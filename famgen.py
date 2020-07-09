@@ -27,7 +27,7 @@ def read_names():
 
     return m_names, w_names, s_names
 
-def get_person(rand=True, sex="r", age=-1, surname=""):
+def get_person(rand=True, sex="r", age=-1, surname="", married=False):
     random.seed()
     m_names, w_names, s_names = read_names()
     person = {}
@@ -57,32 +57,69 @@ def get_person(rand=True, sex="r", age=-1, surname=""):
         'sexuality': sexuality
     }
 
-    print(f"Created {name} {surname}")
+    person["node"] = "human"
+    person["status"] = married
+
     return person
 
 
 def init_generation(init_couples):
+    random.seed()
     G = nx.Graph()
+
     for i in range(init_couples):
-        wife = get_person(rand=False, sex="f")
-        husband = get_person(rand=False, sex="m")
-        w = f"{i}w"
-        h = f"{i}h"
-        G.add_nodes_from([(w, wife), (h, husband)])
-        G.add_edge(w, h)
+        wife = get_person(rand=False, sex="f", married=True)
+        husband = get_person(rand=False, sex="m", married=True)
+        hn = husband["names"]["name"]
+        if wife["names"]["surname"] == "":
+            if random.random() < 0.6:
+                wife["names"]["surname"] = f"van {hn}"
+
+        # relationship
+        no_children = random.randrange(10)
+        rel = {"color" :'r', "node" : "relation", "children" : no_children}
+
+        # add wife and husband to network
+        r, w, h = f"{i}r", f"{i}w", f"{i}h"
+        G.add_nodes_from([(r, rel), (w, wife), (h, husband)])
+        G.add_edge(w, r, color="r")
+        G.add_edge(h, r, color="r")
+
+        # create children
+        for j in range(no_children):
+            key = f"{i}{j}c"
+            child = get_person()
+            if child["general"]["sex"] == 'f':
+                child["names"]["surname"] = f"{hn}sdochter"
+            else:
+                child["names"]["surname"] = f"{hn}szoon"
+
+            G.add_nodes_from([(key, child)])
+            G.add_edge(r, key, color='b')
+
+            with open(f"people/{i}{j}c.json", "w") as output:
+                json.dump(child, output)        
 
         # json dump
-        with open(f"people/{i}.json", "w") as output:
+        with open(f"people/{i}w.json", "w") as output:
             json.dump(wife, output)
+
+        with open(f"people/{i}h.json", "w") as output:
             json.dump(husband, output)
 
-    nx.draw(G, with_labels=True, font_weight='bold')
-    nx.draw_shell(G)
+    print(G.nodes())
+    edges = G.edges()
+    colors = colors = [G[u][v]['color'] for u,v in edges]
+    color_map = []
+    for _, n in G.nodes.data():
+        if n["node"] == "relation":
+            color_map.append('red')
+        else:
+            color_map.append('yellow')
+
+    nx.draw(G, node_color=color_map, edges=edges, edge_color=colors, with_labels=True, font_weight='bold')
     plt.show()
+    return G
 
-
-        
-
-        
-
-init_generation(2)
+G = init_generation(3)
+print(G.nodes(node="human"))
