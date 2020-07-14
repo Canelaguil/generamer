@@ -5,45 +5,18 @@ import matplotlib.pyplot as plt
 import random
 
 class Generations:
-    def __init__(self, gens, seed_couples, json=False):
+    def __init__(self, gens, seed_couples):
         self.m_names, self.w_names, self.s_names = self.read_names()
-        # Current unmarried generation
         self.single_gen = 1
-        # Number of marriages
         self.marriages = 0
-
-        # Genealogic tree
         self.G = nx.DiGraph()
-        # Network of friendships
-        self.N = nx.Graph()
-
-        # Generational loop
         self.init_generation(seed_couples)
         for _ in range(gens - 1):
-            self.forge_friendships()
             self.add_generation()
             self.draw_network()
             self.print_stats()
 
-        # Print to output
-        if json:
-            self.jsonify()
-
-    def jsonify(self):
-        """
-        Prints human nodes to output. 
-        """
-        for individual in self.G:
-            with open(f"people/{individual}c.json", "w") as output:
-                json.dump(self.G.nodes[individual], output)
-
     def print_stats(self):
-        """
-        Prints the statistics of the current Graph state. 
-
-        TODO:
-        - Add N statistiscs 
-        """
         nodes = list(self.G.nodes())
         no_nodes = len(nodes)
         no_people = no_nodes - self.marriages
@@ -53,13 +26,6 @@ class Generations:
         print(f"Number of marriages: {self.marriages}")
 
     def read_names(self):
-        """
-        Reads the different name files and saves them as lists.
-
-        TODO:
-        - Make distinction in class between names.
-        - Add jobs names. 
-        """
         men_file = open("men.names", "r")
         women_file = open("women.names", "r")
         sur_file = open("genericsur.names", "r")
@@ -84,12 +50,6 @@ class Generations:
         return m_names, w_names, s_names
 
     def draw_network(self):
-        """
-        Draws network G.
-
-        TODO:
-        - Draw network N.
-        """
         edges = self.G.edges()
         colors = colors = [self.G[u][v]['color'] for u,v in edges]
         color_map = []
@@ -103,9 +63,6 @@ class Generations:
         plt.show()
 
     def are_siblings(self, a, b):
-        """
-        Checks if a and b are siblings. 
-        """
         neighbours_a = self.G[a]
         parents_a = ""
         for key, value in neighbours_a.items():
@@ -114,20 +71,8 @@ class Generations:
         return parents_a in self.G[b].keys()
 
     def get_person(self, generation, rand=True, sex="r", age=-1, surname="", married=False):
-        """
-        Returns a newly generated person.
-
-        TODO:
-        - Personality
-        - Look
-        - Base look & personality on parents
-        - Add family information
-        """
         random.seed()
         person = {}
-
-        person["node"] = "human"
-        person["gen"] = generation
 
         if rand:
             sex = "m" if random.random() < 0.6 else "f"
@@ -135,6 +80,7 @@ class Generations:
             if random.random() < 0.4:
                 surname = random.choice(self.s_names)
 
+        
         sexuality = "straight" if random.random() < 0.9 else "gay"
 
         # name 
@@ -154,12 +100,12 @@ class Generations:
             'status' : married
         }
 
+        person["node"] = "human"
+        person["gen"] = generation
+
         return person
 
     def init_generation(self, init_couples):
-        """
-        Initializes the "seed couples" and generates their offspring.
-        """
         for i in range(init_couples):
             wife = self.get_person(0, rand=False, sex="f", married=True)
             husband = self.get_person(0, rand=False, sex="m", married=True)
@@ -169,20 +115,13 @@ class Generations:
                     wife["names"]["surname"] = f"van {hn}"
             
             # add wife and husband to network
-            w, h = f"{i}", f"{i}"
+            w, h = f"{i}w", f"{i}h"
             self.G.add_nodes_from([(w, wife), (h, husband)])
             
             # generate offspring
             self.consumate_match(h, w)
 
     def consumate_match(self, husband, wife):
-        """
-        Generates children of a marriage.
-        
-        TODO:
-        - Naming conventions
-        - Twins?
-        """
         hn = self.G.nodes[husband]['names']['name']
         no_children = random.randrange(10)
         rel = {"color" :'r', "node" : "relation", "children" : no_children}
@@ -201,21 +140,13 @@ class Generations:
 
             self.G.add_nodes_from([(key, child)])
             self.G.add_edge(r, key, color='b', kind='parents')
+
+            with open(f"people/{r}{j}c.json", "w") as output:
+                json.dump(child, output)
         
         self.marriages += 1
 
-    def forge_friendships(self):
-        pass
-
     def add_generation(self):
-        """
-        Makes matches between the currently unmarried generation and
-        generates their children. 
-
-        TODO:
-        - Generate bastard children
-        - Adoption (later stage)
-        """
         random.seed()
         bachelors, bachelorettes = [], []
         for key, n in self.G.nodes.data():
@@ -250,4 +181,4 @@ class Generations:
             self.consumate_match(bachelor, match)
         self.single_gen += 1
 
-gens = Generations(2, 2)
+gens = Generations(2, 20)
