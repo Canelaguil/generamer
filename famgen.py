@@ -85,7 +85,7 @@ class Generations:
 
     def draw_network(self):
         """
-        Draws network G.
+        Draws network G and N.
 
         TODO:
         - Draw network N.
@@ -99,7 +99,8 @@ class Generations:
             else:
                 color_map.append('yellow')
 
-        nx.draw(self.G, node_color=color_map, edges=edges, edge_color=colors, with_labels=True, font_weight='bold')
+        nx.draw(self.G, node_color=color_map, edges=edges, edge_color=colors, with_labels=True)
+        # nx.draw(self.N, node_color=color_map, edges=edges, edge_color=colors, with_labels=True)
         plt.show()
 
     def are_siblings(self, a, b):
@@ -113,7 +114,50 @@ class Generations:
                 parents_a = key
         return parents_a in self.G[b].keys()
 
-    def get_person(self, generation, rand=True, sex="r", age=-1, surname="", married=False):
+    def get_personality(self):
+        """
+        Returns random personality traits based on the
+        7 sins and virtues.
+        """
+        random.seed()
+        sins = {}
+        virtues = {}
+        lower = 0 
+        upper = 5
+        
+        # LUCIFER Hoogmoed - ijdelheid
+        sins["superbia"] = random.randint(lower, upper)
+        # MAMMON Hebzucht - gierigheid
+        sins["avaritia"] = random.randint(lower, upper)
+        # ASMODEUS Onkuisheid - lust
+        sins["luxuria"] = random.randint(lower, upper)
+        # LEVIATHAN Jaloezie - afgunst
+        sins["invidia"] = random.randint(lower, upper)
+        # BEELZEBUB Onmatigheid - vraatzucht
+        sins["gula"] = random.randint(lower, upper)
+        # SATAN Woede- wraak
+        sins["ira"] = random.randint(lower, upper)
+        # BELFAGOR gemakzucht - luiheid
+        sins["acedia"] = random.randint(lower, upper)
+
+        # Voorzichtigheid - wijsheid
+        virtues["prudentia"] = random.randint(lower, upper)
+        # Rechtvaardigheid - rechtschapenheid
+        virtues["iustitia"] = random.randint(lower, upper)
+        # Gematigdheid - Zelfbeheersing
+        virtues["temperantia"] = random.randint(lower, upper)
+        # Moed - focus - sterkte
+        virtues["fortitudo"] = random.randint(lower, upper)
+        # Geloof
+        virtues["fides"] = random.randint(lower, upper)
+        # Hoop
+        virtues["spes"] = random.randint(lower, upper)
+        # Naastenliefde - liefdadigheid
+        virtues["caritas"] = random.randint(lower, upper)
+
+        return {"sins" : sins, "virtues" : virtues}
+
+    def get_person(self, generation, rand=True, sex="r", age=-1, surname="", married="unmarried"):
         """
         Returns a newly generated person.
 
@@ -154,6 +198,8 @@ class Generations:
             'status' : married
         }
 
+        person["personality"] = self.get_personality()
+
         return person
 
     def init_generation(self, init_couples):
@@ -169,7 +215,7 @@ class Generations:
                     wife["names"]["surname"] = f"van {hn}"
             
             # add wife and husband to network
-            w, h = f"{i}", f"{i}"
+            w, h = f"{i * 2}", f"{i  * 2 + 1}"
             self.G.add_nodes_from([(w, wife), (h, husband)])
             
             # generate offspring
@@ -184,15 +230,18 @@ class Generations:
         - Twins?
         """
         hn = self.G.nodes[husband]['names']['name']
+        self.G.nodes[husband]['general']['status'] = "married"
+        self.G.nodes[wife]['general']['status'] = "married"
         no_children = random.randrange(10)
+        children = []
         rel = {"color" :'r', "node" : "relation", "children" : no_children}
-        r = f"{husband}r"
+        r = f"{husband}-{wife}"
         self.G.add_nodes_from([(r, rel)])
         self.G.add_edge(wife, r, color="r", kind='marriage')
         self.G.add_edge(husband, r, color="r", kind='marriage')
 
         for j in range(no_children):
-            key = f"{r}{j}c"
+            key = f"{r}{j}"
             child = self.get_person(1)
             if child["general"]["sex"] == 'f':
                 child["names"]["surname"] = f"{hn}sdochter"
@@ -201,6 +250,14 @@ class Generations:
 
             self.G.add_nodes_from([(key, child)])
             self.G.add_edge(r, key, color='b', kind='parents')
+            children.append(key)
+        
+        for child in children:
+            # self.N.add_edge(wife, child, color='g')
+            # self.N.add_edge(husband, child, color='g')
+            children.remove(child)
+            for sibling in children:
+                self.N.add_edge(sibling, child, color='g', kind='sibling')
         
         self.marriages += 1
 
@@ -214,6 +271,7 @@ class Generations:
 
         TODO:
         - Generate bastard children
+        - Get outsider brides/grooms for bachelors/bachelorettes
         - Adoption (later stage)
         """
         random.seed()
@@ -250,4 +308,4 @@ class Generations:
             self.consumate_match(bachelor, match)
         self.single_gen += 1
 
-gens = Generations(2, 2)
+gens = Generations(2, 2, json=True)
