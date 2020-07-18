@@ -90,8 +90,10 @@ class Generations:
         TODO:
         - Draw network N.
         """
-        edges = self.G.edges()
-        colors = colors = [self.G[u][v]['color'] for u,v in edges]
+        gedges = self.G.edges()
+        nedges = self.N.edges()
+        gcolors = [self.G[u][v]['color'] for u,v in gedges]
+        ncolors = [self.N[u][v]['color'] for u,v in nedges]
         color_map = []
         for _, n in self.G.nodes.data():
             if n["node"] == "relation":
@@ -99,8 +101,8 @@ class Generations:
             else:
                 color_map.append('yellow')
 
-        nx.draw(self.G, node_color=color_map, edges=edges, edge_color=colors, with_labels=True)
-        # nx.draw(self.N, node_color=color_map, edges=edges, edge_color=colors, with_labels=True)
+        nx.draw(self.G, node_color=color_map, edges=gedges, edge_color=gcolors, with_labels=True)
+        nx.draw(self.G, edges=nedges, edge_color=ncolors, with_labels=True)
         plt.show()
 
     def are_siblings(self, a, b):
