@@ -1,0 +1,33 @@
+digraph G {
+    // splines="FALSE";
+
+    /* Entities */
+    M1 [shape="diamond"]
+    M2 [shape="diamond"]
+    M3 [shape="diamond"]
+    M4 [shape="diamond"]
+    M5 [shape="diamond"]
+
+    { rank=same Eva Adam Marco Victoria M1 M2 }
+    { rank=same Cain Abel Seth Clara Mathias M3 }
+    
+    /* Relationships */
+    Eva -> M1[arrowhead=none]
+    Adam -> M1[arrowhead=none]
+    M1 -> Abel
+    M1 -> Cain 
+    M1 -> Seth
+    Marco -> M2[arrowhead=none]
+    Victoria -> M2[arrowhead=none]
+    M2 -> Clara
+    M2 -> Mathias
+    Clara -> M3[arrowhead=none]
+    Clara -> Cain[arrowhead=none]
+    M3 -> Samuel
+    M3 -> Pim
+    M3 -> Dana
+    M3 -> Fergus
+    
+    /* Ranks */
+    // { rank=same; shortName; };
+}

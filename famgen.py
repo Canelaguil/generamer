@@ -4,6 +4,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import random
 
+
 class Generations:
     def __init__(self, gens, seed_couples, json=False):
         self.m_names, self.w_names, self.s_names = self.read_names()
@@ -92,8 +93,8 @@ class Generations:
         """
         gedges = self.G.edges()
         nedges = self.N.edges()
-        gcolors = [self.G[u][v]['color'] for u,v in gedges]
-        ncolors = [self.N[u][v]['color'] for u,v in nedges]
+        gcolors = [self.G[u][v]['color'] for u, v in gedges]
+        ncolors = [self.N[u][v]['color'] for u, v in nedges]
         color_map = []
         for _, n in self.G.nodes.data():
             if n["node"] == "relation":
@@ -101,7 +102,8 @@ class Generations:
             else:
                 color_map.append('yellow')
 
-        nx.draw(self.G, node_color=color_map, edges=gedges, edge_color=gcolors, with_labels=True)
+        nx.draw(self.G, node_color=color_map, edges=gedges,
+                edge_color=gcolors, with_labels=True)
         nx.draw(self.G, edges=nedges, edge_color=ncolors, with_labels=True)
         plt.show()
 
@@ -124,9 +126,9 @@ class Generations:
         random.seed()
         sins = {}
         virtues = {}
-        lower = 0 
+        lower = 0
         upper = 5
-        
+
         # LUCIFER Hoogmoed - ijdelheid
         sins["superbia"] = random.randint(lower, upper)
         # MAMMON Hebzucht - gierigheid
@@ -157,7 +159,13 @@ class Generations:
         # Naastenliefde - liefdadigheid
         virtues["caritas"] = random.randint(lower, upper)
 
-        return {"sins" : sins, "virtues" : virtues}
+        return {"sins": sins, "virtues": virtues}
+
+    def get_appearance(self):
+        # https://stylecaster.com/beauty/hair-color-chart/
+        hair_colors = ['light ash blonde', 'light blonde', 'light golden blond', 'medium champagne', 'dark champagne', 'cool brown', 'light brown',
+                       'light golden brown', 'ginger', 'light auburn', 'medium auburn', 'chocolate brown', 'dark golden brown', 'medium ash brown', 'espresso']
+        return hair_colors
 
     def get_person(self, generation, rand=True, sex="r", age=-1, surname="", married="unmarried"):
         """
@@ -183,7 +191,7 @@ class Generations:
 
         sexuality = "straight" if random.random() < 0.9 else "gay"
 
-        # name 
+        # name
         if sex == "m":
             name = random.choice(self.m_names)
         else:
@@ -197,10 +205,11 @@ class Generations:
         person["general"] = {
             'sex': sex,
             'sexuality': sexuality,
-            'status' : married
+            'status': married
         }
 
         person["personality"] = self.get_personality()
+        person["appearance"] = self.get_appearance()
 
         return person
 
@@ -215,18 +224,18 @@ class Generations:
             if wife["names"]["surname"] == "":
                 if random.random() < 0.6:
                     wife["names"]["surname"] = f"van {hn}"
-            
+
             # add wife and husband to network
             w, h = f"{i * 2}", f"{i  * 2 + 1}"
             self.G.add_nodes_from([(w, wife), (h, husband)])
-            
+
             # generate offspring
             self.consumate_match(h, w)
 
     def consumate_match(self, husband, wife):
         """
         Generates children of a marriage.
-        
+
         TODO:
         - Naming conventions
         - Twins?
@@ -236,7 +245,7 @@ class Generations:
         self.G.nodes[wife]['general']['status'] = "married"
         no_children = random.randrange(10)
         children = []
-        rel = {"color" :'r', "node" : "relation", "children" : no_children}
+        rel = {"color": 'r', "node": "relation", "children": no_children}
         r = f"{husband}-{wife}"
         self.G.add_nodes_from([(r, rel)])
         self.G.add_edge(wife, r, color="r", kind='marriage')
@@ -253,14 +262,14 @@ class Generations:
             self.G.add_nodes_from([(key, child)])
             self.G.add_edge(r, key, color='b', kind='parents')
             children.append(key)
-        
+
         for child in children:
             # self.N.add_edge(wife, child, color='g')
             # self.N.add_edge(husband, child, color='g')
             children.remove(child)
             for sibling in children:
                 self.N.add_edge(sibling, child, color='g', kind='sibling')
-        
+
         self.marriages += 1
 
     def forge_friendships(self):
@@ -287,12 +296,12 @@ class Generations:
                     else:
                         if random.random() < 0.05:
                             continue
-                    
+
                     if n["general"]["sex"] == 'm':
                         bachelors.append(key)
                     else:
                         bachelorettes.append(key)
-                
+
         for bachelor in bachelors:
             if bachelorettes == []:
                 return
@@ -306,8 +315,9 @@ class Generations:
                     break
                 else:
                     options.remove(match)
-            
+
             self.consumate_match(bachelor, match)
         self.single_gen += 1
+
 
 gens = Generations(2, 2, json=True)
