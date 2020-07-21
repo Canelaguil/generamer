@@ -5,8 +5,45 @@ from graphviz import Digraph, Graph
 import matplotlib.pyplot as plt
 import random
 
+
+class World:
+    def __init__(self):
+        self.m_names, self.w_names, self.s_names = self.read_names()
+        self.community = self.Community(self, 1340, 4)
+
+    def read_names(self):
+        """
+        Reads the different name files and saves them as lists.
+
+        TODO:
+        - Make distinction in class between names.
+        - Add jobs names. 
+        """
+        men_file = open("names/men.names", "r")
+        women_file = open("names/women.names", "r")
+        sur_file = open("names/genericsur.names", "r")
+
+        m_names, w_names, s_names = [], [], []
+
+        for mn in men_file:
+            mn = mn.replace("\n", "")
+            mn = mn.replace("\r", "")
+            m_names.append(mn.strip())
+
+        for wn in women_file:
+            wn = wn.replace("\n", "")
+            wn = wn.replace("\r", "")
+            w_names.append(wn.strip())
+
+        for sn in sur_file:
+            sn = sn.replace("\n", "")
+            sn = sn.replace("\r", "")
+            s_names.append(sn.strip())
+
+        return m_names, w_names, s_names
+
 class Event:
-    def __init__(self, secrecy, description, year, ongoing=False):
+    def __init__(self, world, secrecy, description, year, ongoing=False):
         """
         Class that defines an event in terms of people involved and the 
         level of secrecy. 
@@ -41,8 +78,8 @@ class Event:
         return event
 
 class Person:
-    def __init__(self, mother, father, name, surname, sex, key, age=0, married='unmarried'):
-        # binary code
+    def __init__(self, world, mother, father, name, surname, sex, key, age=0, married='unmarried'):
+        # binary
         self.key = key
         
         # biological
@@ -52,6 +89,7 @@ class Person:
         # genetics
         self.personality = self.get_personality()
         self.appearance = self.get_appearance()
+        self.fertility = None
 
         # names
         self.name = name
@@ -118,9 +156,11 @@ class Person:
         - Genetics stuff
         """
         hair_colors = ['light ash blonde', 'light blonde', 'light golden blond', 'medium champagne', 'dark champagne', 'cool brown', 'light brown',
-                       'light golden brown', 'ginger', 'light auburn', 'medium auburn', 'chocolate brown', 'dark golden brown', 'medium ash brown', 'espresso']
+                    'light golden brown', 'ginger', 'light auburn', 'medium auburn', 'chocolate brown', 'dark golden brown', 'medium ash brown', 'espresso']
         return hair_colors
 
+    def personal_events(self):
+        pass
 
 class Relationship:
     def __init__(self, man, woman, key, married='married'):
@@ -134,9 +174,14 @@ class Relationship:
         self.no_children += 1
         self.children.append(child.key)
 
+    def relationship_events(self):
+        pass
 
 class Community:
-    def __init__(self, start_year, seed_couples, end_year=1354):
+    def __init__(self, world, start_year, seed_couples, end_year=1354):
+        self.world = world
+        self.seed_town = seed_couples
+
         # Population control
         self.alive = {}
         self.dead = {}
@@ -165,9 +210,7 @@ class Community:
         """
         Init town with seed couples. 
         """
-        self.m_names, self.w_names, self.s_names = self.read_names()
-
-        for i in range(self.init_town):
+        for i in range(self.seed_town):
             random.seed()
 
             # ages
@@ -175,8 +218,8 @@ class Community:
             husband_age = random.randrange(18, 38)
 
             # names
-            wife_name = random.choice(self.w_names)
-            husband_name = random.choice(self.m_names)
+            wife_name = random.choice(self.world.w_names)
+            husband_name = random.choice(self.world.m_names)
             
             # surnames
             if random.random() < 0.6:
@@ -184,14 +227,14 @@ class Community:
             else:
                 wife_surname = ""
 
-            husband_surname = random.choice(self.s_names)
+            husband_surname = random.choice(self.world.s_names)
 
             # keys
             w, h = f"{i}a", f"{i}b"
 
             # create people
-            wife = Person(None, None, wife_name, wife_surname, 'f', w, age=wife_age, married='married')
-            husband = Person(None, None, husband_name, husband_surname, 'm', h, age=husband_age, married='married')
+            wife = self.world.Person(None, None, wife_name, wife_surname, 'f', w, age=wife_age, married='married')
+            husband = self.world.Person(None, None, husband_name, husband_surname, 'm', h, age=husband_age, married='married')
             
             self.family_tree.node(w)
             self.relations.node(w)
@@ -206,7 +249,7 @@ class Community:
         self.total_marriages += 1
 
         # create relationship and add to inventory
-        marriage = Relationship(husband, wife, self.total_marriages)
+        marriage = self.world.Relationship(husband, wife, self.total_marriages)
         self.alive_couples[self.total_marriages] = marriage
 
         # represent in family network
@@ -214,40 +257,21 @@ class Community:
         self.family_tree.edge(wife.key, self.total_marriages)
         self.family_tree.edge(husband.key, self.total_marriages)
 
+    def community_events(self):
+        pass
+
     def time(self):
         """
         Runs the time loop 
         """
         while self.year < self.end_year:
+            for r in self.alive_couples.values():
+                r.relationship_events()
+            
+            for p in self.alive.values():
+                p.personal_events()
+
+            self.community_events()
             self.year += 1
 
-    def read_names(self):
-        """
-        Reads the different name files and saves them as lists.
-
-        TODO:
-        - Make distinction in class between names.
-        - Add jobs names. 
-        """
-        men_file = open("names/men.names", "r")
-        women_file = open("names/women.names", "r")
-        sur_file = open("names/genericsur.names", "r")
-
-        m_names, w_names, s_names = [], [], []
-
-        for mn in men_file:
-            mn = mn.replace("\n", "")
-            mn = mn.replace("\r", "")
-            m_names.append(mn.strip())
-
-        for wn in women_file:
-            wn = wn.replace("\n", "")
-            wn = wn.replace("\r", "")
-            w_names.append(wn.strip())
-
-        for sn in sur_file:
-            sn = sn.replace("\n", "")
-            sn = sn.replace("\r", "")
-            s_names.append(sn.strip())
-
-        return m_names, w_names, s_names
+w = World()
