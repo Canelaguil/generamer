@@ -4,6 +4,7 @@ import networkx as nx
 from graphviz import Digraph, Graph
 import matplotlib.pyplot as plt
 import random
+import copy
 
 def read_names():
         """
@@ -36,7 +37,7 @@ def read_names():
 
         return m_names, w_names, s_names
 
-# initiliatization
+# Varaiables
 m_names, w_names, s_names = read_names()
 
 # Networks
@@ -48,9 +49,12 @@ relations = Graph('Relations', filename='community.gv')
 alive = {}
 dead = {}
 people = {}
-alive_couples = {}
+active_couples = {}
 people_alive = 0
 
+# Match.com
+bachelors = []
+bachelorettes = []
 
 class Event:
     def __init__(self, secrecy, description, year, ongoing=False):
@@ -87,12 +91,13 @@ class Event:
         event["description"] = self.description
         return event
 
+
 class Person:
-    def __init__(self, mother, father, key, age=0, sex='r', married='unmarried', surname='r'):
+    def __init__(self, mother, father, key, age=0, sex='r', married=False, surname='r'):
         global s_names, w_names, m_names
         global alive, dead, people
         global family_tree, relations
-        global people_alive
+        global people_alive, bachelors, bachelorettes
 
         # binary
         self.key = key
@@ -121,7 +126,7 @@ class Person:
 
         # progressive variables
         self.age = age
-        self.status = married
+        self.married = married
         self.relationships = [] 
         self.events = {}
 
@@ -141,6 +146,7 @@ class Person:
         alive.pop(self.key)
         self.alive = False
         dead[self.key] = self
+        family_tree.node(self.key, label=self.name, color='orange')
 
     def get_personality(self):
         """
@@ -236,6 +242,18 @@ class Person:
     def personal_events(self):
         self.age += 1
 
+        # chance of marrying
+        if not self.married:
+            if random.random() < self.chance_of_marrying():
+                if self.sex == 'f':
+                    bachelorettes.append(self.key)
+                elif self.sex == 'm':
+                    bachelors.append(self.key)
+
+        # chance of dying
+        if random.random() < self.chance_of_dying('age'):
+            self.die()
+
     def chance_of_dying(self, trigger):
         # giving birth to a child
         if trigger == 'childbirth':
@@ -243,8 +261,40 @@ class Person:
         # being born
         elif trigger == 'birth':
             return 1 - (self.health - 0.1)
+        # age related issues
+        elif trigger == 'age':
+            if self.age < 12:
+                return 0.01
+            elif self.age > 60:
+                return 0.75
+            elif self.age > 45:
+                return (60 - self.age) / 15
         # general medieval circumstances
         return (1 - self.health) * 0.05
+
+    def chance_of_marrying(self):
+        chance = 0
+
+        if self.age > 12:
+            chance = 0.6
+            if self.sex == 'f':
+                if self.age > 41:
+                    chance = 0.05
+                elif self.age > 36:
+                    chance = 0.4
+                elif self.age > 25:
+                    chance = 0.5
+            else:
+                if self.age < 18:
+                    chance = 0.3
+                elif age > 45:
+                    chance = 0.4
+
+        if self.sexuality == 'gay':
+            chance *= 0.7
+        
+        return chance
+
 
     def jsonify(self):
         person = {}
@@ -267,7 +317,7 @@ class Person:
         person["appearance"] = self.appearance
         person["procedural"] = {
             "age" : self.age,
-            "status" : self.status,
+            "status" : self.married,
             "events" : self.events
         }
 
@@ -278,7 +328,7 @@ class Relationship:
     def __init__(self, man, woman, key, married=True):
         global s_names, w_names, m_names
         global family_tree, relations
-        global dead, alive, alive_couples
+        global dead, alive, active_couples
 
         self.key = key
         self.man = man
@@ -293,7 +343,7 @@ class Relationship:
     def init_relationship(self):
         self.man.relationships.append(self)
         self.woman.relationships.append(self)
-        alive_couples[self.key] = self
+        active_couples[self.key] = self
 
         if self.married:
             # change surname of wife
@@ -305,6 +355,28 @@ class Relationship:
         family_tree.edge(self.woman.key, self.key)
         family_tree.edge(self.man.key, self.key)
 
+    def end_relationship(self, cause):
+        """
+        Possible causes:
+        - woman_died
+        - man_died 
+        - separated
+        """
+        if cause == 'woman_died':
+            if self.active:
+                self.active = False
+            if self.married:
+                self.man.married = False
+        elif cause == 'man_died':
+            if self.active:
+                self.active = False
+            if self.married:
+                self.woman.married = False
+        elif cause == 'separated':
+            self.active = False
+
+        active_couples.pop(self.key)
+                
     def add_child(self):
         self.no_children += 1
         child_key = f"{self.key}c{self.no_children}"
@@ -315,6 +387,14 @@ class Relationship:
         family_tree.node(child_key)
         relations.node(child_key)
         family_tree.edge(self.key, child_key)
+
+        # chance of child dying in childbirth
+        if random.random() < child.chance_of_dying('birth'):
+            child.die()
+        
+        # chance of mother dying in childbirth
+        if random.random() < self.woman.chance_of_dying('childbirth'):
+            self.woman.die()
 
     def yearly_chance_of_pregnancy(self):
         chance = 0.6
@@ -331,7 +411,7 @@ class Relationship:
             self.add_child()
 
             # If child is out of wedlock, add event
-            if self.married == "unmarried":
+            if not self.married:
                 out_of_wedlock = Event(4, "Had a child out of wedlock", year, True)
                 out_of_wedlock.concerns.append(self.woman.key)
                 out_of_wedlock.concerns.append(self.man.key)
@@ -342,8 +422,8 @@ class Community:
         # World initiation
         global s_names, w_names, m_names
         global family_tree, relations
-        global alive, dead, people, alive_couples
-        global people_alive
+        global alive, dead, people, active_couples
+        global people_alive, bachelorettes, bachelors
 
         self.seed_town = seed_couples
         self.year = start_year
@@ -374,8 +454,8 @@ class Community:
             w, h = f"{i}a", f"{i}b"
 
             # create people
-            wife = Person(1, 1, w, sex='f', age=wife_age, married='married')
-            husband = Person(1, 1, h, sex='m', age=husband_age, married='married')
+            wife = Person(1, 1, w, sex='f', age=wife_age, married=True)
+            husband = Person(1, 1, h, sex='m', age=husband_age, married=True)
 
             # marry husband and wife
             self.marry(wife, husband)
@@ -395,6 +475,7 @@ class Community:
         print("---------------------------------")
         print(f"Marriages: {self.total_marriages}")
         print(f"People alive: {people_alive}")
+        print(f"People died: {len(dead)}")
 
     def output_people(self, mode="all"):
         if mode == 'all':
@@ -413,11 +494,17 @@ class Community:
         Runs the time loop 
         """
         while self.year < self.end_year:
-            for r in alive_couples.values():
-                r.relationship_events(self.year)
+            for r in list(active_couples):
+                try:
+                    active_couples[r].relationship_events(self.year)
+                except:
+                    pass
             
-            for p in alive.values():
-                p.personal_events()
+            for p in list(alive):
+                try:
+                    alive[p].personal_events()
+                except:
+                    pass
 
             self.community_events()
             self.print_stats()

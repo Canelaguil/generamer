@@ -61,9 +61,9 @@ class Generations:
         - Make distinction in class between names.
         - Add jobs names. 
         """
-        men_file = open("men.names", "r")
-        women_file = open("women.names", "r")
-        sur_file = open("genericsur.names", "r")
+        men_file = open("names/men.names", "r")
+        women_file = open("names/women.names", "r")
+        sur_file = open("names/genericsur.names", "r")
 
         m_names, w_names, s_names = [], [], []
 
@@ -320,4 +320,4 @@ class Generations:
         self.single_gen += 1
 
 
-gens = Generations(2, 2, json=True)
+gens = Generations(4, 4, json=True)
