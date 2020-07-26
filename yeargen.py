@@ -2,6 +2,7 @@ import json
 import copy
 import networkx as nx
 from graphviz import Digraph, Graph
+import numpy as np
 import matplotlib.pyplot as plt
 import random
 import copy
@@ -41,9 +42,10 @@ def read_names():
 m_names, w_names, s_names = read_names()
 
 # Networks
-family_tree = Digraph('Families', filename='families.gv',
-            node_attr={'color': 'lightblue2', 'style': 'filled'})
-relations = Graph('Relations', filename='community.gv')
+family_tree = Digraph('Families', filename='families.dot',
+            node_attr={'color': 'lightblue2', 'style': 'filled'}, engine='sfdp')
+family_tree.attr(overlap='false')
+relations = Graph('Relations', filename='community.dot')
 
 # Population control
 alive = {}
@@ -51,6 +53,7 @@ dead = {}
 people = {}
 active_couples = {}
 people_alive = 0
+births, deads = 0, 0
 
 # Match.com
 bachelors = []
@@ -93,9 +96,10 @@ class Event:
 
 
 class Person:
-    def __init__(self, mother, father, key, age=0, sex='r', married=False, surname='r'):
+    def __init__(self, parents, key, age=0, sex='r', married=False, surname='r'):
         global s_names, w_names, m_names
         global alive, dead, people
+        global births, deads
         global family_tree, relations
         global people_alive, bachelors, bachelorettes
 
@@ -111,8 +115,7 @@ class Person:
         self.sexuality = "straight" if random.random() < 0.9 else "gay"
 
         # genetics
-        self.mother = mother
-        self.father = father
+        self.parents = parents
         self.personality = self.get_personality()
         self.appearance = self.get_appearance()
         self.health = self.get_health()
@@ -133,7 +136,8 @@ class Person:
         self.init_person()
 
     def init_person(self):
-        global people_alive
+        global people_alive, births
+        births += 1
         people_alive += 1
         alive[self.key] = self
         people[self.key] = self
@@ -141,12 +145,17 @@ class Person:
         relations.node(self.key, label=self.name)
 
     def die(self):
-        global people_alive
+        global people_alive, deads
+        deads += 1
         people_alive -= 1
         alive.pop(self.key)
         self.alive = False
         dead[self.key] = self
         family_tree.node(self.key, label=self.name, color='orange')
+
+        cause = 'woman_died' if self.sex == 'f' else 'man_died'
+        for relation in self.relationships:
+            relation.end_relationship(cause)
 
     def get_personality(self):
         """
@@ -197,22 +206,95 @@ class Person:
     def get_appearance(self):
         """
         Returns appearance based on genetics.
-
-        TODO:
-        - Come up with actual appearance traits
-        - Genetics stuff
         """
-        hair_colors = ['light ash blonde', 'light blonde', 'light golden blond', 'medium champagne', 'dark champagne', 'cool brown', 'light brown',
-                    'light golden brown', 'ginger', 'light auburn', 'medium auburn', 'chocolate brown', 'dark golden brown', 'medium ash brown', 'espresso']
-        return random.choice(hair_colors)
+        hair_colors = ['black', 'brown', 'red', 'blonde', 'strawberry blonde']
+        eye_colors = ['brown', 'green', 'blue']
+
+        # hair color
+        genetic_hair = []
+        if self.parents:
+            genetic_hair.append(self.parents.man.appearance['hair_color'])
+            genetic_hair.append(self.parents.woman.appearance['hair_color'])
+            genetic_hair = set(genetic_hair)
+            if genetic_hair == set(["black", "black"]):
+                hair_weights = [1, 0, 0, 0, 0]
+            elif genetic_hair == set(['black', 'brown']):
+                hair_weights = [0.5, 0.5, 0, 0, 0]
+            elif genetic_hair == set(['black', 'red']):
+                hair_weights = [0, 1, 0, 0, 0]
+            elif genetic_hair == set(['black', 'blonde']):
+                hair_weights = [0, 1, 0, 0, 0]
+            elif genetic_hair == set(['black', 'strawberry blonde']):
+                hair_weights = [0, 1, 0, 0, 0]
+            elif genetic_hair == set(['brown', 'brown']):
+                hair_weights = [0.25, 0.5, 0.03, 0.11, 0.12]
+            elif genetic_hair == set(['brown', 'red']):
+                hair_weights = [0, 0.5, 0.16, 0.34, 0]
+            elif genetic_hair == set(['brown', 'strawberry blonde']):
+                hair_weights = [0, 0.5, 0.08, 0.25, 0.17]
+            elif genetic_hair == set(['brown', 'blonde']):
+                hair_weights = [0, 0.5, 0, 0.16, 0.34]
+            elif genetic_hair == set(['red', 'red']):
+                hair_weights = [0, 0, 1, 0, 0]
+            elif genetic_hair == set(['red', 'strawberry blonde']):
+                hair_weights = [0, 0, 0.5, 0.5, 0]
+            elif genetic_hair == set(['red', 'blonde']):
+                hair_weights = [0, 0, 0, 1, 0]
+            elif genetic_hair == set(['strawberry blonde', 'strawberry blonde']):
+                hair_weights = [0, 0, 0.25, 0.5, 0.25]
+            elif genetic_hair == set(['strawberry blonde', 'blonde']):
+                hair_weights = [0, 0, 0, 0.5, 0.5]
+            elif genetic_hair == set(['blonde', 'blonde']):
+                hair_weights = [0, 0, 0, 0, 1]
+            else:
+                print(f"{self.key}: hair problem")
+        else:
+            hair_weights = [0.15, 0.3, 0.1, 0.2, 0.25]
+
+        # eye color
+        genetic_eyes = []
+        if self.parents:
+            genetic_eyes.append(self.parents.man.appearance['eye_color'])
+            genetic_eyes.append(self.parents.woman.appearance['eye_color'])
+            genetic_eyes = set(genetic_eyes)
+            if genetic_eyes == set(['brown', 'brown']):
+                eye_weights =  [0.75, 0.1875, 0.0625]
+            elif genetic_eyes == set(['green', 'green']):
+                eye_weights = [0.005, 0.75, 0.245]
+            elif genetic_eyes == set(['blue', 'blue']):
+                eye_weights = [0, 0.01, 0.99]
+            elif genetic_eyes == set('green', 'brown'):
+                eye_weights = [0.5, 0.375, 0.125]
+            elif genetic_eyes == set('blue', 'brown'):
+                eye_weights = set(0.5, 0, 0.5)
+            elif genetic_eyes == set('green', 'blue'):
+                eye_weights = [0, 0.5, 0.5]
+            else:
+                print(f"{self.key}: eye_color problem")
+        else:
+            eye_weights = [0.3, 0.15, 0.55]
+        
+        # hair type
+        if self.parents:
+            father_hair = random.choice(self.parents.man.appearance['hair_type'])
+            mother_hair = random.choice(self.parents.woman.appearance['hair_type'])
+            hair_type = [father_hair, mother_hair]
+        else:
+            random_hair = ['C', 'C', 'S']
+            hair_type = [random.choice(random_hair), random.choice(random_hair)]
+
+        eye_color = np.random.choice(eye_colors, p=eye_weights)
+        hair_color = np.random.choice(hair_colors, p=hair_weights)
+
+        return {"eye_color": eye_color, "hair_color": hair_color, "hair_type": hair_type}
 
     def get_health(self):
         # if no parents, return random health
-        if self.father == 1:
+        if not self.parents:
             return random.uniform(0.6, 1.)
         
         # else, genetically generate health
-        parent = self.mother if random.random() < 0.6 else self.father
+        parent = self.parents.woman if random.random() < 0.6 else self.parents.man
         genetics = random.uniform(-0.2, 0.2)
         gen_health = parent.health + genetics
         if gen_health > 1.:
@@ -232,6 +314,12 @@ class Person:
         if random.random() < 0.4:
             return random.choice(s_names)
 
+        if self.parents and random.random() < 0.7:
+            if self.sex == 'f':
+                return f"{self.parents.father.name}sdochter"
+            if self.sex == 'm':
+                    return f"{self.parents.father.name}szoon"
+
     def add_event(self, event):
         try:
             self.events[event.secrecy].append(event)
@@ -240,35 +328,36 @@ class Person:
             self.events[event.secrecy].append(event)
 
     def personal_events(self):
+        global bachelorettes, bachelors
         self.age += 1
-
-        # chance of marrying
-        if not self.married:
-            if random.random() < self.chance_of_marrying():
-                if self.sex == 'f':
-                    bachelorettes.append(self.key)
-                elif self.sex == 'm':
-                    bachelors.append(self.key)
 
         # chance of dying
         if random.random() < self.chance_of_dying('age'):
             self.die()
+        # chance of marrying
+        else:
+            if not self.married:
+                if random.random() < self.chance_of_marrying():
+                    if self.sex == 'f':
+                        bachelorettes.append(self.key)
+                    elif self.sex == 'm':
+                        bachelors.append(self.key)
 
     def chance_of_dying(self, trigger):
         # giving birth to a child
         if trigger == 'childbirth':
-            return 1 - (self.health - 0.02)
+            return (1 - self.health) * 0.02
         # being born
         elif trigger == 'birth':
-            return 1 - (self.health - 0.1)
+            return (1 - self.health) * 0.1
         # age related issues
         elif trigger == 'age':
             if self.age < 12:
-                return 0.01
+                return (1 - self.health) * 0.05
             elif self.age > 60:
-                return 0.75
+                return (1 - self.health) * 0.75
             elif self.age > 45:
-                return (60 - self.age) / 15
+                return (1 - self.health) * 0.5
         # general medieval circumstances
         return (1 - self.health) * 0.05
 
@@ -276,25 +365,24 @@ class Person:
         chance = 0
 
         if self.age > 12:
-            chance = 0.6
+            chance = 0.7
             if self.sex == 'f':
                 if self.age > 41:
                     chance = 0.05
                 elif self.age > 36:
                     chance = 0.4
                 elif self.age > 25:
-                    chance = 0.5
+                    chance = 0.6
             else:
                 if self.age < 18:
                     chance = 0.3
-                elif age > 45:
-                    chance = 0.4
+                elif self.age > 45:
+                    chance = 0.8
 
         if self.sexuality == 'gay':
             chance *= 0.7
         
         return chance
-
 
     def jsonify(self):
         person = {}
@@ -308,16 +396,20 @@ class Person:
             "sex" : self.sex,
             "sexuality" : self.sexuality
         }
+
+        if self.parents:
+            parents = f"{self.parents.man.name} and {self.parents.woman.name}"
+        else:
+            parents = "ancestors"
         person["genetics"] = {
-            # "mother" : self.mother.key,
-            # "father" : self.father.key,
+            "parents" : parents,
             "health" : self.health
         }
         person["personality"] = self.personality
         person["appearance"] = self.appearance
         person["procedural"] = {
             "age" : self.age,
-            "status" : self.married,
+            "married" : self.married,
             "events" : self.events
         }
 
@@ -336,6 +428,7 @@ class Relationship:
         self.married = married
         self.active = True
         self.no_children = 0
+        self.dead_children = 0
         self.children = []
 
         self.init_relationship()
@@ -380,7 +473,7 @@ class Relationship:
     def add_child(self):
         self.no_children += 1
         child_key = f"{self.key}c{self.no_children}"
-        child = Person(self.woman, self.man, child_key)
+        child = Person(self, child_key)
         self.children.append(child)
 
         # add to networks
@@ -391,6 +484,7 @@ class Relationship:
         # chance of child dying in childbirth
         if random.random() < child.chance_of_dying('birth'):
             child.die()
+            self.dead_children += 1
         
         # chance of mother dying in childbirth
         if random.random() < self.woman.chance_of_dying('childbirth'):
@@ -415,6 +509,7 @@ class Relationship:
                 out_of_wedlock = Event(4, "Had a child out of wedlock", year, True)
                 out_of_wedlock.concerns.append(self.woman.key)
                 out_of_wedlock.concerns.append(self.man.key)
+                print(f"{self.man.key} had a child out of wedlock with {self.woman.key}")
 
 
 class Community:
@@ -424,6 +519,7 @@ class Community:
         global family_tree, relations
         global alive, dead, people, active_couples
         global people_alive, bachelorettes, bachelors
+        global births, deads
 
         self.seed_town = seed_couples
         self.year = start_year
@@ -454,8 +550,8 @@ class Community:
             w, h = f"{i}a", f"{i}b"
 
             # create people
-            wife = Person(1, 1, w, sex='f', age=wife_age, married=True)
-            husband = Person(1, 1, h, sex='m', age=husband_age, married=True)
+            wife = Person(None, w, sex='f', age=wife_age, married=True)
+            husband = Person(None, h, sex='m', age=husband_age, married=True)
 
             # marry husband and wife
             self.marry(wife, husband)
@@ -467,15 +563,49 @@ class Community:
 
         # create relationship and add to inventory
         Relationship(husband, wife, key)
-        
+    
+    def match_com(self):
+        """
+        Matches bachelors and bachelorettes. 
+        """
+        global bachelors, bachelorettes
+        print("in match.com")
+        for bachelor in bachelors:
+            if bachelorettes == []:
+                return
+            options = copy.deepcopy(bachelorettes)
+
+            try: 
+                bachelor_parents = alive[bachelor].parents.key
+                print(alive[bachelor])
+            except:
+                print("no bachelor key parents")
+                break
+
+            while True:
+                if options == []:
+                    break
+                match = random.choice(options)
+                try: 
+                    if alive[match].parents.key != bachelor_parents:
+                        bachelorettes.remove(match)
+                        self.marry(alive[match], alive[bachelor])
+                        break
+                    else:
+                        options.remove(match)
+                except:
+                    print("couldnt find match")
+                    break
+
     def community_events(self):
-        pass
+        self.match_com()
     
     def print_stats(self):
         print("---------------------------------")
+        print(f"| {self.year} | +{births} -{deads}")
         print(f"Marriages: {self.total_marriages}")
-        print(f"People alive: {people_alive}")
-        print(f"People died: {len(dead)}")
+        print(f"Currently alive: {people_alive}")
+        print(f"Total died: {len(dead)}")
 
     def output_people(self, mode="all"):
         if mode == 'all':
@@ -493,7 +623,9 @@ class Community:
         """
         Runs the time loop 
         """
+        global bachelors, bachelorettes, deads, births
         while self.year < self.end_year:
+            deads, births = 0, 0
             for r in list(active_couples):
                 try:
                     active_couples[r].relationship_events(self.year)
@@ -507,11 +639,13 @@ class Community:
                     pass
 
             self.community_events()
+
             self.print_stats()
             self.year += 1
+            bachelors, bachelorettes = [], []
 
         self.output_people()
-        family_tree.format = 'svg'
+        family_tree.format = 'pdf'
         family_tree.view()
         
-c = Community(1340, 4)
+c = Community(1300, 100)
