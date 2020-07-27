@@ -336,7 +336,7 @@ class Person:
             self.die()
         # chance of marrying
         else:
-            if not self.married:
+            if not self.married and self.parents != None:
                 if random.random() < self.chance_of_marrying():
                     if self.sex == 'f':
                         bachelorettes.append(self.key)
@@ -569,33 +569,27 @@ class Community:
         Matches bachelors and bachelorettes. 
         """
         global bachelors, bachelorettes
-        print("in match.com")
         for bachelor in bachelors:
             if bachelorettes == []:
                 return
             options = copy.deepcopy(bachelorettes)
-
-            try: 
-                bachelor_parents = alive[bachelor].parents.key
-                print(alive[bachelor])
-            except:
-                print("no bachelor key parents")
-                break
-
             while True:
                 if options == []:
                     break
-                match = random.choice(options)
-                try: 
-                    if alive[match].parents.key != bachelor_parents:
-                        bachelorettes.remove(match)
-                        self.marry(alive[match], alive[bachelor])
-                        break
-                    else:
-                        options.remove(match)
+
+                try:
+                    groom = alive[bachelor]
+                    match_id = random.choice(options)
+                    match = alive[match_id]
                 except:
-                    print("couldnt find match")
+                    print("one of them dead")
+
+                if match.parents.key != groom.parents.key:
+                    bachelorettes.remove(match_id)
+                    self.marry(match, groom)
                     break
+                else:
+                    options.remove(match_id)
 
     def community_events(self):
         self.match_com()
@@ -644,8 +638,8 @@ class Community:
             self.year += 1
             bachelors, bachelorettes = [], []
 
-        self.output_people()
-        family_tree.format = 'pdf'
-        family_tree.view()
+        # self.output_people()
+        # family_tree.format = 'pdf'
+        # family_tree.view()
         
 c = Community(1300, 100)
