@@ -157,7 +157,7 @@ class Person:
         for relation in self.relationships:
             relation.end_relationship(cause)
 
-    def get_personality(self):
+    def get_personality(self, adjusted_sins=[], adjusted_virtues=[]):
         """
         Returns random personality traits based on the
         7 sins and virtues.
@@ -168,38 +168,39 @@ class Person:
         random.seed()
         sins = {}
         virtues = {}
-        lower = 0
-        upper = 5
+        personality_values = [0, 1, 2, 3, 4, 5]
+        sins_weight = [0.1, 0.1, 0.15, 0.4, 0.15, 0.1] if adjusted_sins == [] else adjusted_sins
+        virtues_weight = [0.1, 0.1, 0.15, 0.4, 0.15, 0.1] if adjusted_virtues == [] else adjusted_virtues
 
         # LUCIFER Hoogmoed - ijdelheid
-        sins["superbia"] = random.randint(lower, upper)
+        sins["superbia"] = int(np.random.choice(personality_values, p=sins_weight))
         # MAMMON Hebzucht - gierigheid
-        sins["avaritia"] = random.randint(lower, upper)
+        sins["avaritia"] = int(np.random.choice(personality_values, p=sins_weight))
         # ASMODEUS Onkuisheid - lust
-        sins["luxuria"] = random.randint(lower, upper)
+        sins["luxuria"] = int(np.random.choice(personality_values, p=sins_weight))
         # LEVIATHAN Jaloezie - afgunst
-        sins["invidia"] = random.randint(lower, upper)
+        sins["invidia"] = int(np.random.choice(personality_values, p=sins_weight))
         # BEELZEBUB Onmatigheid - vraatzucht
-        sins["gula"] = random.randint(lower, upper)
+        sins["gula"] = int(np.random.choice(personality_values, p=sins_weight))
         # SATAN Woede- wraak
-        sins["ira"] = random.randint(lower, upper)
+        sins["ira"] = int(np.random.choice(personality_values, p=sins_weight))
         # BELFAGOR gemakzucht - luiheid
-        sins["acedia"] = random.randint(lower, upper)
+        sins["acedia"] = int(np.random.choice(personality_values, p=sins_weight))
 
         # Voorzichtigheid - wijsheid
-        virtues["prudentia"] = random.randint(lower, upper)
+        virtues["prudentia"] = int(np.random.choice(personality_values, p=virtues_weight))
         # Rechtvaardigheid - rechtschapenheid
-        virtues["iustitia"] = random.randint(lower, upper)
+        virtues["iustitia"] = int(np.random.choice(personality_values, p=virtues_weight))
         # Gematigdheid - Zelfbeheersing
-        virtues["temperantia"] = random.randint(lower, upper)
+        virtues["temperantia"] = int(np.random.choice(personality_values, p=virtues_weight))
         # Moed - focus - sterkte
-        virtues["fortitudo"] = random.randint(lower, upper)
+        virtues["fortitudo"] = int(np.random.choice(personality_values, p=virtues_weight))
         # Geloof
-        virtues["fides"] = random.randint(lower, upper)
+        virtues["fides"] = int(np.random.choice(personality_values, p=virtues_weight))
         # Hoop
-        virtues["spes"] = random.randint(lower, upper)
+        virtues["spes"] = int(np.random.choice(personality_values, p=virtues_weight))
         # Naastenliefde - liefdadigheid
-        virtues["caritas"] = random.randint(lower, upper)
+        virtues["caritas"] = int(np.random.choice(personality_values, p=virtues_weight))
 
         return {"sins": sins, "virtues": virtues}
 
@@ -353,7 +354,7 @@ class Person:
         # age related issues
         elif trigger == 'age':
             if self.age < 12:
-                return (1 - self.health) * 0.05
+                return (1 - self.health) * 0.1
             elif self.age > 60:
                 return (1 - self.health) * 0.75
             elif self.age > 45:
@@ -377,10 +378,10 @@ class Person:
                 if self.age < 18:
                     chance = 0.3
                 elif self.age > 45:
-                    chance = 0.8
+                    chance = 0.5
 
         if self.sexuality == 'gay':
-            chance *= 0.7
+            chance *= 0.5
         
         return chance
 
@@ -602,6 +603,8 @@ class Community:
         print(f"Total died: {len(dead)}")
 
     def output_people(self, mode="all"):
+        global alive, people, dead
+
         if mode == 'all':
             database = people
         elif mode == 'alive':
@@ -638,7 +641,7 @@ class Community:
             self.year += 1
             bachelors, bachelorettes = [], []
 
-        # self.output_people()
+        self.output_people()
         # family_tree.format = 'pdf'
         # family_tree.view()
         
