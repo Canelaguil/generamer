@@ -59,10 +59,10 @@ births, deads = 0, 0
 bachelors = []
 bachelorettes = []
 
-class Event:
-    def __init__(self, secrecy, description, year, ongoing=False):
+class Bit:
+    def __init__(self, secrecy, description, age, ongoing=False):
         """
-        Class that defines an event in terms of people involved and the 
+        Class that defines an bit in terms of people involved and the 
         level of secrecy. 
         """
         # Who is this about?
@@ -71,28 +71,32 @@ class Event:
         # Who was also involved but not condemned by it?
         self.involved = []
 
-        # How secret is this event? [0 - 5]
+        # Who was the source of this bit?
+        self.source = None
+
+        # How secret is this bit? [0 - 5]
         self.secrecy = secrecy
 
         # Which sins / virtues does this relate to? [optional]
         self.meaning = {}
 
         # When did this take place and is it still taking place?
-        self.year = year
+        self.age = age
         self.ongoing = ongoing
         
-        # Description of event
+        # Description of bit
         self.description = description
 
     def jsonify(self):
-        event = {}
-        event["concerns"] = self.concerns
-        event["involved"] = self.involved
-        event["secrecy"] = self.secrecy
-        event["meaning"] = self.meaning
-        event["when"] = [self.year, self.ongoing]
-        event["description"] = self.description
-        return event
+        bit = {}
+        bit["concerns"] = self.concerns
+        bit["involved"] = self.involved
+        bit["source"] = self.source
+        bit["secrecy"] = self.secrecy
+        bit["meaning"] = self.meaning
+        bit["age / ongoing"] = [self.age, self.ongoing]
+        bit["description"] = self.description
+        return bit
 
 
 class Person:
@@ -131,7 +135,7 @@ class Person:
         self.age = age
         self.married = married
         self.relationships = [] 
-        self.events = {}
+        self.bits = {}
 
         self.init_person()
 
@@ -321,13 +325,21 @@ class Person:
             if self.sex == 'm':
                     return f"{self.parents.father.name}szoon"
 
-    def add_event(self, event):
+    def add_bit(self, secrecy, description, ongoing=False):
+        bit = Bit(secrecy, description, self.age, ongoing)
         try:
-            self.events[event.secrecy].append(event)
+            self.bits[secrecy].append(bit)
         except:
-            self.events[event.secrecy] = []
-            self.events[event.secrecy].append(event)
+            self.bits[secrecy] = []
+            self.bits[secrecy].append(bit)
 
+    def add_bit_premade(self, bit):
+        try:
+            self.bits[bit.secrecy].append(bit)
+        except:
+            self.bits[bit.secrecy] = []
+            self.bits[bit.secrecy].append(bit)
+        
     def personal_events(self):
         global bachelorettes, bachelors
         self.age += 1
@@ -335,6 +347,8 @@ class Person:
         # chance of dying
         if random.random() < self.chance_of_dying('age'):
             self.die()
+            if self.age < 12:
+                print("a child died")
         # chance of marrying
         else:
             if not self.married and self.parents != None:
@@ -345,20 +359,23 @@ class Person:
                         bachelors.append(self.key)
 
     def chance_of_dying(self, trigger):
+        """
+        Yearly chance of dying.
+        """
         # giving birth to a child
         if trigger == 'childbirth':
-            return (1 - self.health) * 0.02
-        # being born
+            return (1 - self.health) * 0.2
+        # being born / misscarriage
         elif trigger == 'birth':
-            return (1 - self.health) * 0.1
+            return (1 - self.health) * 0.25
         # age related issues
         elif trigger == 'age':
             if self.age < 12:
                 return (1 - self.health) * 0.1
             elif self.age > 60:
-                return (1 - self.health) * 0.75
+                return 0.7
             elif self.age > 45:
-                return (1 - self.health) * 0.5
+                return 0.4
         # general medieval circumstances
         return (1 - self.health) * 0.05
 
@@ -387,6 +404,11 @@ class Person:
 
     def jsonify(self):
         person = {}
+        bits = []
+        for l in self.bits.values():
+            for el in l:
+                bits.append(el.description)
+
         person["key"] = self.key
         person["alive"] = self.alive
         person["names"] = {
@@ -411,7 +433,7 @@ class Person:
         person["procedural"] = {
             "age" : self.age,
             "married" : self.married,
-            "events" : self.events
+            "events" : bits
         }
 
         return person
@@ -443,6 +465,10 @@ class Relationship:
             # change surname of wife
             if random.random() < 0.6:
                 self.woman.surname = f"van {self.man.name}"
+            self.man.add_bit(0, f"Got married at {self.man.age} to {self.woman.name}.")
+            self.woman.add_bit(0, f"Got married at {self.woman.age} to {self.man.name}.")
+            self.woman.married = True
+            self.man.married = True
 
         # represent in family network
         family_tree.node(self.key, shape="diamond")
@@ -456,16 +482,18 @@ class Relationship:
         - man_died 
         - separated
         """
+        if self.active:
+            self.active = False
         if cause == 'woman_died':
-            if self.active:
-                self.active = False
             if self.married:
                 self.man.married = False
+                if self.man.alive:
+                    self.man.add_bit(1, f"Became a widower at {self.man.age}.")
         elif cause == 'man_died':
-            if self.active:
-                self.active = False
             if self.married:
                 self.woman.married = False
+                if self.woman.alive:
+                    self.woman.add_bit(1, f"Became a widow at {self.woman.age}.")
         elif cause == 'separated':
             self.active = False
 
@@ -473,6 +501,7 @@ class Relationship:
                 
     def add_child(self):
         self.no_children += 1
+        print(f"{self.key}: {self.no_children}")
         child_key = f"{self.key}c{self.no_children}"
         child = Person(self, child_key)
         self.children.append(child)
@@ -484,33 +513,52 @@ class Relationship:
 
         # chance of child dying in childbirth
         if random.random() < child.chance_of_dying('birth'):
+            print("baby died")
             child.die()
             self.dead_children += 1
-        
+            if self.dead_children == 1 and self.children == 1:
+                self.man.add_bit(2, f"Lost first child with {self.woman.name} in childbirth.")
+                self.woman.add_bit(2, f"Lost first child with {self.man.name} in childbirth.")
+            elif self.dead_children > 1:
+                self.man.add_bit(2, f"Lost several children with {self.woman.name}.")
+                self.woman.add_bit(2, f"Lost several children with {self.man.name}.")
+                print(f"{self.woman.key} lost child {self.no_children} in childbirth")
+
         # chance of mother dying in childbirth
         if random.random() < self.woman.chance_of_dying('childbirth'):
             self.woman.die()
+            if self.married:
+                self.man.add_bit(2, f"Lost wife {self.woman.name} when she gave birth to {child.name}.")
+            print("mother died in childbirth")
 
     def yearly_chance_of_pregnancy(self):
-        chance = 0.6
+        chance = 0.7
         if self.woman.age > 41:
             chance = 0.05
         elif self.woman.age > 36:
-            chance = 0.4
-        elif self.woman.age > 25:
             chance = 0.5
+        elif self.woman.age > 25:
+            chance = 0.6
+
+        if self.no_children > 14:
+            chance *= 0.05
+        elif self.no_children > 9:
+            chance *= 0.15
+        
         return chance
 
     def relationship_events(self, year):
         if random.random() < self.yearly_chance_of_pregnancy():
             self.add_child()
 
-            # If child is out of wedlock, add event
-            if not self.married:
-                out_of_wedlock = Event(4, "Had a child out of wedlock", year, True)
-                out_of_wedlock.concerns.append(self.woman.key)
-                out_of_wedlock.concerns.append(self.man.key)
-                print(f"{self.man.key} had a child out of wedlock with {self.woman.key}")
+        # If child is out of wedlock, add bit
+        if not self.married:
+            out_of_wedlock = Bit(4, "Had a child out of wedlock", year, True)
+            out_of_wedlock.concerns.append(self.woman.key)
+            out_of_wedlock.concerns.append(self.man.key)
+            self.man.add_bit_premade(out_of_wedlock)
+            self.woman.add_bit_premade(out_of_wedlock)
+            print(f"{self.man.key} had a child out of wedlock with {self.woman.key}")
 
 
 class Community:
@@ -642,7 +690,7 @@ class Community:
             bachelors, bachelorettes = [], []
 
         self.output_people()
-        # family_tree.format = 'pdf'
-        # family_tree.view()
+        family_tree.format = 'pdf'
+        family_tree.view()
         
-c = Community(1300, 100)
+c = Community(1250, 10)
