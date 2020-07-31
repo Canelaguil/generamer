@@ -8,35 +8,35 @@ import random
 import copy
 
 def read_names():
-        """
-        Reads the different name files and saves them as lists.
+    """
+    Reads the different name files and saves them as lists.
 
-        TODO:
-        - Make distinction in class between names.
-        - Add jobs names. 
-        """
-        men_file = open("names/men.names", "r")
-        women_file = open("names/women.names", "r")
-        sur_file = open("names/genericsur.names", "r")
+    TODO:
+    - Make distinction in class between names.
+    - Add jobs names. 
+    """
+    men_file = open("names/men.names", "r")
+    women_file = open("names/women.names", "r")
+    sur_file = open("names/genericsur.names", "r")
 
-        m_names, w_names, s_names = [], [], []
+    m_names, w_names, s_names = [], [], []
 
-        for mn in men_file:
-            mn = mn.replace("\n", "")
-            mn = mn.replace("\r", "")
-            m_names.append(mn.strip())
+    for mn in men_file:
+        mn = mn.replace("\n", "")
+        mn = mn.replace("\r", "")
+        m_names.append(mn.strip())
 
-        for wn in women_file:
-            wn = wn.replace("\n", "")
-            wn = wn.replace("\r", "")
-            w_names.append(wn.strip())
+    for wn in women_file:
+        wn = wn.replace("\n", "")
+        wn = wn.replace("\r", "")
+        w_names.append(wn.strip())
 
-        for sn in sur_file:
-            sn = sn.replace("\n", "")
-            sn = sn.replace("\r", "")
-            s_names.append(sn.strip())
+    for sn in sur_file:
+        sn = sn.replace("\n", "")
+        sn = sn.replace("\r", "")
+        s_names.append(sn.strip())
 
-        return m_names, w_names, s_names
+    return m_names, w_names, s_names
 
 # Varaiables
 m_names, w_names, s_names = read_names()
@@ -116,13 +116,18 @@ class Person:
             self.sex = 'f' if random.random() < 0.51 else 'm'
         else:
             self.sex = sex
+        
         self.sexuality = "straight" if random.random() < 0.9 else "gay"
 
         # genetics
         self.parents = parents
-        self.personality = self.get_personality()
-        self.appearance = self.get_appearance()
+        
         self.health = self.get_health()
+        self.appearance = self.get_appearance()
+        try:
+            self.personality = self.get_personality()
+        except:
+            print("one of the gets went wrong")
 
         # names
         self.name = self.generate_name()
@@ -156,7 +161,7 @@ class Person:
         self.alive = False
         dead[self.key] = self
         family_tree.node(self.key, label=self.name, color='orange')
-
+        self.add_bit(0, f"Died at age {self.age}.")
         cause = 'woman_died' if self.sex == 'f' else 'man_died'
         for relation in self.relationships:
             relation.end_relationship(cause)
@@ -169,6 +174,7 @@ class Person:
         TODO:
         - Actually implement genetics
         """
+        # return "nice"
         random.seed()
         sins = {}
         virtues = {}
@@ -207,17 +213,19 @@ class Person:
         virtues["caritas"] = int(np.random.choice(personality_values, p=virtues_weight))
 
         return {"sins": sins, "virtues": virtues}
+        
 
     def get_appearance(self):
         """
         Returns appearance based on genetics.
         """
+        # return "good looking"
         hair_colors = ['black', 'brown', 'red', 'blonde', 'strawberry blonde']
         eye_colors = ['brown', 'green', 'blue']
 
         # hair color
         genetic_hair = []
-        if self.parents:
+        if self.parents != None:
             genetic_hair.append(self.parents.man.appearance['hair_color'])
             genetic_hair.append(self.parents.woman.appearance['hair_color'])
             genetic_hair = set(genetic_hair)
@@ -232,7 +240,7 @@ class Person:
             elif genetic_hair == set(['black', 'strawberry blonde']):
                 hair_weights = [0, 1, 0, 0, 0]
             elif genetic_hair == set(['brown', 'brown']):
-                hair_weights = [0.25, 0.5, 0.03, 0.11, 0.12]
+                hair_weights = [0.25, 0.5, 0.02, 0.11, 0.12]
             elif genetic_hair == set(['brown', 'red']):
                 hair_weights = [0, 0.5, 0.16, 0.34, 0]
             elif genetic_hair == set(['brown', 'strawberry blonde']):
@@ -258,21 +266,21 @@ class Person:
 
         # eye color
         genetic_eyes = []
-        if self.parents:
+        if self.parents != None:
             genetic_eyes.append(self.parents.man.appearance['eye_color'])
             genetic_eyes.append(self.parents.woman.appearance['eye_color'])
             genetic_eyes = set(genetic_eyes)
             if genetic_eyes == set(['brown', 'brown']):
-                eye_weights =  [0.75, 0.1875, 0.0625]
+                eye_weights = [0.75, 0.1875, 0.0625]
             elif genetic_eyes == set(['green', 'green']):
                 eye_weights = [0.005, 0.75, 0.245]
             elif genetic_eyes == set(['blue', 'blue']):
                 eye_weights = [0, 0.01, 0.99]
-            elif genetic_eyes == set('green', 'brown'):
+            elif genetic_eyes == set(['green', 'brown']):
                 eye_weights = [0.5, 0.375, 0.125]
-            elif genetic_eyes == set('blue', 'brown'):
-                eye_weights = set(0.5, 0, 0.5)
-            elif genetic_eyes == set('green', 'blue'):
+            elif genetic_eyes == set(['blue', 'brown']):
+                eye_weights = [0.5, 0, 0.5]
+            elif genetic_eyes == set(['green', 'blue']):
                 eye_weights = [0, 0.5, 0.5]
             else:
                 print(f"{self.key}: eye_color problem")
@@ -280,22 +288,23 @@ class Person:
             eye_weights = [0.3, 0.15, 0.55]
         
         # hair type
-        if self.parents:
+        if self.parents != None:
             father_hair = random.choice(self.parents.man.appearance['hair_type'])
             mother_hair = random.choice(self.parents.woman.appearance['hair_type'])
             hair_type = [father_hair, mother_hair]
         else:
-            random_hair = ['C', 'C', 'S']
+            random_hair = ['C', 'S', 'S']
             hair_type = [random.choice(random_hair), random.choice(random_hair)]
-
+        
         eye_color = np.random.choice(eye_colors, p=eye_weights)
         hair_color = np.random.choice(hair_colors, p=hair_weights)
 
         return {"eye_color": eye_color, "hair_color": hair_color, "hair_type": hair_type}
+        # return "normal"
 
     def get_health(self):
         # if no parents, return random health
-        if not self.parents:
+        if self.parents == None:
             return random.uniform(0.6, 1.)
         
         # else, genetically generate health
@@ -308,22 +317,37 @@ class Person:
             gen_health = 0.1
         
         return gen_health
+        # return 0.5
 
     def generate_name(self):
+        # return "tarun"
+        global w_names, m_names
         if self.sex == 'f':
             return random.choice(w_names)
         if self.sex == 'm':
             return random.choice(m_names)
+        return "Tarun"
+        # print("no gender")
 
     def generate_surname(self):
+        # return "martens avila"
+        global s_names
         if random.random() < 0.4:
-            return random.choice(s_names)
+            try:
+                return random.choice(s_names)
+            except:
+                print("no name")
+                return "No-name"
 
-        if self.parents and random.random() < 0.7:
-            if self.sex == 'f':
-                return f"{self.parents.father.name}sdochter"
-            if self.sex == 'm':
-                    return f"{self.parents.father.name}szoon"
+        if self.parents != None and random.random() < 0.7:
+            try:
+                if self.sex == 'f':
+                    return f"{self.parents.man.name}sdochter"
+                if self.sex == 'm':
+                    return f"{self.parents.man.name}szoon"
+            except:
+                return "bobbie"
+        return ""
 
     def add_bit(self, secrecy, description, ongoing=False):
         bit = Bit(secrecy, description, self.age, ongoing)
@@ -347,8 +371,8 @@ class Person:
         # chance of dying
         if random.random() < self.chance_of_dying('age'):
             self.die()
-            if self.age < 12:
-                print("a child died")
+            # if self.age < 12:
+            #     print("a child died")
         # chance of marrying
         else:
             if not self.married and self.parents != None:
@@ -501,19 +525,18 @@ class Relationship:
                 
     def add_child(self):
         self.no_children += 1
-        print(f"{self.key}: {self.no_children}")
         child_key = f"{self.key}c{self.no_children}"
-        child = Person(self, child_key)
+        try:
+            child = Person(self, child_key)
+        except:
+            print(f"couldnt init child {self.no_children} of {self.key}")
         self.children.append(child)
 
         # add to networks
-        family_tree.node(child_key)
-        relations.node(child_key)
         family_tree.edge(self.key, child_key)
 
         # chance of child dying in childbirth
         if random.random() < child.chance_of_dying('birth'):
-            print("baby died")
             child.die()
             self.dead_children += 1
             if self.dead_children == 1 and self.children == 1:
@@ -529,7 +552,6 @@ class Relationship:
             self.woman.die()
             if self.married:
                 self.man.add_bit(2, f"Lost wife {self.woman.name} when she gave birth to {child.name}.")
-            print("mother died in childbirth")
 
     def yearly_chance_of_pregnancy(self):
         chance = 0.7
@@ -548,7 +570,10 @@ class Relationship:
         return chance
 
     def relationship_events(self, year):
-        if random.random() < self.yearly_chance_of_pregnancy():
+        random.seed()
+        chance = self.yearly_chance_of_pregnancy()
+
+        if random.random() < chance:
             self.add_child()
 
         # If child is out of wedlock, add bit
@@ -588,7 +613,7 @@ class Community:
         """
         Init town with seed couples. 
         """
-        for i in range(self.seed_town):
+        for i in range(1, self.seed_town + 1):
             random.seed()
 
             # ages
@@ -693,4 +718,4 @@ class Community:
         family_tree.format = 'pdf'
         family_tree.view()
         
-c = Community(1250, 10)
+c = Community(1330, 50)
