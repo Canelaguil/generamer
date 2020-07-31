@@ -1,11 +1,11 @@
 import json
+import os
 import copy
 import networkx as nx
 from graphviz import Digraph, Graph
 import numpy as np
 import matplotlib.pyplot as plt
 import random
-import copy
 
 def read_names():
     """
@@ -45,7 +45,7 @@ m_names, w_names, s_names = read_names()
 family_tree = Digraph('Families', filename='families.dot',
             node_attr={'color': 'lightblue2', 'style': 'filled'}, engine='sfdp')
 family_tree.attr(overlap='false')
-relations = Graph('Relations', filename='community.dot')
+network = nx.Graph()
 
 # Population control
 alive = {}
@@ -104,7 +104,7 @@ class Person:
         global s_names, w_names, m_names
         global alive, dead, people
         global births, deads
-        global family_tree, relations
+        global family_tree, network
         global people_alive, bachelors, bachelorettes
 
         # binary
@@ -151,7 +151,39 @@ class Person:
         alive[self.key] = self
         people[self.key] = self
         family_tree.node(self.key, label=self.name)
-        relations.node(self.key, label=self.name)
+        network.add_node(self.key, label=self.name)
+        self.init_network()
+
+    def init_network(self):
+        global network
+        # forge network with siblings
+        if not self.parents:
+            return
+        
+        for sibling in self.parents.children:
+            network.add_edge(sibling.key, self.key)
+            for relationship in sibling.relationships:
+                if relationship.active:
+                    if sibling.sex == 'm':
+                        partner = relationship.woman
+                    else:
+                        partner = relationship.man
+                    
+                    if relationship.married:
+                        network.add_edge(partner.key, self.key)
+                        for cousin in relationship.children:
+                            if cousin.alive:
+                                network.add_edge(cousin.key, self.key)
+                    else:
+                        if random.random() < 0.6:
+                            network.add_edge(partner.key, self.key)
+
+        # forge network with parents' family
+        for parent in [self.parents.man, self.parents.woman]:
+            if parent.parents != None:
+                for unclaunt in parent.parents.children:
+                    if unclaunt.alive:
+                        network.add_edge(self.key, unclaunt.key)
 
     def die(self):
         global people_alive, deads
@@ -159,12 +191,21 @@ class Person:
         people_alive -= 1
         alive.pop(self.key)
         self.alive = False
+
+        # process global networks
         dead[self.key] = self
         family_tree.node(self.key, label=self.name, color='orange')
+        network.remove_node(self.key)
+        # create bits
         self.add_bit(0, f"Died at age {self.age}.")
         cause = 'woman_died' if self.sex == 'f' else 'man_died'
+
+        # end relationships
         for relation in self.relationships:
             relation.end_relationship(cause)
+
+        # update parents' relationship
+        self.parents.relationship_trigger('dead child', (self.name, self.age))
 
     def get_personality(self, adjusted_sins=[], adjusted_virtues=[]):
         """
@@ -214,7 +255,6 @@ class Person:
 
         return {"sins": sins, "virtues": virtues}
         
-
     def get_appearance(self):
         """
         Returns appearance based on genetics.
@@ -293,7 +333,7 @@ class Person:
             mother_hair = random.choice(self.parents.woman.appearance['hair_type'])
             hair_type = [father_hair, mother_hair]
         else:
-            random_hair = ['C', 'S', 'S']
+            random_hair = ['C', 'S', 'S', 'S']
             hair_type = [random.choice(random_hair), random.choice(random_hair)]
         
         eye_color = np.random.choice(eye_colors, p=eye_weights)
@@ -391,11 +431,11 @@ class Person:
             return (1 - self.health) * 0.2
         # being born / misscarriage
         elif trigger == 'birth':
-            return (1 - self.health) * 0.25
+            return (1 - self.health) * 0.15
         # age related issues
         elif trigger == 'age':
-            if self.age < 12:
-                return (1 - self.health) * 0.1
+            if self.age < 10:
+                return (1 - self.health) * (0.12 - (0.01 * self.age))
             elif self.age > 60:
                 return 0.7
             elif self.age > 45:
@@ -466,7 +506,7 @@ class Person:
 class Relationship:
     def __init__(self, man, woman, key, married=True):
         global s_names, w_names, m_names
-        global family_tree, relations
+        global family_tree, network
         global dead, alive, active_couples
 
         self.key = key
@@ -476,6 +516,7 @@ class Relationship:
         self.active = True
         self.no_children = 0
         self.dead_children = 0
+        self.still_births = 0
         self.children = []
 
         self.init_relationship()
@@ -494,10 +535,12 @@ class Relationship:
             self.woman.married = True
             self.man.married = True
 
+            # make families 
+
         # represent in family network
         family_tree.node(self.key, shape="diamond")
-        family_tree.edge(self.woman.key, self.key)
-        family_tree.edge(self.man.key, self.key)
+        family_tree.edge(self.woman.key, self.key, weight='12')
+        family_tree.edge(self.man.key, self.key, weight='12')
 
     def end_relationship(self, cause):
         """
@@ -513,17 +556,24 @@ class Relationship:
                 self.man.married = False
                 if self.man.alive:
                     self.man.add_bit(1, f"Became a widower at {self.man.age}.")
+                for child in self.children:
+                    if child.alive:
+                        child.add_bit(2, f"Lost mother at the age of {child.age}")
         elif cause == 'man_died':
             if self.married:
                 self.woman.married = False
                 if self.woman.alive:
                     self.woman.add_bit(1, f"Became a widow at {self.woman.age}.")
+                for child in self.children:
+                    if child.alive:
+                        child.add_bit(2, f"Lost father at the age of {child.age}")
         elif cause == 'separated':
             self.active = False
 
         active_couples.pop(self.key)
                 
     def add_child(self):
+        global network, family_tree
         self.no_children += 1
         child_key = f"{self.key}c{self.no_children}"
         try:
@@ -533,19 +583,45 @@ class Relationship:
         self.children.append(child)
 
         # add to networks
-        family_tree.edge(self.key, child_key)
+        family_tree.edge(self.key, child_key, weight='6')
+
+        network.add_edge(self.woman.key, child_key)
+        if self.man.alive:
+            network.add_edge(self.man.key, child_key)
+
+        # forge network with siblings
+        for sibling in self.children:
+            network.add_edge(sibling.key, child_key)
+            for relationship in sibling.relationships:
+                if relationship.active:
+                    if sibling.sex == 'm':
+                        partner = relationship.woman
+                    else:
+                        partner = relationship.man
+                    
+                    if relationship.married:
+                        network.add_edge(partner.key, child_key)
+                        for cousin in relationship.children:
+                            if cousin.alive:
+                                network.add_edge(cousin.key, child_key)
+                    else:
+                        if random.random() < 0.6:
+                            network.add_edge(partner.key, child_key)
+                      
 
         # chance of child dying in childbirth
+        self.stillbirthbit = False
         if random.random() < child.chance_of_dying('birth'):
             child.die()
             self.dead_children += 1
+            self.still_births +=1
             if self.dead_children == 1 and self.children == 1:
                 self.man.add_bit(2, f"Lost first child with {self.woman.name} in childbirth.")
                 self.woman.add_bit(2, f"Lost first child with {self.man.name} in childbirth.")
-            elif self.dead_children > 1:
-                self.man.add_bit(2, f"Lost several children with {self.woman.name}.")
-                self.woman.add_bit(2, f"Lost several children with {self.man.name}.")
-                print(f"{self.woman.key} lost child {self.no_children} in childbirth")
+            elif self.still_births > 1 and not self.stillbirthbit:
+                self.man.add_bit(2, f"{self.woman.name} had several miscarriages when they tried to conceive.")
+                self.woman.add_bit(2, f"Had several misscariages when trying to conceive with {self.man.name}.")
+                self.stillbirthbit = True
 
         # chance of mother dying in childbirth
         if random.random() < self.woman.chance_of_dying('childbirth'):
@@ -585,12 +661,31 @@ class Relationship:
             self.woman.add_bit_premade(out_of_wedlock)
             print(f"{self.man.key} had a child out of wedlock with {self.woman.key}")
 
+    def relationship_trigger(self, trigger, param=None):
+        """
+        dead child: param tuple of (name_child, age_child)
+        """
+        if trigger == 'dead child':
+            self.dead_children += 1
+            name_child, age_child = param
+
+            # parents
+            if self.man.alive:
+                self.man.add_bit(2, f"Lost their child {name_child} when {name_child} was {age_child} years old.")
+            if self.woman.alive:
+                self.woman.add_bit(2, f"Lost their child {name_child} when {name_child} was {age_child} years old.")
+            
+            # children
+            for child in self.children:
+                if child.alive:
+                    child.add_bit(2, f"Lost their sibling {name_child} when {child.name} was {child.age} and {name_child} was {age_child}.")
+
 
 class Community:
     def __init__(self, start_year, seed_couples, end_year=1354):
         # World initiation
         global s_names, w_names, m_names
-        global family_tree, relations
+        global family_tree, network
         global alive, dead, people, active_couples
         global people_alive, bachelorettes, bachelors
         global births, deads
@@ -667,7 +762,21 @@ class Community:
 
     def community_events(self):
         self.match_com()
-    
+
+    def draw_community(self):
+        global network
+        edges = network.edges()
+        # edgecolors = [network[u][v]['color'] for u, v in edges]
+        color_map = []
+        for _, n in network.nodes.data():
+            # if n["node"] == "relation":
+            #     color_map.append('red')
+            # else:
+            color_map.append('yellow')
+        nx.draw(network, edges=edges, with_labels=True, node_color=color_map)
+                 # node_color=color_map, edge_color=edgecolors)
+        plt.show()
+
     def print_stats(self):
         print("---------------------------------")
         print(f"| {self.year} | +{births} -{deads}")
@@ -684,6 +793,12 @@ class Community:
             database = alive
         elif mode == 'dead':
             database = dead 
+
+        if os.path.exists('people'):
+        #     os.rmdir('people')
+            pass
+        else:
+            os.mkdir('people')
 
         for individual in database.values():
             with open(f"people/{individual.key}.json", "w") as output:
@@ -715,7 +830,8 @@ class Community:
             bachelors, bachelorettes = [], []
 
         self.output_people()
+        self.draw_community()
         family_tree.format = 'pdf'
         family_tree.view()
         
-c = Community(1330, 50)
+c = Community(1330, 60)
