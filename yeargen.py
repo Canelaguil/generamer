@@ -38,6 +38,7 @@ def read_names():
 
     return m_names, w_names, s_names
 
+
 # Varaiables
 m_names, w_names, s_names = read_names()
 
@@ -58,6 +59,25 @@ births, deads = 0, 0
 # People who need people
 bachelors = []
 bachelorettes = []
+
+# Global functions
+def connect(key_a, key_b, nature='outsider'):
+    """
+    NATURE:
+    - outsider
+    - family
+    - sibling
+    - parent
+    """
+    A = people[key_a]
+    B = people[key_b]
+
+    # Determine index modifier
+
+    # Determine init relationshiplevel
+
+
+    network.add_edge(key_a, key_b)
 
 
 class Bit:
@@ -168,7 +188,7 @@ class Person:
             return
         
         for sibling in self.parents.children:
-            network.add_edge(sibling.key, self.key)
+            connect(sibling.key, self.key, 'sibling')
             for relationship in sibling.relationships:
                 if relationship.active:
                     if sibling.sex == 'm':
@@ -177,20 +197,20 @@ class Person:
                         partner = relationship.man
                     
                     if relationship.married:
-                        network.add_edge(partner.key, self.key)
+                        connect(partner.key, self.key, 'family')
                         for cousin in relationship.children:
                             if cousin.alive:
-                                network.add_edge(cousin.key, self.key)
+                                connect(cousin.key, self.key, 'family')
                     else:
                         if random.random() < 0.6:
-                            network.add_edge(partner.key, self.key)
+                            connect(partner.key, self.key, 'outsider')
 
         # forge network with parents' family
         for parent in [self.parents.man, self.parents.woman]:
             if parent.parents != None:
                 for unclaunt in parent.parents.children:
                     if unclaunt.alive:
-                        network.add_edge(self.key, unclaunt.key)
+                        connect(self.key, unclaunt.key, 'family')
 
     def die(self):
         global people_alive, deads
@@ -235,10 +255,10 @@ class Person:
     def influence_personality(self, kind, trait, influence, source):
         tup = self.personality[kind][trait]
         value, importance = tup
-        if influence < 0:
-            measure = 'decrease'
-        else:
-            measure = 'increase'
+        # if influence < 0:
+        #     measure = 'decrease'
+        # else:
+        #     measure = 'increase'
 
         value += influence
         self.personality[kind][trait] = (value, importance)
@@ -248,9 +268,6 @@ class Person:
         """
         Returns random personality traits based on the
         7 sins and virtues.
-
-        TODO:
-        - Actually implement genetics
         """
         # return "nice"
         random.seed()
@@ -404,7 +421,7 @@ class Person:
         global w_names, m_names
         if self.parents:
             if self.parents.no_children == 1:
-                if random.random() < 0.4:
+                if random.random() < 0.25:
                     if self.surname == "":
                         self.surname = "de Jonge"
                     if self.sex == 'f':
@@ -697,29 +714,9 @@ class Relationship:
         # add to networks
         family_tree.edge(self.key, child_key, weight='6')
 
-        network.add_edge(self.woman.key, child_key)
+        connect(self.woman.key, child_key, 'parent')
         if self.man.alive:
-            network.add_edge(self.man.key, child_key)
-
-        # forge network with siblings
-        for sibling in self.children:
-            network.add_edge(sibling.key, child_key)
-            for relationship in sibling.relationships:
-                if relationship.active:
-                    if sibling.sex == 'm':
-                        partner = relationship.woman
-                    else:
-                        partner = relationship.man
-                    
-                    if relationship.married:
-                        network.add_edge(partner.key, child_key)
-                        for cousin in relationship.children:
-                            if cousin.alive:
-                                network.add_edge(cousin.key, child_key)
-                    else:
-                        if random.random() < 0.6:
-                            network.add_edge(partner.key, child_key)
-                      
+            connect(self.man.key, child_key, 'parent')                      
 
         # chance of child dying in childbirth
         self.stillbirthbit = False
@@ -828,7 +825,7 @@ class Community:
 
     def init_town(self):
         """
-        Init town with seed couples. 
+        Init town with seed couples and seed friendships. 
         """
         for i in range(1, self.seed_town + 1):
             random.seed()
@@ -882,8 +879,15 @@ class Community:
                 else:
                     options.remove(match_id)
 
+    def all_in_this_together(self):
+        """
+        Forges new connections between people.
+        """
+        pass
+
     def community_events(self):
         self.match_com()
+        self.all_in_this_together()
 
     def draw_community(self):
         global network
