@@ -1,13 +1,14 @@
 import json
 import os
 import copy
+import math
 import networkx as nx
 from graphviz import Digraph, Graph
 import numpy as np
 import matplotlib.pyplot as plt
 import random
 
-def read_names():
+def read_files():
     """
     Reads the different name files and saves them as lists.
 
@@ -36,11 +37,32 @@ def read_names():
         sn = sn.replace("\r", "")
         s_names.append(sn.strip())
 
-    return m_names, w_names, s_names
+    # This whole thing could be a lot neater
+    traits = ['superbia', 'avaritia', 'luxuria', 'invidia', 'gula', 'ira', 'acedia', 'prudentia', 'iustitia', 'temperantia', 'fortitudo', 'fides', 'spes', 'caritas']
+    trait_modifiers = {}
+    for tr in traits:
+        trait_modifiers[tr] = {}
+        for t in traits:
+            trait_modifiers[tr][t] = np.zeros((4, 4), dtype=int)
+
+    csv_modi = np.genfromtxt('sources/relation_modifiers.csv', delimiter=',', dtype=int)
+    for row_nr, row in enumerate(csv_modi):
+        row_trait = traits[math.floor(row_nr / 4)]
+        vertical_index = row_nr % 4
+        trait_index, row_index, sub_index = 0, 0, 0
+        while row_index < 56:
+            column_trait = traits[trait_index]
+            trait_modifiers[row_trait][column_trait][sub_index][vertical_index] = row[row_index]
+            row_index += 1
+            sub_index += 1
+            if sub_index == 4:
+                sub_index = 0
+                trait_index += 1
+    return m_names, w_names, s_names, trait_modifiers
 
 
 # Varaiables
-m_names, w_names, s_names = read_names()
+m_names, w_names, s_names, trait_modifiers = read_files()
 
 # Networks
 family_tree = Digraph('Families', filename='families.dot',
@@ -73,11 +95,27 @@ def connect(key_a, key_b, nature='outsider'):
     B = people[key_b]
 
     # Determine index modifier
+    for sin in ['superbia', 'avaritia', 'luxuria', 'invidia', 'gula', 'ira', 'acedia']:
+        value_a, importance_a = A.personality['sins'][sin]
+        value_b, importance_b = B.personality['sins'][sin]
+
+    for virtue in ['prudentia', 'iustitia', 'temperantia', 'fortitudo', 'fides', 'spes', 'caritas']:
+        value_a, importance_a = A.personality['virtues'][virtue]
+        value_b, importance_b = B.personality['virtues'][virtue]
+
+    index_mod = 0
 
     # Determine init relationshiplevel
+    if nature=='parent':
+        rel = random.randint(10, 40)
+    elif nature=='sibling':
+        rel = random.randint(5, 25)
+    elif nature=='family':
+        rel = random.randint(0, 15)
+    else:
+        rel = random.randint(-10, 10)
 
-
-    network.add_edge(key_a, key_b)
+    network.add_edge(key_a, key_b, weight=rel, index_mod=index_mod)
 
 
 class Bit:
@@ -234,7 +272,7 @@ class Person:
         # update parents' relationship
         self.parents.relationship_trigger('dead child', (self.name, self.age))
 
-    def get_persoanlityvalue(self, kind, values, weight):
+    def get_personalityvalue(self, kind, values, weight):
         sinmoods = ['happy', 'not happy']
         virtuemoods = ['important', 'not important']
         if kind == 'sin':
@@ -278,34 +316,34 @@ class Person:
         virtues_weight = [1/28, 4/28, 6/28, 6/28, 6/28, 4/28, 1/28] if adjusted_virtues == [] else adjusted_virtues
 
         # LUCIFER Hoogmoed - ijdelheid
-        sins["superbia"] = self.get_persoanlityvalue('sin', personality_values, sins_weight)
+        sins["superbia"] = self.get_personalityvalue('sin', personality_values, sins_weight)
         # MAMMON Hebzucht - gierigheid
-        sins["avaritia"] = self.get_persoanlityvalue('sin', personality_values, sins_weight)
+        sins["avaritia"] = self.get_personalityvalue('sin', personality_values, sins_weight)
         # ASMODEUS Onkuisheid - lust
-        sins["luxuria"] = self.get_persoanlityvalue('sin', personality_values, sins_weight)
+        sins["luxuria"] = self.get_personalityvalue('sin', personality_values, sins_weight)
         # LEVIATHAN Jaloezie - afgunst
-        sins["invidia"] = self.get_persoanlityvalue('sin', personality_values, sins_weight)
+        sins["invidia"] = self.get_personalityvalue('sin', personality_values, sins_weight)
         # BEELZEBUB Onmatigheid - vraatzucht
-        sins["gula"] = self.get_persoanlityvalue('sin', personality_values, sins_weight)
+        sins["gula"] = self.get_personalityvalue('sin', personality_values, sins_weight)
         # SATAN Woede- wraak
-        sins["ira"] = self.get_persoanlityvalue('sin', personality_values, sins_weight)
+        sins["ira"] = self.get_personalityvalue('sin', personality_values, sins_weight)
         # BELFAGOR gemakzucht - luiheid
-        sins["acedia"] = self.get_persoanlityvalue('sin', personality_values, sins_weight)
+        sins["acedia"] = self.get_personalityvalue('sin', personality_values, sins_weight)
 
         # Voorzichtigheid - wijsheid
-        virtues["prudentia"] = self.get_persoanlityvalue('virtue', personality_values, virtues_weight)
+        virtues["prudentia"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
         # Rechtvaardigheid - rechtschapenheid
-        virtues["iustitia"] = self.get_persoanlityvalue('virtue', personality_values, virtues_weight)
+        virtues["iustitia"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
         # Gematigdheid - Zelfbeheersing
-        virtues["temperantia"] = self.get_persoanlityvalue('virtue', personality_values, virtues_weight)
+        virtues["temperantia"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
         # Moed - focus - sterkte
-        virtues["fortitudo"] = self.get_persoanlityvalue('virtue', personality_values, virtues_weight)
+        virtues["fortitudo"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
         # Geloof
-        virtues["fides"] = self.get_persoanlityvalue('virtue', personality_values, virtues_weight)
+        virtues["fides"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
         # Hoop
-        virtues["spes"] = self.get_persoanlityvalue('virtue', personality_values, virtues_weight)
+        virtues["spes"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
         # Naastenliefde - liefdadigheid
-        virtues["caritas"] = self.get_persoanlityvalue('virtue', personality_values, virtues_weight)
+        virtues["caritas"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
 
         return {"sins": sins, "virtues": virtues}
         
@@ -961,4 +999,4 @@ class Community:
         family_tree.format = 'pdf'
         family_tree.view()
         
-c = Community(1320, 10)
+c = Community(1350, 1)
