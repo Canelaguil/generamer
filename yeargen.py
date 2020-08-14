@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
+
 def read_files():
     """
     Reads the different name files and saves them as lists.
@@ -38,21 +39,23 @@ def read_files():
         s_names.append(sn.strip())
 
     # This whole thing could be a lot neater
-    traits = ['superbia', 'avaritia', 'luxuria', 'invidia', 'gula', 'ira', 'acedia', 'prudentia', 'iustitia', 'temperantia', 'fortitudo', 'fides', 'spes', 'caritas']
+    traits = ['superbia', 'avaritia', 'luxuria', 'invidia', 'gula', 'ira', 'acedia',
+              'prudentia', 'iustitia', 'temperantia', 'fortitudo', 'fides', 'spes', 'caritas']
     trait_modifiers = {}
     for tr in traits:
         trait_modifiers[tr] = {}
         for t in traits:
-            trait_modifiers[tr][t] = np.zeros((4, 4), dtype=int)
+            trait_modifiers[tr][t] = np.zeros((4, 4), dtype=int).tolist()
 
-    csv_modi = np.genfromtxt('sources/relation_modifiers.csv', delimiter=',', dtype=int)
+    csv_modi = np.genfromtxt(
+        'sources/relation_modifiers.csv', delimiter=',', dtype=int)
     for row_nr, row in enumerate(csv_modi):
         row_trait = traits[math.floor(row_nr / 4)]
         vertical_index = row_nr % 4
         trait_index, row_index, sub_index = 0, 0, 0
         while row_index < 56:
             column_trait = traits[trait_index]
-            trait_modifiers[row_trait][column_trait][sub_index][vertical_index] = row[row_index]
+            trait_modifiers[row_trait][column_trait][sub_index][vertical_index] = int(row[row_index])
             row_index += 1
             sub_index += 1
             if sub_index == 4:
@@ -61,12 +64,12 @@ def read_files():
     return m_names, w_names, s_names, trait_modifiers
 
 
-# Varaiables
+# Variables
 m_names, w_names, s_names, trait_modifiers = read_files()
 
 # Networks
 family_tree = Digraph('Families', filename='families.dot',
-            node_attr={'color': 'lightblue2', 'style': 'filled'}, engine='sfdp')
+                      node_attr={'color': 'lightblue2', 'style': 'filled'}, engine='sfdp')
 family_tree.attr(overlap='false')
 network = nx.Graph()
 
@@ -83,7 +86,9 @@ bachelors = []
 bachelorettes = []
 
 # Global functions
-def connect(key_a, key_b, nature='outsider'):
+
+
+def connect(key_a, key_b, nature='outsider', preset_rel=0):
     """
     NATURE:
     - outsider
@@ -91,31 +96,67 @@ def connect(key_a, key_b, nature='outsider'):
     - sibling
     - parent
     """
-    A = people[key_a]
-    B = people[key_b]
+    global trait_modifiers
+
+    A = people[key_a].personality
+    B = people[key_b].personality
 
     # Determine index modifier
-    for sin in ['superbia', 'avaritia', 'luxuria', 'invidia', 'gula', 'ira', 'acedia']:
-        value_a, importance_a = A.personality['sins'][sin]
-        value_b, importance_b = B.personality['sins'][sin]
-
-    for virtue in ['prudentia', 'iustitia', 'temperantia', 'fortitudo', 'fides', 'spes', 'caritas']:
-        value_a, importance_a = A.personality['virtues'][virtue]
-        value_b, importance_b = B.personality['virtues'][virtue]
-
+    traits = ['superbia', 'avaritia', 'luxuria', 'invidia', 'gula', 'ira', 'acedia',
+              'prudentia', 'iustitia', 'temperantia', 'fortitudo', 'fides', 'spes', 'caritas']
+    
     index_mod = 0
+    x_a = 0
+    for trait_a in traits:
+        x_b = 0
+        for trait_b in traits:
+            if x_a < 7:
+                kind_a = 'sins'
+            else:
+                kind_a = 'virtues'
+
+            if x_b < 7:
+                kind_b = 'sins'
+            else:
+                kind_b = 'virtues'
+            
+            M = trait_modifiers[trait_a][trait_b]
+            a_value, a_opinion = A[kind_a][trait_a]
+            b_value, b_opinion = B[kind_b][trait_b]
+            
+            a_mod = 1 if a_opinion == 'important' or a_opinion == 'happy' else 0
+            b_mod = 1 if b_opinion == 'important' or b_opinion == 'happy' else 0
+            x_b += 1
+
+            if a_value > 5:
+                index_a = a_mod
+            elif a_value < 3:
+                index_a = 2 + a_mod
+            else:
+                continue
+
+            if b_value > 5:
+                index_b = b_mod
+            elif b_value < 3:
+                index_b = 2 + b_mod
+            else:
+                continue
+
+            index_mod += M[index_a][index_b]
+        x_a += 1
 
     # Determine init relationshiplevel
-    if nature=='parent':
-        rel = random.randint(10, 40)
-    elif nature=='sibling':
+    if nature == 'parent':
+        rel = random.randint(10, 40) 
+    elif nature == 'sibling':
         rel = random.randint(5, 25)
-    elif nature=='family':
+    elif nature == 'family':
         rel = random.randint(0, 15)
     else:
         rel = random.randint(-10, 10)
 
-    network.add_edge(key_a, key_b, weight=rel, index_mod=index_mod)
+    rel += preset_rel
+    network.add_edge(key_a, key_b, weight=rel, index_mod=index_mod, nature=nature)
 
 
 class Bit:
@@ -129,7 +170,6 @@ class Bit:
         self.action = ""
         self.object = []
         self.circumstances = []
-
 
         # Who was otherwise involved but not condemned by it?
         self.involved = []
@@ -146,7 +186,7 @@ class Bit:
         # When did this take place and is it still taking place?
         self.age = age
         self.ongoing = ongoing
-        
+
         # Description of bit
         self.description = description
 
@@ -174,18 +214,18 @@ class Person:
         self.key = key
         self.alive = True
         self.birthday = self.get_birthday()
-        
+
         # biological
         if sex == 'r':
             self.sex = 'f' if random.random() < 0.51 else 'm'
         else:
             self.sex = sex
-        
+
         self.sexuality = "straight" if random.random() < 0.9 else "gay"
 
         # genetics
         self.parents = parents
-        
+
         self.health = self.get_health()
         self.appearance = self.get_appearance()
         try:
@@ -204,7 +244,7 @@ class Person:
         self.age = age
         self.married = married
         self.children = 0
-        self.relationships = [] 
+        self.relationships = []
         self.bits = {}
 
         self.init_person()
@@ -224,7 +264,7 @@ class Person:
         # forge network with siblings
         if not self.parents:
             return
-        
+
         for sibling in self.parents.children:
             connect(sibling.key, self.key, 'sibling')
             for relationship in sibling.relationships:
@@ -233,7 +273,7 @@ class Person:
                         partner = relationship.woman
                     else:
                         partner = relationship.man
-                    
+
                     if relationship.married:
                         connect(partner.key, self.key, 'family')
                         for cousin in relationship.children:
@@ -289,7 +329,7 @@ class Person:
                 return (virtue, np.random.choice(virtuemoods, p=[0.7, 0.3]))
             else:
                 return (virtue, np.random.choice(virtuemoods, p=[0.6, 0.4]))
-            
+
     def influence_personality(self, kind, trait, influence, source):
         tup = self.personality[kind][trait]
         value, importance = tup
@@ -312,41 +352,57 @@ class Person:
         sins = {}
         virtues = {}
         personality_values = [1, 2, 3, 4, 5, 6, 7]
-        sins_weight = [1/28, 4/28, 6/28, 6/28, 6/28, 4/28, 1/28] if adjusted_sins == [] else adjusted_sins
-        virtues_weight = [1/28, 4/28, 6/28, 6/28, 6/28, 4/28, 1/28] if adjusted_virtues == [] else adjusted_virtues
+        sins_weight = [1/28, 4/28, 6/28, 6/28, 6/28, 4/28,
+                       1/28] if adjusted_sins == [] else adjusted_sins
+        virtues_weight = [1/28, 4/28, 6/28, 6/28, 6/28, 4/28,
+                          1/28] if adjusted_virtues == [] else adjusted_virtues
 
         # LUCIFER Hoogmoed - ijdelheid
-        sins["superbia"] = self.get_personalityvalue('sin', personality_values, sins_weight)
+        sins["superbia"] = self.get_personalityvalue(
+            'sin', personality_values, sins_weight)
         # MAMMON Hebzucht - gierigheid
-        sins["avaritia"] = self.get_personalityvalue('sin', personality_values, sins_weight)
+        sins["avaritia"] = self.get_personalityvalue(
+            'sin', personality_values, sins_weight)
         # ASMODEUS Onkuisheid - lust
-        sins["luxuria"] = self.get_personalityvalue('sin', personality_values, sins_weight)
+        sins["luxuria"] = self.get_personalityvalue(
+            'sin', personality_values, sins_weight)
         # LEVIATHAN Jaloezie - afgunst
-        sins["invidia"] = self.get_personalityvalue('sin', personality_values, sins_weight)
+        sins["invidia"] = self.get_personalityvalue(
+            'sin', personality_values, sins_weight)
         # BEELZEBUB Onmatigheid - vraatzucht
-        sins["gula"] = self.get_personalityvalue('sin', personality_values, sins_weight)
+        sins["gula"] = self.get_personalityvalue(
+            'sin', personality_values, sins_weight)
         # SATAN Woede- wraak
-        sins["ira"] = self.get_personalityvalue('sin', personality_values, sins_weight)
+        sins["ira"] = self.get_personalityvalue(
+            'sin', personality_values, sins_weight)
         # BELFAGOR gemakzucht - luiheid
-        sins["acedia"] = self.get_personalityvalue('sin', personality_values, sins_weight)
+        sins["acedia"] = self.get_personalityvalue(
+            'sin', personality_values, sins_weight)
 
         # Voorzichtigheid - wijsheid
-        virtues["prudentia"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
+        virtues["prudentia"] = self.get_personalityvalue(
+            'virtue', personality_values, virtues_weight)
         # Rechtvaardigheid - rechtschapenheid
-        virtues["iustitia"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
+        virtues["iustitia"] = self.get_personalityvalue(
+            'virtue', personality_values, virtues_weight)
         # Gematigdheid - Zelfbeheersing
-        virtues["temperantia"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
+        virtues["temperantia"] = self.get_personalityvalue(
+            'virtue', personality_values, virtues_weight)
         # Moed - focus - sterkte
-        virtues["fortitudo"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
+        virtues["fortitudo"] = self.get_personalityvalue(
+            'virtue', personality_values, virtues_weight)
         # Geloof
-        virtues["fides"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
+        virtues["fides"] = self.get_personalityvalue(
+            'virtue', personality_values, virtues_weight)
         # Hoop
-        virtues["spes"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
+        virtues["spes"] = self.get_personalityvalue(
+            'virtue', personality_values, virtues_weight)
         # Naastenliefde - liefdadigheid
-        virtues["caritas"] = self.get_personalityvalue('virtue', personality_values, virtues_weight)
+        virtues["caritas"] = self.get_personalityvalue(
+            'virtue', personality_values, virtues_weight)
 
         return {"sins": sins, "virtues": virtues}
-        
+
     def get_appearance(self):
         """
         Returns appearance based on genetics.
@@ -418,16 +474,19 @@ class Person:
                 print(f"{self.key}: eye_color problem")
         else:
             eye_weights = [0.3, 0.15, 0.55]
-        
+
         # hair type
         if self.parents != None:
-            father_hair = random.choice(self.parents.man.appearance['hair_type'])
-            mother_hair = random.choice(self.parents.woman.appearance['hair_type'])
+            father_hair = random.choice(
+                self.parents.man.appearance['hair_type'])
+            mother_hair = random.choice(
+                self.parents.woman.appearance['hair_type'])
             hair_type = [father_hair, mother_hair]
         else:
             random_hair = ['C', 'S', 'S', 'S']
-            hair_type = [random.choice(random_hair), random.choice(random_hair)]
-        
+            hair_type = [random.choice(random_hair),
+                         random.choice(random_hair)]
+
         eye_color = np.random.choice(eye_colors, p=eye_weights)
         hair_color = np.random.choice(hair_colors, p=hair_weights)
 
@@ -438,7 +497,7 @@ class Person:
         # if no parents, return random health
         if self.parents == None:
             return random.uniform(0.6, 1.)
-        
+
         # else, genetically generate health
         parent = self.parents.woman if random.random() < 0.6 else self.parents.man
         genetics = random.uniform(-0.2, 0.2)
@@ -447,12 +506,13 @@ class Person:
             gen_health = 0.9
         elif gen_health < 0.:
             gen_health = 0.1
-        
+
         return gen_health
         # return 0.5
 
     def get_birthday(self):
-        months = ["Ianuarius", "Februarius", "Martius", "Aprilis", "Maius", "Iunius", "Iulius", "Augustus", "Septembris", "Octobris", "Novembris", "Decembris"]
+        months = ["Ianuarius", "Februarius", "Martius", "Aprilis", "Maius", "Iunius",
+                  "Iulius", "Augustus", "Septembris", "Octobris", "Novembris", "Decembris"]
         return (random.choice(months), random.randint(1, 29))
 
     def generate_name(self):
@@ -506,7 +566,7 @@ class Person:
         except:
             self.bits[bit.secrecy] = []
             self.bits[bit.secrecy].append(bit)
-        
+
     def personal_events(self):
         global bachelorettes, bachelors
         self.age += 1
@@ -538,16 +598,16 @@ class Person:
                 chance = 0.2
             else:
                 chance = 0.4
-            
+
             # by how much is the value changed?
             if own_value < value:
                 change = 1
             else:
                 change = -1
-            
+
             if random.random() < chance:
                 self.influence_personality('virtues', virtue, change, source)
-                
+
             return
         elif trigger == 'sin_influence':
             sin, value, source = param
@@ -556,12 +616,12 @@ class Person:
                 chance = 0.2
             else:
                 chance = 0.6
-            
+
             if own_value < value:
                 change = 1
             else:
                 change = -1
-            
+
             if random.random() < chance:
                 self.influence_personality('sins', virtue, change, source)
             return
@@ -607,10 +667,11 @@ class Person:
 
         if self.sexuality == 'gay':
             chance *= 0.5
-        
+
         return chance
 
     def jsonify(self):
+        global network
         person = {}
         bits = []
         for l in self.bits.values():
@@ -621,15 +682,20 @@ class Person:
         for r in self.relationships:
             rs.append(r.key)
 
+        social_network = {}
+        edges = network.edges(self.key)
+        for u, v in edges:
+            social_network[v] = network.get_edge_data(u, v)
+
         person["key"] = self.key
         person["alive"] = self.alive
         person["names"] = {
-            "name" : self.name,
-            "surname" : self.surname
+            "name": self.name,
+            "surname": self.surname
         }
         person["biological"] = {
-            "sex" : self.sex,
-            "sexuality" : self.sexuality
+            "sex": self.sex,
+            "sexuality": self.sexuality
         }
 
         if self.parents:
@@ -637,18 +703,19 @@ class Person:
         else:
             parents = "ancestors"
         person["genetics"] = {
-            "parents" : parents,
-            "health" : self.health,
+            "parents": parents,
+            "health": self.health,
             "birthday": self.birthday
         }
         person["personality"] = self.personality
         person["appearance"] = self.appearance
+        person["social"] = social_network
         person["procedural"] = {
-            "age" : self.age,
-            "married" : self.married,
-            'no_children' : self.children,
-            'relationships' : rs,
-            "events" : bits
+            "age": self.age,
+            "married": self.married,
+            'no_children': self.children,
+            'relationships': rs,
+            "events": bits
         }
 
         return person
@@ -684,8 +751,10 @@ class Relationship:
             # change surname of wife
             if random.random() < 0.6:
                 self.woman.surname = f"van {self.man.name}"
-            self.man.add_bit(0, f"Got married at {self.man.age} to {self.woman.name}.")
-            self.woman.add_bit(0, f"Got married at {self.woman.age} to {self.man.name}.")
+            self.man.add_bit(
+                0, f"Got married at {self.man.age} to {self.woman.name}.")
+            self.woman.add_bit(
+                0, f"Got married at {self.woman.age} to {self.man.name}.")
             self.woman.married = True
             self.man.married = True
 
@@ -723,20 +792,23 @@ class Relationship:
                     self.man.add_bit(1, f"Became a widower at {self.man.age}.")
                 for child in self.children:
                     if child.alive:
-                        child.add_bit(2, f"Lost mother at the age of {child.age}")
+                        child.add_bit(
+                            2, f"Lost mother at the age of {child.age}")
         elif cause == 'man_died':
             if self.married:
                 self.woman.married = False
                 if self.woman.alive:
-                    self.woman.add_bit(1, f"Became a widow at {self.woman.age}.")
+                    self.woman.add_bit(
+                        1, f"Became a widow at {self.woman.age}.")
                 for child in self.children:
                     if child.alive:
-                        child.add_bit(2, f"Lost father at the age of {child.age}")
+                        child.add_bit(
+                            2, f"Lost father at the age of {child.age}")
         elif cause == 'separated':
             self.active = False
 
         active_couples.pop(self.key)
-                
+
     def add_child(self):
         global network, family_tree
         self.no_children += 1
@@ -754,27 +826,32 @@ class Relationship:
 
         connect(self.woman.key, child_key, 'parent')
         if self.man.alive:
-            connect(self.man.key, child_key, 'parent')                      
+            connect(self.man.key, child_key, 'parent')
 
         # chance of child dying in childbirth
         self.stillbirthbit = False
         if random.random() < child.chance_of_dying('birth'):
             child.die()
             self.dead_children += 1
-            self.still_births +=1
+            self.still_births += 1
             if self.dead_children == 1 and self.children == 1:
-                self.man.add_bit(2, f"Lost first child with {self.woman.name} in childbirth.")
-                self.woman.add_bit(2, f"Lost first child with {self.man.name} in childbirth.")
+                self.man.add_bit(
+                    2, f"Lost first child with {self.woman.name} in childbirth.")
+                self.woman.add_bit(
+                    2, f"Lost first child with {self.man.name} in childbirth.")
             elif self.still_births > 1 and not self.stillbirthbit:
-                self.man.add_bit(2, f"{self.woman.name} had several miscarriages when they tried to conceive.")
-                self.woman.add_bit(2, f"Had several misscariages when trying to conceive with {self.man.name}.")
+                self.man.add_bit(
+                    2, f"{self.woman.name} had several miscarriages when they tried to conceive.")
+                self.woman.add_bit(
+                    2, f"Had several misscariages when trying to conceive with {self.man.name}.")
                 self.stillbirthbit = True
 
         # chance of mother dying in childbirth
         if random.random() < self.woman.chance_of_dying('childbirth'):
             self.woman.die()
             if self.married:
-                self.man.add_bit(2, f"Lost wife {self.woman.name} when she gave birth to {child.name}.")
+                self.man.add_bit(
+                    2, f"Lost wife {self.woman.name} when she gave birth to {child.name}.")
 
     def yearly_chance_of_pregnancy(self):
         chance = 0.7
@@ -789,7 +866,7 @@ class Relationship:
             chance *= 0.05
         elif self.no_children > 9:
             chance *= 0.15
-        
+
         return chance
 
     def relationship_events(self, year):
@@ -809,14 +886,15 @@ class Relationship:
                     if random.random() < 0.5:
                         child.trigger('sin_influence', (s, v, 'parents'))
                         # print(f"{self.key} influenced sin")
-        
+
         for virtue in virtues:
             vir, val = virtue
             for child in self.children:
                 if child.alive and child.age > 3:
                     if random.random() < 0.5:
-                        child.trigger('virtue_influence', (vir, val, 'parents'))
-                        # print(f"{self.key} influenced virtue")    
+                        child.trigger('virtue_influence',
+                                      (vir, val, 'parents'))
+                        # print(f"{self.key} influenced virtue")
 
     def relationship_trigger(self, trigger, param=None):
         """
@@ -828,14 +906,17 @@ class Relationship:
 
             # parents
             if self.man.alive:
-                self.man.add_bit(2, f"Lost their child {name_child} when {name_child} was {age_child} years old.")
+                self.man.add_bit(
+                    2, f"Lost their child {name_child} when {name_child} was {age_child} years old.")
             if self.woman.alive:
-                self.woman.add_bit(2, f"Lost their child {name_child} when {name_child} was {age_child} years old.")
-            
+                self.woman.add_bit(
+                    2, f"Lost their child {name_child} when {name_child} was {age_child} years old.")
+
             # children
             for child in self.children:
                 if child.alive:
-                    child.add_bit(2, f"Lost their sibling {name_child} when {child.name} was {child.age} and {name_child} was {age_child}.")
+                    child.add_bit(
+                        2, f"Lost their sibling {name_child} when {child.name} was {child.age} and {name_child} was {age_child}.")
 
 
 class Community:
@@ -849,7 +930,7 @@ class Community:
 
         self.seed_town = seed_couples
         self.year = start_year
-        self.end_year =  end_year
+        self.end_year = end_year
 
         # Stat variables
         self.new_people = 0
@@ -889,7 +970,7 @@ class Community:
 
         # create relationship and add to inventory
         Relationship(husband, wife, key)
-    
+
     def match_com(self):
         """
         Matches bachelors and bachelorettes. 
@@ -937,8 +1018,9 @@ class Community:
             #     color_map.append('red')
             # else:
             color_map.append('yellow')
-        nx.draw_spring(network, edges=edges, with_labels=True, node_color=color_map)
-                 # node_color=color_map, edge_color=edgecolors)
+        nx.draw_spring(network, edges=edges,
+                       with_labels=True, node_color=color_map)
+        # node_color=color_map, edge_color=edgecolors)
         plt.show()
         # plt.savefig('network.png')
 
@@ -957,10 +1039,10 @@ class Community:
         elif mode == 'alive':
             database = alive
         elif mode == 'dead':
-            database = dead 
+            database = dead
 
         if os.path.exists('people'):
-        #     os.rmdir('people')
+            #     os.rmdir('people')
             pass
         else:
             os.mkdir('people')
@@ -981,7 +1063,7 @@ class Community:
                     active_couples[r].relationship_events(self.year)
                 except:
                     pass
-            
+
             for p in list(alive):
                 try:
                     alive[p].personal_events()
@@ -990,7 +1072,7 @@ class Community:
 
             self.community_events()
 
-            self.print_stats()
+            # self.print_stats()
             self.year += 1
             bachelors, bachelorettes = [], []
 
@@ -998,5 +1080,6 @@ class Community:
         self.draw_community()
         family_tree.format = 'pdf'
         family_tree.view()
-        
+
+
 c = Community(1350, 1)
