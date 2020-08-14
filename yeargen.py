@@ -144,6 +144,9 @@ def connect(key_a, key_b, nature='outsider', preset_rel=0):
 
             index_mod += M[index_a][index_b]
         x_a += 1
+    
+    # if index_mod < -10 or index_mod > 10:
+    #     print(index_mod)
 
     # Determine init relationshiplevel
     if nature == 'parent':
@@ -157,6 +160,50 @@ def connect(key_a, key_b, nature='outsider', preset_rel=0):
 
     rel += preset_rel
     network.add_edge(key_a, key_b, weight=rel, index_mod=index_mod, nature=nature)
+
+def broadcast_intention(intent, source_key, depth=2, age=0, gender='r'):
+    """
+    INTENT:
+    - find_child_friend: age, gender
+    - find_connection: age, gender
+    """
+    global network, people
+
+    edges = network.edges(source_key)
+    options = []
+
+    if intent == 'find_child_friend':
+        for u, v in edges:
+            data = network.get_edge_data(u, v)
+            sublist = network.edges(v)
+            # print(data['nature'])
+            sublist.remove(source_key) 
+            try:
+                if data['nature'] == 'parent': # or data['nature'] == 'sibling':
+                    print('l')
+                    options.append(sublist)
+            except:
+                print('lalala')
+            if data['weight'] > 20:
+                print('l')
+                options.append(sublist)
+            elif random.random() < 0.075:
+                print('l')
+                options.append(sublist)
+
+            print(options)
+    for _, option in options:
+
+        print('l')   
+        if random.random() < 0.6:
+            potential_link = people[option]
+            if abs(age - potential_link) < 3:
+                print('k')                
+                childhood_start = random.randint(0, 20)
+                connect(source_key, potential_link.key, preset_rel=childhood_start)
+
+
+
 
 
 class Bit:
@@ -574,8 +621,7 @@ class Person:
         # chance of dying
         if random.random() < self.chance_of_dying('age'):
             self.die()
-            # if self.age < 12:
-            #     print("a child died")
+            
         # chance of marrying
         else:
             if not self.married and self.parents != None:
@@ -584,6 +630,11 @@ class Person:
                         bachelorettes.append(self.key)
                     elif self.sex == 'm':
                         bachelors.append(self.key)
+
+        # making childhood friends:
+        if self.age < 13:
+            if random.random() < 0.7:
+                broadcast_intention('find_child_friend', self.key, age=self.age, gender=self.sex)
 
     def trigger(self, trigger, param=None):
         """
@@ -895,7 +946,7 @@ class Relationship:
                         child.trigger('virtue_influence',
                                       (vir, val, 'parents'))
                         # print(f"{self.key} influenced virtue")
-
+        
     def relationship_trigger(self, trigger, param=None):
         """
         dead child: param tuple of (name_child, age_child)
@@ -946,6 +997,9 @@ class Community:
         """
         Init town with seed couples and seed friendships. 
         """
+        global active_couples
+
+        # Init towns people and marriages
         for i in range(1, self.seed_town + 1):
             random.seed()
 
@@ -962,7 +1016,18 @@ class Community:
 
             # marry husband and wife
             self.marry(wife, husband)
-
+        
+        # forge initial friendships 
+        for relation in active_couples.values():
+            for r in active_couples.values():
+                if random.random() < 0.6:
+                    if not relation.man.key in network[r.man.key]:
+                        if random.random() < 0.7:
+                            connect(relation.woman.key, r.woman.key)
+                    if not relation.woman.key in network[r.woman.key]:
+                        if random.random() < 0.7:
+                            connect(relation.woman.key, r.woman.key)
+                    
     def marry(self, wife, husband):
         # also serves as key for the relationship
         self.total_marriages += 1
@@ -1079,7 +1144,7 @@ class Community:
         self.output_people()
         self.draw_community()
         family_tree.format = 'pdf'
-        family_tree.view()
+        # family_tree.view()
 
 
-c = Community(1350, 1)
+c = Community(1340, 70)
