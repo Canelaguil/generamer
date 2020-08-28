@@ -158,6 +158,9 @@ class Personality:
             "acedia" : self.acedia
         }
 
+    def jsonify_all(self):
+        return self.all
+
     def jsonify(self):
         return {
             "sins" : self.jsonify_sins(),
@@ -313,7 +316,7 @@ class Knowledge:
         self.bits = {}
         self.knowledge = {}
 
-    def add_bit(self, secrecy, description, ongoing):
+    def add_bit(self, secrecy, description, ongoing=False):
         bit = Bit(secrecy, description, self.person.age, ongoing)
         self.add_bit_premade(bit)
 
@@ -331,6 +334,159 @@ class Knowledge:
             self.knowledge[object_key][bit.secrecy] = []
 
         self.knowledge[object_key][bit.secrecy].append(bit)
+
+
+class Connections:
+    def __init__(self, person, house):
+        self.person = person
+        self.own_key = person.key
+        self.house = house
+        self.past_friends = []
+        self.current_friends = []
+
+        self.init_family_network()
+        self.init_household_network()
+
+    def init_family_network(self):
+        global network
+
+        if not self.person.parents:
+            return
+        else:
+            if self.person.parents.woman.alive:
+                connect(self.woman.key, child_key, 'parent')
+            if self.person.parents.man.alive:
+                connect(self.man.key, child_key, 'parent')
+        
+        for sibling in self.person.parents.children:
+            if sibling.alive:
+                self.make_connection(sibling.key, 'sibling')                
+
+    def init_household_network(self):
+        global network
+
+        # what if roommate is extended family?
+        for roommate in self.house.inhabitants:
+            if roommate.key not in network[self.own_key]:
+                self.make_connection(roommate.key, 'other')
+
+    def broadcast_intention(self, intent, depth=2):
+        """
+        INTENT:
+        - find_child_friend
+        - find_connection
+        """
+        global network, people
+
+        random.seed()
+        edges = network.edges(self.own_key)
+        options = []
+        for _, v in edges:
+            suggestions = people[v].connections.receive_intention(intent, self.own_key, self.own_key, depth, [])
+            options.extend(suggestions)
+
+        if intent == 'find_child_friend':
+            rel_mod = random.randint(-20, 30)
+        else:
+            rel_mod = 0
+        
+        for option in options:
+            if random.random() < 0.6:
+                self.make_connection(option, 'outsider', rel_mod)
+
+    def receive_intention(self, intent, source, op, depth, suggestions):
+        global people
+        depth -= 1
+        if depth < 1:
+            return []
+
+        options = []
+        for _, v in network.edges(self.own_key):
+            if v != source and v != op and v not in suggestions:
+                options.extend(v)
+        
+        if intent == 'find_child_friend':
+            return [x for x in options if people[x].age < 12]
+        return options
+
+    def get_indexmodifier(self, other_key):
+        global people, trait_modifiers
+
+        A = self.person.personality.jsonify_all()
+        B = self.person.personality.jsonify_all()
+        traits = ['superbia', 'avaritia', 'luxuria', 'invidia', 'gula', 'ira', 'acedia',
+              'prudentia', 'iustitia', 'temperantia', 'fortitudo', 'fides', 'spes', 'caritas']
+        index_mod = 0
+        for trait_a in traits:
+            for trait_b in traits:
+                M = trait_modifiers[trait_a][trait_b]
+                a_value, a_opinion = A[trait_a]
+                b_value, b_opinion = B[trait_b]
+                a_mod = 1 if a_opinion == 'important' or a_opinion == 'happy' else 0
+                b_mod = 1 if b_opinion == 'important' or b_opinion == 'happy' else 0
+                if a_value > 5:
+                    index_a = a_mod
+                elif a_value < 3:
+                    index_a = 2 + a_mod
+                else:
+                    continue
+                if b_value > 5:
+                    index_b = b_mod
+                elif b_value < 3:
+                    index_b = 2 + b_mod
+                else:
+                    continue
+                
+                index_mod += M[index_a][index_b]
+
+        return index_mod
+
+    def make_connection(self, other_key, nature, preset_rel=0):
+        global network
+
+        index_mod = self.get_indexmodifier(other_key)
+        if nature == 'parent':
+            rel = random.randint(10, 40)
+        elif nature == 'sibling':
+            rel = random.randint(5, 25)
+        elif nature == 'family':
+            rel = random.randint(0, 15)
+        else:
+            rel = random.randint(-10, 10)
+
+        rel += preset_rel
+        network.add_edge(self.own_key, other_key, weight=rel,
+                        index_mod=index_mod, nature=nature)
+
+    def social_life(self):
+        random.seed() 
+        edges = network.edges(self.own_key)
+
+        for u, v in edges:
+            index_mod = copy.deepcopy(network.get_edge_data(u, v)['index_mod'])
+            age_mod = 1.5 if self.person.age < 12 else 1
+
+            """
+            RANGE: -30-30
+            - < 15 : nothing happens
+            - 15-20 : small event
+            - 20-25 : medium event
+            - 25-30: big event
+            """
+            event = random.randint(-30, 30) + index_mod
+            mod = age_mod if event > 0 else -1 * age_mod
+
+            if abs(event) < 15:
+                points = 0
+            elif abs(event) < 20:
+                points = 10
+            elif abs(event) < 25:
+                points = 20
+            else:
+                points = 30
+            
+            new_weight = network[u][v]['weight'] + (mod * points)
+            network[u][v]['weight'] = new_weight
 
 
 class Names:
@@ -376,9 +532,19 @@ class Names:
                 return f"{self.parents.man.name}szoon"
         return ""
 
+    def update_surname(self, trigger):
+        pass
+
+    def jsonfiy(self):
+        return {
+            "name" : self.name,
+            "nickname:" self.nickname,
+            "surname" : self.surname
+        }
+
 
 class Person:
-    def __init__(self, parents, key, age=0, sex='r', married=False, surname='r'):
+    def __init__(self, parents, key, house=None, age=0, sex='r', married=False, surname='r'):
         # binary
         self.key = key
         self.alive = True
@@ -390,6 +556,7 @@ class Person:
         else:
             self.sex = sex
         self.sexuality = "straight" if random.random() < 0.9 else "gay"
+        self.characteristics = self.get_characteristics()
     
         # genetics
         self.parents = parents
@@ -407,12 +574,13 @@ class Person:
         self.age = age
         self.married = married
         self.children = 0
+        self.marriage = None
         self.relationships = []
         self.knowledge = Knowledge(self)
 
         # start life
+        self.connections = Connections(self, house)
         self.init_existence()
-        self.init_network()
 
     """
     LIVING & DYING
@@ -439,6 +607,15 @@ class Person:
 
         return gen_health
 
+    def get_characteristics(self):
+        characteristics = ['infertile', 'autistic', 'down syndrome', 'blind', 'deaf', 'transgender']
+        own_ch = []
+        if random.random() < 0.1:
+            own_ch.append(random.choice(characteristics))
+            if random.random() < 0.1:
+                own_ch.append(random.choice(characteristics))
+        return own_ch
+            
     def init_existence(self):
         global people_alive, births
         births += 1
@@ -449,8 +626,28 @@ class Person:
         network.add_node(self.key, label=self.name)
         self.init_network()
 
-    def die(self):
-        pass
+    def die(self, circumstance=""):
+        global people_alive, deads
+        deads += 1
+        people_alive -= 1
+        alive.pop(self.key)
+        self.alive = False
+
+        # process global networks
+        dead[self.key] = self
+        family_tree.node(self.key, label=self.name, color='orange')
+        network.remove_node(self.key)
+
+        # create bits
+        self.knowledge.add_bit(0, f"Died at age {self.age}{circumstance}.")
+        
+        # end relationships
+        cause = 'woman_died' if self.sex == 'f' else 'man_died'
+        for relation in self.relationships:
+            if relation.active:
+                relation.end_relationship(cause, circumstance)
+
+        self.parents.relationship_trigger('dead_child', (self.name, self.age))
     
     """
     TRIGGERS & CHANCES
@@ -458,7 +655,11 @@ class Person:
     def trigger(self, trigger, param=None):
         """
         Triggers:
-        - trait_influence, param=(trait, value, source)
+        - trait_influence : param=(trait, value, source), return True / False
+        - childbirth : return True / False
+        - birth : return True / False
+        - mother_died : param=circumstance
+        - father_died : param=circumstance
         """
         if trigger == 'virtue_influence':
             trait, value, source = param
@@ -469,13 +670,31 @@ class Person:
                 chance = 0.4
 
             # by how much is the value changed?
-            if own_value < value:
-                change = 1
-            else:
-                change = -1
+            change = 1 if own_value < value else -1
 
             if random.random() < chance:
                 self.personality.influence_personality(trait, change, source)
+                return True
+        
+        elif trigger == 'childbirth':
+            if random.random() < self.chance_of_dying('childbirth'):
+                self.die('in childbirth')
+                return True 
+
+        elif trigger == 'birth':
+            if random.random() < self.chance_of_dying('birth'):
+                self.die("days after being born")
+                return True
+
+        elif trigger == 'mother_died':
+            child.connections.add_bit(2, f"Lost mother at the age of {child.age}{param}.")
+            return
+
+        elif trigger == 'father_died':
+            child.connections.add_bit(2, f"Lost father at the age of {child.age}{param}.")
+            return
+
+        return False
 
     def chance_of_dying(self, trigger):
         """
@@ -544,59 +763,135 @@ class Person:
         # making childhood friends:
         if self.age < 13:
             if random.random() < 0.7:
-                broadcast_intention('find_child_friend',
-                                    self.key, age=self.age, gender=self.sex)
-
-        self.social_life()
+                self.connections.broadcast_intention('find_child_friend')
         
-    def init_network(self):
+        self.connections.social_life()
+
+
+class Relationship:
+    def __init__(self, man, woman, key, married=True):
+        self.active = True
+        self.key = key
+        self.married = married
+        self.family_values = [[], []]
+        
+        # members
+        self.man = man
+        self.woman = woman
+        self.children = []
+
+        # stats
+        self.no_children = 0
+        self.dead_children = 0
+        self.still_births = 0
+
+        self.init_relationship()
+
+    """
+    BEGINNING & ENDING
+    """
+    def init_relationship(self):
+        self.man.relationships.append(self)
+        self.woman.relationships.append(self)
+        active_couples[self.key] = self
+        self.set_familyvalues()
+        if self.married:
+            self.man.marriage = self
+            self.woman.marriage = self
+            self.woman.names.update_surname('marriage')
+
+        # represent in family network
+        family_tree.node(self.key, shape="diamond")
+        family_tree.edge(self.woman.key, self.key, weight='12')
+        family_tree.edge(self.man.key, self.key, weight='12')
+
+    def set_familyvalues(self):
+        for partner in [self.man, self.woman]:
+            for trait, score in partner.personality.jsonify_all():
+                value, importance = score
+                if (value > 5 or value < 3) and importance == 'important':
+                    self.family_values[1].append((trait, value))
+
+    def end_relationship(self, cause, circumstance=""):
+        """
+        Possible causes:
+        - woman_died
+        - man_died 
+        - separated
+        """
+        global active_couples
+
+        if self.active:
+            self.active = False
+        if cause == 'woman_died':
+            if self.married:
+                self.man.married = False
+                if self.man.alive:
+                    self.man.knowledge.add_bit(1, f"Became a widower at {self.man.age}{circumstance}.")
+            for child in self.children:
+                if child.alive:
+                    child.trigger('mother_died', circumstance)
+        elif cause == 'man_died':
+            if self.married:
+                self.woman.married = False
+                if self.woman.alive:
+                    self.woman.knowledge.add_bit(1, f"Became a widow at {self.man.age}{circumstance}.")
+            for child in self.children:
+                if child.alive:
+                    child.trigger('father_died', circumstance)
+        elif cause == 'separated':
+            pass
+
+        active_couples.pop(self.key)
+                    
+    def add_child(self):
+        global network, family_tree
+        self.no_children += 1
+        self.man.children += 1
+        self.woman.children += 1
+
+        # init_child
+        child_key = f"{self.key}c{self.no_children}"
+        try:
+            child = Person(self, child_key)
+            self.children.append(child)
+        except:
+            print(f"couldnt init child {self.no_children} of {self.key}")
+        child.trigger('birth')
+
+        # add to family tree
+        family_tree.edge(self.key, child_key, weight='6')
+    
+    """
+    TRIGGERS & EVENTS
+    """
+    def relationship_trigger(self, trigger, param=None):
+        """
+        dead child: param tuple of (name_child, age_child)
+        """
+        if trigger == 'dead child':
+            self.dead_children += 1
+            name_child, age_child = param
+
+            # parents
+            if self.man.alive:
+                self.man.add_bit(
+                    2, f"Lost their child {name_child} when {name_child} was {age_child} years old.")
+            if self.woman.alive:
+                self.woman.add_bit(
+                    2, f"Lost their child {name_child} when {name_child} was {age_child} years old.")
+
+            # children
+            for child in self.children:
+                if child.alive:
+                    child.add_bit(
+                        2, f"Lost their sibling {name_child} when {child.name} was {child.age} and {name_child} was {age_child}.")
+
+    def relationship_events(self):
         pass
 
-    def social_life(self):
-        global network
-        random.seed()
-        edges = network.edges(self.key)
-      
-        for u, v in edges:
-            old_weight = copy.deepcopy(network.get_edge_data(u, v)['weight'])
-            other = people[v].name
-            """
-            RANGE: 0-30
-            - x < 10 : minor event, 5 points
-            - 10 < x < 22 : medium event, 10 points
-            - 22 < x < 28 : major event, 20 points
-            - 28 < x < 30 : mindblowing event, 30 points
-            """
-            positive = random.randint(0, 30) + old_weight
-            negative = random.randint(0, 30) - old_weight
-
-            if positive < 10:
-                points = 5
-            elif positive < 22:
-                points = 10
-            elif positive < 28:
-                points = 20
-            elif positive < 31:
-                points = 30
-
-            if negative < 10:
-                _points = 5
-            elif negative < 22:
-                _points = 10
-            elif negative < 28:
-                _points = 20
-            elif negative < 31:
-                _points = 30
-
-            # print('--------')
-            # print(network[u][v]['weight'])
-            # network[u][v]['weight'] = old_weight + points - _points
-            # print(network[u][v]['weight'])
-
-            if network[u][v]['weight'] > 80 and old_weight < 80:
-                self.add_bit(1, f'{self.name} and {other} became good friends.')
-            elif network[u][v]['weight'] > 50 and old_weight < 80:
-                self.add_bit(1, f'{self.name} and {other} became friends.')
+    def pregnancy_chance(self):
+        pass
 
 
 class House:
@@ -656,7 +951,7 @@ class House:
         """
         pass
 
-    def yearly_events(self):
+    def house_events(self):
         """
         Yearly household events.
 
@@ -666,4 +961,14 @@ class House:
         """
         pass
 
+    def get_householdmembers(self):
+        return self.inhabitants
 
+class City:
+    def __init__(self):
+        pass
+
+
+class Community:
+    def __init__(self):
+        pass
