@@ -7,6 +7,7 @@ from graphviz import Digraph, Graph
 import numpy as np
 import matplotlib.pyplot as plt
 import random
+import csv
 
 def read_files():
     """
@@ -63,8 +64,36 @@ def read_files():
                 trait_index += 1
     return m_names, w_names, s_names, trait_modifiers
 
+def read_city():
+    buurten = {}
+    strbr = {}
+    with open('sources/Buurten.csv', 'r') as bfile:
+        csvreader = csv.reader(bfile)
+        for row in csvreader:
+            strbr[row[1]] = row[0]
+            if row[0] not in buurten:
+                buurten[row[0]] = []
+            buurten[row[0]].append(row[1])
+    print(strbr)
+    streets = {}
+    cols = ['street', 'A', 'class', 'B', 'class', 'C', 'class', 'D', 'class', 'E', 'class']
+    with open('sources/SectionStreets.csv', 'r') as cfile:
+        csvreader = csv.reader(cfile)
+        for row in csvreader:
+            sections = {}
+            for i in range(1, 11, 2):
+                if row[i] == '':
+                    break
+                sections[cols[i]] = (int(row[i]), int(row[i + 1]), {})
+            streets[row[0]] = (strbr[row[0]], sections)
+    
+    return buurten, streets
+
+
 # Variables
 m_names, w_names, n_names, trait_modifiers = read_files()
+buurten, streets = read_city()
+print(streets)
 year = 0
 
 # Networks
@@ -105,7 +134,7 @@ class Personality:
         self.spes = self.generate_virtue()
         self.caritas = self.generate_virtue()
 
-        self.all = {**self.jsonify_sins(), **self.jsonify_virtues}
+        self.all = self.combine_all()
 
     def generate_sin(self):
         values = [1, 2, 3, 4, 5, 6, 7]
@@ -135,6 +164,9 @@ class Personality:
     def influence_personality(self, trait, influence, source, bit=False):
         v, i = self.all[trait]
         self.all[trait] = ( v + influence, i)        
+
+    def combine_all(self):
+        return self.jsonify_sins().update(self.jsonify_virtues())
 
     def jsonify_virtues(self):
         return {
@@ -335,6 +367,12 @@ class Knowledge:
 
         self.knowledge[object_key][bit.secrecy].append(bit)
 
+    def get_descriptions(self):
+        bits = []
+        for l in self.bits.values():
+            for el in l:
+                bits.append(el.description)
+        return bits
 
 class Connections:
     def __init__(self, person, house):
@@ -354,9 +392,9 @@ class Connections:
             return
         else:
             if self.person.parents.woman.alive:
-                connect(self.woman.key, child_key, 'parent')
+                self.make_connection(self.person.parents.woman.key, 'parent')
             if self.person.parents.man.alive:
-                connect(self.man.key, child_key, 'parent')
+                self.make_connection(self.person.parents.man.key, 'parent')
         
         for sibling in self.person.parents.children:
             if sibling.alive:
@@ -364,11 +402,11 @@ class Connections:
 
     def init_household_network(self):
         global network
-
-        # what if roommate is extended family?
-        for roommate in self.house.inhabitants:
-            if roommate.key not in network[self.own_key]:
-                self.make_connection(roommate.key, 'other')
+        if self.house:
+            # what if roommate is extended family?
+            for roommate in self.house.inhabitants:
+                if roommate.key not in network[self.own_key]:
+                    self.make_connection(roommate.key, 'other')
 
     def broadcast_intention(self, intent, depth=2):
         """
@@ -442,6 +480,12 @@ class Connections:
         return index_mod
 
     def make_connection(self, other_key, nature, preset_rel=0):
+        """
+        INPUT:
+        - other_key
+        - nature
+        - (preset_rel)
+        """
         global network
 
         index_mod = self.get_indexmodifier(other_key)
@@ -487,6 +531,16 @@ class Connections:
             
             new_weight = network[u][v]['weight'] + (mod * points)
             network[u][v]['weight'] = new_weight
+
+    def get_network(self):
+        global network
+        social_network = {'family' : {}, 'outsider' : {}, 'sibling' : {}, 'parent' : {}}
+        edges = network.edges(self.own_key)
+        for u, v in edges:
+            data = network.get_edge_data(u, v)
+            social_network[data['nature']][v] = data
+
+        return social_network
 
 
 class Names:
@@ -538,7 +592,7 @@ class Names:
     def jsonfiy(self):
         return {
             "name" : self.name,
-            "nickname:" self.nickname,
+            "nickname" : self.nickname,
             "surname" : self.surname
         }
 
@@ -624,7 +678,6 @@ class Person:
         people[self.key] = self
         family_tree.node(self.key, label=self.name)
         network.add_node(self.key, label=self.name)
-        self.init_network()
 
     def die(self, circumstance=""):
         global people_alive, deads
@@ -687,11 +740,11 @@ class Person:
                 return True
 
         elif trigger == 'mother_died':
-            child.connections.add_bit(2, f"Lost mother at the age of {child.age}{param}.")
+            self.knowledge.add_bit(2, f"Lost mother at the age of {self.age}{param}.")
             return
 
         elif trigger == 'father_died':
-            child.connections.add_bit(2, f"Lost father at the age of {child.age}{param}.")
+            self.knowledge.add_bit(2, f"Lost father at the age of {self.age}{param}.")
             return
 
         return False
@@ -766,6 +819,36 @@ class Person:
                 self.connections.broadcast_intention('find_child_friend')
         
         self.connections.social_life()
+
+    def jsonify(self):
+        global network
+        person = {}
+        person["alive"] = self.alive
+        person["names"] = self.names.jsonfiy()
+        person["biological"] = {
+            "parents" : self.parents.key if self.parents else "ancestors",
+            "sex" : self.sex,
+            "sexuality" : self.sexuality,
+            "health" : self.health,
+            "birthday" : self.birthday
+        }
+        person["appearance"] = self.appearance.jsonify()
+        person["parents"] = [f"{self.parents.man.key} and {self.parents.woman.key}" if self.parents else "ancestors", f"{self.parents.man.name} and {self.parents.woman.name}" if self.parents else "ancestors"]
+        person["procedural"] = {
+            "age": self.age,
+            "married": self.married,
+            'no_children': self.children,
+            'connections' : self.connections.get_network(),
+            "events": self.knowledge.get_descriptions()
+        }
+        person["personality"] = {
+            "sins" : self.personality.jsonify_sins(),
+            "virtues" : self.personality.jsonify_virtues()
+        }
+
+        return person
+
+
 
 
 class Relationship:
@@ -964,6 +1047,19 @@ class House:
     def get_householdmembers(self):
         return self.inhabitants
 
+class Street:
+    class Section:
+        def __init__(self):
+            pass
+
+    def __init__(self, name):
+        self.name = name
+        self.total_lots, self.sections = self.init_street()
+        self.empty_lots = copy.deepcopy(self.empty_lots)
+
+    def init_street(self):
+        return 0, []
+
 class City:
     def __init__(self):
         pass
@@ -972,3 +1068,10 @@ class City:
 class Community:
     def __init__(self):
         pass
+
+individual = Person(None, '1')
+with open(f"people/{individual.key}.json", "w") as output:
+    json.dump(individual.jsonify(), output)
+
+with open(f"people/test.json", "w") as output:
+    json.dump(streets, output)
