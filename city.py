@@ -168,6 +168,7 @@ class Knowledge:
 
 class Person:
     def __init__(self, parents, key, age=0, sex='r', married=False, surname='r', house=None):
+        
         # biological
         if sex == 'r':
             self.sex = 'f' if random.random() < 0.51 else 'm'
@@ -261,7 +262,6 @@ class Person:
                 self.house = self.parents.woman.house
             else:
                 self.house = houses['outside']
-            print(self.house)
         self.house.add_person(self, 'birthed')
 
     def die(self, circumstance=""):
@@ -443,16 +443,17 @@ class Person:
         def __init__(self, sex, parents, surname='r', income_class=0):
             self.parents = parents
             self.sex = sex
-            self.name = self.generate_name()
-            self.nickname = self.generate_nickname()
             if surname == 'r':
                 self.surname = self.generate_surname()
             else:
                 self.surname = surname
+            self.name = self.generate_name()
+            self.nickname = self.generate_nickname()
 
         def generate_name(self):
             global w_names, m_names
-            if self.parents:
+
+            if self.parents != None:
                 if self.parents.no_children == 1:
                     if random.random() < 0.25:
                         if self.surname == "":
@@ -504,8 +505,8 @@ class Person:
             genetic_hair = []
 
             if self.parents != None:
-                genetic_hair.append(self.parents.man.appearance['hair_color'])
-                genetic_hair.append(self.parents.woman.appearance['hair_color'])
+                genetic_hair.append(self.parents.man.appearance.hair_color)
+                genetic_hair.append(self.parents.woman.appearance.hair_color)
                 genetic_hair = set(genetic_hair)
                 if genetic_hair == set(["black", "black"]):
                     hair_weights = [1, 0, 0, 0, 0]
@@ -547,9 +548,9 @@ class Person:
         def get_hairtype(self):
             if self.parents != None:
                 father_hair = random.choice(
-                    self.parents.man.appearance['hair_type'])
+                    self.parents.man.appearance.hair_type)
                 mother_hair = random.choice(
-                    self.parents.woman.appearance['hair_type'])
+                    self.parents.woman.appearance.hair_type)
                 return [father_hair, mother_hair]
             else:
                 random_hair = ['C', 'S', 'S', 'S']
@@ -561,8 +562,8 @@ class Person:
             genetic_eyes = []
 
             if self.parents != None:
-                genetic_eyes.append(self.parents.man.appearance['eye_color'])
-                genetic_eyes.append(self.parents.woman.appearance['eye_color'])
+                genetic_eyes.append(self.parents.man.appearance.eye_color)
+                genetic_eyes.append(self.parents.woman.appearance.eye_color)
                 genetic_eyes = set(genetic_eyes)
                 if genetic_eyes == set(['brown', 'brown']):
                     eye_weights = [0.75, 0.1875, 0.0625]
@@ -611,7 +612,6 @@ class Person:
             self.caritas = self.generate_virtue()
 
             self.all = self.combine_all()
-            print("made it to init")
 
         def generate_sin(self):
             values = [1, 2, 3, 4, 5, 6, 7]
@@ -935,6 +935,7 @@ class Relationship:
             self.children.append(child)
         except:
             print(f"couldnt init child {self.no_children} of {self.key}")
+            print("----------------------")
         child.trigger('birth')
 
         # add to family tree
