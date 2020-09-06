@@ -18,6 +18,7 @@ towns_people = 0
 births, deads = 0, 0
 total_marriages = 0
 
+
 def read_files():
     """
     Reads the different name files and saves them as lists.
@@ -73,14 +74,20 @@ def read_files():
                 trait_index += 1
     return m_names, w_names, s_names, trait_modifiers
 
+
 class Others:
     def __init__(self):
         global houses
 
         self.people = {}
         self.couples = {}
+        self.city = None
         self.monasteries = {}
+        self.orphanage = self.Orphanage(self)
         self.outside_home = None
+
+    def yearly_events(self):
+        self.orphanage.yearly_events()
 
     def move_outoftown(self, person):
         global alive, towns_people
@@ -104,13 +111,48 @@ class Others:
     def send_tomonastery(self):
         pass
 
+    def send_toorphanage(self, child):
+        self.orphanage.add_person(child)
+
     def is_alive(self, key):
         pass
-
 
     class Monastery:
         def __init__(self):
             pass
+
+    class Orphanage:
+        def __init__(self, outside):
+            self.outside = outside
+            self.children = []
+            self.supervisors = []
+            self.no_children = 0
+            self.income_class = 1
+
+        def yearly_events(self):
+            for child in self.children:
+                if child.age > 17:
+                    self.remove_person(child)
+
+        def adopt(self, child_key):
+            pass
+
+        def add_person(self, child):
+            child.house = None
+            self.children.append(child)
+            child.income_class = self.income_class
+            child.knowledge.add_bit(1, f"Went to live in the orphanage at age {child.age}.")
+            print(f"{child.key} went to orphanage")
+
+        def remove_person(self, child):
+            self.children = [x for x in self.children if x.key != child.key]
+            child.emancipated = True
+            child.independent = True
+            self.outside.city.find_house_for(child)
+            child.knowledge.add_bit(1, f"Left orphanage at the age of {child.age}.")
+            self.no_children -= 1
+
+            
 
 # Variables
 m_names, w_names, n_names, trait_modifiers = read_files()
@@ -136,6 +178,7 @@ class Bit:
         Class that defines an bit in terms of people involved and the 
         level of secrecy. 
         """
+        global year
         # Who is this about?
         self.subject = []
         self.action = ""
@@ -156,6 +199,7 @@ class Bit:
 
         # When did this take place and is it still taking place?
         self.age = age
+        self.year = year
         self.ongoing = ongoing
 
         # Description of bit
@@ -174,7 +218,7 @@ class Bit:
 
 
 class Person:
-    def __init__(self, parents, key, age=0, sex='r', married=False, surname='r', house=None):
+    def __init__(self, parents, key, age=0, sex='r', married=False, surname='r', house=None, emancipated=False, independent=False):
         # biological
         if sex == 'r':
             self.sex = 'f' if random.random() < 0.51 else 'm'
@@ -182,7 +226,7 @@ class Person:
             self.sex = sex
         self.sexuality = "straight" if random.random() < 0.9 else "gay"
         self.characteristics = self.get_characteristics()
-    
+
         # genetics
         self.parents = parents
         self.health = self.get_health()
@@ -198,7 +242,7 @@ class Person:
         # progressive variables
         self.age = age
         self.married = married
-        self.children = 0 
+        self.children = 0
         self.marriage = None
         self.relationships = []
         self.knowledge = self.Knowledge(self)
@@ -211,7 +255,8 @@ class Person:
 
         # houselife
         self.house = house
-        self.emancipated = False
+        self.emancipated = emancipated # financially stable
+        self.independent = independent # moved out of parents house 
         self.caretaker = False
         self.breadwinner = False
         self.income_class = 0
@@ -250,14 +295,15 @@ class Person:
         return gen_health
 
     def get_characteristics(self):
-        characteristics = ['infertile', 'autistic', 'down syndrome', 'blind', 'deaf', 'transgender']
+        characteristics = ['infertile', 'autistic',
+                           'down syndrome', 'blind', 'deaf', 'transgender']
         own_ch = []
         if random.random() < 0.1:
             own_ch.append(random.choice(characteristics))
             if random.random() < 0.1:
                 own_ch.append(random.choice(characteristics))
         return own_ch
-            
+
     def init_existence(self):
         global towns_people, alive, births, houses
 
@@ -292,22 +338,21 @@ class Person:
 
         # create bits
         self.knowledge.add_bit(0, f"Died at age {self.age}{circumstance}.")
-        
+
         # end relationships
         cause = 'woman_died' if self.sex == 'f' else 'man_died'
         for relation in self.relationships:
             if relation.active:
                 relation.end_relationship(cause, circumstance)
 
+        # notify family
         if self.parents != None:
-            self.parents.relationship_trigger('dead_child', (self.name, self.age))
-            for child in self.parents.children:
-                if child.alive:
-                    child.trigger.dead_sibling(self.key)
+            self.parents.relationship_trigger(
+                'dead child', self)
 
         if self.house != None:
             self.house.remove_person(self.key, 'died')
-    
+
     """
     CHANCES
     """
@@ -364,8 +409,8 @@ class Person:
         """
         if self.sex == 'f':
             return
-        if self.age > 29 or self.age < 16:
-            return 
+        if self.age > 29 or self.age < 18:
+            return
 
         random.seed()
         chance = 1.0 / (30 - self.age)
@@ -374,16 +419,24 @@ class Person:
             self.emancipated = True
 
             # set new income class
-            hi = self.house.income_class
+            try:
+                hi = self.house.income_class
+            except:
+                print(f"{self.jsonify()}")
+                sys.exit()
             in_weights = [0.2, 0.7, 0.1]
-            in_values = [hi if hi==1 else hi-1, hi, hi if hi==5 else hi+1]
+            in_values = [hi if hi == 1 else hi-1, hi, hi if hi == 5 else hi+1]
             self.income_class = np.random.choice(in_values, p=in_weights)
-            self.knowledge.add_bit(2, f'Became financially stable at {self.age}.')
+            self.knowledge.add_bit(
+                2, f'Became financially stable at {self.age}.')
 
     def personal_events(self):
         global bachelorettes, bachelors
 
         self.age += 1
+
+        # if self.age < 13 and not self.parents.man.alive and not self.parents.woman.alive:
+            # print(f"{self.key} is an orphan")
 
         # chance of dying
         if random.random() < self.chance_of_dying('age'):
@@ -405,9 +458,9 @@ class Person:
         # if random.random() < 0.7:
         #     if self.age < 13:
         #         self.connections.broadcast_intention('find_child_friend')
-        #     else: 
+        #     else:
                 # self.connections.broadcast_intention('find_connection')
-        
+
         # self.connections.social_life()
 
         # emancipation
@@ -421,23 +474,24 @@ class Person:
         person["house"] = None if self.house == None else self.house.key
         person["names"] = self.names.jsonfiy()
         person["biological"] = {
-            "parents" : self.parents.key if self.parents else "ancestors",
-            "sex" : self.sex,
-            "sexuality" : self.sexuality,
-            "health" : self.health,
-            "birthday" : self.birthday
+            "parents": self.parents.key if self.parents else "ancestors",
+            "sex": self.sex,
+            "sexuality": self.sexuality,
+            "health": self.health,
+            "birthday": self.birthday
         }
         person["appearance"] = self.appearance.jsonify()
-        person["parents"] = [f"{self.parents.man.key} and {self.parents.woman.key}" if self.parents else "ancestors", f"{self.parents.man.name} and {self.parents.woman.name}" if self.parents else "ancestors"]
+        person["parents"] = [f"{self.parents.man.key} and {self.parents.woman.key}" if self.parents else "ancestors",
+                             f"{self.parents.man.name} and {self.parents.woman.name}" if self.parents else "ancestors"]
         person["procedural"] = {
             "age": self.age,
             "married": self.married,
             'no_children': self.children,
-            'connections' : self.connections.get_network(),
+            'connections': self.connections.get_network(),
         }
         person["personality"] = {
-            "sins" : self.personality.jsonify_sins(),
-            "virtues" : self.personality.jsonify_virtues()
+            "sins": self.personality.jsonify_sins(),
+            "virtues": self.personality.jsonify_virtues()
         }
         person["events"] = self.knowledge.get_descriptions()
 
@@ -465,7 +519,7 @@ class Person:
                     if random.random() < 0.25:
                         if self.surname == "":
                             self.surname = "de Jonge"
-                        
+
                         if self.sex == 'f':
                             return self.parents.woman.name
                         else:
@@ -495,9 +549,9 @@ class Person:
 
         def jsonfiy(self):
             return {
-                "name" : self.name,
-                "nickname" : self.nickname,
-                "surname" : self.surname
+                "name": self.name,
+                "nickname": self.nickname,
+                "surname": self.surname
             }
 
     class Appearance:
@@ -508,7 +562,8 @@ class Person:
             self.eye_color = self.get_eye_color()
 
         def get_haircolor(self):
-            hair_colors = ['black', 'brown', 'red', 'blonde', 'strawberry blonde']
+            hair_colors = ['black', 'brown', 'red',
+                           'blonde', 'strawberry blonde']
             genetic_hair = []
 
             if self.parents != None:
@@ -549,7 +604,7 @@ class Person:
                     print(f"{self.parents.key}: hair problem")
             else:
                 hair_weights = [0.15, 0.3, 0.1, 0.2, 0.25]
-            
+
             return np.random.choice(hair_colors, p=hair_weights)
 
         def get_hairtype(self):
@@ -562,7 +617,7 @@ class Person:
             else:
                 random_hair = ['C', 'S', 'S', 'S']
                 return [random.choice(random_hair),
-                            random.choice(random_hair)]
+                        random.choice(random_hair)]
 
         def get_eye_color(self):
             eye_colors = ['brown', 'green', 'blue']
@@ -593,9 +648,9 @@ class Person:
 
         def jsonify(self):
             return {
-                "hair_color" : self.hair_color,
-                "hair_type" : self.hair_type,
-                "eye_color" : self.eye_color
+                "hair_color": self.hair_color,
+                "hair_type": self.hair_type,
+                "eye_color": self.eye_color
             }
 
     class Personality:
@@ -608,7 +663,7 @@ class Person:
             self.gula = self.generate_sin()
             self.ira = self.generate_sin()
             self.acedia = self.generate_sin()
-            
+
             # Virtues
             self.prudentia = self.generate_virtue()
             self.iustitia = self.generate_virtue()
@@ -629,7 +684,7 @@ class Person:
                 return (sin, 'happy')
             else:
                 return (sin, random.choice(sinmoods))
-                
+
         def generate_virtue(self):
             values = [1, 2, 3, 4, 5, 6, 7]
             weight = [1/28, 4/28, 6/28, 6/28, 6/28, 4/28, 1/28]
@@ -647,7 +702,7 @@ class Person:
 
         def influence_personality(self, trait, influence, source, bit=False):
             v, i = self.all[trait]
-            self.all[trait] = ( v + influence, i)        
+            self.all[trait] = (v + influence, i)
 
         def combine_all(self):
             b = self.jsonify_virtues()
@@ -655,24 +710,24 @@ class Person:
 
         def jsonify_virtues(self):
             return {
-                "prudentia" : self.prudentia,
-                "iustitia" : self.iustitia,
-                "temperantia" : self.temperantia,
-                "fortitudo" : self.fortitudo,
-                "fides" : self.fides,
-                "spes" : self.spes,
-                "caritas" : self.caritas
+                "prudentia": self.prudentia,
+                "iustitia": self.iustitia,
+                "temperantia": self.temperantia,
+                "fortitudo": self.fortitudo,
+                "fides": self.fides,
+                "spes": self.spes,
+                "caritas": self.caritas
             }
 
         def jsonify_sins(self):
             return {
-                "superbia" : self.superbia,
-                "avaritia" : self.avaritia,
-                "luxuria" : self.luxuria, 
-                "invidia" : self.invidia,
-                "gula" : self.gula, 
-                "ira" : self.ira,
-                "acedia" : self.acedia
+                "superbia": self.superbia,
+                "avaritia": self.avaritia,
+                "luxuria": self.luxuria,
+                "invidia": self.invidia,
+                "gula": self.gula,
+                "ira": self.ira,
+                "acedia": self.acedia
             }
 
         def jsonify_all(self):
@@ -680,8 +735,8 @@ class Person:
 
         def jsonify(self):
             return {
-                "sins" : self.jsonify_sins(),
-                "virtues" : self.jsonify_virtues()
+                "sins": self.jsonify_sins(),
+                "virtues": self.jsonify_virtues()
             }
 
     # Procedural classes
@@ -704,13 +759,14 @@ class Person:
             else:
                 # print("made parental connection")
                 if self.person.parents.woman.alive:
-                    self.make_connection(self.person.parents.woman.key, 'parent')
+                    self.make_connection(
+                        self.person.parents.woman.key, 'parent')
                 if self.person.parents.man.alive:
                     self.make_connection(self.person.parents.man.key, 'parent')
-            
+
             for sibling in self.person.parents.children:
                 if sibling.alive:
-                    self.make_connection(sibling.key, 'sibling')                
+                    self.make_connection(sibling.key, 'sibling')
 
         def init_household_network(self):
             global network
@@ -732,14 +788,15 @@ class Person:
             edges = network.edges(self.own_key)
             options = []
             for _, v in edges:
-                suggestions = people[v].connections.receive_intention(intent, self.own_key, self.own_key, depth, [])
+                suggestions = people[v].connections.receive_intention(
+                    intent, self.own_key, self.own_key, depth, [])
                 options.extend(suggestions)
 
             if intent == 'find_child_friend':
                 rel_mod = random.randint(-20, 30)
             else:
                 rel_mod = 0
-            
+
             for option in options:
                 if random.random() < 0.6:
                     self.make_connection(option, 'outsider', rel_mod)
@@ -754,7 +811,7 @@ class Person:
             for _, v in network.edges(self.own_key):
                 if v != source and v != op and v not in suggestions:
                     options.extend(v)
-            
+
             if intent == 'find_child_friend':
                 return [x for x in options if people[x].age < 12]
             return options
@@ -765,7 +822,7 @@ class Person:
             A = self.person.personality.jsonify_all()
             B = self.person.personality.jsonify_all()
             traits = ['superbia', 'avaritia', 'luxuria', 'invidia', 'gula', 'ira', 'acedia',
-                'prudentia', 'iustitia', 'temperantia', 'fortitudo', 'fides', 'spes', 'caritas']
+                      'prudentia', 'iustitia', 'temperantia', 'fortitudo', 'fides', 'spes', 'caritas']
             index_mod = 0
             for trait_a in traits:
                 for trait_b in traits:
@@ -786,7 +843,7 @@ class Person:
                         index_b = 2 + b_mod
                     else:
                         continue
-                    
+
                     index_mod += M[index_a][index_b]
 
             return index_mod
@@ -812,14 +869,15 @@ class Person:
 
             rel += preset_rel
             network.add_edge(self.own_key, other_key, weight=rel,
-                            index_mod=index_mod, nature=nature)
+                             index_mod=index_mod, nature=nature)
 
         def social_life(self):
-            random.seed() 
+            random.seed()
             edges = network.edges(self.own_key)
 
             for u, v in edges:
-                index_mod = copy.deepcopy(network.get_edge_data(u, v)['index_mod'])
+                index_mod = copy.deepcopy(
+                    network.get_edge_data(u, v)['index_mod'])
                 age_mod = 1.5 if self.person.age < 12 else 1
 
                 """
@@ -840,13 +898,14 @@ class Person:
                     points = 20
                 else:
                     points = 30
-                
+
                 new_weight = network[u][v]['weight'] + (mod * points)
                 network[u][v]['weight'] = new_weight
 
         def get_network(self):
             global network
-            social_network = {'family' : {}, 'outsider' : {}, 'sibling' : {}, 'parent' : {}}
+            social_network = {'family': {}, 'outsider': {},
+                              'sibling': {}, 'parent': {}}
             edges = network.edges(self.own_key)
             for u, v in edges:
                 data = network.get_edge_data(u, v)
@@ -873,17 +932,19 @@ class Person:
         def add_knowledge(self, object_key, bit):
             if object_key not in self.knowledge:
                 self.knowledge[object_key] = {}
-            
+
             if bit.secrecy not in self.knowledge[object_key][bit.secrecy]:
                 self.knowledge[object_key][bit.secrecy] = []
 
             self.knowledge[object_key][bit.secrecy].append(bit)
 
         def get_descriptions(self):
-            bits = []
+            bits = {}
             for l in self.bits.values():
                 for el in l:
-                    bits.append(el.description)
+                    if el.year not in bits:
+                        bits[el.year] = []
+                    bits[el.year].append(el.description)
             return bits
 
     class Trigger:
@@ -891,25 +952,30 @@ class Person:
             self.person = person
             self.prev_neglect = False
             self.marriages = 0
+            self.dead_children = 0
+            self.dead_chidren_bit = False
 
         def trait_influence(self, trait, value, source):
             random.seed()
-            own_value, own_importance = self.person.personality.get_trait(trait)
+            own_value, own_importance = self.person.personality.get_trait(
+                trait)
             chance = 0.1 if own_importance == 'important' else 0.4
             change = 1 if own_value < value else -1
 
             if random.random() < chance:
-                self.person.personality.influence_personality(trait, change, source)
+                self.person.personality.influence_personality(
+                    trait, change, source)
                 return True
             return False
 
         """
         LIFE
         """
+
         def birth(self):
             random.seed()
             if random.random() < self.person.chance_of_dying('birth'):
-                self.person.die('days after being born')
+                self.person.die(' days after being born')
                 return True
             return False
 
@@ -920,9 +986,10 @@ class Person:
             if self.person.sex == 'f':
                 self.person.names.update_surname('marriage')
 
-            times = ['', 'a second time ', 'a third time ', ' a fourth time ', 
-                        'the fifth time ', 'the sixth time ', 'the seventh time ']
-            self.person.knowledge.add_bit(1, f"Got married {times[self.marriages]}with {partner.name} at age {self.person.age} in {year}.")
+            times = ['', 'a second time ', 'a third time ', ' a fourth time ',
+                     'the fifth time ', 'the sixth time ', 'the seventh time ']
+            self.person.knowledge.add_bit(
+                1, f"Got married {times[self.marriages]}to {partner.name} at age {self.person.age} in {year}.")
             self.marriages += 1
 
         def moved_outoftown(self):
@@ -935,41 +1002,79 @@ class Person:
             if random.random() < self.person.chance_of_dying('childbirth'):
                 self.person.die(' in childbirth')
                 return True
-            self.person.health -= random.randint(0,20) * 0.005
+            self.person.health -= random.randint(0, 20) * 0.005
             return False
+
+        def had_child(self, child):
+            global year 
+
+            if self.person.sex == 'f':
+                if child.alive and self.person.alive:
+                    self.person.knowledge.add_bit(1, f"Gave birth to {child.name} in {year} at age {self.person.age}.")
+                elif not child.alive and not self.person.alive:
+                    self.person.knowledge.add_bit(1, f"Died while giving birth to stillborn {child.name} in {year} at age {self.person.age}.")
+                elif child.alive and not self.person.alive:
+                    self.person.knowledge.add_bit(1, f"Died while giving birth to {child.name} in {year} at age {self.person.age}.")
+                elif not child.alive and self.person.alive:
+                    self.person.knowledge.add_bit(1, f"Gave birth to stillborn {child.name} in {year} at age {self.person.age}.")
+            else: 
+                child_sex = 'son' if child.sex == 'm' else 'daughter'
+                partner = child.parents.woman
+                if child.alive and partner.alive:
+                    self.person.knowledge.add_bit(1, f"Had a {child_sex} with {partner.name}, {child.name}, at age {self.person.age}.")
+                elif not child.alive and not partner.alive:
+                    self.person.knowledge.add_bit(1, f"Lost his wife {partner.name} and their {child_sex} {child.name}  while {partner.name} was giving birth when he was {self.person.age}.")
+                elif child.alive and not partner.alive:
+                    self.person.knowledge.add_bit(1, f"Lost his wife {partner.name} while she was giving birth to {child.name} in {year}.")
+                elif not child.alive and partner.alive:
+                    self.person.knowledge.add_bit(1, f"{partner.name} gave birth to their stillborn {child_sex} {child.name} in {year}.")
+                else:
+                    self.person.knowledge.add_bit(1, f"Had {child_sex} {child.name} with {partner.name} at age {self.person.age} in {year}.")
+
+            self.person.children += 1
 
         """
         FAMILY
         """
         def neglected(self):
             if not self.prev_neglect:
-                self.person.knowledge.add_bit(3, f"Was neglected as a child.")
                 print(f"{self.person.key} was neglected as a child")
                 self.prev_neglect = True
             return True
 
         def mother_died(self, param=""):
-            self.person.knowledge.add_bit(2, f"Lost mother at the age of {self.person.age}{param}.")
+            self.person.knowledge.add_bit(
+                2, f"Lost mother at the age of {self.person.age}{param}.")
             return True
 
         def father_died(self, param=""):
-            self.person.knowledge.add_bit(2, f"Lost father at the age of {self.person.age}{param}.")
-            return True
-
-        def dead_sibling(self, sibling_key, param=""):
-            global people, year
-            sibling = people[sibling_key]
-            self.person.knowledge.add_bit(2, f"Lost sibling {sibling.name} when {sibling.name} was {sibling.age} in {year}{param}.")
+            self.person.knowledge.add_bit(
+                2, f"Lost father at the age of {self.person.age}{param}.")
             return True
         
+        def dead_child(self, child, circumstance=""):
+            child_sex = 'son' if child.sex == 'm' else 'daughter'
+            self.person.knowledge.add_bit(1, f'Lost {child_sex} {child.name} when {child.name} was {child.age} years old{circumstance}.')
+            self.dead_children += 1
+            if self.dead_children > 2 and not self.dead_chidren_bit:
+                self.person.knowledge.add_bit(1, f'Has seen several of their children die.')
+                self.dead_chidren_bit = True
+
+        def dead_sibling(self, sibling, param=""):
+            global year
             
+            self.person.knowledge.add_bit(
+                2, f"Lost sibling {sibling.name} in {year}{param} when {sibling.name} was {sibling.age}.")
+            return True
+
+
 class Relationship:
     def __init__(self, man, woman, key, married=True, assigned_house=None):
         self.active = True
         self.key = key
         self.married = married
         self.family_values = [[], []]
-        
+
         # members
         self.man = man
         self.woman = woman
@@ -1001,41 +1106,53 @@ class Relationship:
         family_tree.edge(self.woman.key, self.key, weight='12')
         family_tree.edge(self.man.key, self.key, weight='12')
 
-        # organize house 
+        # organize house
         self.init_household(assigned_house)
-        
+
     def init_household(self, assigned_house):
         random.seed()
         if assigned_house == None and self.married:
             if self.woman.breadwinner:
                 self.woman.house.add_person(self.man, 'married')
                 self.man.house.update_roles(care_candidate=self.man)
-                self.man.knowledge.add_bit(3, f"Moved in with wife {self.woman.name} after marriage.")
-                self.woman.knowledge.add_bit(3, f"Had {self.man.name} move in at {self.woman.house.key} after marriage.")
-            elif self.man.breadwinner:
+                self.man.knowledge.add_bit(
+                    3, f"Moved in with wife {self.woman.name} after marriage.")
+                self.woman.knowledge.add_bit(
+                    3, f"Had {self.man.name} move in at {self.woman.house.key} after marriage.")
+                self.man.independent = True
+            elif self.man.breadwinner and self.man.independent:
                 self.man.house.add_person(self.woman, 'married')
                 self.man.house.update_roles(care_candidate=self.woman)
-                self.woman.knowledge.add_bit(2, f"Moved in with husband {self.man.name} after marriage.")
-                self.man.knowledge.add_bit(2, f"Had {self.woman.name} move in at {self.man.house.key} after marriage.")
+                self.woman.knowledge.add_bit(
+                    2, f"Moved in with husband {self.man.name} after marriage.")
+                self.man.knowledge.add_bit(
+                    2, f"Had {self.woman.name} move in at {self.man.house.key} after marriage.")
+                self.woman.independent = True
             else:
                 # print(f"{self.man.key} moved in with {self.woman.key}")
                 if self.man.income_class in empty_houses and empty_houses[self.man.income_class] != []:
-                    house_key = random.choice(empty_houses[self.man.income_class])
+                    house_key = random.choice(
+                        empty_houses[self.man.income_class])
                     new_house = houses[house_key]
-                    new_house.add_people([self.man, self.woman])
-                    new_house.update_roles(care_candidate=self.woman, bread_candidate=self.man)
+                    new_house.add_people([self.man, self.woman], 'married')
+                    new_house.update_roles(
+                        care_candidate=self.woman, bread_candidate=self.man)
+                    self.man.independent, self.woman.independent = True, True
                 else:
                     # move in with husband family
-                    if random.random() < 0.6:
+                    if random.random() < 0.5:
                         self.man.house.add_person(self.woman, 'married')
                         self.man.house.update_roles(care_candidate=self.woman)
-                        self.woman.knowledge.add_bit(2, f"Moved in with husband {self.man.name}'s family after marriage.")
-                        self.man.knowledge.add_bit(2, f"Had {self.woman.name} move into family home at {self.man.house.key} after marriage.")
+                        self.woman.knowledge.add_bit(
+                            2, f"Moved in with husband {self.man.name}'s family after marriage.")
+                        self.man.knowledge.add_bit(
+                            2, f"Had {self.woman.name} move into family home at {self.man.house.key} after marriage.")
                     else:
                         outside.move_couple_outoftown(self)
         elif self.married:
-            self.man.house.update_roles(care_candidate=self.woman, bread_candidate=self.man)
-    
+            self.man.house.update_roles(
+                care_candidate=self.woman, bread_candidate=self.man)
+
     def set_familyvalues(self):
         for partner in [self.man, self.woman]:
             for trait, score in partner.personality.jsonify_all().items():
@@ -1058,7 +1175,8 @@ class Relationship:
             if self.married:
                 self.man.married = False
                 if self.man.alive:
-                    self.man.knowledge.add_bit(1, f"Became a widower at {self.man.age}{circumstance}.")
+                    self.man.knowledge.add_bit(
+                        1, f"Became a widower at {self.man.age}.")
             for child in self.children:
                 if child.alive:
                     child.trigger.mother_died(circumstance)
@@ -1066,7 +1184,8 @@ class Relationship:
             if self.married:
                 self.woman.married = False
                 if self.woman.alive:
-                    self.woman.knowledge.add_bit(1, f"Became a widow at {self.man.age}{circumstance}.")
+                    self.woman.knowledge.add_bit(
+                        1, f"Became a widow at {self.man.age}{circumstance}.")
             for child in self.children:
                 if child.alive:
                     child.trigger.father_died(circumstance)
@@ -1074,12 +1193,10 @@ class Relationship:
             pass
 
         active_couples.pop(self.key)
-                    
+
     def add_child(self):
         global network, family_tree
         self.no_children += 1
-        self.man.children += 1
-        self.woman.children += 1
 
         # init_child
         child_key = f"{self.key}c{self.no_children}"
@@ -1088,41 +1205,49 @@ class Relationship:
             self.children.append(child)
         except:
             print(f"couldnt init child {self.no_children} of {self.key}")
-            print(self.man.jsonify())
-            print("----")
-            print(self.woman.jsonify())
-            print("----------------------")
+   
+        # order is important for triggers
         child.trigger.birth()
         self.woman.trigger.childbirth()
+        self.woman.trigger.had_child(child)
+        self.man.trigger.had_child(child)
 
         # add to family tree
         family_tree.edge(self.key, child_key, weight='6')
-    
+
     """
     TRIGGERS & EVENTS
     """
+
     def relationship_trigger(self, trigger, param=None):
         """
-        dead child: param tuple of (name_child, age_child)
+        dead child: param=(child)
+        adopt grandchild: param=(child)
         """
         if trigger == 'dead child':
             self.dead_children += 1
-            name_child, age_child = param
-
+            child = param
             # parents
             if self.man.alive:
-                self.man.add_bit(
-                    2, f"Lost their child {name_child} when {name_child} was {age_child} years old.")
+                self.man.trigger.dead_child(child)
             if self.woman.alive:
-                self.woman.add_bit(
-                    2, f"Lost their child {name_child} when {name_child} was {age_child} years old.")
+                self.woman.trigger.dead_child(child)
 
             # children
-            for child in self.children:
-                if child.alive:
-                    child.add_bit(
-                        2, f"Lost their sibling {name_child} when {child.name} was {child.age} and {name_child} was {age_child}.")
+            for sibling in self.children:
+                if sibling.alive:
+                    sibling.trigger.dead_sibling(child)
 
+        elif trigger == 'adopt grandchild':
+            child = param
+            if self.man.alive:
+                self.man.knowledge.add_bit(1, f"Took grandchild {child.name} in when {child.name} was {child.age}.")
+                house = self.man.house
+            if self.woman.alive:
+                self.woman.knowledge.add_bit(1, f"Took grandchild {child.name} in when {child.name} was {child.age}.")
+                house = self.woman.house
+            house.add_person(child, 'adopted')
+            
     def relationship_events(self):
         # having a child
         child_chance = self.pregnancy_chance()
@@ -1147,18 +1272,19 @@ class Relationship:
 
 
 class House:
-    def __init__(self, income, street, section, number, function=None, material='wood', key='r'):
+    def __init__(self, income, street, section, number, city, function=None, material='wood', key='r'):
         # People
         self.inhabitants = []
         self.inh_count = 0
         self.breadwinners = []
         self.caretakers = []
         self.care_dependant = []
-        
+
         # Household
+        self.city = city
         self.income_class = income
         self.street = street
-        self.section = section 
+        self.section = section
         self.number = number
         if key == 'r':
             self.key = f"{self.street.name}.{self.section.relative_key}.{self.number}"
@@ -1180,10 +1306,11 @@ class House:
         empty_houses[self.income_class].append(self.key)
 
         houses[self.key] = self
-            
+
     """
     PEOPLE MANAGEMENT
     """
+
     def add_person(self, inhabitant, reason):
         """
         REASONS:
@@ -1198,15 +1325,15 @@ class House:
             empty_houses[self.income_class].remove(self.key)
         self.inh_count += 1
 
-        if reason=='birthed':
+        if reason == 'birthed':
             text = f"{inhabitant.name} was born in {self.street.name} in {year}."
-        elif reason =='adopted':
-            text = f"{inhabitant.name} was adopted into the household at {self.key} in {year} at age {self.inhabitant.age}."
+        elif reason == 'adopted':
+            text = f"{inhabitant.name} was adopted into the household at {self.key} in {year} at age {inhabitant.age}."
         elif reason == 'married':
             text = f"{inhabitant.name} moved to {self.key} after marriage."
-        elif reason == 'married':
+        elif reason == 'moved':
             text = f"{inhabitant.name} moved to {self.key} in {year}."
-        else: 
+        else:
             text = f"{inhabitant.name} moved to {self.key} at age {inhabitant.age} because of {reason}."
         inhabitant.knowledge.add_bit(0, text)
 
@@ -1224,6 +1351,7 @@ class House:
         REASONS:
         - died
         - married
+        - orphaned
         - moved_city
         - moved_outside
         """
@@ -1232,12 +1360,16 @@ class House:
             if self.income_class not in empty_houses:
                 empty_houses[self.income_class] = []
             empty_houses[self.income_class].append(self.key)
+
         self.inhabitants = [x for x in self.inhabitants if x.key != key]
         self.care_dependant = [x for x in self.care_dependant if x.key != key]
+        self.breadwinners = [x for x in self.breadwinners if x.key != key]
+        self.caretakers = [x for x in self.caretakers if x.key != key]
 
     """
     HOUSEHOLD MANAGEMENT
     """
+
     def update_roles(self, care_candidate=None, bread_candidate=None):
         if care_candidate != None:
             if len(self.caretakers) < 3:
@@ -1246,11 +1378,12 @@ class House:
                 if self.care_dependant != []:
                     children = ""
                     for ch in self.care_dependant:
-                        ch.knowledge.add_bit(2, f"{care_candidate.name} took care of {ch.name} since {ch.name} was {ch.age}.")
+                        ch.knowledge.add_bit(
+                            2, f"{care_candidate.name} took care of {ch.name} since {ch.name} was {ch.age}.")
                         children += f"{ch.name}, "
-                    care_candidate.knowledge.add_bit(2, f"Became caretaker of {children[:-2]} at age {care_candidate.age}.")
+                    care_candidate.knowledge.add_bit(
+                        2, f"Became caretaker of {children[:-2]} at age {care_candidate.age}.")
                     # print(care_candidate.key)
-
 
         if bread_candidate != None:
             if len(self.breadwinners) < 4:
@@ -1268,7 +1401,7 @@ class House:
                 elif option.sex == 'f' and i.sex == 'm':
                     option = i
             else:
-                if i.age > 14:
+                if i.age > 16:
                     option = i
 
         if option != None:
@@ -1290,9 +1423,11 @@ class House:
 
         if option != None:
             self.update_roles(care_candidate=option)
-    
+
     def relocate_members(self):
-        pass
+        for i in self.inhabitants:
+            self.remove_person(i.key, 'orphaned')
+            self.city.find_house_for(i)                 
 
     """
     EVENTS
@@ -1314,7 +1449,7 @@ class House:
         - 
         """
         for i in self.care_dependant:
-            if i.age > 12:
+            if i.age > 13:
                 self.care_dependant.remove(i)
 
         # check if there is still a breadwinner
@@ -1332,17 +1467,25 @@ class House:
     """
     def get_householdmembers(self):
         return self.inhabitants
-    
-    def household_summary(self):
-        return [(x.key, x.name) for x in self.inhabitants]
 
+    def household_summary(self):
+        return {
+            "income_class" : self.income_class,
+            "breadwinners" : [(x.key, x.name) for x in self.breadwinners],
+            "caretakers" : [(x.key, x.name) for x in self.caretakers],
+            "care dependant" : [(x.key, x.name) for x in self.care_dependant],
+            "inhabitants" : [(x.key, x.name) for x in self.inhabitants]
+        }
+        
 
 class City:
-    def __init__(self, start_year, end_year=1400):
+    def __init__(self, start_year, outside, end_year=1400):
         global year, houses
         year = start_year
         self.buurten, self.streets = self.read_cityfiles()
         self.start_year, self.end_year = start_year, end_year
+        self.outside = outside
+        outside.city = self
         self.init_town()
         self.time()
 
@@ -1359,18 +1502,18 @@ class City:
                 if row[0] not in buurten:
                     buurten[row[0]] = []
                 buurten[row[0]].append(row[1])
-        
+
         streets = {}
         with open('sources/SectionStreets.csv', 'r') as cfile:
             csvreader = csv.reader(cfile)
             for row in csvreader:
-                streets[row[0]] = self.Street(row[0], row)
+                streets[row[0]] = self.Street(row[0], row, self)
 
         return buurten, streets
 
     def init_town(self):
         global houses, empty_houses, total_marriages, towns_people
-        
+
         random.seed()
         for home in houses.values():
             inhabitants = []
@@ -1384,9 +1527,11 @@ class City:
 
                 # keys & people
                 w, h = f"{total_marriages}a", f"{total_marriages}b"
-                wife = Person(None, w, house=home, sex='f', age=wife_age, married=True)
-                husband = Person(None, h, house=home, sex='m', age=husband_age, married=True)
-                
+                wife = Person(None, w, house=home, sex='f',
+                              age=wife_age, married=True, emancipated=True, independent=True)
+                husband = Person(None, h, house=home, sex='m',
+                                 age=husband_age, married=True, emancipated=True, independent=True)
+
                 self.marry(wife, husband, assigned_home=home)
 
             # roommates
@@ -1397,7 +1542,8 @@ class City:
                 for _ in range(no_inhabitants):
                     age = random.randint(age_lowest, age_lowest + 10)
                     key = f"{towns_people}"
-                    inhabitant = Person(None, key, house=home, sex=sex, age=age)
+                    inhabitant = Person(
+                        None, key, house=home, sex=sex, age=age)
                     inhabitants.append(inhabitant)
                 home.add_people(inhabitants)
         self.print_stats()
@@ -1405,6 +1551,7 @@ class City:
     """
     COMMUNITY BUILDING
     """
+
     def marry(self, wife, husband, assigned_home=None):
         global total_marriages
 
@@ -1413,14 +1560,65 @@ class City:
 
         # create relationship and add to inventory
         Relationship(husband, wife, key, assigned_house=assigned_home)
+        husband.emancipated = True
+        wife.emancipated = True
         total_marriages += 1
+
+    def find_house_for(self, person):
+        global empty_houses
+        # TODO: find house through connections
+        if person.age < 16:
+            print(f"{person.key} needs a house")
+            if person.parents != None:
+                # check if they can live with sibling
+                for sibling in person.parents.children:
+                    if sibling.key != person.key and sibling.alive and sibling.emancipated and sibling.independent:
+                        person.knowledge.add_bit(1, f"Went to live with sibling {sibling.name} at age {i.age}.")
+                        if sibling.house != None:
+                            sibling.house.add_person(person, 'adopted')
+                            return
+
+                # check if they can live with paternal family
+                if person.parents.man.parents != None:
+                    if person.parents.man.parents.man.alive or person.parents.man.parents.woman.alive:
+                        person.parents.man.parents.relationship_trigger('adopt grandchild', person)
+                        return
+                    for unclaunt in person.parents.man.parents.children:
+                        if unclaunt.alive and unclaunt.emancipated and unclaunt.house != None:
+                            person.knowledge.add_bit(1, f"Went to live with father's sibling {unclaunt.name} at age {i.age}.")
+                            unclaunt.house.add_person(person, 'adopted')
+                            return
+
+                # check if they can live with maternal family
+                if person.parents.woman.parents != None:
+                    if person.parents.woman.parents.man.alive or person.parents.woman.parents.woman.alive:
+                        person.parents.man.parents.relationship_trigger('adopt grandchild', person)
+                        return
+                    for unclaunt in person.parents.woman.parents.children:
+                        if unclaunt.alive and unclaunt.emancipated and unclaunt.house != None and unclaunt.independent:
+                            person.knowledge.add_bit(1, f"Went to live with mother's sibling {unclaunt.name} at age {i.age}.")
+                            unclaunt.house.add_person(person, 'adopted')
+                            return
+                            
+            self.outside.send_toorphanage(person)
+            return
+
+        if person.income_class in empty_houses and empty_houses[person.income_class] != []:
+            house_key = random.choice(
+                        empty_houses[person.income_class])
+            new_house = houses[house_key]
+            new_house.add_person(person, 'moved')
+            new_house.update_roles(
+                care_candidate=person, bread_candidate=person)
+        else:
+            self.outside.move_outoftown(person)
 
     def match_com(self):
         """
         Matches bachelors and bachelorettes. 
         """
         global bachelors, bachelorettes
-        
+
         for bachelor in bachelors:
             if bachelorettes == []:
                 return
@@ -1446,10 +1644,12 @@ class City:
 
     def community_events(self):
         self.match_com()
+        self.outside.yearly_events()
 
     """
     TIME FLIES WHEN YOU'RE HAVING FUN
     """
+
     def time(self):
         """
         Runs the time loop 
@@ -1461,7 +1661,7 @@ class City:
             deads, births = 0, 0
             for r in list(active_couples.values()):
                 r.relationship_events()
-                
+
             for p in list(alive.values()):
                 p.personal_events()
 
@@ -1484,6 +1684,7 @@ class City:
     """
     OUTPUT METHODS
     """
+
     def output_people(self, mode="all"):
         global alive, people, dead
         # print(people)
@@ -1502,7 +1703,7 @@ class City:
         for individual in database.values():
             with open(f"people/{individual.key}.json", "w") as output:
                 json.dump(individual.jsonify(), output)
-        
+
     def output_houses(self):
         global houses
 
@@ -1513,7 +1714,7 @@ class City:
 
         for h in houses.values():
             with open(f"houses/{h.key}.json", "w") as output:
-                json.dump({"summary" : h.household_summary()}, output)
+                json.dump({"summary": h.household_summary()}, output)
 
     def print_stats(self):
         global year, total_marriages, births, deads, dead
@@ -1527,20 +1728,23 @@ class City:
     CLASSES
     """
     class Street:
-        def __init__(self, name, inputlist):
+        def __init__(self, name, inputlist, city):
             self.name = name
+            self.city = city
             self.sections = self.init_street(inputlist)
             # self.empty_lots = copy.deepcopy(self.total_lots)
 
         def init_street(self, row):
             if row == []:
                 return
-            cols = ['street', 'A', 'class', 'B', 'class', 'C', 'class', 'D', 'class', 'E', 'class']
+            cols = ['street', 'A', 'class', 'B', 'class',
+                    'C', 'class', 'D', 'class', 'E', 'class']
             sections = {}
             for i in range(1, 11, 2):
                 if row[i] == '' or i >= len(row):
                     break
-                sections[cols[i]] = self.Section(int(row[i]), int(row[i+1]), self, cols[i])
+                sections[cols[i]] = self.Section(
+                    int(row[i]), int(row[i+1]), self, cols[i], self.city)
             return sections
 
         def street_summary(self):
@@ -1550,24 +1754,25 @@ class City:
             return summary
 
         class Section:
-            def __init__(self, no_houses, income_class, street, key):
+            def __init__(self, no_houses, income_class, street, key, city):
                 self.total_lots = no_houses
                 self.empty_lots = copy.deepcopy(self.total_lots)
                 self.relative_key = key
                 self.in_class = income_class
                 self.street = street
+                self.city = city
                 self.houses = self.init_houses()
 
             def init_houses(self):
                 section = []
                 for i in range(self.total_lots):
-                    section.append(House(self.in_class, self.street, self, i))
+                    section.append(House(self.in_class, self.street, self, i, self.city))
                 return section
 
             def get_section_summary(self):
                 summary = {}
                 for house in self.houses:
-                    summary[house.key] =  house.household_summary()
+                    summary[house.key] = house.household_summary()
                 return summary
 
 
@@ -1576,4 +1781,4 @@ class City:
 #     Person(None, '2')
 # except:
 #     print("fail")
-City(1370)
+City(1370, outside)
