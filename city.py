@@ -286,7 +286,7 @@ class Person:
         self.init_existence()
 
     """
-    LIVING & DYING
+    INITIALISATION
     """
     def get_birthday(self):
         global year
@@ -324,6 +324,9 @@ class Person:
                 own_ch.append(random.choice(characteristics))
         return own_ch
 
+    """
+    LIVING & DYING
+    """
     def init_existence(self):
         global towns_people, alive, births, houses
 
@@ -358,7 +361,7 @@ class Person:
         # process global networks
         dead[self.key] = self
         family_tree.node(self.key, label=self.name, color='orange')
-        network.remove_node(self.key)
+        # network.remove_node(self.key)
 
         # create bits
         self.knowledge.add_bit(0, f"Died at age {self.age}{circumstance}.")
@@ -486,14 +489,7 @@ class Person:
                     # broadcast intention to look for lover
                     pass
 
-        # making friends and connections:
-        # if random.random() < 0.7:
-        #     if self.age < 13:
-        #         self.connections.broadcast_intention('find_child_friend')
-        #     else:
-                # self.connections.broadcast_intention('find_connection')
-
-        # self.connections.social_life()
+        self.connections.social_life()
 
         # emancipation
         if not self.emancipated:
@@ -501,6 +497,8 @@ class Person:
 
     def jsonify(self):
         global network
+        children = None # [c.key for c in r.children for r in self.relationships]
+        rs = [f"{r.man.key}, {r.woman.key}" for r in self.relationships]
         person = {}
         person["alive"] = self.alive
         person["house"] = None if self.house == None else self.house.key
@@ -518,13 +516,15 @@ class Person:
         person["procedural"] = {
             "age": self.age,
             "married": self.married,
+            "relationships" : rs,
             'no_children': self.children,
-            'connections': self.connections.get_network(),
+            "children" : children
         }
         person["personality"] = {
             "sins": self.personality.jsonify_sins(),
             "virtues": self.personality.jsonify_virtues()
         }
+        person["network"] = self.connections.get_network()
         person["events"] = self.knowledge.get_descriptions()
 
         return person
@@ -781,7 +781,7 @@ class Person:
             self.current_friends = []
 
             self.init_family_network()
-            # self.init_household_network()
+            self.init_household_network()
 
         def init_family_network(self):
             global network
@@ -803,10 +803,12 @@ class Person:
         def init_household_network(self):
             global network
             if self.house:
-                # what if roommate is extended family?
+                # what if roommate is extended family?             
+                # print(network[self.own_key])
                 for roommate in self.house.inhabitants:
-                    if roommate.key not in network[self.own_key]:
-                        self.make_connection(roommate.key, 'other')
+                    if not network.has_edge(self.own_key, roommate.key):
+                        if roommate.alive:
+                            self.make_connection(roommate.key, 'other')
 
         def broadcast_intention(self, intent, depth=2):
             """
@@ -820,9 +822,13 @@ class Person:
             edges = network.edges(self.own_key)
             options = []
             for _, v in edges:
-                suggestions = people[v].connections.receive_intention(
-                    intent, self.own_key, self.own_key, depth, [])
-                options.extend(suggestions)
+                try:
+                    suggestions = people[v].connections.receive_intention(
+                        intent, self.own_key, self.own_key, depth, [])
+                    options.extend(suggestions)
+                except:
+                    pass
+                    # print(f"Got suggestion {v}")
 
             if intent == 'find_child_friend':
                 rel_mod = random.randint(-20, 30)
@@ -907,6 +913,14 @@ class Person:
             random.seed()
             edges = network.edges(self.own_key)
 
+            # making new friends and connections:
+            # if random.random() < 0.5:
+            #     if self.person.age < 13 and self.person.age > 4:
+            #         self.broadcast_intention('find_child_friend')
+            #     else:
+            #         self.broadcast_intention('find_connection')
+
+            # maintain relations with
             for u, v in edges:
                 index_mod = copy.deepcopy(
                     network.get_edge_data(u, v)['index_mod'])
@@ -922,14 +936,14 @@ class Person:
                 event = random.randint(-30, 30) + index_mod
                 mod = age_mod if event > 0 else -1 * age_mod
 
-                if abs(event) < 15:
+                if abs(event) < 22:
                     points = 0
-                elif abs(event) < 20:
-                    points = 10
                 elif abs(event) < 25:
-                    points = 20
+                    points = 5
+                elif abs(event) < 28:
+                    points = 10
                 else:
-                    points = 30
+                    points = 20
 
                 new_weight = network[u][v]['weight'] + (mod * points)
                 network[u][v]['weight'] = new_weight
@@ -937,7 +951,7 @@ class Person:
         def get_network(self):
             global network
             social_network = {'family': {}, 'outsider': {},
-                              'sibling': {}, 'parent': {}}
+                              'sibling': {}, 'parent': {}, 'other' : {}}
             edges = network.edges(self.own_key)
             for u, v in edges:
                 data = network.get_edge_data(u, v)
@@ -1120,7 +1134,7 @@ class Relationship:
         self.married = married
         self.family_values = [[], []]
 
-        # members
+        # family members
         self.man = man
         self.woman = woman
         self.children = []
@@ -1157,7 +1171,7 @@ class Relationship:
     def init_household(self, assigned_house):
         random.seed()
         if assigned_house == None and self.married:
-            if self.woman.breadwinner and self.woman.house != None:
+            if self.woman.breadwinner and self.woman.house != None and not self.man.breadwinner:
                 self.woman.house.add_person(self.man, 'married')
                 self.man.house.update_roles(care_candidate=self.man)
                 self.man.knowledge.add_bit(
@@ -1224,9 +1238,9 @@ class Relationship:
                 if self.man.alive:
                     self.man.knowledge.add_bit(
                         1, f"Became a widower at {self.man.age}.")
-            for child in self.children:
-                if child.alive:
-                    child.trigger.mother_died(circumstance)
+            # for child in self.children:
+            #     if child.alive:
+            #         child.trigger.mother_died(circumstance)
 
         elif cause == 'man_died':
             if self.married:
@@ -1603,7 +1617,8 @@ class City:
 
     def init_town(self):
         global houses, empty_houses, total_marriages, towns_people
-
+        solo_key = 0
+        
         random.seed()
         for home in houses.values():
             inhabitants = []
@@ -1631,10 +1646,11 @@ class City:
                 sex = 'f' if random.random() < 0.4 else 'm'
                 for _ in range(no_inhabitants):
                     age = random.randint(age_lowest, age_lowest + 10)
-                    key = f"{towns_people}"
+                    key = f"{solo_key}s"
                     inhabitant = Person(
                         None, key, house=home, sex=sex, age=age)
                     inhabitants.append(inhabitant)
+                    solo_key += 1
                 home.add_people(inhabitants)
         # self.print_stats()
 
@@ -1659,7 +1675,6 @@ class City:
         # TODO: find house through connections
         if person.age < 16:
             if person.parents != None:
-                print(f"{person.key}")
                 # check if they can live with sibling
                 for sibling in person.parents.children:
                     if sibling.key != person.key and sibling.alive and sibling.independent:
@@ -1769,9 +1784,10 @@ class City:
             year += 1
             bachelors, bachelorettes = [], []
 
-        # print("got out of time loop")
-        self.output_people()
+        # # print("got out of time loop")
+        #     self.output_people()
         self.output_houses()
+        self.output_people()
         # self.draw_community()
         # family_tree.format = 'pdf'
         # family_tree.view()

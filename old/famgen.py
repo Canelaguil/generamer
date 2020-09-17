@@ -23,12 +23,16 @@ class Generations:
         for _ in range(gens - 1):
             self.forge_friendships()
             self.add_generation()
-            self.draw_network()
             self.print_stats()
 
+        
+        self.draw_network()
+        # family_tree.format = 'pdf'
+        self.G.view()
+
         # Print to output
-        if json:
-            self.jsonify()
+        # if json:
+        #     self.jsonify()
 
     def jsonify(self):
         """
