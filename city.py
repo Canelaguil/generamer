@@ -777,38 +777,33 @@ class Person:
             self.person = person
             self.own_key = person.key
             self.house = house
+            self.dead_connections = []
             self.past_friends = []
             self.current_friends = []
 
-            self.init_family_network()
-            self.init_household_network()
+            self.init_network()
 
-        def init_family_network(self):
+        def init_network(self):
             global network
 
-            if self.person.parents == None:
-                return
-            else:
-                # print("made parental connection")
-                if self.person.parents.woman.alive:
-                    self.make_connection(
-                        self.person.parents.woman.key, 'parent')
-                if self.person.parents.man.alive:
-                    self.make_connection(self.person.parents.man.key, 'parent')
+            for householdmember in self.house.get_householdmembers():
+                other_key = householdmember.key
+                self.make_connection(other_key, 'household')
 
-            for sibling in self.person.parents.children:
-                if sibling.alive:
-                    self.make_connection(sibling.key, 'sibling')
+            for sectionmember in self.house.section.get_people():
+                other_key = sectionmember.key
+                if not network.has_edge(self.own_key, other_key):
+                    self.make_connection(other_key, 'section')
 
-        def init_household_network(self):
-            global network
-            if self.house:
-                # what if roommate is extended family?             
-                # print(network[self.own_key])
-                for roommate in self.house.inhabitants:
-                    if not network.has_edge(self.own_key, roommate.key):
-                        if roommate.alive:
-                            self.make_connection(roommate.key, 'other')
+            for streetmember in self.house.street.get_street():
+                other_key = streetmember.key
+                if not network.has_edge(self.own_key, other_key):
+                    self.make_connection(other_key, 'street')
+
+            # for neighbor in self.house.section.get_people():
+            #     other_key = streetmember.key
+            #     if not network.has_edge(self.own_key, other_key):
+            #         self.make_connection(other_key, 'street')
 
         def broadcast_intention(self, intent, depth=2):
             """
@@ -889,41 +884,39 @@ class Person:
         def make_connection(self, other_key, nature, preset_rel=0):
             """
             INPUT:
-            - other_key
-            - nature
-            - (preset_rel)
+            - len 1: household (children/parents/spouses)
+            - len 2: section
+            - len 3: street
+            - len 4: neighborhood
+            - len 5: city
+            - len 6: outside (not for init)
             """
             global network
 
+            edge_length = {'household' : 0, 'section' : 1, 'street' : 2, 
+                           'neighborhood' : 3, 'city' : 4, 'outside' : 5}[nature]
             index_mod = self.get_indexmodifier(other_key)
-            if nature == 'parent':
+
+            if nature == 'household':
                 rel = random.randint(10, 40)
-            elif nature == 'sibling':
-                rel = random.randint(5, 25)
-            elif nature == 'family':
-                rel = random.randint(0, 15)
             else:
                 rel = random.randint(-10, 10)
 
             rel += preset_rel
             network.add_edge(self.own_key, other_key, weight=rel,
-                             index_mod=index_mod, nature=nature)
+                             index_mod=index_mod, nature=nature, length=edge_length)
 
         def social_life(self):
+            global network
             random.seed()
-            edges = network.edges(self.own_key)
-
-            # making new friends and connections:
-            # if random.random() < 0.5:
-            #     if self.person.age < 13 and self.person.age > 4:
-            #         self.broadcast_intention('find_child_friend')
-            #     else:
-            #         self.broadcast_intention('find_connection')
-
+            relations = sorted(network[self.own_key].items(), key=lambda edge: edge[1]['length'])
+            people = [[], [], [], [], [], []]
+            [people[i[1]['length']].append(i[0]) for i in relations]
+            print(relations)
             # maintain relations with
-            for u, v in edges:
+            for u in relations.keys():
                 index_mod = copy.deepcopy(
-                    network.get_edge_data(u, v)['index_mod'])
+                    network.get_edge_data(self.own_key, u)['index_mod'])
                 age_mod = 1.5 if self.person.age < 12 else 1
 
                 """
@@ -945,13 +938,13 @@ class Person:
                 else:
                     points = 20
 
-                new_weight = network[u][v]['weight'] + (mod * points)
-                network[u][v]['weight'] = new_weight
+                new_weight = network[self.own_key][u]['weight'] + (mod * points)
+                network[self.own_key][u]['weight'] = new_weight
 
         def get_network(self):
             global network
-            social_network = {'family': {}, 'outsider': {},
-                              'sibling': {}, 'parent': {}, 'other' : {}}
+            social_network = {'household': {}, 'section': {}, 'street': {},
+                              'neighborhood': {}, 'city' : {}, 'outside' : {}}
             edges = network.edges(self.own_key)
             for u, v in edges:
                 data = network.get_edge_data(u, v)
@@ -1248,9 +1241,6 @@ class Relationship:
                 if self.woman.alive:
                     self.woman.knowledge.add_bit(
                         1, f"Became a widow at {self.man.age}{circumstance}.")
-            for child in self.children:
-                if child.alive:
-                    child.trigger.father_died(circumstance)
 
         elif cause == 'separated':
             pass
@@ -1352,7 +1342,7 @@ class House:
         self.caretakers = []
         self.care_dependant = []
 
-        # Household
+        # House
         self.city = city
         self.income_class = income
         self.street = street
@@ -1832,7 +1822,7 @@ class City:
         print("---------------------------------")
         print(f"| {year} | +{births} -{deads}")
         print(f"Marriages: {total_marriages}")
-        print(f"Currently alive: {towns_people}")
+        print(f"Number of inhabitants: {towns_people}")
         print(f"Total died: {len(dead)}")
 
     """
@@ -1842,8 +1832,8 @@ class City:
         def __init__(self, name, inputlist, city):
             self.name = name
             self.city = city
+            self.houses = []
             self.sections = self.init_street(inputlist)
-            # self.empty_lots = copy.deepcopy(self.total_lots)
 
         def init_street(self, row):
             if row == []:
@@ -1856,13 +1846,24 @@ class City:
                     break
                 sections[cols[i]] = self.Section(
                     int(row[i]), int(row[i+1]), self, cols[i], self.city)
+                self.houses.extend(sections[cols[i]].houses)
             return sections
+
+        def get_houses(self):
+            return self.houses
 
         def street_summary(self):
             summary = {}
             for s in self.sections.values():
                 summary[s.relative_key] = s.get_section_summary
             return summary
+
+        def get_street(self):
+            street = []
+            for h in self.houses:
+                street.extend(h.get_householdmembers())
+            return street
+
 
         class Section:
             def __init__(self, no_houses, income_class, street, key, city):
@@ -1886,10 +1887,11 @@ class City:
                     summary[house.key] = house.household_summary()
                 return summary
 
+            def get_people(self):
+                people = []
+                for house in self.houses:
+                    people.extend(house.get_householdmembers())
+                return people
 
-# houses['outside'] = House(1, None, None, 0, key='outside')
-# try:
-#     Person(None, '2')
-# except:
-#     print("fail")
+
 City(1370, outside)

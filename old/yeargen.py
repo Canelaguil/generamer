@@ -817,7 +817,7 @@ class Person:
         return person
 
 
-class Relationship:
+class Relationship:()
     def __init__(self, man, woman, key, married=True):
         global s_names, w_names, m_names
         global family_tree, network
