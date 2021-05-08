@@ -15,7 +15,7 @@ dead = {}
 people = {}
 active_couples = {}
 towns_people = 0
-births, deads = 0, 0
+births, deaths = 0, 0
 total_marriages = 0
 
 
@@ -352,8 +352,8 @@ class Person:
         self.income_class = self.house.income_class
 
     def die(self, circumstance=""):
-        global towns_people, alive, deads
-        deads += 1
+        global towns_people, alive, deaths
+        deaths += 1
         towns_people -= 1
         alive.pop(self.key)
         self.alive = False
@@ -908,38 +908,38 @@ class Person:
 
         def social_life(self):
             global network
-            random.seed()
-            relations = sorted(network[self.own_key].items(), key=lambda edge: edge[1]['length'])
-            people = [[], [], [], [], [], []]
-            [people[i[1]['length']].append(i[0]) for i in relations]
-            print(relations)
+            # random.seed()
+            # relations = sorted(network[self.own_key].items(), key=lambda edge: edge[1]['length'])
+            # people = [[], [], [], [], [], []]
+            # [people[i[1]['length']].append(i[0]) for i in relations]
+            # print(relations)
             # maintain relations with
-            for u in relations.keys():
-                index_mod = copy.deepcopy(
-                    network.get_edge_data(self.own_key, u)['index_mod'])
-                age_mod = 1.5 if self.person.age < 12 else 1
+            # for u in relations:
+            #     index_mod = copy.deepcopy(
+            #         network.get_edge_data(self.own_key, u)['index_mod'])
+            #     age_mod = 1.5 if self.person.age < 12 else 1
 
-                """
-                RANGE: -30-30
-                - < 15 : nothing happens
-                - 15-20 : small event
-                - 20-25 : medium event
-                - 25-30: big event
-                """
-                event = random.randint(-30, 30) + index_mod
-                mod = age_mod if event > 0 else -1 * age_mod
+            #     """
+            #     RANGE: -30-30
+            #     - < 15 : nothing happens
+            #     - 15-20 : small event
+            #     - 20-25 : medium event
+            #     - 25-30: big event
+            #     """
+            #     event = random.randint(-30, 30) + index_mod
+            #     mod = age_mod if event > 0 else -1 * age_mod
 
-                if abs(event) < 22:
-                    points = 0
-                elif abs(event) < 25:
-                    points = 5
-                elif abs(event) < 28:
-                    points = 10
-                else:
-                    points = 20
+            #     if abs(event) < 22:
+            #         points = 0
+            #     elif abs(event) < 25:
+            #         points = 5
+            #     elif abs(event) < 28:
+            #         points = 10
+            #     else:
+            #         points = 20
 
-                new_weight = network[self.own_key][u]['weight'] + (mod * points)
-                network[self.own_key][u]['weight'] = new_weight
+            #     new_weight = network[self.own_key][u]['weight'] + (mod * points)
+            #     network[self.own_key][u]['weight'] = new_weight
 
         def get_network(self):
             global network
@@ -1755,10 +1755,10 @@ class City:
         Runs the time loop 
         """
         global bachelors, bachelorettes, alive, houses
-        global year, deads, births, active_couples
+        global year, deaths, births, active_couples
 
         while year < self.end_year:
-            deads, births = 0, 0
+            deaths, births = 0, 0
             for r in list(active_couples.values()):
                 r.relationship_events()
 
@@ -1818,9 +1818,9 @@ class City:
                 json.dump({"summary": h.household_summary()}, output)
 
     def print_stats(self):
-        global year, total_marriages, births, deads, dead
+        global year, total_marriages, births, deaths, dead
         print("---------------------------------")
-        print(f"| {year} | +{births} -{deads}")
+        print(f"| {year} | +{births} -{deaths}")
         print(f"Marriages: {total_marriages}")
         print(f"Number of inhabitants: {towns_people}")
         print(f"Total died: {len(dead)}")
