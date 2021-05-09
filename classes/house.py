@@ -51,13 +51,13 @@ class House:
         self.inh_count += 1
 
         if reason == 'birthed':
-            text = f"{inhabitant.name} was born in {self.street.name} in {self.city.year}."
+            text = f"{inhabitant.name} was born in {self.street.name}."
         elif reason == 'adopted':
             text = f"{inhabitant.name} was adopted into the household at {self.key} at age {inhabitant.age}."
         elif reason == 'married':
             text = f"{inhabitant.name} moved to {self.key} after marriage."
         elif reason == 'moved':
-            text = f"{inhabitant.name} moved to {self.key} in {self.city.year}."
+            text = f"{inhabitant.name} moved to {self.key} at {inhabitant.age}."
         else:
             text = f"{inhabitant.name} moved to {self.key} at age {inhabitant.age} because of {reason}."
         inhabitant.knowledge.add_bit(0, text)
@@ -178,7 +178,7 @@ class House:
         for i in self.inhabitants:
             i.knowledge.add_bit(4, f"Left {self.key} for lack of a breadwinner.")
             self.remove_person(i.key, 'orphaned')
-            self.city.find_house_for(i)                 
+            self.city.community.find_house_for(i)                 
 
     """
     EVENTS

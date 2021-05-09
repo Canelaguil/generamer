@@ -1,8 +1,8 @@
 class Others:
-    def __init__(self, city):
+    def __init__(self, context):
         self.people = {}
         self.couples = {}
-        self.city = city
+        self.context = context
         self.monasteries = {}
         self.orphanage = self.Orphanage(self)
         self.outside_home = None
@@ -15,20 +15,20 @@ class Others:
             person.house.remove_person(person.key, 'moved_outside')
             person.house = self.outside_home
         
-        try:
-            alive.pop(person.key)
-        except:
-            print(person.key)
-            print("Died before leaving?")
+        # try:
+        #     alive.pop(person.key)
+        # except:
+        #     print(person.key)
+        #     print("Died before leaving?")
         
         # for r in person.relationships:
         #     if r.active:
         #         r.end_relationship('partner_left')
-        self.city.towns_people -= 1
+        self.context.towns_people -= 1
         person.trigger.moved_outoftown()
 
     def move_couple_outoftown(self, couple):
-        self.city.active_couples.pop(couple.key)
+        self.context.romance_dies(couple.key)
         self.couples[couple.key] = couple
         self.move_outoftown(couple.man)
         self.move_outoftown(couple.woman)
@@ -87,7 +87,7 @@ class Others:
 
         def remove_person(self, child):
             self.children = [x for x in self.children if x.key != child.key]
-            self.outside.city.find_house_for(child)
+            self.outside.context.find_house_for(child)
             child.trigger.out_orphanage()
             # print(f"{child.key} left orphanage")
             self.no_children -= 1

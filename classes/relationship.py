@@ -63,10 +63,8 @@ class Relationship:
                 self.woman.independent = True
             else:
                 # print(f"{self.man.key} moved in with {self.woman.key}")
-                if self.man.income_class in self.context.empty_houses and self.context.empty_houses[self.man.income_class] != []:
-                    house_key = random.choice(
-                        self.context.empty_houses[self.man.income_class])
-                    new_house = self.context.houses[house_key]
+                new_house = self.context.city.find_house(self.man.income_class)
+                if new_house != None:
                     new_house.add_people([self.man, self.woman], 'married')
                     new_house.update_roles(
                         care_candidate=self.woman, bread_candidate=self.man)

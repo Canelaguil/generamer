@@ -1,10 +1,7 @@
-"""
-Distinction between city and simulation.
-"""
-
 import json
 import os, sys
 import copy
+import argparse
 import math
 import networkx as nx
 from graphviz import Digraph, Graph
@@ -17,17 +14,16 @@ from classes.person import Person
 from classes.places import Others
 from classes.house import House
 from classes.relationship import Relationship
+from classes.city import City
 
-class City:
-    def __init__(self, start_year, end_year=1400):
+class History:
+    def __init__(self, start_year, end_year, people, houses, visual, stats=True):
         # Lists
-        self.houses = {}
-        self.empty_houses = {}
         self.alive, self.dead, self.people = {}, {}, {}
         self.active_couples = {}
         self.bachelors, self.bachelorettes = [], []
-        self.buurten, self.streets = pickle.load(open('city.p', 'rb'))
-        Street.city = self
+        self.city = pickle.load(open('city.p', 'rb'))
+        self.city.community = self
         self.outside = Others(self)
         self.to_die, self.to_live, self.marriage_gone = [], [], []
 
@@ -46,17 +42,18 @@ class City:
         # Initializations
         self.m_names, self.w_names, self.n_names, self.trait_modifiers = pickle.load(open('sources.p', 'rb'))
         self.init_town()
-        self.time()
+        self.time(stats)
+        self.finishing_up(people, houses, visual)
 
     """
-    CITY INIT
+    RUNNING HISTORY
     """
 
     def init_town(self):
         solo_key = 0
         
         random.seed()
-        for home in self.houses.values():
+        for home in self.city.get_houses():
             inhabitants = []
             chance = random.random()
 
@@ -90,6 +87,59 @@ class City:
                 home.add_people(inhabitants)
         # self.print_stats()
 
+    def time(self, stats):
+        """
+        Runs the time loop 
+        """
+        while self.year < self.end_year:
+            for r in self.active_couples.values():
+                r.relationship_events()
+
+            for p in self.alive.values():
+                p.personal_events()
+
+            for h in self.city.get_houses():
+                h.house_events()
+
+            self.community_events()
+
+            # Dead & Birth
+            for baby in self.to_live:
+                self.alive[baby.key] = baby
+                self.people[baby.key] = baby
+
+            for corpse in self.to_die:
+                try:
+                    self.alive.pop(corpse)
+                except:
+                    print(f'{corpse} dies twice')
+
+            for break_up in self.marriage_gone:
+                try:
+                    self.active_couples.pop(break_up)
+                except:
+                    print(f"{break_up} couldn't break up")
+            
+            # print stats if indicated
+            if stats: 
+                self.print_stats()
+
+            # prepare next cycle
+            self.year += 1
+            self.bachelors, self.bachelorettes = [], []
+            self.to_die, self.to_live, self.marriage_gone = [], [], []
+            self.deaths, self.births = 0, 0
+
+    def finishing_up(self, people, houses, visual):
+        if people:
+            self.output_people()
+        if houses:
+            self.output_houses()
+        if visual:
+            # self.draw_community()
+            self.family_tree.format = 'pdf'
+            self.family_tree.view()
+    
     """
     COMMUNITY BUILDING
     """
@@ -114,7 +164,7 @@ class City:
                         if sibling.house != None:
                             sibling.house.add_person(person, 'adopted')
                             person.knowledge.add_bit(1, f"Went to live with sibling {sibling.name} at age {person.age}.")
-                            print(f"{person.key} adopted")
+                            # print(f"{person.key} adopted")
                             return
 
                 # check if they can live with paternal family
@@ -127,7 +177,7 @@ class City:
                         if unclaunt.alive and unclaunt.emancipated and unclaunt.house != None:
                             person.knowledge.add_bit(1, f"Went to live with father's sibling {unclaunt.name} at age {person.age}.")
                             unclaunt.house.add_person(person, 'adopted')
-                            print(f"{person.key} adopted")
+                            # print(f"{person.key} adopted")
                             return
 
                 # check if they can live with maternal family
@@ -140,22 +190,22 @@ class City:
                         if unclaunt.alive and unclaunt.emancipated and unclaunt.house != None and unclaunt.independent:
                             person.knowledge.add_bit(1, f"Went to live with mother's sibling {unclaunt.name} at age {person.age}.")
                             unclaunt.house.add_person(person, 'adopted')
-                            print(f"{person.key} adopted")
+                            # print(f"{person.key} adopted")
                             return
                             
             self.outside.send_toorphanage(person)
             return
 
-        if person.income_class in self.empty_houses and self.empty_houses[person.income_class] != []:
-            house_key = random.choice(
-                        self.empty_houses[person.income_class])
-            new_house = self.houses[house_key]
+        # Else move to own place
+        new_house = self.city.find_house(person.income_class)
+
+        if new_house is None:
+            self.outside.move_outoftown(person)
+        else:
             new_house.add_person(person, 'moved')
             new_house.update_roles(
-                care_candidate=person, bread_candidate=person)
-        else:
-            self.outside.move_outoftown(person)
-
+            care_candidate=person, bread_candidate=person)
+       
     def match_com(self):
         """
         Matches bachelors and bachelorettes. 
@@ -188,54 +238,9 @@ class City:
         self.outside.yearly_events()
 
     """
-    TIME FLIES WHEN YOU'RE HAVING FUN
-    """
-
-    def time(self):
-        """
-        Runs the time loop 
-        """
-        while self.year < self.end_year:
-            for r in self.active_couples.values():
-                r.relationship_events()
-
-            for p in self.alive.values():
-                p.personal_events()
-
-            for h in self.houses.values():
-                h.house_events()
-
-            self.community_events()
-
-            # Dead & Birth
-            for baby in self.to_live:
-                self.alive[baby.key] = baby
-                self.people[baby.key] = baby
-
-            print(len(self.to_die))
-            for corpse in self.to_die:
-                self.alive.pop(corpse)
-
-            for break_up in self.marriage_gone:
-                self.active_couples.pop(break_up)
-
-
-            self.print_stats()
-            self.year += 1
-            self.bachelors, self.bachelorettes = [], []
-            self.to_die, self.to_live, self.marriage_gone = [], [], []
-            self.deaths, self.births = 0, 0
-
-        # self.output_people()
-        # self.output_houses()
-        # self.output_people()
-        # self.draw_community()
-        # self.family_tree.format = 'pdf'
-        # self.family_tree.view()
-
-    """
     HELPER FUNCTIONS
     """
+
     def person_died(self, key, name):
         self.deaths += 1
         self.towns_people -= 1
@@ -284,7 +289,7 @@ class City:
         else:
             os.mkdir('houses')
 
-        for h in self.houses.values():
+        for h in self.city.get_houses():
             with open(f"houses/{h.key}.json", "w") as output:
                 json.dump({"summary": h.household_summary()}, output)
 
@@ -296,70 +301,13 @@ class City:
         print(f"Total died: {len(self.dead)}")
 
 
-class Street:
-    city = 0
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('start_year', nargs='?', type=int, help='the starting year of the simulation', default=1370)
+    parser.add_argument('end_year', nargs='?', type=int, help='the ending year of the simulation', default=1400)
+    parser.add_argument('-p', '--people', action='store_true', help='output json files of all people at the end')
+    parser.add_argument('-c', '--city', action='store_true', help='output json files of all houses at the end')
+    parser.add_argument('-v', '--visual', action='store_true', help='output a visual pdf of the family tree at the end')
+    args = parser.parse_args()
 
-    def __init__(self, name, inputlist):
-        self.name = name
-        self.houses = []
-        self.sections = self.init_street(inputlist)
-
-    def init_street(self, row):
-        if row == []:
-            return
-        cols = ['street', 'A', 'class', 'B', 'class',
-                'C', 'class', 'D', 'class', 'E', 'class']
-        sections = {}
-        for i in range(1, 11, 2):
-            if row[i] == '' or i >= len(row):
-                break
-            sections[cols[i]] = self.Section(
-                int(row[i]), int(row[i+1]), self, cols[i], self.city)
-            self.houses.extend(sections[cols[i]].houses)
-        return sections
-
-    def get_houses(self):
-        return self.houses
-
-    def street_summary(self):
-        summary = {}
-        for s in self.sections.values():
-            summary[s.relative_key] = s.get_section_summary
-        return summary
-
-    def get_street(self):
-        street = []
-        for h in self.houses:
-            street.extend(h.get_householdmembers())
-        return street
-
-
-    class Section:
-        def __init__(self, no_houses, income_class, street, key, city):
-            self.total_lots = no_houses
-            self.empty_lots = copy.deepcopy(self.total_lots)
-            self.relative_key = key
-            self.in_class = income_class
-            self.street = street
-            self.city = city
-            self.houses = self.init_houses()
-
-        def init_houses(self):
-            section = []
-            for i in range(self.total_lots):
-                section.append(House(self.in_class, self.street, self, i, self.city))
-            return section
-
-        def get_section_summary(self):
-            summary = {}
-            for house in self.houses:
-                summary[house.key] = house.household_summary()
-            return summary
-
-        def get_people(self):
-            people = []
-            for house in self.houses:
-                people.extend(house.get_householdmembers())
-            return people
-
-# City(1370)
+    History(args.start_year, args.end_year, args.people, args.city, args.visual)

@@ -3,7 +3,7 @@ import numpy as np
 import csv
 import math
 print('al')
-from simulation import Street
+from history import City
 
 def read_files():
     """
@@ -60,27 +60,7 @@ def read_files():
                 trait_index += 1
     return m_names, w_names, s_names, trait_modifiers
 
-def read_cityfiles():
-        buurten = {}
-        strbr = {}
-        with open('sources/Buurten.csv', 'r') as bfile:
-            csvreader = csv.reader(bfile)
-            for row in csvreader:
-                strbr[row[1]] = row[0]
-                if row[0] not in buurten:
-                    buurten[row[0]] = []
-                buurten[row[0]].append(row[1])
-
-        streets = {}
-        with open('sources/SectionStreets.csv', 'r') as cfile:
-            csvreader = csv.reader(cfile)
-            for row in csvreader:
-                streets[row[0]] = Street(row[0], row)
-
-        return buurten, streets
-
 a, b, c, d = read_files()
-e, f = read_cityfiles()
+city = City()
 pickle.dump([a, b, c, d], open('sources.p', 'wb'))
-print(e)
-pickle.dump([e, f], open('city.p', 'wb'))
+pickle.dump(city, open('city.p', 'wb'))
