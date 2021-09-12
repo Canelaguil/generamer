@@ -64,7 +64,7 @@ class History:
                 husband_age = random.randrange(18, 38)
 
                 # keys & people
-                w, h = f"{self.total_marriages}a", f"{self.total_marriages}b"
+                w, h = "{}a".format(self.total_marriages), "{}b".format(self.total_marriages)
                 wife = Person(None, w, self, house=home, sex='f',
                               age=wife_age, married=True, emancipated=True, independent=True)
                 husband = Person(None, h, self, house=home, sex='m',
@@ -79,7 +79,7 @@ class History:
                 sex = 'f' if random.random() < 0.4 else 'm'
                 for _ in range(no_inhabitants):
                     age = random.randint(age_lowest, age_lowest + 10)
-                    key = f"{solo_key}s"
+                    key = "{}s".format(solo_key)
                     inhabitant = Person(
                         None, key, self, house=home, sex=sex, age=age)
                     inhabitants.append(inhabitant)
@@ -112,13 +112,13 @@ class History:
                 try:
                     self.alive.pop(corpse)
                 except:
-                    print(f'{corpse} dies twice')
+                    print('{} dies twice').format(corpse)
 
             for break_up in self.marriage_gone:
                 try:
                     self.active_couples.pop(break_up)
                 except:
-                    print(f"{break_up} couldn't break up")
+                    print("{} couldn't break up").format(break_up)
             
             # print stats if indicated
             if stats: 
@@ -146,7 +146,7 @@ class History:
 
     def marry(self, wife, husband, assigned_home=None):
         # also serves as key for the relationship
-        key = f"{self.total_marriages}"
+        key = "{}".format(self.total_marriages)
 
         # create relationship and add to inventory
         Relationship(husband, wife, key, assigned_house=assigned_home)
