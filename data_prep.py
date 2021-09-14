@@ -2,7 +2,6 @@ import pickle
 import numpy as np
 import csv
 import math
-print('al')
 from history import City
 
 def read_files():
@@ -62,5 +61,8 @@ def read_files():
 
 a, b, c, d = read_files()
 city = City()
-pickle.dump([a, b, c, d], open('sources.p', 'wb'))
-pickle.dump(city, open('city.p', 'wb'))
+with open('sources/sources.p', 'wb') as f:
+    pickle.dump([a, b, c, d], f)
+
+with open('sources/city.p', 'wb') as g:
+    pickle.dump(city, g)

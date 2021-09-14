@@ -1,3 +1,5 @@
+#!/usr/bin/python3.9
+
 import json
 import os, sys
 import copy
@@ -22,7 +24,7 @@ class History:
         self.alive, self.dead, self.people = {}, {}, {}
         self.active_couples = {}
         self.bachelors, self.bachelorettes = [], []
-        self.city = pickle.load(open('city.p', 'rb'))
+        self.city = pickle.load(open('sources/city.p', 'rb'))
         self.city.community = self
         self.outside = Others(self)
         self.to_die, self.to_live, self.marriage_gone = [], [], []
@@ -40,7 +42,7 @@ class History:
         self.network = nx.Graph()
 
         # Initializations
-        self.m_names, self.w_names, self.n_names, self.trait_modifiers = pickle.load(open('sources.p', 'rb'))
+        self.m_names, self.w_names, self.n_names, self.trait_modifiers = pickle.load(open('sources/sources.p', 'rb'))
         self.init_town()
         self.time(stats)
         self.finishing_up(people, houses, visual)
@@ -112,13 +114,13 @@ class History:
                 try:
                     self.alive.pop(corpse)
                 except:
-                    print('{} dies twice').format(corpse)
+                    print('{} dies twice'.format(corpse))
 
             for break_up in self.marriage_gone:
                 try:
                     self.active_couples.pop(break_up)
                 except:
-                    print("{} couldn't break up").format(break_up)
+                    print("{} couldn't break up".format(break_up))
             
             # print stats if indicated
             if stats: 
