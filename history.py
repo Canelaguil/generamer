@@ -10,13 +10,10 @@ from graphviz import Digraph, Graph
 import numpy as np
 import matplotlib.pyplot as plt
 import random
-import csv
 import pickle
 from classes.person import Person
 from classes.places import Others
-from classes.house import House
 from classes.relationship import Relationship
-from classes.city import City
 
 class History:
     def __init__(self, start_year, end_year, people, houses, visual, stats=True):

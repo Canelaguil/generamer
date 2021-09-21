@@ -456,7 +456,7 @@ class Person:
 
         def generate_sin(self):
             values = [1, 2, 3, 4, 5, 6, 7]
-            weight = [1/28, 4/28, 6/28, 6/28, 6/28, 4/28, 1/28]
+            weight = [1/28, 2/28, 5/28, 7/28, 7/28, 4/28, 2/28]
             sinmoods = ['happy', 'not happy']
             sin = int(np.random.choice(values, p=weight))
             if sin > 2 and sin < 6:
@@ -466,7 +466,7 @@ class Person:
 
         def generate_virtue(self):
             values = [1, 2, 3, 4, 5, 6, 7]
-            weight = [1/28, 4/28, 6/28, 6/28, 6/28, 4/28, 1/28]
+            weight = [1/28, 3/28, 6/28, 8/28, 6/28, 3/28, 1/28]
             virtuemoods = ['important', 'not important']
             virtue = int(np.random.choice(values, p=weight))
             if virtue < 4:
@@ -562,7 +562,7 @@ class Person:
             options = []
             for _, v in edges:
                 try:
-                    suggestions = people[v].connections.receive_intention(
+                    suggestions = self.context.people[v].connections.receive_intention(
                         intent, self.own_key, self.own_key, depth, [])
                     options.extend(suggestions)
                 except:
@@ -619,6 +619,8 @@ class Person:
                         continue
 
                     index_mod += M[index_a][index_b]
+
+            print(index_mod, file=open('extra/modifiers.txt', 'a'))
 
             return index_mod
 
