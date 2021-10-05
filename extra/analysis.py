@@ -2,7 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 data = np.loadtxt('extra/modifiers.txt',dtype=int)
-# plt.hist(data, bins=np.arange(data.min(), data.max()+1)-0.5)
+plt.hist(data, bins=np.arange(data.min(), data.max()+1)-0.5)
+plt.show()
 sorted = np.sort(data)
 normalized = data 
 # plt.hist(normalized, bins=np.arange(normalized.min(), normalized.max()+1)-0.5)

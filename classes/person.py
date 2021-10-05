@@ -269,10 +269,7 @@ class Person:
             'no_children': self.children,
             "children" : children
         }
-        person["personality"] = {
-            "sins": self.personality.jsonify_sins(),
-            "virtues": self.personality.jsonify_virtues()
-        }
+        person["personality"] = self.personality.jsonify()
         person["network"] = self.connections.get_network()
         person["events"] = self.knowledge.get_descriptions()
 
@@ -332,6 +329,7 @@ class Person:
                 "nickname": self.nickname,
                 "surname": self.surname
             }
+
 
     class Appearance:
         def __init__(self, parents):
@@ -432,81 +430,49 @@ class Person:
                 "eye_color": self.eye_color
             }
 
+
     class Personality:
-        def __init__(self, adjusted_sins=[], adjusted_virtues=[]):
-            # Sins
-            self.superbia = self.generate_sin()
-            self.avaritia = self.generate_sin()
-            self.luxuria = self.generate_sin()
-            self.invidia = self.generate_sin()
-            self.gula = self.generate_sin()
-            self.ira = self.generate_sin()
-            self.acedia = self.generate_sin()
-
-            # Virtues
-            self.prudentia = self.generate_virtue()
-            self.iustitia = self.generate_virtue()
-            self.temperantia = self.generate_virtue()
-            self.fortitudo = self.generate_virtue()
-            self.fides = self.generate_virtue()
-            self.spes = self.generate_virtue()
-            self.caritas = self.generate_virtue()
-
-            self.all = self.combine_all()
-
-        def generate_sin(self):
-            values = [1, 2, 3, 4, 5, 6, 7]
-            weight = [1/28, 2/28, 5/28, 7/28, 7/28, 4/28, 2/28]
-            sinmoods = ['happy', 'not happy']
-            sin = int(np.random.choice(values, p=weight))
-            if sin > 2 and sin < 6:
-                return (sin, 'happy')
-            else:
-                return (sin, random.choice(sinmoods))
-
-        def generate_virtue(self):
-            values = [1, 2, 3, 4, 5, 6, 7]
-            weight = [1/28, 3/28, 6/28, 8/28, 6/28, 3/28, 1/28]
-            virtuemoods = ['important', 'not important']
-            virtue = int(np.random.choice(values, p=weight))
-            if virtue < 4:
-                return (virtue, random.choice(virtuemoods))
-            elif virtue > 5:
-                return (virtue, np.random.choice(virtuemoods, p=[0.7, 0.3]))
-            else:
-                return (virtue, np.random.choice(virtuemoods, p=[0.6, 0.4]))
-
-        def get_trait(self, trait):
-            return self.all[trait]
-
-        def influence_personality(self, trait, influence, source, bit=False):
-            v, i = self.all[trait]
-            self.all[trait] = (v + influence, i)
-
-        def combine_all(self):
-            b = self.jsonify_virtues()
-            return dict(self.jsonify_sins(), **b)
-
-        def jsonify_virtues(self):
-            return {
-                "prudentia": self.prudentia,
-                "iustitia": self.iustitia,
-                "temperantia": self.temperantia,
-                "fortitudo": self.fortitudo,
-                "fides": self.fides,
-                "spes": self.spes,
-                "caritas": self.caritas
+        def __init__(self):
+            self.castitas_luxuria = self.get_personality() # sex / romance drive
+            self.temperantia_gula = self.get_personality() # social impression
+            self.caritas_avaritia = self.get_personality() # taking care of others
+            self.industria_acedia = self.get_personality() # work success / ambition
+            self.patentia_ira = self.get_personality() # value attributed to compatability
+            self.humanitas_invidia = self.get_personality() # openness to meeting new people (budget)
+            self.humilitas_superbia = self.get_personality() # sense of selfworth
+            
+            self.values = {
+                'Religion' : self.get_values(),
+                'Hope' : self.get_values(),
+                'Knowledge' : self.get_values(),
+                'Ethics' : self.get_values()
             }
 
-        def jsonify_sins(self):
+        def get_personality(self): 
+            values = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            weight = [1/25, 2/25, 3/25, 4/25, 5/25, 4/25, 3/25, 2/25, 1/25]
+            return int(np.random.choice(values, p=weight))
+
+        def get_values(self):
+            values = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            weight = [1/25, 2/25, 3/25, 4/25, 5/25, 4/25, 3/25, 2/25, 1/25]
+            return int(np.random.choice(values, p=weight))
+
+        def get_value_vector(self):
+            return np.array(list(self.values.values()))
+
+        def influence_values(self, trait, influence, source, bit=False):
+            self.values[trait] += influence
+
+        def jsonify_personality(self):            
             return {
-                "superbia": self.superbia,
-                "avaritia": self.avaritia,
-                "luxuria": self.luxuria,
-                "invidia": self.invidia,
-                "gula": self.gula,
-                "ira": self.ira,
-                "acedia": self.acedia
+                "castitas-luxuria": self.castitas_luxuria,
+                "temperantia-gula": self.temperantia_gula,
+                "caritas-avaritia": self.caritas_avaritia,
+                "industria-acedia": self.industria_acedia,
+                "patentia-ira": self.patentia_ira,
+                "humanitas-invidia": self.humanitas_invidia,
+                "humilitas-superbia": self.humilitas_superbia
             }
 
         def jsonify_all(self):
@@ -514,9 +480,10 @@ class Person:
 
         def jsonify(self):
             return {
-                "sins": self.jsonify_sins(),
-                "virtues": self.jsonify_virtues()
+                "personality": self.jsonify_personality(),
+                "virtues": self.values
             }
+
 
     # Procedural classes
     class Connections:
@@ -532,19 +499,20 @@ class Person:
             self.init_network()
 
         def init_network(self):
-            for householdmember in self.house.get_householdmembers():
-                other_key = householdmember.key
-                self.make_connection(other_key, 'household')
+            pass
+            # for householdmember in self.house.get_householdmembers():
+            #     other_key = householdmember.key
+            #     self.make_connection(other_key, 'household')
 
-            for sectionmember in self.house.section.get_people():
-                other_key = sectionmember.key
-                if not self.context.network.has_edge(self.own_key, other_key):
-                    self.make_connection(other_key, 'section')
+            # for sectionmember in self.house.sect,ion.get_people():
+            #     other_key = sectionmember.key
+            #     if not self.context.network.has_edge(self.own_key, other_key):
+            #         self.make_connection(other_key, 'section')
 
-            for streetmember in self.house.street.get_street():
-                other_key = streetmember.key
-                if not self.context.network.has_edge(self.own_key, other_key):
-                    self.make_connection(other_key, 'street')
+            # for streetmember in self.house.street.get_street():
+            #     other_key = streetmember.key
+            #     if not self.context.network.has_edge(self.own_key, other_key):
+            #         self.make_connection(other_key 'street')
 
             # for neighbor in self.house.section.get_people():
             #     other_key = streetmember.key
@@ -593,32 +561,10 @@ class Person:
             return options
 
         def get_indexmodifier(self, other_key):
-            A = self.person.personality.jsonify_all()
-            B = self.person.personality.jsonify_all()
-            traits = ['superbia', 'avaritia', 'luxuria', 'invidia', 'gula', 'ira', 'acedia',
-                      'prudentia', 'iustitia', 'temperantia', 'fortitudo', 'fides', 'spes', 'caritas']
-            index_mod = 0
-            for trait_a in traits:
-                for trait_b in traits:
-                    M = self.context.trait_modifiers[trait_a][trait_b]
-                    a_value, a_opinion = A[trait_a]
-                    b_value, b_opinion = B[trait_b]
-                    a_mod = 1 if a_opinion == 'important' or a_opinion == 'happy' else 0
-                    b_mod = 1 if b_opinion == 'important' or b_opinion == 'happy' else 0
-                    if a_value > 5:
-                        index_a = a_mod
-                    elif a_value < 3:
-                        index_a = 2 + a_mod
-                    else:
-                        continue
-                    if b_value > 5:
-                        index_b = b_mod
-                    elif b_value < 3:
-                        index_b = 2 + b_mod
-                    else:
-                        continue
-
-                    index_mod += M[index_a][index_b]
+            A = self.person.personality.get_value_vector()
+            B = self.person.context.get_personalvalues(other_key)
+            
+            index_mod = round(np.linalg.norm(A-B))
 
             print(index_mod, file=open('extra/modifiers.txt', 'a'))
 
@@ -703,27 +649,31 @@ class Trigger:
         self.orphanage = False
 
     def trait_influence(self, trait, value, source):
-        random.seed()
-        own_value, own_importance = self.person.personality.get_trait(
-            trait)
-        chance = 0.1 if own_importance == 'important' else 0.4
-        change = 1 if own_value < value else -1
+        return
+        # random.seed()
+        # own_value, own_importance = self.person.personality.get_trait(
+        #     trait)
+        # chance = 0.1 if own_importance == 'important' else 0.4
+        # change = 1 if own_value < value else -1
 
-        if random.random() < chance:
-            self.person.personality.influence_personality(
-                trait, change, source)
-            return True
-        return False
+        # if random.random() < chance:
+        #     self.person.personality.influence_personality(
+        #         trait, change, source)
+        #     return True
+        # return False
 
     """
     LIFE
     """
 
     def birth(self):
+        for parent in self.person.parents.get_members(): 
+            self.person.connections.make_connection(parent, 'household')
         random.seed()
         if random.random() < self.person.chance_of_dying('birth'):
             self.person.die(' days after being born')
             return True
+            
         return False
 
     def marriage(self, partner):

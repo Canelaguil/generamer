@@ -85,11 +85,12 @@ class Relationship:
                 care_candidate=self.woman, bread_candidate=self.man)
 
     def set_familyvalues(self):
-        for partner in [self.man, self.woman]:
-            for trait, score in partner.personality.jsonify_all().items():
-                value, importance = score
-                if (value > 5 or value < 3) and importance == 'important':
-                    self.family_values[1].append((trait, value))
+        pass
+        # for partner in [self.man, self.woman]:
+        #     for trait, score in partner.personality.jsonify_all().items():
+        #         value, importance = score
+        #         if (value > 5 or value < 3) and importance == 'important':
+        #             self.family_values[1].append((trait, value))
 
     def end_relationship(self, cause, circumstance=""):
         """
@@ -207,3 +208,7 @@ class Relationship:
             chance *= 0.15
 
         return chance * self.woman.health
+
+
+    def get_members(self):
+        return (self.man.key, self.woman.key)

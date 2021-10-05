@@ -69,6 +69,8 @@ class History:
                 husband = Person(None, h, self, house=home, sex='m',
                                  age=husband_age, married=True, emancipated=True, independent=True)
 
+                self.people[wife.key] = wife
+                self.people[husband.key] = husband
                 self.marry(wife, husband, assigned_home=home)
 
             # roommates
@@ -261,6 +263,20 @@ class History:
 
     def romance_dies(self, key):
         self.marriage_gone.append(key)
+
+    def get_person(self, key):
+        if key in self.people:
+            return self.people[key]
+        else:
+            print(f'Person {key} was requested but not in list.')
+        return 
+
+    def get_personalvalues(self, key):
+        if key in self.people:
+            return self.people[key].personality.get_value_vector()
+        else:
+            print(f'Person {key} was requested but not in list.')
+        return 
 
     """
     OUTPUT METHODS
