@@ -1,6 +1,7 @@
 import random
 import sys
 from .person import Person
+import logging; logging.basicConfig(filename='logs.log', encoding='utf-8', level=logging.DEBUG, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
 class Relationship:
     def __init__(self, man, woman, key, married=True, assigned_house=None):
@@ -29,6 +30,7 @@ class Relationship:
         self.man.relationships.append(self)
         self.woman.relationships.append(self)
         self.context.active_couples[self.key] = self
+        self.context.couples[self.key] =self
         self.set_familyvalues()
         if self.married:
             self.man.trigger.marriage(self.woman)
@@ -62,7 +64,6 @@ class Relationship:
                     2, f"Had {self.woman.name} move in at {self.man.house.key} after marriage.", 'movein_wife')
                 self.woman.independent = True
             else:
-                # print(f"{self.man.key} moved in with {self.woman.key}")
                 new_house = self.context.city.find_house(self.man.income_class)
                 if new_house != None:
                     new_house.add_people([self.man, self.woman], 'married')
@@ -148,7 +149,7 @@ class Relationship:
             child = Person(self, child_key, self.context, house=self.woman.house)
             self.children.append(child)
         except:
-            print(f"couldnt init child {self.no_children} of {self.key}: {self.woman.key} and {self.man.key}")
+            logging.warning(f"couldnt init child {self.no_children} of {self.key}: {self.woman.key} and {self.man.key}")
             sys.exit()
    
         # order is important for triggers

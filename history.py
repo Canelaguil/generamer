@@ -4,7 +4,7 @@ import json
 import os, sys
 import copy
 import argparse
-import math
+import logging; logging.basicConfig(filename='logs.log', encoding='utf-8', level=logging.DEBUG, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 import networkx as nx
 from graphviz import Digraph, Graph
 import numpy as np
@@ -15,11 +15,14 @@ from classes.person import Person
 from classes.places import Others
 from classes.relationship import Relationship
 
+
 class History:
     def __init__(self, start_year, end_year, people, houses, visual, stats=True):
+        logging.info("\n\nNEW RUN")
         # Lists
         self.alive, self.dead, self.people = {}, {}, {}
         self.active_couples = {}
+        self.couples = {}
         self.bachelors, self.bachelorettes = [], []
         self.city = pickle.load(open('sources/city.p', 'rb'))
         self.city.community = self
@@ -113,13 +116,14 @@ class History:
                 try:
                     self.alive.pop(corpse)
                 except:
-                    print('{} dies twice'.format(corpse))
+                    logging.warning(f'{corpse} dies twice')
 
             for break_up in self.marriage_gone:
                 try:
                     self.active_couples.pop(break_up)
                 except:
-                    print("{} couldn't break up".format(break_up))
+                    couple = self.couples[break_up]
+                    logging.warning(f"{break_up} couldn't break up: {couple.man.key} ({couple.man.alive}) & {couple.woman.key} ({couple.woman.alive})")
             
             # print stats if indicated
             if stats: 
@@ -224,8 +228,7 @@ class History:
                     match_id = random.choice(options)
                     match = self.alive[match_id]
                 except:
-                    print("one of them dead")
-                    break
+                    logging.warning("groom or bride dead")
 
                 if match.parents.key != groom.parents.key and match.income_class == groom.income_class:
                     self.bachelorettes.remove(match_id)
@@ -268,14 +271,14 @@ class History:
         if key in self.people:
             return self.people[key]
         else:
-            print(f'Person {key} was requested but not in list.')
+            logging.warning(f'Person {key} was requested but not in list.')
         return 
 
     def get_personalvalues(self, key):
         if key in self.people:
             return self.people[key].personality.get_value_vector()
         else:
-            print(f'Person {key} was requested but not in list.')
+            logging.warning(f'Person {key} was requested but not in list.')
         return 
 
     """

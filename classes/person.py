@@ -4,6 +4,7 @@ import os, sys
 import queue
 import copy
 import math
+import logging; logging.basicConfig(filename='logs.log', encoding='utf-8', level=logging.DEBUG, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 import numpy as np
 from .information import Knowledge, Bit
 
@@ -379,7 +380,7 @@ class Person:
                 elif genetic_hair == set(['blonde', 'blonde']):
                     hair_weights = [0, 0, 0, 0, 1]
                 else:
-                    print(f"{self.parents.key}: hair problem")
+                    logging.warning(f"{self.parents.key}: hair problem")
             else:
                 hair_weights = [0.15, 0.3, 0.1, 0.2, 0.25]
 
