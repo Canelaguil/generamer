@@ -1,0 +1,219 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags}{}\section{networkx.\+algorithms.\+isomorphism.\+ismags Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags}\index{networkx.\+algorithms.\+isomorphism.\+ismags@{networkx.\+algorithms.\+isomorphism.\+ismags}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS}{I\+S\+M\+A\+GS}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags_adeaeb2412166ed583ba1f5911656cd5e}{are\+\_\+all\+\_\+equal} (iterable)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags_a8a0d10c0c3ce712095d568c54676d43b}{make\+\_\+partitions} (items, test)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags_a9231036839a88c188ab79f4f2b123362}{partition\+\_\+to\+\_\+color} (partitions)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags_aac307ece4bd5b6920883130d6f3c1145}{intersect} (collection\+\_\+of\+\_\+sets)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}****************
+ISMAGS Algorithm
+****************
+
+Provides a Python implementation of the ISMAGS algorithm. [1]_
+
+It is capable of finding (subgraph) isomorphisms between two graphs, taking the
+symmetry of the subgraph into account. In most cases the VF2 algorithm is
+faster (at least on small graphs) than this implementation, but in some cases
+there is an exponential number of isomorphisms that are symmetrically
+equivalent. In that case, the ISMAGS algorithm will provide only one solution
+per symmetry group.
+
+>>> petersen = nx.petersen_graph()
+>>> ismags = nx.isomorphism.ISMAGS(petersen, petersen)
+>>> isomorphisms = list(ismags.isomorphisms_iter(symmetry=False))
+>>> len(isomorphisms)
+120
+>>> isomorphisms = list(ismags.isomorphisms_iter(symmetry=True))
+>>> answer = [{0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9}]
+>>> answer == isomorphisms
+True
+
+In addition, this implementation also provides an interface to find the
+largest common induced subgraph [2]_ between any two graphs, again taking
+symmetry into account. Given `graph` and `subgraph` the algorithm will remove
+nodes from the `subgraph` until `subgraph` is isomorphic to a subgraph of
+`graph`. Since only the symmetry of `subgraph` is taken into account it is
+worth thinking about how you provide your graphs:
+
+>>> graph1 = nx.path_graph(4)
+>>> graph2 = nx.star_graph(3)
+>>> ismags = nx.isomorphism.ISMAGS(graph1, graph2)
+>>> ismags.is_isomorphic()
+False
+>>> largest_common_subgraph = list(ismags.largest_common_subgraph())
+>>> answer = [{1: 0, 0: 1, 2: 2}, {2: 0, 1: 1, 3: 2}]
+>>> answer == largest_common_subgraph
+True
+>>> ismags2 = nx.isomorphism.ISMAGS(graph2, graph1)
+>>> largest_common_subgraph = list(ismags2.largest_common_subgraph())
+>>> answer = [
+...     {1: 0, 0: 1, 2: 2},
+...     {1: 0, 0: 1, 3: 2},
+...     {2: 0, 0: 1, 1: 2},
+...     {2: 0, 0: 1, 3: 2},
+...     {3: 0, 0: 1, 1: 2},
+...     {3: 0, 0: 1, 2: 2},
+... ]
+>>> answer == largest_common_subgraph
+True
+
+However, when not taking symmetry into account, it doesn't matter:
+
+>>> largest_common_subgraph = list(ismags.largest_common_subgraph(symmetry=False))
+>>> answer = [
+...     {1: 0, 0: 1, 2: 2},
+...     {1: 0, 2: 1, 0: 2},
+...     {2: 0, 1: 1, 3: 2},
+...     {2: 0, 3: 1, 1: 2},
+...     {1: 0, 0: 1, 2: 3},
+...     {1: 0, 2: 1, 0: 3},
+...     {2: 0, 1: 1, 3: 3},
+...     {2: 0, 3: 1, 1: 3},
+...     {1: 0, 0: 2, 2: 3},
+...     {1: 0, 2: 2, 0: 3},
+...     {2: 0, 1: 2, 3: 3},
+...     {2: 0, 3: 2, 1: 3},
+... ]
+>>> answer == largest_common_subgraph
+True
+>>> largest_common_subgraph = list(ismags2.largest_common_subgraph(symmetry=False))
+>>> answer = [
+...     {1: 0, 0: 1, 2: 2},
+...     {1: 0, 0: 1, 3: 2},
+...     {2: 0, 0: 1, 1: 2},
+...     {2: 0, 0: 1, 3: 2},
+...     {3: 0, 0: 1, 1: 2},
+...     {3: 0, 0: 1, 2: 2},
+...     {1: 1, 0: 2, 2: 3},
+...     {1: 1, 0: 2, 3: 3},
+...     {2: 1, 0: 2, 1: 3},
+...     {2: 1, 0: 2, 3: 3},
+...     {3: 1, 0: 2, 1: 3},
+...     {3: 1, 0: 2, 2: 3},
+... ]
+>>> answer == largest_common_subgraph
+True
+
+Notes
+-----
+ - The current implementation works for undirected graphs only. The algorithm
+   in general should work for directed graphs as well though.
+ - Node keys for both provided graphs need to be fully orderable as well as
+   hashable.
+ - Node and edge equality is assumed to be transitive: if A is equal to B, and
+   B is equal to C, then A is equal to C.
+
+References
+----------
+.. [1] M. Houbraken, S. Demeyer, T. Michoel, P. Audenaert, D. Colle,
+   M. Pickavet, "The Index-Based Subgraph Matching Algorithm with General
+   Symmetries (ISMAGS): Exploiting Symmetry for Faster Subgraph
+   Enumeration", PLoS One 9(5): e97896, 2014.
+   https://doi.org/10.1371/journal.pone.0097896
+.. [2] https://en.wikipedia.org/wiki/Maximum_common_induced_subgraph
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags_adeaeb2412166ed583ba1f5911656cd5e}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags_adeaeb2412166ed583ba1f5911656cd5e}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags@{networkx\+::algorithms\+::isomorphism\+::ismags}!are\+\_\+all\+\_\+equal@{are\+\_\+all\+\_\+equal}}
+\index{are\+\_\+all\+\_\+equal@{are\+\_\+all\+\_\+equal}!networkx\+::algorithms\+::isomorphism\+::ismags@{networkx\+::algorithms\+::isomorphism\+::ismags}}
+\subsubsection{\texorpdfstring{are\+\_\+all\+\_\+equal()}{are\_all\_equal()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+ismags.\+are\+\_\+all\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{iterable }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns ``True`` if and only if all elements in `iterable` are equal; and
+``False`` otherwise.
+
+Parameters
+----------
+iterable: collections.abc.Iterable
+    The container whose elements will be checked.
+
+Returns
+-------
+bool
+    ``True`` iff all elements in `iterable` compare equal, ``False``
+    otherwise.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags_aac307ece4bd5b6920883130d6f3c1145}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags_aac307ece4bd5b6920883130d6f3c1145}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags@{networkx\+::algorithms\+::isomorphism\+::ismags}!intersect@{intersect}}
+\index{intersect@{intersect}!networkx\+::algorithms\+::isomorphism\+::ismags@{networkx\+::algorithms\+::isomorphism\+::ismags}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+ismags.\+intersect (\begin{DoxyParamCaption}\item[{}]{collection\+\_\+of\+\_\+sets }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given an collection of sets, returns the intersection of those sets.
+
+Parameters
+----------
+collection_of_sets: collections.abc.Collection[set]
+    A collection of sets.
+
+Returns
+-------
+set
+    An intersection of all sets in `collection_of_sets`. Will have the same
+    type as the item initially taken from `collection_of_sets`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags_a8a0d10c0c3ce712095d568c54676d43b}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags_a8a0d10c0c3ce712095d568c54676d43b}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags@{networkx\+::algorithms\+::isomorphism\+::ismags}!make\+\_\+partitions@{make\+\_\+partitions}}
+\index{make\+\_\+partitions@{make\+\_\+partitions}!networkx\+::algorithms\+::isomorphism\+::ismags@{networkx\+::algorithms\+::isomorphism\+::ismags}}
+\subsubsection{\texorpdfstring{make\+\_\+partitions()}{make\_partitions()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+ismags.\+make\+\_\+partitions (\begin{DoxyParamCaption}\item[{}]{items,  }\item[{}]{test }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Partitions items into sets based on the outcome of ``test(item1, item2)``.
+Pairs of items for which `test` returns `True` end up in the same set.
+
+Parameters
+----------
+items : collections.abc.Iterable[collections.abc.Hashable]
+    Items to partition
+test : collections.abc.Callable[collections.abc.Hashable, collections.abc.Hashable]
+    A function that will be called with 2 arguments, taken from items.
+    Should return `True` if those 2 items need to end up in the same
+    partition, and `False` otherwise.
+
+Returns
+-------
+list[set]
+    A list of sets, with each set containing part of the items in `items`,
+    such that ``all(test(*pair) for pair in  itertools.combinations(set, 2))
+    == True``
+
+Notes
+-----
+The function `test` is assumed to be transitive: if ``test(a, b)`` and
+``test(b, c)`` return ``True``, then ``test(a, c)`` must also be ``True``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags_a9231036839a88c188ab79f4f2b123362}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1ismags_a9231036839a88c188ab79f4f2b123362}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags@{networkx\+::algorithms\+::isomorphism\+::ismags}!partition\+\_\+to\+\_\+color@{partition\+\_\+to\+\_\+color}}
+\index{partition\+\_\+to\+\_\+color@{partition\+\_\+to\+\_\+color}!networkx\+::algorithms\+::isomorphism\+::ismags@{networkx\+::algorithms\+::isomorphism\+::ismags}}
+\subsubsection{\texorpdfstring{partition\+\_\+to\+\_\+color()}{partition\_to\_color()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+ismags.\+partition\+\_\+to\+\_\+color (\begin{DoxyParamCaption}\item[{}]{partitions }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Creates a dictionary with for every item in partition for every partition
+in partitions the index of partition in partitions.
+
+Parameters
+----------
+partitions: collections.abc.Sequence[collections.abc.Iterable]
+    As returned by :func:`make_partitions`.
+
+Returns
+-------
+dict
+\end{DoxyVerb}
+ 

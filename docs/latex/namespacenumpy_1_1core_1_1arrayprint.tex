@@ -1,0 +1,766 @@
+\hypertarget{namespacenumpy_1_1core_1_1arrayprint}{}\section{numpy.\+core.\+arrayprint Namespace Reference}
+\label{namespacenumpy_1_1core_1_1arrayprint}\index{numpy.\+core.\+arrayprint@{numpy.\+core.\+arrayprint}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1arrayprint_1_1__TimelikeFormat}{\+\_\+\+Timelike\+Format}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1arrayprint_1_1BoolFormat}{Bool\+Format}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1arrayprint_1_1ComplexFloatingFormat}{Complex\+Floating\+Format}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1arrayprint_1_1DatetimeFormat}{Datetime\+Format}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1arrayprint_1_1FloatingFormat}{Floating\+Format}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1arrayprint_1_1IntegerFormat}{Integer\+Format}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1arrayprint_1_1StructuredVoidFormat}{Structured\+Void\+Format}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1arrayprint_1_1SubArrayFormat}{Sub\+Array\+Format}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1arrayprint_1_1TimedeltaFormat}{Timedelta\+Format}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_a16c960f486a3a0cf4a3c83a0dbc18503}{set\+\_\+printoptions} (precision=None, threshold=None, edgeitems=None, linewidth=None, suppress=None, nanstr=None, infstr=None, formatter=None, sign=None, floatmode=None, legacy=None)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_a65ecafa0dff7c492f6c9cc854f3e25f5}{get\+\_\+printoptions} ()
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_a72c3329c103e1188af0d0a3927274321}{printoptions} (args, kwargs)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_ae4f6d86caeb40ebd108226ac39bc65d1}{repr\+\_\+format} (x)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_a9c25606ff694dc48b0e45ebef848025a}{str\+\_\+format} (x)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_a0460bad6747319f766bf7ceb8f40e593}{array2string} (a, max\+\_\+line\+\_\+width=None, precision=None, suppress\+\_\+small=None, separator=\textquotesingle{} \textquotesingle{}, prefix=\char`\"{}\char`\"{}, style=np.\+\_\+\+No\+Value, formatter=None, threshold=None, edgeitems=None, sign=None, floatmode=None, suffix=\char`\"{}\char`\"{}, legacy=None)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_a2cea445365c52268e6a9ff8e31fab046}{format\+\_\+float\+\_\+scientific} (x, precision=None, unique=True, trim=\textquotesingle{}k\textquotesingle{}, sign=False, pad\+\_\+left=None, exp\+\_\+digits=None, min\+\_\+digits=None)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_a8a77078d071937fb9e895ab6b86bc09c}{format\+\_\+float\+\_\+positional} (x, precision=None, unique=True, fractional=True, trim=\textquotesingle{}k\textquotesingle{}, sign=False, pad\+\_\+left=None, pad\+\_\+right=None, min\+\_\+digits=None)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_a630f2590107cb2c3416fa8a554e2ff1d}{dtype\+\_\+is\+\_\+implied} (dtype)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_ab37467384567a1961f85f1ccf0e92d31}{dtype\+\_\+short\+\_\+repr} (dtype)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_a7d6c2ed788c3217b2d148088525cf38f}{array\+\_\+repr} (arr, max\+\_\+line\+\_\+width=None, precision=None, suppress\+\_\+small=None)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_a4e8029365da7c199289976fcae0e8af8}{array\+\_\+str} (a, max\+\_\+line\+\_\+width=None, precision=None, suppress\+\_\+small=None)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1arrayprint_aa93ad4b5a722166e031bbf5066a2fefe}{set\+\_\+string\+\_\+function} (f, repr=True)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1arrayprint_a057c4e8e7e998179b1313a761873514a}{array2string}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Array printing function
+
+$Id: arrayprint.py,v 1.9 2005/09/13 13:58:44 teoliphant Exp $\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_a0460bad6747319f766bf7ceb8f40e593}\label{namespacenumpy_1_1core_1_1arrayprint_a0460bad6747319f766bf7ceb8f40e593}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!array2string@{array2string}}
+\index{array2string@{array2string}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{array2string()}{array2string()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+array2string (\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{max\+\_\+line\+\_\+width = {\ttfamily None},  }\item[{}]{precision = {\ttfamily None},  }\item[{}]{suppress\+\_\+small = {\ttfamily None},  }\item[{}]{separator = {\ttfamily \textquotesingle{}~\textquotesingle{}},  }\item[{}]{prefix = {\ttfamily \char`\"{}\char`\"{}},  }\item[{}]{style = {\ttfamily np.\+\_\+NoValue},  }\item[{}]{formatter = {\ttfamily None},  }\item[{}]{threshold = {\ttfamily None},  }\item[{}]{edgeitems = {\ttfamily None},  }\item[{}]{sign = {\ttfamily None},  }\item[{}]{floatmode = {\ttfamily None},  }\item[{}]{suffix = {\ttfamily \char`\"{}\char`\"{}},  }\item[{}]{legacy = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a string representation of an array.
+
+Parameters
+----------
+a : ndarray
+    Input array.
+max_line_width : int, optional
+    Inserts newlines if text is longer than `max_line_width`.
+    Defaults to ``numpy.get_printoptions()['linewidth']``.
+precision : int or None, optional
+    Floating point precision.
+    Defaults to ``numpy.get_printoptions()['precision']``.
+suppress_small : bool, optional
+    Represent numbers "very close" to zero as zero; default is False.
+    Very close is defined by precision: if the precision is 8, e.g.,
+    numbers smaller (in absolute value) than 5e-9 are represented as
+    zero.
+    Defaults to ``numpy.get_printoptions()['suppress']``.
+separator : str, optional
+    Inserted between elements.
+prefix : str, optional
+suffix : str, optional
+    The length of the prefix and suffix strings are used to respectively
+    align and wrap the output. An array is typically printed as::
+
+      prefix + array2string(a) + suffix
+
+    The output is left-padded by the length of the prefix string, and
+    wrapping is forced at the column ``max_line_width - len(suffix)``.
+    It should be noted that the content of prefix and suffix strings are
+    not included in the output.
+style : _NoValue, optional
+    Has no effect, do not use.
+
+    .. deprecated:: 1.14.0
+formatter : dict of callables, optional
+    If not None, the keys should indicate the type(s) that the respective
+    formatting function applies to.  Callables should return a string.
+    Types that are not specified (by their corresponding keys) are handled
+    by the default formatters.  Individual types for which a formatter
+    can be set are:
+
+    - 'bool'
+    - 'int'
+    - 'timedelta' : a `numpy.timedelta64`
+    - 'datetime' : a `numpy.datetime64`
+    - 'float'
+    - 'longfloat' : 128-bit floats
+    - 'complexfloat'
+    - 'longcomplexfloat' : composed of two 128-bit floats
+    - 'void' : type `numpy.void`
+    - 'numpystr' : types `numpy.string_` and `numpy.unicode_`
+
+    Other keys that can be used to set a group of types at once are:
+
+    - 'all' : sets all types
+    - 'int_kind' : sets 'int'
+    - 'float_kind' : sets 'float' and 'longfloat'
+    - 'complex_kind' : sets 'complexfloat' and 'longcomplexfloat'
+    - 'str_kind' : sets 'numpystr'
+threshold : int, optional
+    Total number of array elements which trigger summarization
+    rather than full repr.
+    Defaults to ``numpy.get_printoptions()['threshold']``.
+edgeitems : int, optional
+    Number of array items in summary at beginning and end of
+    each dimension.
+    Defaults to ``numpy.get_printoptions()['edgeitems']``.
+sign : string, either '-', '+', or ' ', optional
+    Controls printing of the sign of floating-point types. If '+', always
+    print the sign of positive values. If ' ', always prints a space
+    (whitespace character) in the sign position of positive values.  If
+    '-', omit the sign character of positive values.
+    Defaults to ``numpy.get_printoptions()['sign']``.
+floatmode : str, optional
+    Controls the interpretation of the `precision` option for
+    floating-point types.
+    Defaults to ``numpy.get_printoptions()['floatmode']``.
+    Can take the following values:
+
+    - 'fixed': Always print exactly `precision` fractional digits,
+      even if this would print more or fewer digits than
+      necessary to specify the value uniquely.
+    - 'unique': Print the minimum number of fractional digits necessary
+      to represent each value uniquely. Different elements may
+      have a different number of digits.  The value of the
+      `precision` option is ignored.
+    - 'maxprec': Print at most `precision` fractional digits, but if
+      an element can be uniquely represented with fewer digits
+      only print it with that many.
+    - 'maxprec_equal': Print at most `precision` fractional digits,
+      but if every element in the array can be uniquely
+      represented with an equal number of fewer digits, use that
+      many digits for all elements.
+legacy : string or `False`, optional
+    If set to the string `'1.13'` enables 1.13 legacy printing mode. This
+    approximates numpy 1.13 print output by including a space in the sign
+    position of floats and different behavior for 0d arrays. If set to
+    `False`, disables legacy mode. Unrecognized strings will be ignored
+    with a warning for forward compatibility.
+
+    .. versionadded:: 1.14.0
+
+Returns
+-------
+array_str : str
+    String representation of the array.
+
+Raises
+------
+TypeError
+    if a callable in `formatter` does not return a string.
+
+See Also
+--------
+array_str, array_repr, set_printoptions, get_printoptions
+
+Notes
+-----
+If a formatter is specified for a certain type, the `precision` keyword is
+ignored for that type.
+
+This is a very flexible function; `array_repr` and `array_str` are using
+`array2string` internally so keywords with the same name should work
+identically in all three functions.
+
+Examples
+--------
+>>> x = np.array([1e-16,1,2,3])
+>>> np.array2string(x, precision=2, separator=',',
+...                       suppress_small=True)
+'[0.,1.,2.,3.]'
+
+>>> x  = np.arange(3.)
+>>> np.array2string(x, formatter={'float_kind':lambda x: "%.2f" % x})
+'[0.00 1.00 2.00]'
+
+>>> x  = np.arange(3)
+>>> np.array2string(x, formatter={'int':lambda x: hex(x)})
+'[0x0 0x1 0x2]'\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_a7d6c2ed788c3217b2d148088525cf38f}\label{namespacenumpy_1_1core_1_1arrayprint_a7d6c2ed788c3217b2d148088525cf38f}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!array\+\_\+repr@{array\+\_\+repr}}
+\index{array\+\_\+repr@{array\+\_\+repr}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{array\+\_\+repr()}{array\_repr()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+array\+\_\+repr (\begin{DoxyParamCaption}\item[{}]{arr,  }\item[{}]{max\+\_\+line\+\_\+width = {\ttfamily None},  }\item[{}]{precision = {\ttfamily None},  }\item[{}]{suppress\+\_\+small = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the string representation of an array.
+
+Parameters
+----------
+arr : ndarray
+    Input array.
+max_line_width : int, optional
+    Inserts newlines if text is longer than `max_line_width`.
+    Defaults to ``numpy.get_printoptions()['linewidth']``.
+precision : int, optional
+    Floating point precision.
+    Defaults to ``numpy.get_printoptions()['precision']``.
+suppress_small : bool, optional
+    Represent numbers "very close" to zero as zero; default is False.
+    Very close is defined by precision: if the precision is 8, e.g.,
+    numbers smaller (in absolute value) than 5e-9 are represented as
+    zero.
+    Defaults to ``numpy.get_printoptions()['suppress']``.
+
+Returns
+-------
+string : str
+  The string representation of an array.
+
+See Also
+--------
+array_str, array2string, set_printoptions
+
+Examples
+--------
+>>> np.array_repr(np.array([1,2]))
+'array([1, 2])'
+>>> np.array_repr(np.ma.array([0.]))
+'MaskedArray([0.])'
+>>> np.array_repr(np.array([], np.int32))
+'array([], dtype=int32)'
+
+>>> x = np.array([1e-6, 4e-7, 2, 3])
+>>> np.array_repr(x, precision=6, suppress_small=True)
+'array([0.000001,  0.      ,  2.      ,  3.      ])'\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_a4e8029365da7c199289976fcae0e8af8}\label{namespacenumpy_1_1core_1_1arrayprint_a4e8029365da7c199289976fcae0e8af8}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!array\+\_\+str@{array\+\_\+str}}
+\index{array\+\_\+str@{array\+\_\+str}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{array\+\_\+str()}{array\_str()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+array\+\_\+str (\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{max\+\_\+line\+\_\+width = {\ttfamily None},  }\item[{}]{precision = {\ttfamily None},  }\item[{}]{suppress\+\_\+small = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a string representation of the data in an array.
+
+The data in the array is returned as a single string.  This function is
+similar to `array_repr`, the difference being that `array_repr` also
+returns information on the kind of array and its data type.
+
+Parameters
+----------
+a : ndarray
+    Input array.
+max_line_width : int, optional
+    Inserts newlines if text is longer than `max_line_width`.
+    Defaults to ``numpy.get_printoptions()['linewidth']``.
+precision : int, optional
+    Floating point precision.
+    Defaults to ``numpy.get_printoptions()['precision']``.
+suppress_small : bool, optional
+    Represent numbers "very close" to zero as zero; default is False.
+    Very close is defined by precision: if the precision is 8, e.g.,
+    numbers smaller (in absolute value) than 5e-9 are represented as
+    zero.
+    Defaults to ``numpy.get_printoptions()['suppress']``.
+
+See Also
+--------
+array2string, array_repr, set_printoptions
+
+Examples
+--------
+>>> np.array_str(np.arange(3))
+'[0 1 2]'\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_a630f2590107cb2c3416fa8a554e2ff1d}\label{namespacenumpy_1_1core_1_1arrayprint_a630f2590107cb2c3416fa8a554e2ff1d}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!dtype\+\_\+is\+\_\+implied@{dtype\+\_\+is\+\_\+implied}}
+\index{dtype\+\_\+is\+\_\+implied@{dtype\+\_\+is\+\_\+implied}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{dtype\+\_\+is\+\_\+implied()}{dtype\_is\_implied()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+dtype\+\_\+is\+\_\+implied (\begin{DoxyParamCaption}\item[{}]{dtype }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determine if the given dtype is implied by the representation of its values.
+
+Parameters
+----------
+dtype : dtype
+    Data type
+
+Returns
+-------
+implied : bool
+    True if the dtype is implied by the representation of its values.
+
+Examples
+--------
+>>> np.core.arrayprint.dtype_is_implied(int)
+True
+>>> np.array([1, 2, 3], int)
+array([1, 2, 3])
+>>> np.core.arrayprint.dtype_is_implied(np.int8)
+False
+>>> np.array([1, 2, 3], np.int8)
+array([1, 2, 3], dtype=int8)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_ab37467384567a1961f85f1ccf0e92d31}\label{namespacenumpy_1_1core_1_1arrayprint_ab37467384567a1961f85f1ccf0e92d31}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!dtype\+\_\+short\+\_\+repr@{dtype\+\_\+short\+\_\+repr}}
+\index{dtype\+\_\+short\+\_\+repr@{dtype\+\_\+short\+\_\+repr}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{dtype\+\_\+short\+\_\+repr()}{dtype\_short\_repr()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+dtype\+\_\+short\+\_\+repr (\begin{DoxyParamCaption}\item[{}]{dtype }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a dtype to a short form which evaluates to the same dtype.
+
+The intent is roughly that the following holds
+
+>>> from numpy import *
+>>> dt = np.int64([1, 2]).dtype
+>>> assert eval(dtype_short_repr(dt)) == dt
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_a8a77078d071937fb9e895ab6b86bc09c}\label{namespacenumpy_1_1core_1_1arrayprint_a8a77078d071937fb9e895ab6b86bc09c}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!format\+\_\+float\+\_\+positional@{format\+\_\+float\+\_\+positional}}
+\index{format\+\_\+float\+\_\+positional@{format\+\_\+float\+\_\+positional}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{format\+\_\+float\+\_\+positional()}{format\_float\_positional()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+format\+\_\+float\+\_\+positional (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{precision = {\ttfamily None},  }\item[{}]{unique = {\ttfamily True},  }\item[{}]{fractional = {\ttfamily True},  }\item[{}]{trim = {\ttfamily \textquotesingle{}k\textquotesingle{}},  }\item[{}]{sign = {\ttfamily False},  }\item[{}]{pad\+\_\+left = {\ttfamily None},  }\item[{}]{pad\+\_\+right = {\ttfamily None},  }\item[{}]{min\+\_\+digits = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format a floating-point scalar as a decimal string in positional notation.
+
+Provides control over rounding, trimming and padding. Uses and assumes
+IEEE unbiased rounding. Uses the "Dragon4" algorithm.
+
+Parameters
+----------
+x : python float or numpy floating scalar
+    Value to format.
+precision : non-negative integer or None, optional
+    Maximum number of digits to print. May be None if `unique` is
+    `True`, but must be an integer if unique is `False`.
+unique : boolean, optional
+    If `True`, use a digit-generation strategy which gives the shortest
+    representation which uniquely identifies the floating-point number from
+    other values of the same type, by judicious rounding. If `precision`
+    is given fewer digits than necessary can be printed, or if `min_digits`
+    is given more can be printed, in which cases the last digit is rounded
+    with unbiased rounding.
+    If `False`, digits are generated as if printing an infinite-precision
+    value and stopping after `precision` digits, rounding the remaining
+    value with unbiased rounding
+fractional : boolean, optional
+    If `True`, the cutoffs of `precision` and `min_digits` refer to the
+    total number of digits after the decimal point, including leading
+    zeros.
+    If `False`, `precision` and `min_digits` refer to the total number of
+    significant digits, before or after the decimal point, ignoring leading
+    zeros.
+trim : one of 'k', '.', '0', '-', optional
+    Controls post-processing trimming of trailing digits, as follows:
+
+    * 'k' : keep trailing zeros, keep decimal point (no trimming)
+    * '.' : trim all trailing zeros, leave decimal point
+    * '0' : trim all but the zero before the decimal point. Insert the
+      zero if it is missing.
+    * '-' : trim trailing zeros and any trailing decimal point
+sign : boolean, optional
+    Whether to show the sign for positive values.
+pad_left : non-negative integer, optional
+    Pad the left side of the string with whitespace until at least that
+    many characters are to the left of the decimal point.
+pad_right : non-negative integer, optional
+    Pad the right side of the string with whitespace until at least that
+    many characters are to the right of the decimal point.
+min_digits : non-negative integer or None, optional
+    Minimum number of digits to print. Only has an effect if `unique=True`
+    in which case additional digits past those necessary to uniquely
+    identify the value may be printed, rounding the last additional digit.
+    
+    -- versionadded:: 1.21.0
+
+Returns
+-------
+rep : string
+    The string representation of the floating point value
+
+See Also
+--------
+format_float_scientific
+
+Examples
+--------
+>>> np.format_float_positional(np.float32(np.pi))
+'3.1415927'
+>>> np.format_float_positional(np.float16(np.pi))
+'3.14'
+>>> np.format_float_positional(np.float16(0.3))
+'0.3'
+>>> np.format_float_positional(np.float16(0.3), unique=False, precision=10)
+'0.3000488281'
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_a2cea445365c52268e6a9ff8e31fab046}\label{namespacenumpy_1_1core_1_1arrayprint_a2cea445365c52268e6a9ff8e31fab046}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!format\+\_\+float\+\_\+scientific@{format\+\_\+float\+\_\+scientific}}
+\index{format\+\_\+float\+\_\+scientific@{format\+\_\+float\+\_\+scientific}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{format\+\_\+float\+\_\+scientific()}{format\_float\_scientific()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+format\+\_\+float\+\_\+scientific (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{precision = {\ttfamily None},  }\item[{}]{unique = {\ttfamily True},  }\item[{}]{trim = {\ttfamily \textquotesingle{}k\textquotesingle{}},  }\item[{}]{sign = {\ttfamily False},  }\item[{}]{pad\+\_\+left = {\ttfamily None},  }\item[{}]{exp\+\_\+digits = {\ttfamily None},  }\item[{}]{min\+\_\+digits = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format a floating-point scalar as a decimal string in scientific notation.
+
+Provides control over rounding, trimming and padding. Uses and assumes
+IEEE unbiased rounding. Uses the "Dragon4" algorithm.
+
+Parameters
+----------
+x : python float or numpy floating scalar
+    Value to format.
+precision : non-negative integer or None, optional
+    Maximum number of digits to print. May be None if `unique` is
+    `True`, but must be an integer if unique is `False`.
+unique : boolean, optional
+    If `True`, use a digit-generation strategy which gives the shortest
+    representation which uniquely identifies the floating-point number from
+    other values of the same type, by judicious rounding. If `precision`
+    is given fewer digits than necessary can be printed. If `min_digits`
+    is given more can be printed, in which cases the last digit is rounded
+    with unbiased rounding.
+    If `False`, digits are generated as if printing an infinite-precision
+    value and stopping after `precision` digits, rounding the remaining
+    value with unbiased rounding
+trim : one of 'k', '.', '0', '-', optional
+    Controls post-processing trimming of trailing digits, as follows:
+
+    * 'k' : keep trailing zeros, keep decimal point (no trimming)
+    * '.' : trim all trailing zeros, leave decimal point
+    * '0' : trim all but the zero before the decimal point. Insert the
+      zero if it is missing.
+    * '-' : trim trailing zeros and any trailing decimal point
+sign : boolean, optional
+    Whether to show the sign for positive values.
+pad_left : non-negative integer, optional
+    Pad the left side of the string with whitespace until at least that
+    many characters are to the left of the decimal point.
+exp_digits : non-negative integer, optional
+    Pad the exponent with zeros until it contains at least this many digits.
+    If omitted, the exponent will be at least 2 digits.
+min_digits : non-negative integer or None, optional
+    Minimum number of digits to print. This only has an effect for
+    `unique=True`. In that case more digits than necessary to uniquely
+    identify the value may be printed and rounded unbiased.
+
+    -- versionadded:: 1.21.0
+    
+Returns
+-------
+rep : string
+    The string representation of the floating point value
+
+See Also
+--------
+format_float_positional
+
+Examples
+--------
+>>> np.format_float_scientific(np.float32(np.pi))
+'3.1415927e+00'
+>>> s = np.float32(1.23e24)
+>>> np.format_float_scientific(s, unique=False, precision=15)
+'1.230000071797338e+24'
+>>> np.format_float_scientific(s, exp_digits=4)
+'1.23e+0024'
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_a65ecafa0dff7c492f6c9cc854f3e25f5}\label{namespacenumpy_1_1core_1_1arrayprint_a65ecafa0dff7c492f6c9cc854f3e25f5}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!get\+\_\+printoptions@{get\+\_\+printoptions}}
+\index{get\+\_\+printoptions@{get\+\_\+printoptions}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{get\+\_\+printoptions()}{get\_printoptions()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+get\+\_\+printoptions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the current print options.
+
+Returns
+-------
+print_opts : dict
+    Dictionary of current print options with keys
+
+      - precision : int
+      - threshold : int
+      - edgeitems : int
+      - linewidth : int
+      - suppress : bool
+      - nanstr : str
+      - infstr : str
+      - formatter : dict of callables
+      - sign : str
+
+    For a full description of these options, see `set_printoptions`.
+
+See Also
+--------
+set_printoptions, printoptions, set_string_function\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_a72c3329c103e1188af0d0a3927274321}\label{namespacenumpy_1_1core_1_1arrayprint_a72c3329c103e1188af0d0a3927274321}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!printoptions@{printoptions}}
+\index{printoptions@{printoptions}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{printoptions()}{printoptions()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+printoptions (\begin{DoxyParamCaption}\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Context manager for setting print options.
+
+Set print options for the scope of the `with` block, and restore the old
+options at the end. See `set_printoptions` for the full description of
+available options.
+
+Examples
+--------
+
+>>> from numpy.testing import assert_equal
+>>> with np.printoptions(precision=2):
+...     np.array([2.0]) / 3
+array([0.67])
+
+The `as`-clause of the `with`-statement gives the current print options:
+
+>>> with np.printoptions(precision=2) as opts:
+...      assert_equal(opts, np.get_printoptions())
+
+See Also
+--------
+set_printoptions, get_printoptions\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_ae4f6d86caeb40ebd108226ac39bc65d1}\label{namespacenumpy_1_1core_1_1arrayprint_ae4f6d86caeb40ebd108226ac39bc65d1}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!repr\+\_\+format@{repr\+\_\+format}}
+\index{repr\+\_\+format@{repr\+\_\+format}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{repr\+\_\+format()}{repr\_format()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+repr\+\_\+format (\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_a16c960f486a3a0cf4a3c83a0dbc18503}\label{namespacenumpy_1_1core_1_1arrayprint_a16c960f486a3a0cf4a3c83a0dbc18503}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!set\+\_\+printoptions@{set\+\_\+printoptions}}
+\index{set\+\_\+printoptions@{set\+\_\+printoptions}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{set\+\_\+printoptions()}{set\_printoptions()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+set\+\_\+printoptions (\begin{DoxyParamCaption}\item[{}]{precision = {\ttfamily None},  }\item[{}]{threshold = {\ttfamily None},  }\item[{}]{edgeitems = {\ttfamily None},  }\item[{}]{linewidth = {\ttfamily None},  }\item[{}]{suppress = {\ttfamily None},  }\item[{}]{nanstr = {\ttfamily None},  }\item[{}]{infstr = {\ttfamily None},  }\item[{}]{formatter = {\ttfamily None},  }\item[{}]{sign = {\ttfamily None},  }\item[{}]{floatmode = {\ttfamily None},  }\item[{}]{legacy = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set printing options.
+
+These options determine the way floating point numbers, arrays and
+other NumPy objects are displayed.
+
+Parameters
+----------
+precision : int or None, optional
+    Number of digits of precision for floating point output (default 8).
+    May be None if `floatmode` is not `fixed`, to print as many digits as
+    necessary to uniquely specify the value.
+threshold : int, optional
+    Total number of array elements which trigger summarization
+    rather than full repr (default 1000).
+    To always use the full repr without summarization, pass `sys.maxsize`.
+edgeitems : int, optional
+    Number of array items in summary at beginning and end of
+    each dimension (default 3).
+linewidth : int, optional
+    The number of characters per line for the purpose of inserting
+    line breaks (default 75).
+suppress : bool, optional
+    If True, always print floating point numbers using fixed point
+    notation, in which case numbers equal to zero in the current precision
+    will print as zero.  If False, then scientific notation is used when
+    absolute value of the smallest number is < 1e-4 or the ratio of the
+    maximum absolute value to the minimum is > 1e3. The default is False.
+nanstr : str, optional
+    String representation of floating point not-a-number (default nan).
+infstr : str, optional
+    String representation of floating point infinity (default inf).
+sign : string, either '-', '+', or ' ', optional
+    Controls printing of the sign of floating-point types. If '+', always
+    print the sign of positive values. If ' ', always prints a space
+    (whitespace character) in the sign position of positive values.  If
+    '-', omit the sign character of positive values. (default '-')
+formatter : dict of callables, optional
+    If not None, the keys should indicate the type(s) that the respective
+    formatting function applies to.  Callables should return a string.
+    Types that are not specified (by their corresponding keys) are handled
+    by the default formatters.  Individual types for which a formatter
+    can be set are:
+
+    - 'bool'
+    - 'int'
+    - 'timedelta' : a `numpy.timedelta64`
+    - 'datetime' : a `numpy.datetime64`
+    - 'float'
+    - 'longfloat' : 128-bit floats
+    - 'complexfloat'
+    - 'longcomplexfloat' : composed of two 128-bit floats
+    - 'numpystr' : types `numpy.string_` and `numpy.unicode_`
+    - 'object' : `np.object_` arrays
+
+    Other keys that can be used to set a group of types at once are:
+
+    - 'all' : sets all types
+    - 'int_kind' : sets 'int'
+    - 'float_kind' : sets 'float' and 'longfloat'
+    - 'complex_kind' : sets 'complexfloat' and 'longcomplexfloat'
+    - 'str_kind' : sets 'numpystr'
+floatmode : str, optional
+    Controls the interpretation of the `precision` option for
+    floating-point types. Can take the following values
+    (default maxprec_equal):
+
+    * 'fixed': Always print exactly `precision` fractional digits,
+            even if this would print more or fewer digits than
+            necessary to specify the value uniquely.
+    * 'unique': Print the minimum number of fractional digits necessary
+            to represent each value uniquely. Different elements may
+            have a different number of digits. The value of the
+            `precision` option is ignored.
+    * 'maxprec': Print at most `precision` fractional digits, but if
+            an element can be uniquely represented with fewer digits
+            only print it with that many.
+    * 'maxprec_equal': Print at most `precision` fractional digits,
+            but if every element in the array can be uniquely
+            represented with an equal number of fewer digits, use that
+            many digits for all elements.
+legacy : string or `False`, optional
+    If set to the string `'1.13'` enables 1.13 legacy printing mode. This
+    approximates numpy 1.13 print output by including a space in the sign
+    position of floats and different behavior for 0d arrays. If set to
+    `False`, disables legacy mode. Unrecognized strings will be ignored
+    with a warning for forward compatibility.
+
+    .. versionadded:: 1.14.0
+
+See Also
+--------
+get_printoptions, printoptions, set_string_function, array2string
+
+Notes
+-----
+`formatter` is always reset with a call to `set_printoptions`.
+
+Use `printoptions` as a context manager to set the values temporarily.
+
+Examples
+--------
+Floating point precision can be set:
+
+>>> np.set_printoptions(precision=4)
+>>> np.array([1.123456789])
+[1.1235]
+
+Long arrays can be summarised:
+
+>>> np.set_printoptions(threshold=5)
+>>> np.arange(10)
+array([0, 1, 2, ..., 7, 8, 9])
+
+Small results can be suppressed:
+
+>>> eps = np.finfo(float).eps
+>>> x = np.arange(4.)
+>>> x**2 - (x + eps)**2
+array([-4.9304e-32, -4.4409e-16,  0.0000e+00,  0.0000e+00])
+>>> np.set_printoptions(suppress=True)
+>>> x**2 - (x + eps)**2
+array([-0., -0.,  0.,  0.])
+
+A custom formatter can be used to display array elements as desired:
+
+>>> np.set_printoptions(formatter={'all':lambda x: 'int: '+str(-x)})
+>>> x = np.arange(3)
+>>> x
+array([int: 0, int: -1, int: -2])
+>>> np.set_printoptions()  # formatter gets reset
+>>> x
+array([0, 1, 2])
+
+To put back the default options, you can use:
+
+>>> np.set_printoptions(edgeitems=3, infstr='inf',
+... linewidth=75, nanstr='nan', precision=8,
+... suppress=False, threshold=1000, formatter=None)
+
+Also to temporarily override options, use `printoptions` as a context manager:
+
+>>> with np.printoptions(precision=2, suppress=True, threshold=5):
+...     np.linspace(0, 10, 10)
+array([ 0.  ,  1.11,  2.22, ...,  7.78,  8.89, 10.  ])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_aa93ad4b5a722166e031bbf5066a2fefe}\label{namespacenumpy_1_1core_1_1arrayprint_aa93ad4b5a722166e031bbf5066a2fefe}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!set\+\_\+string\+\_\+function@{set\+\_\+string\+\_\+function}}
+\index{set\+\_\+string\+\_\+function@{set\+\_\+string\+\_\+function}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{set\+\_\+string\+\_\+function()}{set\_string\_function()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+set\+\_\+string\+\_\+function (\begin{DoxyParamCaption}\item[{}]{f,  }\item[{}]{repr = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set a Python function to be used when pretty printing arrays.
+
+Parameters
+----------
+f : function or None
+    Function to be used to pretty print arrays. The function should expect
+    a single array argument and return a string of the representation of
+    the array. If None, the function is reset to the default NumPy function
+    to print arrays.
+repr : bool, optional
+    If True (default), the function for pretty printing (``__repr__``)
+    is set, if False the function that returns the default string
+    representation (``__str__``) is set.
+
+See Also
+--------
+set_printoptions, get_printoptions
+
+Examples
+--------
+>>> def pprint(arr):
+...     return 'HA! - What are you going to do now?'
+...
+>>> np.set_string_function(pprint)
+>>> a = np.arange(10)
+>>> a
+HA! - What are you going to do now?
+>>> _ = a
+>>> # [0 1 2 3 4 5 6 7 8 9]
+
+We can reset the function to the default:
+
+>>> np.set_string_function(None)
+>>> a
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+`repr` affects either pretty printing or normal string representation.
+Note that ``__repr__`` is still affected by setting ``__str__``
+because the width of each array element in the returned string becomes
+equal to the length of the result of ``__str__()``.
+
+>>> x = np.arange(4)
+>>> np.set_string_function(lambda x:'random', repr=False)
+>>> x.__str__()
+'random'
+>>> x.__repr__()
+'array([0, 1, 2, 3])'\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_a9c25606ff694dc48b0e45ebef848025a}\label{namespacenumpy_1_1core_1_1arrayprint_a9c25606ff694dc48b0e45ebef848025a}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!str\+\_\+format@{str\+\_\+format}}
+\index{str\+\_\+format@{str\+\_\+format}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{str\+\_\+format()}{str\_format()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+str\+\_\+format (\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1arrayprint_a057c4e8e7e998179b1313a761873514a}\label{namespacenumpy_1_1core_1_1arrayprint_a057c4e8e7e998179b1313a761873514a}} 
+\index{numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}!array2string@{array2string}}
+\index{array2string@{array2string}!numpy\+::core\+::arrayprint@{numpy\+::core\+::arrayprint}}
+\subsubsection{\texorpdfstring{array2string}{array2string}}
+{\footnotesize\ttfamily numpy.\+core.\+arrayprint.\+array2string}
+

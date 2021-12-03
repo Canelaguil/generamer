@@ -1,0 +1,127 @@
+\hypertarget{classmatplotlib_1_1offsetbox_1_1PaddedBox}{}\section{matplotlib.\+offsetbox.\+Padded\+Box Class Reference}
+\label{classmatplotlib_1_1offsetbox_1_1PaddedBox}\index{matplotlib.\+offsetbox.\+Padded\+Box@{matplotlib.\+offsetbox.\+Padded\+Box}}
+
+
+Inheritance diagram for matplotlib.\+offsetbox.\+Padded\+Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmatplotlib_1_1offsetbox_1_1PaddedBox__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+offsetbox.\+Padded\+Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmatplotlib_1_1offsetbox_1_1PaddedBox__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1PaddedBox_a5bb949d97f91fe2f0ccbaf883fb44395}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, child, \hyperlink{classmatplotlib_1_1offsetbox_1_1PaddedBox_ade280c188133f9b5d46a608ae9e92487}{pad}=None, \hyperlink{classmatplotlib_1_1offsetbox_1_1PaddedBox_a3cc7ce8ee1967f95e0c3ba1b6a091989}{draw\+\_\+frame}=False, patch\+\_\+attrs=None)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1PaddedBox_a263c31f179f8f17c542e18842eab1ab2}{get\+\_\+extent\+\_\+offsets} (self, renderer)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1PaddedBox_ae91687d58b70a1a63b93c32706ac4e79}{draw} (self, renderer)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1PaddedBox_a0a74b1c1840d494826eacc525308eefe}{update\+\_\+frame} (self, bbox, fontsize=None)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1PaddedBox_a3cc7ce8ee1967f95e0c3ba1b6a091989}{draw\+\_\+frame} (self, renderer)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1PaddedBox_ade280c188133f9b5d46a608ae9e92487}{pad}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1PaddedBox_a004f010f254230f2b6b8c665fc3fc97c}{patch}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1PaddedBox_a9eed701f8146289a346cea52ea8818dd}{stale}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A container to add a padding around an `.Artist`.
+
+The `.PaddedBox` contains a `.FancyBboxPatch` that is used to visualize
+it when rendering.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PaddedBox_a5bb949d97f91fe2f0ccbaf883fb44395}\label{classmatplotlib_1_1offsetbox_1_1PaddedBox_a5bb949d97f91fe2f0ccbaf883fb44395}} 
+\index{matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Padded\+Box.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{child,  }\item[{}]{pad = {\ttfamily None},  }\item[{}]{draw\+\_\+frame = {\ttfamily False},  }\item[{}]{patch\+\_\+attrs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+child : `~matplotlib.artist.Artist`
+    The contained `.Artist`.
+pad : float
+    The padding in points. This will be scaled with the renderer dpi.
+    In contrast *width* and *height* are in *pixels* and thus not
+    scaled.
+draw_frame : bool
+    Whether to draw the contained `.FancyBboxPatch`.
+patch_attrs : dict or None
+    Additional parameters passed to the contained `.FancyBboxPatch`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PaddedBox_ae91687d58b70a1a63b93c32706ac4e79}\label{classmatplotlib_1_1offsetbox_1_1PaddedBox_ae91687d58b70a1a63b93c32706ac4e79}} 
+\index{matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}!draw@{draw}}
+\index{draw@{draw}!matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Padded\+Box.\+draw (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PaddedBox_a3cc7ce8ee1967f95e0c3ba1b6a091989}\label{classmatplotlib_1_1offsetbox_1_1PaddedBox_a3cc7ce8ee1967f95e0c3ba1b6a091989}} 
+\index{matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}!draw\+\_\+frame@{draw\+\_\+frame}}
+\index{draw\+\_\+frame@{draw\+\_\+frame}!matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}}
+\subsubsection{\texorpdfstring{draw\+\_\+frame()}{draw\_frame()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Padded\+Box.\+draw\+\_\+frame (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PaddedBox_a263c31f179f8f17c542e18842eab1ab2}\label{classmatplotlib_1_1offsetbox_1_1PaddedBox_a263c31f179f8f17c542e18842eab1ab2}} 
+\index{matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}!get\+\_\+extent\+\_\+offsets@{get\+\_\+extent\+\_\+offsets}}
+\index{get\+\_\+extent\+\_\+offsets@{get\+\_\+extent\+\_\+offsets}!matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}}
+\subsubsection{\texorpdfstring{get\+\_\+extent\+\_\+offsets()}{get\_extent\_offsets()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Padded\+Box.\+get\+\_\+extent\+\_\+offsets (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PaddedBox_a0a74b1c1840d494826eacc525308eefe}\label{classmatplotlib_1_1offsetbox_1_1PaddedBox_a0a74b1c1840d494826eacc525308eefe}} 
+\index{matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}!update\+\_\+frame@{update\+\_\+frame}}
+\index{update\+\_\+frame@{update\+\_\+frame}!matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}}
+\subsubsection{\texorpdfstring{update\+\_\+frame()}{update\_frame()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Padded\+Box.\+update\+\_\+frame (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{bbox,  }\item[{}]{fontsize = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PaddedBox_ade280c188133f9b5d46a608ae9e92487}\label{classmatplotlib_1_1offsetbox_1_1PaddedBox_ade280c188133f9b5d46a608ae9e92487}} 
+\index{matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}!pad@{pad}}
+\index{pad@{pad}!matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}}
+\subsubsection{\texorpdfstring{pad}{pad}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Padded\+Box.\+pad}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PaddedBox_a004f010f254230f2b6b8c665fc3fc97c}\label{classmatplotlib_1_1offsetbox_1_1PaddedBox_a004f010f254230f2b6b8c665fc3fc97c}} 
+\index{matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}!patch@{patch}}
+\index{patch@{patch}!matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}}
+\subsubsection{\texorpdfstring{patch}{patch}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Padded\+Box.\+patch}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PaddedBox_a9eed701f8146289a346cea52ea8818dd}\label{classmatplotlib_1_1offsetbox_1_1PaddedBox_a9eed701f8146289a346cea52ea8818dd}} 
+\index{matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::offsetbox\+::\+Padded\+Box@{matplotlib\+::offsetbox\+::\+Padded\+Box}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Padded\+Box.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{offsetbox_8py}{offsetbox.\+py}\end{DoxyCompactItemize}

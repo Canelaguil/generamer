@@ -1,0 +1,171 @@
+\hypertarget{classmatplotlib_1_1backend__bases_1_1ToolContainerBase}{}\section{matplotlib.\+backend\+\_\+bases.\+Tool\+Container\+Base Class Reference}
+\label{classmatplotlib_1_1backend__bases_1_1ToolContainerBase}\index{matplotlib.\+backend\+\_\+bases.\+Tool\+Container\+Base@{matplotlib.\+backend\+\_\+bases.\+Tool\+Container\+Base}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a0ad1737564133249dfe5a394439a9e77}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a0fe5a57383e07efb58bfe6820dd8b67b}{toolmanager})
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a9c026e3d477c16cf75b655f860bbc4f8}{add\+\_\+tool} (self, tool, group, position=-\/1)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_ab4fc6d3d15370c43d87345e7a19d2f89}{trigger\+\_\+tool} (self, name)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_abde6fc57ff2c485c2271ffda7524350a}{add\+\_\+toolitem} (self, name, group, position, image, description, toggle)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a15f109cb07c4bc97ee3674243b7bc113}{toggle\+\_\+toolitem} (self, name, toggled)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a0cb9190bb61f0d767a38a29d93598b8f}{remove\+\_\+toolitem} (self, name)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_aac3656e54a106ba6583f11fbaf1d2250}{set\+\_\+message} (self, s)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a0fe5a57383e07efb58bfe6820dd8b67b}{toolmanager}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Base class for all tool containers, e.g. toolbars.
+
+Attributes
+----------
+toolmanager : `.ToolManager`
+    The tools with which this `ToolContainer` wants to communicate.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a0ad1737564133249dfe5a394439a9e77}\label{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a0ad1737564133249dfe5a394439a9e77}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Tool\+Container\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{toolmanager }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Toolcontainer button icon image format extension
+
+**String**: Image extension
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a9c026e3d477c16cf75b655f860bbc4f8}\label{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a9c026e3d477c16cf75b655f860bbc4f8}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}!add\+\_\+tool@{add\+\_\+tool}}
+\index{add\+\_\+tool@{add\+\_\+tool}!matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}}
+\subsubsection{\texorpdfstring{add\+\_\+tool()}{add\_tool()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Tool\+Container\+Base.\+add\+\_\+tool (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tool,  }\item[{}]{group,  }\item[{}]{position = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a tool to this container.
+
+Parameters
+----------
+tool : tool_like
+    The tool to add, see `.ToolManager.get_tool`.
+group : str
+    The name of the group to add this tool to.
+position : int, default: -1
+    The position within the group to place this tool.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_abde6fc57ff2c485c2271ffda7524350a}\label{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_abde6fc57ff2c485c2271ffda7524350a}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}!add\+\_\+toolitem@{add\+\_\+toolitem}}
+\index{add\+\_\+toolitem@{add\+\_\+toolitem}!matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}}
+\subsubsection{\texorpdfstring{add\+\_\+toolitem()}{add\_toolitem()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Tool\+Container\+Base.\+add\+\_\+toolitem (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{group,  }\item[{}]{position,  }\item[{}]{image,  }\item[{}]{description,  }\item[{}]{toggle }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a toolitem to the container.
+
+This method must be implemented per backend.
+
+The callback associated with the button click event,
+must be *exactly* ``self.trigger_tool(name)``.
+
+Parameters
+----------
+name : str
+    Name of the tool to add, this gets used as the tool's ID and as the
+    default label of the buttons.
+group : str
+    Name of the group that this tool belongs to.
+position : int
+    Position of the tool within its group, if -1 it goes at the end.
+image : str
+    Filename of the image for the button or `None`.
+description : str
+    Description of the tool, used for the tooltips.
+toggle : bool
+    * `True` : The button is a toggle (change the pressed/unpressed
+      state between consecutive clicks).
+    * `False` : The button is a normal button (returns to unpressed
+      state after release).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a0cb9190bb61f0d767a38a29d93598b8f}\label{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a0cb9190bb61f0d767a38a29d93598b8f}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}!remove\+\_\+toolitem@{remove\+\_\+toolitem}}
+\index{remove\+\_\+toolitem@{remove\+\_\+toolitem}!matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}}
+\subsubsection{\texorpdfstring{remove\+\_\+toolitem()}{remove\_toolitem()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Tool\+Container\+Base.\+remove\+\_\+toolitem (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove a toolitem from the `ToolContainer`.
+
+This method must get implemented per backend.
+
+Called when `.ToolManager` emits a `tool_removed_event`.
+
+Parameters
+----------
+name : str
+    Name of the tool to remove.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_aac3656e54a106ba6583f11fbaf1d2250}\label{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_aac3656e54a106ba6583f11fbaf1d2250}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}!set\+\_\+message@{set\+\_\+message}}
+\index{set\+\_\+message@{set\+\_\+message}!matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}}
+\subsubsection{\texorpdfstring{set\+\_\+message()}{set\_message()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Tool\+Container\+Base.\+set\+\_\+message (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Display a message on the toolbar.
+
+Parameters
+----------
+s : str
+    Message text.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a15f109cb07c4bc97ee3674243b7bc113}\label{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a15f109cb07c4bc97ee3674243b7bc113}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}!toggle\+\_\+toolitem@{toggle\+\_\+toolitem}}
+\index{toggle\+\_\+toolitem@{toggle\+\_\+toolitem}!matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}}
+\subsubsection{\texorpdfstring{toggle\+\_\+toolitem()}{toggle\_toolitem()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Tool\+Container\+Base.\+toggle\+\_\+toolitem (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{toggled }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Toggle the toolitem without firing event.
+
+Parameters
+----------
+name : str
+    Id of the tool to toggle.
+toggled : bool
+    Whether to set this tool as toggled or not.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_ab4fc6d3d15370c43d87345e7a19d2f89}\label{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_ab4fc6d3d15370c43d87345e7a19d2f89}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}!trigger\+\_\+tool@{trigger\+\_\+tool}}
+\index{trigger\+\_\+tool@{trigger\+\_\+tool}!matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}}
+\subsubsection{\texorpdfstring{trigger\+\_\+tool()}{trigger\_tool()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Tool\+Container\+Base.\+trigger\+\_\+tool (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Trigger the tool.
+
+Parameters
+----------
+name : str
+    Name (id) of the tool triggered from within the container.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a0fe5a57383e07efb58bfe6820dd8b67b}\label{classmatplotlib_1_1backend__bases_1_1ToolContainerBase_a0fe5a57383e07efb58bfe6820dd8b67b}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}!toolmanager@{toolmanager}}
+\index{toolmanager@{toolmanager}!matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Tool\+Container\+Base}}
+\subsubsection{\texorpdfstring{toolmanager}{toolmanager}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Tool\+Container\+Base.\+toolmanager}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{backend__bases_8py}{backend\+\_\+bases.\+py}\end{DoxyCompactItemize}

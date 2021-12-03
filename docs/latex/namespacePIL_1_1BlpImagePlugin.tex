@@ -1,0 +1,153 @@
+\hypertarget{namespacePIL_1_1BlpImagePlugin}{}\section{P\+I\+L.\+Blp\+Image\+Plugin Namespace Reference}
+\label{namespacePIL_1_1BlpImagePlugin}\index{P\+I\+L.\+Blp\+Image\+Plugin@{P\+I\+L.\+Blp\+Image\+Plugin}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPIL_1_1BlpImagePlugin_1_1__BLPBaseDecoder}{\+\_\+\+B\+L\+P\+Base\+Decoder}
+\item 
+class \hyperlink{classPIL_1_1BlpImagePlugin_1_1BLP1Decoder}{B\+L\+P1\+Decoder}
+\item 
+class \hyperlink{classPIL_1_1BlpImagePlugin_1_1BLP2Decoder}{B\+L\+P2\+Decoder}
+\item 
+class \hyperlink{classPIL_1_1BlpImagePlugin_1_1BLPFormatError}{B\+L\+P\+Format\+Error}
+\item 
+class \hyperlink{classPIL_1_1BlpImagePlugin_1_1BlpImageFile}{Blp\+Image\+File}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacePIL_1_1BlpImagePlugin_adb9e25ac3bbe03afb98fd41f3240aaea}{unpack\+\_\+565} (i)
+\item 
+def \hyperlink{namespacePIL_1_1BlpImagePlugin_ab4aca494d15595dfa28f88cbcd78a721}{decode\+\_\+dxt1} (data, alpha=False)
+\item 
+def \hyperlink{namespacePIL_1_1BlpImagePlugin_a7fb2c338e574dc1747ca83c74b85a99b}{decode\+\_\+dxt3} (data)
+\item 
+def \hyperlink{namespacePIL_1_1BlpImagePlugin_ad2800c3c913889a70679466ec7491e7d}{decode\+\_\+dxt5} (data)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacePIL_1_1BlpImagePlugin_a44adbc65c9d85b7f6b797686d08d7e21}{B\+L\+P\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+J\+P\+EG}
+\item 
+\hyperlink{namespacePIL_1_1BlpImagePlugin_aa738911043bb946621e54fcbdecdefe9}{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED}
+\item 
+\hyperlink{namespacePIL_1_1BlpImagePlugin_ab680e1381c7e56f756b5faf38bf7666f}{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+XT}
+\item 
+\hyperlink{namespacePIL_1_1BlpImagePlugin_a1819ef98917bf42b3b1f75bc058611f8}{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D\+\_\+\+R\+A\+W\+\_\+\+B\+G\+RA}
+\item 
+\hyperlink{namespacePIL_1_1BlpImagePlugin_a25f970d870f584bbb9dac5a9fc09d0de}{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T1}
+\item 
+\hyperlink{namespacePIL_1_1BlpImagePlugin_add79a7985512eca02e517c512d9f72b9}{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T3}
+\item 
+\hyperlink{namespacePIL_1_1BlpImagePlugin_afa5ffd294bf41fec282970b53584e45c}{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T5}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Blizzard Mipmap Format (.blp)
+Jerome Leclanche <jerome@leclan.ch>
+
+The contents of this file are hereby released in the public domain (CC0)
+Full text of the CC0 license:
+  https://creativecommons.org/publicdomain/zero/1.0/
+
+BLP1 files, used mostly in Warcraft III, are not fully supported.
+All types of BLP2 files used in World of Warcraft are supported.
+
+The BLP file structure consists of a header, up to 16 mipmaps of the
+texture
+
+Texture sizes must be powers of two, though the two dimensions do
+not have to be equal; 512x256 is valid, but 512x200 is not.
+The first mipmap (mipmap #0) is the full size image; each subsequent
+mipmap halves both dimensions. The final mipmap should be 1x1.
+
+BLP files come in many different flavours:
+* JPEG-compressed (type == 0) - only supported for BLP1.
+* RAW images (type == 1, encoding == 1). Each mipmap is stored as an
+  array of 8-bit values, one per pixel, left to right, top to bottom.
+  Each value is an index to the palette.
+* DXT-compressed (type == 1, encoding == 2):
+- DXT1 compression is used if alpha_encoding == 0.
+  - An additional alpha bit is used if alpha_depth == 1.
+  - DXT3 compression is used if alpha_encoding == 1.
+  - DXT5 compression is used if alpha_encoding == 7.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1BlpImagePlugin_ab4aca494d15595dfa28f88cbcd78a721}\label{namespacePIL_1_1BlpImagePlugin_ab4aca494d15595dfa28f88cbcd78a721}} 
+\index{P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}!decode\+\_\+dxt1@{decode\+\_\+dxt1}}
+\index{decode\+\_\+dxt1@{decode\+\_\+dxt1}!P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{decode\+\_\+dxt1()}{decode\_dxt1()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Blp\+Image\+Plugin.\+decode\+\_\+dxt1 (\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{alpha = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}input: one "row" of data (i.e. will produce 4*width pixels)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1BlpImagePlugin_a7fb2c338e574dc1747ca83c74b85a99b}\label{namespacePIL_1_1BlpImagePlugin_a7fb2c338e574dc1747ca83c74b85a99b}} 
+\index{P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}!decode\+\_\+dxt3@{decode\+\_\+dxt3}}
+\index{decode\+\_\+dxt3@{decode\+\_\+dxt3}!P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{decode\+\_\+dxt3()}{decode\_dxt3()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Blp\+Image\+Plugin.\+decode\+\_\+dxt3 (\begin{DoxyParamCaption}\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}input: one "row" of data (i.e. will produce 4*width pixels)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1BlpImagePlugin_ad2800c3c913889a70679466ec7491e7d}\label{namespacePIL_1_1BlpImagePlugin_ad2800c3c913889a70679466ec7491e7d}} 
+\index{P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}!decode\+\_\+dxt5@{decode\+\_\+dxt5}}
+\index{decode\+\_\+dxt5@{decode\+\_\+dxt5}!P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{decode\+\_\+dxt5()}{decode\_dxt5()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Blp\+Image\+Plugin.\+decode\+\_\+dxt5 (\begin{DoxyParamCaption}\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}input: one "row" of data (i.e. will produce 4 * width pixels)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1BlpImagePlugin_adb9e25ac3bbe03afb98fd41f3240aaea}\label{namespacePIL_1_1BlpImagePlugin_adb9e25ac3bbe03afb98fd41f3240aaea}} 
+\index{P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}!unpack\+\_\+565@{unpack\+\_\+565}}
+\index{unpack\+\_\+565@{unpack\+\_\+565}!P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{unpack\+\_\+565()}{unpack\_565()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Blp\+Image\+Plugin.\+unpack\+\_\+565 (\begin{DoxyParamCaption}\item[{}]{i }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1BlpImagePlugin_a25f970d870f584bbb9dac5a9fc09d0de}\label{namespacePIL_1_1BlpImagePlugin_a25f970d870f584bbb9dac5a9fc09d0de}} 
+\index{P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}!B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T1@{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T1}}
+\index{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T1@{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T1}!P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T1}{BLP\_ALPHA\_ENCODING\_DXT1}}
+{\footnotesize\ttfamily P\+I\+L.\+Blp\+Image\+Plugin.\+B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T1}
+
+\mbox{\Hypertarget{namespacePIL_1_1BlpImagePlugin_add79a7985512eca02e517c512d9f72b9}\label{namespacePIL_1_1BlpImagePlugin_add79a7985512eca02e517c512d9f72b9}} 
+\index{P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}!B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T3@{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T3}}
+\index{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T3@{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T3}!P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T3}{BLP\_ALPHA\_ENCODING\_DXT3}}
+{\footnotesize\ttfamily P\+I\+L.\+Blp\+Image\+Plugin.\+B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T3}
+
+\mbox{\Hypertarget{namespacePIL_1_1BlpImagePlugin_afa5ffd294bf41fec282970b53584e45c}\label{namespacePIL_1_1BlpImagePlugin_afa5ffd294bf41fec282970b53584e45c}} 
+\index{P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}!B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T5@{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T5}}
+\index{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T5@{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T5}!P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T5}{BLP\_ALPHA\_ENCODING\_DXT5}}
+{\footnotesize\ttfamily P\+I\+L.\+Blp\+Image\+Plugin.\+B\+L\+P\+\_\+\+A\+L\+P\+H\+A\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+X\+T5}
+
+\mbox{\Hypertarget{namespacePIL_1_1BlpImagePlugin_ab680e1381c7e56f756b5faf38bf7666f}\label{namespacePIL_1_1BlpImagePlugin_ab680e1381c7e56f756b5faf38bf7666f}} 
+\index{P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}!B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+XT@{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+XT}}
+\index{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+XT@{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+XT}!P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+XT}{BLP\_ENCODING\_DXT}}
+{\footnotesize\ttfamily P\+I\+L.\+Blp\+Image\+Plugin.\+B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+D\+XT}
+
+\mbox{\Hypertarget{namespacePIL_1_1BlpImagePlugin_aa738911043bb946621e54fcbdecdefe9}\label{namespacePIL_1_1BlpImagePlugin_aa738911043bb946621e54fcbdecdefe9}} 
+\index{P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}!B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED@{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED}}
+\index{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED@{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED}!P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED}{BLP\_ENCODING\_UNCOMPRESSED}}
+{\footnotesize\ttfamily P\+I\+L.\+Blp\+Image\+Plugin.\+B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED}
+
+\mbox{\Hypertarget{namespacePIL_1_1BlpImagePlugin_a1819ef98917bf42b3b1f75bc058611f8}\label{namespacePIL_1_1BlpImagePlugin_a1819ef98917bf42b3b1f75bc058611f8}} 
+\index{P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}!B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D\+\_\+\+R\+A\+W\+\_\+\+B\+G\+RA@{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D\+\_\+\+R\+A\+W\+\_\+\+B\+G\+RA}}
+\index{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D\+\_\+\+R\+A\+W\+\_\+\+B\+G\+RA@{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D\+\_\+\+R\+A\+W\+\_\+\+B\+G\+RA}!P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D\+\_\+\+R\+A\+W\+\_\+\+B\+G\+RA}{BLP\_ENCODING\_UNCOMPRESSED\_RAW\_BGRA}}
+{\footnotesize\ttfamily P\+I\+L.\+Blp\+Image\+Plugin.\+B\+L\+P\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D\+\_\+\+R\+A\+W\+\_\+\+B\+G\+RA}
+
+\mbox{\Hypertarget{namespacePIL_1_1BlpImagePlugin_a44adbc65c9d85b7f6b797686d08d7e21}\label{namespacePIL_1_1BlpImagePlugin_a44adbc65c9d85b7f6b797686d08d7e21}} 
+\index{P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}!B\+L\+P\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+J\+P\+EG@{B\+L\+P\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+J\+P\+EG}}
+\index{B\+L\+P\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+J\+P\+EG@{B\+L\+P\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+J\+P\+EG}!P\+I\+L\+::\+Blp\+Image\+Plugin@{P\+I\+L\+::\+Blp\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{B\+L\+P\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+J\+P\+EG}{BLP\_FORMAT\_JPEG}}
+{\footnotesize\ttfamily P\+I\+L.\+Blp\+Image\+Plugin.\+B\+L\+P\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+J\+P\+EG}
+

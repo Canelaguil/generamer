@@ -1,0 +1,67 @@
+\hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__random__exponential}{}\section{pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+random\+\_\+exponential Class Reference}
+\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__random__exponential}\index{pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+random\+\_\+exponential@{pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+random\+\_\+exponential}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+random\+\_\+exponential\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__random__exponential__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+random\+\_\+exponential\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__random__exponential__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__random__exponential_ac6a0ed8050e3b4a9617fdbb742641275}{\+\_\+\+\_\+call\+\_\+\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Random wait with exponentially widening window.
+
+An exponential backoff strategy used to mediate contention between multiple
+uncoordinated processes for a shared resource in distributed systems. This
+is the sense in which "exponential backoff" is meant in e.g. Ethernet
+networking, and corresponds to the "Full Jitter" algorithm described in
+this blog post:
+
+https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/
+
+Each retry occurs at a random time in a geometrically expanding interval.
+It allows for a custom multiplier and an ability to restrict the upper
+limit of the random interval to some maximum value.
+
+Example::
+
+    wait_random_exponential(multiplier=0.5,  # initial window 0.5s
+                            max=60)          # max 60s timeout
+
+When waiting for an unavailable resource to become available again, as
+opposed to trying to resolve contention for a shared resource, the
+wait_exponential strategy (which uses a fixed interval) may be preferable.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__random__exponential_ac6a0ed8050e3b4a9617fdbb742641275}\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__random__exponential_ac6a0ed8050e3b4a9617fdbb742641275}} 
+\index{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+random\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+random\+\_\+exponential}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+random\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+random\+\_\+exponential}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+random\+\_\+exponential.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{retry\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/tenacity/\hyperlink{tenacity_2wait_8py}{wait.\+py}\end{DoxyCompactItemize}

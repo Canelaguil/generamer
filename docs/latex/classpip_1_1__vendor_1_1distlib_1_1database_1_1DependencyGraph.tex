@@ -1,0 +1,182 @@
+\hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph}{}\section{pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph Class Reference}
+\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph}\index{pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph@{pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a3bfb8f60f329fbb0263f426f0199498c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a7f6602ca9050ec3c01cdf446f7b30665}{add\+\_\+distribution} (self, distribution)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_aad458a901fef164e4b4d26d162ef4ab7}{add\+\_\+edge} (self, x, y, label=None)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a372a05efe7243ce822e03da20181f7e6}{add\+\_\+missing} (self, distribution, requirement)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_ae34e4ffde44d8f82b4ca446e51c81a2c}{repr\+\_\+node} (self, dist, level=1)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a781f2bf3dce5bbc552bdb7f5fd6b5e9b}{to\+\_\+dot} (self, f, skip\+\_\+disconnected=True)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_af79cfdb1bc73ef831fb4e05affd7af7b}{topological\+\_\+sort} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a552032dc5099b46a72a7542fc28c4bd8}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_ab09458adced85d979e12319d4a76a80e}{adjacency\+\_\+list}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_aa3df0f0e44cb028bbd4b86159a8043c6}{reverse\+\_\+list}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_ae7a49b57f8dc50445e4fbc129c90f7e5}{missing}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Represents a dependency graph between distributions.
+
+The dependency relationships are stored in an ``adjacency_list`` that maps
+distributions to a list of ``(other, label)`` tuples where  ``other``
+is a distribution and the edge is labeled with ``label`` (i.e. the version
+specifier, if such was provided). Also, for more efficient traversal, for
+every distribution ``x``, a list of predecessors is kept in
+``reverse_list[x]``. An edge from distribution ``a`` to
+distribution ``b`` means that ``a`` depends on ``b``. If any missing
+dependencies are found, they are stored in ``missing``, which is a
+dictionary that maps distributions to a list of requirements that were not
+provided by any other distributions.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a3bfb8f60f329fbb0263f426f0199498c}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a3bfb8f60f329fbb0263f426f0199498c}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a552032dc5099b46a72a7542fc28c4bd8}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a552032dc5099b46a72a7542fc28c4bd8}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Representation of the graph\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a7f6602ca9050ec3c01cdf446f7b30665}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a7f6602ca9050ec3c01cdf446f7b30665}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}!add\+\_\+distribution@{add\+\_\+distribution}}
+\index{add\+\_\+distribution@{add\+\_\+distribution}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}}
+\subsubsection{\texorpdfstring{add\+\_\+distribution()}{add\_distribution()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph.\+add\+\_\+distribution (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{distribution }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add the *distribution* to the graph.
+
+:type distribution: :class:`distutils2.database.InstalledDistribution`
+            or :class:`distutils2.database.EggInfoDistribution`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_aad458a901fef164e4b4d26d162ef4ab7}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_aad458a901fef164e4b4d26d162ef4ab7}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}!add\+\_\+edge@{add\+\_\+edge}}
+\index{add\+\_\+edge@{add\+\_\+edge}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}}
+\subsubsection{\texorpdfstring{add\+\_\+edge()}{add\_edge()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph.\+add\+\_\+edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{label = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add an edge from distribution *x* to distribution *y* with the given
+*label*.
+
+:type x: :class:`distutils2.database.InstalledDistribution` or
+ :class:`distutils2.database.EggInfoDistribution`
+:type y: :class:`distutils2.database.InstalledDistribution` or
+ :class:`distutils2.database.EggInfoDistribution`
+:type label: ``str`` or ``None``
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a372a05efe7243ce822e03da20181f7e6}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a372a05efe7243ce822e03da20181f7e6}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}!add\+\_\+missing@{add\+\_\+missing}}
+\index{add\+\_\+missing@{add\+\_\+missing}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}}
+\subsubsection{\texorpdfstring{add\+\_\+missing()}{add\_missing()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph.\+add\+\_\+missing (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{distribution,  }\item[{}]{requirement }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a missing *requirement* for the given *distribution*.
+
+:type distribution: :class:`distutils2.database.InstalledDistribution`
+            or :class:`distutils2.database.EggInfoDistribution`
+:type requirement: ``str``
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_ae34e4ffde44d8f82b4ca446e51c81a2c}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_ae34e4ffde44d8f82b4ca446e51c81a2c}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}!repr\+\_\+node@{repr\+\_\+node}}
+\index{repr\+\_\+node@{repr\+\_\+node}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}}
+\subsubsection{\texorpdfstring{repr\+\_\+node()}{repr\_node()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph.\+repr\+\_\+node (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dist,  }\item[{}]{level = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Prints only a subgraph\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a781f2bf3dce5bbc552bdb7f5fd6b5e9b}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_a781f2bf3dce5bbc552bdb7f5fd6b5e9b}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}!to\+\_\+dot@{to\+\_\+dot}}
+\index{to\+\_\+dot@{to\+\_\+dot}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}}
+\subsubsection{\texorpdfstring{to\+\_\+dot()}{to\_dot()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph.\+to\+\_\+dot (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{f,  }\item[{}]{skip\+\_\+disconnected = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Writes a DOT output for the graph to the provided file *f*.
+
+If *skip_disconnected* is set to ``True``, then all distributions
+that are not dependent on any other distribution are skipped.
+
+:type f: has to support ``file``-like operations
+:type skip_disconnected: ``bool``
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_af79cfdb1bc73ef831fb4e05affd7af7b}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_af79cfdb1bc73ef831fb4e05affd7af7b}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}!topological\+\_\+sort@{topological\+\_\+sort}}
+\index{topological\+\_\+sort@{topological\+\_\+sort}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}}
+\subsubsection{\texorpdfstring{topological\+\_\+sort()}{topological\_sort()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph.\+topological\+\_\+sort (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Perform a topological sort of the graph.
+:return: A tuple, the first element of which is a topologically sorted
+ list of distributions, and the second element of which is a
+ list of distributions that cannot be sorted because they have
+ circular dependencies and so form a cycle.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_ab09458adced85d979e12319d4a76a80e}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_ab09458adced85d979e12319d4a76a80e}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}!adjacency\+\_\+list@{adjacency\+\_\+list}}
+\index{adjacency\+\_\+list@{adjacency\+\_\+list}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}}
+\subsubsection{\texorpdfstring{adjacency\+\_\+list}{adjacency\_list}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph.\+adjacency\+\_\+list}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_ae7a49b57f8dc50445e4fbc129c90f7e5}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_ae7a49b57f8dc50445e4fbc129c90f7e5}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}!missing@{missing}}
+\index{missing@{missing}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}}
+\subsubsection{\texorpdfstring{missing}{missing}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph.\+missing}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_aa3df0f0e44cb028bbd4b86159a8043c6}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph_aa3df0f0e44cb028bbd4b86159a8043c6}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}!reverse\+\_\+list@{reverse\+\_\+list}}
+\index{reverse\+\_\+list@{reverse\+\_\+list}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Dependency\+Graph}}
+\subsubsection{\texorpdfstring{reverse\+\_\+list}{reverse\_list}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+Dependency\+Graph.\+reverse\+\_\+list}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/distlib/\hyperlink{database_8py}{database.\+py}\end{DoxyCompactItemize}

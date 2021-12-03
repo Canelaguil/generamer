@@ -1,0 +1,92 @@
+\hypertarget{classnumpy_1_1core_1_1records_1_1format__parser}{}\section{numpy.\+core.\+records.\+format\+\_\+parser Class Reference}
+\label{classnumpy_1_1core_1_1records_1_1format__parser}\index{numpy.\+core.\+records.\+format\+\_\+parser@{numpy.\+core.\+records.\+format\+\_\+parser}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1core_1_1records_1_1format__parser_a6dde6659fb3b6d8aecd64b4135be9a99}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, formats, names, titles, aligned=False, byteorder=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1core_1_1records_1_1format__parser_a58c32390714015baad90c06ebec15af4}{dtype}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Class to convert formats, names, titles description to a dtype.
+
+After constructing the format_parser object, the dtype attribute is
+the converted data-type:
+``dtype = format_parser(formats, names, titles).dtype``
+
+Attributes
+----------
+dtype : dtype
+    The converted data-type.
+
+Parameters
+----------
+formats : str or list of str
+    The format description, either specified as a string with
+    comma-separated format descriptions in the form ``'f8, i4, a5'``, or
+    a list of format description strings  in the form
+    ``['f8', 'i4', 'a5']``.
+names : str or list/tuple of str
+    The field names, either specified as a comma-separated string in the
+    form ``'col1, col2, col3'``, or as a list or tuple of strings in the
+    form ``['col1', 'col2', 'col3']``.
+    An empty list can be used, in that case default field names
+    ('f0', 'f1', ...) are used.
+titles : sequence
+    Sequence of title strings. An empty list can be used to leave titles
+    out.
+aligned : bool, optional
+    If True, align the fields by padding as the C-compiler would.
+    Default is False.
+byteorder : str, optional
+    If specified, all the fields will be changed to the
+    provided byte-order.  Otherwise, the default byte-order is
+    used. For all available string specifiers, see `dtype.newbyteorder`.
+
+See Also
+--------
+dtype, typename, sctype2char
+
+Examples
+--------
+>>> np.format_parser(['<f8', '<i4', '<a5'], ['col1', 'col2', 'col3'],
+...                  ['T1', 'T2', 'T3']).dtype
+dtype([(('T1', 'col1'), '<f8'), (('T2', 'col2'), '<i4'), (('T3', 'col3'), 'S5')])
+
+`names` and/or `titles` can be empty lists. If `titles` is an empty list,
+titles will simply not appear. If `names` is empty, default field names
+will be used.
+
+>>> np.format_parser(['f8', 'i4', 'a5'], ['col1', 'col2', 'col3'],
+...                  []).dtype
+dtype([('col1', '<f8'), ('col2', '<i4'), ('col3', '<S5')])
+>>> np.format_parser(['<f8', '<i4', '<a5'], [], []).dtype
+dtype([('f0', '<f8'), ('f1', '<i4'), ('f2', 'S5')])\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1records_1_1format__parser_a6dde6659fb3b6d8aecd64b4135be9a99}\label{classnumpy_1_1core_1_1records_1_1format__parser_a6dde6659fb3b6d8aecd64b4135be9a99}} 
+\index{numpy\+::core\+::records\+::format\+\_\+parser@{numpy\+::core\+::records\+::format\+\_\+parser}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::core\+::records\+::format\+\_\+parser@{numpy\+::core\+::records\+::format\+\_\+parser}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+records.\+format\+\_\+parser.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{formats,  }\item[{}]{names,  }\item[{}]{titles,  }\item[{}]{aligned = {\ttfamily False},  }\item[{}]{byteorder = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1records_1_1format__parser_a58c32390714015baad90c06ebec15af4}\label{classnumpy_1_1core_1_1records_1_1format__parser_a58c32390714015baad90c06ebec15af4}} 
+\index{numpy\+::core\+::records\+::format\+\_\+parser@{numpy\+::core\+::records\+::format\+\_\+parser}!dtype@{dtype}}
+\index{dtype@{dtype}!numpy\+::core\+::records\+::format\+\_\+parser@{numpy\+::core\+::records\+::format\+\_\+parser}}
+\subsubsection{\texorpdfstring{dtype}{dtype}}
+{\footnotesize\ttfamily numpy.\+core.\+records.\+format\+\_\+parser.\+dtype}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/core/\hyperlink{records_8py}{records.\+py}\end{DoxyCompactItemize}

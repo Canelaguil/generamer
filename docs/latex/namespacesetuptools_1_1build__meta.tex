@@ -1,0 +1,109 @@
+\hypertarget{namespacesetuptools_1_1build__meta}{}\section{setuptools.\+build\+\_\+meta Namespace Reference}
+\label{namespacesetuptools_1_1build__meta}\index{setuptools.\+build\+\_\+meta@{setuptools.\+build\+\_\+meta}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1build__meta_1_1__BuildMetaBackend}{\+\_\+\+Build\+Meta\+Backend}
+\item 
+class \hyperlink{classsetuptools_1_1build__meta_1_1__BuildMetaLegacyBackend}{\+\_\+\+Build\+Meta\+Legacy\+Backend}
+\item 
+class \hyperlink{classsetuptools_1_1build__meta_1_1Distribution}{Distribution}
+\item 
+class \hyperlink{classsetuptools_1_1build__meta_1_1SetupRequirementsError}{Setup\+Requirements\+Error}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1build__meta_a2d613b8edde1bdbe5292f18b72d07c42}{no\+\_\+install\+\_\+setup\+\_\+requires} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1build__meta_ae422aa2677da3cdad5d9210ff4d3db6c}{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel}
+\item 
+\hyperlink{namespacesetuptools_1_1build__meta_afa6e72b6701024a70ba35eebabac86ff}{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist}
+\item 
+\hyperlink{namespacesetuptools_1_1build__meta_a3cdfc997ea294205c834e83b162da242}{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel}
+\item 
+\hyperlink{namespacesetuptools_1_1build__meta_aa1e49d651c5d668b3cea0c55420626be}{build\+\_\+wheel}
+\item 
+\hyperlink{namespacesetuptools_1_1build__meta_a313c85d35645c296bbf0fee98cbcb0b8}{build\+\_\+sdist}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A PEP 517 interface to setuptools
+
+Previously, when a user or a command line tool (let's call it a "frontend")
+needed to make a request of setuptools to take a certain action, for
+example, generating a list of installation requirements, the frontend would
+would call "setup.py egg_info" or "setup.py bdist_wheel" on the command line.
+
+PEP 517 defines a different method of interfacing with setuptools. Rather
+than calling "setup.py" directly, the frontend should:
+
+  1. Set the current directory to the directory with a setup.py file
+  2. Import this module into a safe python interpreter (one in which
+ setuptools can potentially set global variables or crash hard).
+  3. Call one of the functions defined in PEP 517.
+
+What each function does is defined in PEP 517. However, here is a "casual"
+definition of the functions (this definition should not be relied on for
+bug reports or API stability):
+
+  - `build_wheel`: build a wheel in the folder and return the basename
+  - `get_requires_for_build_wheel`: get the `setup_requires` to build
+  - `prepare_metadata_for_build_wheel`: get the `install_requires`
+  - `build_sdist`: build an sdist in the folder and return the basename
+  - `get_requires_for_build_sdist`: get the `setup_requires` to build
+
+Again, this is not a formal definition! Just a "taste" of the module.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1build__meta_a2d613b8edde1bdbe5292f18b72d07c42}\label{namespacesetuptools_1_1build__meta_a2d613b8edde1bdbe5292f18b72d07c42}} 
+\index{setuptools\+::build\+\_\+meta@{setuptools\+::build\+\_\+meta}!no\+\_\+install\+\_\+setup\+\_\+requires@{no\+\_\+install\+\_\+setup\+\_\+requires}}
+\index{no\+\_\+install\+\_\+setup\+\_\+requires@{no\+\_\+install\+\_\+setup\+\_\+requires}!setuptools\+::build\+\_\+meta@{setuptools\+::build\+\_\+meta}}
+\subsubsection{\texorpdfstring{no\+\_\+install\+\_\+setup\+\_\+requires()}{no\_install\_setup\_requires()}}
+{\footnotesize\ttfamily def setuptools.\+build\+\_\+meta.\+no\+\_\+install\+\_\+setup\+\_\+requires (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Temporarily disable installing setup_requires
+
+Under PEP 517, the backend reports build dependencies to the frontend,
+and the frontend is responsible for ensuring they're installed.
+So setuptools (acting as a backend) should not try to install them.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1build__meta_a313c85d35645c296bbf0fee98cbcb0b8}\label{namespacesetuptools_1_1build__meta_a313c85d35645c296bbf0fee98cbcb0b8}} 
+\index{setuptools\+::build\+\_\+meta@{setuptools\+::build\+\_\+meta}!build\+\_\+sdist@{build\+\_\+sdist}}
+\index{build\+\_\+sdist@{build\+\_\+sdist}!setuptools\+::build\+\_\+meta@{setuptools\+::build\+\_\+meta}}
+\subsubsection{\texorpdfstring{build\+\_\+sdist}{build\_sdist}}
+{\footnotesize\ttfamily setuptools.\+build\+\_\+meta.\+build\+\_\+sdist}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1build__meta_aa1e49d651c5d668b3cea0c55420626be}\label{namespacesetuptools_1_1build__meta_aa1e49d651c5d668b3cea0c55420626be}} 
+\index{setuptools\+::build\+\_\+meta@{setuptools\+::build\+\_\+meta}!build\+\_\+wheel@{build\+\_\+wheel}}
+\index{build\+\_\+wheel@{build\+\_\+wheel}!setuptools\+::build\+\_\+meta@{setuptools\+::build\+\_\+meta}}
+\subsubsection{\texorpdfstring{build\+\_\+wheel}{build\_wheel}}
+{\footnotesize\ttfamily setuptools.\+build\+\_\+meta.\+build\+\_\+wheel}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1build__meta_afa6e72b6701024a70ba35eebabac86ff}\label{namespacesetuptools_1_1build__meta_afa6e72b6701024a70ba35eebabac86ff}} 
+\index{setuptools\+::build\+\_\+meta@{setuptools\+::build\+\_\+meta}!get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist@{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist}}
+\index{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist@{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist}!setuptools\+::build\+\_\+meta@{setuptools\+::build\+\_\+meta}}
+\subsubsection{\texorpdfstring{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist}{get\_requires\_for\_build\_sdist}}
+{\footnotesize\ttfamily setuptools.\+build\+\_\+meta.\+get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1build__meta_ae422aa2677da3cdad5d9210ff4d3db6c}\label{namespacesetuptools_1_1build__meta_ae422aa2677da3cdad5d9210ff4d3db6c}} 
+\index{setuptools\+::build\+\_\+meta@{setuptools\+::build\+\_\+meta}!get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel@{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel}}
+\index{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel@{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel}!setuptools\+::build\+\_\+meta@{setuptools\+::build\+\_\+meta}}
+\subsubsection{\texorpdfstring{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel}{get\_requires\_for\_build\_wheel}}
+{\footnotesize\ttfamily setuptools.\+build\+\_\+meta.\+get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1build__meta_a3cdfc997ea294205c834e83b162da242}\label{namespacesetuptools_1_1build__meta_a3cdfc997ea294205c834e83b162da242}} 
+\index{setuptools\+::build\+\_\+meta@{setuptools\+::build\+\_\+meta}!prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel@{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel}}
+\index{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel@{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel}!setuptools\+::build\+\_\+meta@{setuptools\+::build\+\_\+meta}}
+\subsubsection{\texorpdfstring{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel}{prepare\_metadata\_for\_build\_wheel}}
+{\footnotesize\ttfamily setuptools.\+build\+\_\+meta.\+prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel}
+

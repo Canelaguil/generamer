@@ -1,0 +1,198 @@
+\hypertarget{classmatplotlib_1_1__mathtext_1_1Char}{}\section{matplotlib.\+\_\+mathtext.\+Char Class Reference}
+\label{classmatplotlib_1_1__mathtext_1_1Char}\index{matplotlib.\+\_\+mathtext.\+Char@{matplotlib.\+\_\+mathtext.\+Char}}
+
+
+Inheritance diagram for matplotlib.\+\_\+mathtext.\+Char\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classmatplotlib_1_1__mathtext_1_1Char__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+\_\+mathtext.\+Char\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classmatplotlib_1_1__mathtext_1_1Char__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Char_a0e6f39df55b00796d3b7bc25c8b4aa45}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1__mathtext_1_1Char_ad0a96d779582655d1806dbfdee8756ae}{c}, state, \hyperlink{classmatplotlib_1_1__mathtext_1_1Char_ac128837857ae5dbf517edcf098bba4d4}{math}=True)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Char_ad8c424fce47d4127709080f753d1ec77}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Char_a75cc34f928a57081fbf275fa1f3ae3b3}{is\+\_\+slanted} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Char_a1fb407b2561825bfb4a06c1a126d1d5c}{get\+\_\+kerning} (self, next)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Char_ad913a0c543de4d5d182afc5fe882f2ff}{render} (self, x, y)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Char_a209478846ef8627c3f528df741c5924a}{shrink} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Char_ab3a23132187a61fcb1b1f3c5106f4ef0}{grow} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Char_ad0a96d779582655d1806dbfdee8756ae}{c}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Char_ad0517db302116292c8a6f1d0fcd646e5}{font\+\_\+output}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Char_a9d73241b9a249cebec1b8c5879b73ff7}{font}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Char_a28bc459ec7d140347fa00f39d95a0bc6}{font\+\_\+class}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Char_a0a46ba1f757218207860526a884adcbb}{fontsize}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Char_a5791b11c90b1ea91dd63eb488f9382a4}{dpi}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Char_ac128837857ae5dbf517edcf098bba4d4}{math}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Char_a1fbd200443acd7468950756327edbd33}{width}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Char_a38a8a687d465c16ac6022596ca812180}{height}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Char_aba0869d79610b37fc4dcd94be653f449}{depth}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A single character.
+
+Unlike TeX, the font information and metrics are stored with each `Char`
+to make it easier to lookup the font metrics when needed.  Note that TeX
+boxes have a width, height, and depth, unlike Type1 and TrueType which use
+a full bounding box and an advance in the x-direction.  The metrics must
+be converted to the TeX model, and the advance (if different from width)
+must be converted into a `Kern` node when the `Char` is added to its parent
+`Hlist`.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_a0e6f39df55b00796d3b7bc25c8b4aa45}\label{classmatplotlib_1_1__mathtext_1_1Char_a0e6f39df55b00796d3b7bc25c8b4aa45}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Char.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{c,  }\item[{}]{state,  }\item[{}]{math = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_ad8c424fce47d4127709080f753d1ec77}\label{classmatplotlib_1_1__mathtext_1_1Char_ad8c424fce47d4127709080f753d1ec77}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Char.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_a1fb407b2561825bfb4a06c1a126d1d5c}\label{classmatplotlib_1_1__mathtext_1_1Char_a1fb407b2561825bfb4a06c1a126d1d5c}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!get\+\_\+kerning@{get\+\_\+kerning}}
+\index{get\+\_\+kerning@{get\+\_\+kerning}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{get\+\_\+kerning()}{get\_kerning()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Char.\+get\+\_\+kerning (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{next }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the amount of kerning between this and the given character.
+
+This method is called when characters are strung together into `Hlist`
+to create `Kern` nodes.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_ab3a23132187a61fcb1b1f3c5106f4ef0}\label{classmatplotlib_1_1__mathtext_1_1Char_ab3a23132187a61fcb1b1f3c5106f4ef0}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!grow@{grow}}
+\index{grow@{grow}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{grow()}{grow()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Char.\+grow (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_a75cc34f928a57081fbf275fa1f3ae3b3}\label{classmatplotlib_1_1__mathtext_1_1Char_a75cc34f928a57081fbf275fa1f3ae3b3}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!is\+\_\+slanted@{is\+\_\+slanted}}
+\index{is\+\_\+slanted@{is\+\_\+slanted}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{is\+\_\+slanted()}{is\_slanted()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Char.\+is\+\_\+slanted (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_ad913a0c543de4d5d182afc5fe882f2ff}\label{classmatplotlib_1_1__mathtext_1_1Char_ad913a0c543de4d5d182afc5fe882f2ff}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!render@{render}}
+\index{render@{render}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Char.\+render (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Render the character to the canvas
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_a209478846ef8627c3f528df741c5924a}\label{classmatplotlib_1_1__mathtext_1_1Char_a209478846ef8627c3f528df741c5924a}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!shrink@{shrink}}
+\index{shrink@{shrink}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{shrink()}{shrink()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Char.\+shrink (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_ad0a96d779582655d1806dbfdee8756ae}\label{classmatplotlib_1_1__mathtext_1_1Char_ad0a96d779582655d1806dbfdee8756ae}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!c@{c}}
+\index{c@{c}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Char.\+c}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_aba0869d79610b37fc4dcd94be653f449}\label{classmatplotlib_1_1__mathtext_1_1Char_aba0869d79610b37fc4dcd94be653f449}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!depth@{depth}}
+\index{depth@{depth}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Char.\+depth}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_a5791b11c90b1ea91dd63eb488f9382a4}\label{classmatplotlib_1_1__mathtext_1_1Char_a5791b11c90b1ea91dd63eb488f9382a4}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!dpi@{dpi}}
+\index{dpi@{dpi}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{dpi}{dpi}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Char.\+dpi}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_a9d73241b9a249cebec1b8c5879b73ff7}\label{classmatplotlib_1_1__mathtext_1_1Char_a9d73241b9a249cebec1b8c5879b73ff7}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!font@{font}}
+\index{font@{font}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Char.\+font}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_a28bc459ec7d140347fa00f39d95a0bc6}\label{classmatplotlib_1_1__mathtext_1_1Char_a28bc459ec7d140347fa00f39d95a0bc6}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!font\+\_\+class@{font\+\_\+class}}
+\index{font\+\_\+class@{font\+\_\+class}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{font\+\_\+class}{font\_class}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Char.\+font\+\_\+class}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_ad0517db302116292c8a6f1d0fcd646e5}\label{classmatplotlib_1_1__mathtext_1_1Char_ad0517db302116292c8a6f1d0fcd646e5}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!font\+\_\+output@{font\+\_\+output}}
+\index{font\+\_\+output@{font\+\_\+output}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{font\+\_\+output}{font\_output}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Char.\+font\+\_\+output}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_a0a46ba1f757218207860526a884adcbb}\label{classmatplotlib_1_1__mathtext_1_1Char_a0a46ba1f757218207860526a884adcbb}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!fontsize@{fontsize}}
+\index{fontsize@{fontsize}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{fontsize}{fontsize}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Char.\+fontsize}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_a38a8a687d465c16ac6022596ca812180}\label{classmatplotlib_1_1__mathtext_1_1Char_a38a8a687d465c16ac6022596ca812180}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!height@{height}}
+\index{height@{height}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Char.\+height}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_ac128837857ae5dbf517edcf098bba4d4}\label{classmatplotlib_1_1__mathtext_1_1Char_ac128837857ae5dbf517edcf098bba4d4}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!math@{math}}
+\index{math@{math}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{math}{math}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Char.\+math}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Char_a1fbd200443acd7468950756327edbd33}\label{classmatplotlib_1_1__mathtext_1_1Char_a1fbd200443acd7468950756327edbd33}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}!width@{width}}
+\index{width@{width}!matplotlib\+::\+\_\+mathtext\+::\+Char@{matplotlib\+::\+\_\+mathtext\+::\+Char}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Char.\+width}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{__mathtext_8py}{\+\_\+mathtext.\+py}\end{DoxyCompactItemize}

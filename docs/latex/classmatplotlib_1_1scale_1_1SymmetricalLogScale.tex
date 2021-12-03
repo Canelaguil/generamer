@@ -1,0 +1,173 @@
+\hypertarget{classmatplotlib_1_1scale_1_1SymmetricalLogScale}{}\section{matplotlib.\+scale.\+Symmetrical\+Log\+Scale Class Reference}
+\label{classmatplotlib_1_1scale_1_1SymmetricalLogScale}\index{matplotlib.\+scale.\+Symmetrical\+Log\+Scale@{matplotlib.\+scale.\+Symmetrical\+Log\+Scale}}
+
+
+Inheritance diagram for matplotlib.\+scale.\+Symmetrical\+Log\+Scale\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classmatplotlib_1_1scale_1_1SymmetricalLogScale__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+scale.\+Symmetrical\+Log\+Scale\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classmatplotlib_1_1scale_1_1SymmetricalLogScale__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogScale_afa44ada0aae6492ca54a109f1097f671}{Symmetrical\+Log\+Transform} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a5fdfaee038d2ec9296b96859548d03b4}{Inverted\+Symmetrical\+Log\+Transform} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogScale_ae6113677e06d8b69276f1ca89d837b42}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, axis, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogScale_aa6739f407d8e9147c94fcb43a613bba4}{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters} (self, axis)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogScale_ab3f3ccb4ce913cc50d9818ff90bde49d}{get\+\_\+transform} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogScale_aebf71a90f042b7902d7d1578bfb49d68}{subs}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a1712ae25d3ffd40364937e777da47926}{name}
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a0a6e605c5c2d549a3b1d007f808116be}{alternative}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogScale_affa0ca844dd982816e664e310bd052f6}{base} = property(lambda self\+: self.\+\_\+transform.\+base)
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a203a6a9996c15b76071d997846b829c5}{linthresh} = property(lambda self\+: self.\+\_\+transform.\+linthresh)
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a3471458646cebb0d3062afec6c0d7a8c}{linscale} = property(lambda self\+: self.\+\_\+transform.\+linscale)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The symmetrical logarithmic scale is logarithmic in both the
+positive and negative directions from the origin.
+
+Since the values close to zero tend toward infinity, there is a
+need to have a range around zero that is linear.  The parameter
+*linthresh* allows the user to specify the size of this range
+(-*linthresh*, *linthresh*).
+
+Parameters
+----------
+base : float, default: 10
+    The base of the logarithm.
+
+linthresh : float, default: 2
+    Defines the range ``(-x, x)``, within which the plot is linear.
+    This avoids having the plot go to infinity around zero.
+
+subs : sequence of int
+    Where to place the subticks between each major tick.
+    For example, in a log10 scale: ``[2, 3, 4, 5, 6, 7, 8, 9]`` will place
+    8 logarithmically spaced minor ticks between each major tick.
+
+linscale : float, optional
+    This allows the linear range ``(-linthresh, linthresh)`` to be
+    stretched relative to the logarithmic range. Its value is the number of
+    decades to use for each half of the linear range. For example, when
+    *linscale* == 1.0 (the default), the space used for the positive and
+    negative halves of the linear range will be equal to one decade in
+    the logarithmic range.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1SymmetricalLogScale_ae6113677e06d8b69276f1ca89d837b42}\label{classmatplotlib_1_1scale_1_1SymmetricalLogScale_ae6113677e06d8b69276f1ca89d837b42}} 
+\index{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Symmetrical\+Log\+Scale.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{axis,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1SymmetricalLogScale_ab3f3ccb4ce913cc50d9818ff90bde49d}\label{classmatplotlib_1_1scale_1_1SymmetricalLogScale_ab3f3ccb4ce913cc50d9818ff90bde49d}} 
+\index{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}!get\+\_\+transform@{get\+\_\+transform}}
+\index{get\+\_\+transform@{get\+\_\+transform}!matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}}
+\subsubsection{\texorpdfstring{get\+\_\+transform()}{get\_transform()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Symmetrical\+Log\+Scale.\+get\+\_\+transform (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the `.SymmetricalLogTransform` associated with this scale.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a5fdfaee038d2ec9296b96859548d03b4}\label{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a5fdfaee038d2ec9296b96859548d03b4}} 
+\index{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}!Inverted\+Symmetrical\+Log\+Transform@{Inverted\+Symmetrical\+Log\+Transform}}
+\index{Inverted\+Symmetrical\+Log\+Transform@{Inverted\+Symmetrical\+Log\+Transform}!matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}}
+\subsubsection{\texorpdfstring{Inverted\+Symmetrical\+Log\+Transform()}{InvertedSymmetricalLogTransform()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Symmetrical\+Log\+Scale.\+Inverted\+Symmetrical\+Log\+Transform (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1SymmetricalLogScale_aa6739f407d8e9147c94fcb43a613bba4}\label{classmatplotlib_1_1scale_1_1SymmetricalLogScale_aa6739f407d8e9147c94fcb43a613bba4}} 
+\index{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}!set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters@{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters}}
+\index{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters@{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters}!matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}}
+\subsubsection{\texorpdfstring{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters()}{set\_default\_locators\_and\_formatters()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Symmetrical\+Log\+Scale.\+set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{axis }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1SymmetricalLogScale_afa44ada0aae6492ca54a109f1097f671}\label{classmatplotlib_1_1scale_1_1SymmetricalLogScale_afa44ada0aae6492ca54a109f1097f671}} 
+\index{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}!Symmetrical\+Log\+Transform@{Symmetrical\+Log\+Transform}}
+\index{Symmetrical\+Log\+Transform@{Symmetrical\+Log\+Transform}!matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}}
+\subsubsection{\texorpdfstring{Symmetrical\+Log\+Transform()}{SymmetricalLogTransform()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Symmetrical\+Log\+Scale.\+Symmetrical\+Log\+Transform (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a0a6e605c5c2d549a3b1d007f808116be}\label{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a0a6e605c5c2d549a3b1d007f808116be}} 
+\index{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}!alternative@{alternative}}
+\index{alternative@{alternative}!matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}}
+\subsubsection{\texorpdfstring{alternative}{alternative}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Symmetrical\+Log\+Scale.\+alternative\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a1712ae25d3ffd40364937e777da47926}\label{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a1712ae25d3ffd40364937e777da47926}} 
+\index{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}!name@{name}}
+\index{name@{name}!matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Symmetrical\+Log\+Scale.\+name\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1SymmetricalLogScale_aebf71a90f042b7902d7d1578bfb49d68}\label{classmatplotlib_1_1scale_1_1SymmetricalLogScale_aebf71a90f042b7902d7d1578bfb49d68}} 
+\index{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}!subs@{subs}}
+\index{subs@{subs}!matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}}
+\subsubsection{\texorpdfstring{subs}{subs}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Symmetrical\+Log\+Scale.\+subs}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1SymmetricalLogScale_affa0ca844dd982816e664e310bd052f6}\label{classmatplotlib_1_1scale_1_1SymmetricalLogScale_affa0ca844dd982816e664e310bd052f6}} 
+\index{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}!base@{base}}
+\index{base@{base}!matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}}
+\subsubsection{\texorpdfstring{base}{base}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Symmetrical\+Log\+Scale.\+base = property(lambda self\+: self.\+\_\+transform.\+base)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a3471458646cebb0d3062afec6c0d7a8c}\label{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a3471458646cebb0d3062afec6c0d7a8c}} 
+\index{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}!linscale@{linscale}}
+\index{linscale@{linscale}!matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}}
+\subsubsection{\texorpdfstring{linscale}{linscale}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Symmetrical\+Log\+Scale.\+linscale = property(lambda self\+: self.\+\_\+transform.\+linscale)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a203a6a9996c15b76071d997846b829c5}\label{classmatplotlib_1_1scale_1_1SymmetricalLogScale_a203a6a9996c15b76071d997846b829c5}} 
+\index{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}!linthresh@{linthresh}}
+\index{linthresh@{linthresh}!matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale@{matplotlib\+::scale\+::\+Symmetrical\+Log\+Scale}}
+\subsubsection{\texorpdfstring{linthresh}{linthresh}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Symmetrical\+Log\+Scale.\+linthresh = property(lambda self\+: self.\+\_\+transform.\+linthresh)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{scale_8py}{scale.\+py}\end{DoxyCompactItemize}

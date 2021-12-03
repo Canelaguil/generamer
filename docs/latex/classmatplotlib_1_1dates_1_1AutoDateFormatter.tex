@@ -1,0 +1,140 @@
+\hypertarget{classmatplotlib_1_1dates_1_1AutoDateFormatter}{}\section{matplotlib.\+dates.\+Auto\+Date\+Formatter Class Reference}
+\label{classmatplotlib_1_1dates_1_1AutoDateFormatter}\index{matplotlib.\+dates.\+Auto\+Date\+Formatter@{matplotlib.\+dates.\+Auto\+Date\+Formatter}}
+
+
+Inheritance diagram for matplotlib.\+dates.\+Auto\+Date\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classmatplotlib_1_1dates_1_1AutoDateFormatter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+dates.\+Auto\+Date\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classmatplotlib_1_1dates_1_1AutoDateFormatter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1AutoDateFormatter_a856f8f1e4e7c693991d56cc41313ce47}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, locator, tz=None, \hyperlink{classmatplotlib_1_1dates_1_1AutoDateFormatter_ad40ac85744ef9124ff81debf8a41b191}{defaultfmt}=\textquotesingle{}\%Y-\/\%m-\/\%d\textquotesingle{}, usetex=None)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1AutoDateFormatter_a8f033a6cb87d8c33bd7224ea9901a632}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, x, pos=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1AutoDateFormatter_ad40ac85744ef9124ff81debf8a41b191}{defaultfmt}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1AutoDateFormatter_a7c8150a94f4782c409698d595d9825e3}{scaled}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A `.Formatter` which attempts to figure out the best format to use.  This
+is most useful when used with the `AutoDateLocator`.
+
+The AutoDateFormatter has a scale dictionary that maps the scale
+of the tick (the distance in days between one major tick) and a
+format string.  The default looks like this::
+
+    self.scaled = {
+        DAYS_PER_YEAR: rcParams['date.autoformat.year'],
+        DAYS_PER_MONTH: rcParams['date.autoformat.month'],
+        1.0: rcParams['date.autoformat.day'],
+        1. / HOURS_PER_DAY: rcParams['date.autoformat.hour'],
+        1. / (MINUTES_PER_DAY): rcParams['date.autoformat.minute'],
+        1. / (SEC_PER_DAY): rcParams['date.autoformat.second'],
+        1. / (MUSECONDS_PER_DAY): rcParams['date.autoformat.microsecond'],
+    }
+
+The algorithm picks the key in the dictionary that is >= the
+current scale and uses that format string.  You can customize this
+dictionary by doing::
+
+>>> locator = AutoDateLocator()
+>>> formatter = AutoDateFormatter(locator)
+>>> formatter.scaled[1/(24.*60.)] = '%M:%S' # only show min and sec
+
+A custom `.FuncFormatter` can also be used.  The following example shows
+how to use a custom format function to strip trailing zeros from decimal
+seconds and adds the date to the first ticklabel::
+
+    >>> def my_format_function(x, pos=None):
+    ...     x = matplotlib.dates.num2date(x)
+    ...     if pos == 0:
+    ...         fmt = '%D %H:%M:%S.%f'
+    ...     else:
+    ...         fmt = '%H:%M:%S.%f'
+    ...     label = x.strftime(fmt)
+    ...     label = label.rstrip("0")
+    ...     label = label.rstrip(".")
+    ...     return label
+    >>> from matplotlib.ticker import FuncFormatter
+    >>> formatter.scaled[1/(24.*60.)] = FuncFormatter(my_format_function)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateFormatter_a856f8f1e4e7c693991d56cc41313ce47}\label{classmatplotlib_1_1dates_1_1AutoDateFormatter_a856f8f1e4e7c693991d56cc41313ce47}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Formatter@{matplotlib\+::dates\+::\+Auto\+Date\+Formatter}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::dates\+::\+Auto\+Date\+Formatter@{matplotlib\+::dates\+::\+Auto\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Auto\+Date\+Formatter.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{locator,  }\item[{}]{tz = {\ttfamily None},  }\item[{}]{defaultfmt = {\ttfamily \textquotesingle{}\%Y-\/\%m-\/\%d\textquotesingle{}},  }\item[{}]{usetex = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Autoformat the date labels.
+
+Parameters
+----------
+locator : `.ticker.Locator`
+    Locator that this axis is using.
+
+tz : str, optional
+    Passed to `.dates.date2num`.
+
+defaultfmt : str
+    The default format to use if none of the values in ``self.scaled``
+    are greater than the unit returned by ``locator._get_unit()``.
+
+usetex : bool, default: :rc:`text.usetex`
+    To enable/disable the use of TeX's math mode for rendering the
+    results of the formatter. If any entries in ``self.scaled`` are set
+    as functions, then it is up to the customized function to enable or
+    disable TeX's math mode itself.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateFormatter_a8f033a6cb87d8c33bd7224ea9901a632}\label{classmatplotlib_1_1dates_1_1AutoDateFormatter_a8f033a6cb87d8c33bd7224ea9901a632}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Formatter@{matplotlib\+::dates\+::\+Auto\+Date\+Formatter}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::dates\+::\+Auto\+Date\+Formatter@{matplotlib\+::dates\+::\+Auto\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Auto\+Date\+Formatter.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{pos = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateFormatter_ad40ac85744ef9124ff81debf8a41b191}\label{classmatplotlib_1_1dates_1_1AutoDateFormatter_ad40ac85744ef9124ff81debf8a41b191}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Formatter@{matplotlib\+::dates\+::\+Auto\+Date\+Formatter}!defaultfmt@{defaultfmt}}
+\index{defaultfmt@{defaultfmt}!matplotlib\+::dates\+::\+Auto\+Date\+Formatter@{matplotlib\+::dates\+::\+Auto\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{defaultfmt}{defaultfmt}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Auto\+Date\+Formatter.\+defaultfmt}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateFormatter_a7c8150a94f4782c409698d595d9825e3}\label{classmatplotlib_1_1dates_1_1AutoDateFormatter_a7c8150a94f4782c409698d595d9825e3}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Formatter@{matplotlib\+::dates\+::\+Auto\+Date\+Formatter}!scaled@{scaled}}
+\index{scaled@{scaled}!matplotlib\+::dates\+::\+Auto\+Date\+Formatter@{matplotlib\+::dates\+::\+Auto\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{scaled}{scaled}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Auto\+Date\+Formatter.\+scaled}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{dates_8py}{dates.\+py}\end{DoxyCompactItemize}

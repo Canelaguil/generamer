@@ -1,0 +1,146 @@
+\hypertarget{namespacenetworkx_1_1readwrite_1_1pajek}{}\section{networkx.\+readwrite.\+pajek Namespace Reference}
+\label{namespacenetworkx_1_1readwrite_1_1pajek}\index{networkx.\+readwrite.\+pajek@{networkx.\+readwrite.\+pajek}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1pajek_a9903e63244c0ce03b4e8a02edd9c521b}{generate\+\_\+pajek} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1pajek_a280d279fd8b6591d4019046899eec5b1}{write\+\_\+pajek} (G, path, encoding=\char`\"{}U\+TF-\/8\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1pajek_ad51f4ac8ecbd12782be218e31a98380d}{read\+\_\+pajek} (path, encoding=\char`\"{}U\+TF-\/8\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1pajek_a209aa5831d8b00d51d17f6350018b4bb}{parse\+\_\+pajek} (lines)
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1pajek_adda16690a7a608d9cb3404328762c8d6}{make\+\_\+qstr} (t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}*****
+Pajek
+*****
+Read graphs in Pajek format.
+
+This implementation handles directed and undirected graphs including
+those with self loops and parallel edges.
+
+Format
+------
+See http://vlado.fmf.uni-lj.si/pub/networks/pajek/doc/draweps.htm
+for format information.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1pajek_a9903e63244c0ce03b4e8a02edd9c521b}\label{namespacenetworkx_1_1readwrite_1_1pajek_a9903e63244c0ce03b4e8a02edd9c521b}} 
+\index{networkx\+::readwrite\+::pajek@{networkx\+::readwrite\+::pajek}!generate\+\_\+pajek@{generate\+\_\+pajek}}
+\index{generate\+\_\+pajek@{generate\+\_\+pajek}!networkx\+::readwrite\+::pajek@{networkx\+::readwrite\+::pajek}}
+\subsubsection{\texorpdfstring{generate\+\_\+pajek()}{generate\_pajek()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+pajek.\+generate\+\_\+pajek (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate lines in Pajek graph format.
+
+Parameters
+----------
+G : graph
+   A Networkx graph
+
+References
+----------
+See http://vlado.fmf.uni-lj.si/pub/networks/pajek/doc/draweps.htm
+for format information.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1pajek_adda16690a7a608d9cb3404328762c8d6}\label{namespacenetworkx_1_1readwrite_1_1pajek_adda16690a7a608d9cb3404328762c8d6}} 
+\index{networkx\+::readwrite\+::pajek@{networkx\+::readwrite\+::pajek}!make\+\_\+qstr@{make\+\_\+qstr}}
+\index{make\+\_\+qstr@{make\+\_\+qstr}!networkx\+::readwrite\+::pajek@{networkx\+::readwrite\+::pajek}}
+\subsubsection{\texorpdfstring{make\+\_\+qstr()}{make\_qstr()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+pajek.\+make\+\_\+qstr (\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the string representation of t.
+Add outer double-quotes if the string has a space.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1pajek_a209aa5831d8b00d51d17f6350018b4bb}\label{namespacenetworkx_1_1readwrite_1_1pajek_a209aa5831d8b00d51d17f6350018b4bb}} 
+\index{networkx\+::readwrite\+::pajek@{networkx\+::readwrite\+::pajek}!parse\+\_\+pajek@{parse\+\_\+pajek}}
+\index{parse\+\_\+pajek@{parse\+\_\+pajek}!networkx\+::readwrite\+::pajek@{networkx\+::readwrite\+::pajek}}
+\subsubsection{\texorpdfstring{parse\+\_\+pajek()}{parse\_pajek()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+pajek.\+parse\+\_\+pajek (\begin{DoxyParamCaption}\item[{}]{lines }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse Pajek format graph from string or iterable.
+
+Parameters
+----------
+lines : string or iterable
+   Data in Pajek format.
+
+Returns
+-------
+G : NetworkX graph
+
+See Also
+--------
+read_pajek\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1pajek_ad51f4ac8ecbd12782be218e31a98380d}\label{namespacenetworkx_1_1readwrite_1_1pajek_ad51f4ac8ecbd12782be218e31a98380d}} 
+\index{networkx\+::readwrite\+::pajek@{networkx\+::readwrite\+::pajek}!read\+\_\+pajek@{read\+\_\+pajek}}
+\index{read\+\_\+pajek@{read\+\_\+pajek}!networkx\+::readwrite\+::pajek@{networkx\+::readwrite\+::pajek}}
+\subsubsection{\texorpdfstring{read\+\_\+pajek()}{read\_pajek()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+pajek.\+read\+\_\+pajek (\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{encoding = {\ttfamily \char`\"{}UTF-\/8\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read graph in Pajek format from path.
+
+Parameters
+----------
+path : file or string
+   File or filename to write.
+   Filenames ending in .gz or .bz2 will be uncompressed.
+
+Returns
+-------
+G : NetworkX MultiGraph or MultiDiGraph.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> nx.write_pajek(G, "test.net")
+>>> G = nx.read_pajek("test.net")
+
+To create a Graph instead of a MultiGraph use
+
+>>> G1 = nx.Graph(G)
+
+References
+----------
+See http://vlado.fmf.uni-lj.si/pub/networks/pajek/doc/draweps.htm
+for format information.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1pajek_a280d279fd8b6591d4019046899eec5b1}\label{namespacenetworkx_1_1readwrite_1_1pajek_a280d279fd8b6591d4019046899eec5b1}} 
+\index{networkx\+::readwrite\+::pajek@{networkx\+::readwrite\+::pajek}!write\+\_\+pajek@{write\+\_\+pajek}}
+\index{write\+\_\+pajek@{write\+\_\+pajek}!networkx\+::readwrite\+::pajek@{networkx\+::readwrite\+::pajek}}
+\subsubsection{\texorpdfstring{write\+\_\+pajek()}{write\_pajek()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+pajek.\+write\+\_\+pajek (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{path,  }\item[{}]{encoding = {\ttfamily \char`\"{}UTF-\/8\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write graph in Pajek format to path.
+
+Parameters
+----------
+G : graph
+   A Networkx graph
+path : file or string
+   File or filename to write.
+   Filenames ending in .gz or .bz2 will be compressed.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> nx.write_pajek(G, "test.net")
+
+Warnings
+--------
+Optional node attributes and edge attributes must be non-empty strings.
+Otherwise it will not be written into the file. You will need to
+convert those attributes to strings if you want to keep them.
+
+References
+----------
+See http://vlado.fmf.uni-lj.si/pub/networks/pajek/doc/draweps.htm
+for format information.
+\end{DoxyVerb}
+ 

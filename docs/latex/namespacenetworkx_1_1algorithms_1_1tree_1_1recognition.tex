@@ -1,0 +1,209 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition}{}\section{networkx.\+algorithms.\+tree.\+recognition Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition}\index{networkx.\+algorithms.\+tree.\+recognition@{networkx.\+algorithms.\+tree.\+recognition}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition_a39e9081aa63bc4c106fd8dc0cc4d5e51}{is\+\_\+arborescence} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition_ae93ee5537aae537d550b1fadc2eaf992}{is\+\_\+branching} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition_afa313295940a819b7b46b485062d9eab}{is\+\_\+forest} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition_a5a576f572714440375b8ff046d00d024}{is\+\_\+tree} (G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Recognition Tests
+=================
+
+A *forest* is an acyclic, undirected graph, and a *tree* is a connected forest.
+Depending on the subfield, there are various conventions for generalizing these
+definitions to directed graphs.
+
+In one convention, directed variants of forest and tree are defined in an
+identical manner, except that the direction of the edges is ignored. In effect,
+each directed edge is treated as a single undirected edge. Then, additional
+restrictions are imposed to define *branchings* and *arborescences*.
+
+In another convention, directed variants of forest and tree correspond to
+the previous convention's branchings and arborescences, respectively. Then two
+new terms, *polyforest* and *polytree*, are defined to correspond to the other
+convention's forest and tree.
+
+Summarizing::
+
+   +-----------------------------+
+   | Convention A | Convention B |
+   +=============================+
+   | forest       | polyforest   |
+   | tree         | polytree     |
+   | branching    | forest       |
+   | arborescence | tree         |
+   +-----------------------------+
+
+Each convention has its reasons. The first convention emphasizes definitional
+similarity in that directed forests and trees are only concerned with
+acyclicity and do not have an in-degree constraint, just as their undirected
+counterparts do not. The second convention emphasizes functional similarity
+in the sense that the directed analog of a spanning tree is a spanning
+arborescence. That is, take any spanning tree and choose one node as the root.
+Then every edge is assigned a direction such there is a directed path from the
+root to every other node. The result is a spanning arborescence.
+
+NetworkX follows convention "A". Explicitly, these are:
+
+undirected forest
+   An undirected graph with no undirected cycles.
+
+undirected tree
+   A connected, undirected forest.
+
+directed forest
+   A directed graph with no undirected cycles. Equivalently, the underlying
+   graph structure (which ignores edge orientations) is an undirected forest.
+   In convention B, this is known as a polyforest.
+
+directed tree
+   A weakly connected, directed forest. Equivalently, the underlying graph
+   structure (which ignores edge orientations) is an undirected tree. In
+   convention B, this is known as a polytree.
+
+branching
+   A directed forest with each node having, at most, one parent. So the maximum
+   in-degree is equal to 1. In convention B, this is known as a forest.
+
+arborescence
+   A directed tree with each node having, at most, one parent. So the maximum
+   in-degree is equal to 1. In convention B, this is known as a tree.
+
+For trees and arborescences, the adjective "spanning" may be added to designate
+that the graph, when considered as a forest/branching, consists of a single
+tree/arborescence that includes all nodes in the graph. It is true, by
+definition, that every tree/arborescence is spanning with respect to the nodes
+that define the tree/arborescence and so, it might seem redundant to introduce
+the notion of "spanning". However, the nodes may represent a subset of
+nodes from a larger graph, and it is in this context that the term "spanning"
+becomes a useful notion.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition_a39e9081aa63bc4c106fd8dc0cc4d5e51}\label{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition_a39e9081aa63bc4c106fd8dc0cc4d5e51}} 
+\index{networkx\+::algorithms\+::tree\+::recognition@{networkx\+::algorithms\+::tree\+::recognition}!is\+\_\+arborescence@{is\+\_\+arborescence}}
+\index{is\+\_\+arborescence@{is\+\_\+arborescence}!networkx\+::algorithms\+::tree\+::recognition@{networkx\+::algorithms\+::tree\+::recognition}}
+\subsubsection{\texorpdfstring{is\+\_\+arborescence()}{is\_arborescence()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+recognition.\+is\+\_\+arborescence (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if `G` is an arborescence.
+
+An arborescence is a directed tree with maximum in-degree equal to 1.
+
+Parameters
+----------
+G : graph
+    The graph to test.
+
+Returns
+-------
+b : bool
+    A boolean that is True if `G` is an arborescence.
+
+Notes
+-----
+In another convention, an arborescence is known as a *tree*.
+
+See Also
+--------
+is_tree\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition_ae93ee5537aae537d550b1fadc2eaf992}\label{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition_ae93ee5537aae537d550b1fadc2eaf992}} 
+\index{networkx\+::algorithms\+::tree\+::recognition@{networkx\+::algorithms\+::tree\+::recognition}!is\+\_\+branching@{is\+\_\+branching}}
+\index{is\+\_\+branching@{is\+\_\+branching}!networkx\+::algorithms\+::tree\+::recognition@{networkx\+::algorithms\+::tree\+::recognition}}
+\subsubsection{\texorpdfstring{is\+\_\+branching()}{is\_branching()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+recognition.\+is\+\_\+branching (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if `G` is a branching.
+
+A branching is a directed forest with maximum in-degree equal to 1.
+
+Parameters
+----------
+G : directed graph
+    The directed graph to test.
+
+Returns
+-------
+b : bool
+    A boolean that is True if `G` is a branching.
+
+Notes
+-----
+In another convention, a branching is also known as a *forest*.
+
+See Also
+--------
+is_forest\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition_afa313295940a819b7b46b485062d9eab}\label{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition_afa313295940a819b7b46b485062d9eab}} 
+\index{networkx\+::algorithms\+::tree\+::recognition@{networkx\+::algorithms\+::tree\+::recognition}!is\+\_\+forest@{is\+\_\+forest}}
+\index{is\+\_\+forest@{is\+\_\+forest}!networkx\+::algorithms\+::tree\+::recognition@{networkx\+::algorithms\+::tree\+::recognition}}
+\subsubsection{\texorpdfstring{is\+\_\+forest()}{is\_forest()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+recognition.\+is\+\_\+forest (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if `G` is a forest.
+
+A forest is a graph with no undirected cycles.
+
+For directed graphs, `G` is a forest if the underlying graph is a forest.
+The underlying graph is obtained by treating each directed edge as a single
+undirected edge in a multigraph.
+
+Parameters
+----------
+G : graph
+    The graph to test.
+
+Returns
+-------
+b : bool
+    A boolean that is True if `G` is a forest.
+
+Notes
+-----
+In another convention, a directed forest is known as a *polyforest* and
+then *forest* corresponds to a *branching*.
+
+See Also
+--------
+is_branching\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition_a5a576f572714440375b8ff046d00d024}\label{namespacenetworkx_1_1algorithms_1_1tree_1_1recognition_a5a576f572714440375b8ff046d00d024}} 
+\index{networkx\+::algorithms\+::tree\+::recognition@{networkx\+::algorithms\+::tree\+::recognition}!is\+\_\+tree@{is\+\_\+tree}}
+\index{is\+\_\+tree@{is\+\_\+tree}!networkx\+::algorithms\+::tree\+::recognition@{networkx\+::algorithms\+::tree\+::recognition}}
+\subsubsection{\texorpdfstring{is\+\_\+tree()}{is\_tree()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+recognition.\+is\+\_\+tree (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if `G` is a tree.
+
+A tree is a connected graph with no undirected cycles.
+
+For directed graphs, `G` is a tree if the underlying graph is a tree. The
+underlying graph is obtained by treating each directed edge as a single
+undirected edge in a multigraph.
+
+Parameters
+----------
+G : graph
+    The graph to test.
+
+Returns
+-------
+b : bool
+    A boolean that is True if `G` is a tree.
+
+Notes
+-----
+In another convention, a directed tree is known as a *polytree* and then
+*tree* corresponds to an *arborescence*.
+
+See Also
+--------
+is_arborescence\end{DoxyVerb}
+ 

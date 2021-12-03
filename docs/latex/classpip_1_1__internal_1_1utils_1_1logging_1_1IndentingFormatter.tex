@@ -1,0 +1,96 @@
+\hypertarget{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter}{}\section{pip.\+\_\+internal.\+utils.\+logging.\+Indenting\+Formatter Class Reference}
+\label{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter}\index{pip.\+\_\+internal.\+utils.\+logging.\+Indenting\+Formatter@{pip.\+\_\+internal.\+utils.\+logging.\+Indenting\+Formatter}}
+
+
+Inheritance diagram for pip.\+\_\+internal.\+utils.\+logging.\+Indenting\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+internal.\+utils.\+logging.\+Indenting\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_a319d437a93091b5149193f7ed273616a}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, args, \hyperlink{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_aed8747c14da43b94d392434bf73c4228}{add\+\_\+timestamp}=False, kwargs)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_afb5ccf6041a37cf3487c2b08bc31ef5f}{get\+\_\+message\+\_\+start} (self, formatted, levelno)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_a5d4332f67f315773e40b095d9873f690}{format} (self, record)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_aed8747c14da43b94d392434bf73c4228}{add\+\_\+timestamp}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_af319bffe5d951c33e88106869f2a9241}{default\+\_\+time\+\_\+format}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_a319d437a93091b5149193f7ed273616a}\label{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_a319d437a93091b5149193f7ed273616a}} 
+\index{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter@{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter@{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+logging.\+Indenting\+Formatter.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{add\+\_\+timestamp = {\ttfamily False},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A logging.Formatter that obeys the indent_log() context manager.
+
+:param add_timestamp: A bool indicating output lines should be prefixed
+    with their record's timestamp.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_a5d4332f67f315773e40b095d9873f690}\label{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_a5d4332f67f315773e40b095d9873f690}} 
+\index{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter@{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter}!format@{format}}
+\index{format@{format}!pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter@{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter}}
+\subsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+logging.\+Indenting\+Formatter.\+format (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{record }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calls the standard formatter, but will indent all of the log message
+lines by our current indentation level.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_afb5ccf6041a37cf3487c2b08bc31ef5f}\label{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_afb5ccf6041a37cf3487c2b08bc31ef5f}} 
+\index{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter@{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter}!get\+\_\+message\+\_\+start@{get\+\_\+message\+\_\+start}}
+\index{get\+\_\+message\+\_\+start@{get\+\_\+message\+\_\+start}!pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter@{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter}}
+\subsubsection{\texorpdfstring{get\+\_\+message\+\_\+start()}{get\_message\_start()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+logging.\+Indenting\+Formatter.\+get\+\_\+message\+\_\+start (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{formatted,  }\item[{}]{levelno }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the start of the formatted log message (not counting the
+prefix to add to each line).
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_aed8747c14da43b94d392434bf73c4228}\label{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_aed8747c14da43b94d392434bf73c4228}} 
+\index{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter@{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter}!add\+\_\+timestamp@{add\+\_\+timestamp}}
+\index{add\+\_\+timestamp@{add\+\_\+timestamp}!pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter@{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter}}
+\subsubsection{\texorpdfstring{add\+\_\+timestamp}{add\_timestamp}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+logging.\+Indenting\+Formatter.\+add\+\_\+timestamp}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_af319bffe5d951c33e88106869f2a9241}\label{classpip_1_1__internal_1_1utils_1_1logging_1_1IndentingFormatter_af319bffe5d951c33e88106869f2a9241}} 
+\index{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter@{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter}!default\+\_\+time\+\_\+format@{default\+\_\+time\+\_\+format}}
+\index{default\+\_\+time\+\_\+format@{default\+\_\+time\+\_\+format}!pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter@{pip\+::\+\_\+internal\+::utils\+::logging\+::\+Indenting\+Formatter}}
+\subsubsection{\texorpdfstring{default\+\_\+time\+\_\+format}{default\_time\_format}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+logging.\+Indenting\+Formatter.\+default\+\_\+time\+\_\+format\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+internal/utils/\hyperlink{logging_8py}{logging.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,146 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring}{}\section{networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring}\index{networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring@{networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a18b64cc06a3c34def29e3cebdd5ae39b}{is\+\_\+coloring} (G, coloring)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a78992108f3129c4f2264f8ee751e7f07}{is\+\_\+equitable} (G, coloring, num\+\_\+colors=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a35fcfec63046b1b0949a6fddb59fb0b3}{make\+\_\+\+C\+\_\+from\+\_\+F} (F)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_aa7e8945e01ba6acd6329d30f839607eb}{make\+\_\+\+N\+\_\+from\+\_\+\+L\+\_\+C} (L, C)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a62ed07b2920ac11ec7f1566a8dcca1d1}{make\+\_\+\+H\+\_\+from\+\_\+\+C\+\_\+N} (C, N)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_aecadac75147d649d7cb01e19e38ed1bb}{change\+\_\+color} (u, X, Y, N, H, F, C, L)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a3389920a0828d701abbd6550d8e609a6}{move\+\_\+witnesses} (src\+\_\+color, dst\+\_\+color, N, H, F, C, T\+\_\+cal, L)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_ad564cd161c98e55b605760d7fc6c32e4}{pad\+\_\+graph} (G, num\+\_\+colors)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_ae77c7c09e94a019d26ad9302eb6a5004}{procedure\+\_\+P} (V\+\_\+minus, V\+\_\+plus, N, H, F, C, L, excluded\+\_\+colors=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a763d70813a14904de18244af11ea73d5}{equitable\+\_\+color} (G, num\+\_\+colors)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Equitable coloring of graphs with bounded degree.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_aecadac75147d649d7cb01e19e38ed1bb}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_aecadac75147d649d7cb01e19e38ed1bb}} 
+\index{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}!change\+\_\+color@{change\+\_\+color}}
+\index{change\+\_\+color@{change\+\_\+color}!networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}}
+\subsubsection{\texorpdfstring{change\+\_\+color()}{change\_color()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring.\+change\+\_\+color (\begin{DoxyParamCaption}\item[{}]{u,  }\item[{}]{X,  }\item[{}]{Y,  }\item[{}]{N,  }\item[{}]{H,  }\item[{}]{F,  }\item[{}]{C,  }\item[{}]{L }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Change the color of 'u' from X to Y and update N, H, F, C.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a763d70813a14904de18244af11ea73d5}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a763d70813a14904de18244af11ea73d5}} 
+\index{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}!equitable\+\_\+color@{equitable\+\_\+color}}
+\index{equitable\+\_\+color@{equitable\+\_\+color}!networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}}
+\subsubsection{\texorpdfstring{equitable\+\_\+color()}{equitable\_color()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring.\+equitable\+\_\+color (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{num\+\_\+colors }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Provides equitable (r + 1)-coloring for nodes of G in O(r * n^2) time
+if deg(G) <= r. The algorithm is described in [1]_.
+
+Attempts to color a graph using r colors, where no neighbors of a node
+can have same color as the node itself and the number of nodes with each
+color differ by at most 1.
+
+Parameters
+----------
+G : networkX graph
+   The nodes of this graph will be colored.
+
+num_colors : number of colors to use
+   This number must be at least one more than the maximum degree of nodes
+   in the graph.
+
+Returns
+-------
+A dictionary with keys representing nodes and values representing
+corresponding coloring.
+
+Examples
+--------
+>>> G = nx.cycle_graph(4)
+>>> d = nx.coloring.equitable_color(G, num_colors=3)
+>>> nx.algorithms.coloring.equitable_coloring.is_equitable(G, d)
+True
+
+Raises
+------
+NetworkXAlgorithmError
+    If the maximum degree of the graph ``G`` is greater than
+    ``num_colors``.
+
+References
+----------
+.. [1] Kierstead, H. A., Kostochka, A. V., Mydlarz, M., & Szemerédi, E.
+    (2010). A fast algorithm for equitable coloring. Combinatorica, 30(2),
+    217-224.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a18b64cc06a3c34def29e3cebdd5ae39b}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a18b64cc06a3c34def29e3cebdd5ae39b}} 
+\index{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}!is\+\_\+coloring@{is\+\_\+coloring}}
+\index{is\+\_\+coloring@{is\+\_\+coloring}!networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}}
+\subsubsection{\texorpdfstring{is\+\_\+coloring()}{is\_coloring()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring.\+is\+\_\+coloring (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{coloring }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determine if the coloring is a valid coloring for the graph G.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a78992108f3129c4f2264f8ee751e7f07}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a78992108f3129c4f2264f8ee751e7f07}} 
+\index{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}!is\+\_\+equitable@{is\+\_\+equitable}}
+\index{is\+\_\+equitable@{is\+\_\+equitable}!networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}}
+\subsubsection{\texorpdfstring{is\+\_\+equitable()}{is\_equitable()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring.\+is\+\_\+equitable (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{coloring,  }\item[{}]{num\+\_\+colors = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determines if the coloring is valid and equitable for the graph G.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a35fcfec63046b1b0949a6fddb59fb0b3}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a35fcfec63046b1b0949a6fddb59fb0b3}} 
+\index{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}!make\+\_\+\+C\+\_\+from\+\_\+F@{make\+\_\+\+C\+\_\+from\+\_\+F}}
+\index{make\+\_\+\+C\+\_\+from\+\_\+F@{make\+\_\+\+C\+\_\+from\+\_\+F}!networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}}
+\subsubsection{\texorpdfstring{make\+\_\+\+C\+\_\+from\+\_\+\+F()}{make\_C\_from\_F()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring.\+make\+\_\+\+C\+\_\+from\+\_\+F (\begin{DoxyParamCaption}\item[{}]{F }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a62ed07b2920ac11ec7f1566a8dcca1d1}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a62ed07b2920ac11ec7f1566a8dcca1d1}} 
+\index{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}!make\+\_\+\+H\+\_\+from\+\_\+\+C\+\_\+N@{make\+\_\+\+H\+\_\+from\+\_\+\+C\+\_\+N}}
+\index{make\+\_\+\+H\+\_\+from\+\_\+\+C\+\_\+N@{make\+\_\+\+H\+\_\+from\+\_\+\+C\+\_\+N}!networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}}
+\subsubsection{\texorpdfstring{make\+\_\+\+H\+\_\+from\+\_\+\+C\+\_\+\+N()}{make\_H\_from\_C\_N()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring.\+make\+\_\+\+H\+\_\+from\+\_\+\+C\+\_\+N (\begin{DoxyParamCaption}\item[{}]{C,  }\item[{}]{N }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_aa7e8945e01ba6acd6329d30f839607eb}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_aa7e8945e01ba6acd6329d30f839607eb}} 
+\index{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}!make\+\_\+\+N\+\_\+from\+\_\+\+L\+\_\+C@{make\+\_\+\+N\+\_\+from\+\_\+\+L\+\_\+C}}
+\index{make\+\_\+\+N\+\_\+from\+\_\+\+L\+\_\+C@{make\+\_\+\+N\+\_\+from\+\_\+\+L\+\_\+C}!networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}}
+\subsubsection{\texorpdfstring{make\+\_\+\+N\+\_\+from\+\_\+\+L\+\_\+\+C()}{make\_N\_from\_L\_C()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring.\+make\+\_\+\+N\+\_\+from\+\_\+\+L\+\_\+C (\begin{DoxyParamCaption}\item[{}]{L,  }\item[{}]{C }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a3389920a0828d701abbd6550d8e609a6}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_a3389920a0828d701abbd6550d8e609a6}} 
+\index{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}!move\+\_\+witnesses@{move\+\_\+witnesses}}
+\index{move\+\_\+witnesses@{move\+\_\+witnesses}!networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}}
+\subsubsection{\texorpdfstring{move\+\_\+witnesses()}{move\_witnesses()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring.\+move\+\_\+witnesses (\begin{DoxyParamCaption}\item[{}]{src\+\_\+color,  }\item[{}]{dst\+\_\+color,  }\item[{}]{N,  }\item[{}]{H,  }\item[{}]{F,  }\item[{}]{C,  }\item[{}]{T\+\_\+cal,  }\item[{}]{L }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Move witness along a path from src_color to dst_color.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_ad564cd161c98e55b605760d7fc6c32e4}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_ad564cd161c98e55b605760d7fc6c32e4}} 
+\index{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}!pad\+\_\+graph@{pad\+\_\+graph}}
+\index{pad\+\_\+graph@{pad\+\_\+graph}!networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}}
+\subsubsection{\texorpdfstring{pad\+\_\+graph()}{pad\_graph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring.\+pad\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{num\+\_\+colors }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a disconnected complete clique K_p such that the number of nodes in
+the graph becomes a multiple of `num_colors`.
+
+Assumes that the graph's nodes are labelled using integers.
+
+Returns the number of nodes with each color.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_ae77c7c09e94a019d26ad9302eb6a5004}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1equitable__coloring_ae77c7c09e94a019d26ad9302eb6a5004}} 
+\index{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}!procedure\+\_\+P@{procedure\+\_\+P}}
+\index{procedure\+\_\+P@{procedure\+\_\+P}!networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::equitable\+\_\+coloring}}
+\subsubsection{\texorpdfstring{procedure\+\_\+\+P()}{procedure\_P()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+equitable\+\_\+coloring.\+procedure\+\_\+P (\begin{DoxyParamCaption}\item[{}]{V\+\_\+minus,  }\item[{}]{V\+\_\+plus,  }\item[{}]{N,  }\item[{}]{H,  }\item[{}]{F,  }\item[{}]{C,  }\item[{}]{L,  }\item[{}]{excluded\+\_\+colors = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Procedure P as described in the paper.\end{DoxyVerb}
+ 

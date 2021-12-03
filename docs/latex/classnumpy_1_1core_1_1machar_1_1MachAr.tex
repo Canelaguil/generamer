@@ -1,0 +1,274 @@
+\hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr}{}\section{numpy.\+core.\+machar.\+Mach\+Ar Class Reference}
+\label{classnumpy_1_1core_1_1machar_1_1MachAr}\index{numpy.\+core.\+machar.\+Mach\+Ar@{numpy.\+core.\+machar.\+Mach\+Ar}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_ad3f3270ef2fb030daff0eb2d62035b9c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, float\+\_\+conv=float, int\+\_\+conv=int, float\+\_\+to\+\_\+float=float, float\+\_\+to\+\_\+str=lambda v\+:\textquotesingle{}\%24.\+16e\textquotesingle{} \% v, title=\textquotesingle{}\+Python floating point number\textquotesingle{})
+\item 
+def \hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_ae44e82521e9853322f77dfd256ca2a1f}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a573cfbc2ea63ca9f9989f27bfdb1aad3}{ibeta}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_ad89387e57a38a49a5a50d72af1e44df5}{it}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a6018256b105f395d98858a2c228fdeed}{negep}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a1422467d25fc0a6eb907b9eada07e93d}{epsneg}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a764631c04360f32d0b5511a657eac464}{machep}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a01c2c9e287faab50bb38078eb0274596}{eps}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_ac1e1f0f0b9387d959b58587982f9ecc6}{ngrd}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a0a7cbf81b508618c2c1a4a79ab1c4df7}{iexp}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a4295c497259fa866a138f9a9d9de3f9f}{minexp}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_adc11614eec5ddddb6305c32f48d243a4}{xmin}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a650d1f3093b16980ac922239db9c745b}{maxexp}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a0ba1f3cf762856acb37171c7206a21a2}{xmax}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a91e7c393ceeee851f09a80159185b5ac}{irnd}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a16205da5071b2ebbc834e01800dc256c}{title}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a77235e7d990497842ba5ef964f86efd7}{epsilon}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a832cb28124cbf165c9fe9da31383fbf5}{tiny}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_a93fe236b4add82203f699273463b1a0e}{huge}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_ab0464c5575b2013f0b4176b1e5586dd8}{precision}
+\item 
+\hyperlink{classnumpy_1_1core_1_1machar_1_1MachAr_aeaa91eb6e9f4ed615a5101fc035e9deb}{resolution}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Diagnosing machine parameters.
+
+Attributes
+----------
+ibeta : int
+    Radix in which numbers are represented.
+it : int
+    Number of base-`ibeta` digits in the floating point mantissa M.
+machep : int
+    Exponent of the smallest (most negative) power of `ibeta` that,
+    added to 1.0, gives something different from 1.0
+eps : float
+    Floating-point number ``beta**machep`` (floating point precision)
+negep : int
+    Exponent of the smallest power of `ibeta` that, subtracted
+    from 1.0, gives something different from 1.0.
+epsneg : float
+    Floating-point number ``beta**negep``.
+iexp : int
+    Number of bits in the exponent (including its sign and bias).
+minexp : int
+    Smallest (most negative) power of `ibeta` consistent with there
+    being no leading zeros in the mantissa.
+xmin : float
+    Floating-point number ``beta**minexp`` (the smallest [in
+    magnitude] positive floating point number with full precision).
+maxexp : int
+    Smallest (positive) power of `ibeta` that causes overflow.
+xmax : float
+    ``(1-epsneg) * beta**maxexp`` (the largest [in magnitude]
+    usable floating value).
+irnd : int
+    In ``range(6)``, information on what kind of rounding is done
+    in addition, and on how underflow is handled.
+ngrd : int
+    Number of 'guard digits' used when truncating the product
+    of two mantissas to fit the representation.
+epsilon : float
+    Same as `eps`.
+tiny : float
+    Same as `xmin`.
+huge : float
+    Same as `xmax`.
+precision : float
+    ``- int(-log10(eps))``
+resolution : float
+    ``- 10**(-precision)``
+
+Parameters
+----------
+float_conv : function, optional
+    Function that converts an integer or integer array to a float
+    or float array. Default is `float`.
+int_conv : function, optional
+    Function that converts a float or float array to an integer or
+    integer array. Default is `int`.
+float_to_float : function, optional
+    Function that converts a float array to float. Default is `float`.
+    Note that this does not seem to do anything useful in the current
+    implementation.
+float_to_str : function, optional
+    Function that converts a single float to a string. Default is
+    ``lambda v:'%24.16e' %v``.
+title : str, optional
+    Title that is printed in the string representation of `MachAr`.
+
+See Also
+--------
+finfo : Machine limits for floating point types.
+iinfo : Machine limits for integer types.
+
+References
+----------
+.. [1] Press, Teukolsky, Vetterling and Flannery,
+       "Numerical Recipes in C++," 2nd ed,
+       Cambridge University Press, 2002, p. 31.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_ad3f3270ef2fb030daff0eb2d62035b9c}\label{classnumpy_1_1core_1_1machar_1_1MachAr_ad3f3270ef2fb030daff0eb2d62035b9c}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+machar.\+Mach\+Ar.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{float\+\_\+conv = {\ttfamily float},  }\item[{}]{int\+\_\+conv = {\ttfamily int},  }\item[{}]{float\+\_\+to\+\_\+float = {\ttfamily float},  }\item[{}]{float\+\_\+to\+\_\+str = {\ttfamily lambda~v\+:\textquotesingle{}\%24.16e\textquotesingle{}~\%~v},  }\item[{}]{title = {\ttfamily \textquotesingle{}Python~floating~point~number\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}float_conv - convert integer to float (array)
+int_conv   - convert float (array) to integer
+float_to_float - convert float array to float
+float_to_str - convert array float to str
+title        - description of used floating point numbers\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_ae44e82521e9853322f77dfd256ca2a1f}\label{classnumpy_1_1core_1_1machar_1_1MachAr_ae44e82521e9853322f77dfd256ca2a1f}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+machar.\+Mach\+Ar.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a01c2c9e287faab50bb38078eb0274596}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a01c2c9e287faab50bb38078eb0274596}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!eps@{eps}}
+\index{eps@{eps}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{eps}{eps}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+eps}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a77235e7d990497842ba5ef964f86efd7}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a77235e7d990497842ba5ef964f86efd7}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{epsilon}{epsilon}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+epsilon}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a1422467d25fc0a6eb907b9eada07e93d}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a1422467d25fc0a6eb907b9eada07e93d}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!epsneg@{epsneg}}
+\index{epsneg@{epsneg}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{epsneg}{epsneg}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+epsneg}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a93fe236b4add82203f699273463b1a0e}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a93fe236b4add82203f699273463b1a0e}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!huge@{huge}}
+\index{huge@{huge}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{huge}{huge}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+huge}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a573cfbc2ea63ca9f9989f27bfdb1aad3}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a573cfbc2ea63ca9f9989f27bfdb1aad3}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!ibeta@{ibeta}}
+\index{ibeta@{ibeta}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{ibeta}{ibeta}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+ibeta}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a0a7cbf81b508618c2c1a4a79ab1c4df7}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a0a7cbf81b508618c2c1a4a79ab1c4df7}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!iexp@{iexp}}
+\index{iexp@{iexp}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{iexp}{iexp}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+iexp}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a91e7c393ceeee851f09a80159185b5ac}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a91e7c393ceeee851f09a80159185b5ac}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!irnd@{irnd}}
+\index{irnd@{irnd}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{irnd}{irnd}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+irnd}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_ad89387e57a38a49a5a50d72af1e44df5}\label{classnumpy_1_1core_1_1machar_1_1MachAr_ad89387e57a38a49a5a50d72af1e44df5}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!it@{it}}
+\index{it@{it}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{it}{it}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+it}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a764631c04360f32d0b5511a657eac464}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a764631c04360f32d0b5511a657eac464}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!machep@{machep}}
+\index{machep@{machep}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{machep}{machep}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+machep}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a650d1f3093b16980ac922239db9c745b}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a650d1f3093b16980ac922239db9c745b}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!maxexp@{maxexp}}
+\index{maxexp@{maxexp}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{maxexp}{maxexp}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+maxexp}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a4295c497259fa866a138f9a9d9de3f9f}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a4295c497259fa866a138f9a9d9de3f9f}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!minexp@{minexp}}
+\index{minexp@{minexp}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{minexp}{minexp}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+minexp}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a6018256b105f395d98858a2c228fdeed}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a6018256b105f395d98858a2c228fdeed}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!negep@{negep}}
+\index{negep@{negep}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{negep}{negep}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+negep}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_ac1e1f0f0b9387d959b58587982f9ecc6}\label{classnumpy_1_1core_1_1machar_1_1MachAr_ac1e1f0f0b9387d959b58587982f9ecc6}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!ngrd@{ngrd}}
+\index{ngrd@{ngrd}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{ngrd}{ngrd}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+ngrd}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_ab0464c5575b2013f0b4176b1e5586dd8}\label{classnumpy_1_1core_1_1machar_1_1MachAr_ab0464c5575b2013f0b4176b1e5586dd8}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!precision@{precision}}
+\index{precision@{precision}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{precision}{precision}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+precision}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_aeaa91eb6e9f4ed615a5101fc035e9deb}\label{classnumpy_1_1core_1_1machar_1_1MachAr_aeaa91eb6e9f4ed615a5101fc035e9deb}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!resolution@{resolution}}
+\index{resolution@{resolution}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{resolution}{resolution}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+resolution}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a832cb28124cbf165c9fe9da31383fbf5}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a832cb28124cbf165c9fe9da31383fbf5}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!tiny@{tiny}}
+\index{tiny@{tiny}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{tiny}{tiny}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+tiny}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a16205da5071b2ebbc834e01800dc256c}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a16205da5071b2ebbc834e01800dc256c}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!title@{title}}
+\index{title@{title}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+title}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_a0ba1f3cf762856acb37171c7206a21a2}\label{classnumpy_1_1core_1_1machar_1_1MachAr_a0ba1f3cf762856acb37171c7206a21a2}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!xmax@{xmax}}
+\index{xmax@{xmax}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{xmax}{xmax}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+xmax}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1machar_1_1MachAr_adc11614eec5ddddb6305c32f48d243a4}\label{classnumpy_1_1core_1_1machar_1_1MachAr_adc11614eec5ddddb6305c32f48d243a4}} 
+\index{numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}!xmin@{xmin}}
+\index{xmin@{xmin}!numpy\+::core\+::machar\+::\+Mach\+Ar@{numpy\+::core\+::machar\+::\+Mach\+Ar}}
+\subsubsection{\texorpdfstring{xmin}{xmin}}
+{\footnotesize\ttfamily numpy.\+core.\+machar.\+Mach\+Ar.\+xmin}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/core/\hyperlink{machar_8py}{machar.\+py}\end{DoxyCompactItemize}

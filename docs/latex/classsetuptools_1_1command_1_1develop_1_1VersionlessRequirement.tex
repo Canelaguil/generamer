@@ -1,0 +1,55 @@
+\hypertarget{classsetuptools_1_1command_1_1develop_1_1VersionlessRequirement}{}\section{setuptools.\+command.\+develop.\+Versionless\+Requirement Class Reference}
+\label{classsetuptools_1_1command_1_1develop_1_1VersionlessRequirement}\index{setuptools.\+command.\+develop.\+Versionless\+Requirement@{setuptools.\+command.\+develop.\+Versionless\+Requirement}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1command_1_1develop_1_1VersionlessRequirement_af061e705b06e1d98f3c129ea74805851}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, dist)
+\item 
+def \hyperlink{classsetuptools_1_1command_1_1develop_1_1VersionlessRequirement_a467f595f6bbaa8497ffd43176513b68b}{\+\_\+\+\_\+getattr\+\_\+\+\_\+} (self, name)
+\item 
+def \hyperlink{classsetuptools_1_1command_1_1develop_1_1VersionlessRequirement_ab9bc06f36f92fb67455cc2bf0e53ccb3}{as\+\_\+requirement} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Adapt a pkg_resources.Distribution to simply return the project
+name as the 'requirement' so that scripts will work across
+multiple versions.
+
+>>> from pkg_resources import Distribution
+>>> dist = Distribution(project_name='foo', version='1.0')
+>>> str(dist.as_requirement())
+'foo==1.0'
+>>> adapted_dist = VersionlessRequirement(dist)
+>>> str(adapted_dist.as_requirement())
+'foo'
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1command_1_1develop_1_1VersionlessRequirement_af061e705b06e1d98f3c129ea74805851}\label{classsetuptools_1_1command_1_1develop_1_1VersionlessRequirement_af061e705b06e1d98f3c129ea74805851}} 
+\index{setuptools\+::command\+::develop\+::\+Versionless\+Requirement@{setuptools\+::command\+::develop\+::\+Versionless\+Requirement}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::command\+::develop\+::\+Versionless\+Requirement@{setuptools\+::command\+::develop\+::\+Versionless\+Requirement}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+command.\+develop.\+Versionless\+Requirement.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dist }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1command_1_1develop_1_1VersionlessRequirement_a467f595f6bbaa8497ffd43176513b68b}\label{classsetuptools_1_1command_1_1develop_1_1VersionlessRequirement_a467f595f6bbaa8497ffd43176513b68b}} 
+\index{setuptools\+::command\+::develop\+::\+Versionless\+Requirement@{setuptools\+::command\+::develop\+::\+Versionless\+Requirement}!\+\_\+\+\_\+getattr\+\_\+\+\_\+@{\+\_\+\+\_\+getattr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getattr\+\_\+\+\_\+@{\+\_\+\+\_\+getattr\+\_\+\+\_\+}!setuptools\+::command\+::develop\+::\+Versionless\+Requirement@{setuptools\+::command\+::develop\+::\+Versionless\+Requirement}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getattr\+\_\+\+\_\+()}{\_\_getattr\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+command.\+develop.\+Versionless\+Requirement.\+\_\+\+\_\+getattr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1command_1_1develop_1_1VersionlessRequirement_ab9bc06f36f92fb67455cc2bf0e53ccb3}\label{classsetuptools_1_1command_1_1develop_1_1VersionlessRequirement_ab9bc06f36f92fb67455cc2bf0e53ccb3}} 
+\index{setuptools\+::command\+::develop\+::\+Versionless\+Requirement@{setuptools\+::command\+::develop\+::\+Versionless\+Requirement}!as\+\_\+requirement@{as\+\_\+requirement}}
+\index{as\+\_\+requirement@{as\+\_\+requirement}!setuptools\+::command\+::develop\+::\+Versionless\+Requirement@{setuptools\+::command\+::develop\+::\+Versionless\+Requirement}}
+\subsubsection{\texorpdfstring{as\+\_\+requirement()}{as\_requirement()}}
+{\footnotesize\ttfamily def setuptools.\+command.\+develop.\+Versionless\+Requirement.\+as\+\_\+requirement (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/command/\hyperlink{setuptools_2command_2develop_8py}{develop.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,137 @@
+\hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager}{}\section{pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Proxy\+Manager Class Reference}
+\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager}\index{pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Proxy\+Manager@{pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Proxy\+Manager}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Proxy\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Proxy\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_ac29d5832324b43be87f3bb14e73bd360}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, proxy\+\_\+url, num\+\_\+pools=10, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1request_1_1RequestMethods_a507ade459b427bd81a5a8849563702e3}{headers}=None, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_ae2670de8938cd39588e6e17189177cd7}{proxy\+\_\+headers}=None, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_aa22b381efad94c37841182b63c06b2d3}{proxy\+\_\+ssl\+\_\+context}=None, use\+\_\+forwarding\+\_\+for\+\_\+https=False, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a509374901e1f086853c6df9928b7312a}{connection\+\_\+pool\+\_\+kw})
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_a5600fa9fa9caa11c0abf43ba4950d46b}{connection\+\_\+from\+\_\+host} (self, host, port=None, scheme=\char`\"{}http\char`\"{}, pool\+\_\+kwargs=None)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_a96151d6fe736d4fdf893837f446995ff}{urlopen} (self, method, url, redirect=True, kw)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_a1eb61252145626a37aca86cd9be1fa6d}{proxy}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_ae2670de8938cd39588e6e17189177cd7}{proxy\+\_\+headers}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_aa22b381efad94c37841182b63c06b2d3}{proxy\+\_\+ssl\+\_\+context}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_a09bc39eb1fc0430b5bbc00ec05d1c741}{proxy\+\_\+config}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Behaves just like :class:`PoolManager`, but sends all requests through
+the defined proxy, using the CONNECT method for HTTPS URLs.
+
+:param proxy_url:
+    The URL of the proxy to be used.
+
+:param proxy_headers:
+    A dictionary containing headers that will be sent to the proxy. In case
+    of HTTP they are being sent with each request, while in the
+    HTTPS/CONNECT case they are sent only once. Could be used for proxy
+    authentication.
+
+:param proxy_ssl_context:
+    The proxy SSL context is used to establish the TLS connection to the
+    proxy when using HTTPS proxies.
+
+:param use_forwarding_for_https:
+    (Defaults to False) If set to True will forward requests to the HTTPS
+    proxy to be made on behalf of the client instead of creating a TLS
+    tunnel via the CONNECT method. **Enabling this flag means that request
+    and response headers and content will be visible from the HTTPS proxy**
+    whereas tunneling keeps request and response headers and content
+    private.  IP address, target hostname, SNI, and port are always visible
+    to an HTTPS proxy even when this flag is disabled.
+
+Example:
+    >>> proxy = urllib3.ProxyManager('http://localhost:3128/')
+    >>> r1 = proxy.request('GET', 'http://google.com/')
+    >>> r2 = proxy.request('GET', 'http://httpbin.org/')
+    >>> len(proxy.pools)
+    1
+    >>> r3 = proxy.request('GET', 'https://httpbin.org/')
+    >>> r4 = proxy.request('GET', 'https://twitter.com/')
+    >>> len(proxy.pools)
+    3\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_ac29d5832324b43be87f3bb14e73bd360}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_ac29d5832324b43be87f3bb14e73bd360}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Proxy\+Manager.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{proxy\+\_\+url,  }\item[{}]{num\+\_\+pools = {\ttfamily 10},  }\item[{}]{headers = {\ttfamily None},  }\item[{}]{proxy\+\_\+headers = {\ttfamily None},  }\item[{}]{proxy\+\_\+ssl\+\_\+context = {\ttfamily None},  }\item[{}]{use\+\_\+forwarding\+\_\+for\+\_\+https = {\ttfamily False},  }\item[{}]{connection\+\_\+pool\+\_\+kw }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_a5600fa9fa9caa11c0abf43ba4950d46b}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_a5600fa9fa9caa11c0abf43ba4950d46b}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}!connection\+\_\+from\+\_\+host@{connection\+\_\+from\+\_\+host}}
+\index{connection\+\_\+from\+\_\+host@{connection\+\_\+from\+\_\+host}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}}
+\subsubsection{\texorpdfstring{connection\+\_\+from\+\_\+host()}{connection\_from\_host()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Proxy\+Manager.\+connection\+\_\+from\+\_\+host (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{host,  }\item[{}]{port = {\ttfamily None},  }\item[{}]{scheme = {\ttfamily \char`\"{}http\char`\"{}},  }\item[{}]{pool\+\_\+kwargs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_a96151d6fe736d4fdf893837f446995ff}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_a96151d6fe736d4fdf893837f446995ff}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}!urlopen@{urlopen}}
+\index{urlopen@{urlopen}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}}
+\subsubsection{\texorpdfstring{urlopen()}{urlopen()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Proxy\+Manager.\+urlopen (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{method,  }\item[{}]{url,  }\item[{}]{redirect = {\ttfamily True},  }\item[{}]{kw }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_a1eb61252145626a37aca86cd9be1fa6d}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_a1eb61252145626a37aca86cd9be1fa6d}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}!proxy@{proxy}}
+\index{proxy@{proxy}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}}
+\subsubsection{\texorpdfstring{proxy}{proxy}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Proxy\+Manager.\+proxy}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_a09bc39eb1fc0430b5bbc00ec05d1c741}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_a09bc39eb1fc0430b5bbc00ec05d1c741}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}!proxy\+\_\+config@{proxy\+\_\+config}}
+\index{proxy\+\_\+config@{proxy\+\_\+config}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}}
+\subsubsection{\texorpdfstring{proxy\+\_\+config}{proxy\_config}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Proxy\+Manager.\+proxy\+\_\+config}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_ae2670de8938cd39588e6e17189177cd7}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_ae2670de8938cd39588e6e17189177cd7}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}!proxy\+\_\+headers@{proxy\+\_\+headers}}
+\index{proxy\+\_\+headers@{proxy\+\_\+headers}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}}
+\subsubsection{\texorpdfstring{proxy\+\_\+headers}{proxy\_headers}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Proxy\+Manager.\+proxy\+\_\+headers}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_aa22b381efad94c37841182b63c06b2d3}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1ProxyManager_aa22b381efad94c37841182b63c06b2d3}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}!proxy\+\_\+ssl\+\_\+context@{proxy\+\_\+ssl\+\_\+context}}
+\index{proxy\+\_\+ssl\+\_\+context@{proxy\+\_\+ssl\+\_\+context}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Proxy\+Manager}}
+\subsubsection{\texorpdfstring{proxy\+\_\+ssl\+\_\+context}{proxy\_ssl\_context}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Proxy\+Manager.\+proxy\+\_\+ssl\+\_\+context}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/urllib3/\hyperlink{poolmanager_8py}{poolmanager.\+py}\end{DoxyCompactItemize}

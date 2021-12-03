@@ -1,0 +1,148 @@
+\hypertarget{classmatplotlib_1_1image_1_1PcolorImage}{}\section{matplotlib.\+image.\+Pcolor\+Image Class Reference}
+\label{classmatplotlib_1_1image_1_1PcolorImage}\index{matplotlib.\+image.\+Pcolor\+Image@{matplotlib.\+image.\+Pcolor\+Image}}
+
+
+Inheritance diagram for matplotlib.\+image.\+Pcolor\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classmatplotlib_1_1image_1_1PcolorImage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+image.\+Pcolor\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classmatplotlib_1_1image_1_1PcolorImage__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1PcolorImage_a88e5b79e41ec15edef12dc46d3be3187}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, ax, x=None, y=None, A=None, \hyperlink{classmatplotlib_1_1cm_1_1ScalarMappable_a3684ebc12a81cc6f2599c0babd1d40af}{cmap}=None, \hyperlink{classmatplotlib_1_1cm_1_1ScalarMappable_a5507985e8c38feaa3d6972f75db09f73}{norm}=None, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1PcolorImage_a221c4c4a43814566ca0cd5ae8a068bc3}{make\+\_\+image} (self, renderer, magnification=1.\+0, unsampled=False)
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1PcolorImage_add0f07a055acd14f51d46dc7924de64c}{set\+\_\+data} (self, x, y, A)
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1PcolorImage_a57e5e9df73f4094aa1583a307f3f1859}{set\+\_\+array} (self, args)
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1PcolorImage_accbbf6a4d94bb249820a80d93aa3300c}{get\+\_\+cursor\+\_\+data} (self, event)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1image_1_1PcolorImage_a4932fc2a2e98f699033a0f74246c68cf}{stale}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1image_1_1PcolorImage_a4b2984e4cdcbd9b19259f47723f83804}{is\+\_\+grayscale} = \+\_\+api.\+deprecate\+\_\+privatize\+\_\+attribute(\char`\"{}3.\+3\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Make a pcolor-style plot with an irregular rectangular grid.
+
+This uses a variation of the original irregular image code,
+and it is used by pcolorfast for the corresponding grid type.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1PcolorImage_a88e5b79e41ec15edef12dc46d3be3187}\label{classmatplotlib_1_1image_1_1PcolorImage_a88e5b79e41ec15edef12dc46d3be3187}} 
+\index{matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Pcolor\+Image.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{x = {\ttfamily None},  }\item[{}]{y = {\ttfamily None},  }\item[{}]{A = {\ttfamily None},  }\item[{}]{cmap = {\ttfamily None},  }\item[{}]{norm = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+ax : `~.axes.Axes`
+    The axes the image will belong to.
+x, y : 1D array-like, optional
+    Monotonic arrays of length N+1 and M+1, respectively, specifying
+    rectangle boundaries.  If not given, will default to
+    ``range(N + 1)`` and ``range(M + 1)``, respectively.
+A : array-like
+    The data to be color-coded. The interpretation depends on the
+    shape:
+
+    - (M, N) ndarray or masked array: values to be colormapped
+    - (M, N, 3): RGB array
+    - (M, N, 4): RGBA array
+
+cmap : str or `~matplotlib.colors.Colormap`, default: :rc:`image.cmap`
+    The Colormap instance or registered colormap name used to map
+    scalar data to colors.
+norm : `~matplotlib.colors.Normalize`
+    Maps luminance to 0-1.
+**kwargs : `.Artist` properties
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1PcolorImage_accbbf6a4d94bb249820a80d93aa3300c}\label{classmatplotlib_1_1image_1_1PcolorImage_accbbf6a4d94bb249820a80d93aa3300c}} 
+\index{matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}!get\+\_\+cursor\+\_\+data@{get\+\_\+cursor\+\_\+data}}
+\index{get\+\_\+cursor\+\_\+data@{get\+\_\+cursor\+\_\+data}!matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}}
+\subsubsection{\texorpdfstring{get\+\_\+cursor\+\_\+data()}{get\_cursor\_data()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Pcolor\+Image.\+get\+\_\+cursor\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1PcolorImage_a221c4c4a43814566ca0cd5ae8a068bc3}\label{classmatplotlib_1_1image_1_1PcolorImage_a221c4c4a43814566ca0cd5ae8a068bc3}} 
+\index{matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}!make\+\_\+image@{make\+\_\+image}}
+\index{make\+\_\+image@{make\+\_\+image}!matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}}
+\subsubsection{\texorpdfstring{make\+\_\+image()}{make\_image()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Pcolor\+Image.\+make\+\_\+image (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer,  }\item[{}]{magnification = {\ttfamily 1.0},  }\item[{}]{unsampled = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1PcolorImage_a57e5e9df73f4094aa1583a307f3f1859}\label{classmatplotlib_1_1image_1_1PcolorImage_a57e5e9df73f4094aa1583a307f3f1859}} 
+\index{matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}!set\+\_\+array@{set\+\_\+array}}
+\index{set\+\_\+array@{set\+\_\+array}!matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}}
+\subsubsection{\texorpdfstring{set\+\_\+array()}{set\_array()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Pcolor\+Image.\+set\+\_\+array (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1PcolorImage_add0f07a055acd14f51d46dc7924de64c}\label{classmatplotlib_1_1image_1_1PcolorImage_add0f07a055acd14f51d46dc7924de64c}} 
+\index{matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}!set\+\_\+data@{set\+\_\+data}}
+\index{set\+\_\+data@{set\+\_\+data}!matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}}
+\subsubsection{\texorpdfstring{set\+\_\+data()}{set\_data()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Pcolor\+Image.\+set\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{A }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the grid for the rectangle boundaries, and the data values.
+
+Parameters
+----------
+x, y : 1D array-like, optional
+    Monotonic arrays of length N+1 and M+1, respectively, specifying
+    rectangle boundaries.  If not given, will default to
+    ``range(N + 1)`` and ``range(M + 1)``, respectively.
+A : array-like
+    The data to be color-coded. The interpretation depends on the
+    shape:
+
+    - (M, N) ndarray or masked array: values to be colormapped
+    - (M, N, 3): RGB array
+    - (M, N, 4): RGBA array
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1PcolorImage_a4b2984e4cdcbd9b19259f47723f83804}\label{classmatplotlib_1_1image_1_1PcolorImage_a4b2984e4cdcbd9b19259f47723f83804}} 
+\index{matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}!is\+\_\+grayscale@{is\+\_\+grayscale}}
+\index{is\+\_\+grayscale@{is\+\_\+grayscale}!matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}}
+\subsubsection{\texorpdfstring{is\+\_\+grayscale}{is\_grayscale}}
+{\footnotesize\ttfamily matplotlib.\+image.\+Pcolor\+Image.\+is\+\_\+grayscale = \+\_\+api.\+deprecate\+\_\+privatize\+\_\+attribute(\char`\"{}3.\+3\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1PcolorImage_a4932fc2a2e98f699033a0f74246c68cf}\label{classmatplotlib_1_1image_1_1PcolorImage_a4932fc2a2e98f699033a0f74246c68cf}} 
+\index{matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::image\+::\+Pcolor\+Image@{matplotlib\+::image\+::\+Pcolor\+Image}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+image.\+Pcolor\+Image.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{image_8py}{image.\+py}\end{DoxyCompactItemize}

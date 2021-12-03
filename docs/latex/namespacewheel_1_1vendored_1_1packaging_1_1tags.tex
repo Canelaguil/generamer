@@ -1,0 +1,190 @@
+\hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags}{}\section{wheel.\+vendored.\+packaging.\+tags Namespace Reference}
+\label{namespacewheel_1_1vendored_1_1packaging_1_1tags}\index{wheel.\+vendored.\+packaging.\+tags@{wheel.\+vendored.\+packaging.\+tags}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classwheel_1_1vendored_1_1packaging_1_1tags_1_1__ELFFileHeader}{\+\_\+\+E\+L\+F\+File\+Header}
+\item 
+class \hyperlink{classwheel_1_1vendored_1_1packaging_1_1tags_1_1Tag}{Tag}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_adad8fe5985f2db710719817409806d4e}{parse\+\_\+tag} (tag)
+\item 
+def \hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_aae023c374ad7825b9d3f943d9e36b169}{cpython\+\_\+tags} (python\+\_\+version=None, abis=None, platforms=None, kwargs)
+\item 
+def \hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_a199ba251a0877076b8007baffffed1a2}{generic\+\_\+tags} (interpreter=None, abis=None, platforms=None, kwargs)
+\item 
+def \hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_aace61eef4bc25ac7347c068de81df95d}{compatible\+\_\+tags} (python\+\_\+version=None, interpreter=None, platforms=None)
+\item 
+def \hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_a7a425b4ec7e87900a12436639b659621}{mac\+\_\+platforms} (version=None, arch=None)
+\item 
+def \hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_aeb0ded3973cb6f890ce2f924c58e72ec}{interpreter\+\_\+name} ()
+\item 
+def \hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_a61301b2e3c1f29c718bba218a5956c59}{interpreter\+\_\+version} (kwargs)
+\item 
+def \hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_a08f919d05b93256070a44ce8107250a1}{sys\+\_\+tags} (kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_a56fe435135f96020e683c429da949861}{E\+X\+T\+E\+N\+S\+I\+O\+N\+\_\+\+S\+U\+F\+F\+I\+X\+ES}
+\item 
+\hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_adfc372937a92b59eaff3e5ad36d2f418}{Python\+Version}
+\item 
+\hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_a35e9532ad90e36436f05b1dbf15d7b1e}{Mac\+Version}
+\item 
+\hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_ad848e4c57ba3230c8811283619a523af}{Glibc\+Version}
+\item 
+\hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_acbf923db2c0713798fa898d5d44fac92}{logger}
+\item 
+\hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_ae711b252afcd70aea0c75a0d861a0171}{I\+N\+T\+E\+R\+P\+R\+E\+T\+E\+R\+\_\+\+S\+H\+O\+R\+T\+\_\+\+N\+A\+M\+ES}
+\item 
+\hyperlink{namespacewheel_1_1vendored_1_1packaging_1_1tags_a78a50add06a0d8861d202e7bd0c9538d}{glibc\+Version}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_aace61eef4bc25ac7347c068de81df95d}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_aace61eef4bc25ac7347c068de81df95d}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!compatible\+\_\+tags@{compatible\+\_\+tags}}
+\index{compatible\+\_\+tags@{compatible\+\_\+tags}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{compatible\+\_\+tags()}{compatible\_tags()}}
+{\footnotesize\ttfamily def wheel.\+vendored.\+packaging.\+tags.\+compatible\+\_\+tags (\begin{DoxyParamCaption}\item[{}]{python\+\_\+version = {\ttfamily None},  }\item[{}]{interpreter = {\ttfamily None},  }\item[{}]{platforms = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Yields the sequence of tags that are compatible with a specific version of Python.
+
+The tags consist of:
+- py*-none-<platform>
+- <interpreter>-none-any  # ... if `interpreter` is provided.
+- py*-none-any
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_aae023c374ad7825b9d3f943d9e36b169}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_aae023c374ad7825b9d3f943d9e36b169}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!cpython\+\_\+tags@{cpython\+\_\+tags}}
+\index{cpython\+\_\+tags@{cpython\+\_\+tags}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{cpython\+\_\+tags()}{cpython\_tags()}}
+{\footnotesize\ttfamily def wheel.\+vendored.\+packaging.\+tags.\+cpython\+\_\+tags (\begin{DoxyParamCaption}\item[{}]{python\+\_\+version = {\ttfamily None},  }\item[{}]{abis = {\ttfamily None},  }\item[{}]{platforms = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Yields the tags for a CPython interpreter.
+
+The tags consist of:
+- cp<python_version>-<abi>-<platform>
+- cp<python_version>-abi3-<platform>
+- cp<python_version>-none-<platform>
+- cp<less than python_version>-abi3-<platform>  # Older Python versions down to 3.2.
+
+If python_version only specifies a major version then user-provided ABIs and
+the 'none' ABItag will be used.
+
+If 'abi3' or 'none' are specified in 'abis' then they will be yielded at
+their normal position and not at the beginning.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_a199ba251a0877076b8007baffffed1a2}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_a199ba251a0877076b8007baffffed1a2}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!generic\+\_\+tags@{generic\+\_\+tags}}
+\index{generic\+\_\+tags@{generic\+\_\+tags}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{generic\+\_\+tags()}{generic\_tags()}}
+{\footnotesize\ttfamily def wheel.\+vendored.\+packaging.\+tags.\+generic\+\_\+tags (\begin{DoxyParamCaption}\item[{}]{interpreter = {\ttfamily None},  }\item[{}]{abis = {\ttfamily None},  }\item[{}]{platforms = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Yields the tags for a generic interpreter.
+
+The tags consist of:
+- <interpreter>-<abi>-<platform>
+
+The "none" ABI will be added if it was not explicitly provided.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_aeb0ded3973cb6f890ce2f924c58e72ec}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_aeb0ded3973cb6f890ce2f924c58e72ec}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!interpreter\+\_\+name@{interpreter\+\_\+name}}
+\index{interpreter\+\_\+name@{interpreter\+\_\+name}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{interpreter\+\_\+name()}{interpreter\_name()}}
+{\footnotesize\ttfamily def wheel.\+vendored.\+packaging.\+tags.\+interpreter\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the name of the running interpreter.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_a61301b2e3c1f29c718bba218a5956c59}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_a61301b2e3c1f29c718bba218a5956c59}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!interpreter\+\_\+version@{interpreter\+\_\+version}}
+\index{interpreter\+\_\+version@{interpreter\+\_\+version}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{interpreter\+\_\+version()}{interpreter\_version()}}
+{\footnotesize\ttfamily def wheel.\+vendored.\+packaging.\+tags.\+interpreter\+\_\+version (\begin{DoxyParamCaption}\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the version of the running interpreter.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_a7a425b4ec7e87900a12436639b659621}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_a7a425b4ec7e87900a12436639b659621}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!mac\+\_\+platforms@{mac\+\_\+platforms}}
+\index{mac\+\_\+platforms@{mac\+\_\+platforms}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{mac\+\_\+platforms()}{mac\_platforms()}}
+{\footnotesize\ttfamily def wheel.\+vendored.\+packaging.\+tags.\+mac\+\_\+platforms (\begin{DoxyParamCaption}\item[{}]{version = {\ttfamily None},  }\item[{}]{arch = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Yields the platform tags for a macOS system.
+
+The `version` parameter is a two-item tuple specifying the macOS version to
+generate platform tags for. The `arch` parameter is the CPU architecture to
+generate platform tags for. Both parameters default to the appropriate value
+for the current system.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_adad8fe5985f2db710719817409806d4e}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_adad8fe5985f2db710719817409806d4e}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!parse\+\_\+tag@{parse\+\_\+tag}}
+\index{parse\+\_\+tag@{parse\+\_\+tag}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{parse\+\_\+tag()}{parse\_tag()}}
+{\footnotesize\ttfamily def wheel.\+vendored.\+packaging.\+tags.\+parse\+\_\+tag (\begin{DoxyParamCaption}\item[{}]{tag }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parses the provided tag (e.g. `py3-none-any`) into a frozenset of Tag instances.
+
+Returning a set is required due to the possibility that the tag is a
+compressed tag set.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_a08f919d05b93256070a44ce8107250a1}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_a08f919d05b93256070a44ce8107250a1}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!sys\+\_\+tags@{sys\+\_\+tags}}
+\index{sys\+\_\+tags@{sys\+\_\+tags}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{sys\+\_\+tags()}{sys\_tags()}}
+{\footnotesize\ttfamily def wheel.\+vendored.\+packaging.\+tags.\+sys\+\_\+tags (\begin{DoxyParamCaption}\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the sequence of tag triples for the running interpreter.
+
+The order of the sequence corresponds to priority order for the
+interpreter, from most to least important.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_a56fe435135f96020e683c429da949861}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_a56fe435135f96020e683c429da949861}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!E\+X\+T\+E\+N\+S\+I\+O\+N\+\_\+\+S\+U\+F\+F\+I\+X\+ES@{E\+X\+T\+E\+N\+S\+I\+O\+N\+\_\+\+S\+U\+F\+F\+I\+X\+ES}}
+\index{E\+X\+T\+E\+N\+S\+I\+O\+N\+\_\+\+S\+U\+F\+F\+I\+X\+ES@{E\+X\+T\+E\+N\+S\+I\+O\+N\+\_\+\+S\+U\+F\+F\+I\+X\+ES}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{E\+X\+T\+E\+N\+S\+I\+O\+N\+\_\+\+S\+U\+F\+F\+I\+X\+ES}{EXTENSION\_SUFFIXES}}
+{\footnotesize\ttfamily wheel.\+vendored.\+packaging.\+tags.\+E\+X\+T\+E\+N\+S\+I\+O\+N\+\_\+\+S\+U\+F\+F\+I\+X\+ES}
+
+\mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_ad848e4c57ba3230c8811283619a523af}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_ad848e4c57ba3230c8811283619a523af}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!Glibc\+Version@{Glibc\+Version}}
+\index{Glibc\+Version@{Glibc\+Version}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{Glibc\+Version}{GlibcVersion}}
+{\footnotesize\ttfamily wheel.\+vendored.\+packaging.\+tags.\+Glibc\+Version}
+
+\mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_a78a50add06a0d8861d202e7bd0c9538d}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_a78a50add06a0d8861d202e7bd0c9538d}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!glibc\+Version@{glibc\+Version}}
+\index{glibc\+Version@{glibc\+Version}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{glibc\+Version}{glibcVersion}}
+{\footnotesize\ttfamily wheel.\+vendored.\+packaging.\+tags.\+glibc\+Version}
+
+\mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_ae711b252afcd70aea0c75a0d861a0171}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_ae711b252afcd70aea0c75a0d861a0171}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!I\+N\+T\+E\+R\+P\+R\+E\+T\+E\+R\+\_\+\+S\+H\+O\+R\+T\+\_\+\+N\+A\+M\+ES@{I\+N\+T\+E\+R\+P\+R\+E\+T\+E\+R\+\_\+\+S\+H\+O\+R\+T\+\_\+\+N\+A\+M\+ES}}
+\index{I\+N\+T\+E\+R\+P\+R\+E\+T\+E\+R\+\_\+\+S\+H\+O\+R\+T\+\_\+\+N\+A\+M\+ES@{I\+N\+T\+E\+R\+P\+R\+E\+T\+E\+R\+\_\+\+S\+H\+O\+R\+T\+\_\+\+N\+A\+M\+ES}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{I\+N\+T\+E\+R\+P\+R\+E\+T\+E\+R\+\_\+\+S\+H\+O\+R\+T\+\_\+\+N\+A\+M\+ES}{INTERPRETER\_SHORT\_NAMES}}
+{\footnotesize\ttfamily wheel.\+vendored.\+packaging.\+tags.\+I\+N\+T\+E\+R\+P\+R\+E\+T\+E\+R\+\_\+\+S\+H\+O\+R\+T\+\_\+\+N\+A\+M\+ES}
+
+\mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_acbf923db2c0713798fa898d5d44fac92}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_acbf923db2c0713798fa898d5d44fac92}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!logger@{logger}}
+\index{logger@{logger}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily wheel.\+vendored.\+packaging.\+tags.\+logger}
+
+\mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_a35e9532ad90e36436f05b1dbf15d7b1e}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_a35e9532ad90e36436f05b1dbf15d7b1e}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!Mac\+Version@{Mac\+Version}}
+\index{Mac\+Version@{Mac\+Version}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{Mac\+Version}{MacVersion}}
+{\footnotesize\ttfamily wheel.\+vendored.\+packaging.\+tags.\+Mac\+Version}
+
+\mbox{\Hypertarget{namespacewheel_1_1vendored_1_1packaging_1_1tags_adfc372937a92b59eaff3e5ad36d2f418}\label{namespacewheel_1_1vendored_1_1packaging_1_1tags_adfc372937a92b59eaff3e5ad36d2f418}} 
+\index{wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}!Python\+Version@{Python\+Version}}
+\index{Python\+Version@{Python\+Version}!wheel\+::vendored\+::packaging\+::tags@{wheel\+::vendored\+::packaging\+::tags}}
+\subsubsection{\texorpdfstring{Python\+Version}{PythonVersion}}
+{\footnotesize\ttfamily wheel.\+vendored.\+packaging.\+tags.\+Python\+Version}
+

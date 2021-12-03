@@ -1,0 +1,160 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1all}{}\section{networkx.\+algorithms.\+operators.\+all Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1operators_1_1all}\index{networkx.\+algorithms.\+operators.\+all@{networkx.\+algorithms.\+operators.\+all}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1all_aa0df7e5fc8bf2bd495bce365727ccde7}{union\+\_\+all} (graphs, rename=(None,))
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1all_a14b22d0f0f0cfb34074e57c5e71ca175}{disjoint\+\_\+union\+\_\+all} (graphs)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1all_a90558d7b299f112034ae3457f4b9a093}{compose\+\_\+all} (graphs)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1all_ace8d3d7c3693100c65c1645c3da72b72}{intersection\+\_\+all} (graphs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Operations on many graphs.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1all_a90558d7b299f112034ae3457f4b9a093}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1all_a90558d7b299f112034ae3457f4b9a093}} 
+\index{networkx\+::algorithms\+::operators\+::all@{networkx\+::algorithms\+::operators\+::all}!compose\+\_\+all@{compose\+\_\+all}}
+\index{compose\+\_\+all@{compose\+\_\+all}!networkx\+::algorithms\+::operators\+::all@{networkx\+::algorithms\+::operators\+::all}}
+\subsubsection{\texorpdfstring{compose\+\_\+all()}{compose\_all()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+all.\+compose\+\_\+all (\begin{DoxyParamCaption}\item[{}]{graphs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the composition of all graphs.
+
+Composition is the simple union of the node sets and edge sets.
+The node sets of the supplied graphs need not be disjoint.
+
+Parameters
+----------
+graphs : list
+   List of NetworkX graphs
+
+Returns
+-------
+C : A graph with the same type as the first graph in list
+
+Raises
+------
+ValueError
+   If `graphs` is an empty list.
+
+Notes
+-----
+It is recommended that the supplied graphs be either all directed or all
+undirected.
+
+Graph, edge, and node attributes are propagated to the union graph.
+If a graph attribute is present in multiple graphs, then the value
+from the last graph in the list with that attribute is used.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1all_a14b22d0f0f0cfb34074e57c5e71ca175}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1all_a14b22d0f0f0cfb34074e57c5e71ca175}} 
+\index{networkx\+::algorithms\+::operators\+::all@{networkx\+::algorithms\+::operators\+::all}!disjoint\+\_\+union\+\_\+all@{disjoint\+\_\+union\+\_\+all}}
+\index{disjoint\+\_\+union\+\_\+all@{disjoint\+\_\+union\+\_\+all}!networkx\+::algorithms\+::operators\+::all@{networkx\+::algorithms\+::operators\+::all}}
+\subsubsection{\texorpdfstring{disjoint\+\_\+union\+\_\+all()}{disjoint\_union\_all()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+all.\+disjoint\+\_\+union\+\_\+all (\begin{DoxyParamCaption}\item[{}]{graphs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the disjoint union of all graphs.
+
+This operation forces distinct integer node labels starting with 0
+for the first graph in the list and numbering consecutively.
+
+Parameters
+----------
+graphs : list
+   List of NetworkX graphs
+
+Returns
+-------
+U : A graph with the same type as the first graph in list
+
+Raises
+------
+ValueError
+   If `graphs` is an empty list.
+
+Notes
+-----
+It is recommended that the graphs be either all directed or all undirected.
+
+Graph, edge, and node attributes are propagated to the union graph.
+If a graph attribute is present in multiple graphs, then the value
+from the last graph in the list with that attribute is used.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1all_ace8d3d7c3693100c65c1645c3da72b72}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1all_ace8d3d7c3693100c65c1645c3da72b72}} 
+\index{networkx\+::algorithms\+::operators\+::all@{networkx\+::algorithms\+::operators\+::all}!intersection\+\_\+all@{intersection\+\_\+all}}
+\index{intersection\+\_\+all@{intersection\+\_\+all}!networkx\+::algorithms\+::operators\+::all@{networkx\+::algorithms\+::operators\+::all}}
+\subsubsection{\texorpdfstring{intersection\+\_\+all()}{intersection\_all()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+all.\+intersection\+\_\+all (\begin{DoxyParamCaption}\item[{}]{graphs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a new graph that contains only the nodes and the edges that exist in
+all graphs.
+
+Parameters
+----------
+graphs : list
+   List of NetworkX graphs
+
+Returns
+-------
+R : A new graph with the same type as the first graph in list
+
+Raises
+------
+ValueError
+   If `graphs` is an empty list.
+
+Notes
+-----
+Attributes from the graph, nodes, and edges are not copied to the new
+graph.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1all_aa0df7e5fc8bf2bd495bce365727ccde7}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1all_aa0df7e5fc8bf2bd495bce365727ccde7}} 
+\index{networkx\+::algorithms\+::operators\+::all@{networkx\+::algorithms\+::operators\+::all}!union\+\_\+all@{union\+\_\+all}}
+\index{union\+\_\+all@{union\+\_\+all}!networkx\+::algorithms\+::operators\+::all@{networkx\+::algorithms\+::operators\+::all}}
+\subsubsection{\texorpdfstring{union\+\_\+all()}{union\_all()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+all.\+union\+\_\+all (\begin{DoxyParamCaption}\item[{}]{graphs,  }\item[{}]{rename = {\ttfamily (None,)} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the union of all graphs.
+
+The graphs must be disjoint, otherwise an exception is raised.
+
+Parameters
+----------
+graphs : list of graphs
+   List of NetworkX graphs
+
+rename : bool , default=(None, None)
+   Node names of G and H can be changed by specifying the tuple
+   rename=('G-','H-') (for example).  Node "u" in G is then renamed
+   "G-u" and "v" in H is renamed "H-v".
+
+Returns
+-------
+U : a graph with the same type as the first graph in list
+
+Raises
+------
+ValueError
+   If `graphs` is an empty list.
+
+Notes
+-----
+To force a disjoint union with node relabeling, use
+disjoint_union_all(G,H) or convert_node_labels_to integers().
+
+Graph, edge, and node attributes are propagated to the union graph.
+If a graph attribute is present in multiple graphs, then the value
+from the last graph in the list with that attribute is used.
+
+See Also
+--------
+union
+disjoint_union_all
+\end{DoxyVerb}
+ 

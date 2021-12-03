@@ -1,0 +1,201 @@
+\hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase}{}\section{matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base Class Reference}
+\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase}\index{matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base@{matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a831809abdb684c76bc0e4fefb0b29119}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, fig, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a6adda293f5f19d94f7f5ca4b2ef75029}{\+\_\+\+\_\+reduce\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a78df59a70657134973ccb1d8f18a333b}{get\+\_\+geometry} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a9e55895271cf9fe38343c9a72cf460d9}{change\+\_\+geometry} (self, numrows, numcols, num)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a520c20acc9275059961174eb20152003}{get\+\_\+subplotspec} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_ad44832f3682e9fef9dba4818fa5d0783}{set\+\_\+subplotspec} (self, subplotspec)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_ae7df39f7ff5af073be5be36fe1f3bb45}{get\+\_\+gridspec} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a0c116a941d5765c2e6186d934d8be186}{figbox} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a815965f5254620df4664771b324d6eba}{num\+Rows} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_acafc62321f5d48ef2f6dee7f26f0195b}{num\+Cols} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_abf692797a6837b4690144de58fe9c057}{update\+\_\+params} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_aa3e688c5a81fdb5c6e76f1969f31cfb1}{is\+\_\+first\+\_\+row} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a4412d2361726f150e4bac73548ae74fa}{is\+\_\+last\+\_\+row} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a4894e352939ab2fb9b917aae6f70d902}{is\+\_\+first\+\_\+col} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a8daf928ef64c663c3f3dc77d8b0d2ed1}{is\+\_\+last\+\_\+col} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a36ad2138f15cc058ee1e5bb7f0a68cef}{label\+\_\+outer} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_aab127e4d91d5a1aaab5af6995de63dae}{alternative}
+\item 
+\hyperlink{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_ae83d3ec376920c5f45efefbee46b0863}{addendum}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Base class for subplots, which are :class:`Axes` instances with
+additional methods to facilitate generating and manipulating a set
+of :class:`Axes` within a figure.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a831809abdb684c76bc0e4fefb0b29119}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a831809abdb684c76bc0e4fefb0b29119}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fig,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+fig : `matplotlib.figure.Figure`
+
+*args : tuple (*nrows*, *ncols*, *index*) or int
+    The array of subplots in the figure has dimensions ``(nrows,
+    ncols)``, and *index* is the index of the subplot being created.
+    *index* starts at 1 in the upper left corner and increases to the
+    right.
+
+    If *nrows*, *ncols*, and *index* are all single digit numbers, then
+    *args* can be passed as a single 3-digit number (e.g. 234 for
+    (2, 3, 4)).
+
+**kwargs
+    Keyword arguments are passed to the Axes (sub)class constructor.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a6adda293f5f19d94f7f5ca4b2ef75029}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a6adda293f5f19d94f7f5ca4b2ef75029}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!\+\_\+\+\_\+reduce\+\_\+\+\_\+@{\+\_\+\+\_\+reduce\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+reduce\+\_\+\+\_\+@{\+\_\+\+\_\+reduce\+\_\+\+\_\+}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+reduce\+\_\+\+\_\+()}{\_\_reduce\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+\_\+\+\_\+reduce\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a9e55895271cf9fe38343c9a72cf460d9}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a9e55895271cf9fe38343c9a72cf460d9}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!change\+\_\+geometry@{change\+\_\+geometry}}
+\index{change\+\_\+geometry@{change\+\_\+geometry}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{change\+\_\+geometry()}{change\_geometry()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+change\+\_\+geometry (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{numrows,  }\item[{}]{numcols,  }\item[{}]{num }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Change subplot geometry, e.g., from (1, 1, 1) to (2, 2, 3).\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a0c116a941d5765c2e6186d934d8be186}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a0c116a941d5765c2e6186d934d8be186}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!figbox@{figbox}}
+\index{figbox@{figbox}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{figbox()}{figbox()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+figbox (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a78df59a70657134973ccb1d8f18a333b}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a78df59a70657134973ccb1d8f18a333b}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!get\+\_\+geometry@{get\+\_\+geometry}}
+\index{get\+\_\+geometry@{get\+\_\+geometry}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{get\+\_\+geometry()}{get\_geometry()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+get\+\_\+geometry (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the subplot geometry, e.g., (2, 2, 3).\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_ae7df39f7ff5af073be5be36fe1f3bb45}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_ae7df39f7ff5af073be5be36fe1f3bb45}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!get\+\_\+gridspec@{get\+\_\+gridspec}}
+\index{get\+\_\+gridspec@{get\+\_\+gridspec}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{get\+\_\+gridspec()}{get\_gridspec()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+get\+\_\+gridspec (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the `.GridSpec` instance associated with the subplot.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a520c20acc9275059961174eb20152003}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a520c20acc9275059961174eb20152003}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!get\+\_\+subplotspec@{get\+\_\+subplotspec}}
+\index{get\+\_\+subplotspec@{get\+\_\+subplotspec}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{get\+\_\+subplotspec()}{get\_subplotspec()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+get\+\_\+subplotspec (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the `.SubplotSpec` instance associated with the subplot.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a4894e352939ab2fb9b917aae6f70d902}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a4894e352939ab2fb9b917aae6f70d902}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!is\+\_\+first\+\_\+col@{is\+\_\+first\+\_\+col}}
+\index{is\+\_\+first\+\_\+col@{is\+\_\+first\+\_\+col}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{is\+\_\+first\+\_\+col()}{is\_first\_col()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+is\+\_\+first\+\_\+col (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_aa3e688c5a81fdb5c6e76f1969f31cfb1}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_aa3e688c5a81fdb5c6e76f1969f31cfb1}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!is\+\_\+first\+\_\+row@{is\+\_\+first\+\_\+row}}
+\index{is\+\_\+first\+\_\+row@{is\+\_\+first\+\_\+row}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{is\+\_\+first\+\_\+row()}{is\_first\_row()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+is\+\_\+first\+\_\+row (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a8daf928ef64c663c3f3dc77d8b0d2ed1}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a8daf928ef64c663c3f3dc77d8b0d2ed1}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!is\+\_\+last\+\_\+col@{is\+\_\+last\+\_\+col}}
+\index{is\+\_\+last\+\_\+col@{is\+\_\+last\+\_\+col}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{is\+\_\+last\+\_\+col()}{is\_last\_col()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+is\+\_\+last\+\_\+col (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a4412d2361726f150e4bac73548ae74fa}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a4412d2361726f150e4bac73548ae74fa}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!is\+\_\+last\+\_\+row@{is\+\_\+last\+\_\+row}}
+\index{is\+\_\+last\+\_\+row@{is\+\_\+last\+\_\+row}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{is\+\_\+last\+\_\+row()}{is\_last\_row()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+is\+\_\+last\+\_\+row (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a36ad2138f15cc058ee1e5bb7f0a68cef}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a36ad2138f15cc058ee1e5bb7f0a68cef}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!label\+\_\+outer@{label\+\_\+outer}}
+\index{label\+\_\+outer@{label\+\_\+outer}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{label\+\_\+outer()}{label\_outer()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+label\+\_\+outer (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Only show "outer" labels and tick labels.
+
+x-labels are only kept for subplots on the last row; y-labels only for
+subplots on the first column.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_acafc62321f5d48ef2f6dee7f26f0195b}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_acafc62321f5d48ef2f6dee7f26f0195b}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!num\+Cols@{num\+Cols}}
+\index{num\+Cols@{num\+Cols}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{num\+Cols()}{numCols()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+num\+Cols (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a815965f5254620df4664771b324d6eba}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_a815965f5254620df4664771b324d6eba}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!num\+Rows@{num\+Rows}}
+\index{num\+Rows@{num\+Rows}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{num\+Rows()}{numRows()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+num\+Rows (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_ad44832f3682e9fef9dba4818fa5d0783}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_ad44832f3682e9fef9dba4818fa5d0783}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!set\+\_\+subplotspec@{set\+\_\+subplotspec}}
+\index{set\+\_\+subplotspec@{set\+\_\+subplotspec}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{set\+\_\+subplotspec()}{set\_subplotspec()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+set\+\_\+subplotspec (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{subplotspec }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the `.SubplotSpec`. instance associated with the subplot.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_abf692797a6837b4690144de58fe9c057}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_abf692797a6837b4690144de58fe9c057}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!update\+\_\+params@{update\+\_\+params}}
+\index{update\+\_\+params@{update\+\_\+params}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{update\+\_\+params()}{update\_params()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+update\+\_\+params (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update the subplot position from ``self.figure.subplotpars``.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_ae83d3ec376920c5f45efefbee46b0863}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_ae83d3ec376920c5f45efefbee46b0863}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!addendum@{addendum}}
+\index{addendum@{addendum}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{addendum}{addendum}}
+{\footnotesize\ttfamily matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+addendum\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_aab127e4d91d5a1aaab5af6995de63dae}\label{classmatplotlib_1_1axes_1_1__subplots_1_1SubplotBase_aab127e4d91d5a1aaab5af6995de63dae}} 
+\index{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}!alternative@{alternative}}
+\index{alternative@{alternative}!matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base@{matplotlib\+::axes\+::\+\_\+subplots\+::\+Subplot\+Base}}
+\subsubsection{\texorpdfstring{alternative}{alternative}}
+{\footnotesize\ttfamily matplotlib.\+axes.\+\_\+subplots.\+Subplot\+Base.\+alternative\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/axes/\hyperlink{__subplots_8py}{\+\_\+subplots.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,177 @@
+\hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase}{}\section{matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base Class Reference}
+\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase}\index{matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+
+
+Inheritance diagram for matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_abba326c6c83b25b4a23bdca1761eb3de}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, parent, id, figure=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_ac30fd47231a2c845d8716c6c22eb37e5}{Copy\+\_\+to\+\_\+\+Clipboard} (self, event=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a2e8cb6dab8b656d6ba86d54cba74b7c4}{draw\+\_\+idle} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a4d70d13e5059160ad42c8135ecedd9bc}{flush\+\_\+events} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a8646c81951f3981c5ba0969c76ca7f1e}{start\+\_\+event\+\_\+loop} (self, timeout=0)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a5aa519f0839089c90c891f4147655cc9}{stop\+\_\+event\+\_\+loop} (self, event=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a63d10bc394beefee3ca36c933bd20a8f}{gui\+\_\+repaint} (self, draw\+DC=None, origin=\textquotesingle{}WX\textquotesingle{})
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a4487f1a5bcac8593c83e319b2c1217ab}{print\+\_\+figure} (self, filename, args, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_ae915b1b1127698cf8faf24831bf4835a}{bitmap}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_adbc8a80512bb6c343f50f513cb0e2c1d}{required\+\_\+interactive\+\_\+framework} = \char`\"{}wx\char`\"{}
+\item 
+dictionary \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_abdc2234f1d7c8a97cd23c65db965cc47}{keyvald}
+\item 
+dictionary \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_ae766ab9d54670f46b0a055004f873c41}{filetypes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The FigureCanvas contains the figure and does event handling.
+
+In the wxPython backend, it is derived from wxPanel, and (usually) lives
+inside a frame instantiated by a FigureManagerWx. The parent window
+probably implements a wx.Sizer to control the displayed control size - but
+we give a hint as to our preferred minimum size.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_abba326c6c83b25b4a23bdca1761eb3de}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_abba326c6c83b25b4a23bdca1761eb3de}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{parent,  }\item[{}]{id,  }\item[{}]{figure = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize a FigureWx instance.
+
+- Initialize the FigureCanvasBase and wxPanel parents.
+- Set event handlers for resize, paint, and keyboard and mouse
+  interaction.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_ac30fd47231a2c845d8716c6c22eb37e5}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_ac30fd47231a2c845d8716c6c22eb37e5}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}!Copy\+\_\+to\+\_\+\+Clipboard@{Copy\+\_\+to\+\_\+\+Clipboard}}
+\index{Copy\+\_\+to\+\_\+\+Clipboard@{Copy\+\_\+to\+\_\+\+Clipboard}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+\subsubsection{\texorpdfstring{Copy\+\_\+to\+\_\+\+Clipboard()}{Copy\_to\_Clipboard()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base.\+Copy\+\_\+to\+\_\+\+Clipboard (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Copy bitmap of canvas to system clipboard.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a2e8cb6dab8b656d6ba86d54cba74b7c4}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a2e8cb6dab8b656d6ba86d54cba74b7c4}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}!draw\+\_\+idle@{draw\+\_\+idle}}
+\index{draw\+\_\+idle@{draw\+\_\+idle}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+\subsubsection{\texorpdfstring{draw\+\_\+idle()}{draw\_idle()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base.\+draw\+\_\+idle (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a4d70d13e5059160ad42c8135ecedd9bc}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a4d70d13e5059160ad42c8135ecedd9bc}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}!flush\+\_\+events@{flush\+\_\+events}}
+\index{flush\+\_\+events@{flush\+\_\+events}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+\subsubsection{\texorpdfstring{flush\+\_\+events()}{flush\_events()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base.\+flush\+\_\+events (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a63d10bc394beefee3ca36c933bd20a8f}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a63d10bc394beefee3ca36c933bd20a8f}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}!gui\+\_\+repaint@{gui\+\_\+repaint}}
+\index{gui\+\_\+repaint@{gui\+\_\+repaint}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+\subsubsection{\texorpdfstring{gui\+\_\+repaint()}{gui\_repaint()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base.\+gui\+\_\+repaint (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{draw\+DC = {\ttfamily None},  }\item[{}]{origin = {\ttfamily \textquotesingle{}WX\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Performs update of the displayed image on the GUI canvas, using the
+supplied wx.PaintDC device context.
+
+The 'WXAgg' backend sets origin accordingly.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a4487f1a5bcac8593c83e319b2c1217ab}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a4487f1a5bcac8593c83e319b2c1217ab}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}!print\+\_\+figure@{print\+\_\+figure}}
+\index{print\+\_\+figure@{print\+\_\+figure}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+\subsubsection{\texorpdfstring{print\+\_\+figure()}{print\_figure()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base.\+print\+\_\+figure (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a8646c81951f3981c5ba0969c76ca7f1e}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a8646c81951f3981c5ba0969c76ca7f1e}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}!start\+\_\+event\+\_\+loop@{start\+\_\+event\+\_\+loop}}
+\index{start\+\_\+event\+\_\+loop@{start\+\_\+event\+\_\+loop}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+\subsubsection{\texorpdfstring{start\+\_\+event\+\_\+loop()}{start\_event\_loop()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base.\+start\+\_\+event\+\_\+loop (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{timeout = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a5aa519f0839089c90c891f4147655cc9}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_a5aa519f0839089c90c891f4147655cc9}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}!stop\+\_\+event\+\_\+loop@{stop\+\_\+event\+\_\+loop}}
+\index{stop\+\_\+event\+\_\+loop@{stop\+\_\+event\+\_\+loop}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+\subsubsection{\texorpdfstring{stop\+\_\+event\+\_\+loop()}{stop\_event\_loop()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base.\+stop\+\_\+event\+\_\+loop (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_ae915b1b1127698cf8faf24831bf4835a}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_ae915b1b1127698cf8faf24831bf4835a}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}!bitmap@{bitmap}}
+\index{bitmap@{bitmap}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+\subsubsection{\texorpdfstring{bitmap}{bitmap}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base.\+bitmap}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_ae766ab9d54670f46b0a055004f873c41}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_ae766ab9d54670f46b0a055004f873c41}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}!filetypes@{filetypes}}
+\index{filetypes@{filetypes}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+\subsubsection{\texorpdfstring{filetypes}{filetypes}}
+{\footnotesize\ttfamily dictionary matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base.\+filetypes\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  \{
+        **FigureCanvasBase.filetypes,
+        \textcolor{stringliteral}{'bmp'}: \textcolor{stringliteral}{'Windows bitmap'},
+        \textcolor{stringliteral}{'jpeg'}: \textcolor{stringliteral}{'JPEG'},
+        \textcolor{stringliteral}{'jpg'}: \textcolor{stringliteral}{'JPEG'},
+        \textcolor{stringliteral}{'pcx'}: \textcolor{stringliteral}{'PCX'},
+        \textcolor{stringliteral}{'png'}: \textcolor{stringliteral}{'Portable Network Graphics'},
+        \textcolor{stringliteral}{'tif'}: \textcolor{stringliteral}{'Tagged Image Format File'},
+        \textcolor{stringliteral}{'tiff'}: \textcolor{stringliteral}{'Tagged Image Format File'},
+        \textcolor{stringliteral}{'xpm'}: \textcolor{stringliteral}{'X pixmap'},
+    \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_abdc2234f1d7c8a97cd23c65db965cc47}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_abdc2234f1d7c8a97cd23c65db965cc47}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}!keyvald@{keyvald}}
+\index{keyvald@{keyvald}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+\subsubsection{\texorpdfstring{keyvald}{keyvald}}
+{\footnotesize\ttfamily dictionary matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base.\+keyvald\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_adbc8a80512bb6c343f50f513cb0e2c1d}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1__FigureCanvasWxBase_adbc8a80512bb6c343f50f513cb0e2c1d}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}!required\+\_\+interactive\+\_\+framework@{required\+\_\+interactive\+\_\+framework}}
+\index{required\+\_\+interactive\+\_\+framework@{required\+\_\+interactive\+\_\+framework}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+\_\+\+Figure\+Canvas\+Wx\+Base}}
+\subsubsection{\texorpdfstring{required\+\_\+interactive\+\_\+framework}{required\_interactive\_framework}}
+{\footnotesize\ttfamily string matplotlib.\+backends.\+backend\+\_\+wx.\+\_\+\+Figure\+Canvas\+Wx\+Base.\+required\+\_\+interactive\+\_\+framework = \char`\"{}wx\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/backends/\hyperlink{backend__wx_8py}{backend\+\_\+wx.\+py}\end{DoxyCompactItemize}

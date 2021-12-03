@@ -1,0 +1,61 @@
+\hypertarget{classPIL_1_1ImageTransform_1_1ExtentTransform}{}\section{P\+I\+L.\+Image\+Transform.\+Extent\+Transform Class Reference}
+\label{classPIL_1_1ImageTransform_1_1ExtentTransform}\index{P\+I\+L.\+Image\+Transform.\+Extent\+Transform@{P\+I\+L.\+Image\+Transform.\+Extent\+Transform}}
+
+
+Inheritance diagram for P\+I\+L.\+Image\+Transform.\+Extent\+Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classPIL_1_1ImageTransform_1_1ExtentTransform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+I\+L.\+Image\+Transform.\+Extent\+Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classPIL_1_1ImageTransform_1_1ExtentTransform__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPIL_1_1ImageTransform_1_1ExtentTransform_a457fa6c906052c840593f167c6323896}{method}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Define a transform to extract a subregion from an image.
+
+Maps a rectangle (defined by two corners) from the image to a rectangle of
+the given size. The resulting image will contain data sampled from between
+the corners, such that (x0, y0) in the input image will end up at (0,0) in
+the output image, and (x1, y1) at size.
+
+This method can be used to crop, stretch, shrink, or mirror an arbitrary
+rectangle in the current image. It is slightly slower than crop, but about
+as fast as a corresponding resize operation.
+
+See :py:meth:`~PIL.Image.Image.transform`
+
+:param bbox: A 4-tuple (x0, y0, x1, y1) which specifies two points in the
+    input image's coordinate system. See :ref:`coordinate-system`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPIL_1_1ImageTransform_1_1ExtentTransform_a457fa6c906052c840593f167c6323896}\label{classPIL_1_1ImageTransform_1_1ExtentTransform_a457fa6c906052c840593f167c6323896}} 
+\index{P\+I\+L\+::\+Image\+Transform\+::\+Extent\+Transform@{P\+I\+L\+::\+Image\+Transform\+::\+Extent\+Transform}!method@{method}}
+\index{method@{method}!P\+I\+L\+::\+Image\+Transform\+::\+Extent\+Transform@{P\+I\+L\+::\+Image\+Transform\+::\+Extent\+Transform}}
+\subsubsection{\texorpdfstring{method}{method}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Transform.\+Extent\+Transform.\+method\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\+P\+I\+L/\hyperlink{ImageTransform_8py}{Image\+Transform.\+py}\end{DoxyCompactItemize}

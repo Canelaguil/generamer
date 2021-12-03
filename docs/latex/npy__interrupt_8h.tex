@@ -1,0 +1,81 @@
+\hypertarget{npy__interrupt_8h}{}\section{venv/lib/python3.9/site-\/packages/numpy/core/include/numpy/npy\+\_\+interrupt.h File Reference}
+\label{npy__interrupt_8h}\index{venv/lib/python3.\+9/site-\/packages/numpy/core/include/numpy/npy\+\_\+interrupt.\+h@{venv/lib/python3.\+9/site-\/packages/numpy/core/include/numpy/npy\+\_\+interrupt.\+h}}
+{\ttfamily \#include $<$setjmp.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+Include dependency graph for npy\+\_\+interrupt.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{npy__interrupt_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{npy__interrupt_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{npy__interrupt_8h_add5597d27c914b1ba2f885d6ce53bf5a}{N\+P\+Y\+\_\+\+S\+I\+G\+S\+E\+T\+J\+MP}(arg1,  arg2)~setjmp(arg1)
+\item 
+\#define \hyperlink{npy__interrupt_8h_ae5643bba1c8cba2234184591cac0253b}{N\+P\+Y\+\_\+\+S\+I\+G\+L\+O\+N\+G\+J\+MP}(arg1,  arg2)~longjmp(arg1, arg2)
+\item 
+\#define \hyperlink{npy__interrupt_8h_a4fd8d09b4fd8d24f0f498db023e25a24}{N\+P\+Y\+\_\+\+S\+I\+G\+J\+M\+P\+\_\+\+B\+UF}~jmp\+\_\+buf
+\item 
+\#define \hyperlink{npy__interrupt_8h_ad6566ee5e756bddbabaf0e19fef91797}{N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+ON}
+\item 
+\#define \hyperlink{npy__interrupt_8h_ad349f513aee22859290ecc33de864240}{N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+O\+FF}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{npy__interrupt_8h_ad349f513aee22859290ecc33de864240}\label{npy__interrupt_8h_ad349f513aee22859290ecc33de864240}} 
+\index{npy\+\_\+interrupt.\+h@{npy\+\_\+interrupt.\+h}!N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+O\+FF@{N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+O\+FF}}
+\index{N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+O\+FF@{N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+O\+FF}!npy\+\_\+interrupt.\+h@{npy\+\_\+interrupt.\+h}}
+\subsubsection{\texorpdfstring{N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+O\+FF}{NPY\_SIGINT\_OFF}}
+{\footnotesize\ttfamily \#define N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+O\+FF}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\}                                      \(\backslash\)
+        PyOS\_setsig(SIGINT, \_npy\_sig\_save);                       \(\backslash\)
+        \}
+\end{DoxyCode}
+\mbox{\Hypertarget{npy__interrupt_8h_ad6566ee5e756bddbabaf0e19fef91797}\label{npy__interrupt_8h_ad6566ee5e756bddbabaf0e19fef91797}} 
+\index{npy\+\_\+interrupt.\+h@{npy\+\_\+interrupt.\+h}!N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+ON@{N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+ON}}
+\index{N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+ON@{N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+ON}!npy\+\_\+interrupt.\+h@{npy\+\_\+interrupt.\+h}}
+\subsubsection{\texorpdfstring{N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+ON}{NPY\_SIGINT\_ON}}
+{\footnotesize\ttfamily \#define N\+P\+Y\+\_\+\+S\+I\+G\+I\+N\+T\+\_\+\+ON}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                                             \(\backslash\)
+                   PyOS\_sighandler\_t \_npy\_sig\_save;                     \(\backslash\)
+                   \_npy\_sig\_save = PyOS\_setsig(SIGINT, \hyperlink{____multiarray__api_8h_aa45829aff7358e641d6b412d1969bf24}{\_PyArray\_SigintHandler}); \(\backslash\)
+                   if (\hyperlink{npy__interrupt_8h_add5597d27c914b1ba2f885d6ce53bf5a}{NPY\_SIGSETJMP}(*((\hyperlink{npy__interrupt_8h_a4fd8d09b4fd8d24f0f498db023e25a24}{NPY\_SIGJMP\_BUF} *)
+      \hyperlink{____multiarray__api_8h_a9fa8472cccd0097e09e7b21fbb867d4b}{\_PyArray\_GetSigintBuf}()), \(\backslash\)
+                                 1) == 0) \{                             \(\backslash\)
+\end{DoxyCode}
+\mbox{\Hypertarget{npy__interrupt_8h_a4fd8d09b4fd8d24f0f498db023e25a24}\label{npy__interrupt_8h_a4fd8d09b4fd8d24f0f498db023e25a24}} 
+\index{npy\+\_\+interrupt.\+h@{npy\+\_\+interrupt.\+h}!N\+P\+Y\+\_\+\+S\+I\+G\+J\+M\+P\+\_\+\+B\+UF@{N\+P\+Y\+\_\+\+S\+I\+G\+J\+M\+P\+\_\+\+B\+UF}}
+\index{N\+P\+Y\+\_\+\+S\+I\+G\+J\+M\+P\+\_\+\+B\+UF@{N\+P\+Y\+\_\+\+S\+I\+G\+J\+M\+P\+\_\+\+B\+UF}!npy\+\_\+interrupt.\+h@{npy\+\_\+interrupt.\+h}}
+\subsubsection{\texorpdfstring{N\+P\+Y\+\_\+\+S\+I\+G\+J\+M\+P\+\_\+\+B\+UF}{NPY\_SIGJMP\_BUF}}
+{\footnotesize\ttfamily \#define N\+P\+Y\+\_\+\+S\+I\+G\+J\+M\+P\+\_\+\+B\+UF~jmp\+\_\+buf}
+
+\mbox{\Hypertarget{npy__interrupt_8h_ae5643bba1c8cba2234184591cac0253b}\label{npy__interrupt_8h_ae5643bba1c8cba2234184591cac0253b}} 
+\index{npy\+\_\+interrupt.\+h@{npy\+\_\+interrupt.\+h}!N\+P\+Y\+\_\+\+S\+I\+G\+L\+O\+N\+G\+J\+MP@{N\+P\+Y\+\_\+\+S\+I\+G\+L\+O\+N\+G\+J\+MP}}
+\index{N\+P\+Y\+\_\+\+S\+I\+G\+L\+O\+N\+G\+J\+MP@{N\+P\+Y\+\_\+\+S\+I\+G\+L\+O\+N\+G\+J\+MP}!npy\+\_\+interrupt.\+h@{npy\+\_\+interrupt.\+h}}
+\subsubsection{\texorpdfstring{N\+P\+Y\+\_\+\+S\+I\+G\+L\+O\+N\+G\+J\+MP}{NPY\_SIGLONGJMP}}
+{\footnotesize\ttfamily \#define N\+P\+Y\+\_\+\+S\+I\+G\+L\+O\+N\+G\+J\+MP(\begin{DoxyParamCaption}\item[{}]{arg1,  }\item[{}]{arg2 }\end{DoxyParamCaption})~longjmp(arg1, arg2)}
+
+\mbox{\Hypertarget{npy__interrupt_8h_add5597d27c914b1ba2f885d6ce53bf5a}\label{npy__interrupt_8h_add5597d27c914b1ba2f885d6ce53bf5a}} 
+\index{npy\+\_\+interrupt.\+h@{npy\+\_\+interrupt.\+h}!N\+P\+Y\+\_\+\+S\+I\+G\+S\+E\+T\+J\+MP@{N\+P\+Y\+\_\+\+S\+I\+G\+S\+E\+T\+J\+MP}}
+\index{N\+P\+Y\+\_\+\+S\+I\+G\+S\+E\+T\+J\+MP@{N\+P\+Y\+\_\+\+S\+I\+G\+S\+E\+T\+J\+MP}!npy\+\_\+interrupt.\+h@{npy\+\_\+interrupt.\+h}}
+\subsubsection{\texorpdfstring{N\+P\+Y\+\_\+\+S\+I\+G\+S\+E\+T\+J\+MP}{NPY\_SIGSETJMP}}
+{\footnotesize\ttfamily \#define N\+P\+Y\+\_\+\+S\+I\+G\+S\+E\+T\+J\+MP(\begin{DoxyParamCaption}\item[{}]{arg1,  }\item[{}]{arg2 }\end{DoxyParamCaption})~setjmp(arg1)}
+

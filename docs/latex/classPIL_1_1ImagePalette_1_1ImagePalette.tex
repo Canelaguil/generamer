@@ -1,0 +1,168 @@
+\hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette}{}\section{P\+I\+L.\+Image\+Palette.\+Image\+Palette Class Reference}
+\label{classPIL_1_1ImagePalette_1_1ImagePalette}\index{P\+I\+L.\+Image\+Palette.\+Image\+Palette@{P\+I\+L.\+Image\+Palette.\+Image\+Palette}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_a52d292bfd5557fd362429e1716a49cd7}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_a313cc7fc974827ec1ec75b756b81d6eb}{mode}=\char`\"{}R\+GB\char`\"{}, palette=None, size=0)
+\item 
+def \hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_a7884b919befb2fd9aacaa4bfeeb47e1c}{palette} (self)
+\item 
+def \hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_aed828437d59530fe7bb008fb3b57eedb}{palette} (self, palette)
+\item 
+def \hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_a2987eb0a8b683392a77ab864da9bbefc}{copy} (self)
+\item 
+def \hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_a1a35e0e1f28ad44fdd6377d229a4f150}{getdata} (self)
+\item 
+def \hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_af3e87a3315388d7f927ecf38c28fd949}{tobytes} (self)
+\item 
+def \hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_a6dfcc2050f480e458f592046fcdf609d}{getcolor} (self, color, image=None)
+\item 
+def \hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_ac40b18c6f0f8f5ee8a96a861c00d33d5}{save} (self, fp)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_a313cc7fc974827ec1ec75b756b81d6eb}{mode}
+\item 
+\hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_ab214a175bb9ad50552979778a9fc3989}{rawmode}
+\item 
+\hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_a27734476bcd68516353aab90491e30d5}{palette}
+\item 
+\hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_a6e6c3c79440b7c27630cb3bbfa57698c}{dirty}
+\item 
+\hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_a194edbac72e4ec76d28a44cdd079f209}{colors}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPIL_1_1ImagePalette_1_1ImagePalette_aba886925536ea1443865d0eb894cefd7}{tostring}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Color palette for palette mapped images
+
+:param mode: The mode to use for the palette. See:
+    :ref:`concept-modes`. Defaults to "RGB"
+:param palette: An optional palette. If given, it must be a bytearray,
+    an array or a list of ints between 0-255. The list must consist of
+    all channels for one color followed by the next color (e.g. RGBRGBRGB).
+    Defaults to an empty palette.
+:param size: An optional palette size. If given, an error is raised
+    if ``palette`` is not of equal length.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_a52d292bfd5557fd362429e1716a49cd7}\label{classPIL_1_1ImagePalette_1_1ImagePalette_a52d292bfd5557fd362429e1716a49cd7}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{mode = {\ttfamily \char`\"{}RGB\char`\"{}},  }\item[{}]{palette = {\ttfamily None},  }\item[{}]{size = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_a2987eb0a8b683392a77ab864da9bbefc}\label{classPIL_1_1ImagePalette_1_1ImagePalette_a2987eb0a8b683392a77ab864da9bbefc}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!copy@{copy}}
+\index{copy@{copy}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+copy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_a6dfcc2050f480e458f592046fcdf609d}\label{classPIL_1_1ImagePalette_1_1ImagePalette_a6dfcc2050f480e458f592046fcdf609d}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!getcolor@{getcolor}}
+\index{getcolor@{getcolor}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{getcolor()}{getcolor()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+getcolor (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{color,  }\item[{}]{image = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given an rgb tuple, allocate palette entry.
+
+.. warning:: This method is experimental.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_a1a35e0e1f28ad44fdd6377d229a4f150}\label{classPIL_1_1ImagePalette_1_1ImagePalette_a1a35e0e1f28ad44fdd6377d229a4f150}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!getdata@{getdata}}
+\index{getdata@{getdata}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{getdata()}{getdata()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+getdata (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get palette contents in format suitable for the low-level
+``im.putpalette`` primitive.
+
+.. warning:: This method is experimental.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_a7884b919befb2fd9aacaa4bfeeb47e1c}\label{classPIL_1_1ImagePalette_1_1ImagePalette_a7884b919befb2fd9aacaa4bfeeb47e1c}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!palette@{palette}}
+\index{palette@{palette}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{palette()}{palette()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+palette (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_aed828437d59530fe7bb008fb3b57eedb}\label{classPIL_1_1ImagePalette_1_1ImagePalette_aed828437d59530fe7bb008fb3b57eedb}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!palette@{palette}}
+\index{palette@{palette}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{palette()}{palette()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+palette (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{palette }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_ac40b18c6f0f8f5ee8a96a861c00d33d5}\label{classPIL_1_1ImagePalette_1_1ImagePalette_ac40b18c6f0f8f5ee8a96a861c00d33d5}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!save@{save}}
+\index{save@{save}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+save (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fp }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Save palette to text file.
+
+.. warning:: This method is experimental.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_af3e87a3315388d7f927ecf38c28fd949}\label{classPIL_1_1ImagePalette_1_1ImagePalette_af3e87a3315388d7f927ecf38c28fd949}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!tobytes@{tobytes}}
+\index{tobytes@{tobytes}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{tobytes()}{tobytes()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+tobytes (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert palette to bytes.
+
+.. warning:: This method is experimental.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_a194edbac72e4ec76d28a44cdd079f209}\label{classPIL_1_1ImagePalette_1_1ImagePalette_a194edbac72e4ec76d28a44cdd079f209}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!colors@{colors}}
+\index{colors@{colors}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{colors}{colors}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+colors}
+
+\mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_a6e6c3c79440b7c27630cb3bbfa57698c}\label{classPIL_1_1ImagePalette_1_1ImagePalette_a6e6c3c79440b7c27630cb3bbfa57698c}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!dirty@{dirty}}
+\index{dirty@{dirty}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{dirty}{dirty}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+dirty}
+
+\mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_a313cc7fc974827ec1ec75b756b81d6eb}\label{classPIL_1_1ImagePalette_1_1ImagePalette_a313cc7fc974827ec1ec75b756b81d6eb}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!mode@{mode}}
+\index{mode@{mode}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+mode}
+
+\mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_a27734476bcd68516353aab90491e30d5}\label{classPIL_1_1ImagePalette_1_1ImagePalette_a27734476bcd68516353aab90491e30d5}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!palette@{palette}}
+\index{palette@{palette}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{palette}{palette}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+palette}
+
+\mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_ab214a175bb9ad50552979778a9fc3989}\label{classPIL_1_1ImagePalette_1_1ImagePalette_ab214a175bb9ad50552979778a9fc3989}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!rawmode@{rawmode}}
+\index{rawmode@{rawmode}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{rawmode}{rawmode}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+rawmode}
+
+\mbox{\Hypertarget{classPIL_1_1ImagePalette_1_1ImagePalette_aba886925536ea1443865d0eb894cefd7}\label{classPIL_1_1ImagePalette_1_1ImagePalette_aba886925536ea1443865d0eb894cefd7}} 
+\index{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}!tostring@{tostring}}
+\index{tostring@{tostring}!P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette@{P\+I\+L\+::\+Image\+Palette\+::\+Image\+Palette}}
+\subsubsection{\texorpdfstring{tostring}{tostring}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Palette.\+Image\+Palette.\+tostring\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\+P\+I\+L/\hyperlink{ImagePalette_8py}{Image\+Palette.\+py}\end{DoxyCompactItemize}

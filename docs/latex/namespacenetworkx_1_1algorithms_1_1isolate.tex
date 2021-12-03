@@ -1,0 +1,119 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1isolate}{}\section{networkx.\+algorithms.\+isolate Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1isolate}\index{networkx.\+algorithms.\+isolate@{networkx.\+algorithms.\+isolate}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isolate_a3a1a912d51cd51be02d2ae7481a8c18c}{is\+\_\+isolate} (G, n)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isolate_a74078653ae94897579962c208cf40e79}{isolates} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isolate_a22ad14324f84b73111b34769d4e5466e}{number\+\_\+of\+\_\+isolates} (G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions for identifying isolate (degree zero) nodes.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isolate_a3a1a912d51cd51be02d2ae7481a8c18c}\label{namespacenetworkx_1_1algorithms_1_1isolate_a3a1a912d51cd51be02d2ae7481a8c18c}} 
+\index{networkx\+::algorithms\+::isolate@{networkx\+::algorithms\+::isolate}!is\+\_\+isolate@{is\+\_\+isolate}}
+\index{is\+\_\+isolate@{is\+\_\+isolate}!networkx\+::algorithms\+::isolate@{networkx\+::algorithms\+::isolate}}
+\subsubsection{\texorpdfstring{is\+\_\+isolate()}{is\_isolate()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isolate.\+is\+\_\+isolate (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determines whether a node is an isolate.
+
+An *isolate* is a node with no neighbors (that is, with degree
+zero). For directed graphs, this means no in-neighbors and no
+out-neighbors.
+
+Parameters
+----------
+G : NetworkX graph
+
+n : node
+    A node in `G`.
+
+Returns
+-------
+is_isolate : bool
+   True if and only if `n` has no neighbors.
+
+Examples
+--------
+>>> G = nx.Graph()
+>>> G.add_edge(1, 2)
+>>> G.add_node(3)
+>>> nx.is_isolate(G, 2)
+False
+>>> nx.is_isolate(G, 3)
+True
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isolate_a74078653ae94897579962c208cf40e79}\label{namespacenetworkx_1_1algorithms_1_1isolate_a74078653ae94897579962c208cf40e79}} 
+\index{networkx\+::algorithms\+::isolate@{networkx\+::algorithms\+::isolate}!isolates@{isolates}}
+\index{isolates@{isolates}!networkx\+::algorithms\+::isolate@{networkx\+::algorithms\+::isolate}}
+\subsubsection{\texorpdfstring{isolates()}{isolates()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isolate.\+isolates (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Iterator over isolates in the graph.
+
+An *isolate* is a node with no neighbors (that is, with degree
+zero). For directed graphs, this means no in-neighbors and no
+out-neighbors.
+
+Parameters
+----------
+G : NetworkX graph
+
+Returns
+-------
+iterator
+    An iterator over the isolates of `G`.
+
+Examples
+--------
+To get a list of all isolates of a graph, use the :class:`list`
+constructor::
+
+    >>> G = nx.Graph()
+    >>> G.add_edge(1, 2)
+    >>> G.add_node(3)
+    >>> list(nx.isolates(G))
+    [3]
+
+To remove all isolates in the graph, first create a list of the
+isolates, then use :meth:`Graph.remove_nodes_from`::
+
+    >>> G.remove_nodes_from(list(nx.isolates(G)))
+    >>> list(G)
+    [1, 2]
+
+For digraphs, isolates have zero in-degree and zero out_degre::
+
+    >>> G = nx.DiGraph([(0, 1), (1, 2)])
+    >>> G.add_node(3)
+    >>> list(nx.isolates(G))
+    [3]\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isolate_a22ad14324f84b73111b34769d4e5466e}\label{namespacenetworkx_1_1algorithms_1_1isolate_a22ad14324f84b73111b34769d4e5466e}} 
+\index{networkx\+::algorithms\+::isolate@{networkx\+::algorithms\+::isolate}!number\+\_\+of\+\_\+isolates@{number\+\_\+of\+\_\+isolates}}
+\index{number\+\_\+of\+\_\+isolates@{number\+\_\+of\+\_\+isolates}!networkx\+::algorithms\+::isolate@{networkx\+::algorithms\+::isolate}}
+\subsubsection{\texorpdfstring{number\+\_\+of\+\_\+isolates()}{number\_of\_isolates()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isolate.\+number\+\_\+of\+\_\+isolates (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the number of isolates in the graph.
+
+An *isolate* is a node with no neighbors (that is, with degree
+zero). For directed graphs, this means no in-neighbors and no
+out-neighbors.
+
+Parameters
+----------
+G : NetworkX graph
+
+Returns
+-------
+int
+    The number of degree zero nodes in the graph `G`.\end{DoxyVerb}
+ 

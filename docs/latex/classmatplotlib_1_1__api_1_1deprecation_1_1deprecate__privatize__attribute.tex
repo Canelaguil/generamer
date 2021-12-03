@@ -1,0 +1,61 @@
+\hypertarget{classmatplotlib_1_1__api_1_1deprecation_1_1deprecate__privatize__attribute}{}\section{matplotlib.\+\_\+api.\+deprecation.\+deprecate\+\_\+privatize\+\_\+attribute Class Reference}
+\label{classmatplotlib_1_1__api_1_1deprecation_1_1deprecate__privatize__attribute}\index{matplotlib.\+\_\+api.\+deprecation.\+deprecate\+\_\+privatize\+\_\+attribute@{matplotlib.\+\_\+api.\+deprecation.\+deprecate\+\_\+privatize\+\_\+attribute}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1__api_1_1deprecation_1_1deprecate__privatize__attribute_a2596563c4d4af72dd699338dc4bce095}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1__api_1_1deprecation_1_1deprecate__privatize__attribute_ad5ee9d316158cb5dbcedf4f3d34c5e3a}{\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+} (self, owner, name)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1__api_1_1deprecation_1_1deprecate__privatize__attribute_a41364120bf1f2e52b90d6e403a108b19}{deprecator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Helper to deprecate public access to an attribute.
+
+This helper should only be used at class scope, as follows::
+
+    class Foo:
+        attr = _deprecate_privatize_attribute(*args, **kwargs)
+
+where *all* parameters are forwarded to `deprecated`.  This form makes
+``attr`` a property which forwards access to ``self._attr`` (same name but
+with a leading underscore), with a deprecation warning.  Note that the
+attribute name is derived from *the name this helper is assigned to*.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__api_1_1deprecation_1_1deprecate__privatize__attribute_a2596563c4d4af72dd699338dc4bce095}\label{classmatplotlib_1_1__api_1_1deprecation_1_1deprecate__privatize__attribute_a2596563c4d4af72dd699338dc4bce095}} 
+\index{matplotlib\+::\+\_\+api\+::deprecation\+::deprecate\+\_\+privatize\+\_\+attribute@{matplotlib\+::\+\_\+api\+::deprecation\+::deprecate\+\_\+privatize\+\_\+attribute}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::\+\_\+api\+::deprecation\+::deprecate\+\_\+privatize\+\_\+attribute@{matplotlib\+::\+\_\+api\+::deprecation\+::deprecate\+\_\+privatize\+\_\+attribute}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+deprecation.\+deprecate\+\_\+privatize\+\_\+attribute.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__api_1_1deprecation_1_1deprecate__privatize__attribute_ad5ee9d316158cb5dbcedf4f3d34c5e3a}\label{classmatplotlib_1_1__api_1_1deprecation_1_1deprecate__privatize__attribute_ad5ee9d316158cb5dbcedf4f3d34c5e3a}} 
+\index{matplotlib\+::\+\_\+api\+::deprecation\+::deprecate\+\_\+privatize\+\_\+attribute@{matplotlib\+::\+\_\+api\+::deprecation\+::deprecate\+\_\+privatize\+\_\+attribute}!\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+@{\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+@{\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+}!matplotlib\+::\+\_\+api\+::deprecation\+::deprecate\+\_\+privatize\+\_\+attribute@{matplotlib\+::\+\_\+api\+::deprecation\+::deprecate\+\_\+privatize\+\_\+attribute}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+()}{\_\_set\_name\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+deprecation.\+deprecate\+\_\+privatize\+\_\+attribute.\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{owner,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__api_1_1deprecation_1_1deprecate__privatize__attribute_a41364120bf1f2e52b90d6e403a108b19}\label{classmatplotlib_1_1__api_1_1deprecation_1_1deprecate__privatize__attribute_a41364120bf1f2e52b90d6e403a108b19}} 
+\index{matplotlib\+::\+\_\+api\+::deprecation\+::deprecate\+\_\+privatize\+\_\+attribute@{matplotlib\+::\+\_\+api\+::deprecation\+::deprecate\+\_\+privatize\+\_\+attribute}!deprecator@{deprecator}}
+\index{deprecator@{deprecator}!matplotlib\+::\+\_\+api\+::deprecation\+::deprecate\+\_\+privatize\+\_\+attribute@{matplotlib\+::\+\_\+api\+::deprecation\+::deprecate\+\_\+privatize\+\_\+attribute}}
+\subsubsection{\texorpdfstring{deprecator}{deprecator}}
+{\footnotesize\ttfamily matplotlib.\+\_\+api.\+deprecation.\+deprecate\+\_\+privatize\+\_\+attribute.\+deprecator}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\+\_\+api/\hyperlink{matplotlib_2__api_2deprecation_8py}{deprecation.\+py}\end{DoxyCompactItemize}

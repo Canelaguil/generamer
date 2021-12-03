@@ -1,0 +1,33 @@
+\hypertarget{namespacepip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates}{}\section{pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates Namespace Reference}
+\label{namespacepip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates}\index{pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates@{pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates}{Found\+Candidates}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_a5dc497406a3176c6265b8c383ee1ca94}{Index\+Candidate\+Info}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Utilities to lazily create and visit candidates found.
+
+Creating and visiting a candidate is a *very* costly operation. It involves
+fetching, extracting, potentially building modules from source, and verifying
+distribution metadata. It is therefore crucial for performance to keep
+everything here lazy all the way down, so we only touch candidates that we
+absolutely need, and not "download the world" when we only need one version of
+something.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_a5dc497406a3176c6265b8c383ee1ca94}\label{namespacepip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_a5dc497406a3176c6265b8c383ee1ca94}} 
+\index{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates}!Index\+Candidate\+Info@{Index\+Candidate\+Info}}
+\index{Index\+Candidate\+Info@{Index\+Candidate\+Info}!pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates}}
+\subsubsection{\texorpdfstring{Index\+Candidate\+Info}{IndexCandidateInfo}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates.\+Index\+Candidate\+Info}
+

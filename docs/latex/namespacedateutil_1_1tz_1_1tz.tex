@@ -1,0 +1,205 @@
+\hypertarget{namespacedateutil_1_1tz_1_1tz}{}\section{dateutil.\+tz.\+tz Namespace Reference}
+\label{namespacedateutil_1_1tz_1_1tz}\index{dateutil.\+tz.\+tz@{dateutil.\+tz.\+tz}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1tz_1_1__nullcontext}{\+\_\+nullcontext}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1tz_1_1__ttinfo}{\+\_\+ttinfo}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1tz_1_1__tzfile}{\+\_\+tzfile}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1tz_1_1__tzicalvtz}{\+\_\+tzicalvtz}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1tz_1_1__tzicalvtzcomp}{\+\_\+tzicalvtzcomp}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzfile}{tzfile}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzical}{tzical}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzlocal}{tzlocal}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzoffset}{tzoffset}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzrange}{tzrange}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzstr}{tzstr}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzutc}{tzutc}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacedateutil_1_1tz_1_1tz_a4ba2e53b6154f1c008208a7e8b42bfde}{datetime\+\_\+exists} (dt, tz=None)
+\item 
+def \hyperlink{namespacedateutil_1_1tz_1_1tz_a6d25c2763c71b83d0f613b8e879ee9a9}{datetime\+\_\+ambiguous} (dt, tz=None)
+\item 
+def \hyperlink{namespacedateutil_1_1tz_1_1tz_a94ecc4305612c58567e0037602edd414}{resolve\+\_\+imaginary} (dt)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacedateutil_1_1tz_1_1tz_ace91b67b861e0dac4377e44790fc2f75}{tzwin} = None
+\item 
+\hyperlink{namespacedateutil_1_1tz_1_1tz_a18378431357829ceeb09d65400bbc865}{Z\+E\+RO} = \hyperlink{noprefix_8h_ae6feacec25f59b525f6e0c442ef75ff7}{datetime.\+timedelta}(0)
+\item 
+\hyperlink{namespacedateutil_1_1tz_1_1tz_a7c010e6056d7ef2b13139b46f4876d17}{E\+P\+O\+CH} = datetime.\+datetime.\+utcfromtimestamp(0)
+\item 
+\hyperlink{namespacedateutil_1_1tz_1_1tz_a94222ee399001b3ceaa52a4e16af788d}{E\+P\+O\+C\+H\+O\+R\+D\+I\+N\+AL} = E\+P\+O\+C\+H.\+toordinal()
+\item 
+\hyperlink{namespacedateutil_1_1tz_1_1tz_ab991c64e6818646df618e99674cbdf41}{U\+TC} = \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzutc}{tzutc}()
+\item 
+list \hyperlink{namespacedateutil_1_1tz_1_1tz_a9dc6bbef789deb84207009c08a339bbd}{T\+Z\+F\+I\+L\+ES} = \mbox{[}\char`\"{}/etc/localtime\char`\"{}, \char`\"{}localtime\char`\"{}\mbox{]}
+\item 
+list \hyperlink{namespacedateutil_1_1tz_1_1tz_a12ad37923e081992c88dea103b1c7610}{T\+Z\+P\+A\+T\+HS}
+\item 
+def \hyperlink{namespacedateutil_1_1tz_1_1tz_ad368d4e3cb04c5751ca8c7dfe1863c51}{gettz} = \+\_\+\+\_\+get\+\_\+gettz()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacedateutil_1_1tz_1_1tz_a6d25c2763c71b83d0f613b8e879ee9a9}\label{namespacedateutil_1_1tz_1_1tz_a6d25c2763c71b83d0f613b8e879ee9a9}} 
+\index{dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}!datetime\+\_\+ambiguous@{datetime\+\_\+ambiguous}}
+\index{datetime\+\_\+ambiguous@{datetime\+\_\+ambiguous}!dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}}
+\subsubsection{\texorpdfstring{datetime\+\_\+ambiguous()}{datetime\_ambiguous()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+datetime\+\_\+ambiguous (\begin{DoxyParamCaption}\item[{}]{dt,  }\item[{}]{tz = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given a datetime and a time zone, determine whether or not a given datetime
+is ambiguous (i.e if there are two times differentiated only by their DST
+status).
+
+:param dt:
+    A :class:`datetime.datetime` (whose time zone will be ignored if ``tz``
+    is provided.)
+
+:param tz:
+    A :class:`datetime.tzinfo` with support for the ``fold`` attribute. If
+    ``None`` or not provided, the datetime's own time zone will be used.
+
+:return:
+    Returns a boolean value whether or not the "wall time" is ambiguous in
+    ``tz``.
+
+.. versionadded:: 2.6.0
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacedateutil_1_1tz_1_1tz_a4ba2e53b6154f1c008208a7e8b42bfde}\label{namespacedateutil_1_1tz_1_1tz_a4ba2e53b6154f1c008208a7e8b42bfde}} 
+\index{dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}!datetime\+\_\+exists@{datetime\+\_\+exists}}
+\index{datetime\+\_\+exists@{datetime\+\_\+exists}!dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}}
+\subsubsection{\texorpdfstring{datetime\+\_\+exists()}{datetime\_exists()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+datetime\+\_\+exists (\begin{DoxyParamCaption}\item[{}]{dt,  }\item[{}]{tz = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given a datetime and a time zone, determine whether or not a given datetime
+would fall in a gap.
+
+:param dt:
+    A :class:`datetime.datetime` (whose time zone will be ignored if ``tz``
+    is provided.)
+
+:param tz:
+    A :class:`datetime.tzinfo` with support for the ``fold`` attribute. If
+    ``None`` or not provided, the datetime's own time zone will be used.
+
+:return:
+    Returns a boolean value whether or not the "wall time" exists in
+    ``tz``.
+
+.. versionadded:: 2.7.0
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacedateutil_1_1tz_1_1tz_a94ecc4305612c58567e0037602edd414}\label{namespacedateutil_1_1tz_1_1tz_a94ecc4305612c58567e0037602edd414}} 
+\index{dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}!resolve\+\_\+imaginary@{resolve\+\_\+imaginary}}
+\index{resolve\+\_\+imaginary@{resolve\+\_\+imaginary}!dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}}
+\subsubsection{\texorpdfstring{resolve\+\_\+imaginary()}{resolve\_imaginary()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+resolve\+\_\+imaginary (\begin{DoxyParamCaption}\item[{}]{dt }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given a datetime that may be imaginary, return an existing datetime.
+
+This function assumes that an imaginary datetime represents what the
+wall time would be in a zone had the offset transition not occurred, so
+it will always fall forward by the transition's change in offset.
+
+.. doctest::
+
+    >>> from dateutil import tz
+    >>> from datetime import datetime
+    >>> NYC = tz.gettz('America/New_York')
+    >>> print(tz.resolve_imaginary(datetime(2017, 3, 12, 2, 30, tzinfo=NYC)))
+    2017-03-12 03:30:00-04:00
+
+    >>> KIR = tz.gettz('Pacific/Kiritimati')
+    >>> print(tz.resolve_imaginary(datetime(1995, 1, 1, 12, 30, tzinfo=KIR)))
+    1995-01-02 12:30:00+14:00
+
+As a note, :func:`datetime.astimezone` is guaranteed to produce a valid,
+existing datetime, so a round-trip to and from UTC is sufficient to get
+an extant datetime, however, this generally "falls back" to an earlier time
+rather than falling forward to the STD side (though no guarantees are made
+about this behavior).
+
+:param dt:
+    A :class:`datetime.datetime` which may or may not exist.
+
+:return:
+    Returns an existing :class:`datetime.datetime`. If ``dt`` was not
+    imaginary, the datetime returned is guaranteed to be the same object
+    passed to the function.
+
+.. versionadded:: 2.7.0
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacedateutil_1_1tz_1_1tz_a7c010e6056d7ef2b13139b46f4876d17}\label{namespacedateutil_1_1tz_1_1tz_a7c010e6056d7ef2b13139b46f4876d17}} 
+\index{dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}!E\+P\+O\+CH@{E\+P\+O\+CH}}
+\index{E\+P\+O\+CH@{E\+P\+O\+CH}!dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}}
+\subsubsection{\texorpdfstring{E\+P\+O\+CH}{EPOCH}}
+{\footnotesize\ttfamily dateutil.\+tz.\+tz.\+E\+P\+O\+CH = datetime.\+datetime.\+utcfromtimestamp(0)}
+
+\mbox{\Hypertarget{namespacedateutil_1_1tz_1_1tz_a94222ee399001b3ceaa52a4e16af788d}\label{namespacedateutil_1_1tz_1_1tz_a94222ee399001b3ceaa52a4e16af788d}} 
+\index{dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}!E\+P\+O\+C\+H\+O\+R\+D\+I\+N\+AL@{E\+P\+O\+C\+H\+O\+R\+D\+I\+N\+AL}}
+\index{E\+P\+O\+C\+H\+O\+R\+D\+I\+N\+AL@{E\+P\+O\+C\+H\+O\+R\+D\+I\+N\+AL}!dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}}
+\subsubsection{\texorpdfstring{E\+P\+O\+C\+H\+O\+R\+D\+I\+N\+AL}{EPOCHORDINAL}}
+{\footnotesize\ttfamily dateutil.\+tz.\+tz.\+E\+P\+O\+C\+H\+O\+R\+D\+I\+N\+AL = E\+P\+O\+C\+H.\+toordinal()}
+
+\mbox{\Hypertarget{namespacedateutil_1_1tz_1_1tz_ad368d4e3cb04c5751ca8c7dfe1863c51}\label{namespacedateutil_1_1tz_1_1tz_ad368d4e3cb04c5751ca8c7dfe1863c51}} 
+\index{dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}!gettz@{gettz}}
+\index{gettz@{gettz}!dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}}
+\subsubsection{\texorpdfstring{gettz}{gettz}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+gettz = \+\_\+\+\_\+get\+\_\+gettz()}
+
+\mbox{\Hypertarget{namespacedateutil_1_1tz_1_1tz_a9dc6bbef789deb84207009c08a339bbd}\label{namespacedateutil_1_1tz_1_1tz_a9dc6bbef789deb84207009c08a339bbd}} 
+\index{dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}!T\+Z\+F\+I\+L\+ES@{T\+Z\+F\+I\+L\+ES}}
+\index{T\+Z\+F\+I\+L\+ES@{T\+Z\+F\+I\+L\+ES}!dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}}
+\subsubsection{\texorpdfstring{T\+Z\+F\+I\+L\+ES}{TZFILES}}
+{\footnotesize\ttfamily list dateutil.\+tz.\+tz.\+T\+Z\+F\+I\+L\+ES = \mbox{[}\char`\"{}/etc/localtime\char`\"{}, \char`\"{}localtime\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacedateutil_1_1tz_1_1tz_a12ad37923e081992c88dea103b1c7610}\label{namespacedateutil_1_1tz_1_1tz_a12ad37923e081992c88dea103b1c7610}} 
+\index{dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}!T\+Z\+P\+A\+T\+HS@{T\+Z\+P\+A\+T\+HS}}
+\index{T\+Z\+P\+A\+T\+HS@{T\+Z\+P\+A\+T\+HS}!dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}}
+\subsubsection{\texorpdfstring{T\+Z\+P\+A\+T\+HS}{TZPATHS}}
+{\footnotesize\ttfamily list dateutil.\+tz.\+tz.\+T\+Z\+P\+A\+T\+HS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  [\textcolor{stringliteral}{"/usr/share/zoneinfo"},
+2                \textcolor{stringliteral}{"/usr/lib/zoneinfo"},
+3                \textcolor{stringliteral}{"/usr/share/lib/zoneinfo"},
+4                \textcolor{stringliteral}{"/etc/zoneinfo"}]
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacedateutil_1_1tz_1_1tz_ace91b67b861e0dac4377e44790fc2f75}\label{namespacedateutil_1_1tz_1_1tz_ace91b67b861e0dac4377e44790fc2f75}} 
+\index{dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}!tzwin@{tzwin}}
+\index{tzwin@{tzwin}!dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}}
+\subsubsection{\texorpdfstring{tzwin}{tzwin}}
+{\footnotesize\ttfamily \hyperlink{classdateutil_1_1tz_1_1win_1_1tzwin}{dateutil.\+tz.\+tz.\+tzwin} = None}
+
+\mbox{\Hypertarget{namespacedateutil_1_1tz_1_1tz_ab991c64e6818646df618e99674cbdf41}\label{namespacedateutil_1_1tz_1_1tz_ab991c64e6818646df618e99674cbdf41}} 
+\index{dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}!U\+TC@{U\+TC}}
+\index{U\+TC@{U\+TC}!dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}}
+\subsubsection{\texorpdfstring{U\+TC}{UTC}}
+{\footnotesize\ttfamily dateutil.\+tz.\+tz.\+U\+TC = \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzutc}{tzutc}()}
+
+\mbox{\Hypertarget{namespacedateutil_1_1tz_1_1tz_a18378431357829ceeb09d65400bbc865}\label{namespacedateutil_1_1tz_1_1tz_a18378431357829ceeb09d65400bbc865}} 
+\index{dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}!Z\+E\+RO@{Z\+E\+RO}}
+\index{Z\+E\+RO@{Z\+E\+RO}!dateutil\+::tz\+::tz@{dateutil\+::tz\+::tz}}
+\subsubsection{\texorpdfstring{Z\+E\+RO}{ZERO}}
+{\footnotesize\ttfamily dateutil.\+tz.\+tz.\+Z\+E\+RO = \hyperlink{noprefix_8h_ae6feacec25f59b525f6e0c442ef75ff7}{datetime.\+timedelta}(0)}
+

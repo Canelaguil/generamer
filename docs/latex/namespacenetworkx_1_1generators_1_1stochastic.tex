@@ -1,0 +1,44 @@
+\hypertarget{namespacenetworkx_1_1generators_1_1stochastic}{}\section{networkx.\+generators.\+stochastic Namespace Reference}
+\label{namespacenetworkx_1_1generators_1_1stochastic}\index{networkx.\+generators.\+stochastic@{networkx.\+generators.\+stochastic}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1generators_1_1stochastic_a82855a44e07c27e2b0f699b3148742a5}{stochastic\+\_\+graph} (G, copy=True, weight=\char`\"{}weight\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions for generating stochastic graphs from a given weighted directed
+graph.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1stochastic_a82855a44e07c27e2b0f699b3148742a5}\label{namespacenetworkx_1_1generators_1_1stochastic_a82855a44e07c27e2b0f699b3148742a5}} 
+\index{networkx\+::generators\+::stochastic@{networkx\+::generators\+::stochastic}!stochastic\+\_\+graph@{stochastic\+\_\+graph}}
+\index{stochastic\+\_\+graph@{stochastic\+\_\+graph}!networkx\+::generators\+::stochastic@{networkx\+::generators\+::stochastic}}
+\subsubsection{\texorpdfstring{stochastic\+\_\+graph()}{stochastic\_graph()}}
+{\footnotesize\ttfamily def networkx.\+generators.\+stochastic.\+stochastic\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{copy = {\ttfamily True},  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a right-stochastic representation of directed graph `G`.
+
+A right-stochastic graph is a weighted digraph in which for each
+node, the sum of the weights of all the out-edges of that node is
+1. If the graph is already weighted (for example, via a 'weight'
+edge attribute), the reweighting takes that into account.
+
+Parameters
+----------
+G : directed graph
+    A :class:`~networkx.DiGraph` or :class:`~networkx.MultiDiGraph`.
+
+copy : boolean, optional
+    If this is True, then this function returns a new graph with
+    the stochastic reweighting. Otherwise, the original graph is
+    modified in-place (and also returned, for convenience).
+
+weight : edge attribute key (optional, default='weight')
+    Edge attribute key used for reading the existing weight and
+    setting the new weight.  If no attribute with this key is found
+    for an edge, then the edge weight is assumed to be 1. If an edge
+    has a weight, it must be a positive number.\end{DoxyVerb}
+ 

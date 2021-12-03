@@ -1,0 +1,75 @@
+\hypertarget{classnumpy_1_1lib_1_1__datasource_1_1__FileOpeners}{}\section{numpy.\+lib.\+\_\+datasource.\+\_\+\+File\+Openers Class Reference}
+\label{classnumpy_1_1lib_1_1__datasource_1_1__FileOpeners}\index{numpy.\+lib.\+\_\+datasource.\+\_\+\+File\+Openers@{numpy.\+lib.\+\_\+datasource.\+\_\+\+File\+Openers}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__datasource_1_1__FileOpeners_a7a3adc67f45952f6b3988a0e13e2a00f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__datasource_1_1__FileOpeners_ab8ed8bfb9853ef411ec0fd46af9b882b}{keys} (self)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__datasource_1_1__FileOpeners_afca9742121027603bd423c5cd25dcc21}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, key)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Container for different methods to open (un-)compressed files.
+
+`_FileOpeners` contains a dictionary that holds one method for each
+supported file format. Attribute lookup is implemented in such a way
+that an instance of `_FileOpeners` itself can be indexed with the keys
+of that dictionary. Currently uncompressed files as well as files
+compressed with ``gzip``, ``bz2`` or ``xz`` compression are supported.
+
+Notes
+-----
+`_file_openers`, an instance of `_FileOpeners`, is made available for
+use in the `_datasource` module.
+
+Examples
+--------
+>>> import gzip
+>>> np.lib._datasource._file_openers.keys()
+[None, '.bz2', '.gz', '.xz', '.lzma']
+>>> np.lib._datasource._file_openers['.gz'] is gzip.open
+True\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__datasource_1_1__FileOpeners_a7a3adc67f45952f6b3988a0e13e2a00f}\label{classnumpy_1_1lib_1_1__datasource_1_1__FileOpeners_a7a3adc67f45952f6b3988a0e13e2a00f}} 
+\index{numpy\+::lib\+::\+\_\+datasource\+::\+\_\+\+File\+Openers@{numpy\+::lib\+::\+\_\+datasource\+::\+\_\+\+File\+Openers}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::lib\+::\+\_\+datasource\+::\+\_\+\+File\+Openers@{numpy\+::lib\+::\+\_\+datasource\+::\+\_\+\+File\+Openers}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+datasource.\+\_\+\+File\+Openers.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__datasource_1_1__FileOpeners_afca9742121027603bd423c5cd25dcc21}\label{classnumpy_1_1lib_1_1__datasource_1_1__FileOpeners_afca9742121027603bd423c5cd25dcc21}} 
+\index{numpy\+::lib\+::\+\_\+datasource\+::\+\_\+\+File\+Openers@{numpy\+::lib\+::\+\_\+datasource\+::\+\_\+\+File\+Openers}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!numpy\+::lib\+::\+\_\+datasource\+::\+\_\+\+File\+Openers@{numpy\+::lib\+::\+\_\+datasource\+::\+\_\+\+File\+Openers}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+datasource.\+\_\+\+File\+Openers.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__datasource_1_1__FileOpeners_ab8ed8bfb9853ef411ec0fd46af9b882b}\label{classnumpy_1_1lib_1_1__datasource_1_1__FileOpeners_ab8ed8bfb9853ef411ec0fd46af9b882b}} 
+\index{numpy\+::lib\+::\+\_\+datasource\+::\+\_\+\+File\+Openers@{numpy\+::lib\+::\+\_\+datasource\+::\+\_\+\+File\+Openers}!keys@{keys}}
+\index{keys@{keys}!numpy\+::lib\+::\+\_\+datasource\+::\+\_\+\+File\+Openers@{numpy\+::lib\+::\+\_\+datasource\+::\+\_\+\+File\+Openers}}
+\subsubsection{\texorpdfstring{keys()}{keys()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+datasource.\+\_\+\+File\+Openers.\+keys (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the keys of currently supported file openers.
+
+Parameters
+----------
+None
+
+Returns
+-------
+keys : list
+    The keys are None for uncompressed files and the file extension
+    strings (i.e. ``'.gz'``, ``'.xz'``) for supported compression
+    methods.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/lib/\hyperlink{__datasource_8py}{\+\_\+datasource.\+py}\end{DoxyCompactItemize}

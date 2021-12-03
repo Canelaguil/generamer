@@ -1,0 +1,94 @@
+\hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1DegreeView}{}\section{networkx.\+classes.\+reportviews.\+Degree\+View Class Reference}
+\label{classnetworkx_1_1classes_1_1reportviews_1_1DegreeView}\index{networkx.\+classes.\+reportviews.\+Degree\+View@{networkx.\+classes.\+reportviews.\+Degree\+View}}
+
+
+Inheritance diagram for networkx.\+classes.\+reportviews.\+Degree\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classnetworkx_1_1classes_1_1reportviews_1_1DegreeView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for networkx.\+classes.\+reportviews.\+Degree\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classnetworkx_1_1classes_1_1reportviews_1_1DegreeView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1DegreeView_a873e548075b9ff7d7ec1378f9f764064}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, n)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1DegreeView_af063bebbf55f1b0f64a0e20e1dfc9aea}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A DegreeView class to act as G.degree for a NetworkX Graph
+
+Typical usage focuses on iteration over `(node, degree)` pairs.
+The degree is by default the number of edges incident to the node.
+Optional argument `weight` enables weighted degree using the edge
+attribute named in the `weight` argument.  Reporting and iteration
+can also be restricted to a subset of nodes using `nbunch`.
+
+Additional functionality include node lookup so that `G.degree[n]`
+reported the (possibly weighted) degree of node `n`. Calling the
+view creates a view with different arguments `nbunch` or `weight`.
+
+Parameters
+==========
+graph : NetworkX graph-like class
+nbunch : node, container of nodes, or None meaning all nodes (default=None)
+weight : string or None (default=None)
+
+Notes
+-----
+DegreeView can still lookup any node even if nbunch is specified.
+
+Examples
+--------
+>>> G = nx.path_graph(3)
+>>> DV = G.degree()
+>>> assert DV[2] == 1
+>>> assert G.degree[2] == 1
+>>> assert sum(deg for n, deg in DV) == 4
+
+>>> DVweight = G.degree(weight="span")
+>>> G.add_edge(1, 2, span=34)
+>>> DVweight[2]
+34
+>>> DVweight[0]  #  default edge weight is 1
+1
+>>> sum(span for n, span in DVweight)  # sum weighted degrees
+70
+
+>>> DVnbunch = G.degree(nbunch=(1, 2))
+>>> assert len(list(DVnbunch)) == 2  # iteration over nbunch only
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1DegreeView_a873e548075b9ff7d7ec1378f9f764064}\label{classnetworkx_1_1classes_1_1reportviews_1_1DegreeView_a873e548075b9ff7d7ec1378f9f764064}} 
+\index{networkx\+::classes\+::reportviews\+::\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Degree\+View}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Degree\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Degree\+View.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1DegreeView_af063bebbf55f1b0f64a0e20e1dfc9aea}\label{classnetworkx_1_1classes_1_1reportviews_1_1DegreeView_af063bebbf55f1b0f64a0e20e1dfc9aea}} 
+\index{networkx\+::classes\+::reportviews\+::\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Degree\+View}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Degree\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Degree\+View.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/classes/\hyperlink{reportviews_8py}{reportviews.\+py}\end{DoxyCompactItemize}

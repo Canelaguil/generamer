@@ -1,0 +1,239 @@
+\hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp}{}\section{pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp Class Reference}
+\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp}\index{pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp@{pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_ad71f01eebb6008ee9b7c7998207c6049}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a402dde70e5dd6bfc4d783bb780a00c8f}{seconds}, \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a6445f24723dbb45fb5f6f7e527acf222}{nanoseconds}=0)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a4adc139a53f42fa7a62ecb92cc64e0b1}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_abba6737fdc132514c5817a421e43d60a}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a85bbfb0158c314f6747659d9d79fbc5f}{\+\_\+\+\_\+ne\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a1864c32d746d8b9331118ccc3344952b}{\+\_\+\+\_\+hash\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a7285a185b266aee511f617c196fa0136}{to\+\_\+bytes} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_acc932f0c7c8c1a85ea4923433e7a02f1}{to\+\_\+unix} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a35e6bfd10cdc274a7221f11b23996f02}{to\+\_\+unix\+\_\+nano} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a39c65017f3feb922755eb646ef1d9d01}{to\+\_\+datetime} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a2550bdf0c1b253d92ad38772eabeb960}{from\+\_\+bytes} (b)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a9ebe1ffed71a8f1497ba79de06c6a6ab}{from\+\_\+unix} (unix\+\_\+sec)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a16b97511d73ae784ef855dd8d3d3c792}{from\+\_\+unix\+\_\+nano} (unix\+\_\+ns)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a8e9cf6bd29b3dca3d767dab3f914a3f6}{from\+\_\+datetime} (dt)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a402dde70e5dd6bfc4d783bb780a00c8f}{seconds}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a6445f24723dbb45fb5f6f7e527acf222}{nanoseconds}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Timestamp represents the Timestamp extension type in msgpack.
+
+When built with Cython, msgpack uses C methods to pack and unpack `Timestamp`. When using pure-Python
+msgpack, :func:`to_bytes` and :func:`from_bytes` are used to pack and unpack `Timestamp`.
+
+This class is immutable: Do not override seconds and nanoseconds.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_ad71f01eebb6008ee9b7c7998207c6049}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_ad71f01eebb6008ee9b7c7998207c6049}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{seconds,  }\item[{}]{nanoseconds = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize a Timestamp object.
+
+:param int seconds:
+    Number of seconds since the UNIX epoch (00:00:00 UTC Jan 1 1970, minus leap seconds).
+    May be negative.
+
+:param int nanoseconds:
+    Number of nanoseconds to add to `seconds` to get fractional time.
+    Maximum is 999_999_999.  Default is 0.
+
+Note: Negative times (before the UNIX epoch) are represented as negative seconds + positive ns.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_abba6737fdc132514c5817a421e43d60a}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_abba6737fdc132514c5817a421e43d60a}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+eq\+\_\+\+\_\+()}{\_\_eq\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+\_\+\+\_\+eq\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check for equality with another Timestamp object\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a1864c32d746d8b9331118ccc3344952b}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a1864c32d746d8b9331118ccc3344952b}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!\+\_\+\+\_\+hash\+\_\+\+\_\+@{\+\_\+\+\_\+hash\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+hash\+\_\+\+\_\+@{\+\_\+\+\_\+hash\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+hash\+\_\+\+\_\+()}{\_\_hash\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+\_\+\+\_\+hash\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a85bbfb0158c314f6747659d9d79fbc5f}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a85bbfb0158c314f6747659d9d79fbc5f}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!\+\_\+\+\_\+ne\+\_\+\+\_\+@{\+\_\+\+\_\+ne\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+ne\+\_\+\+\_\+@{\+\_\+\+\_\+ne\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+ne\+\_\+\+\_\+()}{\_\_ne\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+\_\+\+\_\+ne\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}not-equals method (see :func:`__eq__()`)\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a4adc139a53f42fa7a62ecb92cc64e0b1}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a4adc139a53f42fa7a62ecb92cc64e0b1}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}String representation of Timestamp.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a2550bdf0c1b253d92ad38772eabeb960}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a2550bdf0c1b253d92ad38772eabeb960}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!from\+\_\+bytes@{from\+\_\+bytes}}
+\index{from\+\_\+bytes@{from\+\_\+bytes}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{from\+\_\+bytes()}{from\_bytes()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+from\+\_\+bytes (\begin{DoxyParamCaption}\item[{}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Unpack bytes into a `Timestamp` object.
+
+Used for pure-Python msgpack unpacking.
+
+:param b: Payload from msgpack ext message with code -1
+:type b: bytes
+
+:returns: Timestamp object unpacked from msgpack ext payload
+:rtype: Timestamp
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a8e9cf6bd29b3dca3d767dab3f914a3f6}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a8e9cf6bd29b3dca3d767dab3f914a3f6}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!from\+\_\+datetime@{from\+\_\+datetime}}
+\index{from\+\_\+datetime@{from\+\_\+datetime}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{from\+\_\+datetime()}{from\_datetime()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+from\+\_\+datetime (\begin{DoxyParamCaption}\item[{}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Create a Timestamp from datetime with tzinfo.
+
+Python 2 is not supported.
+
+:rtype: Timestamp
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a9ebe1ffed71a8f1497ba79de06c6a6ab}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a9ebe1ffed71a8f1497ba79de06c6a6ab}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!from\+\_\+unix@{from\+\_\+unix}}
+\index{from\+\_\+unix@{from\+\_\+unix}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{from\+\_\+unix()}{from\_unix()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+from\+\_\+unix (\begin{DoxyParamCaption}\item[{}]{unix\+\_\+sec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Create a Timestamp from posix timestamp in seconds.
+
+:param unix_float: Posix timestamp in seconds.
+:type unix_float: int or float.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a16b97511d73ae784ef855dd8d3d3c792}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a16b97511d73ae784ef855dd8d3d3c792}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!from\+\_\+unix\+\_\+nano@{from\+\_\+unix\+\_\+nano}}
+\index{from\+\_\+unix\+\_\+nano@{from\+\_\+unix\+\_\+nano}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{from\+\_\+unix\+\_\+nano()}{from\_unix\_nano()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+from\+\_\+unix\+\_\+nano (\begin{DoxyParamCaption}\item[{}]{unix\+\_\+ns }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Create a Timestamp from posix timestamp in nanoseconds.
+
+:param int unix_ns: Posix timestamp in nanoseconds.
+:rtype: Timestamp
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a7285a185b266aee511f617c196fa0136}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a7285a185b266aee511f617c196fa0136}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!to\+\_\+bytes@{to\+\_\+bytes}}
+\index{to\+\_\+bytes@{to\+\_\+bytes}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{to\+\_\+bytes()}{to\_bytes()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+to\+\_\+bytes (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Pack this Timestamp object into bytes.
+
+Used for pure-Python msgpack packing.
+
+:returns data: Payload for EXT message with code -1 (timestamp type)
+:rtype: bytes
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a39c65017f3feb922755eb646ef1d9d01}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a39c65017f3feb922755eb646ef1d9d01}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!to\+\_\+datetime@{to\+\_\+datetime}}
+\index{to\+\_\+datetime@{to\+\_\+datetime}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{to\+\_\+datetime()}{to\_datetime()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+to\+\_\+datetime (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the timestamp as a UTC datetime.
+
+Python 2 is not supported.
+
+:rtype: datetime.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_acc932f0c7c8c1a85ea4923433e7a02f1}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_acc932f0c7c8c1a85ea4923433e7a02f1}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!to\+\_\+unix@{to\+\_\+unix}}
+\index{to\+\_\+unix@{to\+\_\+unix}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{to\+\_\+unix()}{to\_unix()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+to\+\_\+unix (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the timestamp as a floating-point value.
+
+:returns: posix timestamp
+:rtype: float
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a35e6bfd10cdc274a7221f11b23996f02}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a35e6bfd10cdc274a7221f11b23996f02}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!to\+\_\+unix\+\_\+nano@{to\+\_\+unix\+\_\+nano}}
+\index{to\+\_\+unix\+\_\+nano@{to\+\_\+unix\+\_\+nano}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{to\+\_\+unix\+\_\+nano()}{to\_unix\_nano()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+to\+\_\+unix\+\_\+nano (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the timestamp as a unixtime in nanoseconds.
+
+:returns: posix timestamp in nanoseconds
+:rtype: int
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a6445f24723dbb45fb5f6f7e527acf222}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a6445f24723dbb45fb5f6f7e527acf222}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!nanoseconds@{nanoseconds}}
+\index{nanoseconds@{nanoseconds}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{nanoseconds}{nanoseconds}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+nanoseconds}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a402dde70e5dd6bfc4d783bb780a00c8f}\label{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1Timestamp_a402dde70e5dd6bfc4d783bb780a00c8f}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}!seconds@{seconds}}
+\index{seconds@{seconds}!pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp@{pip\+::\+\_\+vendor\+::msgpack\+::ext\+::\+Timestamp}}
+\subsubsection{\texorpdfstring{seconds}{seconds}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+msgpack.\+ext.\+Timestamp.\+seconds}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/msgpack/\hyperlink{ext_8py}{ext.\+py}\end{DoxyCompactItemize}

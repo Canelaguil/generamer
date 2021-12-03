@@ -1,0 +1,196 @@
+\hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator}{}\section{matplotlib.\+ticker.\+Max\+N\+Locator Class Reference}
+\label{classmatplotlib_1_1ticker_1_1MaxNLocator}\index{matplotlib.\+ticker.\+Max\+N\+Locator@{matplotlib.\+ticker.\+Max\+N\+Locator}}
+
+
+Inheritance diagram for matplotlib.\+ticker.\+Max\+N\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1ticker_1_1MaxNLocator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+ticker.\+Max\+N\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classmatplotlib_1_1ticker_1_1MaxNLocator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1MaxNLocator_a3c8d49ff313ee77faaac42d5ed88c319}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1MaxNLocator_ad4fcbde5dafcc6b16f69aba87a8f0504}{set\+\_\+params} (self, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1MaxNLocator_ac25f6a562c7444d0f940fd1f5eccebae}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1MaxNLocator_a522013809076312c55a3be93b20fa27f}{tick\+\_\+values} (self, vmin, vmax)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1MaxNLocator_a24478e8039d21c7f85f4bf1221b58870}{view\+\_\+limits} (self, dmin, dmax)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1MaxNLocator_ad19d15fa6f824f3c27756520c2fb9689}{default\+\_\+params}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1MaxNLocator_ab982e8cceb9cdf89f9ca4166729401f1}{nbins}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1MaxNLocator_a1011800698b63e9ac21d5a17f0457f42}{steps}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1MaxNLocator_a696ca1ea62afe2be0c3d15531f667f7b}{integer}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1MaxNLocator_ab502d1f9d20600eaec384145e1cfa055}{symmetric}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1MaxNLocator_ac7921df59e33758a4b9d6c6c3eef03fc}{prune}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1MaxNLocator_a57c6b351c1757ea6e53e14d2e5a4c4bb}{min\+\_\+n\+\_\+ticks}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Find nice tick locations with no more than N being within the view limits.
+Locations beyond the limits are added to support autoscaling.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator_a3c8d49ff313ee77faaac42d5ed88c319}\label{classmatplotlib_1_1ticker_1_1MaxNLocator_a3c8d49ff313ee77faaac42d5ed88c319}} 
+\index{matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Max\+N\+Locator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+nbins : int or 'auto', default: 10
+    Maximum number of intervals; one less than max number of
+    ticks.  If the string 'auto', the number of bins will be
+    automatically determined based on the length of the axis.
+
+steps : array-like, optional
+    Sequence of nice numbers starting with 1 and ending with 10;
+    e.g., [1, 2, 4, 5, 10], where the values are acceptable
+    tick multiples.  i.e. for the example, 20, 40, 60 would be
+    an acceptable set of ticks, as would 0.4, 0.6, 0.8, because
+    they are multiples of 2.  However, 30, 60, 90 would not
+    be allowed because 3 does not appear in the list of steps.
+
+integer : bool, default: False
+    If True, ticks will take only integer values, provided at least
+    *min_n_ticks* integers are found within the view limits.
+
+symmetric : bool, default: False
+    If True, autoscaling will result in a range symmetric about zero.
+
+prune : {'lower', 'upper', 'both', None}, default: None
+    Remove edge ticks -- useful for stacked or ganged plots where
+    the upper tick of one axes overlaps with the lower tick of the
+    axes above it, primarily when :rc:`axes.autolimit_mode` is
+    ``'round_numbers'``.  If ``prune=='lower'``, the smallest tick will
+    be removed.  If ``prune == 'upper'``, the largest tick will be
+    removed.  If ``prune == 'both'``, the largest and smallest ticks
+    will be removed.  If *prune* is *None*, no ticks will be removed.
+
+min_n_ticks : int, default: 2
+    Relax *nbins* and *integer* constraints if necessary to obtain
+    this minimum number of ticks.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator_ac25f6a562c7444d0f940fd1f5eccebae}\label{classmatplotlib_1_1ticker_1_1MaxNLocator_ac25f6a562c7444d0f940fd1f5eccebae}} 
+\index{matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Max\+N\+Locator.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator_ad4fcbde5dafcc6b16f69aba87a8f0504}\label{classmatplotlib_1_1ticker_1_1MaxNLocator_ad4fcbde5dafcc6b16f69aba87a8f0504}} 
+\index{matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}!set\+\_\+params@{set\+\_\+params}}
+\index{set\+\_\+params@{set\+\_\+params}!matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}}
+\subsubsection{\texorpdfstring{set\+\_\+params()}{set\_params()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Max\+N\+Locator.\+set\+\_\+params (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set parameters for this locator.
+
+Parameters
+----------
+nbins : int or 'auto', optional
+    see `.MaxNLocator`
+steps : array-like, optional
+    see `.MaxNLocator`
+integer : bool, optional
+    see `.MaxNLocator`
+symmetric : bool, optional
+    see `.MaxNLocator`
+prune : {'lower', 'upper', 'both', None}, optional
+    see `.MaxNLocator`
+min_n_ticks : int, optional
+    see `.MaxNLocator`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator_a522013809076312c55a3be93b20fa27f}\label{classmatplotlib_1_1ticker_1_1MaxNLocator_a522013809076312c55a3be93b20fa27f}} 
+\index{matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}!tick\+\_\+values@{tick\+\_\+values}}
+\index{tick\+\_\+values@{tick\+\_\+values}!matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}}
+\subsubsection{\texorpdfstring{tick\+\_\+values()}{tick\_values()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Max\+N\+Locator.\+tick\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator_a24478e8039d21c7f85f4bf1221b58870}\label{classmatplotlib_1_1ticker_1_1MaxNLocator_a24478e8039d21c7f85f4bf1221b58870}} 
+\index{matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}!view\+\_\+limits@{view\+\_\+limits}}
+\index{view\+\_\+limits@{view\+\_\+limits}!matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}}
+\subsubsection{\texorpdfstring{view\+\_\+limits()}{view\_limits()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Max\+N\+Locator.\+view\+\_\+limits (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dmin,  }\item[{}]{dmax }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator_ad19d15fa6f824f3c27756520c2fb9689}\label{classmatplotlib_1_1ticker_1_1MaxNLocator_ad19d15fa6f824f3c27756520c2fb9689}} 
+\index{matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}!default\+\_\+params@{default\+\_\+params}}
+\index{default\+\_\+params@{default\+\_\+params}!matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}}
+\subsubsection{\texorpdfstring{default\+\_\+params}{default\_params}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Max\+N\+Locator.\+default\+\_\+params\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator_a696ca1ea62afe2be0c3d15531f667f7b}\label{classmatplotlib_1_1ticker_1_1MaxNLocator_a696ca1ea62afe2be0c3d15531f667f7b}} 
+\index{matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}!integer@{integer}}
+\index{integer@{integer}!matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}}
+\subsubsection{\texorpdfstring{integer}{integer}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Max\+N\+Locator.\+integer\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator_a57c6b351c1757ea6e53e14d2e5a4c4bb}\label{classmatplotlib_1_1ticker_1_1MaxNLocator_a57c6b351c1757ea6e53e14d2e5a4c4bb}} 
+\index{matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}!min\+\_\+n\+\_\+ticks@{min\+\_\+n\+\_\+ticks}}
+\index{min\+\_\+n\+\_\+ticks@{min\+\_\+n\+\_\+ticks}!matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}}
+\subsubsection{\texorpdfstring{min\+\_\+n\+\_\+ticks}{min\_n\_ticks}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Max\+N\+Locator.\+min\+\_\+n\+\_\+ticks\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator_ab982e8cceb9cdf89f9ca4166729401f1}\label{classmatplotlib_1_1ticker_1_1MaxNLocator_ab982e8cceb9cdf89f9ca4166729401f1}} 
+\index{matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}!nbins@{nbins}}
+\index{nbins@{nbins}!matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}}
+\subsubsection{\texorpdfstring{nbins}{nbins}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Max\+N\+Locator.\+nbins\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator_ac7921df59e33758a4b9d6c6c3eef03fc}\label{classmatplotlib_1_1ticker_1_1MaxNLocator_ac7921df59e33758a4b9d6c6c3eef03fc}} 
+\index{matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}!prune@{prune}}
+\index{prune@{prune}!matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}}
+\subsubsection{\texorpdfstring{prune}{prune}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Max\+N\+Locator.\+prune\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator_a1011800698b63e9ac21d5a17f0457f42}\label{classmatplotlib_1_1ticker_1_1MaxNLocator_a1011800698b63e9ac21d5a17f0457f42}} 
+\index{matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}!steps@{steps}}
+\index{steps@{steps}!matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}}
+\subsubsection{\texorpdfstring{steps}{steps}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Max\+N\+Locator.\+steps\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1MaxNLocator_ab502d1f9d20600eaec384145e1cfa055}\label{classmatplotlib_1_1ticker_1_1MaxNLocator_ab502d1f9d20600eaec384145e1cfa055}} 
+\index{matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}!symmetric@{symmetric}}
+\index{symmetric@{symmetric}!matplotlib\+::ticker\+::\+Max\+N\+Locator@{matplotlib\+::ticker\+::\+Max\+N\+Locator}}
+\subsubsection{\texorpdfstring{symmetric}{symmetric}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Max\+N\+Locator.\+symmetric\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{ticker_8py}{ticker.\+py}\end{DoxyCompactItemize}

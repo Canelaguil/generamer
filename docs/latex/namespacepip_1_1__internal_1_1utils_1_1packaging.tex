@@ -1,0 +1,70 @@
+\hypertarget{namespacepip_1_1__internal_1_1utils_1_1packaging}{}\section{pip.\+\_\+internal.\+utils.\+packaging Namespace Reference}
+\label{namespacepip_1_1__internal_1_1utils_1_1packaging}\index{pip.\+\_\+internal.\+utils.\+packaging@{pip.\+\_\+internal.\+utils.\+packaging}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1packaging_a4fdb0a72887d32af7942a40f3f372e18}{check\+\_\+requires\+\_\+python} (requires\+\_\+python, version\+\_\+info)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1packaging_a754fee3ac3294fe313b4870d848c2e8b}{get\+\_\+metadata} (dist)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1packaging_a9a1a1b346a43ddd0501923f548359c86}{get\+\_\+requires\+\_\+python} (dist)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1packaging_a3017a27d4117f36c01dde2362bcd3316}{get\+\_\+installer} (dist)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1utils_1_1packaging_aeeaf45933f76591f1a386645f06bff17}{logger}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1packaging_a4fdb0a72887d32af7942a40f3f372e18}\label{namespacepip_1_1__internal_1_1utils_1_1packaging_a4fdb0a72887d32af7942a40f3f372e18}} 
+\index{pip\+::\+\_\+internal\+::utils\+::packaging@{pip\+::\+\_\+internal\+::utils\+::packaging}!check\+\_\+requires\+\_\+python@{check\+\_\+requires\+\_\+python}}
+\index{check\+\_\+requires\+\_\+python@{check\+\_\+requires\+\_\+python}!pip\+::\+\_\+internal\+::utils\+::packaging@{pip\+::\+\_\+internal\+::utils\+::packaging}}
+\subsubsection{\texorpdfstring{check\+\_\+requires\+\_\+python()}{check\_requires\_python()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+packaging.\+check\+\_\+requires\+\_\+python (\begin{DoxyParamCaption}\item[{}]{requires\+\_\+python,  }\item[{}]{version\+\_\+info }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if the given Python version matches a "Requires-Python" specifier.
+
+:param version_info: A 3-tuple of ints representing a Python
+    major-minor-micro version to check (e.g. `sys.version_info[:3]`).
+
+:return: `True` if the given Python version satisfies the requirement.
+    Otherwise, return `False`.
+
+:raises InvalidSpecifier: If `requires_python` has an invalid format.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1packaging_a3017a27d4117f36c01dde2362bcd3316}\label{namespacepip_1_1__internal_1_1utils_1_1packaging_a3017a27d4117f36c01dde2362bcd3316}} 
+\index{pip\+::\+\_\+internal\+::utils\+::packaging@{pip\+::\+\_\+internal\+::utils\+::packaging}!get\+\_\+installer@{get\+\_\+installer}}
+\index{get\+\_\+installer@{get\+\_\+installer}!pip\+::\+\_\+internal\+::utils\+::packaging@{pip\+::\+\_\+internal\+::utils\+::packaging}}
+\subsubsection{\texorpdfstring{get\+\_\+installer()}{get\_installer()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+packaging.\+get\+\_\+installer (\begin{DoxyParamCaption}\item[{}]{dist }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1packaging_a754fee3ac3294fe313b4870d848c2e8b}\label{namespacepip_1_1__internal_1_1utils_1_1packaging_a754fee3ac3294fe313b4870d848c2e8b}} 
+\index{pip\+::\+\_\+internal\+::utils\+::packaging@{pip\+::\+\_\+internal\+::utils\+::packaging}!get\+\_\+metadata@{get\+\_\+metadata}}
+\index{get\+\_\+metadata@{get\+\_\+metadata}!pip\+::\+\_\+internal\+::utils\+::packaging@{pip\+::\+\_\+internal\+::utils\+::packaging}}
+\subsubsection{\texorpdfstring{get\+\_\+metadata()}{get\_metadata()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+packaging.\+get\+\_\+metadata (\begin{DoxyParamCaption}\item[{}]{dist }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:raises NoneMetadataError: if the distribution reports `has_metadata()`
+    True but `get_metadata()` returns None.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1packaging_a9a1a1b346a43ddd0501923f548359c86}\label{namespacepip_1_1__internal_1_1utils_1_1packaging_a9a1a1b346a43ddd0501923f548359c86}} 
+\index{pip\+::\+\_\+internal\+::utils\+::packaging@{pip\+::\+\_\+internal\+::utils\+::packaging}!get\+\_\+requires\+\_\+python@{get\+\_\+requires\+\_\+python}}
+\index{get\+\_\+requires\+\_\+python@{get\+\_\+requires\+\_\+python}!pip\+::\+\_\+internal\+::utils\+::packaging@{pip\+::\+\_\+internal\+::utils\+::packaging}}
+\subsubsection{\texorpdfstring{get\+\_\+requires\+\_\+python()}{get\_requires\_python()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+packaging.\+get\+\_\+requires\+\_\+python (\begin{DoxyParamCaption}\item[{}]{dist }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the "Requires-Python" metadata for a distribution, or None
+if not present.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1packaging_aeeaf45933f76591f1a386645f06bff17}\label{namespacepip_1_1__internal_1_1utils_1_1packaging_aeeaf45933f76591f1a386645f06bff17}} 
+\index{pip\+::\+\_\+internal\+::utils\+::packaging@{pip\+::\+\_\+internal\+::utils\+::packaging}!logger@{logger}}
+\index{logger@{logger}!pip\+::\+\_\+internal\+::utils\+::packaging@{pip\+::\+\_\+internal\+::utils\+::packaging}}
+\subsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+packaging.\+logger}
+

@@ -1,0 +1,88 @@
+\hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression}{}\section{numpy.\+lib.\+index\+\_\+tricks.\+Index\+Expression Class Reference}
+\label{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression}\index{numpy.\+lib.\+index\+\_\+tricks.\+Index\+Expression@{numpy.\+lib.\+index\+\_\+tricks.\+Index\+Expression}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression_ab5cc81085a9a92e029f98159c029bc52}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression_a9d003fb9d48dcc5f0013423edf89ddf9}{maketuple})
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression_ad7a537a2fcf446f1161a7b8692e35a5b}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, item)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression_a9d003fb9d48dcc5f0013423edf89ddf9}{maketuple}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A nicer way to build up index tuples for arrays.
+
+.. note::
+   Use one of the two predefined instances `index_exp` or `s_`
+   rather than directly using `IndexExpression`.
+
+For any index combination, including slicing and axis insertion,
+``a[indices]`` is the same as ``a[np.index_exp[indices]]`` for any
+array `a`. However, ``np.index_exp[indices]`` can be used anywhere
+in Python code and returns a tuple of slice objects that can be
+used in the construction of complex index expressions.
+
+Parameters
+----------
+maketuple : bool
+    If True, always returns a tuple.
+
+See Also
+--------
+index_exp : Predefined instance that always returns a tuple:
+   `index_exp = IndexExpression(maketuple=True)`.
+s_ : Predefined instance without tuple conversion:
+   `s_ = IndexExpression(maketuple=False)`.
+
+Notes
+-----
+You can do all this with `slice()` plus a few special objects,
+but there's a lot to remember and this version is simpler because
+it uses the standard array indexing syntax.
+
+Examples
+--------
+>>> np.s_[2::2]
+slice(2, None, 2)
+>>> np.index_exp[2::2]
+(slice(2, None, 2),)
+
+>>> np.array([0, 1, 2, 3, 4])[np.s_[2::2]]
+array([2, 4])\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression_ab5cc81085a9a92e029f98159c029bc52}\label{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression_ab5cc81085a9a92e029f98159c029bc52}} 
+\index{numpy\+::lib\+::index\+\_\+tricks\+::\+Index\+Expression@{numpy\+::lib\+::index\+\_\+tricks\+::\+Index\+Expression}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::lib\+::index\+\_\+tricks\+::\+Index\+Expression@{numpy\+::lib\+::index\+\_\+tricks\+::\+Index\+Expression}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+Index\+Expression.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{maketuple }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression_ad7a537a2fcf446f1161a7b8692e35a5b}\label{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression_ad7a537a2fcf446f1161a7b8692e35a5b}} 
+\index{numpy\+::lib\+::index\+\_\+tricks\+::\+Index\+Expression@{numpy\+::lib\+::index\+\_\+tricks\+::\+Index\+Expression}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!numpy\+::lib\+::index\+\_\+tricks\+::\+Index\+Expression@{numpy\+::lib\+::index\+\_\+tricks\+::\+Index\+Expression}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+Index\+Expression.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{item }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression_a9d003fb9d48dcc5f0013423edf89ddf9}\label{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression_a9d003fb9d48dcc5f0013423edf89ddf9}} 
+\index{numpy\+::lib\+::index\+\_\+tricks\+::\+Index\+Expression@{numpy\+::lib\+::index\+\_\+tricks\+::\+Index\+Expression}!maketuple@{maketuple}}
+\index{maketuple@{maketuple}!numpy\+::lib\+::index\+\_\+tricks\+::\+Index\+Expression@{numpy\+::lib\+::index\+\_\+tricks\+::\+Index\+Expression}}
+\subsubsection{\texorpdfstring{maketuple}{maketuple}}
+{\footnotesize\ttfamily numpy.\+lib.\+index\+\_\+tricks.\+Index\+Expression.\+maketuple}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/lib/\hyperlink{lib_2index__tricks_8py}{index\+\_\+tricks.\+py}\end{DoxyCompactItemize}

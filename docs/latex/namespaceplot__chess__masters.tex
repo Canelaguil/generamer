@@ -1,0 +1,272 @@
+\hypertarget{namespaceplot__chess__masters}{}\section{plot\+\_\+chess\+\_\+masters Namespace Reference}
+\label{namespaceplot__chess__masters}\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceplot__chess__masters_af98462d231a4f0d13d13c99476716cac}{chess\+\_\+pgn\+\_\+graph} (pgn\+\_\+file=\char`\"{}chess\+\_\+masters\+\_\+\+W\+C\+C.\+pgn.\+bz2\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceplot__chess__masters_a5f568c09dd24aa9dcd71109cab3a4550}{game\+\_\+details}
+\item 
+\hyperlink{namespaceplot__chess__masters_a6eabfb0c608eaeb1f95108336922a52a}{G}
+\item 
+\hyperlink{namespaceplot__chess__masters_a16c9af2bf9ed9402fde48296fae883fb}{H}
+\item 
+\hyperlink{namespaceplot__chess__masters_a877922a3688c5a8bf0c16478b40cfab4}{Gcc}
+\item 
+\hyperlink{namespaceplot__chess__masters_a6e8f964e9b2a25f27cee63df04df67e4}{openings}
+\item 
+\hyperlink{namespaceplot__chess__masters_ad6cde5a774f2a591a5970fcd99f49ab6}{data}
+\item 
+\hyperlink{namespaceplot__chess__masters_abe0cadf1c4c71e715d65f19adb4ebaec}{summary}
+\item 
+\hyperlink{namespaceplot__chess__masters_aef2c1dfc1fe858c3e7e578036486456f}{edgewidth}
+\item 
+\hyperlink{namespaceplot__chess__masters_a4c9ca045e04e73e15da3754775756955}{wins}
+\item 
+\hyperlink{namespaceplot__chess__masters_a8bc7d9d15156d622689d213a4149f9ac}{r}
+\item 
+\hyperlink{namespaceplot__chess__masters_a3b9092438b8cd205f548cac6625fd565}{nodesize}
+\item 
+\hyperlink{namespaceplot__chess__masters_a08dc9cb2082d741991740c2fe4e665ff}{pos}
+\item 
+\hyperlink{namespaceplot__chess__masters_aa6c7b1e2ae5e6827dbf62e58190bfde5}{fig}
+\item 
+\hyperlink{namespaceplot__chess__masters_a14ad4300f09a3eb782afc048a5fc7650}{ax}
+\item 
+\hyperlink{namespaceplot__chess__masters_abd5f8d5e98ec1a3f442159a97b5ea16f}{figsize}
+\item 
+\hyperlink{namespaceplot__chess__masters_abd323dff0f26170ff399fc17e0ec8470}{alpha}
+\item 
+\hyperlink{namespaceplot__chess__masters_a09778d2d525c078f702a79cfb18e3cc5}{width}
+\item 
+\hyperlink{namespaceplot__chess__masters_a30aac82fb35eeaca452b1a39d5c250dd}{edge\+\_\+color}
+\item 
+\hyperlink{namespaceplot__chess__masters_a76c7509572b6618091e9240725c74194}{node\+\_\+size}
+\item 
+\hyperlink{namespaceplot__chess__masters_aae032c5ad84a74292862a4071ce7a86a}{node\+\_\+color}
+\item 
+\hyperlink{namespaceplot__chess__masters_a4ea667f5e9d3769016c179ab377f61b2}{label\+\_\+options}
+\item 
+\hyperlink{namespaceplot__chess__masters_a2a864018b024c476b67eacaf887b6145}{font\+\_\+size}
+\item 
+\hyperlink{namespaceplot__chess__masters_a734bc1049d83031c90e87bbd811cfb2d}{bbox}
+\item 
+\hyperlink{namespaceplot__chess__masters_a5c886436f8a90c2982dbf09464b6d00f}{font}
+\item 
+\hyperlink{namespaceplot__chess__masters_a8852f68f96e472fccc7e571c4a3c5e40}{horizontalalignment}
+\item 
+\hyperlink{namespaceplot__chess__masters_abf17e843ddf30122963d57ffc9160066}{transform}
+\item 
+\hyperlink{namespaceplot__chess__masters_a5d139ff0a14cb0c6fdadc0b4cbf88bed}{fontdict}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}=============
+Chess Masters
+=============
+
+An example of the MultiDiGraph class.
+
+The function `chess_pgn_graph` reads a collection of chess matches stored in
+the specified PGN file (PGN ="Portable Game Notation").  Here the (compressed)
+default file::
+
+chess_masters_WCC.pgn.bz2
+
+contains all 685 World Chess Championship matches from 1886--1985.
+(data from http://chessproblem.my-free-games.com/chess/games/Download-PGN.php)
+
+The `chess_pgn_graph()` function returns a `MultiDiGraph` with multiple edges.
+Each node is the last name of a chess master. Each edge is directed from white
+to black and contains selected game info.
+
+The key statement in `chess_pgn_graph` below is::
+
+G.add_edge(white, black, game_info)
+
+where `game_info` is a `dict` describing each game.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceplot__chess__masters_af98462d231a4f0d13d13c99476716cac}\label{namespaceplot__chess__masters_af98462d231a4f0d13d13c99476716cac}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!chess\+\_\+pgn\+\_\+graph@{chess\+\_\+pgn\+\_\+graph}}
+\index{chess\+\_\+pgn\+\_\+graph@{chess\+\_\+pgn\+\_\+graph}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{chess\+\_\+pgn\+\_\+graph()}{chess\_pgn\_graph()}}
+{\footnotesize\ttfamily def plot\+\_\+chess\+\_\+masters.\+chess\+\_\+pgn\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{pgn\+\_\+file = {\ttfamily \char`\"{}chess\+\_\+masters\+\_\+WCC.pgn.bz2\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read chess games in pgn format in pgn_file.
+
+Filenames ending in .bz2 will be uncompressed.
+
+Return the MultiDiGraph of players connected by a chess game.
+Edges contain game data in a dict.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceplot__chess__masters_abd323dff0f26170ff399fc17e0ec8470}\label{namespaceplot__chess__masters_abd323dff0f26170ff399fc17e0ec8470}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!alpha@{alpha}}
+\index{alpha@{alpha}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+alpha}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a14ad4300f09a3eb782afc048a5fc7650}\label{namespaceplot__chess__masters_a14ad4300f09a3eb782afc048a5fc7650}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!ax@{ax}}
+\index{ax@{ax}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{ax}{ax}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+ax}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a734bc1049d83031c90e87bbd811cfb2d}\label{namespaceplot__chess__masters_a734bc1049d83031c90e87bbd811cfb2d}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!bbox@{bbox}}
+\index{bbox@{bbox}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{bbox}{bbox}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+bbox}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_ad6cde5a774f2a591a5970fcd99f49ab6}\label{namespaceplot__chess__masters_ad6cde5a774f2a591a5970fcd99f49ab6}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!data@{data}}
+\index{data@{data}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+data}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a30aac82fb35eeaca452b1a39d5c250dd}\label{namespaceplot__chess__masters_a30aac82fb35eeaca452b1a39d5c250dd}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!edge\+\_\+color@{edge\+\_\+color}}
+\index{edge\+\_\+color@{edge\+\_\+color}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{edge\+\_\+color}{edge\_color}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+edge\+\_\+color}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_aef2c1dfc1fe858c3e7e578036486456f}\label{namespaceplot__chess__masters_aef2c1dfc1fe858c3e7e578036486456f}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!edgewidth@{edgewidth}}
+\index{edgewidth@{edgewidth}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{edgewidth}{edgewidth}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+edgewidth}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_aa6c7b1e2ae5e6827dbf62e58190bfde5}\label{namespaceplot__chess__masters_aa6c7b1e2ae5e6827dbf62e58190bfde5}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!fig@{fig}}
+\index{fig@{fig}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{fig}{fig}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+fig}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_abd5f8d5e98ec1a3f442159a97b5ea16f}\label{namespaceplot__chess__masters_abd5f8d5e98ec1a3f442159a97b5ea16f}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!figsize@{figsize}}
+\index{figsize@{figsize}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{figsize}{figsize}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+figsize}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a5c886436f8a90c2982dbf09464b6d00f}\label{namespaceplot__chess__masters_a5c886436f8a90c2982dbf09464b6d00f}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!font@{font}}
+\index{font@{font}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+font}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a2a864018b024c476b67eacaf887b6145}\label{namespaceplot__chess__masters_a2a864018b024c476b67eacaf887b6145}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!font\+\_\+size@{font\+\_\+size}}
+\index{font\+\_\+size@{font\+\_\+size}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{font\+\_\+size}{font\_size}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+font\+\_\+size}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a5d139ff0a14cb0c6fdadc0b4cbf88bed}\label{namespaceplot__chess__masters_a5d139ff0a14cb0c6fdadc0b4cbf88bed}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!fontdict@{fontdict}}
+\index{fontdict@{fontdict}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{fontdict}{fontdict}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+fontdict}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a6eabfb0c608eaeb1f95108336922a52a}\label{namespaceplot__chess__masters_a6eabfb0c608eaeb1f95108336922a52a}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!G@{G}}
+\index{G@{G}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+G}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a5f568c09dd24aa9dcd71109cab3a4550}\label{namespaceplot__chess__masters_a5f568c09dd24aa9dcd71109cab3a4550}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!game\+\_\+details@{game\+\_\+details}}
+\index{game\+\_\+details@{game\+\_\+details}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{game\+\_\+details}{game\_details}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+game\+\_\+details}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a877922a3688c5a8bf0c16478b40cfab4}\label{namespaceplot__chess__masters_a877922a3688c5a8bf0c16478b40cfab4}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!Gcc@{Gcc}}
+\index{Gcc@{Gcc}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{Gcc}{Gcc}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+Gcc}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a16c9af2bf9ed9402fde48296fae883fb}\label{namespaceplot__chess__masters_a16c9af2bf9ed9402fde48296fae883fb}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!H@{H}}
+\index{H@{H}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{H}{H}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+H}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a8852f68f96e472fccc7e571c4a3c5e40}\label{namespaceplot__chess__masters_a8852f68f96e472fccc7e571c4a3c5e40}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!horizontalalignment@{horizontalalignment}}
+\index{horizontalalignment@{horizontalalignment}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{horizontalalignment}{horizontalalignment}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+horizontalalignment}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a4ea667f5e9d3769016c179ab377f61b2}\label{namespaceplot__chess__masters_a4ea667f5e9d3769016c179ab377f61b2}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!label\+\_\+options@{label\+\_\+options}}
+\index{label\+\_\+options@{label\+\_\+options}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{label\+\_\+options}{label\_options}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+label\+\_\+options}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_aae032c5ad84a74292862a4071ce7a86a}\label{namespaceplot__chess__masters_aae032c5ad84a74292862a4071ce7a86a}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!node\+\_\+color@{node\+\_\+color}}
+\index{node\+\_\+color@{node\+\_\+color}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{node\+\_\+color}{node\_color}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+node\+\_\+color}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a76c7509572b6618091e9240725c74194}\label{namespaceplot__chess__masters_a76c7509572b6618091e9240725c74194}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!node\+\_\+size@{node\+\_\+size}}
+\index{node\+\_\+size@{node\+\_\+size}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{node\+\_\+size}{node\_size}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+node\+\_\+size}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a3b9092438b8cd205f548cac6625fd565}\label{namespaceplot__chess__masters_a3b9092438b8cd205f548cac6625fd565}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!nodesize@{nodesize}}
+\index{nodesize@{nodesize}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{nodesize}{nodesize}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+nodesize}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a6e8f964e9b2a25f27cee63df04df67e4}\label{namespaceplot__chess__masters_a6e8f964e9b2a25f27cee63df04df67e4}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!openings@{openings}}
+\index{openings@{openings}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{openings}{openings}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+openings}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a08dc9cb2082d741991740c2fe4e665ff}\label{namespaceplot__chess__masters_a08dc9cb2082d741991740c2fe4e665ff}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!pos@{pos}}
+\index{pos@{pos}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+pos}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a8bc7d9d15156d622689d213a4149f9ac}\label{namespaceplot__chess__masters_a8bc7d9d15156d622689d213a4149f9ac}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!r@{r}}
+\index{r@{r}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+r}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_abe0cadf1c4c71e715d65f19adb4ebaec}\label{namespaceplot__chess__masters_abe0cadf1c4c71e715d65f19adb4ebaec}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!summary@{summary}}
+\index{summary@{summary}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{summary}{summary}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+summary}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_abf17e843ddf30122963d57ffc9160066}\label{namespaceplot__chess__masters_abf17e843ddf30122963d57ffc9160066}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!transform@{transform}}
+\index{transform@{transform}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+transform}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a09778d2d525c078f702a79cfb18e3cc5}\label{namespaceplot__chess__masters_a09778d2d525c078f702a79cfb18e3cc5}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!width@{width}}
+\index{width@{width}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+width}
+
+\mbox{\Hypertarget{namespaceplot__chess__masters_a4c9ca045e04e73e15da3754775756955}\label{namespaceplot__chess__masters_a4c9ca045e04e73e15da3754775756955}} 
+\index{plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}!wins@{wins}}
+\index{wins@{wins}!plot\+\_\+chess\+\_\+masters@{plot\+\_\+chess\+\_\+masters}}
+\subsubsection{\texorpdfstring{wins}{wins}}
+{\footnotesize\ttfamily plot\+\_\+chess\+\_\+masters.\+wins}
+

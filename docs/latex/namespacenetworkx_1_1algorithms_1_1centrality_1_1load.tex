@@ -1,0 +1,112 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1centrality_1_1load}{}\section{networkx.\+algorithms.\+centrality.\+load Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1centrality_1_1load}\index{networkx.\+algorithms.\+centrality.\+load@{networkx.\+algorithms.\+centrality.\+load}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1centrality_1_1load_aa6e723e954aa51a2258ec99854f063c0}{newman\+\_\+betweenness\+\_\+centrality} (G, v=None, cutoff=None, normalized=True, weight=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1centrality_1_1load_a2a022759465348a57b0a8a2a2c1371f6}{edge\+\_\+load\+\_\+centrality} (G, cutoff=False)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1centrality_1_1load_af4b6efad9f3076cd3eb5dad2beb4d36a}{load\+\_\+centrality}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Load centrality.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1centrality_1_1load_a2a022759465348a57b0a8a2a2c1371f6}\label{namespacenetworkx_1_1algorithms_1_1centrality_1_1load_a2a022759465348a57b0a8a2a2c1371f6}} 
+\index{networkx\+::algorithms\+::centrality\+::load@{networkx\+::algorithms\+::centrality\+::load}!edge\+\_\+load\+\_\+centrality@{edge\+\_\+load\+\_\+centrality}}
+\index{edge\+\_\+load\+\_\+centrality@{edge\+\_\+load\+\_\+centrality}!networkx\+::algorithms\+::centrality\+::load@{networkx\+::algorithms\+::centrality\+::load}}
+\subsubsection{\texorpdfstring{edge\+\_\+load\+\_\+centrality()}{edge\_load\_centrality()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+centrality.\+load.\+edge\+\_\+load\+\_\+centrality (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{cutoff = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute edge load.
+
+WARNING: This concept of edge load has not been analysed
+or discussed outside of NetworkX that we know of.
+It is based loosely on load_centrality in the sense that
+it counts the number of shortest paths which cross each edge.
+This function is for demonstration and testing purposes.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+cutoff : bool, optional (default=False)
+    If specified, only consider paths of length <= cutoff.
+
+Returns
+-------
+A dict keyed by edge 2-tuple to the number of shortest paths
+which use that edge. Where more than one path is shortest
+the count is divided equally among paths.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1centrality_1_1load_aa6e723e954aa51a2258ec99854f063c0}\label{namespacenetworkx_1_1algorithms_1_1centrality_1_1load_aa6e723e954aa51a2258ec99854f063c0}} 
+\index{networkx\+::algorithms\+::centrality\+::load@{networkx\+::algorithms\+::centrality\+::load}!newman\+\_\+betweenness\+\_\+centrality@{newman\+\_\+betweenness\+\_\+centrality}}
+\index{newman\+\_\+betweenness\+\_\+centrality@{newman\+\_\+betweenness\+\_\+centrality}!networkx\+::algorithms\+::centrality\+::load@{networkx\+::algorithms\+::centrality\+::load}}
+\subsubsection{\texorpdfstring{newman\+\_\+betweenness\+\_\+centrality()}{newman\_betweenness\_centrality()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+centrality.\+load.\+newman\+\_\+betweenness\+\_\+centrality (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{v = {\ttfamily None},  }\item[{}]{cutoff = {\ttfamily None},  }\item[{}]{normalized = {\ttfamily True},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute load centrality for nodes.
+
+The load centrality of a node is the fraction of all shortest
+paths that pass through that node.
+
+Parameters
+----------
+G : graph
+  A networkx graph.
+
+normalized : bool, optional (default=True)
+  If True the betweenness values are normalized by b=b/(n-1)(n-2) where
+  n is the number of nodes in G.
+
+weight : None or string, optional (default=None)
+  If None, edge weights are ignored.
+  Otherwise holds the name of the edge attribute used as weight.
+  The weight of an edge is treated as the length or distance between the two sides.
+
+cutoff : bool, optional (default=None)
+  If specified, only consider paths of length <= cutoff.
+
+Returns
+-------
+nodes : dictionary
+   Dictionary of nodes with centrality as the value.
+
+See Also
+--------
+betweenness_centrality
+
+Notes
+-----
+Load centrality is slightly different than betweenness. It was originally
+introduced by [2]_. For this load algorithm see [1]_.
+
+References
+----------
+.. [1] Mark E. J. Newman:
+   Scientific collaboration networks. II.
+   Shortest paths, weighted networks, and centrality.
+   Physical Review E 64, 016132, 2001.
+   http://journals.aps.org/pre/abstract/10.1103/PhysRevE.64.016132
+.. [2] Kwang-Il Goh, Byungnam Kahng and Doochul Kim
+   Universal behavior of Load Distribution in Scale-Free Networks.
+   Physical Review Letters 87(27):1–4, 2001.
+   https://doi.org/10.1103/PhysRevLett.87.278701
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1centrality_1_1load_af4b6efad9f3076cd3eb5dad2beb4d36a}\label{namespacenetworkx_1_1algorithms_1_1centrality_1_1load_af4b6efad9f3076cd3eb5dad2beb4d36a}} 
+\index{networkx\+::algorithms\+::centrality\+::load@{networkx\+::algorithms\+::centrality\+::load}!load\+\_\+centrality@{load\+\_\+centrality}}
+\index{load\+\_\+centrality@{load\+\_\+centrality}!networkx\+::algorithms\+::centrality\+::load@{networkx\+::algorithms\+::centrality\+::load}}
+\subsubsection{\texorpdfstring{load\+\_\+centrality}{load\_centrality}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+centrality.\+load.\+load\+\_\+centrality}
+

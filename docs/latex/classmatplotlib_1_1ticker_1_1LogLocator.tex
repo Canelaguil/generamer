@@ -1,0 +1,157 @@
+\hypertarget{classmatplotlib_1_1ticker_1_1LogLocator}{}\section{matplotlib.\+ticker.\+Log\+Locator Class Reference}
+\label{classmatplotlib_1_1ticker_1_1LogLocator}\index{matplotlib.\+ticker.\+Log\+Locator@{matplotlib.\+ticker.\+Log\+Locator}}
+
+
+Inheritance diagram for matplotlib.\+ticker.\+Log\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classmatplotlib_1_1ticker_1_1LogLocator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+ticker.\+Log\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classmatplotlib_1_1ticker_1_1LogLocator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a175402f3869188b24ba81a24757716e5}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a8947a585727641d29da009762eb0112f}{base}=10.\+0, \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a755aa8c4e4262890ce64bc0c0a38993e}{subs}=(1.\+0,), \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_ab606e4a57ea96a790bb2b63c3fcf93fe}{numdecs}=4, \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a77bbfb4efea21cfc057a79ed4eb81c17}{numticks}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a4747347c5cc05a9b664aeebfb8af3d35}{set\+\_\+params} (self, \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a8947a585727641d29da009762eb0112f}{base}=None, \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a755aa8c4e4262890ce64bc0c0a38993e}{subs}=None, \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_ab606e4a57ea96a790bb2b63c3fcf93fe}{numdecs}=None, \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a77bbfb4efea21cfc057a79ed4eb81c17}{numticks}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a8947a585727641d29da009762eb0112f}{base} (self, base)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a755aa8c4e4262890ce64bc0c0a38993e}{subs} (self, subs)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a7cdff5eaec6ed65b4777dc10e45b1937}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a3fb4f4fa3a011e59f572b2d09e5d7a58}{tick\+\_\+values} (self, vmin, vmax)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a5c96306332580532457c75c779a5d023}{view\+\_\+limits} (self, vmin, vmax)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_ae8dc88adcdc530e6cb4d8af788edb2ff}{nonsingular} (self, vmin, vmax)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_ab606e4a57ea96a790bb2b63c3fcf93fe}{numdecs}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1LogLocator_a77bbfb4efea21cfc057a79ed4eb81c17}{numticks}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Determine the tick locations for log axes
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogLocator_a175402f3869188b24ba81a24757716e5}\label{classmatplotlib_1_1ticker_1_1LogLocator_a175402f3869188b24ba81a24757716e5}} 
+\index{matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Locator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{base = {\ttfamily 10.0},  }\item[{}]{subs = {\ttfamily (1.0,)},  }\item[{}]{numdecs = {\ttfamily 4},  }\item[{}]{numticks = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Place ticks on the locations : subs[j] * base**i
+
+Parameters
+----------
+base : float, default: 10.0
+    The base of the log used, so ticks are placed at ``base**n``.
+subs : None or str or sequence of float, default: (1.0,)
+    Gives the multiples of integer powers of the base at which
+    to place ticks.  The default places ticks only at
+    integer powers of the base.
+    The permitted string values are ``'auto'`` and ``'all'``,
+    both of which use an algorithm based on the axis view
+    limits to determine whether and how to put ticks between
+    integer powers of the base.  With ``'auto'``, ticks are
+    placed only between integer powers; with ``'all'``, the
+    integer powers are included.  A value of None is
+    equivalent to ``'auto'``.
+numticks : None or int, default: None
+    The maximum number of ticks to allow on a given axis. The default
+    of ``None`` will try to choose intelligently as long as this
+    Locator has already been assigned to an axis using
+    `~.axis.Axis.get_tick_space`, but otherwise falls back to 9.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogLocator_a7cdff5eaec6ed65b4777dc10e45b1937}\label{classmatplotlib_1_1ticker_1_1LogLocator_a7cdff5eaec6ed65b4777dc10e45b1937}} 
+\index{matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Locator.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the locations of the ticks.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogLocator_a8947a585727641d29da009762eb0112f}\label{classmatplotlib_1_1ticker_1_1LogLocator_a8947a585727641d29da009762eb0112f}} 
+\index{matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}!base@{base}}
+\index{base@{base}!matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}}
+\subsubsection{\texorpdfstring{base()}{base()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Locator.\+base (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{base }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the log base (major tick every ``base**i``, i integer).\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogLocator_ae8dc88adcdc530e6cb4d8af788edb2ff}\label{classmatplotlib_1_1ticker_1_1LogLocator_ae8dc88adcdc530e6cb4d8af788edb2ff}} 
+\index{matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}!nonsingular@{nonsingular}}
+\index{nonsingular@{nonsingular}!matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}}
+\subsubsection{\texorpdfstring{nonsingular()}{nonsingular()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Locator.\+nonsingular (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogLocator_a4747347c5cc05a9b664aeebfb8af3d35}\label{classmatplotlib_1_1ticker_1_1LogLocator_a4747347c5cc05a9b664aeebfb8af3d35}} 
+\index{matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}!set\+\_\+params@{set\+\_\+params}}
+\index{set\+\_\+params@{set\+\_\+params}!matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}}
+\subsubsection{\texorpdfstring{set\+\_\+params()}{set\_params()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Locator.\+set\+\_\+params (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{base = {\ttfamily None},  }\item[{}]{subs = {\ttfamily None},  }\item[{}]{numdecs = {\ttfamily None},  }\item[{}]{numticks = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set parameters within this locator.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogLocator_a755aa8c4e4262890ce64bc0c0a38993e}\label{classmatplotlib_1_1ticker_1_1LogLocator_a755aa8c4e4262890ce64bc0c0a38993e}} 
+\index{matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}!subs@{subs}}
+\index{subs@{subs}!matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}}
+\subsubsection{\texorpdfstring{subs()}{subs()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Locator.\+subs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{subs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the minor ticks for the log scaling every ``base**i*subs[j]``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogLocator_a3fb4f4fa3a011e59f572b2d09e5d7a58}\label{classmatplotlib_1_1ticker_1_1LogLocator_a3fb4f4fa3a011e59f572b2d09e5d7a58}} 
+\index{matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}!tick\+\_\+values@{tick\+\_\+values}}
+\index{tick\+\_\+values@{tick\+\_\+values}!matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}}
+\subsubsection{\texorpdfstring{tick\+\_\+values()}{tick\_values()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Locator.\+tick\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogLocator_a5c96306332580532457c75c779a5d023}\label{classmatplotlib_1_1ticker_1_1LogLocator_a5c96306332580532457c75c779a5d023}} 
+\index{matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}!view\+\_\+limits@{view\+\_\+limits}}
+\index{view\+\_\+limits@{view\+\_\+limits}!matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}}
+\subsubsection{\texorpdfstring{view\+\_\+limits()}{view\_limits()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Locator.\+view\+\_\+limits (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Try to choose the view limits intelligently.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogLocator_ab606e4a57ea96a790bb2b63c3fcf93fe}\label{classmatplotlib_1_1ticker_1_1LogLocator_ab606e4a57ea96a790bb2b63c3fcf93fe}} 
+\index{matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}!numdecs@{numdecs}}
+\index{numdecs@{numdecs}!matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}}
+\subsubsection{\texorpdfstring{numdecs}{numdecs}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Log\+Locator.\+numdecs}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogLocator_a77bbfb4efea21cfc057a79ed4eb81c17}\label{classmatplotlib_1_1ticker_1_1LogLocator_a77bbfb4efea21cfc057a79ed4eb81c17}} 
+\index{matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}!numticks@{numticks}}
+\index{numticks@{numticks}!matplotlib\+::ticker\+::\+Log\+Locator@{matplotlib\+::ticker\+::\+Log\+Locator}}
+\subsubsection{\texorpdfstring{numticks}{numticks}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Log\+Locator.\+numticks}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{ticker_8py}{ticker.\+py}\end{DoxyCompactItemize}

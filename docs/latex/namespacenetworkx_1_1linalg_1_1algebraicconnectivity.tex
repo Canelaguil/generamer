@@ -1,0 +1,229 @@
+\hypertarget{namespacenetworkx_1_1linalg_1_1algebraicconnectivity}{}\section{networkx.\+linalg.\+algebraicconnectivity Namespace Reference}
+\label{namespacenetworkx_1_1linalg_1_1algebraicconnectivity}\index{networkx.\+linalg.\+algebraicconnectivity@{networkx.\+linalg.\+algebraicconnectivity}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1linalg_1_1algebraicconnectivity_1_1__CholeskySolver}{\+\_\+\+Cholesky\+Solver}
+\item 
+class \hyperlink{classnetworkx_1_1linalg_1_1algebraicconnectivity_1_1__LUSolver}{\+\_\+\+L\+U\+Solver}
+\item 
+class \hyperlink{classnetworkx_1_1linalg_1_1algebraicconnectivity_1_1__PCGSolver}{\+\_\+\+P\+C\+G\+Solver}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1algebraicconnectivity_abf07069cd8baafec751f7be25880c595}{algebraic\+\_\+connectivity} (G, weight=\char`\"{}weight\char`\"{}, normalized=False, tol=1e-\/8, method=\char`\"{}tracemin\+\_\+pcg\char`\"{}, seed=\+None)
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1algebraicconnectivity_a862b00cdd972ff366199b0e3b8a42a4c}{fiedler\+\_\+vector} (G, weight=\char`\"{}weight\char`\"{}, normalized=False, tol=1e-\/8, method=\char`\"{}tracemin\+\_\+pcg\char`\"{}, seed=\+None)
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1algebraicconnectivity_a51ebf49ae3fabf3461120a0a4b8007a7}{spectral\+\_\+ordering} (G, weight=\char`\"{}weight\char`\"{}, normalized=False, tol=1e-\/8, method=\char`\"{}tracemin\+\_\+pcg\char`\"{}, seed=\+None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Algebraic connectivity and Fiedler vectors of undirected graphs.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1algebraicconnectivity_abf07069cd8baafec751f7be25880c595}\label{namespacenetworkx_1_1linalg_1_1algebraicconnectivity_abf07069cd8baafec751f7be25880c595}} 
+\index{networkx\+::linalg\+::algebraicconnectivity@{networkx\+::linalg\+::algebraicconnectivity}!algebraic\+\_\+connectivity@{algebraic\+\_\+connectivity}}
+\index{algebraic\+\_\+connectivity@{algebraic\+\_\+connectivity}!networkx\+::linalg\+::algebraicconnectivity@{networkx\+::linalg\+::algebraicconnectivity}}
+\subsubsection{\texorpdfstring{algebraic\+\_\+connectivity()}{algebraic\_connectivity()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+algebraicconnectivity.\+algebraic\+\_\+connectivity (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}},  }\item[{}]{normalized = {\ttfamily False},  }\item[{}]{tol = {\ttfamily 1e-\/8},  }\item[{}]{method = {\ttfamily \char`\"{}tracemin\+\_\+pcg\char`\"{}},  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the algebraic connectivity of an undirected graph.
+
+The algebraic connectivity of a connected undirected graph is the second
+smallest eigenvalue of its Laplacian matrix.
+
+Parameters
+----------
+G : NetworkX graph
+    An undirected graph.
+
+weight : object, optional (default: None)
+    The data key used to determine the weight of each edge. If None, then
+    each edge has unit weight.
+
+normalized : bool, optional (default: False)
+    Whether the normalized Laplacian matrix is used.
+
+tol : float, optional (default: 1e-8)
+    Tolerance of relative residual in eigenvalue computation.
+
+method : string, optional (default: 'tracemin_pcg')
+    Method of eigenvalue computation. It must be one of the tracemin
+    options shown below (TraceMIN), 'lanczos' (Lanczos iteration)
+    or 'lobpcg' (LOBPCG).
+
+    The TraceMIN algorithm uses a linear system solver. The following
+    values allow specifying the solver to be used.
+
+    =============== ========================================
+    Value           Solver
+    =============== ========================================
+    'tracemin_pcg'  Preconditioned conjugate gradient method
+    'tracemin_lu'   LU factorization
+    =============== ========================================
+
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+
+Returns
+-------
+algebraic_connectivity : float
+    Algebraic connectivity.
+
+Raises
+------
+NetworkXNotImplemented
+    If G is directed.
+
+NetworkXError
+    If G has less than two nodes.
+
+Notes
+-----
+Edge weights are interpreted by their absolute values. For MultiGraph's,
+weights of parallel edges are summed. Zero-weighted edges are ignored.
+
+See Also
+--------
+laplacian_matrix
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1algebraicconnectivity_a862b00cdd972ff366199b0e3b8a42a4c}\label{namespacenetworkx_1_1linalg_1_1algebraicconnectivity_a862b00cdd972ff366199b0e3b8a42a4c}} 
+\index{networkx\+::linalg\+::algebraicconnectivity@{networkx\+::linalg\+::algebraicconnectivity}!fiedler\+\_\+vector@{fiedler\+\_\+vector}}
+\index{fiedler\+\_\+vector@{fiedler\+\_\+vector}!networkx\+::linalg\+::algebraicconnectivity@{networkx\+::linalg\+::algebraicconnectivity}}
+\subsubsection{\texorpdfstring{fiedler\+\_\+vector()}{fiedler\_vector()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+algebraicconnectivity.\+fiedler\+\_\+vector (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}},  }\item[{}]{normalized = {\ttfamily False},  }\item[{}]{tol = {\ttfamily 1e-\/8},  }\item[{}]{method = {\ttfamily \char`\"{}tracemin\+\_\+pcg\char`\"{}},  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the Fiedler vector of a connected undirected graph.
+
+The Fiedler vector of a connected undirected graph is the eigenvector
+corresponding to the second smallest eigenvalue of the Laplacian matrix
+of the graph.
+
+Parameters
+----------
+G : NetworkX graph
+    An undirected graph.
+
+weight : object, optional (default: None)
+    The data key used to determine the weight of each edge. If None, then
+    each edge has unit weight.
+
+normalized : bool, optional (default: False)
+    Whether the normalized Laplacian matrix is used.
+
+tol : float, optional (default: 1e-8)
+    Tolerance of relative residual in eigenvalue computation.
+
+method : string, optional (default: 'tracemin_pcg')
+    Method of eigenvalue computation. It must be one of the tracemin
+    options shown below (TraceMIN), 'lanczos' (Lanczos iteration)
+    or 'lobpcg' (LOBPCG).
+
+    The TraceMIN algorithm uses a linear system solver. The following
+    values allow specifying the solver to be used.
+
+    =============== ========================================
+    Value           Solver
+    =============== ========================================
+    'tracemin_pcg'  Preconditioned conjugate gradient method
+    'tracemin_lu'   LU factorization
+    =============== ========================================
+
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+
+Returns
+-------
+fiedler_vector : NumPy array of floats.
+    Fiedler vector.
+
+Raises
+------
+NetworkXNotImplemented
+    If G is directed.
+
+NetworkXError
+    If G has less than two nodes or is not connected.
+
+Notes
+-----
+Edge weights are interpreted by their absolute values. For MultiGraph's,
+weights of parallel edges are summed. Zero-weighted edges are ignored.
+
+See Also
+--------
+laplacian_matrix
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1algebraicconnectivity_a51ebf49ae3fabf3461120a0a4b8007a7}\label{namespacenetworkx_1_1linalg_1_1algebraicconnectivity_a51ebf49ae3fabf3461120a0a4b8007a7}} 
+\index{networkx\+::linalg\+::algebraicconnectivity@{networkx\+::linalg\+::algebraicconnectivity}!spectral\+\_\+ordering@{spectral\+\_\+ordering}}
+\index{spectral\+\_\+ordering@{spectral\+\_\+ordering}!networkx\+::linalg\+::algebraicconnectivity@{networkx\+::linalg\+::algebraicconnectivity}}
+\subsubsection{\texorpdfstring{spectral\+\_\+ordering()}{spectral\_ordering()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+algebraicconnectivity.\+spectral\+\_\+ordering (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}},  }\item[{}]{normalized = {\ttfamily False},  }\item[{}]{tol = {\ttfamily 1e-\/8},  }\item[{}]{method = {\ttfamily \char`\"{}tracemin\+\_\+pcg\char`\"{}},  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the spectral_ordering of a graph.
+
+The spectral ordering of a graph is an ordering of its nodes where nodes
+in the same weakly connected components appear contiguous and ordered by
+their corresponding elements in the Fiedler vector of the component.
+
+Parameters
+----------
+G : NetworkX graph
+    A graph.
+
+weight : object, optional (default: None)
+    The data key used to determine the weight of each edge. If None, then
+    each edge has unit weight.
+
+normalized : bool, optional (default: False)
+    Whether the normalized Laplacian matrix is used.
+
+tol : float, optional (default: 1e-8)
+    Tolerance of relative residual in eigenvalue computation.
+
+method : string, optional (default: 'tracemin_pcg')
+    Method of eigenvalue computation. It must be one of the tracemin
+    options shown below (TraceMIN), 'lanczos' (Lanczos iteration)
+    or 'lobpcg' (LOBPCG).
+
+    The TraceMIN algorithm uses a linear system solver. The following
+    values allow specifying the solver to be used.
+
+    =============== ========================================
+    Value           Solver
+    =============== ========================================
+    'tracemin_pcg'  Preconditioned conjugate gradient method
+    'tracemin_lu'   LU factorization
+    =============== ========================================
+
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+
+Returns
+-------
+spectral_ordering : NumPy array of floats.
+    Spectral ordering of nodes.
+
+Raises
+------
+NetworkXError
+    If G is empty.
+
+Notes
+-----
+Edge weights are interpreted by their absolute values. For MultiGraph's,
+weights of parallel edges are summed. Zero-weighted edges are ignored.
+
+See Also
+--------
+laplacian_matrix
+\end{DoxyVerb}
+ 

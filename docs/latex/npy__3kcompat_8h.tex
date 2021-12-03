@@ -1,0 +1,340 @@
+\hypertarget{npy__3kcompat_8h}{}\section{venv/lib/python3.9/site-\/packages/numpy/core/include/numpy/npy\+\_\+3kcompat.h File Reference}
+\label{npy__3kcompat_8h}\index{venv/lib/python3.\+9/site-\/packages/numpy/core/include/numpy/npy\+\_\+3kcompat.\+h@{venv/lib/python3.\+9/site-\/packages/numpy/core/include/numpy/npy\+\_\+3kcompat.\+h}}
+{\ttfamily \#include $<$Python.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}numpy/npy\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}numpy/ndarrayobject.\+h\char`\"{}}\newline
+Include dependency graph for npy\+\_\+3kcompat.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{npy__3kcompat_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{npy__3kcompat_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a3c74be2dad63d341ae47a375203c369a}{N\+P\+Y\+\_\+\+P\+Y3K}~1
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a632a258fbf1794f1535c8e23bb7fd001}{Py\+Int\+\_\+\+From\+Long}~Py\+Long\+\_\+\+From\+Long
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a57142adc746f6ec4bd14c0689c6e1eec}{Py\+Int\+\_\+\+As\+Long}~Py\+Long\+\_\+\+As\+Long
+\item 
+\#define \hyperlink{npy__3kcompat_8h_aee651d2493ff9d7298ccd7ab8d7c0480}{Py\+Int\+\_\+\+A\+S\+\_\+\+L\+O\+NG}~Py\+Long\+\_\+\+As\+Long
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a5d0c25f3f4620a2cd7c67dd11c82bda5}{Py\+Int\+\_\+\+As\+Ssize\+\_\+t}~Py\+Long\+\_\+\+As\+Ssize\+\_\+t
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a44f2f4a66f3ffe321b760fd90d310cb6}{Py\+Number\+\_\+\+Int}~Py\+Number\+\_\+\+Long
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a45a42eb02239f54eae00b41fa7b9f08e}{Npy\+Slice\+\_\+\+Get\+Indices\+Ex}~Py\+Slice\+\_\+\+Get\+Indices\+Ex
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a262050af4f9a682c60442fadf1a2828e}{Py\+\_\+\+S\+E\+T\+\_\+\+T\+Y\+PE}(obj,  type)~((Py\+\_\+\+T\+Y\+PE(obj) = (type)), (void)0)
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a3cb90487552d1196475a99f7d48cfc0a}{Py\+\_\+\+S\+E\+T\+\_\+\+S\+I\+ZE}(obj,  size)~((Py\+\_\+\+S\+I\+ZE(obj) = (size)), (void)0)
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a621e8973e7dca5fd35dd712c28e76cdb}{Py\+\_\+\+S\+E\+T\+\_\+\+R\+E\+F\+C\+NT}(obj,  refcnt)~((Py\+\_\+\+R\+E\+F\+C\+NT(obj) = (refcnt)), (void)0)
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a73b0582c498fc4e9b6901c45664307ec}{Npy\+\_\+\+Enter\+Recursive\+Call}(x)~Py\+\_\+\+Enter\+Recursive\+Call(x)
+\item 
+\#define \hyperlink{npy__3kcompat_8h_af780ebbcdd90b8c70b488c4b82c1c709}{Py\+\_\+\+S\+E\+T\+R\+EF}(op,  op2)
+\item 
+\#define \hyperlink{npy__3kcompat_8h_ae82e1f00a6b73afb51fbb7b118acb5ee}{Py\+String\+\_\+\+Type}~Py\+Bytes\+\_\+\+Type
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a0ff426412dacbbf838d9d50da0ba62d9}{Py\+String\+\_\+\+Check}~Py\+Bytes\+\_\+\+Check
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a54cc403f4dbfc1fb014d2065a1b95468}{Py\+String\+Object}~Py\+Bytes\+Object
+\item 
+\#define \hyperlink{npy__3kcompat_8h_ae277eeeb0335fe1a90f0fe6d8b057c99}{Py\+String\+\_\+\+From\+String}~Py\+Bytes\+\_\+\+From\+String
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a39d83115da5315f67cb846f433199fd7}{Py\+String\+\_\+\+From\+String\+And\+Size}~Py\+Bytes\+\_\+\+From\+String\+And\+Size
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a3f12b8eddad4568ac5c3ef7307056a58}{Py\+String\+\_\+\+A\+S\+\_\+\+S\+T\+R\+I\+NG}~Py\+Bytes\+\_\+\+A\+S\+\_\+\+S\+T\+R\+I\+NG
+\item 
+\#define \hyperlink{npy__3kcompat_8h_aa01be5baf4b211d1ae7c4d1cc0ab84e9}{Py\+String\+\_\+\+As\+String\+And\+Size}~Py\+Bytes\+\_\+\+As\+String\+And\+Size
+\item 
+\#define \hyperlink{npy__3kcompat_8h_ae7ef36acee33494d163f9cba905789b3}{Py\+String\+\_\+\+From\+Format}~Py\+Bytes\+\_\+\+From\+Format
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a3dfcdaf4504cc7e2deec1331314954d5}{Py\+String\+\_\+\+Concat}~Py\+Bytes\+\_\+\+Concat
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a05a31efb34a0746c18386f02e26e50b7}{Py\+String\+\_\+\+Concat\+And\+Del}~Py\+Bytes\+\_\+\+Concat\+And\+Del
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a0194a1ba79e46d39a1a42cb631dd5190}{Py\+String\+\_\+\+As\+String}~Py\+Bytes\+\_\+\+As\+String
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a432485aa72a9c9ed7b67b6576e819277}{Py\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}~Py\+Bytes\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a5df9a20f4323a3974909770f80a978cb}{Py\+String\+\_\+\+Size}~Py\+Bytes\+\_\+\+Size
+\item 
+\#define \hyperlink{npy__3kcompat_8h_aba292e78c6ea65e2964a29679c6a436c}{Py\+U\+String\+\_\+\+Type}~Py\+Unicode\+\_\+\+Type
+\item 
+\#define \hyperlink{npy__3kcompat_8h_ad145e0b245e90850e30930fbdc375097}{Py\+U\+String\+\_\+\+Check}~Py\+Unicode\+\_\+\+Check
+\item 
+\#define \hyperlink{npy__3kcompat_8h_afd7034de22a2d8c3a244264dfe0e92c1}{Py\+U\+String\+Object}~Py\+Unicode\+Object
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a1f999d5596478a553cfd685205329421}{Py\+U\+String\+\_\+\+From\+String}~Py\+Unicode\+\_\+\+From\+String
+\item 
+\#define \hyperlink{npy__3kcompat_8h_acb5c5279000635debf60cb367524c7f0}{Py\+U\+String\+\_\+\+From\+String\+And\+Size}~Py\+Unicode\+\_\+\+From\+String\+And\+Size
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a81e0ddbee4cd2380a11f351f7668f8ca}{Py\+U\+String\+\_\+\+From\+Format}~Py\+Unicode\+\_\+\+From\+Format
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a4f6f6b1a782e961345e539e6c1314bd5}{Py\+U\+String\+\_\+\+Concat}~Py\+Unicode\+\_\+\+Concat2
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a64b09a46bd1e9317ba6d59572cd7b86d}{Py\+U\+String\+\_\+\+Concat\+And\+Del}~Py\+Unicode\+\_\+\+Concat\+And\+Del
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a8e4adce25392b3d8cf797a2da69e0b66}{Py\+U\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}~Py\+Unicode\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE
+\item 
+\#define \hyperlink{npy__3kcompat_8h_ad78afabe8f7520ef34558a1216909bea}{Py\+U\+String\+\_\+\+Size}~Py\+Unicode\+\_\+\+Size
+\item 
+\#define \hyperlink{npy__3kcompat_8h_ae005403d4cac6ce5b220f3903bc0a161}{Py\+U\+String\+\_\+\+Intern\+From\+String}~Py\+Unicode\+\_\+\+Intern\+From\+String
+\item 
+\#define \hyperlink{npy__3kcompat_8h_a0263f2d00843c7d843f8b75308bd6761}{Py\+U\+String\+\_\+\+Format}~Py\+Unicode\+\_\+\+Format
+\item 
+\#define \hyperlink{npy__3kcompat_8h_aaeca9438329c75d08b3d2f9e95f3bcf7}{Py\+Base\+String\+\_\+\+Check}(obj)~(Py\+Unicode\+\_\+\+Check(obj))
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{npy__3kcompat_8h_a73b0582c498fc4e9b6901c45664307ec}\label{npy__3kcompat_8h_a73b0582c498fc4e9b6901c45664307ec}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Npy\+\_\+\+Enter\+Recursive\+Call@{Npy\+\_\+\+Enter\+Recursive\+Call}}
+\index{Npy\+\_\+\+Enter\+Recursive\+Call@{Npy\+\_\+\+Enter\+Recursive\+Call}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Npy\+\_\+\+Enter\+Recursive\+Call}{Npy\_EnterRecursiveCall}}
+{\footnotesize\ttfamily \#define Npy\+\_\+\+Enter\+Recursive\+Call(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~Py\+\_\+\+Enter\+Recursive\+Call(x)}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a3c74be2dad63d341ae47a375203c369a}\label{npy__3kcompat_8h_a3c74be2dad63d341ae47a375203c369a}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!N\+P\+Y\+\_\+\+P\+Y3K@{N\+P\+Y\+\_\+\+P\+Y3K}}
+\index{N\+P\+Y\+\_\+\+P\+Y3K@{N\+P\+Y\+\_\+\+P\+Y3K}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{N\+P\+Y\+\_\+\+P\+Y3K}{NPY\_PY3K}}
+{\footnotesize\ttfamily \#define N\+P\+Y\+\_\+\+P\+Y3K~1}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a45a42eb02239f54eae00b41fa7b9f08e}\label{npy__3kcompat_8h_a45a42eb02239f54eae00b41fa7b9f08e}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Npy\+Slice\+\_\+\+Get\+Indices\+Ex@{Npy\+Slice\+\_\+\+Get\+Indices\+Ex}}
+\index{Npy\+Slice\+\_\+\+Get\+Indices\+Ex@{Npy\+Slice\+\_\+\+Get\+Indices\+Ex}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Npy\+Slice\+\_\+\+Get\+Indices\+Ex}{NpySlice\_GetIndicesEx}}
+{\footnotesize\ttfamily \#define Npy\+Slice\+\_\+\+Get\+Indices\+Ex~Py\+Slice\+\_\+\+Get\+Indices\+Ex}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a621e8973e7dca5fd35dd712c28e76cdb}\label{npy__3kcompat_8h_a621e8973e7dca5fd35dd712c28e76cdb}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+\_\+\+S\+E\+T\+\_\+\+R\+E\+F\+C\+NT@{Py\+\_\+\+S\+E\+T\+\_\+\+R\+E\+F\+C\+NT}}
+\index{Py\+\_\+\+S\+E\+T\+\_\+\+R\+E\+F\+C\+NT@{Py\+\_\+\+S\+E\+T\+\_\+\+R\+E\+F\+C\+NT}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+\_\+\+S\+E\+T\+\_\+\+R\+E\+F\+C\+NT}{Py\_SET\_REFCNT}}
+{\footnotesize\ttfamily \#define Py\+\_\+\+S\+E\+T\+\_\+\+R\+E\+F\+C\+NT(\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{refcnt }\end{DoxyParamCaption})~((Py\+\_\+\+R\+E\+F\+C\+NT(obj) = (refcnt)), (void)0)}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a3cb90487552d1196475a99f7d48cfc0a}\label{npy__3kcompat_8h_a3cb90487552d1196475a99f7d48cfc0a}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+\_\+\+S\+E\+T\+\_\+\+S\+I\+ZE@{Py\+\_\+\+S\+E\+T\+\_\+\+S\+I\+ZE}}
+\index{Py\+\_\+\+S\+E\+T\+\_\+\+S\+I\+ZE@{Py\+\_\+\+S\+E\+T\+\_\+\+S\+I\+ZE}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+\_\+\+S\+E\+T\+\_\+\+S\+I\+ZE}{Py\_SET\_SIZE}}
+{\footnotesize\ttfamily \#define Py\+\_\+\+S\+E\+T\+\_\+\+S\+I\+ZE(\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{size }\end{DoxyParamCaption})~((Py\+\_\+\+S\+I\+ZE(obj) = (size)), (void)0)}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a262050af4f9a682c60442fadf1a2828e}\label{npy__3kcompat_8h_a262050af4f9a682c60442fadf1a2828e}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+\_\+\+S\+E\+T\+\_\+\+T\+Y\+PE@{Py\+\_\+\+S\+E\+T\+\_\+\+T\+Y\+PE}}
+\index{Py\+\_\+\+S\+E\+T\+\_\+\+T\+Y\+PE@{Py\+\_\+\+S\+E\+T\+\_\+\+T\+Y\+PE}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+\_\+\+S\+E\+T\+\_\+\+T\+Y\+PE}{Py\_SET\_TYPE}}
+{\footnotesize\ttfamily \#define Py\+\_\+\+S\+E\+T\+\_\+\+T\+Y\+PE(\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{type }\end{DoxyParamCaption})~((Py\+\_\+\+T\+Y\+PE(obj) = (type)), (void)0)}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_af780ebbcdd90b8c70b488c4b82c1c709}\label{npy__3kcompat_8h_af780ebbcdd90b8c70b488c4b82c1c709}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+\_\+\+S\+E\+T\+R\+EF@{Py\+\_\+\+S\+E\+T\+R\+EF}}
+\index{Py\+\_\+\+S\+E\+T\+R\+EF@{Py\+\_\+\+S\+E\+T\+R\+EF}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+\_\+\+S\+E\+T\+R\+EF}{Py\_SETREF}}
+{\footnotesize\ttfamily \#define Py\+\_\+\+S\+E\+T\+R\+EF(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{op2 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                        \(\backslash\)
+            PyObject *\_py\_tmp = (PyObject *)(op);   \(\backslash\)
+            (op) = (op2);                           \(\backslash\)
+            Py\_DECREF(\_py\_tmp);                     \(\backslash\)
+        \} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\mbox{\Hypertarget{npy__3kcompat_8h_aaeca9438329c75d08b3d2f9e95f3bcf7}\label{npy__3kcompat_8h_aaeca9438329c75d08b3d2f9e95f3bcf7}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+Base\+String\+\_\+\+Check@{Py\+Base\+String\+\_\+\+Check}}
+\index{Py\+Base\+String\+\_\+\+Check@{Py\+Base\+String\+\_\+\+Check}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+Base\+String\+\_\+\+Check}{PyBaseString\_Check}}
+{\footnotesize\ttfamily \#define Py\+Base\+String\+\_\+\+Check(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})~(Py\+Unicode\+\_\+\+Check(obj))}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_aee651d2493ff9d7298ccd7ab8d7c0480}\label{npy__3kcompat_8h_aee651d2493ff9d7298ccd7ab8d7c0480}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+Int\+\_\+\+A\+S\+\_\+\+L\+O\+NG@{Py\+Int\+\_\+\+A\+S\+\_\+\+L\+O\+NG}}
+\index{Py\+Int\+\_\+\+A\+S\+\_\+\+L\+O\+NG@{Py\+Int\+\_\+\+A\+S\+\_\+\+L\+O\+NG}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+Int\+\_\+\+A\+S\+\_\+\+L\+O\+NG}{PyInt\_AS\_LONG}}
+{\footnotesize\ttfamily \#define Py\+Int\+\_\+\+A\+S\+\_\+\+L\+O\+NG~Py\+Long\+\_\+\+As\+Long}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a57142adc746f6ec4bd14c0689c6e1eec}\label{npy__3kcompat_8h_a57142adc746f6ec4bd14c0689c6e1eec}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+Int\+\_\+\+As\+Long@{Py\+Int\+\_\+\+As\+Long}}
+\index{Py\+Int\+\_\+\+As\+Long@{Py\+Int\+\_\+\+As\+Long}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+Int\+\_\+\+As\+Long}{PyInt\_AsLong}}
+{\footnotesize\ttfamily \#define Py\+Int\+\_\+\+As\+Long~Py\+Long\+\_\+\+As\+Long}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a5d0c25f3f4620a2cd7c67dd11c82bda5}\label{npy__3kcompat_8h_a5d0c25f3f4620a2cd7c67dd11c82bda5}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+Int\+\_\+\+As\+Ssize\+\_\+t@{Py\+Int\+\_\+\+As\+Ssize\+\_\+t}}
+\index{Py\+Int\+\_\+\+As\+Ssize\+\_\+t@{Py\+Int\+\_\+\+As\+Ssize\+\_\+t}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+Int\+\_\+\+As\+Ssize\+\_\+t}{PyInt\_AsSsize\_t}}
+{\footnotesize\ttfamily \#define Py\+Int\+\_\+\+As\+Ssize\+\_\+t~Py\+Long\+\_\+\+As\+Ssize\+\_\+t}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a632a258fbf1794f1535c8e23bb7fd001}\label{npy__3kcompat_8h_a632a258fbf1794f1535c8e23bb7fd001}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+Int\+\_\+\+From\+Long@{Py\+Int\+\_\+\+From\+Long}}
+\index{Py\+Int\+\_\+\+From\+Long@{Py\+Int\+\_\+\+From\+Long}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+Int\+\_\+\+From\+Long}{PyInt\_FromLong}}
+{\footnotesize\ttfamily \#define Py\+Int\+\_\+\+From\+Long~Py\+Long\+\_\+\+From\+Long}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a44f2f4a66f3ffe321b760fd90d310cb6}\label{npy__3kcompat_8h_a44f2f4a66f3ffe321b760fd90d310cb6}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+Number\+\_\+\+Int@{Py\+Number\+\_\+\+Int}}
+\index{Py\+Number\+\_\+\+Int@{Py\+Number\+\_\+\+Int}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+Number\+\_\+\+Int}{PyNumber\_Int}}
+{\footnotesize\ttfamily \#define Py\+Number\+\_\+\+Int~Py\+Number\+\_\+\+Long}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a3f12b8eddad4568ac5c3ef7307056a58}\label{npy__3kcompat_8h_a3f12b8eddad4568ac5c3ef7307056a58}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+\_\+\+A\+S\+\_\+\+S\+T\+R\+I\+NG@{Py\+String\+\_\+\+A\+S\+\_\+\+S\+T\+R\+I\+NG}}
+\index{Py\+String\+\_\+\+A\+S\+\_\+\+S\+T\+R\+I\+NG@{Py\+String\+\_\+\+A\+S\+\_\+\+S\+T\+R\+I\+NG}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+\_\+\+A\+S\+\_\+\+S\+T\+R\+I\+NG}{PyString\_AS\_STRING}}
+{\footnotesize\ttfamily \#define Py\+String\+\_\+\+A\+S\+\_\+\+S\+T\+R\+I\+NG~Py\+Bytes\+\_\+\+A\+S\+\_\+\+S\+T\+R\+I\+NG}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a0194a1ba79e46d39a1a42cb631dd5190}\label{npy__3kcompat_8h_a0194a1ba79e46d39a1a42cb631dd5190}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+\_\+\+As\+String@{Py\+String\+\_\+\+As\+String}}
+\index{Py\+String\+\_\+\+As\+String@{Py\+String\+\_\+\+As\+String}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+\_\+\+As\+String}{PyString\_AsString}}
+{\footnotesize\ttfamily \#define Py\+String\+\_\+\+As\+String~Py\+Bytes\+\_\+\+As\+String}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_aa01be5baf4b211d1ae7c4d1cc0ab84e9}\label{npy__3kcompat_8h_aa01be5baf4b211d1ae7c4d1cc0ab84e9}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+\_\+\+As\+String\+And\+Size@{Py\+String\+\_\+\+As\+String\+And\+Size}}
+\index{Py\+String\+\_\+\+As\+String\+And\+Size@{Py\+String\+\_\+\+As\+String\+And\+Size}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+\_\+\+As\+String\+And\+Size}{PyString\_AsStringAndSize}}
+{\footnotesize\ttfamily \#define Py\+String\+\_\+\+As\+String\+And\+Size~Py\+Bytes\+\_\+\+As\+String\+And\+Size}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a0ff426412dacbbf838d9d50da0ba62d9}\label{npy__3kcompat_8h_a0ff426412dacbbf838d9d50da0ba62d9}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+\_\+\+Check@{Py\+String\+\_\+\+Check}}
+\index{Py\+String\+\_\+\+Check@{Py\+String\+\_\+\+Check}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+\_\+\+Check}{PyString\_Check}}
+{\footnotesize\ttfamily \#define Py\+String\+\_\+\+Check~Py\+Bytes\+\_\+\+Check}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a3dfcdaf4504cc7e2deec1331314954d5}\label{npy__3kcompat_8h_a3dfcdaf4504cc7e2deec1331314954d5}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+\_\+\+Concat@{Py\+String\+\_\+\+Concat}}
+\index{Py\+String\+\_\+\+Concat@{Py\+String\+\_\+\+Concat}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+\_\+\+Concat}{PyString\_Concat}}
+{\footnotesize\ttfamily \#define Py\+String\+\_\+\+Concat~Py\+Bytes\+\_\+\+Concat}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a05a31efb34a0746c18386f02e26e50b7}\label{npy__3kcompat_8h_a05a31efb34a0746c18386f02e26e50b7}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+\_\+\+Concat\+And\+Del@{Py\+String\+\_\+\+Concat\+And\+Del}}
+\index{Py\+String\+\_\+\+Concat\+And\+Del@{Py\+String\+\_\+\+Concat\+And\+Del}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+\_\+\+Concat\+And\+Del}{PyString\_ConcatAndDel}}
+{\footnotesize\ttfamily \#define Py\+String\+\_\+\+Concat\+And\+Del~Py\+Bytes\+\_\+\+Concat\+And\+Del}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_ae7ef36acee33494d163f9cba905789b3}\label{npy__3kcompat_8h_ae7ef36acee33494d163f9cba905789b3}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+\_\+\+From\+Format@{Py\+String\+\_\+\+From\+Format}}
+\index{Py\+String\+\_\+\+From\+Format@{Py\+String\+\_\+\+From\+Format}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+\_\+\+From\+Format}{PyString\_FromFormat}}
+{\footnotesize\ttfamily \#define Py\+String\+\_\+\+From\+Format~Py\+Bytes\+\_\+\+From\+Format}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_ae277eeeb0335fe1a90f0fe6d8b057c99}\label{npy__3kcompat_8h_ae277eeeb0335fe1a90f0fe6d8b057c99}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+\_\+\+From\+String@{Py\+String\+\_\+\+From\+String}}
+\index{Py\+String\+\_\+\+From\+String@{Py\+String\+\_\+\+From\+String}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+\_\+\+From\+String}{PyString\_FromString}}
+{\footnotesize\ttfamily \#define Py\+String\+\_\+\+From\+String~Py\+Bytes\+\_\+\+From\+String}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a39d83115da5315f67cb846f433199fd7}\label{npy__3kcompat_8h_a39d83115da5315f67cb846f433199fd7}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+\_\+\+From\+String\+And\+Size@{Py\+String\+\_\+\+From\+String\+And\+Size}}
+\index{Py\+String\+\_\+\+From\+String\+And\+Size@{Py\+String\+\_\+\+From\+String\+And\+Size}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+\_\+\+From\+String\+And\+Size}{PyString\_FromStringAndSize}}
+{\footnotesize\ttfamily \#define Py\+String\+\_\+\+From\+String\+And\+Size~Py\+Bytes\+\_\+\+From\+String\+And\+Size}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a432485aa72a9c9ed7b67b6576e819277}\label{npy__3kcompat_8h_a432485aa72a9c9ed7b67b6576e819277}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE@{Py\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}}
+\index{Py\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE@{Py\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}{PyString\_GET\_SIZE}}
+{\footnotesize\ttfamily \#define Py\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE~Py\+Bytes\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a5df9a20f4323a3974909770f80a978cb}\label{npy__3kcompat_8h_a5df9a20f4323a3974909770f80a978cb}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+\_\+\+Size@{Py\+String\+\_\+\+Size}}
+\index{Py\+String\+\_\+\+Size@{Py\+String\+\_\+\+Size}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+\_\+\+Size}{PyString\_Size}}
+{\footnotesize\ttfamily \#define Py\+String\+\_\+\+Size~Py\+Bytes\+\_\+\+Size}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_ae82e1f00a6b73afb51fbb7b118acb5ee}\label{npy__3kcompat_8h_ae82e1f00a6b73afb51fbb7b118acb5ee}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+\_\+\+Type@{Py\+String\+\_\+\+Type}}
+\index{Py\+String\+\_\+\+Type@{Py\+String\+\_\+\+Type}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+\_\+\+Type}{PyString\_Type}}
+{\footnotesize\ttfamily \#define Py\+String\+\_\+\+Type~Py\+Bytes\+\_\+\+Type}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a54cc403f4dbfc1fb014d2065a1b95468}\label{npy__3kcompat_8h_a54cc403f4dbfc1fb014d2065a1b95468}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+String\+Object@{Py\+String\+Object}}
+\index{Py\+String\+Object@{Py\+String\+Object}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+String\+Object}{PyStringObject}}
+{\footnotesize\ttfamily \#define Py\+String\+Object~Py\+Bytes\+Object}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_ad145e0b245e90850e30930fbdc375097}\label{npy__3kcompat_8h_ad145e0b245e90850e30930fbdc375097}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+U\+String\+\_\+\+Check@{Py\+U\+String\+\_\+\+Check}}
+\index{Py\+U\+String\+\_\+\+Check@{Py\+U\+String\+\_\+\+Check}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+U\+String\+\_\+\+Check}{PyUString\_Check}}
+{\footnotesize\ttfamily \#define Py\+U\+String\+\_\+\+Check~Py\+Unicode\+\_\+\+Check}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a4f6f6b1a782e961345e539e6c1314bd5}\label{npy__3kcompat_8h_a4f6f6b1a782e961345e539e6c1314bd5}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+U\+String\+\_\+\+Concat@{Py\+U\+String\+\_\+\+Concat}}
+\index{Py\+U\+String\+\_\+\+Concat@{Py\+U\+String\+\_\+\+Concat}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+U\+String\+\_\+\+Concat}{PyUString\_Concat}}
+{\footnotesize\ttfamily \#define Py\+U\+String\+\_\+\+Concat~Py\+Unicode\+\_\+\+Concat2}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a64b09a46bd1e9317ba6d59572cd7b86d}\label{npy__3kcompat_8h_a64b09a46bd1e9317ba6d59572cd7b86d}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+U\+String\+\_\+\+Concat\+And\+Del@{Py\+U\+String\+\_\+\+Concat\+And\+Del}}
+\index{Py\+U\+String\+\_\+\+Concat\+And\+Del@{Py\+U\+String\+\_\+\+Concat\+And\+Del}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+U\+String\+\_\+\+Concat\+And\+Del}{PyUString\_ConcatAndDel}}
+{\footnotesize\ttfamily \#define Py\+U\+String\+\_\+\+Concat\+And\+Del~Py\+Unicode\+\_\+\+Concat\+And\+Del}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a0263f2d00843c7d843f8b75308bd6761}\label{npy__3kcompat_8h_a0263f2d00843c7d843f8b75308bd6761}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+U\+String\+\_\+\+Format@{Py\+U\+String\+\_\+\+Format}}
+\index{Py\+U\+String\+\_\+\+Format@{Py\+U\+String\+\_\+\+Format}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+U\+String\+\_\+\+Format}{PyUString\_Format}}
+{\footnotesize\ttfamily \#define Py\+U\+String\+\_\+\+Format~Py\+Unicode\+\_\+\+Format}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a81e0ddbee4cd2380a11f351f7668f8ca}\label{npy__3kcompat_8h_a81e0ddbee4cd2380a11f351f7668f8ca}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+U\+String\+\_\+\+From\+Format@{Py\+U\+String\+\_\+\+From\+Format}}
+\index{Py\+U\+String\+\_\+\+From\+Format@{Py\+U\+String\+\_\+\+From\+Format}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+U\+String\+\_\+\+From\+Format}{PyUString\_FromFormat}}
+{\footnotesize\ttfamily \#define Py\+U\+String\+\_\+\+From\+Format~Py\+Unicode\+\_\+\+From\+Format}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a1f999d5596478a553cfd685205329421}\label{npy__3kcompat_8h_a1f999d5596478a553cfd685205329421}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+U\+String\+\_\+\+From\+String@{Py\+U\+String\+\_\+\+From\+String}}
+\index{Py\+U\+String\+\_\+\+From\+String@{Py\+U\+String\+\_\+\+From\+String}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+U\+String\+\_\+\+From\+String}{PyUString\_FromString}}
+{\footnotesize\ttfamily \#define Py\+U\+String\+\_\+\+From\+String~Py\+Unicode\+\_\+\+From\+String}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_acb5c5279000635debf60cb367524c7f0}\label{npy__3kcompat_8h_acb5c5279000635debf60cb367524c7f0}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+U\+String\+\_\+\+From\+String\+And\+Size@{Py\+U\+String\+\_\+\+From\+String\+And\+Size}}
+\index{Py\+U\+String\+\_\+\+From\+String\+And\+Size@{Py\+U\+String\+\_\+\+From\+String\+And\+Size}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+U\+String\+\_\+\+From\+String\+And\+Size}{PyUString\_FromStringAndSize}}
+{\footnotesize\ttfamily \#define Py\+U\+String\+\_\+\+From\+String\+And\+Size~Py\+Unicode\+\_\+\+From\+String\+And\+Size}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_a8e4adce25392b3d8cf797a2da69e0b66}\label{npy__3kcompat_8h_a8e4adce25392b3d8cf797a2da69e0b66}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+U\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE@{Py\+U\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}}
+\index{Py\+U\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE@{Py\+U\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+U\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}{PyUString\_GET\_SIZE}}
+{\footnotesize\ttfamily \#define Py\+U\+String\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE~Py\+Unicode\+\_\+\+G\+E\+T\+\_\+\+S\+I\+ZE}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_ae005403d4cac6ce5b220f3903bc0a161}\label{npy__3kcompat_8h_ae005403d4cac6ce5b220f3903bc0a161}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+U\+String\+\_\+\+Intern\+From\+String@{Py\+U\+String\+\_\+\+Intern\+From\+String}}
+\index{Py\+U\+String\+\_\+\+Intern\+From\+String@{Py\+U\+String\+\_\+\+Intern\+From\+String}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+U\+String\+\_\+\+Intern\+From\+String}{PyUString\_InternFromString}}
+{\footnotesize\ttfamily \#define Py\+U\+String\+\_\+\+Intern\+From\+String~Py\+Unicode\+\_\+\+Intern\+From\+String}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_ad78afabe8f7520ef34558a1216909bea}\label{npy__3kcompat_8h_ad78afabe8f7520ef34558a1216909bea}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+U\+String\+\_\+\+Size@{Py\+U\+String\+\_\+\+Size}}
+\index{Py\+U\+String\+\_\+\+Size@{Py\+U\+String\+\_\+\+Size}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+U\+String\+\_\+\+Size}{PyUString\_Size}}
+{\footnotesize\ttfamily \#define Py\+U\+String\+\_\+\+Size~Py\+Unicode\+\_\+\+Size}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_aba292e78c6ea65e2964a29679c6a436c}\label{npy__3kcompat_8h_aba292e78c6ea65e2964a29679c6a436c}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+U\+String\+\_\+\+Type@{Py\+U\+String\+\_\+\+Type}}
+\index{Py\+U\+String\+\_\+\+Type@{Py\+U\+String\+\_\+\+Type}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+U\+String\+\_\+\+Type}{PyUString\_Type}}
+{\footnotesize\ttfamily \#define Py\+U\+String\+\_\+\+Type~Py\+Unicode\+\_\+\+Type}
+
+\mbox{\Hypertarget{npy__3kcompat_8h_afd7034de22a2d8c3a244264dfe0e92c1}\label{npy__3kcompat_8h_afd7034de22a2d8c3a244264dfe0e92c1}} 
+\index{npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}!Py\+U\+String\+Object@{Py\+U\+String\+Object}}
+\index{Py\+U\+String\+Object@{Py\+U\+String\+Object}!npy\+\_\+3kcompat.\+h@{npy\+\_\+3kcompat.\+h}}
+\subsubsection{\texorpdfstring{Py\+U\+String\+Object}{PyUStringObject}}
+{\footnotesize\ttfamily \#define Py\+U\+String\+Object~Py\+Unicode\+Object}
+

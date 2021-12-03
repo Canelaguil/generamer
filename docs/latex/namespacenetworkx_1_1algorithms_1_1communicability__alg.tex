@@ -1,0 +1,137 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1communicability__alg}{}\section{networkx.\+algorithms.\+communicability\+\_\+alg Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1communicability__alg}\index{networkx.\+algorithms.\+communicability\+\_\+alg@{networkx.\+algorithms.\+communicability\+\_\+alg}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1communicability__alg_a56dd6183dccfe26ea8079f2f1524eb24}{communicability} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1communicability__alg_ac724a15513044b68fc82f48808b07893}{communicability\+\_\+exp} (G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Communicability.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1communicability__alg_a56dd6183dccfe26ea8079f2f1524eb24}\label{namespacenetworkx_1_1algorithms_1_1communicability__alg_a56dd6183dccfe26ea8079f2f1524eb24}} 
+\index{networkx\+::algorithms\+::communicability\+\_\+alg@{networkx\+::algorithms\+::communicability\+\_\+alg}!communicability@{communicability}}
+\index{communicability@{communicability}!networkx\+::algorithms\+::communicability\+\_\+alg@{networkx\+::algorithms\+::communicability\+\_\+alg}}
+\subsubsection{\texorpdfstring{communicability()}{communicability()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+communicability\+\_\+alg.\+communicability (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns communicability between all pairs of nodes in G.
+
+The communicability between pairs of nodes in G is the sum of
+walks of different lengths starting at node u and ending at node v.
+
+Parameters
+----------
+G: graph
+
+Returns
+-------
+comm: dictionary of dictionaries
+    Dictionary of dictionaries keyed by nodes with communicability
+    as the value.
+
+Raises
+------
+NetworkXError
+   If the graph is not undirected and simple.
+
+See Also
+--------
+communicability_exp:
+   Communicability between all pairs of nodes in G  using spectral
+   decomposition.
+communicability_betweenness_centrality:
+   Communicability betweeness centrality for each node in G.
+
+Notes
+-----
+This algorithm uses a spectral decomposition of the adjacency matrix.
+Let G=(V,E) be a simple undirected graph.  Using the connection between
+the powers  of the adjacency matrix and the number of walks in the graph,
+the communicability  between nodes `u` and `v` based on the graph spectrum
+is [1]_
+
+.. math::
+    C(u,v)=\sum_{j=1}^{n}\phi_{j}(u)\phi_{j}(v)e^{\lambda_{j}},
+
+where `\phi_{j}(u)` is the `u\rm{th}` element of the `j\rm{th}` orthonormal
+eigenvector of the adjacency matrix associated with the eigenvalue
+`\lambda_{j}`.
+
+References
+----------
+.. [1] Ernesto Estrada, Naomichi Hatano,
+   "Communicability in complex networks",
+   Phys. Rev. E 77, 036111 (2008).
+   https://arxiv.org/abs/0707.0756
+
+Examples
+--------
+>>> G = nx.Graph([(0, 1), (1, 2), (1, 5), (5, 4), (2, 4), (2, 3), (4, 3), (3, 6)])
+>>> c = nx.communicability(G)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1communicability__alg_ac724a15513044b68fc82f48808b07893}\label{namespacenetworkx_1_1algorithms_1_1communicability__alg_ac724a15513044b68fc82f48808b07893}} 
+\index{networkx\+::algorithms\+::communicability\+\_\+alg@{networkx\+::algorithms\+::communicability\+\_\+alg}!communicability\+\_\+exp@{communicability\+\_\+exp}}
+\index{communicability\+\_\+exp@{communicability\+\_\+exp}!networkx\+::algorithms\+::communicability\+\_\+alg@{networkx\+::algorithms\+::communicability\+\_\+alg}}
+\subsubsection{\texorpdfstring{communicability\+\_\+exp()}{communicability\_exp()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+communicability\+\_\+alg.\+communicability\+\_\+exp (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns communicability between all pairs of nodes in G.
+
+Communicability between pair of node (u,v) of node in G is the sum of
+walks of different lengths starting at node u and ending at node v.
+
+Parameters
+----------
+G: graph
+
+Returns
+-------
+comm: dictionary of dictionaries
+    Dictionary of dictionaries keyed by nodes with communicability
+    as the value.
+
+Raises
+------
+NetworkXError
+    If the graph is not undirected and simple.
+
+See Also
+--------
+communicability:
+   Communicability between pairs of nodes in G.
+communicability_betweenness_centrality:
+   Communicability betweeness centrality for each node in G.
+
+Notes
+-----
+This algorithm uses matrix exponentiation of the adjacency matrix.
+
+Let G=(V,E) be a simple undirected graph.  Using the connection between
+the powers  of the adjacency matrix and the number of walks in the graph,
+the communicability between nodes u and v is [1]_,
+
+.. math::
+    C(u,v) = (e^A)_{uv},
+
+where `A` is the adjacency matrix of G.
+
+References
+----------
+.. [1] Ernesto Estrada, Naomichi Hatano,
+   "Communicability in complex networks",
+   Phys. Rev. E 77, 036111 (2008).
+   https://arxiv.org/abs/0707.0756
+
+Examples
+--------
+>>> G = nx.Graph([(0, 1), (1, 2), (1, 5), (5, 4), (2, 4), (2, 3), (4, 3), (3, 6)])
+>>> c = nx.communicability_exp(G)
+\end{DoxyVerb}
+ 

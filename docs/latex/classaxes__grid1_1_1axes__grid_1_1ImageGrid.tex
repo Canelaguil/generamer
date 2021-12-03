@@ -1,0 +1,104 @@
+\hypertarget{classaxes__grid1_1_1axes__grid_1_1ImageGrid}{}\section{axes\+\_\+grid1.\+axes\+\_\+grid.\+Image\+Grid Class Reference}
+\label{classaxes__grid1_1_1axes__grid_1_1ImageGrid}\index{axes\+\_\+grid1.\+axes\+\_\+grid.\+Image\+Grid@{axes\+\_\+grid1.\+axes\+\_\+grid.\+Image\+Grid}}
+
+
+Inheritance diagram for axes\+\_\+grid1.\+axes\+\_\+grid.\+Image\+Grid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classaxes__grid1_1_1axes__grid_1_1ImageGrid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for axes\+\_\+grid1.\+axes\+\_\+grid.\+Image\+Grid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classaxes__grid1_1_1axes__grid_1_1ImageGrid__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classaxes__grid1_1_1axes__grid_1_1ImageGrid_a4b57bd3ee05a96cf509c50b3c320599f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, fig, rect, nrows\+\_\+ncols, \hyperlink{classaxes__grid1_1_1axes__grid_1_1Grid_ac03a9489d1bf668d1c2e7a476093cf2a}{ngrids}=None, direction=\char`\"{}row\char`\"{}, axes\+\_\+pad=0.\+02, add\+\_\+all=True, share\+\_\+all=False, aspect=True, label\+\_\+mode=\char`\"{}L\char`\"{}, cbar\+\_\+mode=None, cbar\+\_\+location=\char`\"{}right\char`\"{}, cbar\+\_\+pad=None, cbar\+\_\+size=\char`\"{}5\%\char`\"{}, cbar\+\_\+set\+\_\+cax=True, axes\+\_\+class=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classaxes__grid1_1_1axes__grid_1_1ImageGrid_a649c8da747abbcc29a2134c67b3b87ce}{cbar\+\_\+axes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1axes__grid_1_1ImageGrid_a4b57bd3ee05a96cf509c50b3c320599f}\label{classaxes__grid1_1_1axes__grid_1_1ImageGrid_a4b57bd3ee05a96cf509c50b3c320599f}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+grid\+::\+Image\+Grid@{axes\+\_\+grid1\+::axes\+\_\+grid\+::\+Image\+Grid}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!axes\+\_\+grid1\+::axes\+\_\+grid\+::\+Image\+Grid@{axes\+\_\+grid1\+::axes\+\_\+grid\+::\+Image\+Grid}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+axes\+\_\+grid.\+Image\+Grid.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fig,  }\item[{}]{rect,  }\item[{}]{nrows\+\_\+ncols,  }\item[{}]{ngrids = {\ttfamily None},  }\item[{}]{direction = {\ttfamily \char`\"{}row\char`\"{}},  }\item[{}]{axes\+\_\+pad = {\ttfamily 0.02},  }\item[{}]{add\+\_\+all = {\ttfamily True},  }\item[{}]{share\+\_\+all = {\ttfamily False},  }\item[{}]{aspect = {\ttfamily True},  }\item[{}]{label\+\_\+mode = {\ttfamily \char`\"{}L\char`\"{}},  }\item[{}]{cbar\+\_\+mode = {\ttfamily None},  }\item[{}]{cbar\+\_\+location = {\ttfamily \char`\"{}right\char`\"{}},  }\item[{}]{cbar\+\_\+pad = {\ttfamily None},  }\item[{}]{cbar\+\_\+size = {\ttfamily \char`\"{}5\%\char`\"{}},  }\item[{}]{cbar\+\_\+set\+\_\+cax = {\ttfamily True},  }\item[{}]{axes\+\_\+class = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+fig : `.Figure`
+    The parent figure.
+rect : (float, float, float, float) or int
+    The axes position, as a ``(left, bottom, width, height)`` tuple or
+    as a three-digit subplot position code (e.g., "121").
+nrows_ncols : (int, int)
+    Number of rows and columns in the grid.
+ngrids : int or None, default: None
+    If not None, only the first *ngrids* axes in the grid are created.
+direction : {"row", "column"}, default: "row"
+    Whether axes are created in row-major ("row by row") or
+    column-major order ("column by column").  This also affects the
+    order in which axes are accessed using indexing (``grid[index]``).
+axes_pad : float or (float, float), default: 0.02in
+    Padding or (horizontal padding, vertical padding) between axes, in
+    inches.
+add_all : bool, default: True
+    Whether to add the axes to the figure using `.Figure.add_axes`.
+    This parameter is deprecated.
+share_all : bool, default: False
+    Whether all axes share their x- and y-axis.
+aspect : bool, default: True
+    Whether the axes aspect ratio follows the aspect ratio of the data
+    limits.
+label_mode : {"L", "1", "all"}, default: "L"
+    Determines which axes will get tick labels:
+
+    - "L": All axes on the left column get vertical tick labels;
+      all axes on the bottom row get horizontal tick labels.
+    - "1": Only the bottom left axes is labelled.
+    - "all": all axes are labelled.
+
+cbar_mode : {"each", "single", "edge", None}, default: None
+    Whether to create a colorbar for "each" axes, a "single" colorbar
+    for the entire grid, colorbars only for axes on the "edge"
+    determined by *cbar_location*, or no colorbars.  The colorbars are
+    stored in the :attr:`cbar_axes` attribute.
+cbar_location : {"left", "right", "bottom", "top"}, default: "right"
+cbar_pad : float, default: None
+    Padding between the image axes and the colorbar axes.
+cbar_size : size specification (see `.Size.from_any`), default: "5%"
+    Colorbar size.
+cbar_set_cax : bool, default: True
+    If True, each axes in the grid has a *cax* attribute that is bound
+    to associated *cbar_axes*.
+axes_class : subclass of `matplotlib.axes.Axes`, default: None
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1axes__grid_1_1ImageGrid_a649c8da747abbcc29a2134c67b3b87ce}\label{classaxes__grid1_1_1axes__grid_1_1ImageGrid_a649c8da747abbcc29a2134c67b3b87ce}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+grid\+::\+Image\+Grid@{axes\+\_\+grid1\+::axes\+\_\+grid\+::\+Image\+Grid}!cbar\+\_\+axes@{cbar\+\_\+axes}}
+\index{cbar\+\_\+axes@{cbar\+\_\+axes}!axes\+\_\+grid1\+::axes\+\_\+grid\+::\+Image\+Grid@{axes\+\_\+grid1\+::axes\+\_\+grid\+::\+Image\+Grid}}
+\subsubsection{\texorpdfstring{cbar\+\_\+axes}{cbar\_axes}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+axes\+\_\+grid.\+Image\+Grid.\+cbar\+\_\+axes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/mpl\+\_\+toolkits/axes\+\_\+grid1/\hyperlink{axes__grid1_2axes__grid_8py}{axes\+\_\+grid.\+py}\end{DoxyCompactItemize}

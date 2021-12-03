@@ -1,0 +1,108 @@
+\hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1build}{}\section{pip.\+\_\+vendor.\+pep517.\+build Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1pep517_1_1build}\index{pip.\+\_\+vendor.\+pep517.\+build@{pip.\+\_\+vendor.\+pep517.\+build}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1build_ae8c3647d1dec58659de94743307b912e}{validate\+\_\+system} (system)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1build_a947629dd0956e56b2c1c7e0119bb8124}{load\+\_\+system} (source\+\_\+dir)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1build_ac17573f87b3f31c04bf634150ef5f368}{compat\+\_\+system} (source\+\_\+dir)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1build_aabcc54a837545e9cadf3ab91aaa6a611}{build} (source\+\_\+dir, dist, dest=None, system=None)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1build_aa3bf9002f1471764cf8359ec8a9e5ce0}{main} (args)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1build_a7467ff642f69ca992afb884de5974812}{log}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1build_ae881c344a56185303239155da09abfc6}{parser}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1build_a13e317f500e061959aabfae774114463}{help}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1build_a39b21193847f339149e48542484724c3}{action}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1build_a0e44cd200daee3b36dea2c5252d52c97}{default}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Build a project using PEP 517 hooks.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1build_aabcc54a837545e9cadf3ab91aaa6a611}\label{namespacepip_1_1__vendor_1_1pep517_1_1build_aabcc54a837545e9cadf3ab91aaa6a611}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}!build@{build}}
+\index{build@{build}!pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}}
+\subsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+build.\+build (\begin{DoxyParamCaption}\item[{}]{source\+\_\+dir,  }\item[{}]{dist,  }\item[{}]{dest = {\ttfamily None},  }\item[{}]{system = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1build_ac17573f87b3f31c04bf634150ef5f368}\label{namespacepip_1_1__vendor_1_1pep517_1_1build_ac17573f87b3f31c04bf634150ef5f368}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}!compat\+\_\+system@{compat\+\_\+system}}
+\index{compat\+\_\+system@{compat\+\_\+system}!pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}}
+\subsubsection{\texorpdfstring{compat\+\_\+system()}{compat\_system()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+build.\+compat\+\_\+system (\begin{DoxyParamCaption}\item[{}]{source\+\_\+dir }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given a source dir, attempt to get a build system backend
+and requirements from pyproject.toml. Fallback to
+setuptools but only if the file was not found or a build
+system was not indicated.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1build_a947629dd0956e56b2c1c7e0119bb8124}\label{namespacepip_1_1__vendor_1_1pep517_1_1build_a947629dd0956e56b2c1c7e0119bb8124}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}!load\+\_\+system@{load\+\_\+system}}
+\index{load\+\_\+system@{load\+\_\+system}!pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}}
+\subsubsection{\texorpdfstring{load\+\_\+system()}{load\_system()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+build.\+load\+\_\+system (\begin{DoxyParamCaption}\item[{}]{source\+\_\+dir }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load the build system from a source dir (pyproject.toml).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1build_aa3bf9002f1471764cf8359ec8a9e5ce0}\label{namespacepip_1_1__vendor_1_1pep517_1_1build_aa3bf9002f1471764cf8359ec8a9e5ce0}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}!main@{main}}
+\index{main@{main}!pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+build.\+main (\begin{DoxyParamCaption}\item[{}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1build_ae8c3647d1dec58659de94743307b912e}\label{namespacepip_1_1__vendor_1_1pep517_1_1build_ae8c3647d1dec58659de94743307b912e}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}!validate\+\_\+system@{validate\+\_\+system}}
+\index{validate\+\_\+system@{validate\+\_\+system}!pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}}
+\subsubsection{\texorpdfstring{validate\+\_\+system()}{validate\_system()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+build.\+validate\+\_\+system (\begin{DoxyParamCaption}\item[{}]{system }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Ensure build system has the requisite fields.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1build_a39b21193847f339149e48542484724c3}\label{namespacepip_1_1__vendor_1_1pep517_1_1build_a39b21193847f339149e48542484724c3}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}!action@{action}}
+\index{action@{action}!pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}}
+\subsubsection{\texorpdfstring{action}{action}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pep517.\+build.\+action}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1build_a0e44cd200daee3b36dea2c5252d52c97}\label{namespacepip_1_1__vendor_1_1pep517_1_1build_a0e44cd200daee3b36dea2c5252d52c97}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}!default@{default}}
+\index{default@{default}!pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}}
+\subsubsection{\texorpdfstring{default}{default}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pep517.\+build.\+default}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1build_a13e317f500e061959aabfae774114463}\label{namespacepip_1_1__vendor_1_1pep517_1_1build_a13e317f500e061959aabfae774114463}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}!help@{help}}
+\index{help@{help}!pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}}
+\subsubsection{\texorpdfstring{help}{help}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pep517.\+build.\+help}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1build_a7467ff642f69ca992afb884de5974812}\label{namespacepip_1_1__vendor_1_1pep517_1_1build_a7467ff642f69ca992afb884de5974812}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}!log@{log}}
+\index{log@{log}!pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}}
+\subsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pep517.\+build.\+log}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1build_ae881c344a56185303239155da09abfc6}\label{namespacepip_1_1__vendor_1_1pep517_1_1build_ae881c344a56185303239155da09abfc6}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}!parser@{parser}}
+\index{parser@{parser}!pip\+::\+\_\+vendor\+::pep517\+::build@{pip\+::\+\_\+vendor\+::pep517\+::build}}
+\subsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pep517.\+build.\+parser}
+

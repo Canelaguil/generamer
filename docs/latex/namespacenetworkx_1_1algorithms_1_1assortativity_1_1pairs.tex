@@ -1,0 +1,104 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1pairs}{}\section{networkx.\+algorithms.\+assortativity.\+pairs Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1pairs}\index{networkx.\+algorithms.\+assortativity.\+pairs@{networkx.\+algorithms.\+assortativity.\+pairs}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1assortativity_1_1pairs_a768b8f5a471ee6ef846d15ceeb47e919}{node\+\_\+attribute\+\_\+xy} (G, attribute, nodes=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1assortativity_1_1pairs_a168f6a2f4bac098496e44fb31f9c4339}{node\+\_\+degree\+\_\+xy} (G, x=\char`\"{}out\char`\"{}, y=\char`\"{}in\char`\"{}, weight=None, nodes=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Generators of  x-y pairs of node data.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1pairs_a768b8f5a471ee6ef846d15ceeb47e919}\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1pairs_a768b8f5a471ee6ef846d15ceeb47e919}} 
+\index{networkx\+::algorithms\+::assortativity\+::pairs@{networkx\+::algorithms\+::assortativity\+::pairs}!node\+\_\+attribute\+\_\+xy@{node\+\_\+attribute\+\_\+xy}}
+\index{node\+\_\+attribute\+\_\+xy@{node\+\_\+attribute\+\_\+xy}!networkx\+::algorithms\+::assortativity\+::pairs@{networkx\+::algorithms\+::assortativity\+::pairs}}
+\subsubsection{\texorpdfstring{node\+\_\+attribute\+\_\+xy()}{node\_attribute\_xy()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+assortativity.\+pairs.\+node\+\_\+attribute\+\_\+xy (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{attribute,  }\item[{}]{nodes = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns iterator of node-attribute pairs for all edges in G.
+
+Parameters
+----------
+G: NetworkX graph
+
+attribute: key
+   The node attribute key.
+
+nodes: list or iterable (optional)
+    Use only edges that are adjacency to specified nodes.
+    The default is all nodes.
+
+Returns
+-------
+(x,y): 2-tuple
+    Generates 2-tuple of (attribute,attribute) values.
+
+Examples
+--------
+>>> G = nx.DiGraph()
+>>> G.add_node(1, color="red")
+>>> G.add_node(2, color="blue")
+>>> G.add_edge(1, 2)
+>>> list(nx.node_attribute_xy(G, "color"))
+[('red', 'blue')]
+
+Notes
+-----
+For undirected graphs each edge is produced twice, once for each edge
+representation (u,v) and (v,u), with the exception of self-loop edges
+which only appear once.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1pairs_a168f6a2f4bac098496e44fb31f9c4339}\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1pairs_a168f6a2f4bac098496e44fb31f9c4339}} 
+\index{networkx\+::algorithms\+::assortativity\+::pairs@{networkx\+::algorithms\+::assortativity\+::pairs}!node\+\_\+degree\+\_\+xy@{node\+\_\+degree\+\_\+xy}}
+\index{node\+\_\+degree\+\_\+xy@{node\+\_\+degree\+\_\+xy}!networkx\+::algorithms\+::assortativity\+::pairs@{networkx\+::algorithms\+::assortativity\+::pairs}}
+\subsubsection{\texorpdfstring{node\+\_\+degree\+\_\+xy()}{node\_degree\_xy()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+assortativity.\+pairs.\+node\+\_\+degree\+\_\+xy (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{x = {\ttfamily \char`\"{}out\char`\"{}},  }\item[{}]{y = {\ttfamily \char`\"{}in\char`\"{}},  }\item[{}]{weight = {\ttfamily None},  }\item[{}]{nodes = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate node degree-degree pairs for edges in G.
+
+Parameters
+----------
+G: NetworkX graph
+
+x: string ('in','out')
+   The degree type for source node (directed graphs only).
+
+y: string ('in','out')
+   The degree type for target node (directed graphs only).
+
+weight: string or None, optional (default=None)
+   The edge attribute that holds the numerical value used
+   as a weight.  If None, then each edge has weight 1.
+   The degree is the sum of the edge weights adjacent to the node.
+
+nodes: list or iterable (optional)
+    Use only edges that are adjacency to specified nodes.
+    The default is all nodes.
+
+Returns
+-------
+(x,y): 2-tuple
+    Generates 2-tuple of (degree,degree) values.
+
+
+Examples
+--------
+>>> G = nx.DiGraph()
+>>> G.add_edge(1, 2)
+>>> list(nx.node_degree_xy(G, x="out", y="in"))
+[(1, 1)]
+>>> list(nx.node_degree_xy(G, x="in", y="out"))
+[(0, 0)]
+
+Notes
+-----
+For undirected graphs each edge is produced twice, once for each edge
+representation (u,v) and (v,u), with the exception of self-loop edges
+which only appear once.
+\end{DoxyVerb}
+ 

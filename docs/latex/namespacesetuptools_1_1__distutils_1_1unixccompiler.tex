@@ -1,0 +1,25 @@
+\hypertarget{namespacesetuptools_1_1__distutils_1_1unixccompiler}{}\section{setuptools.\+\_\+distutils.\+unixccompiler Namespace Reference}
+\label{namespacesetuptools_1_1__distutils_1_1unixccompiler}\index{setuptools.\+\_\+distutils.\+unixccompiler@{setuptools.\+\_\+distutils.\+unixccompiler}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1__distutils_1_1unixccompiler_1_1UnixCCompiler}{Unix\+C\+Compiler}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}distutils.unixccompiler
+
+Contains the UnixCCompiler class, a subclass of CCompiler that handles
+the "typical" Unix-style command-line C compiler:
+  * macros defined with -Dname[=value]
+  * macros undefined with -Uname
+  * include search directories specified with -Idir
+  * libraries specified with -lllib
+  * library search directories specified with -Ldir
+  * compile handled by 'cc' (or similar) executable with -c option:
+    compiles .c to .o
+  * link static library handled by 'ar' command (possibly with 'ranlib')
+  * link shared library handled by 'cc -shared'
+\end{DoxyVerb}
+ 

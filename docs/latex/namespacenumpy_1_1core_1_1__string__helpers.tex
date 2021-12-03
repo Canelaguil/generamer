@@ -1,0 +1,131 @@
+\hypertarget{namespacenumpy_1_1core_1_1__string__helpers}{}\section{numpy.\+core.\+\_\+string\+\_\+helpers Namespace Reference}
+\label{namespacenumpy_1_1core_1_1__string__helpers}\index{numpy.\+core.\+\_\+string\+\_\+helpers@{numpy.\+core.\+\_\+string\+\_\+helpers}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1__string__helpers_aaa1d620a85b4e2b18d4bb6d837e81332}{english\+\_\+lower} (s)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1__string__helpers_a3ff87ea2ea25d9de1f54a279dd16d329}{english\+\_\+upper} (s)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1__string__helpers_a6659d04de7679ff46ff9133ed915857c}{english\+\_\+capitalize} (s)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1__string__helpers_a8510a742099911a611dca468e32de5db}{L\+O\+W\+E\+R\+\_\+\+T\+A\+B\+LE}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1__string__helpers_a3b0221f59c4bd35f2df385fc2f5da240}{U\+P\+P\+E\+R\+\_\+\+T\+A\+B\+LE}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}String-handling utilities to avoid locale-dependence.
+
+Used primarily to generate type name aliases.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__string__helpers_a6659d04de7679ff46ff9133ed915857c}\label{namespacenumpy_1_1core_1_1__string__helpers_a6659d04de7679ff46ff9133ed915857c}} 
+\index{numpy\+::core\+::\+\_\+string\+\_\+helpers@{numpy\+::core\+::\+\_\+string\+\_\+helpers}!english\+\_\+capitalize@{english\+\_\+capitalize}}
+\index{english\+\_\+capitalize@{english\+\_\+capitalize}!numpy\+::core\+::\+\_\+string\+\_\+helpers@{numpy\+::core\+::\+\_\+string\+\_\+helpers}}
+\subsubsection{\texorpdfstring{english\+\_\+capitalize()}{english\_capitalize()}}
+{\footnotesize\ttfamily def numpy.\+core.\+\_\+string\+\_\+helpers.\+english\+\_\+capitalize (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply English case rules to convert the first character of an ASCII
+string to upper case.
+
+This is an internal utility function to replace calls to str.capitalize()
+such that we can avoid changing behavior with changing locales.
+
+Parameters
+----------
+s : str
+
+Returns
+-------
+capitalized : str
+
+Examples
+--------
+>>> from numpy.core.numerictypes import english_capitalize
+>>> english_capitalize('int8')
+'Int8'
+>>> english_capitalize('Int8')
+'Int8'
+>>> english_capitalize('')
+''
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1__string__helpers_aaa1d620a85b4e2b18d4bb6d837e81332}\label{namespacenumpy_1_1core_1_1__string__helpers_aaa1d620a85b4e2b18d4bb6d837e81332}} 
+\index{numpy\+::core\+::\+\_\+string\+\_\+helpers@{numpy\+::core\+::\+\_\+string\+\_\+helpers}!english\+\_\+lower@{english\+\_\+lower}}
+\index{english\+\_\+lower@{english\+\_\+lower}!numpy\+::core\+::\+\_\+string\+\_\+helpers@{numpy\+::core\+::\+\_\+string\+\_\+helpers}}
+\subsubsection{\texorpdfstring{english\+\_\+lower()}{english\_lower()}}
+{\footnotesize\ttfamily def numpy.\+core.\+\_\+string\+\_\+helpers.\+english\+\_\+lower (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply English case rules to convert ASCII strings to all lower case.
+
+This is an internal utility function to replace calls to str.lower() such
+that we can avoid changing behavior with changing locales. In particular,
+Turkish has distinct dotted and dotless variants of the Latin letter "I" in
+both lowercase and uppercase. Thus, "I".lower() != "i" in a "tr" locale.
+
+Parameters
+----------
+s : str
+
+Returns
+-------
+lowered : str
+
+Examples
+--------
+>>> from numpy.core.numerictypes import english_lower
+>>> english_lower('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_')
+'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789_'
+>>> english_lower('')
+''
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1__string__helpers_a3ff87ea2ea25d9de1f54a279dd16d329}\label{namespacenumpy_1_1core_1_1__string__helpers_a3ff87ea2ea25d9de1f54a279dd16d329}} 
+\index{numpy\+::core\+::\+\_\+string\+\_\+helpers@{numpy\+::core\+::\+\_\+string\+\_\+helpers}!english\+\_\+upper@{english\+\_\+upper}}
+\index{english\+\_\+upper@{english\+\_\+upper}!numpy\+::core\+::\+\_\+string\+\_\+helpers@{numpy\+::core\+::\+\_\+string\+\_\+helpers}}
+\subsubsection{\texorpdfstring{english\+\_\+upper()}{english\_upper()}}
+{\footnotesize\ttfamily def numpy.\+core.\+\_\+string\+\_\+helpers.\+english\+\_\+upper (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply English case rules to convert ASCII strings to all upper case.
+
+This is an internal utility function to replace calls to str.upper() such
+that we can avoid changing behavior with changing locales. In particular,
+Turkish has distinct dotted and dotless variants of the Latin letter "I" in
+both lowercase and uppercase. Thus, "i".upper() != "I" in a "tr" locale.
+
+Parameters
+----------
+s : str
+
+Returns
+-------
+uppered : str
+
+Examples
+--------
+>>> from numpy.core.numerictypes import english_upper
+>>> english_upper('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_')
+'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_'
+>>> english_upper('')
+''
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__string__helpers_a8510a742099911a611dca468e32de5db}\label{namespacenumpy_1_1core_1_1__string__helpers_a8510a742099911a611dca468e32de5db}} 
+\index{numpy\+::core\+::\+\_\+string\+\_\+helpers@{numpy\+::core\+::\+\_\+string\+\_\+helpers}!L\+O\+W\+E\+R\+\_\+\+T\+A\+B\+LE@{L\+O\+W\+E\+R\+\_\+\+T\+A\+B\+LE}}
+\index{L\+O\+W\+E\+R\+\_\+\+T\+A\+B\+LE@{L\+O\+W\+E\+R\+\_\+\+T\+A\+B\+LE}!numpy\+::core\+::\+\_\+string\+\_\+helpers@{numpy\+::core\+::\+\_\+string\+\_\+helpers}}
+\subsubsection{\texorpdfstring{L\+O\+W\+E\+R\+\_\+\+T\+A\+B\+LE}{LOWER\_TABLE}}
+{\footnotesize\ttfamily numpy.\+core.\+\_\+string\+\_\+helpers.\+L\+O\+W\+E\+R\+\_\+\+T\+A\+B\+LE}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__string__helpers_a3b0221f59c4bd35f2df385fc2f5da240}\label{namespacenumpy_1_1core_1_1__string__helpers_a3b0221f59c4bd35f2df385fc2f5da240}} 
+\index{numpy\+::core\+::\+\_\+string\+\_\+helpers@{numpy\+::core\+::\+\_\+string\+\_\+helpers}!U\+P\+P\+E\+R\+\_\+\+T\+A\+B\+LE@{U\+P\+P\+E\+R\+\_\+\+T\+A\+B\+LE}}
+\index{U\+P\+P\+E\+R\+\_\+\+T\+A\+B\+LE@{U\+P\+P\+E\+R\+\_\+\+T\+A\+B\+LE}!numpy\+::core\+::\+\_\+string\+\_\+helpers@{numpy\+::core\+::\+\_\+string\+\_\+helpers}}
+\subsubsection{\texorpdfstring{U\+P\+P\+E\+R\+\_\+\+T\+A\+B\+LE}{UPPER\_TABLE}}
+{\footnotesize\ttfamily numpy.\+core.\+\_\+string\+\_\+helpers.\+U\+P\+P\+E\+R\+\_\+\+T\+A\+B\+LE}
+

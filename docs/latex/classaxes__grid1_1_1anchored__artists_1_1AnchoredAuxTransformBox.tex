@@ -1,0 +1,112 @@
+\hypertarget{classaxes__grid1_1_1anchored__artists_1_1AnchoredAuxTransformBox}{}\section{axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Aux\+Transform\+Box Class Reference}
+\label{classaxes__grid1_1_1anchored__artists_1_1AnchoredAuxTransformBox}\index{axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Aux\+Transform\+Box@{axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Aux\+Transform\+Box}}
+
+
+Inheritance diagram for axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Aux\+Transform\+Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classaxes__grid1_1_1anchored__artists_1_1AnchoredAuxTransformBox__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Aux\+Transform\+Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classaxes__grid1_1_1anchored__artists_1_1AnchoredAuxTransformBox__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classaxes__grid1_1_1anchored__artists_1_1AnchoredAuxTransformBox_a66382708af8cdafd8675f1f3eea78fad}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, transform, loc, pad=0.\+4, borderpad=0.\+5, prop=None, frameon=True, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classaxes__grid1_1_1anchored__artists_1_1AnchoredAuxTransformBox_adb2f663ce6e8605acb3ebb045e6799e1}{drawing\+\_\+area}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1anchored__artists_1_1AnchoredAuxTransformBox_a66382708af8cdafd8675f1f3eea78fad}\label{classaxes__grid1_1_1anchored__artists_1_1AnchoredAuxTransformBox_a66382708af8cdafd8675f1f3eea78fad}} 
+\index{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Aux\+Transform\+Box@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Aux\+Transform\+Box}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Aux\+Transform\+Box@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Aux\+Transform\+Box.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{transform,  }\item[{}]{loc,  }\item[{}]{pad = {\ttfamily 0.4},  }\item[{}]{borderpad = {\ttfamily 0.5},  }\item[{}]{prop = {\ttfamily None},  }\item[{}]{frameon = {\ttfamily True},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}An anchored container with transformed coordinates.
+
+Artists added to the *drawing_area* are scaled according to the
+coordinates of the transformation used. The dimensions of this artist
+will scale to contain the artists added.
+
+Parameters
+----------
+transform : `matplotlib.transforms.Transform`
+    The transformation object for the coordinate system in use, i.e.,
+    :attr:`matplotlib.axes.Axes.transData`.
+
+loc : int
+    Location of this artist. Valid location codes are::
+
+'upper right'  : 1,
+'upper left'   : 2,
+'lower left'   : 3,
+'lower right'  : 4,
+'right'        : 5,
+'center left'  : 6,
+'center right' : 7,
+'lower center' : 8,
+'upper center' : 9,
+'center'       : 10
+
+pad : float, default: 0.4
+    Padding around the child objects, in fraction of the font size.
+
+borderpad : float, default: 0.5
+    Border padding, in fraction of the font size.
+
+prop : `matplotlib.font_manager.FontProperties`, optional
+    Font property used as a reference for paddings.
+
+frameon : bool, default: True
+    If True, draw a box around this artists.
+
+**kwargs
+    Keyworded arguments to pass to
+    :class:`matplotlib.offsetbox.AnchoredOffsetbox`.
+
+Attributes
+----------
+drawing_area : `matplotlib.offsetbox.AuxTransformBox`
+    A container for artists to display.
+
+Examples
+--------
+To display an ellipse in the upper left, with a width of 0.1 and
+height of 0.4 in data coordinates:
+
+>>> box = AnchoredAuxTransformBox(ax.transData, loc='upper left')
+>>> el = Ellipse((0, 0), width=0.1, height=0.4, angle=30)
+>>> box.drawing_area.add_artist(el)
+>>> ax.add_artist(box)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1anchored__artists_1_1AnchoredAuxTransformBox_adb2f663ce6e8605acb3ebb045e6799e1}\label{classaxes__grid1_1_1anchored__artists_1_1AnchoredAuxTransformBox_adb2f663ce6e8605acb3ebb045e6799e1}} 
+\index{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Aux\+Transform\+Box@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Aux\+Transform\+Box}!drawing\+\_\+area@{drawing\+\_\+area}}
+\index{drawing\+\_\+area@{drawing\+\_\+area}!axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Aux\+Transform\+Box@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{drawing\+\_\+area}{drawing\_area}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Aux\+Transform\+Box.\+drawing\+\_\+area}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/mpl\+\_\+toolkits/axes\+\_\+grid1/\hyperlink{_2anchored__artists_8py}{anchored\+\_\+artists.\+py}\end{DoxyCompactItemize}

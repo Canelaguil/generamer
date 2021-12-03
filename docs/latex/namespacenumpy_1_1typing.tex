@@ -1,0 +1,240 @@
+\hypertarget{namespacenumpy_1_1typing}{}\section{numpy.\+typing Namespace Reference}
+\label{namespacenumpy_1_1typing}\index{numpy.\+typing@{numpy.\+typing}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1__add__docstring}{\+\_\+add\+\_\+docstring}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1__array__like}{\+\_\+array\+\_\+like}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1__callable}{\+\_\+callable}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1__char__codes}{\+\_\+char\+\_\+codes}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1__dtype__like}{\+\_\+dtype\+\_\+like}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1__extended__precision}{\+\_\+extended\+\_\+precision}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1__generic__alias}{\+\_\+generic\+\_\+alias}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1__nbit}{\+\_\+nbit}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1__scalars}{\+\_\+scalars}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1__shape}{\+\_\+shape}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1mypy__plugin}{mypy\+\_\+plugin}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1setup}{setup}
+\item 
+ \hyperlink{namespacenumpy_1_1typing_1_1tests}{tests}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnumpy_1_1typing_1_1__128Bit}{\+\_\+128\+Bit}
+\item 
+class \hyperlink{classnumpy_1_1typing_1_1__16Bit}{\+\_\+16\+Bit}
+\item 
+class \hyperlink{classnumpy_1_1typing_1_1__256Bit}{\+\_\+256\+Bit}
+\item 
+class \hyperlink{classnumpy_1_1typing_1_1__32Bit}{\+\_\+32\+Bit}
+\item 
+class \hyperlink{classnumpy_1_1typing_1_1__64Bit}{\+\_\+64\+Bit}
+\item 
+class \hyperlink{classnumpy_1_1typing_1_1__80Bit}{\+\_\+80\+Bit}
+\item 
+class \hyperlink{classnumpy_1_1typing_1_1__8Bit}{\+\_\+8\+Bit}
+\item 
+class \hyperlink{classnumpy_1_1typing_1_1__96Bit}{\+\_\+96\+Bit}
+\item 
+class \hyperlink{classnumpy_1_1typing_1_1NBitBase}{N\+Bit\+Base}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1typing_ae5318a3c44e5bcc959a32b1436f7d65a}{final} (f)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1typing_ae85ceb6b665f510f0a3010e781ac12c4}{test}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}============================
+Typing (:mod:`numpy.typing`)
+============================
+
+.. warning::
+
+  Some of the types in this module rely on features only present in
+  the standard library in Python 3.8 and greater. If you want to use
+  these types in earlier versions of Python, you should install the
+  typing-extensions_ package.
+
+Large parts of the NumPy API have PEP-484-style type annotations. In
+addition a number of type aliases are available to users, most prominently
+the two below:
+
+- `ArrayLike`: objects that can be converted to arrays
+- `DTypeLike`: objects that can be converted to dtypes
+
+.. _typing-extensions: https://pypi.org/project/typing-extensions/
+
+Mypy plugin
+-----------
+
+A mypy_ plugin is distributed in `numpy.typing` for managing a number of
+platform-specific annotations. Its function can be split into to parts:
+
+* Assigning the (platform-dependent) precisions of certain `~numpy.number` subclasses,
+  including the likes of `~numpy.int_`, `~numpy.intp` and `~numpy.longlong`.
+  See the documentation on :ref:`scalar types <arrays.scalars.built-in>` for a
+  comprehensive overview of the affected classes. without the plugin the precision
+  of all relevant classes will be inferred as `~typing.Any`.
+* Removing all extended-precision `~numpy.number` subclasses that are unavailable
+  for the platform in question. Most notable this includes the likes of
+  `~numpy.float128` and `~numpy.complex256`. Without the plugin *all*
+  extended-precision types will, as far as mypy is concerned, be available
+  to all platforms.
+
+To enable the plugin, one must add it to their mypy `configuration file`_:
+
+.. code-block:: ini
+
+    [mypy]
+    plugins = numpy.typing.mypy_plugin
+
+.. _mypy: http://mypy-lang.org/
+.. _configuration file: https://mypy.readthedocs.io/en/stable/config_file.html
+
+Differences from the runtime NumPy API
+--------------------------------------
+
+NumPy is very flexible. Trying to describe the full range of
+possibilities statically would result in types that are not very
+helpful. For that reason, the typed NumPy API is often stricter than
+the runtime NumPy API. This section describes some notable
+differences.
+
+ArrayLike
+~~~~~~~~~
+
+The `ArrayLike` type tries to avoid creating object arrays. For
+example,
+
+.. code-block:: python
+
+    >>> np.array(x**2 for x in range(10))
+    array(<generator object <genexpr> at ...>, dtype=object)
+
+is valid NumPy code which will create a 0-dimensional object
+array. Type checkers will complain about the above example when using
+the NumPy types however. If you really intended to do the above, then
+you can either use a ``# type: ignore`` comment:
+
+.. code-block:: python
+
+    >>> np.array(x**2 for x in range(10))  # type: ignore
+
+or explicitly type the array like object as `~typing.Any`:
+
+.. code-block:: python
+
+    >>> from typing import Any
+    >>> array_like: Any = (x**2 for x in range(10))
+    >>> np.array(array_like)
+    array(<generator object <genexpr> at ...>, dtype=object)
+
+ndarray
+~~~~~~~
+
+It's possible to mutate the dtype of an array at runtime. For example,
+the following code is valid:
+
+.. code-block:: python
+
+    >>> x = np.array([1, 2])
+    >>> x.dtype = np.bool_
+
+This sort of mutation is not allowed by the types. Users who want to
+write statically typed code should instead use the `numpy.ndarray.view`
+method to create a view of the array with a different dtype.
+
+DTypeLike
+~~~~~~~~~
+
+The `DTypeLike` type tries to avoid creation of dtype objects using
+dictionary of fields like below:
+
+.. code-block:: python
+
+    >>> x = np.dtype({"field1": (float, 1), "field2": (int, 3)})
+
+Although this is valid NumPy code, the type checker will complain about it,
+since its usage is discouraged.
+Please see : :ref:`Data type objects <arrays.dtypes>`
+
+Number precision
+~~~~~~~~~~~~~~~~
+
+The precision of `numpy.number` subclasses is treated as a covariant generic
+parameter (see :class:`~NBitBase`), simplifying the annotating of processes
+involving precision-based casting.
+
+.. code-block:: python
+
+    >>> from typing import TypeVar
+    >>> import numpy as np
+    >>> import numpy.typing as npt
+
+    >>> T = TypeVar("T", bound=npt.NBitBase)
+    >>> def func(a: "np.floating[T]", b: "np.floating[T]") -> "np.floating[T]":
+    ...     ...
+
+Consequently, the likes of `~numpy.float16`, `~numpy.float32` and
+`~numpy.float64` are still sub-types of `~numpy.floating`, but, contrary to
+runtime, they're not necessarily considered as sub-classes.
+
+Timedelta64
+~~~~~~~~~~~
+
+The `~numpy.timedelta64` class is not considered a subclass of `~numpy.signedinteger`,
+the former only inheriting from `~numpy.generic` while static type checking.
+
+0D arrays
+~~~~~~~~~
+
+During runtime numpy aggressively casts any passed 0D arrays into their
+corresponding `~numpy.generic` instance. Until the introduction of shape
+typing (see :pep:`646`) it is unfortunately not possible to make the
+necessary distinction between 0D and >0D arrays. While thus not strictly
+correct, all operations are that can potentially perform a 0D-array -> scalar
+cast are currently annotated as exclusively returning an `ndarray`.
+
+If it is known in advance that an operation _will_ perform a
+0D-array -> scalar cast, then one can consider manually remedying the
+situation with either `typing.cast` or a ``# type: ignore`` comment.
+
+API
+---\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1typing_ae5318a3c44e5bcc959a32b1436f7d65a}\label{namespacenumpy_1_1typing_ae5318a3c44e5bcc959a32b1436f7d65a}} 
+\index{numpy\+::typing@{numpy\+::typing}!final@{final}}
+\index{final@{final}!numpy\+::typing@{numpy\+::typing}}
+\subsubsection{\texorpdfstring{final()}{final()}}
+{\footnotesize\ttfamily def numpy.\+typing.\+final (\begin{DoxyParamCaption}\item[{}]{f }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1typing_ae85ceb6b665f510f0a3010e781ac12c4}\label{namespacenumpy_1_1typing_ae85ceb6b665f510f0a3010e781ac12c4}} 
+\index{numpy\+::typing@{numpy\+::typing}!test@{test}}
+\index{test@{test}!numpy\+::typing@{numpy\+::typing}}
+\subsubsection{\texorpdfstring{test}{test}}
+{\footnotesize\ttfamily numpy.\+typing.\+test}
+

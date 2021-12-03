@@ -1,0 +1,86 @@
+\hypertarget{namespacesetuptools_1_1__distutils_1_1versionpredicate}{}\section{setuptools.\+\_\+distutils.\+versionpredicate Namespace Reference}
+\label{namespacesetuptools_1_1__distutils_1_1versionpredicate}\index{setuptools.\+\_\+distutils.\+versionpredicate@{setuptools.\+\_\+distutils.\+versionpredicate}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1__distutils_1_1versionpredicate_1_1VersionPredicate}{Version\+Predicate}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1versionpredicate_aef106f185adf3667cf513ee0af81c8fa}{split\+Up} (pred)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1versionpredicate_af4072cfd07f97b5b71a42d2c9de5a8cf}{split\+\_\+provision} (value)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1versionpredicate_a1c1ab5d3991e2da262c199dbcaa5e833}{re\+\_\+valid\+Package}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1versionpredicate_aa9b63cc0b89ab9b811479748e30242b3}{re\+\_\+paren}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1versionpredicate_aacaf5c82de4677b1a960449710773798}{re\+\_\+split\+Comparison}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1versionpredicate_a3f93758671afdc6b6be3afff323407f7}{compmap}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Module for parsing and testing package version predicate strings.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1versionpredicate_af4072cfd07f97b5b71a42d2c9de5a8cf}\label{namespacesetuptools_1_1__distutils_1_1versionpredicate_af4072cfd07f97b5b71a42d2c9de5a8cf}} 
+\index{setuptools\+::\+\_\+distutils\+::versionpredicate@{setuptools\+::\+\_\+distutils\+::versionpredicate}!split\+\_\+provision@{split\+\_\+provision}}
+\index{split\+\_\+provision@{split\+\_\+provision}!setuptools\+::\+\_\+distutils\+::versionpredicate@{setuptools\+::\+\_\+distutils\+::versionpredicate}}
+\subsubsection{\texorpdfstring{split\+\_\+provision()}{split\_provision()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+versionpredicate.\+split\+\_\+provision (\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the name and optional version number of a provision.
+
+The version number, if given, will be returned as a `StrictVersion`
+instance, otherwise it will be `None`.
+
+>>> split_provision('mypkg')
+('mypkg', None)
+>>> split_provision(' mypkg( 1.2 ) ')
+('mypkg', StrictVersion ('1.2'))
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1versionpredicate_aef106f185adf3667cf513ee0af81c8fa}\label{namespacesetuptools_1_1__distutils_1_1versionpredicate_aef106f185adf3667cf513ee0af81c8fa}} 
+\index{setuptools\+::\+\_\+distutils\+::versionpredicate@{setuptools\+::\+\_\+distutils\+::versionpredicate}!split\+Up@{split\+Up}}
+\index{split\+Up@{split\+Up}!setuptools\+::\+\_\+distutils\+::versionpredicate@{setuptools\+::\+\_\+distutils\+::versionpredicate}}
+\subsubsection{\texorpdfstring{split\+Up()}{splitUp()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+versionpredicate.\+split\+Up (\begin{DoxyParamCaption}\item[{}]{pred }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse a single version comparison.
+
+Return (comparison string, StrictVersion)
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1versionpredicate_a3f93758671afdc6b6be3afff323407f7}\label{namespacesetuptools_1_1__distutils_1_1versionpredicate_a3f93758671afdc6b6be3afff323407f7}} 
+\index{setuptools\+::\+\_\+distutils\+::versionpredicate@{setuptools\+::\+\_\+distutils\+::versionpredicate}!compmap@{compmap}}
+\index{compmap@{compmap}!setuptools\+::\+\_\+distutils\+::versionpredicate@{setuptools\+::\+\_\+distutils\+::versionpredicate}}
+\subsubsection{\texorpdfstring{compmap}{compmap}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+versionpredicate.\+compmap}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1versionpredicate_aa9b63cc0b89ab9b811479748e30242b3}\label{namespacesetuptools_1_1__distutils_1_1versionpredicate_aa9b63cc0b89ab9b811479748e30242b3}} 
+\index{setuptools\+::\+\_\+distutils\+::versionpredicate@{setuptools\+::\+\_\+distutils\+::versionpredicate}!re\+\_\+paren@{re\+\_\+paren}}
+\index{re\+\_\+paren@{re\+\_\+paren}!setuptools\+::\+\_\+distutils\+::versionpredicate@{setuptools\+::\+\_\+distutils\+::versionpredicate}}
+\subsubsection{\texorpdfstring{re\+\_\+paren}{re\_paren}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+versionpredicate.\+re\+\_\+paren}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1versionpredicate_aacaf5c82de4677b1a960449710773798}\label{namespacesetuptools_1_1__distutils_1_1versionpredicate_aacaf5c82de4677b1a960449710773798}} 
+\index{setuptools\+::\+\_\+distutils\+::versionpredicate@{setuptools\+::\+\_\+distutils\+::versionpredicate}!re\+\_\+split\+Comparison@{re\+\_\+split\+Comparison}}
+\index{re\+\_\+split\+Comparison@{re\+\_\+split\+Comparison}!setuptools\+::\+\_\+distutils\+::versionpredicate@{setuptools\+::\+\_\+distutils\+::versionpredicate}}
+\subsubsection{\texorpdfstring{re\+\_\+split\+Comparison}{re\_splitComparison}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+versionpredicate.\+re\+\_\+split\+Comparison}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1versionpredicate_a1c1ab5d3991e2da262c199dbcaa5e833}\label{namespacesetuptools_1_1__distutils_1_1versionpredicate_a1c1ab5d3991e2da262c199dbcaa5e833}} 
+\index{setuptools\+::\+\_\+distutils\+::versionpredicate@{setuptools\+::\+\_\+distutils\+::versionpredicate}!re\+\_\+valid\+Package@{re\+\_\+valid\+Package}}
+\index{re\+\_\+valid\+Package@{re\+\_\+valid\+Package}!setuptools\+::\+\_\+distutils\+::versionpredicate@{setuptools\+::\+\_\+distutils\+::versionpredicate}}
+\subsubsection{\texorpdfstring{re\+\_\+valid\+Package}{re\_validPackage}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+versionpredicate.\+re\+\_\+valid\+Package}
+

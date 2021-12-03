@@ -1,0 +1,178 @@
+\hypertarget{classmatplotlib_1_1colors_1_1BoundaryNorm}{}\section{matplotlib.\+colors.\+Boundary\+Norm Class Reference}
+\label{classmatplotlib_1_1colors_1_1BoundaryNorm}\index{matplotlib.\+colors.\+Boundary\+Norm@{matplotlib.\+colors.\+Boundary\+Norm}}
+
+
+Inheritance diagram for matplotlib.\+colors.\+Boundary\+Norm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classmatplotlib_1_1colors_1_1BoundaryNorm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+colors.\+Boundary\+Norm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classmatplotlib_1_1colors_1_1BoundaryNorm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_a91d672f60081a03a69d43427fabe394f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_a0d4490fe31a88486a0b7f974ca7bb000}{boundaries}, ncolors, \hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_ab9464718150405d5cff2aa40bce4c66e}{clip}=False, \hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_adea4ab245c880f8580022103b6ca1231}{extend}=\textquotesingle{}neither\textquotesingle{})
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_a23d05804e919befe676a8db4c35e840d}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, value, \hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_ab9464718150405d5cff2aa40bce4c66e}{clip}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_aaf0d4594593def5e6c8be57b1666923e}{inverse} (self, value)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_ab9464718150405d5cff2aa40bce4c66e}{clip}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_a29beedb7f317ef15f3aa6852ad0929d0}{vmin}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_adef68ce2dc3422143d667ba6b2a52291}{vmax}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_a0d4490fe31a88486a0b7f974ca7bb000}{boundaries}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_aa72a12a1bb1ce214b6cf488b82cc7bd8}{N}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_a8908386711e53c6b766018cd4a85277b}{Ncmap}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm_adea4ab245c880f8580022103b6ca1231}{extend}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Generate a colormap index based on discrete intervals.
+
+Unlike `Normalize` or `LogNorm`, `BoundaryNorm` maps values to integers
+instead of to the interval 0-1.
+
+Mapping to the 0-1 interval could have been done via piece-wise linear
+interpolation, but using integers seems simpler, and reduces the number of
+conversions back and forth between integer and floating point.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1BoundaryNorm_a91d672f60081a03a69d43427fabe394f}\label{classmatplotlib_1_1colors_1_1BoundaryNorm_a91d672f60081a03a69d43427fabe394f}} 
+\index{matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Boundary\+Norm.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{boundaries,  }\item[{}]{ncolors,  }\item[{}]{clip = {\ttfamily False},  }\item[{}]{extend = {\ttfamily \textquotesingle{}neither\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+boundaries : array-like
+    Monotonically increasing sequence of at least 2 boundaries.
+ncolors : int
+    Number of colors in the colormap to be used.
+clip : bool, optional
+    If clip is ``True``, out of range values are mapped to 0 if they
+    are below ``boundaries[0]`` or mapped to ``ncolors - 1`` if they
+    are above ``boundaries[-1]``.
+
+    If clip is ``False``, out of range values are mapped to -1 if
+    they are below ``boundaries[0]`` or mapped to *ncolors* if they are
+    above ``boundaries[-1]``. These are then converted to valid indices
+    by `Colormap.__call__`.
+extend : {'neither', 'both', 'min', 'max'}, default: 'neither'
+    Extend the number of bins to include one or both of the
+    regions beyond the boundaries.  For example, if ``extend``
+    is 'min', then the color to which the region between the first
+    pair of boundaries is mapped will be distinct from the first
+    color in the colormap, and by default a
+    `~matplotlib.colorbar.Colorbar` will be drawn with
+    the triangle extension on the left or lower end.
+
+Returns
+-------
+int16 scalar or array
+
+Notes
+-----
+*boundaries* defines the edges of bins, and data falling within a bin
+is mapped to the color with the same index.
+
+If the number of bins, including any extensions, is less than
+*ncolors*, the color index is chosen by linear interpolation, mapping
+the ``[0, nbins - 1]`` range onto the ``[0, ncolors - 1]`` range.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1BoundaryNorm_a23d05804e919befe676a8db4c35e840d}\label{classmatplotlib_1_1colors_1_1BoundaryNorm_a23d05804e919befe676a8db4c35e840d}} 
+\index{matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Boundary\+Norm.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value,  }\item[{}]{clip = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1BoundaryNorm_aaf0d4594593def5e6c8be57b1666923e}\label{classmatplotlib_1_1colors_1_1BoundaryNorm_aaf0d4594593def5e6c8be57b1666923e}} 
+\index{matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}!inverse@{inverse}}
+\index{inverse@{inverse}!matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}}
+\subsubsection{\texorpdfstring{inverse()}{inverse()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Boundary\+Norm.\+inverse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Raises
+------
+ValueError
+    BoundaryNorm is not invertible, so calling this method will always
+    raise an error
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1BoundaryNorm_a0d4490fe31a88486a0b7f974ca7bb000}\label{classmatplotlib_1_1colors_1_1BoundaryNorm_a0d4490fe31a88486a0b7f974ca7bb000}} 
+\index{matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}!boundaries@{boundaries}}
+\index{boundaries@{boundaries}!matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}}
+\subsubsection{\texorpdfstring{boundaries}{boundaries}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Boundary\+Norm.\+boundaries}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1BoundaryNorm_ab9464718150405d5cff2aa40bce4c66e}\label{classmatplotlib_1_1colors_1_1BoundaryNorm_ab9464718150405d5cff2aa40bce4c66e}} 
+\index{matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}!clip@{clip}}
+\index{clip@{clip}!matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}}
+\subsubsection{\texorpdfstring{clip}{clip}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Boundary\+Norm.\+clip}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1BoundaryNorm_adea4ab245c880f8580022103b6ca1231}\label{classmatplotlib_1_1colors_1_1BoundaryNorm_adea4ab245c880f8580022103b6ca1231}} 
+\index{matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}!extend@{extend}}
+\index{extend@{extend}!matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}}
+\subsubsection{\texorpdfstring{extend}{extend}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Boundary\+Norm.\+extend}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1BoundaryNorm_aa72a12a1bb1ce214b6cf488b82cc7bd8}\label{classmatplotlib_1_1colors_1_1BoundaryNorm_aa72a12a1bb1ce214b6cf488b82cc7bd8}} 
+\index{matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}!N@{N}}
+\index{N@{N}!matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}}
+\subsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Boundary\+Norm.\+N}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1BoundaryNorm_a8908386711e53c6b766018cd4a85277b}\label{classmatplotlib_1_1colors_1_1BoundaryNorm_a8908386711e53c6b766018cd4a85277b}} 
+\index{matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}!Ncmap@{Ncmap}}
+\index{Ncmap@{Ncmap}!matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}}
+\subsubsection{\texorpdfstring{Ncmap}{Ncmap}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Boundary\+Norm.\+Ncmap}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1BoundaryNorm_adef68ce2dc3422143d667ba6b2a52291}\label{classmatplotlib_1_1colors_1_1BoundaryNorm_adef68ce2dc3422143d667ba6b2a52291}} 
+\index{matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}!vmax@{vmax}}
+\index{vmax@{vmax}!matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}}
+\subsubsection{\texorpdfstring{vmax}{vmax}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Boundary\+Norm.\+vmax}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1BoundaryNorm_a29beedb7f317ef15f3aa6852ad0929d0}\label{classmatplotlib_1_1colors_1_1BoundaryNorm_a29beedb7f317ef15f3aa6852ad0929d0}} 
+\index{matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}!vmin@{vmin}}
+\index{vmin@{vmin}!matplotlib\+::colors\+::\+Boundary\+Norm@{matplotlib\+::colors\+::\+Boundary\+Norm}}
+\subsubsection{\texorpdfstring{vmin}{vmin}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Boundary\+Norm.\+vmin}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{colors_8py}{colors.\+py}\end{DoxyCompactItemize}

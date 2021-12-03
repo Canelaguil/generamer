@@ -1,0 +1,83 @@
+\hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain}{}\section{pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+chain Class Reference}
+\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain}\index{pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+chain@{pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+chain}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+chain\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+chain\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain_a7041532dd5f6c87dba560ad775dce55c}{\+\_\+\+\_\+init\+\_\+\+\_\+}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain_a9bf49356b899002ff8e60255effe88e7}{\+\_\+\+\_\+call\+\_\+\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain_a1d703803145b90258e78803f6fec89f2}{strategies}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Chain two or more waiting strategies.
+
+If all strategies are exhausted, the very last strategy is used
+thereafter.
+
+For example::
+
+    @retry(wait=wait_chain(*[wait_fixed(1) for i in range(3)] +
+                           [wait_fixed(2) for j in range(5)] +
+                           [wait_fixed(5) for k in range(4)))
+    def wait_chained():
+        print("Wait 1s for 3 attempts, 2s for 5 attempts and 5s
+               thereafter.")
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain_a7041532dd5f6c87dba560ad775dce55c}\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain_a7041532dd5f6c87dba560ad775dce55c}} 
+\index{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+chain@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+chain}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+chain@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+chain}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+chain.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{strategies }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain_a9bf49356b899002ff8e60255effe88e7}\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain_a9bf49356b899002ff8e60255effe88e7}} 
+\index{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+chain@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+chain}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+chain@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+chain}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+chain.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{retry\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain_a1d703803145b90258e78803f6fec89f2}\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__chain_a1d703803145b90258e78803f6fec89f2}} 
+\index{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+chain@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+chain}!strategies@{strategies}}
+\index{strategies@{strategies}!pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+chain@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+chain}}
+\subsubsection{\texorpdfstring{strategies}{strategies}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+chain.\+strategies}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/tenacity/\hyperlink{tenacity_2wait_8py}{wait.\+py}\end{DoxyCompactItemize}

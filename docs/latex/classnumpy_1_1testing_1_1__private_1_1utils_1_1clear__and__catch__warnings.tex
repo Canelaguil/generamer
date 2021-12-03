@@ -1,0 +1,129 @@
+\hypertarget{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings}{}\section{numpy.\+testing.\+\_\+private.\+utils.\+clear\+\_\+and\+\_\+catch\+\_\+warnings Class Reference}
+\label{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings}\index{numpy.\+testing.\+\_\+private.\+utils.\+clear\+\_\+and\+\_\+catch\+\_\+warnings@{numpy.\+testing.\+\_\+private.\+utils.\+clear\+\_\+and\+\_\+catch\+\_\+warnings}}
+
+
+Inheritance diagram for numpy.\+testing.\+\_\+private.\+utils.\+clear\+\_\+and\+\_\+catch\+\_\+warnings\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+testing.\+\_\+private.\+utils.\+clear\+\_\+and\+\_\+catch\+\_\+warnings\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_afebf5316b2edd866b61e921f6f5b5cb5}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnumpy_1_1core_1_1records_1_1record}{record}=False, \hyperlink{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_af2c69b1bfe7ee58b2cef999af7ded367}{modules}=())
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_afaffe0c25a3d8c6b5348ead864ddc6fd}{\+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_ab9e91e927256143cd3839ceaebac3f91}{\+\_\+\+\_\+exit\+\_\+\+\_\+} (self, exc\+\_\+info)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_af2c69b1bfe7ee58b2cef999af7ded367}{modules}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_a3690f1daaee94106f95c046d3e95b21a}{class\+\_\+modules}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Context manager that resets warning registry for catching warnings
+
+Warnings can be slippery, because, whenever a warning is triggered, Python
+adds a ``__warningregistry__`` member to the *calling* module.  This makes
+it impossible to retrigger the warning in this module, whatever you put in
+the warnings filters.  This context manager accepts a sequence of `modules`
+as a keyword argument to its constructor and:
+
+* stores and removes any ``__warningregistry__`` entries in given `modules`
+  on entry;
+* resets ``__warningregistry__`` to its previous state on exit.
+
+This makes it possible to trigger any warning afresh inside the context
+manager without disturbing the state of warnings outside.
+
+For compatibility with Python 3.0, please consider all arguments to be
+keyword-only.
+
+Parameters
+----------
+record : bool, optional
+    Specifies whether warnings should be captured by a custom
+    implementation of ``warnings.showwarning()`` and be appended to a list
+    returned by the context manager. Otherwise None is returned by the
+    context manager. The objects appended to the list are arguments whose
+    attributes mirror the arguments to ``showwarning()``.
+modules : sequence, optional
+    Sequence of modules for which to reset warnings registry on entry and
+    restore on exit. To work correctly, all 'ignore' filters should
+    filter by one of these modules.
+
+Examples
+--------
+>>> import warnings
+>>> with np.testing.clear_and_catch_warnings(
+...         modules=[np.core.fromnumeric]):
+...     warnings.simplefilter('always')
+...     warnings.filterwarnings('ignore', module='np.core.fromnumeric')
+...     # do something that raises a warning but ignore those in
+...     # np.core.fromnumeric
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_afebf5316b2edd866b61e921f6f5b5cb5}\label{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_afebf5316b2edd866b61e921f6f5b5cb5}} 
+\index{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings@{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings@{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+utils.\+clear\+\_\+and\+\_\+catch\+\_\+warnings.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{record = {\ttfamily False},  }\item[{}]{modules = {\ttfamily ()} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_afaffe0c25a3d8c6b5348ead864ddc6fd}\label{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_afaffe0c25a3d8c6b5348ead864ddc6fd}} 
+\index{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings@{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings}!\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}!numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings@{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+enter\+\_\+\+\_\+()}{\_\_enter\_\_()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+utils.\+clear\+\_\+and\+\_\+catch\+\_\+warnings.\+\_\+\+\_\+enter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_ab9e91e927256143cd3839ceaebac3f91}\label{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_ab9e91e927256143cd3839ceaebac3f91}} 
+\index{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings@{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings}!\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}!numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings@{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+exit\+\_\+\+\_\+()}{\_\_exit\_\_()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+utils.\+clear\+\_\+and\+\_\+catch\+\_\+warnings.\+\_\+\+\_\+exit\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{exc\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_a3690f1daaee94106f95c046d3e95b21a}\label{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_a3690f1daaee94106f95c046d3e95b21a}} 
+\index{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings@{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings}!class\+\_\+modules@{class\+\_\+modules}}
+\index{class\+\_\+modules@{class\+\_\+modules}!numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings@{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings}}
+\subsubsection{\texorpdfstring{class\+\_\+modules}{class\_modules}}
+{\footnotesize\ttfamily numpy.\+testing.\+\_\+private.\+utils.\+clear\+\_\+and\+\_\+catch\+\_\+warnings.\+class\+\_\+modules\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_af2c69b1bfe7ee58b2cef999af7ded367}\label{classnumpy_1_1testing_1_1__private_1_1utils_1_1clear__and__catch__warnings_af2c69b1bfe7ee58b2cef999af7ded367}} 
+\index{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings@{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings}!modules@{modules}}
+\index{modules@{modules}!numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings@{numpy\+::testing\+::\+\_\+private\+::utils\+::clear\+\_\+and\+\_\+catch\+\_\+warnings}}
+\subsubsection{\texorpdfstring{modules}{modules}}
+{\footnotesize\ttfamily numpy.\+testing.\+\_\+private.\+utils.\+clear\+\_\+and\+\_\+catch\+\_\+warnings.\+modules}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/testing/\+\_\+private/\hyperlink{numpy_2testing_2__private_2utils_8py}{utils.\+py}\end{DoxyCompactItemize}

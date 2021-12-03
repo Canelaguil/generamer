@@ -1,0 +1,211 @@
+\hypertarget{namespaceplot__iterated__dynamical__systems}{}\section{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems Namespace Reference}
+\label{namespaceplot__iterated__dynamical__systems}\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceplot__iterated__dynamical__systems_a73a5c6f1366e2118cfedd584485834af}{digitsrep} (n, b=10)
+\item 
+def \hyperlink{namespaceplot__iterated__dynamical__systems_aab99329c758d98ec4e805eeaf2093e0a}{powersum} (n, \hyperlink{namespaceplot__iterated__dynamical__systems_a36b82f4bf0fd518f7e0230a5b05b75ec}{p}, b=10)
+\item 
+def \hyperlink{namespaceplot__iterated__dynamical__systems_ae6f26c3df4d2ea1f2ba8c6a5666d7184}{attractor153\+\_\+graph} (n, \hyperlink{namespaceplot__iterated__dynamical__systems_a36b82f4bf0fd518f7e0230a5b05b75ec}{p}, multiple=3, b=10)
+\item 
+def \hyperlink{namespaceplot__iterated__dynamical__systems_a5b4353dd5b98c950e009f3d3c2abb0fb}{squaring\+\_\+cycle\+\_\+graph\+\_\+old} (n, b=10)
+\item 
+def \hyperlink{namespaceplot__iterated__dynamical__systems_a01953a2853afa0c505276d1d77a351f3}{sum\+\_\+of\+\_\+digits\+\_\+graph} (\hyperlink{namespaceplot__iterated__dynamical__systems_a75b0c2725adb50615bbff6b196ac1b71}{nmax}, b=10)
+\item 
+def \hyperlink{namespaceplot__iterated__dynamical__systems_abbc15c8d89aad798b3972090d7e8b35a}{squaring\+\_\+cycle\+\_\+digraph} (\hyperlink{namespaceplot__iterated__dynamical__systems_a75b0c2725adb50615bbff6b196ac1b71}{nmax}, b=10)
+\item 
+def \hyperlink{namespaceplot__iterated__dynamical__systems_a6b07bbba09840ed7bc029ef2b09965df}{cubing\+\_\+153\+\_\+digraph} (\hyperlink{namespaceplot__iterated__dynamical__systems_a75b0c2725adb50615bbff6b196ac1b71}{nmax})
+\item 
+def \hyperlink{namespaceplot__iterated__dynamical__systems_a6ccc9a51951a70a928a6c45ec7a7ec03}{discrete\+\_\+dynamics\+\_\+digraph} (\hyperlink{namespaceplot__iterated__dynamical__systems_a75b0c2725adb50615bbff6b196ac1b71}{nmax}, f, itermax=50000)
+\item 
+def \hyperlink{namespaceplot__iterated__dynamical__systems_a138daf15680c2aeca61a45fb22d951f2}{collatz\+\_\+problem\+\_\+digraph} (\hyperlink{namespaceplot__iterated__dynamical__systems_a75b0c2725adb50615bbff6b196ac1b71}{nmax})
+\item 
+def \hyperlink{namespaceplot__iterated__dynamical__systems_a7965bb0b026d41ae0096a921f7d8cd17}{fixed\+\_\+points} (\hyperlink{namespaceplot__iterated__dynamical__systems_a3d0d344a2ee2a00fea2ef1ae6f21df3d}{G})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceplot__iterated__dynamical__systems_a75b0c2725adb50615bbff6b196ac1b71}{nmax}
+\item 
+\hyperlink{namespaceplot__iterated__dynamical__systems_a36b82f4bf0fd518f7e0230a5b05b75ec}{p}
+\item 
+\hyperlink{namespaceplot__iterated__dynamical__systems_a3d0d344a2ee2a00fea2ef1ae6f21df3d}{G}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}==========================
+Iterated Dynamical Systems
+==========================
+
+Digraphs from Integer-valued Iterated Functions
+
+Sums of cubes on 3N
+-------------------
+
+The number 153 has a curious property.
+
+Let 3N={3,6,9,12,...} be the set of positive multiples of 3.  Define an
+iterative process f:3N->3N as follows: for a given n, take each digit
+of n (in base 10), cube it and then sum the cubes to obtain f(n).
+
+When this process is repeated, the resulting series n, f(n), f(f(n)),...
+terminate in 153 after a finite number of iterations (the process ends
+because 153 = 1**3 + 5**3 + 3**3).
+
+In the language of discrete dynamical systems, 153 is the global
+attractor for the iterated map f restricted to the set 3N.
+
+For example: take the number 108
+
+f(108) = 1**3 + 0**3 + 8**3 = 513
+
+and
+
+f(513) = 5**3 + 1**3 + 3**3 = 153
+
+So, starting at 108 we reach 153 in two iterations,
+represented as:
+
+108->513->153
+
+Computing all orbits of 3N up to 10**5 reveals that the attractor
+153 is reached in a maximum of 14 iterations. In this code we
+show that 13 cycles is the maximum required for all integers (in 3N)
+less than 10,000.
+
+The smallest number that requires 13 iterations to reach 153, is 177, i.e.,
+
+177->687->1071->345->216->225->141->66->432->99->1458->702->351->153
+
+The resulting large digraphs are useful for testing network software.
+
+The general problem
+-------------------
+
+Given numbers n, a power p and base b, define F(n; p, b) as the sum of
+the digits of n (in base b) raised to the power p. The above example
+corresponds to f(n)=F(n; 3,10), and below F(n; p, b) is implemented as
+the function powersum(n,p,b). The iterative dynamical system defined by
+the mapping n:->f(n) above (over 3N) converges to a single fixed point;
+153. Applying the map to all positive integers N, leads to a discrete
+dynamical process with 5 fixed points: 1, 153, 370, 371, 407. Modulo 3
+those numbers are 1, 0, 1, 2, 2. The function f above has the added
+property that it maps a multiple of 3 to another multiple of 3; i.e. it
+is invariant on the subset 3N.
+
+
+The squaring of digits (in base 10) result in cycles and the
+single fixed point 1. I.e., from a certain point on, the process
+starts repeating itself.
+
+keywords: "Recurring Digital Invariant", "Narcissistic Number",
+"Happy Number"
+
+The 3n+1 problem
+----------------
+
+There is a rich history of mathematical recreations
+associated with discrete dynamical systems.  The most famous
+is the Collatz 3n+1 problem. See the function
+collatz_problem_digraph below. The Collatz conjecture
+--- that every orbit returns to the fixed point 1 in finite time
+--- is still unproven. Even the great Paul Erdos said "Mathematics
+is not yet ready for such problems", and offered $500
+for its solution.
+
+keywords: "3n+1", "3x+1", "Collatz problem", "Thwaite's conjecture"
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_ae6f26c3df4d2ea1f2ba8c6a5666d7184}\label{namespaceplot__iterated__dynamical__systems_ae6f26c3df4d2ea1f2ba8c6a5666d7184}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!attractor153\+\_\+graph@{attractor153\+\_\+graph}}
+\index{attractor153\+\_\+graph@{attractor153\+\_\+graph}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{attractor153\+\_\+graph()}{attractor153\_graph()}}
+{\footnotesize\ttfamily def plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+attractor153\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{p,  }\item[{}]{multiple = {\ttfamily 3},  }\item[{}]{b = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return digraph of iterations of powersum(n,3,10).\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_a138daf15680c2aeca61a45fb22d951f2}\label{namespaceplot__iterated__dynamical__systems_a138daf15680c2aeca61a45fb22d951f2}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!collatz\+\_\+problem\+\_\+digraph@{collatz\+\_\+problem\+\_\+digraph}}
+\index{collatz\+\_\+problem\+\_\+digraph@{collatz\+\_\+problem\+\_\+digraph}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{collatz\+\_\+problem\+\_\+digraph()}{collatz\_problem\_digraph()}}
+{\footnotesize\ttfamily def plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+collatz\+\_\+problem\+\_\+digraph (\begin{DoxyParamCaption}\item[{}]{nmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_a6b07bbba09840ed7bc029ef2b09965df}\label{namespaceplot__iterated__dynamical__systems_a6b07bbba09840ed7bc029ef2b09965df}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!cubing\+\_\+153\+\_\+digraph@{cubing\+\_\+153\+\_\+digraph}}
+\index{cubing\+\_\+153\+\_\+digraph@{cubing\+\_\+153\+\_\+digraph}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{cubing\+\_\+153\+\_\+digraph()}{cubing\_153\_digraph()}}
+{\footnotesize\ttfamily def plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+cubing\+\_\+153\+\_\+digraph (\begin{DoxyParamCaption}\item[{}]{nmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_a73a5c6f1366e2118cfedd584485834af}\label{namespaceplot__iterated__dynamical__systems_a73a5c6f1366e2118cfedd584485834af}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!digitsrep@{digitsrep}}
+\index{digitsrep@{digitsrep}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{digitsrep()}{digitsrep()}}
+{\footnotesize\ttfamily def plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+digitsrep (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{b = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return list of digits comprising n represented in base b.
+n must be a nonnegative integer\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_a6ccc9a51951a70a928a6c45ec7a7ec03}\label{namespaceplot__iterated__dynamical__systems_a6ccc9a51951a70a928a6c45ec7a7ec03}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!discrete\+\_\+dynamics\+\_\+digraph@{discrete\+\_\+dynamics\+\_\+digraph}}
+\index{discrete\+\_\+dynamics\+\_\+digraph@{discrete\+\_\+dynamics\+\_\+digraph}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{discrete\+\_\+dynamics\+\_\+digraph()}{discrete\_dynamics\_digraph()}}
+{\footnotesize\ttfamily def plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+discrete\+\_\+dynamics\+\_\+digraph (\begin{DoxyParamCaption}\item[{}]{nmax,  }\item[{}]{f,  }\item[{}]{itermax = {\ttfamily 50000} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_a7965bb0b026d41ae0096a921f7d8cd17}\label{namespaceplot__iterated__dynamical__systems_a7965bb0b026d41ae0096a921f7d8cd17}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!fixed\+\_\+points@{fixed\+\_\+points}}
+\index{fixed\+\_\+points@{fixed\+\_\+points}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{fixed\+\_\+points()}{fixed\_points()}}
+{\footnotesize\ttfamily def plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+fixed\+\_\+points (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of fixed points for the discrete dynamical
+system represented by the digraph G.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_aab99329c758d98ec4e805eeaf2093e0a}\label{namespaceplot__iterated__dynamical__systems_aab99329c758d98ec4e805eeaf2093e0a}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!powersum@{powersum}}
+\index{powersum@{powersum}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{powersum()}{powersum()}}
+{\footnotesize\ttfamily def plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+powersum (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{p,  }\item[{}]{b = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return sum of digits of n (in base b) raised to the power p.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_abbc15c8d89aad798b3972090d7e8b35a}\label{namespaceplot__iterated__dynamical__systems_abbc15c8d89aad798b3972090d7e8b35a}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!squaring\+\_\+cycle\+\_\+digraph@{squaring\+\_\+cycle\+\_\+digraph}}
+\index{squaring\+\_\+cycle\+\_\+digraph@{squaring\+\_\+cycle\+\_\+digraph}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{squaring\+\_\+cycle\+\_\+digraph()}{squaring\_cycle\_digraph()}}
+{\footnotesize\ttfamily def plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+squaring\+\_\+cycle\+\_\+digraph (\begin{DoxyParamCaption}\item[{}]{nmax,  }\item[{}]{b = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_a5b4353dd5b98c950e009f3d3c2abb0fb}\label{namespaceplot__iterated__dynamical__systems_a5b4353dd5b98c950e009f3d3c2abb0fb}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!squaring\+\_\+cycle\+\_\+graph\+\_\+old@{squaring\+\_\+cycle\+\_\+graph\+\_\+old}}
+\index{squaring\+\_\+cycle\+\_\+graph\+\_\+old@{squaring\+\_\+cycle\+\_\+graph\+\_\+old}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{squaring\+\_\+cycle\+\_\+graph\+\_\+old()}{squaring\_cycle\_graph\_old()}}
+{\footnotesize\ttfamily def plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+squaring\+\_\+cycle\+\_\+graph\+\_\+old (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{b = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return digraph of iterations of powersum(n,2,10).\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_a01953a2853afa0c505276d1d77a351f3}\label{namespaceplot__iterated__dynamical__systems_a01953a2853afa0c505276d1d77a351f3}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!sum\+\_\+of\+\_\+digits\+\_\+graph@{sum\+\_\+of\+\_\+digits\+\_\+graph}}
+\index{sum\+\_\+of\+\_\+digits\+\_\+graph@{sum\+\_\+of\+\_\+digits\+\_\+graph}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{sum\+\_\+of\+\_\+digits\+\_\+graph()}{sum\_of\_digits\_graph()}}
+{\footnotesize\ttfamily def plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+sum\+\_\+of\+\_\+digits\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{nmax,  }\item[{}]{b = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_a3d0d344a2ee2a00fea2ef1ae6f21df3d}\label{namespaceplot__iterated__dynamical__systems_a3d0d344a2ee2a00fea2ef1ae6f21df3d}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!G@{G}}
+\index{G@{G}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+G}
+
+\mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_a75b0c2725adb50615bbff6b196ac1b71}\label{namespaceplot__iterated__dynamical__systems_a75b0c2725adb50615bbff6b196ac1b71}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!nmax@{nmax}}
+\index{nmax@{nmax}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{nmax}{nmax}}
+{\footnotesize\ttfamily plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+nmax}
+
+\mbox{\Hypertarget{namespaceplot__iterated__dynamical__systems_a36b82f4bf0fd518f7e0230a5b05b75ec}\label{namespaceplot__iterated__dynamical__systems_a36b82f4bf0fd518f7e0230a5b05b75ec}} 
+\index{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}!p@{p}}
+\index{p@{p}!plot\+\_\+iterated\+\_\+dynamical\+\_\+systems@{plot\+\_\+iterated\+\_\+dynamical\+\_\+systems}}
+\subsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily plot\+\_\+iterated\+\_\+dynamical\+\_\+systems.\+p}
+

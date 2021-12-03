@@ -1,0 +1,108 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Dict}{}\section{pip.\+\_\+vendor.\+pyparsing.\+Dict Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1Dict}\index{pip.\+\_\+vendor.\+pyparsing.\+Dict@{pip.\+\_\+vendor.\+pyparsing.\+Dict}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+Dict\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classpip_1_1__vendor_1_1pyparsing_1_1Dict__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+Dict\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classpip_1_1__vendor_1_1pyparsing_1_1Dict__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Dict_a2b75b1f00eed65e1e30c5f81096c5d1f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1ParseElementEnhance_af574b49a0a7d914693fdaa833df7098f}{expr})
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Dict_ad228ab01933bb6645e1076575e97a709}{post\+Parse} (self, instring, loc, tokenlist)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Dict_acf4c750d0bedbdd336da71e971e55331}{save\+As\+List}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Converter to return a repetitive expression as a list, but also
+as a dictionary. Each element can also be referenced using the first
+token in the expression as its key. Useful for tabular report
+scraping when the first column can be used as a item key.
+
+Example::
+
+    data_word = Word(alphas)
+    label = data_word + FollowedBy(':')
+    attr_expr = Group(label + Suppress(':') + OneOrMore(data_word).setParseAction(' '.join))
+
+    text = "shape: SQUARE posn: upper left color: light blue texture: burlap"
+    attr_expr = (label + Suppress(':') + OneOrMore(data_word, stopOn=label).setParseAction(' '.join))
+
+    # print attributes as plain groups
+    print(OneOrMore(attr_expr).parseString(text).dump())
+
+    # instead of OneOrMore(expr), parse using Dict(OneOrMore(Group(expr))) - Dict will auto-assign names
+    result = Dict(OneOrMore(Group(attr_expr))).parseString(text)
+    print(result.dump())
+
+    # access named fields as dict entries, or output as dict
+    print(result['shape'])
+    print(result.asDict())
+
+prints::
+
+    ['shape', 'SQUARE', 'posn', 'upper left', 'color', 'light blue', 'texture', 'burlap']
+    [['shape', 'SQUARE'], ['posn', 'upper left'], ['color', 'light blue'], ['texture', 'burlap']]
+    - color: light blue
+    - posn: upper left
+    - shape: SQUARE
+    - texture: burlap
+    SQUARE
+    {'color': 'light blue', 'posn': 'upper left', 'texture': 'burlap', 'shape': 'SQUARE'}
+
+See more examples at :class:`ParseResults` of accessing fields by results name.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Dict_a2b75b1f00eed65e1e30c5f81096c5d1f}\label{classpip_1_1__vendor_1_1pyparsing_1_1Dict_a2b75b1f00eed65e1e30c5f81096c5d1f}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Dict@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Dict}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Dict@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Dict}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+Dict.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{expr }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Dict_ad228ab01933bb6645e1076575e97a709}\label{classpip_1_1__vendor_1_1pyparsing_1_1Dict_ad228ab01933bb6645e1076575e97a709}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Dict@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Dict}!post\+Parse@{post\+Parse}}
+\index{post\+Parse@{post\+Parse}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Dict@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Dict}}
+\subsubsection{\texorpdfstring{post\+Parse()}{postParse()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+Dict.\+post\+Parse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{tokenlist }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Dict_acf4c750d0bedbdd336da71e971e55331}\label{classpip_1_1__vendor_1_1pyparsing_1_1Dict_acf4c750d0bedbdd336da71e971e55331}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Dict@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Dict}!save\+As\+List@{save\+As\+List}}
+\index{save\+As\+List@{save\+As\+List}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Dict@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Dict}}
+\subsubsection{\texorpdfstring{save\+As\+List}{saveAsList}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Dict.\+save\+As\+List}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/\hyperlink{pip_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

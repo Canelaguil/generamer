@@ -1,0 +1,176 @@
+\hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest}{}\section{pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request Class Reference}
+\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest}\index{pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request@{pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a6142d0899c92a07f524c3dd44a30cc4a}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, request)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a45ee56caa1653e08ef62fbcb0eed9f4d}{get\+\_\+type} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_af5ac0a64a81fc4fd738fbfa3b1221343}{get\+\_\+host} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a5bb2cce3370c3a9a5f69097134114032}{get\+\_\+origin\+\_\+req\+\_\+host} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a40a7da11e73776fae044c7b825ef96ac}{get\+\_\+full\+\_\+url} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a52e39d2166e4abb8b07ce80bb1faf56f}{is\+\_\+unverifiable} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_aa324723c8e0879462aa9c5fb88a06829}{has\+\_\+header} (self, name)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a6f066ed32984f95380656d06a98bd307}{get\+\_\+header} (self, name, default=None)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_ad39c402ac97aae9d784304260b308c45}{add\+\_\+header} (self, key, val)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a04e9926025d34d38e8959870ea751d83}{add\+\_\+unredirected\+\_\+header} (self, name, value)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a7c3ac5e7b77fcc39d30bcad4e0a027f6}{get\+\_\+new\+\_\+headers} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a00a84f149b5856acb71d5e7040f397d3}{unverifiable} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_aa1e1851514e730426e6de59387ec5b3f}{origin\+\_\+req\+\_\+host} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_af4bb7159498fdef48e4ab6403e92d6d8}{host} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a5689aaee84525b806376c0f9155c4c70}{type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Wraps a `requests.Request` to mimic a `urllib2.Request`.
+
+The code in `cookielib.CookieJar` expects this interface in order to correctly
+manage cookie policies, i.e., determine whether a cookie can be set, given the
+domains of the request and the cookie.
+
+The original request object is read-only. The client is responsible for collecting
+the new headers via `get_new_headers()` and interpreting them appropriately. You
+probably want `get_cookie_header`, defined below.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a6142d0899c92a07f524c3dd44a30cc4a}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a6142d0899c92a07f524c3dd44a30cc4a}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_ad39c402ac97aae9d784304260b308c45}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_ad39c402ac97aae9d784304260b308c45}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!add\+\_\+header@{add\+\_\+header}}
+\index{add\+\_\+header@{add\+\_\+header}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{add\+\_\+header()}{add\_header()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+add\+\_\+header (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}cookielib has no legitimate use for this method; add it back if you find one.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a04e9926025d34d38e8959870ea751d83}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a04e9926025d34d38e8959870ea751d83}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!add\+\_\+unredirected\+\_\+header@{add\+\_\+unredirected\+\_\+header}}
+\index{add\+\_\+unredirected\+\_\+header@{add\+\_\+unredirected\+\_\+header}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{add\+\_\+unredirected\+\_\+header()}{add\_unredirected\_header()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+add\+\_\+unredirected\+\_\+header (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a40a7da11e73776fae044c7b825ef96ac}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a40a7da11e73776fae044c7b825ef96ac}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!get\+\_\+full\+\_\+url@{get\+\_\+full\+\_\+url}}
+\index{get\+\_\+full\+\_\+url@{get\+\_\+full\+\_\+url}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{get\+\_\+full\+\_\+url()}{get\_full\_url()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+get\+\_\+full\+\_\+url (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a6f066ed32984f95380656d06a98bd307}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a6f066ed32984f95380656d06a98bd307}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!get\+\_\+header@{get\+\_\+header}}
+\index{get\+\_\+header@{get\+\_\+header}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{get\+\_\+header()}{get\_header()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+get\+\_\+header (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{default = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_af5ac0a64a81fc4fd738fbfa3b1221343}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_af5ac0a64a81fc4fd738fbfa3b1221343}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!get\+\_\+host@{get\+\_\+host}}
+\index{get\+\_\+host@{get\+\_\+host}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{get\+\_\+host()}{get\_host()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+get\+\_\+host (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a7c3ac5e7b77fcc39d30bcad4e0a027f6}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a7c3ac5e7b77fcc39d30bcad4e0a027f6}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!get\+\_\+new\+\_\+headers@{get\+\_\+new\+\_\+headers}}
+\index{get\+\_\+new\+\_\+headers@{get\+\_\+new\+\_\+headers}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{get\+\_\+new\+\_\+headers()}{get\_new\_headers()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+get\+\_\+new\+\_\+headers (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a5bb2cce3370c3a9a5f69097134114032}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a5bb2cce3370c3a9a5f69097134114032}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!get\+\_\+origin\+\_\+req\+\_\+host@{get\+\_\+origin\+\_\+req\+\_\+host}}
+\index{get\+\_\+origin\+\_\+req\+\_\+host@{get\+\_\+origin\+\_\+req\+\_\+host}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{get\+\_\+origin\+\_\+req\+\_\+host()}{get\_origin\_req\_host()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+get\+\_\+origin\+\_\+req\+\_\+host (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a45ee56caa1653e08ef62fbcb0eed9f4d}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a45ee56caa1653e08ef62fbcb0eed9f4d}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!get\+\_\+type@{get\+\_\+type}}
+\index{get\+\_\+type@{get\+\_\+type}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{get\+\_\+type()}{get\_type()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+get\+\_\+type (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_aa324723c8e0879462aa9c5fb88a06829}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_aa324723c8e0879462aa9c5fb88a06829}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!has\+\_\+header@{has\+\_\+header}}
+\index{has\+\_\+header@{has\+\_\+header}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{has\+\_\+header()}{has\_header()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+has\+\_\+header (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_af4bb7159498fdef48e4ab6403e92d6d8}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_af4bb7159498fdef48e4ab6403e92d6d8}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!host@{host}}
+\index{host@{host}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{host()}{host()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+host (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a52e39d2166e4abb8b07ce80bb1faf56f}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a52e39d2166e4abb8b07ce80bb1faf56f}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!is\+\_\+unverifiable@{is\+\_\+unverifiable}}
+\index{is\+\_\+unverifiable@{is\+\_\+unverifiable}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{is\+\_\+unverifiable()}{is\_unverifiable()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+is\+\_\+unverifiable (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_aa1e1851514e730426e6de59387ec5b3f}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_aa1e1851514e730426e6de59387ec5b3f}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!origin\+\_\+req\+\_\+host@{origin\+\_\+req\+\_\+host}}
+\index{origin\+\_\+req\+\_\+host@{origin\+\_\+req\+\_\+host}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{origin\+\_\+req\+\_\+host()}{origin\_req\_host()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+origin\+\_\+req\+\_\+host (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a00a84f149b5856acb71d5e7040f397d3}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a00a84f149b5856acb71d5e7040f397d3}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!unverifiable@{unverifiable}}
+\index{unverifiable@{unverifiable}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{unverifiable()}{unverifiable()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+unverifiable (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a5689aaee84525b806376c0f9155c4c70}\label{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest_a5689aaee84525b806376c0f9155c4c70}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}!type@{type}}
+\index{type@{type}!pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request@{pip\+::\+\_\+vendor\+::requests\+::cookies\+::\+Mock\+Request}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+requests.\+cookies.\+Mock\+Request.\+type}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/requests/\hyperlink{cookies_8py}{cookies.\+py}\end{DoxyCompactItemize}

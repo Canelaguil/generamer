@@ -1,0 +1,128 @@
+\hypertarget{namespacematplotlib_1_1__api}{}\section{matplotlib.\+\_\+api Namespace Reference}
+\label{namespacematplotlib_1_1__api}\index{matplotlib.\+\_\+api@{matplotlib.\+\_\+api}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacematplotlib_1_1__api_1_1deprecation}{deprecation}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1__api_1_1classproperty}{classproperty}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1__api_a56e2f2b8c5d54d2312723b8393149355}{check\+\_\+isinstance} (\+\_\+types, kwargs)
+\item 
+def \hyperlink{namespacematplotlib_1_1__api_a2164c58d6f07e67f7d7d486d53b24c47}{check\+\_\+in\+\_\+list} (\+\_\+values, \+\_\+print\+\_\+supported\+\_\+values=True, kwargs)
+\item 
+def \hyperlink{namespacematplotlib_1_1__api_aee2ab7522a67107f11c14ad87cdf19fc}{check\+\_\+shape} (\+\_\+shape, kwargs)
+\item 
+def \hyperlink{namespacematplotlib_1_1__api_af99f136fe109fdbc3c686232d820e987}{check\+\_\+getitem} (\+\_\+mapping, kwargs)
+\item 
+def \hyperlink{namespacematplotlib_1_1__api_ac668a8e9e8326aa746760038c8e264fa}{warn\+\_\+external} (message, category=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Helper functions for managing the Matplotlib API.
+
+This documentation is only relevant for Matplotlib developers, not for users.
+
+.. warning:
+
+    This module and its submodules are for internal use only.  Do not use them
+    in your own code.  We may change the API at any time with no warning.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1__api_af99f136fe109fdbc3c686232d820e987}\label{namespacematplotlib_1_1__api_af99f136fe109fdbc3c686232d820e987}} 
+\index{matplotlib\+::\+\_\+api@{matplotlib\+::\+\_\+api}!check\+\_\+getitem@{check\+\_\+getitem}}
+\index{check\+\_\+getitem@{check\+\_\+getitem}!matplotlib\+::\+\_\+api@{matplotlib\+::\+\_\+api}}
+\subsubsection{\texorpdfstring{check\+\_\+getitem()}{check\_getitem()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+check\+\_\+getitem (\begin{DoxyParamCaption}\item[{}]{\+\_\+mapping,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}*kwargs* must consist of a single *key, value* pair.  If *key* is in
+*_mapping*, return ``_mapping[value]``; else, raise an appropriate
+ValueError.
+
+Examples
+--------
+>>> _api.check_getitem({"foo": "bar"}, arg=arg)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1__api_a2164c58d6f07e67f7d7d486d53b24c47}\label{namespacematplotlib_1_1__api_a2164c58d6f07e67f7d7d486d53b24c47}} 
+\index{matplotlib\+::\+\_\+api@{matplotlib\+::\+\_\+api}!check\+\_\+in\+\_\+list@{check\+\_\+in\+\_\+list}}
+\index{check\+\_\+in\+\_\+list@{check\+\_\+in\+\_\+list}!matplotlib\+::\+\_\+api@{matplotlib\+::\+\_\+api}}
+\subsubsection{\texorpdfstring{check\+\_\+in\+\_\+list()}{check\_in\_list()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+check\+\_\+in\+\_\+list (\begin{DoxyParamCaption}\item[{}]{\+\_\+values,  }\item[{}]{\+\_\+print\+\_\+supported\+\_\+values = {\ttfamily True},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}For each *key, value* pair in *kwargs*, check that *value* is in *_values*.
+
+Parameters
+----------
+_values : iterable
+    Sequence of values to check on.
+_print_supported_values : bool, default: True
+    Whether to print *_values* when raising ValueError.
+**kwargs : dict
+    *key, value* pairs as keyword arguments to find in *_values*.
+
+Raises
+------
+ValueError
+    If any *value* in *kwargs* is not found in *_values*.
+
+Examples
+--------
+>>> _api.check_in_list(["foo", "bar"], arg=arg, other_arg=other_arg)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1__api_a56e2f2b8c5d54d2312723b8393149355}\label{namespacematplotlib_1_1__api_a56e2f2b8c5d54d2312723b8393149355}} 
+\index{matplotlib\+::\+\_\+api@{matplotlib\+::\+\_\+api}!check\+\_\+isinstance@{check\+\_\+isinstance}}
+\index{check\+\_\+isinstance@{check\+\_\+isinstance}!matplotlib\+::\+\_\+api@{matplotlib\+::\+\_\+api}}
+\subsubsection{\texorpdfstring{check\+\_\+isinstance()}{check\_isinstance()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+check\+\_\+isinstance (\begin{DoxyParamCaption}\item[{}]{\+\_\+types,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}For each *key, value* pair in *kwargs*, check that *value* is an instance
+of one of *_types*; if not, raise an appropriate TypeError.
+
+As a special case, a ``None`` entry in *_types* is treated as NoneType.
+
+Examples
+--------
+>>> _api.check_isinstance((SomeClass, None), arg=arg)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1__api_aee2ab7522a67107f11c14ad87cdf19fc}\label{namespacematplotlib_1_1__api_aee2ab7522a67107f11c14ad87cdf19fc}} 
+\index{matplotlib\+::\+\_\+api@{matplotlib\+::\+\_\+api}!check\+\_\+shape@{check\+\_\+shape}}
+\index{check\+\_\+shape@{check\+\_\+shape}!matplotlib\+::\+\_\+api@{matplotlib\+::\+\_\+api}}
+\subsubsection{\texorpdfstring{check\+\_\+shape()}{check\_shape()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+check\+\_\+shape (\begin{DoxyParamCaption}\item[{}]{\+\_\+shape,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}For each *key, value* pair in *kwargs*, check that *value* has the shape
+*_shape*, if not, raise an appropriate ValueError.
+
+*None* in the shape is treated as a "free" size that can have any length.
+e.g. (None, 2) -> (N, 2)
+
+The values checked must be numpy arrays.
+
+Examples
+--------
+To check for (N, 2) shaped arrays
+
+>>> _api.check_shape((None, 2), arg=arg, other_arg=other_arg)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1__api_ac668a8e9e8326aa746760038c8e264fa}\label{namespacematplotlib_1_1__api_ac668a8e9e8326aa746760038c8e264fa}} 
+\index{matplotlib\+::\+\_\+api@{matplotlib\+::\+\_\+api}!warn\+\_\+external@{warn\+\_\+external}}
+\index{warn\+\_\+external@{warn\+\_\+external}!matplotlib\+::\+\_\+api@{matplotlib\+::\+\_\+api}}
+\subsubsection{\texorpdfstring{warn\+\_\+external()}{warn\_external()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+warn\+\_\+external (\begin{DoxyParamCaption}\item[{}]{message,  }\item[{}]{category = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}`warnings.warn` wrapper that sets *stacklevel* to "outside Matplotlib".
+
+The original emitter of the warning can be obtained by patching this
+function back to `warnings.warn`, i.e. ``_api.warn_external =
+warnings.warn`` (or ``functools.partial(warnings.warn, stacklevel=2)``,
+etc.).
+\end{DoxyVerb}
+ 

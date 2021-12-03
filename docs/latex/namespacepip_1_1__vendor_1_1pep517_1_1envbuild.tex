@@ -1,0 +1,66 @@
+\hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1envbuild}{}\section{pip.\+\_\+vendor.\+pep517.\+envbuild Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1pep517_1_1envbuild}\index{pip.\+\_\+vendor.\+pep517.\+envbuild@{pip.\+\_\+vendor.\+pep517.\+envbuild}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1pep517_1_1envbuild_1_1BuildEnvironment}{Build\+Environment}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1envbuild_af765376719840d88237aff568acf11ec}{build\+\_\+wheel} (source\+\_\+dir, wheel\+\_\+dir, config\+\_\+settings=None)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1envbuild_a1e0d2215d76982b15957ebb74c7d8ee7}{build\+\_\+sdist} (source\+\_\+dir, sdist\+\_\+dir, config\+\_\+settings=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1envbuild_ae935ca4c3ccc5f9a1506a0a5c8e9c53d}{log}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Build wheels/sdists by installing build deps to a temporary environment.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1envbuild_a1e0d2215d76982b15957ebb74c7d8ee7}\label{namespacepip_1_1__vendor_1_1pep517_1_1envbuild_a1e0d2215d76982b15957ebb74c7d8ee7}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::envbuild@{pip\+::\+\_\+vendor\+::pep517\+::envbuild}!build\+\_\+sdist@{build\+\_\+sdist}}
+\index{build\+\_\+sdist@{build\+\_\+sdist}!pip\+::\+\_\+vendor\+::pep517\+::envbuild@{pip\+::\+\_\+vendor\+::pep517\+::envbuild}}
+\subsubsection{\texorpdfstring{build\+\_\+sdist()}{build\_sdist()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+envbuild.\+build\+\_\+sdist (\begin{DoxyParamCaption}\item[{}]{source\+\_\+dir,  }\item[{}]{sdist\+\_\+dir,  }\item[{}]{config\+\_\+settings = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Build an sdist from a source directory using PEP 517 hooks.
+
+:param str source_dir: Source directory containing pyproject.toml
+:param str sdist_dir: Target directory to place sdist in
+:param dict config_settings: Options to pass to build backend
+
+This is a blocking function which will run pip in a subprocess to install
+build requirements.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1envbuild_af765376719840d88237aff568acf11ec}\label{namespacepip_1_1__vendor_1_1pep517_1_1envbuild_af765376719840d88237aff568acf11ec}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::envbuild@{pip\+::\+\_\+vendor\+::pep517\+::envbuild}!build\+\_\+wheel@{build\+\_\+wheel}}
+\index{build\+\_\+wheel@{build\+\_\+wheel}!pip\+::\+\_\+vendor\+::pep517\+::envbuild@{pip\+::\+\_\+vendor\+::pep517\+::envbuild}}
+\subsubsection{\texorpdfstring{build\+\_\+wheel()}{build\_wheel()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+envbuild.\+build\+\_\+wheel (\begin{DoxyParamCaption}\item[{}]{source\+\_\+dir,  }\item[{}]{wheel\+\_\+dir,  }\item[{}]{config\+\_\+settings = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Build a wheel from a source directory using PEP 517 hooks.
+
+:param str source_dir: Source directory containing pyproject.toml
+:param str wheel_dir: Target directory to create wheel in
+:param dict config_settings: Options to pass to build backend
+
+This is a blocking function which will run pip in a subprocess to install
+build requirements.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1envbuild_ae935ca4c3ccc5f9a1506a0a5c8e9c53d}\label{namespacepip_1_1__vendor_1_1pep517_1_1envbuild_ae935ca4c3ccc5f9a1506a0a5c8e9c53d}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::envbuild@{pip\+::\+\_\+vendor\+::pep517\+::envbuild}!log@{log}}
+\index{log@{log}!pip\+::\+\_\+vendor\+::pep517\+::envbuild@{pip\+::\+\_\+vendor\+::pep517\+::envbuild}}
+\subsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pep517.\+envbuild.\+log}
+

@@ -1,0 +1,268 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation}{}\section{networkx.\+algorithms.\+assortativity.\+correlation Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation}\index{networkx.\+algorithms.\+assortativity.\+correlation@{networkx.\+algorithms.\+assortativity.\+correlation}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_aa4d4adbe8aae494852d6561d6f3cb0dc}{degree\+\_\+assortativity\+\_\+coefficient} (G, x=\char`\"{}out\char`\"{}, y=\char`\"{}in\char`\"{}, weight=None, nodes=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_abdb15d01a465144e1ad48b7d7ac218b3}{degree\+\_\+pearson\+\_\+correlation\+\_\+coefficient} (G, x=\char`\"{}out\char`\"{}, y=\char`\"{}in\char`\"{}, weight=None, nodes=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_a0245893dbab54e1912798a3936d32439}{attribute\+\_\+assortativity\+\_\+coefficient} (G, attribute, nodes=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_abbfe3c18569e6eff2686dd425a1f145a}{numeric\+\_\+assortativity\+\_\+coefficient} (G, attribute, nodes=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_a42fde4374505f7a338a49e0bbc6cf55a}{attribute\+\_\+ac} (M)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_af61efe96c03971b43acb9322acfcecb1}{numeric\+\_\+ac} (M, mapping)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Node assortativity coefficients and correlation measures.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_a42fde4374505f7a338a49e0bbc6cf55a}\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_a42fde4374505f7a338a49e0bbc6cf55a}} 
+\index{networkx\+::algorithms\+::assortativity\+::correlation@{networkx\+::algorithms\+::assortativity\+::correlation}!attribute\+\_\+ac@{attribute\+\_\+ac}}
+\index{attribute\+\_\+ac@{attribute\+\_\+ac}!networkx\+::algorithms\+::assortativity\+::correlation@{networkx\+::algorithms\+::assortativity\+::correlation}}
+\subsubsection{\texorpdfstring{attribute\+\_\+ac()}{attribute\_ac()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+assortativity.\+correlation.\+attribute\+\_\+ac (\begin{DoxyParamCaption}\item[{}]{M }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute assortativity for attribute matrix M.
+
+Parameters
+----------
+M : numpy.ndarray
+    2D ndarray representing the attribute mixing matrix.
+
+Notes
+-----
+This computes Eq. (2) in Ref. [1]_ , (trace(e)-sum(e^2))/(1-sum(e^2)),
+where e is the joint probability distribution (mixing matrix)
+of the specified attribute.
+
+References
+----------
+.. [1] M. E. J. Newman, Mixing patterns in networks,
+   Physical Review E, 67 026126, 2003
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_a0245893dbab54e1912798a3936d32439}\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_a0245893dbab54e1912798a3936d32439}} 
+\index{networkx\+::algorithms\+::assortativity\+::correlation@{networkx\+::algorithms\+::assortativity\+::correlation}!attribute\+\_\+assortativity\+\_\+coefficient@{attribute\+\_\+assortativity\+\_\+coefficient}}
+\index{attribute\+\_\+assortativity\+\_\+coefficient@{attribute\+\_\+assortativity\+\_\+coefficient}!networkx\+::algorithms\+::assortativity\+::correlation@{networkx\+::algorithms\+::assortativity\+::correlation}}
+\subsubsection{\texorpdfstring{attribute\+\_\+assortativity\+\_\+coefficient()}{attribute\_assortativity\_coefficient()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+assortativity.\+correlation.\+attribute\+\_\+assortativity\+\_\+coefficient (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{attribute,  }\item[{}]{nodes = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute assortativity for node attributes.
+
+Assortativity measures the similarity of connections
+in the graph with respect to the given attribute.
+
+Parameters
+----------
+G : NetworkX graph
+
+attribute : string
+    Node attribute key
+
+nodes: list or iterable (optional)
+    Compute attribute assortativity for nodes in container.
+    The default is all nodes.
+
+Returns
+-------
+r: float
+   Assortativity of graph for given attribute
+
+Examples
+--------
+>>> G = nx.Graph()
+>>> G.add_nodes_from([0, 1], color="red")
+>>> G.add_nodes_from([2, 3], color="blue")
+>>> G.add_edges_from([(0, 1), (2, 3)])
+>>> print(nx.attribute_assortativity_coefficient(G, "color"))
+1.0
+
+Notes
+-----
+This computes Eq. (2) in Ref. [1]_ , (trace(M)-sum(M^2))/(1-sum(M^2)),
+where M is the joint probability distribution (mixing matrix)
+of the specified attribute.
+
+References
+----------
+.. [1] M. E. J. Newman, Mixing patterns in networks,
+   Physical Review E, 67 026126, 2003
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_aa4d4adbe8aae494852d6561d6f3cb0dc}\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_aa4d4adbe8aae494852d6561d6f3cb0dc}} 
+\index{networkx\+::algorithms\+::assortativity\+::correlation@{networkx\+::algorithms\+::assortativity\+::correlation}!degree\+\_\+assortativity\+\_\+coefficient@{degree\+\_\+assortativity\+\_\+coefficient}}
+\index{degree\+\_\+assortativity\+\_\+coefficient@{degree\+\_\+assortativity\+\_\+coefficient}!networkx\+::algorithms\+::assortativity\+::correlation@{networkx\+::algorithms\+::assortativity\+::correlation}}
+\subsubsection{\texorpdfstring{degree\+\_\+assortativity\+\_\+coefficient()}{degree\_assortativity\_coefficient()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+assortativity.\+correlation.\+degree\+\_\+assortativity\+\_\+coefficient (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{x = {\ttfamily \char`\"{}out\char`\"{}},  }\item[{}]{y = {\ttfamily \char`\"{}in\char`\"{}},  }\item[{}]{weight = {\ttfamily None},  }\item[{}]{nodes = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute degree assortativity of graph.
+
+Assortativity measures the similarity of connections
+in the graph with respect to the node degree.
+
+Parameters
+----------
+G : NetworkX graph
+
+x: string ('in','out')
+   The degree type for source node (directed graphs only).
+
+y: string ('in','out')
+   The degree type for target node (directed graphs only).
+
+weight: string or None, optional (default=None)
+   The edge attribute that holds the numerical value used
+   as a weight.  If None, then each edge has weight 1.
+   The degree is the sum of the edge weights adjacent to the node.
+
+nodes: list or iterable (optional)
+    Compute degree assortativity only for nodes in container.
+    The default is all nodes.
+
+Returns
+-------
+r : float
+   Assortativity of graph by degree.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> r = nx.degree_assortativity_coefficient(G)
+>>> print(f"{r:3.1f}")
+-0.5
+
+See Also
+--------
+attribute_assortativity_coefficient
+numeric_assortativity_coefficient
+degree_mixing_dict
+degree_mixing_matrix
+
+Notes
+-----
+This computes Eq. (21) in Ref. [1]_ , where e is the joint
+probability distribution (mixing matrix) of the degrees.  If G is
+directed than the matrix e is the joint probability of the
+user-specified degree type for the source and target.
+
+References
+----------
+.. [1] M. E. J. Newman, Mixing patterns in networks,
+   Physical Review E, 67 026126, 2003
+.. [2] Foster, J.G., Foster, D.V., Grassberger, P. & Paczuski, M.
+   Edge direction and the structure of networks, PNAS 107, 10815-20 (2010).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_abdb15d01a465144e1ad48b7d7ac218b3}\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_abdb15d01a465144e1ad48b7d7ac218b3}} 
+\index{networkx\+::algorithms\+::assortativity\+::correlation@{networkx\+::algorithms\+::assortativity\+::correlation}!degree\+\_\+pearson\+\_\+correlation\+\_\+coefficient@{degree\+\_\+pearson\+\_\+correlation\+\_\+coefficient}}
+\index{degree\+\_\+pearson\+\_\+correlation\+\_\+coefficient@{degree\+\_\+pearson\+\_\+correlation\+\_\+coefficient}!networkx\+::algorithms\+::assortativity\+::correlation@{networkx\+::algorithms\+::assortativity\+::correlation}}
+\subsubsection{\texorpdfstring{degree\+\_\+pearson\+\_\+correlation\+\_\+coefficient()}{degree\_pearson\_correlation\_coefficient()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+assortativity.\+correlation.\+degree\+\_\+pearson\+\_\+correlation\+\_\+coefficient (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{x = {\ttfamily \char`\"{}out\char`\"{}},  }\item[{}]{y = {\ttfamily \char`\"{}in\char`\"{}},  }\item[{}]{weight = {\ttfamily None},  }\item[{}]{nodes = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute degree assortativity of graph.
+
+Assortativity measures the similarity of connections
+in the graph with respect to the node degree.
+
+This is the same as degree_assortativity_coefficient but uses the
+potentially faster scipy.stats.pearsonr function.
+
+Parameters
+----------
+G : NetworkX graph
+
+x: string ('in','out')
+   The degree type for source node (directed graphs only).
+
+y: string ('in','out')
+   The degree type for target node (directed graphs only).
+
+weight: string or None, optional (default=None)
+   The edge attribute that holds the numerical value used
+   as a weight.  If None, then each edge has weight 1.
+   The degree is the sum of the edge weights adjacent to the node.
+
+nodes: list or iterable (optional)
+    Compute pearson correlation of degrees only for specified nodes.
+    The default is all nodes.
+
+Returns
+-------
+r : float
+   Assortativity of graph by degree.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> r = nx.degree_pearson_correlation_coefficient(G)
+>>> print(f"{r:3.1f}")
+-0.5
+
+Notes
+-----
+This calls scipy.stats.pearsonr.
+
+References
+----------
+.. [1] M. E. J. Newman, Mixing patterns in networks
+       Physical Review E, 67 026126, 2003
+.. [2] Foster, J.G., Foster, D.V., Grassberger, P. & Paczuski, M.
+   Edge direction and the structure of networks, PNAS 107, 10815-20 (2010).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_af61efe96c03971b43acb9322acfcecb1}\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_af61efe96c03971b43acb9322acfcecb1}} 
+\index{networkx\+::algorithms\+::assortativity\+::correlation@{networkx\+::algorithms\+::assortativity\+::correlation}!numeric\+\_\+ac@{numeric\+\_\+ac}}
+\index{numeric\+\_\+ac@{numeric\+\_\+ac}!networkx\+::algorithms\+::assortativity\+::correlation@{networkx\+::algorithms\+::assortativity\+::correlation}}
+\subsubsection{\texorpdfstring{numeric\+\_\+ac()}{numeric\_ac()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+assortativity.\+correlation.\+numeric\+\_\+ac (\begin{DoxyParamCaption}\item[{}]{M,  }\item[{}]{mapping }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_abbfe3c18569e6eff2686dd425a1f145a}\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1correlation_abbfe3c18569e6eff2686dd425a1f145a}} 
+\index{networkx\+::algorithms\+::assortativity\+::correlation@{networkx\+::algorithms\+::assortativity\+::correlation}!numeric\+\_\+assortativity\+\_\+coefficient@{numeric\+\_\+assortativity\+\_\+coefficient}}
+\index{numeric\+\_\+assortativity\+\_\+coefficient@{numeric\+\_\+assortativity\+\_\+coefficient}!networkx\+::algorithms\+::assortativity\+::correlation@{networkx\+::algorithms\+::assortativity\+::correlation}}
+\subsubsection{\texorpdfstring{numeric\+\_\+assortativity\+\_\+coefficient()}{numeric\_assortativity\_coefficient()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+assortativity.\+correlation.\+numeric\+\_\+assortativity\+\_\+coefficient (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{attribute,  }\item[{}]{nodes = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute assortativity for numerical node attributes.
+
+Assortativity measures the similarity of connections
+in the graph with respect to the given numeric attribute.
+
+Parameters
+----------
+G : NetworkX graph
+
+attribute : string
+    Node attribute key.
+
+nodes: list or iterable (optional)
+    Compute numeric assortativity only for attributes of nodes in
+    container. The default is all nodes.
+
+Returns
+-------
+r: float
+   Assortativity of graph for given attribute
+
+Examples
+--------
+>>> G = nx.Graph()
+>>> G.add_nodes_from([0, 1], size=2)
+>>> G.add_nodes_from([2, 3], size=3)
+>>> G.add_edges_from([(0, 1), (2, 3)])
+>>> print(nx.numeric_assortativity_coefficient(G, "size"))
+1.0
+
+Notes
+-----
+This computes Eq. (21) in Ref. [1]_ , for the mixing matrix
+of the specified attribute.
+
+References
+----------
+.. [1] M. E. J. Newman, Mixing patterns in networks
+       Physical Review E, 67 026126, 2003
+\end{DoxyVerb}
+ 

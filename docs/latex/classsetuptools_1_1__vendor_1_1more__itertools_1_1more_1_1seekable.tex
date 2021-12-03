@@ -1,0 +1,157 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable}{}\section{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+seekable Class Reference}
+\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable}\index{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+seekable@{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+seekable}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_abe017ef9bd88e5de23195e5c0e51fa14}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, iterable, maxlen=None)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a227f61eed2b28e847403d1c2a9af1f78}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a5f2cfdb66a5f2e2d3ca0a1d7a0ae81d6}{\+\_\+\+\_\+next\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a894e14e591ed2fef1251a730d2d447d8}{\+\_\+\+\_\+bool\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_ad9a0b9728a6a89c7dbc1e19a97b726f4}{peek} (self, default=\+\_\+marker)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a20d75d4e10928108f295fdb5520bdf43}{elements} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a0ee3ec0cd776f2589ff9851a5a06655b}{seek} (self, index)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Wrap an iterator to allow for seeking backward and forward. This
+progressively caches the items in the source iterable so they can be
+re-visited.
+
+Call :meth:`seek` with an index to seek to that position in the source
+iterable.
+
+To "reset" an iterator, seek to ``0``:
+
+    >>> from itertools import count
+    >>> it = seekable((str(n) for n in count()))
+    >>> next(it), next(it), next(it)
+    ('0', '1', '2')
+    >>> it.seek(0)
+    >>> next(it), next(it), next(it)
+    ('0', '1', '2')
+    >>> next(it)
+    '3'
+
+You can also seek forward:
+
+    >>> it = seekable((str(n) for n in range(20)))
+    >>> it.seek(10)
+    >>> next(it)
+    '10'
+    >>> it.seek(20)  # Seeking past the end of the source isn't a problem
+    >>> list(it)
+    []
+    >>> it.seek(0)  # Resetting works even after hitting the end
+    >>> next(it), next(it), next(it)
+    ('0', '1', '2')
+
+Call :meth:`peek` to look ahead one item without advancing the iterator:
+
+    >>> it = seekable('1234')
+    >>> it.peek()
+    '1'
+    >>> list(it)
+    ['1', '2', '3', '4']
+    >>> it.peek(default='empty')
+    'empty'
+
+Before the iterator is at its end, calling :func:`bool` on it will return
+``True``. After it will return ``False``:
+
+    >>> it = seekable('5678')
+    >>> bool(it)
+    True
+    >>> list(it)
+    ['5', '6', '7', '8']
+    >>> bool(it)
+    False
+
+You may view the contents of the cache with the :meth:`elements` method.
+That returns a :class:`SequenceView`, a view that updates automatically:
+
+    >>> it = seekable((str(n) for n in range(10)))
+    >>> next(it), next(it), next(it)
+    ('0', '1', '2')
+    >>> elements = it.elements()
+    >>> elements
+    SequenceView(['0', '1', '2'])
+    >>> next(it)
+    '3'
+    >>> elements
+    SequenceView(['0', '1', '2', '3'])
+
+By default, the cache grows as the source iterable progresses, so beware of
+wrapping very large or infinite iterables. Supply *maxlen* to limit the
+size of the cache (this of course limits how far back you can seek).
+
+    >>> from itertools import count
+    >>> it = seekable((str(n) for n in count()), maxlen=2)
+    >>> next(it), next(it), next(it), next(it)
+    ('0', '1', '2', '3')
+    >>> list(it.elements())
+    ['2', '3']
+    >>> it.seek(0)
+    >>> next(it), next(it), next(it), next(it)
+    ('2', '3', '4', '5')
+    >>> next(it)
+    '6'\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_abe017ef9bd88e5de23195e5c0e51fa14}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_abe017ef9bd88e5de23195e5c0e51fa14}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+seekable.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iterable,  }\item[{}]{maxlen = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a894e14e591ed2fef1251a730d2d447d8}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a894e14e591ed2fef1251a730d2d447d8}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}!\+\_\+\+\_\+bool\+\_\+\+\_\+@{\+\_\+\+\_\+bool\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+bool\+\_\+\+\_\+@{\+\_\+\+\_\+bool\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+bool\+\_\+\+\_\+()}{\_\_bool\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+seekable.\+\_\+\+\_\+bool\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a227f61eed2b28e847403d1c2a9af1f78}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a227f61eed2b28e847403d1c2a9af1f78}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+seekable.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a5f2cfdb66a5f2e2d3ca0a1d7a0ae81d6}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a5f2cfdb66a5f2e2d3ca0a1d7a0ae81d6}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}!\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+next\+\_\+\+\_\+()}{\_\_next\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+seekable.\+\_\+\+\_\+next\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a20d75d4e10928108f295fdb5520bdf43}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a20d75d4e10928108f295fdb5520bdf43}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}!elements@{elements}}
+\index{elements@{elements}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}}
+\subsubsection{\texorpdfstring{elements()}{elements()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+seekable.\+elements (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_ad9a0b9728a6a89c7dbc1e19a97b726f4}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_ad9a0b9728a6a89c7dbc1e19a97b726f4}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}!peek@{peek}}
+\index{peek@{peek}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}}
+\subsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+seekable.\+peek (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{default = {\ttfamily \+\_\+marker} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a0ee3ec0cd776f2589ff9851a5a06655b}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1seekable_a0ee3ec0cd776f2589ff9851a5a06655b}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}!seek@{seek}}
+\index{seek@{seek}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::seekable}}
+\subsubsection{\texorpdfstring{seek()}{seek()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+seekable.\+seek (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/more\+\_\+itertools/\hyperlink{more_8py}{more.\+py}\end{DoxyCompactItemize}

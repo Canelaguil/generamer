@@ -1,0 +1,95 @@
+\hypertarget{namespacenumpy_1_1lib_1_1__datasource}{}\section{numpy.\+lib.\+\_\+datasource Namespace Reference}
+\label{namespacenumpy_1_1lib_1_1__datasource}\index{numpy.\+lib.\+\_\+datasource@{numpy.\+lib.\+\_\+datasource}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1__datasource_1_1__FileOpeners}{\+\_\+\+File\+Openers}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1__datasource_1_1DataSource}{Data\+Source}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1__datasource_1_1Repository}{Repository}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1__datasource_a31cb95875384c18d75b818588d65d980}{open} (path, mode=\textquotesingle{}r\textquotesingle{}, destpath=os.\+curdir, encoding=None, newline=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A file interface for handling local and remote data files.
+
+The goal of datasource is to abstract some of the file system operations
+when dealing with data files so the researcher doesn't have to know all the
+low-level details.  Through datasource, a researcher can obtain and use a
+file with one function call, regardless of location of the file.
+
+DataSource is meant to augment standard python libraries, not replace them.
+It should work seamlessly with standard file IO operations and the os
+module.
+
+DataSource files can originate locally or remotely:
+
+- local files : '/home/guido/src/local/data.txt'
+- URLs (http, ftp, ...) : 'http://www.scipy.org/not/real/data.txt'
+
+DataSource files can also be compressed or uncompressed.  Currently only
+gzip, bz2 and xz are supported.
+
+Example::
+
+    >>> # Create a DataSource, use os.curdir (default) for local storage.
+    >>> from numpy import DataSource
+    >>> ds = DataSource()
+    >>>
+    >>> # Open a remote file.
+    >>> # DataSource downloads the file, stores it locally in:
+    >>> #     './www.google.com/index.html'
+    >>> # opens the file and returns a file object.
+    >>> fp = ds.open('http://www.google.com/') # doctest: +SKIP
+    >>>
+    >>> # Use the file as you normally would
+    >>> fp.read() # doctest: +SKIP
+    >>> fp.close() # doctest: +SKIP\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1__datasource_a31cb95875384c18d75b818588d65d980}\label{namespacenumpy_1_1lib_1_1__datasource_a31cb95875384c18d75b818588d65d980}} 
+\index{numpy\+::lib\+::\+\_\+datasource@{numpy\+::lib\+::\+\_\+datasource}!open@{open}}
+\index{open@{open}!numpy\+::lib\+::\+\_\+datasource@{numpy\+::lib\+::\+\_\+datasource}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+datasource.\+open (\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{mode = {\ttfamily \textquotesingle{}r\textquotesingle{}},  }\item[{}]{destpath = {\ttfamily os.curdir},  }\item[{}]{encoding = {\ttfamily None},  }\item[{}]{newline = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Open `path` with `mode` and return the file object.
+
+If ``path`` is an URL, it will be downloaded, stored in the
+`DataSource` `destpath` directory and opened from there.
+
+Parameters
+----------
+path : str
+    Local file path or URL to open.
+mode : str, optional
+    Mode to open `path`. Mode 'r' for reading, 'w' for writing, 'a' to
+    append. Available modes depend on the type of object specified by
+    path.  Default is 'r'.
+destpath : str, optional
+    Path to the directory where the source file gets downloaded to for
+    use.  If `destpath` is None, a temporary directory will be created.
+    The default path is the current directory.
+encoding : {None, str}, optional
+    Open text file with given encoding. The default encoding will be
+    what `io.open` uses.
+newline : {None, str}, optional
+    Newline to use when reading text file.
+
+Returns
+-------
+out : file object
+    The opened file.
+
+Notes
+-----
+This is a convenience function that instantiates a `DataSource` and
+returns the file object from ``DataSource.open(path)``.\end{DoxyVerb}
+ 

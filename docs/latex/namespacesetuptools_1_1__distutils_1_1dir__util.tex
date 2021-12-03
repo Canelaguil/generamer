@@ -1,0 +1,101 @@
+\hypertarget{namespacesetuptools_1_1__distutils_1_1dir__util}{}\section{setuptools.\+\_\+distutils.\+dir\+\_\+util Namespace Reference}
+\label{namespacesetuptools_1_1__distutils_1_1dir__util}\index{setuptools.\+\_\+distutils.\+dir\+\_\+util@{setuptools.\+\_\+distutils.\+dir\+\_\+util}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1dir__util_a82c544d263b30ce37020640fa26c5ecf}{mkpath} (name, mode=0o777, verbose=1, dry\+\_\+run=0)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1dir__util_a80933b11d97a9c38807cc92de3fe923e}{create\+\_\+tree} (base\+\_\+dir, files, mode=0o777, verbose=1, dry\+\_\+run=0)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1dir__util_aaccf8f899743a8eb443c6389502f88bc}{copy\+\_\+tree} (src, dst, preserve\+\_\+mode=1, preserve\+\_\+times=1, preserve\+\_\+symlinks=0, update=0, verbose=1, dry\+\_\+run=0)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1dir__util_a7e2284b026c6cb8672e5e07174bbd5fe}{remove\+\_\+tree} (directory, verbose=1, dry\+\_\+run=0)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1dir__util_a551dd5039a40f062536669d5045f691a}{ensure\+\_\+relative} (path)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}distutils.dir_util
+
+Utility functions for manipulating directories and directory trees.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1dir__util_aaccf8f899743a8eb443c6389502f88bc}\label{namespacesetuptools_1_1__distutils_1_1dir__util_aaccf8f899743a8eb443c6389502f88bc}} 
+\index{setuptools\+::\+\_\+distutils\+::dir\+\_\+util@{setuptools\+::\+\_\+distutils\+::dir\+\_\+util}!copy\+\_\+tree@{copy\+\_\+tree}}
+\index{copy\+\_\+tree@{copy\+\_\+tree}!setuptools\+::\+\_\+distutils\+::dir\+\_\+util@{setuptools\+::\+\_\+distutils\+::dir\+\_\+util}}
+\subsubsection{\texorpdfstring{copy\+\_\+tree()}{copy\_tree()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+dir\+\_\+util.\+copy\+\_\+tree (\begin{DoxyParamCaption}\item[{}]{src,  }\item[{}]{dst,  }\item[{}]{preserve\+\_\+mode = {\ttfamily 1},  }\item[{}]{preserve\+\_\+times = {\ttfamily 1},  }\item[{}]{preserve\+\_\+symlinks = {\ttfamily 0},  }\item[{}]{update = {\ttfamily 0},  }\item[{}]{verbose = {\ttfamily 1},  }\item[{}]{dry\+\_\+run = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Copy an entire directory tree 'src' to a new location 'dst'.
+
+Both 'src' and 'dst' must be directory names.  If 'src' is not a
+directory, raise DistutilsFileError.  If 'dst' does not exist, it is
+created with 'mkpath()'.  The end result of the copy is that every
+file in 'src' is copied to 'dst', and directories under 'src' are
+recursively copied to 'dst'.  Return the list of files that were
+copied or might have been copied, using their output name.  The
+return value is unaffected by 'update' or 'dry_run': it is simply
+the list of all files under 'src', with the names changed to be
+under 'dst'.
+
+'preserve_mode' and 'preserve_times' are the same as for
+'copy_file'; note that they only apply to regular files, not to
+directories.  If 'preserve_symlinks' is true, symlinks will be
+copied as symlinks (on platforms that support them!); otherwise
+(the default), the destination of the symlink will be copied.
+'update' and 'verbose' are the same as for 'copy_file'.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1dir__util_a80933b11d97a9c38807cc92de3fe923e}\label{namespacesetuptools_1_1__distutils_1_1dir__util_a80933b11d97a9c38807cc92de3fe923e}} 
+\index{setuptools\+::\+\_\+distutils\+::dir\+\_\+util@{setuptools\+::\+\_\+distutils\+::dir\+\_\+util}!create\+\_\+tree@{create\+\_\+tree}}
+\index{create\+\_\+tree@{create\+\_\+tree}!setuptools\+::\+\_\+distutils\+::dir\+\_\+util@{setuptools\+::\+\_\+distutils\+::dir\+\_\+util}}
+\subsubsection{\texorpdfstring{create\+\_\+tree()}{create\_tree()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+dir\+\_\+util.\+create\+\_\+tree (\begin{DoxyParamCaption}\item[{}]{base\+\_\+dir,  }\item[{}]{files,  }\item[{}]{mode = {\ttfamily 0o777},  }\item[{}]{verbose = {\ttfamily 1},  }\item[{}]{dry\+\_\+run = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create all the empty directories under 'base_dir' needed to put 'files'
+there.
+
+'base_dir' is just the name of a directory which doesn't necessarily
+exist yet; 'files' is a list of filenames to be interpreted relative to
+'base_dir'.  'base_dir' + the directory portion of every file in 'files'
+will be created if it doesn't already exist.  'mode', 'verbose' and
+'dry_run' flags are as for 'mkpath()'.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1dir__util_a551dd5039a40f062536669d5045f691a}\label{namespacesetuptools_1_1__distutils_1_1dir__util_a551dd5039a40f062536669d5045f691a}} 
+\index{setuptools\+::\+\_\+distutils\+::dir\+\_\+util@{setuptools\+::\+\_\+distutils\+::dir\+\_\+util}!ensure\+\_\+relative@{ensure\+\_\+relative}}
+\index{ensure\+\_\+relative@{ensure\+\_\+relative}!setuptools\+::\+\_\+distutils\+::dir\+\_\+util@{setuptools\+::\+\_\+distutils\+::dir\+\_\+util}}
+\subsubsection{\texorpdfstring{ensure\+\_\+relative()}{ensure\_relative()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+dir\+\_\+util.\+ensure\+\_\+relative (\begin{DoxyParamCaption}\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Take the full path 'path', and make it a relative path.
+
+This is useful to make 'path' the second argument to os.path.join().
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1dir__util_a82c544d263b30ce37020640fa26c5ecf}\label{namespacesetuptools_1_1__distutils_1_1dir__util_a82c544d263b30ce37020640fa26c5ecf}} 
+\index{setuptools\+::\+\_\+distutils\+::dir\+\_\+util@{setuptools\+::\+\_\+distutils\+::dir\+\_\+util}!mkpath@{mkpath}}
+\index{mkpath@{mkpath}!setuptools\+::\+\_\+distutils\+::dir\+\_\+util@{setuptools\+::\+\_\+distutils\+::dir\+\_\+util}}
+\subsubsection{\texorpdfstring{mkpath()}{mkpath()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+dir\+\_\+util.\+mkpath (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{mode = {\ttfamily 0o777},  }\item[{}]{verbose = {\ttfamily 1},  }\item[{}]{dry\+\_\+run = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a directory and any missing ancestor directories.
+
+If the directory already exists (or if 'name' is the empty string, which
+means the current directory, which of course exists), then do nothing.
+Raise DistutilsFileError if unable to create some directory along the way
+(eg. some sub-path exists, but is a file rather than a directory).
+If 'verbose' is true, print a one-line summary of each mkdir to stdout.
+Return the list of directories actually created.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1dir__util_a7e2284b026c6cb8672e5e07174bbd5fe}\label{namespacesetuptools_1_1__distutils_1_1dir__util_a7e2284b026c6cb8672e5e07174bbd5fe}} 
+\index{setuptools\+::\+\_\+distutils\+::dir\+\_\+util@{setuptools\+::\+\_\+distutils\+::dir\+\_\+util}!remove\+\_\+tree@{remove\+\_\+tree}}
+\index{remove\+\_\+tree@{remove\+\_\+tree}!setuptools\+::\+\_\+distutils\+::dir\+\_\+util@{setuptools\+::\+\_\+distutils\+::dir\+\_\+util}}
+\subsubsection{\texorpdfstring{remove\+\_\+tree()}{remove\_tree()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+dir\+\_\+util.\+remove\+\_\+tree (\begin{DoxyParamCaption}\item[{}]{directory,  }\item[{}]{verbose = {\ttfamily 1},  }\item[{}]{dry\+\_\+run = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Recursively remove an entire directory tree.
+
+Any errors are ignored (apart from being reported to stdout if 'verbose'
+is true).
+\end{DoxyVerb}
+ 

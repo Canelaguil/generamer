@@ -1,0 +1,148 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1Button}{}\section{matplotlib.\+widgets.\+Button Class Reference}
+\label{classmatplotlib_1_1widgets_1_1Button}\index{matplotlib.\+widgets.\+Button@{matplotlib.\+widgets.\+Button}}
+
+
+Inheritance diagram for matplotlib.\+widgets.\+Button\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1Button__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+widgets.\+Button\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1Button__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1Button_afa231cff67815d2f86396e85bf96237e}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_ac0722858b7001d10a42055dc90420b4f}{ax}, \hyperlink{classmatplotlib_1_1widgets_1_1Button_a5292355f5489751ee84cfeb8bfd32965}{label}, image=None, \hyperlink{classmatplotlib_1_1widgets_1_1Button_a0db461b03c6f51c30a736425033790bb}{color}=\textquotesingle{}0.\+85\textquotesingle{}, \hyperlink{classmatplotlib_1_1widgets_1_1Button_a9acc42a919c9077037a2664d6ab801d7}{hovercolor}=\textquotesingle{}0.\+95\textquotesingle{})
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1Button_a061596d93476b79244626f8a79d52a81}{on\+\_\+clicked} (self, func)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1Button_a65abc7ad50b24913e1da7f1a670dd4e8}{disconnect} (self, cid)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1Button_a5292355f5489751ee84cfeb8bfd32965}{label}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1Button_a0db461b03c6f51c30a736425033790bb}{color}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1Button_a9acc42a919c9077037a2664d6ab801d7}{hovercolor}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1Button_a817ac277afbd2540a3216cca3adfa3fd}{cnt}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1Button_a64b11292e43068344a3ab2ce4c3695a3}{observers}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A GUI neutral button.
+
+For the button to remain responsive you must keep a reference to it.
+Call `.on_clicked` to connect to the button.
+
+Attributes
+----------
+ax
+    The `matplotlib.axes.Axes` the button renders into.
+label
+    A `matplotlib.text.Text` instance.
+color
+    The color of the button when not hovering.
+hovercolor
+    The color of the button when hovering.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Button_afa231cff67815d2f86396e85bf96237e}\label{classmatplotlib_1_1widgets_1_1Button_afa231cff67815d2f86396e85bf96237e}} 
+\index{matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Button.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{label,  }\item[{}]{image = {\ttfamily None},  }\item[{}]{color = {\ttfamily \textquotesingle{}0.85\textquotesingle{}},  }\item[{}]{hovercolor = {\ttfamily \textquotesingle{}0.95\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+ax : `~matplotlib.axes.Axes`
+    The `~.axes.Axes` instance the button will be placed into.
+label : str
+    The button text.
+image : array-like or PIL Image
+    The image to place in the button, if not *None*.  The parameter is
+    directly forwarded to `~matplotlib.axes.Axes.imshow`.
+color : color
+    The color of the button when not activated.
+hovercolor : color
+    The color of the button when the mouse is over it.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Button_a65abc7ad50b24913e1da7f1a670dd4e8}\label{classmatplotlib_1_1widgets_1_1Button_a65abc7ad50b24913e1da7f1a670dd4e8}} 
+\index{matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}}
+\subsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Button.\+disconnect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cid }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove the callback function with connection id *cid*.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Button_a061596d93476b79244626f8a79d52a81}\label{classmatplotlib_1_1widgets_1_1Button_a061596d93476b79244626f8a79d52a81}} 
+\index{matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}!on\+\_\+clicked@{on\+\_\+clicked}}
+\index{on\+\_\+clicked@{on\+\_\+clicked}!matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}}
+\subsubsection{\texorpdfstring{on\+\_\+clicked()}{on\_clicked()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Button.\+on\+\_\+clicked (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Connect the callback function *func* to button click events.
+
+Returns a connection id, which can be used to disconnect the callback.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Button_a817ac277afbd2540a3216cca3adfa3fd}\label{classmatplotlib_1_1widgets_1_1Button_a817ac277afbd2540a3216cca3adfa3fd}} 
+\index{matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}!cnt@{cnt}}
+\index{cnt@{cnt}!matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}}
+\subsubsection{\texorpdfstring{cnt}{cnt}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Button.\+cnt\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Button_a0db461b03c6f51c30a736425033790bb}\label{classmatplotlib_1_1widgets_1_1Button_a0db461b03c6f51c30a736425033790bb}} 
+\index{matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}!color@{color}}
+\index{color@{color}!matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}}
+\subsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Button.\+color}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Button_a9acc42a919c9077037a2664d6ab801d7}\label{classmatplotlib_1_1widgets_1_1Button_a9acc42a919c9077037a2664d6ab801d7}} 
+\index{matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}!hovercolor@{hovercolor}}
+\index{hovercolor@{hovercolor}!matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}}
+\subsubsection{\texorpdfstring{hovercolor}{hovercolor}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Button.\+hovercolor}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Button_a5292355f5489751ee84cfeb8bfd32965}\label{classmatplotlib_1_1widgets_1_1Button_a5292355f5489751ee84cfeb8bfd32965}} 
+\index{matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}!label@{label}}
+\index{label@{label}!matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}}
+\subsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Button.\+label}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Button_a64b11292e43068344a3ab2ce4c3695a3}\label{classmatplotlib_1_1widgets_1_1Button_a64b11292e43068344a3ab2ce4c3695a3}} 
+\index{matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}!observers@{observers}}
+\index{observers@{observers}!matplotlib\+::widgets\+::\+Button@{matplotlib\+::widgets\+::\+Button}}
+\subsubsection{\texorpdfstring{observers}{observers}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Button.\+observers\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

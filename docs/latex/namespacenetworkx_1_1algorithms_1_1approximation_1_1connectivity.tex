@@ -1,0 +1,217 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity}{}\section{networkx.\+algorithms.\+approximation.\+connectivity Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity}\index{networkx.\+algorithms.\+approximation.\+connectivity@{networkx.\+algorithms.\+approximation.\+connectivity}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity_a8a4c09af96899a72f9ce090bad755c7c}{local\+\_\+node\+\_\+connectivity} (G, source, target, cutoff=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity_ae14f54cbac9e4b263ebce3144ff845bf}{node\+\_\+connectivity} (G, s=None, t=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity_a0087ae8cd6af1574da15c6767fb24893}{all\+\_\+pairs\+\_\+node\+\_\+connectivity} (G, nbunch=None, cutoff=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity_aa5b25211f6bd4db33a1028266ec1aa4b}{I\+NF}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Fast approximation for node connectivity
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity_a0087ae8cd6af1574da15c6767fb24893}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity_a0087ae8cd6af1574da15c6767fb24893}} 
+\index{networkx\+::algorithms\+::approximation\+::connectivity@{networkx\+::algorithms\+::approximation\+::connectivity}!all\+\_\+pairs\+\_\+node\+\_\+connectivity@{all\+\_\+pairs\+\_\+node\+\_\+connectivity}}
+\index{all\+\_\+pairs\+\_\+node\+\_\+connectivity@{all\+\_\+pairs\+\_\+node\+\_\+connectivity}!networkx\+::algorithms\+::approximation\+::connectivity@{networkx\+::algorithms\+::approximation\+::connectivity}}
+\subsubsection{\texorpdfstring{all\+\_\+pairs\+\_\+node\+\_\+connectivity()}{all\_pairs\_node\_connectivity()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+connectivity.\+all\+\_\+pairs\+\_\+node\+\_\+connectivity (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nbunch = {\ttfamily None},  }\item[{}]{cutoff = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute node connectivity between all pairs of nodes.
+
+Pairwise or local node connectivity between two distinct and nonadjacent
+nodes is the minimum number of nodes that must be removed (minimum
+separating cutset) to disconnect them. By Menger's theorem, this is equal
+to the number of node independent paths (paths that share no nodes other
+than source and target). Which is what we compute in this function.
+
+This algorithm is a fast approximation that gives an strict lower
+bound on the actual number of node independent paths between two nodes [1]_.
+It works for both directed and undirected graphs.
+
+
+Parameters
+----------
+G : NetworkX graph
+
+nbunch: container
+    Container of nodes. If provided node connectivity will be computed
+    only over pairs of nodes in nbunch.
+
+cutoff : integer
+    Maximum node connectivity to consider. If None, the minimum degree
+    of source or target is used as a cutoff in each pair of nodes.
+    Default value None.
+
+Returns
+-------
+K : dictionary
+    Dictionary, keyed by source and target, of pairwise node connectivity
+
+See Also
+--------
+local_node_connectivity
+node_connectivity
+
+References
+----------
+.. [1] White, Douglas R., and Mark Newman. 2001 A Fast Algorithm for
+    Node-Independent Paths. Santa Fe Institute Working Paper #01-07-035
+    http://eclectic.ss.uci.edu/~drwhite/working.pdf
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity_a8a4c09af96899a72f9ce090bad755c7c}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity_a8a4c09af96899a72f9ce090bad755c7c}} 
+\index{networkx\+::algorithms\+::approximation\+::connectivity@{networkx\+::algorithms\+::approximation\+::connectivity}!local\+\_\+node\+\_\+connectivity@{local\+\_\+node\+\_\+connectivity}}
+\index{local\+\_\+node\+\_\+connectivity@{local\+\_\+node\+\_\+connectivity}!networkx\+::algorithms\+::approximation\+::connectivity@{networkx\+::algorithms\+::approximation\+::connectivity}}
+\subsubsection{\texorpdfstring{local\+\_\+node\+\_\+connectivity()}{local\_node\_connectivity()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+connectivity.\+local\+\_\+node\+\_\+connectivity (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{source,  }\item[{}]{target,  }\item[{}]{cutoff = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute node connectivity between source and target.
+
+Pairwise or local node connectivity between two distinct and nonadjacent
+nodes is the minimum number of nodes that must be removed (minimum
+separating cutset) to disconnect them. By Menger's theorem, this is equal
+to the number of node independent paths (paths that share no nodes other
+than source and target). Which is what we compute in this function.
+
+This algorithm is a fast approximation that gives an strict lower
+bound on the actual number of node independent paths between two nodes [1]_.
+It works for both directed and undirected graphs.
+
+Parameters
+----------
+
+G : NetworkX graph
+
+source : node
+    Starting node for node connectivity
+
+target : node
+    Ending node for node connectivity
+
+cutoff : integer
+    Maximum node connectivity to consider. If None, the minimum degree
+    of source or target is used as a cutoff. Default value None.
+
+Returns
+-------
+k: integer
+   pairwise node connectivity
+
+Examples
+--------
+>>> # Platonic octahedral graph has node connectivity 4
+>>> # for each non adjacent node pair
+>>> from networkx.algorithms import approximation as approx
+>>> G = nx.octahedral_graph()
+>>> approx.local_node_connectivity(G, 0, 5)
+4
+
+Notes
+-----
+This algorithm [1]_ finds node independents paths between two nodes by
+computing their shortest path using BFS, marking the nodes of the path
+found as 'used' and then searching other shortest paths excluding the
+nodes marked as used until no more paths exist. It is not exact because
+a shortest path could use nodes that, if the path were longer, may belong
+to two different node independent paths. Thus it only guarantees an
+strict lower bound on node connectivity.
+
+Note that the authors propose a further refinement, losing accuracy and
+gaining speed, which is not implemented yet.
+
+See also
+--------
+all_pairs_node_connectivity
+node_connectivity
+
+References
+----------
+.. [1] White, Douglas R., and Mark Newman. 2001 A Fast Algorithm for
+    Node-Independent Paths. Santa Fe Institute Working Paper #01-07-035
+    http://eclectic.ss.uci.edu/~drwhite/working.pdf\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity_ae14f54cbac9e4b263ebce3144ff845bf}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity_ae14f54cbac9e4b263ebce3144ff845bf}} 
+\index{networkx\+::algorithms\+::approximation\+::connectivity@{networkx\+::algorithms\+::approximation\+::connectivity}!node\+\_\+connectivity@{node\+\_\+connectivity}}
+\index{node\+\_\+connectivity@{node\+\_\+connectivity}!networkx\+::algorithms\+::approximation\+::connectivity@{networkx\+::algorithms\+::approximation\+::connectivity}}
+\subsubsection{\texorpdfstring{node\+\_\+connectivity()}{node\_connectivity()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+connectivity.\+node\+\_\+connectivity (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{s = {\ttfamily None},  }\item[{}]{t = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns an approximation for node connectivity for a graph or digraph G.
+
+Node connectivity is equal to the minimum number of nodes that
+must be removed to disconnect G or render it trivial. By Menger's theorem,
+this is equal to the number of node independent paths (paths that
+share no nodes other than source and target).
+
+If source and target nodes are provided, this function returns the
+local node connectivity: the minimum number of nodes that must be
+removed to break all paths from source to target in G.
+
+This algorithm is based on a fast approximation that gives an strict lower
+bound on the actual number of node independent paths between two nodes [1]_.
+It works for both directed and undirected graphs.
+
+Parameters
+----------
+G : NetworkX graph
+    Undirected graph
+
+s : node
+    Source node. Optional. Default value: None.
+
+t : node
+    Target node. Optional. Default value: None.
+
+Returns
+-------
+K : integer
+    Node connectivity of G, or local node connectivity if source
+    and target are provided.
+
+Examples
+--------
+>>> # Platonic octahedral graph is 4-node-connected
+>>> from networkx.algorithms import approximation as approx
+>>> G = nx.octahedral_graph()
+>>> approx.node_connectivity(G)
+4
+
+Notes
+-----
+This algorithm [1]_ finds node independents paths between two nodes by
+computing their shortest path using BFS, marking the nodes of the path
+found as 'used' and then searching other shortest paths excluding the
+nodes marked as used until no more paths exist. It is not exact because
+a shortest path could use nodes that, if the path were longer, may belong
+to two different node independent paths. Thus it only guarantees an
+strict lower bound on node connectivity.
+
+See also
+--------
+all_pairs_node_connectivity
+local_node_connectivity
+
+References
+----------
+.. [1] White, Douglas R., and Mark Newman. 2001 A Fast Algorithm for
+    Node-Independent Paths. Santa Fe Institute Working Paper #01-07-035
+    http://eclectic.ss.uci.edu/~drwhite/working.pdf\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity_aa5b25211f6bd4db33a1028266ec1aa4b}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1connectivity_aa5b25211f6bd4db33a1028266ec1aa4b}} 
+\index{networkx\+::algorithms\+::approximation\+::connectivity@{networkx\+::algorithms\+::approximation\+::connectivity}!I\+NF@{I\+NF}}
+\index{I\+NF@{I\+NF}!networkx\+::algorithms\+::approximation\+::connectivity@{networkx\+::algorithms\+::approximation\+::connectivity}}
+\subsubsection{\texorpdfstring{I\+NF}{INF}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+approximation.\+connectivity.\+I\+NF}
+

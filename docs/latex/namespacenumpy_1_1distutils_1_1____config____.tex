@@ -1,0 +1,135 @@
+\hypertarget{namespacenumpy_1_1distutils_1_1____config____}{}\section{numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+ Namespace Reference}
+\label{namespacenumpy_1_1distutils_1_1____config____}\index{numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1____config_____a7907410297f40c910c2bde2a9fbfed3d}{get\+\_\+info} (name)
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1____config_____a8d0a314a1c2214e7b0ec28d4a19865eb}{show} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1____config_____aa146f2411b295e7c1c0996454a626e45}{extra\+\_\+dll\+\_\+dir}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1____config_____a80adce35b658ba404c96caf4ac6b5b34}{blas\+\_\+mkl\+\_\+info}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1____config_____ab66bb1576117ba8944a4f09b4ca4b36a}{blis\+\_\+info}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1____config_____aa64cbe9881af85428511bcd746ee853c}{openblas\+\_\+info}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1____config_____ab8dbeaaea8c831eb72972f8ac8bbadf9}{blas\+\_\+opt\+\_\+info}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1____config_____a30ea9cca05cbf67dc278e43e469a67a4}{lapack\+\_\+mkl\+\_\+info}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1____config_____a7b29df723caa045380f6f5fe02ecd162}{openblas\+\_\+lapack\+\_\+info}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1____config_____a74aac6b9efb163de33b8951373cd78aa}{lapack\+\_\+opt\+\_\+info}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1____config_____a7907410297f40c910c2bde2a9fbfed3d}\label{namespacenumpy_1_1distutils_1_1____config_____a7907410297f40c910c2bde2a9fbfed3d}} 
+\index{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}!get\+\_\+info@{get\+\_\+info}}
+\index{get\+\_\+info@{get\+\_\+info}!numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}}
+\subsubsection{\texorpdfstring{get\+\_\+info()}{get\_info()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+.\+get\+\_\+info (\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1____config_____a8d0a314a1c2214e7b0ec28d4a19865eb}\label{namespacenumpy_1_1distutils_1_1____config_____a8d0a314a1c2214e7b0ec28d4a19865eb}} 
+\index{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}!show@{show}}
+\index{show@{show}!numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}}
+\subsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+.\+show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Show libraries in the system on which NumPy was built.
+
+Print information about various resources (libraries, library
+directories, include directories, etc.) in the system on which
+NumPy was built.
+
+See Also
+--------
+get_include : Returns the directory containing NumPy C
+              header files.
+
+Notes
+-----
+Classes specifying the information to be printed are defined
+in the `numpy.distutils.system_info` module.
+
+Information may include:
+
+* ``language``: language used to write the libraries (mostly
+  C or f77)
+* ``libraries``: names of libraries found in the system
+* ``library_dirs``: directories containing the libraries
+* ``include_dirs``: directories containing library header files
+* ``src_dirs``: directories containing library source files
+* ``define_macros``: preprocessor macros used by
+  ``distutils.setup``
+* ``baseline``: minimum CPU features required
+* ``found``: dispatched features supported in the system
+* ``not found``: dispatched features that are not supported
+  in the system
+
+Examples
+--------
+>>> import numpy as np
+>>> np.show_config()
+blas_opt_info:
+    language = c
+    define_macros = [('HAVE_CBLAS', None)]
+    libraries = ['openblas', 'openblas']
+    library_dirs = ['/usr/local/lib']
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1____config_____a80adce35b658ba404c96caf4ac6b5b34}\label{namespacenumpy_1_1distutils_1_1____config_____a80adce35b658ba404c96caf4ac6b5b34}} 
+\index{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}!blas\+\_\+mkl\+\_\+info@{blas\+\_\+mkl\+\_\+info}}
+\index{blas\+\_\+mkl\+\_\+info@{blas\+\_\+mkl\+\_\+info}!numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}}
+\subsubsection{\texorpdfstring{blas\+\_\+mkl\+\_\+info}{blas\_mkl\_info}}
+{\footnotesize\ttfamily numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+.\+blas\+\_\+mkl\+\_\+info}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1____config_____ab8dbeaaea8c831eb72972f8ac8bbadf9}\label{namespacenumpy_1_1distutils_1_1____config_____ab8dbeaaea8c831eb72972f8ac8bbadf9}} 
+\index{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}!blas\+\_\+opt\+\_\+info@{blas\+\_\+opt\+\_\+info}}
+\index{blas\+\_\+opt\+\_\+info@{blas\+\_\+opt\+\_\+info}!numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}}
+\subsubsection{\texorpdfstring{blas\+\_\+opt\+\_\+info}{blas\_opt\_info}}
+{\footnotesize\ttfamily numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+.\+blas\+\_\+opt\+\_\+info}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1____config_____ab66bb1576117ba8944a4f09b4ca4b36a}\label{namespacenumpy_1_1distutils_1_1____config_____ab66bb1576117ba8944a4f09b4ca4b36a}} 
+\index{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}!blis\+\_\+info@{blis\+\_\+info}}
+\index{blis\+\_\+info@{blis\+\_\+info}!numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}}
+\subsubsection{\texorpdfstring{blis\+\_\+info}{blis\_info}}
+{\footnotesize\ttfamily numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+.\+blis\+\_\+info}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1____config_____aa146f2411b295e7c1c0996454a626e45}\label{namespacenumpy_1_1distutils_1_1____config_____aa146f2411b295e7c1c0996454a626e45}} 
+\index{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}!extra\+\_\+dll\+\_\+dir@{extra\+\_\+dll\+\_\+dir}}
+\index{extra\+\_\+dll\+\_\+dir@{extra\+\_\+dll\+\_\+dir}!numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}}
+\subsubsection{\texorpdfstring{extra\+\_\+dll\+\_\+dir}{extra\_dll\_dir}}
+{\footnotesize\ttfamily numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+.\+extra\+\_\+dll\+\_\+dir}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1____config_____a30ea9cca05cbf67dc278e43e469a67a4}\label{namespacenumpy_1_1distutils_1_1____config_____a30ea9cca05cbf67dc278e43e469a67a4}} 
+\index{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}!lapack\+\_\+mkl\+\_\+info@{lapack\+\_\+mkl\+\_\+info}}
+\index{lapack\+\_\+mkl\+\_\+info@{lapack\+\_\+mkl\+\_\+info}!numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}}
+\subsubsection{\texorpdfstring{lapack\+\_\+mkl\+\_\+info}{lapack\_mkl\_info}}
+{\footnotesize\ttfamily numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+.\+lapack\+\_\+mkl\+\_\+info}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1____config_____a74aac6b9efb163de33b8951373cd78aa}\label{namespacenumpy_1_1distutils_1_1____config_____a74aac6b9efb163de33b8951373cd78aa}} 
+\index{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}!lapack\+\_\+opt\+\_\+info@{lapack\+\_\+opt\+\_\+info}}
+\index{lapack\+\_\+opt\+\_\+info@{lapack\+\_\+opt\+\_\+info}!numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}}
+\subsubsection{\texorpdfstring{lapack\+\_\+opt\+\_\+info}{lapack\_opt\_info}}
+{\footnotesize\ttfamily numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+.\+lapack\+\_\+opt\+\_\+info}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1____config_____aa64cbe9881af85428511bcd746ee853c}\label{namespacenumpy_1_1distutils_1_1____config_____aa64cbe9881af85428511bcd746ee853c}} 
+\index{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}!openblas\+\_\+info@{openblas\+\_\+info}}
+\index{openblas\+\_\+info@{openblas\+\_\+info}!numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}}
+\subsubsection{\texorpdfstring{openblas\+\_\+info}{openblas\_info}}
+{\footnotesize\ttfamily numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+.\+openblas\+\_\+info}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1____config_____a7b29df723caa045380f6f5fe02ecd162}\label{namespacenumpy_1_1distutils_1_1____config_____a7b29df723caa045380f6f5fe02ecd162}} 
+\index{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}!openblas\+\_\+lapack\+\_\+info@{openblas\+\_\+lapack\+\_\+info}}
+\index{openblas\+\_\+lapack\+\_\+info@{openblas\+\_\+lapack\+\_\+info}!numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+@{numpy\+::distutils\+::\+\_\+\+\_\+config\+\_\+\+\_\+}}
+\subsubsection{\texorpdfstring{openblas\+\_\+lapack\+\_\+info}{openblas\_lapack\_info}}
+{\footnotesize\ttfamily numpy.\+distutils.\+\_\+\+\_\+config\+\_\+\+\_\+.\+openblas\+\_\+lapack\+\_\+info}
+

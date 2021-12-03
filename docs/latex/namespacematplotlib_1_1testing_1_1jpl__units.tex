@@ -1,0 +1,143 @@
+\hypertarget{namespacematplotlib_1_1testing_1_1jpl__units}{}\section{matplotlib.\+testing.\+jpl\+\_\+units Namespace Reference}
+\label{namespacematplotlib_1_1testing_1_1jpl__units}\index{matplotlib.\+testing.\+jpl\+\_\+units@{matplotlib.\+testing.\+jpl\+\_\+units}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_1_1Duration}{Duration}
+\item 
+ \hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_1_1Epoch}{Epoch}
+\item 
+ \hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_1_1EpochConverter}{Epoch\+Converter}
+\item 
+ \hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_1_1StrConverter}{Str\+Converter}
+\item 
+ \hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_1_1UnitDbl}{Unit\+Dbl}
+\item 
+ \hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_1_1UnitDblConverter}{Unit\+Dbl\+Converter}
+\item 
+ \hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_1_1UnitDblFormatter}{Unit\+Dbl\+Formatter}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_ae5e86bf22e14304e26b47e66daf1188b}{register} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}{m}
+\item 
+\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_abaf20477ad909e87966e16ad7272ed79}{km}
+\item 
+\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_aff7c1fef72c8b943b993491b0a63b439}{mile}
+\item 
+\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_aa3f345c339ee4457ea4b042e6710a084}{deg}
+\item 
+\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_a6405f99e45e82b6fbfefb0271b556334}{rad}
+\item 
+\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_a9acc2ff11405303ec4ba044cee15b4b8}{sec}
+\item 
+\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_a51cb5000e0910f6ae23d7fe223e7d6ea}{min}
+\item 
+\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_a2358eee4f31b939d391c577003e6f118}{hr}
+\item 
+\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_a3049f211898a0543f84ffb8b03413e6a}{day}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A sample set of units for use with testing unit conversion
+of Matplotlib routines.  These are used because they use very strict
+enforcement of unitized data which will test the entire spectrum of how
+unitized data might be used (it is not always meaningful to convert to
+a float without specific units given).
+
+UnitDbl is essentially a unitized floating point number.  It has a
+minimal set of supported units (enough for testing purposes).  All
+of the mathematical operation are provided to fully test any behaviour
+that might occur with unitized data.  Remember that unitized data has
+rules as to how it can be applied to one another (a value of distance
+cannot be added to a value of time).  Thus we need to guard against any
+accidental "default" conversion that will strip away the meaning of the
+data and render it neutered.
+
+Epoch is different than a UnitDbl of time.  Time is something that can be
+measured where an Epoch is a specific moment in time.  Epochs are typically
+referenced as an offset from some predetermined epoch.
+
+A difference of two epochs is a Duration.  The distinction between a Duration
+and a UnitDbl of time is made because an Epoch can have different frames (or
+units).  In the case of our test Epoch class the two allowed frames are 'UTC'
+and 'ET' (Note that these are rough estimates provided for testing purposes
+and should not be used in production code where accuracy of time frames is
+desired).  As such a Duration also has a frame of reference and therefore needs
+to be called out as different that a simple measurement of time since a delta-t
+in one frame may not be the same in another.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1jpl__units_ae5e86bf22e14304e26b47e66daf1188b}\label{namespacematplotlib_1_1testing_1_1jpl__units_ae5e86bf22e14304e26b47e66daf1188b}} 
+\index{matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}!register@{register}}
+\index{register@{register}!matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}}
+\subsubsection{\texorpdfstring{register()}{register()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+jpl\+\_\+units.\+register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register the unit conversion classes with matplotlib.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1jpl__units_a3049f211898a0543f84ffb8b03413e6a}\label{namespacematplotlib_1_1testing_1_1jpl__units_a3049f211898a0543f84ffb8b03413e6a}} 
+\index{matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}!day@{day}}
+\index{day@{day}!matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}}
+\subsubsection{\texorpdfstring{day}{day}}
+{\footnotesize\ttfamily matplotlib.\+testing.\+jpl\+\_\+units.\+day}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1jpl__units_aa3f345c339ee4457ea4b042e6710a084}\label{namespacematplotlib_1_1testing_1_1jpl__units_aa3f345c339ee4457ea4b042e6710a084}} 
+\index{matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}!deg@{deg}}
+\index{deg@{deg}!matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}}
+\subsubsection{\texorpdfstring{deg}{deg}}
+{\footnotesize\ttfamily matplotlib.\+testing.\+jpl\+\_\+units.\+deg}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1jpl__units_a2358eee4f31b939d391c577003e6f118}\label{namespacematplotlib_1_1testing_1_1jpl__units_a2358eee4f31b939d391c577003e6f118}} 
+\index{matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}!hr@{hr}}
+\index{hr@{hr}!matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}}
+\subsubsection{\texorpdfstring{hr}{hr}}
+{\footnotesize\ttfamily matplotlib.\+testing.\+jpl\+\_\+units.\+hr}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1jpl__units_abaf20477ad909e87966e16ad7272ed79}\label{namespacematplotlib_1_1testing_1_1jpl__units_abaf20477ad909e87966e16ad7272ed79}} 
+\index{matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}!km@{km}}
+\index{km@{km}!matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}}
+\subsubsection{\texorpdfstring{km}{km}}
+{\footnotesize\ttfamily matplotlib.\+testing.\+jpl\+\_\+units.\+km}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}\label{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}} 
+\index{matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}!m@{m}}
+\index{m@{m}!matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}}
+\subsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily matplotlib.\+testing.\+jpl\+\_\+units.\+m}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1jpl__units_aff7c1fef72c8b943b993491b0a63b439}\label{namespacematplotlib_1_1testing_1_1jpl__units_aff7c1fef72c8b943b993491b0a63b439}} 
+\index{matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}!mile@{mile}}
+\index{mile@{mile}!matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}}
+\subsubsection{\texorpdfstring{mile}{mile}}
+{\footnotesize\ttfamily matplotlib.\+testing.\+jpl\+\_\+units.\+mile}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1jpl__units_a51cb5000e0910f6ae23d7fe223e7d6ea}\label{namespacematplotlib_1_1testing_1_1jpl__units_a51cb5000e0910f6ae23d7fe223e7d6ea}} 
+\index{matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}!min@{min}}
+\index{min@{min}!matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}}
+\subsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily matplotlib.\+testing.\+jpl\+\_\+units.\+min}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1jpl__units_a6405f99e45e82b6fbfefb0271b556334}\label{namespacematplotlib_1_1testing_1_1jpl__units_a6405f99e45e82b6fbfefb0271b556334}} 
+\index{matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}!rad@{rad}}
+\index{rad@{rad}!matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}}
+\subsubsection{\texorpdfstring{rad}{rad}}
+{\footnotesize\ttfamily matplotlib.\+testing.\+jpl\+\_\+units.\+rad}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1jpl__units_a9acc2ff11405303ec4ba044cee15b4b8}\label{namespacematplotlib_1_1testing_1_1jpl__units_a9acc2ff11405303ec4ba044cee15b4b8}} 
+\index{matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}!sec@{sec}}
+\index{sec@{sec}!matplotlib\+::testing\+::jpl\+\_\+units@{matplotlib\+::testing\+::jpl\+\_\+units}}
+\subsubsection{\texorpdfstring{sec}{sec}}
+{\footnotesize\ttfamily matplotlib.\+testing.\+jpl\+\_\+units.\+sec}
+

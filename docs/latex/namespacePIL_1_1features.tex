@@ -1,0 +1,201 @@
+\hypertarget{namespacePIL_1_1features}{}\section{P\+I\+L.\+features Namespace Reference}
+\label{namespacePIL_1_1features}\index{P\+I\+L.\+features@{P\+I\+L.\+features}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacePIL_1_1features_a433b9d375d445e4b537e4fdd9d266172}{check\+\_\+module} (feature)
+\item 
+def \hyperlink{namespacePIL_1_1features_ad80ee59b0afe3375a4d3ecfa64a44371}{version\+\_\+module} (feature)
+\item 
+def \hyperlink{namespacePIL_1_1features_a479ecf59adbc4b7927878afa7f146b48}{get\+\_\+supported\+\_\+modules} ()
+\item 
+def \hyperlink{namespacePIL_1_1features_aec3de1af903a33b7eb2578a70b2a9411}{check\+\_\+codec} (feature)
+\item 
+def \hyperlink{namespacePIL_1_1features_a2e27a0a94079654ce3cb41cd1df05468}{version\+\_\+codec} (feature)
+\item 
+def \hyperlink{namespacePIL_1_1features_adf11b3cf60d59d7d58487d6864bc28a6}{get\+\_\+supported\+\_\+codecs} ()
+\item 
+def \hyperlink{namespacePIL_1_1features_aa770cfc9e1bbd82b811d3509601bac7a}{check\+\_\+feature} (feature)
+\item 
+def \hyperlink{namespacePIL_1_1features_a5992f4ca5ff86edcb46bb407e543fbe6}{version\+\_\+feature} (feature)
+\item 
+def \hyperlink{namespacePIL_1_1features_a5685e2e0e76d072df197c5fffb2ff9d2}{get\+\_\+supported\+\_\+features} ()
+\item 
+def \hyperlink{namespacePIL_1_1features_a72161dd073e2e79538e58ce554a9dae5}{check} (feature)
+\item 
+def \hyperlink{namespacePIL_1_1features_aa4315ad39e502ab0c7d72dc1055e53a8}{version} (feature)
+\item 
+def \hyperlink{namespacePIL_1_1features_aa5e618116b48b46ffc6a6e0640a353e1}{get\+\_\+supported} ()
+\item 
+def \hyperlink{namespacePIL_1_1features_aa8419d7f72fa0bf7f764d8d7dba19443}{pilinfo} (out=None, supported\+\_\+formats=True)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacePIL_1_1features_a830cab01c2c555e90ffe1986646609d0}{modules}
+\item 
+\hyperlink{namespacePIL_1_1features_a7a095b9622e9a683d6077402910bb638}{codecs}
+\item 
+\hyperlink{namespacePIL_1_1features_ac781694a3f6fd5be1670197ebf8d7800}{features}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1features_a72161dd073e2e79538e58ce554a9dae5}\label{namespacePIL_1_1features_a72161dd073e2e79538e58ce554a9dae5}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!check@{check}}
+\index{check@{check}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+check (\begin{DoxyParamCaption}\item[{}]{feature }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:param feature: A module, codec, or feature name.
+:returns:
+    ``True`` if the module, codec, or feature is available,
+    ``False`` or ``None`` otherwise.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1features_aec3de1af903a33b7eb2578a70b2a9411}\label{namespacePIL_1_1features_aec3de1af903a33b7eb2578a70b2a9411}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!check\+\_\+codec@{check\+\_\+codec}}
+\index{check\+\_\+codec@{check\+\_\+codec}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{check\+\_\+codec()}{check\_codec()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+check\+\_\+codec (\begin{DoxyParamCaption}\item[{}]{feature }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks if a codec is available.
+
+:param feature: The codec to check for.
+:returns: ``True`` if available, ``False`` otherwise.
+:raises ValueError: If the codec is not defined in this version of Pillow.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1features_aa770cfc9e1bbd82b811d3509601bac7a}\label{namespacePIL_1_1features_aa770cfc9e1bbd82b811d3509601bac7a}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!check\+\_\+feature@{check\+\_\+feature}}
+\index{check\+\_\+feature@{check\+\_\+feature}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{check\+\_\+feature()}{check\_feature()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+check\+\_\+feature (\begin{DoxyParamCaption}\item[{}]{feature }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks if a feature is available.
+
+:param feature: The feature to check for.
+:returns: ``True`` if available, ``False`` if unavailable, ``None`` if unknown.
+:raises ValueError: If the feature is not defined in this version of Pillow.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1features_a433b9d375d445e4b537e4fdd9d266172}\label{namespacePIL_1_1features_a433b9d375d445e4b537e4fdd9d266172}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!check\+\_\+module@{check\+\_\+module}}
+\index{check\+\_\+module@{check\+\_\+module}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{check\+\_\+module()}{check\_module()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+check\+\_\+module (\begin{DoxyParamCaption}\item[{}]{feature }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks if a module is available.
+
+:param feature: The module to check for.
+:returns: ``True`` if available, ``False`` otherwise.
+:raises ValueError: If the module is not defined in this version of Pillow.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1features_aa5e618116b48b46ffc6a6e0640a353e1}\label{namespacePIL_1_1features_aa5e618116b48b46ffc6a6e0640a353e1}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!get\+\_\+supported@{get\+\_\+supported}}
+\index{get\+\_\+supported@{get\+\_\+supported}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{get\+\_\+supported()}{get\_supported()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+get\+\_\+supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:returns: A list of all supported modules, features, and codecs.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1features_adf11b3cf60d59d7d58487d6864bc28a6}\label{namespacePIL_1_1features_adf11b3cf60d59d7d58487d6864bc28a6}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!get\+\_\+supported\+\_\+codecs@{get\+\_\+supported\+\_\+codecs}}
+\index{get\+\_\+supported\+\_\+codecs@{get\+\_\+supported\+\_\+codecs}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{get\+\_\+supported\+\_\+codecs()}{get\_supported\_codecs()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+get\+\_\+supported\+\_\+codecs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:returns: A list of all supported codecs.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1features_a5685e2e0e76d072df197c5fffb2ff9d2}\label{namespacePIL_1_1features_a5685e2e0e76d072df197c5fffb2ff9d2}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!get\+\_\+supported\+\_\+features@{get\+\_\+supported\+\_\+features}}
+\index{get\+\_\+supported\+\_\+features@{get\+\_\+supported\+\_\+features}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{get\+\_\+supported\+\_\+features()}{get\_supported\_features()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+get\+\_\+supported\+\_\+features (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:returns: A list of all supported features.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1features_a479ecf59adbc4b7927878afa7f146b48}\label{namespacePIL_1_1features_a479ecf59adbc4b7927878afa7f146b48}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!get\+\_\+supported\+\_\+modules@{get\+\_\+supported\+\_\+modules}}
+\index{get\+\_\+supported\+\_\+modules@{get\+\_\+supported\+\_\+modules}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{get\+\_\+supported\+\_\+modules()}{get\_supported\_modules()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+get\+\_\+supported\+\_\+modules (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:returns: A list of all supported modules.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1features_aa8419d7f72fa0bf7f764d8d7dba19443}\label{namespacePIL_1_1features_aa8419d7f72fa0bf7f764d8d7dba19443}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!pilinfo@{pilinfo}}
+\index{pilinfo@{pilinfo}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{pilinfo()}{pilinfo()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+pilinfo (\begin{DoxyParamCaption}\item[{}]{out = {\ttfamily None},  }\item[{}]{supported\+\_\+formats = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Prints information about this installation of Pillow.
+This function can be called with ``python3 -m PIL``.
+
+:param out:
+    The output stream to print to. Defaults to ``sys.stdout`` if ``None``.
+:param supported_formats:
+    If ``True``, a list of all supported image file formats will be printed.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1features_aa4315ad39e502ab0c7d72dc1055e53a8}\label{namespacePIL_1_1features_aa4315ad39e502ab0c7d72dc1055e53a8}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!version@{version}}
+\index{version@{version}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{version()}{version()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+version (\begin{DoxyParamCaption}\item[{}]{feature }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:param feature:
+    The module, codec, or feature to check for.
+:returns:
+    The version number as a string, or ``None`` if unknown or not available.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1features_a2e27a0a94079654ce3cb41cd1df05468}\label{namespacePIL_1_1features_a2e27a0a94079654ce3cb41cd1df05468}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!version\+\_\+codec@{version\+\_\+codec}}
+\index{version\+\_\+codec@{version\+\_\+codec}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{version\+\_\+codec()}{version\_codec()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+version\+\_\+codec (\begin{DoxyParamCaption}\item[{}]{feature }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:param feature: The codec to check for.
+:returns:
+    The version number as a string, or ``None`` if not available.
+    Checked at compile time for ``jpg``, run-time otherwise.
+:raises ValueError: If the codec is not defined in this version of Pillow.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1features_a5992f4ca5ff86edcb46bb407e543fbe6}\label{namespacePIL_1_1features_a5992f4ca5ff86edcb46bb407e543fbe6}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!version\+\_\+feature@{version\+\_\+feature}}
+\index{version\+\_\+feature@{version\+\_\+feature}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{version\+\_\+feature()}{version\_feature()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+version\+\_\+feature (\begin{DoxyParamCaption}\item[{}]{feature }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:param feature: The feature to check for.
+:returns: The version number as a string, or ``None`` if not available.
+:raises ValueError: If the feature is not defined in this version of Pillow.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1features_ad80ee59b0afe3375a4d3ecfa64a44371}\label{namespacePIL_1_1features_ad80ee59b0afe3375a4d3ecfa64a44371}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!version\+\_\+module@{version\+\_\+module}}
+\index{version\+\_\+module@{version\+\_\+module}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{version\+\_\+module()}{version\_module()}}
+{\footnotesize\ttfamily def P\+I\+L.\+features.\+version\+\_\+module (\begin{DoxyParamCaption}\item[{}]{feature }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:param feature: The module to check for.
+:returns:
+    The loaded version number as a string, or ``None`` if unknown or not available.
+:raises ValueError: If the module is not defined in this version of Pillow.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1features_a7a095b9622e9a683d6077402910bb638}\label{namespacePIL_1_1features_a7a095b9622e9a683d6077402910bb638}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!codecs@{codecs}}
+\index{codecs@{codecs}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{codecs}{codecs}}
+{\footnotesize\ttfamily P\+I\+L.\+features.\+codecs}
+
+\mbox{\Hypertarget{namespacePIL_1_1features_ac781694a3f6fd5be1670197ebf8d7800}\label{namespacePIL_1_1features_ac781694a3f6fd5be1670197ebf8d7800}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!features@{features}}
+\index{features@{features}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{features}{features}}
+{\footnotesize\ttfamily P\+I\+L.\+features.\+features}
+
+\mbox{\Hypertarget{namespacePIL_1_1features_a830cab01c2c555e90ffe1986646609d0}\label{namespacePIL_1_1features_a830cab01c2c555e90ffe1986646609d0}} 
+\index{P\+I\+L\+::features@{P\+I\+L\+::features}!modules@{modules}}
+\index{modules@{modules}!P\+I\+L\+::features@{P\+I\+L\+::features}}
+\subsubsection{\texorpdfstring{modules}{modules}}
+{\footnotesize\ttfamily P\+I\+L.\+features.\+modules}
+

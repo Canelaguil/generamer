@@ -1,0 +1,378 @@
+\hypertarget{namespacenumpy_1_1lib_1_1index__tricks}{}\section{numpy.\+lib.\+index\+\_\+tricks Namespace Reference}
+\label{namespacenumpy_1_1lib_1_1index__tricks}\index{numpy.\+lib.\+index\+\_\+tricks@{numpy.\+lib.\+index\+\_\+tricks}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1AxisConcatenator}{Axis\+Concatenator}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1CClass}{C\+Class}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1IndexExpression}{Index\+Expression}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1MGridClass}{M\+Grid\+Class}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid}{nd\+\_\+grid}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1ndenumerate}{ndenumerate}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1ndindex}{ndindex}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1OGridClass}{O\+Grid\+Class}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1RClass}{R\+Class}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1index__tricks_ac7efd051779676e13d5806315e7aa940}{ix\+\_\+} (args)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1index__tricks_a63f9e685bbece785aff8007562d962fb}{fill\+\_\+diagonal} (a, val, wrap=False)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1index__tricks_a60c3ddca84d2352b753fd5e01a23e414}{diag\+\_\+indices} (\hyperlink{namespacenumpy_a352663c52853d2754274407d5cae2832}{n}, ndim=2)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1index__tricks_a62e2c1605b994480377db680e3707673}{diag\+\_\+indices\+\_\+from} (arr)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1index__tricks_a6186cb7e25fd7c8b6fdcafefb41c7a38}{array\+\_\+function\+\_\+dispatch}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1index__tricks_a6a56ad89e3d4de39c00640065928622e}{module}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1index__tricks_af460db3657300678604092a36fd9fc4a}{mgrid}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1index__tricks_a0efd1913fc63e3016401175f73708f99}{ogrid}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1index__tricks_aab450cbe1e120d51dd756f22d17a70e9}{r\+\_\+}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1index__tricks_a2da95ccc7ac993d5f84377f365163112}{c\+\_\+}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1index__tricks_ac71ba02dd9cd20cb9bf13363ccd937b4}{index\+\_\+exp}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1index__tricks_a34c248a18a34c1123283ad2346dcc5f0}{maketuple}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1index__tricks_aa062364c520d3a2055b0e8fff56a58ad}{s\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_a60c3ddca84d2352b753fd5e01a23e414}\label{namespacenumpy_1_1lib_1_1index__tricks_a60c3ddca84d2352b753fd5e01a23e414}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!diag\+\_\+indices@{diag\+\_\+indices}}
+\index{diag\+\_\+indices@{diag\+\_\+indices}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{diag\+\_\+indices()}{diag\_indices()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+diag\+\_\+indices (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{ndim = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the indices to access the main diagonal of an array.
+
+This returns a tuple of indices that can be used to access the main
+diagonal of an array `a` with ``a.ndim >= 2`` dimensions and shape
+(n, n, ..., n). For ``a.ndim = 2`` this is the usual diagonal, for
+``a.ndim > 2`` this is the set of indices to access ``a[i, i, ..., i]``
+for ``i = [0..n-1]``.
+
+Parameters
+----------
+n : int
+  The size, along each dimension, of the arrays for which the returned
+  indices can be used.
+
+ndim : int, optional
+  The number of dimensions.
+
+See Also
+--------
+diag_indices_from
+
+Notes
+-----
+.. versionadded:: 1.4.0
+
+Examples
+--------
+Create a set of indices to access the diagonal of a (4, 4) array:
+
+>>> di = np.diag_indices(4)
+>>> di
+(array([0, 1, 2, 3]), array([0, 1, 2, 3]))
+>>> a = np.arange(16).reshape(4, 4)
+>>> a
+array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11],
+       [12, 13, 14, 15]])
+>>> a[di] = 100
+>>> a
+array([[100,   1,   2,   3],
+       [  4, 100,   6,   7],
+       [  8,   9, 100,  11],
+       [ 12,  13,  14, 100]])
+
+Now, we create indices to manipulate a 3-D array:
+
+>>> d3 = np.diag_indices(2, 3)
+>>> d3
+(array([0, 1]), array([0, 1]), array([0, 1]))
+
+And use it to set the diagonal of an array of zeros to 1:
+
+>>> a = np.zeros((2, 2, 2), dtype=int)
+>>> a[d3] = 1
+>>> a
+array([[[1, 0],
+        [0, 0]],
+       [[0, 0],
+        [0, 1]]])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_a62e2c1605b994480377db680e3707673}\label{namespacenumpy_1_1lib_1_1index__tricks_a62e2c1605b994480377db680e3707673}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!diag\+\_\+indices\+\_\+from@{diag\+\_\+indices\+\_\+from}}
+\index{diag\+\_\+indices\+\_\+from@{diag\+\_\+indices\+\_\+from}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{diag\+\_\+indices\+\_\+from()}{diag\_indices\_from()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+diag\+\_\+indices\+\_\+from (\begin{DoxyParamCaption}\item[{}]{arr }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the indices to access the main diagonal of an n-dimensional array.
+
+See `diag_indices` for full details.
+
+Parameters
+----------
+arr : array, at least 2-D
+
+See Also
+--------
+diag_indices
+
+Notes
+-----
+.. versionadded:: 1.4.0\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_a63f9e685bbece785aff8007562d962fb}\label{namespacenumpy_1_1lib_1_1index__tricks_a63f9e685bbece785aff8007562d962fb}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!fill\+\_\+diagonal@{fill\+\_\+diagonal}}
+\index{fill\+\_\+diagonal@{fill\+\_\+diagonal}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{fill\+\_\+diagonal()}{fill\_diagonal()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+fill\+\_\+diagonal (\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{val,  }\item[{}]{wrap = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Fill the main diagonal of the given array of any dimensionality.
+
+For an array `a` with ``a.ndim >= 2``, the diagonal is the list of
+locations with indices ``a[i, ..., i]`` all identical. This function
+modifies the input array in-place, it does not return a value.
+
+Parameters
+----------
+a : array, at least 2-D.
+  Array whose diagonal is to be filled, it gets modified in-place.
+
+val : scalar or array_like
+  Value(s) to write on the diagonal. If `val` is scalar, the value is
+  written along the diagonal. If array-like, the flattened `val` is
+  written along the diagonal, repeating if necessary to fill all
+  diagonal entries.
+
+wrap : bool
+  For tall matrices in NumPy version up to 1.6.2, the
+  diagonal "wrapped" after N columns. You can have this behavior
+  with this option. This affects only tall matrices.
+
+See also
+--------
+diag_indices, diag_indices_from
+
+Notes
+-----
+.. versionadded:: 1.4.0
+
+This functionality can be obtained via `diag_indices`, but internally
+this version uses a much faster implementation that never constructs the
+indices and uses simple slicing.
+
+Examples
+--------
+>>> a = np.zeros((3, 3), int)
+>>> np.fill_diagonal(a, 5)
+>>> a
+array([[5, 0, 0],
+       [0, 5, 0],
+       [0, 0, 5]])
+
+The same function can operate on a 4-D array:
+
+>>> a = np.zeros((3, 3, 3, 3), int)
+>>> np.fill_diagonal(a, 4)
+
+We only show a few blocks for clarity:
+
+>>> a[0, 0]
+array([[4, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0]])
+>>> a[1, 1]
+array([[0, 0, 0],
+       [0, 4, 0],
+       [0, 0, 0]])
+>>> a[2, 2]
+array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 4]])
+
+The wrap option affects only tall matrices:
+
+>>> # tall matrices no wrap
+>>> a = np.zeros((5, 3), int)
+>>> np.fill_diagonal(a, 4)
+>>> a
+array([[4, 0, 0],
+       [0, 4, 0],
+       [0, 0, 4],
+       [0, 0, 0],
+       [0, 0, 0]])
+
+>>> # tall matrices wrap
+>>> a = np.zeros((5, 3), int)
+>>> np.fill_diagonal(a, 4, wrap=True)
+>>> a
+array([[4, 0, 0],
+       [0, 4, 0],
+       [0, 0, 4],
+       [0, 0, 0],
+       [4, 0, 0]])
+
+>>> # wide matrices
+>>> a = np.zeros((3, 5), int)
+>>> np.fill_diagonal(a, 4, wrap=True)
+>>> a
+array([[4, 0, 0, 0, 0],
+       [0, 4, 0, 0, 0],
+       [0, 0, 4, 0, 0]])
+
+The anti-diagonal can be filled by reversing the order of elements
+using either `numpy.flipud` or `numpy.fliplr`.
+
+>>> a = np.zeros((3, 3), int);
+>>> np.fill_diagonal(np.fliplr(a), [1,2,3])  # Horizontal flip
+>>> a
+array([[0, 0, 1],
+       [0, 2, 0],
+       [3, 0, 0]])
+>>> np.fill_diagonal(np.flipud(a), [1,2,3])  # Vertical flip
+>>> a
+array([[0, 0, 3],
+       [0, 2, 0],
+       [1, 0, 0]])
+
+Note that the order in which the diagonal is filled varies depending
+on the flip function.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_ac7efd051779676e13d5806315e7aa940}\label{namespacenumpy_1_1lib_1_1index__tricks_ac7efd051779676e13d5806315e7aa940}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!ix\+\_\+@{ix\+\_\+}}
+\index{ix\+\_\+@{ix\+\_\+}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{ix\+\_\+()}{ix\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+ix\+\_\+ (\begin{DoxyParamCaption}\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Construct an open mesh from multiple sequences.
+
+This function takes N 1-D sequences and returns N outputs with N
+dimensions each, such that the shape is 1 in all but one dimension
+and the dimension with the non-unit shape value cycles through all
+N dimensions.
+
+Using `ix_` one can quickly construct index arrays that will index
+the cross product. ``a[np.ix_([1,3],[2,5])]`` returns the array
+``[[a[1,2] a[1,5]], [a[3,2] a[3,5]]]``.
+
+Parameters
+----------
+args : 1-D sequences
+    Each sequence should be of integer or boolean type.
+    Boolean sequences will be interpreted as boolean masks for the
+    corresponding dimension (equivalent to passing in
+    ``np.nonzero(boolean_sequence)``).
+
+Returns
+-------
+out : tuple of ndarrays
+    N arrays with N dimensions each, with N the number of input
+    sequences. Together these arrays form an open mesh.
+
+See Also
+--------
+ogrid, mgrid, meshgrid
+
+Examples
+--------
+>>> a = np.arange(10).reshape(2, 5)
+>>> a
+array([[0, 1, 2, 3, 4],
+       [5, 6, 7, 8, 9]])
+>>> ixgrid = np.ix_([0, 1], [2, 4])
+>>> ixgrid
+(array([[0],
+       [1]]), array([[2, 4]]))
+>>> ixgrid[0].shape, ixgrid[1].shape
+((2, 1), (1, 2))
+>>> a[ixgrid]
+array([[2, 4],
+       [7, 9]])
+
+>>> ixgrid = np.ix_([True, True], [2, 4])
+>>> a[ixgrid]
+array([[2, 4],
+       [7, 9]])
+>>> ixgrid = np.ix_([True, True], [False, False, True, False, True])
+>>> a[ixgrid]
+array([[2, 4],
+       [7, 9]])\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_a6186cb7e25fd7c8b6fdcafefb41c7a38}\label{namespacenumpy_1_1lib_1_1index__tricks_a6186cb7e25fd7c8b6fdcafefb41c7a38}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!array\+\_\+function\+\_\+dispatch@{array\+\_\+function\+\_\+dispatch}}
+\index{array\+\_\+function\+\_\+dispatch@{array\+\_\+function\+\_\+dispatch}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{array\+\_\+function\+\_\+dispatch}{array\_function\_dispatch}}
+{\footnotesize\ttfamily numpy.\+lib.\+index\+\_\+tricks.\+array\+\_\+function\+\_\+dispatch}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_a2da95ccc7ac993d5f84377f365163112}\label{namespacenumpy_1_1lib_1_1index__tricks_a2da95ccc7ac993d5f84377f365163112}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!c\+\_\+@{c\+\_\+}}
+\index{c\+\_\+@{c\+\_\+}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{c\+\_\+}{c\_}}
+{\footnotesize\ttfamily numpy.\+lib.\+index\+\_\+tricks.\+c\+\_\+}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_ac71ba02dd9cd20cb9bf13363ccd937b4}\label{namespacenumpy_1_1lib_1_1index__tricks_ac71ba02dd9cd20cb9bf13363ccd937b4}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!index\+\_\+exp@{index\+\_\+exp}}
+\index{index\+\_\+exp@{index\+\_\+exp}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{index\+\_\+exp}{index\_exp}}
+{\footnotesize\ttfamily numpy.\+lib.\+index\+\_\+tricks.\+index\+\_\+exp}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_a34c248a18a34c1123283ad2346dcc5f0}\label{namespacenumpy_1_1lib_1_1index__tricks_a34c248a18a34c1123283ad2346dcc5f0}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!maketuple@{maketuple}}
+\index{maketuple@{maketuple}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{maketuple}{maketuple}}
+{\footnotesize\ttfamily numpy.\+lib.\+index\+\_\+tricks.\+maketuple}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_af460db3657300678604092a36fd9fc4a}\label{namespacenumpy_1_1lib_1_1index__tricks_af460db3657300678604092a36fd9fc4a}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!mgrid@{mgrid}}
+\index{mgrid@{mgrid}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{mgrid}{mgrid}}
+{\footnotesize\ttfamily numpy.\+lib.\+index\+\_\+tricks.\+mgrid}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_a6a56ad89e3d4de39c00640065928622e}\label{namespacenumpy_1_1lib_1_1index__tricks_a6a56ad89e3d4de39c00640065928622e}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!module@{module}}
+\index{module@{module}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{module}{module}}
+{\footnotesize\ttfamily numpy.\+lib.\+index\+\_\+tricks.\+module}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_a0efd1913fc63e3016401175f73708f99}\label{namespacenumpy_1_1lib_1_1index__tricks_a0efd1913fc63e3016401175f73708f99}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!ogrid@{ogrid}}
+\index{ogrid@{ogrid}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{ogrid}{ogrid}}
+{\footnotesize\ttfamily numpy.\+lib.\+index\+\_\+tricks.\+ogrid}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_aab450cbe1e120d51dd756f22d17a70e9}\label{namespacenumpy_1_1lib_1_1index__tricks_aab450cbe1e120d51dd756f22d17a70e9}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!r\+\_\+@{r\+\_\+}}
+\index{r\+\_\+@{r\+\_\+}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{r\+\_\+}{r\_}}
+{\footnotesize\ttfamily numpy.\+lib.\+index\+\_\+tricks.\+r\+\_\+}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1index__tricks_aa062364c520d3a2055b0e8fff56a58ad}\label{namespacenumpy_1_1lib_1_1index__tricks_aa062364c520d3a2055b0e8fff56a58ad}} 
+\index{numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}!s\+\_\+@{s\+\_\+}}
+\index{s\+\_\+@{s\+\_\+}!numpy\+::lib\+::index\+\_\+tricks@{numpy\+::lib\+::index\+\_\+tricks}}
+\subsubsection{\texorpdfstring{s\+\_\+}{s\_}}
+{\footnotesize\ttfamily numpy.\+lib.\+index\+\_\+tricks.\+s\+\_\+}
+

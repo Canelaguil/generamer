@@ -1,0 +1,173 @@
+\hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm}{}\section{matplotlib.\+colors.\+Centered\+Norm Class Reference}
+\label{classmatplotlib_1_1colors_1_1CenteredNorm}\index{matplotlib.\+colors.\+Centered\+Norm@{matplotlib.\+colors.\+Centered\+Norm}}
+
+
+Inheritance diagram for matplotlib.\+colors.\+Centered\+Norm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmatplotlib_1_1colors_1_1CenteredNorm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+colors.\+Centered\+Norm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmatplotlib_1_1colors_1_1CenteredNorm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a4b01eaf1c98c8708326040b6cba5a4c0}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a92e9e004bc409f3f35e2cd844ea19445}{vcenter}=0, \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a10eb29f9a5eb38afea307e46e1900d72}{halfrange}=None, \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a040daa09c6b1ef9419e606e19ffcffd5}{clip}=False)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_ab69dacf5dcce416c35fb280f05ae7a4a}{autoscale} (self, A)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a2f995e3e2336ad3fbd7fe9f1a067bd1e}{autoscale\+\_\+\+None} (self, A)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a92e9e004bc409f3f35e2cd844ea19445}{vcenter} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a8f5fefacb570756bbc85b57815225041}{vcenter} (self, vcenter)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a30a47769a24445d1ef0336d2015aca96}{halfrange} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a34e69a34f022a3a7ecded5e5886090c8}{halfrange} (self, halfrange)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a2808fbd193f3b3a0f13529a9525c38f3}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, value, \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a040daa09c6b1ef9419e606e19ffcffd5}{clip}=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_afa8601ccfb1e9c8bc60ae5bc54a74bc6}{vmin}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a42a88bba0b713e674fde0f4354c1c450}{vmax}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a10eb29f9a5eb38afea307e46e1900d72}{halfrange}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm_a040daa09c6b1ef9419e606e19ffcffd5}{clip}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm_a4b01eaf1c98c8708326040b6cba5a4c0}\label{classmatplotlib_1_1colors_1_1CenteredNorm_a4b01eaf1c98c8708326040b6cba5a4c0}} 
+\index{matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Centered\+Norm.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vcenter = {\ttfamily 0},  }\item[{}]{halfrange = {\ttfamily None},  }\item[{}]{clip = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Normalize symmetrical data around a center (0 by default).
+
+Unlike `TwoSlopeNorm`, `CenteredNorm` applies an equal rate of change
+around the center.
+
+Useful when mapping symmetrical data around a conceptual center
+e.g., data that range from -2 to 4, with 0 as the midpoint, and
+with equal rates of change around that midpoint.
+
+Parameters
+----------
+vcenter : float, default: 0
+    The data value that defines ``0.5`` in the normalization.
+halfrange : float, optional
+    The range of data values that defines a range of ``0.5`` in the
+    normalization, so that *vcenter* - *halfrange* is ``0.0`` and
+    *vcenter* + *halfrange* is ``1.0`` in the normalization.
+    Defaults to the largest absolute difference to *vcenter* for
+    the values in the dataset.
+
+Examples
+--------
+This maps data values -2 to 0.25, 0 to 0.5, and 4 to 1.0
+(assuming equal rates of change above and below 0.0):
+
+    >>> import matplotlib.colors as mcolors
+    >>> norm = mcolors.CenteredNorm(halfrange=4.0)
+    >>> data = [-2., 0., 4.]
+    >>> norm(data)
+    array([0.25, 0.5 , 1.  ])
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm_a2808fbd193f3b3a0f13529a9525c38f3}\label{classmatplotlib_1_1colors_1_1CenteredNorm_a2808fbd193f3b3a0f13529a9525c38f3}} 
+\index{matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Centered\+Norm.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value,  }\item[{}]{clip = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm_ab69dacf5dcce416c35fb280f05ae7a4a}\label{classmatplotlib_1_1colors_1_1CenteredNorm_ab69dacf5dcce416c35fb280f05ae7a4a}} 
+\index{matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}!autoscale@{autoscale}}
+\index{autoscale@{autoscale}!matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}}
+\subsubsection{\texorpdfstring{autoscale()}{autoscale()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Centered\+Norm.\+autoscale (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{A }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set *halfrange* to ``max(abs(A-vcenter))``, then set *vmin* and *vmax*.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm_a2f995e3e2336ad3fbd7fe9f1a067bd1e}\label{classmatplotlib_1_1colors_1_1CenteredNorm_a2f995e3e2336ad3fbd7fe9f1a067bd1e}} 
+\index{matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}!autoscale\+\_\+\+None@{autoscale\+\_\+\+None}}
+\index{autoscale\+\_\+\+None@{autoscale\+\_\+\+None}!matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}}
+\subsubsection{\texorpdfstring{autoscale\+\_\+\+None()}{autoscale\_None()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Centered\+Norm.\+autoscale\+\_\+\+None (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{A }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set *vmin* and *vmax*.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm_a30a47769a24445d1ef0336d2015aca96}\label{classmatplotlib_1_1colors_1_1CenteredNorm_a30a47769a24445d1ef0336d2015aca96}} 
+\index{matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}!halfrange@{halfrange}}
+\index{halfrange@{halfrange}!matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}}
+\subsubsection{\texorpdfstring{halfrange()}{halfrange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Centered\+Norm.\+halfrange (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm_a34e69a34f022a3a7ecded5e5886090c8}\label{classmatplotlib_1_1colors_1_1CenteredNorm_a34e69a34f022a3a7ecded5e5886090c8}} 
+\index{matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}!halfrange@{halfrange}}
+\index{halfrange@{halfrange}!matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}}
+\subsubsection{\texorpdfstring{halfrange()}{halfrange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Centered\+Norm.\+halfrange (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{halfrange }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm_a92e9e004bc409f3f35e2cd844ea19445}\label{classmatplotlib_1_1colors_1_1CenteredNorm_a92e9e004bc409f3f35e2cd844ea19445}} 
+\index{matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}!vcenter@{vcenter}}
+\index{vcenter@{vcenter}!matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}}
+\subsubsection{\texorpdfstring{vcenter()}{vcenter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Centered\+Norm.\+vcenter (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm_a8f5fefacb570756bbc85b57815225041}\label{classmatplotlib_1_1colors_1_1CenteredNorm_a8f5fefacb570756bbc85b57815225041}} 
+\index{matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}!vcenter@{vcenter}}
+\index{vcenter@{vcenter}!matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}}
+\subsubsection{\texorpdfstring{vcenter()}{vcenter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Centered\+Norm.\+vcenter (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vcenter }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm_a040daa09c6b1ef9419e606e19ffcffd5}\label{classmatplotlib_1_1colors_1_1CenteredNorm_a040daa09c6b1ef9419e606e19ffcffd5}} 
+\index{matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}!clip@{clip}}
+\index{clip@{clip}!matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}}
+\subsubsection{\texorpdfstring{clip}{clip}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Centered\+Norm.\+clip}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm_a10eb29f9a5eb38afea307e46e1900d72}\label{classmatplotlib_1_1colors_1_1CenteredNorm_a10eb29f9a5eb38afea307e46e1900d72}} 
+\index{matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}!halfrange@{halfrange}}
+\index{halfrange@{halfrange}!matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}}
+\subsubsection{\texorpdfstring{halfrange}{halfrange}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Centered\+Norm.\+halfrange}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm_a42a88bba0b713e674fde0f4354c1c450}\label{classmatplotlib_1_1colors_1_1CenteredNorm_a42a88bba0b713e674fde0f4354c1c450}} 
+\index{matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}!vmax@{vmax}}
+\index{vmax@{vmax}!matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}}
+\subsubsection{\texorpdfstring{vmax}{vmax}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Centered\+Norm.\+vmax}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1CenteredNorm_afa8601ccfb1e9c8bc60ae5bc54a74bc6}\label{classmatplotlib_1_1colors_1_1CenteredNorm_afa8601ccfb1e9c8bc60ae5bc54a74bc6}} 
+\index{matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}!vmin@{vmin}}
+\index{vmin@{vmin}!matplotlib\+::colors\+::\+Centered\+Norm@{matplotlib\+::colors\+::\+Centered\+Norm}}
+\subsubsection{\texorpdfstring{vmin}{vmin}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Centered\+Norm.\+vmin}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{colors_8py}{colors.\+py}\end{DoxyCompactItemize}

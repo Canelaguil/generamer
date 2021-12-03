@@ -1,0 +1,376 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1cuts}{}\section{networkx.\+algorithms.\+cuts Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1cuts}\index{networkx.\+algorithms.\+cuts@{networkx.\+algorithms.\+cuts}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1cuts_a3eab74cd6337e44432d794a0761b6440}{cut\+\_\+size} (G, S, T=None, weight=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1cuts_aba099ec7dcd9a10ba04202443c4453f9}{volume} (G, S, weight=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1cuts_a7092b90008f99838b113597d801b9e9a}{normalized\+\_\+cut\+\_\+size} (G, S, T=None, weight=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1cuts_a96f7d141bb0ecb21b2da6f642484b84a}{conductance} (G, S, T=None, weight=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1cuts_ac90454cac45ff9549676b947df4aece8}{edge\+\_\+expansion} (G, S, T=None, weight=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1cuts_ad6d523ba28c915b7f58652949d782d03}{mixing\+\_\+expansion} (G, S, T=None, weight=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1cuts_a0baf73cd3e4ac469e4e401b321c33dcc}{node\+\_\+expansion} (G, S)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1cuts_a6f634e722bca2e85bc85ffa9124688f1}{boundary\+\_\+expansion} (G, S)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions for finding and evaluating cuts in a graph.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1cuts_a6f634e722bca2e85bc85ffa9124688f1}\label{namespacenetworkx_1_1algorithms_1_1cuts_a6f634e722bca2e85bc85ffa9124688f1}} 
+\index{networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}!boundary\+\_\+expansion@{boundary\+\_\+expansion}}
+\index{boundary\+\_\+expansion@{boundary\+\_\+expansion}!networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}}
+\subsubsection{\texorpdfstring{boundary\+\_\+expansion()}{boundary\_expansion()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+cuts.\+boundary\+\_\+expansion (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{S }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the boundary expansion of the set `S`.
+
+The *boundary expansion* is the quotient of the size
+of the node boundary and the cardinality of *S*. [1]
+
+Parameters
+----------
+G : NetworkX graph
+
+S : collection
+    A collection of nodes in `G`.
+
+Returns
+-------
+number
+    The boundary expansion of the set `S`.
+
+See also
+--------
+edge_expansion
+mixing_expansion
+node_expansion
+
+References
+----------
+.. [1] Vadhan, Salil P.
+       "Pseudorandomness."
+       *Foundations and Trends in Theoretical Computer Science*
+       7.1–3 (2011): 1–336.
+       <https://doi.org/10.1561/0400000010>\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1cuts_a96f7d141bb0ecb21b2da6f642484b84a}\label{namespacenetworkx_1_1algorithms_1_1cuts_a96f7d141bb0ecb21b2da6f642484b84a}} 
+\index{networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}!conductance@{conductance}}
+\index{conductance@{conductance}!networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}}
+\subsubsection{\texorpdfstring{conductance()}{conductance()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+cuts.\+conductance (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{S,  }\item[{}]{T = {\ttfamily None},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the conductance of two sets of nodes.
+
+The *conductance* is the quotient of the cut size and the smaller of
+the volumes of the two sets. [1]
+
+Parameters
+----------
+G : NetworkX graph
+
+S : collection
+    A collection of nodes in `G`.
+
+T : collection
+    A collection of nodes in `G`.
+
+weight : object
+    Edge attribute key to use as weight. If not specified, edges
+    have weight one.
+
+Returns
+-------
+number
+    The conductance between the two sets `S` and `T`.
+
+See also
+--------
+cut_size
+edge_expansion
+normalized_cut_size
+volume
+
+References
+----------
+.. [1] David Gleich.
+       *Hierarchical Directed Spectral Graph Partitioning*.
+       <https://www.cs.purdue.edu/homes/dgleich/publications/Gleich%202005%20-%20hierarchical%20directed%20spectral.pdf>\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1cuts_a3eab74cd6337e44432d794a0761b6440}\label{namespacenetworkx_1_1algorithms_1_1cuts_a3eab74cd6337e44432d794a0761b6440}} 
+\index{networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}!cut\+\_\+size@{cut\+\_\+size}}
+\index{cut\+\_\+size@{cut\+\_\+size}!networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}}
+\subsubsection{\texorpdfstring{cut\+\_\+size()}{cut\_size()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+cuts.\+cut\+\_\+size (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{S,  }\item[{}]{T = {\ttfamily None},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the size of the cut between two sets of nodes.
+
+A *cut* is a partition of the nodes of a graph into two sets. The
+*cut size* is the sum of the weights of the edges "between" the two
+sets of nodes.
+
+Parameters
+----------
+G : NetworkX graph
+
+S : collection
+    A collection of nodes in `G`.
+
+T : collection
+    A collection of nodes in `G`. If not specified, this is taken to
+    be the set complement of `S`.
+
+weight : object
+    Edge attribute key to use as weight. If not specified, edges
+    have weight one.
+
+Returns
+-------
+number
+    Total weight of all edges from nodes in set `S` to nodes in
+    set `T` (and, in the case of directed graphs, all edges from
+    nodes in `T` to nodes in `S`).
+
+Examples
+--------
+In the graph with two cliques joined by a single edges, the natural
+bipartition of the graph into two blocks, one for each clique,
+yields a cut of weight one::
+
+    >>> G = nx.barbell_graph(3, 0)
+    >>> S = {0, 1, 2}
+    >>> T = {3, 4, 5}
+    >>> nx.cut_size(G, S, T)
+    1
+
+Each parallel edge in a multigraph is counted when determining the
+cut size::
+
+    >>> G = nx.MultiGraph(["ab", "ab"])
+    >>> S = {"a"}
+    >>> T = {"b"}
+    >>> nx.cut_size(G, S, T)
+    2
+
+Notes
+-----
+In a multigraph, the cut size is the total weight of edges including
+multiplicity.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1cuts_ac90454cac45ff9549676b947df4aece8}\label{namespacenetworkx_1_1algorithms_1_1cuts_ac90454cac45ff9549676b947df4aece8}} 
+\index{networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}!edge\+\_\+expansion@{edge\+\_\+expansion}}
+\index{edge\+\_\+expansion@{edge\+\_\+expansion}!networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}}
+\subsubsection{\texorpdfstring{edge\+\_\+expansion()}{edge\_expansion()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+cuts.\+edge\+\_\+expansion (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{S,  }\item[{}]{T = {\ttfamily None},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the edge expansion between two node sets.
+
+The *edge expansion* is the quotient of the cut size and the smaller
+of the cardinalities of the two sets. [1]
+
+Parameters
+----------
+G : NetworkX graph
+
+S : collection
+    A collection of nodes in `G`.
+
+T : collection
+    A collection of nodes in `G`.
+
+weight : object
+    Edge attribute key to use as weight. If not specified, edges
+    have weight one.
+
+Returns
+-------
+number
+    The edge expansion between the two sets `S` and `T`.
+
+See also
+--------
+boundary_expansion
+mixing_expansion
+node_expansion
+
+References
+----------
+.. [1] Fan Chung.
+       *Spectral Graph Theory*.
+       (CBMS Regional Conference Series in Mathematics, No. 92),
+       American Mathematical Society, 1997, ISBN 0-8218-0315-8
+       <http://www.math.ucsd.edu/~fan/research/revised.html>\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1cuts_ad6d523ba28c915b7f58652949d782d03}\label{namespacenetworkx_1_1algorithms_1_1cuts_ad6d523ba28c915b7f58652949d782d03}} 
+\index{networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}!mixing\+\_\+expansion@{mixing\+\_\+expansion}}
+\index{mixing\+\_\+expansion@{mixing\+\_\+expansion}!networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}}
+\subsubsection{\texorpdfstring{mixing\+\_\+expansion()}{mixing\_expansion()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+cuts.\+mixing\+\_\+expansion (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{S,  }\item[{}]{T = {\ttfamily None},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the mixing expansion between two node sets.
+
+The *mixing expansion* is the quotient of the cut size and twice the
+number of edges in the graph. [1]
+
+Parameters
+----------
+G : NetworkX graph
+
+S : collection
+    A collection of nodes in `G`.
+
+T : collection
+    A collection of nodes in `G`.
+
+weight : object
+    Edge attribute key to use as weight. If not specified, edges
+    have weight one.
+
+Returns
+-------
+number
+    The mixing expansion between the two sets `S` and `T`.
+
+See also
+--------
+boundary_expansion
+edge_expansion
+node_expansion
+
+References
+----------
+.. [1] Vadhan, Salil P.
+       "Pseudorandomness."
+       *Foundations and Trends
+       in Theoretical Computer Science* 7.1–3 (2011): 1–336.
+       <https://doi.org/10.1561/0400000010>\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1cuts_a0baf73cd3e4ac469e4e401b321c33dcc}\label{namespacenetworkx_1_1algorithms_1_1cuts_a0baf73cd3e4ac469e4e401b321c33dcc}} 
+\index{networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}!node\+\_\+expansion@{node\+\_\+expansion}}
+\index{node\+\_\+expansion@{node\+\_\+expansion}!networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}}
+\subsubsection{\texorpdfstring{node\+\_\+expansion()}{node\_expansion()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+cuts.\+node\+\_\+expansion (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{S }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the node expansion of the set `S`.
+
+The *node expansion* is the quotient of the size of the node
+boundary of *S* and the cardinality of *S*. [1]
+
+Parameters
+----------
+G : NetworkX graph
+
+S : collection
+    A collection of nodes in `G`.
+
+Returns
+-------
+number
+    The node expansion of the set `S`.
+
+See also
+--------
+boundary_expansion
+edge_expansion
+mixing_expansion
+
+References
+----------
+.. [1] Vadhan, Salil P.
+       "Pseudorandomness."
+       *Foundations and Trends
+       in Theoretical Computer Science* 7.1–3 (2011): 1–336.
+       <https://doi.org/10.1561/0400000010>\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1cuts_a7092b90008f99838b113597d801b9e9a}\label{namespacenetworkx_1_1algorithms_1_1cuts_a7092b90008f99838b113597d801b9e9a}} 
+\index{networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}!normalized\+\_\+cut\+\_\+size@{normalized\+\_\+cut\+\_\+size}}
+\index{normalized\+\_\+cut\+\_\+size@{normalized\+\_\+cut\+\_\+size}!networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}}
+\subsubsection{\texorpdfstring{normalized\+\_\+cut\+\_\+size()}{normalized\_cut\_size()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+cuts.\+normalized\+\_\+cut\+\_\+size (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{S,  }\item[{}]{T = {\ttfamily None},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the normalized size of the cut between two sets of nodes.
+
+The *normalized cut size* is the cut size times the sum of the
+reciprocal sizes of the volumes of the two sets. [1]
+
+Parameters
+----------
+G : NetworkX graph
+
+S : collection
+    A collection of nodes in `G`.
+
+T : collection
+    A collection of nodes in `G`.
+
+weight : object
+    Edge attribute key to use as weight. If not specified, edges
+    have weight one.
+
+Returns
+-------
+number
+    The normalized cut size between the two sets `S` and `T`.
+
+Notes
+-----
+In a multigraph, the cut size is the total weight of edges including
+multiplicity.
+
+See also
+--------
+conductance
+cut_size
+edge_expansion
+volume
+
+References
+----------
+.. [1] David Gleich.
+       *Hierarchical Directed Spectral Graph Partitioning*.
+       <https://www.cs.purdue.edu/homes/dgleich/publications/Gleich%202005%20-%20hierarchical%20directed%20spectral.pdf>\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1cuts_aba099ec7dcd9a10ba04202443c4453f9}\label{namespacenetworkx_1_1algorithms_1_1cuts_aba099ec7dcd9a10ba04202443c4453f9}} 
+\index{networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}!volume@{volume}}
+\index{volume@{volume}!networkx\+::algorithms\+::cuts@{networkx\+::algorithms\+::cuts}}
+\subsubsection{\texorpdfstring{volume()}{volume()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+cuts.\+volume (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{S,  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the volume of a set of nodes.
+
+The *volume* of a set *S* is the sum of the (out-)degrees of nodes
+in *S* (taking into account parallel edges in multigraphs). [1]
+
+Parameters
+----------
+G : NetworkX graph
+
+S : collection
+    A collection of nodes in `G`.
+
+weight : object
+    Edge attribute key to use as weight. If not specified, edges
+    have weight one.
+
+Returns
+-------
+number
+    The volume of the set of nodes represented by `S` in the graph
+    `G`.
+
+See also
+--------
+conductance
+cut_size
+edge_expansion
+edge_boundary
+normalized_cut_size
+
+References
+----------
+.. [1] David Gleich.
+       *Hierarchical Directed Spectral Graph Partitioning*.
+       <https://www.cs.purdue.edu/homes/dgleich/publications/Gleich%202005%20-%20hierarchical%20directed%20spectral.pdf>\end{DoxyVerb}
+ 

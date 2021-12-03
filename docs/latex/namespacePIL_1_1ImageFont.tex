@@ -1,0 +1,151 @@
+\hypertarget{namespacePIL_1_1ImageFont}{}\section{P\+I\+L.\+Image\+Font Namespace Reference}
+\label{namespacePIL_1_1ImageFont}\index{P\+I\+L.\+Image\+Font@{P\+I\+L.\+Image\+Font}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPIL_1_1ImageFont_1_1__imagingft__not__installed}{\+\_\+imagingft\+\_\+not\+\_\+installed}
+\item 
+class \hyperlink{classPIL_1_1ImageFont_1_1FreeTypeFont}{Free\+Type\+Font}
+\begin{DoxyCompactList}\small\item\em Wrapper for Free\+Type fonts. \end{DoxyCompactList}\item 
+class \hyperlink{classPIL_1_1ImageFont_1_1ImageFont}{Image\+Font}
+\item 
+class \hyperlink{classPIL_1_1ImageFont_1_1TransposedFont}{Transposed\+Font}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacePIL_1_1ImageFont_adef18079ea6c0d45a068d08604479f9c}{load} (filename)
+\item 
+def \hyperlink{namespacePIL_1_1ImageFont_aca2b1cbcd4176634d6e190fc97367763}{truetype} (font=None, size=10, index=0, encoding=\char`\"{}\char`\"{}, layout\+\_\+engine=None)
+\item 
+def \hyperlink{namespacePIL_1_1ImageFont_ad50580641e55bb15562c963d37d4836e}{load\+\_\+path} (filename)
+\item 
+def \hyperlink{namespacePIL_1_1ImageFont_a57385d8868c8ea8d060d02cfe33c5592}{load\+\_\+default} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacePIL_1_1ImageFont_aa59d127c7e08e982fe790958839b7f67}{L\+A\+Y\+O\+U\+T\+\_\+\+B\+A\+S\+IC}
+\item 
+\hyperlink{namespacePIL_1_1ImageFont_a5ff9e62415510685abf7bdaf699e0304}{L\+A\+Y\+O\+U\+T\+\_\+\+R\+A\+QM}
+\item 
+\hyperlink{namespacePIL_1_1ImageFont_a4b0bd817023284079ed4e3955b3b8370}{core}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1ImageFont_adef18079ea6c0d45a068d08604479f9c}\label{namespacePIL_1_1ImageFont_adef18079ea6c0d45a068d08604479f9c}} 
+\index{P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}!load@{load}}
+\index{load@{load}!P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Font.\+load (\begin{DoxyParamCaption}\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load a font file.  This function loads a font object from the given
+bitmap font file, and returns the corresponding font object.
+
+:param filename: Name of font file.
+:return: A font object.
+:exception OSError: If the file could not be read.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageFont_a57385d8868c8ea8d060d02cfe33c5592}\label{namespacePIL_1_1ImageFont_a57385d8868c8ea8d060d02cfe33c5592}} 
+\index{P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}!load\+\_\+default@{load\+\_\+default}}
+\index{load\+\_\+default@{load\+\_\+default}!P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}}
+\subsubsection{\texorpdfstring{load\+\_\+default()}{load\_default()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Font.\+load\+\_\+default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load a "better than nothing" default font.
+
+.. versionadded:: 1.1.4
+
+:return: A font object.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageFont_ad50580641e55bb15562c963d37d4836e}\label{namespacePIL_1_1ImageFont_ad50580641e55bb15562c963d37d4836e}} 
+\index{P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}!load\+\_\+path@{load\+\_\+path}}
+\index{load\+\_\+path@{load\+\_\+path}!P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}}
+\subsubsection{\texorpdfstring{load\+\_\+path()}{load\_path()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Font.\+load\+\_\+path (\begin{DoxyParamCaption}\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load font file. Same as :py:func:`~PIL.ImageFont.load`, but searches for a
+bitmap font along the Python path.
+
+:param filename: Name of font file.
+:return: A font object.
+:exception OSError: If the file could not be read.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageFont_aca2b1cbcd4176634d6e190fc97367763}\label{namespacePIL_1_1ImageFont_aca2b1cbcd4176634d6e190fc97367763}} 
+\index{P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}!truetype@{truetype}}
+\index{truetype@{truetype}!P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}}
+\subsubsection{\texorpdfstring{truetype()}{truetype()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Font.\+truetype (\begin{DoxyParamCaption}\item[{}]{font = {\ttfamily None},  }\item[{}]{size = {\ttfamily 10},  }\item[{}]{index = {\ttfamily 0},  }\item[{}]{encoding = {\ttfamily \char`\"{}\char`\"{}},  }\item[{}]{layout\+\_\+engine = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load a TrueType or OpenType font from a file or file-like object,
+and create a font object.
+This function loads a font object from the given file or file-like
+object, and creates a font object for a font of the given size.
+
+Pillow uses FreeType to open font files. If you are opening many fonts
+simultaneously on Windows, be aware that Windows limits the number of files
+that can be open in C at once to 512. If you approach that limit, an
+``OSError`` may be thrown, reporting that FreeType "cannot open resource".
+
+This function requires the _imagingft service.
+
+:param font: A filename or file-like object containing a TrueType font.
+             If the file is not found in this filename, the loader may also
+             search in other directories, such as the :file:`fonts/`
+             directory on Windows or :file:`/Library/Fonts/`,
+             :file:`/System/Library/Fonts/` and :file:`~/Library/Fonts/` on
+             macOS.
+
+:param size: The requested size, in points.
+:param index: Which font face to load (default is first available face).
+:param encoding: Which font encoding to use (default is Unicode). Possible
+                 encodings include (see the FreeType documentation for more
+                 information):
+
+                 * "unic" (Unicode)
+                 * "symb" (Microsoft Symbol)
+                 * "ADOB" (Adobe Standard)
+                 * "ADBE" (Adobe Expert)
+                 * "ADBC" (Adobe Custom)
+                 * "armn" (Apple Roman)
+                 * "sjis" (Shift JIS)
+                 * "gb  " (PRC)
+                 * "big5"
+                 * "wans" (Extended Wansung)
+                 * "joha" (Johab)
+                 * "lat1" (Latin-1)
+
+                 This specifies the character set to use. It does not alter the
+                 encoding of any text provided in subsequent operations.
+:param layout_engine: Which layout engine to use, if available:
+                 :data:`.ImageFont.LAYOUT_BASIC` or :data:`.ImageFont.LAYOUT_RAQM`.
+
+                 You can check support for Raqm layout using
+                 :py:func:`PIL.features.check_feature` with ``feature="raqm"``.
+
+                 .. versionadded:: 4.2.0
+:return: A font object.
+:exception OSError: If the file could not be read.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1ImageFont_a4b0bd817023284079ed4e3955b3b8370}\label{namespacePIL_1_1ImageFont_a4b0bd817023284079ed4e3955b3b8370}} 
+\index{P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}!core@{core}}
+\index{core@{core}!P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}}
+\subsubsection{\texorpdfstring{core}{core}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Font.\+core}
+
+\mbox{\Hypertarget{namespacePIL_1_1ImageFont_aa59d127c7e08e982fe790958839b7f67}\label{namespacePIL_1_1ImageFont_aa59d127c7e08e982fe790958839b7f67}} 
+\index{P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}!L\+A\+Y\+O\+U\+T\+\_\+\+B\+A\+S\+IC@{L\+A\+Y\+O\+U\+T\+\_\+\+B\+A\+S\+IC}}
+\index{L\+A\+Y\+O\+U\+T\+\_\+\+B\+A\+S\+IC@{L\+A\+Y\+O\+U\+T\+\_\+\+B\+A\+S\+IC}!P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}}
+\subsubsection{\texorpdfstring{L\+A\+Y\+O\+U\+T\+\_\+\+B\+A\+S\+IC}{LAYOUT\_BASIC}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Font.\+L\+A\+Y\+O\+U\+T\+\_\+\+B\+A\+S\+IC}
+
+\mbox{\Hypertarget{namespacePIL_1_1ImageFont_a5ff9e62415510685abf7bdaf699e0304}\label{namespacePIL_1_1ImageFont_a5ff9e62415510685abf7bdaf699e0304}} 
+\index{P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}!L\+A\+Y\+O\+U\+T\+\_\+\+R\+A\+QM@{L\+A\+Y\+O\+U\+T\+\_\+\+R\+A\+QM}}
+\index{L\+A\+Y\+O\+U\+T\+\_\+\+R\+A\+QM@{L\+A\+Y\+O\+U\+T\+\_\+\+R\+A\+QM}!P\+I\+L\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font}}
+\subsubsection{\texorpdfstring{L\+A\+Y\+O\+U\+T\+\_\+\+R\+A\+QM}{LAYOUT\_RAQM}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Font.\+L\+A\+Y\+O\+U\+T\+\_\+\+R\+A\+QM}
+

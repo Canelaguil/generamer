@@ -1,0 +1,247 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring}{}\section{networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring}\index{networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring@{networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a5b0bba67e48a8670a415e8391c1c7525}{strategy\+\_\+largest\+\_\+first} (G, colors)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a9fd080840fb234083cbbf22d40481e23}{strategy\+\_\+random\+\_\+sequential} (G, colors, seed=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_aa8aa245f56f5e4c903b9053479f02b31}{strategy\+\_\+smallest\+\_\+last} (G, colors)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a52934c3efed3eab63ae7650945303a2f}{strategy\+\_\+independent\+\_\+set} (G, colors)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a2eba150f38b4f43918b422f356d8afde}{strategy\+\_\+connected\+\_\+sequential\+\_\+bfs} (G, colors)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a083f2c34bf925c991005f37b6b68630a}{strategy\+\_\+connected\+\_\+sequential\+\_\+dfs} (G, colors)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_af6e360e9bef4112a7f6f23bdd4af0a6d}{strategy\+\_\+connected\+\_\+sequential} (G, colors, traversal=\char`\"{}bfs\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_aaddf336ba59c8e00684795b4649b769b}{strategy\+\_\+saturation\+\_\+largest\+\_\+first} (G, colors)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_aa77dd5672fb54a952ace2eae70899eb1}{greedy\+\_\+color} (G, strategy=\char`\"{}largest\+\_\+first\char`\"{}, interchange=False)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a23e5a17ce4b85e1b4d439f4f9df0dcb7}{S\+T\+R\+A\+T\+E\+G\+I\+ES}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Greedy graph coloring using various strategies.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_aa77dd5672fb54a952ace2eae70899eb1}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_aa77dd5672fb54a952ace2eae70899eb1}} 
+\index{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}!greedy\+\_\+color@{greedy\+\_\+color}}
+\index{greedy\+\_\+color@{greedy\+\_\+color}!networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}}
+\subsubsection{\texorpdfstring{greedy\+\_\+color()}{greedy\_color()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring.\+greedy\+\_\+color (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{strategy = {\ttfamily \char`\"{}largest\+\_\+first\char`\"{}},  }\item[{}]{interchange = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Color a graph using various strategies of greedy graph coloring.
+
+Attempts to color a graph using as few colors as possible, where no
+neighbours of a node can have same color as the node itself. The
+given strategy determines the order in which nodes are colored.
+
+The strategies are described in [1]_, and smallest-last is based on
+[2]_.
+
+Parameters
+----------
+G : NetworkX graph
+
+strategy : string or function(G, colors)
+   A function (or a string representing a function) that provides
+   the coloring strategy, by returning nodes in the ordering they
+   should be colored. ``G`` is the graph, and ``colors`` is a
+   dictionary of the currently assigned colors, keyed by nodes. The
+   function must return an iterable over all the nodes in ``G``.
+
+   If the strategy function is an iterator generator (that is, a
+   function with ``yield`` statements), keep in mind that the
+   ``colors`` dictionary will be updated after each ``yield``, since
+   this function chooses colors greedily.
+
+   If ``strategy`` is a string, it must be one of the following,
+   each of which represents one of the built-in strategy functions.
+
+   * ``'largest_first'``
+   * ``'random_sequential'``
+   * ``'smallest_last'``
+   * ``'independent_set'``
+   * ``'connected_sequential_bfs'``
+   * ``'connected_sequential_dfs'``
+   * ``'connected_sequential'`` (alias for the previous strategy)
+   * ``'saturation_largest_first'``
+   * ``'DSATUR'`` (alias for the previous strategy)
+
+interchange: bool
+   Will use the color interchange algorithm described by [3]_ if set
+   to ``True``.
+
+   Note that ``saturation_largest_first`` and ``independent_set``
+   do not work with interchange. Furthermore, if you use
+   interchange with your own strategy function, you cannot rely
+   on the values in the ``colors`` argument.
+
+Returns
+-------
+A dictionary with keys representing nodes and values representing
+corresponding coloring.
+
+Examples
+--------
+>>> G = nx.cycle_graph(4)
+>>> d = nx.coloring.greedy_color(G, strategy="largest_first")
+>>> d in [{0: 0, 1: 1, 2: 0, 3: 1}, {0: 1, 1: 0, 2: 1, 3: 0}]
+True
+
+Raises
+------
+NetworkXPointlessConcept
+    If ``strategy`` is ``saturation_largest_first`` or
+    ``independent_set`` and ``interchange`` is ``True``.
+
+References
+----------
+.. [1] Adrian Kosowski, and Krzysztof Manuszewski,
+   Classical Coloring of Graphs, Graph Colorings, 2-19, 2004.
+   ISBN 0-8218-3458-4.
+.. [2] David W. Matula, and Leland L. Beck, "Smallest-last
+   ordering and clustering and graph coloring algorithms." *J. ACM* 30,
+   3 (July 1983), 417–427. <https://doi.org/10.1145/2402.322385>
+.. [3] Maciej M. Sysło, Marsingh Deo, Janusz S. Kowalik,
+   Discrete Optimization Algorithms with Pascal Programs, 415-424, 1983.
+   ISBN 0-486-45353-7.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_af6e360e9bef4112a7f6f23bdd4af0a6d}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_af6e360e9bef4112a7f6f23bdd4af0a6d}} 
+\index{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}!strategy\+\_\+connected\+\_\+sequential@{strategy\+\_\+connected\+\_\+sequential}}
+\index{strategy\+\_\+connected\+\_\+sequential@{strategy\+\_\+connected\+\_\+sequential}!networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}}
+\subsubsection{\texorpdfstring{strategy\+\_\+connected\+\_\+sequential()}{strategy\_connected\_sequential()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring.\+strategy\+\_\+connected\+\_\+sequential (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{colors,  }\item[{}]{traversal = {\ttfamily \char`\"{}bfs\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns an iterable over nodes in ``G`` in the order given by a
+breadth-first or depth-first traversal.
+
+``traversal`` must be one of the strings ``'dfs'`` or ``'bfs'``,
+representing depth-first traversal or breadth-first traversal,
+respectively.
+
+The generated sequence has the property that for each node except
+the first, at least one neighbor appeared earlier in the sequence.
+
+``G`` is a NetworkX graph. ``colors`` is ignored.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a2eba150f38b4f43918b422f356d8afde}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a2eba150f38b4f43918b422f356d8afde}} 
+\index{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}!strategy\+\_\+connected\+\_\+sequential\+\_\+bfs@{strategy\+\_\+connected\+\_\+sequential\+\_\+bfs}}
+\index{strategy\+\_\+connected\+\_\+sequential\+\_\+bfs@{strategy\+\_\+connected\+\_\+sequential\+\_\+bfs}!networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}}
+\subsubsection{\texorpdfstring{strategy\+\_\+connected\+\_\+sequential\+\_\+bfs()}{strategy\_connected\_sequential\_bfs()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring.\+strategy\+\_\+connected\+\_\+sequential\+\_\+bfs (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{colors }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns an iterable over nodes in ``G`` in the order given by a
+breadth-first traversal.
+
+The generated sequence has the property that for each node except
+the first, at least one neighbor appeared earlier in the sequence.
+
+``G`` is a NetworkX graph. ``colors`` is ignored.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a083f2c34bf925c991005f37b6b68630a}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a083f2c34bf925c991005f37b6b68630a}} 
+\index{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}!strategy\+\_\+connected\+\_\+sequential\+\_\+dfs@{strategy\+\_\+connected\+\_\+sequential\+\_\+dfs}}
+\index{strategy\+\_\+connected\+\_\+sequential\+\_\+dfs@{strategy\+\_\+connected\+\_\+sequential\+\_\+dfs}!networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}}
+\subsubsection{\texorpdfstring{strategy\+\_\+connected\+\_\+sequential\+\_\+dfs()}{strategy\_connected\_sequential\_dfs()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring.\+strategy\+\_\+connected\+\_\+sequential\+\_\+dfs (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{colors }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns an iterable over nodes in ``G`` in the order given by a
+depth-first traversal.
+
+The generated sequence has the property that for each node except
+the first, at least one neighbor appeared earlier in the sequence.
+
+``G`` is a NetworkX graph. ``colors`` is ignored.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a52934c3efed3eab63ae7650945303a2f}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a52934c3efed3eab63ae7650945303a2f}} 
+\index{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}!strategy\+\_\+independent\+\_\+set@{strategy\+\_\+independent\+\_\+set}}
+\index{strategy\+\_\+independent\+\_\+set@{strategy\+\_\+independent\+\_\+set}!networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}}
+\subsubsection{\texorpdfstring{strategy\+\_\+independent\+\_\+set()}{strategy\_independent\_set()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring.\+strategy\+\_\+independent\+\_\+set (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{colors }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Uses a greedy independent set removal strategy to determine the
+colors.
+
+This function updates ``colors`` **in-place** and return ``None``,
+unlike the other strategy functions in this module.
+
+This algorithm repeatedly finds and removes a maximal independent
+set, assigning each node in the set an unused color.
+
+``G`` is a NetworkX graph.
+
+This strategy is related to :func:`strategy_smallest_last`: in that
+strategy, an independent set of size one is chosen at each step
+instead of a maximal independent set.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a5b0bba67e48a8670a415e8391c1c7525}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a5b0bba67e48a8670a415e8391c1c7525}} 
+\index{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}!strategy\+\_\+largest\+\_\+first@{strategy\+\_\+largest\+\_\+first}}
+\index{strategy\+\_\+largest\+\_\+first@{strategy\+\_\+largest\+\_\+first}!networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}}
+\subsubsection{\texorpdfstring{strategy\+\_\+largest\+\_\+first()}{strategy\_largest\_first()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring.\+strategy\+\_\+largest\+\_\+first (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{colors }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a list of the nodes of ``G`` in decreasing order by
+degree.
+
+``G`` is a NetworkX graph. ``colors`` is ignored.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a9fd080840fb234083cbbf22d40481e23}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a9fd080840fb234083cbbf22d40481e23}} 
+\index{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}!strategy\+\_\+random\+\_\+sequential@{strategy\+\_\+random\+\_\+sequential}}
+\index{strategy\+\_\+random\+\_\+sequential@{strategy\+\_\+random\+\_\+sequential}!networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}}
+\subsubsection{\texorpdfstring{strategy\+\_\+random\+\_\+sequential()}{strategy\_random\_sequential()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring.\+strategy\+\_\+random\+\_\+sequential (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{colors,  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a random permutation of the nodes of ``G`` as a list.
+
+``G`` is a NetworkX graph. ``colors`` is ignored.
+
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_aaddf336ba59c8e00684795b4649b769b}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_aaddf336ba59c8e00684795b4649b769b}} 
+\index{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}!strategy\+\_\+saturation\+\_\+largest\+\_\+first@{strategy\+\_\+saturation\+\_\+largest\+\_\+first}}
+\index{strategy\+\_\+saturation\+\_\+largest\+\_\+first@{strategy\+\_\+saturation\+\_\+largest\+\_\+first}!networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}}
+\subsubsection{\texorpdfstring{strategy\+\_\+saturation\+\_\+largest\+\_\+first()}{strategy\_saturation\_largest\_first()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring.\+strategy\+\_\+saturation\+\_\+largest\+\_\+first (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{colors }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Iterates over all the nodes of ``G`` in "saturation order" (also
+known as "DSATUR").
+
+``G`` is a NetworkX graph. ``colors`` is a dictionary mapping nodes of
+``G`` to colors, for those nodes that have already been colored.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_aa8aa245f56f5e4c903b9053479f02b31}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_aa8aa245f56f5e4c903b9053479f02b31}} 
+\index{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}!strategy\+\_\+smallest\+\_\+last@{strategy\+\_\+smallest\+\_\+last}}
+\index{strategy\+\_\+smallest\+\_\+last@{strategy\+\_\+smallest\+\_\+last}!networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}}
+\subsubsection{\texorpdfstring{strategy\+\_\+smallest\+\_\+last()}{strategy\_smallest\_last()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring.\+strategy\+\_\+smallest\+\_\+last (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{colors }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a deque of the nodes of ``G``, "smallest" last.
+
+Specifically, the degrees of each node are tracked in a bucket queue.
+From this, the node of minimum degree is repeatedly popped from the
+graph, updating its neighbors' degrees.
+
+``G`` is a NetworkX graph. ``colors`` is ignored.
+
+This implementation of the strategy runs in $O(n + m)$ time
+(ignoring polylogarithmic factors), where $n$ is the number of nodes
+and $m$ is the number of edges.
+
+This strategy is related to :func:`strategy_independent_set`: if we
+interpret each node removed as an independent set of size one, then
+this strategy chooses an independent set of size one instead of a
+maximal independent set.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a23e5a17ce4b85e1b4d439f4f9df0dcb7}\label{namespacenetworkx_1_1algorithms_1_1coloring_1_1greedy__coloring_a23e5a17ce4b85e1b4d439f4f9df0dcb7}} 
+\index{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}!S\+T\+R\+A\+T\+E\+G\+I\+ES@{S\+T\+R\+A\+T\+E\+G\+I\+ES}}
+\index{S\+T\+R\+A\+T\+E\+G\+I\+ES@{S\+T\+R\+A\+T\+E\+G\+I\+ES}!networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring@{networkx\+::algorithms\+::coloring\+::greedy\+\_\+coloring}}
+\subsubsection{\texorpdfstring{S\+T\+R\+A\+T\+E\+G\+I\+ES}{STRATEGIES}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+coloring.\+greedy\+\_\+coloring.\+S\+T\+R\+A\+T\+E\+G\+I\+ES}
+

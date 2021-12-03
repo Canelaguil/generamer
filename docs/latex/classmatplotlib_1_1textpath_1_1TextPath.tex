@@ -1,0 +1,129 @@
+\hypertarget{classmatplotlib_1_1textpath_1_1TextPath}{}\section{matplotlib.\+textpath.\+Text\+Path Class Reference}
+\label{classmatplotlib_1_1textpath_1_1TextPath}\index{matplotlib.\+textpath.\+Text\+Path@{matplotlib.\+textpath.\+Text\+Path}}
+
+
+Inheritance diagram for matplotlib.\+textpath.\+Text\+Path\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classmatplotlib_1_1textpath_1_1TextPath__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+textpath.\+Text\+Path\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classmatplotlib_1_1textpath_1_1TextPath__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1textpath_1_1TextPath_ac6cc130b10544138962c567947ecfecb}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, xy, s, size=None, prop=None, \+\_\+interpolation\+\_\+steps=1, usetex=False)
+\item 
+def \hyperlink{classmatplotlib_1_1textpath_1_1TextPath_a01b26cef7fa4a7dfc5c734e028abfbd7}{set\+\_\+size} (self, size)
+\item 
+def \hyperlink{classmatplotlib_1_1textpath_1_1TextPath_ac89396b97c97d66b09e142f9e239fa33}{get\+\_\+size} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1textpath_1_1TextPath_af1a6127a9fae5aa4cd72ce585252c79f}{vertices} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1textpath_1_1TextPath_a6a09226cb71d869cec23bd250be40244}{codes} (self)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Create a path from the text.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1textpath_1_1TextPath_ac6cc130b10544138962c567947ecfecb}\label{classmatplotlib_1_1textpath_1_1TextPath_ac6cc130b10544138962c567947ecfecb}} 
+\index{matplotlib\+::textpath\+::\+Text\+Path@{matplotlib\+::textpath\+::\+Text\+Path}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::textpath\+::\+Text\+Path@{matplotlib\+::textpath\+::\+Text\+Path}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+textpath.\+Text\+Path.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xy,  }\item[{}]{s,  }\item[{}]{size = {\ttfamily None},  }\item[{}]{prop = {\ttfamily None},  }\item[{}]{\+\_\+interpolation\+\_\+steps = {\ttfamily 1},  }\item[{}]{usetex = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a path from the text. Note that it simply is a path,
+not an artist. You need to use the `~.PathPatch` (or other artists)
+to draw this path onto the canvas.
+
+Parameters
+----------
+xy : tuple or array of two float values
+    Position of the text. For no offset, use ``xy=(0, 0)``.
+
+s : str
+    The text to convert to a path.
+
+size : float, optional
+    Font size in points. Defaults to the size specified via the font
+    properties *prop*.
+
+prop : `matplotlib.font_manager.FontProperties`, optional
+    Font property. If not provided, will use a default
+    ``FontProperties`` with parameters from the
+    :ref:`rcParams <matplotlib-rcparams>`.
+
+_interpolation_steps : int, optional
+    (Currently ignored)
+
+usetex : bool, default: False
+    Whether to use tex rendering.
+
+Examples
+--------
+The following creates a path from the string "ABC" with Helvetica
+font face; and another path from the latex fraction 1/2::
+
+    from matplotlib.textpath import TextPath
+    from matplotlib.font_manager import FontProperties
+
+    fp = FontProperties(family="Helvetica", style="italic")
+    path1 = TextPath((12, 12), "ABC", size=12, prop=fp)
+    path2 = TextPath((0, 0), r"$\frac{1}{2}$", size=12, usetex=True)
+
+Also see :doc:`/gallery/text_labels_and_annotations/demo_text_path`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1textpath_1_1TextPath_a6a09226cb71d869cec23bd250be40244}\label{classmatplotlib_1_1textpath_1_1TextPath_a6a09226cb71d869cec23bd250be40244}} 
+\index{matplotlib\+::textpath\+::\+Text\+Path@{matplotlib\+::textpath\+::\+Text\+Path}!codes@{codes}}
+\index{codes@{codes}!matplotlib\+::textpath\+::\+Text\+Path@{matplotlib\+::textpath\+::\+Text\+Path}}
+\subsubsection{\texorpdfstring{codes()}{codes()}}
+{\footnotesize\ttfamily def matplotlib.\+textpath.\+Text\+Path.\+codes (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the codes
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1textpath_1_1TextPath_ac89396b97c97d66b09e142f9e239fa33}\label{classmatplotlib_1_1textpath_1_1TextPath_ac89396b97c97d66b09e142f9e239fa33}} 
+\index{matplotlib\+::textpath\+::\+Text\+Path@{matplotlib\+::textpath\+::\+Text\+Path}!get\+\_\+size@{get\+\_\+size}}
+\index{get\+\_\+size@{get\+\_\+size}!matplotlib\+::textpath\+::\+Text\+Path@{matplotlib\+::textpath\+::\+Text\+Path}}
+\subsubsection{\texorpdfstring{get\+\_\+size()}{get\_size()}}
+{\footnotesize\ttfamily def matplotlib.\+textpath.\+Text\+Path.\+get\+\_\+size (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the text size.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1textpath_1_1TextPath_a01b26cef7fa4a7dfc5c734e028abfbd7}\label{classmatplotlib_1_1textpath_1_1TextPath_a01b26cef7fa4a7dfc5c734e028abfbd7}} 
+\index{matplotlib\+::textpath\+::\+Text\+Path@{matplotlib\+::textpath\+::\+Text\+Path}!set\+\_\+size@{set\+\_\+size}}
+\index{set\+\_\+size@{set\+\_\+size}!matplotlib\+::textpath\+::\+Text\+Path@{matplotlib\+::textpath\+::\+Text\+Path}}
+\subsubsection{\texorpdfstring{set\+\_\+size()}{set\_size()}}
+{\footnotesize\ttfamily def matplotlib.\+textpath.\+Text\+Path.\+set\+\_\+size (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{size }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the text size.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1textpath_1_1TextPath_af1a6127a9fae5aa4cd72ce585252c79f}\label{classmatplotlib_1_1textpath_1_1TextPath_af1a6127a9fae5aa4cd72ce585252c79f}} 
+\index{matplotlib\+::textpath\+::\+Text\+Path@{matplotlib\+::textpath\+::\+Text\+Path}!vertices@{vertices}}
+\index{vertices@{vertices}!matplotlib\+::textpath\+::\+Text\+Path@{matplotlib\+::textpath\+::\+Text\+Path}}
+\subsubsection{\texorpdfstring{vertices()}{vertices()}}
+{\footnotesize\ttfamily def matplotlib.\+textpath.\+Text\+Path.\+vertices (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the cached path after updating it if necessary.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{textpath_8py}{textpath.\+py}\end{DoxyCompactItemize}

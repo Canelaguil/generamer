@@ -1,0 +1,121 @@
+\hypertarget{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine}{}\section{pip.\+\_\+vendor.\+chardet.\+codingstatemachine.\+Coding\+State\+Machine Class Reference}
+\label{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine}\index{pip.\+\_\+vendor.\+chardet.\+codingstatemachine.\+Coding\+State\+Machine@{pip.\+\_\+vendor.\+chardet.\+codingstatemachine.\+Coding\+State\+Machine}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+chardet.\+codingstatemachine.\+Coding\+State\+Machine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+chardet.\+codingstatemachine.\+Coding\+State\+Machine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_ac38ba14c34673a2370107da23bd2906d}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, sm)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_a166581e46d6368be7bf5796ccb5a677a}{reset} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_a4e0e7db5b52c8c664cdf74a73626a242}{next\+\_\+state} (self, c)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_a9b70697fe5c93e2fa320783e98182a07}{get\+\_\+current\+\_\+charlen} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_ae1344161f1303742c45fe5757e101ab3}{get\+\_\+coding\+\_\+state\+\_\+machine} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_a614d534b5c14959315e4b64155104567}{language} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_afacacdb15e197d8a3ab4f73b9fd76354}{logger}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A state machine to verify a byte sequence for a particular encoding. For
+each byte the detector receives, it will feed that byte to every active
+state machine available, one byte at a time. The state machine changes its
+state based on its previous state and the byte it receives. There are 3
+states in a state machine that are of interest to an auto-detector:
+
+START state: This is the state to start with, or a legal byte sequence
+             (i.e. a valid code point) for character has been identified.
+
+ME state:  This indicates that the state machine identified a byte sequence
+           that is specific to the charset it is designed for and that
+           there is no other possible encoding which can contain this byte
+           sequence. This will to lead to an immediate positive answer for
+           the detector.
+
+ERROR state: This indicates the state machine identified an illegal byte
+             sequence for that encoding. This will lead to an immediate
+             negative answer for this encoding. Detector will exclude this
+             encoding from consideration from here on.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_ac38ba14c34673a2370107da23bd2906d}\label{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_ac38ba14c34673a2370107da23bd2906d}} 
+\index{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+chardet.\+codingstatemachine.\+Coding\+State\+Machine.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{sm }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_ae1344161f1303742c45fe5757e101ab3}\label{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_ae1344161f1303742c45fe5757e101ab3}} 
+\index{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}!get\+\_\+coding\+\_\+state\+\_\+machine@{get\+\_\+coding\+\_\+state\+\_\+machine}}
+\index{get\+\_\+coding\+\_\+state\+\_\+machine@{get\+\_\+coding\+\_\+state\+\_\+machine}!pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}}
+\subsubsection{\texorpdfstring{get\+\_\+coding\+\_\+state\+\_\+machine()}{get\_coding\_state\_machine()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+chardet.\+codingstatemachine.\+Coding\+State\+Machine.\+get\+\_\+coding\+\_\+state\+\_\+machine (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_a9b70697fe5c93e2fa320783e98182a07}\label{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_a9b70697fe5c93e2fa320783e98182a07}} 
+\index{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}!get\+\_\+current\+\_\+charlen@{get\+\_\+current\+\_\+charlen}}
+\index{get\+\_\+current\+\_\+charlen@{get\+\_\+current\+\_\+charlen}!pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}}
+\subsubsection{\texorpdfstring{get\+\_\+current\+\_\+charlen()}{get\_current\_charlen()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+chardet.\+codingstatemachine.\+Coding\+State\+Machine.\+get\+\_\+current\+\_\+charlen (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_a614d534b5c14959315e4b64155104567}\label{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_a614d534b5c14959315e4b64155104567}} 
+\index{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}!language@{language}}
+\index{language@{language}!pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}}
+\subsubsection{\texorpdfstring{language()}{language()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+chardet.\+codingstatemachine.\+Coding\+State\+Machine.\+language (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_a4e0e7db5b52c8c664cdf74a73626a242}\label{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_a4e0e7db5b52c8c664cdf74a73626a242}} 
+\index{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}!next\+\_\+state@{next\+\_\+state}}
+\index{next\+\_\+state@{next\+\_\+state}!pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}}
+\subsubsection{\texorpdfstring{next\+\_\+state()}{next\_state()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+chardet.\+codingstatemachine.\+Coding\+State\+Machine.\+next\+\_\+state (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_a166581e46d6368be7bf5796ccb5a677a}\label{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_a166581e46d6368be7bf5796ccb5a677a}} 
+\index{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}!reset@{reset}}
+\index{reset@{reset}!pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+chardet.\+codingstatemachine.\+Coding\+State\+Machine.\+reset (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_afacacdb15e197d8a3ab4f73b9fd76354}\label{classpip_1_1__vendor_1_1chardet_1_1codingstatemachine_1_1CodingStateMachine_afacacdb15e197d8a3ab4f73b9fd76354}} 
+\index{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}!logger@{logger}}
+\index{logger@{logger}!pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine@{pip\+::\+\_\+vendor\+::chardet\+::codingstatemachine\+::\+Coding\+State\+Machine}}
+\subsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+chardet.\+codingstatemachine.\+Coding\+State\+Machine.\+logger}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/chardet/\hyperlink{codingstatemachine_8py}{codingstatemachine.\+py}\end{DoxyCompactItemize}

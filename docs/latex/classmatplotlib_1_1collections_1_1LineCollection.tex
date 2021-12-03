@@ -1,0 +1,189 @@
+\hypertarget{classmatplotlib_1_1collections_1_1LineCollection}{}\section{matplotlib.\+collections.\+Line\+Collection Class Reference}
+\label{classmatplotlib_1_1collections_1_1LineCollection}\index{matplotlib.\+collections.\+Line\+Collection@{matplotlib.\+collections.\+Line\+Collection}}
+
+
+Inheritance diagram for matplotlib.\+collections.\+Line\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1collections_1_1LineCollection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+collections.\+Line\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1collections_1_1LineCollection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_aa3be8ca273aa64fa046cc23229162431}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, segments, args, \hyperlink{classmatplotlib_1_1artist_1_1Artist_a210781a1646a5f1e9a1a82bf488c314f}{zorder}=2, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a0284b1a1f3ff927207affd42fad8f993}{set\+\_\+segments} (self, segments)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a5d78cc3f139c90180ce122f90e6e7d8a}{get\+\_\+segments} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_abafc92b2e40641934d2d28a290d52cdd}{set\+\_\+color} (self, c)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a5198841f2dfd098c4212d5923ec8e581}{get\+\_\+color} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a981a8578c00b63897025b358e2cdd9a1}{stale}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a8aca91d6d3dc56e4ab276b2e29be2ce2}{set\+\_\+verts} = \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a0284b1a1f3ff927207affd42fad8f993}{set\+\_\+segments}
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a6220c2bb5fe4990caafa2367073d4117}{set\+\_\+paths} = \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a0284b1a1f3ff927207affd42fad8f993}{set\+\_\+segments}
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a2f7c82fcebe076bd438de240dcfc280e}{set\+\_\+colors} = \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_abafc92b2e40641934d2d28a290d52cdd}{set\+\_\+color}
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a79a8d7f2fba323cd96cca0bbe513ac29}{get\+\_\+colors} = \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a5198841f2dfd098c4212d5923ec8e581}{get\+\_\+color}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Represents a sequence of `.Line2D`\s that should be drawn together.
+
+This class extends `.Collection` to represent a sequence of
+`~.Line2D`\s instead of just a sequence of `~.Patch`\s.
+Just as in `.Collection`, each property of a *LineCollection* may be either
+a single value or a list of values. This list is then used cyclically for
+each element of the LineCollection, so the property of the ``i``\th element
+of the collection is::
+
+  prop[i % len(prop)]
+
+The properties of each member of a *LineCollection* default to their values
+in :rc:`lines.*` instead of :rc:`patch.*`, and the property *colors* is
+added in place of *edgecolors*.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1LineCollection_aa3be8ca273aa64fa046cc23229162431}\label{classmatplotlib_1_1collections_1_1LineCollection_aa3be8ca273aa64fa046cc23229162431}} 
+\index{matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Line\+Collection.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{segments,  }\item[{}]{args,  }\item[{}]{zorder = {\ttfamily 2},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+segments : list of array-like
+    A sequence of (*line0*, *line1*, *line2*), where::
+
+linen = (x0, y0), (x1, y1), ... (xm, ym)
+
+    or the equivalent numpy array with two columns. Each line
+    can have a different number of segments.
+linewidths : float or list of float, default: :rc:`lines.linewidth`
+    The width of each line in points.
+colors : color or list of color, default: :rc:`lines.color`
+    A sequence of RGBA tuples (e.g., arbitrary color strings, etc, not
+    allowed).
+antialiaseds : bool or list of bool, default: :rc:`lines.antialiased`
+    Whether to use antialiasing for each line.
+zorder : int, default: 2
+    zorder of the lines once drawn.
+
+facecolors : color or list of color, default: 'none'
+    When setting *facecolors*, each line is interpreted as a boundary
+    for an area, implicitly closing the path from the last point to the
+    first point. The enclosed area is filled with *facecolor*.
+    In order to manually specify what should count as the "interior" of
+    each line, please use `.PathCollection` instead, where the
+    "interior" can be specified by appropriate usage of
+    `~.path.Path.CLOSEPOLY`.
+
+**kwargs
+    Forwarded to `.Collection`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1LineCollection_a5198841f2dfd098c4212d5923ec8e581}\label{classmatplotlib_1_1collections_1_1LineCollection_a5198841f2dfd098c4212d5923ec8e581}} 
+\index{matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}!get\+\_\+color@{get\+\_\+color}}
+\index{get\+\_\+color@{get\+\_\+color}!matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}}
+\subsubsection{\texorpdfstring{get\+\_\+color()}{get\_color()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Line\+Collection.\+get\+\_\+color (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1LineCollection_a5d78cc3f139c90180ce122f90e6e7d8a}\label{classmatplotlib_1_1collections_1_1LineCollection_a5d78cc3f139c90180ce122f90e6e7d8a}} 
+\index{matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}!get\+\_\+segments@{get\+\_\+segments}}
+\index{get\+\_\+segments@{get\+\_\+segments}!matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}}
+\subsubsection{\texorpdfstring{get\+\_\+segments()}{get\_segments()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Line\+Collection.\+get\+\_\+segments (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns
+-------
+list
+    List of segments in the LineCollection. Each list item contains an
+    array of vertices.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1collections_1_1LineCollection_abafc92b2e40641934d2d28a290d52cdd}\label{classmatplotlib_1_1collections_1_1LineCollection_abafc92b2e40641934d2d28a290d52cdd}} 
+\index{matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}!set\+\_\+color@{set\+\_\+color}}
+\index{set\+\_\+color@{set\+\_\+color}!matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+color()}{set\_color()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Line\+Collection.\+set\+\_\+color (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{c }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the edgecolor(s) of the LineCollection.
+
+Parameters
+----------
+c : color or list of colors
+    Single color (all lines have same color), or a
+    sequence of rgba tuples; if it is a sequence the lines will
+    cycle through the sequence.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1collections_1_1LineCollection_a0284b1a1f3ff927207affd42fad8f993}\label{classmatplotlib_1_1collections_1_1LineCollection_a0284b1a1f3ff927207affd42fad8f993}} 
+\index{matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}!set\+\_\+segments@{set\+\_\+segments}}
+\index{set\+\_\+segments@{set\+\_\+segments}!matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+segments()}{set\_segments()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Line\+Collection.\+set\+\_\+segments (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{segments }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1LineCollection_a79a8d7f2fba323cd96cca0bbe513ac29}\label{classmatplotlib_1_1collections_1_1LineCollection_a79a8d7f2fba323cd96cca0bbe513ac29}} 
+\index{matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}!get\+\_\+colors@{get\+\_\+colors}}
+\index{get\+\_\+colors@{get\+\_\+colors}!matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}}
+\subsubsection{\texorpdfstring{get\+\_\+colors}{get\_colors}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Line\+Collection.\+get\+\_\+colors = \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a5198841f2dfd098c4212d5923ec8e581}{get\+\_\+color}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1LineCollection_a2f7c82fcebe076bd438de240dcfc280e}\label{classmatplotlib_1_1collections_1_1LineCollection_a2f7c82fcebe076bd438de240dcfc280e}} 
+\index{matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}!set\+\_\+colors@{set\+\_\+colors}}
+\index{set\+\_\+colors@{set\+\_\+colors}!matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+colors}{set\_colors}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Line\+Collection.\+set\+\_\+colors = \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_abafc92b2e40641934d2d28a290d52cdd}{set\+\_\+color}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1LineCollection_a6220c2bb5fe4990caafa2367073d4117}\label{classmatplotlib_1_1collections_1_1LineCollection_a6220c2bb5fe4990caafa2367073d4117}} 
+\index{matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}!set\+\_\+paths@{set\+\_\+paths}}
+\index{set\+\_\+paths@{set\+\_\+paths}!matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+paths}{set\_paths}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Line\+Collection.\+set\+\_\+paths = \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a0284b1a1f3ff927207affd42fad8f993}{set\+\_\+segments}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1LineCollection_a8aca91d6d3dc56e4ab276b2e29be2ce2}\label{classmatplotlib_1_1collections_1_1LineCollection_a8aca91d6d3dc56e4ab276b2e29be2ce2}} 
+\index{matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}!set\+\_\+verts@{set\+\_\+verts}}
+\index{set\+\_\+verts@{set\+\_\+verts}!matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+verts}{set\_verts}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Line\+Collection.\+set\+\_\+verts = \hyperlink{classmatplotlib_1_1collections_1_1LineCollection_a0284b1a1f3ff927207affd42fad8f993}{set\+\_\+segments}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1LineCollection_a981a8578c00b63897025b358e2cdd9a1}\label{classmatplotlib_1_1collections_1_1LineCollection_a981a8578c00b63897025b358e2cdd9a1}} 
+\index{matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::collections\+::\+Line\+Collection@{matplotlib\+::collections\+::\+Line\+Collection}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+collections.\+Line\+Collection.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{collections_8py}{collections.\+py}\end{DoxyCompactItemize}

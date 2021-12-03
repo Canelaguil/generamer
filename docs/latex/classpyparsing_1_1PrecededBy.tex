@@ -1,0 +1,143 @@
+\hypertarget{classpyparsing_1_1PrecededBy}{}\section{pyparsing.\+Preceded\+By Class Reference}
+\label{classpyparsing_1_1PrecededBy}\index{pyparsing.\+Preceded\+By@{pyparsing.\+Preceded\+By}}
+
+
+Inheritance diagram for pyparsing.\+Preceded\+By\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classpyparsing_1_1PrecededBy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pyparsing.\+Preceded\+By\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classpyparsing_1_1PrecededBy__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpyparsing_1_1PrecededBy_a236f6533125a3d3188781765f81fa18f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpyparsing_1_1PrecededBy_a00f285bb36bee533657365a1fa08217b}{expr}, \hyperlink{classpyparsing_1_1PrecededBy_ae459c75d2665751f167b6108f52e6133}{retreat}=None)
+\item 
+def \hyperlink{classpyparsing_1_1PrecededBy_a90cdf1792c5a9c8065f5b18d6a6f8369}{parse\+Impl} (self, instring, loc=0, do\+Actions=True)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpyparsing_1_1PrecededBy_a00f285bb36bee533657365a1fa08217b}{expr}
+\item 
+\hyperlink{classpyparsing_1_1PrecededBy_a07747a577978047fd1c26db25c8c9361}{may\+Return\+Empty}
+\item 
+\hyperlink{classpyparsing_1_1PrecededBy_a23cd7d97524867e9fd771bbce232ed4e}{may\+Index\+Error}
+\item 
+\hyperlink{classpyparsing_1_1PrecededBy_a2e9778affc1ade2830c341c143002056}{exact}
+\item 
+\hyperlink{classpyparsing_1_1PrecededBy_ae459c75d2665751f167b6108f52e6133}{retreat}
+\item 
+\hyperlink{classpyparsing_1_1PrecededBy_a13fa1a8bf71a4c407a413f978097a670}{errmsg}
+\item 
+\hyperlink{classpyparsing_1_1PrecededBy_ad055a25db4c390dedef38a28649e5bae}{skip\+Whitespace}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Lookbehind matching of the given parse expression.
+``PrecededBy`` does not advance the parsing position within the
+input string, it only verifies that the specified parse expression
+matches prior to the current position.  ``PrecededBy`` always
+returns a null token list, but if a results name is defined on the
+given expression, it is returned.
+
+Parameters:
+
+ - expr - expression that must match prior to the current parse
+   location
+ - retreat - (default= ``None``) - (int) maximum number of characters
+   to lookbehind prior to the current parse location
+
+If the lookbehind expression is a string, Literal, Keyword, or
+a Word or CharsNotIn with a specified exact or maximum length, then
+the retreat parameter is not required. Otherwise, retreat must be
+specified to give a maximum number of characters to look back from
+the current parse position for a lookbehind match.
+
+Example::
+
+    # VB-style variable names with type prefixes
+    int_var = PrecededBy("#") + pyparsing_common.identifier
+    str_var = PrecededBy("$") + pyparsing_common.identifier\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1PrecededBy_a236f6533125a3d3188781765f81fa18f}\label{classpyparsing_1_1PrecededBy_a236f6533125a3d3188781765f81fa18f}} 
+\index{pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Preceded\+By.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{expr,  }\item[{}]{retreat = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1PrecededBy_a90cdf1792c5a9c8065f5b18d6a6f8369}\label{classpyparsing_1_1PrecededBy_a90cdf1792c5a9c8065f5b18d6a6f8369}} 
+\index{pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pyparsing.\+Preceded\+By.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc = {\ttfamily 0},  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1PrecededBy_a13fa1a8bf71a4c407a413f978097a670}\label{classpyparsing_1_1PrecededBy_a13fa1a8bf71a4c407a413f978097a670}} 
+\index{pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}!errmsg@{errmsg}}
+\index{errmsg@{errmsg}!pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}}
+\subsubsection{\texorpdfstring{errmsg}{errmsg}}
+{\footnotesize\ttfamily pyparsing.\+Preceded\+By.\+errmsg}
+
+\mbox{\Hypertarget{classpyparsing_1_1PrecededBy_a2e9778affc1ade2830c341c143002056}\label{classpyparsing_1_1PrecededBy_a2e9778affc1ade2830c341c143002056}} 
+\index{pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}!exact@{exact}}
+\index{exact@{exact}!pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}}
+\subsubsection{\texorpdfstring{exact}{exact}}
+{\footnotesize\ttfamily pyparsing.\+Preceded\+By.\+exact}
+
+\mbox{\Hypertarget{classpyparsing_1_1PrecededBy_a00f285bb36bee533657365a1fa08217b}\label{classpyparsing_1_1PrecededBy_a00f285bb36bee533657365a1fa08217b}} 
+\index{pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}!expr@{expr}}
+\index{expr@{expr}!pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}}
+\subsubsection{\texorpdfstring{expr}{expr}}
+{\footnotesize\ttfamily pyparsing.\+Preceded\+By.\+expr}
+
+\mbox{\Hypertarget{classpyparsing_1_1PrecededBy_a23cd7d97524867e9fd771bbce232ed4e}\label{classpyparsing_1_1PrecededBy_a23cd7d97524867e9fd771bbce232ed4e}} 
+\index{pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}!may\+Index\+Error@{may\+Index\+Error}}
+\index{may\+Index\+Error@{may\+Index\+Error}!pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}}
+\subsubsection{\texorpdfstring{may\+Index\+Error}{mayIndexError}}
+{\footnotesize\ttfamily pyparsing.\+Preceded\+By.\+may\+Index\+Error}
+
+\mbox{\Hypertarget{classpyparsing_1_1PrecededBy_a07747a577978047fd1c26db25c8c9361}\label{classpyparsing_1_1PrecededBy_a07747a577978047fd1c26db25c8c9361}} 
+\index{pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily pyparsing.\+Preceded\+By.\+may\+Return\+Empty}
+
+\mbox{\Hypertarget{classpyparsing_1_1PrecededBy_ae459c75d2665751f167b6108f52e6133}\label{classpyparsing_1_1PrecededBy_ae459c75d2665751f167b6108f52e6133}} 
+\index{pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}!retreat@{retreat}}
+\index{retreat@{retreat}!pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}}
+\subsubsection{\texorpdfstring{retreat}{retreat}}
+{\footnotesize\ttfamily pyparsing.\+Preceded\+By.\+retreat}
+
+\mbox{\Hypertarget{classpyparsing_1_1PrecededBy_ad055a25db4c390dedef38a28649e5bae}\label{classpyparsing_1_1PrecededBy_ad055a25db4c390dedef38a28649e5bae}} 
+\index{pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}!skip\+Whitespace@{skip\+Whitespace}}
+\index{skip\+Whitespace@{skip\+Whitespace}!pyparsing\+::\+Preceded\+By@{pyparsing\+::\+Preceded\+By}}
+\subsubsection{\texorpdfstring{skip\+Whitespace}{skipWhitespace}}
+{\footnotesize\ttfamily pyparsing.\+Preceded\+By.\+skip\+Whitespace}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\hyperlink{pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,201 @@
+\hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE}{}\section{matplotlib.\+mlab.\+Gaussian\+K\+DE Class Reference}
+\label{classmatplotlib_1_1mlab_1_1GaussianKDE}\index{matplotlib.\+mlab.\+Gaussian\+K\+DE@{matplotlib.\+mlab.\+Gaussian\+K\+DE}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_ae94de5d99f517b843ee2a836847ef3b5}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_a1a9bfcd3c9f4567b042757386e564b10}{dataset}, bw\+\_\+method=None)
+\item 
+def \hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_ac36963e4ffac27c198101dcdd2c9f59a}{scotts\+\_\+factor} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_ab7bc555187ab1ca936ab70d8e226e5e2}{silverman\+\_\+factor} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_a0b346469b60aebcc4781f7f1573df770}{evaluate} (self, points)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_a1a9bfcd3c9f4567b042757386e564b10}{dataset}
+\item 
+\hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_a0b43f2fe33abbdd2801eeea8d7babb2c}{num\+\_\+dp}
+\item 
+\hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_a234fd5ded024e253fcc692e76462d846}{covariance\+\_\+factor}
+\item 
+\hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_a15cb36d35b9cfa203189aeeab65c00ee}{factor}
+\item 
+\hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_a3dc8b423013082f8402222a15b6f25de}{data\+\_\+covariance}
+\item 
+\hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_ac06e1fc4e862d5c8b042214359f13743}{data\+\_\+inv\+\_\+cov}
+\item 
+\hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_a1f80a5911d5ddbb4771ade800b14f81b}{covariance}
+\item 
+\hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_a1db8e5df6a322713b9ac95229373c491}{inv\+\_\+cov}
+\item 
+\hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_a0730da7cf3c4dd22f0ec127d0b1fb4ee}{norm\+\_\+factor}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_ab360ecaf7d3eb1d7668174e7791c1c1a}{covariance\+\_\+factor} = \hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_ac36963e4ffac27c198101dcdd2c9f59a}{scotts\+\_\+factor}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Representation of a kernel-density estimate using Gaussian kernels.
+
+Parameters
+----------
+dataset : array-like
+    Datapoints to estimate from. In case of univariate data this is a 1-D
+    array, otherwise a 2D array with shape (# of dims, # of data).
+
+bw_method : str, scalar or callable, optional
+    The method used to calculate the estimator bandwidth.  This can be
+    'scott', 'silverman', a scalar constant or a callable.  If a
+    scalar, this will be used directly as `kde.factor`.  If a
+    callable, it should take a `GaussianKDE` instance as only
+    parameter and return a scalar. If None (default), 'scott' is used.
+
+Attributes
+----------
+dataset : ndarray
+    The dataset with which `gaussian_kde` was initialized.
+
+dim : int
+    Number of dimensions.
+
+num_dp : int
+    Number of datapoints.
+
+factor : float
+    The bandwidth factor, obtained from `kde.covariance_factor`, with which
+    the covariance matrix is multiplied.
+
+covariance : ndarray
+    The covariance matrix of *dataset*, scaled by the calculated bandwidth
+    (`kde.factor`).
+
+inv_cov : ndarray
+    The inverse of *covariance*.
+
+Methods
+-------
+kde.evaluate(points) : ndarray
+    Evaluate the estimated pdf on a provided set of points.
+
+kde(points) : ndarray
+    Same as kde.evaluate(points)\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_ae94de5d99f517b843ee2a836847ef3b5}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_ae94de5d99f517b843ee2a836847ef3b5}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dataset,  }\item[{}]{bw\+\_\+method = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_a0b346469b60aebcc4781f7f1573df770}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_a0b346469b60aebcc4781f7f1573df770}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+evaluate (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{points }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Evaluate the estimated pdf on a set of points.
+
+Parameters
+----------
+points : (# of dimensions, # of points)-array
+    Alternatively, a (# of dimensions,) vector can be passed in and
+    treated as a single point.
+
+Returns
+-------
+(# of points,)-array
+    The values at each point.
+
+Raises
+------
+ValueError : if the dimensionality of the input points is different
+     than the dimensionality of the KDE.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_ac36963e4ffac27c198101dcdd2c9f59a}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_ac36963e4ffac27c198101dcdd2c9f59a}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!scotts\+\_\+factor@{scotts\+\_\+factor}}
+\index{scotts\+\_\+factor@{scotts\+\_\+factor}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{scotts\+\_\+factor()}{scotts\_factor()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+scotts\+\_\+factor (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_ab7bc555187ab1ca936ab70d8e226e5e2}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_ab7bc555187ab1ca936ab70d8e226e5e2}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!silverman\+\_\+factor@{silverman\+\_\+factor}}
+\index{silverman\+\_\+factor@{silverman\+\_\+factor}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{silverman\+\_\+factor()}{silverman\_factor()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+silverman\+\_\+factor (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_a1f80a5911d5ddbb4771ade800b14f81b}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_a1f80a5911d5ddbb4771ade800b14f81b}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!covariance@{covariance}}
+\index{covariance@{covariance}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{covariance}{covariance}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+covariance}
+
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_a234fd5ded024e253fcc692e76462d846}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_a234fd5ded024e253fcc692e76462d846}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!covariance\+\_\+factor@{covariance\+\_\+factor}}
+\index{covariance\+\_\+factor@{covariance\+\_\+factor}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{covariance\+\_\+factor}{covariance\_factor}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+covariance\+\_\+factor}
+
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_ab360ecaf7d3eb1d7668174e7791c1c1a}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_ab360ecaf7d3eb1d7668174e7791c1c1a}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!covariance\+\_\+factor@{covariance\+\_\+factor}}
+\index{covariance\+\_\+factor@{covariance\+\_\+factor}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{covariance\+\_\+factor}{covariance\_factor}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+covariance\+\_\+factor = \hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE_ac36963e4ffac27c198101dcdd2c9f59a}{scotts\+\_\+factor}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_a3dc8b423013082f8402222a15b6f25de}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_a3dc8b423013082f8402222a15b6f25de}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!data\+\_\+covariance@{data\+\_\+covariance}}
+\index{data\+\_\+covariance@{data\+\_\+covariance}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{data\+\_\+covariance}{data\_covariance}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+data\+\_\+covariance}
+
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_ac06e1fc4e862d5c8b042214359f13743}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_ac06e1fc4e862d5c8b042214359f13743}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!data\+\_\+inv\+\_\+cov@{data\+\_\+inv\+\_\+cov}}
+\index{data\+\_\+inv\+\_\+cov@{data\+\_\+inv\+\_\+cov}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{data\+\_\+inv\+\_\+cov}{data\_inv\_cov}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+data\+\_\+inv\+\_\+cov}
+
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_a1a9bfcd3c9f4567b042757386e564b10}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_a1a9bfcd3c9f4567b042757386e564b10}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!dataset@{dataset}}
+\index{dataset@{dataset}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{dataset}{dataset}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+dataset}
+
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_a15cb36d35b9cfa203189aeeab65c00ee}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_a15cb36d35b9cfa203189aeeab65c00ee}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!factor@{factor}}
+\index{factor@{factor}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{factor}{factor}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+factor}
+
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_a1db8e5df6a322713b9ac95229373c491}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_a1db8e5df6a322713b9ac95229373c491}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!inv\+\_\+cov@{inv\+\_\+cov}}
+\index{inv\+\_\+cov@{inv\+\_\+cov}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{inv\+\_\+cov}{inv\_cov}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+inv\+\_\+cov}
+
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_a0730da7cf3c4dd22f0ec127d0b1fb4ee}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_a0730da7cf3c4dd22f0ec127d0b1fb4ee}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!norm\+\_\+factor@{norm\+\_\+factor}}
+\index{norm\+\_\+factor@{norm\+\_\+factor}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{norm\+\_\+factor}{norm\_factor}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+norm\+\_\+factor}
+
+\mbox{\Hypertarget{classmatplotlib_1_1mlab_1_1GaussianKDE_a0b43f2fe33abbdd2801eeea8d7babb2c}\label{classmatplotlib_1_1mlab_1_1GaussianKDE_a0b43f2fe33abbdd2801eeea8d7babb2c}} 
+\index{matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}!num\+\_\+dp@{num\+\_\+dp}}
+\index{num\+\_\+dp@{num\+\_\+dp}!matplotlib\+::mlab\+::\+Gaussian\+K\+DE@{matplotlib\+::mlab\+::\+Gaussian\+K\+DE}}
+\subsubsection{\texorpdfstring{num\+\_\+dp}{num\_dp}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+Gaussian\+K\+D\+E.\+num\+\_\+dp}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{mlab_8py}{mlab.\+py}\end{DoxyCompactItemize}

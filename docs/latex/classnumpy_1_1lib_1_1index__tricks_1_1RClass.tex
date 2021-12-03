@@ -1,0 +1,135 @@
+\hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1RClass}{}\section{numpy.\+lib.\+index\+\_\+tricks.\+R\+Class Class Reference}
+\label{classnumpy_1_1lib_1_1index__tricks_1_1RClass}\index{numpy.\+lib.\+index\+\_\+tricks.\+R\+Class@{numpy.\+lib.\+index\+\_\+tricks.\+R\+Class}}
+
+
+Inheritance diagram for numpy.\+lib.\+index\+\_\+tricks.\+R\+Class\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classnumpy_1_1lib_1_1index__tricks_1_1RClass__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+lib.\+index\+\_\+tricks.\+R\+Class\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classnumpy_1_1lib_1_1index__tricks_1_1RClass__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1RClass_ab0bfa0de53b310c803b10d035c052e66}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Translates slice objects to concatenation along the first axis.
+
+This is a simple way to build up arrays quickly. There are two use cases.
+
+1. If the index expression contains comma separated arrays, then stack
+   them along their first axis.
+2. If the index expression contains slice notation or scalars then create
+   a 1-D array with a range indicated by the slice notation.
+
+If slice notation is used, the syntax ``start:stop:step`` is equivalent
+to ``np.arange(start, stop, step)`` inside of the brackets. However, if
+``step`` is an imaginary number (i.e. 100j) then its integer portion is
+interpreted as a number-of-points desired and the start and stop are
+inclusive. In other words ``start:stop:stepj`` is interpreted as
+``np.linspace(start, stop, step, endpoint=1)`` inside of the brackets.
+After expansion of slice notation, all comma separated sequences are
+concatenated together.
+
+Optional character strings placed as the first element of the index
+expression can be used to change the output. The strings 'r' or 'c' result
+in matrix output. If the result is 1-D and 'r' is specified a 1 x N (row)
+matrix is produced. If the result is 1-D and 'c' is specified, then a N x 1
+(column) matrix is produced. If the result is 2-D then both provide the
+same matrix result.
+
+A string integer specifies which axis to stack multiple comma separated
+arrays along. A string of two comma-separated integers allows indication
+of the minimum number of dimensions to force each entry into as the
+second integer (the axis to concatenate along is still the first integer).
+
+A string with three comma-separated integers allows specification of the
+axis to concatenate along, the minimum number of dimensions to force the
+entries to, and which axis should contain the start of the arrays which
+are less than the specified number of dimensions. In other words the third
+integer allows you to specify where the 1's should be placed in the shape
+of the arrays that have their shapes upgraded. By default, they are placed
+in the front of the shape tuple. The third argument allows you to specify
+where the start of the array should be instead. Thus, a third argument of
+'0' would place the 1's at the end of the array shape. Negative integers
+specify where in the new shape tuple the last dimension of upgraded arrays
+should be placed, so the default is '-1'.
+
+Parameters
+----------
+Not a function, so takes no parameters
+
+
+Returns
+-------
+A concatenated ndarray or matrix.
+
+See Also
+--------
+concatenate : Join a sequence of arrays along an existing axis.
+c_ : Translates slice objects to concatenation along the second axis.
+
+Examples
+--------
+>>> np.r_[np.array([1,2,3]), 0, 0, np.array([4,5,6])]
+array([1, 2, 3, ..., 4, 5, 6])
+>>> np.r_[-1:1:6j, [0]*3, 5, 6]
+array([-1. , -0.6, -0.2,  0.2,  0.6,  1. ,  0. ,  0. ,  0. ,  5. ,  6. ])
+
+String integers specify the axis to concatenate along or the minimum
+number of dimensions to force entries into.
+
+>>> a = np.array([[0, 1, 2], [3, 4, 5]])
+>>> np.r_['-1', a, a] # concatenate along last axis
+array([[0, 1, 2, 0, 1, 2],
+       [3, 4, 5, 3, 4, 5]])
+>>> np.r_['0,2', [1,2,3], [4,5,6]] # concatenate along first axis, dim>=2
+array([[1, 2, 3],
+       [4, 5, 6]])
+
+>>> np.r_['0,2,0', [1,2,3], [4,5,6]]
+array([[1],
+       [2],
+       [3],
+       [4],
+       [5],
+       [6]])
+>>> np.r_['1,2,0', [1,2,3], [4,5,6]]
+array([[1, 4],
+       [2, 5],
+       [3, 6]])
+
+Using 'r' or 'c' as a first string argument creates a matrix.
+
+>>> np.r_['r',[1,2,3], [4,5,6]]
+matrix([[1, 2, 3, 4, 5, 6]])\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1RClass_ab0bfa0de53b310c803b10d035c052e66}\label{classnumpy_1_1lib_1_1index__tricks_1_1RClass_ab0bfa0de53b310c803b10d035c052e66}} 
+\index{numpy\+::lib\+::index\+\_\+tricks\+::\+R\+Class@{numpy\+::lib\+::index\+\_\+tricks\+::\+R\+Class}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::lib\+::index\+\_\+tricks\+::\+R\+Class@{numpy\+::lib\+::index\+\_\+tricks\+::\+R\+Class}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+R\+Class.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/lib/\hyperlink{lib_2index__tricks_8py}{index\+\_\+tricks.\+py}\end{DoxyCompactItemize}

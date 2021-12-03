@@ -1,0 +1,824 @@
+\hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab}{}\section{networkx.\+drawing.\+nx\+\_\+pylab Namespace Reference}
+\label{namespacenetworkx_1_1drawing_1_1nx__pylab}\index{networkx.\+drawing.\+nx\+\_\+pylab@{networkx.\+drawing.\+nx\+\_\+pylab}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_ad6f777a242efbef8330552f619f2b635}{draw} (G, pos=None, ax=None, kwds)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_ac656ed97042c7dca44219020d17dee0a}{draw\+\_\+networkx} (G, pos=None, arrows=None, with\+\_\+labels=True, kwds)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_a3f26ea20c4799842a65c35f71f31adeb}{draw\+\_\+networkx\+\_\+nodes} (G, pos, nodelist=None, node\+\_\+size=300, node\+\_\+color=\char`\"{}\#1f78b4\char`\"{}, node\+\_\+shape=\char`\"{}o\char`\"{}, alpha=\+None, cmap=\+None, vmin=\+None, vmax=\+None, ax=\+None, linewidths=\+None, edgecolors=\+None, label=\+None, margins=\+None)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_a4cb9e85a2799e28ec7e0dc97a400ba9b}{draw\+\_\+networkx\+\_\+edges} (G, pos, edgelist=None, width=1.\+0, edge\+\_\+color=\char`\"{}k\char`\"{}, style=\char`\"{}solid\char`\"{}, alpha=None, arrowstyle=\char`\"{}-\/$\vert$$>$\char`\"{}, arrowsize=10, edge\+\_\+cmap=None, edge\+\_\+vmin=None, edge\+\_\+vmax=None, ax=None, arrows=None, label=None, node\+\_\+size=300, nodelist=None, node\+\_\+shape=\char`\"{}o\char`\"{}, connectionstyle=\char`\"{}arc3\char`\"{}, min\+\_\+source\+\_\+margin=0, min\+\_\+target\+\_\+margin=0)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_a36145e7e2e1717b10a72c53e4d2dc582}{draw\+\_\+networkx\+\_\+labels} (G, pos, labels=None, font\+\_\+size=12, font\+\_\+color=\char`\"{}k\char`\"{}, font\+\_\+family=\char`\"{}sans-\/serif\char`\"{}, font\+\_\+weight=\char`\"{}normal\char`\"{}, alpha=None, bbox=None, horizontalalignment=\char`\"{}center\char`\"{}, verticalalignment=\char`\"{}center\char`\"{}, ax=None, clip\+\_\+on=True)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_ac71727a8ce6993138e6b4e9b2b38ec6c}{draw\+\_\+networkx\+\_\+edge\+\_\+labels} (G, pos, edge\+\_\+labels=None, label\+\_\+pos=0.\+5, font\+\_\+size=10, font\+\_\+color=\char`\"{}k\char`\"{}, font\+\_\+family=\char`\"{}sans-\/serif\char`\"{}, font\+\_\+weight=\char`\"{}normal\char`\"{}, alpha=None, bbox=None, horizontalalignment=\char`\"{}center\char`\"{}, verticalalignment=\char`\"{}center\char`\"{}, ax=None, rotate=True, clip\+\_\+on=True)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_ab89d6773b43206bca9bcee0d05e5e2e8}{draw\+\_\+circular} (G, kwargs)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_a62710432baf9e173eff963c9ee9cbf14}{draw\+\_\+kamada\+\_\+kawai} (G, kwargs)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_ae8ec30406a42f7c3296ffca2260dce69}{draw\+\_\+random} (G, kwargs)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_a2641bdfab26d56a434e2ccd8f403bfaa}{draw\+\_\+spectral} (G, kwargs)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_aac1c6c6cb4283783cd8d9b97c62e3b2d}{draw\+\_\+spring} (G, kwargs)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_ae93adbb59f973371b6639edbdb997253}{draw\+\_\+shell} (G, kwargs)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_a1a77ee04f7a8a5b04de461332027abd7}{draw\+\_\+planar} (G, kwargs)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pylab_a09fc3bf9141b36d33e22fff1cd99e283}{apply\+\_\+alpha} (colors, alpha, elem\+\_\+list, cmap=None, vmin=None, vmax=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}**********
+Matplotlib
+**********
+
+Draw networks with matplotlib.
+
+Examples
+--------
+>>> G = nx.complete_graph(5)
+>>> nx.draw(G)
+
+See Also
+--------
+ - :doc:`matplotlib <matplotlib:index>`
+ - :func:`matplotlib.pyplot.scatter`
+ - :obj:`matplotlib.patches.FancyArrowPatch`
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_a09fc3bf9141b36d33e22fff1cd99e283}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_a09fc3bf9141b36d33e22fff1cd99e283}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!apply\+\_\+alpha@{apply\+\_\+alpha}}
+\index{apply\+\_\+alpha@{apply\+\_\+alpha}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{apply\+\_\+alpha()}{apply\_alpha()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+apply\+\_\+alpha (\begin{DoxyParamCaption}\item[{}]{colors,  }\item[{}]{alpha,  }\item[{}]{elem\+\_\+list,  }\item[{}]{cmap = {\ttfamily None},  }\item[{}]{vmin = {\ttfamily None},  }\item[{}]{vmax = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply an alpha (or list of alphas) to the colors provided.
+
+Parameters
+----------
+
+colors : color string or array of floats (default='r')
+    Color of element. Can be a single color format string,
+    or a sequence of colors with the same length as nodelist.
+    If numeric values are specified they will be mapped to
+    colors using the cmap and vmin,vmax parameters.  See
+    matplotlib.scatter for more details.
+
+alpha : float or array of floats
+    Alpha values for elements. This can be a single alpha value, in
+    which case it will be applied to all the elements of color. Otherwise,
+    if it is an array, the elements of alpha will be applied to the colors
+    in order (cycling through alpha multiple times if necessary).
+
+elem_list : array of networkx objects
+    The list of elements which are being colored. These could be nodes,
+    edges or labels.
+
+cmap : matplotlib colormap
+    Color map for use if colors is a list of floats corresponding to points
+    on a color mapping.
+
+vmin, vmax : float
+    Minimum and maximum values for normalizing colors if a colormap is used
+
+Returns
+-------
+
+rgba_colors : numpy ndarray
+    Array containing RGBA format values for each of the node colours.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_ad6f777a242efbef8330552f619f2b635}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_ad6f777a242efbef8330552f619f2b635}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw@{draw}}
+\index{draw@{draw}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{pos = {\ttfamily None},  }\item[{}]{ax = {\ttfamily None},  }\item[{}]{kwds }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw the graph G with Matplotlib.
+
+Draw the graph as a simple representation with no node
+labels or edge labels and using the full Matplotlib figure area
+and no axis labels by default.  See draw_networkx() for more
+full-featured drawing that allows title, axis labels etc.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+pos : dictionary, optional
+    A dictionary with nodes as keys and positions as values.
+    If not specified a spring layout positioning will be computed.
+    See :py:mod:`networkx.drawing.layout` for functions that
+    compute node positions.
+
+ax : Matplotlib Axes object, optional
+    Draw the graph in specified Matplotlib axes.
+
+kwds : optional keywords
+    See networkx.draw_networkx() for a description of optional keywords.
+
+Examples
+--------
+>>> G = nx.dodecahedral_graph()
+>>> nx.draw(G)
+>>> nx.draw(G, pos=nx.spring_layout(G))  # use spring layout
+
+See Also
+--------
+draw_networkx
+draw_networkx_nodes
+draw_networkx_edges
+draw_networkx_labels
+draw_networkx_edge_labels
+
+Notes
+-----
+This function has the same name as pylab.draw and pyplot.draw
+so beware when using `from networkx import *`
+
+since you might overwrite the pylab.draw function.
+
+With pyplot use
+
+>>> import matplotlib.pyplot as plt
+>>> G = nx.dodecahedral_graph()
+>>> nx.draw(G)  # networkx draw()
+>>> plt.draw()  # pyplot draw()
+
+Also see the NetworkX drawing examples at
+https://networkx.org/documentation/latest/auto_examples/index.html
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_ab89d6773b43206bca9bcee0d05e5e2e8}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_ab89d6773b43206bca9bcee0d05e5e2e8}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw\+\_\+circular@{draw\+\_\+circular}}
+\index{draw\+\_\+circular@{draw\+\_\+circular}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw\+\_\+circular()}{draw\_circular()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw\+\_\+circular (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw the graph G with a circular layout.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+kwargs : optional keywords
+    See networkx.draw_networkx() for a description of optional keywords,
+    with the exception of the pos parameter which is not used by this
+    function.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_a62710432baf9e173eff963c9ee9cbf14}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_a62710432baf9e173eff963c9ee9cbf14}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw\+\_\+kamada\+\_\+kawai@{draw\+\_\+kamada\+\_\+kawai}}
+\index{draw\+\_\+kamada\+\_\+kawai@{draw\+\_\+kamada\+\_\+kawai}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw\+\_\+kamada\+\_\+kawai()}{draw\_kamada\_kawai()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw\+\_\+kamada\+\_\+kawai (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw the graph G with a Kamada-Kawai force-directed layout.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+kwargs : optional keywords
+    See networkx.draw_networkx() for a description of optional keywords,
+    with the exception of the pos parameter which is not used by this
+    function.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_ac656ed97042c7dca44219020d17dee0a}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_ac656ed97042c7dca44219020d17dee0a}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw\+\_\+networkx@{draw\+\_\+networkx}}
+\index{draw\+\_\+networkx@{draw\+\_\+networkx}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw\+\_\+networkx()}{draw\_networkx()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw\+\_\+networkx (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{pos = {\ttfamily None},  }\item[{}]{arrows = {\ttfamily None},  }\item[{}]{with\+\_\+labels = {\ttfamily True},  }\item[{}]{kwds }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw the graph G using Matplotlib.
+
+Draw the graph with Matplotlib with options for node positions,
+labeling, titles, and many other drawing features.
+See draw() for simple drawing without labels or axes.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+pos : dictionary, optional
+    A dictionary with nodes as keys and positions as values.
+    If not specified a spring layout positioning will be computed.
+    See :py:mod:`networkx.drawing.layout` for functions that
+    compute node positions.
+
+arrows : bool or None, optional (default=None)
+    If `None`, directed graphs draw arrowheads with
+    `~matplotlib.patches.FancyArrowPatch`, while undirected graphs draw edges
+    via `~matplotlib.collections.LineCollection` for speed.
+    If `True`, draw arrowheads with FancyArrowPatches (bendable and stylish).
+    If `False`, draw edges using LineCollection (linear and fast).
+    For directed graphs, if True draw arrowheads.
+    Note: Arrows will be the same color as edges.
+
+arrowstyle : str (default='-\|>')
+    For directed graphs, choose the style of the arrowsheads.
+    See `matplotlib.patches.ArrowStyle` for more options.
+
+arrowsize : int (default=10)
+    For directed graphs, choose the size of the arrow head's length and
+    width. See `matplotlib.patches.FancyArrowPatch` for attribute
+    `mutation_scale` for more info.
+
+with_labels :  bool (default=True)
+    Set to True to draw labels on the nodes.
+
+ax : Matplotlib Axes object, optional
+    Draw the graph in the specified Matplotlib axes.
+
+nodelist : list (default=list(G))
+    Draw only specified nodes
+
+edgelist : list (default=list(G.edges()))
+    Draw only specified edges
+
+node_size : scalar or array (default=300)
+    Size of nodes.  If an array is specified it must be the
+    same length as nodelist.
+
+node_color : color or array of colors (default='#1f78b4')
+    Node color. Can be a single color or a sequence of colors with the same
+    length as nodelist. Color can be string or rgb (or rgba) tuple of
+    floats from 0-1. If numeric values are specified they will be
+    mapped to colors using the cmap and vmin,vmax parameters. See
+    matplotlib.scatter for more details.
+
+node_shape :  string (default='o')
+    The shape of the node.  Specification is as matplotlib.scatter
+    marker, one of 'so^>v<dph8'.
+
+alpha : float or None (default=None)
+    The node and edge transparency
+
+cmap : Matplotlib colormap, optional
+    Colormap for mapping intensities of nodes
+
+vmin,vmax : float, optional
+    Minimum and maximum for node colormap scaling
+
+linewidths : scalar or sequence (default=1.0)
+    Line width of symbol border
+
+width : float or array of floats (default=1.0)
+    Line width of edges
+
+edge_color : color or array of colors (default='k')
+    Edge color. Can be a single color or a sequence of colors with the same
+    length as edgelist. Color can be string or rgb (or rgba) tuple of
+    floats from 0-1. If numeric values are specified they will be
+    mapped to colors using the edge_cmap and edge_vmin,edge_vmax parameters.
+
+edge_cmap : Matplotlib colormap, optional
+    Colormap for mapping intensities of edges
+
+edge_vmin,edge_vmax : floats, optional
+    Minimum and maximum for edge colormap scaling
+
+style : string (default=solid line)
+    Edge line style e.g.: '-', '--', '-.', ':'
+    or words like 'solid' or 'dashed'.
+    (See `matplotlib.patches.FancyArrowPatch`: `linestyle`)
+
+labels : dictionary (default=None)
+    Node labels in a dictionary of text labels keyed by node
+
+font_size : int (default=12 for nodes, 10 for edges)
+    Font size for text labels
+
+font_color : string (default='k' black)
+    Font color string
+
+font_weight : string (default='normal')
+    Font weight
+
+font_family : string (default='sans-serif')
+    Font family
+
+label : string, optional
+    Label for graph legend
+
+kwds : optional keywords
+    See networkx.draw_networkx_nodes(), networkx.draw_networkx_edges(), and
+    networkx.draw_networkx_labels() for a description of optional keywords.
+
+Notes
+-----
+For directed graphs, arrows  are drawn at the head end.  Arrows can be
+turned off with keyword arrows=False.
+
+Examples
+--------
+>>> G = nx.dodecahedral_graph()
+>>> nx.draw(G)
+>>> nx.draw(G, pos=nx.spring_layout(G))  # use spring layout
+
+>>> import matplotlib.pyplot as plt
+>>> limits = plt.axis("off")  # turn off axis
+
+Also see the NetworkX drawing examples at
+https://networkx.org/documentation/latest/auto_examples/index.html
+
+See Also
+--------
+draw
+draw_networkx_nodes
+draw_networkx_edges
+draw_networkx_labels
+draw_networkx_edge_labels
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_ac71727a8ce6993138e6b4e9b2b38ec6c}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_ac71727a8ce6993138e6b4e9b2b38ec6c}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw\+\_\+networkx\+\_\+edge\+\_\+labels@{draw\+\_\+networkx\+\_\+edge\+\_\+labels}}
+\index{draw\+\_\+networkx\+\_\+edge\+\_\+labels@{draw\+\_\+networkx\+\_\+edge\+\_\+labels}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw\+\_\+networkx\+\_\+edge\+\_\+labels()}{draw\_networkx\_edge\_labels()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw\+\_\+networkx\+\_\+edge\+\_\+labels (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{pos,  }\item[{}]{edge\+\_\+labels = {\ttfamily None},  }\item[{}]{label\+\_\+pos = {\ttfamily 0.5},  }\item[{}]{font\+\_\+size = {\ttfamily 10},  }\item[{}]{font\+\_\+color = {\ttfamily \char`\"{}k\char`\"{}},  }\item[{}]{font\+\_\+family = {\ttfamily \char`\"{}sans-\/serif\char`\"{}},  }\item[{}]{font\+\_\+weight = {\ttfamily \char`\"{}normal\char`\"{}},  }\item[{}]{alpha = {\ttfamily None},  }\item[{}]{bbox = {\ttfamily None},  }\item[{}]{horizontalalignment = {\ttfamily \char`\"{}center\char`\"{}},  }\item[{}]{verticalalignment = {\ttfamily \char`\"{}center\char`\"{}},  }\item[{}]{ax = {\ttfamily None},  }\item[{}]{rotate = {\ttfamily True},  }\item[{}]{clip\+\_\+on = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw edge labels.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+pos : dictionary
+    A dictionary with nodes as keys and positions as values.
+    Positions should be sequences of length 2.
+
+edge_labels : dictionary (default={})
+    Edge labels in a dictionary of labels keyed by edge two-tuple.
+    Only labels for the keys in the dictionary are drawn.
+
+label_pos : float (default=0.5)
+    Position of edge label along edge (0=head, 0.5=center, 1=tail)
+
+font_size : int (default=10)
+    Font size for text labels
+
+font_color : string (default='k' black)
+    Font color string
+
+font_weight : string (default='normal')
+    Font weight
+
+font_family : string (default='sans-serif')
+    Font family
+
+alpha : float or None (default=None)
+    The text transparency
+
+bbox : Matplotlib bbox, optional
+    Specify text box properties (e.g. shape, color etc.) for edge labels.
+    Default is {boxstyle='round', ec=(1.0, 1.0, 1.0), fc=(1.0, 1.0, 1.0)}.
+
+horizontalalignment : string (default='center')
+    Horizontal alignment {'center', 'right', 'left'}
+
+verticalalignment : string (default='center')
+    Vertical alignment {'center', 'top', 'bottom', 'baseline', 'center_baseline'}
+
+ax : Matplotlib Axes object, optional
+    Draw the graph in the specified Matplotlib axes.
+
+rotate : bool (deafult=True)
+    Rotate edge labels to lie parallel to edges
+
+clip_on : bool (default=True)
+    Turn on clipping of edge labels at axis boundaries
+
+Returns
+-------
+dict
+    `dict` of labels keyed by edge
+
+Examples
+--------
+>>> G = nx.dodecahedral_graph()
+>>> edge_labels = nx.draw_networkx_edge_labels(G, pos=nx.spring_layout(G))
+
+Also see the NetworkX drawing examples at
+https://networkx.org/documentation/latest/auto_examples/index.html
+
+See Also
+--------
+draw
+draw_networkx
+draw_networkx_nodes
+draw_networkx_edges
+draw_networkx_labels
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_a4cb9e85a2799e28ec7e0dc97a400ba9b}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_a4cb9e85a2799e28ec7e0dc97a400ba9b}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw\+\_\+networkx\+\_\+edges@{draw\+\_\+networkx\+\_\+edges}}
+\index{draw\+\_\+networkx\+\_\+edges@{draw\+\_\+networkx\+\_\+edges}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw\+\_\+networkx\+\_\+edges()}{draw\_networkx\_edges()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw\+\_\+networkx\+\_\+edges (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{pos,  }\item[{}]{edgelist = {\ttfamily None},  }\item[{}]{width = {\ttfamily 1.0},  }\item[{}]{edge\+\_\+color = {\ttfamily \char`\"{}k\char`\"{}},  }\item[{}]{style = {\ttfamily \char`\"{}solid\char`\"{}},  }\item[{}]{alpha = {\ttfamily None},  }\item[{}]{arrowstyle = {\ttfamily \char`\"{}-\/$\vert$$>$\char`\"{}},  }\item[{}]{arrowsize = {\ttfamily 10},  }\item[{}]{edge\+\_\+cmap = {\ttfamily None},  }\item[{}]{edge\+\_\+vmin = {\ttfamily None},  }\item[{}]{edge\+\_\+vmax = {\ttfamily None},  }\item[{}]{ax = {\ttfamily None},  }\item[{}]{arrows = {\ttfamily None},  }\item[{}]{label = {\ttfamily None},  }\item[{}]{node\+\_\+size = {\ttfamily 300},  }\item[{}]{nodelist = {\ttfamily None},  }\item[{}]{node\+\_\+shape = {\ttfamily \char`\"{}o\char`\"{}},  }\item[{}]{connectionstyle = {\ttfamily \char`\"{}arc3\char`\"{}},  }\item[{}]{min\+\_\+source\+\_\+margin = {\ttfamily 0},  }\item[{}]{min\+\_\+target\+\_\+margin = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw the edges of the graph G.
+
+This draws only the edges of the graph G.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+pos : dictionary
+    A dictionary with nodes as keys and positions as values.
+    Positions should be sequences of length 2.
+
+edgelist : collection of edge tuples (default=G.edges())
+    Draw only specified edges
+
+width : float or array of floats (default=1.0)
+    Line width of edges
+
+edge_color : color or array of colors (default='k')
+    Edge color. Can be a single color or a sequence of colors with the same
+    length as edgelist. Color can be string or rgb (or rgba) tuple of
+    floats from 0-1. If numeric values are specified they will be
+    mapped to colors using the edge_cmap and edge_vmin,edge_vmax parameters.
+
+style : string (default=solid line)
+    Edge line style e.g.: '-', '--', '-.', ':'
+    or words like 'solid' or 'dashed'.
+    (See `matplotlib.patches.FancyArrowPatch`: `linestyle`)
+
+alpha : float or None (default=None)
+    The edge transparency
+
+edge_cmap : Matplotlib colormap, optional
+    Colormap for mapping intensities of edges
+
+edge_vmin,edge_vmax : floats, optional
+    Minimum and maximum for edge colormap scaling
+
+ax : Matplotlib Axes object, optional
+    Draw the graph in the specified Matplotlib axes.
+
+arrows : bool or None, optional (default=None)
+    If `None`, directed graphs draw arrowheads with
+    `~matplotlib.patches.FancyArrowPatch`, while undirected graphs draw edges
+    via `~matplotlib.collections.LineCollection` for speed.
+    If `True`, draw arrowheads with FancyArrowPatches (bendable and stylish).
+    If `False`, draw edges using LineCollection (linear and fast).
+
+    Note: Arrowheads will be the same color as edges.
+
+arrowstyle : str (default='-\|>')
+    For directed graphs and `arrows==True` defaults to '-\|>',
+
+    See `matplotlib.patches.ArrowStyle` for more options.
+
+arrowsize : int (default=10)
+    For directed graphs, choose the size of the arrow head's length and
+    width. See `matplotlib.patches.FancyArrowPatch` for attribute
+    `mutation_scale` for more info.
+
+connectionstyle : string (default="arc3")
+    Pass the connectionstyle parameter to create curved arc of rounding
+    radius rad. For example, connectionstyle='arc3,rad=0.2'.
+    See `matplotlib.patches.ConnectionStyle` and
+    `matplotlib.patches.FancyArrowPatch` for more info.
+
+node_size : scalar or array (default=300)
+    Size of nodes. Though the nodes are not drawn with this function, the
+    node size is used in determining edge positioning.
+
+nodelist : list, optional (default=G.nodes())
+   This provides the node order for the `node_size` array (if it is an array).
+
+node_shape :  string (default='o')
+    The marker used for nodes, used in determining edge positioning.
+    Specification is as a `matplotlib.markers` marker, e.g. one of 'so^>v<dph8'.
+
+label : None or string
+    Label for legend
+
+min_source_margin : int (default=0)
+    The minimum margin (gap) at the begining of the edge at the source.
+
+min_target_margin : int (default=0)
+    The minimum margin (gap) at the end of the edge at the target.
+
+Returns
+-------
+ matplotlib.colections.LineCollection or a list of matplotlib.patches.FancyArrowPatch
+    If ``arrows=True``, a list of FancyArrowPatches is returned.
+    If ``arrows=False``, a LineCollection is returned.
+    If ``arrows=None`` (the default), then a LineCollection is returned if
+    `G` is undirected, otherwise returns a list of FancyArrowPatches.
+
+Notes
+-----
+For directed graphs, arrows are drawn at the head end.  Arrows can be
+turned off with keyword arrows=False or by passing an arrowstyle without
+an arrow on the end.
+
+Be sure to include `node_size` as a keyword argument; arrows are
+drawn considering the size of nodes.
+
+Self-loops are always drawn with `~matplotlib.patches.FancyArrowPatch`
+regardless of the value of `arrows` or whether `G` is directed.
+When ``arrows=False`` or ``arrows=None`` and `G` is undirected, the
+FancyArrowPatches corresponding to the self-loops are not explicitly
+returned. They should instead be accessed via the ``Axes.patches``
+attribute (see examples).
+
+Examples
+--------
+>>> G = nx.dodecahedral_graph()
+>>> edges = nx.draw_networkx_edges(G, pos=nx.spring_layout(G))
+
+>>> G = nx.DiGraph()
+>>> G.add_edges_from([(1, 2), (1, 3), (2, 3)])
+>>> arcs = nx.draw_networkx_edges(G, pos=nx.spring_layout(G))
+>>> alphas = [0.3, 0.4, 0.5]
+>>> for i, arc in enumerate(arcs):  # change alpha values of arcs
+...     arc.set_alpha(alphas[i])
+
+The FancyArrowPatches corresponding to self-loops are not always
+returned, but can always be accessed via the ``patches`` attribute of the
+`matplotlib.Axes` object.
+
+>>> import matplotlib.pyplot as plt
+>>> fig, ax = plt.subplots()
+>>> G = nx.Graph([(0, 1), (0, 0)])  # Self-loop at node 0
+>>> edge_collection = nx.draw_networkx_edges(G, pos=nx.circular_layout(G), ax=ax)
+>>> self_loop_fap = ax.patches[0]
+
+Also see the NetworkX drawing examples at
+https://networkx.org/documentation/latest/auto_examples/index.html
+
+See Also
+--------
+draw
+draw_networkx
+draw_networkx_nodes
+draw_networkx_labels
+draw_networkx_edge_labels\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_a36145e7e2e1717b10a72c53e4d2dc582}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_a36145e7e2e1717b10a72c53e4d2dc582}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw\+\_\+networkx\+\_\+labels@{draw\+\_\+networkx\+\_\+labels}}
+\index{draw\+\_\+networkx\+\_\+labels@{draw\+\_\+networkx\+\_\+labels}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw\+\_\+networkx\+\_\+labels()}{draw\_networkx\_labels()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw\+\_\+networkx\+\_\+labels (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{pos,  }\item[{}]{labels = {\ttfamily None},  }\item[{}]{font\+\_\+size = {\ttfamily 12},  }\item[{}]{font\+\_\+color = {\ttfamily \char`\"{}k\char`\"{}},  }\item[{}]{font\+\_\+family = {\ttfamily \char`\"{}sans-\/serif\char`\"{}},  }\item[{}]{font\+\_\+weight = {\ttfamily \char`\"{}normal\char`\"{}},  }\item[{}]{alpha = {\ttfamily None},  }\item[{}]{bbox = {\ttfamily None},  }\item[{}]{horizontalalignment = {\ttfamily \char`\"{}center\char`\"{}},  }\item[{}]{verticalalignment = {\ttfamily \char`\"{}center\char`\"{}},  }\item[{}]{ax = {\ttfamily None},  }\item[{}]{clip\+\_\+on = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw node labels on the graph G.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+pos : dictionary
+    A dictionary with nodes as keys and positions as values.
+    Positions should be sequences of length 2.
+
+labels : dictionary (default={n: n for n in G})
+    Node labels in a dictionary of text labels keyed by node.
+    Node-keys in labels should appear as keys in `pos`.
+    If needed use: `{n:lab for n,lab in labels.items() if n in pos}`
+
+font_size : int (default=12)
+    Font size for text labels
+
+font_color : string (default='k' black)
+    Font color string
+
+font_weight : string (default='normal')
+    Font weight
+
+font_family : string (default='sans-serif')
+    Font family
+
+alpha : float or None (default=None)
+    The text transparency
+
+bbox : Matplotlib bbox, (default is Matplotlib's ax.text default)
+    Specify text box properties (e.g. shape, color etc.) for node labels.
+
+horizontalalignment : string (default='center')
+    Horizontal alignment {'center', 'right', 'left'}
+
+verticalalignment : string (default='center')
+    Vertical alignment {'center', 'top', 'bottom', 'baseline', 'center_baseline'}
+
+ax : Matplotlib Axes object, optional
+    Draw the graph in the specified Matplotlib axes.
+
+clip_on : bool (default=True)
+    Turn on clipping of node labels at axis boundaries
+
+Returns
+-------
+dict
+    `dict` of labels keyed on the nodes
+
+Examples
+--------
+>>> G = nx.dodecahedral_graph()
+>>> labels = nx.draw_networkx_labels(G, pos=nx.spring_layout(G))
+
+Also see the NetworkX drawing examples at
+https://networkx.org/documentation/latest/auto_examples/index.html
+
+See Also
+--------
+draw
+draw_networkx
+draw_networkx_nodes
+draw_networkx_edges
+draw_networkx_edge_labels
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_a3f26ea20c4799842a65c35f71f31adeb}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_a3f26ea20c4799842a65c35f71f31adeb}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw\+\_\+networkx\+\_\+nodes@{draw\+\_\+networkx\+\_\+nodes}}
+\index{draw\+\_\+networkx\+\_\+nodes@{draw\+\_\+networkx\+\_\+nodes}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw\+\_\+networkx\+\_\+nodes()}{draw\_networkx\_nodes()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw\+\_\+networkx\+\_\+nodes (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{pos,  }\item[{}]{nodelist = {\ttfamily None},  }\item[{}]{node\+\_\+size = {\ttfamily 300},  }\item[{}]{node\+\_\+color = {\ttfamily \char`\"{}\#1f78b4\char`\"{}},  }\item[{}]{node\+\_\+shape = {\ttfamily \char`\"{}o\char`\"{}},  }\item[{}]{alpha = {\ttfamily None},  }\item[{}]{cmap = {\ttfamily None},  }\item[{}]{vmin = {\ttfamily None},  }\item[{}]{vmax = {\ttfamily None},  }\item[{}]{ax = {\ttfamily None},  }\item[{}]{linewidths = {\ttfamily None},  }\item[{}]{edgecolors = {\ttfamily None},  }\item[{}]{label = {\ttfamily None},  }\item[{}]{margins = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw the nodes of the graph G.
+
+This draws only the nodes of the graph G.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+pos : dictionary
+    A dictionary with nodes as keys and positions as values.
+    Positions should be sequences of length 2.
+
+ax : Matplotlib Axes object, optional
+    Draw the graph in the specified Matplotlib axes.
+
+nodelist : list (default list(G))
+    Draw only specified nodes
+
+node_size : scalar or array (default=300)
+    Size of nodes.  If an array it must be the same length as nodelist.
+
+node_color : color or array of colors (default='#1f78b4')
+    Node color. Can be a single color or a sequence of colors with the same
+    length as nodelist. Color can be string or rgb (or rgba) tuple of
+    floats from 0-1. If numeric values are specified they will be
+    mapped to colors using the cmap and vmin,vmax parameters. See
+    matplotlib.scatter for more details.
+
+node_shape :  string (default='o')
+    The shape of the node.  Specification is as matplotlib.scatter
+    marker, one of 'so^>v<dph8'.
+
+alpha : float or array of floats (default=None)
+    The node transparency.  This can be a single alpha value,
+    in which case it will be applied to all the nodes of color. Otherwise,
+    if it is an array, the elements of alpha will be applied to the colors
+    in order (cycling through alpha multiple times if necessary).
+
+cmap : Matplotlib colormap (default=None)
+    Colormap for mapping intensities of nodes
+
+vmin,vmax : floats or None (default=None)
+    Minimum and maximum for node colormap scaling
+
+linewidths : [None | scalar | sequence] (default=1.0)
+    Line width of symbol border
+
+edgecolors : [None | scalar | sequence] (default = node_color)
+    Colors of node borders
+
+label : [None | string]
+    Label for legend
+
+margins : float or 2-tuple, optional
+    Sets the padding for axis autoscaling. Increase margin to prevent
+    clipping for nodes that are near the edges of an image. Values should
+    be in the range ``[0, 1]``. See :meth:`matplotlib.axes.Axes.margins`
+    for details. The default is `None`, which uses the Matplotlib default.
+
+Returns
+-------
+matplotlib.collections.PathCollection
+    `PathCollection` of the nodes.
+
+Examples
+--------
+>>> G = nx.dodecahedral_graph()
+>>> nodes = nx.draw_networkx_nodes(G, pos=nx.spring_layout(G))
+
+Also see the NetworkX drawing examples at
+https://networkx.org/documentation/latest/auto_examples/index.html
+
+See Also
+--------
+draw
+draw_networkx
+draw_networkx_edges
+draw_networkx_labels
+draw_networkx_edge_labels
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_a1a77ee04f7a8a5b04de461332027abd7}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_a1a77ee04f7a8a5b04de461332027abd7}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw\+\_\+planar@{draw\+\_\+planar}}
+\index{draw\+\_\+planar@{draw\+\_\+planar}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw\+\_\+planar()}{draw\_planar()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw\+\_\+planar (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw a planar networkx graph with planar layout.
+
+Parameters
+----------
+G : graph
+    A planar networkx graph
+
+kwargs : optional keywords
+    See networkx.draw_networkx() for a description of optional keywords,
+    with the exception of the pos parameter which is not used by this
+    function.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_ae8ec30406a42f7c3296ffca2260dce69}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_ae8ec30406a42f7c3296ffca2260dce69}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw\+\_\+random@{draw\+\_\+random}}
+\index{draw\+\_\+random@{draw\+\_\+random}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw\+\_\+random()}{draw\_random()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw\+\_\+random (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw the graph G with a random layout.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+kwargs : optional keywords
+    See networkx.draw_networkx() for a description of optional keywords,
+    with the exception of the pos parameter which is not used by this
+    function.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_ae93adbb59f973371b6639edbdb997253}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_ae93adbb59f973371b6639edbdb997253}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw\+\_\+shell@{draw\+\_\+shell}}
+\index{draw\+\_\+shell@{draw\+\_\+shell}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw\+\_\+shell()}{draw\_shell()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw\+\_\+shell (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw networkx graph with shell layout.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+kwargs : optional keywords
+    See networkx.draw_networkx() for a description of optional keywords,
+    with the exception of the pos parameter which is not used by this
+    function.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_a2641bdfab26d56a434e2ccd8f403bfaa}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_a2641bdfab26d56a434e2ccd8f403bfaa}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw\+\_\+spectral@{draw\+\_\+spectral}}
+\index{draw\+\_\+spectral@{draw\+\_\+spectral}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw\+\_\+spectral()}{draw\_spectral()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw\+\_\+spectral (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw the graph G with a spectral 2D layout.
+
+Using the unnormalized Laplacian, the layout shows possible clusters of
+nodes which are an approximation of the ratio cut. The positions are the
+entries of the second and third eigenvectors corresponding to the
+ascending eigenvalues starting from the second one.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+kwargs : optional keywords
+    See networkx.draw_networkx() for a description of optional keywords,
+    with the exception of the pos parameter which is not used by this
+    function.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pylab_aac1c6c6cb4283783cd8d9b97c62e3b2d}\label{namespacenetworkx_1_1drawing_1_1nx__pylab_aac1c6c6cb4283783cd8d9b97c62e3b2d}} 
+\index{networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}!draw\+\_\+spring@{draw\+\_\+spring}}
+\index{draw\+\_\+spring@{draw\+\_\+spring}!networkx\+::drawing\+::nx\+\_\+pylab@{networkx\+::drawing\+::nx\+\_\+pylab}}
+\subsubsection{\texorpdfstring{draw\+\_\+spring()}{draw\_spring()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pylab.\+draw\+\_\+spring (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw the graph G with a spring layout.
+
+Parameters
+----------
+G : graph
+    A networkx graph
+
+kwargs : optional keywords
+    See networkx.draw_networkx() for a description of optional keywords,
+    with the exception of the pos parameter which is not used by this
+    function.
+\end{DoxyVerb}
+ 

@@ -1,0 +1,82 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group}{}\section{setuptools.\+\_\+vendor.\+pyparsing.\+Group Class Reference}
+\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group}\index{setuptools.\+\_\+vendor.\+pyparsing.\+Group@{setuptools.\+\_\+vendor.\+pyparsing.\+Group}}
+
+
+Inheritance diagram for setuptools.\+\_\+vendor.\+pyparsing.\+Group\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for setuptools.\+\_\+vendor.\+pyparsing.\+Group\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group_ac8ddd6ac40275611871ddf1ce6eaa6da}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1ParseElementEnhance_a445450bd765a74cc1d1567e40cade40d}{expr})
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group_a83c4ae0d82479b6fcac000adab3a3bc3}{post\+Parse} (self, instring, loc, tokenlist)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group_abb9329fa2f2c5c248c18b80cdd6f39c0}{save\+As\+List}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Converter to return the matched tokens as a list - useful for returning tokens of C{L{ZeroOrMore}} and C{L{OneOrMore}} expressions.
+
+Example::
+    ident = Word(alphas)
+    num = Word(nums)
+    term = ident | num
+    func = ident + Optional(delimitedList(term))
+    print(func.parseString("fn a,b,100"))  # -> ['fn', 'a', 'b', '100']
+
+    func = ident + Group(Optional(delimitedList(term)))
+    print(func.parseString("fn a,b,100"))  # -> ['fn', ['a', 'b', '100']]
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group_ac8ddd6ac40275611871ddf1ce6eaa6da}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group_ac8ddd6ac40275611871ddf1ce6eaa6da}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Group@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Group}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Group@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Group}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+pyparsing.\+Group.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{expr }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group_a83c4ae0d82479b6fcac000adab3a3bc3}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group_a83c4ae0d82479b6fcac000adab3a3bc3}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Group@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Group}!post\+Parse@{post\+Parse}}
+\index{post\+Parse@{post\+Parse}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Group@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Group}}
+\subsubsection{\texorpdfstring{post\+Parse()}{postParse()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+pyparsing.\+Group.\+post\+Parse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{tokenlist }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group_abb9329fa2f2c5c248c18b80cdd6f39c0}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Group_abb9329fa2f2c5c248c18b80cdd6f39c0}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Group@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Group}!save\+As\+List@{save\+As\+List}}
+\index{save\+As\+List@{save\+As\+List}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Group@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Group}}
+\subsubsection{\texorpdfstring{save\+As\+List}{saveAsList}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Group.\+save\+As\+List}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/\hyperlink{setuptools_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

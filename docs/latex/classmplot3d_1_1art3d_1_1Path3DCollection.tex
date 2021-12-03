@@ -1,0 +1,166 @@
+\hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection}{}\section{mplot3d.\+art3d.\+Path3\+D\+Collection Class Reference}
+\label{classmplot3d_1_1art3d_1_1Path3DCollection}\index{mplot3d.\+art3d.\+Path3\+D\+Collection@{mplot3d.\+art3d.\+Path3\+D\+Collection}}
+
+
+Inheritance diagram for mplot3d.\+art3d.\+Path3\+D\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmplot3d_1_1art3d_1_1Path3DCollection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for mplot3d.\+art3d.\+Path3\+D\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmplot3d_1_1art3d_1_1Path3DCollection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection_aa4d8e52e853cb9ab90a3379433a2f08d}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, args, zs=0, zdir=\textquotesingle{}z\textquotesingle{}, depthshade=True, kwargs)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection_abea57d4d686a1d1f8c095e6412f86383}{draw} (self, renderer)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection_ac85e3de3eaaf6a8ef781ba9fe58a58e4}{set\+\_\+sort\+\_\+zpos} (self, val)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection_a890c4b52e1dfad5fcbe261b3c0caa5c0}{set\+\_\+3d\+\_\+properties} (self, zs, zdir)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection_a0714474e0f646f5e9b7de6547adf3036}{set\+\_\+sizes} (self, sizes, dpi=72.\+0)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection_a75a92ddaef2db7d8b0128c3e73ac6e18}{set\+\_\+linewidth} (self, lw)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection_a93dd128376157e5232b3a4c3c16103a5}{get\+\_\+depthshade} (self)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection_a68980b4192c872e0623d18b1436ab50f}{set\+\_\+depthshade} (self, depthshade)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection_a1b2c2c6c452be3a5126e4af6d3ad37d8}{do\+\_\+3d\+\_\+projection} (self, renderer=None)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection_aded0798c3a6687defbbc0a4bfc197ebe}{get\+\_\+facecolor} (self)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection_acfcfdaf805ed78f8a76a05e3ff71659e}{get\+\_\+edgecolor} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection_a566efa2a58c5d4b0e58346a4da2c72fc}{stale}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A collection of 3D paths.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection_aa4d8e52e853cb9ab90a3379433a2f08d}\label{classmplot3d_1_1art3d_1_1Path3DCollection_aa4d8e52e853cb9ab90a3379433a2f08d}} 
+\index{mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Path3\+D\+Collection.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{zs = {\ttfamily 0},  }\item[{}]{zdir = {\ttfamily \textquotesingle{}z\textquotesingle{}},  }\item[{}]{depthshade = {\ttfamily True},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a collection of flat 3D paths with its normal vector
+pointed in *zdir* direction, and located at *zs* on the *zdir*
+axis. 'zs' can be a scalar or an array-like of the same length as
+the number of paths in the collection.
+
+Constructor arguments are the same as for
+:class:`~matplotlib.collections.PathCollection`. In addition,
+keywords *zs=0* and *zdir='z'* are available.
+
+Also, the keyword argument *depthshade* is available to
+indicate whether or not to shade the patches in order to
+give the appearance of depth (default is *True*).
+This is typically desired in scatter plots.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection_a1b2c2c6c452be3a5126e4af6d3ad37d8}\label{classmplot3d_1_1art3d_1_1Path3DCollection_a1b2c2c6c452be3a5126e4af6d3ad37d8}} 
+\index{mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}!do\+\_\+3d\+\_\+projection@{do\+\_\+3d\+\_\+projection}}
+\index{do\+\_\+3d\+\_\+projection@{do\+\_\+3d\+\_\+projection}!mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}}
+\subsubsection{\texorpdfstring{do\+\_\+3d\+\_\+projection()}{do\_3d\_projection()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Path3\+D\+Collection.\+do\+\_\+3d\+\_\+projection (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection_abea57d4d686a1d1f8c095e6412f86383}\label{classmplot3d_1_1art3d_1_1Path3DCollection_abea57d4d686a1d1f8c095e6412f86383}} 
+\index{mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}!draw@{draw}}
+\index{draw@{draw}!mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Path3\+D\+Collection.\+draw (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection_a93dd128376157e5232b3a4c3c16103a5}\label{classmplot3d_1_1art3d_1_1Path3DCollection_a93dd128376157e5232b3a4c3c16103a5}} 
+\index{mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}!get\+\_\+depthshade@{get\+\_\+depthshade}}
+\index{get\+\_\+depthshade@{get\+\_\+depthshade}!mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}}
+\subsubsection{\texorpdfstring{get\+\_\+depthshade()}{get\_depthshade()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Path3\+D\+Collection.\+get\+\_\+depthshade (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection_acfcfdaf805ed78f8a76a05e3ff71659e}\label{classmplot3d_1_1art3d_1_1Path3DCollection_acfcfdaf805ed78f8a76a05e3ff71659e}} 
+\index{mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}!get\+\_\+edgecolor@{get\+\_\+edgecolor}}
+\index{get\+\_\+edgecolor@{get\+\_\+edgecolor}!mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}}
+\subsubsection{\texorpdfstring{get\+\_\+edgecolor()}{get\_edgecolor()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Path3\+D\+Collection.\+get\+\_\+edgecolor (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection_aded0798c3a6687defbbc0a4bfc197ebe}\label{classmplot3d_1_1art3d_1_1Path3DCollection_aded0798c3a6687defbbc0a4bfc197ebe}} 
+\index{mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}!get\+\_\+facecolor@{get\+\_\+facecolor}}
+\index{get\+\_\+facecolor@{get\+\_\+facecolor}!mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}}
+\subsubsection{\texorpdfstring{get\+\_\+facecolor()}{get\_facecolor()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Path3\+D\+Collection.\+get\+\_\+facecolor (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection_a890c4b52e1dfad5fcbe261b3c0caa5c0}\label{classmplot3d_1_1art3d_1_1Path3DCollection_a890c4b52e1dfad5fcbe261b3c0caa5c0}} 
+\index{mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}!set\+\_\+3d\+\_\+properties@{set\+\_\+3d\+\_\+properties}}
+\index{set\+\_\+3d\+\_\+properties@{set\+\_\+3d\+\_\+properties}!mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+3d\+\_\+properties()}{set\_3d\_properties()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Path3\+D\+Collection.\+set\+\_\+3d\+\_\+properties (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{zs,  }\item[{}]{zdir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection_a68980b4192c872e0623d18b1436ab50f}\label{classmplot3d_1_1art3d_1_1Path3DCollection_a68980b4192c872e0623d18b1436ab50f}} 
+\index{mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}!set\+\_\+depthshade@{set\+\_\+depthshade}}
+\index{set\+\_\+depthshade@{set\+\_\+depthshade}!mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+depthshade()}{set\_depthshade()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Path3\+D\+Collection.\+set\+\_\+depthshade (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{depthshade }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set whether depth shading is performed on collection members.
+
+Parameters
+----------
+depthshade : bool
+    Whether to shade the patches in order to give the appearance of
+    depth.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection_a75a92ddaef2db7d8b0128c3e73ac6e18}\label{classmplot3d_1_1art3d_1_1Path3DCollection_a75a92ddaef2db7d8b0128c3e73ac6e18}} 
+\index{mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}!set\+\_\+linewidth@{set\+\_\+linewidth}}
+\index{set\+\_\+linewidth@{set\+\_\+linewidth}!mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+linewidth()}{set\_linewidth()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Path3\+D\+Collection.\+set\+\_\+linewidth (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{lw }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection_a0714474e0f646f5e9b7de6547adf3036}\label{classmplot3d_1_1art3d_1_1Path3DCollection_a0714474e0f646f5e9b7de6547adf3036}} 
+\index{mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}!set\+\_\+sizes@{set\+\_\+sizes}}
+\index{set\+\_\+sizes@{set\+\_\+sizes}!mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+sizes()}{set\_sizes()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Path3\+D\+Collection.\+set\+\_\+sizes (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{sizes,  }\item[{}]{dpi = {\ttfamily 72.0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection_ac85e3de3eaaf6a8ef781ba9fe58a58e4}\label{classmplot3d_1_1art3d_1_1Path3DCollection_ac85e3de3eaaf6a8ef781ba9fe58a58e4}} 
+\index{mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}!set\+\_\+sort\+\_\+zpos@{set\+\_\+sort\+\_\+zpos}}
+\index{set\+\_\+sort\+\_\+zpos@{set\+\_\+sort\+\_\+zpos}!mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+sort\+\_\+zpos()}{set\_sort\_zpos()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Path3\+D\+Collection.\+set\+\_\+sort\+\_\+zpos (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the position to use for z-sorting.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Path3DCollection_a566efa2a58c5d4b0e58346a4da2c72fc}\label{classmplot3d_1_1art3d_1_1Path3DCollection_a566efa2a58c5d4b0e58346a4da2c72fc}} 
+\index{mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}!stale@{stale}}
+\index{stale@{stale}!mplot3d\+::art3d\+::\+Path3\+D\+Collection@{mplot3d\+::art3d\+::\+Path3\+D\+Collection}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily mplot3d.\+art3d.\+Path3\+D\+Collection.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/mpl\+\_\+toolkits/mplot3d/\hyperlink{art3d_8py}{art3d.\+py}\end{DoxyCompactItemize}

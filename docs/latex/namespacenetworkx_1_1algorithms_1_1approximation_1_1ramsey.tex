@@ -1,0 +1,45 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1ramsey}{}\section{networkx.\+algorithms.\+approximation.\+ramsey Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1ramsey}\index{networkx.\+algorithms.\+approximation.\+ramsey@{networkx.\+algorithms.\+approximation.\+ramsey}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1ramsey_ab2b9bfb0e6d1b340ce9e30457d7f93b0}{ramsey\+\_\+\+R2} (G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Ramsey numbers.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1ramsey_ab2b9bfb0e6d1b340ce9e30457d7f93b0}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1ramsey_ab2b9bfb0e6d1b340ce9e30457d7f93b0}} 
+\index{networkx\+::algorithms\+::approximation\+::ramsey@{networkx\+::algorithms\+::approximation\+::ramsey}!ramsey\+\_\+\+R2@{ramsey\+\_\+\+R2}}
+\index{ramsey\+\_\+\+R2@{ramsey\+\_\+\+R2}!networkx\+::algorithms\+::approximation\+::ramsey@{networkx\+::algorithms\+::approximation\+::ramsey}}
+\subsubsection{\texorpdfstring{ramsey\+\_\+\+R2()}{ramsey\_R2()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+ramsey.\+ramsey\+\_\+\+R2 (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the largest clique and largest independent set in `G`.
+
+This can be used to estimate bounds for the 2-color
+Ramsey number `R(2;s,t)` for `G`.
+
+This is a recursive implementation which could run into trouble
+for large recursions. Note that self-loop edges are ignored.
+
+Parameters
+----------
+G : NetworkX graph
+    Undirected graph
+
+Returns
+-------
+max_pair : (set, set) tuple
+    Maximum clique, Maximum independent set.
+
+Raises
+------
+NetworkXNotImplemented
+    If the graph is directed or is a multigraph.
+\end{DoxyVerb}
+ 

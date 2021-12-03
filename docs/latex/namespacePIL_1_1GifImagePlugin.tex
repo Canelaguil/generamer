@@ -1,0 +1,69 @@
+\hypertarget{namespacePIL_1_1GifImagePlugin}{}\section{P\+I\+L.\+Gif\+Image\+Plugin Namespace Reference}
+\label{namespacePIL_1_1GifImagePlugin}\index{P\+I\+L.\+Gif\+Image\+Plugin@{P\+I\+L.\+Gif\+Image\+Plugin}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPIL_1_1GifImagePlugin_1_1GifImageFile}{Gif\+Image\+File}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespacePIL_1_1Image}{Image} plugin for G\+IF images. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacePIL_1_1GifImagePlugin_add2e392be28d3eed884ff59e883036ca}{get\+\_\+interlace} (im)
+\item 
+def \hyperlink{namespacePIL_1_1GifImagePlugin_a483ab05e56fe4d40944b1806935caaa6}{getheader} (im, palette=None, info=None)
+\item 
+def \hyperlink{namespacePIL_1_1GifImagePlugin_a418eb734d37f1ca9314a2c82469d9d96}{getdata} (im, offset=(0, 0), params)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacePIL_1_1GifImagePlugin_aecdec844c7e230b7a55c8f93d29ecdfd}{R\+A\+W\+M\+O\+DE}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1GifImagePlugin_add2e392be28d3eed884ff59e883036ca}\label{namespacePIL_1_1GifImagePlugin_add2e392be28d3eed884ff59e883036ca}} 
+\index{P\+I\+L\+::\+Gif\+Image\+Plugin@{P\+I\+L\+::\+Gif\+Image\+Plugin}!get\+\_\+interlace@{get\+\_\+interlace}}
+\index{get\+\_\+interlace@{get\+\_\+interlace}!P\+I\+L\+::\+Gif\+Image\+Plugin@{P\+I\+L\+::\+Gif\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{get\+\_\+interlace()}{get\_interlace()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Gif\+Image\+Plugin.\+get\+\_\+interlace (\begin{DoxyParamCaption}\item[{}]{im }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePIL_1_1GifImagePlugin_a418eb734d37f1ca9314a2c82469d9d96}\label{namespacePIL_1_1GifImagePlugin_a418eb734d37f1ca9314a2c82469d9d96}} 
+\index{P\+I\+L\+::\+Gif\+Image\+Plugin@{P\+I\+L\+::\+Gif\+Image\+Plugin}!getdata@{getdata}}
+\index{getdata@{getdata}!P\+I\+L\+::\+Gif\+Image\+Plugin@{P\+I\+L\+::\+Gif\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{getdata()}{getdata()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Gif\+Image\+Plugin.\+getdata (\begin{DoxyParamCaption}\item[{}]{im,  }\item[{}]{offset = {\ttfamily (0,~0)},  }\item[{}]{params }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Legacy Method
+
+Return a list of strings representing this image.
+The first string is a local image header, the rest contains
+encoded image data.
+
+:param im: Image object
+:param offset: Tuple of (x, y) pixels. Defaults to (0,0)
+:param \\**params: E.g. duration or other encoder info parameters
+:returns: List of Bytes containing gif encoded frame data\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1GifImagePlugin_a483ab05e56fe4d40944b1806935caaa6}\label{namespacePIL_1_1GifImagePlugin_a483ab05e56fe4d40944b1806935caaa6}} 
+\index{P\+I\+L\+::\+Gif\+Image\+Plugin@{P\+I\+L\+::\+Gif\+Image\+Plugin}!getheader@{getheader}}
+\index{getheader@{getheader}!P\+I\+L\+::\+Gif\+Image\+Plugin@{P\+I\+L\+::\+Gif\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{getheader()}{getheader()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Gif\+Image\+Plugin.\+getheader (\begin{DoxyParamCaption}\item[{}]{im,  }\item[{}]{palette = {\ttfamily None},  }\item[{}]{info = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Legacy Method to get Gif data from image.
+
+Warning:: May modify image data.
+
+:param im: Image object
+:param palette: bytes object containing the source palette, or ....
+:param info: encoderinfo
+:returns: tuple of(list of header items, optimized palette)\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1GifImagePlugin_aecdec844c7e230b7a55c8f93d29ecdfd}\label{namespacePIL_1_1GifImagePlugin_aecdec844c7e230b7a55c8f93d29ecdfd}} 
+\index{P\+I\+L\+::\+Gif\+Image\+Plugin@{P\+I\+L\+::\+Gif\+Image\+Plugin}!R\+A\+W\+M\+O\+DE@{R\+A\+W\+M\+O\+DE}}
+\index{R\+A\+W\+M\+O\+DE@{R\+A\+W\+M\+O\+DE}!P\+I\+L\+::\+Gif\+Image\+Plugin@{P\+I\+L\+::\+Gif\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{R\+A\+W\+M\+O\+DE}{RAWMODE}}
+{\footnotesize\ttfamily P\+I\+L.\+Gif\+Image\+Plugin.\+R\+A\+W\+M\+O\+DE}
+

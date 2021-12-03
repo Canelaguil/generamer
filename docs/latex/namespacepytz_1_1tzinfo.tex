@@ -1,0 +1,64 @@
+\hypertarget{namespacepytz_1_1tzinfo}{}\section{pytz.\+tzinfo Namespace Reference}
+\label{namespacepytz_1_1tzinfo}\index{pytz.\+tzinfo@{pytz.\+tzinfo}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpytz_1_1tzinfo_1_1BaseTzInfo}{Base\+Tz\+Info}
+\item 
+class \hyperlink{classpytz_1_1tzinfo_1_1DstTzInfo}{Dst\+Tz\+Info}
+\item 
+class \hyperlink{classpytz_1_1tzinfo_1_1StaticTzInfo}{Static\+Tz\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepytz_1_1tzinfo_aa88228d1ac2d80c09eff7d1eb0dab7b1}{memorized\+\_\+timedelta} (seconds)
+\item 
+def \hyperlink{namespacepytz_1_1tzinfo_a5e88e1294125e1acac0b11502e949d0e}{memorized\+\_\+datetime} (seconds)
+\item 
+def \hyperlink{namespacepytz_1_1tzinfo_a162a0f44b21d1c0ab80ca7b6f319dc83}{memorized\+\_\+ttinfo} (args)
+\item 
+def \hyperlink{namespacepytz_1_1tzinfo_abfa314b5b1f93e87637b0a7378bf078d}{unpickler} (zone, utcoffset=None, dstoffset=None, tzname=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Base classes and helpers for building zone specific tzinfo classes\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepytz_1_1tzinfo_a5e88e1294125e1acac0b11502e949d0e}\label{namespacepytz_1_1tzinfo_a5e88e1294125e1acac0b11502e949d0e}} 
+\index{pytz\+::tzinfo@{pytz\+::tzinfo}!memorized\+\_\+datetime@{memorized\+\_\+datetime}}
+\index{memorized\+\_\+datetime@{memorized\+\_\+datetime}!pytz\+::tzinfo@{pytz\+::tzinfo}}
+\subsubsection{\texorpdfstring{memorized\+\_\+datetime()}{memorized\_datetime()}}
+{\footnotesize\ttfamily def pytz.\+tzinfo.\+memorized\+\_\+datetime (\begin{DoxyParamCaption}\item[{}]{seconds }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create only one instance of each distinct datetime\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepytz_1_1tzinfo_aa88228d1ac2d80c09eff7d1eb0dab7b1}\label{namespacepytz_1_1tzinfo_aa88228d1ac2d80c09eff7d1eb0dab7b1}} 
+\index{pytz\+::tzinfo@{pytz\+::tzinfo}!memorized\+\_\+timedelta@{memorized\+\_\+timedelta}}
+\index{memorized\+\_\+timedelta@{memorized\+\_\+timedelta}!pytz\+::tzinfo@{pytz\+::tzinfo}}
+\subsubsection{\texorpdfstring{memorized\+\_\+timedelta()}{memorized\_timedelta()}}
+{\footnotesize\ttfamily def pytz.\+tzinfo.\+memorized\+\_\+timedelta (\begin{DoxyParamCaption}\item[{}]{seconds }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create only one instance of each distinct timedelta\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepytz_1_1tzinfo_a162a0f44b21d1c0ab80ca7b6f319dc83}\label{namespacepytz_1_1tzinfo_a162a0f44b21d1c0ab80ca7b6f319dc83}} 
+\index{pytz\+::tzinfo@{pytz\+::tzinfo}!memorized\+\_\+ttinfo@{memorized\+\_\+ttinfo}}
+\index{memorized\+\_\+ttinfo@{memorized\+\_\+ttinfo}!pytz\+::tzinfo@{pytz\+::tzinfo}}
+\subsubsection{\texorpdfstring{memorized\+\_\+ttinfo()}{memorized\_ttinfo()}}
+{\footnotesize\ttfamily def pytz.\+tzinfo.\+memorized\+\_\+ttinfo (\begin{DoxyParamCaption}\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create only one instance of each distinct tuple\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepytz_1_1tzinfo_abfa314b5b1f93e87637b0a7378bf078d}\label{namespacepytz_1_1tzinfo_abfa314b5b1f93e87637b0a7378bf078d}} 
+\index{pytz\+::tzinfo@{pytz\+::tzinfo}!unpickler@{unpickler}}
+\index{unpickler@{unpickler}!pytz\+::tzinfo@{pytz\+::tzinfo}}
+\subsubsection{\texorpdfstring{unpickler()}{unpickler()}}
+{\footnotesize\ttfamily def pytz.\+tzinfo.\+unpickler (\begin{DoxyParamCaption}\item[{}]{zone,  }\item[{}]{utcoffset = {\ttfamily None},  }\item[{}]{dstoffset = {\ttfamily None},  }\item[{}]{tzname = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Factory function for unpickling pytz tzinfo instances.
+
+This is shared for both StaticTzInfo and DstTzInfo instances, because
+database changes could cause a zones implementation to switch between
+these two base classes and we can't break pickles on a pytz version
+upgrade.
+\end{DoxyVerb}
+ 

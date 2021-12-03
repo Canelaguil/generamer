@@ -1,0 +1,73 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable}{}\section{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+countable Class Reference}
+\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable}\index{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+countable@{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+countable}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable_a0eea011b5d6298a825c2290a21c4350d}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, iterable)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable_af19ec53803d0f06f89aedb7a77df3108}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable_ae239b691ae4be573c0de278512d61371}{\+\_\+\+\_\+next\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable_a6911177a79e1ac4825d6adfda8c13860}{items\+\_\+seen}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Wrap *iterable* and keep a count of how many items have been consumed.
+
+The ``items_seen`` attribute starts at ``0`` and increments as the iterable
+is consumed:
+
+    >>> iterable = map(str, range(10))
+    >>> it = countable(iterable)
+    >>> it.items_seen
+    0
+    >>> next(it), next(it)
+    ('0', '1')
+    >>> list(it)
+    ['2', '3', '4', '5', '6', '7', '8', '9']
+    >>> it.items_seen
+    10
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable_a0eea011b5d6298a825c2290a21c4350d}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable_a0eea011b5d6298a825c2290a21c4350d}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+countable.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iterable }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable_af19ec53803d0f06f89aedb7a77df3108}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable_af19ec53803d0f06f89aedb7a77df3108}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+countable.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable_ae239b691ae4be573c0de278512d61371}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable_ae239b691ae4be573c0de278512d61371}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable}!\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+next\+\_\+\+\_\+()}{\_\_next\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+countable.\+\_\+\+\_\+next\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable_a6911177a79e1ac4825d6adfda8c13860}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1countable_a6911177a79e1ac4825d6adfda8c13860}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable}!items\+\_\+seen@{items\+\_\+seen}}
+\index{items\+\_\+seen@{items\+\_\+seen}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::countable}}
+\subsubsection{\texorpdfstring{items\+\_\+seen}{items\_seen}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+countable.\+items\+\_\+seen}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/more\+\_\+itertools/\hyperlink{more_8py}{more.\+py}\end{DoxyCompactItemize}

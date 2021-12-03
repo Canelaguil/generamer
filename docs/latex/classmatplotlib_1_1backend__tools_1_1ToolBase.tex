@@ -1,0 +1,172 @@
+\hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase}{}\section{matplotlib.\+backend\+\_\+tools.\+Tool\+Base Class Reference}
+\label{classmatplotlib_1_1backend__tools_1_1ToolBase}\index{matplotlib.\+backend\+\_\+tools.\+Tool\+Base@{matplotlib.\+backend\+\_\+tools.\+Tool\+Base}}
+
+
+Inheritance diagram for matplotlib.\+backend\+\_\+tools.\+Tool\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classmatplotlib_1_1backend__tools_1_1ToolBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_ad220305a96c5635531913147ba548ca3}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_aa7888dab7ba0552f93037f1df4b192f6}{toolmanager}, \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_a1d36209f79c4ef48cd4bf27a70725f51}{name})
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_af85e83d1db0787aa40d06837204651ee}{figure} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_a713e936fba2aef09af69e7cfe8eacf85}{figure} (self, figure)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_ac96bf482f1c26012fec3fd575e849170}{canvas} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_aa7888dab7ba0552f93037f1df4b192f6}{toolmanager} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_aa871e39862d028c704279af0f9f3fb5b}{set\+\_\+figure} (self, \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_af85e83d1db0787aa40d06837204651ee}{figure})
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_a789005a8a3c42ec7b0d5a31a9e7e12ae}{trigger} (self, sender, event, data=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_a1d36209f79c4ef48cd4bf27a70725f51}{name} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_aa43bb065c57c164cf457d9d46765ca96}{destroy} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_a8e12b0ed7ee376740ae47329706329f9}{default\+\_\+keymap} = None
+\item 
+\hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_ac110aeab1e632d73815dc49a7cfc82c8}{description} = None
+\item 
+\hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_a1bed4c4ed1281b3fdc331850a5247f75}{image} = None
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Base tool class.
+
+A base tool, only implements `trigger` method or not method at all.
+The tool is instantiated by `matplotlib.backend_managers.ToolManager`.
+
+Attributes
+----------
+toolmanager : `matplotlib.backend_managers.ToolManager`
+    ToolManager that controls this Tool.
+figure : `FigureCanvas`
+    Figure instance that is affected by this Tool.
+name : str
+    Used as **Id** of the tool, has to be unique among tools of the same
+    ToolManager.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase_ad220305a96c5635531913147ba548ca3}\label{classmatplotlib_1_1backend__tools_1_1ToolBase_ad220305a96c5635531913147ba548ca3}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{toolmanager,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase_ac96bf482f1c26012fec3fd575e849170}\label{classmatplotlib_1_1backend__tools_1_1ToolBase_ac96bf482f1c26012fec3fd575e849170}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}!canvas@{canvas}}
+\index{canvas@{canvas}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}}
+\subsubsection{\texorpdfstring{canvas()}{canvas()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Base.\+canvas (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase_aa43bb065c57c164cf457d9d46765ca96}\label{classmatplotlib_1_1backend__tools_1_1ToolBase_aa43bb065c57c164cf457d9d46765ca96}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}!destroy@{destroy}}
+\index{destroy@{destroy}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Base.\+destroy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Destroy the tool.
+
+This method is called when the tool is removed by
+`matplotlib.backend_managers.ToolManager.remove_tool`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase_af85e83d1db0787aa40d06837204651ee}\label{classmatplotlib_1_1backend__tools_1_1ToolBase_af85e83d1db0787aa40d06837204651ee}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}!figure@{figure}}
+\index{figure@{figure}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}}
+\subsubsection{\texorpdfstring{figure()}{figure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Base.\+figure (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase_a713e936fba2aef09af69e7cfe8eacf85}\label{classmatplotlib_1_1backend__tools_1_1ToolBase_a713e936fba2aef09af69e7cfe8eacf85}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}!figure@{figure}}
+\index{figure@{figure}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}}
+\subsubsection{\texorpdfstring{figure()}{figure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Base.\+figure (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase_a1d36209f79c4ef48cd4bf27a70725f51}\label{classmatplotlib_1_1backend__tools_1_1ToolBase_a1d36209f79c4ef48cd4bf27a70725f51}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}!name@{name}}
+\index{name@{name}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Base.\+name (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tool Id.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase_aa871e39862d028c704279af0f9f3fb5b}\label{classmatplotlib_1_1backend__tools_1_1ToolBase_aa871e39862d028c704279af0f9f3fb5b}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}!set\+\_\+figure@{set\+\_\+figure}}
+\index{set\+\_\+figure@{set\+\_\+figure}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}}
+\subsubsection{\texorpdfstring{set\+\_\+figure()}{set\_figure()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Base.\+set\+\_\+figure (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Assign a figure to the tool.
+
+Parameters
+----------
+figure : `.Figure`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase_aa7888dab7ba0552f93037f1df4b192f6}\label{classmatplotlib_1_1backend__tools_1_1ToolBase_aa7888dab7ba0552f93037f1df4b192f6}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}!toolmanager@{toolmanager}}
+\index{toolmanager@{toolmanager}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}}
+\subsubsection{\texorpdfstring{toolmanager()}{toolmanager()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Base.\+toolmanager (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase_a789005a8a3c42ec7b0d5a31a9e7e12ae}\label{classmatplotlib_1_1backend__tools_1_1ToolBase_a789005a8a3c42ec7b0d5a31a9e7e12ae}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}!trigger@{trigger}}
+\index{trigger@{trigger}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}}
+\subsubsection{\texorpdfstring{trigger()}{trigger()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Base.\+trigger (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{sender,  }\item[{}]{event,  }\item[{}]{data = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Called when this tool gets used.
+
+This method is called by
+`matplotlib.backend_managers.ToolManager.trigger_tool`.
+
+Parameters
+----------
+event : `.Event`
+    The canvas event that caused this tool to be called.
+sender : object
+    Object that requested the tool to be triggered.
+data : object
+    Extra data.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase_a8e12b0ed7ee376740ae47329706329f9}\label{classmatplotlib_1_1backend__tools_1_1ToolBase_a8e12b0ed7ee376740ae47329706329f9}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}!default\+\_\+keymap@{default\+\_\+keymap}}
+\index{default\+\_\+keymap@{default\+\_\+keymap}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}}
+\subsubsection{\texorpdfstring{default\+\_\+keymap}{default\_keymap}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+tools.\+Tool\+Base.\+default\+\_\+keymap = None\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase_ac110aeab1e632d73815dc49a7cfc82c8}\label{classmatplotlib_1_1backend__tools_1_1ToolBase_ac110aeab1e632d73815dc49a7cfc82c8}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}!description@{description}}
+\index{description@{description}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}}
+\subsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+tools.\+Tool\+Base.\+description = None\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolBase_a1bed4c4ed1281b3fdc331850a5247f75}\label{classmatplotlib_1_1backend__tools_1_1ToolBase_a1bed4c4ed1281b3fdc331850a5247f75}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}!image@{image}}
+\index{image@{image}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Base}}
+\subsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+tools.\+Tool\+Base.\+image = None\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{backend__tools_8py}{backend\+\_\+tools.\+py}\end{DoxyCompactItemize}

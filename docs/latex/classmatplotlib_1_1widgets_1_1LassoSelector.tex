@@ -1,0 +1,125 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1LassoSelector}{}\section{matplotlib.\+widgets.\+Lasso\+Selector Class Reference}
+\label{classmatplotlib_1_1widgets_1_1LassoSelector}\index{matplotlib.\+widgets.\+Lasso\+Selector@{matplotlib.\+widgets.\+Lasso\+Selector}}
+
+
+Inheritance diagram for matplotlib.\+widgets.\+Lasso\+Selector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1LassoSelector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+widgets.\+Lasso\+Selector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1LassoSelector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1LassoSelector_a90fd4fad181512ce9e21637bc815b754}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_ac0722858b7001d10a42055dc90420b4f}{ax}, \hyperlink{classmatplotlib_1_1widgets_1_1__SelectorWidget_ad893af1ad010d595c7cce1106b48d854}{onselect}=None, \hyperlink{classmatplotlib_1_1widgets_1_1__SelectorWidget_a6d178ef2dd7ec61c11b18302de3f43bf}{useblit}=True, lineprops=None, button=None)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1LassoSelector_aa66e59967f19252ca2aeb7ea54b97bdc}{onpress} (self, event)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1LassoSelector_ac137b87f674424a15c51511736ac97dd}{onrelease} (self, event)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1LassoSelector_add746361d68e54e767ba133d12523a18}{verts}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1LassoSelector_a157e7a28352fd772a8179ab409210549}{line}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1LassoSelector_a610b9fe6d5c84fede3f9837cd04cf2ea}{artists}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Selection curve of an arbitrary shape.
+
+For the selector to remain responsive you must keep a reference to it.
+
+The selected path can be used in conjunction with `~.Path.contains_point`
+to select data points from an image.
+
+In contrast to `Lasso`, `LassoSelector` is written with an interface
+similar to `RectangleSelector` and `SpanSelector`, and will continue to
+interact with the axes until disconnected.
+
+Example usage::
+
+    ax = plt.subplot()
+    ax.plot(x, y)
+
+    def onselect(verts):
+        print(verts)
+    lasso = LassoSelector(ax, onselect)
+
+Parameters
+----------
+ax : `~matplotlib.axes.Axes`
+    The parent axes for the widget.
+onselect : function
+    Whenever the lasso is released, the *onselect* function is called and
+    passed the vertices of the selected path.
+button : `.MouseButton` or list of `.MouseButton`, optional
+    The mouse buttons used for rectangle selection.  Default is ``None``,
+    which corresponds to all buttons.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1LassoSelector_a90fd4fad181512ce9e21637bc815b754}\label{classmatplotlib_1_1widgets_1_1LassoSelector_a90fd4fad181512ce9e21637bc815b754}} 
+\index{matplotlib\+::widgets\+::\+Lasso\+Selector@{matplotlib\+::widgets\+::\+Lasso\+Selector}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Lasso\+Selector@{matplotlib\+::widgets\+::\+Lasso\+Selector}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Lasso\+Selector.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{onselect = {\ttfamily None},  }\item[{}]{useblit = {\ttfamily True},  }\item[{}]{lineprops = {\ttfamily None},  }\item[{}]{button = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1LassoSelector_aa66e59967f19252ca2aeb7ea54b97bdc}\label{classmatplotlib_1_1widgets_1_1LassoSelector_aa66e59967f19252ca2aeb7ea54b97bdc}} 
+\index{matplotlib\+::widgets\+::\+Lasso\+Selector@{matplotlib\+::widgets\+::\+Lasso\+Selector}!onpress@{onpress}}
+\index{onpress@{onpress}!matplotlib\+::widgets\+::\+Lasso\+Selector@{matplotlib\+::widgets\+::\+Lasso\+Selector}}
+\subsubsection{\texorpdfstring{onpress()}{onpress()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Lasso\+Selector.\+onpress (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1LassoSelector_ac137b87f674424a15c51511736ac97dd}\label{classmatplotlib_1_1widgets_1_1LassoSelector_ac137b87f674424a15c51511736ac97dd}} 
+\index{matplotlib\+::widgets\+::\+Lasso\+Selector@{matplotlib\+::widgets\+::\+Lasso\+Selector}!onrelease@{onrelease}}
+\index{onrelease@{onrelease}!matplotlib\+::widgets\+::\+Lasso\+Selector@{matplotlib\+::widgets\+::\+Lasso\+Selector}}
+\subsubsection{\texorpdfstring{onrelease()}{onrelease()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Lasso\+Selector.\+onrelease (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1LassoSelector_a610b9fe6d5c84fede3f9837cd04cf2ea}\label{classmatplotlib_1_1widgets_1_1LassoSelector_a610b9fe6d5c84fede3f9837cd04cf2ea}} 
+\index{matplotlib\+::widgets\+::\+Lasso\+Selector@{matplotlib\+::widgets\+::\+Lasso\+Selector}!artists@{artists}}
+\index{artists@{artists}!matplotlib\+::widgets\+::\+Lasso\+Selector@{matplotlib\+::widgets\+::\+Lasso\+Selector}}
+\subsubsection{\texorpdfstring{artists}{artists}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Lasso\+Selector.\+artists}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1LassoSelector_a157e7a28352fd772a8179ab409210549}\label{classmatplotlib_1_1widgets_1_1LassoSelector_a157e7a28352fd772a8179ab409210549}} 
+\index{matplotlib\+::widgets\+::\+Lasso\+Selector@{matplotlib\+::widgets\+::\+Lasso\+Selector}!line@{line}}
+\index{line@{line}!matplotlib\+::widgets\+::\+Lasso\+Selector@{matplotlib\+::widgets\+::\+Lasso\+Selector}}
+\subsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Lasso\+Selector.\+line}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1LassoSelector_add746361d68e54e767ba133d12523a18}\label{classmatplotlib_1_1widgets_1_1LassoSelector_add746361d68e54e767ba133d12523a18}} 
+\index{matplotlib\+::widgets\+::\+Lasso\+Selector@{matplotlib\+::widgets\+::\+Lasso\+Selector}!verts@{verts}}
+\index{verts@{verts}!matplotlib\+::widgets\+::\+Lasso\+Selector@{matplotlib\+::widgets\+::\+Lasso\+Selector}}
+\subsubsection{\texorpdfstring{verts}{verts}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Lasso\+Selector.\+verts}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

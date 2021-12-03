@@ -1,0 +1,43 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1community}{}\section{networkx.\+algorithms.\+community Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1community}\index{networkx.\+algorithms.\+community@{networkx.\+algorithms.\+community}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1asyn__fluid}{asyn\+\_\+fluid}
+\item 
+ \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1centrality}{centrality}
+\item 
+ \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1community__utils}{community\+\_\+utils}
+\item 
+ \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1kclique}{kclique}
+\item 
+ \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1kernighan__lin}{kernighan\+\_\+lin}
+\item 
+ \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1label__propagation}{label\+\_\+propagation}
+\item 
+ \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1lukes}{lukes}
+\item 
+ \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1modularity__max}{modularity\+\_\+max}
+\item 
+ \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1quality}{quality}
+\item 
+ \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1tests}{tests}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions for computing and measuring community structure.
+
+The functions in this class are not imported into the top-level
+:mod:`networkx` namespace. You can access these functions by importing
+the :mod:`networkx.algorithms.community` module, then accessing the
+functions as attributes of ``community``. For example::
+
+    >>> from networkx.algorithms import community
+    >>> G = nx.barbell_graph(5, 1)
+    >>> communities_generator = community.girvan_newman(G)
+    >>> top_level_communities = next(communities_generator)
+    >>> next_level_communities = next(communities_generator)
+    >>> sorted(map(sorted, next_level_communities))
+    [[0, 1, 2, 3, 4], [5], [6, 7, 8, 9, 10]]\end{DoxyVerb}
+ 

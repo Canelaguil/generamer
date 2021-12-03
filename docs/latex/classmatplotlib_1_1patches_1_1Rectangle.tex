@@ -1,0 +1,262 @@
+\hypertarget{classmatplotlib_1_1patches_1_1Rectangle}{}\section{matplotlib.\+patches.\+Rectangle Class Reference}
+\label{classmatplotlib_1_1patches_1_1Rectangle}\index{matplotlib.\+patches.\+Rectangle@{matplotlib.\+patches.\+Rectangle}}
+
+
+Inheritance diagram for matplotlib.\+patches.\+Rectangle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classmatplotlib_1_1patches_1_1Rectangle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+patches.\+Rectangle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classmatplotlib_1_1patches_1_1Rectangle__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a5407eda04219c5c82d48378763b5eb33}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a7d63154bd2a86b5e8e314a12c7728877}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a7febcd40cac82459d66c33ddfc6ba09f}{xy}, width, height, \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_afcd2b4e52594d4950ba836cbbffc90de}{angle}=0.\+0, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a4900143a0229a351567a0d3c187b7a8b}{get\+\_\+path} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a5382d4ef5328c44c12e661f3d1e5b849}{get\+\_\+patch\+\_\+transform} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a14fd904bb42952f55f14904028d46e7c}{get\+\_\+x} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a3678a7dc4fccc2fbd67eec412a8bd531}{get\+\_\+y} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a4b017693949cd5ea9f162f168f8e0855}{get\+\_\+xy} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_af43e9c698f3b6b47aca02114005ca1d8}{get\+\_\+width} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_ab833c765c31478f78f3fe695c340ec53}{get\+\_\+height} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_aca87ee174e5cb581e19cac86fb761915}{set\+\_\+x} (self, x)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a8a79507318cde4d59523b1de08461134}{set\+\_\+y} (self, y)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_aba57bf8a9cd2c16f5b53412b4228e5c7}{set\+\_\+xy} (self, \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a7febcd40cac82459d66c33ddfc6ba09f}{xy})
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a9212221e39f877049a0446154c4edfd8}{set\+\_\+width} (self, w)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_adbb43e91e339e31fe0aa6821e15c9b4b}{set\+\_\+height} (self, h)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_aea102be3007ac4f09548b7714d7dd461}{set\+\_\+bounds} (self, args)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a734c08acbdb7843c61bd70bda008ce04}{get\+\_\+bbox} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1patches_1_1Rectangle_afcd2b4e52594d4950ba836cbbffc90de}{angle}
+\item 
+\hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a96ab0b5fed1ee33aff151d16ab9078e7}{stale}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a7febcd40cac82459d66c33ddfc6ba09f}{xy} = property(\hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a4b017693949cd5ea9f162f168f8e0855}{get\+\_\+xy}, \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_aba57bf8a9cd2c16f5b53412b4228e5c7}{set\+\_\+xy})
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A rectangle defined via an anchor point *xy* and its *width* and *height*.
+
+The rectangle extends from ``xy[0]`` to ``xy[0] + width`` in x-direction
+and from ``xy[1]`` to ``xy[1] + height`` in y-direction. ::
+
+  :                +------------------+
+  :                |                  |
+  :              height               |
+  :                |                  |
+  :               (xy)---- width -----+
+
+One may picture *xy* as the bottom left corner, but which corner *xy* is
+actually depends on the the direction of the axis and the sign of *width*
+and *height*; e.g. *xy* would be the bottom right corner if the x-axis
+was inverted or if *width* was negative.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_a7d63154bd2a86b5e8e314a12c7728877}\label{classmatplotlib_1_1patches_1_1Rectangle_a7d63154bd2a86b5e8e314a12c7728877}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xy,  }\item[{}]{width,  }\item[{}]{height,  }\item[{}]{angle = {\ttfamily 0.0},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+xy : (float, float)
+    The anchor point.
+width : float
+    Rectangle width.
+height : float
+    Rectangle height.
+angle : float, default: 0
+    Rotation in degrees anti-clockwise about *xy*.
+
+Other Parameters
+----------------
+**kwargs : `.Patch` properties
+    %(Patch_kwdoc)s
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_a5407eda04219c5c82d48378763b5eb33}\label{classmatplotlib_1_1patches_1_1Rectangle_a5407eda04219c5c82d48378763b5eb33}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_a734c08acbdb7843c61bd70bda008ce04}\label{classmatplotlib_1_1patches_1_1Rectangle_a734c08acbdb7843c61bd70bda008ce04}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!get\+\_\+bbox@{get\+\_\+bbox}}
+\index{get\+\_\+bbox@{get\+\_\+bbox}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{get\+\_\+bbox()}{get\_bbox()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+get\+\_\+bbox (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the `.Bbox`.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_ab833c765c31478f78f3fe695c340ec53}\label{classmatplotlib_1_1patches_1_1Rectangle_ab833c765c31478f78f3fe695c340ec53}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!get\+\_\+height@{get\+\_\+height}}
+\index{get\+\_\+height@{get\+\_\+height}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{get\+\_\+height()}{get\_height()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+get\+\_\+height (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the height of the rectangle.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_a5382d4ef5328c44c12e661f3d1e5b849}\label{classmatplotlib_1_1patches_1_1Rectangle_a5382d4ef5328c44c12e661f3d1e5b849}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!get\+\_\+patch\+\_\+transform@{get\+\_\+patch\+\_\+transform}}
+\index{get\+\_\+patch\+\_\+transform@{get\+\_\+patch\+\_\+transform}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{get\+\_\+patch\+\_\+transform()}{get\_patch\_transform()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+get\+\_\+patch\+\_\+transform (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_a4900143a0229a351567a0d3c187b7a8b}\label{classmatplotlib_1_1patches_1_1Rectangle_a4900143a0229a351567a0d3c187b7a8b}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!get\+\_\+path@{get\+\_\+path}}
+\index{get\+\_\+path@{get\+\_\+path}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{get\+\_\+path()}{get\_path()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+get\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the vertices of the rectangle.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_af43e9c698f3b6b47aca02114005ca1d8}\label{classmatplotlib_1_1patches_1_1Rectangle_af43e9c698f3b6b47aca02114005ca1d8}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!get\+\_\+width@{get\+\_\+width}}
+\index{get\+\_\+width@{get\+\_\+width}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{get\+\_\+width()}{get\_width()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+get\+\_\+width (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the width of the rectangle.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_a14fd904bb42952f55f14904028d46e7c}\label{classmatplotlib_1_1patches_1_1Rectangle_a14fd904bb42952f55f14904028d46e7c}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!get\+\_\+x@{get\+\_\+x}}
+\index{get\+\_\+x@{get\+\_\+x}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{get\+\_\+x()}{get\_x()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+get\+\_\+x (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the left coordinate of the rectangle.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_a4b017693949cd5ea9f162f168f8e0855}\label{classmatplotlib_1_1patches_1_1Rectangle_a4b017693949cd5ea9f162f168f8e0855}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!get\+\_\+xy@{get\+\_\+xy}}
+\index{get\+\_\+xy@{get\+\_\+xy}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{get\+\_\+xy()}{get\_xy()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+get\+\_\+xy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the left and bottom coords of the rectangle as a tuple.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_a3678a7dc4fccc2fbd67eec412a8bd531}\label{classmatplotlib_1_1patches_1_1Rectangle_a3678a7dc4fccc2fbd67eec412a8bd531}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!get\+\_\+y@{get\+\_\+y}}
+\index{get\+\_\+y@{get\+\_\+y}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{get\+\_\+y()}{get\_y()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+get\+\_\+y (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the bottom coordinate of the rectangle.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_aea102be3007ac4f09548b7714d7dd461}\label{classmatplotlib_1_1patches_1_1Rectangle_aea102be3007ac4f09548b7714d7dd461}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!set\+\_\+bounds@{set\+\_\+bounds}}
+\index{set\+\_\+bounds@{set\+\_\+bounds}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{set\+\_\+bounds()}{set\_bounds()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+set\+\_\+bounds (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the bounds of the rectangle as *left*, *bottom*, *width*, *height*.
+
+The values may be passed as separate parameters or as a tuple::
+
+    set_bounds(left, bottom, width, height)
+    set_bounds((left, bottom, width, height))
+
+.. ACCEPTS: (left, bottom, width, height)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_adbb43e91e339e31fe0aa6821e15c9b4b}\label{classmatplotlib_1_1patches_1_1Rectangle_adbb43e91e339e31fe0aa6821e15c9b4b}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!set\+\_\+height@{set\+\_\+height}}
+\index{set\+\_\+height@{set\+\_\+height}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{set\+\_\+height()}{set\_height()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+set\+\_\+height (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{h }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the height of the rectangle.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_a9212221e39f877049a0446154c4edfd8}\label{classmatplotlib_1_1patches_1_1Rectangle_a9212221e39f877049a0446154c4edfd8}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!set\+\_\+width@{set\+\_\+width}}
+\index{set\+\_\+width@{set\+\_\+width}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{set\+\_\+width()}{set\_width()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+set\+\_\+width (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{w }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the width of the rectangle.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_aca87ee174e5cb581e19cac86fb761915}\label{classmatplotlib_1_1patches_1_1Rectangle_aca87ee174e5cb581e19cac86fb761915}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!set\+\_\+x@{set\+\_\+x}}
+\index{set\+\_\+x@{set\+\_\+x}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{set\+\_\+x()}{set\_x()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+set\+\_\+x (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the left coordinate of the rectangle.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_aba57bf8a9cd2c16f5b53412b4228e5c7}\label{classmatplotlib_1_1patches_1_1Rectangle_aba57bf8a9cd2c16f5b53412b4228e5c7}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!set\+\_\+xy@{set\+\_\+xy}}
+\index{set\+\_\+xy@{set\+\_\+xy}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{set\+\_\+xy()}{set\_xy()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+set\+\_\+xy (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xy }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the left and bottom coordinates of the rectangle.
+
+Parameters
+----------
+xy : (float, float)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_a8a79507318cde4d59523b1de08461134}\label{classmatplotlib_1_1patches_1_1Rectangle_a8a79507318cde4d59523b1de08461134}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!set\+\_\+y@{set\+\_\+y}}
+\index{set\+\_\+y@{set\+\_\+y}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{set\+\_\+y()}{set\_y()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Rectangle.\+set\+\_\+y (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the bottom coordinate of the rectangle.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_afcd2b4e52594d4950ba836cbbffc90de}\label{classmatplotlib_1_1patches_1_1Rectangle_afcd2b4e52594d4950ba836cbbffc90de}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!angle@{angle}}
+\index{angle@{angle}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily matplotlib.\+patches.\+Rectangle.\+angle}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_a96ab0b5fed1ee33aff151d16ab9078e7}\label{classmatplotlib_1_1patches_1_1Rectangle_a96ab0b5fed1ee33aff151d16ab9078e7}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+patches.\+Rectangle.\+stale}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Rectangle_a7febcd40cac82459d66c33ddfc6ba09f}\label{classmatplotlib_1_1patches_1_1Rectangle_a7febcd40cac82459d66c33ddfc6ba09f}} 
+\index{matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}!xy@{xy}}
+\index{xy@{xy}!matplotlib\+::patches\+::\+Rectangle@{matplotlib\+::patches\+::\+Rectangle}}
+\subsubsection{\texorpdfstring{xy}{xy}}
+{\footnotesize\ttfamily matplotlib.\+patches.\+Rectangle.\+xy = property(\hyperlink{classmatplotlib_1_1patches_1_1Rectangle_a4b017693949cd5ea9f162f168f8e0855}{get\+\_\+xy}, \hyperlink{classmatplotlib_1_1patches_1_1Rectangle_aba57bf8a9cd2c16f5b53412b4228e5c7}{set\+\_\+xy})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{patches_8py}{patches.\+py}\end{DoxyCompactItemize}

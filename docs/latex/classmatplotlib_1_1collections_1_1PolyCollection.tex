@@ -1,0 +1,116 @@
+\hypertarget{classmatplotlib_1_1collections_1_1PolyCollection}{}\section{matplotlib.\+collections.\+Poly\+Collection Class Reference}
+\label{classmatplotlib_1_1collections_1_1PolyCollection}\index{matplotlib.\+collections.\+Poly\+Collection@{matplotlib.\+collections.\+Poly\+Collection}}
+
+
+Inheritance diagram for matplotlib.\+collections.\+Poly\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1collections_1_1PolyCollection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+collections.\+Poly\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1collections_1_1PolyCollection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1PolyCollection_a17e889c24a2423a4d5258c74d68dbd48}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, verts, sizes=None, closed=True, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1PolyCollection_ada06fb0a14e12f529a52badcfd9f1d1b}{set\+\_\+verts} (self, verts, closed=True)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1PolyCollection_a8a245825bf8c8b709bc14f08d2bce8f5}{set\+\_\+verts\+\_\+and\+\_\+codes} (self, verts, codes)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1collections_1_1PolyCollection_a988c7061b07dc3f8f10547f576d37d15}{stale}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1PolyCollection_a4be914300c28f1229ba5b265221d6357}{set\+\_\+paths} = \hyperlink{classmatplotlib_1_1collections_1_1PolyCollection_ada06fb0a14e12f529a52badcfd9f1d1b}{set\+\_\+verts}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1PolyCollection_a17e889c24a2423a4d5258c74d68dbd48}\label{classmatplotlib_1_1collections_1_1PolyCollection_a17e889c24a2423a4d5258c74d68dbd48}} 
+\index{matplotlib\+::collections\+::\+Poly\+Collection@{matplotlib\+::collections\+::\+Poly\+Collection}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::collections\+::\+Poly\+Collection@{matplotlib\+::collections\+::\+Poly\+Collection}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Poly\+Collection.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{verts,  }\item[{}]{sizes = {\ttfamily None},  }\item[{}]{closed = {\ttfamily True},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+verts : list of array-like
+    The sequence of polygons [*verts0*, *verts1*, ...] where each
+    element *verts_i* defines the vertices of polygon *i* as a 2D
+    array-like of shape (M, 2).
+sizes : array-like, default: None
+    Squared scaling factors for the polygons. The coordinates of each
+    polygon *verts_i* are multiplied by the square-root of the
+    corresponding entry in *sizes* (i.e., *sizes* specify the scaling
+    of areas). The scaling is applied before the Artist master
+    transform.
+closed : bool, default: True
+    Whether the polygon should be closed by adding a CLOSEPOLY
+    connection at the end.
+**kwargs
+    Forwarded to `.Collection`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1PolyCollection_ada06fb0a14e12f529a52badcfd9f1d1b}\label{classmatplotlib_1_1collections_1_1PolyCollection_ada06fb0a14e12f529a52badcfd9f1d1b}} 
+\index{matplotlib\+::collections\+::\+Poly\+Collection@{matplotlib\+::collections\+::\+Poly\+Collection}!set\+\_\+verts@{set\+\_\+verts}}
+\index{set\+\_\+verts@{set\+\_\+verts}!matplotlib\+::collections\+::\+Poly\+Collection@{matplotlib\+::collections\+::\+Poly\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+verts()}{set\_verts()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Poly\+Collection.\+set\+\_\+verts (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{verts,  }\item[{}]{closed = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the vertices of the polygons.
+
+Parameters
+----------
+verts : list of array-like
+    The sequence of polygons [*verts0*, *verts1*, ...] where each
+    element *verts_i* defines the vertices of polygon *i* as a 2D
+    array-like of shape (M, 2).
+closed : bool, default: True
+    Whether the polygon should be closed by adding a CLOSEPOLY
+    connection at the end.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1collections_1_1PolyCollection_a8a245825bf8c8b709bc14f08d2bce8f5}\label{classmatplotlib_1_1collections_1_1PolyCollection_a8a245825bf8c8b709bc14f08d2bce8f5}} 
+\index{matplotlib\+::collections\+::\+Poly\+Collection@{matplotlib\+::collections\+::\+Poly\+Collection}!set\+\_\+verts\+\_\+and\+\_\+codes@{set\+\_\+verts\+\_\+and\+\_\+codes}}
+\index{set\+\_\+verts\+\_\+and\+\_\+codes@{set\+\_\+verts\+\_\+and\+\_\+codes}!matplotlib\+::collections\+::\+Poly\+Collection@{matplotlib\+::collections\+::\+Poly\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+verts\+\_\+and\+\_\+codes()}{set\_verts\_and\_codes()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Poly\+Collection.\+set\+\_\+verts\+\_\+and\+\_\+codes (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{verts,  }\item[{}]{codes }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize vertices with path codes.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1PolyCollection_a4be914300c28f1229ba5b265221d6357}\label{classmatplotlib_1_1collections_1_1PolyCollection_a4be914300c28f1229ba5b265221d6357}} 
+\index{matplotlib\+::collections\+::\+Poly\+Collection@{matplotlib\+::collections\+::\+Poly\+Collection}!set\+\_\+paths@{set\+\_\+paths}}
+\index{set\+\_\+paths@{set\+\_\+paths}!matplotlib\+::collections\+::\+Poly\+Collection@{matplotlib\+::collections\+::\+Poly\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+paths}{set\_paths}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Poly\+Collection.\+set\+\_\+paths = \hyperlink{classmatplotlib_1_1collections_1_1PolyCollection_ada06fb0a14e12f529a52badcfd9f1d1b}{set\+\_\+verts}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1PolyCollection_a988c7061b07dc3f8f10547f576d37d15}\label{classmatplotlib_1_1collections_1_1PolyCollection_a988c7061b07dc3f8f10547f576d37d15}} 
+\index{matplotlib\+::collections\+::\+Poly\+Collection@{matplotlib\+::collections\+::\+Poly\+Collection}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::collections\+::\+Poly\+Collection@{matplotlib\+::collections\+::\+Poly\+Collection}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+collections.\+Poly\+Collection.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{collections_8py}{collections.\+py}\end{DoxyCompactItemize}

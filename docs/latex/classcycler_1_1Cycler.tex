@@ -1,0 +1,294 @@
+\hypertarget{classcycler_1_1Cycler}{}\section{cycler.\+Cycler Class Reference}
+\label{classcycler_1_1Cycler}\index{cycler.\+Cycler@{cycler.\+Cycler}}
+
+
+Inheritance diagram for cycler.\+Cycler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classcycler_1_1Cycler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for cycler.\+Cycler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classcycler_1_1Cycler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classcycler_1_1Cycler_a15c83d15bcbadf331a4cef7894136aa8}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classcycler_1_1Cycler_a3b39bffad8da36418975e7cd386db883}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, left, right=None, op=None)
+\item 
+def \hyperlink{classcycler_1_1Cycler_a88a3fb0b715e947bfc1c95ce83cac267}{keys} (self)
+\item 
+def \hyperlink{classcycler_1_1Cycler_adb8c9f43e8d31300275bf09cbce14c0a}{change\+\_\+key} (self, old, new)
+\item 
+def \hyperlink{classcycler_1_1Cycler_a00a0ca61bf906531f61f16030fe3a9b0}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, key)
+\item 
+def \hyperlink{classcycler_1_1Cycler_a9791a4e7220bef0833025e5ad3eae57d}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classcycler_1_1Cycler_a47cf8ab7da697c444648fa1d39073788}{\+\_\+\+\_\+add\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classcycler_1_1Cycler_ab23a068aeb44ddae0f260d477e293922}{\+\_\+\+\_\+mul\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classcycler_1_1Cycler_a3f88390af4b592094c0a5a6bc4984eaa}{\+\_\+\+\_\+rmul\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classcycler_1_1Cycler_a843d7e667e9d243e9a73e7c925e1cd2f}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classcycler_1_1Cycler_a6857266277b80ea616f7fd70a51b519a}{\+\_\+\+\_\+iadd\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classcycler_1_1Cycler_a0cef7faf0cf5b362c426776ebca2fe3b}{\+\_\+\+\_\+imul\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classcycler_1_1Cycler_aa01128b0081267caa56a93123fa7b645}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classcycler_1_1Cycler_ac4312249bd1aeb949568ee49bf62971e}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classcycler_1_1Cycler_aff0cddb733ac75e56fe420b00d108efd}{by\+\_\+key} (self)
+\item 
+def \hyperlink{classcycler_1_1Cycler_a0a6e46f7c2b2e5a277e1e8c0b43c96e5}{simplify} (self)
+\item 
+def \hyperlink{classcycler_1_1Cycler_a29be128842304da3f9cf41b526c6e2fe}{concat} (self, other)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Composable cycles
+
+This class has compositions methods:
+
+``+``
+  for 'inner' products (zip)
+
+``+=``
+  in-place ``+``
+
+``*``
+  for outer products (itertools.product) and integer multiplication
+
+``*=``
+  in-place ``*``
+
+and supports basic slicing via ``[]``
+
+Parameters
+----------
+left : Cycler or None
+    The 'left' cycler
+
+right : Cycler or None
+    The 'right' cycler
+
+op : func or None
+    Function which composes the 'left' and 'right' cyclers.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcycler_1_1Cycler_a3b39bffad8da36418975e7cd386db883}\label{classcycler_1_1Cycler_a3b39bffad8da36418975e7cd386db883}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{left,  }\item[{}]{right = {\ttfamily None},  }\item[{}]{op = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Semi-private init
+
+Do not use this directly, use `cycler` function instead.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcycler_1_1Cycler_a47cf8ab7da697c444648fa1d39073788}\label{classcycler_1_1Cycler_a47cf8ab7da697c444648fa1d39073788}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!\+\_\+\+\_\+add\+\_\+\+\_\+@{\+\_\+\+\_\+add\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+add\+\_\+\+\_\+@{\+\_\+\+\_\+add\+\_\+\+\_\+}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+add\+\_\+\+\_\+()}{\_\_add\_\_()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+\_\+\+\_\+add\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Pair-wise combine two equal length cycles (zip)
+
+Parameters
+----------
+other : Cycler
+   The second Cycler
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcycler_1_1Cycler_a15c83d15bcbadf331a4cef7894136aa8}\label{classcycler_1_1Cycler_a15c83d15bcbadf331a4cef7894136aa8}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcycler_1_1Cycler_aa01128b0081267caa56a93123fa7b645}\label{classcycler_1_1Cycler_aa01128b0081267caa56a93123fa7b645}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+eq\+\_\+\+\_\+()}{\_\_eq\_\_()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+\_\+\+\_\+eq\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check equality
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcycler_1_1Cycler_a00a0ca61bf906531f61f16030fe3a9b0}\label{classcycler_1_1Cycler_a00a0ca61bf906531f61f16030fe3a9b0}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcycler_1_1Cycler_a6857266277b80ea616f7fd70a51b519a}\label{classcycler_1_1Cycler_a6857266277b80ea616f7fd70a51b519a}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!\+\_\+\+\_\+iadd\+\_\+\+\_\+@{\+\_\+\+\_\+iadd\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iadd\+\_\+\+\_\+@{\+\_\+\+\_\+iadd\+\_\+\+\_\+}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iadd\+\_\+\+\_\+()}{\_\_iadd\_\_()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+\_\+\+\_\+iadd\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}In-place pair-wise combine two equal length cycles (zip)
+
+Parameters
+----------
+other : Cycler
+   The second Cycler
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcycler_1_1Cycler_a0cef7faf0cf5b362c426776ebca2fe3b}\label{classcycler_1_1Cycler_a0cef7faf0cf5b362c426776ebca2fe3b}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!\+\_\+\+\_\+imul\+\_\+\+\_\+@{\+\_\+\+\_\+imul\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+imul\+\_\+\+\_\+@{\+\_\+\+\_\+imul\+\_\+\+\_\+}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+imul\+\_\+\+\_\+()}{\_\_imul\_\_()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+\_\+\+\_\+imul\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}In-place outer product of two cycles (`itertools.product`)
+
+Parameters
+----------
+other : Cycler
+   The second Cycler
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcycler_1_1Cycler_a9791a4e7220bef0833025e5ad3eae57d}\label{classcycler_1_1Cycler_a9791a4e7220bef0833025e5ad3eae57d}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcycler_1_1Cycler_a843d7e667e9d243e9a73e7c925e1cd2f}\label{classcycler_1_1Cycler_a843d7e667e9d243e9a73e7c925e1cd2f}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcycler_1_1Cycler_ab23a068aeb44ddae0f260d477e293922}\label{classcycler_1_1Cycler_ab23a068aeb44ddae0f260d477e293922}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!\+\_\+\+\_\+mul\+\_\+\+\_\+@{\+\_\+\+\_\+mul\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+mul\+\_\+\+\_\+@{\+\_\+\+\_\+mul\+\_\+\+\_\+}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+mul\+\_\+\+\_\+()}{\_\_mul\_\_()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+\_\+\+\_\+mul\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Outer product of two cycles (`itertools.product`) or integer
+multiplication.
+
+Parameters
+----------
+other : Cycler or int
+   The second Cycler or integer
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcycler_1_1Cycler_ac4312249bd1aeb949568ee49bf62971e}\label{classcycler_1_1Cycler_ac4312249bd1aeb949568ee49bf62971e}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcycler_1_1Cycler_a3f88390af4b592094c0a5a6bc4984eaa}\label{classcycler_1_1Cycler_a3f88390af4b592094c0a5a6bc4984eaa}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!\+\_\+\+\_\+rmul\+\_\+\+\_\+@{\+\_\+\+\_\+rmul\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+rmul\+\_\+\+\_\+@{\+\_\+\+\_\+rmul\+\_\+\+\_\+}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+rmul\+\_\+\+\_\+()}{\_\_rmul\_\_()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+\_\+\+\_\+rmul\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcycler_1_1Cycler_aff0cddb733ac75e56fe420b00d108efd}\label{classcycler_1_1Cycler_aff0cddb733ac75e56fe420b00d108efd}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!by\+\_\+key@{by\+\_\+key}}
+\index{by\+\_\+key@{by\+\_\+key}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{by\+\_\+key()}{by\_key()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+by\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Values by key
+
+This returns the transposed values of the cycler.  Iterating
+over a `Cycler` yields dicts with a single value for each key,
+this method returns a `dict` of `list` which are the values
+for the given key.
+
+The returned value can be used to create an equivalent `Cycler`
+using only `+`.
+
+Returns
+-------
+transpose : dict
+    dict of lists of the values for each key.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcycler_1_1Cycler_adb8c9f43e8d31300275bf09cbce14c0a}\label{classcycler_1_1Cycler_adb8c9f43e8d31300275bf09cbce14c0a}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!change\+\_\+key@{change\+\_\+key}}
+\index{change\+\_\+key@{change\+\_\+key}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{change\+\_\+key()}{change\_key()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+change\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{old,  }\item[{}]{new }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Change a key in this cycler to a new name.
+Modification is performed in-place.
+
+Does nothing if the old key is the same as the new key.
+Raises a ValueError if the new key is already a key.
+Raises a KeyError if the old key isn't a key.\end{DoxyVerb}
+ \mbox{\Hypertarget{classcycler_1_1Cycler_a29be128842304da3f9cf41b526c6e2fe}\label{classcycler_1_1Cycler_a29be128842304da3f9cf41b526c6e2fe}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!concat@{concat}}
+\index{concat@{concat}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{concat()}{concat()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+concat (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Concatenate this cycler and an other.
+
+The keys must match exactly.
+
+This returns a single Cycler which is equivalent to
+`itertools.chain(self, other)`
+
+Examples
+--------
+
+>>> num = cycler('a', range(3))
+>>> let = cycler('a', 'abc')
+>>> num.concat(let)
+cycler('a', [0, 1, 2, 'a', 'b', 'c'])
+
+Parameters
+----------
+other : `Cycler`
+    The `Cycler` to concatenate to this one.
+
+Returns
+-------
+ret : `Cycler`
+    The concatenated `Cycler`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcycler_1_1Cycler_a88a3fb0b715e947bfc1c95ce83cac267}\label{classcycler_1_1Cycler_a88a3fb0b715e947bfc1c95ce83cac267}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!keys@{keys}}
+\index{keys@{keys}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{keys()}{keys()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+keys (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The keys this Cycler knows about
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcycler_1_1Cycler_a0a6e46f7c2b2e5a277e1e8c0b43c96e5}\label{classcycler_1_1Cycler_a0a6e46f7c2b2e5a277e1e8c0b43c96e5}} 
+\index{cycler\+::\+Cycler@{cycler\+::\+Cycler}!simplify@{simplify}}
+\index{simplify@{simplify}!cycler\+::\+Cycler@{cycler\+::\+Cycler}}
+\subsubsection{\texorpdfstring{simplify()}{simplify()}}
+{\footnotesize\ttfamily def cycler.\+Cycler.\+simplify (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Simplify the Cycler
+
+Returned as a composition using only sums (no multiplications)
+
+Returns
+-------
+simple : Cycler
+    An equivalent cycler using only summation\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\hyperlink{cycler_8py}{cycler.\+py}\end{DoxyCompactItemize}

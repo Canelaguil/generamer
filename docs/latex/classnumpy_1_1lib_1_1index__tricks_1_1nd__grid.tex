@@ -1,0 +1,91 @@
+\hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid}{}\section{numpy.\+lib.\+index\+\_\+tricks.\+nd\+\_\+grid Class Reference}
+\label{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid}\index{numpy.\+lib.\+index\+\_\+tricks.\+nd\+\_\+grid@{numpy.\+lib.\+index\+\_\+tricks.\+nd\+\_\+grid}}
+
+
+Inheritance diagram for numpy.\+lib.\+index\+\_\+tricks.\+nd\+\_\+grid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid_a8d1b5d244d2aacfd699fec7f23d5fa94}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid_a390a2fd914a0d6b8092ab3855a3af857}{sparse}=False)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid_ab10c8d0852f61f736080a8e695463f61}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, key)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid_a390a2fd914a0d6b8092ab3855a3af857}{sparse}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Construct a multi-dimensional "meshgrid".
+
+``grid = nd_grid()`` creates an instance which will return a mesh-grid
+when indexed.  The dimension and number of the output arrays are equal
+to the number of indexing dimensions.  If the step length is not a
+complex number, then the stop is not inclusive.
+
+However, if the step length is a **complex number** (e.g. 5j), then the
+integer part of its magnitude is interpreted as specifying the
+number of points to create between the start and stop values, where
+the stop value **is inclusive**.
+
+If instantiated with an argument of ``sparse=True``, the mesh-grid is
+open (or not fleshed out) so that only one-dimension of each returned
+argument is greater than 1.
+
+Parameters
+----------
+sparse : bool, optional
+    Whether the grid is sparse or not. Default is False.
+
+Notes
+-----
+Two instances of `nd_grid` are made available in the NumPy namespace,
+`mgrid` and `ogrid`, approximately defined as::
+
+    mgrid = nd_grid(sparse=False)
+    ogrid = nd_grid(sparse=True)
+
+Users should use these pre-defined instances instead of using `nd_grid`
+directly.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid_a8d1b5d244d2aacfd699fec7f23d5fa94}\label{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid_a8d1b5d244d2aacfd699fec7f23d5fa94}} 
+\index{numpy\+::lib\+::index\+\_\+tricks\+::nd\+\_\+grid@{numpy\+::lib\+::index\+\_\+tricks\+::nd\+\_\+grid}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::lib\+::index\+\_\+tricks\+::nd\+\_\+grid@{numpy\+::lib\+::index\+\_\+tricks\+::nd\+\_\+grid}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+nd\+\_\+grid.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{sparse = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid_ab10c8d0852f61f736080a8e695463f61}\label{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid_ab10c8d0852f61f736080a8e695463f61}} 
+\index{numpy\+::lib\+::index\+\_\+tricks\+::nd\+\_\+grid@{numpy\+::lib\+::index\+\_\+tricks\+::nd\+\_\+grid}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!numpy\+::lib\+::index\+\_\+tricks\+::nd\+\_\+grid@{numpy\+::lib\+::index\+\_\+tricks\+::nd\+\_\+grid}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+nd\+\_\+grid.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid_a390a2fd914a0d6b8092ab3855a3af857}\label{classnumpy_1_1lib_1_1index__tricks_1_1nd__grid_a390a2fd914a0d6b8092ab3855a3af857}} 
+\index{numpy\+::lib\+::index\+\_\+tricks\+::nd\+\_\+grid@{numpy\+::lib\+::index\+\_\+tricks\+::nd\+\_\+grid}!sparse@{sparse}}
+\index{sparse@{sparse}!numpy\+::lib\+::index\+\_\+tricks\+::nd\+\_\+grid@{numpy\+::lib\+::index\+\_\+tricks\+::nd\+\_\+grid}}
+\subsubsection{\texorpdfstring{sparse}{sparse}}
+{\footnotesize\ttfamily numpy.\+lib.\+index\+\_\+tricks.\+nd\+\_\+grid.\+sparse}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/lib/\hyperlink{lib_2index__tricks_8py}{index\+\_\+tricks.\+py}\end{DoxyCompactItemize}

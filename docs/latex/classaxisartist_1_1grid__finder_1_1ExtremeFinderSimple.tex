@@ -1,0 +1,91 @@
+\hypertarget{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple}{}\section{axisartist.\+grid\+\_\+finder.\+Extreme\+Finder\+Simple Class Reference}
+\label{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple}\index{axisartist.\+grid\+\_\+finder.\+Extreme\+Finder\+Simple@{axisartist.\+grid\+\_\+finder.\+Extreme\+Finder\+Simple}}
+
+
+Inheritance diagram for axisartist.\+grid\+\_\+finder.\+Extreme\+Finder\+Simple\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a16c044e3ab5bf91a03829658dd359147}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a21a6f0268aaa5ad8b14f0b9d153c5609}{nx}, \hyperlink{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a12a07cc0177a1e2cb1aa0dbbc3ef161f}{ny})
+\item 
+def \hyperlink{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a42ea4610054cd0c98d449e3cc948912d}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, transform\+\_\+xy, x1, y1, x2, y2)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a21a6f0268aaa5ad8b14f0b9d153c5609}{nx}
+\item 
+\hyperlink{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a12a07cc0177a1e2cb1aa0dbbc3ef161f}{ny}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A helper class to figure out the range of grid lines that need to be drawn.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a16c044e3ab5bf91a03829658dd359147}\label{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a16c044e3ab5bf91a03829658dd359147}} 
+\index{axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple@{axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple@{axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def axisartist.\+grid\+\_\+finder.\+Extreme\+Finder\+Simple.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{nx,  }\item[{}]{ny }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+nx, ny : int
+    The number of samples in each direction.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a42ea4610054cd0c98d449e3cc948912d}\label{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a42ea4610054cd0c98d449e3cc948912d}} 
+\index{axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple@{axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple@{axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def axisartist.\+grid\+\_\+finder.\+Extreme\+Finder\+Simple.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{transform\+\_\+xy,  }\item[{}]{x1,  }\item[{}]{y1,  }\item[{}]{x2,  }\item[{}]{y2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute an approximation of the bounding box obtained by applying
+*transform_xy* to the box delimited by ``(x1, y1, x2, y2)``.
+
+The intended use is to have ``(x1, y1, x2, y2)`` in axes coordinates,
+and have *transform_xy* be the transform from axes coordinates to data
+coordinates; this method then returns the range of data coordinates
+that span the actual axes.
+
+The computation is done by sampling ``nx * ny`` equispaced points in
+the ``(x1, y1, x2, y2)`` box and finding the resulting points with
+extremal coordinates; then adding some padding to take into account the
+finite sampling.
+
+As each sampling step covers a relative range of *1/nx* or *1/ny*,
+the padding is computed by expanding the span covered by the extremal
+coordinates by these fractions.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a21a6f0268aaa5ad8b14f0b9d153c5609}\label{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a21a6f0268aaa5ad8b14f0b9d153c5609}} 
+\index{axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple@{axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple}!nx@{nx}}
+\index{nx@{nx}!axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple@{axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple}}
+\subsubsection{\texorpdfstring{nx}{nx}}
+{\footnotesize\ttfamily axisartist.\+grid\+\_\+finder.\+Extreme\+Finder\+Simple.\+nx}
+
+\mbox{\Hypertarget{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a12a07cc0177a1e2cb1aa0dbbc3ef161f}\label{classaxisartist_1_1grid__finder_1_1ExtremeFinderSimple_a12a07cc0177a1e2cb1aa0dbbc3ef161f}} 
+\index{axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple@{axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple}!ny@{ny}}
+\index{ny@{ny}!axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple@{axisartist\+::grid\+\_\+finder\+::\+Extreme\+Finder\+Simple}}
+\subsubsection{\texorpdfstring{ny}{ny}}
+{\footnotesize\ttfamily axisartist.\+grid\+\_\+finder.\+Extreme\+Finder\+Simple.\+ny}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/mpl\+\_\+toolkits/axisartist/\hyperlink{axisartist_2grid__finder_8py}{grid\+\_\+finder.\+py}\end{DoxyCompactItemize}

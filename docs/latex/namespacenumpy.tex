@@ -1,0 +1,305 @@
+\hypertarget{namespacenumpy}{}\section{numpy Namespace Reference}
+\label{namespacenumpy}\index{numpy@{numpy}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacenumpy_1_1____config____}{\+\_\+\+\_\+config\+\_\+\+\_\+}
+\item 
+ \hyperlink{namespacenumpy_1_1__distributor__init}{\+\_\+distributor\+\_\+init}
+\item 
+ \hyperlink{namespacenumpy_1_1__globals}{\+\_\+globals}
+\item 
+ \hyperlink{namespacenumpy_1_1__pytesttester}{\+\_\+pytesttester}
+\item 
+ \hyperlink{namespacenumpy_1_1__version}{\+\_\+version}
+\item 
+ \hyperlink{namespacenumpy_1_1compat}{compat}
+\item 
+ \hyperlink{namespacenumpy_1_1conftest}{conftest}
+\item 
+ \hyperlink{namespacenumpy_1_1core}{core}
+\item 
+ \hyperlink{namespacenumpy_1_1ctypeslib}{ctypeslib}
+\item 
+ \hyperlink{namespacenumpy_1_1distutils}{distutils}
+\item 
+ \hyperlink{namespacenumpy_1_1doc}{doc}
+\item 
+ \hyperlink{namespacenumpy_1_1dual}{dual}
+\item 
+ \hyperlink{namespacenumpy_1_1f2py}{f2py}
+\item 
+ \hyperlink{namespacenumpy_1_1fft}{fft}
+\item 
+ \hyperlink{namespacenumpy_1_1lib}{lib}
+\item 
+ \hyperlink{namespacenumpy_1_1linalg}{linalg}
+\item 
+ \hyperlink{namespacenumpy_1_1ma}{ma}
+\item 
+ \hyperlink{namespacenumpy_1_1matlib}{matlib}
+\item 
+ \hyperlink{namespacenumpy_1_1matrixlib}{matrixlib}
+\item 
+ \hyperlink{namespacenumpy_1_1polynomial}{polynomial}
+\item 
+ \hyperlink{namespacenumpy_1_1random}{random}
+\item 
+ \hyperlink{namespacenumpy_1_1setup}{setup}
+\item 
+ \hyperlink{namespacenumpy_1_1testing}{testing}
+\item 
+ \hyperlink{namespacenumpy_1_1tests}{tests}
+\item 
+ \hyperlink{namespacenumpy_1_1typing}{typing}
+\item 
+ \hyperlink{namespacenumpy_1_1version}{version}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_a769fc49989b89b83a8a22d1fc5957707}{\+\_\+\+\_\+getattr\+\_\+\+\_\+} (attr)
+\item 
+def \hyperlink{namespacenumpy_a05ae198afa113ce10c617885c28b79fa}{\+\_\+\+\_\+dir\+\_\+\+\_\+} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_ab96122eb8e44294b488b0ef93ec27d38}{msg}
+\item 
+\hyperlink{namespacenumpy_ad57cc1f157391df7570bccf725ba5abf}{vinfo}
+\item 
+\hyperlink{namespacenumpy_a352663c52853d2754274407d5cae2832}{n}
+\item 
+\hyperlink{namespacenumpy_a212925a5ecfb70237012aaee36a44789}{extended\+\_\+msg}
+\item 
+\hyperlink{namespacenumpy_a59b0d7baee040fdd1da26565c4ca2408}{n2}
+\item 
+\hyperlink{namespacenumpy_a2222f7c2b3c819deee274f05ccc2a705}{message}
+\item 
+\hyperlink{namespacenumpy_a8dc6952b5a0171808a2f920142d8403e}{oldnumeric}
+\item 
+\hyperlink{namespacenumpy_a91810bdd8fe09a74518e2b6f6efc0645}{numarray}
+\item 
+\hyperlink{namespacenumpy_a940b21ea81a40752b492a99b786f0718}{test}
+\item 
+\hyperlink{namespacenumpy_a26b7b29ce31118456a3c197e73d945bc}{record}
+\item 
+\hyperlink{namespacenumpy_ad70b9a8ab78be689bf073dc3a65b1096}{error\+\_\+message}
+\item 
+\hyperlink{namespacenumpy_ac2b03242e859c2749c9ab46cb321221c}{use\+\_\+hugepage}
+\item 
+\hyperlink{namespacenumpy_aaf7d214394ee08d6424d0b598a590ac7}{kernel\+\_\+version}
+\item 
+\hyperlink{namespacenumpy_a00cdcc15f38e00325dc285f9f4f275c8}{use\+\_\+hugepages}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}NumPy
+=====
+
+Provides
+  1. An array object of arbitrary homogeneous items
+  2. Fast mathematical operations over arrays
+  3. Linear Algebra, Fourier Transforms, Random Number Generation
+
+How to use the documentation
+----------------------------
+Documentation is available in two forms: docstrings provided
+with the code, and a loose standing reference guide, available from
+`the NumPy homepage <https://www.scipy.org>`_.
+
+We recommend exploring the docstrings using
+`IPython <https://ipython.org>`_, an advanced Python shell with
+TAB-completion and introspection capabilities.  See below for further
+instructions.
+
+The docstring examples assume that `numpy` has been imported as `np`::
+
+  >>> import numpy as np
+
+Code snippets are indicated by three greater-than signs::
+
+  >>> x = 42
+  >>> x = x + 1
+
+Use the built-in ``help`` function to view a function's docstring::
+
+  >>> help(np.sort)
+  ... # doctest: +SKIP
+
+For some objects, ``np.info(obj)`` may provide additional help.  This is
+particularly true if you see the line "Help on ufunc object:" at the top
+of the help() page.  Ufuncs are implemented in C, not Python, for speed.
+The native Python help() does not know how to view their help, but our
+np.info() function does.
+
+To search for documents containing a keyword, do::
+
+  >>> np.lookfor('keyword')
+  ... # doctest: +SKIP
+
+General-purpose documents like a glossary and help on the basic concepts
+of numpy are available under the ``doc`` sub-module::
+
+  >>> from numpy import doc
+  >>> help(doc)
+  ... # doctest: +SKIP
+
+Available subpackages
+---------------------
+doc
+Topical documentation on broadcasting, indexing, etc.
+lib
+Basic functions used by several sub-packages.
+random
+Core Random Tools
+linalg
+Core Linear Algebra Tools
+fft
+Core FFT routines
+polynomial
+Polynomial tools
+testing
+NumPy testing tools
+f2py
+Fortran to Python Interface Generator.
+distutils
+Enhancements to distutils with support for
+Fortran compilers support and more.
+
+Utilities
+---------
+test
+Run numpy unittests
+show_config
+Show numpy build configuration
+dual
+Overwrite certain functions with high-performance SciPy tools.
+Note: `numpy.dual` is deprecated.  Use the functions from NumPy or Scipy
+directly instead of importing them from `numpy.dual`.
+matlib
+Make everything matrices.
+__version__
+NumPy version string
+
+Viewing documentation using IPython
+-----------------------------------
+Start IPython with the NumPy profile (``ipython -p numpy``), which will
+import `numpy` under the alias `np`.  Then, use the ``cpaste`` command to
+paste examples into the shell.  To see which functions are available in
+`numpy`, type ``np.<TAB>`` (where ``<TAB>`` refers to the TAB key), or use
+``np.*cos*?<ENTER>`` (where ``<ENTER>`` refers to the ENTER key) to narrow
+down the list.  To view the docstring for a function, use
+``np.cos?<ENTER>`` (to view the docstring) and ``np.cos??<ENTER>`` (to view
+the source code).
+
+Copies vs. in-place operation
+-----------------------------
+Most of the functions in `numpy` return a copy of the array argument
+(e.g., `np.sort`).  In-place versions of these functions are often
+available as array methods, i.e. ``x = np.array([1,2,3]); x.sort()``.
+Exceptions to this rule are documented.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_a05ae198afa113ce10c617885c28b79fa}\label{namespacenumpy_a05ae198afa113ce10c617885c28b79fa}} 
+\index{numpy@{numpy}!\+\_\+\+\_\+dir\+\_\+\+\_\+@{\+\_\+\+\_\+dir\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+dir\+\_\+\+\_\+@{\+\_\+\+\_\+dir\+\_\+\+\_\+}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dir\+\_\+\+\_\+()}{\_\_dir\_\_()}}
+{\footnotesize\ttfamily def numpy.\+\_\+\+\_\+dir\+\_\+\+\_\+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_a769fc49989b89b83a8a22d1fc5957707}\label{namespacenumpy_a769fc49989b89b83a8a22d1fc5957707}} 
+\index{numpy@{numpy}!\+\_\+\+\_\+getattr\+\_\+\+\_\+@{\+\_\+\+\_\+getattr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getattr\+\_\+\+\_\+@{\+\_\+\+\_\+getattr\+\_\+\+\_\+}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getattr\+\_\+\+\_\+()}{\_\_getattr\_\_()}}
+{\footnotesize\ttfamily def numpy.\+\_\+\+\_\+getattr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{attr }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_ad70b9a8ab78be689bf073dc3a65b1096}\label{namespacenumpy_ad70b9a8ab78be689bf073dc3a65b1096}} 
+\index{numpy@{numpy}!error\+\_\+message@{error\+\_\+message}}
+\index{error\+\_\+message@{error\+\_\+message}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{error\+\_\+message}{error\_message}}
+{\footnotesize\ttfamily numpy.\+error\+\_\+message}
+
+\mbox{\Hypertarget{namespacenumpy_a212925a5ecfb70237012aaee36a44789}\label{namespacenumpy_a212925a5ecfb70237012aaee36a44789}} 
+\index{numpy@{numpy}!extended\+\_\+msg@{extended\+\_\+msg}}
+\index{extended\+\_\+msg@{extended\+\_\+msg}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{extended\+\_\+msg}{extended\_msg}}
+{\footnotesize\ttfamily numpy.\+extended\+\_\+msg}
+
+\mbox{\Hypertarget{namespacenumpy_aaf7d214394ee08d6424d0b598a590ac7}\label{namespacenumpy_aaf7d214394ee08d6424d0b598a590ac7}} 
+\index{numpy@{numpy}!kernel\+\_\+version@{kernel\+\_\+version}}
+\index{kernel\+\_\+version@{kernel\+\_\+version}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{kernel\+\_\+version}{kernel\_version}}
+{\footnotesize\ttfamily numpy.\+kernel\+\_\+version}
+
+\mbox{\Hypertarget{namespacenumpy_a2222f7c2b3c819deee274f05ccc2a705}\label{namespacenumpy_a2222f7c2b3c819deee274f05ccc2a705}} 
+\index{numpy@{numpy}!message@{message}}
+\index{message@{message}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{message}{message}}
+{\footnotesize\ttfamily numpy.\+message}
+
+\mbox{\Hypertarget{namespacenumpy_ab96122eb8e44294b488b0ef93ec27d38}\label{namespacenumpy_ab96122eb8e44294b488b0ef93ec27d38}} 
+\index{numpy@{numpy}!msg@{msg}}
+\index{msg@{msg}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{msg}{msg}}
+{\footnotesize\ttfamily numpy.\+msg}
+
+\mbox{\Hypertarget{namespacenumpy_a352663c52853d2754274407d5cae2832}\label{namespacenumpy_a352663c52853d2754274407d5cae2832}} 
+\index{numpy@{numpy}!n@{n}}
+\index{n@{n}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily numpy.\+n}
+
+\mbox{\Hypertarget{namespacenumpy_a59b0d7baee040fdd1da26565c4ca2408}\label{namespacenumpy_a59b0d7baee040fdd1da26565c4ca2408}} 
+\index{numpy@{numpy}!n2@{n2}}
+\index{n2@{n2}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{n2}{n2}}
+{\footnotesize\ttfamily numpy.\+n2}
+
+\mbox{\Hypertarget{namespacenumpy_a91810bdd8fe09a74518e2b6f6efc0645}\label{namespacenumpy_a91810bdd8fe09a74518e2b6f6efc0645}} 
+\index{numpy@{numpy}!numarray@{numarray}}
+\index{numarray@{numarray}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{numarray}{numarray}}
+{\footnotesize\ttfamily numpy.\+numarray}
+
+\mbox{\Hypertarget{namespacenumpy_a8dc6952b5a0171808a2f920142d8403e}\label{namespacenumpy_a8dc6952b5a0171808a2f920142d8403e}} 
+\index{numpy@{numpy}!oldnumeric@{oldnumeric}}
+\index{oldnumeric@{oldnumeric}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{oldnumeric}{oldnumeric}}
+{\footnotesize\ttfamily numpy.\+oldnumeric}
+
+\mbox{\Hypertarget{namespacenumpy_a26b7b29ce31118456a3c197e73d945bc}\label{namespacenumpy_a26b7b29ce31118456a3c197e73d945bc}} 
+\index{numpy@{numpy}!record@{record}}
+\index{record@{record}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{record}{record}}
+{\footnotesize\ttfamily \hyperlink{classnumpy_1_1core_1_1records_1_1record}{numpy.\+record}}
+
+\mbox{\Hypertarget{namespacenumpy_a940b21ea81a40752b492a99b786f0718}\label{namespacenumpy_a940b21ea81a40752b492a99b786f0718}} 
+\index{numpy@{numpy}!test@{test}}
+\index{test@{test}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{test}{test}}
+{\footnotesize\ttfamily numpy.\+test}
+
+\mbox{\Hypertarget{namespacenumpy_ac2b03242e859c2749c9ab46cb321221c}\label{namespacenumpy_ac2b03242e859c2749c9ab46cb321221c}} 
+\index{numpy@{numpy}!use\+\_\+hugepage@{use\+\_\+hugepage}}
+\index{use\+\_\+hugepage@{use\+\_\+hugepage}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{use\+\_\+hugepage}{use\_hugepage}}
+{\footnotesize\ttfamily numpy.\+use\+\_\+hugepage}
+
+\mbox{\Hypertarget{namespacenumpy_a00cdcc15f38e00325dc285f9f4f275c8}\label{namespacenumpy_a00cdcc15f38e00325dc285f9f4f275c8}} 
+\index{numpy@{numpy}!use\+\_\+hugepages@{use\+\_\+hugepages}}
+\index{use\+\_\+hugepages@{use\+\_\+hugepages}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{use\+\_\+hugepages}{use\_hugepages}}
+{\footnotesize\ttfamily numpy.\+use\+\_\+hugepages}
+
+\mbox{\Hypertarget{namespacenumpy_ad57cc1f157391df7570bccf725ba5abf}\label{namespacenumpy_ad57cc1f157391df7570bccf725ba5abf}} 
+\index{numpy@{numpy}!vinfo@{vinfo}}
+\index{vinfo@{vinfo}!numpy@{numpy}}
+\subsubsection{\texorpdfstring{vinfo}{vinfo}}
+{\footnotesize\ttfamily numpy.\+vinfo}
+

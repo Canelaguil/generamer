@@ -1,0 +1,72 @@
+\hypertarget{namespacedateutil_1_1utils}{}\section{dateutil.\+utils Namespace Reference}
+\label{namespacedateutil_1_1utils}\index{dateutil.\+utils@{dateutil.\+utils}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacedateutil_1_1utils_ab4fd4b6f7d7b12a852d640ff84aa9191}{today} (tzinfo=None)
+\item 
+def \hyperlink{namespacedateutil_1_1utils_af76b90a36fb854817eff3c4749709942}{default\+\_\+tzinfo} (dt, tzinfo)
+\item 
+def \hyperlink{namespacedateutil_1_1utils_a6cae45aff4256b0744d058258dc3863a}{within\+\_\+delta} (dt1, dt2, delta)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacedateutil_1_1utils_af76b90a36fb854817eff3c4749709942}\label{namespacedateutil_1_1utils_af76b90a36fb854817eff3c4749709942}} 
+\index{dateutil\+::utils@{dateutil\+::utils}!default\+\_\+tzinfo@{default\+\_\+tzinfo}}
+\index{default\+\_\+tzinfo@{default\+\_\+tzinfo}!dateutil\+::utils@{dateutil\+::utils}}
+\subsubsection{\texorpdfstring{default\+\_\+tzinfo()}{default\_tzinfo()}}
+{\footnotesize\ttfamily def dateutil.\+utils.\+default\+\_\+tzinfo (\begin{DoxyParamCaption}\item[{}]{dt,  }\item[{}]{tzinfo }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sets the ``tzinfo`` parameter on naive datetimes only
+
+This is useful for example when you are provided a datetime that may have
+either an implicit or explicit time zone, such as when parsing a time zone
+string.
+
+.. doctest::
+
+    >>> from dateutil.tz import tzoffset
+    >>> from dateutil.parser import parse
+    >>> from dateutil.utils import default_tzinfo
+    >>> dflt_tz = tzoffset("EST", -18000)
+    >>> print(default_tzinfo(parse('2014-01-01 12:30 UTC'), dflt_tz))
+    2014-01-01 12:30:00+00:00
+    >>> print(default_tzinfo(parse('2014-01-01 12:30'), dflt_tz))
+    2014-01-01 12:30:00-05:00
+
+:param dt:
+    The datetime on which to replace the time zone
+
+:param tzinfo:
+    The :py:class:`datetime.tzinfo` subclass instance to assign to
+    ``dt`` if (and only if) it is naive.
+
+:return:
+    Returns an aware :py:class:`datetime.datetime`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacedateutil_1_1utils_ab4fd4b6f7d7b12a852d640ff84aa9191}\label{namespacedateutil_1_1utils_ab4fd4b6f7d7b12a852d640ff84aa9191}} 
+\index{dateutil\+::utils@{dateutil\+::utils}!today@{today}}
+\index{today@{today}!dateutil\+::utils@{dateutil\+::utils}}
+\subsubsection{\texorpdfstring{today()}{today()}}
+{\footnotesize\ttfamily def dateutil.\+utils.\+today (\begin{DoxyParamCaption}\item[{}]{tzinfo = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a :py:class:`datetime` representing the current day at midnight
+
+:param tzinfo:
+    The time zone to attach (also used to determine the current day).
+
+:return:
+    A :py:class:`datetime.datetime` object representing the current day
+    at midnight.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacedateutil_1_1utils_a6cae45aff4256b0744d058258dc3863a}\label{namespacedateutil_1_1utils_a6cae45aff4256b0744d058258dc3863a}} 
+\index{dateutil\+::utils@{dateutil\+::utils}!within\+\_\+delta@{within\+\_\+delta}}
+\index{within\+\_\+delta@{within\+\_\+delta}!dateutil\+::utils@{dateutil\+::utils}}
+\subsubsection{\texorpdfstring{within\+\_\+delta()}{within\_delta()}}
+{\footnotesize\ttfamily def dateutil.\+utils.\+within\+\_\+delta (\begin{DoxyParamCaption}\item[{}]{dt1,  }\item[{}]{dt2,  }\item[{}]{delta }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Useful for comparing two datetimes that may have a negligible difference
+to be considered equal.
+\end{DoxyVerb}
+ 

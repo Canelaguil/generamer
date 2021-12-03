@@ -1,0 +1,62 @@
+\hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__argparse}{}\section{numpy.\+core.\+tests.\+test\+\_\+argparse Namespace Reference}
+\label{namespacenumpy_1_1core_1_1tests_1_1test__argparse}\index{numpy.\+core.\+tests.\+test\+\_\+argparse@{numpy.\+core.\+tests.\+test\+\_\+argparse}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1tests_1_1test__argparse_acfb301729719f948aea01b2b016cfa4d}{test\+\_\+invalid\+\_\+integers} ()
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1tests_1_1test__argparse_a6492e4961765f3c793ea633df0e77b44}{test\+\_\+missing\+\_\+arguments} ()
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1tests_1_1test__argparse_aa2abf4273e7876b243cd06fe8fb8699b}{test\+\_\+too\+\_\+many\+\_\+positional} ()
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1tests_1_1test__argparse_a3c64c4cc920e85fbfc50f80237f91cb6}{test\+\_\+multiple\+\_\+values} ()
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1tests_1_1test__argparse_a07522f4f20cb4397b963a55edcb6f28c}{test\+\_\+string\+\_\+fallbacks} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Tests for the private NumPy argument parsing functionality.
+They mainly exists to ensure good test coverage without having to try the
+weirder cases on actual numpy functions but test them in one place.
+
+The test function is defined in C to be equivalent to (errors may not always
+match exactly, and could be adjusted):
+
+def func(arg1, /, arg2, *, arg3):
+    i = integer(arg1)  # reproducing the 'i' parsing in Python.
+    return None
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__argparse_acfb301729719f948aea01b2b016cfa4d}\label{namespacenumpy_1_1core_1_1tests_1_1test__argparse_acfb301729719f948aea01b2b016cfa4d}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+argparse@{numpy\+::core\+::tests\+::test\+\_\+argparse}!test\+\_\+invalid\+\_\+integers@{test\+\_\+invalid\+\_\+integers}}
+\index{test\+\_\+invalid\+\_\+integers@{test\+\_\+invalid\+\_\+integers}!numpy\+::core\+::tests\+::test\+\_\+argparse@{numpy\+::core\+::tests\+::test\+\_\+argparse}}
+\subsubsection{\texorpdfstring{test\+\_\+invalid\+\_\+integers()}{test\_invalid\_integers()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+argparse.\+test\+\_\+invalid\+\_\+integers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__argparse_a6492e4961765f3c793ea633df0e77b44}\label{namespacenumpy_1_1core_1_1tests_1_1test__argparse_a6492e4961765f3c793ea633df0e77b44}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+argparse@{numpy\+::core\+::tests\+::test\+\_\+argparse}!test\+\_\+missing\+\_\+arguments@{test\+\_\+missing\+\_\+arguments}}
+\index{test\+\_\+missing\+\_\+arguments@{test\+\_\+missing\+\_\+arguments}!numpy\+::core\+::tests\+::test\+\_\+argparse@{numpy\+::core\+::tests\+::test\+\_\+argparse}}
+\subsubsection{\texorpdfstring{test\+\_\+missing\+\_\+arguments()}{test\_missing\_arguments()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+argparse.\+test\+\_\+missing\+\_\+arguments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__argparse_a3c64c4cc920e85fbfc50f80237f91cb6}\label{namespacenumpy_1_1core_1_1tests_1_1test__argparse_a3c64c4cc920e85fbfc50f80237f91cb6}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+argparse@{numpy\+::core\+::tests\+::test\+\_\+argparse}!test\+\_\+multiple\+\_\+values@{test\+\_\+multiple\+\_\+values}}
+\index{test\+\_\+multiple\+\_\+values@{test\+\_\+multiple\+\_\+values}!numpy\+::core\+::tests\+::test\+\_\+argparse@{numpy\+::core\+::tests\+::test\+\_\+argparse}}
+\subsubsection{\texorpdfstring{test\+\_\+multiple\+\_\+values()}{test\_multiple\_values()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+argparse.\+test\+\_\+multiple\+\_\+values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__argparse_a07522f4f20cb4397b963a55edcb6f28c}\label{namespacenumpy_1_1core_1_1tests_1_1test__argparse_a07522f4f20cb4397b963a55edcb6f28c}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+argparse@{numpy\+::core\+::tests\+::test\+\_\+argparse}!test\+\_\+string\+\_\+fallbacks@{test\+\_\+string\+\_\+fallbacks}}
+\index{test\+\_\+string\+\_\+fallbacks@{test\+\_\+string\+\_\+fallbacks}!numpy\+::core\+::tests\+::test\+\_\+argparse@{numpy\+::core\+::tests\+::test\+\_\+argparse}}
+\subsubsection{\texorpdfstring{test\+\_\+string\+\_\+fallbacks()}{test\_string\_fallbacks()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+argparse.\+test\+\_\+string\+\_\+fallbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__argparse_aa2abf4273e7876b243cd06fe8fb8699b}\label{namespacenumpy_1_1core_1_1tests_1_1test__argparse_aa2abf4273e7876b243cd06fe8fb8699b}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+argparse@{numpy\+::core\+::tests\+::test\+\_\+argparse}!test\+\_\+too\+\_\+many\+\_\+positional@{test\+\_\+too\+\_\+many\+\_\+positional}}
+\index{test\+\_\+too\+\_\+many\+\_\+positional@{test\+\_\+too\+\_\+many\+\_\+positional}!numpy\+::core\+::tests\+::test\+\_\+argparse@{numpy\+::core\+::tests\+::test\+\_\+argparse}}
+\subsubsection{\texorpdfstring{test\+\_\+too\+\_\+many\+\_\+positional()}{test\_too\_many\_positional()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+argparse.\+test\+\_\+too\+\_\+many\+\_\+positional (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

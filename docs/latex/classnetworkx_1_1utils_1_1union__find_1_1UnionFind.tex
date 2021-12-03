@@ -1,0 +1,117 @@
+\hypertarget{classnetworkx_1_1utils_1_1union__find_1_1UnionFind}{}\section{networkx.\+utils.\+union\+\_\+find.\+Union\+Find Class Reference}
+\label{classnetworkx_1_1utils_1_1union__find_1_1UnionFind}\index{networkx.\+utils.\+union\+\_\+find.\+Union\+Find@{networkx.\+utils.\+union\+\_\+find.\+Union\+Find}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_add9e2eefbebb3c65b22d39637720807a}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, elements=None)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_a7b783446b2e8f931924ad4d776e22f0f}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, object)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_a8be12eb74fa70d6cd774aee62490af24}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_a8ded68db5c76fb2bd008e51156902ad3}{to\+\_\+sets} (self)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_ad112493d8588afcd5672fe5197028654}{union} (self, objects)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_afa0034f679c612996a25e1bd21eddf45}{parents}
+\item 
+\hyperlink{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_a981dfbf3404345c5c80b3d36ba0807ab}{weights}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Union-find data structure.
+
+Each unionFind instance X maintains a family of disjoint sets of
+hashable objects, supporting the following two methods:
+
+- X[item] returns a name for the set containing the given item.
+  Each set is named by an arbitrarily-chosen one of its members; as
+  long as the set remains unchanged it will keep the same name. If
+  the item is not yet part of a set in X, a new singleton set is
+  created for it.
+
+- X.union(item1, item2, ...) merges the sets containing each item
+  into a single larger set.  If any item is not yet part of a set
+  in X, it is added to X as one of the members of the merged set.
+
+  Union-find data structure. Based on Josiah Carlson's code,
+  https://code.activestate.com/recipes/215912/
+  with significant additional changes by D. Eppstein.
+  http://www.ics.uci.edu/~eppstein/PADS/UnionFind.py\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_add9e2eefbebb3c65b22d39637720807a}\label{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_add9e2eefbebb3c65b22d39637720807a}} 
+\index{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+union\+\_\+find.\+Union\+Find.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{elements = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new empty union-find structure.
+
+If *elements* is an iterable, this structure will be initialized
+with the discrete partition on the given set of elements.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_a7b783446b2e8f931924ad4d776e22f0f}\label{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_a7b783446b2e8f931924ad4d776e22f0f}} 
+\index{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+union\+\_\+find.\+Union\+Find.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{object }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find and return the name of the set containing the object.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_a8be12eb74fa70d6cd774aee62490af24}\label{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_a8be12eb74fa70d6cd774aee62490af24}} 
+\index{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+union\+\_\+find.\+Union\+Find.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Iterate through all items ever found or unioned by this structure.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_a8ded68db5c76fb2bd008e51156902ad3}\label{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_a8ded68db5c76fb2bd008e51156902ad3}} 
+\index{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}!to\+\_\+sets@{to\+\_\+sets}}
+\index{to\+\_\+sets@{to\+\_\+sets}!networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}}
+\subsubsection{\texorpdfstring{to\+\_\+sets()}{to\_sets()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+union\+\_\+find.\+Union\+Find.\+to\+\_\+sets (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Iterates over the sets stored in this structure.
+
+For example::
+
+    >>> partition = UnionFind("xyz")
+    >>> sorted(map(sorted, partition.to_sets()))
+    [['x'], ['y'], ['z']]
+    >>> partition.union("x", "y")
+    >>> sorted(map(sorted, partition.to_sets()))
+    [['x', 'y'], ['z']]\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_ad112493d8588afcd5672fe5197028654}\label{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_ad112493d8588afcd5672fe5197028654}} 
+\index{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}!union@{union}}
+\index{union@{union}!networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}}
+\subsubsection{\texorpdfstring{union()}{union()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+union\+\_\+find.\+Union\+Find.\+union (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{objects }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the sets containing the objects and merge them all.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_afa0034f679c612996a25e1bd21eddf45}\label{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_afa0034f679c612996a25e1bd21eddf45}} 
+\index{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}!parents@{parents}}
+\index{parents@{parents}!networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}}
+\subsubsection{\texorpdfstring{parents}{parents}}
+{\footnotesize\ttfamily networkx.\+utils.\+union\+\_\+find.\+Union\+Find.\+parents}
+
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_a981dfbf3404345c5c80b3d36ba0807ab}\label{classnetworkx_1_1utils_1_1union__find_1_1UnionFind_a981dfbf3404345c5c80b3d36ba0807ab}} 
+\index{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}!weights@{weights}}
+\index{weights@{weights}!networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find@{networkx\+::utils\+::union\+\_\+find\+::\+Union\+Find}}
+\subsubsection{\texorpdfstring{weights}{weights}}
+{\footnotesize\ttfamily networkx.\+utils.\+union\+\_\+find.\+Union\+Find.\+weights}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/utils/\hyperlink{union__find_8py}{union\+\_\+find.\+py}\end{DoxyCompactItemize}

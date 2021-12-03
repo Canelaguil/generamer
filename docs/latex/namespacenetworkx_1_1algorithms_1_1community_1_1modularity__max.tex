@@ -1,0 +1,133 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1community_1_1modularity__max}{}\section{networkx.\+algorithms.\+community.\+modularity\+\_\+max Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1community_1_1modularity__max}\index{networkx.\+algorithms.\+community.\+modularity\+\_\+max@{networkx.\+algorithms.\+community.\+modularity\+\_\+max}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1modularity__max_af1cac97e7c364eefa26bb23e56f2f10e}{greedy\+\_\+modularity\+\_\+communities} (G, weight=None, resolution=1, n\+\_\+communities=1)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1modularity__max_a60686893613d98cae2604ab2fb51d6f5}{naive\+\_\+greedy\+\_\+modularity\+\_\+communities} (G, resolution=1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions for detecting communities based on modularity.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1community_1_1modularity__max_af1cac97e7c364eefa26bb23e56f2f10e}\label{namespacenetworkx_1_1algorithms_1_1community_1_1modularity__max_af1cac97e7c364eefa26bb23e56f2f10e}} 
+\index{networkx\+::algorithms\+::community\+::modularity\+\_\+max@{networkx\+::algorithms\+::community\+::modularity\+\_\+max}!greedy\+\_\+modularity\+\_\+communities@{greedy\+\_\+modularity\+\_\+communities}}
+\index{greedy\+\_\+modularity\+\_\+communities@{greedy\+\_\+modularity\+\_\+communities}!networkx\+::algorithms\+::community\+::modularity\+\_\+max@{networkx\+::algorithms\+::community\+::modularity\+\_\+max}}
+\subsubsection{\texorpdfstring{greedy\+\_\+modularity\+\_\+communities()}{greedy\_modularity\_communities()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+community.\+modularity\+\_\+max.\+greedy\+\_\+modularity\+\_\+communities (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{weight = {\ttfamily None},  }\item[{}]{resolution = {\ttfamily 1},  }\item[{}]{n\+\_\+communities = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find communities in G using greedy modularity maximization.
+
+This function uses Clauset-Newman-Moore greedy modularity maximization [2]_.
+
+Greedy modularity maximization begins with each node in its own community
+and joins the pair of communities that most increases modularity until no
+such pair exists or until number of communities `n_communities` is reached.
+
+This function maximizes the generalized modularity, where `resolution`
+is the resolution parameter, often expressed as $\gamma$.
+See :func:`~networkx.algorithms.community.quality.modularity`.
+
+Parameters
+----------
+G : NetworkX graph
+
+weight : string or None, optional (default=None)
+    The name of an edge attribute that holds the numerical value used
+    as a weight.  If None, then each edge has weight 1.
+    The degree is the sum of the edge weights adjacent to the node.
+
+resolution : float (default=1)
+    If resolution is less than 1, modularity favors larger communities.
+    Greater than 1 favors smaller communities.
+
+n_communities: int
+    Desired number of communities: the community merging process is
+    terminated once this number of communities is reached, or until
+    modularity can not be further increased. Must be between 1 and the
+    total number of nodes in `G`. Default is ``1``, meaning the community
+    merging process continues until all nodes are in the same community
+    or until the best community structure is found.
+
+Returns
+-------
+partition: list
+    A list of frozensets of nodes, one for each community.
+    Sorted by length with largest communities first.
+
+Examples
+--------
+>>> from networkx.algorithms.community import greedy_modularity_communities
+>>> G = nx.karate_club_graph()
+>>> c = greedy_modularity_communities(G)
+>>> sorted(c[0])
+[8, 14, 15, 18, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
+
+See Also
+--------
+modularity
+
+References
+----------
+.. [1] Newman, M. E. J. "Networks: An Introduction", page 224
+   Oxford University Press 2011.
+.. [2] Clauset, A., Newman, M. E., & Moore, C.
+   "Finding community structure in very large networks."
+   Physical Review E 70(6), 2004.
+.. [3] Reichardt and Bornholdt "Statistical Mechanics of Community
+   Detection" Phys. Rev. E74, 2006.
+.. [4] Newman, M. E. J."Analysis of weighted networks"
+   Physical Review E 70(5 Pt 2):056131, 2004.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1community_1_1modularity__max_a60686893613d98cae2604ab2fb51d6f5}\label{namespacenetworkx_1_1algorithms_1_1community_1_1modularity__max_a60686893613d98cae2604ab2fb51d6f5}} 
+\index{networkx\+::algorithms\+::community\+::modularity\+\_\+max@{networkx\+::algorithms\+::community\+::modularity\+\_\+max}!naive\+\_\+greedy\+\_\+modularity\+\_\+communities@{naive\+\_\+greedy\+\_\+modularity\+\_\+communities}}
+\index{naive\+\_\+greedy\+\_\+modularity\+\_\+communities@{naive\+\_\+greedy\+\_\+modularity\+\_\+communities}!networkx\+::algorithms\+::community\+::modularity\+\_\+max@{networkx\+::algorithms\+::community\+::modularity\+\_\+max}}
+\subsubsection{\texorpdfstring{naive\+\_\+greedy\+\_\+modularity\+\_\+communities()}{naive\_greedy\_modularity\_communities()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+community.\+modularity\+\_\+max.\+naive\+\_\+greedy\+\_\+modularity\+\_\+communities (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{resolution = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find communities in G using greedy modularity maximization.
+
+This implementation is O(n^4), much slower than alternatives, but it is
+provided as an easy-to-understand reference implementation.
+
+Greedy modularity maximization begins with each node in its own community
+and joins the pair of communities that most increases modularity until no
+such pair exists.
+
+This function maximizes the generalized modularity, where `resolution`
+is the resolution parameter, often expressed as $\gamma$.
+See :func:`~networkx.algorithms.community.quality.modularity`.
+
+Parameters
+----------
+G : NetworkX graph
+
+resolution : float (default=1)
+    If resolution is less than 1, modularity favors larger communities.
+    Greater than 1 favors smaller communities.
+
+Returns
+-------
+list
+    A list of sets of nodes, one for each community.
+    Sorted by length with largest communities first.
+
+Examples
+--------
+>>> from networkx.algorithms.community import \
+... naive_greedy_modularity_communities
+>>> G = nx.karate_club_graph()
+>>> c = naive_greedy_modularity_communities(G)
+>>> sorted(c[0])
+[8, 14, 15, 18, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
+
+See Also
+--------
+greedy_modularity_communities
+modularity
+\end{DoxyVerb}
+ 

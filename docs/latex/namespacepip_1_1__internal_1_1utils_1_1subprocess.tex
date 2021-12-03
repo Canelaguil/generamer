@@ -1,0 +1,106 @@
+\hypertarget{namespacepip_1_1__internal_1_1utils_1_1subprocess}{}\section{pip.\+\_\+internal.\+utils.\+subprocess Namespace Reference}
+\label{namespacepip_1_1__internal_1_1utils_1_1subprocess}\index{pip.\+\_\+internal.\+utils.\+subprocess@{pip.\+\_\+internal.\+utils.\+subprocess}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1subprocess_a315498638ac5b88744748fa91671c17a}{make\+\_\+command} (args)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1subprocess_a555d52c519beee42615b9db004f18d59}{format\+\_\+command\+\_\+args} (args)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1subprocess_a550dccfe24824c5345f989cdd92d8b37}{reveal\+\_\+command\+\_\+args} (args)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1subprocess_a69e159aa9db850860bed4f4a64da8598}{make\+\_\+subprocess\+\_\+output\+\_\+error} (cmd\+\_\+args, cwd, lines, exit\+\_\+status)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1subprocess_abba62bba85561b170942cc705f7a325a}{call\+\_\+subprocess} (cmd, show\+\_\+stdout=False, cwd=None, on\+\_\+returncode=\char`\"{}raise\char`\"{}, extra\+\_\+ok\+\_\+returncodes=None, command\+\_\+desc=None, extra\+\_\+environ=None, unset\+\_\+environ=None, spinner=None, log\+\_\+failed\+\_\+cmd=True, stdout\+\_\+only=False)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1subprocess_a1a8d53bdd89463ba5941dfb10aaf153b}{runner\+\_\+with\+\_\+spinner\+\_\+message} (message)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1utils_1_1subprocess_aa5735a299d9c96782540b9e5d56361f2}{Command\+Args}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1utils_1_1subprocess_af7549782f1cefcfe4c4a53bfdfa761c7}{L\+O\+G\+\_\+\+D\+I\+V\+I\+D\+ER}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1subprocess_abba62bba85561b170942cc705f7a325a}\label{namespacepip_1_1__internal_1_1utils_1_1subprocess_abba62bba85561b170942cc705f7a325a}} 
+\index{pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}!call\+\_\+subprocess@{call\+\_\+subprocess}}
+\index{call\+\_\+subprocess@{call\+\_\+subprocess}!pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}}
+\subsubsection{\texorpdfstring{call\+\_\+subprocess()}{call\_subprocess()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+subprocess.\+call\+\_\+subprocess (\begin{DoxyParamCaption}\item[{}]{cmd,  }\item[{}]{show\+\_\+stdout = {\ttfamily False},  }\item[{}]{cwd = {\ttfamily None},  }\item[{}]{on\+\_\+returncode = {\ttfamily \char`\"{}raise\char`\"{}},  }\item[{}]{extra\+\_\+ok\+\_\+returncodes = {\ttfamily None},  }\item[{}]{command\+\_\+desc = {\ttfamily None},  }\item[{}]{extra\+\_\+environ = {\ttfamily None},  }\item[{}]{unset\+\_\+environ = {\ttfamily None},  }\item[{}]{spinner = {\ttfamily None},  }\item[{}]{log\+\_\+failed\+\_\+cmd = {\ttfamily True},  }\item[{}]{stdout\+\_\+only = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Args:
+  show_stdout: if true, use INFO to log the subprocess's stderr and
+    stdout streams.  Otherwise, use DEBUG.  Defaults to False.
+  extra_ok_returncodes: an iterable of integer return codes that are
+    acceptable, in addition to 0. Defaults to None, which means [].
+  unset_environ: an iterable of environment variable names to unset
+    prior to calling subprocess.Popen().
+  log_failed_cmd: if false, failed commands are not logged, only raised.
+  stdout_only: if true, return only stdout, else return both. When true,
+    logging of both stdout and stderr occurs when the subprocess has
+    terminated, else logging occurs as subprocess output is produced.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1subprocess_a555d52c519beee42615b9db004f18d59}\label{namespacepip_1_1__internal_1_1utils_1_1subprocess_a555d52c519beee42615b9db004f18d59}} 
+\index{pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}!format\+\_\+command\+\_\+args@{format\+\_\+command\+\_\+args}}
+\index{format\+\_\+command\+\_\+args@{format\+\_\+command\+\_\+args}!pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}}
+\subsubsection{\texorpdfstring{format\+\_\+command\+\_\+args()}{format\_command\_args()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+subprocess.\+format\+\_\+command\+\_\+args (\begin{DoxyParamCaption}\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format command arguments for display.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1subprocess_a315498638ac5b88744748fa91671c17a}\label{namespacepip_1_1__internal_1_1utils_1_1subprocess_a315498638ac5b88744748fa91671c17a}} 
+\index{pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}!make\+\_\+command@{make\+\_\+command}}
+\index{make\+\_\+command@{make\+\_\+command}!pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}}
+\subsubsection{\texorpdfstring{make\+\_\+command()}{make\_command()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+subprocess.\+make\+\_\+command (\begin{DoxyParamCaption}\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a CommandArgs object.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1subprocess_a69e159aa9db850860bed4f4a64da8598}\label{namespacepip_1_1__internal_1_1utils_1_1subprocess_a69e159aa9db850860bed4f4a64da8598}} 
+\index{pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}!make\+\_\+subprocess\+\_\+output\+\_\+error@{make\+\_\+subprocess\+\_\+output\+\_\+error}}
+\index{make\+\_\+subprocess\+\_\+output\+\_\+error@{make\+\_\+subprocess\+\_\+output\+\_\+error}!pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}}
+\subsubsection{\texorpdfstring{make\+\_\+subprocess\+\_\+output\+\_\+error()}{make\_subprocess\_output\_error()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+subprocess.\+make\+\_\+subprocess\+\_\+output\+\_\+error (\begin{DoxyParamCaption}\item[{}]{cmd\+\_\+args,  }\item[{}]{cwd,  }\item[{}]{lines,  }\item[{}]{exit\+\_\+status }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create and return the error message to use to log a subprocess error
+with command output.
+
+:param lines: A list of lines, each ending with a newline.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1subprocess_a550dccfe24824c5345f989cdd92d8b37}\label{namespacepip_1_1__internal_1_1utils_1_1subprocess_a550dccfe24824c5345f989cdd92d8b37}} 
+\index{pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}!reveal\+\_\+command\+\_\+args@{reveal\+\_\+command\+\_\+args}}
+\index{reveal\+\_\+command\+\_\+args@{reveal\+\_\+command\+\_\+args}!pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}}
+\subsubsection{\texorpdfstring{reveal\+\_\+command\+\_\+args()}{reveal\_command\_args()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+subprocess.\+reveal\+\_\+command\+\_\+args (\begin{DoxyParamCaption}\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the arguments in their raw, unredacted form.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1subprocess_a1a8d53bdd89463ba5941dfb10aaf153b}\label{namespacepip_1_1__internal_1_1utils_1_1subprocess_a1a8d53bdd89463ba5941dfb10aaf153b}} 
+\index{pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}!runner\+\_\+with\+\_\+spinner\+\_\+message@{runner\+\_\+with\+\_\+spinner\+\_\+message}}
+\index{runner\+\_\+with\+\_\+spinner\+\_\+message@{runner\+\_\+with\+\_\+spinner\+\_\+message}!pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}}
+\subsubsection{\texorpdfstring{runner\+\_\+with\+\_\+spinner\+\_\+message()}{runner\_with\_spinner\_message()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+subprocess.\+runner\+\_\+with\+\_\+spinner\+\_\+message (\begin{DoxyParamCaption}\item[{}]{message }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Provide a subprocess_runner that shows a spinner message.
+
+Intended for use with for pep517's Pep517HookCaller. Thus, the runner has
+an API that matches what's expected by Pep517HookCaller.subprocess_runner.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1subprocess_aa5735a299d9c96782540b9e5d56361f2}\label{namespacepip_1_1__internal_1_1utils_1_1subprocess_aa5735a299d9c96782540b9e5d56361f2}} 
+\index{pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}!Command\+Args@{Command\+Args}}
+\index{Command\+Args@{Command\+Args}!pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}}
+\subsubsection{\texorpdfstring{Command\+Args}{CommandArgs}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+subprocess.\+Command\+Args}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1subprocess_af7549782f1cefcfe4c4a53bfdfa761c7}\label{namespacepip_1_1__internal_1_1utils_1_1subprocess_af7549782f1cefcfe4c4a53bfdfa761c7}} 
+\index{pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}!L\+O\+G\+\_\+\+D\+I\+V\+I\+D\+ER@{L\+O\+G\+\_\+\+D\+I\+V\+I\+D\+ER}}
+\index{L\+O\+G\+\_\+\+D\+I\+V\+I\+D\+ER@{L\+O\+G\+\_\+\+D\+I\+V\+I\+D\+ER}!pip\+::\+\_\+internal\+::utils\+::subprocess@{pip\+::\+\_\+internal\+::utils\+::subprocess}}
+\subsubsection{\texorpdfstring{L\+O\+G\+\_\+\+D\+I\+V\+I\+D\+ER}{LOG\_DIVIDER}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+subprocess.\+L\+O\+G\+\_\+\+D\+I\+V\+I\+D\+ER}
+

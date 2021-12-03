@@ -1,0 +1,170 @@
+\hypertarget{namespacenumpy_1_1ma_1_1mrecords}{}\section{numpy.\+ma.\+mrecords Namespace Reference}
+\label{namespacenumpy_1_1ma_1_1mrecords}\index{numpy.\+ma.\+mrecords@{numpy.\+ma.\+mrecords}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnumpy_1_1ma_1_1mrecords_1_1MaskedRecords}{Masked\+Records}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1mrecords_a7a6d16a1971e40fd2fd2a6c6cfe4b457}{fromarrays} (arraylist, dtype=None, shape=None, formats=None, names=None, titles=None, aligned=False, byteorder=None, fill\+\_\+value=None)
+\begin{DoxyCompactList}\small\item\em Constructors \#. \end{DoxyCompactList}\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1mrecords_a359f017d2aa568063b7f9c6adf5f4d68}{fromrecords} (reclist, dtype=None, shape=None, formats=None, names=None, titles=None, aligned=False, byteorder=None, fill\+\_\+value=None, mask=nomask)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1mrecords_a6aafb839783f26cf38717f5100938e44}{openfile} (fname)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1mrecords_a839888b6e8c0caf880133c2b18f257ca}{fromtextfile} (fname, delimitor=None, commentchar=\textquotesingle{}\#\textquotesingle{}, missingchar=\textquotesingle{}\textquotesingle{}, varnames=None, vartypes=None)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1mrecords_aab8c28cddff89a1854da159f62102747}{addfield} (mrecord, newfield, newfieldname=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1ma_1_1mrecords_ad8d0e24a00d2315215ca374495ac7346}{reserved\+\_\+fields}
+\item 
+\hyperlink{namespacenumpy_1_1ma_1_1mrecords_a208e716532e0db541eb2398f5ab12135}{mrecarray}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}:mod:`numpy.ma..mrecords`
+
+Defines the equivalent of :class:`numpy.recarrays` for masked arrays,
+where fields can be accessed as attributes.
+Note that :class:`numpy.ma.MaskedArray` already supports structured datatypes
+and the masking of individual fields.
+
+.. moduleauthor:: Pierre Gerard-Marchant\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1ma_1_1mrecords_aab8c28cddff89a1854da159f62102747}\label{namespacenumpy_1_1ma_1_1mrecords_aab8c28cddff89a1854da159f62102747}} 
+\index{numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}!addfield@{addfield}}
+\index{addfield@{addfield}!numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}}
+\subsubsection{\texorpdfstring{addfield()}{addfield()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+mrecords.\+addfield (\begin{DoxyParamCaption}\item[{}]{mrecord,  }\item[{}]{newfield,  }\item[{}]{newfieldname = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a new field to the masked record array
+
+Uses `newfield` as data and `newfieldname` as name. If `newfieldname`
+is None, the new field name is set to 'fi', where `i` is the number of
+existing fields.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1mrecords_a7a6d16a1971e40fd2fd2a6c6cfe4b457}\label{namespacenumpy_1_1ma_1_1mrecords_a7a6d16a1971e40fd2fd2a6c6cfe4b457}} 
+\index{numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}!fromarrays@{fromarrays}}
+\index{fromarrays@{fromarrays}!numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}}
+\subsubsection{\texorpdfstring{fromarrays()}{fromarrays()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+mrecords.\+fromarrays (\begin{DoxyParamCaption}\item[{}]{arraylist,  }\item[{}]{dtype = {\ttfamily None},  }\item[{}]{shape = {\ttfamily None},  }\item[{}]{formats = {\ttfamily None},  }\item[{}]{names = {\ttfamily None},  }\item[{}]{titles = {\ttfamily None},  }\item[{}]{aligned = {\ttfamily False},  }\item[{}]{byteorder = {\ttfamily None},  }\item[{}]{fill\+\_\+value = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+Constructors \#. 
+
+\begin{DoxyVerb}Creates a mrecarray from a (flat) list of masked arrays.
+
+Parameters
+----------
+arraylist : sequence
+    A list of (masked) arrays. Each element of the sequence is first converted
+    to a masked array if needed. If a 2D array is passed as argument, it is
+    processed line by line
+dtype : {None, dtype}, optional
+    Data type descriptor.
+shape : {None, integer}, optional
+    Number of records. If None, shape is defined from the shape of the
+    first array in the list.
+formats : {None, sequence}, optional
+    Sequence of formats for each individual field. If None, the formats will
+    be autodetected by inspecting the fields and selecting the highest dtype
+    possible.
+names : {None, sequence}, optional
+    Sequence of the names of each field.
+fill_value : {None, sequence}, optional
+    Sequence of data to be used as filling values.
+
+Notes
+-----
+Lists of tuples should be preferred over lists of lists for faster processing.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1mrecords_a359f017d2aa568063b7f9c6adf5f4d68}\label{namespacenumpy_1_1ma_1_1mrecords_a359f017d2aa568063b7f9c6adf5f4d68}} 
+\index{numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}!fromrecords@{fromrecords}}
+\index{fromrecords@{fromrecords}!numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}}
+\subsubsection{\texorpdfstring{fromrecords()}{fromrecords()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+mrecords.\+fromrecords (\begin{DoxyParamCaption}\item[{}]{reclist,  }\item[{}]{dtype = {\ttfamily None},  }\item[{}]{shape = {\ttfamily None},  }\item[{}]{formats = {\ttfamily None},  }\item[{}]{names = {\ttfamily None},  }\item[{}]{titles = {\ttfamily None},  }\item[{}]{aligned = {\ttfamily False},  }\item[{}]{byteorder = {\ttfamily None},  }\item[{}]{fill\+\_\+value = {\ttfamily None},  }\item[{}]{mask = {\ttfamily nomask} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Creates a MaskedRecords from a list of records.
+
+Parameters
+----------
+reclist : sequence
+    A list of records. Each element of the sequence is first converted
+    to a masked array if needed. If a 2D array is passed as argument, it is
+    processed line by line
+dtype : {None, dtype}, optional
+    Data type descriptor.
+shape : {None,int}, optional
+    Number of records. If None, ``shape`` is defined from the shape of the
+    first array in the list.
+formats : {None, sequence}, optional
+    Sequence of formats for each individual field. If None, the formats will
+    be autodetected by inspecting the fields and selecting the highest dtype
+    possible.
+names : {None, sequence}, optional
+    Sequence of the names of each field.
+fill_value : {None, sequence}, optional
+    Sequence of data to be used as filling values.
+mask : {nomask, sequence}, optional.
+    External mask to apply on the data.
+
+Notes
+-----
+Lists of tuples should be preferred over lists of lists for faster processing.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1mrecords_a839888b6e8c0caf880133c2b18f257ca}\label{namespacenumpy_1_1ma_1_1mrecords_a839888b6e8c0caf880133c2b18f257ca}} 
+\index{numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}!fromtextfile@{fromtextfile}}
+\index{fromtextfile@{fromtextfile}!numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}}
+\subsubsection{\texorpdfstring{fromtextfile()}{fromtextfile()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+mrecords.\+fromtextfile (\begin{DoxyParamCaption}\item[{}]{fname,  }\item[{}]{delimitor = {\ttfamily None},  }\item[{}]{commentchar = {\ttfamily \textquotesingle{}\#\textquotesingle{}},  }\item[{}]{missingchar = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{varnames = {\ttfamily None},  }\item[{}]{vartypes = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Creates a mrecarray from data stored in the file `filename`.
+
+Parameters
+----------
+fname : {file name/handle}
+    Handle of an opened file.
+delimitor : {None, string}, optional
+    Alphanumeric character used to separate columns in the file.
+    If None, any (group of) white spacestring(s) will be used.
+commentchar : {'#', string}, optional
+    Alphanumeric character used to mark the start of a comment.
+missingchar : {'', string}, optional
+    String indicating missing data, and used to create the masks.
+varnames : {None, sequence}, optional
+    Sequence of the variable names. If None, a list will be created from
+    the first non empty line of the file.
+vartypes : {None, sequence}, optional
+    Sequence of the variables dtypes. If None, it will be estimated from
+    the first non-commented line.
+
+
+Ultra simple: the varnames are in the header, one line\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1mrecords_a6aafb839783f26cf38717f5100938e44}\label{namespacenumpy_1_1ma_1_1mrecords_a6aafb839783f26cf38717f5100938e44}} 
+\index{numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}!openfile@{openfile}}
+\index{openfile@{openfile}!numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}}
+\subsubsection{\texorpdfstring{openfile()}{openfile()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+mrecords.\+openfile (\begin{DoxyParamCaption}\item[{}]{fname }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Opens the file handle of file `fname`.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1ma_1_1mrecords_a208e716532e0db541eb2398f5ab12135}\label{namespacenumpy_1_1ma_1_1mrecords_a208e716532e0db541eb2398f5ab12135}} 
+\index{numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}!mrecarray@{mrecarray}}
+\index{mrecarray@{mrecarray}!numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}}
+\subsubsection{\texorpdfstring{mrecarray}{mrecarray}}
+{\footnotesize\ttfamily numpy.\+ma.\+mrecords.\+mrecarray}
+
+\mbox{\Hypertarget{namespacenumpy_1_1ma_1_1mrecords_ad8d0e24a00d2315215ca374495ac7346}\label{namespacenumpy_1_1ma_1_1mrecords_ad8d0e24a00d2315215ca374495ac7346}} 
+\index{numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}!reserved\+\_\+fields@{reserved\+\_\+fields}}
+\index{reserved\+\_\+fields@{reserved\+\_\+fields}!numpy\+::ma\+::mrecords@{numpy\+::ma\+::mrecords}}
+\subsubsection{\texorpdfstring{reserved\+\_\+fields}{reserved\_fields}}
+{\footnotesize\ttfamily numpy.\+ma.\+mrecords.\+reserved\+\_\+fields}
+

@@ -1,0 +1,216 @@
+\hypertarget{namespacenetworkx_1_1drawing_1_1nx__pydot}{}\section{networkx.\+drawing.\+nx\+\_\+pydot Namespace Reference}
+\label{namespacenetworkx_1_1drawing_1_1nx__pydot}\index{networkx.\+drawing.\+nx\+\_\+pydot@{networkx.\+drawing.\+nx\+\_\+pydot}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pydot_a857e86b9a44cfa838d5a32dfd8afb9fd}{write\+\_\+dot} (G, path)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pydot_a6522bbd2c34cdfa0497f7c21f33eaeca}{read\+\_\+dot} (path)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pydot_a3384bfb7e6bb5ebb35a2dae9ecf97994}{from\+\_\+pydot} (P)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pydot_a4241b8bd9ba6c83dda07fed169a1ef6e}{to\+\_\+pydot} (N)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pydot_ad4e6130de869e7cfbccbc1bbe9bc72e1}{graphviz\+\_\+layout} (G, prog=\char`\"{}neato\char`\"{}, root=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1drawing_1_1nx__pydot_a3f26b8104d7ff44aefb4f8c47126c9e8}{pydot\+\_\+layout} (G, prog=\char`\"{}neato\char`\"{}, root=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1drawing_1_1nx__pydot_a492e7db939cfb2e188cadd1e7c79bb2b}{mode}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}*****
+Pydot
+*****
+
+Import and export NetworkX graphs in Graphviz dot format using pydot.
+
+Either this module or nx_agraph can be used to interface with graphviz.
+
+Examples
+--------
+>>> G = nx.complete_graph(5)
+>>> PG = nx.nx_pydot.to_pydot(G)
+>>> H = nx.nx_pydot.from_pydot(PG)
+
+See Also
+--------
+ - pydot:         https://github.com/erocarrera/pydot
+ - Graphviz:      https://www.graphviz.org
+ - DOT Language:  http://www.graphviz.org/doc/info/lang.html
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pydot_a3384bfb7e6bb5ebb35a2dae9ecf97994}\label{namespacenetworkx_1_1drawing_1_1nx__pydot_a3384bfb7e6bb5ebb35a2dae9ecf97994}} 
+\index{networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}!from\+\_\+pydot@{from\+\_\+pydot}}
+\index{from\+\_\+pydot@{from\+\_\+pydot}!networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}}
+\subsubsection{\texorpdfstring{from\+\_\+pydot()}{from\_pydot()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pydot.\+from\+\_\+pydot (\begin{DoxyParamCaption}\item[{}]{P }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a NetworkX graph from a Pydot graph.
+
+Parameters
+----------
+P : Pydot graph
+  A graph created with Pydot
+
+Returns
+-------
+G : NetworkX multigraph
+    A MultiGraph or MultiDiGraph.
+
+Examples
+--------
+>>> K5 = nx.complete_graph(5)
+>>> A = nx.nx_pydot.to_pydot(K5)
+>>> G = nx.nx_pydot.from_pydot(A)  # return MultiGraph
+
+# make a Graph instead of MultiGraph
+>>> G = nx.Graph(nx.nx_pydot.from_pydot(A))\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pydot_ad4e6130de869e7cfbccbc1bbe9bc72e1}\label{namespacenetworkx_1_1drawing_1_1nx__pydot_ad4e6130de869e7cfbccbc1bbe9bc72e1}} 
+\index{networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}!graphviz\+\_\+layout@{graphviz\+\_\+layout}}
+\index{graphviz\+\_\+layout@{graphviz\+\_\+layout}!networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}}
+\subsubsection{\texorpdfstring{graphviz\+\_\+layout()}{graphviz\_layout()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pydot.\+graphviz\+\_\+layout (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{prog = {\ttfamily \char`\"{}neato\char`\"{}},  }\item[{}]{root = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create node positions using Pydot and Graphviz.
+
+Returns a dictionary of positions keyed by node.
+
+Parameters
+----------
+G : NetworkX Graph
+    The graph for which the layout is computed.
+prog : string (default: 'neato')
+    The name of the GraphViz program to use for layout.
+    Options depend on GraphViz version but may include:
+    'dot', 'twopi', 'fdp', 'sfdp', 'circo'
+root : Node from G or None (default: None)
+    The node of G from which to start some layout algorithms.
+
+Returns
+-------
+  Dictionary of (x, y) positions keyed by node.
+
+Examples
+--------
+>>> G = nx.complete_graph(4)
+>>> pos = nx.nx_pydot.graphviz_layout(G)
+>>> pos = nx.nx_pydot.graphviz_layout(G, prog="dot")
+
+Notes
+-----
+This is a wrapper for pydot_layout.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pydot_a3f26b8104d7ff44aefb4f8c47126c9e8}\label{namespacenetworkx_1_1drawing_1_1nx__pydot_a3f26b8104d7ff44aefb4f8c47126c9e8}} 
+\index{networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}!pydot\+\_\+layout@{pydot\+\_\+layout}}
+\index{pydot\+\_\+layout@{pydot\+\_\+layout}!networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}}
+\subsubsection{\texorpdfstring{pydot\+\_\+layout()}{pydot\_layout()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pydot.\+pydot\+\_\+layout (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{prog = {\ttfamily \char`\"{}neato\char`\"{}},  }\item[{}]{root = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create node positions using :mod:`pydot` and Graphviz.
+
+Parameters
+----------
+G : Graph
+    NetworkX graph to be laid out.
+prog : string  (default: 'neato')
+    Name of the GraphViz command to use for layout.
+    Options depend on GraphViz version but may include:
+    'dot', 'twopi', 'fdp', 'sfdp', 'circo'
+root : Node from G or None (default: None)
+    The node of G from which to start some layout algorithms.
+
+Returns
+-------
+dict
+    Dictionary of positions keyed by node.
+
+Examples
+--------
+>>> G = nx.complete_graph(4)
+>>> pos = nx.nx_pydot.pydot_layout(G)
+>>> pos = nx.nx_pydot.pydot_layout(G, prog="dot")
+
+Notes
+-----
+If you use complex node objects, they may have the same string
+representation and GraphViz could treat them as the same node.
+The layout may assign both nodes a single location. See Issue #1568
+If this occurs in your case, consider relabeling the nodes just
+for the layout computation using something similar to::
+
+    H = nx.convert_node_labels_to_integers(G, label_attribute='node_label')
+    H_layout = nx.nx_pydot.pydot_layout(G, prog='dot')
+    G_layout = {H.nodes[n]['node_label']: p for n, p in H_layout.items()}\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pydot_a6522bbd2c34cdfa0497f7c21f33eaeca}\label{namespacenetworkx_1_1drawing_1_1nx__pydot_a6522bbd2c34cdfa0497f7c21f33eaeca}} 
+\index{networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}!read\+\_\+dot@{read\+\_\+dot}}
+\index{read\+\_\+dot@{read\+\_\+dot}!networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}}
+\subsubsection{\texorpdfstring{read\+\_\+dot()}{read\_dot()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pydot.\+read\+\_\+dot (\begin{DoxyParamCaption}\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a NetworkX :class:`MultiGraph` or :class:`MultiDiGraph` from the
+dot file with the passed path.
+
+If this file contains multiple graphs, only the first such graph is
+returned. All graphs _except_ the first are silently ignored.
+
+Parameters
+----------
+path : str or file
+    Filename or file handle.
+
+Returns
+-------
+G : MultiGraph or MultiDiGraph
+    A :class:`MultiGraph` or :class:`MultiDiGraph`.
+
+Notes
+-----
+Use `G = nx.Graph(read_dot(path))` to return a :class:`Graph` instead of a
+:class:`MultiGraph`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pydot_a4241b8bd9ba6c83dda07fed169a1ef6e}\label{namespacenetworkx_1_1drawing_1_1nx__pydot_a4241b8bd9ba6c83dda07fed169a1ef6e}} 
+\index{networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}!to\+\_\+pydot@{to\+\_\+pydot}}
+\index{to\+\_\+pydot@{to\+\_\+pydot}!networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}}
+\subsubsection{\texorpdfstring{to\+\_\+pydot()}{to\_pydot()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pydot.\+to\+\_\+pydot (\begin{DoxyParamCaption}\item[{}]{N }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a pydot graph from a NetworkX graph N.
+
+Parameters
+----------
+N : NetworkX graph
+  A graph created with NetworkX
+
+Examples
+--------
+>>> K5 = nx.complete_graph(5)
+>>> P = nx.nx_pydot.to_pydot(K5)
+
+Notes
+-----\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pydot_a857e86b9a44cfa838d5a32dfd8afb9fd}\label{namespacenetworkx_1_1drawing_1_1nx__pydot_a857e86b9a44cfa838d5a32dfd8afb9fd}} 
+\index{networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}!write\+\_\+dot@{write\+\_\+dot}}
+\index{write\+\_\+dot@{write\+\_\+dot}!networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}}
+\subsubsection{\texorpdfstring{write\+\_\+dot()}{write\_dot()}}
+{\footnotesize\ttfamily def networkx.\+drawing.\+nx\+\_\+pydot.\+write\+\_\+dot (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write NetworkX graph G to Graphviz dot format on path.
+
+Path can be a string or a file handle.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1drawing_1_1nx__pydot_a492e7db939cfb2e188cadd1e7c79bb2b}\label{namespacenetworkx_1_1drawing_1_1nx__pydot_a492e7db939cfb2e188cadd1e7c79bb2b}} 
+\index{networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}!mode@{mode}}
+\index{mode@{mode}!networkx\+::drawing\+::nx\+\_\+pydot@{networkx\+::drawing\+::nx\+\_\+pydot}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily networkx.\+drawing.\+nx\+\_\+pydot.\+mode}
+

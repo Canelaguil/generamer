@@ -1,0 +1,166 @@
+\hypertarget{classmatplotlib_1_1colors_1_1LinearSegmentedColormap}{}\section{matplotlib.\+colors.\+Linear\+Segmented\+Colormap Class Reference}
+\label{classmatplotlib_1_1colors_1_1LinearSegmentedColormap}\index{matplotlib.\+colors.\+Linear\+Segmented\+Colormap@{matplotlib.\+colors.\+Linear\+Segmented\+Colormap}}
+
+
+Inheritance diagram for matplotlib.\+colors.\+Linear\+Segmented\+Colormap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classmatplotlib_1_1colors_1_1LinearSegmentedColormap__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+colors.\+Linear\+Segmented\+Colormap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classmatplotlib_1_1colors_1_1LinearSegmentedColormap__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_ac4cce3cbb564402bb71c0dee4d78118a}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1colors_1_1Colormap_aa816ba9aebc8d8438ca791c82bb6198c}{name}, segmentdata, \hyperlink{classmatplotlib_1_1colors_1_1Colormap_a011f75e2d28856dd18ada18febb2bb26}{N}=256, gamma=1.\+0)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_a2f198e251d17bf78aa2d64d067bc50eb}{set\+\_\+gamma} (self, gamma)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_a0bebcf7401f97a02809b57eaf7d30c66}{reversed} (self, \hyperlink{classmatplotlib_1_1colors_1_1Colormap_aa816ba9aebc8d8438ca791c82bb6198c}{name}=None)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_abfffddd2eee0de3bdbd5f258536da399}{from\+\_\+list} (\hyperlink{classmatplotlib_1_1colors_1_1Colormap_aa816ba9aebc8d8438ca791c82bb6198c}{name}, colors, \hyperlink{classmatplotlib_1_1colors_1_1Colormap_a011f75e2d28856dd18ada18febb2bb26}{N}=256, gamma=1.\+0)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_a048b8576cc8ff2dc1e87b6ac6320eedb}{monochrome}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Colormap objects based on lookup tables using linear segments.
+
+The lookup table is generated using linear interpolation for each
+primary color, with the 0-1 domain divided into any number of
+segments.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_ac4cce3cbb564402bb71c0dee4d78118a}\label{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_ac4cce3cbb564402bb71c0dee4d78118a}} 
+\index{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap@{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap@{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Linear\+Segmented\+Colormap.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{segmentdata,  }\item[{}]{N = {\ttfamily 256},  }\item[{}]{gamma = {\ttfamily 1.0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create colormap from linear mapping segments
+
+segmentdata argument is a dictionary with a red, green and blue
+entries. Each entry should be a list of *x*, *y0*, *y1* tuples,
+forming rows in a table. Entries for alpha are optional.
+
+Example: suppose you want red to increase from 0 to 1 over
+the bottom half, green to do the same over the middle half,
+and blue over the top half.  Then you would use::
+
+    cdict = {'red':   [(0.0,  0.0, 0.0),
+               (0.5,  1.0, 1.0),
+               (1.0,  1.0, 1.0)],
+
+     'green': [(0.0,  0.0, 0.0),
+               (0.25, 0.0, 0.0),
+               (0.75, 1.0, 1.0),
+               (1.0,  1.0, 1.0)],
+
+     'blue':  [(0.0,  0.0, 0.0),
+               (0.5,  0.0, 0.0),
+               (1.0,  1.0, 1.0)]}
+
+Each row in the table for a given color is a sequence of
+*x*, *y0*, *y1* tuples.  In each sequence, *x* must increase
+monotonically from 0 to 1.  For any input value *z* falling
+between *x[i]* and *x[i+1]*, the output value of a given color
+will be linearly interpolated between *y1[i]* and *y0[i+1]*::
+
+    row i:   x  y0  y1
+           /
+          /
+    row i+1: x  y0  y1
+
+Hence y0 in the first row and y1 in the last row are never used.
+
+See Also
+--------
+LinearSegmentedColormap.from_list
+    Static method; factory function for generating a smoothly-varying
+    LinearSegmentedColormap.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_abfffddd2eee0de3bdbd5f258536da399}\label{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_abfffddd2eee0de3bdbd5f258536da399}} 
+\index{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap@{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap}!from\+\_\+list@{from\+\_\+list}}
+\index{from\+\_\+list@{from\+\_\+list}!matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap@{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap}}
+\subsubsection{\texorpdfstring{from\+\_\+list()}{from\_list()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Linear\+Segmented\+Colormap.\+from\+\_\+list (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{colors,  }\item[{}]{N = {\ttfamily 256},  }\item[{}]{gamma = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Create a `LinearSegmentedColormap` from a list of colors.
+
+Parameters
+----------
+name : str
+    The name of the colormap.
+colors : array-like of colors or array-like of (value, color)
+    If only colors are given, they are equidistantly mapped from the
+    range :math:`[0, 1]`; i.e. 0 maps to ``colors[0]`` and 1 maps to
+    ``colors[-1]``.
+    If (value, color) pairs are given, the mapping is from *value*
+    to *color*. This can be used to divide the range unevenly.
+N : int
+    The number of rgb quantization levels.
+gamma : float
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_a0bebcf7401f97a02809b57eaf7d30c66}\label{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_a0bebcf7401f97a02809b57eaf7d30c66}} 
+\index{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap@{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap}!reversed@{reversed}}
+\index{reversed@{reversed}!matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap@{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap}}
+\subsubsection{\texorpdfstring{reversed()}{reversed()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Linear\+Segmented\+Colormap.\+reversed (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a reversed instance of the Colormap.
+
+Parameters
+----------
+name : str, optional
+    The name for the reversed colormap. If it's None the
+    name will be the name of the parent colormap + "_r".
+
+Returns
+-------
+LinearSegmentedColormap
+    The reversed colormap.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_a2f198e251d17bf78aa2d64d067bc50eb}\label{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_a2f198e251d17bf78aa2d64d067bc50eb}} 
+\index{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap@{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap}!set\+\_\+gamma@{set\+\_\+gamma}}
+\index{set\+\_\+gamma@{set\+\_\+gamma}!matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap@{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap}}
+\subsubsection{\texorpdfstring{set\+\_\+gamma()}{set\_gamma()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Linear\+Segmented\+Colormap.\+set\+\_\+gamma (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{gamma }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set a new gamma value and regenerate colormap.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_a048b8576cc8ff2dc1e87b6ac6320eedb}\label{classmatplotlib_1_1colors_1_1LinearSegmentedColormap_a048b8576cc8ff2dc1e87b6ac6320eedb}} 
+\index{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap@{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap}!monochrome@{monochrome}}
+\index{monochrome@{monochrome}!matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap@{matplotlib\+::colors\+::\+Linear\+Segmented\+Colormap}}
+\subsubsection{\texorpdfstring{monochrome}{monochrome}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Linear\+Segmented\+Colormap.\+monochrome}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{colors_8py}{colors.\+py}\end{DoxyCompactItemize}

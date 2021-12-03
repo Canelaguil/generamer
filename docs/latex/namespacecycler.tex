@@ -1,0 +1,134 @@
+\hypertarget{namespacecycler}{}\section{cycler Namespace Reference}
+\label{namespacecycler}\index{cycler@{cycler}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcycler_1_1Cycler}{Cycler}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacecycler_ad5661339f84cea158df28b2b2064e045}{concat} (left, right)
+\item 
+def \hyperlink{namespacecycler_a52e235843070faa367f50dd1159a7afd}{cycler} (args, kwargs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Cycler
+======
+
+Cycling through combinations of values, producing dictionaries.
+
+You can add cyclers::
+
+    from cycler import cycler
+    cc = (cycler(color=list('rgb')) +
+          cycler(linestyle=['-', '--', '-.']))
+    for d in cc:
+        print(d)
+
+Results in::
+
+    {'color': 'r', 'linestyle': '-'}
+    {'color': 'g', 'linestyle': '--'}
+    {'color': 'b', 'linestyle': '-.'}
+
+
+You can multiply cyclers::
+
+    from cycler import cycler
+    cc = (cycler(color=list('rgb')) *
+          cycler(linestyle=['-', '--', '-.']))
+    for d in cc:
+        print(d)
+
+Results in::
+
+    {'color': 'r', 'linestyle': '-'}
+    {'color': 'r', 'linestyle': '--'}
+    {'color': 'r', 'linestyle': '-.'}
+    {'color': 'g', 'linestyle': '-'}
+    {'color': 'g', 'linestyle': '--'}
+    {'color': 'g', 'linestyle': '-.'}
+    {'color': 'b', 'linestyle': '-'}
+    {'color': 'b', 'linestyle': '--'}
+    {'color': 'b', 'linestyle': '-.'}
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacecycler_ad5661339f84cea158df28b2b2064e045}\label{namespacecycler_ad5661339f84cea158df28b2b2064e045}} 
+\index{cycler@{cycler}!concat@{concat}}
+\index{concat@{concat}!cycler@{cycler}}
+\subsubsection{\texorpdfstring{concat()}{concat()}}
+{\footnotesize\ttfamily def cycler.\+concat (\begin{DoxyParamCaption}\item[{}]{left,  }\item[{}]{right }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Concatenate two cyclers.
+
+The keys must match exactly.
+
+This returns a single Cycler which is equivalent to
+`itertools.chain(left, right)`
+
+Examples
+--------
+
+>>> num = cycler('a', range(3))
+>>> let = cycler('a', 'abc')
+>>> num.concat(let)
+cycler('a', [0, 1, 2, 'a', 'b', 'c'])
+
+Parameters
+----------
+left, right : `Cycler`
+    The two `Cycler` instances to concatenate
+
+Returns
+-------
+ret : `Cycler`
+    The concatenated `Cycler`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacecycler_a52e235843070faa367f50dd1159a7afd}\label{namespacecycler_a52e235843070faa367f50dd1159a7afd}} 
+\index{cycler@{cycler}!cycler@{cycler}}
+\index{cycler@{cycler}!cycler@{cycler}}
+\subsubsection{\texorpdfstring{cycler()}{cycler()}}
+{\footnotesize\ttfamily def cycler.\+cycler (\begin{DoxyParamCaption}\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new `Cycler` object from a single positional argument,
+a pair of positional arguments, or the combination of keyword arguments.
+
+cycler(arg)
+cycler(label1=itr1[, label2=iter2[, ...]])
+cycler(label, itr)
+
+Form 1 simply copies a given `Cycler` object.
+
+Form 2 composes a `Cycler` as an inner product of the
+pairs of keyword arguments. In other words, all of the
+iterables are cycled simultaneously, as if through zip().
+
+Form 3 creates a `Cycler` from a label and an iterable.
+This is useful for when the label cannot be a keyword argument
+(e.g., an integer or a name that has a space in it).
+
+Parameters
+----------
+arg : Cycler
+    Copy constructor for Cycler (does a shallow copy of iterables).
+
+label : name
+    The property key. In the 2-arg form of the function,
+    the label can be any hashable object. In the keyword argument
+    form of the function, it must be a valid python identifier.
+
+itr : iterable
+    Finite length iterable of the property values.
+    Can be a single-property `Cycler` that would
+    be like a key change, but as a shallow copy.
+
+Returns
+-------
+cycler : Cycler
+    New `Cycler` for the given property\end{DoxyVerb}
+ 

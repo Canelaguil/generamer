@@ -1,0 +1,60 @@
+\hypertarget{namespacematplotlib_1_1__layoutgrid}{}\section{matplotlib.\+\_\+layoutgrid Namespace Reference}
+\label{namespacematplotlib_1_1__layoutgrid}\index{matplotlib.\+\_\+layoutgrid@{matplotlib.\+\_\+layoutgrid}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1__layoutgrid_1_1LayoutGrid}{Layout\+Grid}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1__layoutgrid_a16fe697cb96f7405bd76e42425329895}{seq\+\_\+id} ()
+\item 
+def \hyperlink{namespacematplotlib_1_1__layoutgrid_a3ca761132b41d5e09623ccb54c90fca5}{print\+\_\+children} (lb)
+\item 
+def \hyperlink{namespacematplotlib_1_1__layoutgrid_acda0f256a21eb2f7345b0ae77d98d11a}{plot\+\_\+children} (fig, lg, level=0, printit=False)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A layoutgrid is a nrows by ncols set of boxes, meant to be used by
+`._constrained_layout`, each box is analogous to a subplotspec element of
+a gridspec.
+
+Each box is defined by left[ncols], right[ncols], bottom[nrows] and top[nrows],
+and by two editable margins for each side.  The main margin gets its value
+set by the size of ticklabels, titles, etc on each axes that is in the figure.
+The outer margin is the padding around the axes, and space for any
+colorbars.
+
+The "inner" widths and heights of these boxes are then constrained to be the
+same (relative the values of `width_ratios[ncols]` and `height_ratios[nrows]`).
+
+The layoutgrid is then constrained to be contained within a parent layoutgrid,
+its column(s) and row(s) specified when it is created.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1__layoutgrid_acda0f256a21eb2f7345b0ae77d98d11a}\label{namespacematplotlib_1_1__layoutgrid_acda0f256a21eb2f7345b0ae77d98d11a}} 
+\index{matplotlib\+::\+\_\+layoutgrid@{matplotlib\+::\+\_\+layoutgrid}!plot\+\_\+children@{plot\+\_\+children}}
+\index{plot\+\_\+children@{plot\+\_\+children}!matplotlib\+::\+\_\+layoutgrid@{matplotlib\+::\+\_\+layoutgrid}}
+\subsubsection{\texorpdfstring{plot\+\_\+children()}{plot\_children()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+layoutgrid.\+plot\+\_\+children (\begin{DoxyParamCaption}\item[{}]{fig,  }\item[{}]{lg,  }\item[{}]{level = {\ttfamily 0},  }\item[{}]{printit = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Simple plotting to show where boxes are.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1__layoutgrid_a3ca761132b41d5e09623ccb54c90fca5}\label{namespacematplotlib_1_1__layoutgrid_a3ca761132b41d5e09623ccb54c90fca5}} 
+\index{matplotlib\+::\+\_\+layoutgrid@{matplotlib\+::\+\_\+layoutgrid}!print\+\_\+children@{print\+\_\+children}}
+\index{print\+\_\+children@{print\+\_\+children}!matplotlib\+::\+\_\+layoutgrid@{matplotlib\+::\+\_\+layoutgrid}}
+\subsubsection{\texorpdfstring{print\+\_\+children()}{print\_children()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+layoutgrid.\+print\+\_\+children (\begin{DoxyParamCaption}\item[{}]{lb }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Print the children of the layoutbox.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1__layoutgrid_a16fe697cb96f7405bd76e42425329895}\label{namespacematplotlib_1_1__layoutgrid_a16fe697cb96f7405bd76e42425329895}} 
+\index{matplotlib\+::\+\_\+layoutgrid@{matplotlib\+::\+\_\+layoutgrid}!seq\+\_\+id@{seq\+\_\+id}}
+\index{seq\+\_\+id@{seq\+\_\+id}!matplotlib\+::\+\_\+layoutgrid@{matplotlib\+::\+\_\+layoutgrid}}
+\subsubsection{\texorpdfstring{seq\+\_\+id()}{seq\_id()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+layoutgrid.\+seq\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a short sequential id for layoutbox objects.\end{DoxyVerb}
+ 

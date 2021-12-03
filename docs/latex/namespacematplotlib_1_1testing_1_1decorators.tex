@@ -1,0 +1,149 @@
+\hypertarget{namespacematplotlib_1_1testing_1_1decorators}{}\section{matplotlib.\+testing.\+decorators Namespace Reference}
+\label{namespacematplotlib_1_1testing_1_1decorators}\index{matplotlib.\+testing.\+decorators@{matplotlib.\+testing.\+decorators}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1testing_1_1decorators_1_1__ImageComparisonBase}{\+\_\+\+Image\+Comparison\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1testing_1_1decorators_1_1CleanupTestCase}{Cleanup\+Test\+Case}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1decorators_aca4dda0538e182fbc9232ef377fba97d}{cleanup} (style=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1decorators_ae29d25a87e06d278ca1ec28163c6d526}{check\+\_\+freetype\+\_\+version} (ver)
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1decorators_afcf7b690a5627c0a0a23b0b5733fb496}{remove\+\_\+ticks\+\_\+and\+\_\+titles} (figure)
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1decorators_ac21f58ae7b14bdc094ee33a58d743bfc}{image\+\_\+comparison} (baseline\+\_\+images, extensions=None, tol=0, freetype\+\_\+version=None, remove\+\_\+text=False, savefig\+\_\+kwarg=None, style=(\char`\"{}classic\char`\"{}, \char`\"{}\+\_\+classic\+\_\+test\+\_\+patch\char`\"{}))
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1decorators_add8fbd22aa6392d12bf4d104e52651b8}{check\+\_\+figures\+\_\+equal} (extensions=(\char`\"{}png\char`\"{}, \char`\"{}pdf\char`\"{}, \char`\"{}svg\char`\"{}), tol=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1decorators_add8fbd22aa6392d12bf4d104e52651b8}\label{namespacematplotlib_1_1testing_1_1decorators_add8fbd22aa6392d12bf4d104e52651b8}} 
+\index{matplotlib\+::testing\+::decorators@{matplotlib\+::testing\+::decorators}!check\+\_\+figures\+\_\+equal@{check\+\_\+figures\+\_\+equal}}
+\index{check\+\_\+figures\+\_\+equal@{check\+\_\+figures\+\_\+equal}!matplotlib\+::testing\+::decorators@{matplotlib\+::testing\+::decorators}}
+\subsubsection{\texorpdfstring{check\+\_\+figures\+\_\+equal()}{check\_figures\_equal()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+decorators.\+check\+\_\+figures\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{extensions = {\ttfamily (\char`\"{}png\char`\"{},~\char`\"{}pdf\char`\"{},~\char`\"{}svg\char`\"{})},  }\item[{}]{tol = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decorator for test cases that generate and compare two figures.
+
+The decorated function must take two keyword arguments, *fig_test*
+and *fig_ref*, and draw the test and reference images on them.
+After the function returns, the figures are saved and compared.
+
+This decorator should be preferred over `image_comparison` when possible in
+order to keep the size of the test suite from ballooning.
+
+Parameters
+----------
+extensions : list, default: ["png", "pdf", "svg"]
+    The extensions to test.
+tol : float
+    The RMS threshold above which the test is considered failed.
+
+Raises
+------
+RuntimeError
+    If any new figures are created (and not subsequently closed) inside
+    the test function.
+
+Examples
+--------
+Check that calling `.Axes.plot` with a single argument plots it against
+``[0, 1, 2, ...]``::
+
+    @check_figures_equal()
+    def test_plot(fig_test, fig_ref):
+        fig_test.subplots().plot([1, 3, 5])
+        fig_ref.subplots().plot([0, 1, 2], [1, 3, 5])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1decorators_ae29d25a87e06d278ca1ec28163c6d526}\label{namespacematplotlib_1_1testing_1_1decorators_ae29d25a87e06d278ca1ec28163c6d526}} 
+\index{matplotlib\+::testing\+::decorators@{matplotlib\+::testing\+::decorators}!check\+\_\+freetype\+\_\+version@{check\+\_\+freetype\+\_\+version}}
+\index{check\+\_\+freetype\+\_\+version@{check\+\_\+freetype\+\_\+version}!matplotlib\+::testing\+::decorators@{matplotlib\+::testing\+::decorators}}
+\subsubsection{\texorpdfstring{check\+\_\+freetype\+\_\+version()}{check\_freetype\_version()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+decorators.\+check\+\_\+freetype\+\_\+version (\begin{DoxyParamCaption}\item[{}]{ver }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1decorators_aca4dda0538e182fbc9232ef377fba97d}\label{namespacematplotlib_1_1testing_1_1decorators_aca4dda0538e182fbc9232ef377fba97d}} 
+\index{matplotlib\+::testing\+::decorators@{matplotlib\+::testing\+::decorators}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!matplotlib\+::testing\+::decorators@{matplotlib\+::testing\+::decorators}}
+\subsubsection{\texorpdfstring{cleanup()}{cleanup()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+decorators.\+cleanup (\begin{DoxyParamCaption}\item[{}]{style = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A decorator to ensure that any global state is reset before
+running a test.
+
+Parameters
+----------
+style : str, dict, or list, optional
+    The style(s) to apply.  Defaults to ``["classic",
+    "_classic_test_patch"]``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1decorators_ac21f58ae7b14bdc094ee33a58d743bfc}\label{namespacematplotlib_1_1testing_1_1decorators_ac21f58ae7b14bdc094ee33a58d743bfc}} 
+\index{matplotlib\+::testing\+::decorators@{matplotlib\+::testing\+::decorators}!image\+\_\+comparison@{image\+\_\+comparison}}
+\index{image\+\_\+comparison@{image\+\_\+comparison}!matplotlib\+::testing\+::decorators@{matplotlib\+::testing\+::decorators}}
+\subsubsection{\texorpdfstring{image\+\_\+comparison()}{image\_comparison()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+decorators.\+image\+\_\+comparison (\begin{DoxyParamCaption}\item[{}]{baseline\+\_\+images,  }\item[{}]{extensions = {\ttfamily None},  }\item[{}]{tol = {\ttfamily 0},  }\item[{}]{freetype\+\_\+version = {\ttfamily None},  }\item[{}]{remove\+\_\+text = {\ttfamily False},  }\item[{}]{savefig\+\_\+kwarg = {\ttfamily None},  }\item[{}]{style = {\ttfamily (\char`\"{}classic\char`\"{},~\char`\"{}\+\_\+classic\+\_\+test\+\_\+patch\char`\"{})} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compare images generated by the test with those specified in
+*baseline_images*, which must correspond, else an `ImageComparisonFailure`
+exception will be raised.
+
+Parameters
+----------
+baseline_images : list or None
+    A list of strings specifying the names of the images generated by
+    calls to `.Figure.savefig`.
+
+    If *None*, the test function must use the ``baseline_images`` fixture,
+    either as a parameter or with `pytest.mark.usefixtures`. This value is
+    only allowed when using pytest.
+
+extensions : None or list of str
+    The list of extensions to test, e.g. ``['png', 'pdf']``.
+
+    If *None*, defaults to all supported extensions: png, pdf, and svg.
+
+    When testing a single extension, it can be directly included in the
+    names passed to *baseline_images*.  In that case, *extensions* must not
+    be set.
+
+    In order to keep the size of the test suite from ballooning, we only
+    include the ``svg`` or ``pdf`` outputs if the test is explicitly
+    exercising a feature dependent on that backend (see also the
+    `check_figures_equal` decorator for that purpose).
+
+tol : float, default: 0
+    The RMS threshold above which the test is considered failed.
+
+    Due to expected small differences in floating-point calculations, on
+    32-bit systems an additional 0.06 is added to this threshold.
+
+freetype_version : str or tuple
+    The expected freetype version or range of versions for this test to
+    pass.
+
+remove_text : bool
+    Remove the title and tick text from the figure before comparison.  This
+    is useful to make the baseline images independent of variations in text
+    rendering between different versions of FreeType.
+
+    This does not remove other, more deliberate, text, such as legends and
+    annotations.
+
+savefig_kwarg : dict
+    Optional arguments that are passed to the savefig method.
+
+style : str, dict, or list
+    The optional style(s) to apply to the image test. The test itself
+    can also apply additional styles if desired. Defaults to ``["classic",
+    "_classic_test_patch"]``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1decorators_afcf7b690a5627c0a0a23b0b5733fb496}\label{namespacematplotlib_1_1testing_1_1decorators_afcf7b690a5627c0a0a23b0b5733fb496}} 
+\index{matplotlib\+::testing\+::decorators@{matplotlib\+::testing\+::decorators}!remove\+\_\+ticks\+\_\+and\+\_\+titles@{remove\+\_\+ticks\+\_\+and\+\_\+titles}}
+\index{remove\+\_\+ticks\+\_\+and\+\_\+titles@{remove\+\_\+ticks\+\_\+and\+\_\+titles}!matplotlib\+::testing\+::decorators@{matplotlib\+::testing\+::decorators}}
+\subsubsection{\texorpdfstring{remove\+\_\+ticks\+\_\+and\+\_\+titles()}{remove\_ticks\_and\_titles()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+decorators.\+remove\+\_\+ticks\+\_\+and\+\_\+titles (\begin{DoxyParamCaption}\item[{}]{figure }\end{DoxyParamCaption})}
+

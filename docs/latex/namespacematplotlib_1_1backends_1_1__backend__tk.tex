@@ -1,0 +1,97 @@
+\hypertarget{namespacematplotlib_1_1backends_1_1__backend__tk}{}\section{matplotlib.\+backends.\+\_\+backend\+\_\+tk Namespace Reference}
+\label{namespacematplotlib_1_1backends_1_1__backend__tk}\index{matplotlib.\+backends.\+\_\+backend\+\_\+tk@{matplotlib.\+backends.\+\_\+backend\+\_\+tk}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1__BackendTk}{\+\_\+\+Backend\+Tk}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1ConfigureSubplotsTk}{Configure\+Subplots\+Tk}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1FigureCanvasTk}{Figure\+Canvas\+Tk}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1FigureManagerTk}{Figure\+Manager\+Tk}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1HelpTk}{Help\+Tk}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk}{Navigation\+Toolbar2\+Tk}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1RubberbandTk}{Rubberband\+Tk}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1SaveFigureTk}{Save\+Figure\+Tk}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1SetCursorTk}{Set\+Cursor\+Tk}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1StatusbarTk}{Statusbar\+Tk}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1TimerTk}{Timer\+Tk}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1ToolbarTk}{Toolbar\+Tk}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1ToolTip}{Tool\+Tip}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1backends_1_1__backend__tk_a338470990726abf69035544dec8a7e94}{blit} (photoimage, aggimage, offsets, bbox=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1backends_1_1__backend__tk_ad8b7798437f407c3536f23a2005684ff}{backend\+\_\+version} = tk.\+Tk\+Version
+\item 
+dictionary \hyperlink{namespacematplotlib_1_1backends_1_1__backend__tk_af56246acc7da1bc6b214ded219324136}{cursord}
+\item 
+\hyperlink{namespacematplotlib_1_1backends_1_1__backend__tk_acfe241fed63edba68189f3c46b3fdff2}{Toolbar} = \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1ToolbarTk}{Toolbar\+Tk}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1__backend__tk_a338470990726abf69035544dec8a7e94}\label{namespacematplotlib_1_1backends_1_1__backend__tk_a338470990726abf69035544dec8a7e94}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk}!blit@{blit}}
+\index{blit@{blit}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk}}
+\subsubsection{\texorpdfstring{blit()}{blit()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+blit (\begin{DoxyParamCaption}\item[{}]{photoimage,  }\item[{}]{aggimage,  }\item[{}]{offsets,  }\item[{}]{bbox = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Blit *aggimage* to *photoimage*.
+
+*offsets* is a tuple describing how to fill the ``offset`` field of the
+``Tk_PhotoImageBlock`` struct: it should be (0, 1, 2, 3) for RGBA8888 data,
+(2, 1, 0, 3) for little-endian ARBG32 (i.e. GBRA8888) data and (1, 2, 3, 0)
+for big-endian ARGB32 (i.e. ARGB8888) data.
+
+If *bbox* is passed, it defines the region that gets blitted. That region
+will NOT be blanked before blitting.
+
+Tcl events must be dispatched to trigger a blit from a non-Tcl thread.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1__backend__tk_ad8b7798437f407c3536f23a2005684ff}\label{namespacematplotlib_1_1backends_1_1__backend__tk_ad8b7798437f407c3536f23a2005684ff}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk}!backend\+\_\+version@{backend\+\_\+version}}
+\index{backend\+\_\+version@{backend\+\_\+version}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk}}
+\subsubsection{\texorpdfstring{backend\+\_\+version}{backend\_version}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+backend\+\_\+version = tk.\+Tk\+Version}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1__backend__tk_af56246acc7da1bc6b214ded219324136}\label{namespacematplotlib_1_1backends_1_1__backend__tk_af56246acc7da1bc6b214ded219324136}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk}!cursord@{cursord}}
+\index{cursord@{cursord}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk}}
+\subsubsection{\texorpdfstring{cursord}{cursord}}
+{\footnotesize\ttfamily dictionary matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+cursord}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{
+2     cursors.MOVE: \textcolor{stringliteral}{"fleur"},
+3     cursors.HAND: \textcolor{stringliteral}{"hand2"},
+4     cursors.POINTER: \textcolor{stringliteral}{"arrow"},
+5     cursors.SELECT\_REGION: \textcolor{stringliteral}{"tcross"},
+6     cursors.WAIT: \textcolor{stringliteral}{"watch"},
+7     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1__backend__tk_acfe241fed63edba68189f3c46b3fdff2}\label{namespacematplotlib_1_1backends_1_1__backend__tk_acfe241fed63edba68189f3c46b3fdff2}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk}!Toolbar@{Toolbar}}
+\index{Toolbar@{Toolbar}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk}}
+\subsubsection{\texorpdfstring{Toolbar}{Toolbar}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Toolbar = \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1ToolbarTk}{Toolbar\+Tk}}
+

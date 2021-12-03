@@ -1,0 +1,265 @@
+\hypertarget{classmatplotlib_1_1dviread_1_1Dvi}{}\section{matplotlib.\+dviread.\+Dvi Class Reference}
+\label{classmatplotlib_1_1dviread_1_1Dvi}\index{matplotlib.\+dviread.\+Dvi@{matplotlib.\+dviread.\+Dvi}}
+
+
+Inheritance diagram for matplotlib.\+dviread.\+Dvi\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classmatplotlib_1_1dviread_1_1Dvi__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a2c99516bd578ef5b8599cbd7e197a292}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, filename, \hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a4780c17da3c32da700aa7858d29562f6}{dpi})
+\item 
+def \hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a0f432b7e47c615a03d24c1a9f5f9c7ac}{\+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a8e84e06f5a675f9d0668a993e87cdf4c}{\+\_\+\+\_\+exit\+\_\+\+\_\+} (self, etype, evalue, etrace)
+\item 
+def \hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a596bdfa8a30ca060cbc945fca1a86722}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a4aba2d0e54333f36e69b83cba14c280f}{close} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_aa9559a88edd1f9ca0403477c2b15f069}{file}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a4780c17da3c32da700aa7858d29562f6}{dpi}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_ac67d2645243a24bbb7f34c832df0785c}{fonts}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_ac0f8c5d5c2bda108ee0b4f9d54adf88b}{baseline}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a293a84f008cf738af2ac75ede5e96893}{z}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_adb3cda4e367883f713bdbaac3a5fc08e}{stack}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a40834bfbb8f255f51925f9f50d141150}{text}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a0db76c0c8a56d6dc743308c3687a6565}{boxes}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_aca4d5c297a37eb8390125a599f0da6c6}{w}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a785a2f22c28527b55865450e33857b88}{x}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a897b9041ab58796a8fb89e62b3667d38}{y}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a5d15875c6457044db341a78f8380310f}{f}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_ae7370d0534bafc35a7759d0fbf7e471f}{min}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a61e8b8b02ec7553241c0fe42c9555004}{max}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a87ef35c6e9fb51513b57a8720a1410c4}{state}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a90b7fab9eb7fc96defa6ba70456e61a1}{inpage}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_abe12ec8b95487997b9423a4eaf714399}{args}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a68655b697587660183445bf0b901014c}{outer}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1Dvi_a878b883e6f20468280062fbe42331869}{pre}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A reader for a dvi ("device-independent") file, as produced by TeX.
+The current implementation can only iterate through pages in order,
+and does not even attempt to verify the postamble.
+
+This class can be used as a context manager to close the underlying
+file upon exit. Pages can be read via iteration. Here is an overly
+simple way to extract text without trying to detect whitespace::
+
+    >>> with matplotlib.dviread.Dvi('input.dvi', 72) as dvi:
+    ...     for page in dvi:
+    ...         print(''.join(chr(t.glyph) for t in page.text))
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a2c99516bd578ef5b8599cbd7e197a292}\label{classmatplotlib_1_1dviread_1_1Dvi_a2c99516bd578ef5b8599cbd7e197a292}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dviread.\+Dvi.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename,  }\item[{}]{dpi }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read the data from the file named *filename* and convert
+TeX's internal units to units of *dpi* per inch.
+*dpi* only sets the units and does not limit the resolution.
+Use None to return TeX's internal units.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a0f432b7e47c615a03d24c1a9f5f9c7ac}\label{classmatplotlib_1_1dviread_1_1Dvi_a0f432b7e47c615a03d24c1a9f5f9c7ac}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+enter\+\_\+\+\_\+()}{\_\_enter\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dviread.\+Dvi.\+\_\+\+\_\+enter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Context manager enter method, does nothing.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a8e84e06f5a675f9d0668a993e87cdf4c}\label{classmatplotlib_1_1dviread_1_1Dvi_a8e84e06f5a675f9d0668a993e87cdf4c}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+exit\+\_\+\+\_\+()}{\_\_exit\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dviread.\+Dvi.\+\_\+\+\_\+exit\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{etype,  }\item[{}]{evalue,  }\item[{}]{etrace }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Context manager exit method, closes the underlying file if it is open.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a596bdfa8a30ca060cbc945fca1a86722}\label{classmatplotlib_1_1dviread_1_1Dvi_a596bdfa8a30ca060cbc945fca1a86722}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dviread.\+Dvi.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Iterate through the pages of the file.
+
+Yields
+------
+Page
+    Details of all the text and box objects on the page.
+    The Page tuple contains lists of Text and Box tuples and
+    the page dimensions, and the Text and Box tuples contain
+    coordinates transformed into a standard Cartesian
+    coordinate system at the dpi value given when initializing.
+    The coordinates are floating point numbers, but otherwise
+    precision is not lost and coordinate values are not clipped to
+    integers.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a4aba2d0e54333f36e69b83cba14c280f}\label{classmatplotlib_1_1dviread_1_1Dvi_a4aba2d0e54333f36e69b83cba14c280f}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!close@{close}}
+\index{close@{close}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily def matplotlib.\+dviread.\+Dvi.\+close (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Close the underlying file if it is open.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_abe12ec8b95487997b9423a4eaf714399}\label{classmatplotlib_1_1dviread_1_1Dvi_abe12ec8b95487997b9423a4eaf714399}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!args@{args}}
+\index{args@{args}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{args}{args}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+args\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_ac0f8c5d5c2bda108ee0b4f9d54adf88b}\label{classmatplotlib_1_1dviread_1_1Dvi_ac0f8c5d5c2bda108ee0b4f9d54adf88b}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!baseline@{baseline}}
+\index{baseline@{baseline}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{baseline}{baseline}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+baseline}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a0db76c0c8a56d6dc743308c3687a6565}\label{classmatplotlib_1_1dviread_1_1Dvi_a0db76c0c8a56d6dc743308c3687a6565}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!boxes@{boxes}}
+\index{boxes@{boxes}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{boxes}{boxes}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+boxes}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a4780c17da3c32da700aa7858d29562f6}\label{classmatplotlib_1_1dviread_1_1Dvi_a4780c17da3c32da700aa7858d29562f6}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!dpi@{dpi}}
+\index{dpi@{dpi}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{dpi}{dpi}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+dpi}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a5d15875c6457044db341a78f8380310f}\label{classmatplotlib_1_1dviread_1_1Dvi_a5d15875c6457044db341a78f8380310f}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!f@{f}}
+\index{f@{f}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+f}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_aa9559a88edd1f9ca0403477c2b15f069}\label{classmatplotlib_1_1dviread_1_1Dvi_aa9559a88edd1f9ca0403477c2b15f069}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!file@{file}}
+\index{file@{file}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+file}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_ac67d2645243a24bbb7f34c832df0785c}\label{classmatplotlib_1_1dviread_1_1Dvi_ac67d2645243a24bbb7f34c832df0785c}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!fonts@{fonts}}
+\index{fonts@{fonts}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{fonts}{fonts}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+fonts}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a90b7fab9eb7fc96defa6ba70456e61a1}\label{classmatplotlib_1_1dviread_1_1Dvi_a90b7fab9eb7fc96defa6ba70456e61a1}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!inpage@{inpage}}
+\index{inpage@{inpage}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{inpage}{inpage}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+inpage\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a61e8b8b02ec7553241c0fe42c9555004}\label{classmatplotlib_1_1dviread_1_1Dvi_a61e8b8b02ec7553241c0fe42c9555004}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!max@{max}}
+\index{max@{max}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+max\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_ae7370d0534bafc35a7759d0fbf7e471f}\label{classmatplotlib_1_1dviread_1_1Dvi_ae7370d0534bafc35a7759d0fbf7e471f}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!min@{min}}
+\index{min@{min}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+min\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a68655b697587660183445bf0b901014c}\label{classmatplotlib_1_1dviread_1_1Dvi_a68655b697587660183445bf0b901014c}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!outer@{outer}}
+\index{outer@{outer}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{outer}{outer}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+outer\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a878b883e6f20468280062fbe42331869}\label{classmatplotlib_1_1dviread_1_1Dvi_a878b883e6f20468280062fbe42331869}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!pre@{pre}}
+\index{pre@{pre}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{pre}{pre}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+pre\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_adb3cda4e367883f713bdbaac3a5fc08e}\label{classmatplotlib_1_1dviread_1_1Dvi_adb3cda4e367883f713bdbaac3a5fc08e}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!stack@{stack}}
+\index{stack@{stack}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{stack}{stack}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+stack}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a87ef35c6e9fb51513b57a8720a1410c4}\label{classmatplotlib_1_1dviread_1_1Dvi_a87ef35c6e9fb51513b57a8720a1410c4}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!state@{state}}
+\index{state@{state}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+state\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a40834bfbb8f255f51925f9f50d141150}\label{classmatplotlib_1_1dviread_1_1Dvi_a40834bfbb8f255f51925f9f50d141150}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!text@{text}}
+\index{text@{text}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+text}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_aca4d5c297a37eb8390125a599f0da6c6}\label{classmatplotlib_1_1dviread_1_1Dvi_aca4d5c297a37eb8390125a599f0da6c6}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!w@{w}}
+\index{w@{w}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+w}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a785a2f22c28527b55865450e33857b88}\label{classmatplotlib_1_1dviread_1_1Dvi_a785a2f22c28527b55865450e33857b88}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!x@{x}}
+\index{x@{x}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+x}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a897b9041ab58796a8fb89e62b3667d38}\label{classmatplotlib_1_1dviread_1_1Dvi_a897b9041ab58796a8fb89e62b3667d38}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!y@{y}}
+\index{y@{y}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+y}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1Dvi_a293a84f008cf738af2ac75ede5e96893}\label{classmatplotlib_1_1dviread_1_1Dvi_a293a84f008cf738af2ac75ede5e96893}} 
+\index{matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}!z@{z}}
+\index{z@{z}!matplotlib\+::dviread\+::\+Dvi@{matplotlib\+::dviread\+::\+Dvi}}
+\subsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi.\+z}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{dviread_8py}{dviread.\+py}\end{DoxyCompactItemize}

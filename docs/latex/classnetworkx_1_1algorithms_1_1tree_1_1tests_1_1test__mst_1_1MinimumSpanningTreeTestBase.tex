@@ -1,0 +1,178 @@
+\hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase}{}\section{networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base Class Reference}
+\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase}\index{networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base}}
+
+
+Inheritance diagram for networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ae77ee8e9a98778766e72757a2decbf06}{setup\+\_\+method} (self, method)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ad98ffbda896c314a0a723cbd451f5517}{test\+\_\+minimum\+\_\+edges} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_aa6c241379febe26ad4bf5330b4266a23}{test\+\_\+maximum\+\_\+edges} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a79983c689d2b18a86aef6a4a403e8ae2}{test\+\_\+without\+\_\+data} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a18981261d644061fcb1b5396e4847987}{test\+\_\+nan\+\_\+weights} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a00e4274986d2a1ed12a24bab73ab0d05}{test\+\_\+nan\+\_\+weights\+\_\+order} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a90ccccd094e63066beb51a73d8af3a1b}{test\+\_\+isolated\+\_\+node} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a61d1a181060e3040eb9ac4737355e05a}{test\+\_\+minimum\+\_\+tree} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ab9bfa9de22a7bc41568950efe99b82f6}{test\+\_\+maximum\+\_\+tree} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ab9821b27cd95624771929d8a342d1f75}{test\+\_\+disconnected} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ad31b02e36f74c990ed53b4d2e0bc7ce1}{test\+\_\+empty\+\_\+graph} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ae0c9db3f2d109ec00b9652cc454a046e}{test\+\_\+attributes} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_aff6389350c3e41d34497ce0675b05c9b}{test\+\_\+weight\+\_\+attribute} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ac35d3d7e3790e9319a7fc2d6abbb94ad}{algo}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a1f3c508cc693dd2c7fc61b7476b5f387}{G}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_abf3bbcdddf69db3dba52f6fc142efe20}{minimum\+\_\+spanning\+\_\+edgelist}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a8b06516e4f4385321ff77102cd1af270}{maximum\+\_\+spanning\+\_\+edgelist}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Base class for test classes for minimum spanning tree algorithms.
+
+This class contains some common tests that will be inherited by
+subclasses. Each subclass must have a class attribute
+:data:`algorithm` that is a string representing the algorithm to
+run, as described under the ``algorithm`` keyword argument for the
+:func:`networkx.minimum_spanning_edges` function.  Subclasses can
+then implement any algorithm-specific tests.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ae77ee8e9a98778766e72757a2decbf06}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ae77ee8e9a98778766e72757a2decbf06}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!setup\+\_\+method@{setup\+\_\+method}}
+\index{setup\+\_\+method@{setup\+\_\+method}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{setup\+\_\+method()}{setup\_method()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+setup\+\_\+method (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{method }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Creates an example graph and stores the expected minimum and
+maximum spanning tree edges.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ae0c9db3f2d109ec00b9652cc454a046e}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ae0c9db3f2d109ec00b9652cc454a046e}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!test\+\_\+attributes@{test\+\_\+attributes}}
+\index{test\+\_\+attributes@{test\+\_\+attributes}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{test\+\_\+attributes()}{test\_attributes()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+test\+\_\+attributes (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ab9821b27cd95624771929d8a342d1f75}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ab9821b27cd95624771929d8a342d1f75}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!test\+\_\+disconnected@{test\+\_\+disconnected}}
+\index{test\+\_\+disconnected@{test\+\_\+disconnected}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{test\+\_\+disconnected()}{test\_disconnected()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+test\+\_\+disconnected (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ad31b02e36f74c990ed53b4d2e0bc7ce1}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ad31b02e36f74c990ed53b4d2e0bc7ce1}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!test\+\_\+empty\+\_\+graph@{test\+\_\+empty\+\_\+graph}}
+\index{test\+\_\+empty\+\_\+graph@{test\+\_\+empty\+\_\+graph}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{test\+\_\+empty\+\_\+graph()}{test\_empty\_graph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+test\+\_\+empty\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a90ccccd094e63066beb51a73d8af3a1b}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a90ccccd094e63066beb51a73d8af3a1b}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!test\+\_\+isolated\+\_\+node@{test\+\_\+isolated\+\_\+node}}
+\index{test\+\_\+isolated\+\_\+node@{test\+\_\+isolated\+\_\+node}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{test\+\_\+isolated\+\_\+node()}{test\_isolated\_node()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+test\+\_\+isolated\+\_\+node (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_aa6c241379febe26ad4bf5330b4266a23}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_aa6c241379febe26ad4bf5330b4266a23}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!test\+\_\+maximum\+\_\+edges@{test\+\_\+maximum\+\_\+edges}}
+\index{test\+\_\+maximum\+\_\+edges@{test\+\_\+maximum\+\_\+edges}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{test\+\_\+maximum\+\_\+edges()}{test\_maximum\_edges()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+test\+\_\+maximum\+\_\+edges (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ab9bfa9de22a7bc41568950efe99b82f6}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ab9bfa9de22a7bc41568950efe99b82f6}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!test\+\_\+maximum\+\_\+tree@{test\+\_\+maximum\+\_\+tree}}
+\index{test\+\_\+maximum\+\_\+tree@{test\+\_\+maximum\+\_\+tree}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{test\+\_\+maximum\+\_\+tree()}{test\_maximum\_tree()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+test\+\_\+maximum\+\_\+tree (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ad98ffbda896c314a0a723cbd451f5517}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ad98ffbda896c314a0a723cbd451f5517}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!test\+\_\+minimum\+\_\+edges@{test\+\_\+minimum\+\_\+edges}}
+\index{test\+\_\+minimum\+\_\+edges@{test\+\_\+minimum\+\_\+edges}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{test\+\_\+minimum\+\_\+edges()}{test\_minimum\_edges()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+test\+\_\+minimum\+\_\+edges (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a61d1a181060e3040eb9ac4737355e05a}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a61d1a181060e3040eb9ac4737355e05a}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!test\+\_\+minimum\+\_\+tree@{test\+\_\+minimum\+\_\+tree}}
+\index{test\+\_\+minimum\+\_\+tree@{test\+\_\+minimum\+\_\+tree}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{test\+\_\+minimum\+\_\+tree()}{test\_minimum\_tree()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+test\+\_\+minimum\+\_\+tree (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a18981261d644061fcb1b5396e4847987}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a18981261d644061fcb1b5396e4847987}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!test\+\_\+nan\+\_\+weights@{test\+\_\+nan\+\_\+weights}}
+\index{test\+\_\+nan\+\_\+weights@{test\+\_\+nan\+\_\+weights}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{test\+\_\+nan\+\_\+weights()}{test\_nan\_weights()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+test\+\_\+nan\+\_\+weights (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a00e4274986d2a1ed12a24bab73ab0d05}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a00e4274986d2a1ed12a24bab73ab0d05}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!test\+\_\+nan\+\_\+weights\+\_\+order@{test\+\_\+nan\+\_\+weights\+\_\+order}}
+\index{test\+\_\+nan\+\_\+weights\+\_\+order@{test\+\_\+nan\+\_\+weights\+\_\+order}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{test\+\_\+nan\+\_\+weights\+\_\+order()}{test\_nan\_weights\_order()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+test\+\_\+nan\+\_\+weights\+\_\+order (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_aff6389350c3e41d34497ce0675b05c9b}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_aff6389350c3e41d34497ce0675b05c9b}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!test\+\_\+weight\+\_\+attribute@{test\+\_\+weight\+\_\+attribute}}
+\index{test\+\_\+weight\+\_\+attribute@{test\+\_\+weight\+\_\+attribute}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{test\+\_\+weight\+\_\+attribute()}{test\_weight\_attribute()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+test\+\_\+weight\+\_\+attribute (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a79983c689d2b18a86aef6a4a403e8ae2}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a79983c689d2b18a86aef6a4a403e8ae2}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!test\+\_\+without\+\_\+data@{test\+\_\+without\+\_\+data}}
+\index{test\+\_\+without\+\_\+data@{test\+\_\+without\+\_\+data}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{test\+\_\+without\+\_\+data()}{test\_without\_data()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+test\+\_\+without\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ac35d3d7e3790e9319a7fc2d6abbb94ad}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_ac35d3d7e3790e9319a7fc2d6abbb94ad}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!algo@{algo}}
+\index{algo@{algo}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{algo}{algo}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+algo}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a1f3c508cc693dd2c7fc61b7476b5f387}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a1f3c508cc693dd2c7fc61b7476b5f387}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!G@{G}}
+\index{G@{G}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+G}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a8b06516e4f4385321ff77102cd1af270}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_a8b06516e4f4385321ff77102cd1af270}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!maximum\+\_\+spanning\+\_\+edgelist@{maximum\+\_\+spanning\+\_\+edgelist}}
+\index{maximum\+\_\+spanning\+\_\+edgelist@{maximum\+\_\+spanning\+\_\+edgelist}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{maximum\+\_\+spanning\+\_\+edgelist}{maximum\_spanning\_edgelist}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+maximum\+\_\+spanning\+\_\+edgelist}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_abf3bbcdddf69db3dba52f6fc142efe20}\label{classnetworkx_1_1algorithms_1_1tree_1_1tests_1_1test__mst_1_1MinimumSpanningTreeTestBase_abf3bbcdddf69db3dba52f6fc142efe20}} 
+\index{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}!minimum\+\_\+spanning\+\_\+edgelist@{minimum\+\_\+spanning\+\_\+edgelist}}
+\index{minimum\+\_\+spanning\+\_\+edgelist@{minimum\+\_\+spanning\+\_\+edgelist}!networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base@{networkx\+::algorithms\+::tree\+::tests\+::test\+\_\+mst\+::\+Minimum\+Spanning\+Tree\+Test\+Base}}
+\subsubsection{\texorpdfstring{minimum\+\_\+spanning\+\_\+edgelist}{minimum\_spanning\_edgelist}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+tree.\+tests.\+test\+\_\+mst.\+Minimum\+Spanning\+Tree\+Test\+Base.\+minimum\+\_\+spanning\+\_\+edgelist}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/algorithms/tree/tests/\hyperlink{test__mst_8py}{test\+\_\+mst.\+py}\end{DoxyCompactItemize}

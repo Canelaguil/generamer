@@ -1,0 +1,135 @@
+\hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue}{}\section{networkx.\+utils.\+mapped\+\_\+queue.\+Mapped\+Queue Class Reference}
+\label{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue}\index{networkx.\+utils.\+mapped\+\_\+queue.\+Mapped\+Queue@{networkx.\+utils.\+mapped\+\_\+queue.\+Mapped\+Queue}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a82eb90efb8f6df3a3fcf56c0ec624fbf}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, data=\mbox{[}$\,$\mbox{]})
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_af3a1c842bd87c4685654569c9d7b4b60}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a33447b47368614cd50a5a7ef012b8193}{push} (self, elt, priority=None)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_aacbab4958fb6ebbb42e6dcd067a1b710}{pop} (self)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_abbc8bc9a572274ac074fdfc083a9d5ae}{update} (self, elt, new, priority=None)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a3ef740aed764281890fb279c9ee94319}{remove} (self, elt)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a5e69d5429975883c434259a18f8926c2}{heap}
+\item 
+\hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a9bedb9446f5b4e2ad2b503af99aa585b}{position}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The MappedQueue class implements a min-heap with removal and update-priority.
+
+The min heap uses heapq as well as custom written _siftup and _siftdown
+methods to allow the heap positions to be tracked by an additional dict
+keyed by element to position. The smallest element can be popped in O(1) time,
+new elements can be pushed in O(log n) time, and any element can be removed
+or updated in O(log n) time. The queue cannot contain duplicate elements
+and an attempt to push an element already in the queue will have no effect.
+
+MappedQueue complements the heapq package from the python standard
+library. While MappedQueue is designed for maximum compatibility with
+heapq, it adds element removal, lookup, and priority update.
+
+Examples
+--------
+
+A `MappedQueue` can be created empty or optionally given an array of
+initial elements. Calling `push()` will add an element and calling `pop()`
+will remove and return the smallest element.
+
+>>> q = MappedQueue([916, 50, 4609, 493, 237])
+>>> q.push(1310)
+True
+>>> [q.pop() for i in range(len(q.heap))]
+[50, 237, 493, 916, 1310, 4609]
+
+Elements can also be updated or removed from anywhere in the queue.
+
+>>> q = MappedQueue([916, 50, 4609, 493, 237])
+>>> q.remove(493)
+>>> q.update(237, 1117)
+>>> [q.pop() for i in range(len(q.heap))]
+[50, 916, 1117, 4609]
+
+References
+----------
+.. [1] Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2001).
+   Introduction to algorithms second edition.
+.. [2] Knuth, D. E. (1997). The art of computer programming (Vol. 3).
+   Pearson Education.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a82eb90efb8f6df3a3fcf56c0ec624fbf}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a82eb90efb8f6df3a3fcf56c0ec624fbf}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+Mapped\+Queue.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Priority queue class with updatable priorities.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_af3a1c842bd87c4685654569c9d7b4b60}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_af3a1c842bd87c4685654569c9d7b4b60}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+Mapped\+Queue.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_aacbab4958fb6ebbb42e6dcd067a1b710}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_aacbab4958fb6ebbb42e6dcd067a1b710}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}!pop@{pop}}
+\index{pop@{pop}!networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}}
+\subsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+Mapped\+Queue.\+pop (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove and return the smallest element in the queue.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a33447b47368614cd50a5a7ef012b8193}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a33447b47368614cd50a5a7ef012b8193}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}!push@{push}}
+\index{push@{push}!networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}}
+\subsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+Mapped\+Queue.\+push (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{elt,  }\item[{}]{priority = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add an element to the queue.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a3ef740aed764281890fb279c9ee94319}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a3ef740aed764281890fb279c9ee94319}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}!remove@{remove}}
+\index{remove@{remove}!networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+Mapped\+Queue.\+remove (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{elt }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove an element from the queue.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_abbc8bc9a572274ac074fdfc083a9d5ae}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_abbc8bc9a572274ac074fdfc083a9d5ae}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}!update@{update}}
+\index{update@{update}!networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+Mapped\+Queue.\+update (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{elt,  }\item[{}]{new,  }\item[{}]{priority = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Replace an element in the queue with a new one.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a5e69d5429975883c434259a18f8926c2}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a5e69d5429975883c434259a18f8926c2}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}!heap@{heap}}
+\index{heap@{heap}!networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}}
+\subsubsection{\texorpdfstring{heap}{heap}}
+{\footnotesize\ttfamily networkx.\+utils.\+mapped\+\_\+queue.\+Mapped\+Queue.\+heap}
+
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a9bedb9446f5b4e2ad2b503af99aa585b}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1MappedQueue_a9bedb9446f5b4e2ad2b503af99aa585b}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}!position@{position}}
+\index{position@{position}!networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue@{networkx\+::utils\+::mapped\+\_\+queue\+::\+Mapped\+Queue}}
+\subsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily networkx.\+utils.\+mapped\+\_\+queue.\+Mapped\+Queue.\+position}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/utils/\hyperlink{mapped__queue_8py}{mapped\+\_\+queue.\+py}\end{DoxyCompactItemize}

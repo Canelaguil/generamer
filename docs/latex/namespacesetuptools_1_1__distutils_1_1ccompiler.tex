@@ -1,0 +1,111 @@
+\hypertarget{namespacesetuptools_1_1__distutils_1_1ccompiler}{}\section{setuptools.\+\_\+distutils.\+ccompiler Namespace Reference}
+\label{namespacesetuptools_1_1__distutils_1_1ccompiler}\index{setuptools.\+\_\+distutils.\+ccompiler@{setuptools.\+\_\+distutils.\+ccompiler}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1__distutils_1_1ccompiler_1_1CCompiler}{C\+Compiler}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1ccompiler_afbcbb6febf94a459bb5f8329bd2dcb9b}{get\+\_\+default\+\_\+compiler} (osname=None, platform=None)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1ccompiler_a764b086d07417c6b316bc8d81f9bf897}{show\+\_\+compilers} ()
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1ccompiler_aa33975550d1aae55411abeb711b8f7fb}{new\+\_\+compiler} (plat=None, compiler=None, verbose=0, dry\+\_\+run=0, force=0)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1ccompiler_a61e9065d3f34f4c2f88deb2eda16d537}{gen\+\_\+preprocess\+\_\+options} (macros, include\+\_\+dirs)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1ccompiler_a3c8fe797e125f47bef62aae7ab76aad7}{gen\+\_\+lib\+\_\+options} (compiler, library\+\_\+dirs, runtime\+\_\+library\+\_\+dirs, libraries)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1ccompiler_ad41ffa303595565cef666a42c0e954da}{compiler\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}distutils.ccompiler
+
+Contains CCompiler, an abstract base class that defines the interface
+for the Distutils compiler abstraction model.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1ccompiler_a3c8fe797e125f47bef62aae7ab76aad7}\label{namespacesetuptools_1_1__distutils_1_1ccompiler_a3c8fe797e125f47bef62aae7ab76aad7}} 
+\index{setuptools\+::\+\_\+distutils\+::ccompiler@{setuptools\+::\+\_\+distutils\+::ccompiler}!gen\+\_\+lib\+\_\+options@{gen\+\_\+lib\+\_\+options}}
+\index{gen\+\_\+lib\+\_\+options@{gen\+\_\+lib\+\_\+options}!setuptools\+::\+\_\+distutils\+::ccompiler@{setuptools\+::\+\_\+distutils\+::ccompiler}}
+\subsubsection{\texorpdfstring{gen\+\_\+lib\+\_\+options()}{gen\_lib\_options()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+ccompiler.\+gen\+\_\+lib\+\_\+options (\begin{DoxyParamCaption}\item[{}]{compiler,  }\item[{}]{library\+\_\+dirs,  }\item[{}]{runtime\+\_\+library\+\_\+dirs,  }\item[{}]{libraries }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate linker options for searching library directories and
+linking with specific libraries.  'libraries' and 'library_dirs' are,
+respectively, lists of library names (not filenames!) and search
+directories.  Returns a list of command-line options suitable for use
+with some compiler (depending on the two format strings passed in).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1ccompiler_a61e9065d3f34f4c2f88deb2eda16d537}\label{namespacesetuptools_1_1__distutils_1_1ccompiler_a61e9065d3f34f4c2f88deb2eda16d537}} 
+\index{setuptools\+::\+\_\+distutils\+::ccompiler@{setuptools\+::\+\_\+distutils\+::ccompiler}!gen\+\_\+preprocess\+\_\+options@{gen\+\_\+preprocess\+\_\+options}}
+\index{gen\+\_\+preprocess\+\_\+options@{gen\+\_\+preprocess\+\_\+options}!setuptools\+::\+\_\+distutils\+::ccompiler@{setuptools\+::\+\_\+distutils\+::ccompiler}}
+\subsubsection{\texorpdfstring{gen\+\_\+preprocess\+\_\+options()}{gen\_preprocess\_options()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+ccompiler.\+gen\+\_\+preprocess\+\_\+options (\begin{DoxyParamCaption}\item[{}]{macros,  }\item[{}]{include\+\_\+dirs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate C pre-processor options (-D, -U, -I) as used by at least
+two types of compilers: the typical Unix compiler and Visual C++.
+'macros' is the usual thing, a list of 1- or 2-tuples, where (name,)
+means undefine (-U) macro 'name', and (name,value) means define (-D)
+macro 'name' to 'value'.  'include_dirs' is just a list of directory
+names to be added to the header file search path (-I).  Returns a list
+of command-line options suitable for either Unix compilers or Visual
+C++.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1ccompiler_afbcbb6febf94a459bb5f8329bd2dcb9b}\label{namespacesetuptools_1_1__distutils_1_1ccompiler_afbcbb6febf94a459bb5f8329bd2dcb9b}} 
+\index{setuptools\+::\+\_\+distutils\+::ccompiler@{setuptools\+::\+\_\+distutils\+::ccompiler}!get\+\_\+default\+\_\+compiler@{get\+\_\+default\+\_\+compiler}}
+\index{get\+\_\+default\+\_\+compiler@{get\+\_\+default\+\_\+compiler}!setuptools\+::\+\_\+distutils\+::ccompiler@{setuptools\+::\+\_\+distutils\+::ccompiler}}
+\subsubsection{\texorpdfstring{get\+\_\+default\+\_\+compiler()}{get\_default\_compiler()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+ccompiler.\+get\+\_\+default\+\_\+compiler (\begin{DoxyParamCaption}\item[{}]{osname = {\ttfamily None},  }\item[{}]{platform = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determine the default compiler to use for the given platform.
+
+   osname should be one of the standard Python OS names (i.e. the
+   ones returned by os.name) and platform the common value
+   returned by sys.platform for the platform in question.
+
+   The default values are os.name and sys.platform in case the
+   parameters are not given.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1ccompiler_aa33975550d1aae55411abeb711b8f7fb}\label{namespacesetuptools_1_1__distutils_1_1ccompiler_aa33975550d1aae55411abeb711b8f7fb}} 
+\index{setuptools\+::\+\_\+distutils\+::ccompiler@{setuptools\+::\+\_\+distutils\+::ccompiler}!new\+\_\+compiler@{new\+\_\+compiler}}
+\index{new\+\_\+compiler@{new\+\_\+compiler}!setuptools\+::\+\_\+distutils\+::ccompiler@{setuptools\+::\+\_\+distutils\+::ccompiler}}
+\subsubsection{\texorpdfstring{new\+\_\+compiler()}{new\_compiler()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+ccompiler.\+new\+\_\+compiler (\begin{DoxyParamCaption}\item[{}]{plat = {\ttfamily None},  }\item[{}]{compiler = {\ttfamily None},  }\item[{}]{verbose = {\ttfamily 0},  }\item[{}]{dry\+\_\+run = {\ttfamily 0},  }\item[{}]{force = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate an instance of some CCompiler subclass for the supplied
+platform/compiler combination.  'plat' defaults to 'os.name'
+(eg. 'posix', 'nt'), and 'compiler' defaults to the default compiler
+for that platform.  Currently only 'posix' and 'nt' are supported, and
+the default compilers are "traditional Unix interface" (UnixCCompiler
+class) and Visual C++ (MSVCCompiler class).  Note that it's perfectly
+possible to ask for a Unix compiler object under Windows, and a
+Microsoft compiler object under Unix -- if you supply a value for
+'compiler', 'plat' is ignored.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1ccompiler_a764b086d07417c6b316bc8d81f9bf897}\label{namespacesetuptools_1_1__distutils_1_1ccompiler_a764b086d07417c6b316bc8d81f9bf897}} 
+\index{setuptools\+::\+\_\+distutils\+::ccompiler@{setuptools\+::\+\_\+distutils\+::ccompiler}!show\+\_\+compilers@{show\+\_\+compilers}}
+\index{show\+\_\+compilers@{show\+\_\+compilers}!setuptools\+::\+\_\+distutils\+::ccompiler@{setuptools\+::\+\_\+distutils\+::ccompiler}}
+\subsubsection{\texorpdfstring{show\+\_\+compilers()}{show\_compilers()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+ccompiler.\+show\+\_\+compilers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Print list of available compilers (used by the "--help-compiler"
+options to "build", "build_ext", "build_clib").
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1ccompiler_ad41ffa303595565cef666a42c0e954da}\label{namespacesetuptools_1_1__distutils_1_1ccompiler_ad41ffa303595565cef666a42c0e954da}} 
+\index{setuptools\+::\+\_\+distutils\+::ccompiler@{setuptools\+::\+\_\+distutils\+::ccompiler}!compiler\+\_\+class@{compiler\+\_\+class}}
+\index{compiler\+\_\+class@{compiler\+\_\+class}!setuptools\+::\+\_\+distutils\+::ccompiler@{setuptools\+::\+\_\+distutils\+::ccompiler}}
+\subsubsection{\texorpdfstring{compiler\+\_\+class}{compiler\_class}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+ccompiler.\+compiler\+\_\+class}
+

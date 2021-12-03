@@ -1,0 +1,102 @@
+\hypertarget{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting}{}\section{numpy.\+testing.\+tests.\+test\+\_\+doctesting Namespace Reference}
+\label{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting}\index{numpy.\+testing.\+tests.\+test\+\_\+doctesting@{numpy.\+testing.\+tests.\+test\+\_\+doctesting}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_a0d185b8906cf32b100dd60d1ef8ce783}{check\+\_\+random\+\_\+directive} ()
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_ae7d8a01857a6b1605092d87e42554cd5}{check\+\_\+implicit\+\_\+np} ()
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_afe7bd5096e554bc027047a45ccd9f37f}{check\+\_\+whitespace\+\_\+enabled} ()
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_ad4a1a46dd1de4b1a792ac4e3794313fd}{check\+\_\+empty\+\_\+output} ()
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_a81d316ca9b5292162920514934c23c08}{check\+\_\+skip} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_ad639f892029816d01ff8a34a82602acb}{argv}
+\item 
+\hyperlink{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_a8a0fb3e04d0d1258529f99e7b35ec9fc}{addplugins}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Doctests for NumPy-specific nose/doctest modifications\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_ad4a1a46dd1de4b1a792ac4e3794313fd}\label{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_ad4a1a46dd1de4b1a792ac4e3794313fd}} 
+\index{numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}!check\+\_\+empty\+\_\+output@{check\+\_\+empty\+\_\+output}}
+\index{check\+\_\+empty\+\_\+output@{check\+\_\+empty\+\_\+output}!numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}}
+\subsubsection{\texorpdfstring{check\+\_\+empty\+\_\+output()}{check\_empty\_output()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+tests.\+test\+\_\+doctesting.\+check\+\_\+empty\+\_\+output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check that no output does not cause an error.
+
+This is related to nose bug 445; the numpy plugin changed the
+doctest-result-variable default and therefore hit this bug:
+http://code.google.com/p/python-nose/issues/detail?id=445
+
+>>> a = 10
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_ae7d8a01857a6b1605092d87e42554cd5}\label{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_ae7d8a01857a6b1605092d87e42554cd5}} 
+\index{numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}!check\+\_\+implicit\+\_\+np@{check\+\_\+implicit\+\_\+np}}
+\index{check\+\_\+implicit\+\_\+np@{check\+\_\+implicit\+\_\+np}!numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}}
+\subsubsection{\texorpdfstring{check\+\_\+implicit\+\_\+np()}{check\_implicit\_np()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+tests.\+test\+\_\+doctesting.\+check\+\_\+implicit\+\_\+np (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}>>> np.array([1,2,3])
+array([1, 2, 3])
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_a0d185b8906cf32b100dd60d1ef8ce783}\label{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_a0d185b8906cf32b100dd60d1ef8ce783}} 
+\index{numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}!check\+\_\+random\+\_\+directive@{check\+\_\+random\+\_\+directive}}
+\index{check\+\_\+random\+\_\+directive@{check\+\_\+random\+\_\+directive}!numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}}
+\subsubsection{\texorpdfstring{check\+\_\+random\+\_\+directive()}{check\_random\_directive()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+tests.\+test\+\_\+doctesting.\+check\+\_\+random\+\_\+directive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}>>> 2+2
+<BadExample object at 0x084D05AC>  #random: may vary on your system
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_a81d316ca9b5292162920514934c23c08}\label{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_a81d316ca9b5292162920514934c23c08}} 
+\index{numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}!check\+\_\+skip@{check\+\_\+skip}}
+\index{check\+\_\+skip@{check\+\_\+skip}!numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}}
+\subsubsection{\texorpdfstring{check\+\_\+skip()}{check\_skip()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+tests.\+test\+\_\+doctesting.\+check\+\_\+skip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check skip directive
+
+The test below should not run
+
+>>> 1/0 #doctest: +SKIP
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_afe7bd5096e554bc027047a45ccd9f37f}\label{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_afe7bd5096e554bc027047a45ccd9f37f}} 
+\index{numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}!check\+\_\+whitespace\+\_\+enabled@{check\+\_\+whitespace\+\_\+enabled}}
+\index{check\+\_\+whitespace\+\_\+enabled@{check\+\_\+whitespace\+\_\+enabled}!numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}}
+\subsubsection{\texorpdfstring{check\+\_\+whitespace\+\_\+enabled()}{check\_whitespace\_enabled()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+tests.\+test\+\_\+doctesting.\+check\+\_\+whitespace\+\_\+enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}# whitespace after the 3
+>>> 1+2
+3
+
+# whitespace before the 7
+>>> 3+4
+ 7
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_a8a0fb3e04d0d1258529f99e7b35ec9fc}\label{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_a8a0fb3e04d0d1258529f99e7b35ec9fc}} 
+\index{numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}!addplugins@{addplugins}}
+\index{addplugins@{addplugins}!numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}}
+\subsubsection{\texorpdfstring{addplugins}{addplugins}}
+{\footnotesize\ttfamily numpy.\+testing.\+tests.\+test\+\_\+doctesting.\+addplugins}
+
+\mbox{\Hypertarget{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_ad639f892029816d01ff8a34a82602acb}\label{namespacenumpy_1_1testing_1_1tests_1_1test__doctesting_ad639f892029816d01ff8a34a82602acb}} 
+\index{numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}!argv@{argv}}
+\index{argv@{argv}!numpy\+::testing\+::tests\+::test\+\_\+doctesting@{numpy\+::testing\+::tests\+::test\+\_\+doctesting}}
+\subsubsection{\texorpdfstring{argv}{argv}}
+{\footnotesize\ttfamily numpy.\+testing.\+tests.\+test\+\_\+doctesting.\+argv}
+

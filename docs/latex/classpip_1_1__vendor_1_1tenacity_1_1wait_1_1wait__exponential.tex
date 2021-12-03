@@ -1,0 +1,104 @@
+\hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential}{}\section{pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+exponential Class Reference}
+\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential}\index{pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+exponential@{pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+exponential}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+exponential\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+exponential\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_ad4c1bf3a33d98f44fd34d96ac65a923f}{\+\_\+\+\_\+init\+\_\+\+\_\+}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_a1731d7c9e7cee5039fdbaae5109a5126}{\+\_\+\+\_\+call\+\_\+\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_aad2e12fc1f18347de41ac288fa9d55f4}{multiplier}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_ae41e1cde724cc3efb75190fd8d02b403}{min}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_a684008195b1733ae7520a10d8183fe9b}{max}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_af64e5448868f6376b326c38a958f3c34}{exp\+\_\+base}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Wait strategy that applies exponential backoff.
+
+It allows for a customized multiplier and an ability to restrict the
+upper and lower limits to some maximum and minimum value.
+
+The intervals are fixed (i.e. there is no jitter), so this strategy is
+suitable for balancing retries against latency when a required resource is
+unavailable for an unknown duration, but *not* suitable for resolving
+contention between multiple processes for a shared resource. Use
+wait_random_exponential for the latter case.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_ad4c1bf3a33d98f44fd34d96ac65a923f}\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_ad4c1bf3a33d98f44fd34d96ac65a923f}} 
+\index{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+exponential.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{multiplier }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_a1731d7c9e7cee5039fdbaae5109a5126}\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_a1731d7c9e7cee5039fdbaae5109a5126}} 
+\index{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+exponential.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{retry\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_af64e5448868f6376b326c38a958f3c34}\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_af64e5448868f6376b326c38a958f3c34}} 
+\index{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential}!exp\+\_\+base@{exp\+\_\+base}}
+\index{exp\+\_\+base@{exp\+\_\+base}!pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential}}
+\subsubsection{\texorpdfstring{exp\+\_\+base}{exp\_base}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+exponential.\+exp\+\_\+base\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_a684008195b1733ae7520a10d8183fe9b}\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_a684008195b1733ae7520a10d8183fe9b}} 
+\index{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential}!max@{max}}
+\index{max@{max}!pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential}}
+\subsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+exponential.\+max\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_ae41e1cde724cc3efb75190fd8d02b403}\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_ae41e1cde724cc3efb75190fd8d02b403}} 
+\index{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential}!min@{min}}
+\index{min@{min}!pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential}}
+\subsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+exponential.\+min\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_aad2e12fc1f18347de41ac288fa9d55f4}\label{classpip_1_1__vendor_1_1tenacity_1_1wait_1_1wait__exponential_aad2e12fc1f18347de41ac288fa9d55f4}} 
+\index{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential}!multiplier@{multiplier}}
+\index{multiplier@{multiplier}!pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential@{pip\+::\+\_\+vendor\+::tenacity\+::wait\+::wait\+\_\+exponential}}
+\subsubsection{\texorpdfstring{multiplier}{multiplier}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+tenacity.\+wait.\+wait\+\_\+exponential.\+multiplier\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/tenacity/\hyperlink{tenacity_2wait_8py}{wait.\+py}\end{DoxyCompactItemize}

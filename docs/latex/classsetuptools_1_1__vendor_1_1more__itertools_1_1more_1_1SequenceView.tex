@@ -1,0 +1,97 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView}{}\section{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+Sequence\+View Class Reference}
+\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView}\index{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+Sequence\+View@{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+Sequence\+View}}
+
+
+Inheritance diagram for setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+Sequence\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+Sequence\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView_a2d15d82d3d05efa4f6a3d3121ba053fe}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, target)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView_ab7f4888d268a7c2b58b30f16f592d3ed}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, index)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView_aa90931089d55f5a627ef8ec4a2a27e6e}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView_a78fce898ff72d9333007cb8612165b94}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Return a read-only view of the sequence object *target*.
+
+:class:`SequenceView` objects are analogous to Python's built-in
+"dictionary view" types. They provide a dynamic view of a sequence's items,
+meaning that when the sequence updates, so does the view.
+
+    >>> seq = ['0', '1', '2']
+    >>> view = SequenceView(seq)
+    >>> view
+    SequenceView(['0', '1', '2'])
+    >>> seq.append('3')
+    >>> view
+    SequenceView(['0', '1', '2', '3'])
+
+Sequence views support indexing, slicing, and length queries. They act
+like the underlying sequence, except they don't allow assignment:
+
+    >>> view[1]
+    '1'
+    >>> view[1:-1]
+    ['1', '2']
+    >>> len(view)
+    4
+
+Sequence views are useful as an alternative to copying, as they don't
+require (much) extra storage.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView_a2d15d82d3d05efa4f6a3d3121ba053fe}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView_a2d15d82d3d05efa4f6a3d3121ba053fe}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+Sequence\+View.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{target }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView_ab7f4888d268a7c2b58b30f16f592d3ed}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView_ab7f4888d268a7c2b58b30f16f592d3ed}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+Sequence\+View.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView_aa90931089d55f5a627ef8ec4a2a27e6e}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView_aa90931089d55f5a627ef8ec4a2a27e6e}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+Sequence\+View.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView_a78fce898ff72d9333007cb8612165b94}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1SequenceView_a78fce898ff72d9333007cb8612165b94}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::\+Sequence\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+Sequence\+View.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/more\+\_\+itertools/\hyperlink{more_8py}{more.\+py}\end{DoxyCompactItemize}

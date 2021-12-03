@@ -1,0 +1,115 @@
+\hypertarget{classmatplotlib_1_1figure_1_1__AxesStack}{}\section{matplotlib.\+figure.\+\_\+\+Axes\+Stack Class Reference}
+\label{classmatplotlib_1_1figure_1_1__AxesStack}\index{matplotlib.\+figure.\+\_\+\+Axes\+Stack@{matplotlib.\+figure.\+\_\+\+Axes\+Stack}}
+
+
+Inheritance diagram for matplotlib.\+figure.\+\_\+\+Axes\+Stack\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classmatplotlib_1_1figure_1_1__AxesStack__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+figure.\+\_\+\+Axes\+Stack\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classmatplotlib_1_1figure_1_1__AxesStack__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1__AxesStack_a75d6ed84165737e038a42f4e9afdfdd9}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1__AxesStack_a49363361c2f7d876e6b9d54951804c21}{as\+\_\+list} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1__AxesStack_a0ac61e4385f21e846d645cd61b9be273}{remove} (self, a)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1__AxesStack_a8fda07b52c3972eeb74a9debb6b3970d}{bubble} (self, a)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1__AxesStack_ae1d6a33592ea671daf55189c7b61a842}{add} (self, a)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1__AxesStack_aa76c05eccdd837d39d9afb2dbe33ae9f}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1__AxesStack_a8b442b6c87733bbd77f22664c8cd0967}{\+\_\+\+\_\+contains\+\_\+\+\_\+} (self, a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Specialization of Stack, to handle all tracking of Axes in a Figure.
+
+This stack stores ``ind, axes`` pairs, where ``ind`` is a serial index
+tracking the order in which axes were added.
+
+AxesStack is a callable; calling it returns the current axes.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1__AxesStack_a75d6ed84165737e038a42f4e9afdfdd9}\label{classmatplotlib_1_1figure_1_1__AxesStack_a75d6ed84165737e038a42f4e9afdfdd9}} 
+\index{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+\_\+\+Axes\+Stack.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1__AxesStack_aa76c05eccdd837d39d9afb2dbe33ae9f}\label{classmatplotlib_1_1figure_1_1__AxesStack_aa76c05eccdd837d39d9afb2dbe33ae9f}} 
+\index{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+\_\+\+Axes\+Stack.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the active axes.
+
+If no axes exists on the stack, then returns None.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1figure_1_1__AxesStack_a8b442b6c87733bbd77f22664c8cd0967}\label{classmatplotlib_1_1figure_1_1__AxesStack_a8b442b6c87733bbd77f22664c8cd0967}} 
+\index{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}!\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}!matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+contains\+\_\+\+\_\+()}{\_\_contains\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+\_\+\+Axes\+Stack.\+\_\+\+\_\+contains\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1__AxesStack_ae1d6a33592ea671daf55189c7b61a842}\label{classmatplotlib_1_1figure_1_1__AxesStack_ae1d6a33592ea671daf55189c7b61a842}} 
+\index{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}!add@{add}}
+\index{add@{add}!matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+\_\+\+Axes\+Stack.\+add (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add Axes *a* to the stack.
+
+If *a* is already on the stack, don't add it again.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1figure_1_1__AxesStack_a49363361c2f7d876e6b9d54951804c21}\label{classmatplotlib_1_1figure_1_1__AxesStack_a49363361c2f7d876e6b9d54951804c21}} 
+\index{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}!as\+\_\+list@{as\+\_\+list}}
+\index{as\+\_\+list@{as\+\_\+list}!matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}}
+\subsubsection{\texorpdfstring{as\+\_\+list()}{as\_list()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+\_\+\+Axes\+Stack.\+as\+\_\+list (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of the Axes instances that have been added to the figure.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1figure_1_1__AxesStack_a8fda07b52c3972eeb74a9debb6b3970d}\label{classmatplotlib_1_1figure_1_1__AxesStack_a8fda07b52c3972eeb74a9debb6b3970d}} 
+\index{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}!bubble@{bubble}}
+\index{bubble@{bubble}!matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}}
+\subsubsection{\texorpdfstring{bubble()}{bubble()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+\_\+\+Axes\+Stack.\+bubble (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Move the given axes, which must already exist in the stack, to the top.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1figure_1_1__AxesStack_a0ac61e4385f21e846d645cd61b9be273}\label{classmatplotlib_1_1figure_1_1__AxesStack_a0ac61e4385f21e846d645cd61b9be273}} 
+\index{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}!remove@{remove}}
+\index{remove@{remove}!matplotlib\+::figure\+::\+\_\+\+Axes\+Stack@{matplotlib\+::figure\+::\+\_\+\+Axes\+Stack}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+\_\+\+Axes\+Stack.\+remove (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove the axes from the stack.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{figure_8py}{figure.\+py}\end{DoxyCompactItemize}

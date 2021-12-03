@@ -1,0 +1,55 @@
+\hypertarget{namespacesetuptools_1_1__vendor_1_1ordered__set}{}\section{setuptools.\+\_\+vendor.\+ordered\+\_\+set Namespace Reference}
+\label{namespacesetuptools_1_1__vendor_1_1ordered__set}\index{setuptools.\+\_\+vendor.\+ordered\+\_\+set@{setuptools.\+\_\+vendor.\+ordered\+\_\+set}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1__vendor_1_1ordered__set_1_1OrderedSet}{Ordered\+Set}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1__vendor_1_1ordered__set_a01beb552fed7ce9816e5ffcb877d9560}{is\+\_\+iterable} (obj)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1__vendor_1_1ordered__set_a71176dd52bbe2f4c416ba37f3efb4ed4}{S\+L\+I\+C\+E\+\_\+\+A\+LL}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An OrderedSet is a custom MutableSet that remembers its order, so that every
+entry has an index that can be looked up.
+
+Based on a recipe originally posted to ActiveState Recipes by Raymond Hettiger,
+and released under the MIT license.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__vendor_1_1ordered__set_a01beb552fed7ce9816e5ffcb877d9560}\label{namespacesetuptools_1_1__vendor_1_1ordered__set_a01beb552fed7ce9816e5ffcb877d9560}} 
+\index{setuptools\+::\+\_\+vendor\+::ordered\+\_\+set@{setuptools\+::\+\_\+vendor\+::ordered\+\_\+set}!is\+\_\+iterable@{is\+\_\+iterable}}
+\index{is\+\_\+iterable@{is\+\_\+iterable}!setuptools\+::\+\_\+vendor\+::ordered\+\_\+set@{setuptools\+::\+\_\+vendor\+::ordered\+\_\+set}}
+\subsubsection{\texorpdfstring{is\+\_\+iterable()}{is\_iterable()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+ordered\+\_\+set.\+is\+\_\+iterable (\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Are we being asked to look up a list of things, instead of a single thing?
+We check for the `__iter__` attribute so that this can cover types that
+don't have to be known by this module, such as NumPy arrays.
+
+Strings, however, should be considered as atomic values to look up, not
+iterables. The same goes for tuples, since they are immutable and therefore
+valid entries.
+
+We don't need to check for the Python 2 `unicode` type, because it doesn't
+have an `__iter__` attribute anyway.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__vendor_1_1ordered__set_a71176dd52bbe2f4c416ba37f3efb4ed4}\label{namespacesetuptools_1_1__vendor_1_1ordered__set_a71176dd52bbe2f4c416ba37f3efb4ed4}} 
+\index{setuptools\+::\+\_\+vendor\+::ordered\+\_\+set@{setuptools\+::\+\_\+vendor\+::ordered\+\_\+set}!S\+L\+I\+C\+E\+\_\+\+A\+LL@{S\+L\+I\+C\+E\+\_\+\+A\+LL}}
+\index{S\+L\+I\+C\+E\+\_\+\+A\+LL@{S\+L\+I\+C\+E\+\_\+\+A\+LL}!setuptools\+::\+\_\+vendor\+::ordered\+\_\+set@{setuptools\+::\+\_\+vendor\+::ordered\+\_\+set}}
+\subsubsection{\texorpdfstring{S\+L\+I\+C\+E\+\_\+\+A\+LL}{SLICE\_ALL}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+ordered\+\_\+set.\+S\+L\+I\+C\+E\+\_\+\+A\+LL}
+

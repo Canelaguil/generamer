@@ -1,0 +1,67 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1community_1_1kernighan__lin}{}\section{networkx.\+algorithms.\+community.\+kernighan\+\_\+lin Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1community_1_1kernighan__lin}\index{networkx.\+algorithms.\+community.\+kernighan\+\_\+lin@{networkx.\+algorithms.\+community.\+kernighan\+\_\+lin}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1kernighan__lin_a3d0f9f66102c88c7edc28024525d2946}{kernighan\+\_\+lin\+\_\+bisection} (G, partition=None, max\+\_\+iter=10, weight=\char`\"{}weight\char`\"{}, seed=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions for computing the Kernighan–Lin bipartition algorithm.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1community_1_1kernighan__lin_a3d0f9f66102c88c7edc28024525d2946}\label{namespacenetworkx_1_1algorithms_1_1community_1_1kernighan__lin_a3d0f9f66102c88c7edc28024525d2946}} 
+\index{networkx\+::algorithms\+::community\+::kernighan\+\_\+lin@{networkx\+::algorithms\+::community\+::kernighan\+\_\+lin}!kernighan\+\_\+lin\+\_\+bisection@{kernighan\+\_\+lin\+\_\+bisection}}
+\index{kernighan\+\_\+lin\+\_\+bisection@{kernighan\+\_\+lin\+\_\+bisection}!networkx\+::algorithms\+::community\+::kernighan\+\_\+lin@{networkx\+::algorithms\+::community\+::kernighan\+\_\+lin}}
+\subsubsection{\texorpdfstring{kernighan\+\_\+lin\+\_\+bisection()}{kernighan\_lin\_bisection()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+community.\+kernighan\+\_\+lin.\+kernighan\+\_\+lin\+\_\+bisection (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{partition = {\ttfamily None},  }\item[{}]{max\+\_\+iter = {\ttfamily 10},  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}},  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Partition a graph into two blocks using the Kernighan–Lin
+algorithm.
+
+This algorithm partitions a network into two sets by iteratively
+swapping pairs of nodes to reduce the edge cut between the two sets.  The
+pairs are chosen according to a modified form of Kernighan-Lin, which
+moves node individually, alternating between sides to keep the bisection
+balanced.
+
+Parameters
+----------
+G : graph
+
+partition : tuple
+    Pair of iterables containing an initial partition. If not
+    specified, a random balanced partition is used.
+
+max_iter : int
+    Maximum number of times to attempt swaps to find an
+    improvemement before giving up.
+
+weight : key
+    Edge data key to use as weight. If None, the weights are all
+    set to one.
+
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+    Only used if partition is None
+
+Returns
+-------
+partition : tuple
+    A pair of sets of nodes representing the bipartition.
+
+Raises
+------
+NetworkXError
+    If partition is not a valid partition of the nodes of the graph.
+
+References
+----------
+.. [1] Kernighan, B. W.; Lin, Shen (1970).
+   "An efficient heuristic procedure for partitioning graphs."
+   *Bell Systems Technical Journal* 49: 291--307.
+   Oxford University Press 2011.\end{DoxyVerb}
+ 

@@ -1,0 +1,331 @@
+\hypertarget{namespacenetworkx_1_1readwrite_1_1graphml}{}\section{networkx.\+readwrite.\+graphml Namespace Reference}
+\label{namespacenetworkx_1_1readwrite_1_1graphml}\index{networkx.\+readwrite.\+graphml@{networkx.\+readwrite.\+graphml}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphML}{Graph\+ML}
+\item 
+class \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader}{Graph\+M\+L\+Reader}
+\item 
+class \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLWriter}{Graph\+M\+L\+Writer}
+\item 
+class \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLWriterLxml}{Graph\+M\+L\+Writer\+Lxml}
+\item 
+class \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1IncrementalElement}{Incremental\+Element}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1graphml_a402f85085b78287200232129e44d5415}{write\+\_\+graphml\+\_\+xml} (G, path, encoding=\char`\"{}utf-\/8\char`\"{}, prettyprint=True, infer\+\_\+numeric\+\_\+types=False, named\+\_\+key\+\_\+ids=False, edge\+\_\+id\+\_\+from\+\_\+attribute=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1graphml_aa2b8982d923038f1e66ce2863daa637f}{write\+\_\+graphml\+\_\+lxml} (G, path, encoding=\char`\"{}utf-\/8\char`\"{}, prettyprint=True, infer\+\_\+numeric\+\_\+types=False, named\+\_\+key\+\_\+ids=False, edge\+\_\+id\+\_\+from\+\_\+attribute=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1graphml_ae3cad67ecd404c7d3c5aa7e3a960c698}{generate\+\_\+graphml} (G, encoding=\char`\"{}utf-\/8\char`\"{}, prettyprint=True, named\+\_\+key\+\_\+ids=False, edge\+\_\+id\+\_\+from\+\_\+attribute=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1graphml_a8347c9f63d34bba3e57c48f043835e2e}{read\+\_\+graphml} (path, node\+\_\+type=str, edge\+\_\+key\+\_\+type=int, force\+\_\+multigraph=False)
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1graphml_abeff394d286bd6994a649c8bdddd5a17}{parse\+\_\+graphml} (graphml\+\_\+string, node\+\_\+type=str, edge\+\_\+key\+\_\+type=int, force\+\_\+multigraph=False)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1readwrite_1_1graphml_afaaee57deeaba21fc4c70f107fe39da1}{mode}
+\item 
+\hyperlink{namespacenetworkx_1_1readwrite_1_1graphml_a50907e2aab4ec16b4d6a25916ef67bb7}{write\+\_\+graphml}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}*******
+GraphML
+*******
+Read and write graphs in GraphML format.
+
+This implementation does not support mixed graphs (directed and unidirected
+edges together), hyperedges, nested graphs, or ports.
+
+"GraphML is a comprehensive and easy-to-use file format for graphs. It
+consists of a language core to describe the structural properties of a
+graph and a flexible extension mechanism to add application-specific
+data. Its main features include support of
+
+    * directed, undirected, and mixed graphs,
+    * hypergraphs,
+    * hierarchical graphs,
+    * graphical representations,
+    * references to external data,
+    * application-specific attribute data, and
+    * light-weight parsers.
+
+Unlike many other file formats for graphs, GraphML does not use a
+custom syntax. Instead, it is based on XML and hence ideally suited as
+a common denominator for all kinds of services generating, archiving,
+or processing graphs."
+
+http://graphml.graphdrawing.org/
+
+Format
+------
+GraphML is an XML format.  See
+http://graphml.graphdrawing.org/specification.html for the specification and
+http://graphml.graphdrawing.org/primer/graphml-primer.html
+for examples.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1graphml_ae3cad67ecd404c7d3c5aa7e3a960c698}\label{namespacenetworkx_1_1readwrite_1_1graphml_ae3cad67ecd404c7d3c5aa7e3a960c698}} 
+\index{networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}!generate\+\_\+graphml@{generate\+\_\+graphml}}
+\index{generate\+\_\+graphml@{generate\+\_\+graphml}!networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}}
+\subsubsection{\texorpdfstring{generate\+\_\+graphml()}{generate\_graphml()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+graphml.\+generate\+\_\+graphml (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{encoding = {\ttfamily \char`\"{}utf-\/8\char`\"{}},  }\item[{}]{prettyprint = {\ttfamily True},  }\item[{}]{named\+\_\+key\+\_\+ids = {\ttfamily False},  }\item[{}]{edge\+\_\+id\+\_\+from\+\_\+attribute = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate GraphML lines for G
+
+Parameters
+----------
+G : graph
+   A networkx graph
+encoding : string (optional)
+   Encoding for text data.
+prettyprint : bool (optional)
+   If True use line breaks and indenting in output XML.
+named_key_ids : bool (optional)
+   If True use attr.name as value for key elements' id attribute.
+edge_id_from_attribute : dict key (optional)
+    If provided, the graphml edge id is set by looking up the corresponding
+    edge data attribute keyed by this parameter. If `None` or the key does not exist in edge data,
+    the edge id is set by the edge key if `G` is a MultiGraph, else the edge id is left unset.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> linefeed = chr(10)  # linefeed = \n
+>>> s = linefeed.join(nx.generate_graphml(G))
+>>> for line in nx.generate_graphml(G):  # doctest: +SKIP
+...     print(line)
+
+Notes
+-----
+This implementation does not support mixed graphs (directed and unidirected
+edges together) hyperedges, nested graphs, or ports.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1graphml_abeff394d286bd6994a649c8bdddd5a17}\label{namespacenetworkx_1_1readwrite_1_1graphml_abeff394d286bd6994a649c8bdddd5a17}} 
+\index{networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}!parse\+\_\+graphml@{parse\+\_\+graphml}}
+\index{parse\+\_\+graphml@{parse\+\_\+graphml}!networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}}
+\subsubsection{\texorpdfstring{parse\+\_\+graphml()}{parse\_graphml()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+graphml.\+parse\+\_\+graphml (\begin{DoxyParamCaption}\item[{}]{graphml\+\_\+string,  }\item[{}]{node\+\_\+type = {\ttfamily str},  }\item[{}]{edge\+\_\+key\+\_\+type = {\ttfamily int},  }\item[{}]{force\+\_\+multigraph = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read graph in GraphML format from string.
+
+Parameters
+----------
+graphml_string : string
+   String containing graphml information
+   (e.g., contents of a graphml file).
+
+node_type: Python type (default: str)
+   Convert node ids to this type
+
+edge_key_type: Python type (default: int)
+   Convert graphml edge ids to this type. Multigraphs use id as edge key.
+   Non-multigraphs add to edge attribute dict with name "id".
+
+force_multigraph : bool (default: False)
+   If True, return a multigraph with edge keys. If False (the default)
+   return a multigraph when multiedges are in the graph.
+
+
+Returns
+-------
+graph: NetworkX graph
+    If no parallel edges are found a Graph or DiGraph is returned.
+    Otherwise a MultiGraph or MultiDiGraph is returned.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> linefeed = chr(10)  # linefeed = \n
+>>> s = linefeed.join(nx.generate_graphml(G))
+>>> H = nx.parse_graphml(s)
+
+Notes
+-----
+Default node and edge attributes are not propagated to each node and edge.
+They can be obtained from `G.graph` and applied to node and edge attributes
+if desired using something like this:
+
+>>> default_color = G.graph["node_default"]["color"]  # doctest: +SKIP
+>>> for node, data in G.nodes(data=True):  # doctest: +SKIP
+...     if "color" not in data:
+...         data["color"] = default_color
+>>> default_color = G.graph["edge_default"]["color"]  # doctest: +SKIP
+>>> for u, v, data in G.edges(data=True):  # doctest: +SKIP
+...     if "color" not in data:
+...         data["color"] = default_color
+
+This implementation does not support mixed graphs (directed and unidirected
+edges together), hypergraphs, nested graphs, or ports.
+
+For multigraphs the GraphML edge "id" will be used as the edge
+key.  If not specified then they "key" attribute will be used.  If
+there is no "key" attribute a default NetworkX multigraph edge key
+will be provided.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1graphml_a8347c9f63d34bba3e57c48f043835e2e}\label{namespacenetworkx_1_1readwrite_1_1graphml_a8347c9f63d34bba3e57c48f043835e2e}} 
+\index{networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}!read\+\_\+graphml@{read\+\_\+graphml}}
+\index{read\+\_\+graphml@{read\+\_\+graphml}!networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}}
+\subsubsection{\texorpdfstring{read\+\_\+graphml()}{read\_graphml()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+graphml.\+read\+\_\+graphml (\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{node\+\_\+type = {\ttfamily str},  }\item[{}]{edge\+\_\+key\+\_\+type = {\ttfamily int},  }\item[{}]{force\+\_\+multigraph = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read graph in GraphML format from path.
+
+Parameters
+----------
+path : file or string
+   File or filename to write.
+   Filenames ending in .gz or .bz2 will be compressed.
+
+node_type: Python type (default: str)
+   Convert node ids to this type
+
+edge_key_type: Python type (default: int)
+   Convert graphml edge ids to this type. Multigraphs use id as edge key.
+   Non-multigraphs add to edge attribute dict with name "id".
+
+force_multigraph : bool (default: False)
+   If True, return a multigraph with edge keys. If False (the default)
+   return a multigraph when multiedges are in the graph.
+
+Returns
+-------
+graph: NetworkX graph
+    If parallel edges are present or `force_multigraph=True` then
+    a MultiGraph or MultiDiGraph is returned. Otherwise a Graph/DiGraph.
+    The returned graph is directed if the file indicates it should be.
+
+Notes
+-----
+Default node and edge attributes are not propagated to each node and edge.
+They can be obtained from `G.graph` and applied to node and edge attributes
+if desired using something like this:
+
+>>> default_color = G.graph["node_default"]["color"]  # doctest: +SKIP
+>>> for node, data in G.nodes(data=True):  # doctest: +SKIP
+...     if "color" not in data:
+...         data["color"] = default_color
+>>> default_color = G.graph["edge_default"]["color"]  # doctest: +SKIP
+>>> for u, v, data in G.edges(data=True):  # doctest: +SKIP
+...     if "color" not in data:
+...         data["color"] = default_color
+
+This implementation does not support mixed graphs (directed and unidirected
+edges together), hypergraphs, nested graphs, or ports.
+
+For multigraphs the GraphML edge "id" will be used as the edge
+key.  If not specified then they "key" attribute will be used.  If
+there is no "key" attribute a default NetworkX multigraph edge key
+will be provided.
+
+Files with the yEd "yfiles" extension can be read. The type of the node's
+shape is preserved in the `shape_type` node attribute.
+
+yEd compressed files ("file.graphmlz" extension) can be read by renaming
+the file to "file.graphml.gz".\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1graphml_aa2b8982d923038f1e66ce2863daa637f}\label{namespacenetworkx_1_1readwrite_1_1graphml_aa2b8982d923038f1e66ce2863daa637f}} 
+\index{networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}!write\+\_\+graphml\+\_\+lxml@{write\+\_\+graphml\+\_\+lxml}}
+\index{write\+\_\+graphml\+\_\+lxml@{write\+\_\+graphml\+\_\+lxml}!networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}}
+\subsubsection{\texorpdfstring{write\+\_\+graphml\+\_\+lxml()}{write\_graphml\_lxml()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+graphml.\+write\+\_\+graphml\+\_\+lxml (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{path,  }\item[{}]{encoding = {\ttfamily \char`\"{}utf-\/8\char`\"{}},  }\item[{}]{prettyprint = {\ttfamily True},  }\item[{}]{infer\+\_\+numeric\+\_\+types = {\ttfamily False},  }\item[{}]{named\+\_\+key\+\_\+ids = {\ttfamily False},  }\item[{}]{edge\+\_\+id\+\_\+from\+\_\+attribute = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write G in GraphML XML format to path
+
+This function uses the LXML framework and should be faster than
+the version using the xml library.
+
+Parameters
+----------
+G : graph
+   A networkx graph
+path : file or string
+   File or filename to write.
+   Filenames ending in .gz or .bz2 will be compressed.
+encoding : string (optional)
+   Encoding for text data.
+prettyprint : bool (optional)
+   If True use line breaks and indenting in output XML.
+infer_numeric_types : boolean
+   Determine if numeric types should be generalized.
+   For example, if edges have both int and float 'weight' attributes,
+   we infer in GraphML that both are floats.
+named_key_ids : bool (optional)
+   If True use attr.name as value for key elements' id attribute.
+edge_id_from_attribute : dict key (optional)
+    If provided, the graphml edge id is set by looking up the corresponding
+    edge data attribute keyed by this parameter. If `None` or the key does not exist in edge data,
+    the edge id is set by the edge key if `G` is a MultiGraph, else the edge id is left unset.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> nx.write_graphml_lxml(G, "fourpath.graphml")
+
+Notes
+-----
+This implementation does not support mixed graphs (directed
+and unidirected edges together) hyperedges, nested graphs, or ports.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1graphml_a402f85085b78287200232129e44d5415}\label{namespacenetworkx_1_1readwrite_1_1graphml_a402f85085b78287200232129e44d5415}} 
+\index{networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}!write\+\_\+graphml\+\_\+xml@{write\+\_\+graphml\+\_\+xml}}
+\index{write\+\_\+graphml\+\_\+xml@{write\+\_\+graphml\+\_\+xml}!networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}}
+\subsubsection{\texorpdfstring{write\+\_\+graphml\+\_\+xml()}{write\_graphml\_xml()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+graphml.\+write\+\_\+graphml\+\_\+xml (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{path,  }\item[{}]{encoding = {\ttfamily \char`\"{}utf-\/8\char`\"{}},  }\item[{}]{prettyprint = {\ttfamily True},  }\item[{}]{infer\+\_\+numeric\+\_\+types = {\ttfamily False},  }\item[{}]{named\+\_\+key\+\_\+ids = {\ttfamily False},  }\item[{}]{edge\+\_\+id\+\_\+from\+\_\+attribute = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write G in GraphML XML format to path
+
+Parameters
+----------
+G : graph
+   A networkx graph
+path : file or string
+   File or filename to write.
+   Filenames ending in .gz or .bz2 will be compressed.
+encoding : string (optional)
+   Encoding for text data.
+prettyprint : bool (optional)
+   If True use line breaks and indenting in output XML.
+infer_numeric_types : boolean
+   Determine if numeric types should be generalized.
+   For example, if edges have both int and float 'weight' attributes,
+   we infer in GraphML that both are floats.
+named_key_ids : bool (optional)
+   If True use attr.name as value for key elements' id attribute.
+edge_id_from_attribute : dict key (optional)
+    If provided, the graphml edge id is set by looking up the corresponding
+    edge data attribute keyed by this parameter. If `None` or the key does not exist in edge data,
+    the edge id is set by the edge key if `G` is a MultiGraph, else the edge id is left unset.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> nx.write_graphml(G, "test.graphml")
+
+Notes
+-----
+This implementation does not support mixed graphs (directed
+and unidirected edges together) hyperedges, nested graphs, or ports.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1graphml_afaaee57deeaba21fc4c70f107fe39da1}\label{namespacenetworkx_1_1readwrite_1_1graphml_afaaee57deeaba21fc4c70f107fe39da1}} 
+\index{networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}!mode@{mode}}
+\index{mode@{mode}!networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+graphml.\+mode}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1graphml_a50907e2aab4ec16b4d6a25916ef67bb7}\label{namespacenetworkx_1_1readwrite_1_1graphml_a50907e2aab4ec16b4d6a25916ef67bb7}} 
+\index{networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}!write\+\_\+graphml@{write\+\_\+graphml}}
+\index{write\+\_\+graphml@{write\+\_\+graphml}!networkx\+::readwrite\+::graphml@{networkx\+::readwrite\+::graphml}}
+\subsubsection{\texorpdfstring{write\+\_\+graphml}{write\_graphml}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+graphml.\+write\+\_\+graphml}
+

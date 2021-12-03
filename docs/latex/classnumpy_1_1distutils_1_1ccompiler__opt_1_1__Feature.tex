@@ -1,0 +1,374 @@
+\hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature}{}\section{numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature Class Reference}
+\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature}\index{numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature@{numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature}}
+
+
+Inheritance diagram for numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a0cf31967af0242c0fec79ec02d991ae7}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_afd8af969d9b3cc3872efe625903a55bd}{feature\+\_\+names} (self, names=None, force\+\_\+flags=None, macros=\mbox{[}$\,$\mbox{]})
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a6134bc5da1036936f31d09184959f5f0}{feature\+\_\+is\+\_\+exist} (self, name)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a2d778f9b3993c56b7d4fe363626d05b3}{feature\+\_\+sorted} (self, names, reverse=False)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a326853cdc7f2baf4945e37946075a5d8}{feature\+\_\+implies} (self, names, keep\+\_\+origins=False)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a4d740c60f856ce7e6950522367c24745}{feature\+\_\+implies\+\_\+c} (self, names)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a670243ec2f2f1ec83e13155f10d0e775}{feature\+\_\+ahead} (self, names)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a71b3eb9d29aca4f71e06b8bfba1cf043}{feature\+\_\+untied} (self, names)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a0193863be451726b816f51e8f8bce067}{feature\+\_\+get\+\_\+til} (self, names, keyisfalse)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a99a15d5127cde74eaacc953ff19e527f}{feature\+\_\+detect} (self, names)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a36b39b27ce1b0e16274b39d40a105fa4}{feature\+\_\+flags} (self, names)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a06dd4af410f1c755833654f3838427a6}{feature\+\_\+test} (self, name, force\+\_\+flags=None, macros=\mbox{[}$\,$\mbox{]})
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_adab52af0dbdad47435ddb50cf1042283}{feature\+\_\+is\+\_\+supported} (self, name, force\+\_\+flags=None, macros=\mbox{[}$\,$\mbox{]})
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_ab4e1bbbf998c1dc012f74d7cdb6bf68e}{feature\+\_\+can\+\_\+autovec} (self, name)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_ae5efa7e50ecf910ffd5fecaf31c56a6e}{feature\+\_\+extra\+\_\+checks} (self, name)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a04f8d6305d8996f7b58060332c89b4ab}{feature\+\_\+c\+\_\+preprocessor} (self, feature\+\_\+name, tabs=0)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a946a45ae9c021d04ef520d9787f518a5}{feature\+\_\+supported}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_ad78fd220cdcd29f37e716fb9370c8c26}{feature\+\_\+min}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a722943b73603d5d9cae00a7bca16a556}{feature\+\_\+is\+\_\+cached}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A helper class for `CCompilerOpt` that managing CPU features.
+
+Attributes
+----------
+feature_supported : dict
+    Dictionary containing all CPU features that supported
+    by the platform, according to the specified values in attribute
+    `_Config.conf_features` and `_Config.conf_features_partial()`
+
+feature_min : set
+    The minimum support of CPU features, according to
+    the specified values in attribute `_Config.conf_min_features`.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a0cf31967af0242c0fec79ec02d991ae7}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a0cf31967af0242c0fec79ec02d991ae7}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a670243ec2f2f1ec83e13155f10d0e775}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a670243ec2f2f1ec83e13155f10d0e775}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+ahead@{feature\+\_\+ahead}}
+\index{feature\+\_\+ahead@{feature\+\_\+ahead}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+ahead()}{feature\_ahead()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+ahead (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return list of features in 'names' after remove any
+implied features and keep the origins.
+
+Parameters
+----------
+'names': sequence
+    sequence of CPU feature names in uppercase.
+
+Returns
+-------
+list of CPU features sorted as-is 'names'
+
+Examples
+--------
+>>> self.feature_ahead(["SSE2", "SSE3", "SSE41"])
+["SSE41"]
+# assume AVX2 and FMA3 implies each other and AVX2
+# is the highest interest
+>>> self.feature_ahead(["SSE2", "SSE3", "SSE41", "AVX2", "FMA3"])
+["AVX2"]
+# assume AVX2 and FMA3 don't implies each other
+>>> self.feature_ahead(["SSE2", "SSE3", "SSE41", "AVX2", "FMA3"])
+["AVX2", "FMA3"]
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a04f8d6305d8996f7b58060332c89b4ab}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a04f8d6305d8996f7b58060332c89b4ab}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+c\+\_\+preprocessor@{feature\+\_\+c\+\_\+preprocessor}}
+\index{feature\+\_\+c\+\_\+preprocessor@{feature\+\_\+c\+\_\+preprocessor}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+c\+\_\+preprocessor()}{feature\_c\_preprocessor()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+c\+\_\+preprocessor (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{feature\+\_\+name,  }\item[{}]{tabs = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate C preprocessor definitions and include headers of a CPU feature.
+
+Parameters
+----------
+'feature_name': str
+    CPU feature name in uppercase.
+'tabs': int
+    if > 0, align the generated strings to the right depend on number of tabs.
+
+Returns
+-------
+str, generated C preprocessor
+
+Examples
+--------
+>>> self.feature_c_preprocessor("SSE3")
+/** SSE3 **/
+#define NPY_HAVE_SSE3 1
+#include <pmmintrin.h>
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_ab4e1bbbf998c1dc012f74d7cdb6bf68e}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_ab4e1bbbf998c1dc012f74d7cdb6bf68e}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+can\+\_\+autovec@{feature\+\_\+can\+\_\+autovec}}
+\index{feature\+\_\+can\+\_\+autovec@{feature\+\_\+can\+\_\+autovec}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+can\+\_\+autovec()}{feature\_can\_autovec()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+can\+\_\+autovec (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}check if the feature can be auto-vectorized by the compiler
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a99a15d5127cde74eaacc953ff19e527f}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a99a15d5127cde74eaacc953ff19e527f}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+detect@{feature\+\_\+detect}}
+\index{feature\+\_\+detect@{feature\+\_\+detect}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+detect()}{feature\_detect()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+detect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of CPU features that required to be detected
+sorted from the lowest to highest interest.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_ae5efa7e50ecf910ffd5fecaf31c56a6e}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_ae5efa7e50ecf910ffd5fecaf31c56a6e}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+extra\+\_\+checks@{feature\+\_\+extra\+\_\+checks}}
+\index{feature\+\_\+extra\+\_\+checks@{feature\+\_\+extra\+\_\+checks}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+extra\+\_\+checks()}{feature\_extra\_checks()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+extra\+\_\+checks (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of supported extra checks after testing them against
+the compiler.
+
+Parameters
+----------
+names: str
+    CPU feature name in uppercase.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a36b39b27ce1b0e16274b39d40a105fa4}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a36b39b27ce1b0e16274b39d40a105fa4}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+flags@{feature\+\_\+flags}}
+\index{feature\+\_\+flags@{feature\+\_\+flags}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+flags()}{feature\_flags()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+flags (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of CPU features flags sorted from the lowest
+to highest interest.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a0193863be451726b816f51e8f8bce067}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a0193863be451726b816f51e8f8bce067}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+get\+\_\+til@{feature\+\_\+get\+\_\+til}}
+\index{feature\+\_\+get\+\_\+til@{feature\+\_\+get\+\_\+til}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+get\+\_\+til()}{feature\_get\_til()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+get\+\_\+til (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names,  }\item[{}]{keyisfalse }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}same as `feature_implies_c()` but stop collecting implied
+features when feature's option that provided through
+parameter 'keyisfalse' is False, also sorting the returned
+features.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a326853cdc7f2baf4945e37946075a5d8}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a326853cdc7f2baf4945e37946075a5d8}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+implies@{feature\+\_\+implies}}
+\index{feature\+\_\+implies@{feature\+\_\+implies}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+implies()}{feature\_implies()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+implies (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names,  }\item[{}]{keep\+\_\+origins = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a set of CPU features that implied by 'names'
+
+Parameters
+----------
+names: str or sequence of str
+    CPU feature name(s) in uppercase.
+
+keep_origins: bool
+    if False(default) then the returned set will not contain any
+    features from 'names'. This case happens only when two features
+    imply each other.
+
+Examples
+--------
+>>> self.feature_implies("SSE3")
+{'SSE', 'SSE2'}
+>>> self.feature_implies("SSE2")
+{'SSE'}
+>>> self.feature_implies("SSE2", keep_origins=True)
+# 'SSE2' found here since 'SSE' and 'SSE2' imply each other
+{'SSE', 'SSE2'}
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a4d740c60f856ce7e6950522367c24745}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a4d740c60f856ce7e6950522367c24745}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+implies\+\_\+c@{feature\+\_\+implies\+\_\+c}}
+\index{feature\+\_\+implies\+\_\+c@{feature\+\_\+implies\+\_\+c}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+implies\+\_\+c()}{feature\_implies\_c()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+implies\+\_\+c (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}same as feature_implies() but combining 'names'\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a6134bc5da1036936f31d09184959f5f0}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a6134bc5da1036936f31d09184959f5f0}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+is\+\_\+exist@{feature\+\_\+is\+\_\+exist}}
+\index{feature\+\_\+is\+\_\+exist@{feature\+\_\+is\+\_\+exist}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+is\+\_\+exist()}{feature\_is\_exist()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+is\+\_\+exist (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if a certain feature is exist and covered within
+`_Config.conf_features`.
+
+Parameters
+----------
+'name': str
+    feature name in uppercase.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_adab52af0dbdad47435ddb50cf1042283}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_adab52af0dbdad47435ddb50cf1042283}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+is\+\_\+supported@{feature\+\_\+is\+\_\+supported}}
+\index{feature\+\_\+is\+\_\+supported@{feature\+\_\+is\+\_\+supported}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+is\+\_\+supported()}{feature\_is\_supported()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+is\+\_\+supported (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{force\+\_\+flags = {\ttfamily None},  }\item[{}]{macros = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if a certain CPU feature is supported by the platform and compiler.
+
+Parameters
+----------
+name: str
+    CPU feature name in uppercase.
+
+force_flags: list or None, optional
+    If None(default), default compiler flags for every CPU feature will
+    be used during test.
+
+macros : list of tuples, optional
+    A list of C macro definitions.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_afd8af969d9b3cc3872efe625903a55bd}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_afd8af969d9b3cc3872efe625903a55bd}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+names@{feature\+\_\+names}}
+\index{feature\+\_\+names@{feature\+\_\+names}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+names()}{feature\_names()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+names (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names = {\ttfamily None},  }\item[{}]{force\+\_\+flags = {\ttfamily None},  }\item[{}]{macros = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a set of CPU feature names that supported by platform and the **C** compiler.
+
+Parameters
+----------
+names: sequence or None, optional
+    Specify certain CPU features to test it against the **C** compiler.
+    if None(default), it will test all current supported features.
+    **Note**: feature names must be in upper-case.
+
+force_flags: list or None, optional
+    If None(default), default compiler flags for every CPU feature will
+    be used during the test.
+
+macros : list of tuples, optional
+    A list of C macro definitions.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a2d778f9b3993c56b7d4fe363626d05b3}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a2d778f9b3993c56b7d4fe363626d05b3}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+sorted@{feature\+\_\+sorted}}
+\index{feature\+\_\+sorted@{feature\+\_\+sorted}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+sorted()}{feature\_sorted()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+sorted (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names,  }\item[{}]{reverse = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sort a list of CPU features ordered by the lowest interest.
+
+Parameters
+----------
+'names': sequence
+    sequence of supported feature names in uppercase.
+'reverse': bool, optional
+    If true, the sorted features is reversed. (highest interest)
+
+Returns
+-------
+list, sorted CPU features
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a06dd4af410f1c755833654f3838427a6}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a06dd4af410f1c755833654f3838427a6}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+test@{feature\+\_\+test}}
+\index{feature\+\_\+test@{feature\+\_\+test}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+test()}{feature\_test()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+test (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{force\+\_\+flags = {\ttfamily None},  }\item[{}]{macros = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test a certain CPU feature against the compiler through its own
+check file.
+
+Parameters
+----------
+name: str
+    Supported CPU feature name.
+
+force_flags: list or None, optional
+    If None(default), the returned flags from `feature_flags()`
+    will be used.
+
+macros : list of tuples, optional
+    A list of C macro definitions.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a71b3eb9d29aca4f71e06b8bfba1cf043}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a71b3eb9d29aca4f71e06b8bfba1cf043}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+untied@{feature\+\_\+untied}}
+\index{feature\+\_\+untied@{feature\+\_\+untied}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+untied()}{feature\_untied()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+untied (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}same as 'feature_ahead()' but if both features implied each other
+and keep the highest interest.
+
+Parameters
+----------
+'names': sequence
+    sequence of CPU feature names in uppercase.
+
+Returns
+-------
+list of CPU features sorted as-is 'names'
+
+Examples
+--------
+>>> self.feature_untied(["SSE2", "SSE3", "SSE41"])
+["SSE2", "SSE3", "SSE41"]
+# assume AVX2 and FMA3 implies each other
+>>> self.feature_untied(["SSE2", "SSE3", "SSE41", "FMA3", "AVX2"])
+["SSE2", "SSE3", "SSE41", "AVX2"]
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a722943b73603d5d9cae00a7bca16a556}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a722943b73603d5d9cae00a7bca16a556}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+is\+\_\+cached@{feature\+\_\+is\+\_\+cached}}
+\index{feature\+\_\+is\+\_\+cached@{feature\+\_\+is\+\_\+cached}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+is\+\_\+cached}{feature\_is\_cached}}
+{\footnotesize\ttfamily numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+is\+\_\+cached}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_ad78fd220cdcd29f37e716fb9370c8c26}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_ad78fd220cdcd29f37e716fb9370c8c26}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+min@{feature\+\_\+min}}
+\index{feature\+\_\+min@{feature\+\_\+min}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+min}{feature\_min}}
+{\footnotesize\ttfamily numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+min}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a946a45ae9c021d04ef520d9787f518a5}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature_a946a45ae9c021d04ef520d9787f518a5}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}!feature\+\_\+supported@{feature\+\_\+supported}}
+\index{feature\+\_\+supported@{feature\+\_\+supported}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Feature}}
+\subsubsection{\texorpdfstring{feature\+\_\+supported}{feature\_supported}}
+{\footnotesize\ttfamily numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Feature.\+feature\+\_\+supported}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/distutils/\hyperlink{ccompiler__opt_8py}{ccompiler\+\_\+opt.\+py}\end{DoxyCompactItemize}

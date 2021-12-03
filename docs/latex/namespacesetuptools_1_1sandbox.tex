@@ -1,0 +1,120 @@
+\hypertarget{namespacesetuptools_1_1sandbox}{}\section{setuptools.\+sandbox Namespace Reference}
+\label{namespacesetuptools_1_1sandbox}\index{setuptools.\+sandbox@{setuptools.\+sandbox}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1sandbox_1_1AbstractSandbox}{Abstract\+Sandbox}
+\item 
+class \hyperlink{classsetuptools_1_1sandbox_1_1DirectorySandbox}{Directory\+Sandbox}
+\item 
+class \hyperlink{classsetuptools_1_1sandbox_1_1ExceptionSaver}{Exception\+Saver}
+\item 
+class \hyperlink{classsetuptools_1_1sandbox_1_1SandboxViolation}{Sandbox\+Violation}
+\item 
+class \hyperlink{classsetuptools_1_1sandbox_1_1UnpickleableException}{Unpickleable\+Exception}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1sandbox_a2a79966d30bf09df3b132b92a596738c}{save\+\_\+argv} (repl=None)
+\item 
+def \hyperlink{namespacesetuptools_1_1sandbox_a057c8a6e653446a00924ea4809b63dc6}{save\+\_\+path} ()
+\item 
+def \hyperlink{namespacesetuptools_1_1sandbox_a2c4ba056356a14d170e0b4b60fd02580}{override\+\_\+temp} (replacement)
+\item 
+def \hyperlink{namespacesetuptools_1_1sandbox_a7971928fb0fbf584da85d366379232d3}{pushd} (target)
+\item 
+def \hyperlink{namespacesetuptools_1_1sandbox_a03b1ef3f49621d5d24d9847920d2a71a}{save\+\_\+modules} ()
+\item 
+def \hyperlink{namespacesetuptools_1_1sandbox_a7f34d1ea59a8595bed11a0c2f0e84aef}{save\+\_\+pkg\+\_\+resources\+\_\+state} ()
+\item 
+def \hyperlink{namespacesetuptools_1_1sandbox_a52b79978a4d33340bc744648198b5a87}{setup\+\_\+context} (setup\+\_\+dir)
+\item 
+def \hyperlink{namespacesetuptools_1_1sandbox_a2866b4e88f03f6075fed0f7a530261c3}{hide\+\_\+setuptools} ()
+\item 
+def \hyperlink{namespacesetuptools_1_1sandbox_ac27deefbd9b5163ee6861eb07b93bc23}{run\+\_\+setup} (setup\+\_\+script, args)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1sandbox_ae2d3c0e479bb79bd56a7f884d5a5826b}{W\+R\+I\+T\+E\+\_\+\+F\+L\+A\+GS}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1sandbox_a2866b4e88f03f6075fed0f7a530261c3}\label{namespacesetuptools_1_1sandbox_a2866b4e88f03f6075fed0f7a530261c3}} 
+\index{setuptools\+::sandbox@{setuptools\+::sandbox}!hide\+\_\+setuptools@{hide\+\_\+setuptools}}
+\index{hide\+\_\+setuptools@{hide\+\_\+setuptools}!setuptools\+::sandbox@{setuptools\+::sandbox}}
+\subsubsection{\texorpdfstring{hide\+\_\+setuptools()}{hide\_setuptools()}}
+{\footnotesize\ttfamily def setuptools.\+sandbox.\+hide\+\_\+setuptools (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove references to setuptools' modules from sys.modules to allow the
+invocation to import the most appropriate setuptools. This technique is
+necessary to avoid issues such as #315 where setuptools upgrading itself
+would fail to find a function declared in the metadata.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1sandbox_a2c4ba056356a14d170e0b4b60fd02580}\label{namespacesetuptools_1_1sandbox_a2c4ba056356a14d170e0b4b60fd02580}} 
+\index{setuptools\+::sandbox@{setuptools\+::sandbox}!override\+\_\+temp@{override\+\_\+temp}}
+\index{override\+\_\+temp@{override\+\_\+temp}!setuptools\+::sandbox@{setuptools\+::sandbox}}
+\subsubsection{\texorpdfstring{override\+\_\+temp()}{override\_temp()}}
+{\footnotesize\ttfamily def setuptools.\+sandbox.\+override\+\_\+temp (\begin{DoxyParamCaption}\item[{}]{replacement }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Monkey-patch tempfile.tempdir with replacement, ensuring it exists
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1sandbox_a7971928fb0fbf584da85d366379232d3}\label{namespacesetuptools_1_1sandbox_a7971928fb0fbf584da85d366379232d3}} 
+\index{setuptools\+::sandbox@{setuptools\+::sandbox}!pushd@{pushd}}
+\index{pushd@{pushd}!setuptools\+::sandbox@{setuptools\+::sandbox}}
+\subsubsection{\texorpdfstring{pushd()}{pushd()}}
+{\footnotesize\ttfamily def setuptools.\+sandbox.\+pushd (\begin{DoxyParamCaption}\item[{}]{target }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1sandbox_ac27deefbd9b5163ee6861eb07b93bc23}\label{namespacesetuptools_1_1sandbox_ac27deefbd9b5163ee6861eb07b93bc23}} 
+\index{setuptools\+::sandbox@{setuptools\+::sandbox}!run\+\_\+setup@{run\+\_\+setup}}
+\index{run\+\_\+setup@{run\+\_\+setup}!setuptools\+::sandbox@{setuptools\+::sandbox}}
+\subsubsection{\texorpdfstring{run\+\_\+setup()}{run\_setup()}}
+{\footnotesize\ttfamily def setuptools.\+sandbox.\+run\+\_\+setup (\begin{DoxyParamCaption}\item[{}]{setup\+\_\+script,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Run a distutils setup script, sandboxed in its directory\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1sandbox_a2a79966d30bf09df3b132b92a596738c}\label{namespacesetuptools_1_1sandbox_a2a79966d30bf09df3b132b92a596738c}} 
+\index{setuptools\+::sandbox@{setuptools\+::sandbox}!save\+\_\+argv@{save\+\_\+argv}}
+\index{save\+\_\+argv@{save\+\_\+argv}!setuptools\+::sandbox@{setuptools\+::sandbox}}
+\subsubsection{\texorpdfstring{save\+\_\+argv()}{save\_argv()}}
+{\footnotesize\ttfamily def setuptools.\+sandbox.\+save\+\_\+argv (\begin{DoxyParamCaption}\item[{}]{repl = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1sandbox_a03b1ef3f49621d5d24d9847920d2a71a}\label{namespacesetuptools_1_1sandbox_a03b1ef3f49621d5d24d9847920d2a71a}} 
+\index{setuptools\+::sandbox@{setuptools\+::sandbox}!save\+\_\+modules@{save\+\_\+modules}}
+\index{save\+\_\+modules@{save\+\_\+modules}!setuptools\+::sandbox@{setuptools\+::sandbox}}
+\subsubsection{\texorpdfstring{save\+\_\+modules()}{save\_modules()}}
+{\footnotesize\ttfamily def setuptools.\+sandbox.\+save\+\_\+modules (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Context in which imported modules are saved.
+
+Translates exceptions internal to the context into the equivalent exception
+outside the context.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1sandbox_a057c8a6e653446a00924ea4809b63dc6}\label{namespacesetuptools_1_1sandbox_a057c8a6e653446a00924ea4809b63dc6}} 
+\index{setuptools\+::sandbox@{setuptools\+::sandbox}!save\+\_\+path@{save\+\_\+path}}
+\index{save\+\_\+path@{save\+\_\+path}!setuptools\+::sandbox@{setuptools\+::sandbox}}
+\subsubsection{\texorpdfstring{save\+\_\+path()}{save\_path()}}
+{\footnotesize\ttfamily def setuptools.\+sandbox.\+save\+\_\+path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1sandbox_a7f34d1ea59a8595bed11a0c2f0e84aef}\label{namespacesetuptools_1_1sandbox_a7f34d1ea59a8595bed11a0c2f0e84aef}} 
+\index{setuptools\+::sandbox@{setuptools\+::sandbox}!save\+\_\+pkg\+\_\+resources\+\_\+state@{save\+\_\+pkg\+\_\+resources\+\_\+state}}
+\index{save\+\_\+pkg\+\_\+resources\+\_\+state@{save\+\_\+pkg\+\_\+resources\+\_\+state}!setuptools\+::sandbox@{setuptools\+::sandbox}}
+\subsubsection{\texorpdfstring{save\+\_\+pkg\+\_\+resources\+\_\+state()}{save\_pkg\_resources\_state()}}
+{\footnotesize\ttfamily def setuptools.\+sandbox.\+save\+\_\+pkg\+\_\+resources\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1sandbox_a52b79978a4d33340bc744648198b5a87}\label{namespacesetuptools_1_1sandbox_a52b79978a4d33340bc744648198b5a87}} 
+\index{setuptools\+::sandbox@{setuptools\+::sandbox}!setup\+\_\+context@{setup\+\_\+context}}
+\index{setup\+\_\+context@{setup\+\_\+context}!setuptools\+::sandbox@{setuptools\+::sandbox}}
+\subsubsection{\texorpdfstring{setup\+\_\+context()}{setup\_context()}}
+{\footnotesize\ttfamily def setuptools.\+sandbox.\+setup\+\_\+context (\begin{DoxyParamCaption}\item[{}]{setup\+\_\+dir }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1sandbox_ae2d3c0e479bb79bd56a7f884d5a5826b}\label{namespacesetuptools_1_1sandbox_ae2d3c0e479bb79bd56a7f884d5a5826b}} 
+\index{setuptools\+::sandbox@{setuptools\+::sandbox}!W\+R\+I\+T\+E\+\_\+\+F\+L\+A\+GS@{W\+R\+I\+T\+E\+\_\+\+F\+L\+A\+GS}}
+\index{W\+R\+I\+T\+E\+\_\+\+F\+L\+A\+GS@{W\+R\+I\+T\+E\+\_\+\+F\+L\+A\+GS}!setuptools\+::sandbox@{setuptools\+::sandbox}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+F\+L\+A\+GS}{WRITE\_FLAGS}}
+{\footnotesize\ttfamily setuptools.\+sandbox.\+W\+R\+I\+T\+E\+\_\+\+F\+L\+A\+GS}
+

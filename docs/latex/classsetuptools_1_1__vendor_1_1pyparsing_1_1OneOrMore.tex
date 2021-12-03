@@ -1,0 +1,82 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1OneOrMore}{}\section{setuptools.\+\_\+vendor.\+pyparsing.\+One\+Or\+More Class Reference}
+\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1OneOrMore}\index{setuptools.\+\_\+vendor.\+pyparsing.\+One\+Or\+More@{setuptools.\+\_\+vendor.\+pyparsing.\+One\+Or\+More}}
+
+
+Inheritance diagram for setuptools.\+\_\+vendor.\+pyparsing.\+One\+Or\+More\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1OneOrMore__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for setuptools.\+\_\+vendor.\+pyparsing.\+One\+Or\+More\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1OneOrMore__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1OneOrMore_a0ae3a5700eda959018801f21bc695aa2}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1OneOrMore_a883dd01ccfe60d6fdab612eeb2e3eb9c}{str\+Repr}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Repetition of one or more of the given expression.
+
+Parameters:
+ - expr - expression that must match one or more times
+ - stopOn - (default=C{None}) - expression for a terminating sentinel
+      (only required if the sentinel would ordinarily match the repetition 
+      expression)          
+
+Example::
+    data_word = Word(alphas)
+    label = data_word + FollowedBy(':')
+    attr_expr = Group(label + Suppress(':') + OneOrMore(data_word).setParseAction(' '.join))
+
+    text = "shape: SQUARE posn: upper left color: BLACK"
+    OneOrMore(attr_expr).parseString(text).pprint()  # Fail! read 'color' as data instead of next label -> [['shape', 'SQUARE color']]
+
+    # use stopOn attribute for OneOrMore to avoid reading label string as part of the data
+    attr_expr = Group(label + Suppress(':') + OneOrMore(data_word, stopOn=label).setParseAction(' '.join))
+    OneOrMore(attr_expr).parseString(text).pprint() # Better -> [['shape', 'SQUARE'], ['posn', 'upper left'], ['color', 'BLACK']]
+    
+    # could also be written as
+    (attr_expr * (1,)).parseString(text).pprint()
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1OneOrMore_a0ae3a5700eda959018801f21bc695aa2}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1OneOrMore_a0ae3a5700eda959018801f21bc695aa2}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+One\+Or\+More@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+One\+Or\+More}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+One\+Or\+More@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+One\+Or\+More}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+pyparsing.\+One\+Or\+More.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1OneOrMore_a883dd01ccfe60d6fdab612eeb2e3eb9c}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1OneOrMore_a883dd01ccfe60d6fdab612eeb2e3eb9c}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+One\+Or\+More@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+One\+Or\+More}!str\+Repr@{str\+Repr}}
+\index{str\+Repr@{str\+Repr}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+One\+Or\+More@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+One\+Or\+More}}
+\subsubsection{\texorpdfstring{str\+Repr}{strRepr}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+One\+Or\+More.\+str\+Repr}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/\hyperlink{setuptools_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

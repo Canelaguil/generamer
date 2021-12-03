@@ -1,0 +1,150 @@
+\hypertarget{classPIL_1_1IcoImagePlugin_1_1IcoImageFile}{}\section{P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File Class Reference}
+\label{classPIL_1_1IcoImagePlugin_1_1IcoImageFile}\index{P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File@{P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File}}
+
+
+\hyperlink{namespacePIL_1_1Image}{Image} plugin for Windows Icon files.  
+
+
+
+
+Inheritance diagram for P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classPIL_1_1IcoImagePlugin_1_1IcoImageFile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classPIL_1_1IcoImagePlugin_1_1IcoImageFile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a2127b133ebc6e88083f5f8694eef381a}{size} (self)
+\item 
+def \hyperlink{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_ae41dc548fd36d0eb543939845ab7e3dd}{size} (self, value)
+\item 
+def \hyperlink{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_af6e37185ed8c54192b414eeed5d6a734}{load} (self)
+\item 
+def \hyperlink{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a0c90ca26415ff9316d6e4394551d6af2}{load\+\_\+seek} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_ae210c6f6893956e3bce3efe9e38e4123}{ico}
+\item 
+\hyperlink{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_ab94517beb89a66d9842aacc7be7e8a2f}{size}
+\item 
+\hyperlink{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_ae8e1c596e4b6cc2df9c4bc035ac43bae}{im}
+\item 
+\hyperlink{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a5487577c7801231235bb4568cd576226}{mode}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a28dadf14f3390f12308f1ac766230978}{format}
+\item 
+\hyperlink{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a0448a992b0b8a9eeb6bfeb5ce28511dd}{format\+\_\+description}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{namespacePIL_1_1Image}{Image} plugin for Windows Icon files. 
+
+\begin{DoxyVerb}PIL read-only image support for Microsoft Windows .ico files.
+
+By default the largest resolution image in the file will be loaded. This
+can be changed by altering the 'size' attribute before calling 'load'.
+
+The info dictionary has a key 'sizes' that is a list of the sizes available
+in the icon file.
+
+Handles classic, XP and Vista icon formats.
+
+When saving, PNG compression is used. Support for this was only added in
+Windows Vista. If you are unable to view the icon in Windows, convert the
+image to "RGBA" mode before saving.
+
+This plugin is a refactored version of Win32IconImagePlugin by Bryan Davis
+<casadebender@gmail.com>.
+https://code.google.com/archive/p/casadebender/wikis/Win32IconImagePlugin.wiki
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_af6e37185ed8c54192b414eeed5d6a734}\label{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_af6e37185ed8c54192b414eeed5d6a734}} 
+\index{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}!load@{load}}
+\index{load@{load}!P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File.\+load (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a0c90ca26415ff9316d6e4394551d6af2}\label{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a0c90ca26415ff9316d6e4394551d6af2}} 
+\index{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}!load\+\_\+seek@{load\+\_\+seek}}
+\index{load\+\_\+seek@{load\+\_\+seek}!P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}}
+\subsubsection{\texorpdfstring{load\+\_\+seek()}{load\_seek()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File.\+load\+\_\+seek (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a2127b133ebc6e88083f5f8694eef381a}\label{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a2127b133ebc6e88083f5f8694eef381a}} 
+\index{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}!size@{size}}
+\index{size@{size}!P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}}
+\subsubsection{\texorpdfstring{size()}{size()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File.\+size (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_ae41dc548fd36d0eb543939845ab7e3dd}\label{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_ae41dc548fd36d0eb543939845ab7e3dd}} 
+\index{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}!size@{size}}
+\index{size@{size}!P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}}
+\subsubsection{\texorpdfstring{size()}{size()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File.\+size (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a28dadf14f3390f12308f1ac766230978}\label{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a28dadf14f3390f12308f1ac766230978}} 
+\index{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}!format@{format}}
+\index{format@{format}!P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}}
+\subsubsection{\texorpdfstring{format}{format}}
+{\footnotesize\ttfamily P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File.\+format\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a0448a992b0b8a9eeb6bfeb5ce28511dd}\label{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a0448a992b0b8a9eeb6bfeb5ce28511dd}} 
+\index{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}!format\+\_\+description@{format\+\_\+description}}
+\index{format\+\_\+description@{format\+\_\+description}!P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}}
+\subsubsection{\texorpdfstring{format\+\_\+description}{format\_description}}
+{\footnotesize\ttfamily P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File.\+format\+\_\+description\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_ae210c6f6893956e3bce3efe9e38e4123}\label{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_ae210c6f6893956e3bce3efe9e38e4123}} 
+\index{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}!ico@{ico}}
+\index{ico@{ico}!P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}}
+\subsubsection{\texorpdfstring{ico}{ico}}
+{\footnotesize\ttfamily P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File.\+ico}
+
+\mbox{\Hypertarget{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_ae8e1c596e4b6cc2df9c4bc035ac43bae}\label{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_ae8e1c596e4b6cc2df9c4bc035ac43bae}} 
+\index{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}!im@{im}}
+\index{im@{im}!P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}}
+\subsubsection{\texorpdfstring{im}{im}}
+{\footnotesize\ttfamily P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File.\+im}
+
+\mbox{\Hypertarget{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a5487577c7801231235bb4568cd576226}\label{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_a5487577c7801231235bb4568cd576226}} 
+\index{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}!mode@{mode}}
+\index{mode@{mode}!P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File.\+mode}
+
+\mbox{\Hypertarget{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_ab94517beb89a66d9842aacc7be7e8a2f}\label{classPIL_1_1IcoImagePlugin_1_1IcoImageFile_ab94517beb89a66d9842aacc7be7e8a2f}} 
+\index{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}!size@{size}}
+\index{size@{size}!P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File@{P\+I\+L\+::\+Ico\+Image\+Plugin\+::\+Ico\+Image\+File}}
+\subsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily P\+I\+L.\+Ico\+Image\+Plugin.\+Ico\+Image\+File.\+size}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\+P\+I\+L/\hyperlink{IcoImagePlugin_8py}{Ico\+Image\+Plugin.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,47 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1run__length}{}\section{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+run\+\_\+length Class Reference}
+\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1run__length}\index{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+run\+\_\+length@{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+run\+\_\+length}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1run__length_a4046f1d68dbcb52ce9caa17fb2d356cd}{encode} (iterable)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1run__length_a74cde72972c533e9994d0d5829dbb836}{decode} (iterable)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}:func:`run_length.encode` compresses an iterable with run-length encoding.
+It yields groups of repeated items with the count of how many times they
+were repeated:
+
+    >>> uncompressed = 'abbcccdddd'
+    >>> list(run_length.encode(uncompressed))
+    [('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+
+:func:`run_length.decode` decompresses an iterable that was previously
+compressed with run-length encoding. It yields the items of the
+decompressed iterable:
+
+    >>> compressed = [('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+    >>> list(run_length.decode(compressed))
+    ['a', 'b', 'b', 'c', 'c', 'c', 'd', 'd', 'd', 'd']\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1run__length_a74cde72972c533e9994d0d5829dbb836}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1run__length_a74cde72972c533e9994d0d5829dbb836}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::run\+\_\+length@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::run\+\_\+length}!decode@{decode}}
+\index{decode@{decode}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::run\+\_\+length@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::run\+\_\+length}}
+\subsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+run\+\_\+length.\+decode (\begin{DoxyParamCaption}\item[{}]{iterable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1run__length_a4046f1d68dbcb52ce9caa17fb2d356cd}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1run__length_a4046f1d68dbcb52ce9caa17fb2d356cd}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::run\+\_\+length@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::run\+\_\+length}!encode@{encode}}
+\index{encode@{encode}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::run\+\_\+length@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::run\+\_\+length}}
+\subsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+run\+\_\+length.\+encode (\begin{DoxyParamCaption}\item[{}]{iterable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/more\+\_\+itertools/\hyperlink{more_8py}{more.\+py}\end{DoxyCompactItemize}

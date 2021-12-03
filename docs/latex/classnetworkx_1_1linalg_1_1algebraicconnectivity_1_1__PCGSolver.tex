@@ -1,0 +1,49 @@
+\hypertarget{classnetworkx_1_1linalg_1_1algebraicconnectivity_1_1__PCGSolver}{}\section{networkx.\+linalg.\+algebraicconnectivity.\+\_\+\+P\+C\+G\+Solver Class Reference}
+\label{classnetworkx_1_1linalg_1_1algebraicconnectivity_1_1__PCGSolver}\index{networkx.\+linalg.\+algebraicconnectivity.\+\_\+\+P\+C\+G\+Solver@{networkx.\+linalg.\+algebraicconnectivity.\+\_\+\+P\+C\+G\+Solver}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1linalg_1_1algebraicconnectivity_1_1__PCGSolver_ac0e0f9602526df9f45bf2995ae160cfc}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, A, M)
+\item 
+def \hyperlink{classnetworkx_1_1linalg_1_1algebraicconnectivity_1_1__PCGSolver_a82deb87df9ee62a11c434cd27dac07bf}{solve} (self, B, tol)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Preconditioned conjugate gradient method.
+
+To solve Ax = b:
+    M = A.diagonal() # or some other preconditioner
+    solver = _PCGSolver(lambda x: A * x, lambda x: M * x)
+    x = solver.solve(b)
+
+The inputs A and M are functions which compute
+matrix multiplication on the argument.
+A - multiply by the matrix A in Ax=b
+M - multiply by M, the preconditioner surragate for A
+
+Warning: There is no limit on number of iterations.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1linalg_1_1algebraicconnectivity_1_1__PCGSolver_ac0e0f9602526df9f45bf2995ae160cfc}\label{classnetworkx_1_1linalg_1_1algebraicconnectivity_1_1__PCGSolver_ac0e0f9602526df9f45bf2995ae160cfc}} 
+\index{networkx\+::linalg\+::algebraicconnectivity\+::\+\_\+\+P\+C\+G\+Solver@{networkx\+::linalg\+::algebraicconnectivity\+::\+\_\+\+P\+C\+G\+Solver}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!networkx\+::linalg\+::algebraicconnectivity\+::\+\_\+\+P\+C\+G\+Solver@{networkx\+::linalg\+::algebraicconnectivity\+::\+\_\+\+P\+C\+G\+Solver}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+algebraicconnectivity.\+\_\+\+P\+C\+G\+Solver.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{A,  }\item[{}]{M }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1linalg_1_1algebraicconnectivity_1_1__PCGSolver_a82deb87df9ee62a11c434cd27dac07bf}\label{classnetworkx_1_1linalg_1_1algebraicconnectivity_1_1__PCGSolver_a82deb87df9ee62a11c434cd27dac07bf}} 
+\index{networkx\+::linalg\+::algebraicconnectivity\+::\+\_\+\+P\+C\+G\+Solver@{networkx\+::linalg\+::algebraicconnectivity\+::\+\_\+\+P\+C\+G\+Solver}!solve@{solve}}
+\index{solve@{solve}!networkx\+::linalg\+::algebraicconnectivity\+::\+\_\+\+P\+C\+G\+Solver@{networkx\+::linalg\+::algebraicconnectivity\+::\+\_\+\+P\+C\+G\+Solver}}
+\subsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+algebraicconnectivity.\+\_\+\+P\+C\+G\+Solver.\+solve (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{B,  }\item[{}]{tol }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/linalg/\hyperlink{algebraicconnectivity_8py}{algebraicconnectivity.\+py}\end{DoxyCompactItemize}

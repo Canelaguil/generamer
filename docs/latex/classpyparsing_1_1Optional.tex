@@ -1,0 +1,138 @@
+\hypertarget{classpyparsing_1_1Optional}{}\section{pyparsing.\+Optional Class Reference}
+\label{classpyparsing_1_1Optional}\index{pyparsing.\+Optional@{pyparsing.\+Optional}}
+
+
+Inheritance diagram for pyparsing.\+Optional\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classpyparsing_1_1Optional__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pyparsing.\+Optional\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classpyparsing_1_1Optional__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpyparsing_1_1Optional_ae7cdc2f551349f35f0ad2697aa4856f1}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpyparsing_1_1ParseElementEnhance_a0139048279aeac38804a10d131d3c340}{expr}, \hyperlink{namespacepyparsing_af718ddc22535044334309aa6db3c8bb9}{default}=\+\_\+\+\_\+optional\+Not\+Matched)
+\item 
+def \hyperlink{classpyparsing_1_1Optional_a409559688b076bb68b67491be0cd6cf9}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\item 
+def \hyperlink{classpyparsing_1_1Optional_a733b6e3fdc49b9586a4f98e41bb6c70d}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpyparsing_1_1Optional_ae35eef3dc33dcd0ce0ed5740124e2f59}{save\+As\+List}
+\item 
+\hyperlink{classpyparsing_1_1Optional_a7288ea089b6fc92df8ff14794237a518}{default\+Value}
+\item 
+\hyperlink{classpyparsing_1_1Optional_a8962112c51a291f8d2dc5f6e783a7e1c}{may\+Return\+Empty}
+\item 
+\hyperlink{classpyparsing_1_1Optional_af1702e1c5920c5d752b36057a682ef44}{str\+Repr}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Optional matching of the given expression.
+
+Parameters:
+ - expr - expression that must match zero or more times
+ - default (optional) - value to be returned if the optional expression is not found.
+
+Example::
+
+    # US postal code can be a 5-digit zip, plus optional 4-digit qualifier
+    zip = Combine(Word(nums, exact=5) + Optional('-' + Word(nums, exact=4)))
+    zip.runTests('''
+        # traditional ZIP code
+        12345
+
+        # ZIP+4 form
+        12101-0001
+
+        # invalid ZIP
+        98765-
+        ''')
+
+prints::
+
+    # traditional ZIP code
+    12345
+    ['12345']
+
+    # ZIP+4 form
+    12101-0001
+    ['12101-0001']
+
+    # invalid ZIP
+    98765-
+         ^
+    FAIL: Expected end of text (at char 5), (line:1, col:6)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Optional_ae7cdc2f551349f35f0ad2697aa4856f1}\label{classpyparsing_1_1Optional_ae7cdc2f551349f35f0ad2697aa4856f1}} 
+\index{pyparsing\+::\+Optional@{pyparsing\+::\+Optional}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pyparsing\+::\+Optional@{pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Optional.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{expr,  }\item[{}]{default = {\ttfamily \+\_\+\+\_\+optionalNotMatched} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Optional_a733b6e3fdc49b9586a4f98e41bb6c70d}\label{classpyparsing_1_1Optional_a733b6e3fdc49b9586a4f98e41bb6c70d}} 
+\index{pyparsing\+::\+Optional@{pyparsing\+::\+Optional}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!pyparsing\+::\+Optional@{pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Optional.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpyparsing_1_1Optional_a409559688b076bb68b67491be0cd6cf9}\label{classpyparsing_1_1Optional_a409559688b076bb68b67491be0cd6cf9}} 
+\index{pyparsing\+::\+Optional@{pyparsing\+::\+Optional}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pyparsing\+::\+Optional@{pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pyparsing.\+Optional.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Optional_a7288ea089b6fc92df8ff14794237a518}\label{classpyparsing_1_1Optional_a7288ea089b6fc92df8ff14794237a518}} 
+\index{pyparsing\+::\+Optional@{pyparsing\+::\+Optional}!default\+Value@{default\+Value}}
+\index{default\+Value@{default\+Value}!pyparsing\+::\+Optional@{pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{default\+Value}{defaultValue}}
+{\footnotesize\ttfamily pyparsing.\+Optional.\+default\+Value}
+
+\mbox{\Hypertarget{classpyparsing_1_1Optional_a8962112c51a291f8d2dc5f6e783a7e1c}\label{classpyparsing_1_1Optional_a8962112c51a291f8d2dc5f6e783a7e1c}} 
+\index{pyparsing\+::\+Optional@{pyparsing\+::\+Optional}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!pyparsing\+::\+Optional@{pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily pyparsing.\+Optional.\+may\+Return\+Empty}
+
+\mbox{\Hypertarget{classpyparsing_1_1Optional_ae35eef3dc33dcd0ce0ed5740124e2f59}\label{classpyparsing_1_1Optional_ae35eef3dc33dcd0ce0ed5740124e2f59}} 
+\index{pyparsing\+::\+Optional@{pyparsing\+::\+Optional}!save\+As\+List@{save\+As\+List}}
+\index{save\+As\+List@{save\+As\+List}!pyparsing\+::\+Optional@{pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{save\+As\+List}{saveAsList}}
+{\footnotesize\ttfamily pyparsing.\+Optional.\+save\+As\+List}
+
+\mbox{\Hypertarget{classpyparsing_1_1Optional_af1702e1c5920c5d752b36057a682ef44}\label{classpyparsing_1_1Optional_af1702e1c5920c5d752b36057a682ef44}} 
+\index{pyparsing\+::\+Optional@{pyparsing\+::\+Optional}!str\+Repr@{str\+Repr}}
+\index{str\+Repr@{str\+Repr}!pyparsing\+::\+Optional@{pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{str\+Repr}{strRepr}}
+{\footnotesize\ttfamily pyparsing.\+Optional.\+str\+Repr}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\hyperlink{pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

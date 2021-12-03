@@ -1,0 +1,109 @@
+\hypertarget{classdateutil_1_1tz_1_1tz_1_1tzstr}{}\section{dateutil.\+tz.\+tz.\+tzstr Class Reference}
+\label{classdateutil_1_1tz_1_1tz_1_1tzstr}\index{dateutil.\+tz.\+tz.\+tzstr@{dateutil.\+tz.\+tz.\+tzstr}}
+
+
+Inheritance diagram for dateutil.\+tz.\+tz.\+tzstr\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classdateutil_1_1tz_1_1tz_1_1tzstr__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dateutil.\+tz.\+tz.\+tzstr\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classdateutil_1_1tz_1_1tz_1_1tzstr__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzstr_a69e92dce6740e41325a7a1b03a632a2f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, s, posix\+\_\+offset=False)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzstr_a5bd0aa894d8dffbcff503e5d4f15eeac}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdateutil_1_1tz_1_1tz_1_1tzstr_aad9666c7b79662b78a1fc66a8ce0f215}{hasdst}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}``tzstr`` objects are time zone objects specified by a time-zone string as
+it would be passed to a ``TZ`` variable on POSIX-style systems (see
+the `GNU C Library: TZ Variable`_ for more details).
+
+There is one notable exception, which is that POSIX-style time zones use an
+inverted offset format, so normally ``GMT+3`` would be parsed as an offset
+3 hours *behind* GMT. The ``tzstr`` time zone object will parse this as an
+offset 3 hours *ahead* of GMT. If you would like to maintain the POSIX
+behavior, pass a ``True`` value to ``posix_offset``.
+
+The :class:`tzrange` object provides the same functionality, but is
+specified using :class:`relativedelta.relativedelta` objects. rather than
+strings.
+
+:param s:
+    A time zone string in ``TZ`` variable format. This can be a
+    :class:`bytes` (2.x: :class:`str`), :class:`str` (2.x:
+    :class:`unicode`) or a stream emitting unicode characters
+    (e.g. :class:`StringIO`).
+
+:param posix_offset:
+    Optional. If set to ``True``, interpret strings such as ``GMT+3`` or
+    ``UTC+3`` as being 3 hours *behind* UTC rather than ahead, per the
+    POSIX standard.
+
+.. caution::
+
+    Prior to version 2.7.0, this function also supported time zones
+    in the format:
+
+        * ``EST5EDT,4,0,6,7200,10,0,26,7200,3600``
+        * ``EST5EDT,4,1,0,7200,10,-1,0,7200,3600``
+
+    This format is non-standard and has been deprecated; this function
+    will raise a :class:`DeprecatedTZFormatWarning` until
+    support is removed in a future version.
+
+.. _`GNU C Library: TZ Variable`:
+    https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzstr_a69e92dce6740e41325a7a1b03a632a2f}\label{classdateutil_1_1tz_1_1tz_1_1tzstr_a69e92dce6740e41325a7a1b03a632a2f}} 
+\index{dateutil\+::tz\+::tz\+::tzstr@{dateutil\+::tz\+::tz\+::tzstr}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!dateutil\+::tz\+::tz\+::tzstr@{dateutil\+::tz\+::tz\+::tzstr}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzstr.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{s,  }\item[{}]{posix\+\_\+offset = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzstr_a5bd0aa894d8dffbcff503e5d4f15eeac}\label{classdateutil_1_1tz_1_1tz_1_1tzstr_a5bd0aa894d8dffbcff503e5d4f15eeac}} 
+\index{dateutil\+::tz\+::tz\+::tzstr@{dateutil\+::tz\+::tz\+::tzstr}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!dateutil\+::tz\+::tz\+::tzstr@{dateutil\+::tz\+::tz\+::tzstr}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzstr.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzstr_aad9666c7b79662b78a1fc66a8ce0f215}\label{classdateutil_1_1tz_1_1tz_1_1tzstr_aad9666c7b79662b78a1fc66a8ce0f215}} 
+\index{dateutil\+::tz\+::tz\+::tzstr@{dateutil\+::tz\+::tz\+::tzstr}!hasdst@{hasdst}}
+\index{hasdst@{hasdst}!dateutil\+::tz\+::tz\+::tzstr@{dateutil\+::tz\+::tz\+::tzstr}}
+\subsubsection{\texorpdfstring{hasdst}{hasdst}}
+{\footnotesize\ttfamily dateutil.\+tz.\+tz.\+tzstr.\+hasdst}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/dateutil/tz/\hyperlink{tz_8py}{tz.\+py}\end{DoxyCompactItemize}

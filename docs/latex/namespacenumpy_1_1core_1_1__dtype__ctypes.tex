@@ -1,0 +1,45 @@
+\hypertarget{namespacenumpy_1_1core_1_1__dtype__ctypes}{}\section{numpy.\+core.\+\_\+dtype\+\_\+ctypes Namespace Reference}
+\label{namespacenumpy_1_1core_1_1__dtype__ctypes}\index{numpy.\+core.\+\_\+dtype\+\_\+ctypes@{numpy.\+core.\+\_\+dtype\+\_\+ctypes}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1__dtype__ctypes_a85d29533d3118c96aaabaf3580c30ae0}{dtype\+\_\+from\+\_\+ctypes\+\_\+type} (t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Conversion from ctypes to dtype.
+
+In an ideal world, we could achieve this through the PEP3118 buffer protocol,
+something like::
+
+def dtype_from_ctypes_type(t):
+    # needed to ensure that the shape of `t` is within memoryview.format
+    class DummyStruct(ctypes.Structure):
+        _fields_ = [('a', t)]
+
+    # empty to avoid memory allocation
+    ctype_0 = (DummyStruct * 0)()
+    mv = memoryview(ctype_0)
+
+    # convert the struct, and slice back out the field
+    return _dtype_from_pep3118(mv.format)['a']
+
+Unfortunately, this fails because:
+
+* ctypes cannot handle length-0 arrays with PEP3118 (bpo-32782)
+* PEP3118 cannot represent unions, but both numpy and ctypes can
+* ctypes cannot handle big-endian structs with PEP3118 (bpo-32780)
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__dtype__ctypes_a85d29533d3118c96aaabaf3580c30ae0}\label{namespacenumpy_1_1core_1_1__dtype__ctypes_a85d29533d3118c96aaabaf3580c30ae0}} 
+\index{numpy\+::core\+::\+\_\+dtype\+\_\+ctypes@{numpy\+::core\+::\+\_\+dtype\+\_\+ctypes}!dtype\+\_\+from\+\_\+ctypes\+\_\+type@{dtype\+\_\+from\+\_\+ctypes\+\_\+type}}
+\index{dtype\+\_\+from\+\_\+ctypes\+\_\+type@{dtype\+\_\+from\+\_\+ctypes\+\_\+type}!numpy\+::core\+::\+\_\+dtype\+\_\+ctypes@{numpy\+::core\+::\+\_\+dtype\+\_\+ctypes}}
+\subsubsection{\texorpdfstring{dtype\+\_\+from\+\_\+ctypes\+\_\+type()}{dtype\_from\_ctypes\_type()}}
+{\footnotesize\ttfamily def numpy.\+core.\+\_\+dtype\+\_\+ctypes.\+dtype\+\_\+from\+\_\+ctypes\+\_\+type (\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Construct a dtype object from a ctypes type
+\end{DoxyVerb}
+ 

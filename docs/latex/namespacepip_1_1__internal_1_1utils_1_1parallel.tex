@@ -1,0 +1,99 @@
+\hypertarget{namespacepip_1_1__internal_1_1utils_1_1parallel}{}\section{pip.\+\_\+internal.\+utils.\+parallel Namespace Reference}
+\label{namespacepip_1_1__internal_1_1utils_1_1parallel}\index{pip.\+\_\+internal.\+utils.\+parallel@{pip.\+\_\+internal.\+utils.\+parallel}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1parallel_a08bb2c13a5c8f31693fffedc06015272}{closing} (pool)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1utils_1_1parallel_a915958e5b3ae0e9d29f8c0bc46843adc}{Pool}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1utils_1_1parallel_a36e65bf7762c44bb45297b9225a35bea}{S}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1utils_1_1parallel_ae7ad6c54f1ad91b836e8491dd87c1ff5}{T}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1utils_1_1parallel_a58f1f819a3644abf0a89259696e894b5}{L\+A\+C\+K\+\_\+\+S\+E\+M\+\_\+\+O\+P\+EN}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1utils_1_1parallel_ade8851f49238e66c70377dcb824ccf9b}{T\+I\+M\+E\+O\+UT}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1utils_1_1parallel_ab00a474b1469fe1cd6565cd4ca41e8ae}{map\+\_\+multiprocess}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1utils_1_1parallel_a27efd79dfd412e237493abd341084730}{map\+\_\+multithread}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Convenient parallelization of higher order functions.
+
+This module provides two helper functions, with appropriate fallbacks on
+Python 2 and on systems lacking support for synchronization mechanisms:
+
+- map_multiprocess
+- map_multithread
+
+These helpers work like Python 3's map, with two differences:
+
+- They don't guarantee the order of processing of
+  the elements of the iterable.
+- The underlying process/thread pools chop the iterable into
+  a number of chunks, so that for very long iterables using
+  a large value for chunksize can make the job complete much faster
+  than using the default value of 1.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1parallel_a08bb2c13a5c8f31693fffedc06015272}\label{namespacepip_1_1__internal_1_1utils_1_1parallel_a08bb2c13a5c8f31693fffedc06015272}} 
+\index{pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}!closing@{closing}}
+\index{closing@{closing}!pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}}
+\subsubsection{\texorpdfstring{closing()}{closing()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+parallel.\+closing (\begin{DoxyParamCaption}\item[{}]{pool }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a context manager making sure the pool closes properly.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1parallel_a58f1f819a3644abf0a89259696e894b5}\label{namespacepip_1_1__internal_1_1utils_1_1parallel_a58f1f819a3644abf0a89259696e894b5}} 
+\index{pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}!L\+A\+C\+K\+\_\+\+S\+E\+M\+\_\+\+O\+P\+EN@{L\+A\+C\+K\+\_\+\+S\+E\+M\+\_\+\+O\+P\+EN}}
+\index{L\+A\+C\+K\+\_\+\+S\+E\+M\+\_\+\+O\+P\+EN@{L\+A\+C\+K\+\_\+\+S\+E\+M\+\_\+\+O\+P\+EN}!pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}}
+\subsubsection{\texorpdfstring{L\+A\+C\+K\+\_\+\+S\+E\+M\+\_\+\+O\+P\+EN}{LACK\_SEM\_OPEN}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+parallel.\+L\+A\+C\+K\+\_\+\+S\+E\+M\+\_\+\+O\+P\+EN}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1parallel_ab00a474b1469fe1cd6565cd4ca41e8ae}\label{namespacepip_1_1__internal_1_1utils_1_1parallel_ab00a474b1469fe1cd6565cd4ca41e8ae}} 
+\index{pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}!map\+\_\+multiprocess@{map\+\_\+multiprocess}}
+\index{map\+\_\+multiprocess@{map\+\_\+multiprocess}!pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}}
+\subsubsection{\texorpdfstring{map\+\_\+multiprocess}{map\_multiprocess}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+parallel.\+map\+\_\+multiprocess}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1parallel_a27efd79dfd412e237493abd341084730}\label{namespacepip_1_1__internal_1_1utils_1_1parallel_a27efd79dfd412e237493abd341084730}} 
+\index{pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}!map\+\_\+multithread@{map\+\_\+multithread}}
+\index{map\+\_\+multithread@{map\+\_\+multithread}!pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}}
+\subsubsection{\texorpdfstring{map\+\_\+multithread}{map\_multithread}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+parallel.\+map\+\_\+multithread}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1parallel_a915958e5b3ae0e9d29f8c0bc46843adc}\label{namespacepip_1_1__internal_1_1utils_1_1parallel_a915958e5b3ae0e9d29f8c0bc46843adc}} 
+\index{pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}!Pool@{Pool}}
+\index{Pool@{Pool}!pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}}
+\subsubsection{\texorpdfstring{Pool}{Pool}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+parallel.\+Pool}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1parallel_a36e65bf7762c44bb45297b9225a35bea}\label{namespacepip_1_1__internal_1_1utils_1_1parallel_a36e65bf7762c44bb45297b9225a35bea}} 
+\index{pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}!S@{S}}
+\index{S@{S}!pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}}
+\subsubsection{\texorpdfstring{S}{S}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+parallel.\+S}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1parallel_ae7ad6c54f1ad91b836e8491dd87c1ff5}\label{namespacepip_1_1__internal_1_1utils_1_1parallel_ae7ad6c54f1ad91b836e8491dd87c1ff5}} 
+\index{pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}!T@{T}}
+\index{T@{T}!pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}}
+\subsubsection{\texorpdfstring{T}{T}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+parallel.\+T}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1parallel_ade8851f49238e66c70377dcb824ccf9b}\label{namespacepip_1_1__internal_1_1utils_1_1parallel_ade8851f49238e66c70377dcb824ccf9b}} 
+\index{pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}!T\+I\+M\+E\+O\+UT@{T\+I\+M\+E\+O\+UT}}
+\index{T\+I\+M\+E\+O\+UT@{T\+I\+M\+E\+O\+UT}!pip\+::\+\_\+internal\+::utils\+::parallel@{pip\+::\+\_\+internal\+::utils\+::parallel}}
+\subsubsection{\texorpdfstring{T\+I\+M\+E\+O\+UT}{TIMEOUT}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+parallel.\+T\+I\+M\+E\+O\+UT}
+

@@ -1,0 +1,147 @@
+\hypertarget{namespacenumpy_1_1distutils_1_1exec__command}{}\section{numpy.\+distutils.\+exec\+\_\+command Namespace Reference}
+\label{namespacenumpy_1_1distutils_1_1exec__command}\index{numpy.\+distutils.\+exec\+\_\+command@{numpy.\+distutils.\+exec\+\_\+command}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1exec__command_a8ab80ad3b0509e86b733672611ff9642}{filepath\+\_\+from\+\_\+subprocess\+\_\+output} (output)
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1exec__command_a3cd3421a69e8e2884723e8334e866a0e}{forward\+\_\+bytes\+\_\+to\+\_\+stdout} (val)
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1exec__command_a872f1dcbe44528dfbad63400c2e751ae}{temp\+\_\+file\+\_\+name} ()
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1exec__command_a12ae23b81b1ba23d159bb59baaff0db7}{get\+\_\+pythonexe} ()
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1exec__command_a9ad5db20f4885acfc4b50e57c0408732}{find\+\_\+executable} (exe, path=None, \+\_\+cache=\{\})
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1exec__command_ac3ebe717bf449d45c7f3c6ace8252b16}{exec\+\_\+command} (command, execute\+\_\+in=\textquotesingle{}\textquotesingle{}, use\+\_\+shell=None, use\+\_\+tee=None, \+\_\+with\+\_\+python=1, env)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}exec_command
+
+Implements exec_command function that is (almost) equivalent to
+commands.getstatusoutput function but on NT, DOS systems the
+returned status is actually correct (though, the returned status
+values may be different by a factor). In addition, exec_command
+takes keyword arguments for (re-)defining environment variables.
+
+Provides functions:
+
+  exec_command  --- execute command in a specified directory and
+            in the modified environment.
+  find_executable --- locate a command using info from environment
+            variable PATH. Equivalent to posix `which`
+            command.
+
+Author: Pearu Peterson <pearu@cens.ioc.ee>
+Created: 11 January 2003
+
+Requires: Python 2.x
+
+Successfully tested on:
+
+========  ============  =================================================
+os.name   sys.platform  comments
+========  ============  =================================================
+posix     linux2        Debian (sid) Linux, Python 2.1.3+, 2.2.3+, 2.3.3
+                PyCrust 0.9.3, Idle 1.0.2
+posix     linux2        Red Hat 9 Linux, Python 2.1.3, 2.2.2, 2.3.2
+posix     sunos5        SunOS 5.9, Python 2.2, 2.3.2
+posix     darwin        Darwin 7.2.0, Python 2.3
+nt        win32         Windows Me
+                Python 2.3(EE), Idle 1.0, PyCrust 0.7.2
+                Python 2.1.1 Idle 0.8
+nt        win32         Windows 98, Python 2.1.1. Idle 0.8
+nt        win32         Cygwin 98-4.10, Python 2.1.1(MSC) - echo tests
+                fail i.e. redefining environment variables may
+                not work. FIXED: don't use cygwin echo!
+                Comment: also `cmd /c echo` will not work
+                but redefining environment variables do work.
+posix     cygwin        Cygwin 98-4.10, Python 2.3.3(cygming special)
+nt        win32         Windows XP, Python 2.3.3
+========  ============  =================================================
+
+Known bugs:
+
+* Tests, that send messages to stderr, fail when executed from MSYS prompt
+  because the messages are lost at some point.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1exec__command_ac3ebe717bf449d45c7f3c6ace8252b16}\label{namespacenumpy_1_1distutils_1_1exec__command_ac3ebe717bf449d45c7f3c6ace8252b16}} 
+\index{numpy\+::distutils\+::exec\+\_\+command@{numpy\+::distutils\+::exec\+\_\+command}!exec\+\_\+command@{exec\+\_\+command}}
+\index{exec\+\_\+command@{exec\+\_\+command}!numpy\+::distutils\+::exec\+\_\+command@{numpy\+::distutils\+::exec\+\_\+command}}
+\subsubsection{\texorpdfstring{exec\+\_\+command()}{exec\_command()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+exec\+\_\+command.\+exec\+\_\+command (\begin{DoxyParamCaption}\item[{}]{command,  }\item[{}]{execute\+\_\+in = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{use\+\_\+shell = {\ttfamily None},  }\item[{}]{use\+\_\+tee = {\ttfamily None},  }\item[{}]{\+\_\+with\+\_\+python = {\ttfamily 1},  }\item[{}]{env }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return (status,output) of executed command.
+
+.. deprecated:: 1.17
+    Use subprocess.Popen instead
+
+Parameters
+----------
+command : str
+    A concatenated string of executable and arguments.
+execute_in : str
+    Before running command ``cd execute_in`` and after ``cd -``.
+use_shell : {bool, None}, optional
+    If True, execute ``sh -c command``. Default None (True)
+use_tee : {bool, None}, optional
+    If True use tee. Default None (True)
+
+
+Returns
+-------
+res : str
+    Both stdout and stderr messages.
+
+Notes
+-----
+On NT, DOS systems the returned status is correct for external commands.
+Wild cards will not work for non-posix systems or when use_shell=0.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1exec__command_a8ab80ad3b0509e86b733672611ff9642}\label{namespacenumpy_1_1distutils_1_1exec__command_a8ab80ad3b0509e86b733672611ff9642}} 
+\index{numpy\+::distutils\+::exec\+\_\+command@{numpy\+::distutils\+::exec\+\_\+command}!filepath\+\_\+from\+\_\+subprocess\+\_\+output@{filepath\+\_\+from\+\_\+subprocess\+\_\+output}}
+\index{filepath\+\_\+from\+\_\+subprocess\+\_\+output@{filepath\+\_\+from\+\_\+subprocess\+\_\+output}!numpy\+::distutils\+::exec\+\_\+command@{numpy\+::distutils\+::exec\+\_\+command}}
+\subsubsection{\texorpdfstring{filepath\+\_\+from\+\_\+subprocess\+\_\+output()}{filepath\_from\_subprocess\_output()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+exec\+\_\+command.\+filepath\+\_\+from\+\_\+subprocess\+\_\+output (\begin{DoxyParamCaption}\item[{}]{output }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert `bytes` in the encoding used by a subprocess into a filesystem-appropriate `str`.
+
+Inherited from `exec_command`, and possibly incorrect.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1exec__command_a9ad5db20f4885acfc4b50e57c0408732}\label{namespacenumpy_1_1distutils_1_1exec__command_a9ad5db20f4885acfc4b50e57c0408732}} 
+\index{numpy\+::distutils\+::exec\+\_\+command@{numpy\+::distutils\+::exec\+\_\+command}!find\+\_\+executable@{find\+\_\+executable}}
+\index{find\+\_\+executable@{find\+\_\+executable}!numpy\+::distutils\+::exec\+\_\+command@{numpy\+::distutils\+::exec\+\_\+command}}
+\subsubsection{\texorpdfstring{find\+\_\+executable()}{find\_executable()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+exec\+\_\+command.\+find\+\_\+executable (\begin{DoxyParamCaption}\item[{}]{exe,  }\item[{}]{path = {\ttfamily None},  }\item[{}]{\+\_\+cache = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return full path of a executable or None.
+
+Symbolic links are not followed.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1exec__command_a3cd3421a69e8e2884723e8334e866a0e}\label{namespacenumpy_1_1distutils_1_1exec__command_a3cd3421a69e8e2884723e8334e866a0e}} 
+\index{numpy\+::distutils\+::exec\+\_\+command@{numpy\+::distutils\+::exec\+\_\+command}!forward\+\_\+bytes\+\_\+to\+\_\+stdout@{forward\+\_\+bytes\+\_\+to\+\_\+stdout}}
+\index{forward\+\_\+bytes\+\_\+to\+\_\+stdout@{forward\+\_\+bytes\+\_\+to\+\_\+stdout}!numpy\+::distutils\+::exec\+\_\+command@{numpy\+::distutils\+::exec\+\_\+command}}
+\subsubsection{\texorpdfstring{forward\+\_\+bytes\+\_\+to\+\_\+stdout()}{forward\_bytes\_to\_stdout()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+exec\+\_\+command.\+forward\+\_\+bytes\+\_\+to\+\_\+stdout (\begin{DoxyParamCaption}\item[{}]{val }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Forward bytes from a subprocess call to the console, without attempting to
+decode them.
+
+The assumption is that the subprocess call already returned bytes in
+a suitable encoding.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1exec__command_a12ae23b81b1ba23d159bb59baaff0db7}\label{namespacenumpy_1_1distutils_1_1exec__command_a12ae23b81b1ba23d159bb59baaff0db7}} 
+\index{numpy\+::distutils\+::exec\+\_\+command@{numpy\+::distutils\+::exec\+\_\+command}!get\+\_\+pythonexe@{get\+\_\+pythonexe}}
+\index{get\+\_\+pythonexe@{get\+\_\+pythonexe}!numpy\+::distutils\+::exec\+\_\+command@{numpy\+::distutils\+::exec\+\_\+command}}
+\subsubsection{\texorpdfstring{get\+\_\+pythonexe()}{get\_pythonexe()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+exec\+\_\+command.\+get\+\_\+pythonexe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1exec__command_a872f1dcbe44528dfbad63400c2e751ae}\label{namespacenumpy_1_1distutils_1_1exec__command_a872f1dcbe44528dfbad63400c2e751ae}} 
+\index{numpy\+::distutils\+::exec\+\_\+command@{numpy\+::distutils\+::exec\+\_\+command}!temp\+\_\+file\+\_\+name@{temp\+\_\+file\+\_\+name}}
+\index{temp\+\_\+file\+\_\+name@{temp\+\_\+file\+\_\+name}!numpy\+::distutils\+::exec\+\_\+command@{numpy\+::distutils\+::exec\+\_\+command}}
+\subsubsection{\texorpdfstring{temp\+\_\+file\+\_\+name()}{temp\_file\_name()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+exec\+\_\+command.\+temp\+\_\+file\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

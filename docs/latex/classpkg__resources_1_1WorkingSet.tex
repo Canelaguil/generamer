@@ -1,0 +1,283 @@
+\hypertarget{classpkg__resources_1_1WorkingSet}{}\section{pkg\+\_\+resources.\+Working\+Set Class Reference}
+\label{classpkg__resources_1_1WorkingSet}\index{pkg\+\_\+resources.\+Working\+Set@{pkg\+\_\+resources.\+Working\+Set}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_a88df1aa3c1781fcb4576a56854bab8da}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpkg__resources_1_1WorkingSet_aa9a6eb37900163d92183a1e40a0b52f4}{entries}=None)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_aed20abcb6a85cdc25dff1686ad480958}{add\+\_\+entry} (self, entry)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_a6a4880a5d32dac95a7b93f03f7ebc5b9}{\+\_\+\+\_\+contains\+\_\+\+\_\+} (self, dist)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_a4eb8b69f25d05e0edb4f2a8d162d096b}{find} (self, req)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_a556736951f3aa317fa2d339d64e290ea}{iter\+\_\+entry\+\_\+points} (self, group, name=None)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_ab2b93a4b8818042f319d7f9d7d2884bf}{run\+\_\+script} (self, requires, script\+\_\+name)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_a59bda285ab373ec1cc8b22b0e24c460c}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_ab12bd19b39a01d6013544ab543401a16}{add} (self, dist, entry=None, insert=True, replace=False)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_a38c13850cc73d319b4bcf47592132941}{resolve} (self, requirements, env=None, installer=None, replace\+\_\+conflicting=False, extras=None)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_a5a8cbb91286691870d04edd6c841197d}{find\+\_\+plugins} (self, plugin\+\_\+env, full\+\_\+env=None, installer=None, fallback=True)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_a1c2434f098e08c20314935fddad8426b}{require} (self, requirements)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_a998b3678540dc5f39aa560f347c66d4b}{subscribe} (self, callback, existing=True)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_a576c93da9ba579531e1c0144dc83769b}{\+\_\+\+\_\+getstate\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpkg__resources_1_1WorkingSet_ae0f044870f29ce1c4fd06ebaa209cc51}{\+\_\+\+\_\+setstate\+\_\+\+\_\+} (self, e\+\_\+k\+\_\+b\+\_\+c)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpkg__resources_1_1WorkingSet_aa9a6eb37900163d92183a1e40a0b52f4}{entries}
+\item 
+\hyperlink{classpkg__resources_1_1WorkingSet_afe054ebd8bc27fe61aa90cecadaa9bad}{entry\+\_\+keys}
+\item 
+\hyperlink{classpkg__resources_1_1WorkingSet_ac0e359dc968ec95eb2b5aed2988daa36}{by\+\_\+key}
+\item 
+\hyperlink{classpkg__resources_1_1WorkingSet_a5b68079da017460c2ad13d6514ae55d7}{callbacks}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A collection of active distributions on sys.path (or a similar list)\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_a88df1aa3c1781fcb4576a56854bab8da}\label{classpkg__resources_1_1WorkingSet_a88df1aa3c1781fcb4576a56854bab8da}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{entries = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A collection of active distributions on sys.path (or a similar list)\end{DoxyVerb}
+\begin{DoxyVerb}Create working set from list of path entries (default=sys.path)\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_a6a4880a5d32dac95a7b93f03f7ebc5b9}\label{classpkg__resources_1_1WorkingSet_a6a4880a5d32dac95a7b93f03f7ebc5b9}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+contains\+\_\+\+\_\+()}{\_\_contains\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+\_\+\+\_\+contains\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dist }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}True if `dist` is the active distribution for its project\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_a576c93da9ba579531e1c0144dc83769b}\label{classpkg__resources_1_1WorkingSet_a576c93da9ba579531e1c0144dc83769b}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getstate\+\_\+\+\_\+()}{\_\_getstate\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+\_\+\+\_\+getstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_a59bda285ab373ec1cc8b22b0e24c460c}\label{classpkg__resources_1_1WorkingSet_a59bda285ab373ec1cc8b22b0e24c460c}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Yield distributions for non-duplicate projects in the working set
+
+The yield order is the order in which the items' path entries were
+added to the working set.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_ae0f044870f29ce1c4fd06ebaa209cc51}\label{classpkg__resources_1_1WorkingSet_ae0f044870f29ce1c4fd06ebaa209cc51}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setstate\+\_\+\+\_\+()}{\_\_setstate\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+\_\+\+\_\+setstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{e\+\_\+k\+\_\+b\+\_\+c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_ab12bd19b39a01d6013544ab543401a16}\label{classpkg__resources_1_1WorkingSet_ab12bd19b39a01d6013544ab543401a16}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!add@{add}}
+\index{add@{add}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+add (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dist,  }\item[{}]{entry = {\ttfamily None},  }\item[{}]{insert = {\ttfamily True},  }\item[{}]{replace = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add `dist` to working set, associated with `entry`
+
+If `entry` is unspecified, it defaults to the ``.location`` of `dist`.
+On exit from this routine, `entry` is added to the end of the working
+set's ``.entries`` (if it wasn't already present).
+
+`dist` is only added to the working set if it's for a project that
+doesn't already have a distribution in the set, unless `replace=True`.
+If it's added, any callbacks registered with the ``subscribe()`` method
+will be called.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_aed20abcb6a85cdc25dff1686ad480958}\label{classpkg__resources_1_1WorkingSet_aed20abcb6a85cdc25dff1686ad480958}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!add\+\_\+entry@{add\+\_\+entry}}
+\index{add\+\_\+entry@{add\+\_\+entry}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{add\+\_\+entry()}{add\_entry()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+add\+\_\+entry (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{entry }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a path item to ``.entries``, finding any distributions on it
+
+``find_distributions(entry, True)`` is used to find distributions
+corresponding to the path entry, and they are added.  `entry` is
+always appended to ``.entries``, even if it is already present.
+(This is because ``sys.path`` can contain the same value more than
+once, and the ``.entries`` of the ``sys.path`` WorkingSet should always
+equal ``sys.path``.)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_a4eb8b69f25d05e0edb4f2a8d162d096b}\label{classpkg__resources_1_1WorkingSet_a4eb8b69f25d05e0edb4f2a8d162d096b}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!find@{find}}
+\index{find@{find}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+find (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{req }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find a distribution matching requirement `req`
+
+If there is an active distribution for the requested project, this
+returns it as long as it meets the version requirement specified by
+`req`.  But, if there is an active distribution for the project and it
+does *not* meet the `req` requirement, ``VersionConflict`` is raised.
+If there is no active distribution for the requested project, ``None``
+is returned.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_a5a8cbb91286691870d04edd6c841197d}\label{classpkg__resources_1_1WorkingSet_a5a8cbb91286691870d04edd6c841197d}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!find\+\_\+plugins@{find\+\_\+plugins}}
+\index{find\+\_\+plugins@{find\+\_\+plugins}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{find\+\_\+plugins()}{find\_plugins()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+find\+\_\+plugins (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{plugin\+\_\+env,  }\item[{}]{full\+\_\+env = {\ttfamily None},  }\item[{}]{installer = {\ttfamily None},  }\item[{}]{fallback = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find all activatable distributions in `plugin_env`
+
+Example usage::
+
+    distributions, errors = working_set.find_plugins(
+Environment(plugin_dirlist)
+    )
+    # add plugins+libs to sys.path
+    map(working_set.add, distributions)
+    # display errors
+    print('Could not load', errors)
+
+The `plugin_env` should be an ``Environment`` instance that contains
+only distributions that are in the project's "plugin directory" or
+directories. The `full_env`, if supplied, should be an ``Environment``
+contains all currently-available distributions.  If `full_env` is not
+supplied, one is created automatically from the ``WorkingSet`` this
+method is called on, which will typically mean that every directory on
+``sys.path`` will be scanned for distributions.
+
+`installer` is a standard installer callback as used by the
+``resolve()`` method. The `fallback` flag indicates whether we should
+attempt to resolve older versions of a plugin if the newest version
+cannot be resolved.
+
+This method returns a 2-tuple: (`distributions`, `error_info`), where
+`distributions` is a list of the distributions found in `plugin_env`
+that were loadable, along with any other distributions that are needed
+to resolve their dependencies.  `error_info` is a dictionary mapping
+unloadable plugin distributions to an exception instance describing the
+error that occurred. Usually this will be a ``DistributionNotFound`` or
+``VersionConflict`` instance.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_a556736951f3aa317fa2d339d64e290ea}\label{classpkg__resources_1_1WorkingSet_a556736951f3aa317fa2d339d64e290ea}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!iter\+\_\+entry\+\_\+points@{iter\+\_\+entry\+\_\+points}}
+\index{iter\+\_\+entry\+\_\+points@{iter\+\_\+entry\+\_\+points}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{iter\+\_\+entry\+\_\+points()}{iter\_entry\_points()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+iter\+\_\+entry\+\_\+points (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{group,  }\item[{}]{name = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Yield entry point objects from `group` matching `name`
+
+If `name` is None, yields all entry points in `group` from all
+distributions in the working set, otherwise only ones matching
+both `group` and `name` are yielded (in distribution order).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_a1c2434f098e08c20314935fddad8426b}\label{classpkg__resources_1_1WorkingSet_a1c2434f098e08c20314935fddad8426b}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!require@{require}}
+\index{require@{require}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{require()}{require()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+require (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{requirements }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Ensure that distributions matching `requirements` are activated
+
+`requirements` must be a string or a (possibly-nested) sequence
+thereof, specifying the distributions and versions required.  The
+return value is a sequence of the distributions that needed to be
+activated to fulfill the requirements; all relevant distributions are
+included, even if they were already activated in this working set.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_a38c13850cc73d319b4bcf47592132941}\label{classpkg__resources_1_1WorkingSet_a38c13850cc73d319b4bcf47592132941}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!resolve@{resolve}}
+\index{resolve@{resolve}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{resolve()}{resolve()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+resolve (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{requirements,  }\item[{}]{env = {\ttfamily None},  }\item[{}]{installer = {\ttfamily None},  }\item[{}]{replace\+\_\+conflicting = {\ttfamily False},  }\item[{}]{extras = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}List all distributions needed to (recursively) meet `requirements`
+
+`requirements` must be a sequence of ``Requirement`` objects.  `env`,
+if supplied, should be an ``Environment`` instance.  If
+not supplied, it defaults to all distributions available within any
+entry or distribution in the working set.  `installer`, if supplied,
+will be invoked with each requirement that cannot be met by an
+already-installed distribution; it should return a ``Distribution`` or
+``None``.
+
+Unless `replace_conflicting=True`, raises a VersionConflict exception
+if
+any requirements are found on the path that have the correct name but
+the wrong version.  Otherwise, if an `installer` is supplied it will be
+invoked to obtain the correct version of the requirement and activate
+it.
+
+`extras` is a list of the extras to be used with these requirements.
+This is important because extra requirements may look like `my_req;
+extra = "my_extra"`, which would otherwise be interpreted as a purely
+optional requirement.  Instead, we want to be able to assert that these
+requirements are truly required.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_ab2b93a4b8818042f319d7f9d7d2884bf}\label{classpkg__resources_1_1WorkingSet_ab2b93a4b8818042f319d7f9d7d2884bf}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!run\+\_\+script@{run\+\_\+script}}
+\index{run\+\_\+script@{run\+\_\+script}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{run\+\_\+script()}{run\_script()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+run\+\_\+script (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{requires,  }\item[{}]{script\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Locate distribution for `requires` and run `script_name` script\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_a998b3678540dc5f39aa560f347c66d4b}\label{classpkg__resources_1_1WorkingSet_a998b3678540dc5f39aa560f347c66d4b}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{subscribe()}{subscribe()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Working\+Set.\+subscribe (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{callback,  }\item[{}]{existing = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invoke `callback` for all distributions
+
+If `existing=True` (default),
+call on all existing ones, as well.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_ac0e359dc968ec95eb2b5aed2988daa36}\label{classpkg__resources_1_1WorkingSet_ac0e359dc968ec95eb2b5aed2988daa36}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!by\+\_\+key@{by\+\_\+key}}
+\index{by\+\_\+key@{by\+\_\+key}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{by\+\_\+key}{by\_key}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+Working\+Set.\+by\+\_\+key}
+
+\mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_a5b68079da017460c2ad13d6514ae55d7}\label{classpkg__resources_1_1WorkingSet_a5b68079da017460c2ad13d6514ae55d7}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!callbacks@{callbacks}}
+\index{callbacks@{callbacks}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{callbacks}{callbacks}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+Working\+Set.\+callbacks}
+
+\mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_aa9a6eb37900163d92183a1e40a0b52f4}\label{classpkg__resources_1_1WorkingSet_aa9a6eb37900163d92183a1e40a0b52f4}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!entries@{entries}}
+\index{entries@{entries}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{entries}{entries}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+Working\+Set.\+entries}
+
+\mbox{\Hypertarget{classpkg__resources_1_1WorkingSet_afe054ebd8bc27fe61aa90cecadaa9bad}\label{classpkg__resources_1_1WorkingSet_afe054ebd8bc27fe61aa90cecadaa9bad}} 
+\index{pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}!entry\+\_\+keys@{entry\+\_\+keys}}
+\index{entry\+\_\+keys@{entry\+\_\+keys}!pkg\+\_\+resources\+::\+Working\+Set@{pkg\+\_\+resources\+::\+Working\+Set}}
+\subsubsection{\texorpdfstring{entry\+\_\+keys}{entry\_keys}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+Working\+Set.\+entry\+\_\+keys}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pkg\+\_\+resources/\hyperlink{venv_2lib_2python3_89_2site-packages_2pkg__resources_2____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}\end{DoxyCompactItemize}

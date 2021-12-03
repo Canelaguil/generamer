@@ -1,0 +1,163 @@
+\hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages}{}\section{matplotlib.\+backends.\+backend\+\_\+pdf.\+Pdf\+Pages Class Reference}
+\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages}\index{matplotlib.\+backends.\+backend\+\_\+pdf.\+Pdf\+Pages@{matplotlib.\+backends.\+backend\+\_\+pdf.\+Pdf\+Pages}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a6d5caaea4a0cbc5d2d07d9e2b4042dcd}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, filename, \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a15f6698aedae6a9d6c4c26b88daea5d3}{keep\+\_\+empty}=True, metadata=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_ad4fefcb92522d11ef1e25751190f196a}{\+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a6f5653c5d7f0ae1cfd7339d085896e1f}{\+\_\+\+\_\+exit\+\_\+\+\_\+} (self, exc\+\_\+type, exc\+\_\+val, exc\+\_\+tb)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a437630511808eb57fd6eb79e6698e752}{close} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a55064807818dfc2461ad45e78ece4f29}{infodict} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a42c462ddfed8228465fefb9321ac4858}{savefig} (self, figure=None, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_ad7a8dd73d6362c0c61f4be100cfe6a88}{get\+\_\+pagecount} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a05f70733732c65e6df2e25a9437b2a4b}{attach\+\_\+note} (self, text, position\+Rect=\mbox{[}-\/100)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a15f6698aedae6a9d6c4c26b88daea5d3}{keep\+\_\+empty}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A multi-page PDF file.
+
+Examples
+--------
+>>> import matplotlib.pyplot as plt
+>>> # Initialize:
+>>> with PdfPages('foo.pdf') as pdf:
+...     # As many times as you like, create a figure fig and save it:
+...     fig = plt.figure()
+...     pdf.savefig(fig)
+...     # When no figure is specified the current figure is saved
+...     pdf.savefig()
+
+Notes
+-----
+In reality `PdfPages` is a thin wrapper around `PdfFile`, in order to avoid
+confusion when using `~.pyplot.savefig` and forgetting the format argument.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a6d5caaea4a0cbc5d2d07d9e2b4042dcd}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a6d5caaea4a0cbc5d2d07d9e2b4042dcd}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+pdf.\+Pdf\+Pages.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename,  }\item[{}]{keep\+\_\+empty = {\ttfamily True},  }\item[{}]{metadata = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new PdfPages object.
+
+Parameters
+----------
+filename : str or path-like or file-like
+    Plots using `PdfPages.savefig` will be written to a file at this
+    location. The file is opened at once and any older file with the
+    same name is overwritten.
+
+keep_empty : bool, optional
+    If set to False, then empty pdf files will be deleted automatically
+    when closed.
+
+metadata : dict, optional
+    Information dictionary object (see PDF reference section 10.2.1
+    'Document Information Dictionary'), e.g.:
+    ``{'Creator': 'My software', 'Author': 'Me', 'Title': 'Awesome'}``.
+
+    The standard keys are 'Title', 'Author', 'Subject', 'Keywords',
+    'Creator', 'Producer', 'CreationDate', 'ModDate', and
+    'Trapped'. Values have been predefined for 'Creator', 'Producer'
+    and 'CreationDate'. They can be removed by setting them to `None`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_ad4fefcb92522d11ef1e25751190f196a}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_ad4fefcb92522d11ef1e25751190f196a}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}!\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+enter\+\_\+\+\_\+()}{\_\_enter\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+pdf.\+Pdf\+Pages.\+\_\+\+\_\+enter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a6f5653c5d7f0ae1cfd7339d085896e1f}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a6f5653c5d7f0ae1cfd7339d085896e1f}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}!\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+exit\+\_\+\+\_\+()}{\_\_exit\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+pdf.\+Pdf\+Pages.\+\_\+\+\_\+exit\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{exc\+\_\+type,  }\item[{}]{exc\+\_\+val,  }\item[{}]{exc\+\_\+tb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a05f70733732c65e6df2e25a9437b2a4b}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a05f70733732c65e6df2e25a9437b2a4b}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}!attach\+\_\+note@{attach\+\_\+note}}
+\index{attach\+\_\+note@{attach\+\_\+note}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}}
+\subsubsection{\texorpdfstring{attach\+\_\+note()}{attach\_note()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+pdf.\+Pdf\+Pages.\+attach\+\_\+note (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{text,  }\item[{}]{position\+Rect = {\ttfamily \mbox{[}-\/100} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a new text note to the page to be saved next. The optional
+positionRect specifies the position of the new note on the
+page. It is outside the page per default to make sure it is
+invisible on printouts.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a437630511808eb57fd6eb79e6698e752}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a437630511808eb57fd6eb79e6698e752}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}!close@{close}}
+\index{close@{close}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+pdf.\+Pdf\+Pages.\+close (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Finalize this object, making the underlying file a complete
+PDF file.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_ad7a8dd73d6362c0c61f4be100cfe6a88}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_ad7a8dd73d6362c0c61f4be100cfe6a88}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}!get\+\_\+pagecount@{get\+\_\+pagecount}}
+\index{get\+\_\+pagecount@{get\+\_\+pagecount}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}}
+\subsubsection{\texorpdfstring{get\+\_\+pagecount()}{get\_pagecount()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+pdf.\+Pdf\+Pages.\+get\+\_\+pagecount (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the current number of pages in the multipage pdf file.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a55064807818dfc2461ad45e78ece4f29}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a55064807818dfc2461ad45e78ece4f29}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}!infodict@{infodict}}
+\index{infodict@{infodict}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}}
+\subsubsection{\texorpdfstring{infodict()}{infodict()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+pdf.\+Pdf\+Pages.\+infodict (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a modifiable information dictionary object
+(see PDF reference section 10.2.1 'Document Information
+Dictionary').
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a42c462ddfed8228465fefb9321ac4858}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a42c462ddfed8228465fefb9321ac4858}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}!savefig@{savefig}}
+\index{savefig@{savefig}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}}
+\subsubsection{\texorpdfstring{savefig()}{savefig()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+pdf.\+Pdf\+Pages.\+savefig (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Save a `.Figure` to this file as a new page.
+
+Any other keyword arguments are passed to `~.Figure.savefig`.
+
+Parameters
+----------
+figure : `.Figure` or int, optional
+    Specifies what figure is saved to file. If not specified, the
+    active figure is saved. If a `.Figure` instance is provided, this
+    figure is saved. If an int is specified, the figure instance to
+    save is looked up by number.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a15f6698aedae6a9d6c4c26b88daea5d3}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1PdfPages_a15f6698aedae6a9d6c4c26b88daea5d3}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}!keep\+\_\+empty@{keep\+\_\+empty}}
+\index{keep\+\_\+empty@{keep\+\_\+empty}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Pdf\+Pages}}
+\subsubsection{\texorpdfstring{keep\+\_\+empty}{keep\_empty}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+pdf.\+Pdf\+Pages.\+keep\+\_\+empty}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/backends/\hyperlink{backend__pdf_8py}{backend\+\_\+pdf.\+py}\end{DoxyCompactItemize}

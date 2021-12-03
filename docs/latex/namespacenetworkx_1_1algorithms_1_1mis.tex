@@ -1,0 +1,66 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1mis}{}\section{networkx.\+algorithms.\+mis Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1mis}\index{networkx.\+algorithms.\+mis@{networkx.\+algorithms.\+mis}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1mis_adf60d61f598341fd0a205a534f8d8b36}{maximal\+\_\+independent\+\_\+set} (G, nodes=None, seed=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Algorithm to find a maximal (not maximum) independent set.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1mis_adf60d61f598341fd0a205a534f8d8b36}\label{namespacenetworkx_1_1algorithms_1_1mis_adf60d61f598341fd0a205a534f8d8b36}} 
+\index{networkx\+::algorithms\+::mis@{networkx\+::algorithms\+::mis}!maximal\+\_\+independent\+\_\+set@{maximal\+\_\+independent\+\_\+set}}
+\index{maximal\+\_\+independent\+\_\+set@{maximal\+\_\+independent\+\_\+set}!networkx\+::algorithms\+::mis@{networkx\+::algorithms\+::mis}}
+\subsubsection{\texorpdfstring{maximal\+\_\+independent\+\_\+set()}{maximal\_independent\_set()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+mis.\+maximal\+\_\+independent\+\_\+set (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodes = {\ttfamily None},  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a random maximal independent set guaranteed to contain
+a given set of nodes.
+
+An independent set is a set of nodes such that the subgraph
+of G induced by these nodes contains no edges. A maximal
+independent set is an independent set such that it is not possible
+to add a new node and still get an independent set.
+
+Parameters
+----------
+G : NetworkX graph
+
+nodes : list or iterable
+   Nodes that must be part of the independent set. This set of nodes
+   must be independent.
+
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+
+Returns
+-------
+indep_nodes : list
+   List of nodes that are part of a maximal independent set.
+
+Raises
+------
+NetworkXUnfeasible
+   If the nodes in the provided list are not part of the graph or
+   do not form an independent set, an exception is raised.
+
+NetworkXNotImplemented
+    If `G` is directed.
+
+Examples
+--------
+>>> G = nx.path_graph(5)
+>>> nx.maximal_independent_set(G)  # doctest: +SKIP
+[4, 0, 2]
+>>> nx.maximal_independent_set(G, [1])  # doctest: +SKIP
+[1, 3]
+
+Notes
+-----
+This algorithm does not solve the maximum independent set problem.\end{DoxyVerb}
+ 

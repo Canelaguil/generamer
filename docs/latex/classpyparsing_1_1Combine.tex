@@ -1,0 +1,119 @@
+\hypertarget{classpyparsing_1_1Combine}{}\section{pyparsing.\+Combine Class Reference}
+\label{classpyparsing_1_1Combine}\index{pyparsing.\+Combine@{pyparsing.\+Combine}}
+
+
+Inheritance diagram for pyparsing.\+Combine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classpyparsing_1_1Combine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pyparsing.\+Combine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classpyparsing_1_1Combine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpyparsing_1_1Combine_aea517a18e3f3af05a758c8425f801882}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpyparsing_1_1ParseElementEnhance_a0139048279aeac38804a10d131d3c340}{expr}, \hyperlink{classpyparsing_1_1Combine_af29f4f370d67f512fdb0124268e6c98b}{join\+String}=\char`\"{}\char`\"{}, \hyperlink{classpyparsing_1_1Combine_a21015dbc75caf4ec46760504d28cc5b4}{adjacent}=True)
+\item 
+def \hyperlink{classpyparsing_1_1Combine_ad74c8919ff98415bdfffb1f5abdd7cc4}{ignore} (self, other)
+\item 
+def \hyperlink{classpyparsing_1_1Combine_a38a68fcc9ded0a35390a0a77c70ec37b}{post\+Parse} (self, instring, loc, tokenlist)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpyparsing_1_1Combine_a21015dbc75caf4ec46760504d28cc5b4}{adjacent}
+\item 
+\hyperlink{classpyparsing_1_1Combine_ac47d5ae106499d773a6d1fdddcf23166}{skip\+Whitespace}
+\item 
+\hyperlink{classpyparsing_1_1Combine_af29f4f370d67f512fdb0124268e6c98b}{join\+String}
+\item 
+\hyperlink{classpyparsing_1_1Combine_a50ca3727f830f42303a2a3c3395deec0}{call\+Preparse}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Converter to concatenate all matching tokens to a single string.
+By default, the matching patterns must also be contiguous in the
+input string; this can be disabled by specifying
+``'adjacent=False'`` in the constructor.
+
+Example::
+
+    real = Word(nums) + '.' + Word(nums)
+    print(real.parseString('3.1416')) # -> ['3', '.', '1416']
+    # will also erroneously match the following
+    print(real.parseString('3. 1416')) # -> ['3', '.', '1416']
+
+    real = Combine(Word(nums) + '.' + Word(nums))
+    print(real.parseString('3.1416')) # -> ['3.1416']
+    # no match when there are internal spaces
+    print(real.parseString('3. 1416')) # -> Exception: Expected W:(0123...)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Combine_aea517a18e3f3af05a758c8425f801882}\label{classpyparsing_1_1Combine_aea517a18e3f3af05a758c8425f801882}} 
+\index{pyparsing\+::\+Combine@{pyparsing\+::\+Combine}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pyparsing\+::\+Combine@{pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Combine.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{expr,  }\item[{}]{join\+String = {\ttfamily \char`\"{}\char`\"{}},  }\item[{}]{adjacent = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Combine_ad74c8919ff98415bdfffb1f5abdd7cc4}\label{classpyparsing_1_1Combine_ad74c8919ff98415bdfffb1f5abdd7cc4}} 
+\index{pyparsing\+::\+Combine@{pyparsing\+::\+Combine}!ignore@{ignore}}
+\index{ignore@{ignore}!pyparsing\+::\+Combine@{pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{ignore()}{ignore()}}
+{\footnotesize\ttfamily def pyparsing.\+Combine.\+ignore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpyparsing_1_1Combine_a38a68fcc9ded0a35390a0a77c70ec37b}\label{classpyparsing_1_1Combine_a38a68fcc9ded0a35390a0a77c70ec37b}} 
+\index{pyparsing\+::\+Combine@{pyparsing\+::\+Combine}!post\+Parse@{post\+Parse}}
+\index{post\+Parse@{post\+Parse}!pyparsing\+::\+Combine@{pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{post\+Parse()}{postParse()}}
+{\footnotesize\ttfamily def pyparsing.\+Combine.\+post\+Parse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{tokenlist }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Combine_a21015dbc75caf4ec46760504d28cc5b4}\label{classpyparsing_1_1Combine_a21015dbc75caf4ec46760504d28cc5b4}} 
+\index{pyparsing\+::\+Combine@{pyparsing\+::\+Combine}!adjacent@{adjacent}}
+\index{adjacent@{adjacent}!pyparsing\+::\+Combine@{pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{adjacent}{adjacent}}
+{\footnotesize\ttfamily pyparsing.\+Combine.\+adjacent}
+
+\mbox{\Hypertarget{classpyparsing_1_1Combine_a50ca3727f830f42303a2a3c3395deec0}\label{classpyparsing_1_1Combine_a50ca3727f830f42303a2a3c3395deec0}} 
+\index{pyparsing\+::\+Combine@{pyparsing\+::\+Combine}!call\+Preparse@{call\+Preparse}}
+\index{call\+Preparse@{call\+Preparse}!pyparsing\+::\+Combine@{pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{call\+Preparse}{callPreparse}}
+{\footnotesize\ttfamily pyparsing.\+Combine.\+call\+Preparse}
+
+\mbox{\Hypertarget{classpyparsing_1_1Combine_af29f4f370d67f512fdb0124268e6c98b}\label{classpyparsing_1_1Combine_af29f4f370d67f512fdb0124268e6c98b}} 
+\index{pyparsing\+::\+Combine@{pyparsing\+::\+Combine}!join\+String@{join\+String}}
+\index{join\+String@{join\+String}!pyparsing\+::\+Combine@{pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{join\+String}{joinString}}
+{\footnotesize\ttfamily pyparsing.\+Combine.\+join\+String}
+
+\mbox{\Hypertarget{classpyparsing_1_1Combine_ac47d5ae106499d773a6d1fdddcf23166}\label{classpyparsing_1_1Combine_ac47d5ae106499d773a6d1fdddcf23166}} 
+\index{pyparsing\+::\+Combine@{pyparsing\+::\+Combine}!skip\+Whitespace@{skip\+Whitespace}}
+\index{skip\+Whitespace@{skip\+Whitespace}!pyparsing\+::\+Combine@{pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{skip\+Whitespace}{skipWhitespace}}
+{\footnotesize\ttfamily pyparsing.\+Combine.\+skip\+Whitespace}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\hyperlink{pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

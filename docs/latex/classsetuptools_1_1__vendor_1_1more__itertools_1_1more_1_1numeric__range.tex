@@ -1,0 +1,191 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range}{}\section{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range Class Reference}
+\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range}\index{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range@{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range}}
+
+
+Inheritance diagram for setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a7df5576bfe2a38d0d1428f8680f9f16f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, args)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a332ca2c85bf0406566c4e2046b73f1dd}{\+\_\+\+\_\+bool\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_add9700db1c04674af8d556835481fbff}{\+\_\+\+\_\+contains\+\_\+\+\_\+} (self, elem)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_aff80c3ddd0965ddddff1a75debc36da8}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a36a28e82ef8c11c2dfc7d9ec0624380f}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, key)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a10dd022669ae08d1de8752208fa0f3a8}{\+\_\+\+\_\+hash\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a58f4bb1aef339043b63608ebce09ef1f}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a0fc66ae6b79a7424e55573ad31985c08}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a6e1d5f829127444edd7437e89ac405a3}{\+\_\+\+\_\+reduce\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a5bb35f65639f428405292c9d5d6bdee2}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a83b517e7c46af3a7f81236ce6792c21a}{\+\_\+\+\_\+reversed\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_ac6193d9f343a8604d8262f8166c4ab60}{count} (self, value)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a394db59afc76561009e55b38d2254d97}{index} (self, value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An extension of the built-in ``range()`` function whose arguments can
+be any orderable numeric type.
+
+With only *stop* specified, *start* defaults to ``0`` and *step*
+defaults to ``1``. The output items will match the type of *stop*:
+
+    >>> list(numeric_range(3.5))
+    [0.0, 1.0, 2.0, 3.0]
+
+With only *start* and *stop* specified, *step* defaults to ``1``. The
+output items will match the type of *start*:
+
+    >>> from decimal import Decimal
+    >>> start = Decimal('2.1')
+    >>> stop = Decimal('5.1')
+    >>> list(numeric_range(start, stop))
+    [Decimal('2.1'), Decimal('3.1'), Decimal('4.1')]
+
+With *start*, *stop*, and *step*  specified the output items will match
+the type of ``start + step``:
+
+    >>> from fractions import Fraction
+    >>> start = Fraction(1, 2)  # Start at 1/2
+    >>> stop = Fraction(5, 2)  # End at 5/2
+    >>> step = Fraction(1, 2)  # Count by 1/2
+    >>> list(numeric_range(start, stop, step))
+    [Fraction(1, 2), Fraction(1, 1), Fraction(3, 2), Fraction(2, 1)]
+
+If *step* is zero, ``ValueError`` is raised. Negative steps are supported:
+
+    >>> list(numeric_range(3, -1, -1.0))
+    [3.0, 2.0, 1.0, 0.0]
+
+Be aware of the limitations of floating point numbers; the representation
+of the yielded numbers may be surprising.
+
+``datetime.datetime`` objects can be used for *start* and *stop*, if *step*
+is a ``datetime.timedelta`` object:
+
+    >>> import datetime
+    >>> start = datetime.datetime(2019, 1, 1)
+    >>> stop = datetime.datetime(2019, 1, 3)
+    >>> step = datetime.timedelta(days=1)
+    >>> items = iter(numeric_range(start, stop, step))
+    >>> next(items)
+    datetime.datetime(2019, 1, 1, 0, 0)
+    >>> next(items)
+    datetime.datetime(2019, 1, 2, 0, 0)\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a7df5576bfe2a38d0d1428f8680f9f16f}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a7df5576bfe2a38d0d1428f8680f9f16f}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a332ca2c85bf0406566c4e2046b73f1dd}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a332ca2c85bf0406566c4e2046b73f1dd}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!\+\_\+\+\_\+bool\+\_\+\+\_\+@{\+\_\+\+\_\+bool\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+bool\+\_\+\+\_\+@{\+\_\+\+\_\+bool\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+bool\+\_\+\+\_\+()}{\_\_bool\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+\_\+\+\_\+bool\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_add9700db1c04674af8d556835481fbff}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_add9700db1c04674af8d556835481fbff}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+contains\+\_\+\+\_\+()}{\_\_contains\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+\_\+\+\_\+contains\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{elem }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_aff80c3ddd0965ddddff1a75debc36da8}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_aff80c3ddd0965ddddff1a75debc36da8}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+eq\+\_\+\+\_\+()}{\_\_eq\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+\_\+\+\_\+eq\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a36a28e82ef8c11c2dfc7d9ec0624380f}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a36a28e82ef8c11c2dfc7d9ec0624380f}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a10dd022669ae08d1de8752208fa0f3a8}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a10dd022669ae08d1de8752208fa0f3a8}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!\+\_\+\+\_\+hash\+\_\+\+\_\+@{\+\_\+\+\_\+hash\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+hash\+\_\+\+\_\+@{\+\_\+\+\_\+hash\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+hash\+\_\+\+\_\+()}{\_\_hash\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+\_\+\+\_\+hash\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a58f4bb1aef339043b63608ebce09ef1f}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a58f4bb1aef339043b63608ebce09ef1f}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a0fc66ae6b79a7424e55573ad31985c08}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a0fc66ae6b79a7424e55573ad31985c08}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a6e1d5f829127444edd7437e89ac405a3}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a6e1d5f829127444edd7437e89ac405a3}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!\+\_\+\+\_\+reduce\+\_\+\+\_\+@{\+\_\+\+\_\+reduce\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+reduce\+\_\+\+\_\+@{\+\_\+\+\_\+reduce\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+reduce\+\_\+\+\_\+()}{\_\_reduce\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+\_\+\+\_\+reduce\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a5bb35f65639f428405292c9d5d6bdee2}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a5bb35f65639f428405292c9d5d6bdee2}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a83b517e7c46af3a7f81236ce6792c21a}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a83b517e7c46af3a7f81236ce6792c21a}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!\+\_\+\+\_\+reversed\+\_\+\+\_\+@{\+\_\+\+\_\+reversed\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+reversed\+\_\+\+\_\+@{\+\_\+\+\_\+reversed\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+reversed\+\_\+\+\_\+()}{\_\_reversed\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+\_\+\+\_\+reversed\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_ac6193d9f343a8604d8262f8166c4ab60}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_ac6193d9f343a8604d8262f8166c4ab60}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!count@{count}}
+\index{count@{count}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+count (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a394db59afc76561009e55b38d2254d97}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1numeric__range_a394db59afc76561009e55b38d2254d97}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}!index@{index}}
+\index{index@{index}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::numeric\+\_\+range}}
+\subsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+numeric\+\_\+range.\+index (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/more\+\_\+itertools/\hyperlink{more_8py}{more.\+py}\end{DoxyCompactItemize}

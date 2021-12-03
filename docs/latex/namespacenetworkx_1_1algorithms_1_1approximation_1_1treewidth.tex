@@ -1,0 +1,127 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth}{}\section{networkx.\+algorithms.\+approximation.\+treewidth Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth}\index{networkx.\+algorithms.\+approximation.\+treewidth@{networkx.\+algorithms.\+approximation.\+treewidth}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1treewidth_1_1MinDegreeHeuristic}{Min\+Degree\+Heuristic}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a61fc0c9223a43796cfaca14a69fe0a8c}{treewidth\+\_\+min\+\_\+degree} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a80f9b50c25683439899cf76c8b7baeca}{treewidth\+\_\+min\+\_\+fill\+\_\+in} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a0bb0e946b540b4d1287654403c7e38ba}{min\+\_\+fill\+\_\+in\+\_\+heuristic} (graph)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a237be07bcad07dfb38016e0938bbfcfc}{treewidth\+\_\+decomp} (G, heuristic=\hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a0bb0e946b540b4d1287654403c7e38ba}{min\+\_\+fill\+\_\+in\+\_\+heuristic})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions for computing treewidth decomposition.
+
+Treewidth of an undirected graph is a number associated with the graph.
+It can be defined as the size of the largest vertex set (bag) in a tree
+decomposition of the graph minus one.
+
+`Wikipedia: Treewidth <https://en.wikipedia.org/wiki/Treewidth>`_
+
+The notions of treewidth and tree decomposition have gained their
+attractiveness partly because many graph and network problems that are
+intractable (e.g., NP-hard) on arbitrary graphs become efficiently
+solvable (e.g., with a linear time algorithm) when the treewidth of the
+input graphs is bounded by a constant [1]_ [2]_.
+
+There are two different functions for computing a tree decomposition:
+:func:`treewidth_min_degree` and :func:`treewidth_min_fill_in`.
+
+.. [1] Hans L. Bodlaender and Arie M. C. A. Koster. 2010. "Treewidth
+      computations I.Upper bounds". Inf. Comput. 208, 3 (March 2010),259-275.
+      http://dx.doi.org/10.1016/j.ic.2009.03.008
+
+.. [2] Hans L. Bodlaender. "Discovering Treewidth". Institute of Information
+      and Computing Sciences, Utrecht University.
+      Technical Report UU-CS-2005-018.
+      http://www.cs.uu.nl
+
+.. [3] K. Wang, Z. Lu, and J. Hicks *Treewidth*.
+      https://web.archive.org/web/20210507025929/http://web.eecs.utk.edu/~cphill25/cs594_spring2015_projects/treewidth.pdf\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a0bb0e946b540b4d1287654403c7e38ba}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a0bb0e946b540b4d1287654403c7e38ba}} 
+\index{networkx\+::algorithms\+::approximation\+::treewidth@{networkx\+::algorithms\+::approximation\+::treewidth}!min\+\_\+fill\+\_\+in\+\_\+heuristic@{min\+\_\+fill\+\_\+in\+\_\+heuristic}}
+\index{min\+\_\+fill\+\_\+in\+\_\+heuristic@{min\+\_\+fill\+\_\+in\+\_\+heuristic}!networkx\+::algorithms\+::approximation\+::treewidth@{networkx\+::algorithms\+::approximation\+::treewidth}}
+\subsubsection{\texorpdfstring{min\+\_\+fill\+\_\+in\+\_\+heuristic()}{min\_fill\_in\_heuristic()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+treewidth.\+min\+\_\+fill\+\_\+in\+\_\+heuristic (\begin{DoxyParamCaption}\item[{}]{graph }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Implements the Minimum Degree heuristic.
+
+Returns the node from the graph, where the number of edges added when
+turning the neighbourhood of the chosen node into clique is as small as
+possible. This algorithm chooses the nodes using the Minimum Fill-In
+heuristic. The running time of the algorithm is :math:`O(V^3)` and it uses
+additional constant memory.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a237be07bcad07dfb38016e0938bbfcfc}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a237be07bcad07dfb38016e0938bbfcfc}} 
+\index{networkx\+::algorithms\+::approximation\+::treewidth@{networkx\+::algorithms\+::approximation\+::treewidth}!treewidth\+\_\+decomp@{treewidth\+\_\+decomp}}
+\index{treewidth\+\_\+decomp@{treewidth\+\_\+decomp}!networkx\+::algorithms\+::approximation\+::treewidth@{networkx\+::algorithms\+::approximation\+::treewidth}}
+\subsubsection{\texorpdfstring{treewidth\+\_\+decomp()}{treewidth\_decomp()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+treewidth.\+treewidth\+\_\+decomp (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{heuristic = {\ttfamily \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a0bb0e946b540b4d1287654403c7e38ba}{min\+\_\+fill\+\_\+in\+\_\+heuristic}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a treewidth decomposition using the passed heuristic.
+
+Parameters
+----------
+G : NetworkX graph
+heuristic : heuristic function
+
+Returns
+-------
+Treewidth decomposition : (int, Graph) tuple
+    2-tuple with treewidth and the corresponding decomposed tree.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a61fc0c9223a43796cfaca14a69fe0a8c}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a61fc0c9223a43796cfaca14a69fe0a8c}} 
+\index{networkx\+::algorithms\+::approximation\+::treewidth@{networkx\+::algorithms\+::approximation\+::treewidth}!treewidth\+\_\+min\+\_\+degree@{treewidth\+\_\+min\+\_\+degree}}
+\index{treewidth\+\_\+min\+\_\+degree@{treewidth\+\_\+min\+\_\+degree}!networkx\+::algorithms\+::approximation\+::treewidth@{networkx\+::algorithms\+::approximation\+::treewidth}}
+\subsubsection{\texorpdfstring{treewidth\+\_\+min\+\_\+degree()}{treewidth\_min\_degree()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+treewidth.\+treewidth\+\_\+min\+\_\+degree (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a treewidth decomposition using the Minimum Degree heuristic.
+
+The heuristic chooses the nodes according to their degree, i.e., first
+the node with the lowest degree is chosen, then the graph is updated
+and the corresponding node is removed. Next, a new node with the lowest
+degree is chosen, and so on.
+
+Parameters
+----------
+G : NetworkX graph
+
+Returns
+-------
+Treewidth decomposition : (int, Graph) tuple
+      2-tuple with treewidth and the corresponding decomposed tree.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a80f9b50c25683439899cf76c8b7baeca}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1treewidth_a80f9b50c25683439899cf76c8b7baeca}} 
+\index{networkx\+::algorithms\+::approximation\+::treewidth@{networkx\+::algorithms\+::approximation\+::treewidth}!treewidth\+\_\+min\+\_\+fill\+\_\+in@{treewidth\+\_\+min\+\_\+fill\+\_\+in}}
+\index{treewidth\+\_\+min\+\_\+fill\+\_\+in@{treewidth\+\_\+min\+\_\+fill\+\_\+in}!networkx\+::algorithms\+::approximation\+::treewidth@{networkx\+::algorithms\+::approximation\+::treewidth}}
+\subsubsection{\texorpdfstring{treewidth\+\_\+min\+\_\+fill\+\_\+in()}{treewidth\_min\_fill\_in()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+treewidth.\+treewidth\+\_\+min\+\_\+fill\+\_\+in (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a treewidth decomposition using the Minimum Fill-in heuristic.
+
+The heuristic chooses a node from the graph, where the number of edges
+added turning the neighbourhood of the chosen node into clique is as
+small as possible.
+
+Parameters
+----------
+G : NetworkX graph
+
+Returns
+-------
+Treewidth decomposition : (int, Graph) tuple
+    2-tuple with treewidth and the corresponding decomposed tree.
+\end{DoxyVerb}
+ 

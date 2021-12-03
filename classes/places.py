@@ -71,7 +71,7 @@ class Others:
             else:
                 child = self.people[child_key]
             self.children = [x for x in self.children if x.key != child.key]
-            child.knowledge.add_bit(2, f"Was taken out of orphanage at age {child.age}.")
+            child.knowledge.add_bit(2, f"Was adopted out of the orphanage at age {child.age}.", 'adopted')
             child.trigger.out_orphanage()
             self.no_children -= 1
             return child

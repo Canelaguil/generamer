@@ -1,0 +1,544 @@
+\hypertarget{namespacenumpy_1_1core_1_1numerictypes}{}\section{numpy.\+core.\+numerictypes Namespace Reference}
+\label{namespacenumpy_1_1core_1_1numerictypes}\index{numpy.\+core.\+numerictypes@{numpy.\+core.\+numerictypes}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1numerictypes_1_1__typedict}{\+\_\+typedict}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1numerictypes_a97df80194c7466a06b95f037f0d5a844}{maximum\+\_\+sctype} (t)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1numerictypes_ac0d06f07b4d9348f62cd776c5a4dfed1}{issctype} (rep)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1numerictypes_a4112132097e16025a598ee650fdca003}{obj2sctype} (rep, default=None)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1numerictypes_aabfb2145123e09bd184960c3f238b9db}{issubclass\+\_\+} (arg1, arg2)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1numerictypes_a248957fb69c8b2fee6ecc1ef38266c88}{issubsctype} (arg1, arg2)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1numerictypes_a42ed83d8a157a361cc678587b9c64ec3}{issubdtype} (arg1, arg2)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1numerictypes_a0fc02b9c8ebbf34f43da02fd841e1e28}{sctype2char} (sctype)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1numerictypes_a7a32e4cf109ee7b1a687ab3555e98898}{find\+\_\+common\+\_\+type} (array\+\_\+types, scalar\+\_\+types)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1numerictypes_a2b174847e4107b9e121d3c59cdf533ab}{generic}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1numerictypes_a181b5ae0d7ea8698d14a527228e79b60}{generic\+Type\+Rank}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1numerictypes_a07c1df771e775b51368c44e834e759d7}{nbytes}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1numerictypes_a800a45743c8e0f4aec5b624c45232091}{cast}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1numerictypes_af7a40df6735224194004fe9d7a2b80d4}{x}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1numerictypes_a487d35c8a6e2a81ebb15722142c54b9c}{k}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1numerictypes_a0c806c31bd62329acf3f0a9e6ada3912}{copy}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1numerictypes_a1f202a8a6691fe39f21261ea8c21a3c4}{Scalar\+Type}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1numerictypes_a4debd884e6bb24f280edd8eb1efa9fba}{key}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1numerictypes_a09fe3d51e0c01d075c881c3c23465601}{typecodes}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1numerictypes_a810a50e9f22081beeaea93490623c5e9}{type\+Dict}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}numerictypes: Define the numeric type objects
+
+This module is designed so "from numerictypes import \\*" is safe.
+Exported symbols include:
+
+  Dictionary with all registered number types (including aliases):
+sctypeDict
+
+  Type objects (not all will be available, depends on platform):
+  see variable sctypes for which ones you have
+
+Bit-width names
+
+int8 int16 int32 int64 int128
+uint8 uint16 uint32 uint64 uint128
+float16 float32 float64 float96 float128 float256
+complex32 complex64 complex128 complex192 complex256 complex512
+datetime64 timedelta64
+
+c-based names
+
+bool_
+
+object_
+
+void, str_, unicode_
+
+byte, ubyte,
+short, ushort
+intc, uintc,
+intp, uintp,
+int_, uint,
+longlong, ulonglong,
+
+single, csingle,
+float_, complex_,
+longfloat, clongfloat,
+
+   As part of the type-hierarchy:    xx -- is bit-width
+
+   generic
+ +-> bool_                                  (kind=b)
+ +-> number
+ |   +-> integer
+ |   |   +-> signedinteger     (intxx)      (kind=i)
+ |   |   |     byte
+ |   |   |     short
+ |   |   |     intc
+ |   |   |     intp            int0
+ |   |   |     int_
+ |   |   |     longlong
+ |   |   \\-> unsignedinteger  (uintxx)     (kind=u)
+ |   |         ubyte
+ |   |         ushort
+ |   |         uintc
+ |   |         uintp           uint0
+ |   |         uint_
+ |   |         ulonglong
+ |   +-> inexact
+ |       +-> floating          (floatxx)    (kind=f)
+ |       |     half
+ |       |     single
+ |       |     float_          (double)
+ |       |     longfloat
+ |       \\-> complexfloating  (complexxx)  (kind=c)
+ |             csingle         (singlecomplex)
+ |             complex_        (cfloat, cdouble)
+ |             clongfloat      (longcomplex)
+ +-> flexible
+ |   +-> character
+ |   |     str_     (string_, bytes_)       (kind=S)    [Python 2]
+ |   |     unicode_                         (kind=U)    [Python 2]
+ |   |
+ |   |     bytes_   (string_)               (kind=S)    [Python 3]
+ |   |     str_     (unicode_)              (kind=U)    [Python 3]
+ |   |
+ |   \\-> void                              (kind=V)
+ \\-> object_ (not used much)               (kind=O)\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a7a32e4cf109ee7b1a687ab3555e98898}\label{namespacenumpy_1_1core_1_1numerictypes_a7a32e4cf109ee7b1a687ab3555e98898}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!find\+\_\+common\+\_\+type@{find\+\_\+common\+\_\+type}}
+\index{find\+\_\+common\+\_\+type@{find\+\_\+common\+\_\+type}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{find\+\_\+common\+\_\+type()}{find\_common\_type()}}
+{\footnotesize\ttfamily def numpy.\+core.\+numerictypes.\+find\+\_\+common\+\_\+type (\begin{DoxyParamCaption}\item[{}]{array\+\_\+types,  }\item[{}]{scalar\+\_\+types }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determine common type following standard coercion rules.
+
+Parameters
+----------
+array_types : sequence
+    A list of dtypes or dtype convertible objects representing arrays.
+scalar_types : sequence
+    A list of dtypes or dtype convertible objects representing scalars.
+
+Returns
+-------
+datatype : dtype
+    The common data type, which is the maximum of `array_types` ignoring
+    `scalar_types`, unless the maximum of `scalar_types` is of a
+    different kind (`dtype.kind`). If the kind is not understood, then
+    None is returned.
+
+See Also
+--------
+dtype, common_type, can_cast, mintypecode
+
+Examples
+--------
+>>> np.find_common_type([], [np.int64, np.float32, complex])
+dtype('complex128')
+>>> np.find_common_type([np.int64, np.float32], [])
+dtype('float64')
+
+The standard casting rules ensure that a scalar cannot up-cast an
+array unless the scalar is of a fundamentally different kind of data
+(i.e. under a different hierarchy in the data type hierarchy) then
+the array:
+
+>>> np.find_common_type([np.float32], [np.int64, np.float64])
+dtype('float32')
+
+Complex is of a different type, so it up-casts the float in the
+`array_types` argument:
+
+>>> np.find_common_type([np.float32], [complex])
+dtype('complex128')
+
+Type specifier strings are convertible to dtypes and can therefore
+be used instead of dtypes:
+
+>>> np.find_common_type(['f4', 'f4', 'i4'], ['c8'])
+dtype('complex128')\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_ac0d06f07b4d9348f62cd776c5a4dfed1}\label{namespacenumpy_1_1core_1_1numerictypes_ac0d06f07b4d9348f62cd776c5a4dfed1}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!issctype@{issctype}}
+\index{issctype@{issctype}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{issctype()}{issctype()}}
+{\footnotesize\ttfamily def numpy.\+core.\+numerictypes.\+issctype (\begin{DoxyParamCaption}\item[{}]{rep }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determines whether the given object represents a scalar data-type.
+
+Parameters
+----------
+rep : any
+    If `rep` is an instance of a scalar dtype, True is returned. If not,
+    False is returned.
+
+Returns
+-------
+out : bool
+    Boolean result of check whether `rep` is a scalar dtype.
+
+See Also
+--------
+issubsctype, issubdtype, obj2sctype, sctype2char
+
+Examples
+--------
+>>> np.issctype(np.int32)
+True
+>>> np.issctype(list)
+False
+>>> np.issctype(1.1)
+False
+
+Strings are also a scalar type:
+
+>>> np.issctype(np.dtype('str'))
+True\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_aabfb2145123e09bd184960c3f238b9db}\label{namespacenumpy_1_1core_1_1numerictypes_aabfb2145123e09bd184960c3f238b9db}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!issubclass\+\_\+@{issubclass\+\_\+}}
+\index{issubclass\+\_\+@{issubclass\+\_\+}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{issubclass\+\_\+()}{issubclass\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+numerictypes.\+issubclass\+\_\+ (\begin{DoxyParamCaption}\item[{}]{arg1,  }\item[{}]{arg2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determine if a class is a subclass of a second class.
+
+`issubclass_` is equivalent to the Python built-in ``issubclass``,
+except that it returns False instead of raising a TypeError if one
+of the arguments is not a class.
+
+Parameters
+----------
+arg1 : class
+    Input class. True is returned if `arg1` is a subclass of `arg2`.
+arg2 : class or tuple of classes.
+    Input class. If a tuple of classes, True is returned if `arg1` is a
+    subclass of any of the tuple elements.
+
+Returns
+-------
+out : bool
+    Whether `arg1` is a subclass of `arg2` or not.
+
+See Also
+--------
+issubsctype, issubdtype, issctype
+
+Examples
+--------
+>>> np.issubclass_(np.int32, int)
+False
+>>> np.issubclass_(np.int32, float)
+False
+>>> np.issubclass_(np.float64, float)
+True\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a42ed83d8a157a361cc678587b9c64ec3}\label{namespacenumpy_1_1core_1_1numerictypes_a42ed83d8a157a361cc678587b9c64ec3}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!issubdtype@{issubdtype}}
+\index{issubdtype@{issubdtype}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{issubdtype()}{issubdtype()}}
+{\footnotesize\ttfamily def numpy.\+core.\+numerictypes.\+issubdtype (\begin{DoxyParamCaption}\item[{}]{arg1,  }\item[{}]{arg2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if first argument is a typecode lower/equal in type hierarchy.
+
+This is like the builtin :func:`issubclass`, but for `dtype`\ s.
+
+Parameters
+----------
+arg1, arg2 : dtype_like
+    `dtype` or object coercible to one
+
+Returns
+-------
+out : bool
+
+See Also
+--------
+:ref:`arrays.scalars` : Overview of the numpy type hierarchy.
+issubsctype, issubclass_
+
+Examples
+--------
+`issubdtype` can be used to check the type of arrays:
+
+>>> ints = np.array([1, 2, 3], dtype=np.int32)
+>>> np.issubdtype(ints.dtype, np.integer)
+True
+>>> np.issubdtype(ints.dtype, np.floating)
+False
+
+>>> floats = np.array([1, 2, 3], dtype=np.float32)
+>>> np.issubdtype(floats.dtype, np.integer)
+False
+>>> np.issubdtype(floats.dtype, np.floating)
+True
+
+Similar types of different sizes are not subdtypes of each other:
+
+>>> np.issubdtype(np.float64, np.float32)
+False
+>>> np.issubdtype(np.float32, np.float64)
+False
+
+but both are subtypes of `floating`:
+
+>>> np.issubdtype(np.float64, np.floating)
+True
+>>> np.issubdtype(np.float32, np.floating)
+True
+
+For convenience, dtype-like objects are allowed too:
+
+>>> np.issubdtype('S1', np.string_)
+True
+>>> np.issubdtype('i4', np.signedinteger)
+True\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a248957fb69c8b2fee6ecc1ef38266c88}\label{namespacenumpy_1_1core_1_1numerictypes_a248957fb69c8b2fee6ecc1ef38266c88}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!issubsctype@{issubsctype}}
+\index{issubsctype@{issubsctype}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{issubsctype()}{issubsctype()}}
+{\footnotesize\ttfamily def numpy.\+core.\+numerictypes.\+issubsctype (\begin{DoxyParamCaption}\item[{}]{arg1,  }\item[{}]{arg2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determine if the first argument is a subclass of the second argument.
+
+Parameters
+----------
+arg1, arg2 : dtype or dtype specifier
+    Data-types.
+
+Returns
+-------
+out : bool
+    The result.
+
+See Also
+--------
+issctype, issubdtype, obj2sctype
+
+Examples
+--------
+>>> np.issubsctype('S8', str)
+False
+>>> np.issubsctype(np.array([1]), int)
+True
+>>> np.issubsctype(np.array([1]), float)
+False\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a97df80194c7466a06b95f037f0d5a844}\label{namespacenumpy_1_1core_1_1numerictypes_a97df80194c7466a06b95f037f0d5a844}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!maximum\+\_\+sctype@{maximum\+\_\+sctype}}
+\index{maximum\+\_\+sctype@{maximum\+\_\+sctype}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{maximum\+\_\+sctype()}{maximum\_sctype()}}
+{\footnotesize\ttfamily def numpy.\+core.\+numerictypes.\+maximum\+\_\+sctype (\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the scalar type of highest precision of the same kind as the input.
+
+Parameters
+----------
+t : dtype or dtype specifier
+    The input data type. This can be a `dtype` object or an object that
+    is convertible to a `dtype`.
+
+Returns
+-------
+out : dtype
+    The highest precision data type of the same kind (`dtype.kind`) as `t`.
+
+See Also
+--------
+obj2sctype, mintypecode, sctype2char
+dtype
+
+Examples
+--------
+>>> np.maximum_sctype(int)
+<class 'numpy.int64'>
+>>> np.maximum_sctype(np.uint8)
+<class 'numpy.uint64'>
+>>> np.maximum_sctype(complex)
+<class 'numpy.complex256'> # may vary
+
+>>> np.maximum_sctype(str)
+<class 'numpy.str_'>
+
+>>> np.maximum_sctype('i2')
+<class 'numpy.int64'>
+>>> np.maximum_sctype('f4')
+<class 'numpy.float128'> # may vary\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a4112132097e16025a598ee650fdca003}\label{namespacenumpy_1_1core_1_1numerictypes_a4112132097e16025a598ee650fdca003}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!obj2sctype@{obj2sctype}}
+\index{obj2sctype@{obj2sctype}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{obj2sctype()}{obj2sctype()}}
+{\footnotesize\ttfamily def numpy.\+core.\+numerictypes.\+obj2sctype (\begin{DoxyParamCaption}\item[{}]{rep,  }\item[{}]{default = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the scalar dtype or NumPy equivalent of Python type of an object.
+
+Parameters
+----------
+rep : any
+    The object of which the type is returned.
+default : any, optional
+    If given, this is returned for objects whose types can not be
+    determined. If not given, None is returned for those objects.
+
+Returns
+-------
+dtype : dtype or Python type
+    The data type of `rep`.
+
+See Also
+--------
+sctype2char, issctype, issubsctype, issubdtype, maximum_sctype
+
+Examples
+--------
+>>> np.obj2sctype(np.int32)
+<class 'numpy.int32'>
+>>> np.obj2sctype(np.array([1., 2.]))
+<class 'numpy.float64'>
+>>> np.obj2sctype(np.array([1.j]))
+<class 'numpy.complex128'>
+
+>>> np.obj2sctype(dict)
+<class 'numpy.object_'>
+>>> np.obj2sctype('string')
+
+>>> np.obj2sctype(1, default=list)
+<class 'list'>\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a0fc02b9c8ebbf34f43da02fd841e1e28}\label{namespacenumpy_1_1core_1_1numerictypes_a0fc02b9c8ebbf34f43da02fd841e1e28}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!sctype2char@{sctype2char}}
+\index{sctype2char@{sctype2char}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{sctype2char()}{sctype2char()}}
+{\footnotesize\ttfamily def numpy.\+core.\+numerictypes.\+sctype2char (\begin{DoxyParamCaption}\item[{}]{sctype }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the string representation of a scalar dtype.
+
+Parameters
+----------
+sctype : scalar dtype or object
+    If a scalar dtype, the corresponding string character is
+    returned. If an object, `sctype2char` tries to infer its scalar type
+    and then return the corresponding string character.
+
+Returns
+-------
+typechar : str
+    The string character corresponding to the scalar type.
+
+Raises
+------
+ValueError
+    If `sctype` is an object for which the type can not be inferred.
+
+See Also
+--------
+obj2sctype, issctype, issubsctype, mintypecode
+
+Examples
+--------
+>>> for sctype in [np.int32, np.double, np.complex_, np.string_, np.ndarray]:
+...     print(np.sctype2char(sctype))
+l # may vary
+d
+D
+S
+O
+
+>>> x = np.array([1., 2-1.j])
+>>> np.sctype2char(x)
+'D'
+>>> np.sctype2char(list)
+'O'\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a800a45743c8e0f4aec5b624c45232091}\label{namespacenumpy_1_1core_1_1numerictypes_a800a45743c8e0f4aec5b624c45232091}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!cast@{cast}}
+\index{cast@{cast}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{cast}{cast}}
+{\footnotesize\ttfamily numpy.\+core.\+numerictypes.\+cast}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a0c806c31bd62329acf3f0a9e6ada3912}\label{namespacenumpy_1_1core_1_1numerictypes_a0c806c31bd62329acf3f0a9e6ada3912}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!copy@{copy}}
+\index{copy@{copy}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{copy}{copy}}
+{\footnotesize\ttfamily numpy.\+core.\+numerictypes.\+copy}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a2b174847e4107b9e121d3c59cdf533ab}\label{namespacenumpy_1_1core_1_1numerictypes_a2b174847e4107b9e121d3c59cdf533ab}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!generic@{generic}}
+\index{generic@{generic}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{generic}{generic}}
+{\footnotesize\ttfamily numpy.\+core.\+numerictypes.\+generic}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a181b5ae0d7ea8698d14a527228e79b60}\label{namespacenumpy_1_1core_1_1numerictypes_a181b5ae0d7ea8698d14a527228e79b60}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!generic\+Type\+Rank@{generic\+Type\+Rank}}
+\index{generic\+Type\+Rank@{generic\+Type\+Rank}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{generic\+Type\+Rank}{genericTypeRank}}
+{\footnotesize\ttfamily numpy.\+core.\+numerictypes.\+generic\+Type\+Rank}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a487d35c8a6e2a81ebb15722142c54b9c}\label{namespacenumpy_1_1core_1_1numerictypes_a487d35c8a6e2a81ebb15722142c54b9c}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!k@{k}}
+\index{k@{k}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily numpy.\+core.\+numerictypes.\+k}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a4debd884e6bb24f280edd8eb1efa9fba}\label{namespacenumpy_1_1core_1_1numerictypes_a4debd884e6bb24f280edd8eb1efa9fba}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!key@{key}}
+\index{key@{key}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily numpy.\+core.\+numerictypes.\+key}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a07c1df771e775b51368c44e834e759d7}\label{namespacenumpy_1_1core_1_1numerictypes_a07c1df771e775b51368c44e834e759d7}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!nbytes@{nbytes}}
+\index{nbytes@{nbytes}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{nbytes}{nbytes}}
+{\footnotesize\ttfamily numpy.\+core.\+numerictypes.\+nbytes}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a1f202a8a6691fe39f21261ea8c21a3c4}\label{namespacenumpy_1_1core_1_1numerictypes_a1f202a8a6691fe39f21261ea8c21a3c4}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!Scalar\+Type@{Scalar\+Type}}
+\index{Scalar\+Type@{Scalar\+Type}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{Scalar\+Type}{ScalarType}}
+{\footnotesize\ttfamily numpy.\+core.\+numerictypes.\+Scalar\+Type}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a09fe3d51e0c01d075c881c3c23465601}\label{namespacenumpy_1_1core_1_1numerictypes_a09fe3d51e0c01d075c881c3c23465601}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!typecodes@{typecodes}}
+\index{typecodes@{typecodes}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{typecodes}{typecodes}}
+{\footnotesize\ttfamily numpy.\+core.\+numerictypes.\+typecodes}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_a810a50e9f22081beeaea93490623c5e9}\label{namespacenumpy_1_1core_1_1numerictypes_a810a50e9f22081beeaea93490623c5e9}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!type\+Dict@{type\+Dict}}
+\index{type\+Dict@{type\+Dict}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{type\+Dict}{typeDict}}
+{\footnotesize\ttfamily numpy.\+core.\+numerictypes.\+type\+Dict}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1numerictypes_af7a40df6735224194004fe9d7a2b80d4}\label{namespacenumpy_1_1core_1_1numerictypes_af7a40df6735224194004fe9d7a2b80d4}} 
+\index{numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}!x@{x}}
+\index{x@{x}!numpy\+::core\+::numerictypes@{numpy\+::core\+::numerictypes}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily numpy.\+core.\+numerictypes.\+x}
+

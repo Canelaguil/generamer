@@ -1,0 +1,322 @@
+\hypertarget{namespacepytz}{}\section{pytz Namespace Reference}
+\label{namespacepytz}\index{pytz@{pytz}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacepytz_1_1exceptions}{exceptions}
+\item 
+ \hyperlink{namespacepytz_1_1lazy}{lazy}
+\item 
+ \hyperlink{namespacepytz_1_1reference}{reference}
+\item 
+ \hyperlink{namespacepytz_1_1tzfile}{tzfile}
+\item 
+ \hyperlink{namespacepytz_1_1tzinfo}{tzinfo}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpytz_1_1__CountryNameDict}{\+\_\+\+Country\+Name\+Dict}
+\item 
+class \hyperlink{classpytz_1_1__CountryTimezoneDict}{\+\_\+\+Country\+Timezone\+Dict}
+\item 
+class \hyperlink{classpytz_1_1__FixedOffset}{\+\_\+\+Fixed\+Offset}
+\item 
+class \hyperlink{classpytz_1_1UTC}{U\+TC}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepytz_a3b47f581b0f7a2e44fc39a9e56941618}{ascii} (s)
+\item 
+def \hyperlink{namespacepytz_a902975213c079691292a54e1a341891c}{open\+\_\+resource} (name)
+\item 
+def \hyperlink{namespacepytz_a438c8878c1f251185ee9f2233acf6f89}{resource\+\_\+exists} (name)
+\item 
+def \hyperlink{namespacepytz_a864aeabe33e444f56b55e925803db0be}{timezone} (zone)
+\item 
+def \hyperlink{namespacepytz_af79016a547a0b7bae15ac4218644a224}{Fixed\+Offset} (offset, \+\_\+tzinfos=\{\})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepytz_acfac5ce43a9cbf4370e913fdd09823fd}{O\+L\+S\+O\+N\+\_\+\+V\+E\+R\+S\+I\+ON}
+\item 
+\hyperlink{namespacepytz_abeb8992f4c2062ee7a06057a81fb32b8}{V\+E\+R\+S\+I\+ON}
+\item 
+\hyperlink{namespacepytz_ad20ee0e4fe22cfeab729b8fceedbe3c0}{O\+L\+S\+E\+N\+\_\+\+V\+E\+R\+S\+I\+ON}
+\item 
+\hyperlink{namespacepytz_a009a80d7121e28d768e98ff4c17e8143}{unicode}
+\item 
+\hyperlink{namespacepytz_a1ab5e8af2b17453c978d10ee2434766c}{Z\+E\+RO}
+\item 
+\hyperlink{namespacepytz_abc0dcd675cea2f2c99078059f1ff3f8b}{H\+O\+UR}
+\item 
+\hyperlink{namespacepytz_af8649e079377bfcda685487b70ffee4a}{hours}
+\item 
+\hyperlink{namespacepytz_a31f8b6b17d0fae5e40c63b26c0779755}{U\+TC}
+\item 
+\hyperlink{namespacepytz_a5504f2a21bc800e653c57de6aa2f4eff}{utc}
+\item 
+\hyperlink{namespacepytz_abfb013c5058754a68284b93ad20f3633}{country\+\_\+timezones}
+\item 
+\hyperlink{namespacepytz_aa4d8e6ba5de8d55fe984af30d09f1b4e}{country\+\_\+names}
+\item 
+\hyperlink{namespacepytz_a6b2d3edbe035a1b6410f3302cd83d3a7}{all\+\_\+timezones}
+\item 
+\hyperlink{namespacepytz_adda1f9fb3669a885d1976a5138adcdfc}{all\+\_\+timezones\+\_\+set}
+\item 
+\hyperlink{namespacepytz_a13415689e339f0e57015fde74581ab87}{common\+\_\+timezones}
+\item 
+\hyperlink{namespacepytz_acd5ed7bd5342964bad02f40bbe73ef1a}{common\+\_\+timezones\+\_\+set}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}datetime.tzinfo timezone definitions generated from the
+Olson timezone database:
+
+    ftp://elsie.nci.nih.gov/pub/tz*.tar.gz
+
+See the datetime section of the Python Library Reference for information
+on how to use these modules.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepytz_a3b47f581b0f7a2e44fc39a9e56941618}\label{namespacepytz_a3b47f581b0f7a2e44fc39a9e56941618}} 
+\index{pytz@{pytz}!ascii@{ascii}}
+\index{ascii@{ascii}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{ascii()}{ascii()}}
+{\footnotesize\ttfamily def pytz.\+ascii (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}>>> ascii('Hello')
+'Hello'
+>>> ascii('\N{TRADE MARK SIGN}') #doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+    ...
+UnicodeEncodeError: ...
+\end{DoxyVerb}
+
+
+\begin{DoxyVerb}>>> ascii('Hello')
+'Hello'
+>>> ascii(u'Hello')
+'Hello'
+>>> ascii(u'\N{TRADE MARK SIGN}') #doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+    ...
+UnicodeEncodeError: ...
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepytz_af79016a547a0b7bae15ac4218644a224}\label{namespacepytz_af79016a547a0b7bae15ac4218644a224}} 
+\index{pytz@{pytz}!Fixed\+Offset@{Fixed\+Offset}}
+\index{Fixed\+Offset@{Fixed\+Offset}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{Fixed\+Offset()}{FixedOffset()}}
+{\footnotesize\ttfamily def pytz.\+Fixed\+Offset (\begin{DoxyParamCaption}\item[{}]{offset,  }\item[{}]{\+\_\+tzinfos = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}return a fixed-offset timezone based off a number of minutes.
+
+    >>> one = FixedOffset(-330)
+    >>> one
+    pytz.FixedOffset(-330)
+    >>> str(one.utcoffset(datetime.datetime.now()))
+    '-1 day, 18:30:00'
+    >>> str(one.dst(datetime.datetime.now()))
+    '0:00:00'
+
+    >>> two = FixedOffset(1380)
+    >>> two
+    pytz.FixedOffset(1380)
+    >>> str(two.utcoffset(datetime.datetime.now()))
+    '23:00:00'
+    >>> str(two.dst(datetime.datetime.now()))
+    '0:00:00'
+
+The datetime.timedelta must be between the range of -1 and 1 day,
+non-inclusive.
+
+    >>> FixedOffset(1440)
+    Traceback (most recent call last):
+    ...
+    ValueError: ('absolute offset is too large', 1440)
+
+    >>> FixedOffset(-1440)
+    Traceback (most recent call last):
+    ...
+    ValueError: ('absolute offset is too large', -1440)
+
+An offset of 0 is special-cased to return UTC.
+
+    >>> FixedOffset(0) is UTC
+    True
+
+There should always be only one instance of a FixedOffset per timedelta.
+This should be true for multiple creation calls.
+
+    >>> FixedOffset(-330) is one
+    True
+    >>> FixedOffset(1380) is two
+    True
+
+It should also be true for pickling.
+
+    >>> import pickle
+    >>> pickle.loads(pickle.dumps(one)) is one
+    True
+    >>> pickle.loads(pickle.dumps(two)) is two
+    True
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepytz_a902975213c079691292a54e1a341891c}\label{namespacepytz_a902975213c079691292a54e1a341891c}} 
+\index{pytz@{pytz}!open\+\_\+resource@{open\+\_\+resource}}
+\index{open\+\_\+resource@{open\+\_\+resource}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{open\+\_\+resource()}{open\_resource()}}
+{\footnotesize\ttfamily def pytz.\+open\+\_\+resource (\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Open a resource from the zoneinfo subdir for reading.
+
+Uses the pkg_resources module if available and no standard file
+found at the calculated location.
+
+It is possible to specify different location for zoneinfo
+subdir by using the PYTZ_TZDATADIR environment variable.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepytz_a438c8878c1f251185ee9f2233acf6f89}\label{namespacepytz_a438c8878c1f251185ee9f2233acf6f89}} 
+\index{pytz@{pytz}!resource\+\_\+exists@{resource\+\_\+exists}}
+\index{resource\+\_\+exists@{resource\+\_\+exists}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{resource\+\_\+exists()}{resource\_exists()}}
+{\footnotesize\ttfamily def pytz.\+resource\+\_\+exists (\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return true if the given resource exists\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepytz_a864aeabe33e444f56b55e925803db0be}\label{namespacepytz_a864aeabe33e444f56b55e925803db0be}} 
+\index{pytz@{pytz}!timezone@{timezone}}
+\index{timezone@{timezone}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{timezone()}{timezone()}}
+{\footnotesize\ttfamily def pytz.\+timezone (\begin{DoxyParamCaption}\item[{}]{zone }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a datetime.tzinfo implementation for the given timezone
+
+>>> from datetime import datetime, timedelta
+>>> utc = timezone('UTC')
+>>> eastern = timezone('US/Eastern')
+>>> eastern.zone
+'US/Eastern'
+>>> timezone(unicode('US/Eastern')) is eastern
+True
+>>> utc_dt = datetime(2002, 10, 27, 6, 0, 0, tzinfo=utc)
+>>> loc_dt = utc_dt.astimezone(eastern)
+>>> fmt = '%Y-%m-%d %H:%M:%S %Z (%z)'
+>>> loc_dt.strftime(fmt)
+'2002-10-27 01:00:00 EST (-0500)'
+>>> (loc_dt - timedelta(minutes=10)).strftime(fmt)
+'2002-10-27 00:50:00 EST (-0500)'
+>>> eastern.normalize(loc_dt - timedelta(minutes=10)).strftime(fmt)
+'2002-10-27 01:50:00 EDT (-0400)'
+>>> (loc_dt + timedelta(minutes=10)).strftime(fmt)
+'2002-10-27 01:10:00 EST (-0500)'
+
+Raises UnknownTimeZoneError if passed an unknown zone.
+
+>>> try:
+...     timezone('Asia/Shangri-La')
+... except UnknownTimeZoneError:
+...     print('Unknown')
+Unknown
+
+>>> try:
+...     timezone(unicode('\N{TRADE MARK SIGN}'))
+... except UnknownTimeZoneError:
+...     print('Unknown')
+Unknown\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepytz_a6b2d3edbe035a1b6410f3302cd83d3a7}\label{namespacepytz_a6b2d3edbe035a1b6410f3302cd83d3a7}} 
+\index{pytz@{pytz}!all\+\_\+timezones@{all\+\_\+timezones}}
+\index{all\+\_\+timezones@{all\+\_\+timezones}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{all\+\_\+timezones}{all\_timezones}}
+{\footnotesize\ttfamily pytz.\+all\+\_\+timezones}
+
+\mbox{\Hypertarget{namespacepytz_adda1f9fb3669a885d1976a5138adcdfc}\label{namespacepytz_adda1f9fb3669a885d1976a5138adcdfc}} 
+\index{pytz@{pytz}!all\+\_\+timezones\+\_\+set@{all\+\_\+timezones\+\_\+set}}
+\index{all\+\_\+timezones\+\_\+set@{all\+\_\+timezones\+\_\+set}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{all\+\_\+timezones\+\_\+set}{all\_timezones\_set}}
+{\footnotesize\ttfamily pytz.\+all\+\_\+timezones\+\_\+set}
+
+\mbox{\Hypertarget{namespacepytz_a13415689e339f0e57015fde74581ab87}\label{namespacepytz_a13415689e339f0e57015fde74581ab87}} 
+\index{pytz@{pytz}!common\+\_\+timezones@{common\+\_\+timezones}}
+\index{common\+\_\+timezones@{common\+\_\+timezones}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{common\+\_\+timezones}{common\_timezones}}
+{\footnotesize\ttfamily pytz.\+common\+\_\+timezones}
+
+\mbox{\Hypertarget{namespacepytz_acd5ed7bd5342964bad02f40bbe73ef1a}\label{namespacepytz_acd5ed7bd5342964bad02f40bbe73ef1a}} 
+\index{pytz@{pytz}!common\+\_\+timezones\+\_\+set@{common\+\_\+timezones\+\_\+set}}
+\index{common\+\_\+timezones\+\_\+set@{common\+\_\+timezones\+\_\+set}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{common\+\_\+timezones\+\_\+set}{common\_timezones\_set}}
+{\footnotesize\ttfamily pytz.\+common\+\_\+timezones\+\_\+set}
+
+\mbox{\Hypertarget{namespacepytz_aa4d8e6ba5de8d55fe984af30d09f1b4e}\label{namespacepytz_aa4d8e6ba5de8d55fe984af30d09f1b4e}} 
+\index{pytz@{pytz}!country\+\_\+names@{country\+\_\+names}}
+\index{country\+\_\+names@{country\+\_\+names}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{country\+\_\+names}{country\_names}}
+{\footnotesize\ttfamily pytz.\+country\+\_\+names}
+
+\mbox{\Hypertarget{namespacepytz_abfb013c5058754a68284b93ad20f3633}\label{namespacepytz_abfb013c5058754a68284b93ad20f3633}} 
+\index{pytz@{pytz}!country\+\_\+timezones@{country\+\_\+timezones}}
+\index{country\+\_\+timezones@{country\+\_\+timezones}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{country\+\_\+timezones}{country\_timezones}}
+{\footnotesize\ttfamily pytz.\+country\+\_\+timezones}
+
+\mbox{\Hypertarget{namespacepytz_abc0dcd675cea2f2c99078059f1ff3f8b}\label{namespacepytz_abc0dcd675cea2f2c99078059f1ff3f8b}} 
+\index{pytz@{pytz}!H\+O\+UR@{H\+O\+UR}}
+\index{H\+O\+UR@{H\+O\+UR}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{H\+O\+UR}{HOUR}}
+{\footnotesize\ttfamily pytz.\+H\+O\+UR}
+
+\mbox{\Hypertarget{namespacepytz_af8649e079377bfcda685487b70ffee4a}\label{namespacepytz_af8649e079377bfcda685487b70ffee4a}} 
+\index{pytz@{pytz}!hours@{hours}}
+\index{hours@{hours}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{hours}{hours}}
+{\footnotesize\ttfamily pytz.\+hours}
+
+\mbox{\Hypertarget{namespacepytz_ad20ee0e4fe22cfeab729b8fceedbe3c0}\label{namespacepytz_ad20ee0e4fe22cfeab729b8fceedbe3c0}} 
+\index{pytz@{pytz}!O\+L\+S\+E\+N\+\_\+\+V\+E\+R\+S\+I\+ON@{O\+L\+S\+E\+N\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{O\+L\+S\+E\+N\+\_\+\+V\+E\+R\+S\+I\+ON@{O\+L\+S\+E\+N\+\_\+\+V\+E\+R\+S\+I\+ON}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{O\+L\+S\+E\+N\+\_\+\+V\+E\+R\+S\+I\+ON}{OLSEN\_VERSION}}
+{\footnotesize\ttfamily pytz.\+O\+L\+S\+E\+N\+\_\+\+V\+E\+R\+S\+I\+ON}
+
+\mbox{\Hypertarget{namespacepytz_acfac5ce43a9cbf4370e913fdd09823fd}\label{namespacepytz_acfac5ce43a9cbf4370e913fdd09823fd}} 
+\index{pytz@{pytz}!O\+L\+S\+O\+N\+\_\+\+V\+E\+R\+S\+I\+ON@{O\+L\+S\+O\+N\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{O\+L\+S\+O\+N\+\_\+\+V\+E\+R\+S\+I\+ON@{O\+L\+S\+O\+N\+\_\+\+V\+E\+R\+S\+I\+ON}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{O\+L\+S\+O\+N\+\_\+\+V\+E\+R\+S\+I\+ON}{OLSON\_VERSION}}
+{\footnotesize\ttfamily pytz.\+O\+L\+S\+O\+N\+\_\+\+V\+E\+R\+S\+I\+ON}
+
+\mbox{\Hypertarget{namespacepytz_a009a80d7121e28d768e98ff4c17e8143}\label{namespacepytz_a009a80d7121e28d768e98ff4c17e8143}} 
+\index{pytz@{pytz}!unicode@{unicode}}
+\index{unicode@{unicode}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{unicode}{unicode}}
+{\footnotesize\ttfamily pytz.\+unicode}
+
+\mbox{\Hypertarget{namespacepytz_a31f8b6b17d0fae5e40c63b26c0779755}\label{namespacepytz_a31f8b6b17d0fae5e40c63b26c0779755}} 
+\index{pytz@{pytz}!U\+TC@{U\+TC}}
+\index{U\+TC@{U\+TC}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{U\+TC}{UTC}}
+{\footnotesize\ttfamily \hyperlink{classpytz_1_1UTC}{pytz.\+U\+TC}}
+
+\mbox{\Hypertarget{namespacepytz_a5504f2a21bc800e653c57de6aa2f4eff}\label{namespacepytz_a5504f2a21bc800e653c57de6aa2f4eff}} 
+\index{pytz@{pytz}!utc@{utc}}
+\index{utc@{utc}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{utc}{utc}}
+{\footnotesize\ttfamily pytz.\+utc}
+
+\mbox{\Hypertarget{namespacepytz_abeb8992f4c2062ee7a06057a81fb32b8}\label{namespacepytz_abeb8992f4c2062ee7a06057a81fb32b8}} 
+\index{pytz@{pytz}!V\+E\+R\+S\+I\+ON@{V\+E\+R\+S\+I\+ON}}
+\index{V\+E\+R\+S\+I\+ON@{V\+E\+R\+S\+I\+ON}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{V\+E\+R\+S\+I\+ON}{VERSION}}
+{\footnotesize\ttfamily pytz.\+V\+E\+R\+S\+I\+ON}
+
+\mbox{\Hypertarget{namespacepytz_a1ab5e8af2b17453c978d10ee2434766c}\label{namespacepytz_a1ab5e8af2b17453c978d10ee2434766c}} 
+\index{pytz@{pytz}!Z\+E\+RO@{Z\+E\+RO}}
+\index{Z\+E\+RO@{Z\+E\+RO}!pytz@{pytz}}
+\subsubsection{\texorpdfstring{Z\+E\+RO}{ZERO}}
+{\footnotesize\ttfamily pytz.\+Z\+E\+RO}
+

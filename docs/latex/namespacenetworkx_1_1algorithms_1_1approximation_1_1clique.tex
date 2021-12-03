@@ -1,0 +1,205 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique}{}\section{networkx.\+algorithms.\+approximation.\+clique Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique}\index{networkx.\+algorithms.\+approximation.\+clique@{networkx.\+algorithms.\+approximation.\+clique}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique_a2cee5576172ab5ed821728432f9cb6cd}{maximum\+\_\+independent\+\_\+set} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique_aa80ba180313409cdcfaeea9e076d6e26}{max\+\_\+clique} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique_a6cfd284655e1f3fe987f25c70123d9dc}{clique\+\_\+removal} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique_a847f951b783309c66549bd763641407d}{large\+\_\+clique\+\_\+size} (G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions for computing large cliques and maximum independent sets.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique_a6cfd284655e1f3fe987f25c70123d9dc}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique_a6cfd284655e1f3fe987f25c70123d9dc}} 
+\index{networkx\+::algorithms\+::approximation\+::clique@{networkx\+::algorithms\+::approximation\+::clique}!clique\+\_\+removal@{clique\+\_\+removal}}
+\index{clique\+\_\+removal@{clique\+\_\+removal}!networkx\+::algorithms\+::approximation\+::clique@{networkx\+::algorithms\+::approximation\+::clique}}
+\subsubsection{\texorpdfstring{clique\+\_\+removal()}{clique\_removal()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+clique.\+clique\+\_\+removal (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Repeatedly remove cliques from the graph.
+
+Results in a $O(|V|/(\log |V|)^2)$ approximation of maximum clique
+and independent set. Returns the largest independent set found, along
+with found maximal cliques.
+
+Parameters
+----------
+G : NetworkX graph
+    Undirected graph
+
+Returns
+-------
+max_ind_cliques : (set, list) tuple
+    2-tuple of Maximal Independent Set and list of maximal cliques (sets).
+
+Raises
+------
+NetworkXNotImplemented
+    If the graph is directed or is a multigraph.
+
+References
+----------
+.. [1] Boppana, R., & Halldórsson, M. M. (1992).
+    Approximating maximum independent sets by excluding subgraphs.
+    BIT Numerical Mathematics, 32(2), 180–196. Springer.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique_a847f951b783309c66549bd763641407d}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique_a847f951b783309c66549bd763641407d}} 
+\index{networkx\+::algorithms\+::approximation\+::clique@{networkx\+::algorithms\+::approximation\+::clique}!large\+\_\+clique\+\_\+size@{large\+\_\+clique\+\_\+size}}
+\index{large\+\_\+clique\+\_\+size@{large\+\_\+clique\+\_\+size}!networkx\+::algorithms\+::approximation\+::clique@{networkx\+::algorithms\+::approximation\+::clique}}
+\subsubsection{\texorpdfstring{large\+\_\+clique\+\_\+size()}{large\_clique\_size()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+clique.\+large\+\_\+clique\+\_\+size (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the size of a large clique in a graph.
+
+A *clique* is a subset of nodes in which each pair of nodes is
+adjacent. This function is a heuristic for finding the size of a
+large clique in the graph.
+
+Parameters
+----------
+G : NetworkX graph
+
+Returns
+-------
+k: integer
+   The size of a large clique in the graph.
+
+Raises
+------
+NetworkXNotImplemented
+    If the graph is directed or is a multigraph.
+
+Notes
+-----
+This implementation is from [1]_. Its worst case time complexity is
+:math:`O(n d^2)`, where *n* is the number of nodes in the graph and
+*d* is the maximum degree.
+
+This function is a heuristic, which means it may work well in
+practice, but there is no rigorous mathematical guarantee on the
+ratio between the returned number and the actual largest clique size
+in the graph.
+
+References
+----------
+.. [1] Pattabiraman, Bharath, et al.
+   "Fast Algorithms for the Maximum Clique Problem on Massive Graphs
+   with Applications to Overlapping Community Detection."
+   *Internet Mathematics* 11.4-5 (2015): 421--448.
+   <https://doi.org/10.1080/15427951.2014.986778>
+
+See also
+--------
+
+:func:`networkx.algorithms.approximation.clique.max_clique`
+    A function that returns an approximate maximum clique with a
+    guarantee on the approximation ratio.
+
+:mod:`networkx.algorithms.clique`
+    Functions for finding the exact maximum clique in a graph.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique_aa80ba180313409cdcfaeea9e076d6e26}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique_aa80ba180313409cdcfaeea9e076d6e26}} 
+\index{networkx\+::algorithms\+::approximation\+::clique@{networkx\+::algorithms\+::approximation\+::clique}!max\+\_\+clique@{max\+\_\+clique}}
+\index{max\+\_\+clique@{max\+\_\+clique}!networkx\+::algorithms\+::approximation\+::clique@{networkx\+::algorithms\+::approximation\+::clique}}
+\subsubsection{\texorpdfstring{max\+\_\+clique()}{max\_clique()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+clique.\+max\+\_\+clique (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the Maximum Clique
+
+Finds the $O(|V|/(log|V|)^2)$ apx of maximum clique/independent set
+in the worst case.
+
+Parameters
+----------
+G : NetworkX graph
+    Undirected graph
+
+Returns
+-------
+clique : set
+    The apx-maximum clique of the graph
+
+Raises
+------
+NetworkXNotImplemented
+    If the graph is directed or is a multigraph.
+
+Notes
+-----
+A clique in an undirected graph G = (V, E) is a subset of the vertex set
+`C \subseteq V` such that for every two vertices in C there exists an edge
+connecting the two. This is equivalent to saying that the subgraph
+induced by C is complete (in some cases, the term clique may also refer
+to the subgraph).
+
+A maximum clique is a clique of the largest possible size in a given graph.
+The clique number `\omega(G)` of a graph G is the number of
+vertices in a maximum clique in G. The intersection number of
+G is the smallest number of cliques that together cover all edges of G.
+
+https://en.wikipedia.org/wiki/Maximum_clique
+
+References
+----------
+.. [1] Boppana, R., & Halldórsson, M. M. (1992).
+    Approximating maximum independent sets by excluding subgraphs.
+    BIT Numerical Mathematics, 32(2), 180–196. Springer.
+    doi:10.1007/BF01994876
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique_a2cee5576172ab5ed821728432f9cb6cd}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1clique_a2cee5576172ab5ed821728432f9cb6cd}} 
+\index{networkx\+::algorithms\+::approximation\+::clique@{networkx\+::algorithms\+::approximation\+::clique}!maximum\+\_\+independent\+\_\+set@{maximum\+\_\+independent\+\_\+set}}
+\index{maximum\+\_\+independent\+\_\+set@{maximum\+\_\+independent\+\_\+set}!networkx\+::algorithms\+::approximation\+::clique@{networkx\+::algorithms\+::approximation\+::clique}}
+\subsubsection{\texorpdfstring{maximum\+\_\+independent\+\_\+set()}{maximum\_independent\_set()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+clique.\+maximum\+\_\+independent\+\_\+set (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns an approximate maximum independent set.
+
+Independent set or stable set is a set of vertices in a graph, no two of
+which are adjacent. That is, it is a set I of vertices such that for every
+two vertices in I, there is no edge connecting the two. Equivalently, each
+edge in the graph has at most one endpoint in I. The size of an independent
+set is the number of vertices it contains [1]_.
+
+A maximum independent set is a largest independent set for a given graph G
+and its size is denoted $\\alpha(G)$. The problem of finding such a set is called
+the maximum independent set problem and is an NP-hard optimization problem.
+As such, it is unlikely that there exists an efficient algorithm for finding
+a maximum independent set of a graph.
+
+The Independent Set algorithm is based on [2]_.
+
+Parameters
+----------
+G : NetworkX graph
+    Undirected graph
+
+Returns
+-------
+iset : Set
+    The apx-maximum independent set
+
+Raises
+------
+NetworkXNotImplemented
+    If the graph is directed or is a multigraph.
+
+Notes
+-----
+Finds the $O(|V|/(log|V|)^2)$ apx of independent set in the worst case.
+
+References
+----------
+.. [1] `Wikipedia: Independent set
+    <https://en.wikipedia.org/wiki/Independent_set_(graph_theory)>`_
+.. [2] Boppana, R., & Halldórsson, M. M. (1992).
+   Approximating maximum independent sets by excluding subgraphs.
+   BIT Numerical Mathematics, 32(2), 180–196. Springer.
+\end{DoxyVerb}
+ 

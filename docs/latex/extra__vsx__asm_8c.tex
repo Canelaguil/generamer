@@ -1,0 +1,55 @@
+\hypertarget{extra__vsx__asm_8c}{}\section{venv/lib/python3.9/site-\/packages/numpy/distutils/checks/extra\+\_\+vsx\+\_\+asm.c File Reference}
+\label{extra__vsx__asm_8c}\index{venv/lib/python3.\+9/site-\/packages/numpy/distutils/checks/extra\+\_\+vsx\+\_\+asm.\+c@{venv/lib/python3.\+9/site-\/packages/numpy/distutils/checks/extra\+\_\+vsx\+\_\+asm.\+c}}
+{\ttfamily \#include $<$altivec.\+h$>$}\newline
+Include dependency graph for extra\+\_\+vsx\+\_\+asm.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{extra__vsx__asm_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{extra__vsx__asm_8c_a7deb9c78092f9b7b3b9eec57f834ff8b}{vsx\+\_\+ld}~vec\+\_\+xl
+\item 
+\#define \hyperlink{extra__vsx__asm_8c_af6f10110d72aba943c98e1e4c044cc20}{vsx\+\_\+st}~vec\+\_\+xst
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{extra__vsx__asm_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{extra__vsx__asm_8c_a7deb9c78092f9b7b3b9eec57f834ff8b}\label{extra__vsx__asm_8c_a7deb9c78092f9b7b3b9eec57f834ff8b}} 
+\index{extra\+\_\+vsx\+\_\+asm.\+c@{extra\+\_\+vsx\+\_\+asm.\+c}!vsx\+\_\+ld@{vsx\+\_\+ld}}
+\index{vsx\+\_\+ld@{vsx\+\_\+ld}!extra\+\_\+vsx\+\_\+asm.\+c@{extra\+\_\+vsx\+\_\+asm.\+c}}
+\subsubsection{\texorpdfstring{vsx\+\_\+ld}{vsx\_ld}}
+{\footnotesize\ttfamily \#define vsx\+\_\+ld~vec\+\_\+xl}
+
+Testing A\+SM V\+SX register number fixer \textquotesingle{}x$<$n$>$\textquotesingle{}
+
+old versions of C\+L\+A\+NG doesn\textquotesingle{}t support x$<$n$>$ in the inline asm template which fixes register number when using any of the register constraints wa, wd, wf.
+
+xref\+:
+\begin{DoxyItemize}
+\item \href{https://bugs.llvm.org/show_bug.cgi?id=31837}{\tt https\+://bugs.\+llvm.\+org/show\+\_\+bug.\+cgi?id=31837}
+\item \href{https://gcc.gnu.org/onlinedocs/gcc/Machine-Constraints.html}{\tt https\+://gcc.\+gnu.\+org/onlinedocs/gcc/\+Machine-\/\+Constraints.\+html} 
+\end{DoxyItemize}\mbox{\Hypertarget{extra__vsx__asm_8c_af6f10110d72aba943c98e1e4c044cc20}\label{extra__vsx__asm_8c_af6f10110d72aba943c98e1e4c044cc20}} 
+\index{extra\+\_\+vsx\+\_\+asm.\+c@{extra\+\_\+vsx\+\_\+asm.\+c}!vsx\+\_\+st@{vsx\+\_\+st}}
+\index{vsx\+\_\+st@{vsx\+\_\+st}!extra\+\_\+vsx\+\_\+asm.\+c@{extra\+\_\+vsx\+\_\+asm.\+c}}
+\subsubsection{\texorpdfstring{vsx\+\_\+st}{vsx\_st}}
+{\footnotesize\ttfamily \#define vsx\+\_\+st~vec\+\_\+xst}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{extra__vsx__asm_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{extra__vsx__asm_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{extra\+\_\+vsx\+\_\+asm.\+c@{extra\+\_\+vsx\+\_\+asm.\+c}!main@{main}}
+\index{main@{main}!extra\+\_\+vsx\+\_\+asm.\+c@{extra\+\_\+vsx\+\_\+asm.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

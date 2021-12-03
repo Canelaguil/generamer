@@ -1,0 +1,197 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense}{}\section{networkx.\+algorithms.\+shortest\+\_\+paths.\+dense Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense}\index{networkx.\+algorithms.\+shortest\+\_\+paths.\+dense@{networkx.\+algorithms.\+shortest\+\_\+paths.\+dense}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense_a0f0fbabf2673e685c7e349ed13c2917b}{floyd\+\_\+warshall\+\_\+numpy} (G, nodelist=None, weight=\char`\"{}weight\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense_a720bd1dfc4a1a191a840459462076a09}{floyd\+\_\+warshall\+\_\+predecessor\+\_\+and\+\_\+distance} (G, weight=\char`\"{}weight\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense_a1bba22b986bd6f786d0e44dc150339e9}{reconstruct\+\_\+path} (source, target, predecessors)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense_aabb334ccd160008dc9b6e788357978db}{floyd\+\_\+warshall} (G, weight=\char`\"{}weight\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Floyd-Warshall algorithm for shortest paths.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense_aabb334ccd160008dc9b6e788357978db}\label{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense_aabb334ccd160008dc9b6e788357978db}} 
+\index{networkx\+::algorithms\+::shortest\+\_\+paths\+::dense@{networkx\+::algorithms\+::shortest\+\_\+paths\+::dense}!floyd\+\_\+warshall@{floyd\+\_\+warshall}}
+\index{floyd\+\_\+warshall@{floyd\+\_\+warshall}!networkx\+::algorithms\+::shortest\+\_\+paths\+::dense@{networkx\+::algorithms\+::shortest\+\_\+paths\+::dense}}
+\subsubsection{\texorpdfstring{floyd\+\_\+warshall()}{floyd\_warshall()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+shortest\+\_\+paths.\+dense.\+floyd\+\_\+warshall (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find all-pairs shortest path lengths using Floyd's algorithm.
+
+Parameters
+----------
+G : NetworkX graph
+
+weight: string, optional (default= 'weight')
+   Edge data key corresponding to the edge weight.
+
+
+Returns
+-------
+distance : dict
+   A dictionary,  keyed by source and target, of shortest paths distances
+   between nodes.
+
+Notes
+-----
+Floyd's algorithm is appropriate for finding shortest paths
+in dense graphs or graphs with negative weights when Dijkstra's algorithm
+fails.  This algorithm can still fail if there are negative cycles.
+It has running time $O(n^3)$ with running space of $O(n^2)$.
+
+See Also
+--------
+floyd_warshall_predecessor_and_distance
+floyd_warshall_numpy
+all_pairs_shortest_path
+all_pairs_shortest_path_length
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense_a0f0fbabf2673e685c7e349ed13c2917b}\label{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense_a0f0fbabf2673e685c7e349ed13c2917b}} 
+\index{networkx\+::algorithms\+::shortest\+\_\+paths\+::dense@{networkx\+::algorithms\+::shortest\+\_\+paths\+::dense}!floyd\+\_\+warshall\+\_\+numpy@{floyd\+\_\+warshall\+\_\+numpy}}
+\index{floyd\+\_\+warshall\+\_\+numpy@{floyd\+\_\+warshall\+\_\+numpy}!networkx\+::algorithms\+::shortest\+\_\+paths\+::dense@{networkx\+::algorithms\+::shortest\+\_\+paths\+::dense}}
+\subsubsection{\texorpdfstring{floyd\+\_\+warshall\+\_\+numpy()}{floyd\_warshall\_numpy()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+shortest\+\_\+paths.\+dense.\+floyd\+\_\+warshall\+\_\+numpy (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodelist = {\ttfamily None},  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find all-pairs shortest path lengths using Floyd's algorithm.
+
+This algorithm for finding shortest paths takes advantage of
+matrix representations of a graph and works well for dense
+graphs where all-pairs shortest path lengths are desired.
+The results are returned as a NumPy array, distance[i, j],
+where i and j are the indexes of two nodes in nodelist.
+The entry distance[i, j] is the distance along a shortest
+path from i to j. If no path exists the distance is Inf.
+
+Parameters
+----------
+G : NetworkX graph
+
+nodelist : list, optional (default=G.nodes)
+   The rows and columns are ordered by the nodes in nodelist.
+   If nodelist is None then the ordering is produced by G.nodes.
+   Nodelist should include all nodes in G.
+
+weight: string, optional (default='weight')
+   Edge data key corresponding to the edge weight.
+
+Returns
+-------
+distance : NumPy matrix
+    A matrix of shortest path distances between nodes.
+    If there is no path between two nodes the value is Inf.
+
+Notes
+-----
+Floyd's algorithm is appropriate for finding shortest paths in
+dense graphs or graphs with negative weights when Dijkstra's
+algorithm fails. This algorithm can still fail if there are negative
+cycles. It has running time $O(n^3)$ with running space of $O(n^2)$.
+
+Raises
+------
+NetworkXError
+    If nodelist is not a list of the nodes in G.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense_a720bd1dfc4a1a191a840459462076a09}\label{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense_a720bd1dfc4a1a191a840459462076a09}} 
+\index{networkx\+::algorithms\+::shortest\+\_\+paths\+::dense@{networkx\+::algorithms\+::shortest\+\_\+paths\+::dense}!floyd\+\_\+warshall\+\_\+predecessor\+\_\+and\+\_\+distance@{floyd\+\_\+warshall\+\_\+predecessor\+\_\+and\+\_\+distance}}
+\index{floyd\+\_\+warshall\+\_\+predecessor\+\_\+and\+\_\+distance@{floyd\+\_\+warshall\+\_\+predecessor\+\_\+and\+\_\+distance}!networkx\+::algorithms\+::shortest\+\_\+paths\+::dense@{networkx\+::algorithms\+::shortest\+\_\+paths\+::dense}}
+\subsubsection{\texorpdfstring{floyd\+\_\+warshall\+\_\+predecessor\+\_\+and\+\_\+distance()}{floyd\_warshall\_predecessor\_and\_distance()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+shortest\+\_\+paths.\+dense.\+floyd\+\_\+warshall\+\_\+predecessor\+\_\+and\+\_\+distance (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find all-pairs shortest path lengths using Floyd's algorithm.
+
+Parameters
+----------
+G : NetworkX graph
+
+weight: string, optional (default= 'weight')
+   Edge data key corresponding to the edge weight.
+
+Returns
+-------
+predecessor,distance : dictionaries
+   Dictionaries, keyed by source and target, of predecessors and distances
+   in the shortest path.
+
+Examples
+--------
+>>> G = nx.DiGraph()
+>>> G.add_weighted_edges_from(
+...     [
+...         ("s", "u", 10),
+...         ("s", "x", 5),
+...         ("u", "v", 1),
+...         ("u", "x", 2),
+...         ("v", "y", 1),
+...         ("x", "u", 3),
+...         ("x", "v", 5),
+...         ("x", "y", 2),
+...         ("y", "s", 7),
+...         ("y", "v", 6),
+...     ]
+... )
+>>> predecessors, _ = nx.floyd_warshall_predecessor_and_distance(G)
+>>> print(nx.reconstruct_path("s", "v", predecessors))
+['s', 'x', 'u', 'v']
+
+Notes
+-----
+Floyd's algorithm is appropriate for finding shortest paths
+in dense graphs or graphs with negative weights when Dijkstra's algorithm
+fails.  This algorithm can still fail if there are negative cycles.
+It has running time $O(n^3)$ with running space of $O(n^2)$.
+
+See Also
+--------
+floyd_warshall
+floyd_warshall_numpy
+all_pairs_shortest_path
+all_pairs_shortest_path_length
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense_a1bba22b986bd6f786d0e44dc150339e9}\label{namespacenetworkx_1_1algorithms_1_1shortest__paths_1_1dense_a1bba22b986bd6f786d0e44dc150339e9}} 
+\index{networkx\+::algorithms\+::shortest\+\_\+paths\+::dense@{networkx\+::algorithms\+::shortest\+\_\+paths\+::dense}!reconstruct\+\_\+path@{reconstruct\+\_\+path}}
+\index{reconstruct\+\_\+path@{reconstruct\+\_\+path}!networkx\+::algorithms\+::shortest\+\_\+paths\+::dense@{networkx\+::algorithms\+::shortest\+\_\+paths\+::dense}}
+\subsubsection{\texorpdfstring{reconstruct\+\_\+path()}{reconstruct\_path()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+shortest\+\_\+paths.\+dense.\+reconstruct\+\_\+path (\begin{DoxyParamCaption}\item[{}]{source,  }\item[{}]{target,  }\item[{}]{predecessors }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reconstruct a path from source to target using the predecessors
+dict as returned by floyd_warshall_predecessor_and_distance
+
+Parameters
+----------
+source : node
+   Starting node for path
+
+target : node
+   Ending node for path
+
+predecessors: dictionary
+   Dictionary, keyed by source and target, of predecessors in the
+   shortest path, as returned by floyd_warshall_predecessor_and_distance
+
+Returns
+-------
+path : list
+   A list of nodes containing the shortest path from source to target
+
+   If source and target are the same, an empty list is returned
+
+Notes
+-----
+This function is meant to give more applicability to the
+floyd_warshall_predecessor_and_distance function
+
+See Also
+--------
+floyd_warshall_predecessor_and_distance
+\end{DoxyVerb}
+ 

@@ -1,0 +1,61 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1unary}{}\section{networkx.\+algorithms.\+operators.\+unary Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1operators_1_1unary}\index{networkx.\+algorithms.\+operators.\+unary@{networkx.\+algorithms.\+operators.\+unary}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1unary_a91ae54bdf069149f50179f99f82b68b8}{complement} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1unary_a7a3d5849f1adccb2d9443d4040ce1b3d}{reverse} (G, copy=True)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Unary operations on graphs\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1unary_a91ae54bdf069149f50179f99f82b68b8}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1unary_a91ae54bdf069149f50179f99f82b68b8}} 
+\index{networkx\+::algorithms\+::operators\+::unary@{networkx\+::algorithms\+::operators\+::unary}!complement@{complement}}
+\index{complement@{complement}!networkx\+::algorithms\+::operators\+::unary@{networkx\+::algorithms\+::operators\+::unary}}
+\subsubsection{\texorpdfstring{complement()}{complement()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+unary.\+complement (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the graph complement of G.
+
+Parameters
+----------
+G : graph
+   A NetworkX graph
+
+Returns
+-------
+GC : A new graph.
+
+Notes
+-----
+Note that `complement` does not create self-loops and also
+does not produce parallel edges for MultiGraphs.
+
+Graph, node, and edge data are not propagated to the new graph.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1unary_a7a3d5849f1adccb2d9443d4040ce1b3d}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1unary_a7a3d5849f1adccb2d9443d4040ce1b3d}} 
+\index{networkx\+::algorithms\+::operators\+::unary@{networkx\+::algorithms\+::operators\+::unary}!reverse@{reverse}}
+\index{reverse@{reverse}!networkx\+::algorithms\+::operators\+::unary@{networkx\+::algorithms\+::operators\+::unary}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+unary.\+reverse (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{copy = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the reverse directed graph of G.
+
+Parameters
+----------
+G : directed graph
+    A NetworkX directed graph
+copy : bool
+    If True, then a new graph is returned. If False, then the graph is
+    reversed in place.
+
+Returns
+-------
+H : directed graph
+    The reversed G.\end{DoxyVerb}
+ 

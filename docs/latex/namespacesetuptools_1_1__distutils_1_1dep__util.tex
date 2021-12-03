@@ -1,0 +1,63 @@
+\hypertarget{namespacesetuptools_1_1__distutils_1_1dep__util}{}\section{setuptools.\+\_\+distutils.\+dep\+\_\+util Namespace Reference}
+\label{namespacesetuptools_1_1__distutils_1_1dep__util}\index{setuptools.\+\_\+distutils.\+dep\+\_\+util@{setuptools.\+\_\+distutils.\+dep\+\_\+util}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1dep__util_a1a74a87b034b2430cec5fc9b6dfac5ce}{newer} (source, target)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1dep__util_a56795f3ddcbca1971c4e426bfc80c4f7}{newer\+\_\+pairwise} (sources, targets)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1dep__util_aabcdb616fc98451fe469ae055c1f8f11}{newer\+\_\+group} (sources, target, missing=\textquotesingle{}error\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}distutils.dep_util
+
+Utility functions for simple, timestamp-based dependency of files
+and groups of files; also, function based entirely on such
+timestamp dependency analysis.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1dep__util_a1a74a87b034b2430cec5fc9b6dfac5ce}\label{namespacesetuptools_1_1__distutils_1_1dep__util_a1a74a87b034b2430cec5fc9b6dfac5ce}} 
+\index{setuptools\+::\+\_\+distutils\+::dep\+\_\+util@{setuptools\+::\+\_\+distutils\+::dep\+\_\+util}!newer@{newer}}
+\index{newer@{newer}!setuptools\+::\+\_\+distutils\+::dep\+\_\+util@{setuptools\+::\+\_\+distutils\+::dep\+\_\+util}}
+\subsubsection{\texorpdfstring{newer()}{newer()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+dep\+\_\+util.\+newer (\begin{DoxyParamCaption}\item[{}]{source,  }\item[{}]{target }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return true if 'source' exists and is more recently modified than
+'target', or if 'source' exists and 'target' doesn't.  Return false if
+both exist and 'target' is the same age or younger than 'source'.
+Raise DistutilsFileError if 'source' does not exist.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1dep__util_aabcdb616fc98451fe469ae055c1f8f11}\label{namespacesetuptools_1_1__distutils_1_1dep__util_aabcdb616fc98451fe469ae055c1f8f11}} 
+\index{setuptools\+::\+\_\+distutils\+::dep\+\_\+util@{setuptools\+::\+\_\+distutils\+::dep\+\_\+util}!newer\+\_\+group@{newer\+\_\+group}}
+\index{newer\+\_\+group@{newer\+\_\+group}!setuptools\+::\+\_\+distutils\+::dep\+\_\+util@{setuptools\+::\+\_\+distutils\+::dep\+\_\+util}}
+\subsubsection{\texorpdfstring{newer\+\_\+group()}{newer\_group()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+dep\+\_\+util.\+newer\+\_\+group (\begin{DoxyParamCaption}\item[{}]{sources,  }\item[{}]{target,  }\item[{}]{missing = {\ttfamily \textquotesingle{}error\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return true if 'target' is out-of-date with respect to any file
+listed in 'sources'.  In other words, if 'target' exists and is newer
+than every file in 'sources', return false; otherwise return true.
+'missing' controls what we do when a source file is missing; the
+default ("error") is to blow up with an OSError from inside 'stat()';
+if it is "ignore", we silently drop any missing source files; if it is
+"newer", any missing source files make us assume that 'target' is
+out-of-date (this is handy in "dry-run" mode: it'll make you pretend to
+carry out commands that wouldn't work because inputs are missing, but
+that doesn't matter because you're not actually going to run the
+commands).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1dep__util_a56795f3ddcbca1971c4e426bfc80c4f7}\label{namespacesetuptools_1_1__distutils_1_1dep__util_a56795f3ddcbca1971c4e426bfc80c4f7}} 
+\index{setuptools\+::\+\_\+distutils\+::dep\+\_\+util@{setuptools\+::\+\_\+distutils\+::dep\+\_\+util}!newer\+\_\+pairwise@{newer\+\_\+pairwise}}
+\index{newer\+\_\+pairwise@{newer\+\_\+pairwise}!setuptools\+::\+\_\+distutils\+::dep\+\_\+util@{setuptools\+::\+\_\+distutils\+::dep\+\_\+util}}
+\subsubsection{\texorpdfstring{newer\+\_\+pairwise()}{newer\_pairwise()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+dep\+\_\+util.\+newer\+\_\+pairwise (\begin{DoxyParamCaption}\item[{}]{sources,  }\item[{}]{targets }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Walk two filename lists in parallel, testing if each source is newer
+than its corresponding target.  Return a pair of lists (sources,
+targets) where source is newer than target, according to the semantics
+of 'newer()'.
+\end{DoxyVerb}
+ 

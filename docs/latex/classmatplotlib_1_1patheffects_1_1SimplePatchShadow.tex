@@ -1,0 +1,74 @@
+\hypertarget{classmatplotlib_1_1patheffects_1_1SimplePatchShadow}{}\section{matplotlib.\+patheffects.\+Simple\+Patch\+Shadow Class Reference}
+\label{classmatplotlib_1_1patheffects_1_1SimplePatchShadow}\index{matplotlib.\+patheffects.\+Simple\+Patch\+Shadow@{matplotlib.\+patheffects.\+Simple\+Patch\+Shadow}}
+
+
+Inheritance diagram for matplotlib.\+patheffects.\+Simple\+Patch\+Shadow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classmatplotlib_1_1patheffects_1_1SimplePatchShadow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+patheffects.\+Simple\+Patch\+Shadow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classmatplotlib_1_1patheffects_1_1SimplePatchShadow__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1patheffects_1_1SimplePatchShadow_a139118514d0c69558cbb7b5ee3c744a3}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, offset=(2, -\/2), shadow\+\_\+rgb\+Face=None, alpha=None, rho=0.\+3, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1patheffects_1_1SimplePatchShadow_a2348709dab173deb5a2ac085acf86161}{draw\+\_\+path} (self, renderer, gc, tpath, affine, rgb\+Face)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A simple shadow via a filled patch.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patheffects_1_1SimplePatchShadow_a139118514d0c69558cbb7b5ee3c744a3}\label{classmatplotlib_1_1patheffects_1_1SimplePatchShadow_a139118514d0c69558cbb7b5ee3c744a3}} 
+\index{matplotlib\+::patheffects\+::\+Simple\+Patch\+Shadow@{matplotlib\+::patheffects\+::\+Simple\+Patch\+Shadow}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::patheffects\+::\+Simple\+Patch\+Shadow@{matplotlib\+::patheffects\+::\+Simple\+Patch\+Shadow}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+patheffects.\+Simple\+Patch\+Shadow.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offset = {\ttfamily (2,~-\/2)},  }\item[{}]{shadow\+\_\+rgb\+Face = {\ttfamily None},  }\item[{}]{alpha = {\ttfamily None},  }\item[{}]{rho = {\ttfamily 0.3},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+offset : (float, float), default: (2, -2)
+    The (x, y) offset of the shadow in points.
+shadow_rgbFace : color
+    The shadow color.
+alpha : float, default: 0.3
+    The alpha transparency of the created shadow patch.
+    http://matplotlib.1069221.n5.nabble.com/path-effects-question-td27630.html
+rho : float, default: 0.3
+    A scale factor to apply to the rgbFace color if *shadow_rgbFace*
+    is not specified.
+**kwargs
+    Extra keywords are stored and passed through to
+    :meth:`AbstractPathEffect._update_gc`.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patheffects_1_1SimplePatchShadow_a2348709dab173deb5a2ac085acf86161}\label{classmatplotlib_1_1patheffects_1_1SimplePatchShadow_a2348709dab173deb5a2ac085acf86161}} 
+\index{matplotlib\+::patheffects\+::\+Simple\+Patch\+Shadow@{matplotlib\+::patheffects\+::\+Simple\+Patch\+Shadow}!draw\+\_\+path@{draw\+\_\+path}}
+\index{draw\+\_\+path@{draw\+\_\+path}!matplotlib\+::patheffects\+::\+Simple\+Patch\+Shadow@{matplotlib\+::patheffects\+::\+Simple\+Patch\+Shadow}}
+\subsubsection{\texorpdfstring{draw\+\_\+path()}{draw\_path()}}
+{\footnotesize\ttfamily def matplotlib.\+patheffects.\+Simple\+Patch\+Shadow.\+draw\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer,  }\item[{}]{gc,  }\item[{}]{tpath,  }\item[{}]{affine,  }\item[{}]{rgb\+Face }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Overrides the standard draw_path to add the shadow offset and
+necessary color changes for the shadow.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{patheffects_8py}{patheffects.\+py}\end{DoxyCompactItemize}

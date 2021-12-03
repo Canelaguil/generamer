@@ -1,0 +1,91 @@
+\hypertarget{classmatplotlib_1_1backend__bases_1_1KeyEvent}{}\section{matplotlib.\+backend\+\_\+bases.\+Key\+Event Class Reference}
+\label{classmatplotlib_1_1backend__bases_1_1KeyEvent}\index{matplotlib.\+backend\+\_\+bases.\+Key\+Event@{matplotlib.\+backend\+\_\+bases.\+Key\+Event}}
+
+
+Inheritance diagram for matplotlib.\+backend\+\_\+bases.\+Key\+Event\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classmatplotlib_1_1backend__bases_1_1KeyEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+backend\+\_\+bases.\+Key\+Event\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classmatplotlib_1_1backend__bases_1_1KeyEvent__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1KeyEvent_afab0554b1d029f72d60ef34bcca47211}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1backend__bases_1_1Event_a4b10ea7af7c8a0b20bcdbb9ca03e1654}{name}, \hyperlink{classmatplotlib_1_1backend__bases_1_1Event_a7721d867d81a1255b1aeb51babec4e14}{canvas}, \hyperlink{classmatplotlib_1_1backend__bases_1_1KeyEvent_a56e60bbb8d0a52741daff43b4e3320db}{key}, \hyperlink{classmatplotlib_1_1backend__bases_1_1LocationEvent_aad07eb863241b9e4a4bfce29833a693b}{x}=0, \hyperlink{classmatplotlib_1_1backend__bases_1_1LocationEvent_a77dbd95e105ce5a66024d85dac58943b}{y}=0, \hyperlink{classmatplotlib_1_1backend__bases_1_1Event_a6cc1dc3c9479b3e5f227f329037adb98}{gui\+Event}=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1KeyEvent_a56e60bbb8d0a52741daff43b4e3320db}{key}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A key event (key press, key release).
+
+Attach additional attributes as defined in
+:meth:`FigureCanvasBase.mpl_connect`.
+
+In addition to the `Event` and `LocationEvent`
+attributes, the following attributes are defined:
+
+Attributes
+----------
+key : None or str
+    the key(s) pressed. Could be **None**, a single case sensitive ascii
+    character ("g", "G", "#", etc.), a special key
+    ("control", "shift", "f1", "up", etc.) or a
+    combination of the above (e.g., "ctrl+alt+g", "ctrl+alt+G").
+
+Notes
+-----
+Modifier keys will be prefixed to the pressed key and will be in the order
+"ctrl", "alt", "super". The exception to this rule is when the pressed key
+is itself a modifier key, therefore "ctrl+alt" and "alt+control" can both
+be valid key values.
+
+Examples
+--------
+::
+
+    def on_key(event):
+        print('you pressed', event.key, event.xdata, event.ydata)
+
+    cid = fig.canvas.mpl_connect('key_press_event', on_key)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1KeyEvent_afab0554b1d029f72d60ef34bcca47211}\label{classmatplotlib_1_1backend__bases_1_1KeyEvent_afab0554b1d029f72d60ef34bcca47211}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Key\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Key\+Event}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+bases\+::\+Key\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Key\+Event}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Key\+Event.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{canvas,  }\item[{}]{key,  }\item[{}]{x = {\ttfamily 0},  }\item[{}]{y = {\ttfamily 0},  }\item[{}]{gui\+Event = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1KeyEvent_a56e60bbb8d0a52741daff43b4e3320db}\label{classmatplotlib_1_1backend__bases_1_1KeyEvent_a56e60bbb8d0a52741daff43b4e3320db}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Key\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Key\+Event}!key@{key}}
+\index{key@{key}!matplotlib\+::backend\+\_\+bases\+::\+Key\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Key\+Event}}
+\subsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Key\+Event.\+key}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{backend__bases_8py}{backend\+\_\+bases.\+py}\end{DoxyCompactItemize}

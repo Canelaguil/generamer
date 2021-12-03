@@ -49,17 +49,17 @@ class Relationship:
                 self.woman.house.add_person(self.man, 'married')
                 self.man.house.update_roles(care_candidate=self.man)
                 self.man.knowledge.add_bit(
-                    3, f"Moved in with wife {self.woman.name} after marriage.")
+                    3, f"Moved in with wife {self.woman.name} after marriage.", 'movein_w_wife')
                 self.woman.knowledge.add_bit(
-                    3, f"Had {self.man.name} move in at {self.woman.house.key} after marriage.")
+                    3, f"Had {self.man.name} move in at {self.woman.house.key} after marriage.", 'movein_husband')
                 self.man.independent = True
             elif self.man.breadwinner and self.man.independent and self.man.house != None:
                 self.man.house.add_person(self.woman, 'married')
                 self.man.house.update_roles(care_candidate=self.woman)
                 self.woman.knowledge.add_bit(
-                    2, f"Moved in with husband {self.man.name} after marriage.")
+                    2, f"Moved in with husband {self.man.name} after marriage.", 'movein_w_husband')
                 self.man.knowledge.add_bit(
-                    2, f"Had {self.woman.name} move in at {self.man.house.key} after marriage.")
+                    2, f"Had {self.woman.name} move in at {self.man.house.key} after marriage.", 'movein_wife')
                 self.woman.independent = True
             else:
                 # print(f"{self.man.key} moved in with {self.woman.key}")
@@ -75,9 +75,9 @@ class Relationship:
                         self.man.house.add_person(self.woman, 'married')
                         self.man.house.update_roles(care_candidate=self.woman)
                         self.woman.knowledge.add_bit(
-                            2, f"Moved in with husband {self.man.name}'s family after marriage.")
+                            2, f"Moved in with husband {self.man.name}'s family after marriage.", 'move_to_hfam')
                         self.man.knowledge.add_bit(
-                            2, f"Had {self.woman.name} move into family home at {self.man.house.key} after marriage.")
+                            2, f"Had {self.woman.name} move into family home at {self.man.house.key} after marriage.", 'move_wifeto_fam')
                     else:
                         self.context.outside.move_couple_outoftown(self)
         elif self.married:
@@ -97,7 +97,8 @@ class Relationship:
         Possible causes:
         - woman_died
         - man_died 
-        - partner_left
+        - man_left
+        - woman_left
         - separated
         """
         if self.active:
@@ -108,7 +109,7 @@ class Relationship:
                 self.man.married = False
                 if self.man.alive:
                     self.man.knowledge.add_bit(
-                        1, f"Became a widower at {self.man.age}.")
+                        1, f"Became a widower at {self.man.age}.", 'widower')
             # for child in self.children:
             #     if child.alive:
             #         child.trigger.mother_died(circumstance)
@@ -118,17 +119,23 @@ class Relationship:
                 self.woman.married = False
                 if self.woman.alive:
                     self.woman.knowledge.add_bit(
-                        1, f"Became a widow at {self.man.age}{circumstance}.")
+                        1, f"Became a widow at {self.man.age}{circumstance}.", 'widow')
 
         elif cause == 'separated':
             pass
 
-        elif cause == 'partner_left':
+        elif cause == 'man_left':
             if self.married:
                 self.man.married = False
                 self.woman.married = False
             if self.man.alive:
-                self.woman.knowledge.add_bit(2, "Was left by pa")
+                self.woman.knowledge.add_bit(2, f"Was left by {self.man.name}{circumstance}.", cause)
+        elif cause == 'woman_left':
+            if self.married:
+                self.man.married = False
+                self.woman.married = False
+            if self.man.alive:
+                self.man.knowledge.add_bit(2, f"Was left by {self.woman.name}{circumstance}.", cause)
 
         self.context.romance_dies(self.key)
 
@@ -179,12 +186,12 @@ class Relationship:
         elif trigger == 'adopt grandchild':
             child = param
             if self.man.alive:
-                self.man.knowledge.add_bit(1, f"Took grandchild {child.name} in when {child.name} was {child.age}.")
+                self.man.knowledge.add_bit(1, f"Took grandchild {child.name} in when {child.name} was {child.age}.", 'adopt_grandchild')
                 house = self.man.house
             if self.woman.alive:
-                self.woman.knowledge.add_bit(1, f"Took grandchild {child.name} in when {child.name} was {child.age}.")
+                self.woman.knowledge.add_bit(1, f"Took grandchild {child.name} in when {child.name} was {child.age}.", 'adopt_grandchild')
                 house = self.woman.house
-            child.knowledge.add_bit(2, f"Went to live with grandparents at age {child.age}.")
+            child.knowledge.add_bit(2, f"Went to live with grandparents at age {child.age}.", 'adopted_by_gparents')
             house.add_person(child, 'adopted')
             
     def relationship_events(self):

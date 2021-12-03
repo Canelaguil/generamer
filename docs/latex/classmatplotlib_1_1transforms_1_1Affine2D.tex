@@ -1,0 +1,264 @@
+\hypertarget{classmatplotlib_1_1transforms_1_1Affine2D}{}\section{matplotlib.\+transforms.\+Affine2D Class Reference}
+\label{classmatplotlib_1_1transforms_1_1Affine2D}\index{matplotlib.\+transforms.\+Affine2D@{matplotlib.\+transforms.\+Affine2D}}
+
+
+Inheritance diagram for matplotlib.\+transforms.\+Affine2D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmatplotlib_1_1transforms_1_1Affine2D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+transforms.\+Affine2D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmatplotlib_1_1transforms_1_1Affine2D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_a2bd50b6320319e569e13a2b64d92758a}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, matrix=None, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_aeb3619ea042fff846005032dc8a338f8}{get\+\_\+matrix} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_ae2d2039dbe7b7f71f963012f686965e3}{set\+\_\+matrix} (self, mtx)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_ae1754ccf9e53c616f1dd302d3d88de07}{set} (self, other)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_afa6b95055417d3d465cc543a3a16ac4e}{clear} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_a93c783041609d16fa21604d34824d498}{rotate} (self, theta)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_a923dd261e2b25d874a510d1c209ba51e}{rotate\+\_\+deg} (self, degrees)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_a0e6c538c0e3dae6980c3ff2868a7ad42}{rotate\+\_\+around} (self, x, y, theta)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_a924675f12ef956d1baca7cf870dc0e71}{rotate\+\_\+deg\+\_\+around} (self, x, y, degrees)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_ac0bfbdad7634c5d9ef5c9e479652df39}{translate} (self, tx, ty)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_ace725f95dffce8d38ca3ed69faca2d9a}{scale} (self, sx, sy=None)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_a134418a94062c70adbc5ba5d56b21639}{skew} (self, x\+Shear, y\+Shear)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_afd36d93b4fdbbcdf3b96f265ab6f85a0}{skew\+\_\+deg} (self, x\+Shear, y\+Shear)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_a62a011b2660b72fa9df587d145b781c3}{from\+\_\+values} (a, b, c, d, e, f)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D_a648aabbd99acf62a85afde8f47d0e4b3}{identity} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A mutable 2D affine transformation.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_a2bd50b6320319e569e13a2b64d92758a}\label{classmatplotlib_1_1transforms_1_1Affine2D_a2bd50b6320319e569e13a2b64d92758a}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{matrix = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize an Affine transform from a 3x3 numpy float array::
+
+  a c e
+  b d f
+  0 0 1
+
+If *matrix* is None, initialize with the identity transform.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_afa6b95055417d3d465cc543a3a16ac4e}\label{classmatplotlib_1_1transforms_1_1Affine2D_afa6b95055417d3d465cc543a3a16ac4e}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!clear@{clear}}
+\index{clear@{clear}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+clear (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reset the underlying matrix to the identity transform.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_a62a011b2660b72fa9df587d145b781c3}\label{classmatplotlib_1_1transforms_1_1Affine2D_a62a011b2660b72fa9df587d145b781c3}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!from\+\_\+values@{from\+\_\+values}}
+\index{from\+\_\+values@{from\+\_\+values}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{from\+\_\+values()}{from\_values()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+from\+\_\+values (\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{c,  }\item[{}]{d,  }\item[{}]{e,  }\item[{}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Create a new Affine2D instance from the given values::
+
+  a c e
+  b d f
+  0 0 1
+
+.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_aeb3619ea042fff846005032dc8a338f8}\label{classmatplotlib_1_1transforms_1_1Affine2D_aeb3619ea042fff846005032dc8a338f8}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!get\+\_\+matrix@{get\+\_\+matrix}}
+\index{get\+\_\+matrix@{get\+\_\+matrix}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{get\+\_\+matrix()}{get\_matrix()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+get\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the underlying transformation matrix as a 3x3 numpy array::
+
+  a c e
+  b d f
+  0 0 1
+
+.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_a648aabbd99acf62a85afde8f47d0e4b3}\label{classmatplotlib_1_1transforms_1_1Affine2D_a648aabbd99acf62a85afde8f47d0e4b3}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!identity@{identity}}
+\index{identity@{identity}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{identity()}{identity()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Return a new `Affine2D` object that is the identity transform.
+
+Unless this transform will be mutated later on, consider using
+the faster `IdentityTransform` class instead.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_a93c783041609d16fa21604d34824d498}\label{classmatplotlib_1_1transforms_1_1Affine2D_a93c783041609d16fa21604d34824d498}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!rotate@{rotate}}
+\index{rotate@{rotate}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+rotate (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{theta }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a rotation (in radians) to this transform in place.
+
+Returns *self*, so this method can easily be chained with more
+calls to :meth:`rotate`, :meth:`rotate_deg`, :meth:`translate`
+and :meth:`scale`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_a0e6c538c0e3dae6980c3ff2868a7ad42}\label{classmatplotlib_1_1transforms_1_1Affine2D_a0e6c538c0e3dae6980c3ff2868a7ad42}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!rotate\+\_\+around@{rotate\+\_\+around}}
+\index{rotate\+\_\+around@{rotate\+\_\+around}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{rotate\+\_\+around()}{rotate\_around()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+rotate\+\_\+around (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{theta }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a rotation (in radians) around the point (x, y) in place.
+
+Returns *self*, so this method can easily be chained with more
+calls to :meth:`rotate`, :meth:`rotate_deg`, :meth:`translate`
+and :meth:`scale`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_a923dd261e2b25d874a510d1c209ba51e}\label{classmatplotlib_1_1transforms_1_1Affine2D_a923dd261e2b25d874a510d1c209ba51e}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!rotate\+\_\+deg@{rotate\+\_\+deg}}
+\index{rotate\+\_\+deg@{rotate\+\_\+deg}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{rotate\+\_\+deg()}{rotate\_deg()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+rotate\+\_\+deg (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{degrees }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a rotation (in degrees) to this transform in place.
+
+Returns *self*, so this method can easily be chained with more
+calls to :meth:`rotate`, :meth:`rotate_deg`, :meth:`translate`
+and :meth:`scale`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_a924675f12ef956d1baca7cf870dc0e71}\label{classmatplotlib_1_1transforms_1_1Affine2D_a924675f12ef956d1baca7cf870dc0e71}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!rotate\+\_\+deg\+\_\+around@{rotate\+\_\+deg\+\_\+around}}
+\index{rotate\+\_\+deg\+\_\+around@{rotate\+\_\+deg\+\_\+around}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{rotate\+\_\+deg\+\_\+around()}{rotate\_deg\_around()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+rotate\+\_\+deg\+\_\+around (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{degrees }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a rotation (in degrees) around the point (x, y) in place.
+
+Returns *self*, so this method can easily be chained with more
+calls to :meth:`rotate`, :meth:`rotate_deg`, :meth:`translate`
+and :meth:`scale`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_ace725f95dffce8d38ca3ed69faca2d9a}\label{classmatplotlib_1_1transforms_1_1Affine2D_ace725f95dffce8d38ca3ed69faca2d9a}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!scale@{scale}}
+\index{scale@{scale}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+scale (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{sx,  }\item[{}]{sy = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a scale in place.
+
+If *sy* is None, the same scale is applied in both the *x*- and
+*y*-directions.
+
+Returns *self*, so this method can easily be chained with more
+calls to :meth:`rotate`, :meth:`rotate_deg`, :meth:`translate`
+and :meth:`scale`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_ae1754ccf9e53c616f1dd302d3d88de07}\label{classmatplotlib_1_1transforms_1_1Affine2D_ae1754ccf9e53c616f1dd302d3d88de07}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!set@{set}}
+\index{set@{set}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+set (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set this transformation from the frozen copy of another
+`Affine2DBase` object.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_ae2d2039dbe7b7f71f963012f686965e3}\label{classmatplotlib_1_1transforms_1_1Affine2D_ae2d2039dbe7b7f71f963012f686965e3}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!set\+\_\+matrix@{set\+\_\+matrix}}
+\index{set\+\_\+matrix@{set\+\_\+matrix}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{set\+\_\+matrix()}{set\_matrix()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+set\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{mtx }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the underlying transformation matrix from a 3x3 numpy array::
+
+  a c e
+  b d f
+  0 0 1
+
+.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_a134418a94062c70adbc5ba5d56b21639}\label{classmatplotlib_1_1transforms_1_1Affine2D_a134418a94062c70adbc5ba5d56b21639}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!skew@{skew}}
+\index{skew@{skew}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{skew()}{skew()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+skew (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x\+Shear,  }\item[{}]{y\+Shear }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a skew in place.
+
+*xShear* and *yShear* are the shear angles along the *x*- and
+*y*-axes, respectively, in radians.
+
+Returns *self*, so this method can easily be chained with more
+calls to :meth:`rotate`, :meth:`rotate_deg`, :meth:`translate`
+and :meth:`scale`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_afd36d93b4fdbbcdf3b96f265ab6f85a0}\label{classmatplotlib_1_1transforms_1_1Affine2D_afd36d93b4fdbbcdf3b96f265ab6f85a0}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!skew\+\_\+deg@{skew\+\_\+deg}}
+\index{skew\+\_\+deg@{skew\+\_\+deg}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{skew\+\_\+deg()}{skew\_deg()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+skew\+\_\+deg (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x\+Shear,  }\item[{}]{y\+Shear }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a skew in place.
+
+*xShear* and *yShear* are the shear angles along the *x*- and
+*y*-axes, respectively, in degrees.
+
+Returns *self*, so this method can easily be chained with more
+calls to :meth:`rotate`, :meth:`rotate_deg`, :meth:`translate`
+and :meth:`scale`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2D_ac0bfbdad7634c5d9ef5c9e479652df39}\label{classmatplotlib_1_1transforms_1_1Affine2D_ac0bfbdad7634c5d9ef5c9e479652df39}} 
+\index{matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}!translate@{translate}}
+\index{translate@{translate}!matplotlib\+::transforms\+::\+Affine2D@{matplotlib\+::transforms\+::\+Affine2D}}
+\subsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D.\+translate (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tx,  }\item[{}]{ty }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a translation in place.
+
+Returns *self*, so this method can easily be chained with more
+calls to :meth:`rotate`, :meth:`rotate_deg`, :meth:`translate`
+and :meth:`scale`.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{transforms_8py}{transforms.\+py}\end{DoxyCompactItemize}

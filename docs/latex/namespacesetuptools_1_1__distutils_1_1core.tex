@@ -1,0 +1,133 @@
+\hypertarget{namespacesetuptools_1_1__distutils_1_1core}{}\section{setuptools.\+\_\+distutils.\+core Namespace Reference}
+\label{namespacesetuptools_1_1__distutils_1_1core}\index{setuptools.\+\_\+distutils.\+core@{setuptools.\+\_\+distutils.\+core}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1core_adb8f605eb0e9d85ea8d6ed878f127245}{gen\+\_\+usage} (script\+\_\+name)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1core_a6f94e9f9536e6b558c2f6e7a0077ec47}{setup} (attrs)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1core_a275c69fa82364f007c1e4c1f067a9d1c}{run\+\_\+setup} (script\+\_\+name, script\+\_\+args=None, stop\+\_\+after=\char`\"{}run\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1core_a888f6a1a55a9c742cdc8d12cfcddb990}{U\+S\+A\+GE}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1core_a7920d942fb997605b456febec3e0669b}{setup\+\_\+keywords}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1core_aff7fc83db6e6430d082c69c85493baf9}{extension\+\_\+keywords}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}distutils.core
+
+The only module that needs to be imported to use the Distutils; provides
+the 'setup' function (which is to be called from the setup script).  Also
+indirectly provides the Distribution and Command classes, although they are
+really defined in distutils.dist and distutils.cmd.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1core_adb8f605eb0e9d85ea8d6ed878f127245}\label{namespacesetuptools_1_1__distutils_1_1core_adb8f605eb0e9d85ea8d6ed878f127245}} 
+\index{setuptools\+::\+\_\+distutils\+::core@{setuptools\+::\+\_\+distutils\+::core}!gen\+\_\+usage@{gen\+\_\+usage}}
+\index{gen\+\_\+usage@{gen\+\_\+usage}!setuptools\+::\+\_\+distutils\+::core@{setuptools\+::\+\_\+distutils\+::core}}
+\subsubsection{\texorpdfstring{gen\+\_\+usage()}{gen\_usage()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+core.\+gen\+\_\+usage (\begin{DoxyParamCaption}\item[{}]{script\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1core_a275c69fa82364f007c1e4c1f067a9d1c}\label{namespacesetuptools_1_1__distutils_1_1core_a275c69fa82364f007c1e4c1f067a9d1c}} 
+\index{setuptools\+::\+\_\+distutils\+::core@{setuptools\+::\+\_\+distutils\+::core}!run\+\_\+setup@{run\+\_\+setup}}
+\index{run\+\_\+setup@{run\+\_\+setup}!setuptools\+::\+\_\+distutils\+::core@{setuptools\+::\+\_\+distutils\+::core}}
+\subsubsection{\texorpdfstring{run\+\_\+setup()}{run\_setup()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+core.\+run\+\_\+setup (\begin{DoxyParamCaption}\item[{}]{script\+\_\+name,  }\item[{}]{script\+\_\+args = {\ttfamily None},  }\item[{}]{stop\+\_\+after = {\ttfamily \char`\"{}run\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Run a setup script in a somewhat controlled environment, and
+return the Distribution instance that drives things.  This is useful
+if you need to find out the distribution meta-data (passed as
+keyword args from 'script' to 'setup()', or the contents of the
+config files or command-line.
+
+'script_name' is a file that will be read and run with 'exec()';
+'sys.argv[0]' will be replaced with 'script' for the duration of the
+call.  'script_args' is a list of strings; if supplied,
+'sys.argv[1:]' will be replaced by 'script_args' for the duration of
+the call.
+
+'stop_after' tells 'setup()' when to stop processing; possible
+values:
+  init
+    stop after the Distribution instance has been created and
+    populated with the keyword arguments to 'setup()'
+  config
+    stop after config files have been parsed (and their data
+    stored in the Distribution instance)
+  commandline
+    stop after the command-line ('sys.argv[1:]' or 'script_args')
+    have been parsed (and the data stored in the Distribution)
+  run [default]
+    stop after all commands have been run (the same as if 'setup()'
+    had been called in the usual way
+
+Returns the Distribution instance, which provides all information
+used to drive the Distutils.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1core_a6f94e9f9536e6b558c2f6e7a0077ec47}\label{namespacesetuptools_1_1__distutils_1_1core_a6f94e9f9536e6b558c2f6e7a0077ec47}} 
+\index{setuptools\+::\+\_\+distutils\+::core@{setuptools\+::\+\_\+distutils\+::core}!setup@{setup}}
+\index{setup@{setup}!setuptools\+::\+\_\+distutils\+::core@{setuptools\+::\+\_\+distutils\+::core}}
+\subsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+core.\+setup (\begin{DoxyParamCaption}\item[{}]{attrs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The gateway to the Distutils: do everything your setup script needs
+to do, in a highly flexible and user-driven way.  Briefly: create a
+Distribution instance; find and parse config files; parse the command
+line; run each Distutils command found there, customized by the options
+supplied to 'setup()' (as keyword arguments), in config files, and on
+the command line.
+
+The Distribution instance might be an instance of a class supplied via
+the 'distclass' keyword argument to 'setup'; if no such class is
+supplied, then the Distribution class (in dist.py) is instantiated.
+All other arguments to 'setup' (except for 'cmdclass') are used to set
+attributes of the Distribution instance.
+
+The 'cmdclass' argument, if supplied, is a dictionary mapping command
+names to command classes.  Each command encountered on the command line
+will be turned into a command class, which is in turn instantiated; any
+class found in 'cmdclass' is used in place of the default, which is
+(for command 'foo_bar') class 'foo_bar' in module
+'distutils.command.foo_bar'.  The command class must provide a
+'user_options' attribute which is a list of option specifiers for
+'distutils.fancy_getopt'.  Any command-line options between the current
+and the next command are used to set attributes of the current command
+object.
+
+When the entire command-line has been successfully parsed, calls the
+'run()' method on each command object in turn.  This method will be
+driven entirely by the Distribution object (which each command object
+has a reference to, thanks to its constructor), and the
+command-specific options that became attributes of each command
+object.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1core_aff7fc83db6e6430d082c69c85493baf9}\label{namespacesetuptools_1_1__distutils_1_1core_aff7fc83db6e6430d082c69c85493baf9}} 
+\index{setuptools\+::\+\_\+distutils\+::core@{setuptools\+::\+\_\+distutils\+::core}!extension\+\_\+keywords@{extension\+\_\+keywords}}
+\index{extension\+\_\+keywords@{extension\+\_\+keywords}!setuptools\+::\+\_\+distutils\+::core@{setuptools\+::\+\_\+distutils\+::core}}
+\subsubsection{\texorpdfstring{extension\+\_\+keywords}{extension\_keywords}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+core.\+extension\+\_\+keywords}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1core_a7920d942fb997605b456febec3e0669b}\label{namespacesetuptools_1_1__distutils_1_1core_a7920d942fb997605b456febec3e0669b}} 
+\index{setuptools\+::\+\_\+distutils\+::core@{setuptools\+::\+\_\+distutils\+::core}!setup\+\_\+keywords@{setup\+\_\+keywords}}
+\index{setup\+\_\+keywords@{setup\+\_\+keywords}!setuptools\+::\+\_\+distutils\+::core@{setuptools\+::\+\_\+distutils\+::core}}
+\subsubsection{\texorpdfstring{setup\+\_\+keywords}{setup\_keywords}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+core.\+setup\+\_\+keywords}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1core_a888f6a1a55a9c742cdc8d12cfcddb990}\label{namespacesetuptools_1_1__distutils_1_1core_a888f6a1a55a9c742cdc8d12cfcddb990}} 
+\index{setuptools\+::\+\_\+distutils\+::core@{setuptools\+::\+\_\+distutils\+::core}!U\+S\+A\+GE@{U\+S\+A\+GE}}
+\index{U\+S\+A\+GE@{U\+S\+A\+GE}!setuptools\+::\+\_\+distutils\+::core@{setuptools\+::\+\_\+distutils\+::core}}
+\subsubsection{\texorpdfstring{U\+S\+A\+GE}{USAGE}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+core.\+U\+S\+A\+GE}
+

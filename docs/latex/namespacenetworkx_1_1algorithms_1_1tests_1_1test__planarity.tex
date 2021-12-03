@@ -1,0 +1,57 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1tests_1_1test__planarity}{}\section{networkx.\+algorithms.\+tests.\+test\+\_\+planarity Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1tests_1_1test__planarity}\index{networkx.\+algorithms.\+tests.\+test\+\_\+planarity@{networkx.\+algorithms.\+tests.\+test\+\_\+planarity}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1tests_1_1test__planarity_1_1TestLRPlanarity}{Test\+L\+R\+Planarity}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1tests_1_1test__planarity_1_1TestPlanarEmbeddingClass}{Test\+Planar\+Embedding\+Class}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1tests_1_1test__planarity_a0ac528d113c1bab2f8f92697052d2531}{check\+\_\+embedding} (G, embedding)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1tests_1_1test__planarity_a3e4274e0c0a9acabb10f49c7fb1bf1b8}{check\+\_\+counterexample} (G, sub\+\_\+graph)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1tests_1_1test__planarity_a3e4274e0c0a9acabb10f49c7fb1bf1b8}\label{namespacenetworkx_1_1algorithms_1_1tests_1_1test__planarity_a3e4274e0c0a9acabb10f49c7fb1bf1b8}} 
+\index{networkx\+::algorithms\+::tests\+::test\+\_\+planarity@{networkx\+::algorithms\+::tests\+::test\+\_\+planarity}!check\+\_\+counterexample@{check\+\_\+counterexample}}
+\index{check\+\_\+counterexample@{check\+\_\+counterexample}!networkx\+::algorithms\+::tests\+::test\+\_\+planarity@{networkx\+::algorithms\+::tests\+::test\+\_\+planarity}}
+\subsubsection{\texorpdfstring{check\+\_\+counterexample()}{check\_counterexample()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tests.\+test\+\_\+planarity.\+check\+\_\+counterexample (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{sub\+\_\+graph }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Raises an exception if the counterexample is wrong.
+
+Parameters
+----------
+G : NetworkX graph
+subdivision_nodes : set
+    A set of nodes inducing a subgraph as a counterexample
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1tests_1_1test__planarity_a0ac528d113c1bab2f8f92697052d2531}\label{namespacenetworkx_1_1algorithms_1_1tests_1_1test__planarity_a0ac528d113c1bab2f8f92697052d2531}} 
+\index{networkx\+::algorithms\+::tests\+::test\+\_\+planarity@{networkx\+::algorithms\+::tests\+::test\+\_\+planarity}!check\+\_\+embedding@{check\+\_\+embedding}}
+\index{check\+\_\+embedding@{check\+\_\+embedding}!networkx\+::algorithms\+::tests\+::test\+\_\+planarity@{networkx\+::algorithms\+::tests\+::test\+\_\+planarity}}
+\subsubsection{\texorpdfstring{check\+\_\+embedding()}{check\_embedding()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tests.\+test\+\_\+planarity.\+check\+\_\+embedding (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{embedding }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Raises an exception if the combinatorial embedding is not correct
+
+Parameters
+----------
+G : NetworkX graph
+embedding : a dict mapping nodes to a list of edges
+    This specifies the ordering of the outgoing edges from a node for
+    a combinatorial embedding
+
+Notes
+-----
+Checks the following things:
+    - The type of the embedding is correct
+    - The nodes and edges match the original graph
+    - Every half edge has its matching opposite half edge
+    - No intersections of edges (checked by Euler's formula)
+\end{DoxyVerb}
+ 

@@ -1,0 +1,76 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1centrality_1_1harmonic}{}\section{networkx.\+algorithms.\+centrality.\+harmonic Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1centrality_1_1harmonic}\index{networkx.\+algorithms.\+centrality.\+harmonic@{networkx.\+algorithms.\+centrality.\+harmonic}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1centrality_1_1harmonic_af9a051426c6eda5612ca2f661d7ddbd2}{harmonic\+\_\+centrality} (G, nbunch=None, distance=None, sources=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions for computing the harmonic centrality of a graph.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1centrality_1_1harmonic_af9a051426c6eda5612ca2f661d7ddbd2}\label{namespacenetworkx_1_1algorithms_1_1centrality_1_1harmonic_af9a051426c6eda5612ca2f661d7ddbd2}} 
+\index{networkx\+::algorithms\+::centrality\+::harmonic@{networkx\+::algorithms\+::centrality\+::harmonic}!harmonic\+\_\+centrality@{harmonic\+\_\+centrality}}
+\index{harmonic\+\_\+centrality@{harmonic\+\_\+centrality}!networkx\+::algorithms\+::centrality\+::harmonic@{networkx\+::algorithms\+::centrality\+::harmonic}}
+\subsubsection{\texorpdfstring{harmonic\+\_\+centrality()}{harmonic\_centrality()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+centrality.\+harmonic.\+harmonic\+\_\+centrality (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nbunch = {\ttfamily None},  }\item[{}]{distance = {\ttfamily None},  }\item[{}]{sources = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute harmonic centrality for nodes.
+
+Harmonic centrality [1]_ of a node `u` is the sum of the reciprocal
+of the shortest path distances from all other nodes to `u`
+
+.. math::
+
+    C(u) = \sum_{v \neq u} \frac{1}{d(v, u)}
+
+where `d(v, u)` is the shortest-path distance between `v` and `u`.
+
+If `sources` is given as an argument, the returned harmonic centrality
+values are calculated as the sum of the reciprocals of the shortest
+path distances from the nodes specified in `sources` to `u` instead
+of from all nodes to `u`.
+
+Notice that higher values indicate higher centrality.
+
+Parameters
+----------
+G : graph
+  A NetworkX graph
+
+nbunch : container (default: all nodes in G)
+  Container of nodes for which harmonic centrality values are calculated.
+
+sources : container (default: all nodes in G)
+  Container of nodes `v` over which reciprocal distances are computed.
+  Nodes not in `G` are silently ignored.
+
+distance : edge attribute key, optional (default=None)
+  Use the specified edge attribute as the edge distance in shortest
+  path calculations.  If `None`, then each edge will have distance equal to 1.
+
+Returns
+-------
+nodes : dictionary
+  Dictionary of nodes with harmonic centrality as the value.
+
+See Also
+--------
+betweenness_centrality, load_centrality, eigenvector_centrality,
+degree_centrality, closeness_centrality
+
+Notes
+-----
+If the 'distance' keyword is set to an edge attribute key then the
+shortest-path length will be computed using Dijkstra's algorithm with
+that edge attribute as the edge weight.
+
+References
+----------
+.. [1] Boldi, Paolo, and Sebastiano Vigna. "Axioms for centrality."
+       Internet Mathematics 10.3-4 (2014): 222-262.
+\end{DoxyVerb}
+ 

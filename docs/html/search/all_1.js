@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['action',['action',['../classclasses_1_1information_1_1Bit.html#ae2b2e2283b963c5b1265a43207b950e6',1,'classes.information.Bit.action()'],['../namespacehistory.html#a55fe756ef5920faa47da86dc00d3fb97',1,'history.action()']]],
+  ['active',['active',['../classclasses_1_1relationship_1_1Relationship.html#a36bf06ea05c562a25d1e97a93835413f',1,'classes::relationship::Relationship']]],
+  ['active_5fcouples',['active_couples',['../classhistory_1_1History.html#a6af4cc7840a5c0207cd9adf6364c5e3d',1,'history::History']]],
+  ['add_5fbit',['add_bit',['../classclasses_1_1information_1_1Knowledge.html#a8dc237d26b1b26f80396a08fa8bcf0a7',1,'classes::information::Knowledge']]],
+  ['add_5fbit_5fpremade',['add_bit_premade',['../classclasses_1_1information_1_1Knowledge.html#a05737ddbc5f24d0500fffe4dccc2f2a7',1,'classes::information::Knowledge']]],
+  ['add_5fchild',['add_child',['../classclasses_1_1relationship_1_1Relationship.html#a035ec849e088f60ccdeebbb9310a0bc4',1,'classes::relationship::Relationship']]],
+  ['add_5fknowledge',['add_knowledge',['../classclasses_1_1information_1_1Knowledge.html#ad271a6173d93d5f3f12e8586cdebe14b',1,'classes::information::Knowledge']]],
+  ['add_5fpeople',['add_people',['../classclasses_1_1house_1_1House.html#af11348c0a57c36f5ca2c923d8c1db348',1,'classes::house::House']]],
+  ['add_5fperson',['add_person',['../classclasses_1_1house_1_1House.html#a834356bf82f28e9e0c92738b0b9bccac',1,'classes.house.House.add_person()'],['../classclasses_1_1places_1_1Others_1_1Orphanage.html#a3e7702b0ba642f79300daafdef4c0ec0',1,'classes.places.Others.Orphanage.add_person()']]],
+  ['adopt',['adopt',['../classclasses_1_1places_1_1Others_1_1Orphanage.html#a7b3c48298e535060cd118183593bfd47',1,'classes::places::Others::Orphanage']]],
+  ['age',['age',['../classclasses_1_1information_1_1Bit.html#ae8321d5f425e99aef73581a796398bfb',1,'classes.information.Bit.age()'],['../classclasses_1_1person_1_1Person.html#af911ef17491efdfc9122b6786d8f79fe',1,'classes.person.Person.age()']]],
+  ['ages',['ages',['../namespaceanalysis.html#a28ba92b43bf20be8dd2d6aa65295c190',1,'analysis']]],
+  ['alive',['alive',['../classclasses_1_1person_1_1Person.html#aaca2fca9c35648fc006a8c832b4caa41',1,'classes::person::Person']]],
+  ['all_5fbits',['all_bits',['../classclasses_1_1information_1_1Knowledge.html#a334ffacb61e6651b9d26b6e270eb8842',1,'classes::information::Knowledge']]],
+  ['analysis',['analysis',['../namespaceanalysis.html',1,'']]],
+  ['analysis_2epy',['analysis.py',['../analysis_8py.html',1,'']]],
+  ['appearance',['Appearance',['../classclasses_1_1person_1_1Person_1_1Appearance.html',1,'classes.person.Person.Appearance'],['../classclasses_1_1person_1_1Person.html#a91e256938d4897e04285cb05215d4b8a',1,'classes.person.Person.appearance()']]],
+  ['appoint_5fbreadwinner',['appoint_breadwinner',['../classclasses_1_1house_1_1House.html#ad448b07e7d817e96e3a7143c71862140',1,'classes::house::House']]],
+  ['appoint_5fcaretaker',['appoint_caretaker',['../classclasses_1_1house_1_1House.html#a9b215f18d3a5138bcc474c67313654a1',1,'classes::house::House']]],
+  ['args',['args',['../namespacehistory.html#ab07fd329163b8a62f009a6fee1854dcd',1,'history']]]
+];

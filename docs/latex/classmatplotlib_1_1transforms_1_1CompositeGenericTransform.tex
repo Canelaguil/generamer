@@ -1,0 +1,197 @@
+\hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform}{}\section{matplotlib.\+transforms.\+Composite\+Generic\+Transform Class Reference}
+\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform}\index{matplotlib.\+transforms.\+Composite\+Generic\+Transform@{matplotlib.\+transforms.\+Composite\+Generic\+Transform}}
+
+
+Inheritance diagram for matplotlib.\+transforms.\+Composite\+Generic\+Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmatplotlib_1_1transforms_1_1CompositeGenericTransform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+transforms.\+Composite\+Generic\+Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmatplotlib_1_1transforms_1_1CompositeGenericTransform__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a26d7d367a6588232c9576ad0d7e3f96a}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, a, b, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a42e8c9bf008883e09da6e522d0c8fd3c}{frozen} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a9f7e74868afe5fdb0cae8b0478a85aa4}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ab314a50391c012728f95ab15d70afae9}{transform\+\_\+affine} (self, points)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ac690fcc11056e272b39b3d5c37aea237}{transform\+\_\+non\+\_\+affine} (self, points)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a486ee0726dfaf9a605e9836406992776}{transform\+\_\+path\+\_\+non\+\_\+affine} (self, path)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a375fe7db4dbd4c1bb1f97ab68ad716e6}{get\+\_\+affine} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ad2bb448c43a582ed019d6b329b1a55ac}{inverted} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a69d035425e6e94f59767756404d394ce}{input\+\_\+dims}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ad86f2821814104b6b1f303feebc63ce9}{output\+\_\+dims}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a3e2e4c2967613b7ebb7d84898fc77174}{pass\+\_\+through}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a3c5278d362feb676c595fab62be05183}{depth} = property(lambda self\+: self.\+\_\+a.\+depth + self.\+\_\+b.\+depth)
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a2932e83e6124ae21993d1ea78e822a5c}{is\+\_\+affine} = property(lambda self\+: self.\+\_\+a.\+is\+\_\+affine and self.\+\_\+b.\+is\+\_\+affine)
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ad1e427a3197189b337fd6a267033b543}{is\+\_\+separable}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ad85dc6c211be9db8a732f75a9cb594af}{has\+\_\+inverse}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A composite transform formed by applying transform *a* then
+transform *b*.
+
+This "generic" version can handle any two arbitrary
+transformations.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a26d7d367a6588232c9576ad0d7e3f96a}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a26d7d367a6588232c9576ad0d7e3f96a}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a,  }\item[{}]{b,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new composite transform that is the result of
+applying transform *a* then transform *b*.
+
+You will generally not call this constructor directly but write ``a +
+b`` instead, which will automatically choose the best kind of composite
+transform instance to create.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a9f7e74868afe5fdb0cae8b0478a85aa4}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a9f7e74868afe5fdb0cae8b0478a85aa4}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+eq\+\_\+\+\_\+()}{\_\_eq\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+\_\+\+\_\+eq\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a42e8c9bf008883e09da6e522d0c8fd3c}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a42e8c9bf008883e09da6e522d0c8fd3c}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!frozen@{frozen}}
+\index{frozen@{frozen}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{frozen()}{frozen()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+frozen (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a375fe7db4dbd4c1bb1f97ab68ad716e6}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a375fe7db4dbd4c1bb1f97ab68ad716e6}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!get\+\_\+affine@{get\+\_\+affine}}
+\index{get\+\_\+affine@{get\+\_\+affine}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{get\+\_\+affine()}{get\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+get\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ad2bb448c43a582ed019d6b329b1a55ac}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ad2bb448c43a582ed019d6b329b1a55ac}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!inverted@{inverted}}
+\index{inverted@{inverted}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{inverted()}{inverted()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+inverted (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ab314a50391c012728f95ab15d70afae9}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ab314a50391c012728f95ab15d70afae9}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!transform\+\_\+affine@{transform\+\_\+affine}}
+\index{transform\+\_\+affine@{transform\+\_\+affine}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+affine()}{transform\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+transform\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{points }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ac690fcc11056e272b39b3d5c37aea237}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ac690fcc11056e272b39b3d5c37aea237}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!transform\+\_\+non\+\_\+affine@{transform\+\_\+non\+\_\+affine}}
+\index{transform\+\_\+non\+\_\+affine@{transform\+\_\+non\+\_\+affine}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+non\+\_\+affine()}{transform\_non\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+transform\+\_\+non\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{points }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a486ee0726dfaf9a605e9836406992776}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a486ee0726dfaf9a605e9836406992776}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!transform\+\_\+path\+\_\+non\+\_\+affine@{transform\+\_\+path\+\_\+non\+\_\+affine}}
+\index{transform\+\_\+path\+\_\+non\+\_\+affine@{transform\+\_\+path\+\_\+non\+\_\+affine}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+path\+\_\+non\+\_\+affine()}{transform\_path\_non\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+transform\+\_\+path\+\_\+non\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a69d035425e6e94f59767756404d394ce}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a69d035425e6e94f59767756404d394ce}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!input\+\_\+dims@{input\+\_\+dims}}
+\index{input\+\_\+dims@{input\+\_\+dims}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{input\+\_\+dims}{input\_dims}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+input\+\_\+dims}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ad86f2821814104b6b1f303feebc63ce9}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ad86f2821814104b6b1f303feebc63ce9}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!output\+\_\+dims@{output\+\_\+dims}}
+\index{output\+\_\+dims@{output\+\_\+dims}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{output\+\_\+dims}{output\_dims}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+output\+\_\+dims}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a3e2e4c2967613b7ebb7d84898fc77174}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a3e2e4c2967613b7ebb7d84898fc77174}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!pass\+\_\+through@{pass\+\_\+through}}
+\index{pass\+\_\+through@{pass\+\_\+through}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{pass\+\_\+through}{pass\_through}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+pass\+\_\+through\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a3c5278d362feb676c595fab62be05183}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a3c5278d362feb676c595fab62be05183}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!depth@{depth}}
+\index{depth@{depth}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+depth = property(lambda self\+: self.\+\_\+a.\+depth + self.\+\_\+b.\+depth)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ad85dc6c211be9db8a732f75a9cb594af}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ad85dc6c211be9db8a732f75a9cb594af}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!has\+\_\+inverse@{has\+\_\+inverse}}
+\index{has\+\_\+inverse@{has\+\_\+inverse}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{has\+\_\+inverse}{has\_inverse}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+has\+\_\+inverse\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  property(
+        \textcolor{keyword}{lambda} self: self.\_a.has\_inverse \textcolor{keywordflow}{and} self.\_b.has\_inverse)
+\end{DoxyCode}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a2932e83e6124ae21993d1ea78e822a5c}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_a2932e83e6124ae21993d1ea78e822a5c}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!is\+\_\+affine@{is\+\_\+affine}}
+\index{is\+\_\+affine@{is\+\_\+affine}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{is\+\_\+affine}{is\_affine}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+is\+\_\+affine = property(lambda self\+: self.\+\_\+a.\+is\+\_\+affine and self.\+\_\+b.\+is\+\_\+affine)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ad1e427a3197189b337fd6a267033b543}\label{classmatplotlib_1_1transforms_1_1CompositeGenericTransform_ad1e427a3197189b337fd6a267033b543}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}!is\+\_\+separable@{is\+\_\+separable}}
+\index{is\+\_\+separable@{is\+\_\+separable}!matplotlib\+::transforms\+::\+Composite\+Generic\+Transform@{matplotlib\+::transforms\+::\+Composite\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{is\+\_\+separable}{is\_separable}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Composite\+Generic\+Transform.\+is\+\_\+separable\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  property(
+        \textcolor{keyword}{lambda} self: self.\_a.is\_separable \textcolor{keywordflow}{and} self.\_b.is\_separable)
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{transforms_8py}{transforms.\+py}\end{DoxyCompactItemize}

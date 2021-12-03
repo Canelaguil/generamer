@@ -1,0 +1,121 @@
+\hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView}{}\section{networkx.\+classes.\+reportviews.\+Di\+Degree\+View Class Reference}
+\label{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView}\index{networkx.\+classes.\+reportviews.\+Di\+Degree\+View@{networkx.\+classes.\+reportviews.\+Di\+Degree\+View}}
+
+
+Inheritance diagram for networkx.\+classes.\+reportviews.\+Di\+Degree\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_aa1666834e578c623e7cb56ad27c57915}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, G, nbunch=None, weight=None)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_a8d44851c4d18f45ebabc43614c0c6b82}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, nbunch=None, weight=None)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_afacbe652338047fbc17faecff53ecff0}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, n)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_ad3e4a225b4ad993a385a8d1cf4119bd7}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_ae9c0c335e025a0d7259e2db673d5b3e5}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_a723ba58cc2d913af17fb2408bb390f05}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_a96ca885bfe0ad463afd6e5b30df46e34}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A View class for degree of nodes in a NetworkX Graph
+
+The functionality is like dict.items() with (node, degree) pairs.
+Additional functionality includes read-only lookup of node degree,
+and calling with optional features nbunch (for only a subset of nodes)
+and weight (use edge weights to compute degree).
+
+Parameters
+==========
+graph : NetworkX graph-like class
+nbunch : node, container of nodes, or None meaning all nodes (default=None)
+weight : bool or string (default=None)
+
+Notes
+-----
+DegreeView can still lookup any node even if nbunch is specified.
+
+Examples
+--------
+>>> G = nx.path_graph(3)
+>>> DV = G.degree()
+>>> assert DV[2] == 1
+>>> assert sum(deg for n, deg in DV) == 4
+
+>>> DVweight = G.degree(weight="span")
+>>> G.add_edge(1, 2, span=34)
+>>> DVweight[2]
+34
+>>> DVweight[0]  #  default edge weight is 1
+1
+>>> sum(span for n, span in DVweight)  # sum weighted degrees
+70
+
+>>> DVnbunch = G.degree(nbunch=(1, 2))
+>>> assert len(list(DVnbunch)) == 2  # iteration over nbunch only
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_aa1666834e578c623e7cb56ad27c57915}\label{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_aa1666834e578c623e7cb56ad27c57915}} 
+\index{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Di\+Degree\+View.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G,  }\item[{}]{nbunch = {\ttfamily None},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_a8d44851c4d18f45ebabc43614c0c6b82}\label{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_a8d44851c4d18f45ebabc43614c0c6b82}} 
+\index{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Di\+Degree\+View.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{nbunch = {\ttfamily None},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_afacbe652338047fbc17faecff53ecff0}\label{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_afacbe652338047fbc17faecff53ecff0}} 
+\index{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Di\+Degree\+View.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_ad3e4a225b4ad993a385a8d1cf4119bd7}\label{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_ad3e4a225b4ad993a385a8d1cf4119bd7}} 
+\index{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Di\+Degree\+View.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_ae9c0c335e025a0d7259e2db673d5b3e5}\label{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_ae9c0c335e025a0d7259e2db673d5b3e5}} 
+\index{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Di\+Degree\+View.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_a96ca885bfe0ad463afd6e5b30df46e34}\label{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_a96ca885bfe0ad463afd6e5b30df46e34}} 
+\index{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Di\+Degree\+View.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_a723ba58cc2d913af17fb2408bb390f05}\label{classnetworkx_1_1classes_1_1reportviews_1_1DiDegreeView_a723ba58cc2d913af17fb2408bb390f05}} 
+\index{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View@{networkx\+::classes\+::reportviews\+::\+Di\+Degree\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Di\+Degree\+View.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/classes/\hyperlink{reportviews_8py}{reportviews.\+py}\end{DoxyCompactItemize}

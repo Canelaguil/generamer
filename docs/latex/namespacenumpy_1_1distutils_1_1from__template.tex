@@ -1,0 +1,216 @@
+\hypertarget{namespacenumpy_1_1distutils_1_1from__template}{}\section{numpy.\+distutils.\+from\+\_\+template Namespace Reference}
+\label{namespacenumpy_1_1distutils_1_1from__template}\index{numpy.\+distutils.\+from\+\_\+template@{numpy.\+distutils.\+from\+\_\+template}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1from__template_a2ce2747a27983e7115264de6ce74fe93}{parse\+\_\+structure} (astr)
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1from__template_af0ea69227fe675c96e957bbf1145d695}{find\+\_\+repl\+\_\+patterns} (astr)
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1from__template_ad3e986d93a13f2505597d7c32b122c84}{find\+\_\+and\+\_\+remove\+\_\+repl\+\_\+patterns} (astr)
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1from__template_af368bcf90d70d5ee731188e634cce195}{conv} (astr)
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1from__template_ace62bb74290450c8db02c77489cbfbae}{unique\+\_\+key} (adict)
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1from__template_a6a541d2575d74c063769e3e3300e62e1}{expand\+\_\+sub} (substr, names)
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1from__template_a0b8e68dd1edd2ea1ed0851af62c87f99}{process\+\_\+str} (allstr)
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1from__template_a0faad6629020f4f1295d6c8bf5cade9a}{resolve\+\_\+includes} (source)
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1from__template_a922814a3711c667d5df366d7285c2953}{process\+\_\+file} (source)
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1from__template_a82a1daa52222f9751934648563d73af9}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1from__template_a52469fee74b1ba905f9b85c84509d172}{routine\+\_\+start\+\_\+re}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1from__template_ac34d1d912c34dcaba263527ab72d9df5}{routine\+\_\+end\+\_\+re}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1from__template_ab32bbb620454d832445998acf3e0dd1a}{function\+\_\+start\+\_\+re}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1from__template_aec992284a5002313d65e1a149c2e181c}{template\+\_\+re}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1from__template_aa39b68180aefdfbdd430fdf1583f51c9}{named\+\_\+re}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1from__template_a3f27f03d03084e1f5872d66cb4bcc1a0}{list\+\_\+re}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1from__template_a6f63e001fd7b1786203c653ef47b581d}{item\+\_\+re}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1from__template_aeb8c8df89c4074ba2c57825f6442fc27}{template\+\_\+name\+\_\+re}
+\item 
+\hyperlink{namespacenumpy_1_1distutils_1_1from__template_a52f272c702ac7851ff12a43e1209d80f}{include\+\_\+src\+\_\+re}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}process_file(filename)
+
+  takes templated file .xxx.src and produces .xxx file where .xxx
+  is .pyf .f90 or .f using the following template rules:
+
+  '<..>' denotes a template.
+
+  All function and subroutine blocks in a source file with names that
+  contain '<..>' will be replicated according to the rules in '<..>'.
+
+  The number of comma-separated words in '<..>' will determine the number of
+  replicates.
+
+  '<..>' may have two different forms, named and short. For example,
+
+  named:
+   <p=d,s,z,c> where anywhere inside a block '<p>' will be replaced with
+   'd', 's', 'z', and 'c' for each replicate of the block.
+
+   <_c>  is already defined: <_c=s,d,c,z>
+   <_t>  is already defined: <_t=real,double precision,complex,double complex>
+
+  short:
+   <s,d,c,z>, a short form of the named, useful when no <p> appears inside
+   a block.
+
+  In general, '<..>' contains a comma separated list of arbitrary
+  expressions. If these expression must contain a comma|leftarrow|rightarrow,
+  then prepend the comma|leftarrow|rightarrow with a backslash.
+
+  If an expression matches '\\<index>' then it will be replaced
+  by <index>-th expression.
+
+  Note that all '<..>' forms in a block must have the same number of
+  comma-separated entries.
+
+ Predefined named template rules:
+  <prefix=s,d,c,z>
+  <ftype=real,double precision,complex,double complex>
+  <ftypereal=real,double precision,\\0,\\1>
+  <ctype=float,double,complex_float,complex_double>
+  <ctypereal=float,double,\\0,\\1>\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_af368bcf90d70d5ee731188e634cce195}\label{namespacenumpy_1_1distutils_1_1from__template_af368bcf90d70d5ee731188e634cce195}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!conv@{conv}}
+\index{conv@{conv}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{conv()}{conv()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+from\+\_\+template.\+conv (\begin{DoxyParamCaption}\item[{}]{astr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_a6a541d2575d74c063769e3e3300e62e1}\label{namespacenumpy_1_1distutils_1_1from__template_a6a541d2575d74c063769e3e3300e62e1}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!expand\+\_\+sub@{expand\+\_\+sub}}
+\index{expand\+\_\+sub@{expand\+\_\+sub}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{expand\+\_\+sub()}{expand\_sub()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+from\+\_\+template.\+expand\+\_\+sub (\begin{DoxyParamCaption}\item[{}]{substr,  }\item[{}]{names }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_ad3e986d93a13f2505597d7c32b122c84}\label{namespacenumpy_1_1distutils_1_1from__template_ad3e986d93a13f2505597d7c32b122c84}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!find\+\_\+and\+\_\+remove\+\_\+repl\+\_\+patterns@{find\+\_\+and\+\_\+remove\+\_\+repl\+\_\+patterns}}
+\index{find\+\_\+and\+\_\+remove\+\_\+repl\+\_\+patterns@{find\+\_\+and\+\_\+remove\+\_\+repl\+\_\+patterns}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{find\+\_\+and\+\_\+remove\+\_\+repl\+\_\+patterns()}{find\_and\_remove\_repl\_patterns()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+from\+\_\+template.\+find\+\_\+and\+\_\+remove\+\_\+repl\+\_\+patterns (\begin{DoxyParamCaption}\item[{}]{astr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_af0ea69227fe675c96e957bbf1145d695}\label{namespacenumpy_1_1distutils_1_1from__template_af0ea69227fe675c96e957bbf1145d695}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!find\+\_\+repl\+\_\+patterns@{find\+\_\+repl\+\_\+patterns}}
+\index{find\+\_\+repl\+\_\+patterns@{find\+\_\+repl\+\_\+patterns}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{find\+\_\+repl\+\_\+patterns()}{find\_repl\_patterns()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+from\+\_\+template.\+find\+\_\+repl\+\_\+patterns (\begin{DoxyParamCaption}\item[{}]{astr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_a82a1daa52222f9751934648563d73af9}\label{namespacenumpy_1_1distutils_1_1from__template_a82a1daa52222f9751934648563d73af9}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!main@{main}}
+\index{main@{main}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+from\+\_\+template.\+main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_a2ce2747a27983e7115264de6ce74fe93}\label{namespacenumpy_1_1distutils_1_1from__template_a2ce2747a27983e7115264de6ce74fe93}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!parse\+\_\+structure@{parse\+\_\+structure}}
+\index{parse\+\_\+structure@{parse\+\_\+structure}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{parse\+\_\+structure()}{parse\_structure()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+from\+\_\+template.\+parse\+\_\+structure (\begin{DoxyParamCaption}\item[{}]{astr }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of tuples for each function or subroutine each
+tuple is the start and end of a subroutine or function to be
+expanded.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_a922814a3711c667d5df366d7285c2953}\label{namespacenumpy_1_1distutils_1_1from__template_a922814a3711c667d5df366d7285c2953}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!process\+\_\+file@{process\+\_\+file}}
+\index{process\+\_\+file@{process\+\_\+file}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{process\+\_\+file()}{process\_file()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+from\+\_\+template.\+process\+\_\+file (\begin{DoxyParamCaption}\item[{}]{source }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_a0b8e68dd1edd2ea1ed0851af62c87f99}\label{namespacenumpy_1_1distutils_1_1from__template_a0b8e68dd1edd2ea1ed0851af62c87f99}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!process\+\_\+str@{process\+\_\+str}}
+\index{process\+\_\+str@{process\+\_\+str}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{process\+\_\+str()}{process\_str()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+from\+\_\+template.\+process\+\_\+str (\begin{DoxyParamCaption}\item[{}]{allstr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_a0faad6629020f4f1295d6c8bf5cade9a}\label{namespacenumpy_1_1distutils_1_1from__template_a0faad6629020f4f1295d6c8bf5cade9a}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!resolve\+\_\+includes@{resolve\+\_\+includes}}
+\index{resolve\+\_\+includes@{resolve\+\_\+includes}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{resolve\+\_\+includes()}{resolve\_includes()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+from\+\_\+template.\+resolve\+\_\+includes (\begin{DoxyParamCaption}\item[{}]{source }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_ace62bb74290450c8db02c77489cbfbae}\label{namespacenumpy_1_1distutils_1_1from__template_ace62bb74290450c8db02c77489cbfbae}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!unique\+\_\+key@{unique\+\_\+key}}
+\index{unique\+\_\+key@{unique\+\_\+key}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{unique\+\_\+key()}{unique\_key()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+from\+\_\+template.\+unique\+\_\+key (\begin{DoxyParamCaption}\item[{}]{adict }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Obtain a unique key given a dictionary.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_ab32bbb620454d832445998acf3e0dd1a}\label{namespacenumpy_1_1distutils_1_1from__template_ab32bbb620454d832445998acf3e0dd1a}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!function\+\_\+start\+\_\+re@{function\+\_\+start\+\_\+re}}
+\index{function\+\_\+start\+\_\+re@{function\+\_\+start\+\_\+re}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{function\+\_\+start\+\_\+re}{function\_start\_re}}
+{\footnotesize\ttfamily numpy.\+distutils.\+from\+\_\+template.\+function\+\_\+start\+\_\+re}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_a52f272c702ac7851ff12a43e1209d80f}\label{namespacenumpy_1_1distutils_1_1from__template_a52f272c702ac7851ff12a43e1209d80f}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!include\+\_\+src\+\_\+re@{include\+\_\+src\+\_\+re}}
+\index{include\+\_\+src\+\_\+re@{include\+\_\+src\+\_\+re}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{include\+\_\+src\+\_\+re}{include\_src\_re}}
+{\footnotesize\ttfamily numpy.\+distutils.\+from\+\_\+template.\+include\+\_\+src\+\_\+re}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_a6f63e001fd7b1786203c653ef47b581d}\label{namespacenumpy_1_1distutils_1_1from__template_a6f63e001fd7b1786203c653ef47b581d}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!item\+\_\+re@{item\+\_\+re}}
+\index{item\+\_\+re@{item\+\_\+re}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{item\+\_\+re}{item\_re}}
+{\footnotesize\ttfamily numpy.\+distutils.\+from\+\_\+template.\+item\+\_\+re}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_a3f27f03d03084e1f5872d66cb4bcc1a0}\label{namespacenumpy_1_1distutils_1_1from__template_a3f27f03d03084e1f5872d66cb4bcc1a0}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!list\+\_\+re@{list\+\_\+re}}
+\index{list\+\_\+re@{list\+\_\+re}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{list\+\_\+re}{list\_re}}
+{\footnotesize\ttfamily numpy.\+distutils.\+from\+\_\+template.\+list\+\_\+re}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_aa39b68180aefdfbdd430fdf1583f51c9}\label{namespacenumpy_1_1distutils_1_1from__template_aa39b68180aefdfbdd430fdf1583f51c9}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!named\+\_\+re@{named\+\_\+re}}
+\index{named\+\_\+re@{named\+\_\+re}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{named\+\_\+re}{named\_re}}
+{\footnotesize\ttfamily numpy.\+distutils.\+from\+\_\+template.\+named\+\_\+re}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_ac34d1d912c34dcaba263527ab72d9df5}\label{namespacenumpy_1_1distutils_1_1from__template_ac34d1d912c34dcaba263527ab72d9df5}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!routine\+\_\+end\+\_\+re@{routine\+\_\+end\+\_\+re}}
+\index{routine\+\_\+end\+\_\+re@{routine\+\_\+end\+\_\+re}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{routine\+\_\+end\+\_\+re}{routine\_end\_re}}
+{\footnotesize\ttfamily numpy.\+distutils.\+from\+\_\+template.\+routine\+\_\+end\+\_\+re}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_a52469fee74b1ba905f9b85c84509d172}\label{namespacenumpy_1_1distutils_1_1from__template_a52469fee74b1ba905f9b85c84509d172}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!routine\+\_\+start\+\_\+re@{routine\+\_\+start\+\_\+re}}
+\index{routine\+\_\+start\+\_\+re@{routine\+\_\+start\+\_\+re}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{routine\+\_\+start\+\_\+re}{routine\_start\_re}}
+{\footnotesize\ttfamily numpy.\+distutils.\+from\+\_\+template.\+routine\+\_\+start\+\_\+re}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_aeb8c8df89c4074ba2c57825f6442fc27}\label{namespacenumpy_1_1distutils_1_1from__template_aeb8c8df89c4074ba2c57825f6442fc27}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!template\+\_\+name\+\_\+re@{template\+\_\+name\+\_\+re}}
+\index{template\+\_\+name\+\_\+re@{template\+\_\+name\+\_\+re}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{template\+\_\+name\+\_\+re}{template\_name\_re}}
+{\footnotesize\ttfamily numpy.\+distutils.\+from\+\_\+template.\+template\+\_\+name\+\_\+re}
+
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1from__template_aec992284a5002313d65e1a149c2e181c}\label{namespacenumpy_1_1distutils_1_1from__template_aec992284a5002313d65e1a149c2e181c}} 
+\index{numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}!template\+\_\+re@{template\+\_\+re}}
+\index{template\+\_\+re@{template\+\_\+re}!numpy\+::distutils\+::from\+\_\+template@{numpy\+::distutils\+::from\+\_\+template}}
+\subsubsection{\texorpdfstring{template\+\_\+re}{template\_re}}
+{\footnotesize\ttfamily numpy.\+distutils.\+from\+\_\+template.\+template\+\_\+re}
+

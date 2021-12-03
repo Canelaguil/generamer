@@ -1,0 +1,119 @@
+\hypertarget{namespacesetuptools_1_1__distutils_1_1cygwinccompiler}{}\section{setuptools.\+\_\+distutils.\+cygwinccompiler Namespace Reference}
+\label{namespacesetuptools_1_1__distutils_1_1cygwinccompiler}\index{setuptools.\+\_\+distutils.\+cygwinccompiler@{setuptools.\+\_\+distutils.\+cygwinccompiler}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1__distutils_1_1cygwinccompiler_1_1CygwinCCompiler}{Cygwin\+C\+Compiler}
+\item 
+class \hyperlink{classsetuptools_1_1__distutils_1_1cygwinccompiler_1_1Mingw32CCompiler}{Mingw32\+C\+Compiler}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_ade1ff0a9a8d625a0d03a2183a98808f0}{get\+\_\+msvcr} ()
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_a463933b8a69aeb1a261c61ddcb1ba458}{check\+\_\+config\+\_\+h} ()
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_a5a4e7c943f142f32d3769f62fdbae571}{get\+\_\+versions} ()
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_aed4f1da3f7e9fe2673157d75fcd63bc3}{is\+\_\+cygwincc} (cc)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_ae7d2d69118ffa27327eddd2c7bd122fa}{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+OK}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_ad47579f90d617a1a50b9ceb6554c9aba}{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+N\+O\+T\+OK}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_abc9d62a4bf5afc4e1240af4124335b88}{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+U\+N\+C\+E\+R\+T\+A\+IN}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_a2d7605c90b7ad1fa3641327c4e945b7b}{R\+E\+\_\+\+V\+E\+R\+S\+I\+ON}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}distutils.cygwinccompiler
+
+Provides the CygwinCCompiler class, a subclass of UnixCCompiler that
+handles the Cygwin port of the GNU C compiler to Windows.  It also contains
+the Mingw32CCompiler class which handles the mingw32 port of GCC (same as
+cygwin in no-cygwin mode).
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_a463933b8a69aeb1a261c61ddcb1ba458}\label{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_a463933b8a69aeb1a261c61ddcb1ba458}} 
+\index{setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}!check\+\_\+config\+\_\+h@{check\+\_\+config\+\_\+h}}
+\index{check\+\_\+config\+\_\+h@{check\+\_\+config\+\_\+h}!setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}}
+\subsubsection{\texorpdfstring{check\+\_\+config\+\_\+h()}{check\_config\_h()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+cygwinccompiler.\+check\+\_\+config\+\_\+h (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if the current Python installation appears amenable to building
+extensions with GCC.
+
+Returns a tuple (status, details), where 'status' is one of the following
+constants:
+
+- CONFIG_H_OK: all is well, go ahead and compile
+- CONFIG_H_NOTOK: doesn't look good
+- CONFIG_H_UNCERTAIN: not sure -- unable to read pyconfig.h
+
+'details' is a human-readable string explaining the situation.
+
+Note there are two ways to conclude "OK": either 'sys.version' contains
+the string "GCC" (implying that this Python was built with GCC), or the
+installed "pyconfig.h" contains the string "__GNUC__".
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_ade1ff0a9a8d625a0d03a2183a98808f0}\label{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_ade1ff0a9a8d625a0d03a2183a98808f0}} 
+\index{setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}!get\+\_\+msvcr@{get\+\_\+msvcr}}
+\index{get\+\_\+msvcr@{get\+\_\+msvcr}!setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}}
+\subsubsection{\texorpdfstring{get\+\_\+msvcr()}{get\_msvcr()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+cygwinccompiler.\+get\+\_\+msvcr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Include the appropriate MSVC runtime library if Python was built
+with MSVC 7.0 or later.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_a5a4e7c943f142f32d3769f62fdbae571}\label{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_a5a4e7c943f142f32d3769f62fdbae571}} 
+\index{setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}!get\+\_\+versions@{get\+\_\+versions}}
+\index{get\+\_\+versions@{get\+\_\+versions}!setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}}
+\subsubsection{\texorpdfstring{get\+\_\+versions()}{get\_versions()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+cygwinccompiler.\+get\+\_\+versions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Try to find out the versions of gcc, ld and dllwrap.
+
+If not possible it returns None for it.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_aed4f1da3f7e9fe2673157d75fcd63bc3}\label{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_aed4f1da3f7e9fe2673157d75fcd63bc3}} 
+\index{setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}!is\+\_\+cygwincc@{is\+\_\+cygwincc}}
+\index{is\+\_\+cygwincc@{is\+\_\+cygwincc}!setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}}
+\subsubsection{\texorpdfstring{is\+\_\+cygwincc()}{is\_cygwincc()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+cygwinccompiler.\+is\+\_\+cygwincc (\begin{DoxyParamCaption}\item[{}]{cc }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Try to determine if the compiler that would be used is from cygwin.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_ad47579f90d617a1a50b9ceb6554c9aba}\label{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_ad47579f90d617a1a50b9ceb6554c9aba}} 
+\index{setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}!C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+N\+O\+T\+OK@{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+N\+O\+T\+OK}}
+\index{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+N\+O\+T\+OK@{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+N\+O\+T\+OK}!setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}}
+\subsubsection{\texorpdfstring{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+N\+O\+T\+OK}{CONFIG\_H\_NOTOK}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+cygwinccompiler.\+C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+N\+O\+T\+OK}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_ae7d2d69118ffa27327eddd2c7bd122fa}\label{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_ae7d2d69118ffa27327eddd2c7bd122fa}} 
+\index{setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}!C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+OK@{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+OK}}
+\index{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+OK@{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+OK}!setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}}
+\subsubsection{\texorpdfstring{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+OK}{CONFIG\_H\_OK}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+cygwinccompiler.\+C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+OK}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_abc9d62a4bf5afc4e1240af4124335b88}\label{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_abc9d62a4bf5afc4e1240af4124335b88}} 
+\index{setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}!C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+U\+N\+C\+E\+R\+T\+A\+IN@{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+U\+N\+C\+E\+R\+T\+A\+IN}}
+\index{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+U\+N\+C\+E\+R\+T\+A\+IN@{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+U\+N\+C\+E\+R\+T\+A\+IN}!setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}}
+\subsubsection{\texorpdfstring{C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+U\+N\+C\+E\+R\+T\+A\+IN}{CONFIG\_H\_UNCERTAIN}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+cygwinccompiler.\+C\+O\+N\+F\+I\+G\+\_\+\+H\+\_\+\+U\+N\+C\+E\+R\+T\+A\+IN}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_a2d7605c90b7ad1fa3641327c4e945b7b}\label{namespacesetuptools_1_1__distutils_1_1cygwinccompiler_a2d7605c90b7ad1fa3641327c4e945b7b}} 
+\index{setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}!R\+E\+\_\+\+V\+E\+R\+S\+I\+ON@{R\+E\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{R\+E\+\_\+\+V\+E\+R\+S\+I\+ON@{R\+E\+\_\+\+V\+E\+R\+S\+I\+ON}!setuptools\+::\+\_\+distutils\+::cygwinccompiler@{setuptools\+::\+\_\+distutils\+::cygwinccompiler}}
+\subsubsection{\texorpdfstring{R\+E\+\_\+\+V\+E\+R\+S\+I\+ON}{RE\_VERSION}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+cygwinccompiler.\+R\+E\+\_\+\+V\+E\+R\+S\+I\+ON}
+

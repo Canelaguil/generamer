@@ -1,0 +1,116 @@
+\hypertarget{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator}{}\section{matplotlib.\+ticker.\+Symmetrical\+Log\+Locator Class Reference}
+\label{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator}\index{matplotlib.\+ticker.\+Symmetrical\+Log\+Locator@{matplotlib.\+ticker.\+Symmetrical\+Log\+Locator}}
+
+
+Inheritance diagram for matplotlib.\+ticker.\+Symmetrical\+Log\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+ticker.\+Symmetrical\+Log\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_aafb8ce6f3d466e0ffadc45d71b766e3e}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, transform=None, subs=None, linthresh=None, base=None)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a37a3fed790b6c545fc6a69e36257a85a}{set\+\_\+params} (self, subs=None, \hyperlink{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a828600ede7f90b26501ad928a06732a4}{numticks}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a9053802f4a57b25e0bb024321504660e}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_af7aec103e72a968ecde1405e84c2bab8}{tick\+\_\+values} (self, vmin, vmax)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a84210fe9c13281045456207072037770}{view\+\_\+limits} (self, vmin, vmax)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a828600ede7f90b26501ad928a06732a4}{numticks}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Determine the tick locations for symmetric log axes.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_aafb8ce6f3d466e0ffadc45d71b766e3e}\label{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_aafb8ce6f3d466e0ffadc45d71b766e3e}} 
+\index{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator@{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator@{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Symmetrical\+Log\+Locator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{transform = {\ttfamily None},  }\item[{}]{subs = {\ttfamily None},  }\item[{}]{linthresh = {\ttfamily None},  }\item[{}]{base = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+transform : `~.scale.SymmetricalLogTransform`, optional
+    If set, defines the *base* and *linthresh* of the symlog transform.
+base, linthresh : float, optional
+    The *base* and *linthresh* of the symlog transform, as documented
+    for `.SymmetricalLogScale`.  These parameters are only used if
+    *transform* is not set.
+subs : sequence of float, default: [1]
+    The multiples of integer powers of the base where ticks are placed,
+    i.e., ticks are placed at
+    ``[sub * base**i for i in ... for sub in subs]``.
+
+Notes
+-----
+Either *transform*, or both *base* and *linthresh*, must be given.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a9053802f4a57b25e0bb024321504660e}\label{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a9053802f4a57b25e0bb024321504660e}} 
+\index{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator@{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator@{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Symmetrical\+Log\+Locator.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the locations of the ticks.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a37a3fed790b6c545fc6a69e36257a85a}\label{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a37a3fed790b6c545fc6a69e36257a85a}} 
+\index{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator@{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator}!set\+\_\+params@{set\+\_\+params}}
+\index{set\+\_\+params@{set\+\_\+params}!matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator@{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator}}
+\subsubsection{\texorpdfstring{set\+\_\+params()}{set\_params()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Symmetrical\+Log\+Locator.\+set\+\_\+params (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{subs = {\ttfamily None},  }\item[{}]{numticks = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set parameters within this locator.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_af7aec103e72a968ecde1405e84c2bab8}\label{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_af7aec103e72a968ecde1405e84c2bab8}} 
+\index{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator@{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator}!tick\+\_\+values@{tick\+\_\+values}}
+\index{tick\+\_\+values@{tick\+\_\+values}!matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator@{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator}}
+\subsubsection{\texorpdfstring{tick\+\_\+values()}{tick\_values()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Symmetrical\+Log\+Locator.\+tick\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a84210fe9c13281045456207072037770}\label{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a84210fe9c13281045456207072037770}} 
+\index{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator@{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator}!view\+\_\+limits@{view\+\_\+limits}}
+\index{view\+\_\+limits@{view\+\_\+limits}!matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator@{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator}}
+\subsubsection{\texorpdfstring{view\+\_\+limits()}{view\_limits()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Symmetrical\+Log\+Locator.\+view\+\_\+limits (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Try to choose the view limits intelligently.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a828600ede7f90b26501ad928a06732a4}\label{classmatplotlib_1_1ticker_1_1SymmetricalLogLocator_a828600ede7f90b26501ad928a06732a4}} 
+\index{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator@{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator}!numticks@{numticks}}
+\index{numticks@{numticks}!matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator@{matplotlib\+::ticker\+::\+Symmetrical\+Log\+Locator}}
+\subsubsection{\texorpdfstring{numticks}{numticks}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Symmetrical\+Log\+Locator.\+numticks}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{ticker_8py}{ticker.\+py}\end{DoxyCompactItemize}

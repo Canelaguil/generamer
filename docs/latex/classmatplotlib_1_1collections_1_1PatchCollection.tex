@@ -1,0 +1,83 @@
+\hypertarget{classmatplotlib_1_1collections_1_1PatchCollection}{}\section{matplotlib.\+collections.\+Patch\+Collection Class Reference}
+\label{classmatplotlib_1_1collections_1_1PatchCollection}\index{matplotlib.\+collections.\+Patch\+Collection@{matplotlib.\+collections.\+Patch\+Collection}}
+
+
+Inheritance diagram for matplotlib.\+collections.\+Patch\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1collections_1_1PatchCollection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+collections.\+Patch\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1collections_1_1PatchCollection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1PatchCollection_a8ed0c953dd436b697b1bbef971078b3a}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, patches, match\+\_\+original=False, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1PatchCollection_a5c4266f33d8ad1a60c8528963f6cdcdd}{set\+\_\+paths} (self, patches)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A generic collection of patches.
+
+This makes it easier to assign a colormap to a heterogeneous
+collection of patches.
+
+This also may improve plotting speed, since PatchCollection will
+draw faster than a large number of patches.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1PatchCollection_a8ed0c953dd436b697b1bbef971078b3a}\label{classmatplotlib_1_1collections_1_1PatchCollection_a8ed0c953dd436b697b1bbef971078b3a}} 
+\index{matplotlib\+::collections\+::\+Patch\+Collection@{matplotlib\+::collections\+::\+Patch\+Collection}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::collections\+::\+Patch\+Collection@{matplotlib\+::collections\+::\+Patch\+Collection}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Patch\+Collection.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{patches,  }\item[{}]{match\+\_\+original = {\ttfamily False},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}*patches*
+    a sequence of Patch objects.  This list may include
+    a heterogeneous assortment of different patch types.
+
+*match_original*
+    If True, use the colors and linewidths of the original
+    patches.  If False, new colors may be assigned by
+    providing the standard collection arguments, facecolor,
+    edgecolor, linewidths, norm or cmap.
+
+If any of *edgecolors*, *facecolors*, *linewidths*, *antialiaseds* are
+None, they default to their `.rcParams` patch setting, in sequence
+form.
+
+The use of `~matplotlib.cm.ScalarMappable` functionality is optional.
+If the `~matplotlib.cm.ScalarMappable` matrix ``_A`` has been set (via
+a call to `~.ScalarMappable.set_array`), at draw time a call to scalar
+mappable will be made to set the face colors.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1PatchCollection_a5c4266f33d8ad1a60c8528963f6cdcdd}\label{classmatplotlib_1_1collections_1_1PatchCollection_a5c4266f33d8ad1a60c8528963f6cdcdd}} 
+\index{matplotlib\+::collections\+::\+Patch\+Collection@{matplotlib\+::collections\+::\+Patch\+Collection}!set\+\_\+paths@{set\+\_\+paths}}
+\index{set\+\_\+paths@{set\+\_\+paths}!matplotlib\+::collections\+::\+Patch\+Collection@{matplotlib\+::collections\+::\+Patch\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+paths()}{set\_paths()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Patch\+Collection.\+set\+\_\+paths (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{patches }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{collections_8py}{collections.\+py}\end{DoxyCompactItemize}

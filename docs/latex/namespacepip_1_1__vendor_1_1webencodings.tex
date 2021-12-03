@@ -1,0 +1,183 @@
+\hypertarget{namespacepip_1_1__vendor_1_1webencodings}{}\section{pip.\+\_\+vendor.\+webencodings Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1webencodings}\index{pip.\+\_\+vendor.\+webencodings@{pip.\+\_\+vendor.\+webencodings}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1webencodings_1_1labels}{labels}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1webencodings_1_1mklabels}{mklabels}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1webencodings_1_1tests}{tests}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1webencodings_1_1x__user__defined}{x\+\_\+user\+\_\+defined}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1webencodings_1_1Encoding}{Encoding}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder}{Incremental\+Decoder}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1webencodings_1_1IncrementalEncoder}{Incremental\+Encoder}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1webencodings_afa97e391f2b68992094a339176eff233}{ascii\+\_\+lower} (string)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1webencodings_ae558e10f94082a6e5104e4a19de375eb}{lookup} (label)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1webencodings_a8de11e3f8c23c682f8e367d23462a5d0}{decode} (input, fallback\+\_\+encoding, errors=\textquotesingle{}replace\textquotesingle{})
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1webencodings_af737f45c9207721a90c25219dbc89288}{encode} (input, encoding=\hyperlink{namespacepip_1_1__vendor_1_1webencodings_a2eb014d3f6305ba50ece3cad231b60bf}{U\+T\+F8}, errors=\textquotesingle{}strict\textquotesingle{})
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1webencodings_a45fec086851d9f7d2af7ae7715dfa50c}{iter\+\_\+decode} (input, fallback\+\_\+encoding, errors=\textquotesingle{}replace\textquotesingle{})
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1webencodings_aa5411167f6851dbd04d5813b7da22380}{iter\+\_\+encode} (input, encoding=\hyperlink{namespacepip_1_1__vendor_1_1webencodings_a2eb014d3f6305ba50ece3cad231b60bf}{U\+T\+F8}, errors=\textquotesingle{}strict\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1webencodings_a33c958bba3b37600102a9ea1c3140e12}{V\+E\+R\+S\+I\+ON}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1webencodings_a7193e9e0062f7b2533caa43ad9918bcf}{P\+Y\+T\+H\+O\+N\+\_\+\+N\+A\+M\+ES}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1webencodings_a99b3ec77071e1286ccce1c9d509cfa39}{C\+A\+C\+HE}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1webencodings_a2eb014d3f6305ba50ece3cad231b60bf}{U\+T\+F8}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1webencodings_afa97e391f2b68992094a339176eff233}\label{namespacepip_1_1__vendor_1_1webencodings_afa97e391f2b68992094a339176eff233}} 
+\index{pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}!ascii\+\_\+lower@{ascii\+\_\+lower}}
+\index{ascii\+\_\+lower@{ascii\+\_\+lower}!pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}}
+\subsubsection{\texorpdfstring{ascii\+\_\+lower()}{ascii\_lower()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+webencodings.\+ascii\+\_\+lower (\begin{DoxyParamCaption}\item[{}]{string }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Transform (only) ASCII letters to lower case: A-Z is mapped to a-z.
+
+:param string: An Unicode string.
+:returns: A new Unicode string.
+
+This is used for `ASCII case-insensitive
+<http://encoding.spec.whatwg.org/#ascii-case-insensitive>`_
+matching of encoding labels.
+The same matching is also used, among other things,
+for `CSS keywords <http://dev.w3.org/csswg/css-values/#keywords>`_.
+
+This is different from the :meth:`~py:str.lower` method of Unicode strings
+which also affect non-ASCII characters,
+sometimes mapping them into the ASCII range:
+
+    >>> keyword = u'Bac\N{KELVIN SIGN}ground'
+    >>> assert keyword.lower() == u'background'
+    >>> assert ascii_lower(keyword) != keyword.lower()
+    >>> assert ascii_lower(keyword) == u'bac\N{KELVIN SIGN}ground'\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1webencodings_a8de11e3f8c23c682f8e367d23462a5d0}\label{namespacepip_1_1__vendor_1_1webencodings_a8de11e3f8c23c682f8e367d23462a5d0}} 
+\index{pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}!decode@{decode}}
+\index{decode@{decode}!pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}}
+\subsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+webencodings.\+decode (\begin{DoxyParamCaption}\item[{}]{input,  }\item[{}]{fallback\+\_\+encoding,  }\item[{}]{errors = {\ttfamily \textquotesingle{}replace\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decode a single string.
+
+:param input: A byte string
+:param fallback_encoding:
+    An :class:`Encoding` object or a label string.
+    The encoding to use if :obj:`input` does note have a BOM.
+:param errors: Type of error handling. See :func:`codecs.register`.
+:raises: :exc:`~exceptions.LookupError` for an unknown encoding label.
+:return:
+    A ``(output, encoding)`` tuple of an Unicode string
+    and an :obj:`Encoding`.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1webencodings_af737f45c9207721a90c25219dbc89288}\label{namespacepip_1_1__vendor_1_1webencodings_af737f45c9207721a90c25219dbc89288}} 
+\index{pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}!encode@{encode}}
+\index{encode@{encode}!pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}}
+\subsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+webencodings.\+encode (\begin{DoxyParamCaption}\item[{}]{input,  }\item[{}]{encoding = {\ttfamily \hyperlink{namespacepip_1_1__vendor_1_1webencodings_a2eb014d3f6305ba50ece3cad231b60bf}{U\+T\+F8}},  }\item[{}]{errors = {\ttfamily \textquotesingle{}strict\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Encode a single string.
+
+:param input: An Unicode string.
+:param encoding: An :class:`Encoding` object or a label string.
+:param errors: Type of error handling. See :func:`codecs.register`.
+:raises: :exc:`~exceptions.LookupError` for an unknown encoding label.
+:return: A byte string.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1webencodings_a45fec086851d9f7d2af7ae7715dfa50c}\label{namespacepip_1_1__vendor_1_1webencodings_a45fec086851d9f7d2af7ae7715dfa50c}} 
+\index{pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}!iter\+\_\+decode@{iter\+\_\+decode}}
+\index{iter\+\_\+decode@{iter\+\_\+decode}!pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}}
+\subsubsection{\texorpdfstring{iter\+\_\+decode()}{iter\_decode()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+webencodings.\+iter\+\_\+decode (\begin{DoxyParamCaption}\item[{}]{input,  }\item[{}]{fallback\+\_\+encoding,  }\item[{}]{errors = {\ttfamily \textquotesingle{}replace\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}"Pull"-based decoder.
+
+:param input:
+    An iterable of byte strings.
+
+    The input is first consumed just enough to determine the encoding
+    based on the precense of a BOM,
+    then consumed on demand when the return value is.
+:param fallback_encoding:
+    An :class:`Encoding` object or a label string.
+    The encoding to use if :obj:`input` does note have a BOM.
+:param errors: Type of error handling. See :func:`codecs.register`.
+:raises: :exc:`~exceptions.LookupError` for an unknown encoding label.
+:returns:
+    An ``(output, encoding)`` tuple.
+    :obj:`output` is an iterable of Unicode strings,
+    :obj:`encoding` is the :obj:`Encoding` that is being used.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1webencodings_aa5411167f6851dbd04d5813b7da22380}\label{namespacepip_1_1__vendor_1_1webencodings_aa5411167f6851dbd04d5813b7da22380}} 
+\index{pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}!iter\+\_\+encode@{iter\+\_\+encode}}
+\index{iter\+\_\+encode@{iter\+\_\+encode}!pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}}
+\subsubsection{\texorpdfstring{iter\+\_\+encode()}{iter\_encode()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+webencodings.\+iter\+\_\+encode (\begin{DoxyParamCaption}\item[{}]{input,  }\item[{}]{encoding = {\ttfamily \hyperlink{namespacepip_1_1__vendor_1_1webencodings_a2eb014d3f6305ba50ece3cad231b60bf}{U\+T\+F8}},  }\item[{}]{errors = {\ttfamily \textquotesingle{}strict\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}“Pull”-based encoder.
+
+:param input: An iterable of Unicode strings.
+:param encoding: An :class:`Encoding` object or a label string.
+:param errors: Type of error handling. See :func:`codecs.register`.
+:raises: :exc:`~exceptions.LookupError` for an unknown encoding label.
+:returns: An iterable of byte strings.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1webencodings_ae558e10f94082a6e5104e4a19de375eb}\label{namespacepip_1_1__vendor_1_1webencodings_ae558e10f94082a6e5104e4a19de375eb}} 
+\index{pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}!lookup@{lookup}}
+\index{lookup@{lookup}!pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}}
+\subsubsection{\texorpdfstring{lookup()}{lookup()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+webencodings.\+lookup (\begin{DoxyParamCaption}\item[{}]{label }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Look for an encoding by its label.
+This is the spec’s `get an encoding
+<http://encoding.spec.whatwg.org/#concept-encoding-get>`_ algorithm.
+Supported labels are listed there.
+
+:param label: A string.
+:returns:
+    An :class:`Encoding` object, or :obj:`None` for an unknown label.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1webencodings_a99b3ec77071e1286ccce1c9d509cfa39}\label{namespacepip_1_1__vendor_1_1webencodings_a99b3ec77071e1286ccce1c9d509cfa39}} 
+\index{pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}!C\+A\+C\+HE@{C\+A\+C\+HE}}
+\index{C\+A\+C\+HE@{C\+A\+C\+HE}!pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}}
+\subsubsection{\texorpdfstring{C\+A\+C\+HE}{CACHE}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+webencodings.\+C\+A\+C\+HE}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1webencodings_a7193e9e0062f7b2533caa43ad9918bcf}\label{namespacepip_1_1__vendor_1_1webencodings_a7193e9e0062f7b2533caa43ad9918bcf}} 
+\index{pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}!P\+Y\+T\+H\+O\+N\+\_\+\+N\+A\+M\+ES@{P\+Y\+T\+H\+O\+N\+\_\+\+N\+A\+M\+ES}}
+\index{P\+Y\+T\+H\+O\+N\+\_\+\+N\+A\+M\+ES@{P\+Y\+T\+H\+O\+N\+\_\+\+N\+A\+M\+ES}!pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}}
+\subsubsection{\texorpdfstring{P\+Y\+T\+H\+O\+N\+\_\+\+N\+A\+M\+ES}{PYTHON\_NAMES}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+webencodings.\+P\+Y\+T\+H\+O\+N\+\_\+\+N\+A\+M\+ES}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1webencodings_a2eb014d3f6305ba50ece3cad231b60bf}\label{namespacepip_1_1__vendor_1_1webencodings_a2eb014d3f6305ba50ece3cad231b60bf}} 
+\index{pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}!U\+T\+F8@{U\+T\+F8}}
+\index{U\+T\+F8@{U\+T\+F8}!pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}}
+\subsubsection{\texorpdfstring{U\+T\+F8}{UTF8}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+webencodings.\+U\+T\+F8}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1webencodings_a33c958bba3b37600102a9ea1c3140e12}\label{namespacepip_1_1__vendor_1_1webencodings_a33c958bba3b37600102a9ea1c3140e12}} 
+\index{pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}!V\+E\+R\+S\+I\+ON@{V\+E\+R\+S\+I\+ON}}
+\index{V\+E\+R\+S\+I\+ON@{V\+E\+R\+S\+I\+ON}!pip\+::\+\_\+vendor\+::webencodings@{pip\+::\+\_\+vendor\+::webencodings}}
+\subsubsection{\texorpdfstring{V\+E\+R\+S\+I\+ON}{VERSION}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+webencodings.\+V\+E\+R\+S\+I\+ON}
+

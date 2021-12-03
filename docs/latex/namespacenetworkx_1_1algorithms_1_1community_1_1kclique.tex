@@ -1,0 +1,55 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1community_1_1kclique}{}\section{networkx.\+algorithms.\+community.\+kclique Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1community_1_1kclique}\index{networkx.\+algorithms.\+community.\+kclique@{networkx.\+algorithms.\+community.\+kclique}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1community_1_1kclique_aef4b33b819cbcc3666168f64bee8434b}{k\+\_\+clique\+\_\+communities} (G, k, cliques=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1community_1_1kclique_aef4b33b819cbcc3666168f64bee8434b}\label{namespacenetworkx_1_1algorithms_1_1community_1_1kclique_aef4b33b819cbcc3666168f64bee8434b}} 
+\index{networkx\+::algorithms\+::community\+::kclique@{networkx\+::algorithms\+::community\+::kclique}!k\+\_\+clique\+\_\+communities@{k\+\_\+clique\+\_\+communities}}
+\index{k\+\_\+clique\+\_\+communities@{k\+\_\+clique\+\_\+communities}!networkx\+::algorithms\+::community\+::kclique@{networkx\+::algorithms\+::community\+::kclique}}
+\subsubsection{\texorpdfstring{k\+\_\+clique\+\_\+communities()}{k\_clique\_communities()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+community.\+kclique.\+k\+\_\+clique\+\_\+communities (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{k,  }\item[{}]{cliques = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find k-clique communities in graph using the percolation method.
+
+A k-clique community is the union of all cliques of size k that
+can be reached through adjacent (sharing k-1 nodes) k-cliques.
+
+Parameters
+----------
+G : NetworkX graph
+
+k : int
+   Size of smallest clique
+
+cliques: list or generator
+   Precomputed cliques (use networkx.find_cliques(G))
+
+Returns
+-------
+Yields sets of nodes, one for each k-clique community.
+
+Examples
+--------
+>>> from networkx.algorithms.community import k_clique_communities
+>>> G = nx.complete_graph(5)
+>>> K5 = nx.convert_node_labels_to_integers(G, first_label=2)
+>>> G.add_edges_from(K5.edges())
+>>> c = list(k_clique_communities(G, 4))
+>>> sorted(list(c[0]))
+[0, 1, 2, 3, 4, 5, 6]
+>>> list(k_clique_communities(G, 6))
+[]
+
+References
+----------
+.. [1] Gergely Palla, Imre Derényi, Illés Farkas1, and Tamás Vicsek,
+   Uncovering the overlapping community structure of complex networks
+   in nature and society Nature 435, 814-818, 2005,
+   doi:10.1038/nature03607
+\end{DoxyVerb}
+ 

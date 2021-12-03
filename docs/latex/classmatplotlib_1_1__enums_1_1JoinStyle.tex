@@ -1,0 +1,139 @@
+\hypertarget{classmatplotlib_1_1__enums_1_1JoinStyle}{}\section{matplotlib.\+\_\+enums.\+Join\+Style Class Reference}
+\label{classmatplotlib_1_1__enums_1_1JoinStyle}\index{matplotlib.\+\_\+enums.\+Join\+Style@{matplotlib.\+\_\+enums.\+Join\+Style}}
+
+
+Inheritance diagram for matplotlib.\+\_\+enums.\+Join\+Style\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classmatplotlib_1_1__enums_1_1JoinStyle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+\_\+enums.\+Join\+Style\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classmatplotlib_1_1__enums_1_1JoinStyle__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1__enums_1_1JoinStyle_af102e824aea9bbb0d191ac071e2b6bce}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, s)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1__enums_1_1JoinStyle_abb85085690b45a6beabb6c5788663e4e}{demo} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1__enums_1_1JoinStyle_a2b3da424eeb2efb821076cee583d5eaf}{miter} = auto()
+\item 
+\hyperlink{classmatplotlib_1_1__enums_1_1JoinStyle_aa57b67a1229a1cddb4c06ad3c1f03931}{round} = auto()
+\item 
+\hyperlink{classmatplotlib_1_1__enums_1_1JoinStyle_afac2620b596cc96cd7bf3a4c48a81af6}{bevel} = auto()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Define how the connection between two line segments is drawn.
+
+For a visual impression of each *JoinStyle*, `view these docs online
+<JoinStyle>`, or run `JoinStyle.demo`.
+
+Lines in Matplotlib are typically defined by a 1D `~.path.Path` and a
+finite ``linewidth``, where the underlying 1D `~.path.Path` represents the
+center of the stroked line.
+
+By default, `~.backend_bases.GraphicsContextBase` defines the boundaries of
+a stroked line to simply be every point within some radius,
+``linewidth/2``, away from any point of the center line. However, this
+results in corners appearing "rounded", which may not be the desired
+behavior if you are drawing, for example, a polygon or pointed star.
+
+**Supported values:**
+
+.. rst-class:: value-list
+
+    'miter'
+        the "arrow-tip" style. Each boundary of the filled-in area will
+        extend in a straight line parallel to the tangent vector of the
+        centerline at the point it meets the corner, until they meet in a
+        sharp point.
+    'round'
+        stokes every point within a radius of ``linewidth/2`` of the center
+        lines.
+    'bevel'
+        the "squared-off" style. It can be thought of as a rounded corner
+        where the "circular" part of the corner has been cut off.
+
+.. note::
+
+    Very long miter tips are cut off (to form a *bevel*) after a
+    backend-dependent limit called the "miter limit", which specifies the
+    maximum allowed ratio of miter length to line width. For example, the
+    PDF backend uses the default value of 10 specified by the PDF standard,
+    while the SVG backend does not even specify the miter limit, resulting
+    in a default value of 4 per the SVG specification. Matplotlib does not
+    currently allow the user to adjust this parameter.
+
+    A more detailed description of the effect of a miter limit can be found
+    in the `Mozilla Developer Docs
+    <https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-miterlimit>`_
+
+.. plot::
+    :alt: Demo of possible JoinStyle's
+
+    from matplotlib._enums import JoinStyle
+    JoinStyle.demo()\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__enums_1_1JoinStyle_af102e824aea9bbb0d191ac071e2b6bce}\label{classmatplotlib_1_1__enums_1_1JoinStyle_af102e824aea9bbb0d191ac071e2b6bce}} 
+\index{matplotlib\+::\+\_\+enums\+::\+Join\+Style@{matplotlib\+::\+\_\+enums\+::\+Join\+Style}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::\+\_\+enums\+::\+Join\+Style@{matplotlib\+::\+\_\+enums\+::\+Join\+Style}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+enums.\+Join\+Style.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__enums_1_1JoinStyle_abb85085690b45a6beabb6c5788663e4e}\label{classmatplotlib_1_1__enums_1_1JoinStyle_abb85085690b45a6beabb6c5788663e4e}} 
+\index{matplotlib\+::\+\_\+enums\+::\+Join\+Style@{matplotlib\+::\+\_\+enums\+::\+Join\+Style}!demo@{demo}}
+\index{demo@{demo}!matplotlib\+::\+\_\+enums\+::\+Join\+Style@{matplotlib\+::\+\_\+enums\+::\+Join\+Style}}
+\subsubsection{\texorpdfstring{demo()}{demo()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+enums.\+Join\+Style.\+demo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Demonstrate how each JoinStyle looks for various join angles.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__enums_1_1JoinStyle_afac2620b596cc96cd7bf3a4c48a81af6}\label{classmatplotlib_1_1__enums_1_1JoinStyle_afac2620b596cc96cd7bf3a4c48a81af6}} 
+\index{matplotlib\+::\+\_\+enums\+::\+Join\+Style@{matplotlib\+::\+\_\+enums\+::\+Join\+Style}!bevel@{bevel}}
+\index{bevel@{bevel}!matplotlib\+::\+\_\+enums\+::\+Join\+Style@{matplotlib\+::\+\_\+enums\+::\+Join\+Style}}
+\subsubsection{\texorpdfstring{bevel}{bevel}}
+{\footnotesize\ttfamily matplotlib.\+\_\+enums.\+Join\+Style.\+bevel = auto()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__enums_1_1JoinStyle_a2b3da424eeb2efb821076cee583d5eaf}\label{classmatplotlib_1_1__enums_1_1JoinStyle_a2b3da424eeb2efb821076cee583d5eaf}} 
+\index{matplotlib\+::\+\_\+enums\+::\+Join\+Style@{matplotlib\+::\+\_\+enums\+::\+Join\+Style}!miter@{miter}}
+\index{miter@{miter}!matplotlib\+::\+\_\+enums\+::\+Join\+Style@{matplotlib\+::\+\_\+enums\+::\+Join\+Style}}
+\subsubsection{\texorpdfstring{miter}{miter}}
+{\footnotesize\ttfamily matplotlib.\+\_\+enums.\+Join\+Style.\+miter = auto()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__enums_1_1JoinStyle_aa57b67a1229a1cddb4c06ad3c1f03931}\label{classmatplotlib_1_1__enums_1_1JoinStyle_aa57b67a1229a1cddb4c06ad3c1f03931}} 
+\index{matplotlib\+::\+\_\+enums\+::\+Join\+Style@{matplotlib\+::\+\_\+enums\+::\+Join\+Style}!round@{round}}
+\index{round@{round}!matplotlib\+::\+\_\+enums\+::\+Join\+Style@{matplotlib\+::\+\_\+enums\+::\+Join\+Style}}
+\subsubsection{\texorpdfstring{round}{round}}
+{\footnotesize\ttfamily matplotlib.\+\_\+enums.\+Join\+Style.\+round = auto()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{__enums_8py}{\+\_\+enums.\+py}\end{DoxyCompactItemize}

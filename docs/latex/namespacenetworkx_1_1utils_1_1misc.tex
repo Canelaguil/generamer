@@ -1,0 +1,435 @@
+\hypertarget{namespacenetworkx_1_1utils_1_1misc}{}\section{networkx.\+utils.\+misc Namespace Reference}
+\label{namespacenetworkx_1_1utils_1_1misc}\index{networkx.\+utils.\+misc@{networkx.\+utils.\+misc}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1utils_1_1misc_1_1PythonRandomInterface}{Python\+Random\+Interface}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_a616b747e99687676813d854ac515795c}{is\+\_\+string\+\_\+like} (obj)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_ae65f2c291dc1744406702c19798e65ec}{iterable} (obj)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_a90b806d70b489812901734395285c2bc}{empty\+\_\+generator} ()
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_ab942ca72fb7de65e013cab73285c339d}{flatten} (obj, result=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_a18436e33d258df06eeba2a18d9e543c6}{make\+\_\+list\+\_\+of\+\_\+ints} (sequence)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_af90ea0c0084848c48f7bd856353598f4}{is\+\_\+list\+\_\+of\+\_\+ints} (intlist)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_a4b8c7a6a6815b9b4c620f5942fafc93f}{make\+\_\+str} (x)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_a3e735b0f0572a68c92123b6b2f842d1d}{generate\+\_\+unique\+\_\+node} ()
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_af45a2218b16258dca06f5b68712fb7f3}{default\+\_\+opener} (filename)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_af6556592b73c85d84580e76bc08ea7af}{dict\+\_\+to\+\_\+numpy\+\_\+array} (d, mapping=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_ac681cf0a0a690ee93b36e90214e2e082}{dict\+\_\+to\+\_\+numpy\+\_\+array2} (d, mapping=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_a60cdb087fa42789016076eff206215c2}{dict\+\_\+to\+\_\+numpy\+\_\+array1} (d, mapping=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_ab3ea50d1f182fcd85380d859726024e5}{is\+\_\+iterator} (obj)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_aee73dcbb065355b5943f7f81cbda859b}{arbitrary\+\_\+element} (\hyperlink{namespacenetworkx_1_1utils_1_1misc_ae65f2c291dc1744406702c19798e65ec}{iterable})
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_a929828e4156160839e8a2f8fb636a0c6}{consume} (iterator)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_a3a5a039422a593c49554f67d5ed353ac}{pairwise} (\hyperlink{namespacenetworkx_1_1utils_1_1misc_ae65f2c291dc1744406702c19798e65ec}{iterable}, cyclic=False)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_a3fd4c57079b5d0aa69046f653c93306a}{groups} (many\+\_\+to\+\_\+one)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_aef864bf26463af0cf2e41b0797365789}{to\+\_\+tuple} (x)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_a8eddf1b3913ba2b4d6e1e8f1eab984f1}{create\+\_\+random\+\_\+state} (random\+\_\+state=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_ad8c08698fd77aa410765b5aea62f9b10}{create\+\_\+py\+\_\+random\+\_\+state} (random\+\_\+state=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_a11d6d25970c3c7b729c775aa8949ce9f}{nodes\+\_\+equal} (nodes1, nodes2)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_afddbff2eb97969114081e94d3efe88d0}{edges\+\_\+equal} (edges1, edges2)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1misc_ade1b11ea29ea0e65b27196990e1aa73b}{graphs\+\_\+equal} (graph1, graph2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Miscellaneous Helpers for NetworkX.
+
+These are not imported into the base networkx namespace but
+can be accessed, for example, as
+
+>>> import networkx
+>>> networkx.utils.make_list_of_ints({1, 2, 3})
+[1, 2, 3]
+>>> networkx.utils.arbitrary_element({5, 1, 7})  # doctest: +SKIP
+1
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_aee73dcbb065355b5943f7f81cbda859b}\label{namespacenetworkx_1_1utils_1_1misc_aee73dcbb065355b5943f7f81cbda859b}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!arbitrary\+\_\+element@{arbitrary\+\_\+element}}
+\index{arbitrary\+\_\+element@{arbitrary\+\_\+element}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{arbitrary\+\_\+element()}{arbitrary\_element()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+arbitrary\+\_\+element (\begin{DoxyParamCaption}\item[{}]{iterable }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns an arbitrary element of `iterable` without removing it.
+
+This is most useful for "peeking" at an arbitrary element of a set,
+but can be used for any list, dictionary, etc., as well.
+
+Parameters
+----------
+iterable : `abc.collections.Iterable` instance
+    Any object that implements ``__iter__``, e.g. set, dict, list, tuple,
+    etc.
+
+Returns
+-------
+The object that results from ``next(iter(iterable))``
+
+Raises
+------
+ValueError
+    If `iterable` is an iterator (because the current implementation of
+    this function would consume an element from the iterator).
+
+Examples
+--------
+Arbitrary elements from common Iterable objects:
+
+>>> nx.utils.arbitrary_element([1, 2, 3])  # list
+1
+>>> nx.utils.arbitrary_element((1, 2, 3))  # tuple
+1
+>>> nx.utils.arbitrary_element({1, 2, 3})  # set
+1
+>>> d = {k: v for k, v in zip([1, 2, 3], [3, 2, 1])}
+>>> nx.utils.arbitrary_element(d)  # dict_keys
+1
+>>> nx.utils.arbitrary_element(d.values())   # dict values
+3
+
+`str` is also an Iterable:
+
+>>> nx.utils.arbitrary_element("hello")
+'h'
+
+:exc:`ValueError` is raised if `iterable` is an iterator:
+
+>>> iterator = iter([1, 2, 3])  # Iterator, *not* Iterable
+>>> nx.utils.arbitrary_element(iterator)
+Traceback (most recent call last):
+    ...
+ValueError: cannot return an arbitrary item from an iterator
+
+Notes
+-----
+This function does not return a *random* element. If `iterable` is
+ordered, sequential calls will return the same value::
+
+    >>> l = [1, 2, 3]
+    >>> nx.utils.arbitrary_element(l)
+    1
+    >>> nx.utils.arbitrary_element(l)
+    1\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_a929828e4156160839e8a2f8fb636a0c6}\label{namespacenetworkx_1_1utils_1_1misc_a929828e4156160839e8a2f8fb636a0c6}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!consume@{consume}}
+\index{consume@{consume}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{consume()}{consume()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+consume (\begin{DoxyParamCaption}\item[{}]{iterator }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Consume the iterator entirely.
+
+.. deprecated:: 2.6
+    This is deprecated and will be removed in NetworkX v3.0.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_ad8c08698fd77aa410765b5aea62f9b10}\label{namespacenetworkx_1_1utils_1_1misc_ad8c08698fd77aa410765b5aea62f9b10}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!create\+\_\+py\+\_\+random\+\_\+state@{create\+\_\+py\+\_\+random\+\_\+state}}
+\index{create\+\_\+py\+\_\+random\+\_\+state@{create\+\_\+py\+\_\+random\+\_\+state}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{create\+\_\+py\+\_\+random\+\_\+state()}{create\_py\_random\_state()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+create\+\_\+py\+\_\+random\+\_\+state (\begin{DoxyParamCaption}\item[{}]{random\+\_\+state = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a random.Random instance depending on input.
+
+Parameters
+----------
+random_state : int or random number generator or None (default=None)
+    If int, return a random.Random instance set with seed=int.
+    if random.Random instance, return it.
+    if None or the `random` package, return the global random number
+    generator used by `random`.
+    if np.random package, return the global numpy random number
+    generator wrapped in a PythonRandomInterface class.
+    if np.random.RandomState instance, return it wrapped in
+    PythonRandomInterface
+    if a PythonRandomInterface instance, return it
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_a8eddf1b3913ba2b4d6e1e8f1eab984f1}\label{namespacenetworkx_1_1utils_1_1misc_a8eddf1b3913ba2b4d6e1e8f1eab984f1}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!create\+\_\+random\+\_\+state@{create\+\_\+random\+\_\+state}}
+\index{create\+\_\+random\+\_\+state@{create\+\_\+random\+\_\+state}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{create\+\_\+random\+\_\+state()}{create\_random\_state()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+create\+\_\+random\+\_\+state (\begin{DoxyParamCaption}\item[{}]{random\+\_\+state = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a numpy.random.RandomState instance depending on input.
+
+Parameters
+----------
+random_state : int or RandomState instance or None  optional (default=None)
+    If int, return a numpy.random.RandomState instance set with seed=int.
+    if numpy.random.RandomState instance, return it.
+    if None or numpy.random, return the global random number generator used
+    by numpy.random.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_af45a2218b16258dca06f5b68712fb7f3}\label{namespacenetworkx_1_1utils_1_1misc_af45a2218b16258dca06f5b68712fb7f3}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!default\+\_\+opener@{default\+\_\+opener}}
+\index{default\+\_\+opener@{default\+\_\+opener}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{default\+\_\+opener()}{default\_opener()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+default\+\_\+opener (\begin{DoxyParamCaption}\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Opens `filename` using system's default program.
+
+.. deprecated:: 2.6
+   default_opener is deprecated and will be removed in version 3.0.
+   Consider an image processing library to open images, such as Pillow::
+
+       from PIL import Image
+       Image.open(filename).show()
+
+Parameters
+----------
+filename : str
+    The path of the file to be opened.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_af6556592b73c85d84580e76bc08ea7af}\label{namespacenetworkx_1_1utils_1_1misc_af6556592b73c85d84580e76bc08ea7af}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!dict\+\_\+to\+\_\+numpy\+\_\+array@{dict\+\_\+to\+\_\+numpy\+\_\+array}}
+\index{dict\+\_\+to\+\_\+numpy\+\_\+array@{dict\+\_\+to\+\_\+numpy\+\_\+array}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{dict\+\_\+to\+\_\+numpy\+\_\+array()}{dict\_to\_numpy\_array()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+dict\+\_\+to\+\_\+numpy\+\_\+array (\begin{DoxyParamCaption}\item[{}]{d,  }\item[{}]{mapping = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a dictionary of dictionaries to a numpy array
+with optional mapping.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_a60cdb087fa42789016076eff206215c2}\label{namespacenetworkx_1_1utils_1_1misc_a60cdb087fa42789016076eff206215c2}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!dict\+\_\+to\+\_\+numpy\+\_\+array1@{dict\+\_\+to\+\_\+numpy\+\_\+array1}}
+\index{dict\+\_\+to\+\_\+numpy\+\_\+array1@{dict\+\_\+to\+\_\+numpy\+\_\+array1}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{dict\+\_\+to\+\_\+numpy\+\_\+array1()}{dict\_to\_numpy\_array1()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+dict\+\_\+to\+\_\+numpy\+\_\+array1 (\begin{DoxyParamCaption}\item[{}]{d,  }\item[{}]{mapping = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a dictionary of numbers to a 1d numpy array
+with optional mapping.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_ac681cf0a0a690ee93b36e90214e2e082}\label{namespacenetworkx_1_1utils_1_1misc_ac681cf0a0a690ee93b36e90214e2e082}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!dict\+\_\+to\+\_\+numpy\+\_\+array2@{dict\+\_\+to\+\_\+numpy\+\_\+array2}}
+\index{dict\+\_\+to\+\_\+numpy\+\_\+array2@{dict\+\_\+to\+\_\+numpy\+\_\+array2}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{dict\+\_\+to\+\_\+numpy\+\_\+array2()}{dict\_to\_numpy\_array2()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+dict\+\_\+to\+\_\+numpy\+\_\+array2 (\begin{DoxyParamCaption}\item[{}]{d,  }\item[{}]{mapping = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a dictionary of dictionaries to a 2d numpy array
+with optional mapping.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_afddbff2eb97969114081e94d3efe88d0}\label{namespacenetworkx_1_1utils_1_1misc_afddbff2eb97969114081e94d3efe88d0}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!edges\+\_\+equal@{edges\+\_\+equal}}
+\index{edges\+\_\+equal@{edges\+\_\+equal}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{edges\+\_\+equal()}{edges\_equal()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+edges\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{edges1,  }\item[{}]{edges2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if edges are equal.
+
+Equality here means equal as Python objects.
+Edge data must match if included.
+The order of the edges is not relevant.
+
+Parameters
+----------
+edges1, edges2 : iterables of with u, v nodes as
+    edge tuples (u, v), or
+    edge tuples with data dicts (u, v, d), or
+    edge tuples with keys and data dicts (u, v, k, d)
+
+Returns
+-------
+bool
+    True if edges are equal, False otherwise.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_a90b806d70b489812901734395285c2bc}\label{namespacenetworkx_1_1utils_1_1misc_a90b806d70b489812901734395285c2bc}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!empty\+\_\+generator@{empty\+\_\+generator}}
+\index{empty\+\_\+generator@{empty\+\_\+generator}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{empty\+\_\+generator()}{empty\_generator()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+empty\+\_\+generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a generator with no members.
+
+.. deprecated:: 2.6
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_ab942ca72fb7de65e013cab73285c339d}\label{namespacenetworkx_1_1utils_1_1misc_ab942ca72fb7de65e013cab73285c339d}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!flatten@{flatten}}
+\index{flatten@{flatten}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+flatten (\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{result = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return flattened version of (possibly nested) iterable object.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_a3e735b0f0572a68c92123b6b2f842d1d}\label{namespacenetworkx_1_1utils_1_1misc_a3e735b0f0572a68c92123b6b2f842d1d}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!generate\+\_\+unique\+\_\+node@{generate\+\_\+unique\+\_\+node}}
+\index{generate\+\_\+unique\+\_\+node@{generate\+\_\+unique\+\_\+node}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{generate\+\_\+unique\+\_\+node()}{generate\_unique\_node()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+generate\+\_\+unique\+\_\+node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a unique node label.
+
+.. deprecated:: 2.6
+    This is deprecated and will be removed in NetworkX v3.0.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_ade1b11ea29ea0e65b27196990e1aa73b}\label{namespacenetworkx_1_1utils_1_1misc_ade1b11ea29ea0e65b27196990e1aa73b}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!graphs\+\_\+equal@{graphs\+\_\+equal}}
+\index{graphs\+\_\+equal@{graphs\+\_\+equal}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{graphs\+\_\+equal()}{graphs\_equal()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+graphs\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{graph1,  }\item[{}]{graph2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if graphs are equal.
+
+Equality here means equal as Python objects (not isomorphism).
+Node, edge and graph data must match.
+
+Parameters
+----------
+graph1, graph2 : graph
+
+Returns
+-------
+bool
+    True if graphs are equal, False otherwise.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_a3fd4c57079b5d0aa69046f653c93306a}\label{namespacenetworkx_1_1utils_1_1misc_a3fd4c57079b5d0aa69046f653c93306a}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!groups@{groups}}
+\index{groups@{groups}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{groups()}{groups()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+groups (\begin{DoxyParamCaption}\item[{}]{many\+\_\+to\+\_\+one }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Converts a many-to-one mapping into a one-to-many mapping.
+
+`many_to_one` must be a dictionary whose keys and values are all
+:term:`hashable`.
+
+The return value is a dictionary mapping values from `many_to_one`
+to sets of keys from `many_to_one` that have that value.
+
+Examples
+--------
+>>> from networkx.utils import groups
+>>> many_to_one = {"a": 1, "b": 1, "c": 2, "d": 3, "e": 3}
+>>> groups(many_to_one)  # doctest: +SKIP
+{1: {'a', 'b'}, 2: {'c'}, 3: {'e', 'd'}}
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_ab3ea50d1f182fcd85380d859726024e5}\label{namespacenetworkx_1_1utils_1_1misc_ab3ea50d1f182fcd85380d859726024e5}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!is\+\_\+iterator@{is\+\_\+iterator}}
+\index{is\+\_\+iterator@{is\+\_\+iterator}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{is\+\_\+iterator()}{is\_iterator()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+is\+\_\+iterator (\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if and only if the given object is an iterator object.
+
+.. deprecated:: 2.6.0
+    Deprecated in favor of ``isinstance(obj, collections.abc.Iterator)``
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_af90ea0c0084848c48f7bd856353598f4}\label{namespacenetworkx_1_1utils_1_1misc_af90ea0c0084848c48f7bd856353598f4}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!is\+\_\+list\+\_\+of\+\_\+ints@{is\+\_\+list\+\_\+of\+\_\+ints}}
+\index{is\+\_\+list\+\_\+of\+\_\+ints@{is\+\_\+list\+\_\+of\+\_\+ints}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{is\+\_\+list\+\_\+of\+\_\+ints()}{is\_list\_of\_ints()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+is\+\_\+list\+\_\+of\+\_\+ints (\begin{DoxyParamCaption}\item[{}]{intlist }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return True if list is a list of ints.
+
+.. deprecated:: 2.6
+    This is deprecated and will be removed in NetworkX v3.0.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_a616b747e99687676813d854ac515795c}\label{namespacenetworkx_1_1utils_1_1misc_a616b747e99687676813d854ac515795c}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!is\+\_\+string\+\_\+like@{is\+\_\+string\+\_\+like}}
+\index{is\+\_\+string\+\_\+like@{is\+\_\+string\+\_\+like}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{is\+\_\+string\+\_\+like()}{is\_string\_like()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+is\+\_\+string\+\_\+like (\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if obj is string.
+
+.. deprecated:: 2.6
+    This is deprecated and will be removed in NetworkX v3.0.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_ae65f2c291dc1744406702c19798e65ec}\label{namespacenetworkx_1_1utils_1_1misc_ae65f2c291dc1744406702c19798e65ec}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!iterable@{iterable}}
+\index{iterable@{iterable}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{iterable()}{iterable()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+iterable (\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return True if obj is iterable with a well-defined len().
+
+.. deprecated:: 2.6
+    This is deprecated and will be removed in NetworkX v3.0.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_a18436e33d258df06eeba2a18d9e543c6}\label{namespacenetworkx_1_1utils_1_1misc_a18436e33d258df06eeba2a18d9e543c6}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!make\+\_\+list\+\_\+of\+\_\+ints@{make\+\_\+list\+\_\+of\+\_\+ints}}
+\index{make\+\_\+list\+\_\+of\+\_\+ints@{make\+\_\+list\+\_\+of\+\_\+ints}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{make\+\_\+list\+\_\+of\+\_\+ints()}{make\_list\_of\_ints()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+make\+\_\+list\+\_\+of\+\_\+ints (\begin{DoxyParamCaption}\item[{}]{sequence }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return list of ints from sequence of integral numbers.
+
+All elements of the sequence must satisfy int(element) == element
+or a ValueError is raised. Sequence is iterated through once.
+
+If sequence is a list, the non-int values are replaced with ints.
+So, no new list is created
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_a4b8c7a6a6815b9b4c620f5942fafc93f}\label{namespacenetworkx_1_1utils_1_1misc_a4b8c7a6a6815b9b4c620f5942fafc93f}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!make\+\_\+str@{make\+\_\+str}}
+\index{make\+\_\+str@{make\+\_\+str}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{make\+\_\+str()}{make\_str()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+make\+\_\+str (\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the string representation of t.
+
+.. deprecated:: 2.6
+    This is deprecated and will be removed in NetworkX v3.0.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_a11d6d25970c3c7b729c775aa8949ce9f}\label{namespacenetworkx_1_1utils_1_1misc_a11d6d25970c3c7b729c775aa8949ce9f}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!nodes\+\_\+equal@{nodes\+\_\+equal}}
+\index{nodes\+\_\+equal@{nodes\+\_\+equal}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{nodes\+\_\+equal()}{nodes\_equal()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+nodes\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{nodes1,  }\item[{}]{nodes2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if nodes are equal.
+
+Equality here means equal as Python objects.
+Node data must match if included.
+The order of nodes is not relevant.
+
+Parameters
+----------
+nodes1, nodes2 : iterables of nodes, or (node, datadict) tuples
+
+Returns
+-------
+bool
+    True if nodes are equal, False otherwise.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_a3a5a039422a593c49554f67d5ed353ac}\label{namespacenetworkx_1_1utils_1_1misc_a3a5a039422a593c49554f67d5ed353ac}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!pairwise@{pairwise}}
+\index{pairwise@{pairwise}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{pairwise()}{pairwise()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+pairwise (\begin{DoxyParamCaption}\item[{}]{iterable,  }\item[{}]{cyclic = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1misc_aef864bf26463af0cf2e41b0797365789}\label{namespacenetworkx_1_1utils_1_1misc_aef864bf26463af0cf2e41b0797365789}} 
+\index{networkx\+::utils\+::misc@{networkx\+::utils\+::misc}!to\+\_\+tuple@{to\+\_\+tuple}}
+\index{to\+\_\+tuple@{to\+\_\+tuple}!networkx\+::utils\+::misc@{networkx\+::utils\+::misc}}
+\subsubsection{\texorpdfstring{to\+\_\+tuple()}{to\_tuple()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+misc.\+to\+\_\+tuple (\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Converts lists to tuples.
+
+Examples
+--------
+>>> from networkx.utils import to_tuple
+>>> a_list = [1, 2, [1, 4]]
+>>> to_tuple(a_list)
+(1, 2, (1, 4))
+\end{DoxyVerb}
+ 

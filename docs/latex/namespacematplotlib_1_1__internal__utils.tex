@@ -1,0 +1,41 @@
+\hypertarget{namespacematplotlib_1_1__internal__utils}{}\section{matplotlib.\+\_\+internal\+\_\+utils Namespace Reference}
+\label{namespacematplotlib_1_1__internal__utils}\index{matplotlib.\+\_\+internal\+\_\+utils@{matplotlib.\+\_\+internal\+\_\+utils}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1__internal__utils_a49104ef82837af8e99081a3c428cdf0a}{graphviz\+\_\+dump\+\_\+transform} (transform, dest, highlight=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Internal debugging utilities, that are not expected to be used in the rest of
+the codebase.
+
+WARNING: Code in this module may change without prior notice!
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1__internal__utils_a49104ef82837af8e99081a3c428cdf0a}\label{namespacematplotlib_1_1__internal__utils_a49104ef82837af8e99081a3c428cdf0a}} 
+\index{matplotlib\+::\+\_\+internal\+\_\+utils@{matplotlib\+::\+\_\+internal\+\_\+utils}!graphviz\+\_\+dump\+\_\+transform@{graphviz\+\_\+dump\+\_\+transform}}
+\index{graphviz\+\_\+dump\+\_\+transform@{graphviz\+\_\+dump\+\_\+transform}!matplotlib\+::\+\_\+internal\+\_\+utils@{matplotlib\+::\+\_\+internal\+\_\+utils}}
+\subsubsection{\texorpdfstring{graphviz\+\_\+dump\+\_\+transform()}{graphviz\_dump\_transform()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+internal\+\_\+utils.\+graphviz\+\_\+dump\+\_\+transform (\begin{DoxyParamCaption}\item[{}]{transform,  }\item[{}]{dest,  }\item[{}]{highlight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a graphical representation of the transform tree for *transform*
+using the :program:`dot` program (which this function depends on).  The
+output format (png, dot, etc.) is determined from the suffix of *dest*.
+
+Parameters
+----------
+transform : `~matplotlib.transform.Transform`
+    The represented transform.
+dest : str
+    Output filename.  The extension must be one of the formats supported
+    by :program:`dot`, e.g. png, svg, dot, ...
+    (see https://www.graphviz.org/doc/info/output.html).
+highlight : list of `~matplotlib.transform.Transform` or None
+    The transforms in the tree to be drawn in bold.
+    If *None*, *transform* is highlighted.
+\end{DoxyVerb}
+ 

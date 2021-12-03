@@ -1,0 +1,210 @@
+\hypertarget{namespacematplotlib_1_1backends_1_1backend__ps}{}\section{matplotlib.\+backends.\+backend\+\_\+ps Namespace Reference}
+\label{namespacematplotlib_1_1backends_1_1backend__ps}\index{matplotlib.\+backends.\+backend\+\_\+ps@{matplotlib.\+backends.\+backend\+\_\+ps}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1backend__ps_1_1__BackendPS}{\+\_\+\+Backend\+PS}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1backend__ps_1_1__Orientation}{\+\_\+\+Orientation}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1backend__ps_1_1FigureCanvasPS}{Figure\+Canvas\+PS}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1backend__ps_1_1GraphicsContextPS}{Graphics\+Context\+PS}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1backend__ps_1_1PsBackendHelper}{Ps\+Backend\+Helper}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1backend__ps_1_1RendererPS}{Renderer\+PS}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1backends_1_1backend__ps_a31f00859c83b0ee81dc0c94f7b04fa3a}{quote\+\_\+ps\+\_\+string} (s)
+\item 
+def \hyperlink{namespacematplotlib_1_1backends_1_1backend__ps_af560d5ec999b291773f8e33c7dd4a2b9}{convert\+\_\+psfrags} (tmpfile, psfrags, font\+\_\+preamble, custom\+\_\+preamble, paper\+\_\+width, paper\+\_\+height, orientation)
+\item 
+def \hyperlink{namespacematplotlib_1_1backends_1_1backend__ps_aa073edde5521a77fbc430126ea9ec543}{gs\+\_\+distill} (tmpfile, eps=False, ptype=\textquotesingle{}letter\textquotesingle{}, bbox=None, rotated=False)
+\item 
+def \hyperlink{namespacematplotlib_1_1backends_1_1backend__ps_a8b81a9d051e4d7fcd45aa47e3194b555}{xpdf\+\_\+distill} (tmpfile, eps=False, ptype=\textquotesingle{}letter\textquotesingle{}, bbox=None, rotated=False)
+\item 
+def \hyperlink{namespacematplotlib_1_1backends_1_1backend__ps_a0f26fb55b593a427cc527b17be0e1c9d}{get\+\_\+bbox\+\_\+header} (lbrt, rotated=False)
+\item 
+def \hyperlink{namespacematplotlib_1_1backends_1_1backend__ps_abf2b9867da37a4a872b54cc23f9a8c86}{pstoeps} (tmpfile, bbox=None, rotated=False)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{namespacematplotlib_1_1backends_1_1backend__ps_aa2a26be019f2a6fafae780106d6d952a}{backend\+\_\+version} = \textquotesingle{}Level II\textquotesingle{}
+\item 
+int \hyperlink{namespacematplotlib_1_1backends_1_1backend__ps_ac50fb83dd85f8b46986d39151a3dead8}{debug\+PS} = 0
+\item 
+\hyperlink{namespacematplotlib_1_1backends_1_1backend__ps_a775472009465547b35039f1a7baac84b}{ps\+\_\+backend\+\_\+helper} = \hyperlink{classmatplotlib_1_1backends_1_1backend__ps_1_1PsBackendHelper}{Ps\+Backend\+Helper}()
+\item 
+dictionary \hyperlink{namespacematplotlib_1_1backends_1_1backend__ps_a3de48a85a8f1b174f97b5bbe55e70fd7}{papersize}
+\item 
+\hyperlink{namespacematplotlib_1_1backends_1_1backend__ps_adfa74b97047cbf6de8434395031d750d}{Figure\+Manager\+PS} = Figure\+Manager\+Base
+\item 
+list \hyperlink{namespacematplotlib_1_1backends_1_1backend__ps_a12b37e17a387319d1aade2a56ccaa1f1}{ps\+Defs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A PostScript backend, which can produce both PostScript .ps and .eps.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__ps_af560d5ec999b291773f8e33c7dd4a2b9}\label{namespacematplotlib_1_1backends_1_1backend__ps_af560d5ec999b291773f8e33c7dd4a2b9}} 
+\index{matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}!convert\+\_\+psfrags@{convert\+\_\+psfrags}}
+\index{convert\+\_\+psfrags@{convert\+\_\+psfrags}!matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}}
+\subsubsection{\texorpdfstring{convert\+\_\+psfrags()}{convert\_psfrags()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+ps.\+convert\+\_\+psfrags (\begin{DoxyParamCaption}\item[{}]{tmpfile,  }\item[{}]{psfrags,  }\item[{}]{font\+\_\+preamble,  }\item[{}]{custom\+\_\+preamble,  }\item[{}]{paper\+\_\+width,  }\item[{}]{paper\+\_\+height,  }\item[{}]{orientation }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}When we want to use the LaTeX backend with postscript, we write PSFrag tags
+to a temporary postscript file, each one marking a position for LaTeX to
+render some text. convert_psfrags generates a LaTeX document containing the
+commands to convert those tags to text. LaTeX/dvips produces the postscript
+file that includes the actual text.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__ps_a0f26fb55b593a427cc527b17be0e1c9d}\label{namespacematplotlib_1_1backends_1_1backend__ps_a0f26fb55b593a427cc527b17be0e1c9d}} 
+\index{matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}!get\+\_\+bbox\+\_\+header@{get\+\_\+bbox\+\_\+header}}
+\index{get\+\_\+bbox\+\_\+header@{get\+\_\+bbox\+\_\+header}!matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}}
+\subsubsection{\texorpdfstring{get\+\_\+bbox\+\_\+header()}{get\_bbox\_header()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+ps.\+get\+\_\+bbox\+\_\+header (\begin{DoxyParamCaption}\item[{}]{lbrt,  }\item[{}]{rotated = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a postscript header string for the given bbox lbrt=(l, b, r, t).
+Optionally, return rotate command.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__ps_aa073edde5521a77fbc430126ea9ec543}\label{namespacematplotlib_1_1backends_1_1backend__ps_aa073edde5521a77fbc430126ea9ec543}} 
+\index{matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}!gs\+\_\+distill@{gs\+\_\+distill}}
+\index{gs\+\_\+distill@{gs\+\_\+distill}!matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}}
+\subsubsection{\texorpdfstring{gs\+\_\+distill()}{gs\_distill()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+ps.\+gs\+\_\+distill (\begin{DoxyParamCaption}\item[{}]{tmpfile,  }\item[{}]{eps = {\ttfamily False},  }\item[{}]{ptype = {\ttfamily \textquotesingle{}letter\textquotesingle{}},  }\item[{}]{bbox = {\ttfamily None},  }\item[{}]{rotated = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Use ghostscript's pswrite or epswrite device to distill a file.
+This yields smaller files without illegal encapsulated postscript
+operators. The output is low-level, converting text to outlines.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__ps_abf2b9867da37a4a872b54cc23f9a8c86}\label{namespacematplotlib_1_1backends_1_1backend__ps_abf2b9867da37a4a872b54cc23f9a8c86}} 
+\index{matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}!pstoeps@{pstoeps}}
+\index{pstoeps@{pstoeps}!matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}}
+\subsubsection{\texorpdfstring{pstoeps()}{pstoeps()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+ps.\+pstoeps (\begin{DoxyParamCaption}\item[{}]{tmpfile,  }\item[{}]{bbox = {\ttfamily None},  }\item[{}]{rotated = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert the postscript to encapsulated postscript.  The bbox of
+the eps file will be replaced with the given *bbox* argument. If
+None, original bbox will be used.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__ps_a31f00859c83b0ee81dc0c94f7b04fa3a}\label{namespacematplotlib_1_1backends_1_1backend__ps_a31f00859c83b0ee81dc0c94f7b04fa3a}} 
+\index{matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}!quote\+\_\+ps\+\_\+string@{quote\+\_\+ps\+\_\+string}}
+\index{quote\+\_\+ps\+\_\+string@{quote\+\_\+ps\+\_\+string}!matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}}
+\subsubsection{\texorpdfstring{quote\+\_\+ps\+\_\+string()}{quote\_ps\_string()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+ps.\+quote\+\_\+ps\+\_\+string (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Quote dangerous characters of S for use in a PostScript string constant.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__ps_a8b81a9d051e4d7fcd45aa47e3194b555}\label{namespacematplotlib_1_1backends_1_1backend__ps_a8b81a9d051e4d7fcd45aa47e3194b555}} 
+\index{matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}!xpdf\+\_\+distill@{xpdf\+\_\+distill}}
+\index{xpdf\+\_\+distill@{xpdf\+\_\+distill}!matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}}
+\subsubsection{\texorpdfstring{xpdf\+\_\+distill()}{xpdf\_distill()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+ps.\+xpdf\+\_\+distill (\begin{DoxyParamCaption}\item[{}]{tmpfile,  }\item[{}]{eps = {\ttfamily False},  }\item[{}]{ptype = {\ttfamily \textquotesingle{}letter\textquotesingle{}},  }\item[{}]{bbox = {\ttfamily None},  }\item[{}]{rotated = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Use ghostscript's ps2pdf and xpdf's/poppler's pdftops to distill a file.
+This yields smaller files without illegal encapsulated postscript
+operators. This distiller is preferred, generating high-level postscript
+output that treats text as text.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__ps_aa2a26be019f2a6fafae780106d6d952a}\label{namespacematplotlib_1_1backends_1_1backend__ps_aa2a26be019f2a6fafae780106d6d952a}} 
+\index{matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}!backend\+\_\+version@{backend\+\_\+version}}
+\index{backend\+\_\+version@{backend\+\_\+version}!matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}}
+\subsubsection{\texorpdfstring{backend\+\_\+version}{backend\_version}}
+{\footnotesize\ttfamily string matplotlib.\+backends.\+backend\+\_\+ps.\+backend\+\_\+version = \textquotesingle{}Level II\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__ps_ac50fb83dd85f8b46986d39151a3dead8}\label{namespacematplotlib_1_1backends_1_1backend__ps_ac50fb83dd85f8b46986d39151a3dead8}} 
+\index{matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}!debug\+PS@{debug\+PS}}
+\index{debug\+PS@{debug\+PS}!matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}}
+\subsubsection{\texorpdfstring{debug\+PS}{debugPS}}
+{\footnotesize\ttfamily int matplotlib.\+backends.\+backend\+\_\+ps.\+debug\+PS = 0}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__ps_adfa74b97047cbf6de8434395031d750d}\label{namespacematplotlib_1_1backends_1_1backend__ps_adfa74b97047cbf6de8434395031d750d}} 
+\index{matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}!Figure\+Manager\+PS@{Figure\+Manager\+PS}}
+\index{Figure\+Manager\+PS@{Figure\+Manager\+PS}!matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}}
+\subsubsection{\texorpdfstring{Figure\+Manager\+PS}{FigureManagerPS}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+ps.\+Figure\+Manager\+PS = Figure\+Manager\+Base}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__ps_a3de48a85a8f1b174f97b5bbe55e70fd7}\label{namespacematplotlib_1_1backends_1_1backend__ps_a3de48a85a8f1b174f97b5bbe55e70fd7}} 
+\index{matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}!papersize@{papersize}}
+\index{papersize@{papersize}!matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}}
+\subsubsection{\texorpdfstring{papersize}{papersize}}
+{\footnotesize\ttfamily dictionary matplotlib.\+backends.\+backend\+\_\+ps.\+papersize}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{\textcolor{stringliteral}{'letter'}: (8.5, 11),
+2              \textcolor{stringliteral}{'legal'}: (8.5, 14),
+3              \textcolor{stringliteral}{'ledger'}: (11, 17),
+4              \textcolor{stringliteral}{'a0'}: (33.11, 46.81),
+5              \textcolor{stringliteral}{'a1'}: (23.39, 33.11),
+6              \textcolor{stringliteral}{'a2'}: (16.54, 23.39),
+7              \textcolor{stringliteral}{'a3'}: (11.69, 16.54),
+8              \textcolor{stringliteral}{'a4'}: (8.27, 11.69),
+9              \textcolor{stringliteral}{'a5'}: (5.83, 8.27),
+10              \textcolor{stringliteral}{'a6'}: (4.13, 5.83),
+11              \textcolor{stringliteral}{'a7'}: (2.91, 4.13),
+12              \textcolor{stringliteral}{'a8'}: (2.07, 2.91),
+13              \textcolor{stringliteral}{'a9'}: (1.457, 2.05),
+14              \textcolor{stringliteral}{'a10'}: (1.02, 1.457),
+15              \textcolor{stringliteral}{'b0'}: (40.55, 57.32),
+16              \textcolor{stringliteral}{'b1'}: (28.66, 40.55),
+17              \textcolor{stringliteral}{'b2'}: (20.27, 28.66),
+18              \textcolor{stringliteral}{'b3'}: (14.33, 20.27),
+19              \textcolor{stringliteral}{'b4'}: (10.11, 14.33),
+20              \textcolor{stringliteral}{'b5'}: (7.16, 10.11),
+21              \textcolor{stringliteral}{'b6'}: (5.04, 7.16),
+22              \textcolor{stringliteral}{'b7'}: (3.58, 5.04),
+23              \textcolor{stringliteral}{'b8'}: (2.51, 3.58),
+24              \textcolor{stringliteral}{'b9'}: (1.76, 2.51),
+25              \textcolor{stringliteral}{'b10'}: (1.26, 1.76)\}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__ps_a775472009465547b35039f1a7baac84b}\label{namespacematplotlib_1_1backends_1_1backend__ps_a775472009465547b35039f1a7baac84b}} 
+\index{matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}!ps\+\_\+backend\+\_\+helper@{ps\+\_\+backend\+\_\+helper}}
+\index{ps\+\_\+backend\+\_\+helper@{ps\+\_\+backend\+\_\+helper}!matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}}
+\subsubsection{\texorpdfstring{ps\+\_\+backend\+\_\+helper}{ps\_backend\_helper}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+ps.\+ps\+\_\+backend\+\_\+helper = \hyperlink{classmatplotlib_1_1backends_1_1backend__ps_1_1PsBackendHelper}{Ps\+Backend\+Helper}()}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__ps_a12b37e17a387319d1aade2a56ccaa1f1}\label{namespacematplotlib_1_1backends_1_1backend__ps_a12b37e17a387319d1aade2a56ccaa1f1}} 
+\index{matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}!ps\+Defs@{ps\+Defs}}
+\index{ps\+Defs@{ps\+Defs}!matplotlib\+::backends\+::backend\+\_\+ps@{matplotlib\+::backends\+::backend\+\_\+ps}}
+\subsubsection{\texorpdfstring{ps\+Defs}{psDefs}}
+{\footnotesize\ttfamily list matplotlib.\+backends.\+backend\+\_\+ps.\+ps\+Defs}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  [
+2     \textcolor{comment}{# name proc  *\_d*  -}
+3     \textcolor{comment}{# Note that this cannot be bound to /d, because when embedding a Type3 font}
+4     \textcolor{comment}{# we may want to define a "d" glyph using "/d\{...\} d" which would locally}
+5     \textcolor{comment}{# overwrite the definition.}
+6     \textcolor{stringliteral}{"/\_d \{ bind def \} bind def"},
+7     \textcolor{comment}{# x y  *m*  -}
+8     \textcolor{stringliteral}{"/m \{ moveto \} \_d"},
+9     \textcolor{comment}{# x y  *l*  -}
+10     \textcolor{stringliteral}{"/l \{ lineto \} \_d"},
+11     \textcolor{comment}{# x y  *r*  -}
+12     \textcolor{stringliteral}{"/r \{ rlineto \} \_d"},
+13     \textcolor{comment}{# x1 y1 x2 y2 x y *c*  -}
+14     \textcolor{stringliteral}{"/c \{ curveto \} \_d"},
+15     \textcolor{comment}{# *cl*  -}
+16     \textcolor{stringliteral}{"/cl \{ closepath \} \_d"},
+17     \textcolor{comment}{# *ce*  -}
+18     \textcolor{stringliteral}{"/ce \{ closepath eofill \} \_d"},
+19     \textcolor{comment}{# w h x y  *box*  -}
+20     ,
+21     \textcolor{comment}{# w h x y  *clipbox*  -}
+22     ,
+23     \textcolor{comment}{# wx wy llx lly urx ury  *setcachedevice*  -}
+24     \textcolor{stringliteral}{"/sc \{ setcachedevice \} \_d"},
+25 ]
+\end{DoxyCode}

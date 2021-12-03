@@ -1,0 +1,89 @@
+\hypertarget{classpip_1_1__internal_1_1cache_1_1WheelCache}{}\section{pip.\+\_\+internal.\+cache.\+Wheel\+Cache Class Reference}
+\label{classpip_1_1__internal_1_1cache_1_1WheelCache}\index{pip.\+\_\+internal.\+cache.\+Wheel\+Cache@{pip.\+\_\+internal.\+cache.\+Wheel\+Cache}}
+
+
+Inheritance diagram for pip.\+\_\+internal.\+cache.\+Wheel\+Cache\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classpip_1_1__internal_1_1cache_1_1WheelCache__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+internal.\+cache.\+Wheel\+Cache\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classpip_1_1__internal_1_1cache_1_1WheelCache__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1cache_1_1WheelCache_a67fa9223bc168f13ca875f35ecede301}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__internal_1_1cache_1_1Cache_aed8f0121963b4d3095aaa0b2ea344012}{cache\+\_\+dir}, \hyperlink{classpip_1_1__internal_1_1cache_1_1Cache_ac6051e5c3dff9ba7c7e5968e82acc9d2}{format\+\_\+control})
+\item 
+def \hyperlink{classpip_1_1__internal_1_1cache_1_1WheelCache_a547a7cc2c142b1f7e971990c564658f6}{get\+\_\+path\+\_\+for\+\_\+link} (self, link)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1cache_1_1WheelCache_aa11a3aa4d932f9e3256040837e73b997}{get\+\_\+ephem\+\_\+path\+\_\+for\+\_\+link} (self, link)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1cache_1_1WheelCache_a722f8381e4d788924983bcfcfea9a320}{get} (self, link, package\+\_\+name, supported\+\_\+tags)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1cache_1_1WheelCache_a26c59ef2ab9419e7f5fff1fc51382cea}{get\+\_\+cache\+\_\+entry} (self, link, package\+\_\+name, supported\+\_\+tags)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Wraps EphemWheelCache and SimpleWheelCache into a single Cache
+
+This Cache allows for gracefully degradation, using the ephem wheel cache
+when a certain link is not found in the simple wheel cache first.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1cache_1_1WheelCache_a67fa9223bc168f13ca875f35ecede301}\label{classpip_1_1__internal_1_1cache_1_1WheelCache_a67fa9223bc168f13ca875f35ecede301}} 
+\index{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cache.\+Wheel\+Cache.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cache\+\_\+dir,  }\item[{}]{format\+\_\+control }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1cache_1_1WheelCache_a722f8381e4d788924983bcfcfea9a320}\label{classpip_1_1__internal_1_1cache_1_1WheelCache_a722f8381e4d788924983bcfcfea9a320}} 
+\index{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache}!get@{get}}
+\index{get@{get}!pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cache.\+Wheel\+Cache.\+get (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{link,  }\item[{}]{package\+\_\+name,  }\item[{}]{supported\+\_\+tags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1cache_1_1WheelCache_a26c59ef2ab9419e7f5fff1fc51382cea}\label{classpip_1_1__internal_1_1cache_1_1WheelCache_a26c59ef2ab9419e7f5fff1fc51382cea}} 
+\index{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache}!get\+\_\+cache\+\_\+entry@{get\+\_\+cache\+\_\+entry}}
+\index{get\+\_\+cache\+\_\+entry@{get\+\_\+cache\+\_\+entry}!pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache}}
+\subsubsection{\texorpdfstring{get\+\_\+cache\+\_\+entry()}{get\_cache\_entry()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cache.\+Wheel\+Cache.\+get\+\_\+cache\+\_\+entry (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{link,  }\item[{}]{package\+\_\+name,  }\item[{}]{supported\+\_\+tags }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a CacheEntry with a link to a cached item if it exists or
+None. The cache entry indicates if the item was found in the persistent
+or ephemeral cache.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__internal_1_1cache_1_1WheelCache_aa11a3aa4d932f9e3256040837e73b997}\label{classpip_1_1__internal_1_1cache_1_1WheelCache_aa11a3aa4d932f9e3256040837e73b997}} 
+\index{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache}!get\+\_\+ephem\+\_\+path\+\_\+for\+\_\+link@{get\+\_\+ephem\+\_\+path\+\_\+for\+\_\+link}}
+\index{get\+\_\+ephem\+\_\+path\+\_\+for\+\_\+link@{get\+\_\+ephem\+\_\+path\+\_\+for\+\_\+link}!pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache}}
+\subsubsection{\texorpdfstring{get\+\_\+ephem\+\_\+path\+\_\+for\+\_\+link()}{get\_ephem\_path\_for\_link()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cache.\+Wheel\+Cache.\+get\+\_\+ephem\+\_\+path\+\_\+for\+\_\+link (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{link }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1cache_1_1WheelCache_a547a7cc2c142b1f7e971990c564658f6}\label{classpip_1_1__internal_1_1cache_1_1WheelCache_a547a7cc2c142b1f7e971990c564658f6}} 
+\index{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache}!get\+\_\+path\+\_\+for\+\_\+link@{get\+\_\+path\+\_\+for\+\_\+link}}
+\index{get\+\_\+path\+\_\+for\+\_\+link@{get\+\_\+path\+\_\+for\+\_\+link}!pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Wheel\+Cache}}
+\subsubsection{\texorpdfstring{get\+\_\+path\+\_\+for\+\_\+link()}{get\_path\_for\_link()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cache.\+Wheel\+Cache.\+get\+\_\+path\+\_\+for\+\_\+link (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{link }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+internal/\hyperlink{__internal_2cache_8py}{cache.\+py}\end{DoxyCompactItemize}

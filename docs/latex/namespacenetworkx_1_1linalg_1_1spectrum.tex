@@ -1,0 +1,175 @@
+\hypertarget{namespacenetworkx_1_1linalg_1_1spectrum}{}\section{networkx.\+linalg.\+spectrum Namespace Reference}
+\label{namespacenetworkx_1_1linalg_1_1spectrum}\index{networkx.\+linalg.\+spectrum@{networkx.\+linalg.\+spectrum}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1spectrum_a3dcfffa7b1aecf8e735e0b79c38602e2}{laplacian\+\_\+spectrum} (G, weight=\char`\"{}weight\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1spectrum_a8c63fefa8333b1c2e76ad1f5db2ca60d}{normalized\+\_\+laplacian\+\_\+spectrum} (G, weight=\char`\"{}weight\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1spectrum_a879ae10f732a232e755b2f9d8ec67c1b}{adjacency\+\_\+spectrum} (G, weight=\char`\"{}weight\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1spectrum_ac85c3062adc5046b637c5f93ab7ab735}{modularity\+\_\+spectrum} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1spectrum_aa1ab745086a1f90e352b4000d41764f7}{bethe\+\_\+hessian\+\_\+spectrum} (G, r=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Eigenvalue spectrum of graphs.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1spectrum_a879ae10f732a232e755b2f9d8ec67c1b}\label{namespacenetworkx_1_1linalg_1_1spectrum_a879ae10f732a232e755b2f9d8ec67c1b}} 
+\index{networkx\+::linalg\+::spectrum@{networkx\+::linalg\+::spectrum}!adjacency\+\_\+spectrum@{adjacency\+\_\+spectrum}}
+\index{adjacency\+\_\+spectrum@{adjacency\+\_\+spectrum}!networkx\+::linalg\+::spectrum@{networkx\+::linalg\+::spectrum}}
+\subsubsection{\texorpdfstring{adjacency\+\_\+spectrum()}{adjacency\_spectrum()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+spectrum.\+adjacency\+\_\+spectrum (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns eigenvalues of the adjacency matrix of G.
+
+Parameters
+----------
+G : graph
+   A NetworkX graph
+
+weight : string or None, optional (default='weight')
+   The edge data key used to compute each value in the matrix.
+   If None, then each edge has weight 1.
+
+Returns
+-------
+evals : NumPy array
+  Eigenvalues
+
+Notes
+-----
+For MultiGraph/MultiDiGraph, the edges weights are summed.
+See to_numpy_array for other options.
+
+See Also
+--------
+adjacency_matrix
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1spectrum_aa1ab745086a1f90e352b4000d41764f7}\label{namespacenetworkx_1_1linalg_1_1spectrum_aa1ab745086a1f90e352b4000d41764f7}} 
+\index{networkx\+::linalg\+::spectrum@{networkx\+::linalg\+::spectrum}!bethe\+\_\+hessian\+\_\+spectrum@{bethe\+\_\+hessian\+\_\+spectrum}}
+\index{bethe\+\_\+hessian\+\_\+spectrum@{bethe\+\_\+hessian\+\_\+spectrum}!networkx\+::linalg\+::spectrum@{networkx\+::linalg\+::spectrum}}
+\subsubsection{\texorpdfstring{bethe\+\_\+hessian\+\_\+spectrum()}{bethe\_hessian\_spectrum()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+spectrum.\+bethe\+\_\+hessian\+\_\+spectrum (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{r = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns eigenvalues of the Bethe Hessian matrix of G.
+
+Parameters
+----------
+G : Graph
+   A NetworkX Graph or DiGraph
+
+r : float
+   Regularizer parameter
+
+Returns
+-------
+evals : NumPy array
+  Eigenvalues
+
+See Also
+--------
+bethe_hessian_matrix
+
+References
+----------
+.. [1] A. Saade, F. Krzakala and L. Zdeborová
+   "Spectral clustering of graphs with the bethe hessian",
+   Advances in Neural Information Processing Systems. 2014.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1spectrum_a3dcfffa7b1aecf8e735e0b79c38602e2}\label{namespacenetworkx_1_1linalg_1_1spectrum_a3dcfffa7b1aecf8e735e0b79c38602e2}} 
+\index{networkx\+::linalg\+::spectrum@{networkx\+::linalg\+::spectrum}!laplacian\+\_\+spectrum@{laplacian\+\_\+spectrum}}
+\index{laplacian\+\_\+spectrum@{laplacian\+\_\+spectrum}!networkx\+::linalg\+::spectrum@{networkx\+::linalg\+::spectrum}}
+\subsubsection{\texorpdfstring{laplacian\+\_\+spectrum()}{laplacian\_spectrum()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+spectrum.\+laplacian\+\_\+spectrum (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns eigenvalues of the Laplacian of G
+
+Parameters
+----------
+G : graph
+   A NetworkX graph
+
+weight : string or None, optional (default='weight')
+   The edge data key used to compute each value in the matrix.
+   If None, then each edge has weight 1.
+
+Returns
+-------
+evals : NumPy array
+  Eigenvalues
+
+Notes
+-----
+For MultiGraph/MultiDiGraph, the edges weights are summed.
+See to_numpy_array for other options.
+
+See Also
+--------
+laplacian_matrix
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1spectrum_ac85c3062adc5046b637c5f93ab7ab735}\label{namespacenetworkx_1_1linalg_1_1spectrum_ac85c3062adc5046b637c5f93ab7ab735}} 
+\index{networkx\+::linalg\+::spectrum@{networkx\+::linalg\+::spectrum}!modularity\+\_\+spectrum@{modularity\+\_\+spectrum}}
+\index{modularity\+\_\+spectrum@{modularity\+\_\+spectrum}!networkx\+::linalg\+::spectrum@{networkx\+::linalg\+::spectrum}}
+\subsubsection{\texorpdfstring{modularity\+\_\+spectrum()}{modularity\_spectrum()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+spectrum.\+modularity\+\_\+spectrum (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns eigenvalues of the modularity matrix of G.
+
+Parameters
+----------
+G : Graph
+   A NetworkX Graph or DiGraph
+
+Returns
+-------
+evals : NumPy array
+  Eigenvalues
+
+See Also
+--------
+modularity_matrix
+
+References
+----------
+.. [1] M. E. J. Newman, "Modularity and community structure in networks",
+   Proc. Natl. Acad. Sci. USA, vol. 103, pp. 8577-8582, 2006.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1spectrum_a8c63fefa8333b1c2e76ad1f5db2ca60d}\label{namespacenetworkx_1_1linalg_1_1spectrum_a8c63fefa8333b1c2e76ad1f5db2ca60d}} 
+\index{networkx\+::linalg\+::spectrum@{networkx\+::linalg\+::spectrum}!normalized\+\_\+laplacian\+\_\+spectrum@{normalized\+\_\+laplacian\+\_\+spectrum}}
+\index{normalized\+\_\+laplacian\+\_\+spectrum@{normalized\+\_\+laplacian\+\_\+spectrum}!networkx\+::linalg\+::spectrum@{networkx\+::linalg\+::spectrum}}
+\subsubsection{\texorpdfstring{normalized\+\_\+laplacian\+\_\+spectrum()}{normalized\_laplacian\_spectrum()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+spectrum.\+normalized\+\_\+laplacian\+\_\+spectrum (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return eigenvalues of the normalized Laplacian of G
+
+Parameters
+----------
+G : graph
+   A NetworkX graph
+
+weight : string or None, optional (default='weight')
+   The edge data key used to compute each value in the matrix.
+   If None, then each edge has weight 1.
+
+Returns
+-------
+evals : NumPy array
+  Eigenvalues
+
+Notes
+-----
+For MultiGraph/MultiDiGraph, the edges weights are summed.
+See to_numpy_array for other options.
+
+See Also
+--------
+normalized_laplacian_matrix
+\end{DoxyVerb}
+ 

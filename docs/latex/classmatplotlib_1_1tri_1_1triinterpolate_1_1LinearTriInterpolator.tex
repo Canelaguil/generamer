@@ -1,0 +1,84 @@
+\hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator}{}\section{matplotlib.\+tri.\+triinterpolate.\+Linear\+Tri\+Interpolator Class Reference}
+\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator}\index{matplotlib.\+tri.\+triinterpolate.\+Linear\+Tri\+Interpolator@{matplotlib.\+tri.\+triinterpolate.\+Linear\+Tri\+Interpolator}}
+
+
+Inheritance diagram for matplotlib.\+tri.\+triinterpolate.\+Linear\+Tri\+Interpolator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+tri.\+triinterpolate.\+Linear\+Tri\+Interpolator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator_a869c534d99ffab66dee8e8f045fc83c6}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, triangulation, z, trifinder=None)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator_a37e4e685c69239ff642b6538f108c98b}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, x, y)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator_af298ec0882c80e44df4aea663ca5c999}{gradient} (self, x, y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Linear interpolator on a triangular grid.
+
+Each triangle is represented by a plane so that an interpolated value at
+point (x, y) lies on the plane of the triangle containing (x, y).
+Interpolated values are therefore continuous across the triangulation, but
+their first derivatives are discontinuous at edges between triangles.
+
+Parameters
+----------
+triangulation : `~matplotlib.tri.Triangulation`
+    The triangulation to interpolate over.
+z : (npoints,) array-like
+    Array of values, defined at grid points, to interpolate between.
+trifinder : `~matplotlib.tri.TriFinder`, optional
+    If this is not specified, the Triangulation's default TriFinder will
+    be used by calling `.Triangulation.get_trifinder`.
+
+Methods
+-------
+`__call__` (x, y) : Returns interpolated values at (x, y) points.
+`gradient` (x, y) : Returns interpolated derivatives at (x, y) points.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator_a869c534d99ffab66dee8e8f045fc83c6}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator_a869c534d99ffab66dee8e8f045fc83c6}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+Linear\+Tri\+Interpolator@{matplotlib\+::tri\+::triinterpolate\+::\+Linear\+Tri\+Interpolator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::tri\+::triinterpolate\+::\+Linear\+Tri\+Interpolator@{matplotlib\+::tri\+::triinterpolate\+::\+Linear\+Tri\+Interpolator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+Linear\+Tri\+Interpolator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{triangulation,  }\item[{}]{z,  }\item[{}]{trifinder = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator_a37e4e685c69239ff642b6538f108c98b}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator_a37e4e685c69239ff642b6538f108c98b}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+Linear\+Tri\+Interpolator@{matplotlib\+::tri\+::triinterpolate\+::\+Linear\+Tri\+Interpolator}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::tri\+::triinterpolate\+::\+Linear\+Tri\+Interpolator@{matplotlib\+::tri\+::triinterpolate\+::\+Linear\+Tri\+Interpolator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+Linear\+Tri\+Interpolator.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator_af298ec0882c80e44df4aea663ca5c999}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1LinearTriInterpolator_af298ec0882c80e44df4aea663ca5c999}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+Linear\+Tri\+Interpolator@{matplotlib\+::tri\+::triinterpolate\+::\+Linear\+Tri\+Interpolator}!gradient@{gradient}}
+\index{gradient@{gradient}!matplotlib\+::tri\+::triinterpolate\+::\+Linear\+Tri\+Interpolator@{matplotlib\+::tri\+::triinterpolate\+::\+Linear\+Tri\+Interpolator}}
+\subsubsection{\texorpdfstring{gradient()}{gradient()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+Linear\+Tri\+Interpolator.\+gradient (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/tri/\hyperlink{triinterpolate_8py}{triinterpolate.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,188 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword}{}\section{setuptools.\+\_\+vendor.\+pyparsing.\+Keyword Class Reference}
+\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword}\index{setuptools.\+\_\+vendor.\+pyparsing.\+Keyword@{setuptools.\+\_\+vendor.\+pyparsing.\+Keyword}}
+
+
+Inheritance diagram for setuptools.\+\_\+vendor.\+pyparsing.\+Keyword\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for setuptools.\+\_\+vendor.\+pyparsing.\+Keyword\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a7037e6d7d6b3273f381766cb7d803178}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, match\+String, \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_aa4030fb7a4311114af357a36bb59989f}{ident\+Chars}=None, \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a995a21960280a362dcb69aa1660ecc0f}{caseless}=False)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a9cbc8c5da7a96bb2fe7d9a9d6f183e94}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a4755042f0debfca0e86a468001a77957}{copy} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a569380346ac0c70c38a8c46ae2a311d1}{set\+Default\+Keyword\+Chars} (chars)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a209023e194df231f1f7c75adb3573c6b}{match}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a16abbaab129ee1461a24619aca8012f4}{match\+Len}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_ade071b00f336c598f3cc9b9304267c47}{first\+Match\+Char}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_afdb27e153bfdc39823b49704a2cb0f98}{name}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a467e41af58395bc71d1b80f0ed0d05e9}{errmsg}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_aaf17f2fd65cdfe0da8a4741fef3f3489}{may\+Return\+Empty}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_ae135c5f08ea315e5c271c9c1a333588c}{may\+Index\+Error}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a995a21960280a362dcb69aa1660ecc0f}{caseless}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a8ce588525bf5a7bf05744f66a98b62d1}{caselessmatch}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_aa4030fb7a4311114af357a36bb59989f}{ident\+Chars}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_af0c3fda9feb88b45a21b6c0280e490df}{D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+Y\+W\+O\+R\+D\+\_\+\+C\+H\+A\+RS}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Token to exactly match a specified string as a keyword, that is, it must be
+immediately followed by a non-keyword character.  Compare with C{L{Literal}}:
+ - C{Literal("if")} will match the leading C{'if'} in C{'ifAndOnlyIf'}.
+ - C{Keyword("if")} will not; it will only match the leading C{'if'} in C{'if x=1'}, or C{'if(y==2)'}
+Accepts two optional constructor arguments in addition to the keyword string:
+ - C{identChars} is a string of characters that would be valid identifier characters,
+      defaulting to all alphanumerics + "_" and "$"
+ - C{caseless} allows case-insensitive matching, default is C{False}.
+   
+Example::
+    Keyword("start").parseString("start")  # -> ['start']
+    Keyword("start").parseString("starting")  # -> Exception
+
+For case-insensitive matching, use L{CaselessKeyword}.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a7037e6d7d6b3273f381766cb7d803178}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a7037e6d7d6b3273f381766cb7d803178}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{match\+String,  }\item[{}]{ident\+Chars = {\ttfamily None},  }\item[{}]{caseless = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a4755042f0debfca0e86a468001a77957}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a4755042f0debfca0e86a468001a77957}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!copy@{copy}}
+\index{copy@{copy}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+copy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a9cbc8c5da7a96bb2fe7d9a9d6f183e94}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a9cbc8c5da7a96bb2fe7d9a9d6f183e94}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a569380346ac0c70c38a8c46ae2a311d1}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a569380346ac0c70c38a8c46ae2a311d1}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!set\+Default\+Keyword\+Chars@{set\+Default\+Keyword\+Chars}}
+\index{set\+Default\+Keyword\+Chars@{set\+Default\+Keyword\+Chars}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{set\+Default\+Keyword\+Chars()}{setDefaultKeywordChars()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+set\+Default\+Keyword\+Chars (\begin{DoxyParamCaption}\item[{}]{chars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Overrides the default Keyword chars
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a995a21960280a362dcb69aa1660ecc0f}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a995a21960280a362dcb69aa1660ecc0f}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!caseless@{caseless}}
+\index{caseless@{caseless}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{caseless}{caseless}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+caseless}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a8ce588525bf5a7bf05744f66a98b62d1}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a8ce588525bf5a7bf05744f66a98b62d1}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!caselessmatch@{caselessmatch}}
+\index{caselessmatch@{caselessmatch}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{caselessmatch}{caselessmatch}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+caselessmatch}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_af0c3fda9feb88b45a21b6c0280e490df}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_af0c3fda9feb88b45a21b6c0280e490df}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+Y\+W\+O\+R\+D\+\_\+\+C\+H\+A\+RS@{D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+Y\+W\+O\+R\+D\+\_\+\+C\+H\+A\+RS}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+Y\+W\+O\+R\+D\+\_\+\+C\+H\+A\+RS@{D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+Y\+W\+O\+R\+D\+\_\+\+C\+H\+A\+RS}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+Y\+W\+O\+R\+D\+\_\+\+C\+H\+A\+RS}{DEFAULT\_KEYWORD\_CHARS}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+Y\+W\+O\+R\+D\+\_\+\+C\+H\+A\+RS\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a467e41af58395bc71d1b80f0ed0d05e9}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a467e41af58395bc71d1b80f0ed0d05e9}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!errmsg@{errmsg}}
+\index{errmsg@{errmsg}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{errmsg}{errmsg}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+errmsg}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_ade071b00f336c598f3cc9b9304267c47}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_ade071b00f336c598f3cc9b9304267c47}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!first\+Match\+Char@{first\+Match\+Char}}
+\index{first\+Match\+Char@{first\+Match\+Char}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{first\+Match\+Char}{firstMatchChar}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+first\+Match\+Char}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_aa4030fb7a4311114af357a36bb59989f}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_aa4030fb7a4311114af357a36bb59989f}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!ident\+Chars@{ident\+Chars}}
+\index{ident\+Chars@{ident\+Chars}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{ident\+Chars}{identChars}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+ident\+Chars}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a209023e194df231f1f7c75adb3573c6b}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a209023e194df231f1f7c75adb3573c6b}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!match@{match}}
+\index{match@{match}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{match}{match}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+match}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a16abbaab129ee1461a24619aca8012f4}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_a16abbaab129ee1461a24619aca8012f4}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!match\+Len@{match\+Len}}
+\index{match\+Len@{match\+Len}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{match\+Len}{matchLen}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+match\+Len}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_ae135c5f08ea315e5c271c9c1a333588c}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_ae135c5f08ea315e5c271c9c1a333588c}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!may\+Index\+Error@{may\+Index\+Error}}
+\index{may\+Index\+Error@{may\+Index\+Error}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{may\+Index\+Error}{mayIndexError}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+may\+Index\+Error}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_aaf17f2fd65cdfe0da8a4741fef3f3489}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_aaf17f2fd65cdfe0da8a4741fef3f3489}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+may\+Return\+Empty}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_afdb27e153bfdc39823b49704a2cb0f98}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Keyword_afdb27e153bfdc39823b49704a2cb0f98}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}!name@{name}}
+\index{name@{name}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Keyword}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Keyword.\+name}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/\hyperlink{setuptools_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

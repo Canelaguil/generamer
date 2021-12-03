@@ -1,0 +1,106 @@
+\hypertarget{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin}{}\section{pip.\+\_\+vendor.\+distlib.\+util.\+Event\+Mixin Class Reference}
+\label{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin}\index{pip.\+\_\+vendor.\+distlib.\+util.\+Event\+Mixin@{pip.\+\_\+vendor.\+distlib.\+util.\+Event\+Mixin}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+distlib.\+util.\+Event\+Mixin\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+distlib.\+util.\+Event\+Mixin\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_a4ed3ac19bcba8dcb1136495a7eb8315e}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_a59395574411aaf4383687b2d5b0b9acd}{add} (self, event, subscriber, append=True)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_aa6ba25c788248661ab22b49e45bfb573}{remove} (self, event, subscriber)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_af8db5a61bb5ef5276efd44d7c5d7a3e3}{get\+\_\+subscribers} (self, event)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_a24812a01ae12463262e231e4d3b537c3}{publish} (self, event, args, kwargs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A very simple publish/subscribe system.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_a4ed3ac19bcba8dcb1136495a7eb8315e}\label{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_a4ed3ac19bcba8dcb1136495a7eb8315e}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin@{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin@{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+util.\+Event\+Mixin.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_a59395574411aaf4383687b2d5b0b9acd}\label{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_a59395574411aaf4383687b2d5b0b9acd}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin@{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin}!add@{add}}
+\index{add@{add}!pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin@{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+util.\+Event\+Mixin.\+add (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event,  }\item[{}]{subscriber,  }\item[{}]{append = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a subscriber for an event.
+
+:param event: The name of an event.
+:param subscriber: The subscriber to be added (and called when the
+           event is published).
+:param append: Whether to append or prepend the subscriber to an
+       existing subscriber list for the event.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_af8db5a61bb5ef5276efd44d7c5d7a3e3}\label{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_af8db5a61bb5ef5276efd44d7c5d7a3e3}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin@{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin}!get\+\_\+subscribers@{get\+\_\+subscribers}}
+\index{get\+\_\+subscribers@{get\+\_\+subscribers}!pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin@{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin}}
+\subsubsection{\texorpdfstring{get\+\_\+subscribers()}{get\_subscribers()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+util.\+Event\+Mixin.\+get\+\_\+subscribers (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return an iterator for the subscribers for an event.
+:param event: The event to return subscribers for.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_a24812a01ae12463262e231e4d3b537c3}\label{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_a24812a01ae12463262e231e4d3b537c3}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin@{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin}!publish@{publish}}
+\index{publish@{publish}!pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin@{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin}}
+\subsubsection{\texorpdfstring{publish()}{publish()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+util.\+Event\+Mixin.\+publish (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Publish a event and return a list of values returned by its
+subscribers.
+
+:param event: The event to publish.
+:param args: The positional arguments to pass to the event's
+     subscribers.
+:param kwargs: The keyword arguments to pass to the event's
+       subscribers.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_aa6ba25c788248661ab22b49e45bfb573}\label{classpip_1_1__vendor_1_1distlib_1_1util_1_1EventMixin_aa6ba25c788248661ab22b49e45bfb573}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin@{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin}!remove@{remove}}
+\index{remove@{remove}!pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin@{pip\+::\+\_\+vendor\+::distlib\+::util\+::\+Event\+Mixin}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+util.\+Event\+Mixin.\+remove (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event,  }\item[{}]{subscriber }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove a subscriber for an event.
+
+:param event: The name of an event.
+:param subscriber: The subscriber to be removed.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/distlib/\hyperlink{pip_2__vendor_2distlib_2util_8py}{util.\+py}\end{DoxyCompactItemize}

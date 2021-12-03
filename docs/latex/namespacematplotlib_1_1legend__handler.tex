@@ -1,0 +1,73 @@
+\hypertarget{namespacematplotlib_1_1legend__handler}{}\section{matplotlib.\+legend\+\_\+handler Namespace Reference}
+\label{namespacematplotlib_1_1legend__handler}\index{matplotlib.\+legend\+\_\+handler@{matplotlib.\+legend\+\_\+handler}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerBase}{Handler\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerCircleCollection}{Handler\+Circle\+Collection}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerErrorbar}{Handler\+Errorbar}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerLine2D}{Handler\+Line2D}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerLineCollection}{Handler\+Line\+Collection}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerNpoints}{Handler\+Npoints}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerNpointsYoffsets}{Handler\+Npoints\+Yoffsets}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerPatch}{Handler\+Patch}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerPathCollection}{Handler\+Path\+Collection}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerPolyCollection}{Handler\+Poly\+Collection}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerRegularPolyCollection}{Handler\+Regular\+Poly\+Collection}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerStem}{Handler\+Stem}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerStepPatch}{Handler\+Step\+Patch}
+\item 
+class \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerTuple}{Handler\+Tuple}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1legend__handler_a51637617e81f9b449cfb5cda8a54a5c8}{update\+\_\+from\+\_\+first\+\_\+child} (tgt, src)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Default legend handlers.
+
+It is strongly encouraged to have read the :doc:`legend guide
+</tutorials/intermediate/legend_guide>` before this documentation.
+
+Legend handlers are expected to be a callable object with a following
+signature. ::
+
+    legend_handler(legend, orig_handle, fontsize, handlebox)
+
+Where *legend* is the legend itself, *orig_handle* is the original
+plot, *fontsize* is the fontsize in pixels, and *handlebox* is a
+OffsetBox instance. Within the call, you should create relevant
+artists (using relevant properties from the *legend* and/or
+*orig_handle*) and add them into the handlebox. The artists needs to
+be scaled according to the fontsize (note that the size is in pixel,
+i.e., this is dpi-scaled value).
+
+This module includes definition of several legend handler classes
+derived from the base class (HandlerBase) with the following method::
+
+    def legend_artist(self, legend, orig_handle, fontsize, handlebox)
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1legend__handler_a51637617e81f9b449cfb5cda8a54a5c8}\label{namespacematplotlib_1_1legend__handler_a51637617e81f9b449cfb5cda8a54a5c8}} 
+\index{matplotlib\+::legend\+\_\+handler@{matplotlib\+::legend\+\_\+handler}!update\+\_\+from\+\_\+first\+\_\+child@{update\+\_\+from\+\_\+first\+\_\+child}}
+\index{update\+\_\+from\+\_\+first\+\_\+child@{update\+\_\+from\+\_\+first\+\_\+child}!matplotlib\+::legend\+\_\+handler@{matplotlib\+::legend\+\_\+handler}}
+\subsubsection{\texorpdfstring{update\+\_\+from\+\_\+first\+\_\+child()}{update\_from\_first\_child()}}
+{\footnotesize\ttfamily def matplotlib.\+legend\+\_\+handler.\+update\+\_\+from\+\_\+first\+\_\+child (\begin{DoxyParamCaption}\item[{}]{tgt,  }\item[{}]{src }\end{DoxyParamCaption})}
+

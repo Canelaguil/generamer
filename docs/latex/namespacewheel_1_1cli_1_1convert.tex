@@ -1,0 +1,90 @@
+\hypertarget{namespacewheel_1_1cli_1_1convert}{}\section{wheel.\+cli.\+convert Namespace Reference}
+\label{namespacewheel_1_1cli_1_1convert}\index{wheel.\+cli.\+convert@{wheel.\+cli.\+convert}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classwheel_1_1cli_1_1convert_1_1__bdist__wheel__tag}{\+\_\+bdist\+\_\+wheel\+\_\+tag}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacewheel_1_1cli_1_1convert_a83b8a22a02b8e4ffdf7ee67cfb897d6b}{egg2wheel} (egg\+\_\+path, dest\+\_\+dir)
+\item 
+def \hyperlink{namespacewheel_1_1cli_1_1convert_af3abb35083c36470841fbac93fc8f19f}{parse\+\_\+wininst\+\_\+info} (wininfo\+\_\+name, egginfo\+\_\+name)
+\item 
+def \hyperlink{namespacewheel_1_1cli_1_1convert_a1f06b050e440ed22143d63e25e295559}{wininst2wheel} (path, dest\+\_\+dir)
+\item 
+def \hyperlink{namespacewheel_1_1cli_1_1convert_af3bc802d1311c120a48e97d90de58fde}{convert} (files, dest\+\_\+dir, verbose)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacewheel_1_1cli_1_1convert_a3b230507fc4be0a22f526158aa5153ea}{egg\+\_\+info\+\_\+re}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacewheel_1_1cli_1_1convert_af3bc802d1311c120a48e97d90de58fde}\label{namespacewheel_1_1cli_1_1convert_af3bc802d1311c120a48e97d90de58fde}} 
+\index{wheel\+::cli\+::convert@{wheel\+::cli\+::convert}!convert@{convert}}
+\index{convert@{convert}!wheel\+::cli\+::convert@{wheel\+::cli\+::convert}}
+\subsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily def wheel.\+cli.\+convert.\+convert (\begin{DoxyParamCaption}\item[{}]{files,  }\item[{}]{dest\+\_\+dir,  }\item[{}]{verbose }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacewheel_1_1cli_1_1convert_a83b8a22a02b8e4ffdf7ee67cfb897d6b}\label{namespacewheel_1_1cli_1_1convert_a83b8a22a02b8e4ffdf7ee67cfb897d6b}} 
+\index{wheel\+::cli\+::convert@{wheel\+::cli\+::convert}!egg2wheel@{egg2wheel}}
+\index{egg2wheel@{egg2wheel}!wheel\+::cli\+::convert@{wheel\+::cli\+::convert}}
+\subsubsection{\texorpdfstring{egg2wheel()}{egg2wheel()}}
+{\footnotesize\ttfamily def wheel.\+cli.\+convert.\+egg2wheel (\begin{DoxyParamCaption}\item[{}]{egg\+\_\+path,  }\item[{}]{dest\+\_\+dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacewheel_1_1cli_1_1convert_af3abb35083c36470841fbac93fc8f19f}\label{namespacewheel_1_1cli_1_1convert_af3abb35083c36470841fbac93fc8f19f}} 
+\index{wheel\+::cli\+::convert@{wheel\+::cli\+::convert}!parse\+\_\+wininst\+\_\+info@{parse\+\_\+wininst\+\_\+info}}
+\index{parse\+\_\+wininst\+\_\+info@{parse\+\_\+wininst\+\_\+info}!wheel\+::cli\+::convert@{wheel\+::cli\+::convert}}
+\subsubsection{\texorpdfstring{parse\+\_\+wininst\+\_\+info()}{parse\_wininst\_info()}}
+{\footnotesize\ttfamily def wheel.\+cli.\+convert.\+parse\+\_\+wininst\+\_\+info (\begin{DoxyParamCaption}\item[{}]{wininfo\+\_\+name,  }\item[{}]{egginfo\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extract metadata from filenames.
+
+Extracts the 4 metadataitems needed (name, version, pyversion, arch) from
+the installer filename and the name of the egg-info directory embedded in
+the zipfile (if any).
+
+The egginfo filename has the format::
+
+    name-ver(-pyver)(-arch).egg-info
+
+The installer filename has the format::
+
+    name-ver.arch(-pyver).exe
+
+Some things to note:
+
+1. The installer filename is not definitive. An installer can be renamed
+   and work perfectly well as an installer. So more reliable data should
+   be used whenever possible.
+2. The egg-info data should be preferred for the name and version, because
+   these come straight from the distutils metadata, and are mandatory.
+3. The pyver from the egg-info data should be ignored, as it is
+   constructed from the version of Python used to build the installer,
+   which is irrelevant - the installer filename is correct here (even to
+   the point that when it's not there, any version is implied).
+4. The architecture must be taken from the installer filename, as it is
+   not included in the egg-info data.
+5. Architecture-neutral installers still have an architecture because the
+   installer format itself (being executable) is architecture-specific. We
+   should therefore ignore the architecture if the content is pure-python.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1cli_1_1convert_a1f06b050e440ed22143d63e25e295559}\label{namespacewheel_1_1cli_1_1convert_a1f06b050e440ed22143d63e25e295559}} 
+\index{wheel\+::cli\+::convert@{wheel\+::cli\+::convert}!wininst2wheel@{wininst2wheel}}
+\index{wininst2wheel@{wininst2wheel}!wheel\+::cli\+::convert@{wheel\+::cli\+::convert}}
+\subsubsection{\texorpdfstring{wininst2wheel()}{wininst2wheel()}}
+{\footnotesize\ttfamily def wheel.\+cli.\+convert.\+wininst2wheel (\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{dest\+\_\+dir }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacewheel_1_1cli_1_1convert_a3b230507fc4be0a22f526158aa5153ea}\label{namespacewheel_1_1cli_1_1convert_a3b230507fc4be0a22f526158aa5153ea}} 
+\index{wheel\+::cli\+::convert@{wheel\+::cli\+::convert}!egg\+\_\+info\+\_\+re@{egg\+\_\+info\+\_\+re}}
+\index{egg\+\_\+info\+\_\+re@{egg\+\_\+info\+\_\+re}!wheel\+::cli\+::convert@{wheel\+::cli\+::convert}}
+\subsubsection{\texorpdfstring{egg\+\_\+info\+\_\+re}{egg\_info\_re}}
+{\footnotesize\ttfamily wheel.\+cli.\+convert.\+egg\+\_\+info\+\_\+re}
+

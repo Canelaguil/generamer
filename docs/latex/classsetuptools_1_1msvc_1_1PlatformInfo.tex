@@ -1,0 +1,178 @@
+\hypertarget{classsetuptools_1_1msvc_1_1PlatformInfo}{}\section{setuptools.\+msvc.\+Platform\+Info Class Reference}
+\label{classsetuptools_1_1msvc_1_1PlatformInfo}\index{setuptools.\+msvc.\+Platform\+Info@{setuptools.\+msvc.\+Platform\+Info}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1msvc_1_1PlatformInfo_aa98d6a4ffa306e85dba513ac18612492}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classsetuptools_1_1msvc_1_1PlatformInfo_a35417db9c47564d7101f92145515092c}{arch})
+\item 
+def \hyperlink{classsetuptools_1_1msvc_1_1PlatformInfo_a2c7d1dc5add6f0b2494e161f364c4644}{target\+\_\+cpu} (self)
+\item 
+def \hyperlink{classsetuptools_1_1msvc_1_1PlatformInfo_a33202c8f736ad183994d06b48b7afd6f}{target\+\_\+is\+\_\+x86} (self)
+\item 
+def \hyperlink{classsetuptools_1_1msvc_1_1PlatformInfo_a09c58742017714dfae07c6604e3f837b}{current\+\_\+is\+\_\+x86} (self)
+\item 
+def \hyperlink{classsetuptools_1_1msvc_1_1PlatformInfo_a5d8f69638b5c98cc654174f4c944d1ab}{current\+\_\+dir} (self, hidex86=False, x64=False)
+\item 
+def \hyperlink{classsetuptools_1_1msvc_1_1PlatformInfo_a8ff098933fbab72ab767191b392e486b}{target\+\_\+dir} (self, hidex86=False, x64=False)
+\item 
+def \hyperlink{classsetuptools_1_1msvc_1_1PlatformInfo_a9cd7bd8ff66ddc3b79fe7448c52f1504}{cross\+\_\+dir} (self, forcex86=False)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1msvc_1_1PlatformInfo_a35417db9c47564d7101f92145515092c}{arch}
+\item 
+\hyperlink{classsetuptools_1_1msvc_1_1PlatformInfo_a5bcf4cada8bfe500f75146ebcbfc1759}{target\+\_\+cpu}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1msvc_1_1PlatformInfo_afd49633c8aa48d6a0162a9ce5aaa72bc}{current\+\_\+cpu}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Current and Target Architectures information.
+
+Parameters
+----------
+arch: str
+    Target architecture.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1msvc_1_1PlatformInfo_aa98d6a4ffa306e85dba513ac18612492}\label{classsetuptools_1_1msvc_1_1PlatformInfo_aa98d6a4ffa306e85dba513ac18612492}} 
+\index{setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+msvc.\+Platform\+Info.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{arch }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1msvc_1_1PlatformInfo_a9cd7bd8ff66ddc3b79fe7448c52f1504}\label{classsetuptools_1_1msvc_1_1PlatformInfo_a9cd7bd8ff66ddc3b79fe7448c52f1504}} 
+\index{setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}!cross\+\_\+dir@{cross\+\_\+dir}}
+\index{cross\+\_\+dir@{cross\+\_\+dir}!setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}}
+\subsubsection{\texorpdfstring{cross\+\_\+dir()}{cross\_dir()}}
+{\footnotesize\ttfamily def setuptools.\+msvc.\+Platform\+Info.\+cross\+\_\+dir (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{forcex86 = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Cross platform specific subfolder.
+
+Parameters
+----------
+forcex86: bool
+    Use 'x86' as current architecture even if current architecture is
+    not x86.
+
+Return
+------
+str
+    subfolder: '' if target architecture is current architecture,
+    '\current_target' if not.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classsetuptools_1_1msvc_1_1PlatformInfo_a5d8f69638b5c98cc654174f4c944d1ab}\label{classsetuptools_1_1msvc_1_1PlatformInfo_a5d8f69638b5c98cc654174f4c944d1ab}} 
+\index{setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}!current\+\_\+dir@{current\+\_\+dir}}
+\index{current\+\_\+dir@{current\+\_\+dir}!setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}}
+\subsubsection{\texorpdfstring{current\+\_\+dir()}{current\_dir()}}
+{\footnotesize\ttfamily def setuptools.\+msvc.\+Platform\+Info.\+current\+\_\+dir (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{hidex86 = {\ttfamily False},  }\item[{}]{x64 = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Current platform specific subfolder.
+
+Parameters
+----------
+hidex86: bool
+    return '' and not '\x86' if architecture is x86.
+x64: bool
+    return '\x64' and not '\amd64' if architecture is amd64.
+
+Return
+------
+str
+    subfolder: '\target', or '' (see hidex86 parameter)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classsetuptools_1_1msvc_1_1PlatformInfo_a09c58742017714dfae07c6604e3f837b}\label{classsetuptools_1_1msvc_1_1PlatformInfo_a09c58742017714dfae07c6604e3f837b}} 
+\index{setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}!current\+\_\+is\+\_\+x86@{current\+\_\+is\+\_\+x86}}
+\index{current\+\_\+is\+\_\+x86@{current\+\_\+is\+\_\+x86}!setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}}
+\subsubsection{\texorpdfstring{current\+\_\+is\+\_\+x86()}{current\_is\_x86()}}
+{\footnotesize\ttfamily def setuptools.\+msvc.\+Platform\+Info.\+current\+\_\+is\+\_\+x86 (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return True if current CPU is x86 32 bits..
+
+Return
+------
+bool
+    CPU is x86 32 bits
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classsetuptools_1_1msvc_1_1PlatformInfo_a2c7d1dc5add6f0b2494e161f364c4644}\label{classsetuptools_1_1msvc_1_1PlatformInfo_a2c7d1dc5add6f0b2494e161f364c4644}} 
+\index{setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}!target\+\_\+cpu@{target\+\_\+cpu}}
+\index{target\+\_\+cpu@{target\+\_\+cpu}!setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}}
+\subsubsection{\texorpdfstring{target\+\_\+cpu()}{target\_cpu()}}
+{\footnotesize\ttfamily def setuptools.\+msvc.\+Platform\+Info.\+target\+\_\+cpu (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return Target CPU architecture.
+
+Return
+------
+str
+    Target CPU
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classsetuptools_1_1msvc_1_1PlatformInfo_a8ff098933fbab72ab767191b392e486b}\label{classsetuptools_1_1msvc_1_1PlatformInfo_a8ff098933fbab72ab767191b392e486b}} 
+\index{setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}!target\+\_\+dir@{target\+\_\+dir}}
+\index{target\+\_\+dir@{target\+\_\+dir}!setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}}
+\subsubsection{\texorpdfstring{target\+\_\+dir()}{target\_dir()}}
+{\footnotesize\ttfamily def setuptools.\+msvc.\+Platform\+Info.\+target\+\_\+dir (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{hidex86 = {\ttfamily False},  }\item[{}]{x64 = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Target platform specific subfolder.
+
+Parameters
+----------
+hidex86: bool
+    return '' and not '\x86' if architecture is x86.
+x64: bool
+    return '\x64' and not '\amd64' if architecture is amd64.
+
+Return
+------
+str
+    subfolder: '\current', or '' (see hidex86 parameter)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classsetuptools_1_1msvc_1_1PlatformInfo_a33202c8f736ad183994d06b48b7afd6f}\label{classsetuptools_1_1msvc_1_1PlatformInfo_a33202c8f736ad183994d06b48b7afd6f}} 
+\index{setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}!target\+\_\+is\+\_\+x86@{target\+\_\+is\+\_\+x86}}
+\index{target\+\_\+is\+\_\+x86@{target\+\_\+is\+\_\+x86}!setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}}
+\subsubsection{\texorpdfstring{target\+\_\+is\+\_\+x86()}{target\_is\_x86()}}
+{\footnotesize\ttfamily def setuptools.\+msvc.\+Platform\+Info.\+target\+\_\+is\+\_\+x86 (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return True if target CPU is x86 32 bits..
+
+Return
+------
+bool
+    CPU is x86 32 bits
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1msvc_1_1PlatformInfo_a35417db9c47564d7101f92145515092c}\label{classsetuptools_1_1msvc_1_1PlatformInfo_a35417db9c47564d7101f92145515092c}} 
+\index{setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}!arch@{arch}}
+\index{arch@{arch}!setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}}
+\subsubsection{\texorpdfstring{arch}{arch}}
+{\footnotesize\ttfamily setuptools.\+msvc.\+Platform\+Info.\+arch}
+
+\mbox{\Hypertarget{classsetuptools_1_1msvc_1_1PlatformInfo_afd49633c8aa48d6a0162a9ce5aaa72bc}\label{classsetuptools_1_1msvc_1_1PlatformInfo_afd49633c8aa48d6a0162a9ce5aaa72bc}} 
+\index{setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}!current\+\_\+cpu@{current\+\_\+cpu}}
+\index{current\+\_\+cpu@{current\+\_\+cpu}!setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}}
+\subsubsection{\texorpdfstring{current\+\_\+cpu}{current\_cpu}}
+{\footnotesize\ttfamily setuptools.\+msvc.\+Platform\+Info.\+current\+\_\+cpu\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsetuptools_1_1msvc_1_1PlatformInfo_a5bcf4cada8bfe500f75146ebcbfc1759}\label{classsetuptools_1_1msvc_1_1PlatformInfo_a5bcf4cada8bfe500f75146ebcbfc1759}} 
+\index{setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}!target\+\_\+cpu@{target\+\_\+cpu}}
+\index{target\+\_\+cpu@{target\+\_\+cpu}!setuptools\+::msvc\+::\+Platform\+Info@{setuptools\+::msvc\+::\+Platform\+Info}}
+\subsubsection{\texorpdfstring{target\+\_\+cpu}{target\_cpu}}
+{\footnotesize\ttfamily setuptools.\+msvc.\+Platform\+Info.\+target\+\_\+cpu}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\hyperlink{msvc_8py}{msvc.\+py}\end{DoxyCompactItemize}

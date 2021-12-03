@@ -1,0 +1,166 @@
+\hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand}{}\section{pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command Class Reference}
+\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand}\index{pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command@{pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command}}
+
+
+Inheritance diagram for pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_aa2ad2f7172e2f034506eafcea3e9914c}{add\+\_\+options} (self)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_aeaeadaf64be640ee5fb83bc98b04c71d}{run}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_ad53c5c80cffecbbbd1e48641b5dff38b}{list\+\_\+values}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a098194f442fa76d213676ab3959e67ce}{get\+\_\+name}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a8e59a29e0e972a018564651d925fb12f}{set\+\_\+name\+\_\+value}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_acddc1a19d8bddaec977c5ba8909a316d}{unset\+\_\+name}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_aa0819879f1035c89d0991a61b8791c76}{list\+\_\+config\+\_\+values}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a06f7b5e9d8ce055160549e11c8e9cc07}{print\+\_\+config\+\_\+file\+\_\+values}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a4e69579d21c3eaa8a38684a0bdb94e53}{print\+\_\+env\+\_\+var\+\_\+values} (self)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a87f0cc8ce988dbeb7c07518e92341214}{open\+\_\+in\+\_\+editor}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a4782ff11ec6237f899e23c6b68a04360}{configuration}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a9cf37ce49ffe2b81261072155c21ee89}{ignore\+\_\+require\+\_\+venv}
+\item 
+\hyperlink{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_aa5a3d8b14f6c268e04e67473d7f48ff4}{usage}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Manage local and global configuration.
+
+Subcommands:
+
+- list: List the active configuration (or from the file specified)
+- edit: Edit the configuration file in an editor
+- get: Get the value associated with name
+- set: Set the name=value
+- unset: Unset the value associated with name
+- debug: List the configuration files and values defined under them
+
+If none of --user, --global and --site are passed, a virtual
+environment configuration file is used if one is active and the file
+exists. Otherwise, all modifications happen on the to the user file by
+default.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_aa2ad2f7172e2f034506eafcea3e9914c}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_aa2ad2f7172e2f034506eafcea3e9914c}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!add\+\_\+options@{add\+\_\+options}}
+\index{add\+\_\+options@{add\+\_\+options}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{add\+\_\+options()}{add\_options()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+add\+\_\+options (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{None }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a098194f442fa76d213676ab3959e67ce}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a098194f442fa76d213676ab3959e67ce}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!get\+\_\+name@{get\+\_\+name}}
+\index{get\+\_\+name@{get\+\_\+name}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{get\+\_\+name()}{get\_name()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+get\+\_\+name (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{options }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_aa0819879f1035c89d0991a61b8791c76}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_aa0819879f1035c89d0991a61b8791c76}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!list\+\_\+config\+\_\+values@{list\+\_\+config\+\_\+values}}
+\index{list\+\_\+config\+\_\+values@{list\+\_\+config\+\_\+values}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{list\+\_\+config\+\_\+values()}{list\_config\_values()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+list\+\_\+config\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{options }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_ad53c5c80cffecbbbd1e48641b5dff38b}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_ad53c5c80cffecbbbd1e48641b5dff38b}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!list\+\_\+values@{list\+\_\+values}}
+\index{list\+\_\+values@{list\+\_\+values}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{list\+\_\+values()}{list\_values()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+list\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{options }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a87f0cc8ce988dbeb7c07518e92341214}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a87f0cc8ce988dbeb7c07518e92341214}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!open\+\_\+in\+\_\+editor@{open\+\_\+in\+\_\+editor}}
+\index{open\+\_\+in\+\_\+editor@{open\+\_\+in\+\_\+editor}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{open\+\_\+in\+\_\+editor()}{open\_in\_editor()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+open\+\_\+in\+\_\+editor (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{options }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a06f7b5e9d8ce055160549e11c8e9cc07}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a06f7b5e9d8ce055160549e11c8e9cc07}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!print\+\_\+config\+\_\+file\+\_\+values@{print\+\_\+config\+\_\+file\+\_\+values}}
+\index{print\+\_\+config\+\_\+file\+\_\+values@{print\+\_\+config\+\_\+file\+\_\+values}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{print\+\_\+config\+\_\+file\+\_\+values()}{print\_config\_file\_values()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+print\+\_\+config\+\_\+file\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{variant }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a4e69579d21c3eaa8a38684a0bdb94e53}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a4e69579d21c3eaa8a38684a0bdb94e53}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!print\+\_\+env\+\_\+var\+\_\+values@{print\+\_\+env\+\_\+var\+\_\+values}}
+\index{print\+\_\+env\+\_\+var\+\_\+values@{print\+\_\+env\+\_\+var\+\_\+values}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{print\+\_\+env\+\_\+var\+\_\+values()}{print\_env\_var\_values()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+print\+\_\+env\+\_\+var\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{None }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get key-values pairs present as environment variables\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_aeaeadaf64be640ee5fb83bc98b04c71d}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_aeaeadaf64be640ee5fb83bc98b04c71d}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!run@{run}}
+\index{run@{run}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+run (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{options }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a8e59a29e0e972a018564651d925fb12f}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a8e59a29e0e972a018564651d925fb12f}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!set\+\_\+name\+\_\+value@{set\+\_\+name\+\_\+value}}
+\index{set\+\_\+name\+\_\+value@{set\+\_\+name\+\_\+value}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{set\+\_\+name\+\_\+value()}{set\_name\_value()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+set\+\_\+name\+\_\+value (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{options }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_acddc1a19d8bddaec977c5ba8909a316d}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_acddc1a19d8bddaec977c5ba8909a316d}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!unset\+\_\+name@{unset\+\_\+name}}
+\index{unset\+\_\+name@{unset\+\_\+name}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{unset\+\_\+name()}{unset\_name()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+unset\+\_\+name (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{options }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a4782ff11ec6237f899e23c6b68a04360}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a4782ff11ec6237f899e23c6b68a04360}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!configuration@{configuration}}
+\index{configuration@{configuration}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{configuration}{configuration}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+configuration}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a9cf37ce49ffe2b81261072155c21ee89}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_a9cf37ce49ffe2b81261072155c21ee89}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!ignore\+\_\+require\+\_\+venv@{ignore\+\_\+require\+\_\+venv}}
+\index{ignore\+\_\+require\+\_\+venv@{ignore\+\_\+require\+\_\+venv}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{ignore\+\_\+require\+\_\+venv}{ignore\_require\_venv}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+ignore\+\_\+require\+\_\+venv\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_aa5a3d8b14f6c268e04e67473d7f48ff4}\label{classpip_1_1__internal_1_1commands_1_1configuration_1_1ConfigurationCommand_aa5a3d8b14f6c268e04e67473d7f48ff4}} 
+\index{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}!usage@{usage}}
+\index{usage@{usage}!pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command@{pip\+::\+\_\+internal\+::commands\+::configuration\+::\+Configuration\+Command}}
+\subsubsection{\texorpdfstring{usage}{usage}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+commands.\+configuration.\+Configuration\+Command.\+usage\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+internal/commands/\hyperlink{commands_2configuration_8py}{configuration.\+py}\end{DoxyCompactItemize}

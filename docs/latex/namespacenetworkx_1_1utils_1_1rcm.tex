@@ -1,0 +1,150 @@
+\hypertarget{namespacenetworkx_1_1utils_1_1rcm}{}\section{networkx.\+utils.\+rcm Namespace Reference}
+\label{namespacenetworkx_1_1utils_1_1rcm}\index{networkx.\+utils.\+rcm@{networkx.\+utils.\+rcm}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1rcm_a5e0d7595f93e977085ad12f692130cca}{cuthill\+\_\+mckee\+\_\+ordering} (G, heuristic=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1rcm_a616827ac44a03f97a29f5fe248c14ef0}{reverse\+\_\+cuthill\+\_\+mckee\+\_\+ordering} (G, heuristic=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1rcm_a8ae25da64847a2fd7f7b49801a0a1d1e}{connected\+\_\+cuthill\+\_\+mckee\+\_\+ordering} (G, heuristic=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1rcm_a8af72dd56bbafa66755a2b7a30e2fc8c}{pseudo\+\_\+peripheral\+\_\+node} (G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Cuthill-McKee ordering of graph nodes to produce sparse matrices
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1rcm_a8ae25da64847a2fd7f7b49801a0a1d1e}\label{namespacenetworkx_1_1utils_1_1rcm_a8ae25da64847a2fd7f7b49801a0a1d1e}} 
+\index{networkx\+::utils\+::rcm@{networkx\+::utils\+::rcm}!connected\+\_\+cuthill\+\_\+mckee\+\_\+ordering@{connected\+\_\+cuthill\+\_\+mckee\+\_\+ordering}}
+\index{connected\+\_\+cuthill\+\_\+mckee\+\_\+ordering@{connected\+\_\+cuthill\+\_\+mckee\+\_\+ordering}!networkx\+::utils\+::rcm@{networkx\+::utils\+::rcm}}
+\subsubsection{\texorpdfstring{connected\+\_\+cuthill\+\_\+mckee\+\_\+ordering()}{connected\_cuthill\_mckee\_ordering()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+rcm.\+connected\+\_\+cuthill\+\_\+mckee\+\_\+ordering (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{heuristic = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1rcm_a5e0d7595f93e977085ad12f692130cca}\label{namespacenetworkx_1_1utils_1_1rcm_a5e0d7595f93e977085ad12f692130cca}} 
+\index{networkx\+::utils\+::rcm@{networkx\+::utils\+::rcm}!cuthill\+\_\+mckee\+\_\+ordering@{cuthill\+\_\+mckee\+\_\+ordering}}
+\index{cuthill\+\_\+mckee\+\_\+ordering@{cuthill\+\_\+mckee\+\_\+ordering}!networkx\+::utils\+::rcm@{networkx\+::utils\+::rcm}}
+\subsubsection{\texorpdfstring{cuthill\+\_\+mckee\+\_\+ordering()}{cuthill\_mckee\_ordering()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+rcm.\+cuthill\+\_\+mckee\+\_\+ordering (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{heuristic = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate an ordering (permutation) of the graph nodes to make
+a sparse matrix.
+
+Uses the Cuthill-McKee heuristic (based on breadth-first search) [1]_.
+
+Parameters
+----------
+G : graph
+  A NetworkX graph
+
+heuristic : function, optional
+  Function to choose starting node for RCM algorithm.  If None
+  a node from a pseudo-peripheral pair is used.  A user-defined function
+  can be supplied that takes a graph object and returns a single node.
+
+Returns
+-------
+nodes : generator
+   Generator of nodes in Cuthill-McKee ordering.
+
+Examples
+--------
+>>> from networkx.utils import cuthill_mckee_ordering
+>>> G = nx.path_graph(4)
+>>> rcm = list(cuthill_mckee_ordering(G))
+>>> A = nx.adjacency_matrix(G, nodelist=rcm)
+
+Smallest degree node as heuristic function:
+
+>>> def smallest_degree(G):
+...     return min(G, key=G.degree)
+>>> rcm = list(cuthill_mckee_ordering(G, heuristic=smallest_degree))
+
+
+See Also
+--------
+reverse_cuthill_mckee_ordering
+
+Notes
+-----
+The optimal solution the bandwidth reduction is NP-complete [2]_.
+
+
+References
+----------
+.. [1] E. Cuthill and J. McKee.
+   Reducing the bandwidth of sparse symmetric matrices,
+   In Proc. 24th Nat. Conf. ACM, pages 157-172, 1969.
+   http://doi.acm.org/10.1145/800195.805928
+.. [2]  Steven S. Skiena. 1997. The Algorithm Design Manual.
+   Springer-Verlag New York, Inc., New York, NY, USA.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1rcm_a8af72dd56bbafa66755a2b7a30e2fc8c}\label{namespacenetworkx_1_1utils_1_1rcm_a8af72dd56bbafa66755a2b7a30e2fc8c}} 
+\index{networkx\+::utils\+::rcm@{networkx\+::utils\+::rcm}!pseudo\+\_\+peripheral\+\_\+node@{pseudo\+\_\+peripheral\+\_\+node}}
+\index{pseudo\+\_\+peripheral\+\_\+node@{pseudo\+\_\+peripheral\+\_\+node}!networkx\+::utils\+::rcm@{networkx\+::utils\+::rcm}}
+\subsubsection{\texorpdfstring{pseudo\+\_\+peripheral\+\_\+node()}{pseudo\_peripheral\_node()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+rcm.\+pseudo\+\_\+peripheral\+\_\+node (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1rcm_a616827ac44a03f97a29f5fe248c14ef0}\label{namespacenetworkx_1_1utils_1_1rcm_a616827ac44a03f97a29f5fe248c14ef0}} 
+\index{networkx\+::utils\+::rcm@{networkx\+::utils\+::rcm}!reverse\+\_\+cuthill\+\_\+mckee\+\_\+ordering@{reverse\+\_\+cuthill\+\_\+mckee\+\_\+ordering}}
+\index{reverse\+\_\+cuthill\+\_\+mckee\+\_\+ordering@{reverse\+\_\+cuthill\+\_\+mckee\+\_\+ordering}!networkx\+::utils\+::rcm@{networkx\+::utils\+::rcm}}
+\subsubsection{\texorpdfstring{reverse\+\_\+cuthill\+\_\+mckee\+\_\+ordering()}{reverse\_cuthill\_mckee\_ordering()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+rcm.\+reverse\+\_\+cuthill\+\_\+mckee\+\_\+ordering (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{heuristic = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate an ordering (permutation) of the graph nodes to make
+a sparse matrix.
+
+Uses the reverse Cuthill-McKee heuristic (based on breadth-first search)
+[1]_.
+
+Parameters
+----------
+G : graph
+  A NetworkX graph
+
+heuristic : function, optional
+  Function to choose starting node for RCM algorithm.  If None
+  a node from a pseudo-peripheral pair is used.  A user-defined function
+  can be supplied that takes a graph object and returns a single node.
+
+Returns
+-------
+nodes : generator
+   Generator of nodes in reverse Cuthill-McKee ordering.
+
+Examples
+--------
+>>> from networkx.utils import reverse_cuthill_mckee_ordering
+>>> G = nx.path_graph(4)
+>>> rcm = list(reverse_cuthill_mckee_ordering(G))
+>>> A = nx.adjacency_matrix(G, nodelist=rcm)
+
+Smallest degree node as heuristic function:
+
+>>> def smallest_degree(G):
+...     return min(G, key=G.degree)
+>>> rcm = list(reverse_cuthill_mckee_ordering(G, heuristic=smallest_degree))
+
+
+See Also
+--------
+cuthill_mckee_ordering
+
+Notes
+-----
+The optimal solution the bandwidth reduction is NP-complete [2]_.
+
+References
+----------
+.. [1] E. Cuthill and J. McKee.
+   Reducing the bandwidth of sparse symmetric matrices,
+   In Proc. 24th Nat. Conf. ACM, pages 157-72, 1969.
+   http://doi.acm.org/10.1145/800195.805928
+.. [2]  Steven S. Skiena. 1997. The Algorithm Design Manual.
+   Springer-Verlag New York, Inc., New York, NY, USA.
+\end{DoxyVerb}
+ 

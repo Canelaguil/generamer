@@ -1,0 +1,89 @@
+\hypertarget{classpyparsing_1_1LineStart}{}\section{pyparsing.\+Line\+Start Class Reference}
+\label{classpyparsing_1_1LineStart}\index{pyparsing.\+Line\+Start@{pyparsing.\+Line\+Start}}
+
+
+Inheritance diagram for pyparsing.\+Line\+Start\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classpyparsing_1_1LineStart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pyparsing.\+Line\+Start\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classpyparsing_1_1LineStart__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpyparsing_1_1LineStart_a4d85605c657554292ed601cab1f0d260}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpyparsing_1_1LineStart_a1e8a545cab426bcccb399f5510fe20bb}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpyparsing_1_1LineStart_aa3c49340e63e1f7db1c8f3a4e61e382e}{errmsg}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Matches if current position is at the beginning of a line within
+the parse string
+
+Example::
+
+    test = '''\
+    AAA this line
+    AAA and this line
+      AAA but not this one
+    B AAA and definitely not this one
+    '''
+
+    for t in (LineStart() + 'AAA' + restOfLine).searchString(test):
+        print(t)
+
+prints::
+
+    ['AAA', ' this line']
+    ['AAA', ' and this line']\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1LineStart_a4d85605c657554292ed601cab1f0d260}\label{classpyparsing_1_1LineStart_a4d85605c657554292ed601cab1f0d260}} 
+\index{pyparsing\+::\+Line\+Start@{pyparsing\+::\+Line\+Start}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pyparsing\+::\+Line\+Start@{pyparsing\+::\+Line\+Start}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Line\+Start.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1LineStart_a1e8a545cab426bcccb399f5510fe20bb}\label{classpyparsing_1_1LineStart_a1e8a545cab426bcccb399f5510fe20bb}} 
+\index{pyparsing\+::\+Line\+Start@{pyparsing\+::\+Line\+Start}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pyparsing\+::\+Line\+Start@{pyparsing\+::\+Line\+Start}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pyparsing.\+Line\+Start.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1LineStart_aa3c49340e63e1f7db1c8f3a4e61e382e}\label{classpyparsing_1_1LineStart_aa3c49340e63e1f7db1c8f3a4e61e382e}} 
+\index{pyparsing\+::\+Line\+Start@{pyparsing\+::\+Line\+Start}!errmsg@{errmsg}}
+\index{errmsg@{errmsg}!pyparsing\+::\+Line\+Start@{pyparsing\+::\+Line\+Start}}
+\subsubsection{\texorpdfstring{errmsg}{errmsg}}
+{\footnotesize\ttfamily pyparsing.\+Line\+Start.\+errmsg}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\hyperlink{pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,144 @@
+\hypertarget{classnumpy_1_1core_1_1getlimits_1_1iinfo}{}\section{numpy.\+core.\+getlimits.\+iinfo Class Reference}
+\label{classnumpy_1_1core_1_1getlimits_1_1iinfo}\index{numpy.\+core.\+getlimits.\+iinfo@{numpy.\+core.\+getlimits.\+iinfo}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1core_1_1getlimits_1_1iinfo_aecf906846c23c1b96d98b4dc3365fabd}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, int\+\_\+type)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1getlimits_1_1iinfo_afa2f5e0124f4841450c7019bd1869fe0}{min} (self)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1getlimits_1_1iinfo_a02c36ed1cc640643fc79dad11fa5b532}{max} (self)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1getlimits_1_1iinfo_ae6f18967b82e0c780bb8dd19bc98650b}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1getlimits_1_1iinfo_a09fd9b674705150d1ce63d99eb39f1ac}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1core_1_1getlimits_1_1iinfo_a386adb0300747f4a3b1e42fde79ecb85}{dtype}
+\item 
+\hyperlink{classnumpy_1_1core_1_1getlimits_1_1iinfo_ad17a169a1fd1277e24c4781f7418f986}{kind}
+\item 
+\hyperlink{classnumpy_1_1core_1_1getlimits_1_1iinfo_a4f76b0fb48222a963949ce72b96a0863}{bits}
+\item 
+\hyperlink{classnumpy_1_1core_1_1getlimits_1_1iinfo_a5513961438841c04d7e8330b9a9edbd0}{key}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}iinfo(type)
+
+Machine limits for integer types.
+
+Attributes
+----------
+bits : int
+    The number of bits occupied by the type.
+min : int
+    The smallest integer expressible by the type.
+max : int
+    The largest integer expressible by the type.
+
+Parameters
+----------
+int_type : integer type, dtype, or instance
+    The kind of integer data type to get information about.
+
+See Also
+--------
+finfo : The equivalent for floating point data types.
+
+Examples
+--------
+With types:
+
+>>> ii16 = np.iinfo(np.int16)
+>>> ii16.min
+-32768
+>>> ii16.max
+32767
+>>> ii32 = np.iinfo(np.int32)
+>>> ii32.min
+-2147483648
+>>> ii32.max
+2147483647
+
+With instances:
+
+>>> ii32 = np.iinfo(np.int32(10))
+>>> ii32.min
+-2147483648
+>>> ii32.max
+2147483647\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1iinfo_aecf906846c23c1b96d98b4dc3365fabd}\label{classnumpy_1_1core_1_1getlimits_1_1iinfo_aecf906846c23c1b96d98b4dc3365fabd}} 
+\index{numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+getlimits.\+iinfo.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{int\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1iinfo_a09fd9b674705150d1ce63d99eb39f1ac}\label{classnumpy_1_1core_1_1getlimits_1_1iinfo_a09fd9b674705150d1ce63d99eb39f1ac}} 
+\index{numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+getlimits.\+iinfo.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1iinfo_ae6f18967b82e0c780bb8dd19bc98650b}\label{classnumpy_1_1core_1_1getlimits_1_1iinfo_ae6f18967b82e0c780bb8dd19bc98650b}} 
+\index{numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+getlimits.\+iinfo.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}String representation.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1iinfo_a02c36ed1cc640643fc79dad11fa5b532}\label{classnumpy_1_1core_1_1getlimits_1_1iinfo_a02c36ed1cc640643fc79dad11fa5b532}} 
+\index{numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}!max@{max}}
+\index{max@{max}!numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}}
+\subsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily def numpy.\+core.\+getlimits.\+iinfo.\+max (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Maximum value of given dtype.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1iinfo_afa2f5e0124f4841450c7019bd1869fe0}\label{classnumpy_1_1core_1_1getlimits_1_1iinfo_afa2f5e0124f4841450c7019bd1869fe0}} 
+\index{numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}!min@{min}}
+\index{min@{min}!numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}}
+\subsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily def numpy.\+core.\+getlimits.\+iinfo.\+min (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Minimum value of given dtype.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1iinfo_a4f76b0fb48222a963949ce72b96a0863}\label{classnumpy_1_1core_1_1getlimits_1_1iinfo_a4f76b0fb48222a963949ce72b96a0863}} 
+\index{numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}!bits@{bits}}
+\index{bits@{bits}!numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}}
+\subsubsection{\texorpdfstring{bits}{bits}}
+{\footnotesize\ttfamily numpy.\+core.\+getlimits.\+iinfo.\+bits}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1iinfo_a386adb0300747f4a3b1e42fde79ecb85}\label{classnumpy_1_1core_1_1getlimits_1_1iinfo_a386adb0300747f4a3b1e42fde79ecb85}} 
+\index{numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}!dtype@{dtype}}
+\index{dtype@{dtype}!numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}}
+\subsubsection{\texorpdfstring{dtype}{dtype}}
+{\footnotesize\ttfamily numpy.\+core.\+getlimits.\+iinfo.\+dtype}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1iinfo_a5513961438841c04d7e8330b9a9edbd0}\label{classnumpy_1_1core_1_1getlimits_1_1iinfo_a5513961438841c04d7e8330b9a9edbd0}} 
+\index{numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}!key@{key}}
+\index{key@{key}!numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}}
+\subsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily numpy.\+core.\+getlimits.\+iinfo.\+key}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1iinfo_ad17a169a1fd1277e24c4781f7418f986}\label{classnumpy_1_1core_1_1getlimits_1_1iinfo_ad17a169a1fd1277e24c4781f7418f986}} 
+\index{numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}!kind@{kind}}
+\index{kind@{kind}!numpy\+::core\+::getlimits\+::iinfo@{numpy\+::core\+::getlimits\+::iinfo}}
+\subsubsection{\texorpdfstring{kind}{kind}}
+{\footnotesize\ttfamily numpy.\+core.\+getlimits.\+iinfo.\+kind}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/core/\hyperlink{getlimits_8py}{getlimits.\+py}\end{DoxyCompactItemize}

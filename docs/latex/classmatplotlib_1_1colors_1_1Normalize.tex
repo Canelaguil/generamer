@@ -1,0 +1,178 @@
+\hypertarget{classmatplotlib_1_1colors_1_1Normalize}{}\section{matplotlib.\+colors.\+Normalize Class Reference}
+\label{classmatplotlib_1_1colors_1_1Normalize}\index{matplotlib.\+colors.\+Normalize@{matplotlib.\+colors.\+Normalize}}
+
+
+Inheritance diagram for matplotlib.\+colors.\+Normalize\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1colors_1_1Normalize__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Normalize_ae35ef95606b0b77e11efa41e07041133}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1colors_1_1Normalize_a27ff9acd0e6407968e6d41cc91ab8441}{vmin}=None, \hyperlink{classmatplotlib_1_1colors_1_1Normalize_ad433e4289413f8976b886044da439a0f}{vmax}=None, \hyperlink{classmatplotlib_1_1colors_1_1Normalize_a7355c143b0fcdd0ec9998c02e2962a8b}{clip}=False)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Normalize_ac322f42dbcaca3daed36a5801f09dce4}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, value, \hyperlink{classmatplotlib_1_1colors_1_1Normalize_a7355c143b0fcdd0ec9998c02e2962a8b}{clip}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Normalize_ac7e87a64910245d444c76a50f74ff0cb}{inverse} (self, value)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Normalize_ab4dcc61fd1f11e25bce825dab4669816}{autoscale} (self, A)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Normalize_ab3a2ef98b9e877627811679b8eb40fe8}{autoscale\+\_\+\+None} (self, A)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Normalize_af6a4ef7fe23e5c00dbecad43c813061e}{scaled} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Normalize_a7a7f9ffecddbbd480766db4aef7567c3}{process\+\_\+value} (value)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1Normalize_a27ff9acd0e6407968e6d41cc91ab8441}{vmin}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1Normalize_ad433e4289413f8976b886044da439a0f}{vmax}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1Normalize_a7355c143b0fcdd0ec9998c02e2962a8b}{clip}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A class which, when called, linearly normalizes data into the
+``[0.0, 1.0]`` interval.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Normalize_ae35ef95606b0b77e11efa41e07041133}\label{classmatplotlib_1_1colors_1_1Normalize_ae35ef95606b0b77e11efa41e07041133}} 
+\index{matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Normalize.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin = {\ttfamily None},  }\item[{}]{vmax = {\ttfamily None},  }\item[{}]{clip = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+vmin, vmax : float or None
+    If *vmin* and/or *vmax* is not given, they are initialized from the
+    minimum and maximum value, respectively, of the first input
+    processed; i.e., ``__call__(A)`` calls ``autoscale_None(A)``.
+
+clip : bool, default: False
+    If ``True`` values falling outside the range ``[vmin, vmax]``,
+    are mapped to 0 or 1, whichever is closer, and masked values are
+    set to 1.  If ``False`` masked values remain masked.
+
+    Clipping silently defeats the purpose of setting the over, under,
+    and masked colors in a colormap, so it is likely to lead to
+    surprises; therefore the default is ``clip=False``.
+
+Notes
+-----
+Returns 0 if ``vmin == vmax``.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Normalize_ac322f42dbcaca3daed36a5801f09dce4}\label{classmatplotlib_1_1colors_1_1Normalize_ac322f42dbcaca3daed36a5801f09dce4}} 
+\index{matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Normalize.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value,  }\item[{}]{clip = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Normalize *value* data in the ``[vmin, vmax]`` interval into the
+``[0.0, 1.0]`` interval and return it.
+
+Parameters
+----------
+value
+    Data to normalize.
+clip : bool
+    If ``None``, defaults to ``self.clip`` (which defaults to
+    ``False``).
+
+Notes
+-----
+If not already initialized, ``self.vmin`` and ``self.vmax`` are
+initialized using ``self.autoscale_None(value)``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Normalize_ab4dcc61fd1f11e25bce825dab4669816}\label{classmatplotlib_1_1colors_1_1Normalize_ab4dcc61fd1f11e25bce825dab4669816}} 
+\index{matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}!autoscale@{autoscale}}
+\index{autoscale@{autoscale}!matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}}
+\subsubsection{\texorpdfstring{autoscale()}{autoscale()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Normalize.\+autoscale (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{A }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set *vmin*, *vmax* to min, max of *A*.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Normalize_ab3a2ef98b9e877627811679b8eb40fe8}\label{classmatplotlib_1_1colors_1_1Normalize_ab3a2ef98b9e877627811679b8eb40fe8}} 
+\index{matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}!autoscale\+\_\+\+None@{autoscale\+\_\+\+None}}
+\index{autoscale\+\_\+\+None@{autoscale\+\_\+\+None}!matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}}
+\subsubsection{\texorpdfstring{autoscale\+\_\+\+None()}{autoscale\_None()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Normalize.\+autoscale\+\_\+\+None (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{A }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}If vmin or vmax are not set, use the min/max of *A* to set them.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Normalize_ac7e87a64910245d444c76a50f74ff0cb}\label{classmatplotlib_1_1colors_1_1Normalize_ac7e87a64910245d444c76a50f74ff0cb}} 
+\index{matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}!inverse@{inverse}}
+\index{inverse@{inverse}!matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}}
+\subsubsection{\texorpdfstring{inverse()}{inverse()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Normalize.\+inverse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Normalize_a7a7f9ffecddbbd480766db4aef7567c3}\label{classmatplotlib_1_1colors_1_1Normalize_a7a7f9ffecddbbd480766db4aef7567c3}} 
+\index{matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}!process\+\_\+value@{process\+\_\+value}}
+\index{process\+\_\+value@{process\+\_\+value}!matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}}
+\subsubsection{\texorpdfstring{process\+\_\+value()}{process\_value()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Normalize.\+process\+\_\+value (\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Homogenize the input *value* for easy and efficient normalization.
+
+*value* can be a scalar or sequence.
+
+Returns
+-------
+result : masked array
+    Masked array with the same shape as *value*.
+is_scalar : bool
+    Whether *value* is a scalar.
+
+Notes
+-----
+Float dtypes are preserved; integer types with two bytes or smaller are
+converted to np.float32, and larger types are converted to np.float64.
+Preserving float32 when possible, and using in-place operations,
+greatly improves speed for large arrays.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Normalize_af6a4ef7fe23e5c00dbecad43c813061e}\label{classmatplotlib_1_1colors_1_1Normalize_af6a4ef7fe23e5c00dbecad43c813061e}} 
+\index{matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}!scaled@{scaled}}
+\index{scaled@{scaled}!matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}}
+\subsubsection{\texorpdfstring{scaled()}{scaled()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Normalize.\+scaled (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether vmin and vmax are set.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Normalize_a7355c143b0fcdd0ec9998c02e2962a8b}\label{classmatplotlib_1_1colors_1_1Normalize_a7355c143b0fcdd0ec9998c02e2962a8b}} 
+\index{matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}!clip@{clip}}
+\index{clip@{clip}!matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}}
+\subsubsection{\texorpdfstring{clip}{clip}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Normalize.\+clip}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Normalize_ad433e4289413f8976b886044da439a0f}\label{classmatplotlib_1_1colors_1_1Normalize_ad433e4289413f8976b886044da439a0f}} 
+\index{matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}!vmax@{vmax}}
+\index{vmax@{vmax}!matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}}
+\subsubsection{\texorpdfstring{vmax}{vmax}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Normalize.\+vmax}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Normalize_a27ff9acd0e6407968e6d41cc91ab8441}\label{classmatplotlib_1_1colors_1_1Normalize_a27ff9acd0e6407968e6d41cc91ab8441}} 
+\index{matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}!vmin@{vmin}}
+\index{vmin@{vmin}!matplotlib\+::colors\+::\+Normalize@{matplotlib\+::colors\+::\+Normalize}}
+\subsubsection{\texorpdfstring{vmin}{vmin}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Normalize.\+vmin}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{colors_8py}{colors.\+py}\end{DoxyCompactItemize}

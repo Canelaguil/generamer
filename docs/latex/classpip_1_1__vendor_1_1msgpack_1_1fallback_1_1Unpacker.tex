@@ -1,0 +1,238 @@
+\hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker}{}\section{pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker Class Reference}
+\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker}\index{pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker@{pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_ad4296e668817d2f33b8999edfbf6f47d}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a0688f673a943509486c55d2754c2deed}{file\+\_\+like}=None, read\+\_\+size=0, use\+\_\+list=True, raw=False, timestamp=0, strict\+\_\+map\+\_\+key=True, object\+\_\+hook=None, object\+\_\+pairs\+\_\+hook=None, list\+\_\+hook=None, unicode\+\_\+errors=None, max\+\_\+buffer\+\_\+size=100 $\ast$1024 $\ast$1024, ext\+\_\+hook=\hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1ExtType}{Ext\+Type}, max\+\_\+str\+\_\+len=-\/1, max\+\_\+bin\+\_\+len=-\/1, max\+\_\+array\+\_\+len=-\/1, max\+\_\+map\+\_\+len=-\/1, max\+\_\+ext\+\_\+len=-\/1)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a7a28f68c1e94d76a2412b8b2f54d986a}{feed} (self, next\+\_\+bytes)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a2f55056f432a3f7750618eba7a433ebd}{read\+\_\+bytes} (self, n)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a0598a730129601f0a8c20f38d5cee2d9}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_acf1141aad67e740403cbaaf71de0ef44}{\+\_\+\+\_\+next\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_acca264a46a3b28c6905f79962a7e56f9}{skip} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a5879154aa0c51b6d9277b6a82b0bf35b}{unpack} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a31d3db0cecbb067973b67674fc41df42}{read\+\_\+array\+\_\+header} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_afa2dc33a0fb42c52cace4cb5ef4a2355}{read\+\_\+map\+\_\+header} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a255bac291f68a0e186ecf02725e79943}{tell} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a0688f673a943509486c55d2754c2deed}{file\+\_\+like}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a02e39e05ca5e5bdb0a65dad59dca5054}{next}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Streaming unpacker.
+
+Arguments:
+
+:param file_like:
+    File-like object having `.read(n)` method.
+    If specified, unpacker reads serialized data from it and :meth:`feed()` is not usable.
+
+:param int read_size:
+    Used as `file_like.read(read_size)`. (default: `min(16*1024, max_buffer_size)`)
+
+:param bool use_list:
+    If true, unpack msgpack array to Python list.
+    Otherwise, unpack to Python tuple. (default: True)
+
+:param bool raw:
+    If true, unpack msgpack raw to Python bytes.
+    Otherwise, unpack to Python str by decoding with UTF-8 encoding (default).
+
+:param int timestamp:
+    Control how timestamp type is unpacked:
+
+        0 - Timestamp
+        1 - float  (Seconds from the EPOCH)
+        2 - int  (Nanoseconds from the EPOCH)
+        3 - datetime.datetime  (UTC).  Python 2 is not supported.
+
+:param bool strict_map_key:
+    If true (default), only str or bytes are accepted for map (dict) keys.
+
+:param callable object_hook:
+    When specified, it should be callable.
+    Unpacker calls it with a dict argument after unpacking msgpack map.
+    (See also simplejson)
+
+:param callable object_pairs_hook:
+    When specified, it should be callable.
+    Unpacker calls it with a list of key-value pairs after unpacking msgpack map.
+    (See also simplejson)
+
+:param str unicode_errors:
+    The error handler for decoding unicode. (default: 'strict')
+    This option should be used only when you have msgpack data which
+    contains invalid UTF-8 string.
+
+:param int max_buffer_size:
+    Limits size of data waiting unpacked.  0 means 2**32-1.
+    The default value is 100*1024*1024 (100MiB).
+    Raises `BufferFull` exception when it is insufficient.
+    You should set this parameter when unpacking data from untrusted source.
+
+:param int max_str_len:
+    Deprecated, use *max_buffer_size* instead.
+    Limits max length of str. (default: max_buffer_size)
+
+:param int max_bin_len:
+    Deprecated, use *max_buffer_size* instead.
+    Limits max length of bin. (default: max_buffer_size)
+
+:param int max_array_len:
+    Limits max length of array.
+    (default: max_buffer_size)
+
+:param int max_map_len:
+    Limits max length of map.
+    (default: max_buffer_size//2)
+
+:param int max_ext_len:
+    Deprecated, use *max_buffer_size* instead.
+    Limits max size of ext type.  (default: max_buffer_size)
+
+Example of streaming deserialize from file-like object::
+
+    unpacker = Unpacker(file_like)
+    for o in unpacker:
+        process(o)
+
+Example of streaming deserialize from socket::
+
+    unpacker = Unpacker(max_buffer_size)
+    while True:
+        buf = sock.recv(1024**2)
+        if not buf:
+            break
+        unpacker.feed(buf)
+        for o in unpacker:
+            process(o)
+
+Raises ``ExtraData`` when *packed* contains extra bytes.
+Raises ``OutOfData`` when *packed* is incomplete.
+Raises ``FormatError`` when *packed* is not valid msgpack.
+Raises ``StackError`` when *packed* contains too nested.
+Other exceptions can be raised during unpacking.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_ad4296e668817d2f33b8999edfbf6f47d}\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_ad4296e668817d2f33b8999edfbf6f47d}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{file\+\_\+like = {\ttfamily None},  }\item[{}]{read\+\_\+size = {\ttfamily 0},  }\item[{}]{use\+\_\+list = {\ttfamily True},  }\item[{}]{raw = {\ttfamily False},  }\item[{}]{timestamp = {\ttfamily 0},  }\item[{}]{strict\+\_\+map\+\_\+key = {\ttfamily True},  }\item[{}]{object\+\_\+hook = {\ttfamily None},  }\item[{}]{object\+\_\+pairs\+\_\+hook = {\ttfamily None},  }\item[{}]{list\+\_\+hook = {\ttfamily None},  }\item[{}]{unicode\+\_\+errors = {\ttfamily None},  }\item[{}]{max\+\_\+buffer\+\_\+size = {\ttfamily 100~$\ast$~1024~$\ast$~1024},  }\item[{}]{ext\+\_\+hook = {\ttfamily \hyperlink{classpip_1_1__vendor_1_1msgpack_1_1ext_1_1ExtType}{Ext\+Type}},  }\item[{}]{max\+\_\+str\+\_\+len = {\ttfamily -\/1},  }\item[{}]{max\+\_\+bin\+\_\+len = {\ttfamily -\/1},  }\item[{}]{max\+\_\+array\+\_\+len = {\ttfamily -\/1},  }\item[{}]{max\+\_\+map\+\_\+len = {\ttfamily -\/1},  }\item[{}]{max\+\_\+ext\+\_\+len = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a0598a730129601f0a8c20f38d5cee2d9}\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a0598a730129601f0a8c20f38d5cee2d9}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_acf1141aad67e740403cbaaf71de0ef44}\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_acf1141aad67e740403cbaaf71de0ef44}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}!\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+next\+\_\+\+\_\+()}{\_\_next\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker.\+\_\+\+\_\+next\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a7a28f68c1e94d76a2412b8b2f54d986a}\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a7a28f68c1e94d76a2412b8b2f54d986a}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}!feed@{feed}}
+\index{feed@{feed}!pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}}
+\subsubsection{\texorpdfstring{feed()}{feed()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker.\+feed (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{next\+\_\+bytes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a31d3db0cecbb067973b67674fc41df42}\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a31d3db0cecbb067973b67674fc41df42}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}!read\+\_\+array\+\_\+header@{read\+\_\+array\+\_\+header}}
+\index{read\+\_\+array\+\_\+header@{read\+\_\+array\+\_\+header}!pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}}
+\subsubsection{\texorpdfstring{read\+\_\+array\+\_\+header()}{read\_array\_header()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker.\+read\+\_\+array\+\_\+header (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a2f55056f432a3f7750618eba7a433ebd}\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a2f55056f432a3f7750618eba7a433ebd}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}!read\+\_\+bytes@{read\+\_\+bytes}}
+\index{read\+\_\+bytes@{read\+\_\+bytes}!pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}}
+\subsubsection{\texorpdfstring{read\+\_\+bytes()}{read\_bytes()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker.\+read\+\_\+bytes (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_afa2dc33a0fb42c52cace4cb5ef4a2355}\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_afa2dc33a0fb42c52cace4cb5ef4a2355}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}!read\+\_\+map\+\_\+header@{read\+\_\+map\+\_\+header}}
+\index{read\+\_\+map\+\_\+header@{read\+\_\+map\+\_\+header}!pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}}
+\subsubsection{\texorpdfstring{read\+\_\+map\+\_\+header()}{read\_map\_header()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker.\+read\+\_\+map\+\_\+header (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_acca264a46a3b28c6905f79962a7e56f9}\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_acca264a46a3b28c6905f79962a7e56f9}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}!skip@{skip}}
+\index{skip@{skip}!pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}}
+\subsubsection{\texorpdfstring{skip()}{skip()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker.\+skip (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a255bac291f68a0e186ecf02725e79943}\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a255bac291f68a0e186ecf02725e79943}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}!tell@{tell}}
+\index{tell@{tell}!pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}}
+\subsubsection{\texorpdfstring{tell()}{tell()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker.\+tell (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a5879154aa0c51b6d9277b6a82b0bf35b}\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a5879154aa0c51b6d9277b6a82b0bf35b}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}!unpack@{unpack}}
+\index{unpack@{unpack}!pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}}
+\subsubsection{\texorpdfstring{unpack()}{unpack()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker.\+unpack (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a0688f673a943509486c55d2754c2deed}\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a0688f673a943509486c55d2754c2deed}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}!file\+\_\+like@{file\+\_\+like}}
+\index{file\+\_\+like@{file\+\_\+like}!pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}}
+\subsubsection{\texorpdfstring{file\+\_\+like}{file\_like}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker.\+file\+\_\+like}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a02e39e05ca5e5bdb0a65dad59dca5054}\label{classpip_1_1__vendor_1_1msgpack_1_1fallback_1_1Unpacker_a02e39e05ca5e5bdb0a65dad59dca5054}} 
+\index{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}!next@{next}}
+\index{next@{next}!pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker@{pip\+::\+\_\+vendor\+::msgpack\+::fallback\+::\+Unpacker}}
+\subsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+msgpack.\+fallback.\+Unpacker.\+next\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/msgpack/\hyperlink{fallback_8py}{fallback.\+py}\end{DoxyCompactItemize}

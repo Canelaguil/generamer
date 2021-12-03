@@ -1,7 +1,7 @@
 import random
 
 class Bit:
-    def __init__(self, secrecy, description, age, year, ongoing=False, source='life'):
+    def __init__(self, secrecy, description, age, year, key, ongoing=False, source='life'):
         """
         Class that defines an bit in terms of people involved and the 
         level of secrecy. 
@@ -23,6 +23,8 @@ class Bit:
 
         # Which sins / virtues does this relate to? [optional]
         self.meaning = {}
+
+        self.key = key
 
         # When did this take place and is it still taking place?
         self.age = age
@@ -51,8 +53,8 @@ class Knowledge:
         self.all_bits = []
         self.knowledge = {}
 
-    def add_bit(self, secrecy, description, ongoing=False):
-        bit = Bit(secrecy, description, self.person.age, self.context.year, ongoing)
+    def add_bit(self, secrecy, description, key, ongoing=False):
+        bit = Bit(secrecy, description, self.person.age, self.context.year, key, ongoing)
         self.add_bit_premade(bit)
 
     def add_bit_premade(self, bit):

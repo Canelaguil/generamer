@@ -1,0 +1,784 @@
+\hypertarget{namespacenumpy_1_1lib_1_1polynomial}{}\section{numpy.\+lib.\+polynomial Namespace Reference}
+\label{namespacenumpy_1_1lib_1_1polynomial}\index{numpy.\+lib.\+polynomial@{numpy.\+lib.\+polynomial}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1polynomial_1_1poly1d}{poly1d}
+\item 
+class \hyperlink{classnumpy_1_1lib_1_1polynomial_1_1RankWarning}{Rank\+Warning}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1polynomial_a0b38f3b9ce59db65a5dd7475d8baf5f2}{poly} (seq\+\_\+of\+\_\+zeros)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1polynomial_a34f751d4a674960e5d7e1e275ec118a7}{roots} (p)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1polynomial_aab48ef7d0433f083a59e67879dd843be}{polyint} (p, m=1, k=None)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1polynomial_a65e87b3b7f328385344947a14ea36453}{polyder} (p, m=1)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1polynomial_a3b001aa881bfc281be7086b33c703933}{polyfit} (x, y, deg, rcond=None, full=False, w=None, cov=False)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1polynomial_ae0b1caf06f430f8f3603c978d0ced250}{polyval} (p, x)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1polynomial_a7b851d4c94b92ac3fb467fff3dba805a}{polyadd} (a1, a2)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1polynomial_a82ed7a695338e1fd554add2135a655ab}{polysub} (a1, a2)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1polynomial_a665c7ef52e6629867d2f89f2f3d74dde}{polymul} (a1, a2)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1polynomial_a1f6f7f494f1c679c43d2033c574c2f82}{polydiv} (u, v)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1polynomial_a81aa094e1e92d3709ccc61cd33748cdb}{array\+\_\+function\+\_\+dispatch}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1polynomial_ac2cf51e66da406b650e81d14e62b8aa4}{module}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions to operate on polynomials.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1polynomial_a0b38f3b9ce59db65a5dd7475d8baf5f2}\label{namespacenumpy_1_1lib_1_1polynomial_a0b38f3b9ce59db65a5dd7475d8baf5f2}} 
+\index{numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}!poly@{poly}}
+\index{poly@{poly}!numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}}
+\subsubsection{\texorpdfstring{poly()}{poly()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+polynomial.\+poly (\begin{DoxyParamCaption}\item[{}]{seq\+\_\+of\+\_\+zeros }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the coefficients of a polynomial with the given sequence of roots.
+
+.. note::
+   This forms part of the old polynomial API. Since version 1.4, the
+   new polynomial API defined in `numpy.polynomial` is preferred.
+   A summary of the differences can be found in the
+   :doc:`transition guide </reference/routines.polynomials>`.
+
+Returns the coefficients of the polynomial whose leading coefficient
+is one for the given sequence of zeros (multiple roots must be included
+in the sequence as many times as their multiplicity; see Examples).
+A square matrix (or array, which will be treated as a matrix) can also
+be given, in which case the coefficients of the characteristic polynomial
+of the matrix are returned.
+
+Parameters
+----------
+seq_of_zeros : array_like, shape (N,) or (N, N)
+    A sequence of polynomial roots, or a square array or matrix object.
+
+Returns
+-------
+c : ndarray
+    1D array of polynomial coefficients from highest to lowest degree:
+
+    ``c[0] * x**(N) + c[1] * x**(N-1) + ... + c[N-1] * x + c[N]``
+    where c[0] always equals 1.
+
+Raises
+------
+ValueError
+    If input is the wrong shape (the input must be a 1-D or square
+    2-D array).
+
+See Also
+--------
+polyval : Compute polynomial values.
+roots : Return the roots of a polynomial.
+polyfit : Least squares polynomial fit.
+poly1d : A one-dimensional polynomial class.
+
+Notes
+-----
+Specifying the roots of a polynomial still leaves one degree of
+freedom, typically represented by an undetermined leading
+coefficient. [1]_ In the case of this function, that coefficient -
+the first one in the returned array - is always taken as one. (If
+for some reason you have one other point, the only automatic way
+presently to leverage that information is to use ``polyfit``.)
+
+The characteristic polynomial, :math:`p_a(t)`, of an `n`-by-`n`
+matrix **A** is given by
+
+    :math:`p_a(t) = \\mathrm{det}(t\\, \\mathbf{I} - \\mathbf{A})`,
+
+where **I** is the `n`-by-`n` identity matrix. [2]_
+
+References
+----------
+.. [1] M. Sullivan and M. Sullivan, III, "Algebra and Trignometry,
+   Enhanced With Graphing Utilities," Prentice-Hall, pg. 318, 1996.
+
+.. [2] G. Strang, "Linear Algebra and Its Applications, 2nd Edition,"
+   Academic Press, pg. 182, 1980.
+
+Examples
+--------
+Given a sequence of a polynomial's zeros:
+
+>>> np.poly((0, 0, 0)) # Multiple root example
+array([1., 0., 0., 0.])
+
+The line above represents z**3 + 0*z**2 + 0*z + 0.
+
+>>> np.poly((-1./2, 0, 1./2))
+array([ 1.  ,  0.  , -0.25,  0.  ])
+
+The line above represents z**3 - z/4
+
+>>> np.poly((np.random.random(1)[0], 0, np.random.random(1)[0]))
+array([ 1.        , -0.77086955,  0.08618131,  0.        ]) # random
+
+Given a square array object:
+
+>>> P = np.array([[0, 1./3], [-1./2, 0]])
+>>> np.poly(P)
+array([1.        , 0.        , 0.16666667])
+
+Note how in all cases the leading coefficient is always 1.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1polynomial_a7b851d4c94b92ac3fb467fff3dba805a}\label{namespacenumpy_1_1lib_1_1polynomial_a7b851d4c94b92ac3fb467fff3dba805a}} 
+\index{numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}!polyadd@{polyadd}}
+\index{polyadd@{polyadd}!numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}}
+\subsubsection{\texorpdfstring{polyadd()}{polyadd()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+polynomial.\+polyadd (\begin{DoxyParamCaption}\item[{}]{a1,  }\item[{}]{a2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the sum of two polynomials.
+
+.. note::
+   This forms part of the old polynomial API. Since version 1.4, the
+   new polynomial API defined in `numpy.polynomial` is preferred.
+   A summary of the differences can be found in the
+   :doc:`transition guide </reference/routines.polynomials>`.
+
+Returns the polynomial resulting from the sum of two input polynomials.
+Each input must be either a poly1d object or a 1D sequence of polynomial
+coefficients, from highest to lowest degree.
+
+Parameters
+----------
+a1, a2 : array_like or poly1d object
+    Input polynomials.
+
+Returns
+-------
+out : ndarray or poly1d object
+    The sum of the inputs. If either input is a poly1d object, then the
+    output is also a poly1d object. Otherwise, it is a 1D array of
+    polynomial coefficients from highest to lowest degree.
+
+See Also
+--------
+poly1d : A one-dimensional polynomial class.
+poly, polyadd, polyder, polydiv, polyfit, polyint, polysub, polyval
+
+Examples
+--------
+>>> np.polyadd([1, 2], [9, 5, 4])
+array([9, 6, 6])
+
+Using poly1d objects:
+
+>>> p1 = np.poly1d([1, 2])
+>>> p2 = np.poly1d([9, 5, 4])
+>>> print(p1)
+1 x + 2
+>>> print(p2)
+   2
+9 x + 5 x + 4
+>>> print(np.polyadd(p1, p2))
+   2
+9 x + 6 x + 6\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1polynomial_a65e87b3b7f328385344947a14ea36453}\label{namespacenumpy_1_1lib_1_1polynomial_a65e87b3b7f328385344947a14ea36453}} 
+\index{numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}!polyder@{polyder}}
+\index{polyder@{polyder}!numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}}
+\subsubsection{\texorpdfstring{polyder()}{polyder()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+polynomial.\+polyder (\begin{DoxyParamCaption}\item[{}]{p,  }\item[{}]{m = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the derivative of the specified order of a polynomial.
+
+.. note::
+   This forms part of the old polynomial API. Since version 1.4, the
+   new polynomial API defined in `numpy.polynomial` is preferred.
+   A summary of the differences can be found in the
+   :doc:`transition guide </reference/routines.polynomials>`.
+
+Parameters
+----------
+p : poly1d or sequence
+    Polynomial to differentiate.
+    A sequence is interpreted as polynomial coefficients, see `poly1d`.
+m : int, optional
+    Order of differentiation (default: 1)
+
+Returns
+-------
+der : poly1d
+    A new polynomial representing the derivative.
+
+See Also
+--------
+polyint : Anti-derivative of a polynomial.
+poly1d : Class for one-dimensional polynomials.
+
+Examples
+--------
+The derivative of the polynomial :math:`x^3 + x^2 + x^1 + 1` is:
+
+>>> p = np.poly1d([1,1,1,1])
+>>> p2 = np.polyder(p)
+>>> p2
+poly1d([3, 2, 1])
+
+which evaluates to:
+
+>>> p2(2.)
+17.0
+
+We can verify this, approximating the derivative with
+``(f(x + h) - f(x))/h``:
+
+>>> (p(2. + 0.001) - p(2.)) / 0.001
+17.007000999997857
+
+The fourth-order derivative of a 3rd-order polynomial is zero:
+
+>>> np.polyder(p, 2)
+poly1d([6, 2])
+>>> np.polyder(p, 3)
+poly1d([6])
+>>> np.polyder(p, 4)
+poly1d([0])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1polynomial_a1f6f7f494f1c679c43d2033c574c2f82}\label{namespacenumpy_1_1lib_1_1polynomial_a1f6f7f494f1c679c43d2033c574c2f82}} 
+\index{numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}!polydiv@{polydiv}}
+\index{polydiv@{polydiv}!numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}}
+\subsubsection{\texorpdfstring{polydiv()}{polydiv()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+polynomial.\+polydiv (\begin{DoxyParamCaption}\item[{}]{u,  }\item[{}]{v }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the quotient and remainder of polynomial division.
+
+.. note::
+   This forms part of the old polynomial API. Since version 1.4, the
+   new polynomial API defined in `numpy.polynomial` is preferred.
+   A summary of the differences can be found in the
+   :doc:`transition guide </reference/routines.polynomials>`.
+
+The input arrays are the coefficients (including any coefficients
+equal to zero) of the "numerator" (dividend) and "denominator"
+(divisor) polynomials, respectively.
+
+Parameters
+----------
+u : array_like or poly1d
+    Dividend polynomial's coefficients.
+
+v : array_like or poly1d
+    Divisor polynomial's coefficients.
+
+Returns
+-------
+q : ndarray
+    Coefficients, including those equal to zero, of the quotient.
+r : ndarray
+    Coefficients, including those equal to zero, of the remainder.
+
+See Also
+--------
+poly, polyadd, polyder, polydiv, polyfit, polyint, polymul, polysub
+polyval
+
+Notes
+-----
+Both `u` and `v` must be 0-d or 1-d (ndim = 0 or 1), but `u.ndim` need
+not equal `v.ndim`. In other words, all four possible combinations -
+``u.ndim = v.ndim = 0``, ``u.ndim = v.ndim = 1``,
+``u.ndim = 1, v.ndim = 0``, and ``u.ndim = 0, v.ndim = 1`` - work.
+
+Examples
+--------
+.. math:: \\frac{3x^2 + 5x + 2}{2x + 1} = 1.5x + 1.75, remainder 0.25
+
+>>> x = np.array([3.0, 5.0, 2.0])
+>>> y = np.array([2.0, 1.0])
+>>> np.polydiv(x, y)
+(array([1.5 , 1.75]), array([0.25]))\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1polynomial_a3b001aa881bfc281be7086b33c703933}\label{namespacenumpy_1_1lib_1_1polynomial_a3b001aa881bfc281be7086b33c703933}} 
+\index{numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}!polyfit@{polyfit}}
+\index{polyfit@{polyfit}!numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}}
+\subsubsection{\texorpdfstring{polyfit()}{polyfit()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+polynomial.\+polyfit (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{deg,  }\item[{}]{rcond = {\ttfamily None},  }\item[{}]{full = {\ttfamily False},  }\item[{}]{w = {\ttfamily None},  }\item[{}]{cov = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Least squares polynomial fit.
+
+.. note::
+   This forms part of the old polynomial API. Since version 1.4, the
+   new polynomial API defined in `numpy.polynomial` is preferred.
+   A summary of the differences can be found in the
+   :doc:`transition guide </reference/routines.polynomials>`.
+
+Fit a polynomial ``p(x) = p[0] * x**deg + ... + p[deg]`` of degree `deg`
+to points `(x, y)`. Returns a vector of coefficients `p` that minimises
+the squared error in the order `deg`, `deg-1`, ... `0`.
+
+The `Polynomial.fit <numpy.polynomial.polynomial.Polynomial.fit>` class
+method is recommended for new code as it is more stable numerically. See
+the documentation of the method for more information.
+
+Parameters
+----------
+x : array_like, shape (M,)
+    x-coordinates of the M sample points ``(x[i], y[i])``.
+y : array_like, shape (M,) or (M, K)
+    y-coordinates of the sample points. Several data sets of sample
+    points sharing the same x-coordinates can be fitted at once by
+    passing in a 2D-array that contains one dataset per column.
+deg : int
+    Degree of the fitting polynomial
+rcond : float, optional
+    Relative condition number of the fit. Singular values smaller than
+    this relative to the largest singular value will be ignored. The
+    default value is len(x)*eps, where eps is the relative precision of
+    the float type, about 2e-16 in most cases.
+full : bool, optional
+    Switch determining nature of return value. When it is False (the
+    default) just the coefficients are returned, when True diagnostic
+    information from the singular value decomposition is also returned.
+w : array_like, shape (M,), optional
+    Weights to apply to the y-coordinates of the sample points. For
+    gaussian uncertainties, use 1/sigma (not 1/sigma**2).
+cov : bool or str, optional
+    If given and not `False`, return not just the estimate but also its
+    covariance matrix. By default, the covariance are scaled by
+    chi2/dof, where dof = M - (deg + 1), i.e., the weights are presumed 
+    to be unreliable except in a relative sense and everything is scaled 
+    such that the reduced chi2 is unity. This scaling is omitted if 
+    ``cov='unscaled'``, as is relevant for the case that the weights are 
+    1/sigma**2, with sigma known to be a reliable estimate of the 
+    uncertainty.
+
+Returns
+-------
+p : ndarray, shape (deg + 1,) or (deg + 1, K)
+    Polynomial coefficients, highest power first.  If `y` was 2-D, the
+    coefficients for `k`-th data set are in ``p[:,k]``.
+
+residuals, rank, singular_values, rcond
+    Present only if `full` = True.  Residuals is sum of squared residuals
+    of the least-squares fit, the effective rank of the scaled Vandermonde
+    coefficient matrix, its singular values, and the specified value of
+    `rcond`. For more details, see `linalg.lstsq`.
+
+V : ndarray, shape (M,M) or (M,M,K)
+    Present only if `full` = False and `cov`=True.  The covariance
+    matrix of the polynomial coefficient estimates.  The diagonal of
+    this matrix are the variance estimates for each coefficient.  If y
+    is a 2-D array, then the covariance matrix for the `k`-th data set
+    are in ``V[:,:,k]``
+
+
+Warns
+-----
+RankWarning
+    The rank of the coefficient matrix in the least-squares fit is
+    deficient. The warning is only raised if `full` = False.
+
+    The warnings can be turned off by
+
+    >>> import warnings
+    >>> warnings.simplefilter('ignore', np.RankWarning)
+
+See Also
+--------
+polyval : Compute polynomial values.
+linalg.lstsq : Computes a least-squares fit.
+scipy.interpolate.UnivariateSpline : Computes spline fits.
+
+Notes
+-----
+The solution minimizes the squared error
+
+.. math ::
+    E = \\sum_{j=0}^k |p(x_j) - y_j|^2
+
+in the equations::
+
+    x[0]**n * p[0] + ... + x[0] * p[n-1] + p[n] = y[0]
+    x[1]**n * p[0] + ... + x[1] * p[n-1] + p[n] = y[1]
+    ...
+    x[k]**n * p[0] + ... + x[k] * p[n-1] + p[n] = y[k]
+
+The coefficient matrix of the coefficients `p` is a Vandermonde matrix.
+
+`polyfit` issues a `RankWarning` when the least-squares fit is badly
+conditioned. This implies that the best fit is not well-defined due
+to numerical error. The results may be improved by lowering the polynomial
+degree or by replacing `x` by `x` - `x`.mean(). The `rcond` parameter
+can also be set to a value smaller than its default, but the resulting
+fit may be spurious: including contributions from the small singular
+values can add numerical noise to the result.
+
+Note that fitting polynomial coefficients is inherently badly conditioned
+when the degree of the polynomial is large or the interval of sample points
+is badly centered. The quality of the fit should always be checked in these
+cases. When polynomial fits are not satisfactory, splines may be a good
+alternative.
+
+References
+----------
+.. [1] Wikipedia, "Curve fitting",
+       https://en.wikipedia.org/wiki/Curve_fitting
+.. [2] Wikipedia, "Polynomial interpolation",
+       https://en.wikipedia.org/wiki/Polynomial_interpolation
+
+Examples
+--------
+>>> import warnings
+>>> x = np.array([0.0, 1.0, 2.0, 3.0,  4.0,  5.0])
+>>> y = np.array([0.0, 0.8, 0.9, 0.1, -0.8, -1.0])
+>>> z = np.polyfit(x, y, 3)
+>>> z
+array([ 0.08703704, -0.81349206,  1.69312169, -0.03968254]) # may vary
+
+It is convenient to use `poly1d` objects for dealing with polynomials:
+
+>>> p = np.poly1d(z)
+>>> p(0.5)
+0.6143849206349179 # may vary
+>>> p(3.5)
+-0.34732142857143039 # may vary
+>>> p(10)
+22.579365079365115 # may vary
+
+High-order polynomials may oscillate wildly:
+
+>>> with warnings.catch_warnings():
+...     warnings.simplefilter('ignore', np.RankWarning)
+...     p30 = np.poly1d(np.polyfit(x, y, 30))
+...
+>>> p30(4)
+-0.80000000000000204 # may vary
+>>> p30(5)
+-0.99999999999999445 # may vary
+>>> p30(4.5)
+-0.10547061179440398 # may vary
+
+Illustration:
+
+>>> import matplotlib.pyplot as plt
+>>> xp = np.linspace(-2, 6, 100)
+>>> _ = plt.plot(x, y, '.', xp, p(xp), '-', xp, p30(xp), '--')
+>>> plt.ylim(-2,2)
+(-2, 2)
+>>> plt.show()\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1polynomial_aab48ef7d0433f083a59e67879dd843be}\label{namespacenumpy_1_1lib_1_1polynomial_aab48ef7d0433f083a59e67879dd843be}} 
+\index{numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}!polyint@{polyint}}
+\index{polyint@{polyint}!numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}}
+\subsubsection{\texorpdfstring{polyint()}{polyint()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+polynomial.\+polyint (\begin{DoxyParamCaption}\item[{}]{p,  }\item[{}]{m = {\ttfamily 1},  }\item[{}]{k = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return an antiderivative (indefinite integral) of a polynomial.
+
+.. note::
+   This forms part of the old polynomial API. Since version 1.4, the
+   new polynomial API defined in `numpy.polynomial` is preferred.
+   A summary of the differences can be found in the
+   :doc:`transition guide </reference/routines.polynomials>`.
+
+The returned order `m` antiderivative `P` of polynomial `p` satisfies
+:math:`\\frac{d^m}{dx^m}P(x) = p(x)` and is defined up to `m - 1`
+integration constants `k`. The constants determine the low-order
+polynomial part
+
+.. math:: \\frac{k_{m-1}}{0!} x^0 + \\ldots + \\frac{k_0}{(m-1)!}x^{m-1}
+
+of `P` so that :math:`P^{(j)}(0) = k_{m-j-1}`.
+
+Parameters
+----------
+p : array_like or poly1d
+    Polynomial to integrate.
+    A sequence is interpreted as polynomial coefficients, see `poly1d`.
+m : int, optional
+    Order of the antiderivative. (Default: 1)
+k : list of `m` scalars or scalar, optional
+    Integration constants. They are given in the order of integration:
+    those corresponding to highest-order terms come first.
+
+    If ``None`` (default), all constants are assumed to be zero.
+    If `m = 1`, a single scalar can be given instead of a list.
+
+See Also
+--------
+polyder : derivative of a polynomial
+poly1d.integ : equivalent method
+
+Examples
+--------
+The defining property of the antiderivative:
+
+>>> p = np.poly1d([1,1,1])
+>>> P = np.polyint(p)
+>>> P
+ poly1d([ 0.33333333,  0.5       ,  1.        ,  0.        ]) # may vary
+>>> np.polyder(P) == p
+True
+
+The integration constants default to zero, but can be specified:
+
+>>> P = np.polyint(p, 3)
+>>> P(0)
+0.0
+>>> np.polyder(P)(0)
+0.0
+>>> np.polyder(P, 2)(0)
+0.0
+>>> P = np.polyint(p, 3, k=[6,5,3])
+>>> P
+poly1d([ 0.01666667,  0.04166667,  0.16666667,  3. ,  5. ,  3. ]) # may vary
+
+Note that 3 = 6 / 2!, and that the constants are given in the order of
+integrations. Constant of the highest-order polynomial term comes first:
+
+>>> np.polyder(P, 2)(0)
+6.0
+>>> np.polyder(P, 1)(0)
+5.0
+>>> P(0)
+3.0\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1polynomial_a665c7ef52e6629867d2f89f2f3d74dde}\label{namespacenumpy_1_1lib_1_1polynomial_a665c7ef52e6629867d2f89f2f3d74dde}} 
+\index{numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}!polymul@{polymul}}
+\index{polymul@{polymul}!numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}}
+\subsubsection{\texorpdfstring{polymul()}{polymul()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+polynomial.\+polymul (\begin{DoxyParamCaption}\item[{}]{a1,  }\item[{}]{a2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the product of two polynomials.
+
+.. note::
+   This forms part of the old polynomial API. Since version 1.4, the
+   new polynomial API defined in `numpy.polynomial` is preferred.
+   A summary of the differences can be found in the
+   :doc:`transition guide </reference/routines.polynomials>`.
+
+Finds the polynomial resulting from the multiplication of the two input
+polynomials. Each input must be either a poly1d object or a 1D sequence
+of polynomial coefficients, from highest to lowest degree.
+
+Parameters
+----------
+a1, a2 : array_like or poly1d object
+    Input polynomials.
+
+Returns
+-------
+out : ndarray or poly1d object
+    The polynomial resulting from the multiplication of the inputs. If
+    either inputs is a poly1d object, then the output is also a poly1d
+    object. Otherwise, it is a 1D array of polynomial coefficients from
+    highest to lowest degree.
+
+See Also
+--------
+poly1d : A one-dimensional polynomial class.
+poly, polyadd, polyder, polydiv, polyfit, polyint, polysub, polyval
+convolve : Array convolution. Same output as polymul, but has parameter
+           for overlap mode.
+
+Examples
+--------
+>>> np.polymul([1, 2, 3], [9, 5, 1])
+array([ 9, 23, 38, 17,  3])
+
+Using poly1d objects:
+
+>>> p1 = np.poly1d([1, 2, 3])
+>>> p2 = np.poly1d([9, 5, 1])
+>>> print(p1)
+   2
+1 x + 2 x + 3
+>>> print(p2)
+   2
+9 x + 5 x + 1
+>>> print(np.polymul(p1, p2))
+   4      3      2
+9 x + 23 x + 38 x + 17 x + 3\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1polynomial_a82ed7a695338e1fd554add2135a655ab}\label{namespacenumpy_1_1lib_1_1polynomial_a82ed7a695338e1fd554add2135a655ab}} 
+\index{numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}!polysub@{polysub}}
+\index{polysub@{polysub}!numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}}
+\subsubsection{\texorpdfstring{polysub()}{polysub()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+polynomial.\+polysub (\begin{DoxyParamCaption}\item[{}]{a1,  }\item[{}]{a2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Difference (subtraction) of two polynomials.
+
+.. note::
+   This forms part of the old polynomial API. Since version 1.4, the
+   new polynomial API defined in `numpy.polynomial` is preferred.
+   A summary of the differences can be found in the
+   :doc:`transition guide </reference/routines.polynomials>`.
+
+Given two polynomials `a1` and `a2`, returns ``a1 - a2``.
+`a1` and `a2` can be either array_like sequences of the polynomials'
+coefficients (including coefficients equal to zero), or `poly1d` objects.
+
+Parameters
+----------
+a1, a2 : array_like or poly1d
+    Minuend and subtrahend polynomials, respectively.
+
+Returns
+-------
+out : ndarray or poly1d
+    Array or `poly1d` object of the difference polynomial's coefficients.
+
+See Also
+--------
+polyval, polydiv, polymul, polyadd
+
+Examples
+--------
+.. math:: (2 x^2 + 10 x - 2) - (3 x^2 + 10 x -4) = (-x^2 + 2)
+
+>>> np.polysub([2, 10, -2], [3, 10, -4])
+array([-1,  0,  2])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1polynomial_ae0b1caf06f430f8f3603c978d0ced250}\label{namespacenumpy_1_1lib_1_1polynomial_ae0b1caf06f430f8f3603c978d0ced250}} 
+\index{numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}!polyval@{polyval}}
+\index{polyval@{polyval}!numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}}
+\subsubsection{\texorpdfstring{polyval()}{polyval()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+polynomial.\+polyval (\begin{DoxyParamCaption}\item[{}]{p,  }\item[{}]{x }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Evaluate a polynomial at specific values.
+
+.. note::
+   This forms part of the old polynomial API. Since version 1.4, the
+   new polynomial API defined in `numpy.polynomial` is preferred.
+   A summary of the differences can be found in the
+   :doc:`transition guide </reference/routines.polynomials>`.
+
+If `p` is of length N, this function returns the value:
+
+    ``p[0]*x**(N-1) + p[1]*x**(N-2) + ... + p[N-2]*x + p[N-1]``
+
+If `x` is a sequence, then ``p(x)`` is returned for each element of ``x``.
+If `x` is another polynomial then the composite polynomial ``p(x(t))``
+is returned.
+
+Parameters
+----------
+p : array_like or poly1d object
+   1D array of polynomial coefficients (including coefficients equal
+   to zero) from highest degree to the constant term, or an
+   instance of poly1d.
+x : array_like or poly1d object
+   A number, an array of numbers, or an instance of poly1d, at
+   which to evaluate `p`.
+
+Returns
+-------
+values : ndarray or poly1d
+   If `x` is a poly1d instance, the result is the composition of the two
+   polynomials, i.e., `x` is "substituted" in `p` and the simplified
+   result is returned. In addition, the type of `x` - array_like or
+   poly1d - governs the type of the output: `x` array_like => `values`
+   array_like, `x` a poly1d object => `values` is also.
+
+See Also
+--------
+poly1d: A polynomial class.
+
+Notes
+-----
+Horner's scheme [1]_ is used to evaluate the polynomial. Even so,
+for polynomials of high degree the values may be inaccurate due to
+rounding errors. Use carefully.
+
+If `x` is a subtype of `ndarray` the return value will be of the same type.
+
+References
+----------
+.. [1] I. N. Bronshtein, K. A. Semendyayev, and K. A. Hirsch (Eng.
+   trans. Ed.), *Handbook of Mathematics*, New York, Van Nostrand
+   Reinhold Co., 1985, pg. 720.
+
+Examples
+--------
+>>> np.polyval([3,0,1], 5)  # 3 * 5**2 + 0 * 5**1 + 1
+76
+>>> np.polyval([3,0,1], np.poly1d(5))
+poly1d([76])
+>>> np.polyval(np.poly1d([3,0,1]), 5)
+76
+>>> np.polyval(np.poly1d([3,0,1]), np.poly1d(5))
+poly1d([76])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1polynomial_a34f751d4a674960e5d7e1e275ec118a7}\label{namespacenumpy_1_1lib_1_1polynomial_a34f751d4a674960e5d7e1e275ec118a7}} 
+\index{numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}!roots@{roots}}
+\index{roots@{roots}!numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}}
+\subsubsection{\texorpdfstring{roots()}{roots()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+polynomial.\+roots (\begin{DoxyParamCaption}\item[{}]{p }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the roots of a polynomial with coefficients given in p.
+
+.. note::
+   This forms part of the old polynomial API. Since version 1.4, the
+   new polynomial API defined in `numpy.polynomial` is preferred.
+   A summary of the differences can be found in the
+   :doc:`transition guide </reference/routines.polynomials>`.
+
+The values in the rank-1 array `p` are coefficients of a polynomial.
+If the length of `p` is n+1 then the polynomial is described by::
+
+  p[0] * x**n + p[1] * x**(n-1) + ... + p[n-1]*x + p[n]
+
+Parameters
+----------
+p : array_like
+    Rank-1 array of polynomial coefficients.
+
+Returns
+-------
+out : ndarray
+    An array containing the roots of the polynomial.
+
+Raises
+------
+ValueError
+    When `p` cannot be converted to a rank-1 array.
+
+See also
+--------
+poly : Find the coefficients of a polynomial with a given sequence
+       of roots.
+polyval : Compute polynomial values.
+polyfit : Least squares polynomial fit.
+poly1d : A one-dimensional polynomial class.
+
+Notes
+-----
+The algorithm relies on computing the eigenvalues of the
+companion matrix [1]_.
+
+References
+----------
+.. [1] R. A. Horn & C. R. Johnson, *Matrix Analysis*.  Cambridge, UK:
+    Cambridge University Press, 1999, pp. 146-7.
+
+Examples
+--------
+>>> coeff = [3.2, 2, 1]
+>>> np.roots(coeff)
+array([-0.3125+0.46351241j, -0.3125-0.46351241j])\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1polynomial_a81aa094e1e92d3709ccc61cd33748cdb}\label{namespacenumpy_1_1lib_1_1polynomial_a81aa094e1e92d3709ccc61cd33748cdb}} 
+\index{numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}!array\+\_\+function\+\_\+dispatch@{array\+\_\+function\+\_\+dispatch}}
+\index{array\+\_\+function\+\_\+dispatch@{array\+\_\+function\+\_\+dispatch}!numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}}
+\subsubsection{\texorpdfstring{array\+\_\+function\+\_\+dispatch}{array\_function\_dispatch}}
+{\footnotesize\ttfamily numpy.\+lib.\+polynomial.\+array\+\_\+function\+\_\+dispatch}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1polynomial_ac2cf51e66da406b650e81d14e62b8aa4}\label{namespacenumpy_1_1lib_1_1polynomial_ac2cf51e66da406b650e81d14e62b8aa4}} 
+\index{numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}!module@{module}}
+\index{module@{module}!numpy\+::lib\+::polynomial@{numpy\+::lib\+::polynomial}}
+\subsubsection{\texorpdfstring{module}{module}}
+{\footnotesize\ttfamily numpy.\+lib.\+polynomial.\+module}
+

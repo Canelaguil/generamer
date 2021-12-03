@@ -1,0 +1,80 @@
+\hypertarget{namespaceaxes__grid1_1_1axes__size}{}\section{axes\+\_\+grid1.\+axes\+\_\+size Namespace Reference}
+\label{namespaceaxes__grid1_1_1axes__size}\index{axes\+\_\+grid1.\+axes\+\_\+size@{axes\+\_\+grid1.\+axes\+\_\+size}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1__Base}{\+\_\+\+Base}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1Add}{Add}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1AddList}{Add\+List}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1AxesX}{AxesX}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1AxesY}{AxesY}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1Fixed}{Fixed}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1Fraction}{Fraction}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1GetExtentHelper}{Get\+Extent\+Helper}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1MaxExtent}{Max\+Extent}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1MaxHeight}{Max\+Height}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1MaxWidth}{Max\+Width}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1Padded}{Padded}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1Scaled}{Scaled}
+\item 
+class \hyperlink{classaxes__grid1_1_1axes__size_1_1SizeFromFunc}{Size\+From\+Func}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceaxes__grid1_1_1axes__size_a30da3c4637b026d06d84e968b787fe89}{from\+\_\+any} (size, fraction\+\_\+ref=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceaxes__grid1_1_1axes__size_a4c4ec66c392071f82191f415efa67456}{Scalable}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Provides classes of simple units that will be used with AxesDivider
+class (or others) to determine the size of each axes. The unit
+classes define `get_size` method that returns a tuple of two floats,
+meaning relative and absolute sizes, respectively.
+
+Note that this class is nothing more than a simple tuple of two
+floats. Take a look at the Divider class to see how these two
+values are used.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceaxes__grid1_1_1axes__size_a30da3c4637b026d06d84e968b787fe89}\label{namespaceaxes__grid1_1_1axes__size_a30da3c4637b026d06d84e968b787fe89}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+size@{axes\+\_\+grid1\+::axes\+\_\+size}!from\+\_\+any@{from\+\_\+any}}
+\index{from\+\_\+any@{from\+\_\+any}!axes\+\_\+grid1\+::axes\+\_\+size@{axes\+\_\+grid1\+::axes\+\_\+size}}
+\subsubsection{\texorpdfstring{from\+\_\+any()}{from\_any()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+axes\+\_\+size.\+from\+\_\+any (\begin{DoxyParamCaption}\item[{}]{size,  }\item[{}]{fraction\+\_\+ref = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a Fixed unit when the first argument is a float, or a
+Fraction unit if that is a string that ends with %. The second
+argument is only meaningful when Fraction unit is created.
+
+>>> a = Size.from_any(1.2) # => Size.Fixed(1.2)
+>>> Size.from_any("50%", a) # => Size.Fraction(0.5, a)
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceaxes__grid1_1_1axes__size_a4c4ec66c392071f82191f415efa67456}\label{namespaceaxes__grid1_1_1axes__size_a4c4ec66c392071f82191f415efa67456}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+size@{axes\+\_\+grid1\+::axes\+\_\+size}!Scalable@{Scalable}}
+\index{Scalable@{Scalable}!axes\+\_\+grid1\+::axes\+\_\+size@{axes\+\_\+grid1\+::axes\+\_\+size}}
+\subsubsection{\texorpdfstring{Scalable}{Scalable}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+axes\+\_\+size.\+Scalable}
+

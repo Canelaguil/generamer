@@ -1,0 +1,229 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider}{}\section{matplotlib.\+widgets.\+Range\+Slider Class Reference}
+\label{classmatplotlib_1_1widgets_1_1RangeSlider}\index{matplotlib.\+widgets.\+Range\+Slider@{matplotlib.\+widgets.\+Range\+Slider}}
+
+
+Inheritance diagram for matplotlib.\+widgets.\+Range\+Slider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1RangeSlider__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+widgets.\+Range\+Slider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1RangeSlider__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_aa02e80e894adeff6d0251821a64e10f2}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_ac0722858b7001d10a42055dc90420b4f}{ax}, \hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_a14031aac72ac612a9b731dfa5ae9adaf}{label}, \hyperlink{classmatplotlib_1_1widgets_1_1SliderBase_a993fb203f18eed971f45cc5cefe46b75}{valmin}, \hyperlink{classmatplotlib_1_1widgets_1_1SliderBase_a43671ae3d4d11d7b5cc1f057d6906d7d}{valmax}, \hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_a9c1d5f8fd0a3032655e02f65198455c7}{valinit}=None, \hyperlink{classmatplotlib_1_1widgets_1_1SliderBase_a30eb223d32ca95faa7bd011bb5dc1836}{valfmt}=None, \hyperlink{classmatplotlib_1_1widgets_1_1SliderBase_aaacaef7e24bbf0e58411e11bab0f6251}{closedmin}=True, \hyperlink{classmatplotlib_1_1widgets_1_1SliderBase_a250e05d4e913ab64f1aab8199139121e}{closedmax}=True, dragging=True, \hyperlink{classmatplotlib_1_1widgets_1_1SliderBase_acc8d1e84849e95324ba5261011d7ffdc}{valstep}=None, \hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_a1f59a8a85f45ba8048209d134b2a4711}{orientation}=\char`\"{}horizontal\char`\"{}, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_aa1429e9f0f6f9d87e1e7fcc59061270f}{set\+\_\+min} (self, min)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_a44ca2d8906994e342eb1d0083fa929b7}{set\+\_\+max} (self, max)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_a9d36dcc7c304e7c974435b65a63385da}{set\+\_\+val} (self, \hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_a70cbec0a637533482703b3acaa6f2aef}{val})
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_ab7736352fe5054f2cbdfe4554952446a}{on\+\_\+changed} (self, func)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_a70cbec0a637533482703b3acaa6f2aef}{val}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_a9c1d5f8fd0a3032655e02f65198455c7}{valinit}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_a19c07aa7d22ddfc36512b2fbb3d76aa0}{poly}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_a14031aac72ac612a9b731dfa5ae9adaf}{label}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_ac476557d97a8626833d8fa91f2bcb453}{valtext}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_a242f63a00bca955d16fda1590e3a722e}{drag\+\_\+active}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RangeSlider_a1f59a8a85f45ba8048209d134b2a4711}{orientation}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A slider representing a range of floating point values. Defines the min and
+max of the range via the *val* attribute as a tuple of (min, max).
+
+Create a slider that defines a range contained within [*valmin*, *valmax*]
+in axes *ax*. For the slider to remain responsive you must maintain a
+reference to it. Call :meth:`on_changed` to connect to the slider event.
+
+Attributes
+----------
+val : tuple of float
+    Slider value.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider_aa02e80e894adeff6d0251821a64e10f2}\label{classmatplotlib_1_1widgets_1_1RangeSlider_aa02e80e894adeff6d0251821a64e10f2}} 
+\index{matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Range\+Slider.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{label,  }\item[{}]{valmin,  }\item[{}]{valmax,  }\item[{}]{valinit = {\ttfamily None},  }\item[{}]{valfmt = {\ttfamily None},  }\item[{}]{closedmin = {\ttfamily True},  }\item[{}]{closedmax = {\ttfamily True},  }\item[{}]{dragging = {\ttfamily True},  }\item[{}]{valstep = {\ttfamily None},  }\item[{}]{orientation = {\ttfamily \char`\"{}horizontal\char`\"{}},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+ax : Axes
+    The Axes to put the slider in.
+
+label : str
+    Slider label.
+
+valmin : float
+    The minimum value of the slider.
+
+valmax : float
+    The maximum value of the slider.
+
+valinit : tuple of float or None, default: None
+    The initial positions of the slider. If None the initial positions
+    will be at the 25th and 75th percentiles of the range.
+
+valfmt : str, default: None
+    %-format string used to format the slider values.  If None, a
+    `.ScalarFormatter` is used instead.
+
+closedmin : bool, default: True
+    Whether the slider interval is closed on the bottom.
+
+closedmax : bool, default: True
+    Whether the slider interval is closed on the top.
+
+dragging : bool, default: True
+    If True the slider can be dragged by the mouse.
+
+valstep : float, default: None
+    If given, the slider will snap to multiples of *valstep*.
+
+orientation : {'horizontal', 'vertical'}, default: 'horizontal'
+    The orientation of the slider.
+
+Notes
+-----
+Additional kwargs are passed on to ``self.poly`` which is the
+`~matplotlib.patches.Rectangle` that draws the slider knob.  See the
+`.Rectangle` documentation for valid property names (``facecolor``,
+``edgecolor``, ``alpha``, etc.).
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider_ab7736352fe5054f2cbdfe4554952446a}\label{classmatplotlib_1_1widgets_1_1RangeSlider_ab7736352fe5054f2cbdfe4554952446a}} 
+\index{matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}!on\+\_\+changed@{on\+\_\+changed}}
+\index{on\+\_\+changed@{on\+\_\+changed}!matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}}
+\subsubsection{\texorpdfstring{on\+\_\+changed()}{on\_changed()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Range\+Slider.\+on\+\_\+changed (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Connect *func* as callback function to changes of the slider value.
+
+Parameters
+----------
+func : callable
+    Function to call when slider is changed. The function
+    must accept a numpy array with shape (2,) as its argument.
+
+Returns
+-------
+int
+    Connection id (which can be used to disconnect *func*).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider_a44ca2d8906994e342eb1d0083fa929b7}\label{classmatplotlib_1_1widgets_1_1RangeSlider_a44ca2d8906994e342eb1d0083fa929b7}} 
+\index{matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}!set\+\_\+max@{set\+\_\+max}}
+\index{set\+\_\+max@{set\+\_\+max}!matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}}
+\subsubsection{\texorpdfstring{set\+\_\+max()}{set\_max()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Range\+Slider.\+set\+\_\+max (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{max }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the lower value of the slider to *max*.
+
+Parameters
+----------
+max : float
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider_aa1429e9f0f6f9d87e1e7fcc59061270f}\label{classmatplotlib_1_1widgets_1_1RangeSlider_aa1429e9f0f6f9d87e1e7fcc59061270f}} 
+\index{matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}!set\+\_\+min@{set\+\_\+min}}
+\index{set\+\_\+min@{set\+\_\+min}!matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}}
+\subsubsection{\texorpdfstring{set\+\_\+min()}{set\_min()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Range\+Slider.\+set\+\_\+min (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{min }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the lower value of the slider to *min*.
+
+Parameters
+----------
+min : float
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider_a9d36dcc7c304e7c974435b65a63385da}\label{classmatplotlib_1_1widgets_1_1RangeSlider_a9d36dcc7c304e7c974435b65a63385da}} 
+\index{matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}!set\+\_\+val@{set\+\_\+val}}
+\index{set\+\_\+val@{set\+\_\+val}!matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}}
+\subsubsection{\texorpdfstring{set\+\_\+val()}{set\_val()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Range\+Slider.\+set\+\_\+val (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set slider value to *val*.
+
+Parameters
+----------
+val : tuple or array-like of float
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider_a242f63a00bca955d16fda1590e3a722e}\label{classmatplotlib_1_1widgets_1_1RangeSlider_a242f63a00bca955d16fda1590e3a722e}} 
+\index{matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}!drag\+\_\+active@{drag\+\_\+active}}
+\index{drag\+\_\+active@{drag\+\_\+active}!matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}}
+\subsubsection{\texorpdfstring{drag\+\_\+active}{drag\_active}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Range\+Slider.\+drag\+\_\+active}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider_a14031aac72ac612a9b731dfa5ae9adaf}\label{classmatplotlib_1_1widgets_1_1RangeSlider_a14031aac72ac612a9b731dfa5ae9adaf}} 
+\index{matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}!label@{label}}
+\index{label@{label}!matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}}
+\subsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Range\+Slider.\+label}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider_a1f59a8a85f45ba8048209d134b2a4711}\label{classmatplotlib_1_1widgets_1_1RangeSlider_a1f59a8a85f45ba8048209d134b2a4711}} 
+\index{matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}!orientation@{orientation}}
+\index{orientation@{orientation}!matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}}
+\subsubsection{\texorpdfstring{orientation}{orientation}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Range\+Slider.\+orientation}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider_a19c07aa7d22ddfc36512b2fbb3d76aa0}\label{classmatplotlib_1_1widgets_1_1RangeSlider_a19c07aa7d22ddfc36512b2fbb3d76aa0}} 
+\index{matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}!poly@{poly}}
+\index{poly@{poly}!matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}}
+\subsubsection{\texorpdfstring{poly}{poly}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Range\+Slider.\+poly}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider_a70cbec0a637533482703b3acaa6f2aef}\label{classmatplotlib_1_1widgets_1_1RangeSlider_a70cbec0a637533482703b3acaa6f2aef}} 
+\index{matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}!val@{val}}
+\index{val@{val}!matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}}
+\subsubsection{\texorpdfstring{val}{val}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Range\+Slider.\+val}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider_a9c1d5f8fd0a3032655e02f65198455c7}\label{classmatplotlib_1_1widgets_1_1RangeSlider_a9c1d5f8fd0a3032655e02f65198455c7}} 
+\index{matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}!valinit@{valinit}}
+\index{valinit@{valinit}!matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}}
+\subsubsection{\texorpdfstring{valinit}{valinit}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Range\+Slider.\+valinit}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RangeSlider_ac476557d97a8626833d8fa91f2bcb453}\label{classmatplotlib_1_1widgets_1_1RangeSlider_ac476557d97a8626833d8fa91f2bcb453}} 
+\index{matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}!valtext@{valtext}}
+\index{valtext@{valtext}!matplotlib\+::widgets\+::\+Range\+Slider@{matplotlib\+::widgets\+::\+Range\+Slider}}
+\subsubsection{\texorpdfstring{valtext}{valtext}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Range\+Slider.\+valtext}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,190 @@
+\hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter}{}\section{matplotlib.\+animation.\+Abstract\+Movie\+Writer Class Reference}
+\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter}\index{matplotlib.\+animation.\+Abstract\+Movie\+Writer@{matplotlib.\+animation.\+Abstract\+Movie\+Writer}}
+
+
+Inheritance diagram for matplotlib.\+animation.\+Abstract\+Movie\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1animation_1_1AbstractMovieWriter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+animation.\+Abstract\+Movie\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classmatplotlib_1_1animation_1_1AbstractMovieWriter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ae4eb9257de1f99c7c920aa980e138aab}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_aaf7656da4e1f760b64f453cffbe15a82}{fps}=5, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a5a23958781c90f0aae7ac29ef6a7401f}{metadata}=None, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a0f1f647083b08f59de77ec4a3692e465}{codec}=None, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a8437f6e4c409bdd6392b1d354e9bc4c5}{bitrate}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ac9a9c1598d0a28907b4501abc3831fc7}{setup} (self, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a835eff7e0ac625992e7f708448e88fa6}{fig}, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ae2006c1ca69618ec02514264a9f318e1}{outfile}, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_aaca5ed6ef95c99e03830b346425ee9bc}{dpi}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a2586c7793164a329fb93f0db66edeb0f}{frame\+\_\+size} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a995dae01d233d2fcce6f4f510f43f548}{grab\+\_\+frame} (self, savefig\+\_\+kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_abc294f9c3518a3c7fcd45c3e2c79a396}{finish} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ae501c524249d79a7a648c3d383a55758}{saving} (self, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a835eff7e0ac625992e7f708448e88fa6}{fig}, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ae2006c1ca69618ec02514264a9f318e1}{outfile}, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_aaca5ed6ef95c99e03830b346425ee9bc}{dpi}, args, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_aaf7656da4e1f760b64f453cffbe15a82}{fps}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a5a23958781c90f0aae7ac29ef6a7401f}{metadata}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a0f1f647083b08f59de77ec4a3692e465}{codec}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a8437f6e4c409bdd6392b1d354e9bc4c5}{bitrate}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ae2006c1ca69618ec02514264a9f318e1}{outfile}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a835eff7e0ac625992e7f708448e88fa6}{fig}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_aaca5ed6ef95c99e03830b346425ee9bc}{dpi}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Abstract base class for writing movies. Fundamentally, what a MovieWriter
+does is provide is a way to grab frames by calling grab_frame().
+
+setup() is called to start the process and finish() is called afterwards.
+
+This class is set up to provide for writing movie frame data to a pipe.
+saving() is provided as a context manager to facilitate this process as::
+
+    with moviewriter.saving(fig, outfile='myfile.mp4', dpi=100):
+        # Iterate over frames
+        moviewriter.grab_frame(**savefig_kwargs)
+
+The use of the context manager ensures that setup() and finish() are
+performed as necessary.
+
+An instance of a concrete subclass of this class can be given as the
+``writer`` argument of `Animation.save()`.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ae4eb9257de1f99c7c920aa980e138aab}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ae4eb9257de1f99c7c920aa980e138aab}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fps = {\ttfamily 5},  }\item[{}]{metadata = {\ttfamily None},  }\item[{}]{codec = {\ttfamily None},  }\item[{}]{bitrate = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_abc294f9c3518a3c7fcd45c3e2c79a396}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_abc294f9c3518a3c7fcd45c3e2c79a396}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!finish@{finish}}
+\index{finish@{finish}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+finish (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Finish any processing for writing the movie.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a2586c7793164a329fb93f0db66edeb0f}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a2586c7793164a329fb93f0db66edeb0f}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!frame\+\_\+size@{frame\+\_\+size}}
+\index{frame\+\_\+size@{frame\+\_\+size}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{frame\+\_\+size()}{frame\_size()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+frame\+\_\+size (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A tuple ``(width, height)`` in pixels of a movie frame.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a995dae01d233d2fcce6f4f510f43f548}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a995dae01d233d2fcce6f4f510f43f548}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!grab\+\_\+frame@{grab\+\_\+frame}}
+\index{grab\+\_\+frame@{grab\+\_\+frame}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{grab\+\_\+frame()}{grab\_frame()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+grab\+\_\+frame (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{savefig\+\_\+kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Grab the image information from the figure and save as a movie frame.
+
+All keyword arguments in *savefig_kwargs* are passed on to the
+`~.Figure.savefig` call that saves the figure.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ae501c524249d79a7a648c3d383a55758}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ae501c524249d79a7a648c3d383a55758}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!saving@{saving}}
+\index{saving@{saving}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{saving()}{saving()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+saving (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fig,  }\item[{}]{outfile,  }\item[{}]{dpi,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Context manager to facilitate writing the movie file.
+
+``*args, **kw`` are any parameters that should be passed to `setup`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ac9a9c1598d0a28907b4501abc3831fc7}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ac9a9c1598d0a28907b4501abc3831fc7}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!setup@{setup}}
+\index{setup@{setup}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+setup (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fig,  }\item[{}]{outfile,  }\item[{}]{dpi = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Setup for writing the movie file.
+
+Parameters
+----------
+fig : `~matplotlib.figure.Figure`
+    The figure object that contains the information for frames.
+outfile : str
+    The filename of the resulting movie file.
+dpi : float, default: ``fig.dpi``
+    The DPI (or resolution) for the file.  This controls the size
+    in pixels of the resulting movie file.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a8437f6e4c409bdd6392b1d354e9bc4c5}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a8437f6e4c409bdd6392b1d354e9bc4c5}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!bitrate@{bitrate}}
+\index{bitrate@{bitrate}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{bitrate}{bitrate}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+bitrate}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a0f1f647083b08f59de77ec4a3692e465}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a0f1f647083b08f59de77ec4a3692e465}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!codec@{codec}}
+\index{codec@{codec}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{codec}{codec}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+codec}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_aaca5ed6ef95c99e03830b346425ee9bc}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_aaca5ed6ef95c99e03830b346425ee9bc}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!dpi@{dpi}}
+\index{dpi@{dpi}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{dpi}{dpi}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+dpi}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a835eff7e0ac625992e7f708448e88fa6}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a835eff7e0ac625992e7f708448e88fa6}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!fig@{fig}}
+\index{fig@{fig}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{fig}{fig}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+fig}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_aaf7656da4e1f760b64f453cffbe15a82}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_aaf7656da4e1f760b64f453cffbe15a82}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!fps@{fps}}
+\index{fps@{fps}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{fps}{fps}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+fps}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a5a23958781c90f0aae7ac29ef6a7401f}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a5a23958781c90f0aae7ac29ef6a7401f}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!metadata@{metadata}}
+\index{metadata@{metadata}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{metadata}{metadata}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+metadata}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ae2006c1ca69618ec02514264a9f318e1}\label{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ae2006c1ca69618ec02514264a9f318e1}} 
+\index{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}!outfile@{outfile}}
+\index{outfile@{outfile}!matplotlib\+::animation\+::\+Abstract\+Movie\+Writer@{matplotlib\+::animation\+::\+Abstract\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{outfile}{outfile}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Abstract\+Movie\+Writer.\+outfile}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{animation_8py}{animation.\+py}\end{DoxyCompactItemize}

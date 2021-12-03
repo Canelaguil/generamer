@@ -1,0 +1,185 @@
+\hypertarget{namespacenumpy_1_1lib_1_1ufunclike}{}\section{numpy.\+lib.\+ufunclike Namespace Reference}
+\label{namespacenumpy_1_1lib_1_1ufunclike}\index{numpy.\+lib.\+ufunclike@{numpy.\+lib.\+ufunclike}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1ufunclike_a708f437330f330a8ebc0b381b0226e23}{fix} (x, out=None)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1ufunclike_a8da95d2f19c9a65994dde5c4c5f1c1fb}{isposinf} (x, out=None)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1ufunclike_aefdea205b9dfdbf965988f1175d67191}{isneginf} (x, out=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Module of functions that are like ufuncs in acting on arrays and optionally
+storing results in an output array.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1ufunclike_a708f437330f330a8ebc0b381b0226e23}\label{namespacenumpy_1_1lib_1_1ufunclike_a708f437330f330a8ebc0b381b0226e23}} 
+\index{numpy\+::lib\+::ufunclike@{numpy\+::lib\+::ufunclike}!fix@{fix}}
+\index{fix@{fix}!numpy\+::lib\+::ufunclike@{numpy\+::lib\+::ufunclike}}
+\subsubsection{\texorpdfstring{fix()}{fix()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+ufunclike.\+fix (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{out = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Round to nearest integer towards zero.
+
+Round an array of floats element-wise to nearest integer towards zero.
+The rounded values are returned as floats.
+
+Parameters
+----------
+x : array_like
+    An array of floats to be rounded
+out : ndarray, optional
+    A location into which the result is stored. If provided, it must have
+    a shape that the input broadcasts to. If not provided or None, a
+    freshly-allocated array is returned.
+
+Returns
+-------
+out : ndarray of floats
+    A float array with the same dimensions as the input.
+    If second argument is not supplied then a float array is returned
+    with the rounded values.
+
+    If a second argument is supplied the result is stored there.
+    The return value `out` is then a reference to that array.
+
+See Also
+--------
+rint, trunc, floor, ceil
+around : Round to given number of decimals
+
+Examples
+--------
+>>> np.fix(3.14)
+3.0
+>>> np.fix(3)
+3.0
+>>> np.fix([2.1, 2.9, -2.1, -2.9])
+array([ 2.,  2., -2., -2.])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1ufunclike_aefdea205b9dfdbf965988f1175d67191}\label{namespacenumpy_1_1lib_1_1ufunclike_aefdea205b9dfdbf965988f1175d67191}} 
+\index{numpy\+::lib\+::ufunclike@{numpy\+::lib\+::ufunclike}!isneginf@{isneginf}}
+\index{isneginf@{isneginf}!numpy\+::lib\+::ufunclike@{numpy\+::lib\+::ufunclike}}
+\subsubsection{\texorpdfstring{isneginf()}{isneginf()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+ufunclike.\+isneginf (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{out = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test element-wise for negative infinity, return result as bool array.
+
+Parameters
+----------
+x : array_like
+    The input array.
+out : array_like, optional
+    A location into which the result is stored. If provided, it must have a
+    shape that the input broadcasts to. If not provided or None, a
+    freshly-allocated boolean array is returned.
+
+Returns
+-------
+out : ndarray
+    A boolean array with the same dimensions as the input.
+    If second argument is not supplied then a numpy boolean array is
+    returned with values True where the corresponding element of the
+    input is negative infinity and values False where the element of
+    the input is not negative infinity.
+
+    If a second argument is supplied the result is stored there. If the
+    type of that array is a numeric type the result is represented as
+    zeros and ones, if the type is boolean then as False and True. The
+    return value `out` is then a reference to that array.
+
+See Also
+--------
+isinf, isposinf, isnan, isfinite
+
+Notes
+-----
+NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+(IEEE 754).
+
+Errors result if the second argument is also supplied when x is a scalar
+input, if first and second arguments have different shapes, or if the
+first argument has complex values.
+
+Examples
+--------
+>>> np.isneginf(np.NINF)
+True
+>>> np.isneginf(np.inf)
+False
+>>> np.isneginf(np.PINF)
+False
+>>> np.isneginf([-np.inf, 0., np.inf])
+array([ True, False, False])
+
+>>> x = np.array([-np.inf, 0., np.inf])
+>>> y = np.array([2, 2, 2])
+>>> np.isneginf(x, y)
+array([1, 0, 0])
+>>> y
+array([1, 0, 0])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1ufunclike_a8da95d2f19c9a65994dde5c4c5f1c1fb}\label{namespacenumpy_1_1lib_1_1ufunclike_a8da95d2f19c9a65994dde5c4c5f1c1fb}} 
+\index{numpy\+::lib\+::ufunclike@{numpy\+::lib\+::ufunclike}!isposinf@{isposinf}}
+\index{isposinf@{isposinf}!numpy\+::lib\+::ufunclike@{numpy\+::lib\+::ufunclike}}
+\subsubsection{\texorpdfstring{isposinf()}{isposinf()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+ufunclike.\+isposinf (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{out = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test element-wise for positive infinity, return result as bool array.
+
+Parameters
+----------
+x : array_like
+    The input array.
+out : array_like, optional
+    A location into which the result is stored. If provided, it must have a
+    shape that the input broadcasts to. If not provided or None, a
+    freshly-allocated boolean array is returned.
+
+Returns
+-------
+out : ndarray
+    A boolean array with the same dimensions as the input.
+    If second argument is not supplied then a boolean array is returned
+    with values True where the corresponding element of the input is
+    positive infinity and values False where the element of the input is
+    not positive infinity.
+
+    If a second argument is supplied the result is stored there. If the
+    type of that array is a numeric type the result is represented as zeros
+    and ones, if the type is boolean then as False and True.
+    The return value `out` is then a reference to that array.
+
+See Also
+--------
+isinf, isneginf, isfinite, isnan
+
+Notes
+-----
+NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+(IEEE 754).
+
+Errors result if the second argument is also supplied when x is a scalar
+input, if first and second arguments have different shapes, or if the
+first argument has complex values
+
+Examples
+--------
+>>> np.isposinf(np.PINF)
+True
+>>> np.isposinf(np.inf)
+True
+>>> np.isposinf(np.NINF)
+False
+>>> np.isposinf([-np.inf, 0., np.inf])
+array([False, False,  True])
+
+>>> x = np.array([-np.inf, 0., np.inf])
+>>> y = np.array([2, 2, 2])
+>>> np.isposinf(x, y)
+array([0, 0, 1])
+>>> y
+array([0, 0, 1])\end{DoxyVerb}
+ 

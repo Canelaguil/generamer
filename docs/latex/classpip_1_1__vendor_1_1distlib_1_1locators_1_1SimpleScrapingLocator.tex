@@ -1,0 +1,173 @@
+\hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator}{}\section{pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator Class Reference}
+\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator}\index{pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator@{pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a86eb1e08c1ec1fc9e5a3edcf92c923db}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, url, \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a4d515374c6b8f51e803eef2375a6f2f0}{timeout}=None, \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a36b92458b635ce89cbee73f0f3551156}{num\+\_\+workers}=10, kwargs)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_aba4b0806b56eebef291b3f33623f28b7}{get\+\_\+page} (self, url)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_af143a81384c2795cedaa872936bfa8a5}{get\+\_\+distribution\+\_\+names} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_ab15ddbc7ce13679c25ff8949a654d1b8}{base\+\_\+url}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a4d515374c6b8f51e803eef2375a6f2f0}{timeout}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a573c917721a75fb2b613a88de23f245f}{skip\+\_\+externals}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a36b92458b635ce89cbee73f0f3551156}{num\+\_\+workers}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a66e7fb39dbad424ac98724d1d919bc3e}{platform\+\_\+check}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a404af46095eacf38efdf97cff5855b38}{result}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_aad70587390d19cbd6df0df4e53d51889}{project\+\_\+name}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_adef1671514a04de04a79b8c21e2b81da}{decoders}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a600b9e7ee74d03d560aa89a38609e607}{fileobj}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_ab40f62c6258707e0329e710d7700c086}{platform\+\_\+dependent}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A locator which scrapes HTML pages to locate downloads for a distribution.
+This runs multiple threads to do the I/O; performance is at least as good
+as pip's PackageFinder, which works in an analogous fashion.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a86eb1e08c1ec1fc9e5a3edcf92c923db}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a86eb1e08c1ec1fc9e5a3edcf92c923db}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{url,  }\item[{}]{timeout = {\ttfamily None},  }\item[{}]{num\+\_\+workers = {\ttfamily 10},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialise an instance.
+:param url: The root URL to use for scraping.
+:param timeout: The timeout, in seconds, to be applied to requests.
+        This defaults to ``None`` (no timeout specified).
+:param num_workers: The number of worker threads you want to do I/O,
+            This defaults to 10.
+:param kwargs: Passed to the superclass.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_af143a81384c2795cedaa872936bfa8a5}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_af143a81384c2795cedaa872936bfa8a5}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!get\+\_\+distribution\+\_\+names@{get\+\_\+distribution\+\_\+names}}
+\index{get\+\_\+distribution\+\_\+names@{get\+\_\+distribution\+\_\+names}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{get\+\_\+distribution\+\_\+names()}{get\_distribution\_names()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+get\+\_\+distribution\+\_\+names (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return all the distribution names known to this locator.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_aba4b0806b56eebef291b3f33623f28b7}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_aba4b0806b56eebef291b3f33623f28b7}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!get\+\_\+page@{get\+\_\+page}}
+\index{get\+\_\+page@{get\+\_\+page}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{get\+\_\+page()}{get\_page()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+get\+\_\+page (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{url }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the HTML for an URL, possibly from an in-memory cache.
+
+XXX TODO Note: this cache is never actually cleared. It's assumed that
+the data won't get stale over the lifetime of a locator instance (not
+necessarily true for the default_locator).
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_ab15ddbc7ce13679c25ff8949a654d1b8}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_ab15ddbc7ce13679c25ff8949a654d1b8}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!base\+\_\+url@{base\+\_\+url}}
+\index{base\+\_\+url@{base\+\_\+url}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{base\+\_\+url}{base\_url}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+base\+\_\+url}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_adef1671514a04de04a79b8c21e2b81da}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_adef1671514a04de04a79b8c21e2b81da}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!decoders@{decoders}}
+\index{decoders@{decoders}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{decoders}{decoders}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+decoders\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a600b9e7ee74d03d560aa89a38609e607}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a600b9e7ee74d03d560aa89a38609e607}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!fileobj@{fileobj}}
+\index{fileobj@{fileobj}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{fileobj}{fileobj}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+fileobj\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a36b92458b635ce89cbee73f0f3551156}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a36b92458b635ce89cbee73f0f3551156}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!num\+\_\+workers@{num\+\_\+workers}}
+\index{num\+\_\+workers@{num\+\_\+workers}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{num\+\_\+workers}{num\_workers}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+num\+\_\+workers}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a66e7fb39dbad424ac98724d1d919bc3e}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a66e7fb39dbad424ac98724d1d919bc3e}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!platform\+\_\+check@{platform\+\_\+check}}
+\index{platform\+\_\+check@{platform\+\_\+check}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{platform\+\_\+check}{platform\_check}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+platform\+\_\+check}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_ab40f62c6258707e0329e710d7700c086}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_ab40f62c6258707e0329e710d7700c086}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!platform\+\_\+dependent@{platform\+\_\+dependent}}
+\index{platform\+\_\+dependent@{platform\+\_\+dependent}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{platform\+\_\+dependent}{platform\_dependent}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+platform\+\_\+dependent\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_aad70587390d19cbd6df0df4e53d51889}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_aad70587390d19cbd6df0df4e53d51889}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!project\+\_\+name@{project\+\_\+name}}
+\index{project\+\_\+name@{project\+\_\+name}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{project\+\_\+name}{project\_name}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+project\+\_\+name}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a404af46095eacf38efdf97cff5855b38}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a404af46095eacf38efdf97cff5855b38}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!result@{result}}
+\index{result@{result}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+result}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a573c917721a75fb2b613a88de23f245f}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a573c917721a75fb2b613a88de23f245f}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!skip\+\_\+externals@{skip\+\_\+externals}}
+\index{skip\+\_\+externals@{skip\+\_\+externals}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{skip\+\_\+externals}{skip\_externals}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+skip\+\_\+externals}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a4d515374c6b8f51e803eef2375a6f2f0}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1SimpleScrapingLocator_a4d515374c6b8f51e803eef2375a6f2f0}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}!timeout@{timeout}}
+\index{timeout@{timeout}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Simple\+Scraping\+Locator}}
+\subsubsection{\texorpdfstring{timeout}{timeout}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Simple\+Scraping\+Locator.\+timeout}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/distlib/\hyperlink{locators_8py}{locators.\+py}\end{DoxyCompactItemize}

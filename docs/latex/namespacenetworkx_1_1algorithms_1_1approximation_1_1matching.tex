@@ -1,0 +1,54 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1matching}{}\section{networkx.\+algorithms.\+approximation.\+matching Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1matching}\index{networkx.\+algorithms.\+approximation.\+matching@{networkx.\+algorithms.\+approximation.\+matching}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1matching_a8bda0ec269485cf38d7dff1e87c2889a}{min\+\_\+maximal\+\_\+matching} (G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}**************
+Graph Matching
+**************
+
+Given a graph G = (V,E), a matching M in G is a set of pairwise non-adjacent
+edges; that is, no two edges share a common vertex.
+
+`Wikipedia: Matching <https://en.wikipedia.org/wiki/Matching_(graph_theory)>`_
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1matching_a8bda0ec269485cf38d7dff1e87c2889a}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1matching_a8bda0ec269485cf38d7dff1e87c2889a}} 
+\index{networkx\+::algorithms\+::approximation\+::matching@{networkx\+::algorithms\+::approximation\+::matching}!min\+\_\+maximal\+\_\+matching@{min\+\_\+maximal\+\_\+matching}}
+\index{min\+\_\+maximal\+\_\+matching@{min\+\_\+maximal\+\_\+matching}!networkx\+::algorithms\+::approximation\+::matching@{networkx\+::algorithms\+::approximation\+::matching}}
+\subsubsection{\texorpdfstring{min\+\_\+maximal\+\_\+matching()}{min\_maximal\_matching()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+matching.\+min\+\_\+maximal\+\_\+matching (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the minimum maximal matching of G. That is, out of all maximal
+matchings of the graph G, the smallest is returned.
+
+Parameters
+----------
+G : NetworkX graph
+  Undirected graph
+
+Returns
+-------
+min_maximal_matching : set
+  Returns a set of edges such that no two edges share a common endpoint
+  and every edge not in the set shares some common endpoint in the set.
+  Cardinality will be 2*OPT in the worst case.
+
+Notes
+-----
+The algorithm computes an approximate solution fo the minimum maximal
+cardinality matching problem. The solution is no more than 2 * OPT in size.
+Runtime is $O(|E|)$.
+
+References
+----------
+.. [1] Vazirani, Vijay Approximation Algorithms (2001)
+\end{DoxyVerb}
+ 

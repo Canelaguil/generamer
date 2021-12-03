@@ -1,0 +1,260 @@
+\hypertarget{classmatplotlib_1_1texmanager_1_1TexManager}{}\section{matplotlib.\+texmanager.\+Tex\+Manager Class Reference}
+\label{classmatplotlib_1_1texmanager_1_1TexManager}\index{matplotlib.\+texmanager.\+Tex\+Manager@{matplotlib.\+texmanager.\+Tex\+Manager}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_aa6f06ea2866afee73f338c1aeb755895}{\+\_\+\+\_\+new\+\_\+\+\_\+} (cls)
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_a711ab5a239f8f56fbc85183646815c6e}{get\+\_\+font\+\_\+config} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_a03141428360929b58e77467a3f4c59c6}{get\+\_\+basefile} (self, tex, fontsize, dpi=None)
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_ab43ee740fae545383cd6997c799db978}{get\+\_\+font\+\_\+preamble} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_aa90a386634056f52a0e84ed28aae966b}{get\+\_\+custom\+\_\+preamble} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_af9d1e50f4c1bbeb3429389057db4c53d}{make\+\_\+tex} (self, tex, fontsize)
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_ae1c73425b951e16b24e76cebec350614}{make\+\_\+tex\+\_\+preview} (self, tex, fontsize)
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_a646b85a21ef5205ea579b96ca69f4fb6}{make\+\_\+dvi} (self, tex, fontsize)
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_af09778e7d60c71661eb0d351ce13ada2}{make\+\_\+dvi\+\_\+preview} (self, tex, fontsize)
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_a6c81a8c74ea6a3fc9727d91cae1cba99}{make\+\_\+png} (self, tex, fontsize, dpi)
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_a53f29971a9643757fed98688b5eeeafc}{get\+\_\+grey} (self, tex, fontsize=None, dpi=None)
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_af115a6c2dbf3e3141600aacace3350fa}{get\+\_\+rgba} (self, tex, fontsize=None, dpi=None, rgb=(0, 0, 0))
+\item 
+def \hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_ac8b7649cd4ec2f8046a7693b97c60c01}{get\+\_\+text\+\_\+width\+\_\+height\+\_\+descent} (self, tex, fontsize, renderer=None)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_a06fa2b016e6f2260ef00bebfbb371dc5}{texcache}
+\item 
+\hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_a7781a7dcd4b3925ea01b3150a43c11bd}{grey\+\_\+arrayd}
+\item 
+\hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_afacb3c497bd15bb5d63f328218dbb607}{font\+\_\+family}
+\item 
+\hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_a31f472221b0723b1e6166ebab1f605f9}{font\+\_\+families}
+\item 
+\hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_abee39c52ddf6bb863522c63878321ed8}{font\+\_\+info}
+\item 
+\hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_abf407afa7677966c90af4c20ab4c3320}{cachedir}
+\item 
+\hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_ac5ff9dc5595d9c2905d05903fb0336a7}{alternative}
+\item 
+\hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_a1f7d89f598848cc54b5b129fb478e8cd}{rgba\+\_\+arrayd}
+\item 
+\hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_aa0f9b51391e65124424855e74a07dda6}{serif}
+\item 
+\hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_aa6263bc162fc007f3c2377c9bf795a07}{sans\+\_\+serif}
+\item 
+\hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_abb9a2a2bc9d53b29e9e7a10297c90527}{cursive}
+\item 
+\hyperlink{classmatplotlib_1_1texmanager_1_1TexManager_a3d946b86a7d15b4316b7d0a0c9e149fb}{monospace}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Convert strings to dvi files using TeX, caching the results to a directory.
+
+Repeated calls to this constructor always return the same instance.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_aa6f06ea2866afee73f338c1aeb755895}\label{classmatplotlib_1_1texmanager_1_1TexManager_aa6f06ea2866afee73f338c1aeb755895}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+new\+\_\+\+\_\+()}{\_\_new\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+\_\+\+\_\+new\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{cls }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_a03141428360929b58e77467a3f4c59c6}\label{classmatplotlib_1_1texmanager_1_1TexManager_a03141428360929b58e77467a3f4c59c6}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!get\+\_\+basefile@{get\+\_\+basefile}}
+\index{get\+\_\+basefile@{get\+\_\+basefile}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+basefile()}{get\_basefile()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+get\+\_\+basefile (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tex,  }\item[{}]{fontsize,  }\item[{}]{dpi = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a filename based on a hash of the string, fontsize, and dpi.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_aa90a386634056f52a0e84ed28aae966b}\label{classmatplotlib_1_1texmanager_1_1TexManager_aa90a386634056f52a0e84ed28aae966b}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!get\+\_\+custom\+\_\+preamble@{get\+\_\+custom\+\_\+preamble}}
+\index{get\+\_\+custom\+\_\+preamble@{get\+\_\+custom\+\_\+preamble}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+custom\+\_\+preamble()}{get\_custom\_preamble()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+get\+\_\+custom\+\_\+preamble (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a string containing user additions to the tex preamble.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_a711ab5a239f8f56fbc85183646815c6e}\label{classmatplotlib_1_1texmanager_1_1TexManager_a711ab5a239f8f56fbc85183646815c6e}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!get\+\_\+font\+\_\+config@{get\+\_\+font\+\_\+config}}
+\index{get\+\_\+font\+\_\+config@{get\+\_\+font\+\_\+config}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+font\+\_\+config()}{get\_font\_config()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+get\+\_\+font\+\_\+config (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_ab43ee740fae545383cd6997c799db978}\label{classmatplotlib_1_1texmanager_1_1TexManager_ab43ee740fae545383cd6997c799db978}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!get\+\_\+font\+\_\+preamble@{get\+\_\+font\+\_\+preamble}}
+\index{get\+\_\+font\+\_\+preamble@{get\+\_\+font\+\_\+preamble}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+font\+\_\+preamble()}{get\_font\_preamble()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+get\+\_\+font\+\_\+preamble (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a string containing font configuration for the tex preamble.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_a53f29971a9643757fed98688b5eeeafc}\label{classmatplotlib_1_1texmanager_1_1TexManager_a53f29971a9643757fed98688b5eeeafc}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!get\+\_\+grey@{get\+\_\+grey}}
+\index{get\+\_\+grey@{get\+\_\+grey}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+grey()}{get\_grey()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+get\+\_\+grey (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tex,  }\item[{}]{fontsize = {\ttfamily None},  }\item[{}]{dpi = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the alpha channel.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_af115a6c2dbf3e3141600aacace3350fa}\label{classmatplotlib_1_1texmanager_1_1TexManager_af115a6c2dbf3e3141600aacace3350fa}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!get\+\_\+rgba@{get\+\_\+rgba}}
+\index{get\+\_\+rgba@{get\+\_\+rgba}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+rgba()}{get\_rgba()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+get\+\_\+rgba (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tex,  }\item[{}]{fontsize = {\ttfamily None},  }\item[{}]{dpi = {\ttfamily None},  }\item[{}]{rgb = {\ttfamily (0,~0,~0)} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return latex's rendering of the tex string as an rgba array.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_ac8b7649cd4ec2f8046a7693b97c60c01}\label{classmatplotlib_1_1texmanager_1_1TexManager_ac8b7649cd4ec2f8046a7693b97c60c01}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!get\+\_\+text\+\_\+width\+\_\+height\+\_\+descent@{get\+\_\+text\+\_\+width\+\_\+height\+\_\+descent}}
+\index{get\+\_\+text\+\_\+width\+\_\+height\+\_\+descent@{get\+\_\+text\+\_\+width\+\_\+height\+\_\+descent}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+text\+\_\+width\+\_\+height\+\_\+descent()}{get\_text\_width\_height\_descent()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+get\+\_\+text\+\_\+width\+\_\+height\+\_\+descent (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tex,  }\item[{}]{fontsize,  }\item[{}]{renderer = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return width, height and descent of the text.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_a646b85a21ef5205ea579b96ca69f4fb6}\label{classmatplotlib_1_1texmanager_1_1TexManager_a646b85a21ef5205ea579b96ca69f4fb6}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!make\+\_\+dvi@{make\+\_\+dvi}}
+\index{make\+\_\+dvi@{make\+\_\+dvi}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{make\+\_\+dvi()}{make\_dvi()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+make\+\_\+dvi (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tex,  }\item[{}]{fontsize }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a dvi file containing latex's layout of tex string.
+
+Return the file name.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_af09778e7d60c71661eb0d351ce13ada2}\label{classmatplotlib_1_1texmanager_1_1TexManager_af09778e7d60c71661eb0d351ce13ada2}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!make\+\_\+dvi\+\_\+preview@{make\+\_\+dvi\+\_\+preview}}
+\index{make\+\_\+dvi\+\_\+preview@{make\+\_\+dvi\+\_\+preview}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{make\+\_\+dvi\+\_\+preview()}{make\_dvi\_preview()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+make\+\_\+dvi\+\_\+preview (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tex,  }\item[{}]{fontsize }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a dvi file containing latex's layout of tex string.
+
+It calls make_tex_preview() method and store the size information
+(width, height, descent) in a separate file.
+
+Return the file name.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_a6c81a8c74ea6a3fc9727d91cae1cba99}\label{classmatplotlib_1_1texmanager_1_1TexManager_a6c81a8c74ea6a3fc9727d91cae1cba99}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!make\+\_\+png@{make\+\_\+png}}
+\index{make\+\_\+png@{make\+\_\+png}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{make\+\_\+png()}{make\_png()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+make\+\_\+png (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tex,  }\item[{}]{fontsize,  }\item[{}]{dpi }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a png file containing latex's rendering of tex string.
+
+Return the file name.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_af9d1e50f4c1bbeb3429389057db4c53d}\label{classmatplotlib_1_1texmanager_1_1TexManager_af9d1e50f4c1bbeb3429389057db4c53d}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!make\+\_\+tex@{make\+\_\+tex}}
+\index{make\+\_\+tex@{make\+\_\+tex}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{make\+\_\+tex()}{make\_tex()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+make\+\_\+tex (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tex,  }\item[{}]{fontsize }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a tex file to render the tex string at a specific font size.
+
+Return the file name.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_ae1c73425b951e16b24e76cebec350614}\label{classmatplotlib_1_1texmanager_1_1TexManager_ae1c73425b951e16b24e76cebec350614}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!make\+\_\+tex\+\_\+preview@{make\+\_\+tex\+\_\+preview}}
+\index{make\+\_\+tex\+\_\+preview@{make\+\_\+tex\+\_\+preview}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{make\+\_\+tex\+\_\+preview()}{make\_tex\_preview()}}
+{\footnotesize\ttfamily def matplotlib.\+texmanager.\+Tex\+Manager.\+make\+\_\+tex\+\_\+preview (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tex,  }\item[{}]{fontsize }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a tex file to render the tex string at a specific font size.
+
+It uses the preview.sty to determine the dimension (width, height,
+descent) of the output.
+
+Return the file name.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_ac5ff9dc5595d9c2905d05903fb0336a7}\label{classmatplotlib_1_1texmanager_1_1TexManager_ac5ff9dc5595d9c2905d05903fb0336a7}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!alternative@{alternative}}
+\index{alternative@{alternative}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{alternative}{alternative}}
+{\footnotesize\ttfamily matplotlib.\+texmanager.\+Tex\+Manager.\+alternative\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_abf407afa7677966c90af4c20ab4c3320}\label{classmatplotlib_1_1texmanager_1_1TexManager_abf407afa7677966c90af4c20ab4c3320}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!cachedir@{cachedir}}
+\index{cachedir@{cachedir}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{cachedir}{cachedir}}
+{\footnotesize\ttfamily matplotlib.\+texmanager.\+Tex\+Manager.\+cachedir\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_abb9a2a2bc9d53b29e9e7a10297c90527}\label{classmatplotlib_1_1texmanager_1_1TexManager_abb9a2a2bc9d53b29e9e7a10297c90527}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!cursive@{cursive}}
+\index{cursive@{cursive}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{cursive}{cursive}}
+{\footnotesize\ttfamily matplotlib.\+texmanager.\+Tex\+Manager.\+cursive\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_a31f472221b0723b1e6166ebab1f605f9}\label{classmatplotlib_1_1texmanager_1_1TexManager_a31f472221b0723b1e6166ebab1f605f9}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!font\+\_\+families@{font\+\_\+families}}
+\index{font\+\_\+families@{font\+\_\+families}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{font\+\_\+families}{font\_families}}
+{\footnotesize\ttfamily matplotlib.\+texmanager.\+Tex\+Manager.\+font\+\_\+families\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_afacb3c497bd15bb5d63f328218dbb607}\label{classmatplotlib_1_1texmanager_1_1TexManager_afacb3c497bd15bb5d63f328218dbb607}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!font\+\_\+family@{font\+\_\+family}}
+\index{font\+\_\+family@{font\+\_\+family}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{font\+\_\+family}{font\_family}}
+{\footnotesize\ttfamily matplotlib.\+texmanager.\+Tex\+Manager.\+font\+\_\+family\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_abee39c52ddf6bb863522c63878321ed8}\label{classmatplotlib_1_1texmanager_1_1TexManager_abee39c52ddf6bb863522c63878321ed8}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!font\+\_\+info@{font\+\_\+info}}
+\index{font\+\_\+info@{font\+\_\+info}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{font\+\_\+info}{font\_info}}
+{\footnotesize\ttfamily matplotlib.\+texmanager.\+Tex\+Manager.\+font\+\_\+info\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_a7781a7dcd4b3925ea01b3150a43c11bd}\label{classmatplotlib_1_1texmanager_1_1TexManager_a7781a7dcd4b3925ea01b3150a43c11bd}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!grey\+\_\+arrayd@{grey\+\_\+arrayd}}
+\index{grey\+\_\+arrayd@{grey\+\_\+arrayd}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{grey\+\_\+arrayd}{grey\_arrayd}}
+{\footnotesize\ttfamily matplotlib.\+texmanager.\+Tex\+Manager.\+grey\+\_\+arrayd\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_a3d946b86a7d15b4316b7d0a0c9e149fb}\label{classmatplotlib_1_1texmanager_1_1TexManager_a3d946b86a7d15b4316b7d0a0c9e149fb}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!monospace@{monospace}}
+\index{monospace@{monospace}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{monospace}{monospace}}
+{\footnotesize\ttfamily matplotlib.\+texmanager.\+Tex\+Manager.\+monospace\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_a1f7d89f598848cc54b5b129fb478e8cd}\label{classmatplotlib_1_1texmanager_1_1TexManager_a1f7d89f598848cc54b5b129fb478e8cd}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!rgba\+\_\+arrayd@{rgba\+\_\+arrayd}}
+\index{rgba\+\_\+arrayd@{rgba\+\_\+arrayd}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{rgba\+\_\+arrayd}{rgba\_arrayd}}
+{\footnotesize\ttfamily matplotlib.\+texmanager.\+Tex\+Manager.\+rgba\+\_\+arrayd\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_aa6263bc162fc007f3c2377c9bf795a07}\label{classmatplotlib_1_1texmanager_1_1TexManager_aa6263bc162fc007f3c2377c9bf795a07}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!sans\+\_\+serif@{sans\+\_\+serif}}
+\index{sans\+\_\+serif@{sans\+\_\+serif}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{sans\+\_\+serif}{sans\_serif}}
+{\footnotesize\ttfamily matplotlib.\+texmanager.\+Tex\+Manager.\+sans\+\_\+serif\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_aa0f9b51391e65124424855e74a07dda6}\label{classmatplotlib_1_1texmanager_1_1TexManager_aa0f9b51391e65124424855e74a07dda6}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!serif@{serif}}
+\index{serif@{serif}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{serif}{serif}}
+{\footnotesize\ttfamily matplotlib.\+texmanager.\+Tex\+Manager.\+serif\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1texmanager_1_1TexManager_a06fa2b016e6f2260ef00bebfbb371dc5}\label{classmatplotlib_1_1texmanager_1_1TexManager_a06fa2b016e6f2260ef00bebfbb371dc5}} 
+\index{matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}!texcache@{texcache}}
+\index{texcache@{texcache}!matplotlib\+::texmanager\+::\+Tex\+Manager@{matplotlib\+::texmanager\+::\+Tex\+Manager}}
+\subsubsection{\texorpdfstring{texcache}{texcache}}
+{\footnotesize\ttfamily matplotlib.\+texmanager.\+Tex\+Manager.\+texcache\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{texmanager_8py}{texmanager.\+py}\end{DoxyCompactItemize}

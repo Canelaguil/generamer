@@ -1,0 +1,152 @@
+\hypertarget{namespacesetuptools_1_1msvc}{}\section{setuptools.\+msvc Namespace Reference}
+\label{namespacesetuptools_1_1msvc}\index{setuptools.\+msvc@{setuptools.\+msvc}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1msvc_1_1EnvironmentInfo}{Environment\+Info}
+\item 
+class \hyperlink{classsetuptools_1_1msvc_1_1PlatformInfo}{Platform\+Info}
+\item 
+class \hyperlink{classsetuptools_1_1msvc_1_1RegistryInfo}{Registry\+Info}
+\item 
+class \hyperlink{classsetuptools_1_1msvc_1_1SystemInfo}{System\+Info}
+\item 
+class \hyperlink{classsetuptools_1_1msvc_1_1winreg}{winreg}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1msvc_a4ee903451bc75bf16dbdd14461ed230f}{msvc9\+\_\+find\+\_\+vcvarsall} (version)
+\item 
+def \hyperlink{namespacesetuptools_1_1msvc_afdbaf4f7d94d7e19c621a4632d9a8027}{msvc9\+\_\+query\+\_\+vcvarsall} (ver, arch=\textquotesingle{}x86\textquotesingle{}, args, kwargs)
+\item 
+def \hyperlink{namespacesetuptools_1_1msvc_abf4312c4a50e38b0965b836584cf402c}{msvc14\+\_\+get\+\_\+vc\+\_\+env} (plat\+\_\+spec)
+\item 
+def \hyperlink{namespacesetuptools_1_1msvc_aa2d697d927b0bed28a47be76cea5a729}{msvc14\+\_\+gen\+\_\+lib\+\_\+options} (args, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1msvc_a8bd7d4dc579a6378c5a0eecdd3e297f0}{environ}
+\item 
+\hyperlink{namespacesetuptools_1_1msvc_a8c44cd3283c29885e2f51a76d5b4fdd9}{P\+L\+A\+T\+\_\+\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+R\+U\+N\+T\+I\+ME}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Improved support for Microsoft Visual C++ compilers.
+
+Known supported compilers:
+--------------------------
+Microsoft Visual C++ 9.0:
+    Microsoft Visual C++ Compiler for Python 2.7 (x86, amd64)
+    Microsoft Windows SDK 6.1 (x86, x64, ia64)
+    Microsoft Windows SDK 7.0 (x86, x64, ia64)
+
+Microsoft Visual C++ 10.0:
+    Microsoft Windows SDK 7.1 (x86, x64, ia64)
+
+Microsoft Visual C++ 14.X:
+    Microsoft Visual C++ Build Tools 2015 (x86, x64, arm)
+    Microsoft Visual Studio Build Tools 2017 (x86, x64, arm, arm64)
+    Microsoft Visual Studio Build Tools 2019 (x86, x64, arm, arm64)
+
+This may also support compilers shipped with compatible Visual Studio versions.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1msvc_aa2d697d927b0bed28a47be76cea5a729}\label{namespacesetuptools_1_1msvc_aa2d697d927b0bed28a47be76cea5a729}} 
+\index{setuptools\+::msvc@{setuptools\+::msvc}!msvc14\+\_\+gen\+\_\+lib\+\_\+options@{msvc14\+\_\+gen\+\_\+lib\+\_\+options}}
+\index{msvc14\+\_\+gen\+\_\+lib\+\_\+options@{msvc14\+\_\+gen\+\_\+lib\+\_\+options}!setuptools\+::msvc@{setuptools\+::msvc}}
+\subsubsection{\texorpdfstring{msvc14\+\_\+gen\+\_\+lib\+\_\+options()}{msvc14\_gen\_lib\_options()}}
+{\footnotesize\ttfamily def setuptools.\+msvc.\+msvc14\+\_\+gen\+\_\+lib\+\_\+options (\begin{DoxyParamCaption}\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Patched "distutils._msvccompiler.gen_lib_options" for fix
+compatibility between "numpy.distutils" and "distutils._msvccompiler"
+(for Numpy < 1.11.2)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1msvc_abf4312c4a50e38b0965b836584cf402c}\label{namespacesetuptools_1_1msvc_abf4312c4a50e38b0965b836584cf402c}} 
+\index{setuptools\+::msvc@{setuptools\+::msvc}!msvc14\+\_\+get\+\_\+vc\+\_\+env@{msvc14\+\_\+get\+\_\+vc\+\_\+env}}
+\index{msvc14\+\_\+get\+\_\+vc\+\_\+env@{msvc14\+\_\+get\+\_\+vc\+\_\+env}!setuptools\+::msvc@{setuptools\+::msvc}}
+\subsubsection{\texorpdfstring{msvc14\+\_\+get\+\_\+vc\+\_\+env()}{msvc14\_get\_vc\_env()}}
+{\footnotesize\ttfamily def setuptools.\+msvc.\+msvc14\+\_\+get\+\_\+vc\+\_\+env (\begin{DoxyParamCaption}\item[{}]{plat\+\_\+spec }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Patched "distutils._msvccompiler._get_vc_env" for support extra
+Microsoft Visual C++ 14.X compilers.
+
+Set environment without use of "vcvarsall.bat".
+
+Parameters
+----------
+plat_spec: str
+    Target architecture.
+
+Return
+------
+dict
+    environment
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1msvc_a4ee903451bc75bf16dbdd14461ed230f}\label{namespacesetuptools_1_1msvc_a4ee903451bc75bf16dbdd14461ed230f}} 
+\index{setuptools\+::msvc@{setuptools\+::msvc}!msvc9\+\_\+find\+\_\+vcvarsall@{msvc9\+\_\+find\+\_\+vcvarsall}}
+\index{msvc9\+\_\+find\+\_\+vcvarsall@{msvc9\+\_\+find\+\_\+vcvarsall}!setuptools\+::msvc@{setuptools\+::msvc}}
+\subsubsection{\texorpdfstring{msvc9\+\_\+find\+\_\+vcvarsall()}{msvc9\_find\_vcvarsall()}}
+{\footnotesize\ttfamily def setuptools.\+msvc.\+msvc9\+\_\+find\+\_\+vcvarsall (\begin{DoxyParamCaption}\item[{}]{version }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Patched "distutils.msvc9compiler.find_vcvarsall" to use the standalone
+compiler build for Python
+(VCForPython / Microsoft Visual C++ Compiler for Python 2.7).
+
+Fall back to original behavior when the standalone compiler is not
+available.
+
+Redirect the path of "vcvarsall.bat".
+
+Parameters
+----------
+version: float
+    Required Microsoft Visual C++ version.
+
+Return
+------
+str
+    vcvarsall.bat path
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1msvc_afdbaf4f7d94d7e19c621a4632d9a8027}\label{namespacesetuptools_1_1msvc_afdbaf4f7d94d7e19c621a4632d9a8027}} 
+\index{setuptools\+::msvc@{setuptools\+::msvc}!msvc9\+\_\+query\+\_\+vcvarsall@{msvc9\+\_\+query\+\_\+vcvarsall}}
+\index{msvc9\+\_\+query\+\_\+vcvarsall@{msvc9\+\_\+query\+\_\+vcvarsall}!setuptools\+::msvc@{setuptools\+::msvc}}
+\subsubsection{\texorpdfstring{msvc9\+\_\+query\+\_\+vcvarsall()}{msvc9\_query\_vcvarsall()}}
+{\footnotesize\ttfamily def setuptools.\+msvc.\+msvc9\+\_\+query\+\_\+vcvarsall (\begin{DoxyParamCaption}\item[{}]{ver,  }\item[{}]{arch = {\ttfamily \textquotesingle{}x86\textquotesingle{}},  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Patched "distutils.msvc9compiler.query_vcvarsall" for support extra
+Microsoft Visual C++ 9.0 and 10.0 compilers.
+
+Set environment without use of "vcvarsall.bat".
+
+Parameters
+----------
+ver: float
+    Required Microsoft Visual C++ version.
+arch: str
+    Target architecture.
+
+Return
+------
+dict
+    environment
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1msvc_a8bd7d4dc579a6378c5a0eecdd3e297f0}\label{namespacesetuptools_1_1msvc_a8bd7d4dc579a6378c5a0eecdd3e297f0}} 
+\index{setuptools\+::msvc@{setuptools\+::msvc}!environ@{environ}}
+\index{environ@{environ}!setuptools\+::msvc@{setuptools\+::msvc}}
+\subsubsection{\texorpdfstring{environ}{environ}}
+{\footnotesize\ttfamily setuptools.\+msvc.\+environ}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1msvc_a8c44cd3283c29885e2f51a76d5b4fdd9}\label{namespacesetuptools_1_1msvc_a8c44cd3283c29885e2f51a76d5b4fdd9}} 
+\index{setuptools\+::msvc@{setuptools\+::msvc}!P\+L\+A\+T\+\_\+\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+R\+U\+N\+T\+I\+ME@{P\+L\+A\+T\+\_\+\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+R\+U\+N\+T\+I\+ME}}
+\index{P\+L\+A\+T\+\_\+\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+R\+U\+N\+T\+I\+ME@{P\+L\+A\+T\+\_\+\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+R\+U\+N\+T\+I\+ME}!setuptools\+::msvc@{setuptools\+::msvc}}
+\subsubsection{\texorpdfstring{P\+L\+A\+T\+\_\+\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+R\+U\+N\+T\+I\+ME}{PLAT\_SPEC\_TO\_RUNTIME}}
+{\footnotesize\ttfamily setuptools.\+msvc.\+P\+L\+A\+T\+\_\+\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+R\+U\+N\+T\+I\+ME}
+

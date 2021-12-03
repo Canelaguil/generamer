@@ -1,0 +1,122 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1AxesWidget}{}\section{matplotlib.\+widgets.\+Axes\+Widget Class Reference}
+\label{classmatplotlib_1_1widgets_1_1AxesWidget}\index{matplotlib.\+widgets.\+Axes\+Widget@{matplotlib.\+widgets.\+Axes\+Widget}}
+
+
+Inheritance diagram for matplotlib.\+widgets.\+Axes\+Widget\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1widgets_1_1AxesWidget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+widgets.\+Axes\+Widget\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1AxesWidget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_af6e9ecdcf48c7bc35137c54ffdb6bfa8}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_ac0722858b7001d10a42055dc90420b4f}{ax})
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_a143390178661205845d5b37ec167463a}{connect\+\_\+event} (self, event, callback)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_a8b5b89b292049847edc362431bd538b4}{disconnect\+\_\+events} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_ac0722858b7001d10a42055dc90420b4f}{ax}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_a5c054a84c588ee0524c32f1ea6fbc90a}{canvas}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_a86ddb97c4e1391b997544cc131f65b9c}{cids}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Widget connected to a single `~matplotlib.axes.Axes`.
+
+To guarantee that the widget remains responsive and not garbage-collected,
+a reference to the object should be maintained by the user.
+
+This is necessary because the callback registry
+maintains only weak-refs to the functions, which are member
+functions of the widget.  If there are no references to the widget
+object it may be garbage collected which will disconnect the callbacks.
+
+Attributes
+----------
+ax : `~matplotlib.axes.Axes`
+    The parent axes for the widget.
+canvas : `~matplotlib.backend_bases.FigureCanvasBase`
+    The parent figure canvas for the widget.
+active : bool
+    If False, the widget does not respond to events.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1AxesWidget_af6e9ecdcf48c7bc35137c54ffdb6bfa8}\label{classmatplotlib_1_1widgets_1_1AxesWidget_af6e9ecdcf48c7bc35137c54ffdb6bfa8}} 
+\index{matplotlib\+::widgets\+::\+Axes\+Widget@{matplotlib\+::widgets\+::\+Axes\+Widget}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Axes\+Widget@{matplotlib\+::widgets\+::\+Axes\+Widget}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Axes\+Widget.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1AxesWidget_a143390178661205845d5b37ec167463a}\label{classmatplotlib_1_1widgets_1_1AxesWidget_a143390178661205845d5b37ec167463a}} 
+\index{matplotlib\+::widgets\+::\+Axes\+Widget@{matplotlib\+::widgets\+::\+Axes\+Widget}!connect\+\_\+event@{connect\+\_\+event}}
+\index{connect\+\_\+event@{connect\+\_\+event}!matplotlib\+::widgets\+::\+Axes\+Widget@{matplotlib\+::widgets\+::\+Axes\+Widget}}
+\subsubsection{\texorpdfstring{connect\+\_\+event()}{connect\_event()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Axes\+Widget.\+connect\+\_\+event (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event,  }\item[{}]{callback }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Connect a callback function with an event.
+
+This should be used in lieu of ``figure.canvas.mpl_connect`` since this
+function stores callback ids for later clean up.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1AxesWidget_a8b5b89b292049847edc362431bd538b4}\label{classmatplotlib_1_1widgets_1_1AxesWidget_a8b5b89b292049847edc362431bd538b4}} 
+\index{matplotlib\+::widgets\+::\+Axes\+Widget@{matplotlib\+::widgets\+::\+Axes\+Widget}!disconnect\+\_\+events@{disconnect\+\_\+events}}
+\index{disconnect\+\_\+events@{disconnect\+\_\+events}!matplotlib\+::widgets\+::\+Axes\+Widget@{matplotlib\+::widgets\+::\+Axes\+Widget}}
+\subsubsection{\texorpdfstring{disconnect\+\_\+events()}{disconnect\_events()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Axes\+Widget.\+disconnect\+\_\+events (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Disconnect all events created by this widget.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1AxesWidget_ac0722858b7001d10a42055dc90420b4f}\label{classmatplotlib_1_1widgets_1_1AxesWidget_ac0722858b7001d10a42055dc90420b4f}} 
+\index{matplotlib\+::widgets\+::\+Axes\+Widget@{matplotlib\+::widgets\+::\+Axes\+Widget}!ax@{ax}}
+\index{ax@{ax}!matplotlib\+::widgets\+::\+Axes\+Widget@{matplotlib\+::widgets\+::\+Axes\+Widget}}
+\subsubsection{\texorpdfstring{ax}{ax}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Axes\+Widget.\+ax}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1AxesWidget_a5c054a84c588ee0524c32f1ea6fbc90a}\label{classmatplotlib_1_1widgets_1_1AxesWidget_a5c054a84c588ee0524c32f1ea6fbc90a}} 
+\index{matplotlib\+::widgets\+::\+Axes\+Widget@{matplotlib\+::widgets\+::\+Axes\+Widget}!canvas@{canvas}}
+\index{canvas@{canvas}!matplotlib\+::widgets\+::\+Axes\+Widget@{matplotlib\+::widgets\+::\+Axes\+Widget}}
+\subsubsection{\texorpdfstring{canvas}{canvas}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Axes\+Widget.\+canvas}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1AxesWidget_a86ddb97c4e1391b997544cc131f65b9c}\label{classmatplotlib_1_1widgets_1_1AxesWidget_a86ddb97c4e1391b997544cc131f65b9c}} 
+\index{matplotlib\+::widgets\+::\+Axes\+Widget@{matplotlib\+::widgets\+::\+Axes\+Widget}!cids@{cids}}
+\index{cids@{cids}!matplotlib\+::widgets\+::\+Axes\+Widget@{matplotlib\+::widgets\+::\+Axes\+Widget}}
+\subsubsection{\texorpdfstring{cids}{cids}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Axes\+Widget.\+cids\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

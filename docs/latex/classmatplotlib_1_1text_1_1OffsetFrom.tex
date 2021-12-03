@@ -1,0 +1,88 @@
+\hypertarget{classmatplotlib_1_1text_1_1OffsetFrom}{}\section{matplotlib.\+text.\+Offset\+From Class Reference}
+\label{classmatplotlib_1_1text_1_1OffsetFrom}\index{matplotlib.\+text.\+Offset\+From@{matplotlib.\+text.\+Offset\+From}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1text_1_1OffsetFrom_a4ed8077bfb99cb692c2fd4401aee1dfd}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, artist, ref\+\_\+coord, unit=\char`\"{}points\char`\"{})
+\item 
+def \hyperlink{classmatplotlib_1_1text_1_1OffsetFrom_aff16dc535b12bdf8dff86aa04bdaf422}{set\+\_\+unit} (self, unit)
+\item 
+def \hyperlink{classmatplotlib_1_1text_1_1OffsetFrom_a8f92c414160af4f3da555fd08fc0b30c}{get\+\_\+unit} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1text_1_1OffsetFrom_a974c14ca806ca869c87b888e5fc20b9a}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, renderer)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Callable helper class for working with `Annotation`.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1text_1_1OffsetFrom_a4ed8077bfb99cb692c2fd4401aee1dfd}\label{classmatplotlib_1_1text_1_1OffsetFrom_a4ed8077bfb99cb692c2fd4401aee1dfd}} 
+\index{matplotlib\+::text\+::\+Offset\+From@{matplotlib\+::text\+::\+Offset\+From}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::text\+::\+Offset\+From@{matplotlib\+::text\+::\+Offset\+From}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+text.\+Offset\+From.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{artist,  }\item[{}]{ref\+\_\+coord,  }\item[{}]{unit = {\ttfamily \char`\"{}points\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+artist : `.Artist` or `.BboxBase` or `.Transform`
+    The object to compute the offset from.
+
+ref_coord : (float, float)
+    If *artist* is an `.Artist` or `.BboxBase`, this values is
+    the location to of the offset origin in fractions of the
+    *artist* bounding box.
+
+    If *artist* is a transform, the offset origin is the
+    transform applied to this value.
+
+unit : {'points, 'pixels'}, default: 'points'
+    The screen units to use (pixels or points) for the offset input.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1text_1_1OffsetFrom_a974c14ca806ca869c87b888e5fc20b9a}\label{classmatplotlib_1_1text_1_1OffsetFrom_a974c14ca806ca869c87b888e5fc20b9a}} 
+\index{matplotlib\+::text\+::\+Offset\+From@{matplotlib\+::text\+::\+Offset\+From}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::text\+::\+Offset\+From@{matplotlib\+::text\+::\+Offset\+From}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+text.\+Offset\+From.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the offset transform.
+
+Parameters
+----------
+renderer : `RendererBase`
+    The renderer to use to compute the offset
+
+Returns
+-------
+`Transform`
+    Maps (x, y) in pixel or point units to screen units
+    relative to the given artist.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1text_1_1OffsetFrom_a8f92c414160af4f3da555fd08fc0b30c}\label{classmatplotlib_1_1text_1_1OffsetFrom_a8f92c414160af4f3da555fd08fc0b30c}} 
+\index{matplotlib\+::text\+::\+Offset\+From@{matplotlib\+::text\+::\+Offset\+From}!get\+\_\+unit@{get\+\_\+unit}}
+\index{get\+\_\+unit@{get\+\_\+unit}!matplotlib\+::text\+::\+Offset\+From@{matplotlib\+::text\+::\+Offset\+From}}
+\subsubsection{\texorpdfstring{get\+\_\+unit()}{get\_unit()}}
+{\footnotesize\ttfamily def matplotlib.\+text.\+Offset\+From.\+get\+\_\+unit (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the unit for input to the transform used by ``__call__``.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1text_1_1OffsetFrom_aff16dc535b12bdf8dff86aa04bdaf422}\label{classmatplotlib_1_1text_1_1OffsetFrom_aff16dc535b12bdf8dff86aa04bdaf422}} 
+\index{matplotlib\+::text\+::\+Offset\+From@{matplotlib\+::text\+::\+Offset\+From}!set\+\_\+unit@{set\+\_\+unit}}
+\index{set\+\_\+unit@{set\+\_\+unit}!matplotlib\+::text\+::\+Offset\+From@{matplotlib\+::text\+::\+Offset\+From}}
+\subsubsection{\texorpdfstring{set\+\_\+unit()}{set\_unit()}}
+{\footnotesize\ttfamily def matplotlib.\+text.\+Offset\+From.\+set\+\_\+unit (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{unit }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the unit for input to the transform used by ``__call__``.
+
+Parameters
+----------
+unit : {'points', 'pixels'}
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{matplotlib_2text_8py}{text.\+py}\end{DoxyCompactItemize}

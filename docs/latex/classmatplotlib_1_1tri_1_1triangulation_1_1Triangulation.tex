@@ -1,0 +1,217 @@
+\hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation}{}\section{matplotlib.\+tri.\+triangulation.\+Triangulation Class Reference}
+\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation}\index{matplotlib.\+tri.\+triangulation.\+Triangulation@{matplotlib.\+tri.\+triangulation.\+Triangulation}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a2ce4a254f5f9d40cd008345787e88ff0}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_aa361148318a0bd7779e1430621b5fe44}{x}, \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_aff84cb603026d3c8301491543810b8e5}{y}, \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_ab9d9665d45a762203258ebbc00695f95}{triangles}=None, \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a742c896bb64598790b0bf91b329c2a93}{mask}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a93c60832c6f7b45a1287018d3773e226}{calculate\+\_\+plane\+\_\+coefficients} (self, z)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a033d2a2db0698d6459a156864a55ba6f}{edges} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a2b9facd01b9df05f690a87a66169aff6}{get\+\_\+cpp\+\_\+triangulation} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a7814c6541d4d51619ba1276c564041aa}{get\+\_\+masked\+\_\+triangles} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a7cb84eddc0dc9d31717bfc653b34b3ec}{get\+\_\+trifinder} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a01e22c19d230faee534109d3d372f862}{neighbors} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a2d61b372e12b79b9880d4e219fda02af}{set\+\_\+mask} (self, \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a742c896bb64598790b0bf91b329c2a93}{mask})
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a74e48fb0dcec489c4f98d3715fd5cb00}{get\+\_\+from\+\_\+args\+\_\+and\+\_\+kwargs} (args, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_aa361148318a0bd7779e1430621b5fe44}{x}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_aff84cb603026d3c8301491543810b8e5}{y}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a742c896bb64598790b0bf91b329c2a93}{mask}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_ae9ef3ea60fcc8f0ddad0fbb33440d824}{is\+\_\+delaunay}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_ab9d9665d45a762203258ebbc00695f95}{triangles}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An unstructured triangular grid consisting of npoints points and
+ntri triangles.  The triangles can either be specified by the user
+or automatically generated using a Delaunay triangulation.
+
+Parameters
+----------
+x, y : (npoints,) array-like
+    Coordinates of grid points.
+triangles : (ntri, 3) array-like of int, optional
+    For each triangle, the indices of the three points that make
+    up the triangle, ordered in an anticlockwise manner.  If not
+    specified, the Delaunay triangulation is calculated.
+mask : (ntri,) array-like of bool, optional
+    Which triangles are masked out.
+
+Attributes
+----------
+triangles : (ntri, 3) array of int
+    For each triangle, the indices of the three points that make
+    up the triangle, ordered in an anticlockwise manner. If you want to
+    take the *mask* into account, use `get_masked_triangles` instead.
+mask : (ntri, 3) array of bool
+    Masked out triangles.
+is_delaunay : bool
+    Whether the Triangulation is a calculated Delaunay
+    triangulation (where *triangles* was not specified) or not.
+
+Notes
+-----
+For a Triangulation to be valid it must not have duplicate points,
+triangles formed from colinear points, or overlapping triangles.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a2ce4a254f5f9d40cd008345787e88ff0}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a2ce4a254f5f9d40cd008345787e88ff0}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triangulation.\+Triangulation.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{triangles = {\ttfamily None},  }\item[{}]{mask = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a93c60832c6f7b45a1287018d3773e226}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a93c60832c6f7b45a1287018d3773e226}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!calculate\+\_\+plane\+\_\+coefficients@{calculate\+\_\+plane\+\_\+coefficients}}
+\index{calculate\+\_\+plane\+\_\+coefficients@{calculate\+\_\+plane\+\_\+coefficients}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{calculate\+\_\+plane\+\_\+coefficients()}{calculate\_plane\_coefficients()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triangulation.\+Triangulation.\+calculate\+\_\+plane\+\_\+coefficients (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{z }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate plane equation coefficients for all unmasked triangles from
+the point (x, y) coordinates and specified z-array of shape (npoints).
+The returned array has shape (npoints, 3) and allows z-value at (x, y)
+position in triangle tri to be calculated using
+``z = array[tri, 0] * x  + array[tri, 1] * y + array[tri, 2]``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a033d2a2db0698d6459a156864a55ba6f}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a033d2a2db0698d6459a156864a55ba6f}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!edges@{edges}}
+\index{edges@{edges}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{edges()}{edges()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triangulation.\+Triangulation.\+edges (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return integer array of shape (nedges, 2) containing all edges of
+non-masked triangles.
+
+Each row defines an edge by it's start point index and end point
+index.  Each edge appears only once, i.e. for an edge between points
+*i*  and *j*, there will only be either *(i, j)* or *(j, i)*.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a2b9facd01b9df05f690a87a66169aff6}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a2b9facd01b9df05f690a87a66169aff6}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!get\+\_\+cpp\+\_\+triangulation@{get\+\_\+cpp\+\_\+triangulation}}
+\index{get\+\_\+cpp\+\_\+triangulation@{get\+\_\+cpp\+\_\+triangulation}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{get\+\_\+cpp\+\_\+triangulation()}{get\_cpp\_triangulation()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triangulation.\+Triangulation.\+get\+\_\+cpp\+\_\+triangulation (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the underlying C++ Triangulation object, creating it
+if necessary.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a74e48fb0dcec489c4f98d3715fd5cb00}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a74e48fb0dcec489c4f98d3715fd5cb00}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!get\+\_\+from\+\_\+args\+\_\+and\+\_\+kwargs@{get\+\_\+from\+\_\+args\+\_\+and\+\_\+kwargs}}
+\index{get\+\_\+from\+\_\+args\+\_\+and\+\_\+kwargs@{get\+\_\+from\+\_\+args\+\_\+and\+\_\+kwargs}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{get\+\_\+from\+\_\+args\+\_\+and\+\_\+kwargs()}{get\_from\_args\_and\_kwargs()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triangulation.\+Triangulation.\+get\+\_\+from\+\_\+args\+\_\+and\+\_\+kwargs (\begin{DoxyParamCaption}\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Return a Triangulation object from the args and kwargs, and
+the remaining args and kwargs with the consumed values removed.
+
+There are two alternatives: either the first argument is a
+Triangulation object, in which case it is returned, or the args
+and kwargs are sufficient to create a new Triangulation to
+return.  In the latter case, see Triangulation.__init__ for
+the possible args and kwargs.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a7814c6541d4d51619ba1276c564041aa}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a7814c6541d4d51619ba1276c564041aa}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!get\+\_\+masked\+\_\+triangles@{get\+\_\+masked\+\_\+triangles}}
+\index{get\+\_\+masked\+\_\+triangles@{get\+\_\+masked\+\_\+triangles}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{get\+\_\+masked\+\_\+triangles()}{get\_masked\_triangles()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triangulation.\+Triangulation.\+get\+\_\+masked\+\_\+triangles (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return an array of triangles that are not masked.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a7cb84eddc0dc9d31717bfc653b34b3ec}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a7cb84eddc0dc9d31717bfc653b34b3ec}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!get\+\_\+trifinder@{get\+\_\+trifinder}}
+\index{get\+\_\+trifinder@{get\+\_\+trifinder}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{get\+\_\+trifinder()}{get\_trifinder()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triangulation.\+Triangulation.\+get\+\_\+trifinder (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the default `matplotlib.tri.TriFinder` of this
+triangulation, creating it if necessary.  This allows the same
+TriFinder object to be easily shared.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a01e22c19d230faee534109d3d372f862}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a01e22c19d230faee534109d3d372f862}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!neighbors@{neighbors}}
+\index{neighbors@{neighbors}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{neighbors()}{neighbors()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triangulation.\+Triangulation.\+neighbors (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return integer array of shape (ntri, 3) containing neighbor triangles.
+
+For each triangle, the indices of the three triangles that
+share the same edges, or -1 if there is no such neighboring
+triangle.  ``neighbors[i, j]`` is the triangle that is the neighbor
+to the edge from point index ``triangles[i, j]`` to point index
+``triangles[i, (j+1)%3]``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a2d61b372e12b79b9880d4e219fda02af}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a2d61b372e12b79b9880d4e219fda02af}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!set\+\_\+mask@{set\+\_\+mask}}
+\index{set\+\_\+mask@{set\+\_\+mask}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{set\+\_\+mask()}{set\_mask()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triangulation.\+Triangulation.\+set\+\_\+mask (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{mask }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set or clear the mask array.
+
+Parameters
+----------
+mask : None or bool array of length ntri
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_ae9ef3ea60fcc8f0ddad0fbb33440d824}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_ae9ef3ea60fcc8f0ddad0fbb33440d824}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!is\+\_\+delaunay@{is\+\_\+delaunay}}
+\index{is\+\_\+delaunay@{is\+\_\+delaunay}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{is\+\_\+delaunay}{is\_delaunay}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triangulation.\+Triangulation.\+is\+\_\+delaunay}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a742c896bb64598790b0bf91b329c2a93}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_a742c896bb64598790b0bf91b329c2a93}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!mask@{mask}}
+\index{mask@{mask}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{mask}{mask}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triangulation.\+Triangulation.\+mask}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_ab9d9665d45a762203258ebbc00695f95}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_ab9d9665d45a762203258ebbc00695f95}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!triangles@{triangles}}
+\index{triangles@{triangles}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{triangles}{triangles}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triangulation.\+Triangulation.\+triangles}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_aa361148318a0bd7779e1430621b5fe44}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_aa361148318a0bd7779e1430621b5fe44}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!x@{x}}
+\index{x@{x}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triangulation.\+Triangulation.\+x}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_aff84cb603026d3c8301491543810b8e5}\label{classmatplotlib_1_1tri_1_1triangulation_1_1Triangulation_aff84cb603026d3c8301491543810b8e5}} 
+\index{matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}!y@{y}}
+\index{y@{y}!matplotlib\+::tri\+::triangulation\+::\+Triangulation@{matplotlib\+::tri\+::triangulation\+::\+Triangulation}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triangulation.\+Triangulation.\+y}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/tri/\hyperlink{triangulation_8py}{triangulation.\+py}\end{DoxyCompactItemize}

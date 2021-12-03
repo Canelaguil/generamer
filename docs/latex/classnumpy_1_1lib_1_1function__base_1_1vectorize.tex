@@ -1,0 +1,231 @@
+\hypertarget{classnumpy_1_1lib_1_1function__base_1_1vectorize}{}\section{numpy.\+lib.\+function\+\_\+base.\+vectorize Class Reference}
+\label{classnumpy_1_1lib_1_1function__base_1_1vectorize}\index{numpy.\+lib.\+function\+\_\+base.\+vectorize@{numpy.\+lib.\+function\+\_\+base.\+vectorize}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1function__base_1_1vectorize_aa40dfbdda34cdfa88f36c391a855e570}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnumpy_1_1lib_1_1function__base_1_1vectorize_a9ba37686f9c887a21fedee2873950d18}{pyfunc}, \hyperlink{classnumpy_1_1lib_1_1function__base_1_1vectorize_aceb5282a6f6c3ccbecae8a9c4ef8c43e}{otypes}=None, doc=None, \hyperlink{classnumpy_1_1lib_1_1function__base_1_1vectorize_a5829ff4804df5dc8841ae169b3ed5daf}{excluded}=None, \hyperlink{classnumpy_1_1lib_1_1function__base_1_1vectorize_ac0abfa29fabd51edd16c71dbcf11a0b0}{cache}=False, \hyperlink{classnumpy_1_1lib_1_1function__base_1_1vectorize_a42b785e898731a232fb1c35125310265}{signature}=None)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1function__base_1_1vectorize_a015d37bbbc3eaa61e429c523f00a6c84}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, args, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1function__base_1_1vectorize_a9ba37686f9c887a21fedee2873950d18}{pyfunc}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1function__base_1_1vectorize_ac0abfa29fabd51edd16c71dbcf11a0b0}{cache}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1function__base_1_1vectorize_a42b785e898731a232fb1c35125310265}{signature}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1function__base_1_1vectorize_aceb5282a6f6c3ccbecae8a9c4ef8c43e}{otypes}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1function__base_1_1vectorize_a5829ff4804df5dc8841ae169b3ed5daf}{excluded}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}vectorize(pyfunc, otypes=None, doc=None, excluded=None, cache=False,
+          signature=None)
+
+Generalized function class.
+
+Define a vectorized function which takes a nested sequence of objects or
+numpy arrays as inputs and returns a single numpy array or a tuple of numpy
+arrays. The vectorized function evaluates `pyfunc` over successive tuples
+of the input arrays like the python map function, except it uses the
+broadcasting rules of numpy.
+
+The data type of the output of `vectorized` is determined by calling
+the function with the first element of the input.  This can be avoided
+by specifying the `otypes` argument.
+
+Parameters
+----------
+pyfunc : callable
+    A python function or method.
+otypes : str or list of dtypes, optional
+    The output data type. It must be specified as either a string of
+    typecode characters or a list of data type specifiers. There should
+    be one data type specifier for each output.
+doc : str, optional
+    The docstring for the function. If None, the docstring will be the
+    ``pyfunc.__doc__``.
+excluded : set, optional
+    Set of strings or integers representing the positional or keyword
+    arguments for which the function will not be vectorized.  These will be
+    passed directly to `pyfunc` unmodified.
+
+    .. versionadded:: 1.7.0
+
+cache : bool, optional
+    If `True`, then cache the first function call that determines the number
+    of outputs if `otypes` is not provided.
+
+    .. versionadded:: 1.7.0
+
+signature : string, optional
+    Generalized universal function signature, e.g., ``(m,n),(n)->(m)`` for
+    vectorized matrix-vector multiplication. If provided, ``pyfunc`` will
+    be called with (and expected to return) arrays with shapes given by the
+    size of corresponding core dimensions. By default, ``pyfunc`` is
+    assumed to take scalars as input and output.
+
+    .. versionadded:: 1.12.0
+
+Returns
+-------
+vectorized : callable
+    Vectorized function.
+
+See Also
+--------
+frompyfunc : Takes an arbitrary Python function and returns a ufunc
+
+Notes
+-----
+The `vectorize` function is provided primarily for convenience, not for
+performance. The implementation is essentially a for loop.
+
+If `otypes` is not specified, then a call to the function with the
+first argument will be used to determine the number of outputs.  The
+results of this call will be cached if `cache` is `True` to prevent
+calling the function twice.  However, to implement the cache, the
+original function must be wrapped which will slow down subsequent
+calls, so only do this if your function is expensive.
+
+The new keyword argument interface and `excluded` argument support
+further degrades performance.
+
+References
+----------
+.. [1] :doc:`/reference/c-api/generalized-ufuncs`
+
+Examples
+--------
+>>> def myfunc(a, b):
+...     "Return a-b if a>b, otherwise return a+b"
+...     if a > b:
+...         return a - b
+...     else:
+...         return a + b
+
+>>> vfunc = np.vectorize(myfunc)
+>>> vfunc([1, 2, 3, 4], 2)
+array([3, 4, 1, 2])
+
+The docstring is taken from the input function to `vectorize` unless it
+is specified:
+
+>>> vfunc.__doc__
+'Return a-b if a>b, otherwise return a+b'
+>>> vfunc = np.vectorize(myfunc, doc='Vectorized `myfunc`')
+>>> vfunc.__doc__
+'Vectorized `myfunc`'
+
+The output type is determined by evaluating the first element of the input,
+unless it is specified:
+
+>>> out = vfunc([1, 2, 3, 4], 2)
+>>> type(out[0])
+<class 'numpy.int64'>
+>>> vfunc = np.vectorize(myfunc, otypes=[float])
+>>> out = vfunc([1, 2, 3, 4], 2)
+>>> type(out[0])
+<class 'numpy.float64'>
+
+The `excluded` argument can be used to prevent vectorizing over certain
+arguments.  This can be useful for array-like arguments of a fixed length
+such as the coefficients for a polynomial as in `polyval`:
+
+>>> def mypolyval(p, x):
+...     _p = list(p)
+...     res = _p.pop(0)
+...     while _p:
+...         res = res*x + _p.pop(0)
+...     return res
+>>> vpolyval = np.vectorize(mypolyval, excluded=['p'])
+>>> vpolyval(p=[1, 2, 3], x=[0, 1])
+array([3, 6])
+
+Positional arguments may also be excluded by specifying their position:
+
+>>> vpolyval.excluded.add(0)
+>>> vpolyval([1, 2, 3], x=[0, 1])
+array([3, 6])
+
+The `signature` argument allows for vectorizing functions that act on
+non-scalar arrays of fixed length. For example, you can use it for a
+vectorized calculation of Pearson correlation coefficient and its p-value:
+
+>>> import scipy.stats
+>>> pearsonr = np.vectorize(scipy.stats.pearsonr,
+...                 signature='(n),(n)->(),()')
+>>> pearsonr([[0, 1, 2, 3]], [[1, 2, 3, 4], [4, 3, 2, 1]])
+(array([ 1., -1.]), array([ 0.,  0.]))
+
+Or for a vectorized convolution:
+
+>>> convolve = np.vectorize(np.convolve, signature='(n),(m)->(k)')
+>>> convolve(np.eye(4), [1, 2, 1])
+array([[1., 2., 1., 0., 0., 0.],
+       [0., 1., 2., 1., 0., 0.],
+       [0., 0., 1., 2., 1., 0.],
+       [0., 0., 0., 1., 2., 1.]])\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1function__base_1_1vectorize_aa40dfbdda34cdfa88f36c391a855e570}\label{classnumpy_1_1lib_1_1function__base_1_1vectorize_aa40dfbdda34cdfa88f36c391a855e570}} 
+\index{numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+function\+\_\+base.\+vectorize.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pyfunc,  }\item[{}]{otypes = {\ttfamily None},  }\item[{}]{doc = {\ttfamily None},  }\item[{}]{excluded = {\ttfamily None},  }\item[{}]{cache = {\ttfamily False},  }\item[{}]{signature = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1function__base_1_1vectorize_a015d37bbbc3eaa61e429c523f00a6c84}\label{classnumpy_1_1lib_1_1function__base_1_1vectorize_a015d37bbbc3eaa61e429c523f00a6c84}} 
+\index{numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+function\+\_\+base.\+vectorize.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return arrays with the results of `pyfunc` broadcast (vectorized) over
+`args` and `kwargs` not in `excluded`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1function__base_1_1vectorize_ac0abfa29fabd51edd16c71dbcf11a0b0}\label{classnumpy_1_1lib_1_1function__base_1_1vectorize_ac0abfa29fabd51edd16c71dbcf11a0b0}} 
+\index{numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}!cache@{cache}}
+\index{cache@{cache}!numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}}
+\subsubsection{\texorpdfstring{cache}{cache}}
+{\footnotesize\ttfamily numpy.\+lib.\+function\+\_\+base.\+vectorize.\+cache}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1function__base_1_1vectorize_a5829ff4804df5dc8841ae169b3ed5daf}\label{classnumpy_1_1lib_1_1function__base_1_1vectorize_a5829ff4804df5dc8841ae169b3ed5daf}} 
+\index{numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}!excluded@{excluded}}
+\index{excluded@{excluded}!numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}}
+\subsubsection{\texorpdfstring{excluded}{excluded}}
+{\footnotesize\ttfamily numpy.\+lib.\+function\+\_\+base.\+vectorize.\+excluded}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1function__base_1_1vectorize_aceb5282a6f6c3ccbecae8a9c4ef8c43e}\label{classnumpy_1_1lib_1_1function__base_1_1vectorize_aceb5282a6f6c3ccbecae8a9c4ef8c43e}} 
+\index{numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}!otypes@{otypes}}
+\index{otypes@{otypes}!numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}}
+\subsubsection{\texorpdfstring{otypes}{otypes}}
+{\footnotesize\ttfamily numpy.\+lib.\+function\+\_\+base.\+vectorize.\+otypes}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1function__base_1_1vectorize_a9ba37686f9c887a21fedee2873950d18}\label{classnumpy_1_1lib_1_1function__base_1_1vectorize_a9ba37686f9c887a21fedee2873950d18}} 
+\index{numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}!pyfunc@{pyfunc}}
+\index{pyfunc@{pyfunc}!numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}}
+\subsubsection{\texorpdfstring{pyfunc}{pyfunc}}
+{\footnotesize\ttfamily numpy.\+lib.\+function\+\_\+base.\+vectorize.\+pyfunc}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1function__base_1_1vectorize_a42b785e898731a232fb1c35125310265}\label{classnumpy_1_1lib_1_1function__base_1_1vectorize_a42b785e898731a232fb1c35125310265}} 
+\index{numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}!signature@{signature}}
+\index{signature@{signature}!numpy\+::lib\+::function\+\_\+base\+::vectorize@{numpy\+::lib\+::function\+\_\+base\+::vectorize}}
+\subsubsection{\texorpdfstring{signature}{signature}}
+{\footnotesize\ttfamily numpy.\+lib.\+function\+\_\+base.\+vectorize.\+signature}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/lib/\hyperlink{lib_2function__base_8py}{function\+\_\+base.\+py}\end{DoxyCompactItemize}

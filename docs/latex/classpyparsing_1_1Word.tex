@@ -1,0 +1,242 @@
+\hypertarget{classpyparsing_1_1Word}{}\section{pyparsing.\+Word Class Reference}
+\label{classpyparsing_1_1Word}\index{pyparsing.\+Word@{pyparsing.\+Word}}
+
+
+Inheritance diagram for pyparsing.\+Word\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classpyparsing_1_1Word__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pyparsing.\+Word\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classpyparsing_1_1Word__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpyparsing_1_1Word_ac613b7889b8235da3963fda4173b40d1}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpyparsing_1_1Word_a2fb25b4ca971b367f234ee8a44a9432e}{init\+Chars}, \hyperlink{classpyparsing_1_1Word_a73973900a299477092ad491ebbccca80}{body\+Chars}=None, min=1, max=0, \hyperlink{namespacepyparsing_a832e22d9e8c149774782b6f58d10278f}{exact}=0, \hyperlink{classpyparsing_1_1Word_aeb1c56e9084057c44b019c202b018fb1}{as\+Keyword}=False, \hyperlink{namespacepyparsing_a74a0d58c5c3028ec3baa9b4db4a9a9f0}{exclude\+Chars}=None)
+\item 
+def \hyperlink{classpyparsing_1_1Word_a09b5d3e6a51cb4035658a90cda63bdb8}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\item 
+def \hyperlink{classpyparsing_1_1Word_a6a028763c3941a776ef330e895b717df}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpyparsing_1_1Word_ab7ea5f88d8cc07ed45f93b07fffbc63d}{init\+Chars\+Orig}
+\item 
+\hyperlink{classpyparsing_1_1Word_a2fb25b4ca971b367f234ee8a44a9432e}{init\+Chars}
+\item 
+\hyperlink{classpyparsing_1_1Word_a6d67e68362de8cecfbc957288a2b4d39}{body\+Chars\+Orig}
+\item 
+\hyperlink{classpyparsing_1_1Word_a73973900a299477092ad491ebbccca80}{body\+Chars}
+\item 
+\hyperlink{classpyparsing_1_1Word_a97f03e5f7ff7b5226dadb00ef03ce7a3}{max\+Specified}
+\item 
+\hyperlink{classpyparsing_1_1Word_a458e9763856de10294585a0ccc3499fd}{min\+Len}
+\item 
+\hyperlink{classpyparsing_1_1Word_a7a963f90af256ffea676cdebda38ca49}{max\+Len}
+\item 
+\hyperlink{classpyparsing_1_1Word_ae3f9469d861b350b458f753ffb7c1cbf}{name}
+\item 
+\hyperlink{classpyparsing_1_1Word_a10b776b309df29a31a94559da4076049}{errmsg}
+\item 
+\hyperlink{classpyparsing_1_1Word_a4632f23e3a17a9d31bb6899bb71e1d32}{may\+Index\+Error}
+\item 
+\hyperlink{classpyparsing_1_1Word_aeb1c56e9084057c44b019c202b018fb1}{as\+Keyword}
+\item 
+\hyperlink{classpyparsing_1_1Word_a4c14449480969cad75536fffde5eabd7}{re\+String}
+\item 
+\hyperlink{classpyparsing_1_1Word_a5cd690a50cf99c9f31ae41d370d69f9c}{re}
+\item 
+\hyperlink{classpyparsing_1_1Word_af5bc24e8d6ab1ec7bb97b6f14824e6bf}{re\+\_\+match}
+\item 
+\hyperlink{classpyparsing_1_1Word_aa71d342af79656a2a2f0737518f1ef28}{str\+Repr}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Token for matching words composed of allowed character sets.
+Defined with string containing all allowed initial characters, an
+optional string containing allowed body characters (if omitted,
+defaults to the initial character set), and an optional minimum,
+maximum, and/or exact length.  The default value for ``min`` is
+1 (a minimum value < 1 is not valid); the default values for
+``max`` and ``exact`` are 0, meaning no maximum or exact
+length restriction. An optional ``excludeChars`` parameter can
+list characters that might be found in the input ``bodyChars``
+string; useful to define a word of all printables except for one or
+two characters, for instance.
+
+:class:`srange` is useful for defining custom character set strings
+for defining ``Word`` expressions, using range notation from
+regular expression character sets.
+
+A common mistake is to use :class:`Word` to match a specific literal
+string, as in ``Word("Address")``. Remember that :class:`Word`
+uses the string argument to define *sets* of matchable characters.
+This expression would match "Add", "AAA", "dAred", or any other word
+made up of the characters 'A', 'd', 'r', 'e', and 's'. To match an
+exact literal string, use :class:`Literal` or :class:`Keyword`.
+
+pyparsing includes helper strings for building Words:
+
+ - :class:`alphas`
+ - :class:`nums`
+ - :class:`alphanums`
+ - :class:`hexnums`
+ - :class:`alphas8bit` (alphabetic characters in ASCII range 128-255
+   - accented, tilded, umlauted, etc.)
+ - :class:`punc8bit` (non-alphabetic characters in ASCII range
+   128-255 - currency, symbols, superscripts, diacriticals, etc.)
+ - :class:`printables` (any non-whitespace character)
+
+Example::
+
+    # a word composed of digits
+    integer = Word(nums) # equivalent to Word("0123456789") or Word(srange("0-9"))
+
+    # a word with a leading capital, and zero or more lowercase
+    capital_word = Word(alphas.upper(), alphas.lower())
+
+    # hostnames are alphanumeric, with leading alpha, and '-'
+    hostname = Word(alphas, alphanums + '-')
+
+    # roman numeral (not a strict parser, accepts invalid mix of characters)
+    roman = Word("IVXLCDM")
+
+    # any string of non-whitespace characters, except for ','
+    csv_value = Word(printables, excludeChars=",")
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Word_ac613b7889b8235da3963fda4173b40d1}\label{classpyparsing_1_1Word_ac613b7889b8235da3963fda4173b40d1}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Word.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{init\+Chars,  }\item[{}]{body\+Chars = {\ttfamily None},  }\item[{}]{min = {\ttfamily 1},  }\item[{}]{max = {\ttfamily 0},  }\item[{}]{exact = {\ttfamily 0},  }\item[{}]{as\+Keyword = {\ttfamily False},  }\item[{}]{exclude\+Chars = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Word_a6a028763c3941a776ef330e895b717df}\label{classpyparsing_1_1Word_a6a028763c3941a776ef330e895b717df}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Word.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_a09b5d3e6a51cb4035658a90cda63bdb8}\label{classpyparsing_1_1Word_a09b5d3e6a51cb4035658a90cda63bdb8}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pyparsing.\+Word.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Word_aeb1c56e9084057c44b019c202b018fb1}\label{classpyparsing_1_1Word_aeb1c56e9084057c44b019c202b018fb1}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!as\+Keyword@{as\+Keyword}}
+\index{as\+Keyword@{as\+Keyword}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{as\+Keyword}{asKeyword}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+as\+Keyword}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_a73973900a299477092ad491ebbccca80}\label{classpyparsing_1_1Word_a73973900a299477092ad491ebbccca80}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!body\+Chars@{body\+Chars}}
+\index{body\+Chars@{body\+Chars}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{body\+Chars}{bodyChars}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+body\+Chars}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_a6d67e68362de8cecfbc957288a2b4d39}\label{classpyparsing_1_1Word_a6d67e68362de8cecfbc957288a2b4d39}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!body\+Chars\+Orig@{body\+Chars\+Orig}}
+\index{body\+Chars\+Orig@{body\+Chars\+Orig}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{body\+Chars\+Orig}{bodyCharsOrig}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+body\+Chars\+Orig}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_a10b776b309df29a31a94559da4076049}\label{classpyparsing_1_1Word_a10b776b309df29a31a94559da4076049}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!errmsg@{errmsg}}
+\index{errmsg@{errmsg}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{errmsg}{errmsg}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+errmsg}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_a2fb25b4ca971b367f234ee8a44a9432e}\label{classpyparsing_1_1Word_a2fb25b4ca971b367f234ee8a44a9432e}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!init\+Chars@{init\+Chars}}
+\index{init\+Chars@{init\+Chars}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{init\+Chars}{initChars}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+init\+Chars}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_ab7ea5f88d8cc07ed45f93b07fffbc63d}\label{classpyparsing_1_1Word_ab7ea5f88d8cc07ed45f93b07fffbc63d}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!init\+Chars\+Orig@{init\+Chars\+Orig}}
+\index{init\+Chars\+Orig@{init\+Chars\+Orig}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{init\+Chars\+Orig}{initCharsOrig}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+init\+Chars\+Orig}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_a7a963f90af256ffea676cdebda38ca49}\label{classpyparsing_1_1Word_a7a963f90af256ffea676cdebda38ca49}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!max\+Len@{max\+Len}}
+\index{max\+Len@{max\+Len}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{max\+Len}{maxLen}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+max\+Len}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_a97f03e5f7ff7b5226dadb00ef03ce7a3}\label{classpyparsing_1_1Word_a97f03e5f7ff7b5226dadb00ef03ce7a3}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!max\+Specified@{max\+Specified}}
+\index{max\+Specified@{max\+Specified}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{max\+Specified}{maxSpecified}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+max\+Specified}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_a4632f23e3a17a9d31bb6899bb71e1d32}\label{classpyparsing_1_1Word_a4632f23e3a17a9d31bb6899bb71e1d32}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!may\+Index\+Error@{may\+Index\+Error}}
+\index{may\+Index\+Error@{may\+Index\+Error}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{may\+Index\+Error}{mayIndexError}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+may\+Index\+Error}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_a458e9763856de10294585a0ccc3499fd}\label{classpyparsing_1_1Word_a458e9763856de10294585a0ccc3499fd}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!min\+Len@{min\+Len}}
+\index{min\+Len@{min\+Len}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{min\+Len}{minLen}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+min\+Len}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_ae3f9469d861b350b458f753ffb7c1cbf}\label{classpyparsing_1_1Word_ae3f9469d861b350b458f753ffb7c1cbf}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!name@{name}}
+\index{name@{name}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+name}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_a5cd690a50cf99c9f31ae41d370d69f9c}\label{classpyparsing_1_1Word_a5cd690a50cf99c9f31ae41d370d69f9c}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!re@{re}}
+\index{re@{re}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{re}{re}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+re}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_af5bc24e8d6ab1ec7bb97b6f14824e6bf}\label{classpyparsing_1_1Word_af5bc24e8d6ab1ec7bb97b6f14824e6bf}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!re\+\_\+match@{re\+\_\+match}}
+\index{re\+\_\+match@{re\+\_\+match}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{re\+\_\+match}{re\_match}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+re\+\_\+match}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_a4c14449480969cad75536fffde5eabd7}\label{classpyparsing_1_1Word_a4c14449480969cad75536fffde5eabd7}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!re\+String@{re\+String}}
+\index{re\+String@{re\+String}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{re\+String}{reString}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+re\+String}
+
+\mbox{\Hypertarget{classpyparsing_1_1Word_aa71d342af79656a2a2f0737518f1ef28}\label{classpyparsing_1_1Word_aa71d342af79656a2a2f0737518f1ef28}} 
+\index{pyparsing\+::\+Word@{pyparsing\+::\+Word}!str\+Repr@{str\+Repr}}
+\index{str\+Repr@{str\+Repr}!pyparsing\+::\+Word@{pyparsing\+::\+Word}}
+\subsubsection{\texorpdfstring{str\+Repr}{strRepr}}
+{\footnotesize\ttfamily pyparsing.\+Word.\+str\+Repr}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\hyperlink{pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

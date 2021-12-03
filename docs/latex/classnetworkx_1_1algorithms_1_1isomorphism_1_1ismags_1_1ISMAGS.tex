@@ -1,0 +1,242 @@
+\hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS}{}\section{networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+GS Class Reference}
+\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS}\index{networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+GS@{networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+GS}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a15c73c9b3bbbac8a6a2bf8c6d53e9528}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_aecadf72dedcab3af3a1f87d4b2b0c398}{graph}, \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a72e8b9194381ecd1760f122c47741002}{subgraph}, node\+\_\+match=None, edge\+\_\+match=None, cache=None)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_aee68cab930d165d0230de8ec1aa9b067}{find\+\_\+isomorphisms} (self, symmetry=True)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a8bfe525305af3eea7a03d2045c84ca8e}{largest\+\_\+common\+\_\+subgraph} (self, symmetry=True)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a2047adf8ebd6af4319f2be87d7f0a2c7}{analyze\+\_\+symmetry} (self, \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_aecadf72dedcab3af3a1f87d4b2b0c398}{graph}, node\+\_\+partitions, edge\+\_\+colors)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a29848db92e352ca9ae78be71d38e8879}{is\+\_\+isomorphic} (self, symmetry=False)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_aee8714f0058eabcf86ce107e23a7a91b}{subgraph\+\_\+is\+\_\+isomorphic} (self, symmetry=False)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_ab5c2f624ad727727c51c3c2e53ba7637}{isomorphisms\+\_\+iter} (self, symmetry=True)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a0b6a909ac39ef0a7ddc4a861b45f2701}{subgraph\+\_\+isomorphisms\+\_\+iter} (self, symmetry=True)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_aecadf72dedcab3af3a1f87d4b2b0c398}{graph}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a72e8b9194381ecd1760f122c47741002}{subgraph}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a7f2ae2177b5be5838c831daef9ae1653}{node\+\_\+equality}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_ac62efe437e1d335d6a5267dd942df2df}{edge\+\_\+equality}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Implements the ISMAGS subgraph matching algorith. [1]_ ISMAGS stands for
+"Index-based Subgraph Matching Algorithm with General Symmetries". As the
+name implies, it is symmetry aware and will only generate non-symmetric
+isomorphisms.
+
+Notes
+-----
+The implementation imposes additional conditions compared to the VF2
+algorithm on the graphs provided and the comparison functions
+(:attr:`node_equality` and :attr:`edge_equality`):
+
+ - Node keys in both graphs must be orderable as well as hashable.
+ - Equality must be transitive: if A is equal to B, and B is equal to C,
+   then A must be equal to C.
+
+Attributes
+----------
+graph: networkx.Graph
+subgraph: networkx.Graph
+node_equality: collections.abc.Callable
+    The function called to see if two nodes should be considered equal.
+    It's signature looks like this:
+    ``f(graph1: networkx.Graph, node1, graph2: networkx.Graph, node2) -> bool``.
+    `node1` is a node in `graph1`, and `node2` a node in `graph2`.
+    Constructed from the argument `node_match`.
+edge_equality: collections.abc.Callable
+    The function called to see if two edges should be considered equal.
+    It's signature looks like this:
+    ``f(graph1: networkx.Graph, edge1, graph2: networkx.Graph, edge2) -> bool``.
+    `edge1` is an edge in `graph1`, and `edge2` an edge in `graph2`.
+    Constructed from the argument `edge_match`.
+
+References
+----------
+.. [1] M. Houbraken, S. Demeyer, T. Michoel, P. Audenaert, D. Colle,
+   M. Pickavet, "The Index-Based Subgraph Matching Algorithm with General
+   Symmetries (ISMAGS): Exploiting Symmetry for Faster Subgraph
+   Enumeration", PLoS One 9(5): e97896, 2014.
+   https://doi.org/10.1371/journal.pone.0097896
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a15c73c9b3bbbac8a6a2bf8c6d53e9528}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a15c73c9b3bbbac8a6a2bf8c6d53e9528}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+G\+S.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph,  }\item[{}]{subgraph,  }\item[{}]{node\+\_\+match = {\ttfamily None},  }\item[{}]{edge\+\_\+match = {\ttfamily None},  }\item[{}]{cache = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+graph: networkx.Graph
+subgraph: networkx.Graph
+node_match: collections.abc.Callable or None
+    Function used to determine whether two nodes are equivalent. Its
+    signature should look like ``f(n1: dict, n2: dict) -> bool``, with
+    `n1` and `n2` node property dicts. See also
+    :func:`~networkx.algorithms.isomorphism.categorical_node_match` and
+    friends.
+    If `None`, all nodes are considered equal.
+edge_match: collections.abc.Callable or None
+    Function used to determine whether two edges are equivalent. Its
+    signature should look like ``f(e1: dict, e2: dict) -> bool``, with
+    `e1` and `e2` edge property dicts. See also
+    :func:`~networkx.algorithms.isomorphism.categorical_edge_match` and
+    friends.
+    If `None`, all edges are considered equal.
+cache: collections.abc.Mapping
+    A cache used for caching graph symmetries.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a2047adf8ebd6af4319f2be87d7f0a2c7}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a2047adf8ebd6af4319f2be87d7f0a2c7}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}!analyze\+\_\+symmetry@{analyze\+\_\+symmetry}}
+\index{analyze\+\_\+symmetry@{analyze\+\_\+symmetry}!networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}}
+\subsubsection{\texorpdfstring{analyze\+\_\+symmetry()}{analyze\_symmetry()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+G\+S.\+analyze\+\_\+symmetry (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph,  }\item[{}]{node\+\_\+partitions,  }\item[{}]{edge\+\_\+colors }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find a minimal set of permutations and corresponding co-sets that
+describe the symmetry of :attr:`subgraph`.
+
+Returns
+-------
+set[frozenset]
+    The found permutations. This is a set of frozenset of pairs of node
+    keys which can be exchanged without changing :attr:`subgraph`.
+dict[collections.abc.Hashable, set[collections.abc.Hashable]]
+    The found co-sets. The co-sets is a dictionary of {node key:
+    set of node keys}. Every key-value pair describes which `values`
+    can be interchanged without changing nodes less than `key`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_aee68cab930d165d0230de8ec1aa9b067}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_aee68cab930d165d0230de8ec1aa9b067}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}!find\+\_\+isomorphisms@{find\+\_\+isomorphisms}}
+\index{find\+\_\+isomorphisms@{find\+\_\+isomorphisms}!networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}}
+\subsubsection{\texorpdfstring{find\+\_\+isomorphisms()}{find\_isomorphisms()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+G\+S.\+find\+\_\+isomorphisms (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{symmetry = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find all subgraph isomorphisms between subgraph and graph
+
+Finds isomorphisms where :attr:`subgraph` <= :attr:`graph`.
+
+Parameters
+----------
+symmetry: bool
+    Whether symmetry should be taken into account. If False, found
+    isomorphisms may be symmetrically equivalent.
+
+Yields
+------
+dict
+    The found isomorphism mappings of {graph_node: subgraph_node}.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a29848db92e352ca9ae78be71d38e8879}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a29848db92e352ca9ae78be71d38e8879}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}!is\+\_\+isomorphic@{is\+\_\+isomorphic}}
+\index{is\+\_\+isomorphic@{is\+\_\+isomorphic}!networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}}
+\subsubsection{\texorpdfstring{is\+\_\+isomorphic()}{is\_isomorphic()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+G\+S.\+is\+\_\+isomorphic (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{symmetry = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if :attr:`graph` is isomorphic to :attr:`subgraph` and
+False otherwise.
+
+Returns
+-------
+bool
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_ab5c2f624ad727727c51c3c2e53ba7637}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_ab5c2f624ad727727c51c3c2e53ba7637}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}!isomorphisms\+\_\+iter@{isomorphisms\+\_\+iter}}
+\index{isomorphisms\+\_\+iter@{isomorphisms\+\_\+iter}!networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}}
+\subsubsection{\texorpdfstring{isomorphisms\+\_\+iter()}{isomorphisms\_iter()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+G\+S.\+isomorphisms\+\_\+iter (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{symmetry = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Does the same as :meth:`find_isomorphisms` if :attr:`graph` and
+:attr:`subgraph` have the same number of nodes.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a8bfe525305af3eea7a03d2045c84ca8e}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a8bfe525305af3eea7a03d2045c84ca8e}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}!largest\+\_\+common\+\_\+subgraph@{largest\+\_\+common\+\_\+subgraph}}
+\index{largest\+\_\+common\+\_\+subgraph@{largest\+\_\+common\+\_\+subgraph}!networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}}
+\subsubsection{\texorpdfstring{largest\+\_\+common\+\_\+subgraph()}{largest\_common\_subgraph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+G\+S.\+largest\+\_\+common\+\_\+subgraph (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{symmetry = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the largest common induced subgraphs between :attr:`subgraph` and
+:attr:`graph`.
+
+Parameters
+----------
+symmetry: bool
+    Whether symmetry should be taken into account. If False, found
+    largest common subgraphs may be symmetrically equivalent.
+
+Yields
+------
+dict
+    The found isomorphism mappings of {graph_node: subgraph_node}.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_aee8714f0058eabcf86ce107e23a7a91b}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_aee8714f0058eabcf86ce107e23a7a91b}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}!subgraph\+\_\+is\+\_\+isomorphic@{subgraph\+\_\+is\+\_\+isomorphic}}
+\index{subgraph\+\_\+is\+\_\+isomorphic@{subgraph\+\_\+is\+\_\+isomorphic}!networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}}
+\subsubsection{\texorpdfstring{subgraph\+\_\+is\+\_\+isomorphic()}{subgraph\_is\_isomorphic()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+G\+S.\+subgraph\+\_\+is\+\_\+isomorphic (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{symmetry = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if a subgraph of :attr:`graph` is isomorphic to
+:attr:`subgraph` and False otherwise.
+
+Returns
+-------
+bool
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a0b6a909ac39ef0a7ddc4a861b45f2701}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a0b6a909ac39ef0a7ddc4a861b45f2701}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}!subgraph\+\_\+isomorphisms\+\_\+iter@{subgraph\+\_\+isomorphisms\+\_\+iter}}
+\index{subgraph\+\_\+isomorphisms\+\_\+iter@{subgraph\+\_\+isomorphisms\+\_\+iter}!networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}}
+\subsubsection{\texorpdfstring{subgraph\+\_\+isomorphisms\+\_\+iter()}{subgraph\_isomorphisms\_iter()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+G\+S.\+subgraph\+\_\+isomorphisms\+\_\+iter (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{symmetry = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Alternative name for :meth:`find_isomorphisms`.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_ac62efe437e1d335d6a5267dd942df2df}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_ac62efe437e1d335d6a5267dd942df2df}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}!edge\+\_\+equality@{edge\+\_\+equality}}
+\index{edge\+\_\+equality@{edge\+\_\+equality}!networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}}
+\subsubsection{\texorpdfstring{edge\+\_\+equality}{edge\_equality}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+G\+S.\+edge\+\_\+equality}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_aecadf72dedcab3af3a1f87d4b2b0c398}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_aecadf72dedcab3af3a1f87d4b2b0c398}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}!graph@{graph}}
+\index{graph@{graph}!networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}}
+\subsubsection{\texorpdfstring{graph}{graph}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+G\+S.\+graph}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a7f2ae2177b5be5838c831daef9ae1653}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a7f2ae2177b5be5838c831daef9ae1653}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}!node\+\_\+equality@{node\+\_\+equality}}
+\index{node\+\_\+equality@{node\+\_\+equality}!networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}}
+\subsubsection{\texorpdfstring{node\+\_\+equality}{node\_equality}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+G\+S.\+node\+\_\+equality}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a72e8b9194381ecd1760f122c47741002}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1ismags_1_1ISMAGS_a72e8b9194381ecd1760f122c47741002}} 
+\index{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}!subgraph@{subgraph}}
+\index{subgraph@{subgraph}!networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS@{networkx\+::algorithms\+::isomorphism\+::ismags\+::\+I\+S\+M\+A\+GS}}
+\subsubsection{\texorpdfstring{subgraph}{subgraph}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+ismags.\+I\+S\+M\+A\+G\+S.\+subgraph}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/algorithms/isomorphism/\hyperlink{ismags_8py}{ismags.\+py}\end{DoxyCompactItemize}

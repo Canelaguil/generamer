@@ -1,0 +1,116 @@
+\hypertarget{namespacematplotlib_1_1streamplot}{}\section{matplotlib.\+streamplot Namespace Reference}
+\label{namespacematplotlib_1_1streamplot}\index{matplotlib.\+streamplot@{matplotlib.\+streamplot}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap}{Domain\+Map}
+\item 
+class \hyperlink{classmatplotlib_1_1streamplot_1_1Grid}{Grid}
+\item 
+class \hyperlink{classmatplotlib_1_1streamplot_1_1InvalidIndexError}{Invalid\+Index\+Error}
+\item 
+class \hyperlink{classmatplotlib_1_1streamplot_1_1OutOfBounds}{Out\+Of\+Bounds}
+\item 
+class \hyperlink{classmatplotlib_1_1streamplot_1_1StreamMask}{Stream\+Mask}
+\item 
+class \hyperlink{classmatplotlib_1_1streamplot_1_1StreamplotSet}{Streamplot\+Set}
+\item 
+class \hyperlink{classmatplotlib_1_1streamplot_1_1TerminateTrajectory}{Terminate\+Trajectory}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1streamplot_a3a50c1d3e0dc4a5f7fe29905972e80f6}{streamplot} (axes, x, y, u, v, density=1, linewidth=None, color=None, cmap=None, norm=None, arrowsize=1, arrowstyle=\textquotesingle{}-\/$\vert$$>$\textquotesingle{}, minlength=0.\+1, transform=None, zorder=None, start\+\_\+points=None, maxlength=4.\+0, integration\+\_\+direction=\textquotesingle{}both\textquotesingle{})
+\item 
+def \hyperlink{namespacematplotlib_1_1streamplot_ab25ae2ba512a6686fe92afdfb33ee89c}{get\+\_\+integrator} (u, v, dmap, minlength, maxlength, integration\+\_\+direction)
+\item 
+def \hyperlink{namespacematplotlib_1_1streamplot_a670940257c94db8f5dd662775e239ef8}{interpgrid} (a, xi, yi)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Streamline plotting for 2D vector fields.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1streamplot_ab25ae2ba512a6686fe92afdfb33ee89c}\label{namespacematplotlib_1_1streamplot_ab25ae2ba512a6686fe92afdfb33ee89c}} 
+\index{matplotlib\+::streamplot@{matplotlib\+::streamplot}!get\+\_\+integrator@{get\+\_\+integrator}}
+\index{get\+\_\+integrator@{get\+\_\+integrator}!matplotlib\+::streamplot@{matplotlib\+::streamplot}}
+\subsubsection{\texorpdfstring{get\+\_\+integrator()}{get\_integrator()}}
+{\footnotesize\ttfamily def matplotlib.\+streamplot.\+get\+\_\+integrator (\begin{DoxyParamCaption}\item[{}]{u,  }\item[{}]{v,  }\item[{}]{dmap,  }\item[{}]{minlength,  }\item[{}]{maxlength,  }\item[{}]{integration\+\_\+direction }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1streamplot_a670940257c94db8f5dd662775e239ef8}\label{namespacematplotlib_1_1streamplot_a670940257c94db8f5dd662775e239ef8}} 
+\index{matplotlib\+::streamplot@{matplotlib\+::streamplot}!interpgrid@{interpgrid}}
+\index{interpgrid@{interpgrid}!matplotlib\+::streamplot@{matplotlib\+::streamplot}}
+\subsubsection{\texorpdfstring{interpgrid()}{interpgrid()}}
+{\footnotesize\ttfamily def matplotlib.\+streamplot.\+interpgrid (\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{xi,  }\item[{}]{yi }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Fast 2D, linear interpolation on an integer grid\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1streamplot_a3a50c1d3e0dc4a5f7fe29905972e80f6}\label{namespacematplotlib_1_1streamplot_a3a50c1d3e0dc4a5f7fe29905972e80f6}} 
+\index{matplotlib\+::streamplot@{matplotlib\+::streamplot}!streamplot@{streamplot}}
+\index{streamplot@{streamplot}!matplotlib\+::streamplot@{matplotlib\+::streamplot}}
+\subsubsection{\texorpdfstring{streamplot()}{streamplot()}}
+{\footnotesize\ttfamily def matplotlib.\+streamplot.\+streamplot (\begin{DoxyParamCaption}\item[{}]{axes,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{u,  }\item[{}]{v,  }\item[{}]{density = {\ttfamily 1},  }\item[{}]{linewidth = {\ttfamily None},  }\item[{}]{color = {\ttfamily None},  }\item[{}]{cmap = {\ttfamily None},  }\item[{}]{norm = {\ttfamily None},  }\item[{}]{arrowsize = {\ttfamily 1},  }\item[{}]{arrowstyle = {\ttfamily \textquotesingle{}-\/$\vert$$>$\textquotesingle{}},  }\item[{}]{minlength = {\ttfamily 0.1},  }\item[{}]{transform = {\ttfamily None},  }\item[{}]{zorder = {\ttfamily None},  }\item[{}]{start\+\_\+points = {\ttfamily None},  }\item[{}]{maxlength = {\ttfamily 4.0},  }\item[{}]{integration\+\_\+direction = {\ttfamily \textquotesingle{}both\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw streamlines of a vector flow.
+
+Parameters
+----------
+x, y : 1D/2D arrays
+    Evenly spaced strictly increasing arrays to make a grid.
+u, v : 2D arrays
+    *x* and *y*-velocities. The number of rows and columns must match
+    the length of *y* and *x*, respectively.
+density : float or (float, float)
+    Controls the closeness of streamlines. When ``density = 1``, the domain
+    is divided into a 30x30 grid. *density* linearly scales this grid.
+    Each cell in the grid can have, at most, one traversing streamline.
+    For different densities in each direction, use a tuple
+    (density_x, density_y).
+linewidth : float or 2D array
+    The width of the stream lines. With a 2D array the line width can be
+    varied across the grid. The array must have the same shape as *u*
+    and *v*.
+color : color or 2D array
+    The streamline color. If given an array, its values are converted to
+    colors using *cmap* and *norm*.  The array must have the same shape
+    as *u* and *v*.
+cmap : `~matplotlib.colors.Colormap`
+    Colormap used to plot streamlines and arrows. This is only used if
+    *color* is an array.
+norm : `~matplotlib.colors.Normalize`
+    Normalize object used to scale luminance data to 0, 1. If ``None``,
+    stretch (min, max) to (0, 1). This is only used if *color* is an array.
+arrowsize : float
+    Scaling factor for the arrow size.
+arrowstyle : str
+    Arrow style specification.
+    See `~matplotlib.patches.FancyArrowPatch`.
+minlength : float
+    Minimum length of streamline in axes coordinates.
+start_points : Nx2 array
+    Coordinates of starting points for the streamlines in data coordinates
+    (the same coordinates as the *x* and *y* arrays).
+zorder : int
+    The zorder of the stream lines and arrows.
+    Artists with lower zorder values are drawn first.
+maxlength : float
+    Maximum length of streamline in axes coordinates.
+integration_direction : {'forward', 'backward', 'both'}, default: 'both'
+    Integrate the streamline in forward, backward or both directions.
+
+Returns
+-------
+StreamplotSet
+    Container object with attributes
+
+    - ``lines``: `.LineCollection` of streamlines
+
+    - ``arrows``: `.PatchCollection` containing `.FancyArrowPatch`
+      objects representing the arrows half-way along stream lines.
+
+    This container will probably change in the future to allow changes
+    to the colormap, alpha, etc. for both lines and arrows, but these
+    changes should be backward compatible.
+\end{DoxyVerb}
+ 

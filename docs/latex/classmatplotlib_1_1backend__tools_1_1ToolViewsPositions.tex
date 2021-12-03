@@ -1,0 +1,187 @@
+\hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions}{}\section{matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions Class Reference}
+\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions}\index{matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions@{matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions}}
+
+
+Inheritance diagram for matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a7d7419bd88c3cd320a49de8e9157ea11}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a3ae482485d950979fd992ea2bbb84822}{add\+\_\+figure} (self, \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_af85e83d1db0787aa40d06837204651ee}{figure})
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a362502df7493ea169784ff2d594e58b8}{clear} (self, \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_af85e83d1db0787aa40d06837204651ee}{figure})
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a3722e6f6fb2e023ee0887e506f368180}{update\+\_\+view} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_ae4651a7fc978f56e9162ca9bba6f68e6}{push\+\_\+current} (self, \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_af85e83d1db0787aa40d06837204651ee}{figure}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a0c648f4a753fd1b1492b80a9dc28cfe4}{update\+\_\+home\+\_\+views} (self, \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_af85e83d1db0787aa40d06837204651ee}{figure}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_ae6a9b07f2ac6a835f5e0daa1045bd028}{refresh\+\_\+locators} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a73c4a28765be8399ee477b2b121c6e2b}{home} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a684d22dd5da2c37412a4b185f4e7895e}{back} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a781ce34cd96aa8f415e922d0405e3ce8}{forward} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a870b71f88ac37d2211aa4678cdd75c45}{views}
+\item 
+\hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a19a2ee7215c3ce9f542404fff1ca3f14}{positions}
+\item 
+\hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a2804c88a6165e1f3a2f1c83a7a37162c}{home\+\_\+views}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a61b928b8e5557aeb30a6aab948930609}{alternative}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Auxiliary Tool to handle changes in views and positions.
+
+Runs in the background and should get used by all the tools that
+need to access the figure's history of views and positions, e.g.
+
+* `ToolZoom`
+* `ToolPan`
+* `ToolHome`
+* `ToolBack`
+* `ToolForward`
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a7d7419bd88c3cd320a49de8e9157ea11}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a7d7419bd88c3cd320a49de8e9157ea11}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a3ae482485d950979fd992ea2bbb84822}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a3ae482485d950979fd992ea2bbb84822}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!add\+\_\+figure@{add\+\_\+figure}}
+\index{add\+\_\+figure@{add\+\_\+figure}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{add\+\_\+figure()}{add\_figure()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+add\+\_\+figure (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add the current figure to the stack of views and positions.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a684d22dd5da2c37412a4b185f4e7895e}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a684d22dd5da2c37412a4b185f4e7895e}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!back@{back}}
+\index{back@{back}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+back (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Back one step in the stack of views and positions.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a362502df7493ea169784ff2d594e58b8}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a362502df7493ea169784ff2d594e58b8}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!clear@{clear}}
+\index{clear@{clear}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+clear (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reset the axes stack.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a781ce34cd96aa8f415e922d0405e3ce8}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a781ce34cd96aa8f415e922d0405e3ce8}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!forward@{forward}}
+\index{forward@{forward}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+forward (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Forward one step in the stack of views and positions.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a73c4a28765be8399ee477b2b121c6e2b}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a73c4a28765be8399ee477b2b121c6e2b}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!home@{home}}
+\index{home@{home}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{home()}{home()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+home (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Recall the first view and position from the stack.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_ae4651a7fc978f56e9162ca9bba6f68e6}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_ae4651a7fc978f56e9162ca9bba6f68e6}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!push\+\_\+current@{push\+\_\+current}}
+\index{push\+\_\+current@{push\+\_\+current}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{push\+\_\+current()}{push\_current()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+push\+\_\+current (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Push the current view limits and position onto their respective stacks.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_ae6a9b07f2ac6a835f5e0daa1045bd028}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_ae6a9b07f2ac6a835f5e0daa1045bd028}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!refresh\+\_\+locators@{refresh\+\_\+locators}}
+\index{refresh\+\_\+locators@{refresh\+\_\+locators}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{refresh\+\_\+locators()}{refresh\_locators()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+refresh\+\_\+locators (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Redraw the canvases, update the locators.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a0c648f4a753fd1b1492b80a9dc28cfe4}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a0c648f4a753fd1b1492b80a9dc28cfe4}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!update\+\_\+home\+\_\+views@{update\+\_\+home\+\_\+views}}
+\index{update\+\_\+home\+\_\+views@{update\+\_\+home\+\_\+views}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{update\+\_\+home\+\_\+views()}{update\_home\_views()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+update\+\_\+home\+\_\+views (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make sure that ``self.home_views`` has an entry for all axes present
+in the figure.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a3722e6f6fb2e023ee0887e506f368180}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a3722e6f6fb2e023ee0887e506f368180}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!update\+\_\+view@{update\+\_\+view}}
+\index{update\+\_\+view@{update\+\_\+view}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{update\+\_\+view()}{update\_view()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+update\+\_\+view (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update the view limits and position for each axes from the current
+stack position. If any axes are present in the figure that aren't in
+the current stack position, use the home view limits for those axes and
+don't update *any* positions.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a61b928b8e5557aeb30a6aab948930609}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a61b928b8e5557aeb30a6aab948930609}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!alternative@{alternative}}
+\index{alternative@{alternative}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{alternative}{alternative}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+alternative\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a2804c88a6165e1f3a2f1c83a7a37162c}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a2804c88a6165e1f3a2f1c83a7a37162c}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!home\+\_\+views@{home\+\_\+views}}
+\index{home\+\_\+views@{home\+\_\+views}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{home\+\_\+views}{home\_views}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+home\+\_\+views}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a19a2ee7215c3ce9f542404fff1ca3f14}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a19a2ee7215c3ce9f542404fff1ca3f14}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!positions@{positions}}
+\index{positions@{positions}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{positions}{positions}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+positions}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a870b71f88ac37d2211aa4678cdd75c45}\label{classmatplotlib_1_1backend__tools_1_1ToolViewsPositions_a870b71f88ac37d2211aa4678cdd75c45}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}!views@{views}}
+\index{views@{views}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Views\+Positions}}
+\subsubsection{\texorpdfstring{views}{views}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+tools.\+Tool\+Views\+Positions.\+views}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{backend__tools_8py}{backend\+\_\+tools.\+py}\end{DoxyCompactItemize}

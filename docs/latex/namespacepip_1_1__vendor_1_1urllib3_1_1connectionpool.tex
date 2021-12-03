@@ -1,0 +1,65 @@
+\hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1connectionpool}{}\section{pip.\+\_\+vendor.\+urllib3.\+connectionpool Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1urllib3_1_1connectionpool}\index{pip.\+\_\+vendor.\+urllib3.\+connectionpool@{pip.\+\_\+vendor.\+urllib3.\+connectionpool}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connectionpool_1_1ConnectionPool}{Connection\+Pool}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connectionpool_1_1HTTPConnectionPool}{H\+T\+T\+P\+Connection\+Pool}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connectionpool_1_1HTTPSConnectionPool}{H\+T\+T\+P\+S\+Connection\+Pool}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1connectionpool_aa083afaea0553436733cc193d35ad162}{connection\+\_\+from\+\_\+url} (url, kw)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1connectionpool_af4fe29676fd273dfca039e3b53b7c92d}{xrange}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1connectionpool_a1bff2928ed0d70d7b462c2014699e21a}{log}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1connectionpool_aa083afaea0553436733cc193d35ad162}\label{namespacepip_1_1__vendor_1_1urllib3_1_1connectionpool_aa083afaea0553436733cc193d35ad162}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connectionpool@{pip\+::\+\_\+vendor\+::urllib3\+::connectionpool}!connection\+\_\+from\+\_\+url@{connection\+\_\+from\+\_\+url}}
+\index{connection\+\_\+from\+\_\+url@{connection\+\_\+from\+\_\+url}!pip\+::\+\_\+vendor\+::urllib3\+::connectionpool@{pip\+::\+\_\+vendor\+::urllib3\+::connectionpool}}
+\subsubsection{\texorpdfstring{connection\+\_\+from\+\_\+url()}{connection\_from\_url()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+connectionpool.\+connection\+\_\+from\+\_\+url (\begin{DoxyParamCaption}\item[{}]{url,  }\item[{}]{kw }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given a url, return an :class:`.ConnectionPool` instance of its host.
+
+This is a shortcut for not having to parse out the scheme, host, and port
+of the url before creating an :class:`.ConnectionPool` instance.
+
+:param url:
+    Absolute URL string that must include the scheme. Port is optional.
+
+:param \\**kw:
+    Passes additional parameters to the constructor of the appropriate
+    :class:`.ConnectionPool`. Useful for specifying things like
+    timeout, maxsize, headers, etc.
+
+Example::
+
+    >>> conn = connection_from_url('http://google.com/')
+    >>> r = conn.request('GET', '/')
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1connectionpool_a1bff2928ed0d70d7b462c2014699e21a}\label{namespacepip_1_1__vendor_1_1urllib3_1_1connectionpool_a1bff2928ed0d70d7b462c2014699e21a}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connectionpool@{pip\+::\+\_\+vendor\+::urllib3\+::connectionpool}!log@{log}}
+\index{log@{log}!pip\+::\+\_\+vendor\+::urllib3\+::connectionpool@{pip\+::\+\_\+vendor\+::urllib3\+::connectionpool}}
+\subsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+connectionpool.\+log}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1connectionpool_af4fe29676fd273dfca039e3b53b7c92d}\label{namespacepip_1_1__vendor_1_1urllib3_1_1connectionpool_af4fe29676fd273dfca039e3b53b7c92d}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connectionpool@{pip\+::\+\_\+vendor\+::urllib3\+::connectionpool}!xrange@{xrange}}
+\index{xrange@{xrange}!pip\+::\+\_\+vendor\+::urllib3\+::connectionpool@{pip\+::\+\_\+vendor\+::urllib3\+::connectionpool}}
+\subsubsection{\texorpdfstring{xrange}{xrange}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+connectionpool.\+xrange}
+

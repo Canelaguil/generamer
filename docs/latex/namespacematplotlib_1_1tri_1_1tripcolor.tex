@@ -1,0 +1,52 @@
+\hypertarget{namespacematplotlib_1_1tri_1_1tripcolor}{}\section{matplotlib.\+tri.\+tripcolor Namespace Reference}
+\label{namespacematplotlib_1_1tri_1_1tripcolor}\index{matplotlib.\+tri.\+tripcolor@{matplotlib.\+tri.\+tripcolor}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1tri_1_1tripcolor_af9fe99bd1f8bfd84aacb48ef1c98a5a3}{tripcolor} (ax, args, alpha=1.\+0, norm=None, cmap=None, vmin=None, vmax=None, shading=\textquotesingle{}flat\textquotesingle{}, facecolors=None, kwargs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1tri_1_1tripcolor_af9fe99bd1f8bfd84aacb48ef1c98a5a3}\label{namespacematplotlib_1_1tri_1_1tripcolor_af9fe99bd1f8bfd84aacb48ef1c98a5a3}} 
+\index{matplotlib\+::tri\+::tripcolor@{matplotlib\+::tri\+::tripcolor}!tripcolor@{tripcolor}}
+\index{tripcolor@{tripcolor}!matplotlib\+::tri\+::tripcolor@{matplotlib\+::tri\+::tripcolor}}
+\subsubsection{\texorpdfstring{tripcolor()}{tripcolor()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+tripcolor.\+tripcolor (\begin{DoxyParamCaption}\item[{}]{ax,  }\item[{}]{args,  }\item[{}]{alpha = {\ttfamily 1.0},  }\item[{}]{norm = {\ttfamily None},  }\item[{}]{cmap = {\ttfamily None},  }\item[{}]{vmin = {\ttfamily None},  }\item[{}]{vmax = {\ttfamily None},  }\item[{}]{shading = {\ttfamily \textquotesingle{}flat\textquotesingle{}},  }\item[{}]{facecolors = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a pseudocolor plot of an unstructured triangular grid.
+
+The triangulation can be specified in one of two ways; either::
+
+  tripcolor(triangulation, ...)
+
+where triangulation is a `.Triangulation` object, or
+
+::
+
+  tripcolor(x, y, ...)
+  tripcolor(x, y, triangles, ...)
+  tripcolor(x, y, triangles=triangles, ...)
+  tripcolor(x, y, mask=mask, ...)
+  tripcolor(x, y, triangles, mask=mask, ...)
+
+in which case a Triangulation object will be created.  See `.Triangulation`
+for a explanation of these possibilities.
+
+The next argument must be *C*, the array of color values, either
+one per point in the triangulation if color values are defined at
+points, or one per triangle in the triangulation if color values
+are defined at triangles. If there are the same number of points
+and triangles in the triangulation it is assumed that color
+values are defined at points; to force the use of color values at
+triangles use the kwarg ``facecolors=C`` instead of just ``C``.
+
+*shading* may be 'flat' (the default) or 'gouraud'. If *shading*
+is 'flat' and C values are defined at points, the color values
+used for each triangle are from the mean C of the triangle's
+three points. If *shading* is 'gouraud' then color values must be
+defined at points.
+
+The remaining kwargs are the same as for `~.Axes.pcolor`.
+\end{DoxyVerb}
+ 

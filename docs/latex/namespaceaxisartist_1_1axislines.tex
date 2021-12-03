@@ -1,0 +1,81 @@
+\hypertarget{namespaceaxisartist_1_1axislines}{}\section{axisartist.\+axislines Namespace Reference}
+\label{namespaceaxisartist_1_1axislines}\index{axisartist.\+axislines@{axisartist.\+axislines}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classaxisartist_1_1axislines_1_1Axes}{Axes}
+\item 
+class \hyperlink{classaxisartist_1_1axislines_1_1AxesZero}{Axes\+Zero}
+\item 
+class \hyperlink{classaxisartist_1_1axislines_1_1AxisArtistHelper}{Axis\+Artist\+Helper}
+\item 
+class \hyperlink{classaxisartist_1_1axislines_1_1AxisArtistHelperRectlinear}{Axis\+Artist\+Helper\+Rectlinear}
+\item 
+class \hyperlink{classaxisartist_1_1axislines_1_1GridHelperBase}{Grid\+Helper\+Base}
+\item 
+class \hyperlink{classaxisartist_1_1axislines_1_1GridHelperRectlinear}{Grid\+Helper\+Rectlinear}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceaxisartist_1_1axislines_ae7bdfebb18ec851f930dd0f32cb803eb}{Subplot}
+\item 
+\hyperlink{namespaceaxisartist_1_1axislines_aec71ec41722b964a8f2081c7025eabfa}{Subplot\+Zero}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Axislines includes modified implementation of the Axes class. The
+biggest difference is that the artists responsible for drawing the axis spine,
+ticks, ticklabels and axis labels are separated out from Matplotlib's Axis
+class. Originally, this change was motivated to support curvilinear
+grid. Here are a few reasons that I came up with a new axes class:
+
+* "top" and "bottom" x-axis (or "left" and "right" y-axis) can have
+  different ticks (tick locations and labels). This is not possible
+  with the current Matplotlib, although some twin axes trick can help.
+
+* Curvilinear grid.
+
+* angled ticks.
+
+In the new axes class, xaxis and yaxis is set to not visible by
+default, and new set of artist (AxisArtist) are defined to draw axis
+line, ticks, ticklabels and axis label. Axes.axis attribute serves as
+a dictionary of these artists, i.e., ax.axis["left"] is a AxisArtist
+instance responsible to draw left y-axis. The default Axes.axis contains
+"bottom", "left", "top" and "right".
+
+AxisArtist can be considered as a container artist and
+has following children artists which will draw ticks, labels, etc.
+
+* line
+* major_ticks, major_ticklabels
+* minor_ticks, minor_ticklabels
+* offsetText
+* label
+
+Note that these are separate artists from `matplotlib.axis.Axis`, thus most
+tick-related functions in Matplotlib won't work. For example, color and
+markerwidth of the ``ax.axis["bottom"].major_ticks`` will follow those of
+Axes.xaxis unless explicitly specified.
+
+In addition to AxisArtist, the Axes will have *gridlines* attribute,
+which obviously draws grid lines. The gridlines needs to be separated
+from the axis as some gridlines can never pass any axis.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceaxisartist_1_1axislines_ae7bdfebb18ec851f930dd0f32cb803eb}\label{namespaceaxisartist_1_1axislines_ae7bdfebb18ec851f930dd0f32cb803eb}} 
+\index{axisartist\+::axislines@{axisartist\+::axislines}!Subplot@{Subplot}}
+\index{Subplot@{Subplot}!axisartist\+::axislines@{axisartist\+::axislines}}
+\subsubsection{\texorpdfstring{Subplot}{Subplot}}
+{\footnotesize\ttfamily axisartist.\+axislines.\+Subplot}
+
+\mbox{\Hypertarget{namespaceaxisartist_1_1axislines_aec71ec41722b964a8f2081c7025eabfa}\label{namespaceaxisartist_1_1axislines_aec71ec41722b964a8f2081c7025eabfa}} 
+\index{axisartist\+::axislines@{axisartist\+::axislines}!Subplot\+Zero@{Subplot\+Zero}}
+\index{Subplot\+Zero@{Subplot\+Zero}!axisartist\+::axislines@{axisartist\+::axislines}}
+\subsubsection{\texorpdfstring{Subplot\+Zero}{SubplotZero}}
+{\footnotesize\ttfamily axisartist.\+axislines.\+Subplot\+Zero}
+

@@ -1,0 +1,306 @@
+\hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager}{}\section{matplotlib.\+backend\+\_\+managers.\+Tool\+Manager Class Reference}
+\label{classmatplotlib_1_1backend__managers_1_1ToolManager}\index{matplotlib.\+backend\+\_\+managers.\+Tool\+Manager@{matplotlib.\+backend\+\_\+managers.\+Tool\+Manager}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_ac60138c7f52b5b58bc60aff39fe23758}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_aafeaea5f9c448117328f7d5d7ff66e39}{figure}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_a1e62e5a862bfcbc54b5f1172df8fcc9f}{canvas} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_aafeaea5f9c448117328f7d5d7ff66e39}{figure} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_a6e76ed05b42dc424f8a17b04bf0d6bb4}{figure} (self, figure)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_affec78f19af58a5c10f258f192a69a03}{set\+\_\+figure} (self, \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_aafeaea5f9c448117328f7d5d7ff66e39}{figure}, update\+\_\+tools=True)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_afd9e0a90709887a79d39e55834f90225}{toolmanager\+\_\+connect} (self, s, func)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_a99802a6ee6fa0ceab74d29c99f8a7019}{toolmanager\+\_\+disconnect} (self, cid)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_a2dee0fa838b2e1457c37f680569498ad}{message\+\_\+event} (self, message, sender=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_a5285c3e9f520ab135ae75a34955d2d8c}{active\+\_\+toggle} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_a18680c9b74a62aae5569481a0bc6f00e}{get\+\_\+tool\+\_\+keymap} (self, name)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_aff7f44850960745d2cead7d2ea7ede1d}{update\+\_\+keymap} (self, name, key, args)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_a74762e8ff793ceca77b6b1b43ce84d3c}{remove\+\_\+tool} (self, name)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_a03cca2a1e94b52ac37f53b0906aa3521}{add\+\_\+tool} (self, name, tool, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_aa251334d40971469f162ff354045ebbc}{trigger\+\_\+tool} (self, name, sender=None, canvasevent=None, data=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_aed974b1d9d043a81f94565fa32e5eda2}{tools} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_ae5ddb2307368e7c3bbb10bc447104b2c}{get\+\_\+tool} (self, name, warn=True)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_a43e924a83290e3c015b1cfabe6f28acb}{keypresslock}
+\item 
+\hyperlink{classmatplotlib_1_1backend__managers_1_1ToolManager_a43829822158e8ddbb92dc16f95a290e9}{messagelock}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Manager for actions triggered by user interactions (key press, toolbar
+clicks, ...) on a Figure.
+
+Attributes
+----------
+figure : `.Figure`
+keypresslock : `~matplotlib.widgets.LockDraw`
+    `.LockDraw` object to know if the `canvas` key_press_event is locked.
+messagelock : `~matplotlib.widgets.LockDraw`
+    `.LockDraw` object to know if the message is available to write.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_ac60138c7f52b5b58bc60aff39fe23758}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_ac60138c7f52b5b58bc60aff39fe23758}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_a5285c3e9f520ab135ae75a34955d2d8c}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_a5285c3e9f520ab135ae75a34955d2d8c}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!active\+\_\+toggle@{active\+\_\+toggle}}
+\index{active\+\_\+toggle@{active\+\_\+toggle}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{active\+\_\+toggle()}{active\_toggle()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+active\+\_\+toggle (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Currently toggled tools.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_a03cca2a1e94b52ac37f53b0906aa3521}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_a03cca2a1e94b52ac37f53b0906aa3521}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!add\+\_\+tool@{add\+\_\+tool}}
+\index{add\+\_\+tool@{add\+\_\+tool}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{add\+\_\+tool()}{add\_tool()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+add\+\_\+tool (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{tool,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add *tool* to `ToolManager`.
+
+If successful, adds a new event ``tool_trigger_{name}`` where
+``{name}`` is the *name* of the tool; the event is fired every time the
+tool is triggered.
+
+Parameters
+----------
+name : str
+    Name of the tool, treated as the ID, has to be unique.
+tool : class_like, i.e. str or type
+    Reference to find the class of the Tool to added.
+
+Notes
+-----
+args and kwargs get passed directly to the tools constructor.
+
+See Also
+--------
+matplotlib.backend_tools.ToolBase : The base class for tools.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_a1e62e5a862bfcbc54b5f1172df8fcc9f}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_a1e62e5a862bfcbc54b5f1172df8fcc9f}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!canvas@{canvas}}
+\index{canvas@{canvas}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{canvas()}{canvas()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+canvas (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Canvas managed by FigureManager.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_aafeaea5f9c448117328f7d5d7ff66e39}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_aafeaea5f9c448117328f7d5d7ff66e39}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!figure@{figure}}
+\index{figure@{figure}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{figure()}{figure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+figure (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Figure that holds the canvas.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_a6e76ed05b42dc424f8a17b04bf0d6bb4}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_a6e76ed05b42dc424f8a17b04bf0d6bb4}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!figure@{figure}}
+\index{figure@{figure}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{figure()}{figure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+figure (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_ae5ddb2307368e7c3bbb10bc447104b2c}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_ae5ddb2307368e7c3bbb10bc447104b2c}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!get\+\_\+tool@{get\+\_\+tool}}
+\index{get\+\_\+tool@{get\+\_\+tool}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+tool()}{get\_tool()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+get\+\_\+tool (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{warn = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the tool object with the given name.
+
+For convenience, this passes tool objects through.
+
+Parameters
+----------
+name : str or `.ToolBase`
+    Name of the tool, or the tool itself.
+warn : bool, default: True
+    Whether a warning should be emitted it no tool with the given name
+    exists.
+
+Returns
+-------
+`.ToolBase` or None
+    The tool or None if no tool with the given name exists.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_a18680c9b74a62aae5569481a0bc6f00e}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_a18680c9b74a62aae5569481a0bc6f00e}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!get\+\_\+tool\+\_\+keymap@{get\+\_\+tool\+\_\+keymap}}
+\index{get\+\_\+tool\+\_\+keymap@{get\+\_\+tool\+\_\+keymap}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+tool\+\_\+keymap()}{get\_tool\_keymap()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+get\+\_\+tool\+\_\+keymap (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the keymap associated with the specified tool.
+
+Parameters
+----------
+name : str
+    Name of the Tool.
+
+Returns
+-------
+list of str
+    List of keys associated with the tool.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_a2dee0fa838b2e1457c37f680569498ad}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_a2dee0fa838b2e1457c37f680569498ad}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!message\+\_\+event@{message\+\_\+event}}
+\index{message\+\_\+event@{message\+\_\+event}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{message\+\_\+event()}{message\_event()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+message\+\_\+event (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{message,  }\item[{}]{sender = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Emit a `ToolManagerMessageEvent`.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_a74762e8ff793ceca77b6b1b43ce84d3c}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_a74762e8ff793ceca77b6b1b43ce84d3c}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!remove\+\_\+tool@{remove\+\_\+tool}}
+\index{remove\+\_\+tool@{remove\+\_\+tool}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{remove\+\_\+tool()}{remove\_tool()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+remove\+\_\+tool (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove tool named *name*.
+
+Parameters
+----------
+name : str
+    Name of the tool.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_affec78f19af58a5c10f258f192a69a03}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_affec78f19af58a5c10f258f192a69a03}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!set\+\_\+figure@{set\+\_\+figure}}
+\index{set\+\_\+figure@{set\+\_\+figure}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{set\+\_\+figure()}{set\_figure()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+set\+\_\+figure (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure,  }\item[{}]{update\+\_\+tools = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Bind the given figure to the tools.
+
+Parameters
+----------
+figure : `.Figure`
+update_tools : bool, default: True
+    Force tools to update figure.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_afd9e0a90709887a79d39e55834f90225}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_afd9e0a90709887a79d39e55834f90225}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!toolmanager\+\_\+connect@{toolmanager\+\_\+connect}}
+\index{toolmanager\+\_\+connect@{toolmanager\+\_\+connect}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{toolmanager\+\_\+connect()}{toolmanager\_connect()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+toolmanager\+\_\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{s,  }\item[{}]{func }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Connect event with string *s* to *func*.
+
+Parameters
+----------
+s : str
+    The name of the event. The following events are recognized:
+
+    - 'tool_message_event'
+    - 'tool_removed_event'
+    - 'tool_added_event'
+
+    For every tool added a new event is created
+
+    - 'tool_trigger_TOOLNAME', where TOOLNAME is the id of the tool.
+
+func : callable
+    Callback function for the toolmanager event with signature::
+
+def func(event: ToolEvent) -> Any
+
+Returns
+-------
+cid
+    The callback id for the connection. This can be used in
+    `.toolmanager_disconnect`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_a99802a6ee6fa0ceab74d29c99f8a7019}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_a99802a6ee6fa0ceab74d29c99f8a7019}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!toolmanager\+\_\+disconnect@{toolmanager\+\_\+disconnect}}
+\index{toolmanager\+\_\+disconnect@{toolmanager\+\_\+disconnect}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{toolmanager\+\_\+disconnect()}{toolmanager\_disconnect()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+toolmanager\+\_\+disconnect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cid }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Disconnect callback id *cid*.
+
+Example usage::
+
+    cid = toolmanager.toolmanager_connect('tool_trigger_zoom', onpress)
+    #...later
+    toolmanager.toolmanager_disconnect(cid)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_aed974b1d9d043a81f94565fa32e5eda2}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_aed974b1d9d043a81f94565fa32e5eda2}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!tools@{tools}}
+\index{tools@{tools}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{tools()}{tools()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+tools (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A dict mapping tool name -> controlled tool.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_aa251334d40971469f162ff354045ebbc}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_aa251334d40971469f162ff354045ebbc}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!trigger\+\_\+tool@{trigger\+\_\+tool}}
+\index{trigger\+\_\+tool@{trigger\+\_\+tool}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{trigger\+\_\+tool()}{trigger\_tool()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+trigger\+\_\+tool (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{sender = {\ttfamily None},  }\item[{}]{canvasevent = {\ttfamily None},  }\item[{}]{data = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Trigger a tool and emit the ``tool_trigger_{name}`` event.
+
+Parameters
+----------
+name : str
+    Name of the tool.
+sender : object
+    Object that wishes to trigger the tool.
+canvasevent : Event
+    Original Canvas event or None.
+data : object
+    Extra data to pass to the tool when triggering.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_aff7f44850960745d2cead7d2ea7ede1d}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_aff7f44850960745d2cead7d2ea7ede1d}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!update\+\_\+keymap@{update\+\_\+keymap}}
+\index{update\+\_\+keymap@{update\+\_\+keymap}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{update\+\_\+keymap()}{update\_keymap()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+update\+\_\+keymap (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{key,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the keymap to associate with the specified tool.
+
+Parameters
+----------
+name : str
+    Name of the Tool.
+key : str or list of str
+    Keys to associate with the tool.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_a43e924a83290e3c015b1cfabe6f28acb}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_a43e924a83290e3c015b1cfabe6f28acb}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!keypresslock@{keypresslock}}
+\index{keypresslock@{keypresslock}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{keypresslock}{keypresslock}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+keypresslock}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__managers_1_1ToolManager_a43829822158e8ddbb92dc16f95a290e9}\label{classmatplotlib_1_1backend__managers_1_1ToolManager_a43829822158e8ddbb92dc16f95a290e9}} 
+\index{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}!messagelock@{messagelock}}
+\index{messagelock@{messagelock}!matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager@{matplotlib\+::backend\+\_\+managers\+::\+Tool\+Manager}}
+\subsubsection{\texorpdfstring{messagelock}{messagelock}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+managers.\+Tool\+Manager.\+messagelock}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{backend__managers_8py}{backend\+\_\+managers.\+py}\end{DoxyCompactItemize}

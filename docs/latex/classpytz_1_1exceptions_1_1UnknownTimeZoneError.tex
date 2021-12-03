@@ -1,0 +1,47 @@
+\hypertarget{classpytz_1_1exceptions_1_1UnknownTimeZoneError}{}\section{pytz.\+exceptions.\+Unknown\+Time\+Zone\+Error Class Reference}
+\label{classpytz_1_1exceptions_1_1UnknownTimeZoneError}\index{pytz.\+exceptions.\+Unknown\+Time\+Zone\+Error@{pytz.\+exceptions.\+Unknown\+Time\+Zone\+Error}}
+
+
+Inheritance diagram for pytz.\+exceptions.\+Unknown\+Time\+Zone\+Error\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classpytz_1_1exceptions_1_1UnknownTimeZoneError__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pytz.\+exceptions.\+Unknown\+Time\+Zone\+Error\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classpytz_1_1exceptions_1_1UnknownTimeZoneError__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Exception raised when pytz is passed an unknown timezone.
+
+>>> isinstance(UnknownTimeZoneError(), LookupError)
+True
+
+This class is actually a subclass of KeyError to provide backwards
+compatibility with code relying on the undocumented behavior of earlier
+pytz releases.
+
+>>> isinstance(UnknownTimeZoneError(), KeyError)
+True
+
+And also a subclass of pytz.exceptions.Error, as are other pytz
+exceptions.
+
+>>> isinstance(UnknownTimeZoneError(), Error)
+True\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pytz/\hyperlink{pytz_2exceptions_8py}{exceptions.\+py}\end{DoxyCompactItemize}

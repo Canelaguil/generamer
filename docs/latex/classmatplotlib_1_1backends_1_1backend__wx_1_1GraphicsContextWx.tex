@@ -1,0 +1,164 @@
+\hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx}{}\section{matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx Class Reference}
+\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx}\index{matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx@{matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx}}
+
+
+Inheritance diagram for matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a7b4313654f83ca9ac33eba0c54287033}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a370d510585ed6f61730dafb80c3bd0ae}{bitmap}, \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a88d17992a26fec774d73446719e7d44e}{renderer})
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a7a32c6e17ffbd23a055c164e0987bb76}{select} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a5138cf41e8ace3669d94d3b111c0a2fa}{unselect} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a5164419d76000c904ae57ff7cf292ca3}{set\+\_\+foreground} (self, fg, is\+R\+G\+BA=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_ab7f4b5a6717c4d10d5dd93a3ae87bf0a}{set\+\_\+linewidth} (self, w)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a0a76a337b699f191cd56f84b392a6183}{set\+\_\+capstyle} (self, cs)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a0e6b3ef07ef1faf99fff4d4c89d7d44e}{set\+\_\+joinstyle} (self, js)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_af01aed5b5c979ca88dac8e468044f9ab}{get\+\_\+wxcolour} (self, color)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a370d510585ed6f61730dafb80c3bd0ae}{bitmap}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a610ffd4265318b2ccbeb8ad44bbde3b9}{dc}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_aba2aefd5dff1fe8688856599ffd7615a}{gfx\+\_\+ctx}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a88d17992a26fec774d73446719e7d44e}{renderer}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_acc2b5e71d7657129a14d082aa441cc4c}{Is\+Selected}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The graphics context provides the color, line styles, etc...
+
+This class stores a reference to a wxMemoryDC, and a
+wxGraphicsContext that draws to it.  Creating a wxGraphicsContext
+seems to be fairly heavy, so these objects are cached based on the
+bitmap object that is passed in.
+
+The base GraphicsContext stores colors as a RGB tuple on the unit
+interval, e.g., (0.5, 0.0, 1.0).  wxPython uses an int interval, but
+since wxPython colour management is rather simple, I have not chosen
+to implement a separate colour manager class.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a7b4313654f83ca9ac33eba0c54287033}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a7b4313654f83ca9ac33eba0c54287033}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{bitmap,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_af01aed5b5c979ca88dac8e468044f9ab}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_af01aed5b5c979ca88dac8e468044f9ab}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!get\+\_\+wxcolour@{get\+\_\+wxcolour}}
+\index{get\+\_\+wxcolour@{get\+\_\+wxcolour}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{get\+\_\+wxcolour()}{get\_wxcolour()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+get\+\_\+wxcolour (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{color }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a RGB(A) color to a wx.Colour.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a7a32c6e17ffbd23a055c164e0987bb76}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a7a32c6e17ffbd23a055c164e0987bb76}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!select@{select}}
+\index{select@{select}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+select (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Select the current bitmap into this wxDC instance.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a0a76a337b699f191cd56f84b392a6183}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a0a76a337b699f191cd56f84b392a6183}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!set\+\_\+capstyle@{set\+\_\+capstyle}}
+\index{set\+\_\+capstyle@{set\+\_\+capstyle}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{set\+\_\+capstyle()}{set\_capstyle()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+set\+\_\+capstyle (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a5164419d76000c904ae57ff7cf292ca3}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a5164419d76000c904ae57ff7cf292ca3}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!set\+\_\+foreground@{set\+\_\+foreground}}
+\index{set\+\_\+foreground@{set\+\_\+foreground}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{set\+\_\+foreground()}{set\_foreground()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+set\+\_\+foreground (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fg,  }\item[{}]{is\+R\+G\+BA = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a0e6b3ef07ef1faf99fff4d4c89d7d44e}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a0e6b3ef07ef1faf99fff4d4c89d7d44e}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!set\+\_\+joinstyle@{set\+\_\+joinstyle}}
+\index{set\+\_\+joinstyle@{set\+\_\+joinstyle}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{set\+\_\+joinstyle()}{set\_joinstyle()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+set\+\_\+joinstyle (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{js }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_ab7f4b5a6717c4d10d5dd93a3ae87bf0a}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_ab7f4b5a6717c4d10d5dd93a3ae87bf0a}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!set\+\_\+linewidth@{set\+\_\+linewidth}}
+\index{set\+\_\+linewidth@{set\+\_\+linewidth}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{set\+\_\+linewidth()}{set\_linewidth()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+set\+\_\+linewidth (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{w }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a5138cf41e8ace3669d94d3b111c0a2fa}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a5138cf41e8ace3669d94d3b111c0a2fa}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!unselect@{unselect}}
+\index{unselect@{unselect}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{unselect()}{unselect()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+unselect (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Select a Null bitmap into this wxDC instance.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a370d510585ed6f61730dafb80c3bd0ae}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a370d510585ed6f61730dafb80c3bd0ae}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!bitmap@{bitmap}}
+\index{bitmap@{bitmap}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{bitmap}{bitmap}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+bitmap}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a610ffd4265318b2ccbeb8ad44bbde3b9}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a610ffd4265318b2ccbeb8ad44bbde3b9}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!dc@{dc}}
+\index{dc@{dc}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{dc}{dc}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+dc}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_aba2aefd5dff1fe8688856599ffd7615a}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_aba2aefd5dff1fe8688856599ffd7615a}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!gfx\+\_\+ctx@{gfx\+\_\+ctx}}
+\index{gfx\+\_\+ctx@{gfx\+\_\+ctx}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{gfx\+\_\+ctx}{gfx\_ctx}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+gfx\+\_\+ctx}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_acc2b5e71d7657129a14d082aa441cc4c}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_acc2b5e71d7657129a14d082aa441cc4c}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!Is\+Selected@{Is\+Selected}}
+\index{Is\+Selected@{Is\+Selected}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{Is\+Selected}{IsSelected}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+Is\+Selected}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a88d17992a26fec774d73446719e7d44e}\label{classmatplotlib_1_1backends_1_1backend__wx_1_1GraphicsContextWx_a88d17992a26fec774d73446719e7d44e}} 
+\index{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}!renderer@{renderer}}
+\index{renderer@{renderer}!matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx@{matplotlib\+::backends\+::backend\+\_\+wx\+::\+Graphics\+Context\+Wx}}
+\subsubsection{\texorpdfstring{renderer}{renderer}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+wx.\+Graphics\+Context\+Wx.\+renderer}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/backends/\hyperlink{backend__wx_8py}{backend\+\_\+wx.\+py}\end{DoxyCompactItemize}

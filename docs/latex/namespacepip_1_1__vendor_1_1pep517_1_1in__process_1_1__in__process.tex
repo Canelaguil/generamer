@@ -1,0 +1,193 @@
+\hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process}{}\section{pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process}\index{pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process@{pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_1_1__DummyException}{\+\_\+\+Dummy\+Exception}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_1_1BackendInvalid}{Backend\+Invalid}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_1_1BackendUnavailable}{Backend\+Unavailable}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_1_1GotUnsupportedOperation}{Got\+Unsupported\+Operation}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_1_1HookMissing}{Hook\+Missing}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ab48bc6fc9bd1a59f29eae2d24db65c1f}{write\+\_\+json} (obj, path, kwargs)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a64c825d95f3bcb1577abb669630bc601}{read\+\_\+json} (path)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_adf716c4edf860d489a33484c51c8af7c}{contained\+\_\+in} (filename, directory)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ac8a3be31af83d2760f667b7262bb6e87}{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel} (config\+\_\+settings)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a2e52ab5df66ab1385120dcc3c759c2b7}{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+editable} (config\+\_\+settings)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_aa97e573cd2afd965748be379151244a9}{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel} (metadata\+\_\+directory, config\+\_\+settings, \+\_\+allow\+\_\+fallback)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ad000b0abe88f62609918a280904bfb9f}{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+editable} (metadata\+\_\+directory, config\+\_\+settings, \+\_\+allow\+\_\+fallback)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ac813d26be56d2b42a422a70cff999e8b}{build\+\_\+wheel} (wheel\+\_\+directory, config\+\_\+settings, metadata\+\_\+directory=None)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a1f230783addb0a5913e9b10082c99eae}{build\+\_\+editable} (wheel\+\_\+directory, config\+\_\+settings, metadata\+\_\+directory=None)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_aad68dab66e561097182866e545c605ff}{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist} (config\+\_\+settings)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a722b4aae02171a873cbd83f4a5fcd5bf}{build\+\_\+sdist} (sdist\+\_\+directory, config\+\_\+settings)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ae97daa93f2d9720c34f1a7153e69281c}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_afbba219e2b44f8a28d6c519f0d64b2b6}{W\+H\+E\+E\+L\+\_\+\+B\+U\+I\+L\+T\+\_\+\+M\+A\+R\+K\+ER}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a45522484902bbab4ec054b2be2b5c501}{H\+O\+O\+K\+\_\+\+N\+A\+M\+ES}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This is invoked in a subprocess to call the build backend hooks.
+
+It expects:
+- Command line args: hook_name, control_dir
+- Environment variables:
+  PEP517_BUILD_BACKEND=entry.point:spec
+  PEP517_BACKEND_PATH=paths (separated with os.pathsep)
+- control_dir/input.json:
+  - {"kwargs": {...}}
+
+Results:
+- control_dir/output.json
+  - {"return_val": ...}
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a1f230783addb0a5913e9b10082c99eae}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a1f230783addb0a5913e9b10082c99eae}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!build\+\_\+editable@{build\+\_\+editable}}
+\index{build\+\_\+editable@{build\+\_\+editable}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{build\+\_\+editable()}{build\_editable()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+build\+\_\+editable (\begin{DoxyParamCaption}\item[{}]{wheel\+\_\+directory,  }\item[{}]{config\+\_\+settings,  }\item[{}]{metadata\+\_\+directory = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invoke the optional build_editable hook.
+
+If a wheel was already built in the
+prepare_metadata_for_build_editable fallback, this
+will copy it rather than rebuilding the wheel.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a722b4aae02171a873cbd83f4a5fcd5bf}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a722b4aae02171a873cbd83f4a5fcd5bf}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!build\+\_\+sdist@{build\+\_\+sdist}}
+\index{build\+\_\+sdist@{build\+\_\+sdist}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{build\+\_\+sdist()}{build\_sdist()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+build\+\_\+sdist (\begin{DoxyParamCaption}\item[{}]{sdist\+\_\+directory,  }\item[{}]{config\+\_\+settings }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invoke the mandatory build_sdist hook.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ac813d26be56d2b42a422a70cff999e8b}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ac813d26be56d2b42a422a70cff999e8b}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!build\+\_\+wheel@{build\+\_\+wheel}}
+\index{build\+\_\+wheel@{build\+\_\+wheel}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{build\+\_\+wheel()}{build\_wheel()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+build\+\_\+wheel (\begin{DoxyParamCaption}\item[{}]{wheel\+\_\+directory,  }\item[{}]{config\+\_\+settings,  }\item[{}]{metadata\+\_\+directory = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invoke the mandatory build_wheel hook.
+
+If a wheel was already built in the
+prepare_metadata_for_build_wheel fallback, this
+will copy it rather than rebuilding the wheel.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_adf716c4edf860d489a33484c51c8af7c}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_adf716c4edf860d489a33484c51c8af7c}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!contained\+\_\+in@{contained\+\_\+in}}
+\index{contained\+\_\+in@{contained\+\_\+in}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{contained\+\_\+in()}{contained\_in()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+contained\+\_\+in (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{directory }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test if a file is located within the given directory.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a2e52ab5df66ab1385120dcc3c759c2b7}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a2e52ab5df66ab1385120dcc3c759c2b7}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!get\+\_\+requires\+\_\+for\+\_\+build\+\_\+editable@{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+editable}}
+\index{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+editable@{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+editable}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+editable()}{get\_requires\_for\_build\_editable()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+get\+\_\+requires\+\_\+for\+\_\+build\+\_\+editable (\begin{DoxyParamCaption}\item[{}]{config\+\_\+settings }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invoke the optional get_requires_for_build_editable hook
+
+Returns [] if the hook is not defined.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_aad68dab66e561097182866e545c605ff}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_aad68dab66e561097182866e545c605ff}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist@{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist}}
+\index{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist@{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist()}{get\_requires\_for\_build\_sdist()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+get\+\_\+requires\+\_\+for\+\_\+build\+\_\+sdist (\begin{DoxyParamCaption}\item[{}]{config\+\_\+settings }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invoke the optional get_requires_for_build_wheel hook
+
+Returns [] if the hook is not defined.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ac8a3be31af83d2760f667b7262bb6e87}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ac8a3be31af83d2760f667b7262bb6e87}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel@{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel}}
+\index{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel@{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel()}{get\_requires\_for\_build\_wheel()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+get\+\_\+requires\+\_\+for\+\_\+build\+\_\+wheel (\begin{DoxyParamCaption}\item[{}]{config\+\_\+settings }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invoke the optional get_requires_for_build_wheel hook
+
+Returns [] if the hook is not defined.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ae97daa93f2d9720c34f1a7153e69281c}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ae97daa93f2d9720c34f1a7153e69281c}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!main@{main}}
+\index{main@{main}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ad000b0abe88f62609918a280904bfb9f}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ad000b0abe88f62609918a280904bfb9f}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+editable@{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+editable}}
+\index{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+editable@{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+editable}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+editable()}{prepare\_metadata\_for\_build\_editable()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+editable (\begin{DoxyParamCaption}\item[{}]{metadata\+\_\+directory,  }\item[{}]{config\+\_\+settings,  }\item[{}]{\+\_\+allow\+\_\+fallback }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invoke optional prepare_metadata_for_build_editable
+
+Implements a fallback by building an editable wheel if the hook isn't
+defined, unless _allow_fallback is False in which case HookMissing is
+raised.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_aa97e573cd2afd965748be379151244a9}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_aa97e573cd2afd965748be379151244a9}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel@{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel}}
+\index{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel@{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel()}{prepare\_metadata\_for\_build\_wheel()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+prepare\+\_\+metadata\+\_\+for\+\_\+build\+\_\+wheel (\begin{DoxyParamCaption}\item[{}]{metadata\+\_\+directory,  }\item[{}]{config\+\_\+settings,  }\item[{}]{\+\_\+allow\+\_\+fallback }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invoke optional prepare_metadata_for_build_wheel
+
+Implements a fallback by building a wheel if the hook isn't defined,
+unless _allow_fallback is False in which case HookMissing is raised.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a64c825d95f3bcb1577abb669630bc601}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a64c825d95f3bcb1577abb669630bc601}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!read\+\_\+json@{read\+\_\+json}}
+\index{read\+\_\+json@{read\+\_\+json}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{read\+\_\+json()}{read\_json()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+read\+\_\+json (\begin{DoxyParamCaption}\item[{}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ab48bc6fc9bd1a59f29eae2d24db65c1f}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_ab48bc6fc9bd1a59f29eae2d24db65c1f}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!write\+\_\+json@{write\+\_\+json}}
+\index{write\+\_\+json@{write\+\_\+json}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{write\+\_\+json()}{write\_json()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+write\+\_\+json (\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{path,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a45522484902bbab4ec054b2be2b5c501}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_a45522484902bbab4ec054b2be2b5c501}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!H\+O\+O\+K\+\_\+\+N\+A\+M\+ES@{H\+O\+O\+K\+\_\+\+N\+A\+M\+ES}}
+\index{H\+O\+O\+K\+\_\+\+N\+A\+M\+ES@{H\+O\+O\+K\+\_\+\+N\+A\+M\+ES}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{H\+O\+O\+K\+\_\+\+N\+A\+M\+ES}{HOOK\_NAMES}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+H\+O\+O\+K\+\_\+\+N\+A\+M\+ES}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_afbba219e2b44f8a28d6c519f0d64b2b6}\label{namespacepip_1_1__vendor_1_1pep517_1_1in__process_1_1__in__process_afbba219e2b44f8a28d6c519f0d64b2b6}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}!W\+H\+E\+E\+L\+\_\+\+B\+U\+I\+L\+T\+\_\+\+M\+A\+R\+K\+ER@{W\+H\+E\+E\+L\+\_\+\+B\+U\+I\+L\+T\+\_\+\+M\+A\+R\+K\+ER}}
+\index{W\+H\+E\+E\+L\+\_\+\+B\+U\+I\+L\+T\+\_\+\+M\+A\+R\+K\+ER@{W\+H\+E\+E\+L\+\_\+\+B\+U\+I\+L\+T\+\_\+\+M\+A\+R\+K\+ER}!pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process@{pip\+::\+\_\+vendor\+::pep517\+::in\+\_\+process\+::\+\_\+in\+\_\+process}}
+\subsubsection{\texorpdfstring{W\+H\+E\+E\+L\+\_\+\+B\+U\+I\+L\+T\+\_\+\+M\+A\+R\+K\+ER}{WHEEL\_BUILT\_MARKER}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pep517.\+in\+\_\+process.\+\_\+in\+\_\+process.\+W\+H\+E\+E\+L\+\_\+\+B\+U\+I\+L\+T\+\_\+\+M\+A\+R\+K\+ER}
+

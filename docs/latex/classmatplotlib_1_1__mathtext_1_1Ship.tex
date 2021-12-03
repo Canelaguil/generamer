@@ -1,0 +1,113 @@
+\hypertarget{classmatplotlib_1_1__mathtext_1_1Ship}{}\section{matplotlib.\+\_\+mathtext.\+Ship Class Reference}
+\label{classmatplotlib_1_1__mathtext_1_1Ship}\index{matplotlib.\+\_\+mathtext.\+Ship@{matplotlib.\+\_\+mathtext.\+Ship}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Ship_add689aa1829478359ac56e36493db01a}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, ox, oy, box)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Ship_a14ae87f573e23ad0d753b22f515ccf36}{hlist\+\_\+out} (self, box)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Ship_a344387d7af078a53ae7e0f60e65ccfa1}{vlist\+\_\+out} (self, box)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Ship_a53454355065ac2443cf24429e8753390}{clamp} (value)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Ship_ad0d3a291c809db00cc0e4f2032e9b0fe}{max\+\_\+push}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Ship_aeeb01621889222c8c938180d2be15b54}{cur\+\_\+s}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Ship_a2af3dff86d577eb845bdd5ffd128a734}{cur\+\_\+v}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Ship_a36108bf51e5f8e0c12781f9b9f0cddcf}{cur\+\_\+h}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Ship_a151527dd71f22d7e0d308eba9759cc4e}{off\+\_\+h}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Ship_a15dd6a262df58b74f0daf2377dce6b0b}{off\+\_\+v}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Ship boxes to output once they have been set up, this sends them to output.
+
+Since boxes can be inside of boxes inside of boxes, the main work of `Ship`
+is done by two mutually recursive routines, `hlist_out` and `vlist_out`,
+which traverse the `Hlist` nodes and `Vlist` nodes inside of horizontal
+and vertical boxes.  The global variables used in TeX to store state as it
+processes have become member variables here.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Ship_add689aa1829478359ac56e36493db01a}\label{classmatplotlib_1_1__mathtext_1_1Ship_add689aa1829478359ac56e36493db01a}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Ship.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ox,  }\item[{}]{oy,  }\item[{}]{box }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Ship_a53454355065ac2443cf24429e8753390}\label{classmatplotlib_1_1__mathtext_1_1Ship_a53454355065ac2443cf24429e8753390}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}!clamp@{clamp}}
+\index{clamp@{clamp}!matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}}
+\subsubsection{\texorpdfstring{clamp()}{clamp()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Ship.\+clamp (\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Ship_a14ae87f573e23ad0d753b22f515ccf36}\label{classmatplotlib_1_1__mathtext_1_1Ship_a14ae87f573e23ad0d753b22f515ccf36}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}!hlist\+\_\+out@{hlist\+\_\+out}}
+\index{hlist\+\_\+out@{hlist\+\_\+out}!matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}}
+\subsubsection{\texorpdfstring{hlist\+\_\+out()}{hlist\_out()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Ship.\+hlist\+\_\+out (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{box }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Ship_a344387d7af078a53ae7e0f60e65ccfa1}\label{classmatplotlib_1_1__mathtext_1_1Ship_a344387d7af078a53ae7e0f60e65ccfa1}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}!vlist\+\_\+out@{vlist\+\_\+out}}
+\index{vlist\+\_\+out@{vlist\+\_\+out}!matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}}
+\subsubsection{\texorpdfstring{vlist\+\_\+out()}{vlist\_out()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Ship.\+vlist\+\_\+out (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{box }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Ship_a36108bf51e5f8e0c12781f9b9f0cddcf}\label{classmatplotlib_1_1__mathtext_1_1Ship_a36108bf51e5f8e0c12781f9b9f0cddcf}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}!cur\+\_\+h@{cur\+\_\+h}}
+\index{cur\+\_\+h@{cur\+\_\+h}!matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}}
+\subsubsection{\texorpdfstring{cur\+\_\+h}{cur\_h}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Ship.\+cur\+\_\+h}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Ship_aeeb01621889222c8c938180d2be15b54}\label{classmatplotlib_1_1__mathtext_1_1Ship_aeeb01621889222c8c938180d2be15b54}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}!cur\+\_\+s@{cur\+\_\+s}}
+\index{cur\+\_\+s@{cur\+\_\+s}!matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}}
+\subsubsection{\texorpdfstring{cur\+\_\+s}{cur\_s}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Ship.\+cur\+\_\+s}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Ship_a2af3dff86d577eb845bdd5ffd128a734}\label{classmatplotlib_1_1__mathtext_1_1Ship_a2af3dff86d577eb845bdd5ffd128a734}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}!cur\+\_\+v@{cur\+\_\+v}}
+\index{cur\+\_\+v@{cur\+\_\+v}!matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}}
+\subsubsection{\texorpdfstring{cur\+\_\+v}{cur\_v}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Ship.\+cur\+\_\+v}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Ship_ad0d3a291c809db00cc0e4f2032e9b0fe}\label{classmatplotlib_1_1__mathtext_1_1Ship_ad0d3a291c809db00cc0e4f2032e9b0fe}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}!max\+\_\+push@{max\+\_\+push}}
+\index{max\+\_\+push@{max\+\_\+push}!matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}}
+\subsubsection{\texorpdfstring{max\+\_\+push}{max\_push}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Ship.\+max\+\_\+push}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Ship_a151527dd71f22d7e0d308eba9759cc4e}\label{classmatplotlib_1_1__mathtext_1_1Ship_a151527dd71f22d7e0d308eba9759cc4e}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}!off\+\_\+h@{off\+\_\+h}}
+\index{off\+\_\+h@{off\+\_\+h}!matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}}
+\subsubsection{\texorpdfstring{off\+\_\+h}{off\_h}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Ship.\+off\+\_\+h}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Ship_a15dd6a262df58b74f0daf2377dce6b0b}\label{classmatplotlib_1_1__mathtext_1_1Ship_a15dd6a262df58b74f0daf2377dce6b0b}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}!off\+\_\+v@{off\+\_\+v}}
+\index{off\+\_\+v@{off\+\_\+v}!matplotlib\+::\+\_\+mathtext\+::\+Ship@{matplotlib\+::\+\_\+mathtext\+::\+Ship}}
+\subsubsection{\texorpdfstring{off\+\_\+v}{off\_v}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Ship.\+off\+\_\+v}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{__mathtext_8py}{\+\_\+mathtext.\+py}\end{DoxyCompactItemize}

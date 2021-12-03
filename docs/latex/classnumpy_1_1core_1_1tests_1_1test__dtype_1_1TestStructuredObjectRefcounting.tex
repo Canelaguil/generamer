@@ -1,0 +1,72 @@
+\hypertarget{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting}{}\section{numpy.\+core.\+tests.\+test\+\_\+dtype.\+Test\+Structured\+Object\+Refcounting Class Reference}
+\label{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting}\index{numpy.\+core.\+tests.\+test\+\_\+dtype.\+Test\+Structured\+Object\+Refcounting@{numpy.\+core.\+tests.\+test\+\_\+dtype.\+Test\+Structured\+Object\+Refcounting}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_a37512433dd04b39800a8c92610c57053}{test\+\_\+structured\+\_\+object\+\_\+create\+\_\+delete} (self, dt, pat, count, singleton, creation\+\_\+func, creation\+\_\+obj)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_a26d2a38fd49f215b5c6da9a5863cd05e}{test\+\_\+structured\+\_\+object\+\_\+item\+\_\+setting} (self, dt, pat, count, singleton)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_acf2144ab4d6416b6252c319a1083bf7c}{test\+\_\+structured\+\_\+object\+\_\+indexing} (self, shape, index, items\+\_\+changed, dt, pat, count, singleton)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_aecd47eba12fa495ebefecd8d3adb6f8e}{test\+\_\+structured\+\_\+object\+\_\+take\+\_\+and\+\_\+repeat} (self, dt, pat, count, singleton)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_a85e7a93f63811dbea44ec0de506bb316}{marks}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}These tests cover various uses of complicated structured types which
+include objects and thus require reference counting.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_a37512433dd04b39800a8c92610c57053}\label{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_a37512433dd04b39800a8c92610c57053}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting@{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting}!test\+\_\+structured\+\_\+object\+\_\+create\+\_\+delete@{test\+\_\+structured\+\_\+object\+\_\+create\+\_\+delete}}
+\index{test\+\_\+structured\+\_\+object\+\_\+create\+\_\+delete@{test\+\_\+structured\+\_\+object\+\_\+create\+\_\+delete}!numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting@{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting}}
+\subsubsection{\texorpdfstring{test\+\_\+structured\+\_\+object\+\_\+create\+\_\+delete()}{test\_structured\_object\_create\_delete()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+dtype.\+Test\+Structured\+Object\+Refcounting.\+test\+\_\+structured\+\_\+object\+\_\+create\+\_\+delete (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dt,  }\item[{}]{pat,  }\item[{}]{count,  }\item[{}]{singleton,  }\item[{}]{creation\+\_\+func,  }\item[{}]{creation\+\_\+obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Structured object reference counting in creation and deletion\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_acf2144ab4d6416b6252c319a1083bf7c}\label{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_acf2144ab4d6416b6252c319a1083bf7c}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting@{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting}!test\+\_\+structured\+\_\+object\+\_\+indexing@{test\+\_\+structured\+\_\+object\+\_\+indexing}}
+\index{test\+\_\+structured\+\_\+object\+\_\+indexing@{test\+\_\+structured\+\_\+object\+\_\+indexing}!numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting@{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting}}
+\subsubsection{\texorpdfstring{test\+\_\+structured\+\_\+object\+\_\+indexing()}{test\_structured\_object\_indexing()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+dtype.\+Test\+Structured\+Object\+Refcounting.\+test\+\_\+structured\+\_\+object\+\_\+indexing (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{shape,  }\item[{}]{index,  }\item[{}]{items\+\_\+changed,  }\item[{}]{dt,  }\item[{}]{pat,  }\item[{}]{count,  }\item[{}]{singleton }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Structured object reference counting for advanced indexing.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_a26d2a38fd49f215b5c6da9a5863cd05e}\label{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_a26d2a38fd49f215b5c6da9a5863cd05e}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting@{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting}!test\+\_\+structured\+\_\+object\+\_\+item\+\_\+setting@{test\+\_\+structured\+\_\+object\+\_\+item\+\_\+setting}}
+\index{test\+\_\+structured\+\_\+object\+\_\+item\+\_\+setting@{test\+\_\+structured\+\_\+object\+\_\+item\+\_\+setting}!numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting@{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting}}
+\subsubsection{\texorpdfstring{test\+\_\+structured\+\_\+object\+\_\+item\+\_\+setting()}{test\_structured\_object\_item\_setting()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+dtype.\+Test\+Structured\+Object\+Refcounting.\+test\+\_\+structured\+\_\+object\+\_\+item\+\_\+setting (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dt,  }\item[{}]{pat,  }\item[{}]{count,  }\item[{}]{singleton }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Structured object reference counting for simple item setting\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_aecd47eba12fa495ebefecd8d3adb6f8e}\label{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_aecd47eba12fa495ebefecd8d3adb6f8e}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting@{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting}!test\+\_\+structured\+\_\+object\+\_\+take\+\_\+and\+\_\+repeat@{test\+\_\+structured\+\_\+object\+\_\+take\+\_\+and\+\_\+repeat}}
+\index{test\+\_\+structured\+\_\+object\+\_\+take\+\_\+and\+\_\+repeat@{test\+\_\+structured\+\_\+object\+\_\+take\+\_\+and\+\_\+repeat}!numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting@{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting}}
+\subsubsection{\texorpdfstring{test\+\_\+structured\+\_\+object\+\_\+take\+\_\+and\+\_\+repeat()}{test\_structured\_object\_take\_and\_repeat()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+dtype.\+Test\+Structured\+Object\+Refcounting.\+test\+\_\+structured\+\_\+object\+\_\+take\+\_\+and\+\_\+repeat (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dt,  }\item[{}]{pat,  }\item[{}]{count,  }\item[{}]{singleton }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Structured object reference counting for specialized functions.
+The older functions such as take and repeat use different code paths
+then item setting (when writing this).
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_a85e7a93f63811dbea44ec0de506bb316}\label{classnumpy_1_1core_1_1tests_1_1test__dtype_1_1TestStructuredObjectRefcounting_a85e7a93f63811dbea44ec0de506bb316}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting@{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting}!marks@{marks}}
+\index{marks@{marks}!numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting@{numpy\+::core\+::tests\+::test\+\_\+dtype\+::\+Test\+Structured\+Object\+Refcounting}}
+\subsubsection{\texorpdfstring{marks}{marks}}
+{\footnotesize\ttfamily numpy.\+core.\+tests.\+test\+\_\+dtype.\+Test\+Structured\+Object\+Refcounting.\+marks\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/core/tests/\hyperlink{test__dtype_8py}{test\+\_\+dtype.\+py}\end{DoxyCompactItemize}

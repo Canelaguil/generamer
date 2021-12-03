@@ -1,0 +1,126 @@
+\hypertarget{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev}{}\section{numpy.\+polynomial.\+chebyshev.\+Chebyshev Class Reference}
+\label{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev}\index{numpy.\+polynomial.\+chebyshev.\+Chebyshev@{numpy.\+polynomial.\+chebyshev.\+Chebyshev}}
+
+
+Inheritance diagram for numpy.\+polynomial.\+chebyshev.\+Chebyshev\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+polynomial.\+chebyshev.\+Chebyshev\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_ab13e941fd82e439d55cca84f1634db0d}{interpolate} (cls, func, deg, \hyperlink{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_a407a7e4ab7716431158d269d9ea7204f}{domain}=None, args=())
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_a407a7e4ab7716431158d269d9ea7204f}{domain}
+\item 
+\hyperlink{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_a3f8e65f8634d1f0cbed3de58b6c55367}{window}
+\item 
+\hyperlink{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_ae3f25afc1709d085936ac89fea3c7e29}{basis\+\_\+name}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A Chebyshev series class.
+
+The Chebyshev class provides the standard Python numerical methods
+'+', '-', '*', '//', '%', 'divmod', '**', and '()' as well as the
+methods listed below.
+
+Parameters
+----------
+coef : array_like
+    Chebyshev coefficients in order of increasing degree, i.e.,
+    ``(1, 2, 3)`` gives ``1*T_0(x) + 2*T_1(x) + 3*T_2(x)``.
+domain : (2,) array_like, optional
+    Domain to use. The interval ``[domain[0], domain[1]]`` is mapped
+    to the interval ``[window[0], window[1]]`` by shifting and scaling.
+    The default value is [-1, 1].
+window : (2,) array_like, optional
+    Window, see `domain` for its use. The default value is [-1, 1].
+
+    .. versionadded:: 1.6.0\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_ab13e941fd82e439d55cca84f1634db0d}\label{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_ab13e941fd82e439d55cca84f1634db0d}} 
+\index{numpy\+::polynomial\+::chebyshev\+::\+Chebyshev@{numpy\+::polynomial\+::chebyshev\+::\+Chebyshev}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!numpy\+::polynomial\+::chebyshev\+::\+Chebyshev@{numpy\+::polynomial\+::chebyshev\+::\+Chebyshev}}
+\subsubsection{\texorpdfstring{interpolate()}{interpolate()}}
+{\footnotesize\ttfamily def numpy.\+polynomial.\+chebyshev.\+Chebyshev.\+interpolate (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{func,  }\item[{}]{deg,  }\item[{}]{domain = {\ttfamily None},  }\item[{}]{args = {\ttfamily ()} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Interpolate a function at the Chebyshev points of the first kind.
+
+Returns the series that interpolates `func` at the Chebyshev points of
+the first kind scaled and shifted to the `domain`. The resulting series
+tends to a minmax approximation of `func` when the function is
+continuous in the domain.
+
+.. versionadded:: 1.14.0
+
+Parameters
+----------
+func : function
+    The function to be interpolated. It must be a function of a single
+    variable of the form ``f(x, a, b, c...)``, where ``a, b, c...`` are
+    extra arguments passed in the `args` parameter.
+deg : int
+    Degree of the interpolating polynomial.
+domain : {None, [beg, end]}, optional
+    Domain over which `func` is interpolated. The default is None, in
+    which case the domain is [-1, 1].
+args : tuple, optional
+    Extra arguments to be used in the function call. Default is no
+    extra arguments.
+
+Returns
+-------
+polynomial : Chebyshev instance
+    Interpolating Chebyshev instance.
+
+Notes
+-----
+See `numpy.polynomial.chebfromfunction` for more details.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_ae3f25afc1709d085936ac89fea3c7e29}\label{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_ae3f25afc1709d085936ac89fea3c7e29}} 
+\index{numpy\+::polynomial\+::chebyshev\+::\+Chebyshev@{numpy\+::polynomial\+::chebyshev\+::\+Chebyshev}!basis\+\_\+name@{basis\+\_\+name}}
+\index{basis\+\_\+name@{basis\+\_\+name}!numpy\+::polynomial\+::chebyshev\+::\+Chebyshev@{numpy\+::polynomial\+::chebyshev\+::\+Chebyshev}}
+\subsubsection{\texorpdfstring{basis\+\_\+name}{basis\_name}}
+{\footnotesize\ttfamily numpy.\+polynomial.\+chebyshev.\+Chebyshev.\+basis\+\_\+name\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_a407a7e4ab7716431158d269d9ea7204f}\label{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_a407a7e4ab7716431158d269d9ea7204f}} 
+\index{numpy\+::polynomial\+::chebyshev\+::\+Chebyshev@{numpy\+::polynomial\+::chebyshev\+::\+Chebyshev}!domain@{domain}}
+\index{domain@{domain}!numpy\+::polynomial\+::chebyshev\+::\+Chebyshev@{numpy\+::polynomial\+::chebyshev\+::\+Chebyshev}}
+\subsubsection{\texorpdfstring{domain}{domain}}
+{\footnotesize\ttfamily numpy.\+polynomial.\+chebyshev.\+Chebyshev.\+domain\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_a3f8e65f8634d1f0cbed3de58b6c55367}\label{classnumpy_1_1polynomial_1_1chebyshev_1_1Chebyshev_a3f8e65f8634d1f0cbed3de58b6c55367}} 
+\index{numpy\+::polynomial\+::chebyshev\+::\+Chebyshev@{numpy\+::polynomial\+::chebyshev\+::\+Chebyshev}!window@{window}}
+\index{window@{window}!numpy\+::polynomial\+::chebyshev\+::\+Chebyshev@{numpy\+::polynomial\+::chebyshev\+::\+Chebyshev}}
+\subsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily numpy.\+polynomial.\+chebyshev.\+Chebyshev.\+window\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/polynomial/\hyperlink{chebyshev_8py}{chebyshev.\+py}\end{DoxyCompactItemize}

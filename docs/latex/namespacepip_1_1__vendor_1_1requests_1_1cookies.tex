@@ -1,0 +1,110 @@
+\hypertarget{namespacepip_1_1__vendor_1_1requests_1_1cookies}{}\section{pip.\+\_\+vendor.\+requests.\+cookies Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1requests_1_1cookies}\index{pip.\+\_\+vendor.\+requests.\+cookies@{pip.\+\_\+vendor.\+requests.\+cookies}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1CookieConflictError}{Cookie\+Conflict\+Error}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockRequest}{Mock\+Request}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1MockResponse}{Mock\+Response}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1requests_1_1cookies_1_1RequestsCookieJar}{Requests\+Cookie\+Jar}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1requests_1_1cookies_abc928d5e92aa070fc82f0f2fe72b9623}{extract\+\_\+cookies\+\_\+to\+\_\+jar} (jar, request, response)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1requests_1_1cookies_a27286c78be1686546e6305b4928cdcc1}{get\+\_\+cookie\+\_\+header} (jar, request)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1requests_1_1cookies_a05b3875ddaca8156cc9d6396a286c345}{remove\+\_\+cookie\+\_\+by\+\_\+name} (cookiejar, name, domain=None, path=None)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1requests_1_1cookies_ac97dc5eec2b7eb65c19f4b765074cc84}{create\+\_\+cookie} (name, value, kwargs)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1requests_1_1cookies_a16d4078d6417c36bb680beebac684d0d}{morsel\+\_\+to\+\_\+cookie} (morsel)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1requests_1_1cookies_abf7f7a7f3d49a7ebbf612ebfe497df33}{cookiejar\+\_\+from\+\_\+dict} (cookie\+\_\+dict, cookiejar=None, overwrite=True)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1requests_1_1cookies_afd7e21f17ae60f422857d8f169c9c41f}{merge\+\_\+cookies} (cookiejar, cookies)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1requests_1_1cookies_abf7f7a7f3d49a7ebbf612ebfe497df33}\label{namespacepip_1_1__vendor_1_1requests_1_1cookies_abf7f7a7f3d49a7ebbf612ebfe497df33}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}!cookiejar\+\_\+from\+\_\+dict@{cookiejar\+\_\+from\+\_\+dict}}
+\index{cookiejar\+\_\+from\+\_\+dict@{cookiejar\+\_\+from\+\_\+dict}!pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}}
+\subsubsection{\texorpdfstring{cookiejar\+\_\+from\+\_\+dict()}{cookiejar\_from\_dict()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+cookiejar\+\_\+from\+\_\+dict (\begin{DoxyParamCaption}\item[{}]{cookie\+\_\+dict,  }\item[{}]{cookiejar = {\ttfamily None},  }\item[{}]{overwrite = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a CookieJar from a key/value dictionary.
+
+:param cookie_dict: Dict of key/values to insert into CookieJar.
+:param cookiejar: (optional) A cookiejar to add the cookies to.
+:param overwrite: (optional) If False, will not replace cookies
+    already in the jar with new ones.
+:rtype: CookieJar
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1requests_1_1cookies_ac97dc5eec2b7eb65c19f4b765074cc84}\label{namespacepip_1_1__vendor_1_1requests_1_1cookies_ac97dc5eec2b7eb65c19f4b765074cc84}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}!create\+\_\+cookie@{create\+\_\+cookie}}
+\index{create\+\_\+cookie@{create\+\_\+cookie}!pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}}
+\subsubsection{\texorpdfstring{create\+\_\+cookie()}{create\_cookie()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+create\+\_\+cookie (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{value,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make a cookie from underspecified parameters.
+
+By default, the pair of `name` and `value` will be set for the domain ''
+and sent on every request (this is sometimes called a "supercookie").
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1requests_1_1cookies_abc928d5e92aa070fc82f0f2fe72b9623}\label{namespacepip_1_1__vendor_1_1requests_1_1cookies_abc928d5e92aa070fc82f0f2fe72b9623}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}!extract\+\_\+cookies\+\_\+to\+\_\+jar@{extract\+\_\+cookies\+\_\+to\+\_\+jar}}
+\index{extract\+\_\+cookies\+\_\+to\+\_\+jar@{extract\+\_\+cookies\+\_\+to\+\_\+jar}!pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}}
+\subsubsection{\texorpdfstring{extract\+\_\+cookies\+\_\+to\+\_\+jar()}{extract\_cookies\_to\_jar()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+extract\+\_\+cookies\+\_\+to\+\_\+jar (\begin{DoxyParamCaption}\item[{}]{jar,  }\item[{}]{request,  }\item[{}]{response }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extract the cookies from the response into a CookieJar.
+
+:param jar: cookielib.CookieJar (not necessarily a RequestsCookieJar)
+:param request: our own requests.Request object
+:param response: urllib3.HTTPResponse object
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1requests_1_1cookies_a27286c78be1686546e6305b4928cdcc1}\label{namespacepip_1_1__vendor_1_1requests_1_1cookies_a27286c78be1686546e6305b4928cdcc1}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}!get\+\_\+cookie\+\_\+header@{get\+\_\+cookie\+\_\+header}}
+\index{get\+\_\+cookie\+\_\+header@{get\+\_\+cookie\+\_\+header}!pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}}
+\subsubsection{\texorpdfstring{get\+\_\+cookie\+\_\+header()}{get\_cookie\_header()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+get\+\_\+cookie\+\_\+header (\begin{DoxyParamCaption}\item[{}]{jar,  }\item[{}]{request }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Produce an appropriate Cookie header string to be sent with `request`, or None.
+
+:rtype: str
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1requests_1_1cookies_afd7e21f17ae60f422857d8f169c9c41f}\label{namespacepip_1_1__vendor_1_1requests_1_1cookies_afd7e21f17ae60f422857d8f169c9c41f}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}!merge\+\_\+cookies@{merge\+\_\+cookies}}
+\index{merge\+\_\+cookies@{merge\+\_\+cookies}!pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}}
+\subsubsection{\texorpdfstring{merge\+\_\+cookies()}{merge\_cookies()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+merge\+\_\+cookies (\begin{DoxyParamCaption}\item[{}]{cookiejar,  }\item[{}]{cookies }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add cookies to cookiejar and returns a merged CookieJar.
+
+:param cookiejar: CookieJar object to add the cookies to.
+:param cookies: Dictionary or CookieJar object to be added.
+:rtype: CookieJar
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1requests_1_1cookies_a16d4078d6417c36bb680beebac684d0d}\label{namespacepip_1_1__vendor_1_1requests_1_1cookies_a16d4078d6417c36bb680beebac684d0d}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}!morsel\+\_\+to\+\_\+cookie@{morsel\+\_\+to\+\_\+cookie}}
+\index{morsel\+\_\+to\+\_\+cookie@{morsel\+\_\+to\+\_\+cookie}!pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}}
+\subsubsection{\texorpdfstring{morsel\+\_\+to\+\_\+cookie()}{morsel\_to\_cookie()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+morsel\+\_\+to\+\_\+cookie (\begin{DoxyParamCaption}\item[{}]{morsel }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a Morsel object into a Cookie containing the one k/v pair.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1requests_1_1cookies_a05b3875ddaca8156cc9d6396a286c345}\label{namespacepip_1_1__vendor_1_1requests_1_1cookies_a05b3875ddaca8156cc9d6396a286c345}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}!remove\+\_\+cookie\+\_\+by\+\_\+name@{remove\+\_\+cookie\+\_\+by\+\_\+name}}
+\index{remove\+\_\+cookie\+\_\+by\+\_\+name@{remove\+\_\+cookie\+\_\+by\+\_\+name}!pip\+::\+\_\+vendor\+::requests\+::cookies@{pip\+::\+\_\+vendor\+::requests\+::cookies}}
+\subsubsection{\texorpdfstring{remove\+\_\+cookie\+\_\+by\+\_\+name()}{remove\_cookie\_by\_name()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+cookies.\+remove\+\_\+cookie\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{}]{cookiejar,  }\item[{}]{name,  }\item[{}]{domain = {\ttfamily None},  }\item[{}]{path = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Unsets a cookie by name, by default over all domains and paths.
+
+Wraps CookieJar.clear(), is O(n).
+\end{DoxyVerb}
+ 

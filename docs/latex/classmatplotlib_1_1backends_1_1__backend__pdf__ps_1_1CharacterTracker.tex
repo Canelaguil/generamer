@@ -1,0 +1,72 @@
+\hypertarget{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker}{}\section{matplotlib.\+backends.\+\_\+backend\+\_\+pdf\+\_\+ps.\+Character\+Tracker Class Reference}
+\label{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker}\index{matplotlib.\+backends.\+\_\+backend\+\_\+pdf\+\_\+ps.\+Character\+Tracker@{matplotlib.\+backends.\+\_\+backend\+\_\+pdf\+\_\+ps.\+Character\+Tracker}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_a8a5b0d2f742231dbf9f65529acf830f7}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_a260571ac34a09b8714101ba15cea903f}{used\+\_\+characters} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_ae4275527abf40055927a12ed848d64aa}{track} (self, font, s)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_a988ed3a0d0ffff56c2379987402d1a3d}{merge} (self, other)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_a5cea4a78fc820ecadde9192788950415}{used}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Helper for font subsetting by the pdf and ps backends.
+
+Maintains a mapping of font paths to the set of character codepoints that
+are being used from that font.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_a8a5b0d2f742231dbf9f65529acf830f7}\label{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_a8a5b0d2f742231dbf9f65529acf830f7}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker@{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker@{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+pdf\+\_\+ps.\+Character\+Tracker.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_a988ed3a0d0ffff56c2379987402d1a3d}\label{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_a988ed3a0d0ffff56c2379987402d1a3d}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker@{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker}!merge@{merge}}
+\index{merge@{merge}!matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker@{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker}}
+\subsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+pdf\+\_\+ps.\+Character\+Tracker.\+merge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update self with a font path to character codepoints.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_ae4275527abf40055927a12ed848d64aa}\label{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_ae4275527abf40055927a12ed848d64aa}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker@{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker}!track@{track}}
+\index{track@{track}!matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker@{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker}}
+\subsubsection{\texorpdfstring{track()}{track()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+pdf\+\_\+ps.\+Character\+Tracker.\+track (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{font,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Record that string *s* is being typeset using font *font*.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_a260571ac34a09b8714101ba15cea903f}\label{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_a260571ac34a09b8714101ba15cea903f}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker@{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker}!used\+\_\+characters@{used\+\_\+characters}}
+\index{used\+\_\+characters@{used\+\_\+characters}!matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker@{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker}}
+\subsubsection{\texorpdfstring{used\+\_\+characters()}{used\_characters()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+pdf\+\_\+ps.\+Character\+Tracker.\+used\+\_\+characters (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_a5cea4a78fc820ecadde9192788950415}\label{classmatplotlib_1_1backends_1_1__backend__pdf__ps_1_1CharacterTracker_a5cea4a78fc820ecadde9192788950415}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker@{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker}!used@{used}}
+\index{used@{used}!matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker@{matplotlib\+::backends\+::\+\_\+backend\+\_\+pdf\+\_\+ps\+::\+Character\+Tracker}}
+\subsubsection{\texorpdfstring{used}{used}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+\_\+backend\+\_\+pdf\+\_\+ps.\+Character\+Tracker.\+used}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/backends/\hyperlink{__backend__pdf__ps_8py}{\+\_\+backend\+\_\+pdf\+\_\+ps.\+py}\end{DoxyCompactItemize}

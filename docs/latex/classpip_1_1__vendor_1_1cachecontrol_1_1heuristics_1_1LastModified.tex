@@ -1,0 +1,76 @@
+\hypertarget{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified}{}\section{pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Last\+Modified Class Reference}
+\label{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified}\index{pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Last\+Modified@{pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Last\+Modified}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Last\+Modified\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Last\+Modified\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified_a6aadca734207db86c9cac2a7f0dc5b23}{update\+\_\+headers} (self, resp)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified_a4f4b1c52aef3050bb11c853357fc0ceb}{warning} (self, resp)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified_a885233b034da76d9caf54ea9311c695e}{cacheable\+\_\+by\+\_\+default\+\_\+statuses}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}If there is no Expires header already, fall back on Last-Modified
+using the heuristic from
+http://tools.ietf.org/html/rfc7234#section-4.2.2
+to calculate a reasonable value.
+
+Firefox also does something like this per
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching_FAQ
+http://lxr.mozilla.org/mozilla-release/source/netwerk/protocol/http/nsHttpResponseHead.cpp#397
+Unlike mozilla we limit this to 24-hr.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified_a6aadca734207db86c9cac2a7f0dc5b23}\label{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified_a6aadca734207db86c9cac2a7f0dc5b23}} 
+\index{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Last\+Modified@{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Last\+Modified}!update\+\_\+headers@{update\+\_\+headers}}
+\index{update\+\_\+headers@{update\+\_\+headers}!pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Last\+Modified@{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Last\+Modified}}
+\subsubsection{\texorpdfstring{update\+\_\+headers()}{update\_headers()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Last\+Modified.\+update\+\_\+headers (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{resp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified_a4f4b1c52aef3050bb11c853357fc0ceb}\label{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified_a4f4b1c52aef3050bb11c853357fc0ceb}} 
+\index{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Last\+Modified@{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Last\+Modified}!warning@{warning}}
+\index{warning@{warning}!pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Last\+Modified@{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Last\+Modified}}
+\subsubsection{\texorpdfstring{warning()}{warning()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Last\+Modified.\+warning (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{resp }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified_a885233b034da76d9caf54ea9311c695e}\label{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1LastModified_a885233b034da76d9caf54ea9311c695e}} 
+\index{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Last\+Modified@{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Last\+Modified}!cacheable\+\_\+by\+\_\+default\+\_\+statuses@{cacheable\+\_\+by\+\_\+default\+\_\+statuses}}
+\index{cacheable\+\_\+by\+\_\+default\+\_\+statuses@{cacheable\+\_\+by\+\_\+default\+\_\+statuses}!pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Last\+Modified@{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Last\+Modified}}
+\subsubsection{\texorpdfstring{cacheable\+\_\+by\+\_\+default\+\_\+statuses}{cacheable\_by\_default\_statuses}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Last\+Modified.\+cacheable\+\_\+by\+\_\+default\+\_\+statuses\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/cachecontrol/\hyperlink{heuristics_8py}{heuristics.\+py}\end{DoxyCompactItemize}

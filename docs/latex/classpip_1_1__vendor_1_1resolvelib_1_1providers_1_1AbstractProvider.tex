@@ -1,0 +1,160 @@
+\hypertarget{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider}{}\section{pip.\+\_\+vendor.\+resolvelib.\+providers.\+Abstract\+Provider Class Reference}
+\label{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider}\index{pip.\+\_\+vendor.\+resolvelib.\+providers.\+Abstract\+Provider@{pip.\+\_\+vendor.\+resolvelib.\+providers.\+Abstract\+Provider}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+resolvelib.\+providers.\+Abstract\+Provider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+resolvelib.\+providers.\+Abstract\+Provider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_ab1fee658c7bf9eccba82775976d60b00}{identify} (self, requirement\+\_\+or\+\_\+candidate)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_a9247b254e4505ec66b2b164ab26ba94b}{get\+\_\+preference} (self, identifier, resolutions, candidates, information)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_af60b475a2374cb795f72ff88c09e51f9}{find\+\_\+matches} (self, identifier, requirements, incompatibilities)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_aaf6d9dda33c45438d6dcd50cf7aabf97}{is\+\_\+satisfied\+\_\+by} (self, requirement, candidate)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_aaa369cd95ed63b6dde6b6babaa5a4b95}{get\+\_\+dependencies} (self, candidate)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Delegate class to provide requirement interface for the resolver.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_af60b475a2374cb795f72ff88c09e51f9}\label{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_af60b475a2374cb795f72ff88c09e51f9}} 
+\index{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider@{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider}!find\+\_\+matches@{find\+\_\+matches}}
+\index{find\+\_\+matches@{find\+\_\+matches}!pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider@{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider}}
+\subsubsection{\texorpdfstring{find\+\_\+matches()}{find\_matches()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+resolvelib.\+providers.\+Abstract\+Provider.\+find\+\_\+matches (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{identifier,  }\item[{}]{requirements,  }\item[{}]{incompatibilities }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find all possible candidates that satisfy given constraints.
+
+:param identifier: An identifier as returned by ``identify()``. This
+    identifies the dependency matches of which should be returned.
+:param requirements: A mapping of requirements that all returned
+    candidates must satisfy. Each key is an identifier, and the value
+    an iterator of requirements for that dependency.
+:param incompatibilities: A mapping of known incompatibilities of
+    each dependency. Each key is an identifier, and the value an
+    iterator of incompatibilities known to the resolver. All
+    incompatibilities *must* be excluded from the return value.
+
+This should try to get candidates based on the requirements' types.
+For VCS, local, and archive requirements, the one-and-only match is
+returned, and for a "named" requirement, the index(es) should be
+consulted to find concrete candidates for this requirement.
+
+The return value should produce candidates ordered by preference; the
+most preferred candidate should come first. The return type may be one
+of the following:
+
+* A callable that returns an iterator that yields candidates.
+* An collection of candidates.
+* An iterable of candidates. This will be consumed immediately into a
+  list of candidates.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_aaa369cd95ed63b6dde6b6babaa5a4b95}\label{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_aaa369cd95ed63b6dde6b6babaa5a4b95}} 
+\index{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider@{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider}!get\+\_\+dependencies@{get\+\_\+dependencies}}
+\index{get\+\_\+dependencies@{get\+\_\+dependencies}!pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider@{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider}}
+\subsubsection{\texorpdfstring{get\+\_\+dependencies()}{get\_dependencies()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+resolvelib.\+providers.\+Abstract\+Provider.\+get\+\_\+dependencies (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{candidate }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get dependencies of a candidate.
+
+This should return a collection of requirements that `candidate`
+specifies as its dependencies.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_a9247b254e4505ec66b2b164ab26ba94b}\label{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_a9247b254e4505ec66b2b164ab26ba94b}} 
+\index{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider@{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider}!get\+\_\+preference@{get\+\_\+preference}}
+\index{get\+\_\+preference@{get\+\_\+preference}!pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider@{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider}}
+\subsubsection{\texorpdfstring{get\+\_\+preference()}{get\_preference()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+resolvelib.\+providers.\+Abstract\+Provider.\+get\+\_\+preference (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{identifier,  }\item[{}]{resolutions,  }\item[{}]{candidates,  }\item[{}]{information }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Produce a sort key for given requirement based on preference.
+
+The preference is defined as "I think this requirement should be
+resolved first". The lower the return value is, the more preferred
+this group of arguments is.
+
+:param identifier: An identifier as returned by ``identify()``. This
+    identifies the dependency matches of which should be returned.
+:param resolutions: Mapping of candidates currently pinned by the
+    resolver. Each key is an identifier, and the value a candidate.
+    The candidate may conflict with requirements from ``information``.
+:param candidates: Mapping of each dependency's possible candidates.
+    Each value is an iterator of candidates.
+:param information: Mapping of requirement information of each package.
+    Each value is an iterator of *requirement information*.
+
+A *requirement information* instance is a named tuple with two members:
+
+* ``requirement`` specifies a requirement contributing to the current
+  list of candidates.
+* ``parent`` specifies the candidate that provides (dependend on) the
+  requirement, or ``None`` to indicate a root requirement.
+
+The preference could depend on a various of issues, including (not
+necessarily in this order):
+
+* Is this package pinned in the current resolution result?
+* How relaxed is the requirement? Stricter ones should probably be
+  worked on first? (I don't know, actually.)
+* How many possibilities are there to satisfy this requirement? Those
+  with few left should likely be worked on first, I guess?
+* Are there any known conflicts for this requirement? We should
+  probably work on those with the most known conflicts.
+
+A sortable value should be returned (this will be used as the ``key``
+parameter of the built-in sorting function). The smaller the value is,
+the more preferred this requirement is (i.e. the sorting function
+is called with ``reverse=False``).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_ab1fee658c7bf9eccba82775976d60b00}\label{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_ab1fee658c7bf9eccba82775976d60b00}} 
+\index{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider@{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider}!identify@{identify}}
+\index{identify@{identify}!pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider@{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider}}
+\subsubsection{\texorpdfstring{identify()}{identify()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+resolvelib.\+providers.\+Abstract\+Provider.\+identify (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{requirement\+\_\+or\+\_\+candidate }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given a requirement, return an identifier for it.
+
+This is used to identify a requirement, e.g. whether two requirements
+should have their specifier parts merged.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_aaf6d9dda33c45438d6dcd50cf7aabf97}\label{classpip_1_1__vendor_1_1resolvelib_1_1providers_1_1AbstractProvider_aaf6d9dda33c45438d6dcd50cf7aabf97}} 
+\index{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider@{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider}!is\+\_\+satisfied\+\_\+by@{is\+\_\+satisfied\+\_\+by}}
+\index{is\+\_\+satisfied\+\_\+by@{is\+\_\+satisfied\+\_\+by}!pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider@{pip\+::\+\_\+vendor\+::resolvelib\+::providers\+::\+Abstract\+Provider}}
+\subsubsection{\texorpdfstring{is\+\_\+satisfied\+\_\+by()}{is\_satisfied\_by()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+resolvelib.\+providers.\+Abstract\+Provider.\+is\+\_\+satisfied\+\_\+by (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{requirement,  }\item[{}]{candidate }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Whether the given requirement can be satisfied by a candidate.
+
+The candidate is guarenteed to have been generated from the
+requirement.
+
+A boolean should be returned to indicate whether ``candidate`` is a
+viable solution to the requirement.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/resolvelib/\hyperlink{providers_8py}{providers.\+py}\end{DoxyCompactItemize}

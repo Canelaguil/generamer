@@ -1,0 +1,184 @@
+\hypertarget{classmatplotlib_1_1quiver_1_1Barbs}{}\section{matplotlib.\+quiver.\+Barbs Class Reference}
+\label{classmatplotlib_1_1quiver_1_1Barbs}\index{matplotlib.\+quiver.\+Barbs@{matplotlib.\+quiver.\+Barbs}}
+
+
+Inheritance diagram for matplotlib.\+quiver.\+Barbs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classmatplotlib_1_1quiver_1_1Barbs__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+quiver.\+Barbs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classmatplotlib_1_1quiver_1_1Barbs__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a7c8dec1ccbe4ab0caf9fcd4a13e77488}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, ax, args, pivot=\textquotesingle{}tip\textquotesingle{}, length=7, barbcolor=None, flagcolor=None, \hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a06f1946ae1eaf6fb7f2e7ad12fd95360}{sizes}=None, \hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a88c2902650f34aa8e23060a0891b61fb}{fill\+\_\+empty}=False, \hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a49c13662e7240845848dd46d9ba79ea5}{barb\+\_\+increments}=None, \hyperlink{classmatplotlib_1_1quiver_1_1Barbs_ab46003486181cfa9f8efcdbc39008426}{rounding}=True, flip\+\_\+barb=False, kw)
+\item 
+def \hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a963364dac5799ec94485ab80c5ea9de4}{set\+\_\+\+U\+VC} (self, U, V, C=None)
+\item 
+def \hyperlink{classmatplotlib_1_1quiver_1_1Barbs_ab1500541958a20b317abe5ec916bc681}{set\+\_\+offsets} (self, xy)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a06f1946ae1eaf6fb7f2e7ad12fd95360}{sizes}
+\item 
+\hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a88c2902650f34aa8e23060a0891b61fb}{fill\+\_\+empty}
+\item 
+\hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a49c13662e7240845848dd46d9ba79ea5}{barb\+\_\+increments}
+\item 
+\hyperlink{classmatplotlib_1_1quiver_1_1Barbs_ab46003486181cfa9f8efcdbc39008426}{rounding}
+\item 
+\hyperlink{classmatplotlib_1_1quiver_1_1Barbs_af39393a7267578bd4adb5d3a5e673c40}{flip}
+\item 
+\hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a79eda277a699d588bd88ebf2d7be9306}{x}
+\item 
+\hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a3137a5e02dce7821d54630c32c83e783}{y}
+\item 
+\hyperlink{classmatplotlib_1_1quiver_1_1Barbs_afc79728b9563ca2941cb2cc11d7e552f}{u}
+\item 
+\hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a02ffc7b07abef03235c448606c614f4a}{v}
+\item 
+\hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a00d30daf4856d2c5ee985913ebc87d80}{stale}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1quiver_1_1Barbs_a4e4628a179c8526cb2a5174ce7d9e579}{barbs\+\_\+doc}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Specialized PolyCollection for barbs.
+
+The only API method is :meth:`set_UVC`, which can be used to
+change the size, orientation, and color of the arrows.  Locations
+are changed using the :meth:`set_offsets` collection method.
+Possibly this method will be useful in animations.
+
+There is one internal function :meth:`_find_tails` which finds
+exactly what should be put on the barb given the vector magnitude.
+From there :meth:`_make_barbs` is used to find the vertices of the
+polygon to represent the barb based on this information.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_a7c8dec1ccbe4ab0caf9fcd4a13e77488}\label{classmatplotlib_1_1quiver_1_1Barbs_a7c8dec1ccbe4ab0caf9fcd4a13e77488}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+quiver.\+Barbs.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{args,  }\item[{}]{pivot = {\ttfamily \textquotesingle{}tip\textquotesingle{}},  }\item[{}]{length = {\ttfamily 7},  }\item[{}]{barbcolor = {\ttfamily None},  }\item[{}]{flagcolor = {\ttfamily None},  }\item[{}]{sizes = {\ttfamily None},  }\item[{}]{fill\+\_\+empty = {\ttfamily False},  }\item[{}]{barb\+\_\+increments = {\ttfamily None},  }\item[{}]{rounding = {\ttfamily True},  }\item[{}]{flip\+\_\+barb = {\ttfamily False},  }\item[{}]{kw }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The constructor takes one required argument, an Axes
+instance, followed by the args and kwargs described
+by the following pyplot interface documentation:
+%(barbs_doc)s
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_ab1500541958a20b317abe5ec916bc681}\label{classmatplotlib_1_1quiver_1_1Barbs_ab1500541958a20b317abe5ec916bc681}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!set\+\_\+offsets@{set\+\_\+offsets}}
+\index{set\+\_\+offsets@{set\+\_\+offsets}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{set\+\_\+offsets()}{set\_offsets()}}
+{\footnotesize\ttfamily def matplotlib.\+quiver.\+Barbs.\+set\+\_\+offsets (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xy }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the offsets for the barb polygons.  This saves the offsets passed
+in and masks them as appropriate for the existing U/V data.
+
+Parameters
+----------
+xy : sequence of pairs of floats
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_a963364dac5799ec94485ab80c5ea9de4}\label{classmatplotlib_1_1quiver_1_1Barbs_a963364dac5799ec94485ab80c5ea9de4}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!set\+\_\+\+U\+VC@{set\+\_\+\+U\+VC}}
+\index{set\+\_\+\+U\+VC@{set\+\_\+\+U\+VC}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{set\+\_\+\+U\+V\+C()}{set\_UVC()}}
+{\footnotesize\ttfamily def matplotlib.\+quiver.\+Barbs.\+set\+\_\+\+U\+VC (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{U,  }\item[{}]{V,  }\item[{}]{C = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_a49c13662e7240845848dd46d9ba79ea5}\label{classmatplotlib_1_1quiver_1_1Barbs_a49c13662e7240845848dd46d9ba79ea5}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!barb\+\_\+increments@{barb\+\_\+increments}}
+\index{barb\+\_\+increments@{barb\+\_\+increments}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{barb\+\_\+increments}{barb\_increments}}
+{\footnotesize\ttfamily matplotlib.\+quiver.\+Barbs.\+barb\+\_\+increments}
+
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_a4e4628a179c8526cb2a5174ce7d9e579}\label{classmatplotlib_1_1quiver_1_1Barbs_a4e4628a179c8526cb2a5174ce7d9e579}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!barbs\+\_\+doc@{barbs\+\_\+doc}}
+\index{barbs\+\_\+doc@{barbs\+\_\+doc}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{barbs\+\_\+doc}{barbs\_doc}}
+{\footnotesize\ttfamily matplotlib.\+quiver.\+Barbs.\+barbs\+\_\+doc\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_a88c2902650f34aa8e23060a0891b61fb}\label{classmatplotlib_1_1quiver_1_1Barbs_a88c2902650f34aa8e23060a0891b61fb}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!fill\+\_\+empty@{fill\+\_\+empty}}
+\index{fill\+\_\+empty@{fill\+\_\+empty}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{fill\+\_\+empty}{fill\_empty}}
+{\footnotesize\ttfamily matplotlib.\+quiver.\+Barbs.\+fill\+\_\+empty}
+
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_af39393a7267578bd4adb5d3a5e673c40}\label{classmatplotlib_1_1quiver_1_1Barbs_af39393a7267578bd4adb5d3a5e673c40}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!flip@{flip}}
+\index{flip@{flip}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{flip}{flip}}
+{\footnotesize\ttfamily matplotlib.\+quiver.\+Barbs.\+flip}
+
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_ab46003486181cfa9f8efcdbc39008426}\label{classmatplotlib_1_1quiver_1_1Barbs_ab46003486181cfa9f8efcdbc39008426}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!rounding@{rounding}}
+\index{rounding@{rounding}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{rounding}{rounding}}
+{\footnotesize\ttfamily matplotlib.\+quiver.\+Barbs.\+rounding}
+
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_a06f1946ae1eaf6fb7f2e7ad12fd95360}\label{classmatplotlib_1_1quiver_1_1Barbs_a06f1946ae1eaf6fb7f2e7ad12fd95360}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!sizes@{sizes}}
+\index{sizes@{sizes}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{sizes}{sizes}}
+{\footnotesize\ttfamily matplotlib.\+quiver.\+Barbs.\+sizes}
+
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_a00d30daf4856d2c5ee985913ebc87d80}\label{classmatplotlib_1_1quiver_1_1Barbs_a00d30daf4856d2c5ee985913ebc87d80}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+quiver.\+Barbs.\+stale}
+
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_afc79728b9563ca2941cb2cc11d7e552f}\label{classmatplotlib_1_1quiver_1_1Barbs_afc79728b9563ca2941cb2cc11d7e552f}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!u@{u}}
+\index{u@{u}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{u}{u}}
+{\footnotesize\ttfamily matplotlib.\+quiver.\+Barbs.\+u}
+
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_a02ffc7b07abef03235c448606c614f4a}\label{classmatplotlib_1_1quiver_1_1Barbs_a02ffc7b07abef03235c448606c614f4a}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!v@{v}}
+\index{v@{v}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{v}{v}}
+{\footnotesize\ttfamily matplotlib.\+quiver.\+Barbs.\+v}
+
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_a79eda277a699d588bd88ebf2d7be9306}\label{classmatplotlib_1_1quiver_1_1Barbs_a79eda277a699d588bd88ebf2d7be9306}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!x@{x}}
+\index{x@{x}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily matplotlib.\+quiver.\+Barbs.\+x}
+
+\mbox{\Hypertarget{classmatplotlib_1_1quiver_1_1Barbs_a3137a5e02dce7821d54630c32c83e783}\label{classmatplotlib_1_1quiver_1_1Barbs_a3137a5e02dce7821d54630c32c83e783}} 
+\index{matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}!y@{y}}
+\index{y@{y}!matplotlib\+::quiver\+::\+Barbs@{matplotlib\+::quiver\+::\+Barbs}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily matplotlib.\+quiver.\+Barbs.\+y}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{quiver_8py}{quiver.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,146 @@
+\hypertarget{classmatplotlib_1_1backend__tools_1_1ToolToggleBase}{}\section{matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base Class Reference}
+\label{classmatplotlib_1_1backend__tools_1_1ToolToggleBase}\index{matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base@{matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base}}
+
+
+Inheritance diagram for matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1backend__tools_1_1ToolToggleBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{classmatplotlib_1_1backend__tools_1_1ToolToggleBase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a74d1909130c00077ab3b10a31e343ee9}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a5b136fca854848f9cee863fcb18cafa2}{trigger} (self, sender, event, data=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a6f4a8940f70797e22c434d4e14fddf71}{enable} (self, event=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_ac018e00d51b5d23618487e35c4e1c4ae}{disable} (self, event=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a58df03fbbeb455678f8b57a2ed62c6a0}{toggled} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_aadec6025f331381d975f62c1a47ecc27}{set\+\_\+figure} (self, \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolBase_af85e83d1db0787aa40d06837204651ee}{figure})
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a67b662a4cd410ed58c5fa7d82f03d5a1}{radio\+\_\+group} = None
+\item 
+\hyperlink{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a366c09bb8c92935f8092e8dced290442}{cursor} = None
+\item 
+bool \hyperlink{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_aebaf605ed6ca1a5b07b5d66db168544e}{default\+\_\+toggled} = False
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Toggleable tool.
+
+Every time it is triggered, it switches between enable and disable.
+
+Parameters
+----------
+``*args``
+    Variable length argument to be used by the Tool.
+``**kwargs``
+    `toggled` if present and True, sets the initial state of the Tool
+    Arbitrary keyword arguments to be consumed by the Tool
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a74d1909130c00077ab3b10a31e343ee9}\label{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a74d1909130c00077ab3b10a31e343ee9}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_ac018e00d51b5d23618487e35c4e1c4ae}\label{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_ac018e00d51b5d23618487e35c4e1c4ae}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}!disable@{disable}}
+\index{disable@{disable}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}}
+\subsubsection{\texorpdfstring{disable()}{disable()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base.\+disable (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Disable the toggle tool.
+
+`trigger` call this method when `toggled` is True.
+
+This can happen in different circumstances.
+
+* Click on the toolbar tool button.
+* Call to `matplotlib.backend_managers.ToolManager.trigger_tool`.
+* Another `ToolToggleBase` derived tool is triggered
+  (from the same `.ToolManager`).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a6f4a8940f70797e22c434d4e14fddf71}\label{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a6f4a8940f70797e22c434d4e14fddf71}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}!enable@{enable}}
+\index{enable@{enable}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}}
+\subsubsection{\texorpdfstring{enable()}{enable()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base.\+enable (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Enable the toggle tool.
+
+`trigger` calls this method when `toggled` is False.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_aadec6025f331381d975f62c1a47ecc27}\label{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_aadec6025f331381d975f62c1a47ecc27}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}!set\+\_\+figure@{set\+\_\+figure}}
+\index{set\+\_\+figure@{set\+\_\+figure}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}}
+\subsubsection{\texorpdfstring{set\+\_\+figure()}{set\_figure()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base.\+set\+\_\+figure (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a58df03fbbeb455678f8b57a2ed62c6a0}\label{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a58df03fbbeb455678f8b57a2ed62c6a0}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}!toggled@{toggled}}
+\index{toggled@{toggled}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}}
+\subsubsection{\texorpdfstring{toggled()}{toggled()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base.\+toggled (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}State of the toggled tool.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a5b136fca854848f9cee863fcb18cafa2}\label{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a5b136fca854848f9cee863fcb18cafa2}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}!trigger@{trigger}}
+\index{trigger@{trigger}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}}
+\subsubsection{\texorpdfstring{trigger()}{trigger()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base.\+trigger (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{sender,  }\item[{}]{event,  }\item[{}]{data = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calls `enable` or `disable` based on `toggled` value.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a366c09bb8c92935f8092e8dced290442}\label{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a366c09bb8c92935f8092e8dced290442}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}!cursor@{cursor}}
+\index{cursor@{cursor}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}}
+\subsubsection{\texorpdfstring{cursor}{cursor}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base.\+cursor = None\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_aebaf605ed6ca1a5b07b5d66db168544e}\label{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_aebaf605ed6ca1a5b07b5d66db168544e}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}!default\+\_\+toggled@{default\+\_\+toggled}}
+\index{default\+\_\+toggled@{default\+\_\+toggled}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}}
+\subsubsection{\texorpdfstring{default\+\_\+toggled}{default\_toggled}}
+{\footnotesize\ttfamily bool matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base.\+default\+\_\+toggled = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a67b662a4cd410ed58c5fa7d82f03d5a1}\label{classmatplotlib_1_1backend__tools_1_1ToolToggleBase_a67b662a4cd410ed58c5fa7d82f03d5a1}} 
+\index{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}!radio\+\_\+group@{radio\+\_\+group}}
+\index{radio\+\_\+group@{radio\+\_\+group}!matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base@{matplotlib\+::backend\+\_\+tools\+::\+Tool\+Toggle\+Base}}
+\subsubsection{\texorpdfstring{radio\+\_\+group}{radio\_group}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+tools.\+Tool\+Toggle\+Base.\+radio\+\_\+group = None\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{backend__tools_8py}{backend\+\_\+tools.\+py}\end{DoxyCompactItemize}

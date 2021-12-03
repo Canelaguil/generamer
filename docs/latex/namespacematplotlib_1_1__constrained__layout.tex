@@ -1,0 +1,54 @@
+\hypertarget{namespacematplotlib_1_1__constrained__layout}{}\section{matplotlib.\+\_\+constrained\+\_\+layout Namespace Reference}
+\label{namespacematplotlib_1_1__constrained__layout}\index{matplotlib.\+\_\+constrained\+\_\+layout@{matplotlib.\+\_\+constrained\+\_\+layout}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1__constrained__layout_a5796c10dbfe53aed98d4b4fc693f9a6e}{do\+\_\+constrained\+\_\+layout} (fig, renderer, h\+\_\+pad, w\+\_\+pad, hspace=None, wspace=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Adjust subplot layouts so that there are no overlapping axes or axes
+decorations.  All axes decorations are dealt with (labels, ticks, titles,
+ticklabels) and some dependent artists are also dealt with (colorbar,
+suptitle).
+
+Layout is done via `~matplotlib.gridspec`, with one constraint per gridspec,
+so it is possible to have overlapping axes if the gridspecs overlap (i.e.
+using `~matplotlib.gridspec.GridSpecFromSubplotSpec`).  Axes placed using
+``figure.subplots()`` or ``figure.add_subplots()`` will participate in the
+layout.  Axes manually placed via ``figure.add_axes()`` will not.
+
+See Tutorial: :doc:`/tutorials/intermediate/constrainedlayout_guide`
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1__constrained__layout_a5796c10dbfe53aed98d4b4fc693f9a6e}\label{namespacematplotlib_1_1__constrained__layout_a5796c10dbfe53aed98d4b4fc693f9a6e}} 
+\index{matplotlib\+::\+\_\+constrained\+\_\+layout@{matplotlib\+::\+\_\+constrained\+\_\+layout}!do\+\_\+constrained\+\_\+layout@{do\+\_\+constrained\+\_\+layout}}
+\index{do\+\_\+constrained\+\_\+layout@{do\+\_\+constrained\+\_\+layout}!matplotlib\+::\+\_\+constrained\+\_\+layout@{matplotlib\+::\+\_\+constrained\+\_\+layout}}
+\subsubsection{\texorpdfstring{do\+\_\+constrained\+\_\+layout()}{do\_constrained\_layout()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+constrained\+\_\+layout.\+do\+\_\+constrained\+\_\+layout (\begin{DoxyParamCaption}\item[{}]{fig,  }\item[{}]{renderer,  }\item[{}]{h\+\_\+pad,  }\item[{}]{w\+\_\+pad,  }\item[{}]{hspace = {\ttfamily None},  }\item[{}]{wspace = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Do the constrained_layout.  Called at draw time in
+ ``figure.constrained_layout()``
+
+Parameters
+----------
+fig : Figure
+    ``Figure`` instance to do the layout in.
+
+renderer : Renderer
+    Renderer to use.
+
+h_pad, w_pad : float
+  Padding around the axes elements in figure-normalized units.
+
+hspace, wspace : float
+   Fraction of the figure to dedicate to space between the
+   axes.  These are evenly spread between the gaps between the axes.
+   A value of 0.2 for a three-column layout would have a space
+   of 0.1 of the figure width between each column.
+   If h/wspace < h/w_pad, then the pads are used instead.
+\end{DoxyVerb}
+ 

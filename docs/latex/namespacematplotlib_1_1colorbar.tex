@@ -1,0 +1,191 @@
+\hypertarget{namespacematplotlib_1_1colorbar}{}\section{matplotlib.\+colorbar Namespace Reference}
+\label{namespacematplotlib_1_1colorbar}\index{matplotlib.\+colorbar@{matplotlib.\+colorbar}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1colorbar_1_1__ColorbarAutoLocator}{\+\_\+\+Colorbar\+Auto\+Locator}
+\item 
+class \hyperlink{classmatplotlib_1_1colorbar_1_1__ColorbarAutoMinorLocator}{\+\_\+\+Colorbar\+Auto\+Minor\+Locator}
+\item 
+class \hyperlink{classmatplotlib_1_1colorbar_1_1__ColorbarLogLocator}{\+\_\+\+Colorbar\+Log\+Locator}
+\item 
+class \hyperlink{classmatplotlib_1_1colorbar_1_1__ColorbarSpine}{\+\_\+\+Colorbar\+Spine}
+\item 
+class \hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar}{Colorbar}
+\item 
+class \hyperlink{classmatplotlib_1_1colorbar_1_1ColorbarBase}{Colorbar\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1colorbar_1_1ColorbarPatch}{Colorbar\+Patch}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1colorbar_a2ed7fcd101af15c1a2ee35b0582e606a}{make\+\_\+axes} (parents, location=None, orientation=None, fraction=0.\+15, shrink=1.\+0, aspect=20, kw)
+\item 
+def \hyperlink{namespacematplotlib_1_1colorbar_a1c8e23c91312e04776011a9af889799a}{make\+\_\+axes\+\_\+gridspec} (parent, location=None, orientation=None, fraction=0.\+15, shrink=1.\+0, aspect=20, kw)
+\item 
+def \hyperlink{namespacematplotlib_1_1colorbar_ab5ea96cb637e6ca5d7e2eecdc692a1e4}{colorbar\+\_\+factory} (cax, mappable, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1colorbar_a7ca9324c365b59716ce5f7d1521c64d7}{colorbar\+\_\+doc} = docstring.\+interpd.\+params\mbox{[}\char`\"{}colorbar\+\_\+doc\char`\"{}\mbox{]}
+\item 
+string \hyperlink{namespacematplotlib_1_1colorbar_a68af3613ba2c4b30bcfe5ba521813a37}{colormap\+\_\+kw\+\_\+doc} = \+\_\+colormap\+\_\+kw\+\_\+doc
+\item 
+string \hyperlink{namespacematplotlib_1_1colorbar_aa0da54385128a6f272b1328022e852d0}{make\+\_\+axes\+\_\+kw\+\_\+doc} = \+\_\+make\+\_\+axes\+\_\+param\+\_\+doc + \+\_\+make\+\_\+axes\+\_\+other\+\_\+param\+\_\+doc
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Colorbars are a visualization of the mapping from scalar values to colors.
+In Matplotlib they are drawn into a dedicated `~.axes.Axes`.
+
+.. note::
+   Colorbars are typically created through `.Figure.colorbar` or its pyplot
+   wrapper `.pyplot.colorbar`, which use `.make_axes` and `.Colorbar`
+   internally.
+
+   As an end-user, you most likely won't have to call the methods or
+   instantiate the classes in this module explicitly.
+
+:class:`ColorbarBase`
+    The base class with full colorbar drawing functionality.
+    It can be used as-is to make a colorbar for a given colormap;
+    a mappable object (e.g., image) is not needed.
+
+:class:`Colorbar`
+    On top of `.ColorbarBase` this connects the colorbar with a
+    `.ScalarMappable` such as an image or contour plot.
+
+:func:`make_axes`
+    Create an `~.axes.Axes` suitable for a colorbar. This functions can be
+    used with figures containing a single axes or with freely placed axes.
+
+:func:`make_axes_gridspec`
+    Create a `~.SubplotBase` suitable for a colorbar. This function should
+    be used for adding a colorbar to a `.GridSpec`.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1colorbar_ab5ea96cb637e6ca5d7e2eecdc692a1e4}\label{namespacematplotlib_1_1colorbar_ab5ea96cb637e6ca5d7e2eecdc692a1e4}} 
+\index{matplotlib\+::colorbar@{matplotlib\+::colorbar}!colorbar\+\_\+factory@{colorbar\+\_\+factory}}
+\index{colorbar\+\_\+factory@{colorbar\+\_\+factory}!matplotlib\+::colorbar@{matplotlib\+::colorbar}}
+\subsubsection{\texorpdfstring{colorbar\+\_\+factory()}{colorbar\_factory()}}
+{\footnotesize\ttfamily def matplotlib.\+colorbar.\+colorbar\+\_\+factory (\begin{DoxyParamCaption}\item[{}]{cax,  }\item[{}]{mappable,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a colorbar on the given axes for the given mappable.
+
+.. note::
+    This is a low-level function to turn an existing axes into a colorbar
+    axes.  Typically, you'll want to use `~.Figure.colorbar` instead, which
+    automatically handles creation and placement of a suitable axes as
+    well.
+
+Parameters
+----------
+cax : `~matplotlib.axes.Axes`
+    The `~.axes.Axes` to turn into a colorbar.
+mappable : `~matplotlib.cm.ScalarMappable`
+    The mappable to be described by the colorbar.
+**kwargs
+    Keyword arguments are passed to the respective colorbar class.
+
+Returns
+-------
+`.Colorbar`
+    The created colorbar instance.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1colorbar_a2ed7fcd101af15c1a2ee35b0582e606a}\label{namespacematplotlib_1_1colorbar_a2ed7fcd101af15c1a2ee35b0582e606a}} 
+\index{matplotlib\+::colorbar@{matplotlib\+::colorbar}!make\+\_\+axes@{make\+\_\+axes}}
+\index{make\+\_\+axes@{make\+\_\+axes}!matplotlib\+::colorbar@{matplotlib\+::colorbar}}
+\subsubsection{\texorpdfstring{make\+\_\+axes()}{make\_axes()}}
+{\footnotesize\ttfamily def matplotlib.\+colorbar.\+make\+\_\+axes (\begin{DoxyParamCaption}\item[{}]{parents,  }\item[{}]{location = {\ttfamily None},  }\item[{}]{orientation = {\ttfamily None},  }\item[{}]{fraction = {\ttfamily 0.15},  }\item[{}]{shrink = {\ttfamily 1.0},  }\item[{}]{aspect = {\ttfamily 20},  }\item[{}]{kw }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create an `~.axes.Axes` suitable for a colorbar.
+
+The axes is placed in the figure of the *parents* axes, by resizing and
+repositioning *parents*.
+
+Parameters
+----------
+parents : `~.axes.Axes` or list of `~.axes.Axes`
+    The Axes to use as parents for placing the colorbar.
+%s
+
+Returns
+-------
+cax : `~.axes.Axes`
+    The child axes.
+kw : dict
+    The reduced keyword dictionary to be passed when creating the colorbar
+    instance.
+
+Other Parameters
+----------------
+%s
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1colorbar_a1c8e23c91312e04776011a9af889799a}\label{namespacematplotlib_1_1colorbar_a1c8e23c91312e04776011a9af889799a}} 
+\index{matplotlib\+::colorbar@{matplotlib\+::colorbar}!make\+\_\+axes\+\_\+gridspec@{make\+\_\+axes\+\_\+gridspec}}
+\index{make\+\_\+axes\+\_\+gridspec@{make\+\_\+axes\+\_\+gridspec}!matplotlib\+::colorbar@{matplotlib\+::colorbar}}
+\subsubsection{\texorpdfstring{make\+\_\+axes\+\_\+gridspec()}{make\_axes\_gridspec()}}
+{\footnotesize\ttfamily def matplotlib.\+colorbar.\+make\+\_\+axes\+\_\+gridspec (\begin{DoxyParamCaption}\item[{}]{parent,  }\item[{}]{location = {\ttfamily None},  }\item[{}]{orientation = {\ttfamily None},  }\item[{}]{fraction = {\ttfamily 0.15},  }\item[{}]{shrink = {\ttfamily 1.0},  }\item[{}]{aspect = {\ttfamily 20},  }\item[{}]{kw }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a `~.SubplotBase` suitable for a colorbar.
+
+The axes is placed in the figure of the *parent* axes, by resizing and
+repositioning *parent*.
+
+This function is similar to `.make_axes`. Primary differences are
+
+- `.make_axes_gridspec` should only be used with a `.SubplotBase` parent.
+
+- `.make_axes` creates an `~.axes.Axes`; `.make_axes_gridspec` creates a
+  `.SubplotBase`.
+
+- `.make_axes` updates the position of the parent.  `.make_axes_gridspec`
+  replaces the ``grid_spec`` attribute of the parent with a new one.
+
+While this function is meant to be compatible with `.make_axes`,
+there could be some minor differences.
+
+Parameters
+----------
+parent : `~.axes.Axes`
+    The Axes to use as parent for placing the colorbar.
+%s
+
+Returns
+-------
+cax : `~.axes.SubplotBase`
+    The child axes.
+kw : dict
+    The reduced keyword dictionary to be passed when creating the colorbar
+    instance.
+
+Other Parameters
+----------------
+%s
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1colorbar_a7ca9324c365b59716ce5f7d1521c64d7}\label{namespacematplotlib_1_1colorbar_a7ca9324c365b59716ce5f7d1521c64d7}} 
+\index{matplotlib\+::colorbar@{matplotlib\+::colorbar}!colorbar\+\_\+doc@{colorbar\+\_\+doc}}
+\index{colorbar\+\_\+doc@{colorbar\+\_\+doc}!matplotlib\+::colorbar@{matplotlib\+::colorbar}}
+\subsubsection{\texorpdfstring{colorbar\+\_\+doc}{colorbar\_doc}}
+{\footnotesize\ttfamily matplotlib.\+colorbar.\+colorbar\+\_\+doc = docstring.\+interpd.\+params\mbox{[}\char`\"{}colorbar\+\_\+doc\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1colorbar_a68af3613ba2c4b30bcfe5ba521813a37}\label{namespacematplotlib_1_1colorbar_a68af3613ba2c4b30bcfe5ba521813a37}} 
+\index{matplotlib\+::colorbar@{matplotlib\+::colorbar}!colormap\+\_\+kw\+\_\+doc@{colormap\+\_\+kw\+\_\+doc}}
+\index{colormap\+\_\+kw\+\_\+doc@{colormap\+\_\+kw\+\_\+doc}!matplotlib\+::colorbar@{matplotlib\+::colorbar}}
+\subsubsection{\texorpdfstring{colormap\+\_\+kw\+\_\+doc}{colormap\_kw\_doc}}
+{\footnotesize\ttfamily string matplotlib.\+colorbar.\+colormap\+\_\+kw\+\_\+doc = \+\_\+colormap\+\_\+kw\+\_\+doc}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1colorbar_aa0da54385128a6f272b1328022e852d0}\label{namespacematplotlib_1_1colorbar_aa0da54385128a6f272b1328022e852d0}} 
+\index{matplotlib\+::colorbar@{matplotlib\+::colorbar}!make\+\_\+axes\+\_\+kw\+\_\+doc@{make\+\_\+axes\+\_\+kw\+\_\+doc}}
+\index{make\+\_\+axes\+\_\+kw\+\_\+doc@{make\+\_\+axes\+\_\+kw\+\_\+doc}!matplotlib\+::colorbar@{matplotlib\+::colorbar}}
+\subsubsection{\texorpdfstring{make\+\_\+axes\+\_\+kw\+\_\+doc}{make\_axes\_kw\_doc}}
+{\footnotesize\ttfamily string matplotlib.\+colorbar.\+make\+\_\+axes\+\_\+kw\+\_\+doc = \+\_\+make\+\_\+axes\+\_\+param\+\_\+doc + \+\_\+make\+\_\+axes\+\_\+other\+\_\+param\+\_\+doc}
+

@@ -1,0 +1,171 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo}{}\section{setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To Class Reference}
+\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo}\index{setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To@{setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To}}
+
+
+Inheritance diagram for setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_a68b2183fe7c02ee31f00d63e3ed1b1f5}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, other, include=False, \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1ParseElementEnhance_a875f69cc8c08a3e2d92242cd58fae173}{ignore}=None, \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_ad631b250725091b5692bbad18f5bc237}{fail\+On}=None)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_af945a9301b2c1f76ea872410bfff218b}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_af12f21cafc85f05ad1941e2e220e1d6a}{ignore\+Expr}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_ace09988b780f04c038a1a34a493a6108}{may\+Return\+Empty}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_a1890c7dc658056ba0f28cd319d6aa9ad}{may\+Index\+Error}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_ade26777e0ed226ced1c5e3714a2562d4}{include\+Match}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_a99bcc295ebd114a5bacfbe737ba98968}{as\+List}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_ad631b250725091b5692bbad18f5bc237}{fail\+On}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_aef2fafd0e069050ccbe01b7070791245}{errmsg}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Token for skipping over all undefined text until the matched expression is found.
+
+Parameters:
+ - expr - target expression marking the end of the data to be skipped
+ - include - (default=C{False}) if True, the target expression is also parsed 
+      (the skipped text and target expression are returned as a 2-element list).
+ - ignore - (default=C{None}) used to define grammars (typically quoted strings and 
+      comments) that might contain false matches to the target expression
+ - failOn - (default=C{None}) define expressions that are not allowed to be 
+      included in the skipped test; if found before the target expression is found, 
+      the SkipTo is not a match
+
+Example::
+    report = '''
+        Outstanding Issues Report - 1 Jan 2000
+
+           # | Severity | Description                               |  Days Open
+        -----+----------+-------------------------------------------+-----------
+         101 | Critical | Intermittent system crash                 |          6
+          94 | Cosmetic | Spelling error on Login ('log|n')         |         14
+          79 | Minor    | System slow when running too many reports |         47
+        '''
+    integer = Word(nums)
+    SEP = Suppress('|')
+    # use SkipTo to simply match everything up until the next SEP
+    # - ignore quoted strings, so that a '|' character inside a quoted string does not match
+    # - parse action will call token.strip() for each matched token, i.e., the description body
+    string_data = SkipTo(SEP, ignore=quotedString)
+    string_data.setParseAction(tokenMap(str.strip))
+    ticket_expr = (integer("issue_num") + SEP 
+                  + string_data("sev") + SEP 
+                  + string_data("desc") + SEP 
+                  + integer("days_open"))
+    
+    for tkt in ticket_expr.searchString(report):
+        print tkt.dump()
+prints::
+    ['101', 'Critical', 'Intermittent system crash', '6']
+    - days_open: 6
+    - desc: Intermittent system crash
+    - issue_num: 101
+    - sev: Critical
+    ['94', 'Cosmetic', "Spelling error on Login ('log|n')", '14']
+    - days_open: 14
+    - desc: Spelling error on Login ('log|n')
+    - issue_num: 94
+    - sev: Cosmetic
+    ['79', 'Minor', 'System slow when running too many reports', '47']
+    - days_open: 47
+    - desc: System slow when running too many reports
+    - issue_num: 79
+    - sev: Minor
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_a68b2183fe7c02ee31f00d63e3ed1b1f5}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_a68b2183fe7c02ee31f00d63e3ed1b1f5}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other,  }\item[{}]{include = {\ttfamily False},  }\item[{}]{ignore = {\ttfamily None},  }\item[{}]{fail\+On = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_af945a9301b2c1f76ea872410bfff218b}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_af945a9301b2c1f76ea872410bfff218b}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_a99bcc295ebd114a5bacfbe737ba98968}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_a99bcc295ebd114a5bacfbe737ba98968}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}!as\+List@{as\+List}}
+\index{as\+List@{as\+List}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{as\+List}{asList}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To.\+as\+List}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_aef2fafd0e069050ccbe01b7070791245}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_aef2fafd0e069050ccbe01b7070791245}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}!errmsg@{errmsg}}
+\index{errmsg@{errmsg}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{errmsg}{errmsg}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To.\+errmsg}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_ad631b250725091b5692bbad18f5bc237}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_ad631b250725091b5692bbad18f5bc237}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}!fail\+On@{fail\+On}}
+\index{fail\+On@{fail\+On}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{fail\+On}{failOn}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To.\+fail\+On}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_af12f21cafc85f05ad1941e2e220e1d6a}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_af12f21cafc85f05ad1941e2e220e1d6a}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}!ignore\+Expr@{ignore\+Expr}}
+\index{ignore\+Expr@{ignore\+Expr}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{ignore\+Expr}{ignoreExpr}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To.\+ignore\+Expr}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_ade26777e0ed226ced1c5e3714a2562d4}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_ade26777e0ed226ced1c5e3714a2562d4}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}!include\+Match@{include\+Match}}
+\index{include\+Match@{include\+Match}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{include\+Match}{includeMatch}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To.\+include\+Match}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_a1890c7dc658056ba0f28cd319d6aa9ad}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_a1890c7dc658056ba0f28cd319d6aa9ad}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}!may\+Index\+Error@{may\+Index\+Error}}
+\index{may\+Index\+Error@{may\+Index\+Error}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{may\+Index\+Error}{mayIndexError}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To.\+may\+Index\+Error}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_ace09988b780f04c038a1a34a493a6108}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1SkipTo_ace09988b780f04c038a1a34a493a6108}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+pyparsing.\+Skip\+To.\+may\+Return\+Empty}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/\hyperlink{setuptools_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

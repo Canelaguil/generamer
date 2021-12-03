@@ -1,0 +1,131 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1centrality_1_1degree__alg}{}\section{networkx.\+algorithms.\+centrality.\+degree\+\_\+alg Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1centrality_1_1degree__alg}\index{networkx.\+algorithms.\+centrality.\+degree\+\_\+alg@{networkx.\+algorithms.\+centrality.\+degree\+\_\+alg}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1centrality_1_1degree__alg_a3388786391092a812d5cd90ea036969d}{degree\+\_\+centrality} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1centrality_1_1degree__alg_adb5a7769931b930d9e7a864745df51fa}{in\+\_\+degree\+\_\+centrality} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1centrality_1_1degree__alg_a3ac985a84d8b050ed24d926bb17bb090}{out\+\_\+degree\+\_\+centrality} (G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Degree centrality measures.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1centrality_1_1degree__alg_a3388786391092a812d5cd90ea036969d}\label{namespacenetworkx_1_1algorithms_1_1centrality_1_1degree__alg_a3388786391092a812d5cd90ea036969d}} 
+\index{networkx\+::algorithms\+::centrality\+::degree\+\_\+alg@{networkx\+::algorithms\+::centrality\+::degree\+\_\+alg}!degree\+\_\+centrality@{degree\+\_\+centrality}}
+\index{degree\+\_\+centrality@{degree\+\_\+centrality}!networkx\+::algorithms\+::centrality\+::degree\+\_\+alg@{networkx\+::algorithms\+::centrality\+::degree\+\_\+alg}}
+\subsubsection{\texorpdfstring{degree\+\_\+centrality()}{degree\_centrality()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+centrality.\+degree\+\_\+alg.\+degree\+\_\+centrality (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the degree centrality for nodes.
+
+The degree centrality for a node v is the fraction of nodes it
+is connected to.
+
+Parameters
+----------
+G : graph
+  A networkx graph
+
+Returns
+-------
+nodes : dictionary
+   Dictionary of nodes with degree centrality as the value.
+
+See Also
+--------
+betweenness_centrality, load_centrality, eigenvector_centrality
+
+Notes
+-----
+The degree centrality values are normalized by dividing by the maximum
+possible degree in a simple graph n-1 where n is the number of nodes in G.
+
+For multigraphs or graphs with self loops the maximum degree might
+be higher than n-1 and values of degree centrality greater than 1
+are possible.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1centrality_1_1degree__alg_adb5a7769931b930d9e7a864745df51fa}\label{namespacenetworkx_1_1algorithms_1_1centrality_1_1degree__alg_adb5a7769931b930d9e7a864745df51fa}} 
+\index{networkx\+::algorithms\+::centrality\+::degree\+\_\+alg@{networkx\+::algorithms\+::centrality\+::degree\+\_\+alg}!in\+\_\+degree\+\_\+centrality@{in\+\_\+degree\+\_\+centrality}}
+\index{in\+\_\+degree\+\_\+centrality@{in\+\_\+degree\+\_\+centrality}!networkx\+::algorithms\+::centrality\+::degree\+\_\+alg@{networkx\+::algorithms\+::centrality\+::degree\+\_\+alg}}
+\subsubsection{\texorpdfstring{in\+\_\+degree\+\_\+centrality()}{in\_degree\_centrality()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+centrality.\+degree\+\_\+alg.\+in\+\_\+degree\+\_\+centrality (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the in-degree centrality for nodes.
+
+The in-degree centrality for a node v is the fraction of nodes its
+incoming edges are connected to.
+
+Parameters
+----------
+G : graph
+    A NetworkX graph
+
+Returns
+-------
+nodes : dictionary
+    Dictionary of nodes with in-degree centrality as values.
+
+Raises
+------
+NetworkXNotImplemented
+    If G is undirected.
+
+See Also
+--------
+degree_centrality, out_degree_centrality
+
+Notes
+-----
+The degree centrality values are normalized by dividing by the maximum
+possible degree in a simple graph n-1 where n is the number of nodes in G.
+
+For multigraphs or graphs with self loops the maximum degree might
+be higher than n-1 and values of degree centrality greater than 1
+are possible.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1centrality_1_1degree__alg_a3ac985a84d8b050ed24d926bb17bb090}\label{namespacenetworkx_1_1algorithms_1_1centrality_1_1degree__alg_a3ac985a84d8b050ed24d926bb17bb090}} 
+\index{networkx\+::algorithms\+::centrality\+::degree\+\_\+alg@{networkx\+::algorithms\+::centrality\+::degree\+\_\+alg}!out\+\_\+degree\+\_\+centrality@{out\+\_\+degree\+\_\+centrality}}
+\index{out\+\_\+degree\+\_\+centrality@{out\+\_\+degree\+\_\+centrality}!networkx\+::algorithms\+::centrality\+::degree\+\_\+alg@{networkx\+::algorithms\+::centrality\+::degree\+\_\+alg}}
+\subsubsection{\texorpdfstring{out\+\_\+degree\+\_\+centrality()}{out\_degree\_centrality()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+centrality.\+degree\+\_\+alg.\+out\+\_\+degree\+\_\+centrality (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the out-degree centrality for nodes.
+
+The out-degree centrality for a node v is the fraction of nodes its
+outgoing edges are connected to.
+
+Parameters
+----------
+G : graph
+    A NetworkX graph
+
+Returns
+-------
+nodes : dictionary
+    Dictionary of nodes with out-degree centrality as values.
+
+Raises
+------
+NetworkXNotImplemented
+    If G is undirected.
+
+See Also
+--------
+degree_centrality, in_degree_centrality
+
+Notes
+-----
+The degree centrality values are normalized by dividing by the maximum
+possible degree in a simple graph n-1 where n is the number of nodes in G.
+
+For multigraphs or graphs with self loops the maximum degree might
+be higher than n-1 and values of degree centrality greater than 1
+are possible.
+\end{DoxyVerb}
+ 

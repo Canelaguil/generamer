@@ -1,0 +1,139 @@
+\hypertarget{classPIL_1_1TiffImagePlugin_1_1IFDRational}{}\section{P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational Class Reference}
+\label{classPIL_1_1TiffImagePlugin_1_1IFDRational}\index{P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational@{P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational}}
+
+
+Inheritance diagram for P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classPIL_1_1TiffImagePlugin_1_1IFDRational__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classPIL_1_1TiffImagePlugin_1_1IFDRational__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1IFDRational_ae0540e91ccbff4982de3ab0435b073b4}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, value, \hyperlink{classPIL_1_1TiffImagePlugin_1_1IFDRational_a206df1df975cff0eafdd55816b368fb7}{denominator}=1)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1IFDRational_a77a39e91da13c845ea0744be74b86993}{numerator} (a)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1IFDRational_a5376019d21a14685123b310f21e566fb}{denominator} (a)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1IFDRational_a5ea31df3e8853393a5ae836603c84a23}{limit\+\_\+rational} (self, max\+\_\+denominator)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1IFDRational_a82ca8eb38838e9812b6acb2ae53245c8}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1IFDRational_a60befd7c9c13422b258be625d1b31034}{\+\_\+\+\_\+hash\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1IFDRational_afba2c44309caede82e9e585c3e6d8ee6}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1IFDRational_a18b4be358cfd4c1d9a5d5c2205cf051e}{\+\_\+\+\_\+getstate\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1IFDRational_aabebf2eb131860a56733bc221aced9e5}{\+\_\+\+\_\+setstate\+\_\+\+\_\+} (self, state)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPIL_1_1TiffImagePlugin_1_1IFDRational_a206df1df975cff0eafdd55816b368fb7}{denominator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Implements a rational class where 0/0 is a legal value to match
+the in the wild use of exif rationals.
+
+e.g., DigitalZoomRatio - 0.00/0.00  indicates that no digital zoom was used
+\end{DoxyVerb}
+\begin{DoxyVerb}If the denominator is 0, store this as a float('nan'), otherwise store
+as a fractions.Fraction(). Delegate as appropriate\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1IFDRational_ae0540e91ccbff4982de3ab0435b073b4}\label{classPIL_1_1TiffImagePlugin_1_1IFDRational_ae0540e91ccbff4982de3ab0435b073b4}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value,  }\item[{}]{denominator = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:param value: either an integer numerator, a
+float/rational/other number, or an IFDRational
+:param denominator: Optional integer denominator
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1IFDRational_afba2c44309caede82e9e585c3e6d8ee6}\label{classPIL_1_1TiffImagePlugin_1_1IFDRational_afba2c44309caede82e9e585c3e6d8ee6}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+eq\+\_\+\+\_\+()}{\_\_eq\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational.\+\_\+\+\_\+eq\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1IFDRational_a18b4be358cfd4c1d9a5d5c2205cf051e}\label{classPIL_1_1TiffImagePlugin_1_1IFDRational_a18b4be358cfd4c1d9a5d5c2205cf051e}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}!\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getstate\+\_\+\+\_\+()}{\_\_getstate\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational.\+\_\+\+\_\+getstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1IFDRational_a60befd7c9c13422b258be625d1b31034}\label{classPIL_1_1TiffImagePlugin_1_1IFDRational_a60befd7c9c13422b258be625d1b31034}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}!\+\_\+\+\_\+hash\+\_\+\+\_\+@{\+\_\+\+\_\+hash\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+hash\+\_\+\+\_\+@{\+\_\+\+\_\+hash\+\_\+\+\_\+}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+hash\+\_\+\+\_\+()}{\_\_hash\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational.\+\_\+\+\_\+hash\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1IFDRational_a82ca8eb38838e9812b6acb2ae53245c8}\label{classPIL_1_1TiffImagePlugin_1_1IFDRational_a82ca8eb38838e9812b6acb2ae53245c8}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1IFDRational_aabebf2eb131860a56733bc221aced9e5}\label{classPIL_1_1TiffImagePlugin_1_1IFDRational_aabebf2eb131860a56733bc221aced9e5}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}!\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setstate\+\_\+\+\_\+()}{\_\_setstate\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational.\+\_\+\+\_\+setstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1IFDRational_a5376019d21a14685123b310f21e566fb}\label{classPIL_1_1TiffImagePlugin_1_1IFDRational_a5376019d21a14685123b310f21e566fb}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}!denominator@{denominator}}
+\index{denominator@{denominator}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}}
+\subsubsection{\texorpdfstring{denominator()}{denominator()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational.\+denominator (\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1IFDRational_a5ea31df3e8853393a5ae836603c84a23}\label{classPIL_1_1TiffImagePlugin_1_1IFDRational_a5ea31df3e8853393a5ae836603c84a23}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}!limit\+\_\+rational@{limit\+\_\+rational}}
+\index{limit\+\_\+rational@{limit\+\_\+rational}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}}
+\subsubsection{\texorpdfstring{limit\+\_\+rational()}{limit\_rational()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational.\+limit\+\_\+rational (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{max\+\_\+denominator }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:param max_denominator: Integer, the maximum denominator value
+:returns: Tuple of (numerator, denominator)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1IFDRational_a77a39e91da13c845ea0744be74b86993}\label{classPIL_1_1TiffImagePlugin_1_1IFDRational_a77a39e91da13c845ea0744be74b86993}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}!numerator@{numerator}}
+\index{numerator@{numerator}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}}
+\subsubsection{\texorpdfstring{numerator()}{numerator()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational.\+numerator (\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1IFDRational_a206df1df975cff0eafdd55816b368fb7}\label{classPIL_1_1TiffImagePlugin_1_1IFDRational_a206df1df975cff0eafdd55816b368fb7}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}!denominator@{denominator}}
+\index{denominator@{denominator}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+I\+F\+D\+Rational}}
+\subsubsection{\texorpdfstring{denominator}{denominator}}
+{\footnotesize\ttfamily P\+I\+L.\+Tiff\+Image\+Plugin.\+I\+F\+D\+Rational.\+denominator}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\+P\+I\+L/\hyperlink{TiffImagePlugin_8py}{Tiff\+Image\+Plugin.\+py}\end{DoxyCompactItemize}

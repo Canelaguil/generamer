@@ -1,0 +1,132 @@
+\hypertarget{classdateutil_1_1tz_1_1win_1_1tzres}{}\section{dateutil.\+tz.\+win.\+tzres Class Reference}
+\label{classdateutil_1_1tz_1_1win_1_1tzres}\index{dateutil.\+tz.\+win.\+tzres@{dateutil.\+tz.\+win.\+tzres}}
+
+
+Inheritance diagram for dateutil.\+tz.\+win.\+tzres\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classdateutil_1_1tz_1_1win_1_1tzres__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dateutil.\+tz.\+win.\+tzres\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classdateutil_1_1tz_1_1win_1_1tzres__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1win_1_1tzres_afde0ff2c11aa19b84bfd471a799dff33}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classdateutil_1_1tz_1_1win_1_1tzres_ac5f17128079cebb8d7851be15c667e0a}{tzres\+\_\+loc}=\textquotesingle{}tzres.\+dll\textquotesingle{})
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1win_1_1tzres_ae0b251cf7df2f866b241b669577f0b3b}{load\+\_\+name} (self, offset)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1win_1_1tzres_ab740cc88e4c9c39bc0b4ce707a256ea0}{name\+\_\+from\+\_\+string} (self, tzname\+\_\+str)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdateutil_1_1tz_1_1win_1_1tzres_ab4ac9505f4939c48ac6a826646773bef}{Load\+StringW}
+\item 
+\hyperlink{classdateutil_1_1tz_1_1win_1_1tzres_ac5f17128079cebb8d7851be15c667e0a}{tzres\+\_\+loc}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdateutil_1_1tz_1_1win_1_1tzres_aeeaa8963623c39ec9e593ce3eaf9eeee}{p\+\_\+wchar} = ctypes.\+P\+O\+I\+N\+T\+ER(wintypes.\+W\+C\+H\+AR)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Class for accessing ``tzres.dll``, which contains timezone name related
+resources.
+
+.. versionadded:: 2.5.0
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1win_1_1tzres_afde0ff2c11aa19b84bfd471a799dff33}\label{classdateutil_1_1tz_1_1win_1_1tzres_afde0ff2c11aa19b84bfd471a799dff33}} 
+\index{dateutil\+::tz\+::win\+::tzres@{dateutil\+::tz\+::win\+::tzres}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!dateutil\+::tz\+::win\+::tzres@{dateutil\+::tz\+::win\+::tzres}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+win.\+tzres.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tzres\+\_\+loc = {\ttfamily \textquotesingle{}tzres.dll\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1win_1_1tzres_ae0b251cf7df2f866b241b669577f0b3b}\label{classdateutil_1_1tz_1_1win_1_1tzres_ae0b251cf7df2f866b241b669577f0b3b}} 
+\index{dateutil\+::tz\+::win\+::tzres@{dateutil\+::tz\+::win\+::tzres}!load\+\_\+name@{load\+\_\+name}}
+\index{load\+\_\+name@{load\+\_\+name}!dateutil\+::tz\+::win\+::tzres@{dateutil\+::tz\+::win\+::tzres}}
+\subsubsection{\texorpdfstring{load\+\_\+name()}{load\_name()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+win.\+tzres.\+load\+\_\+name (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offset }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load a timezone name from a DLL offset (integer).
+
+>>> from dateutil.tzwin import tzres
+>>> tzr = tzres()
+>>> print(tzr.load_name(112))
+'Eastern Standard Time'
+
+:param offset:
+    A positive integer value referring to a string from the tzres dll.
+
+.. note::
+
+    Offsets found in the registry are generally of the form
+    ``@tzres.dll,-114``. The offset in this case is 114, not -114.\end{DoxyVerb}
+ \mbox{\Hypertarget{classdateutil_1_1tz_1_1win_1_1tzres_ab740cc88e4c9c39bc0b4ce707a256ea0}\label{classdateutil_1_1tz_1_1win_1_1tzres_ab740cc88e4c9c39bc0b4ce707a256ea0}} 
+\index{dateutil\+::tz\+::win\+::tzres@{dateutil\+::tz\+::win\+::tzres}!name\+\_\+from\+\_\+string@{name\+\_\+from\+\_\+string}}
+\index{name\+\_\+from\+\_\+string@{name\+\_\+from\+\_\+string}!dateutil\+::tz\+::win\+::tzres@{dateutil\+::tz\+::win\+::tzres}}
+\subsubsection{\texorpdfstring{name\+\_\+from\+\_\+string()}{name\_from\_string()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+win.\+tzres.\+name\+\_\+from\+\_\+string (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tzname\+\_\+str }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse strings as returned from the Windows registry into the time zone
+name as defined in the registry.
+
+>>> from dateutil.tzwin import tzres
+>>> tzr = tzres()
+>>> print(tzr.name_from_string('@tzres.dll,-251'))
+'Dateline Daylight Time'
+>>> print(tzr.name_from_string('Eastern Standard Time'))
+'Eastern Standard Time'
+
+:param tzname_str:
+    A timezone name string as returned from a Windows registry key.
+
+:return:
+    Returns the localized timezone string from tzres.dll if the string
+    is of the form `@tzres.dll,-offset`, else returns the input string.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1win_1_1tzres_ab4ac9505f4939c48ac6a826646773bef}\label{classdateutil_1_1tz_1_1win_1_1tzres_ab4ac9505f4939c48ac6a826646773bef}} 
+\index{dateutil\+::tz\+::win\+::tzres@{dateutil\+::tz\+::win\+::tzres}!Load\+StringW@{Load\+StringW}}
+\index{Load\+StringW@{Load\+StringW}!dateutil\+::tz\+::win\+::tzres@{dateutil\+::tz\+::win\+::tzres}}
+\subsubsection{\texorpdfstring{Load\+StringW}{LoadStringW}}
+{\footnotesize\ttfamily dateutil.\+tz.\+win.\+tzres.\+Load\+StringW}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1win_1_1tzres_aeeaa8963623c39ec9e593ce3eaf9eeee}\label{classdateutil_1_1tz_1_1win_1_1tzres_aeeaa8963623c39ec9e593ce3eaf9eeee}} 
+\index{dateutil\+::tz\+::win\+::tzres@{dateutil\+::tz\+::win\+::tzres}!p\+\_\+wchar@{p\+\_\+wchar}}
+\index{p\+\_\+wchar@{p\+\_\+wchar}!dateutil\+::tz\+::win\+::tzres@{dateutil\+::tz\+::win\+::tzres}}
+\subsubsection{\texorpdfstring{p\+\_\+wchar}{p\_wchar}}
+{\footnotesize\ttfamily dateutil.\+tz.\+win.\+tzres.\+p\+\_\+wchar = ctypes.\+P\+O\+I\+N\+T\+ER(wintypes.\+W\+C\+H\+AR)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1win_1_1tzres_ac5f17128079cebb8d7851be15c667e0a}\label{classdateutil_1_1tz_1_1win_1_1tzres_ac5f17128079cebb8d7851be15c667e0a}} 
+\index{dateutil\+::tz\+::win\+::tzres@{dateutil\+::tz\+::win\+::tzres}!tzres\+\_\+loc@{tzres\+\_\+loc}}
+\index{tzres\+\_\+loc@{tzres\+\_\+loc}!dateutil\+::tz\+::win\+::tzres@{dateutil\+::tz\+::win\+::tzres}}
+\subsubsection{\texorpdfstring{tzres\+\_\+loc}{tzres\_loc}}
+{\footnotesize\ttfamily dateutil.\+tz.\+win.\+tzres.\+tzres\+\_\+loc}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/dateutil/tz/\hyperlink{win_8py}{win.\+py}\end{DoxyCompactItemize}

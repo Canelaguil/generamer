@@ -1,0 +1,117 @@
+\hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution}{}\section{pip.\+\_\+vendor.\+distlib.\+database.\+Base\+Installed\+Distribution Class Reference}
+\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution}\index{pip.\+\_\+vendor.\+distlib.\+database.\+Base\+Installed\+Distribution@{pip.\+\_\+vendor.\+distlib.\+database.\+Base\+Installed\+Distribution}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+distlib.\+database.\+Base\+Installed\+Distribution\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+distlib.\+database.\+Base\+Installed\+Distribution\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_a3cf0dbeeadaece59290525cfd71c8164}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1Distribution_adda9f0db4ba50d2a3b8dd421e576fb79}{metadata}, \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_aa37afc6e1557b041e3e2bb7d5c3eb4ab}{path}, env=None)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_a0db639ac83f057f61eae7b8c6a38d603}{get\+\_\+hash} (self, data, \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_af39b5ee3d049a88bf0cfe1ce69e8ef62}{hasher}=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_aa37afc6e1557b041e3e2bb7d5c3eb4ab}{path}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_ab17d173eea8811a1ccdb286de7cf6ff7}{dist\+\_\+path}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_af39b5ee3d049a88bf0cfe1ce69e8ef62}{hasher}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This is the base class for installed distributions (whether PEP 376 or
+legacy).
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_a3cf0dbeeadaece59290525cfd71c8164}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_a3cf0dbeeadaece59290525cfd71c8164}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+Base\+Installed\+Distribution.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{metadata,  }\item[{}]{path,  }\item[{}]{env = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialise an instance.
+:param metadata: An instance of :class:`Metadata` which describes the
+         distribution. This will normally have been initialised
+         from a metadata file in the ``path``.
+:param path:     The path of the ``.dist-info`` or ``.egg-info``
+         directory for the distribution.
+:param env:      This is normally the :class:`DistributionPath`
+         instance where this distribution was found.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_a0db639ac83f057f61eae7b8c6a38d603}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_a0db639ac83f057f61eae7b8c6a38d603}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution}!get\+\_\+hash@{get\+\_\+hash}}
+\index{get\+\_\+hash@{get\+\_\+hash}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution}}
+\subsubsection{\texorpdfstring{get\+\_\+hash()}{get\_hash()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+Base\+Installed\+Distribution.\+get\+\_\+hash (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data,  }\item[{}]{hasher = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the hash of some data, using a particular hash algorithm, if
+specified.
+
+:param data: The data to be hashed.
+:type data: bytes
+:param hasher: The name of a hash implementation, supported by hashlib,
+       or ``None``. Examples of valid values are ``'sha1'``,
+       ``'sha224'``, ``'sha384'``, '``sha256'``, ``'md5'`` and
+       ``'sha512'``. If no hasher is specified, the ``hasher``
+       attribute of the :class:`InstalledDistribution` instance
+       is used. If the hasher is determined to be ``None``, MD5
+       is used as the hashing algorithm.
+:returns: The hash of the data. If a hasher was explicitly specified,
+  the returned hash will be prefixed with the specified hasher
+  followed by '='.
+:rtype: str
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_ab17d173eea8811a1ccdb286de7cf6ff7}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_ab17d173eea8811a1ccdb286de7cf6ff7}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution}!dist\+\_\+path@{dist\+\_\+path}}
+\index{dist\+\_\+path@{dist\+\_\+path}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution}}
+\subsubsection{\texorpdfstring{dist\+\_\+path}{dist\_path}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+Base\+Installed\+Distribution.\+dist\+\_\+path}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_af39b5ee3d049a88bf0cfe1ce69e8ef62}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_af39b5ee3d049a88bf0cfe1ce69e8ef62}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution}!hasher@{hasher}}
+\index{hasher@{hasher}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution}}
+\subsubsection{\texorpdfstring{hasher}{hasher}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+Base\+Installed\+Distribution.\+hasher\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_aa37afc6e1557b041e3e2bb7d5c3eb4ab}\label{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution_aa37afc6e1557b041e3e2bb7d5c3eb4ab}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution}!path@{path}}
+\index{path@{path}!pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution@{pip\+::\+\_\+vendor\+::distlib\+::database\+::\+Base\+Installed\+Distribution}}
+\subsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+Base\+Installed\+Distribution.\+path}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/distlib/\hyperlink{database_8py}{database.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,264 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster}{}\section{networkx.\+algorithms.\+bipartite.\+cluster Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster}\index{networkx.\+algorithms.\+bipartite.\+cluster@{networkx.\+algorithms.\+bipartite.\+cluster}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_aa8749b5dca0aa1986e505e83d0bb90d7}{cc\+\_\+dot} (nu, nv)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a9e4dfa9f96e78d01a636c30077695ed0}{cc\+\_\+max} (nu, nv)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a4b2c9f3a2966d57d22d6423b9caae820}{cc\+\_\+min} (nu, nv)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a0acdfbe5d1eb9935863043993b4457ba}{latapy\+\_\+clustering} (G, nodes=None, mode=\char`\"{}dot\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_abb3b66d2c3871659c444861cc3180d65}{average\+\_\+clustering} (G, nodes=None, mode=\char`\"{}dot\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a360efe80c92355ee33929deeede41371}{robins\+\_\+alexander\+\_\+clustering} (G)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_aeaa4cba47a1e17135976292befc76a41}{modes}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a25b46a756db8ff1a00af83d2282ccb1e}{clustering}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions for computing clustering of pairs\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_abb3b66d2c3871659c444861cc3180d65}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_abb3b66d2c3871659c444861cc3180d65}} 
+\index{networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}!average\+\_\+clustering@{average\+\_\+clustering}}
+\index{average\+\_\+clustering@{average\+\_\+clustering}!networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}}
+\subsubsection{\texorpdfstring{average\+\_\+clustering()}{average\_clustering()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+cluster.\+average\+\_\+clustering (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodes = {\ttfamily None},  }\item[{}]{mode = {\ttfamily \char`\"{}dot\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the average bipartite clustering coefficient.
+
+A clustering coefficient for the whole graph is the average,
+
+.. math::
+
+   C = \frac{1}{n}\sum_{v \in G} c_v,
+
+where `n` is the number of nodes in `G`.
+
+Similar measures for the two bipartite sets can be defined [1]_
+
+.. math::
+
+   C_X = \frac{1}{|X|}\sum_{v \in X} c_v,
+
+where `X` is a bipartite set of `G`.
+
+Parameters
+----------
+G : graph
+    a bipartite graph
+
+nodes : list or iterable, optional
+    A container of nodes to use in computing the average.
+    The nodes should be either the entire graph (the default) or one of the
+    bipartite sets.
+
+mode : string
+    The pariwise bipartite clustering method.
+    It must be "dot", "max", or "min"
+
+Returns
+-------
+clustering : float
+   The average bipartite clustering for the given set of nodes or the
+   entire graph if no nodes are specified.
+
+Examples
+--------
+>>> from networkx.algorithms import bipartite
+>>> G = nx.star_graph(3)  # star graphs are bipartite
+>>> bipartite.average_clustering(G)
+0.75
+>>> X, Y = bipartite.sets(G)
+>>> bipartite.average_clustering(G, X)
+0.0
+>>> bipartite.average_clustering(G, Y)
+1.0
+
+See Also
+--------
+clustering
+
+Notes
+-----
+The container of nodes passed to this function must contain all of the nodes
+in one of the bipartite sets ("top" or "bottom") in order to compute
+the correct average bipartite clustering coefficients.
+See :mod:`bipartite documentation <networkx.algorithms.bipartite>`
+for further details on how bipartite graphs are handled in NetworkX.
+
+
+References
+----------
+.. [1] Latapy, Matthieu, Clémence Magnien, and Nathalie Del Vecchio (2008).
+    Basic notions for the analysis of large two-mode networks.
+    Social Networks 30(1), 31--48.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_aa8749b5dca0aa1986e505e83d0bb90d7}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_aa8749b5dca0aa1986e505e83d0bb90d7}} 
+\index{networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}!cc\+\_\+dot@{cc\+\_\+dot}}
+\index{cc\+\_\+dot@{cc\+\_\+dot}!networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}}
+\subsubsection{\texorpdfstring{cc\+\_\+dot()}{cc\_dot()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+cluster.\+cc\+\_\+dot (\begin{DoxyParamCaption}\item[{}]{nu,  }\item[{}]{nv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a9e4dfa9f96e78d01a636c30077695ed0}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a9e4dfa9f96e78d01a636c30077695ed0}} 
+\index{networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}!cc\+\_\+max@{cc\+\_\+max}}
+\index{cc\+\_\+max@{cc\+\_\+max}!networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}}
+\subsubsection{\texorpdfstring{cc\+\_\+max()}{cc\_max()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+cluster.\+cc\+\_\+max (\begin{DoxyParamCaption}\item[{}]{nu,  }\item[{}]{nv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a4b2c9f3a2966d57d22d6423b9caae820}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a4b2c9f3a2966d57d22d6423b9caae820}} 
+\index{networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}!cc\+\_\+min@{cc\+\_\+min}}
+\index{cc\+\_\+min@{cc\+\_\+min}!networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}}
+\subsubsection{\texorpdfstring{cc\+\_\+min()}{cc\_min()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+cluster.\+cc\+\_\+min (\begin{DoxyParamCaption}\item[{}]{nu,  }\item[{}]{nv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a0acdfbe5d1eb9935863043993b4457ba}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a0acdfbe5d1eb9935863043993b4457ba}} 
+\index{networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}!latapy\+\_\+clustering@{latapy\+\_\+clustering}}
+\index{latapy\+\_\+clustering@{latapy\+\_\+clustering}!networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}}
+\subsubsection{\texorpdfstring{latapy\+\_\+clustering()}{latapy\_clustering()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+cluster.\+latapy\+\_\+clustering (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodes = {\ttfamily None},  }\item[{}]{mode = {\ttfamily \char`\"{}dot\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute a bipartite clustering coefficient for nodes.
+
+The bipartie clustering coefficient is a measure of local density
+of connections defined as [1]_:
+
+.. math::
+
+   c_u = \frac{\sum_{v \in N(N(u))} c_{uv} }{|N(N(u))|}
+
+where `N(N(u))` are the second order neighbors of `u` in `G` excluding `u`,
+and `c_{uv}` is the pairwise clustering coefficient between nodes
+`u` and `v`.
+
+The mode selects the function for `c_{uv}` which can be:
+
+`dot`:
+
+.. math::
+
+   c_{uv}=\frac{|N(u)\cap N(v)|}{|N(u) \cup N(v)|}
+
+`min`:
+
+.. math::
+
+   c_{uv}=\frac{|N(u)\cap N(v)|}{min(|N(u)|,|N(v)|)}
+
+`max`:
+
+.. math::
+
+   c_{uv}=\frac{|N(u)\cap N(v)|}{max(|N(u)|,|N(v)|)}
+
+
+Parameters
+----------
+G : graph
+    A bipartite graph
+
+nodes : list or iterable (optional)
+    Compute bipartite clustering for these nodes. The default
+    is all nodes in G.
+
+mode : string
+    The pariwise bipartite clustering method to be used in the computation.
+    It must be "dot", "max", or "min".
+
+Returns
+-------
+clustering : dictionary
+    A dictionary keyed by node with the clustering coefficient value.
+
+
+Examples
+--------
+>>> from networkx.algorithms import bipartite
+>>> G = nx.path_graph(4)  # path graphs are bipartite
+>>> c = bipartite.clustering(G)
+>>> c[0]
+0.5
+>>> c = bipartite.clustering(G, mode="min")
+>>> c[0]
+1.0
+
+See Also
+--------
+robins_alexander_clustering
+average_clustering
+networkx.algorithms.cluster.square_clustering
+
+References
+----------
+.. [1] Latapy, Matthieu, Clémence Magnien, and Nathalie Del Vecchio (2008).
+   Basic notions for the analysis of large two-mode networks.
+   Social Networks 30(1), 31--48.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a360efe80c92355ee33929deeede41371}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a360efe80c92355ee33929deeede41371}} 
+\index{networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}!robins\+\_\+alexander\+\_\+clustering@{robins\+\_\+alexander\+\_\+clustering}}
+\index{robins\+\_\+alexander\+\_\+clustering@{robins\+\_\+alexander\+\_\+clustering}!networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}}
+\subsubsection{\texorpdfstring{robins\+\_\+alexander\+\_\+clustering()}{robins\_alexander\_clustering()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+cluster.\+robins\+\_\+alexander\+\_\+clustering (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the bipartite clustering of G.
+
+Robins and Alexander [1]_ defined bipartite clustering coefficient as
+four times the number of four cycles `C_4` divided by the number of
+three paths `L_3` in a bipartite graph:
+
+.. math::
+
+   CC_4 = \frac{4 * C_4}{L_3}
+
+Parameters
+----------
+G : graph
+    a bipartite graph
+
+Returns
+-------
+clustering : float
+   The Robins and Alexander bipartite clustering for the input graph.
+
+Examples
+--------
+>>> from networkx.algorithms import bipartite
+>>> G = nx.davis_southern_women_graph()
+>>> print(round(bipartite.robins_alexander_clustering(G), 3))
+0.468
+
+See Also
+--------
+latapy_clustering
+networkx.algorithms.cluster.square_clustering
+
+References
+----------
+.. [1] Robins, G. and M. Alexander (2004). Small worlds among interlocking
+       directors: Network structure and distance in bipartite graphs.
+       Computational & Mathematical Organization Theory 10(1), 69–94.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a25b46a756db8ff1a00af83d2282ccb1e}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_a25b46a756db8ff1a00af83d2282ccb1e}} 
+\index{networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}!clustering@{clustering}}
+\index{clustering@{clustering}!networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}}
+\subsubsection{\texorpdfstring{clustering}{clustering}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+bipartite.\+cluster.\+clustering}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_aeaa4cba47a1e17135976292befc76a41}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1cluster_aeaa4cba47a1e17135976292befc76a41}} 
+\index{networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}!modes@{modes}}
+\index{modes@{modes}!networkx\+::algorithms\+::bipartite\+::cluster@{networkx\+::algorithms\+::bipartite\+::cluster}}
+\subsubsection{\texorpdfstring{modes}{modes}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+bipartite.\+cluster.\+modes}
+

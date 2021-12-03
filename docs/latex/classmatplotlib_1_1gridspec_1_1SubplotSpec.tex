@@ -1,0 +1,278 @@
+\hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec}{}\section{matplotlib.\+gridspec.\+Subplot\+Spec Class Reference}
+\label{classmatplotlib_1_1gridspec_1_1SubplotSpec}\index{matplotlib.\+gridspec.\+Subplot\+Spec@{matplotlib.\+gridspec.\+Subplot\+Spec}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a9ab813f61256a11e4f13973be721d995}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, gridspec, \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_ac04c4772b102d0b8634a5fa00d6acb56}{num1}, \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a903365a73f1070a8f41931d1fcd96e0f}{num2}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a5643936c9c55446f65e1fad56d36456f}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a49e95aa59788d14c8f6ce1cad1b94d5c}{num2} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a990d2d7b717fb360826e3a9c74aac5f1}{num2} (self, value)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_adc6c717a10bba91073a054f381682a1a}{\+\_\+\+\_\+getstate\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a7767bd58fb7f35a204113b41e7d60d5d}{get\+\_\+gridspec} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a78c47d1409407487c8f5191757e79a9a}{get\+\_\+geometry} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_aa7829b8bc026e7b64c7e4dc9a15c8add}{get\+\_\+rows\+\_\+columns} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a6c1a7317d34c0bc30c3135bcd5e2ccaa}{rowspan} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a89bbd0f5fd46ec70ac8c36ea166a5e74}{colspan} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a8320b7a223afb23cb1d72af0fc9abb3d}{is\+\_\+first\+\_\+row} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a677da2035530536dee6708eb9a09355e}{is\+\_\+last\+\_\+row} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a6a2f63444c89f715e5a301f675fa25ad}{is\+\_\+first\+\_\+col} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a6c578725fd84b16b5b6e2eb95d8d078e}{is\+\_\+last\+\_\+col} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_aa7947c11c4cf382b7ae91ddf9e539d35}{get\+\_\+position} (self, figure, return\+\_\+all=False)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a5abffd71d91ce525b32c0e3ec78d6877}{get\+\_\+topmost\+\_\+subplotspec} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a67b19f5309033d4182adcf7f6f86588e}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_ac722c61410a081bc6830d8c82a9874c9}{\+\_\+\+\_\+hash\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_acc03db846e1376e8b32b29a1f48119e3}{subgridspec} (self, nrows, ncols, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_ac04c4772b102d0b8634a5fa00d6acb56}{num1}
+\item 
+\hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a903365a73f1070a8f41931d1fcd96e0f}{num2}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1gridspec_1_1SubplotSpec_a4923dcf21cfab5040c8e59909b988894}{alternative}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Specifies the location of a subplot in a `GridSpec`.
+
+.. note::
+
+    Likely, you'll never instantiate a `SubplotSpec` yourself. Instead you
+    will typically obtain one from a `GridSpec` using item-access.
+
+Parameters
+----------
+gridspec : `~matplotlib.gridspec.GridSpec`
+    The GridSpec, which the subplot is referencing.
+num1, num2 : int
+    The subplot will occupy the num1-th cell of the given
+    gridspec.  If num2 is provided, the subplot will span between
+    num1-th cell and num2-th cell *inclusive*.
+
+    The index starts from 0.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a9ab813f61256a11e4f13973be721d995}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a9ab813f61256a11e4f13973be721d995}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{gridspec,  }\item[{}]{num1,  }\item[{}]{num2 = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a67b19f5309033d4182adcf7f6f86588e}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a67b19f5309033d4182adcf7f6f86588e}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+eq\+\_\+\+\_\+()}{\_\_eq\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+\_\+\+\_\+eq\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Two SubplotSpecs are considered equal if they refer to the same
+position(s) in the same `GridSpec`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_adc6c717a10bba91073a054f381682a1a}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_adc6c717a10bba91073a054f381682a1a}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getstate\+\_\+\+\_\+()}{\_\_getstate\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+\_\+\+\_\+getstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_ac722c61410a081bc6830d8c82a9874c9}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_ac722c61410a081bc6830d8c82a9874c9}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!\+\_\+\+\_\+hash\+\_\+\+\_\+@{\+\_\+\+\_\+hash\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+hash\+\_\+\+\_\+@{\+\_\+\+\_\+hash\+\_\+\+\_\+}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+hash\+\_\+\+\_\+()}{\_\_hash\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+\_\+\+\_\+hash\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a5643936c9c55446f65e1fad56d36456f}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a5643936c9c55446f65e1fad56d36456f}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a89bbd0f5fd46ec70ac8c36ea166a5e74}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a89bbd0f5fd46ec70ac8c36ea166a5e74}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!colspan@{colspan}}
+\index{colspan@{colspan}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{colspan()}{colspan()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+colspan (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The columns spanned by this subplot, as a `range` object.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a78c47d1409407487c8f5191757e79a9a}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a78c47d1409407487c8f5191757e79a9a}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!get\+\_\+geometry@{get\+\_\+geometry}}
+\index{get\+\_\+geometry@{get\+\_\+geometry}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{get\+\_\+geometry()}{get\_geometry()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+get\+\_\+geometry (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the subplot geometry as tuple ``(n_rows, n_cols, start, stop)``.
+
+The indices *start* and *stop* define the range of the subplot within
+the `GridSpec`. *stop* is inclusive (i.e. for a single cell
+``start == stop``).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a7767bd58fb7f35a204113b41e7d60d5d}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a7767bd58fb7f35a204113b41e7d60d5d}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!get\+\_\+gridspec@{get\+\_\+gridspec}}
+\index{get\+\_\+gridspec@{get\+\_\+gridspec}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{get\+\_\+gridspec()}{get\_gridspec()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+get\+\_\+gridspec (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_aa7947c11c4cf382b7ae91ddf9e539d35}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_aa7947c11c4cf382b7ae91ddf9e539d35}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!get\+\_\+position@{get\+\_\+position}}
+\index{get\+\_\+position@{get\+\_\+position}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{get\+\_\+position()}{get\_position()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+get\+\_\+position (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure,  }\item[{}]{return\+\_\+all = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update the subplot position from ``figure.subplotpars``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_aa7829b8bc026e7b64c7e4dc9a15c8add}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_aa7829b8bc026e7b64c7e4dc9a15c8add}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!get\+\_\+rows\+\_\+columns@{get\+\_\+rows\+\_\+columns}}
+\index{get\+\_\+rows\+\_\+columns@{get\+\_\+rows\+\_\+columns}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{get\+\_\+rows\+\_\+columns()}{get\_rows\_columns()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+get\+\_\+rows\+\_\+columns (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the subplot row and column numbers as a tuple
+``(n_rows, n_cols, row_start, row_stop, col_start, col_stop)``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a5abffd71d91ce525b32c0e3ec78d6877}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a5abffd71d91ce525b32c0e3ec78d6877}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!get\+\_\+topmost\+\_\+subplotspec@{get\+\_\+topmost\+\_\+subplotspec}}
+\index{get\+\_\+topmost\+\_\+subplotspec@{get\+\_\+topmost\+\_\+subplotspec}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{get\+\_\+topmost\+\_\+subplotspec()}{get\_topmost\_subplotspec()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+get\+\_\+topmost\+\_\+subplotspec (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the topmost `SubplotSpec` instance associated with the subplot.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a6a2f63444c89f715e5a301f675fa25ad}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a6a2f63444c89f715e5a301f675fa25ad}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!is\+\_\+first\+\_\+col@{is\+\_\+first\+\_\+col}}
+\index{is\+\_\+first\+\_\+col@{is\+\_\+first\+\_\+col}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{is\+\_\+first\+\_\+col()}{is\_first\_col()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+is\+\_\+first\+\_\+col (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a8320b7a223afb23cb1d72af0fc9abb3d}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a8320b7a223afb23cb1d72af0fc9abb3d}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!is\+\_\+first\+\_\+row@{is\+\_\+first\+\_\+row}}
+\index{is\+\_\+first\+\_\+row@{is\+\_\+first\+\_\+row}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{is\+\_\+first\+\_\+row()}{is\_first\_row()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+is\+\_\+first\+\_\+row (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a6c578725fd84b16b5b6e2eb95d8d078e}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a6c578725fd84b16b5b6e2eb95d8d078e}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!is\+\_\+last\+\_\+col@{is\+\_\+last\+\_\+col}}
+\index{is\+\_\+last\+\_\+col@{is\+\_\+last\+\_\+col}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{is\+\_\+last\+\_\+col()}{is\_last\_col()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+is\+\_\+last\+\_\+col (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a677da2035530536dee6708eb9a09355e}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a677da2035530536dee6708eb9a09355e}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!is\+\_\+last\+\_\+row@{is\+\_\+last\+\_\+row}}
+\index{is\+\_\+last\+\_\+row@{is\+\_\+last\+\_\+row}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{is\+\_\+last\+\_\+row()}{is\_last\_row()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+is\+\_\+last\+\_\+row (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a49e95aa59788d14c8f6ce1cad1b94d5c}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a49e95aa59788d14c8f6ce1cad1b94d5c}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!num2@{num2}}
+\index{num2@{num2}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{num2()}{num2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+num2 (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a990d2d7b717fb360826e3a9c74aac5f1}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a990d2d7b717fb360826e3a9c74aac5f1}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!num2@{num2}}
+\index{num2@{num2}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{num2()}{num2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+num2 (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a6c1a7317d34c0bc30c3135bcd5e2ccaa}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a6c1a7317d34c0bc30c3135bcd5e2ccaa}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!rowspan@{rowspan}}
+\index{rowspan@{rowspan}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{rowspan()}{rowspan()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+rowspan (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The rows spanned by this subplot, as a `range` object.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_acc03db846e1376e8b32b29a1f48119e3}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_acc03db846e1376e8b32b29a1f48119e3}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!subgridspec@{subgridspec}}
+\index{subgridspec@{subgridspec}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{subgridspec()}{subgridspec()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Subplot\+Spec.\+subgridspec (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{nrows,  }\item[{}]{ncols,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a GridSpec within this subplot.
+
+The created `.GridSpecFromSubplotSpec` will have this `SubplotSpec` as
+a parent.
+
+Parameters
+----------
+nrows : int
+    Number of rows in grid.
+
+ncols : int
+    Number or columns in grid.
+
+Returns
+-------
+`.GridSpecFromSubplotSpec`
+
+Other Parameters
+----------------
+**kwargs
+    All other parameters are passed to `.GridSpecFromSubplotSpec`.
+
+See Also
+--------
+matplotlib.pyplot.subplots
+
+Examples
+--------
+Adding three subplots in the space occupied by a single subplot::
+
+    fig = plt.figure()
+    gs0 = fig.add_gridspec(3, 1)
+    ax1 = fig.add_subplot(gs0[0])
+    ax2 = fig.add_subplot(gs0[1])
+    gssub = gs0[2].subgridspec(1, 3)
+    for i in range(3):
+fig.add_subplot(gssub[0, i])
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a4923dcf21cfab5040c8e59909b988894}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a4923dcf21cfab5040c8e59909b988894}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!alternative@{alternative}}
+\index{alternative@{alternative}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{alternative}{alternative}}
+{\footnotesize\ttfamily matplotlib.\+gridspec.\+Subplot\+Spec.\+alternative\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_ac04c4772b102d0b8634a5fa00d6acb56}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_ac04c4772b102d0b8634a5fa00d6acb56}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!num1@{num1}}
+\index{num1@{num1}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{num1}{num1}}
+{\footnotesize\ttfamily matplotlib.\+gridspec.\+Subplot\+Spec.\+num1}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1SubplotSpec_a903365a73f1070a8f41931d1fcd96e0f}\label{classmatplotlib_1_1gridspec_1_1SubplotSpec_a903365a73f1070a8f41931d1fcd96e0f}} 
+\index{matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}!num2@{num2}}
+\index{num2@{num2}!matplotlib\+::gridspec\+::\+Subplot\+Spec@{matplotlib\+::gridspec\+::\+Subplot\+Spec}}
+\subsubsection{\texorpdfstring{num2}{num2}}
+{\footnotesize\ttfamily matplotlib.\+gridspec.\+Subplot\+Spec.\+num2}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{gridspec_8py}{gridspec.\+py}\end{DoxyCompactItemize}

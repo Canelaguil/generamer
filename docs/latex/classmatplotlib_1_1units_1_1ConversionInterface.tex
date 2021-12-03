@@ -1,0 +1,73 @@
+\hypertarget{classmatplotlib_1_1units_1_1ConversionInterface}{}\section{matplotlib.\+units.\+Conversion\+Interface Class Reference}
+\label{classmatplotlib_1_1units_1_1ConversionInterface}\index{matplotlib.\+units.\+Conversion\+Interface@{matplotlib.\+units.\+Conversion\+Interface}}
+
+
+Inheritance diagram for matplotlib.\+units.\+Conversion\+Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1units_1_1ConversionInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1units_1_1ConversionInterface_a9b4018c7837e3646e722747d8853b200}{axisinfo} (unit, axis)
+\item 
+def \hyperlink{classmatplotlib_1_1units_1_1ConversionInterface_ab979f9bc68cc2c125913a60a3f37061d}{default\+\_\+units} (x, axis)
+\item 
+def \hyperlink{classmatplotlib_1_1units_1_1ConversionInterface_ad7bfcbda9759240f1a1bca360c64ae18}{convert} (obj, unit, axis)
+\item 
+def \hyperlink{classmatplotlib_1_1units_1_1ConversionInterface_a236629416d3c8ebe029a45494fcef0bd}{is\+\_\+numlike} (x)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The minimal interface for a converter to take custom data types (or
+sequences) and convert them to values Matplotlib can use.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1units_1_1ConversionInterface_a9b4018c7837e3646e722747d8853b200}\label{classmatplotlib_1_1units_1_1ConversionInterface_a9b4018c7837e3646e722747d8853b200}} 
+\index{matplotlib\+::units\+::\+Conversion\+Interface@{matplotlib\+::units\+::\+Conversion\+Interface}!axisinfo@{axisinfo}}
+\index{axisinfo@{axisinfo}!matplotlib\+::units\+::\+Conversion\+Interface@{matplotlib\+::units\+::\+Conversion\+Interface}}
+\subsubsection{\texorpdfstring{axisinfo()}{axisinfo()}}
+{\footnotesize\ttfamily def matplotlib.\+units.\+Conversion\+Interface.\+axisinfo (\begin{DoxyParamCaption}\item[{}]{unit,  }\item[{}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Return an `.AxisInfo` for the axis with the specified units.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1units_1_1ConversionInterface_ad7bfcbda9759240f1a1bca360c64ae18}\label{classmatplotlib_1_1units_1_1ConversionInterface_ad7bfcbda9759240f1a1bca360c64ae18}} 
+\index{matplotlib\+::units\+::\+Conversion\+Interface@{matplotlib\+::units\+::\+Conversion\+Interface}!convert@{convert}}
+\index{convert@{convert}!matplotlib\+::units\+::\+Conversion\+Interface@{matplotlib\+::units\+::\+Conversion\+Interface}}
+\subsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily def matplotlib.\+units.\+Conversion\+Interface.\+convert (\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{unit,  }\item[{}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Convert *obj* using *unit* for the specified *axis*.
+
+If *obj* is a sequence, return the converted sequence.  The output must
+be a sequence of scalars that can be used by the numpy array layer.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1units_1_1ConversionInterface_ab979f9bc68cc2c125913a60a3f37061d}\label{classmatplotlib_1_1units_1_1ConversionInterface_ab979f9bc68cc2c125913a60a3f37061d}} 
+\index{matplotlib\+::units\+::\+Conversion\+Interface@{matplotlib\+::units\+::\+Conversion\+Interface}!default\+\_\+units@{default\+\_\+units}}
+\index{default\+\_\+units@{default\+\_\+units}!matplotlib\+::units\+::\+Conversion\+Interface@{matplotlib\+::units\+::\+Conversion\+Interface}}
+\subsubsection{\texorpdfstring{default\+\_\+units()}{default\_units()}}
+{\footnotesize\ttfamily def matplotlib.\+units.\+Conversion\+Interface.\+default\+\_\+units (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Return the default unit for *x* or ``None`` for the given axis.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1units_1_1ConversionInterface_a236629416d3c8ebe029a45494fcef0bd}\label{classmatplotlib_1_1units_1_1ConversionInterface_a236629416d3c8ebe029a45494fcef0bd}} 
+\index{matplotlib\+::units\+::\+Conversion\+Interface@{matplotlib\+::units\+::\+Conversion\+Interface}!is\+\_\+numlike@{is\+\_\+numlike}}
+\index{is\+\_\+numlike@{is\+\_\+numlike}!matplotlib\+::units\+::\+Conversion\+Interface@{matplotlib\+::units\+::\+Conversion\+Interface}}
+\subsubsection{\texorpdfstring{is\+\_\+numlike()}{is\_numlike()}}
+{\footnotesize\ttfamily def matplotlib.\+units.\+Conversion\+Interface.\+is\+\_\+numlike (\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}The Matplotlib datalim, autoscaling, locators etc work with scalars
+which are the units converted to floats given the current unit.  The
+converter may be passed these floats, or arrays of them, even when
+units are set.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{units_8py}{units.\+py}\end{DoxyCompactItemize}

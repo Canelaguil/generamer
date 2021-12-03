@@ -1,0 +1,176 @@
+\hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox}{}\section{matplotlib.\+offsetbox.\+Aux\+Transform\+Box Class Reference}
+\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox}\index{matplotlib.\+offsetbox.\+Aux\+Transform\+Box@{matplotlib.\+offsetbox.\+Aux\+Transform\+Box}}
+
+
+Inheritance diagram for matplotlib.\+offsetbox.\+Aux\+Transform\+Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classmatplotlib_1_1offsetbox_1_1AuxTransformBox__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+offsetbox.\+Aux\+Transform\+Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classmatplotlib_1_1offsetbox_1_1AuxTransformBox__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a0d11eb99b83fba6579fce00c46bcc706}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a7581f3afd076527eec84c33c3fc4f4d3}{aux\+\_\+transform})
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a4f81b602b7d9f9ea481b880bab755ed7}{add\+\_\+artist} (self, a)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a17bb4fe118d8a913194524189f8461df}{get\+\_\+transform} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_adb324e18af4078acb23b8db6d76c179e}{set\+\_\+transform} (self, t)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a9391308584455acd71fb373eb29ef5a1}{set\+\_\+offset} (self, xy)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_ab6b693274cd3d9bdc9ea57c185a12708}{get\+\_\+offset} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a61c847fc450cd5a983f562e2327bbfe8}{get\+\_\+window\+\_\+extent} (self, renderer)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a399b4e8b4844d7d36fa3ecd44f7717ce}{get\+\_\+extent} (self, renderer)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a86eb3e22df6060b7d51171ed764aac46}{draw} (self, renderer)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a7581f3afd076527eec84c33c3fc4f4d3}{aux\+\_\+transform}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a00999a041f59671514edd27cb4e8d082}{offset\+\_\+transform}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a78da465b2d9a311a6e3f4b46144766e5}{ref\+\_\+offset\+\_\+transform}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a0544ac985038a2441763ab8bb1d4b36c}{stale}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Offset Box with the aux_transform. Its children will be
+transformed with the aux_transform first then will be
+offsetted. The absolute coordinate of the aux_transform is meaning
+as it will be automatically adjust so that the left-lower corner
+of the bounding box of children will be set to (0, 0) before the
+offset transform.
+
+It is similar to drawing area, except that the extent of the box
+is not predetermined but calculated from the window extent of its
+children. Furthermore, the extent of the children will be
+calculated in the transformed coordinate.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a0d11eb99b83fba6579fce00c46bcc706}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a0d11eb99b83fba6579fce00c46bcc706}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{aux\+\_\+transform }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a4f81b602b7d9f9ea481b880bab755ed7}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a4f81b602b7d9f9ea481b880bab755ed7}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!add\+\_\+artist@{add\+\_\+artist}}
+\index{add\+\_\+artist@{add\+\_\+artist}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{add\+\_\+artist()}{add\_artist()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+add\+\_\+artist (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add an `.Artist` to the container box.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a86eb3e22df6060b7d51171ed764aac46}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a86eb3e22df6060b7d51171ed764aac46}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!draw@{draw}}
+\index{draw@{draw}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+draw (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a399b4e8b4844d7d36fa3ecd44f7717ce}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a399b4e8b4844d7d36fa3ecd44f7717ce}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!get\+\_\+extent@{get\+\_\+extent}}
+\index{get\+\_\+extent@{get\+\_\+extent}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{get\+\_\+extent()}{get\_extent()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+get\+\_\+extent (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_ab6b693274cd3d9bdc9ea57c185a12708}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_ab6b693274cd3d9bdc9ea57c185a12708}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!get\+\_\+offset@{get\+\_\+offset}}
+\index{get\+\_\+offset@{get\+\_\+offset}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{get\+\_\+offset()}{get\_offset()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+get\+\_\+offset (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return offset of the container.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a17bb4fe118d8a913194524189f8461df}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a17bb4fe118d8a913194524189f8461df}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!get\+\_\+transform@{get\+\_\+transform}}
+\index{get\+\_\+transform@{get\+\_\+transform}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{get\+\_\+transform()}{get\_transform()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+get\+\_\+transform (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the :class:`~matplotlib.transforms.Transform` applied
+to the children
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a61c847fc450cd5a983f562e2327bbfe8}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a61c847fc450cd5a983f562e2327bbfe8}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!get\+\_\+window\+\_\+extent@{get\+\_\+window\+\_\+extent}}
+\index{get\+\_\+window\+\_\+extent@{get\+\_\+window\+\_\+extent}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{get\+\_\+window\+\_\+extent()}{get\_window\_extent()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+get\+\_\+window\+\_\+extent (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the bounding box in display space.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a9391308584455acd71fb373eb29ef5a1}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a9391308584455acd71fb373eb29ef5a1}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!set\+\_\+offset@{set\+\_\+offset}}
+\index{set\+\_\+offset@{set\+\_\+offset}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{set\+\_\+offset()}{set\_offset()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+set\+\_\+offset (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xy }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the offset of the container.
+
+Parameters
+----------
+xy : (float, float)
+    The (x, y) coordinates of the offset in display units.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_adb324e18af4078acb23b8db6d76c179e}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_adb324e18af4078acb23b8db6d76c179e}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!set\+\_\+transform@{set\+\_\+transform}}
+\index{set\+\_\+transform@{set\+\_\+transform}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{set\+\_\+transform()}{set\_transform()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+set\+\_\+transform (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{t }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}set_transform is ignored.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a7581f3afd076527eec84c33c3fc4f4d3}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a7581f3afd076527eec84c33c3fc4f4d3}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!aux\+\_\+transform@{aux\+\_\+transform}}
+\index{aux\+\_\+transform@{aux\+\_\+transform}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{aux\+\_\+transform}{aux\_transform}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+aux\+\_\+transform}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a00999a041f59671514edd27cb4e8d082}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a00999a041f59671514edd27cb4e8d082}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!offset\+\_\+transform@{offset\+\_\+transform}}
+\index{offset\+\_\+transform@{offset\+\_\+transform}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{offset\+\_\+transform}{offset\_transform}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+offset\+\_\+transform}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a78da465b2d9a311a6e3f4b46144766e5}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a78da465b2d9a311a6e3f4b46144766e5}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!ref\+\_\+offset\+\_\+transform@{ref\+\_\+offset\+\_\+transform}}
+\index{ref\+\_\+offset\+\_\+transform@{ref\+\_\+offset\+\_\+transform}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{ref\+\_\+offset\+\_\+transform}{ref\_offset\_transform}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+ref\+\_\+offset\+\_\+transform}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a0544ac985038a2441763ab8bb1d4b36c}\label{classmatplotlib_1_1offsetbox_1_1AuxTransformBox_a0544ac985038a2441763ab8bb1d4b36c}} 
+\index{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box@{matplotlib\+::offsetbox\+::\+Aux\+Transform\+Box}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Aux\+Transform\+Box.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{offsetbox_8py}{offsetbox.\+py}\end{DoxyCompactItemize}

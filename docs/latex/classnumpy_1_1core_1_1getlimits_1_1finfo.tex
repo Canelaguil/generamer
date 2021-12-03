@@ -1,0 +1,191 @@
+\hypertarget{classnumpy_1_1core_1_1getlimits_1_1finfo}{}\section{numpy.\+core.\+getlimits.\+finfo Class Reference}
+\label{classnumpy_1_1core_1_1getlimits_1_1finfo}\index{numpy.\+core.\+getlimits.\+finfo@{numpy.\+core.\+getlimits.\+finfo}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1core_1_1getlimits_1_1finfo_acd380768bde6ef5287567498f9861dd4}{\+\_\+\+\_\+new\+\_\+\+\_\+} (cls, \hyperlink{classnumpy_1_1core_1_1getlimits_1_1finfo_aa753c1463bfcd4726e8483b68e685cc5}{dtype})
+\item 
+def \hyperlink{classnumpy_1_1core_1_1getlimits_1_1finfo_abdce9237352c81d82cd1bb113b3079d4}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1getlimits_1_1finfo_aff63cb930aa0fbbb6f2a5dc3cc81d37c}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1core_1_1getlimits_1_1finfo_aa753c1463bfcd4726e8483b68e685cc5}{dtype}
+\item 
+\hyperlink{classnumpy_1_1core_1_1getlimits_1_1finfo_a20640ad67b853dafcae71b4a15720f55}{bits}
+\item 
+\hyperlink{classnumpy_1_1core_1_1getlimits_1_1finfo_a47376ce64d9825d3c124e59e3fe6a2e0}{max}
+\item 
+\hyperlink{classnumpy_1_1core_1_1getlimits_1_1finfo_a557c0a91922946da84851995cb1f5c0e}{min}
+\item 
+\hyperlink{classnumpy_1_1core_1_1getlimits_1_1finfo_a72472bbc3cd2e13995e86b81c3591671}{eps}
+\item 
+\hyperlink{classnumpy_1_1core_1_1getlimits_1_1finfo_a3c4edd130a3f479fde74f3c977c66c52}{nexp}
+\item 
+\hyperlink{classnumpy_1_1core_1_1getlimits_1_1finfo_a54e7dfdcefe800d92984f9c281cf2ccb}{nmant}
+\item 
+\hyperlink{classnumpy_1_1core_1_1getlimits_1_1finfo_ae97135be40a18278b50dc9a2281546d9}{machar}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}finfo(dtype)
+
+Machine limits for floating point types.
+
+Attributes
+----------
+bits : int
+    The number of bits occupied by the type.
+eps : float
+    The difference between 1.0 and the next smallest representable float
+    larger than 1.0. For example, for 64-bit binary floats in the IEEE-754
+    standard, ``eps = 2**-52``, approximately 2.22e-16.
+epsneg : float
+    The difference between 1.0 and the next smallest representable float
+    less than 1.0. For example, for 64-bit binary floats in the IEEE-754
+    standard, ``epsneg = 2**-53``, approximately 1.11e-16.
+iexp : int
+    The number of bits in the exponent portion of the floating point
+    representation.
+machar : MachAr
+    The object which calculated these parameters and holds more
+    detailed information.
+machep : int
+    The exponent that yields `eps`.
+max : floating point number of the appropriate type
+    The largest representable number.
+maxexp : int
+    The smallest positive power of the base (2) that causes overflow.
+min : floating point number of the appropriate type
+    The smallest representable number, typically ``-max``.
+minexp : int
+    The most negative power of the base (2) consistent with there
+    being no leading 0's in the mantissa.
+negep : int
+    The exponent that yields `epsneg`.
+nexp : int
+    The number of bits in the exponent including its sign and bias.
+nmant : int
+    The number of bits in the mantissa.
+precision : int
+    The approximate number of decimal digits to which this kind of
+    float is precise.
+resolution : floating point number of the appropriate type
+    The approximate decimal resolution of this type, i.e.,
+    ``10**-precision``.
+tiny : float
+    The smallest positive floating point number with full precision
+    (see Notes).
+
+Parameters
+----------
+dtype : float, dtype, or instance
+    Kind of floating point data-type about which to get information.
+
+See Also
+--------
+MachAr : The implementation of the tests that produce this information.
+iinfo : The equivalent for integer data types.
+spacing : The distance between a value and the nearest adjacent number
+nextafter : The next floating point value after x1 towards x2
+
+Notes
+-----
+For developers of NumPy: do not instantiate this at the module level.
+The initial calculation of these parameters is expensive and negatively
+impacts import times.  These objects are cached, so calling ``finfo()``
+repeatedly inside your functions is not a problem.
+
+Note that ``tiny`` is not actually the smallest positive representable
+value in a NumPy floating point type. As in the IEEE-754 standard [1]_,
+NumPy floating point types make use of subnormal numbers to fill the
+gap between 0 and ``tiny``. However, subnormal numbers may have
+significantly reduced precision [2]_.
+
+References
+----------
+.. [1] IEEE Standard for Floating-Point Arithmetic, IEEE Std 754-2008,
+       pp.1-70, 2008, http://www.doi.org/10.1109/IEEESTD.2008.4610935
+.. [2] Wikipedia, "Denormal Numbers",
+       https://en.wikipedia.org/wiki/Denormal_number
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1finfo_acd380768bde6ef5287567498f9861dd4}\label{classnumpy_1_1core_1_1getlimits_1_1finfo_acd380768bde6ef5287567498f9861dd4}} 
+\index{numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}!\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}!numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+new\+\_\+\+\_\+()}{\_\_new\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+getlimits.\+finfo.\+\_\+\+\_\+new\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{dtype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1finfo_aff63cb930aa0fbbb6f2a5dc3cc81d37c}\label{classnumpy_1_1core_1_1getlimits_1_1finfo_aff63cb930aa0fbbb6f2a5dc3cc81d37c}} 
+\index{numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+getlimits.\+finfo.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1finfo_abdce9237352c81d82cd1bb113b3079d4}\label{classnumpy_1_1core_1_1getlimits_1_1finfo_abdce9237352c81d82cd1bb113b3079d4}} 
+\index{numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+getlimits.\+finfo.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1finfo_a20640ad67b853dafcae71b4a15720f55}\label{classnumpy_1_1core_1_1getlimits_1_1finfo_a20640ad67b853dafcae71b4a15720f55}} 
+\index{numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}!bits@{bits}}
+\index{bits@{bits}!numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}}
+\subsubsection{\texorpdfstring{bits}{bits}}
+{\footnotesize\ttfamily numpy.\+core.\+getlimits.\+finfo.\+bits}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1finfo_aa753c1463bfcd4726e8483b68e685cc5}\label{classnumpy_1_1core_1_1getlimits_1_1finfo_aa753c1463bfcd4726e8483b68e685cc5}} 
+\index{numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}!dtype@{dtype}}
+\index{dtype@{dtype}!numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}}
+\subsubsection{\texorpdfstring{dtype}{dtype}}
+{\footnotesize\ttfamily numpy.\+core.\+getlimits.\+finfo.\+dtype}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1finfo_a72472bbc3cd2e13995e86b81c3591671}\label{classnumpy_1_1core_1_1getlimits_1_1finfo_a72472bbc3cd2e13995e86b81c3591671}} 
+\index{numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}!eps@{eps}}
+\index{eps@{eps}!numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}}
+\subsubsection{\texorpdfstring{eps}{eps}}
+{\footnotesize\ttfamily numpy.\+core.\+getlimits.\+finfo.\+eps}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1finfo_ae97135be40a18278b50dc9a2281546d9}\label{classnumpy_1_1core_1_1getlimits_1_1finfo_ae97135be40a18278b50dc9a2281546d9}} 
+\index{numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}!machar@{machar}}
+\index{machar@{machar}!numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}}
+\subsubsection{\texorpdfstring{machar}{machar}}
+{\footnotesize\ttfamily numpy.\+core.\+getlimits.\+finfo.\+machar}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1finfo_a47376ce64d9825d3c124e59e3fe6a2e0}\label{classnumpy_1_1core_1_1getlimits_1_1finfo_a47376ce64d9825d3c124e59e3fe6a2e0}} 
+\index{numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}!max@{max}}
+\index{max@{max}!numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}}
+\subsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily numpy.\+core.\+getlimits.\+finfo.\+max}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1finfo_a557c0a91922946da84851995cb1f5c0e}\label{classnumpy_1_1core_1_1getlimits_1_1finfo_a557c0a91922946da84851995cb1f5c0e}} 
+\index{numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}!min@{min}}
+\index{min@{min}!numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}}
+\subsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily numpy.\+core.\+getlimits.\+finfo.\+min}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1finfo_a3c4edd130a3f479fde74f3c977c66c52}\label{classnumpy_1_1core_1_1getlimits_1_1finfo_a3c4edd130a3f479fde74f3c977c66c52}} 
+\index{numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}!nexp@{nexp}}
+\index{nexp@{nexp}!numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}}
+\subsubsection{\texorpdfstring{nexp}{nexp}}
+{\footnotesize\ttfamily numpy.\+core.\+getlimits.\+finfo.\+nexp}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1getlimits_1_1finfo_a54e7dfdcefe800d92984f9c281cf2ccb}\label{classnumpy_1_1core_1_1getlimits_1_1finfo_a54e7dfdcefe800d92984f9c281cf2ccb}} 
+\index{numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}!nmant@{nmant}}
+\index{nmant@{nmant}!numpy\+::core\+::getlimits\+::finfo@{numpy\+::core\+::getlimits\+::finfo}}
+\subsubsection{\texorpdfstring{nmant}{nmant}}
+{\footnotesize\ttfamily numpy.\+core.\+getlimits.\+finfo.\+nmant}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/core/\hyperlink{getlimits_8py}{getlimits.\+py}\end{DoxyCompactItemize}

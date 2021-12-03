@@ -1,0 +1,53 @@
+\hypertarget{classnumpy_1_1linalg_1_1linalg_1_1LinAlgError}{}\section{numpy.\+linalg.\+linalg.\+Lin\+Alg\+Error Class Reference}
+\label{classnumpy_1_1linalg_1_1linalg_1_1LinAlgError}\index{numpy.\+linalg.\+linalg.\+Lin\+Alg\+Error@{numpy.\+linalg.\+linalg.\+Lin\+Alg\+Error}}
+
+
+Inheritance diagram for numpy.\+linalg.\+linalg.\+Lin\+Alg\+Error\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classnumpy_1_1linalg_1_1linalg_1_1LinAlgError__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+linalg.\+linalg.\+Lin\+Alg\+Error\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classnumpy_1_1linalg_1_1linalg_1_1LinAlgError__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Generic Python-exception-derived object raised by linalg functions.
+
+General purpose exception class, derived from Python's exception.Exception
+class, programmatically raised in linalg functions when a Linear
+Algebra-related condition would prevent further correct execution of the
+function.
+
+Parameters
+----------
+None
+
+Examples
+--------
+>>> from numpy import linalg as LA
+>>> LA.inv(np.zeros((2,2)))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "...linalg.py", line 350,
+    in inv return wrap(solve(a, identity(a.shape[0], dtype=a.dtype)))
+  File "...linalg.py", line 249,
+    in solve
+    raise LinAlgError('Singular matrix')
+numpy.linalg.LinAlgError: Singular matrix\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/linalg/\hyperlink{linalg_8py}{linalg.\+py}\end{DoxyCompactItemize}

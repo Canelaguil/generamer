@@ -1,0 +1,352 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators}{}\section{networkx.\+algorithms.\+bipartite.\+generators Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators}\index{networkx.\+algorithms.\+bipartite.\+generators@{networkx.\+algorithms.\+bipartite.\+generators}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_a9db2ac2bb227f430cf8084ccf8821857}{complete\+\_\+bipartite\+\_\+graph} (n1, n2, create\+\_\+using=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_a6d634e37c82b2cdc163888bee02b7dff}{configuration\+\_\+model} (aseq, bseq, create\+\_\+using=None, seed=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_a305160f75bfa76406ac65ca68f364300}{havel\+\_\+hakimi\+\_\+graph} (aseq, bseq, create\+\_\+using=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_ab90b83748f4d4463ff5c4433395feea4}{reverse\+\_\+havel\+\_\+hakimi\+\_\+graph} (aseq, bseq, create\+\_\+using=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_ad6dd66c0de01e7cf70a3d9561bc8dd0f}{alternating\+\_\+havel\+\_\+hakimi\+\_\+graph} (aseq, bseq, create\+\_\+using=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_adfb011eefdc46e36698351edf275a380}{preferential\+\_\+attachment\+\_\+graph} (aseq, p, create\+\_\+using=None, seed=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_ac72f63542228b0d51d526526ee600760}{random\+\_\+graph} (n, m, p, seed=None, directed=False)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_a60074590da46e3abdef5456048742e31}{gnmk\+\_\+random\+\_\+graph} (n, m, k, seed=None, directed=False)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Generators and functions for bipartite graphs.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_ad6dd66c0de01e7cf70a3d9561bc8dd0f}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_ad6dd66c0de01e7cf70a3d9561bc8dd0f}} 
+\index{networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}!alternating\+\_\+havel\+\_\+hakimi\+\_\+graph@{alternating\+\_\+havel\+\_\+hakimi\+\_\+graph}}
+\index{alternating\+\_\+havel\+\_\+hakimi\+\_\+graph@{alternating\+\_\+havel\+\_\+hakimi\+\_\+graph}!networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}}
+\subsubsection{\texorpdfstring{alternating\+\_\+havel\+\_\+hakimi\+\_\+graph()}{alternating\_havel\_hakimi\_graph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+generators.\+alternating\+\_\+havel\+\_\+hakimi\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{aseq,  }\item[{}]{bseq,  }\item[{}]{create\+\_\+using = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a bipartite graph from two given degree sequences using
+an alternating Havel-Hakimi style construction.
+
+The graph is composed of two partitions. Set A has nodes 0 to
+(len(aseq) - 1) and set B has nodes len(aseq) to (len(bseq) - 1).
+Nodes from the set A are connected to nodes in the set B by
+connecting the highest degree nodes in set A to alternatively the
+highest and the lowest degree nodes in set B until all stubs are
+connected.
+
+Parameters
+----------
+aseq : list
+   Degree sequence for node set A.
+bseq : list
+   Degree sequence for node set B.
+create_using : NetworkX graph instance, optional
+   Return graph of this type.
+
+Notes
+-----
+The sum of the two sequences must be equal: sum(aseq)=sum(bseq)
+If no graph type is specified use MultiGraph with parallel edges.
+If you want a graph with no parallel edges use create_using=Graph()
+but then the resulting degree sequences might not be exact.
+
+The nodes are assigned the attribute 'bipartite' with the value 0 or 1
+to indicate which bipartite set the node belongs to.
+
+This function is not imported in the main namespace.
+To use it use nx.bipartite.alternating_havel_hakimi_graph
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_a9db2ac2bb227f430cf8084ccf8821857}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_a9db2ac2bb227f430cf8084ccf8821857}} 
+\index{networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}!complete\+\_\+bipartite\+\_\+graph@{complete\+\_\+bipartite\+\_\+graph}}
+\index{complete\+\_\+bipartite\+\_\+graph@{complete\+\_\+bipartite\+\_\+graph}!networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}}
+\subsubsection{\texorpdfstring{complete\+\_\+bipartite\+\_\+graph()}{complete\_bipartite\_graph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+generators.\+complete\+\_\+bipartite\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{n1,  }\item[{}]{n2,  }\item[{}]{create\+\_\+using = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the complete bipartite graph `K_{n_1,n_2}`.
+
+The graph is composed of two partitions with nodes 0 to (n1 - 1)
+in the first and nodes n1 to (n1 + n2 - 1) in the second.
+Each node in the first is connected to each node in the second.
+
+Parameters
+----------
+n1 : integer
+   Number of nodes for node set A.
+n2 : integer
+   Number of nodes for node set B.
+create_using : NetworkX graph instance, optional
+   Return graph of this type.
+
+Notes
+-----
+Node labels are the integers 0 to `n_1 + n_2 - 1`.
+
+The nodes are assigned the attribute 'bipartite' with the value 0 or 1
+to indicate which bipartite set the node belongs to.
+
+This function is not imported in the main namespace.
+To use it use nx.bipartite.complete_bipartite_graph
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_a6d634e37c82b2cdc163888bee02b7dff}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_a6d634e37c82b2cdc163888bee02b7dff}} 
+\index{networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}!configuration\+\_\+model@{configuration\+\_\+model}}
+\index{configuration\+\_\+model@{configuration\+\_\+model}!networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}}
+\subsubsection{\texorpdfstring{configuration\+\_\+model()}{configuration\_model()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+generators.\+configuration\+\_\+model (\begin{DoxyParamCaption}\item[{}]{aseq,  }\item[{}]{bseq,  }\item[{}]{create\+\_\+using = {\ttfamily None},  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a random bipartite graph from two given degree sequences.
+
+Parameters
+----------
+aseq : list
+   Degree sequence for node set A.
+bseq : list
+   Degree sequence for node set B.
+create_using : NetworkX graph instance, optional
+   Return graph of this type.
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+
+The graph is composed of two partitions. Set A has nodes 0 to
+(len(aseq) - 1) and set B has nodes len(aseq) to (len(bseq) - 1).
+Nodes from set A are connected to nodes in set B by choosing
+randomly from the possible free stubs, one in A and one in B.
+
+Notes
+-----
+The sum of the two sequences must be equal: sum(aseq)=sum(bseq)
+If no graph type is specified use MultiGraph with parallel edges.
+If you want a graph with no parallel edges use create_using=Graph()
+but then the resulting degree sequences might not be exact.
+
+The nodes are assigned the attribute 'bipartite' with the value 0 or 1
+to indicate which bipartite set the node belongs to.
+
+This function is not imported in the main namespace.
+To use it use nx.bipartite.configuration_model
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_a60074590da46e3abdef5456048742e31}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_a60074590da46e3abdef5456048742e31}} 
+\index{networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}!gnmk\+\_\+random\+\_\+graph@{gnmk\+\_\+random\+\_\+graph}}
+\index{gnmk\+\_\+random\+\_\+graph@{gnmk\+\_\+random\+\_\+graph}!networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}}
+\subsubsection{\texorpdfstring{gnmk\+\_\+random\+\_\+graph()}{gnmk\_random\_graph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+generators.\+gnmk\+\_\+random\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{m,  }\item[{}]{k,  }\item[{}]{seed = {\ttfamily None},  }\item[{}]{directed = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a random bipartite graph G_{n,m,k}.
+
+Produces a bipartite graph chosen randomly out of the set of all graphs
+with n top nodes, m bottom nodes, and k edges.
+The graph is composed of two sets of nodes.
+Set A has nodes 0 to (n - 1) and set B has nodes n to (n + m - 1).
+
+Parameters
+----------
+n : int
+    The number of nodes in the first bipartite set.
+m : int
+    The number of nodes in the second bipartite set.
+k : int
+    The number of edges
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+directed : bool, optional (default=False)
+    If True return a directed graph
+
+Examples
+--------
+from nx.algorithms import bipartite
+G = bipartite.gnmk_random_graph(10,20,50)
+
+See Also
+--------
+gnm_random_graph
+
+Notes
+-----
+If k > m * n then a complete bipartite graph is returned.
+
+This graph is a bipartite version of the `G_{nm}` random graph model.
+
+The nodes are assigned the attribute 'bipartite' with the value 0 or 1
+to indicate which bipartite set the node belongs to.
+
+This function is not imported in the main namespace.
+To use it use nx.bipartite.gnmk_random_graph
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_a305160f75bfa76406ac65ca68f364300}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_a305160f75bfa76406ac65ca68f364300}} 
+\index{networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}!havel\+\_\+hakimi\+\_\+graph@{havel\+\_\+hakimi\+\_\+graph}}
+\index{havel\+\_\+hakimi\+\_\+graph@{havel\+\_\+hakimi\+\_\+graph}!networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}}
+\subsubsection{\texorpdfstring{havel\+\_\+hakimi\+\_\+graph()}{havel\_hakimi\_graph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+generators.\+havel\+\_\+hakimi\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{aseq,  }\item[{}]{bseq,  }\item[{}]{create\+\_\+using = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a bipartite graph from two given degree sequences using a
+Havel-Hakimi style construction.
+
+The graph is composed of two partitions. Set A has nodes 0 to
+(len(aseq) - 1) and set B has nodes len(aseq) to (len(bseq) - 1).
+Nodes from the set A are connected to nodes in the set B by
+connecting the highest degree nodes in set A to the highest degree
+nodes in set B until all stubs are connected.
+
+Parameters
+----------
+aseq : list
+   Degree sequence for node set A.
+bseq : list
+   Degree sequence for node set B.
+create_using : NetworkX graph instance, optional
+   Return graph of this type.
+
+Notes
+-----
+The sum of the two sequences must be equal: sum(aseq)=sum(bseq)
+If no graph type is specified use MultiGraph with parallel edges.
+If you want a graph with no parallel edges use create_using=Graph()
+but then the resulting degree sequences might not be exact.
+
+The nodes are assigned the attribute 'bipartite' with the value 0 or 1
+to indicate which bipartite set the node belongs to.
+
+This function is not imported in the main namespace.
+To use it use nx.bipartite.havel_hakimi_graph
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_adfb011eefdc46e36698351edf275a380}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_adfb011eefdc46e36698351edf275a380}} 
+\index{networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}!preferential\+\_\+attachment\+\_\+graph@{preferential\+\_\+attachment\+\_\+graph}}
+\index{preferential\+\_\+attachment\+\_\+graph@{preferential\+\_\+attachment\+\_\+graph}!networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}}
+\subsubsection{\texorpdfstring{preferential\+\_\+attachment\+\_\+graph()}{preferential\_attachment\_graph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+generators.\+preferential\+\_\+attachment\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{aseq,  }\item[{}]{p,  }\item[{}]{create\+\_\+using = {\ttfamily None},  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a bipartite graph with a preferential attachment model from
+a given single degree sequence.
+
+The graph is composed of two partitions. Set A has nodes 0 to
+(len(aseq) - 1) and set B has nodes starting with node len(aseq).
+The number of nodes in set B is random.
+
+Parameters
+----------
+aseq : list
+   Degree sequence for node set A.
+p :  float
+   Probability that a new bottom node is added.
+create_using : NetworkX graph instance, optional
+   Return graph of this type.
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+
+References
+----------
+.. [1] Guillaume, J.L. and Latapy, M.,
+   Bipartite graphs as models of complex networks.
+   Physica A: Statistical Mechanics and its Applications,
+   2006, 371(2), pp.795-813.
+.. [2] Jean-Loup Guillaume and Matthieu Latapy,
+   Bipartite structure of all complex networks,
+   Inf. Process. Lett. 90, 2004, pg. 215-221
+   https://doi.org/10.1016/j.ipl.2004.03.007
+
+Notes
+-----
+The nodes are assigned the attribute 'bipartite' with the value 0 or 1
+to indicate which bipartite set the node belongs to.
+
+This function is not imported in the main namespace.
+To use it use nx.bipartite.preferential_attachment_graph
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_ac72f63542228b0d51d526526ee600760}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_ac72f63542228b0d51d526526ee600760}} 
+\index{networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}!random\+\_\+graph@{random\+\_\+graph}}
+\index{random\+\_\+graph@{random\+\_\+graph}!networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}}
+\subsubsection{\texorpdfstring{random\+\_\+graph()}{random\_graph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+generators.\+random\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{m,  }\item[{}]{p,  }\item[{}]{seed = {\ttfamily None},  }\item[{}]{directed = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a bipartite random graph.
+
+This is a bipartite version of the binomial (Erdős-Rényi) graph.
+The graph is composed of two partitions. Set A has nodes 0 to
+(n - 1) and set B has nodes n to (n + m - 1).
+
+Parameters
+----------
+n : int
+    The number of nodes in the first bipartite set.
+m : int
+    The number of nodes in the second bipartite set.
+p : float
+    Probability for edge creation.
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+directed : bool, optional (default=False)
+    If True return a directed graph
+
+Notes
+-----
+The bipartite random graph algorithm chooses each of the n*m (undirected)
+or 2*nm (directed) possible edges with probability p.
+
+This algorithm is $O(n+m)$ where $m$ is the expected number of edges.
+
+The nodes are assigned the attribute 'bipartite' with the value 0 or 1
+to indicate which bipartite set the node belongs to.
+
+This function is not imported in the main namespace.
+To use it use nx.bipartite.random_graph
+
+See Also
+--------
+gnp_random_graph, configuration_model
+
+References
+----------
+.. [1] Vladimir Batagelj and Ulrik Brandes,
+   "Efficient generation of large random networks",
+   Phys. Rev. E, 71, 036113, 2005.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_ab90b83748f4d4463ff5c4433395feea4}\label{namespacenetworkx_1_1algorithms_1_1bipartite_1_1generators_ab90b83748f4d4463ff5c4433395feea4}} 
+\index{networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}!reverse\+\_\+havel\+\_\+hakimi\+\_\+graph@{reverse\+\_\+havel\+\_\+hakimi\+\_\+graph}}
+\index{reverse\+\_\+havel\+\_\+hakimi\+\_\+graph@{reverse\+\_\+havel\+\_\+hakimi\+\_\+graph}!networkx\+::algorithms\+::bipartite\+::generators@{networkx\+::algorithms\+::bipartite\+::generators}}
+\subsubsection{\texorpdfstring{reverse\+\_\+havel\+\_\+hakimi\+\_\+graph()}{reverse\_havel\_hakimi\_graph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+bipartite.\+generators.\+reverse\+\_\+havel\+\_\+hakimi\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{aseq,  }\item[{}]{bseq,  }\item[{}]{create\+\_\+using = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a bipartite graph from two given degree sequences using a
+Havel-Hakimi style construction.
+
+The graph is composed of two partitions. Set A has nodes 0 to
+(len(aseq) - 1) and set B has nodes len(aseq) to (len(bseq) - 1).
+Nodes from set A are connected to nodes in the set B by connecting
+the highest degree nodes in set A to the lowest degree nodes in
+set B until all stubs are connected.
+
+Parameters
+----------
+aseq : list
+   Degree sequence for node set A.
+bseq : list
+   Degree sequence for node set B.
+create_using : NetworkX graph instance, optional
+   Return graph of this type.
+
+Notes
+-----
+The sum of the two sequences must be equal: sum(aseq)=sum(bseq)
+If no graph type is specified use MultiGraph with parallel edges.
+If you want a graph with no parallel edges use create_using=Graph()
+but then the resulting degree sequences might not be exact.
+
+The nodes are assigned the attribute 'bipartite' with the value 0 or 1
+to indicate which bipartite set the node belongs to.
+
+This function is not imported in the main namespace.
+To use it use nx.bipartite.reverse_havel_hakimi_graph
+\end{DoxyVerb}
+ 

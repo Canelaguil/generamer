@@ -1,0 +1,107 @@
+\hypertarget{namespacenetworkx_1_1generators_1_1internet__as__graphs}{}\section{networkx.\+generators.\+internet\+\_\+as\+\_\+graphs Namespace Reference}
+\label{namespacenetworkx_1_1generators_1_1internet__as__graphs}\index{networkx.\+generators.\+internet\+\_\+as\+\_\+graphs@{networkx.\+generators.\+internet\+\_\+as\+\_\+graphs}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1generators_1_1internet__as__graphs_1_1AS__graph__generator}{A\+S\+\_\+graph\+\_\+generator}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1generators_1_1internet__as__graphs_a09f4314be4097be64da21f945dca73f3}{uniform\+\_\+int\+\_\+from\+\_\+avg} (a, m, seed)
+\item 
+def \hyperlink{namespacenetworkx_1_1generators_1_1internet__as__graphs_a92f1b4b5f8705d8e2b32b1c1dd569df5}{choose\+\_\+pref\+\_\+attach} (degs, seed)
+\item 
+def \hyperlink{namespacenetworkx_1_1generators_1_1internet__as__graphs_a0615563501ff2b39c8beaa26114feb37}{random\+\_\+internet\+\_\+as\+\_\+graph} (n, seed=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Generates graphs resembling the Internet Autonomous System network\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1internet__as__graphs_a92f1b4b5f8705d8e2b32b1c1dd569df5}\label{namespacenetworkx_1_1generators_1_1internet__as__graphs_a92f1b4b5f8705d8e2b32b1c1dd569df5}} 
+\index{networkx\+::generators\+::internet\+\_\+as\+\_\+graphs@{networkx\+::generators\+::internet\+\_\+as\+\_\+graphs}!choose\+\_\+pref\+\_\+attach@{choose\+\_\+pref\+\_\+attach}}
+\index{choose\+\_\+pref\+\_\+attach@{choose\+\_\+pref\+\_\+attach}!networkx\+::generators\+::internet\+\_\+as\+\_\+graphs@{networkx\+::generators\+::internet\+\_\+as\+\_\+graphs}}
+\subsubsection{\texorpdfstring{choose\+\_\+pref\+\_\+attach()}{choose\_pref\_attach()}}
+{\footnotesize\ttfamily def networkx.\+generators.\+internet\+\_\+as\+\_\+graphs.\+choose\+\_\+pref\+\_\+attach (\begin{DoxyParamCaption}\item[{}]{degs,  }\item[{}]{seed }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Pick a random value, with a probability given by its weight.
+
+Returns a random choice among degs keys, each of which has a
+probability proportional to the corresponding dictionary value.
+
+Parameters
+----------
+degs: dictionary
+    It contains the possible values (keys) and the corresponding
+    probabilities (values)
+seed: random state
+
+Returns
+-------
+v: object
+    A key of degs or None if degs is empty
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1internet__as__graphs_a0615563501ff2b39c8beaa26114feb37}\label{namespacenetworkx_1_1generators_1_1internet__as__graphs_a0615563501ff2b39c8beaa26114feb37}} 
+\index{networkx\+::generators\+::internet\+\_\+as\+\_\+graphs@{networkx\+::generators\+::internet\+\_\+as\+\_\+graphs}!random\+\_\+internet\+\_\+as\+\_\+graph@{random\+\_\+internet\+\_\+as\+\_\+graph}}
+\index{random\+\_\+internet\+\_\+as\+\_\+graph@{random\+\_\+internet\+\_\+as\+\_\+graph}!networkx\+::generators\+::internet\+\_\+as\+\_\+graphs@{networkx\+::generators\+::internet\+\_\+as\+\_\+graphs}}
+\subsubsection{\texorpdfstring{random\+\_\+internet\+\_\+as\+\_\+graph()}{random\_internet\_as\_graph()}}
+{\footnotesize\ttfamily def networkx.\+generators.\+internet\+\_\+as\+\_\+graphs.\+random\+\_\+internet\+\_\+as\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generates a random undirected graph resembling the Internet AS network
+
+Parameters
+----------
+n: integer in [1000, 10000]
+    Number of graph nodes
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+
+Returns
+-------
+G: Networkx Graph object
+    A randomly generated undirected graph
+
+Notes
+-----
+This algorithm returns an undirected graph resembling the Internet
+Autonomous System (AS) network, it uses the approach by Elmokashfi et al.
+[1]_ and it grants the properties described in the related paper [1]_.
+
+Each node models an autonomous system, with an attribute 'type' specifying
+its kind; tier-1 (T), mid-level (M), customer (C) or content-provider (CP).
+Each edge models an ADV communication link (hence, bidirectional) with
+attributes:
+
+  - type: transit|peer, the kind of commercial agreement between nodes;
+  - customer: <node id>, the identifier of the node acting as customer
+    ('none' if type is peer).
+
+References
+----------
+.. [1] A. Elmokashfi, A. Kvalbein and C. Dovrolis, "On the Scalability of
+   BGP: The Role of Topology Growth," in IEEE Journal on Selected Areas
+   in Communications, vol. 28, no. 8, pp. 1250-1261, October 2010.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1internet__as__graphs_a09f4314be4097be64da21f945dca73f3}\label{namespacenetworkx_1_1generators_1_1internet__as__graphs_a09f4314be4097be64da21f945dca73f3}} 
+\index{networkx\+::generators\+::internet\+\_\+as\+\_\+graphs@{networkx\+::generators\+::internet\+\_\+as\+\_\+graphs}!uniform\+\_\+int\+\_\+from\+\_\+avg@{uniform\+\_\+int\+\_\+from\+\_\+avg}}
+\index{uniform\+\_\+int\+\_\+from\+\_\+avg@{uniform\+\_\+int\+\_\+from\+\_\+avg}!networkx\+::generators\+::internet\+\_\+as\+\_\+graphs@{networkx\+::generators\+::internet\+\_\+as\+\_\+graphs}}
+\subsubsection{\texorpdfstring{uniform\+\_\+int\+\_\+from\+\_\+avg()}{uniform\_int\_from\_avg()}}
+{\footnotesize\ttfamily def networkx.\+generators.\+internet\+\_\+as\+\_\+graphs.\+uniform\+\_\+int\+\_\+from\+\_\+avg (\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{m,  }\item[{}]{seed }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Pick a random integer with uniform probability.
+
+Returns a random integer uniformly taken from a distribution with
+minimum value 'a' and average value 'm', X~U(a,b), E[X]=m, X in N where
+b = 2*m - a.
+
+Notes
+-----
+p = (b-floor(b))/2
+X = X1 + X2; X1~U(a,floor(b)), X2~B(p)
+E[X] = E[X1] + E[X2] = (floor(b)+a)/2 + (b-floor(b))/2 = (b+a)/2 = m
+\end{DoxyVerb}
+ 

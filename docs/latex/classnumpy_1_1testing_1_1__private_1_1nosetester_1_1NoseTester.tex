@@ -1,0 +1,253 @@
+\hypertarget{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester}{}\section{numpy.\+testing.\+\_\+private.\+nosetester.\+Nose\+Tester Class Reference}
+\label{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester}\index{numpy.\+testing.\+\_\+private.\+nosetester.\+Nose\+Tester@{numpy.\+testing.\+\_\+private.\+nosetester.\+Nose\+Tester}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a0a725bec7d582c2cb49ff3b73fbeeb81}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, package=None, \hyperlink{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a6ea4848c8dc9cde3964f7e58298831a8}{raise\+\_\+warnings}=\char`\"{}release\char`\"{}, depth=0, \hyperlink{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a2244951b799d844c57b9a0b19a1bbdb1}{check\+\_\+fpu\+\_\+mode}=False)
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a67f7e5d6b71983e95608039238e28f8d}{prepare\+\_\+test\+\_\+args} (self, label=\textquotesingle{}fast\textquotesingle{}, verbose=1, extra\+\_\+argv=None, doctests=False, coverage=False, timer=False)
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a4bb93c29fd82f62ea6928836904d95ce}{test} (self, label=\textquotesingle{}fast\textquotesingle{}, verbose=1, extra\+\_\+argv=None, doctests=False, coverage=False, \hyperlink{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a6ea4848c8dc9cde3964f7e58298831a8}{raise\+\_\+warnings}=None, timer=False)
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a4638989956635c6a695559927b1b7491}{bench} (self, label=\textquotesingle{}fast\textquotesingle{}, verbose=1, extra\+\_\+argv=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_ae21b7c07e4ef10572552634510d04c92}{package\+\_\+path}
+\item 
+\hyperlink{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_ab51a1494d2ffd22593182eb4c5d8f456}{package\+\_\+name}
+\item 
+\hyperlink{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a6ea4848c8dc9cde3964f7e58298831a8}{raise\+\_\+warnings}
+\item 
+\hyperlink{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a2244951b799d844c57b9a0b19a1bbdb1}{check\+\_\+fpu\+\_\+mode}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Nose test runner.
+
+This class is made available as numpy.testing.Tester, and a test function
+is typically added to a package's __init__.py like so::
+
+  from numpy.testing import Tester
+  test = Tester().test
+
+Calling this test function finds and runs all tests associated with the
+package and all its sub-packages.
+
+Attributes
+----------
+package_path : str
+    Full path to the package to test.
+package_name : str
+    Name of the package to test.
+
+Parameters
+----------
+package : module, str or None, optional
+    The package to test. If a string, this should be the full path to
+    the package. If None (default), `package` is set to the module from
+    which `NoseTester` is initialized.
+raise_warnings : None, str or sequence of warnings, optional
+    This specifies which warnings to configure as 'raise' instead
+    of being shown once during the test execution.  Valid strings are:
+
+      - "develop" : equals ``(Warning,)``
+      - "release" : equals ``()``, don't raise on any warnings.
+
+    Default is "release".
+depth : int, optional
+    If `package` is None, then this can be used to initialize from the
+    module of the caller of (the caller of (...)) the code that
+    initializes `NoseTester`. Default of 0 means the module of the
+    immediate caller; higher values are useful for utility routines that
+    want to initialize `NoseTester` objects on behalf of other code.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a0a725bec7d582c2cb49ff3b73fbeeb81}\label{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a0a725bec7d582c2cb49ff3b73fbeeb81}} 
+\index{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+nosetester.\+Nose\+Tester.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{package = {\ttfamily None},  }\item[{}]{raise\+\_\+warnings = {\ttfamily \char`\"{}release\char`\"{}},  }\item[{}]{depth = {\ttfamily 0},  }\item[{}]{check\+\_\+fpu\+\_\+mode = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a4638989956635c6a695559927b1b7491}\label{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a4638989956635c6a695559927b1b7491}} 
+\index{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}!bench@{bench}}
+\index{bench@{bench}!numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}}
+\subsubsection{\texorpdfstring{bench()}{bench()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+nosetester.\+Nose\+Tester.\+bench (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{label = {\ttfamily \textquotesingle{}fast\textquotesingle{}},  }\item[{}]{verbose = {\ttfamily 1},  }\item[{}]{extra\+\_\+argv = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Run benchmarks for module using nose.
+
+Parameters
+----------
+label : {'fast', 'full', '', attribute identifier}, optional
+    Identifies the benchmarks to run. This can be a string to pass to
+    the nosetests executable with the '-A' option, or one of several
+    special values.  Special values are:
+
+    * 'fast' - the default - which corresponds to the ``nosetests -A``
+      option of 'not slow'.
+    * 'full' - fast (as above) and slow benchmarks as in the
+      'no -A' option to nosetests - this is the same as ''.
+    * None or '' - run all tests.
+    * attribute_identifier - string passed directly to nosetests as '-A'.
+
+verbose : int, optional
+    Verbosity value for benchmark outputs, in the range 1-10. Default is 1.
+extra_argv : list, optional
+    List with any extra arguments to pass to nosetests.
+
+Returns
+-------
+success : bool
+    Returns True if running the benchmarks works, False if an error
+    occurred.
+
+Notes
+-----
+Benchmarks are like tests, but have names starting with "bench" instead
+of "test", and can be found under the "benchmarks" sub-directory of the
+module.
+
+Each NumPy module exposes `bench` in its namespace to run all benchmarks
+for it.
+
+Examples
+--------
+>>> success = np.lib.bench() #doctest: +SKIP
+Running benchmarks for numpy.lib
+...
+using 562341 items:
+unique:
+0.11
+unique1d:
+0.11
+ratio: 1.0
+nUnique: 56230 == 56230
+...
+OK
+
+>>> success #doctest: +SKIP
+True\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a67f7e5d6b71983e95608039238e28f8d}\label{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a67f7e5d6b71983e95608039238e28f8d}} 
+\index{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}!prepare\+\_\+test\+\_\+args@{prepare\+\_\+test\+\_\+args}}
+\index{prepare\+\_\+test\+\_\+args@{prepare\+\_\+test\+\_\+args}!numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}}
+\subsubsection{\texorpdfstring{prepare\+\_\+test\+\_\+args()}{prepare\_test\_args()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+nosetester.\+Nose\+Tester.\+prepare\+\_\+test\+\_\+args (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{label = {\ttfamily \textquotesingle{}fast\textquotesingle{}},  }\item[{}]{verbose = {\ttfamily 1},  }\item[{}]{extra\+\_\+argv = {\ttfamily None},  }\item[{}]{doctests = {\ttfamily False},  }\item[{}]{coverage = {\ttfamily False},  }\item[{}]{timer = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Run tests for module using nose.
+
+This method does the heavy lifting for the `test` method. It takes all
+the same arguments, for details see `test`.
+
+See Also
+--------
+test\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a4bb93c29fd82f62ea6928836904d95ce}\label{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a4bb93c29fd82f62ea6928836904d95ce}} 
+\index{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}!test@{test}}
+\index{test@{test}!numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}}
+\subsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+nosetester.\+Nose\+Tester.\+test (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{label = {\ttfamily \textquotesingle{}fast\textquotesingle{}},  }\item[{}]{verbose = {\ttfamily 1},  }\item[{}]{extra\+\_\+argv = {\ttfamily None},  }\item[{}]{doctests = {\ttfamily False},  }\item[{}]{coverage = {\ttfamily False},  }\item[{}]{raise\+\_\+warnings = {\ttfamily None},  }\item[{}]{timer = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Run tests for module using nose.
+
+Parameters
+----------
+label : {'fast', 'full', '', attribute identifier}, optional
+    Identifies the tests to run. This can be a string to pass to
+    the nosetests executable with the '-A' option, or one of several
+    special values.  Special values are:
+
+    * 'fast' - the default - which corresponds to the ``nosetests -A``
+      option of 'not slow'.
+    * 'full' - fast (as above) and slow tests as in the
+      'no -A' option to nosetests - this is the same as ''.
+    * None or '' - run all tests.
+    * attribute_identifier - string passed directly to nosetests as '-A'.
+
+verbose : int, optional
+    Verbosity value for test outputs, in the range 1-10. Default is 1.
+extra_argv : list, optional
+    List with any extra arguments to pass to nosetests.
+doctests : bool, optional
+    If True, run doctests in module. Default is False.
+coverage : bool, optional
+    If True, report coverage of NumPy code. Default is False.
+    (This requires the
+    `coverage module <https://pypi.org/project/coverage/>`_).
+raise_warnings : None, str or sequence of warnings, optional
+    This specifies which warnings to configure as 'raise' instead
+    of being shown once during the test execution. Valid strings are:
+
+    * "develop" : equals ``(Warning,)``
+    * "release" : equals ``()``, do not raise on any warnings.
+timer : bool or int, optional
+    Timing of individual tests with ``nose-timer`` (which needs to be
+    installed).  If True, time tests and report on all of them.
+    If an integer (say ``N``), report timing results for ``N`` slowest
+    tests.
+
+Returns
+-------
+result : object
+    Returns the result of running the tests as a
+    ``nose.result.TextTestResult`` object.
+
+Notes
+-----
+Each NumPy module exposes `test` in its namespace to run all tests for it.
+For example, to run all tests for numpy.lib:
+
+>>> np.lib.test() #doctest: +SKIP
+
+Examples
+--------
+>>> result = np.lib.test() #doctest: +SKIP
+Running unit tests for numpy.lib
+...
+Ran 976 tests in 3.933s
+
+OK
+
+>>> result.errors #doctest: +SKIP
+[]
+>>> result.knownfail #doctest: +SKIP
+[]
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a2244951b799d844c57b9a0b19a1bbdb1}\label{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a2244951b799d844c57b9a0b19a1bbdb1}} 
+\index{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}!check\+\_\+fpu\+\_\+mode@{check\+\_\+fpu\+\_\+mode}}
+\index{check\+\_\+fpu\+\_\+mode@{check\+\_\+fpu\+\_\+mode}!numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}}
+\subsubsection{\texorpdfstring{check\+\_\+fpu\+\_\+mode}{check\_fpu\_mode}}
+{\footnotesize\ttfamily numpy.\+testing.\+\_\+private.\+nosetester.\+Nose\+Tester.\+check\+\_\+fpu\+\_\+mode}
+
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_ab51a1494d2ffd22593182eb4c5d8f456}\label{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_ab51a1494d2ffd22593182eb4c5d8f456}} 
+\index{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}!package\+\_\+name@{package\+\_\+name}}
+\index{package\+\_\+name@{package\+\_\+name}!numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}}
+\subsubsection{\texorpdfstring{package\+\_\+name}{package\_name}}
+{\footnotesize\ttfamily numpy.\+testing.\+\_\+private.\+nosetester.\+Nose\+Tester.\+package\+\_\+name}
+
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_ae21b7c07e4ef10572552634510d04c92}\label{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_ae21b7c07e4ef10572552634510d04c92}} 
+\index{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}!package\+\_\+path@{package\+\_\+path}}
+\index{package\+\_\+path@{package\+\_\+path}!numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}}
+\subsubsection{\texorpdfstring{package\+\_\+path}{package\_path}}
+{\footnotesize\ttfamily numpy.\+testing.\+\_\+private.\+nosetester.\+Nose\+Tester.\+package\+\_\+path}
+
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a6ea4848c8dc9cde3964f7e58298831a8}\label{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester_a6ea4848c8dc9cde3964f7e58298831a8}} 
+\index{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}!raise\+\_\+warnings@{raise\+\_\+warnings}}
+\index{raise\+\_\+warnings@{raise\+\_\+warnings}!numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester@{numpy\+::testing\+::\+\_\+private\+::nosetester\+::\+Nose\+Tester}}
+\subsubsection{\texorpdfstring{raise\+\_\+warnings}{raise\_warnings}}
+{\footnotesize\ttfamily numpy.\+testing.\+\_\+private.\+nosetester.\+Nose\+Tester.\+raise\+\_\+warnings}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/testing/\+\_\+private/\hyperlink{nosetester_8py}{nosetester.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,191 @@
+\hypertarget{classmatplotlib_1_1animation_1_1MovieWriter}{}\section{matplotlib.\+animation.\+Movie\+Writer Class Reference}
+\label{classmatplotlib_1_1animation_1_1MovieWriter}\index{matplotlib.\+animation.\+Movie\+Writer@{matplotlib.\+animation.\+Movie\+Writer}}
+
+
+Inheritance diagram for matplotlib.\+animation.\+Movie\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1animation_1_1MovieWriter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+animation.\+Movie\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classmatplotlib_1_1animation_1_1MovieWriter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_ae01612a4e3ba22aa48d17bec8de1bb62}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_aaf7656da4e1f760b64f453cffbe15a82}{fps}=5, \hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a58c85e59e54995fbe71588aa6a2a4b08}{codec}=None, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a8437f6e4c409bdd6392b1d354e9bc4c5}{bitrate}=None, \hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a04961dd29276d116758c5ba8229b32f2}{extra\+\_\+args}=None, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a5a23958781c90f0aae7ac29ef6a7401f}{metadata}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a9b6d5f0e33e492d46c74b0eff368d5b2}{setup} (self, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_a835eff7e0ac625992e7f708448e88fa6}{fig}, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_ae2006c1ca69618ec02514264a9f318e1}{outfile}, \hyperlink{classmatplotlib_1_1animation_1_1AbstractMovieWriter_aaca5ed6ef95c99e03830b346425ee9bc}{dpi}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a6622232a5fc44d900011f61f6cd000fa}{finish} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_af03dcd4f214dd62db590c1abd116f618}{grab\+\_\+frame} (self, savefig\+\_\+kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a8ffc7e3a0acb51f826ae98e9abfb3ba8}{cleanup} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a82b63a3c5e363a36634f0b28fd47b3a7}{bin\+\_\+path} (cls)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a38835f741535e08dd7a5b3ed1e771324}{is\+Available} (cls)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a52d890850839781e09ad50717b00087b}{frame\+\_\+format}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a04961dd29276d116758c5ba8229b32f2}{extra\+\_\+args}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a58c85e59e54995fbe71588aa6a2a4b08}{codec}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a428a3acecf3218f00f563c6290402763}{exec\+\_\+key} = \+\_\+api.\+deprecate\+\_\+privatize\+\_\+attribute(\char`\"{}3.\+3\char`\"{})
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a4071308167e0f5e4a530bd54f6e19527}{args\+\_\+key} = \+\_\+api.\+deprecate\+\_\+privatize\+\_\+attribute(\char`\"{}3.\+3\char`\"{})
+\item 
+list \hyperlink{classmatplotlib_1_1animation_1_1MovieWriter_a299b985b271a8c409e25d1fdada37414}{supported\+\_\+formats} = \mbox{[}\char`\"{}rgba\char`\"{}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Base class for writing movies.
+
+This is a base class for MovieWriter subclasses that write a movie frame
+data to a pipe. You cannot instantiate this class directly.
+See examples for how to use its subclasses.
+
+Attributes
+----------
+frame_format : str
+    The format used in writing frame data, defaults to 'rgba'.
+fig : `~matplotlib.figure.Figure`
+    The figure to capture data from.
+    This must be provided by the sub-classes.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_ae01612a4e3ba22aa48d17bec8de1bb62}\label{classmatplotlib_1_1animation_1_1MovieWriter_ae01612a4e3ba22aa48d17bec8de1bb62}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Movie\+Writer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fps = {\ttfamily 5},  }\item[{}]{codec = {\ttfamily None},  }\item[{}]{bitrate = {\ttfamily None},  }\item[{}]{extra\+\_\+args = {\ttfamily None},  }\item[{}]{metadata = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+fps : int, default: 5
+    Movie frame rate (per second).
+codec : str or None, default: :rc:`animation.codec`
+    The codec to use.
+bitrate : int, default: :rc:`animation.bitrate`
+    The bitrate of the movie, in kilobits per second.  Higher values
+    means higher quality movies, but increase the file size.  A value
+    of -1 lets the underlying movie encoder select the bitrate.
+extra_args : list of str or None, optional
+    Extra command-line arguments passed to the underlying movie
+    encoder.  The default, None, means to use
+    :rc:`animation.[name-of-encoder]_args` for the builtin writers.
+metadata : dict[str, str], default: {}
+    A dictionary of keys and values for metadata to include in the
+    output file. Some keys that may be of use include:
+    title, artist, genre, subject, copyright, srcform, comment.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_a82b63a3c5e363a36634f0b28fd47b3a7}\label{classmatplotlib_1_1animation_1_1MovieWriter_a82b63a3c5e363a36634f0b28fd47b3a7}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!bin\+\_\+path@{bin\+\_\+path}}
+\index{bin\+\_\+path@{bin\+\_\+path}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{bin\+\_\+path()}{bin\_path()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Movie\+Writer.\+bin\+\_\+path (\begin{DoxyParamCaption}\item[{}]{cls }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the binary path to the commandline tool used by a specific
+subclass. This is a class method so that the tool can be looked for
+before making a particular MovieWriter subclass available.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_a8ffc7e3a0acb51f826ae98e9abfb3ba8}\label{classmatplotlib_1_1animation_1_1MovieWriter_a8ffc7e3a0acb51f826ae98e9abfb3ba8}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{cleanup()}{cleanup()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Movie\+Writer.\+cleanup (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_a6622232a5fc44d900011f61f6cd000fa}\label{classmatplotlib_1_1animation_1_1MovieWriter_a6622232a5fc44d900011f61f6cd000fa}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!finish@{finish}}
+\index{finish@{finish}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Movie\+Writer.\+finish (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Finish any processing for writing the movie.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_af03dcd4f214dd62db590c1abd116f618}\label{classmatplotlib_1_1animation_1_1MovieWriter_af03dcd4f214dd62db590c1abd116f618}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!grab\+\_\+frame@{grab\+\_\+frame}}
+\index{grab\+\_\+frame@{grab\+\_\+frame}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{grab\+\_\+frame()}{grab\_frame()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Movie\+Writer.\+grab\+\_\+frame (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{savefig\+\_\+kwargs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_a38835f741535e08dd7a5b3ed1e771324}\label{classmatplotlib_1_1animation_1_1MovieWriter_a38835f741535e08dd7a5b3ed1e771324}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!is\+Available@{is\+Available}}
+\index{is\+Available@{is\+Available}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{is\+Available()}{isAvailable()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Movie\+Writer.\+is\+Available (\begin{DoxyParamCaption}\item[{}]{cls }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether a MovieWriter subclass is actually available.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_a9b6d5f0e33e492d46c74b0eff368d5b2}\label{classmatplotlib_1_1animation_1_1MovieWriter_a9b6d5f0e33e492d46c74b0eff368d5b2}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!setup@{setup}}
+\index{setup@{setup}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Movie\+Writer.\+setup (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fig,  }\item[{}]{outfile,  }\item[{}]{dpi = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_a4071308167e0f5e4a530bd54f6e19527}\label{classmatplotlib_1_1animation_1_1MovieWriter_a4071308167e0f5e4a530bd54f6e19527}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!args\+\_\+key@{args\+\_\+key}}
+\index{args\+\_\+key@{args\+\_\+key}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{args\+\_\+key}{args\_key}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Movie\+Writer.\+args\+\_\+key = \+\_\+api.\+deprecate\+\_\+privatize\+\_\+attribute(\char`\"{}3.\+3\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_a58c85e59e54995fbe71588aa6a2a4b08}\label{classmatplotlib_1_1animation_1_1MovieWriter_a58c85e59e54995fbe71588aa6a2a4b08}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!codec@{codec}}
+\index{codec@{codec}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{codec}{codec}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Movie\+Writer.\+codec}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_a428a3acecf3218f00f563c6290402763}\label{classmatplotlib_1_1animation_1_1MovieWriter_a428a3acecf3218f00f563c6290402763}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!exec\+\_\+key@{exec\+\_\+key}}
+\index{exec\+\_\+key@{exec\+\_\+key}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{exec\+\_\+key}{exec\_key}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Movie\+Writer.\+exec\+\_\+key = \+\_\+api.\+deprecate\+\_\+privatize\+\_\+attribute(\char`\"{}3.\+3\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_a04961dd29276d116758c5ba8229b32f2}\label{classmatplotlib_1_1animation_1_1MovieWriter_a04961dd29276d116758c5ba8229b32f2}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!extra\+\_\+args@{extra\+\_\+args}}
+\index{extra\+\_\+args@{extra\+\_\+args}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{extra\+\_\+args}{extra\_args}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Movie\+Writer.\+extra\+\_\+args}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_a52d890850839781e09ad50717b00087b}\label{classmatplotlib_1_1animation_1_1MovieWriter_a52d890850839781e09ad50717b00087b}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!frame\+\_\+format@{frame\+\_\+format}}
+\index{frame\+\_\+format@{frame\+\_\+format}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{frame\+\_\+format}{frame\_format}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Movie\+Writer.\+frame\+\_\+format}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1MovieWriter_a299b985b271a8c409e25d1fdada37414}\label{classmatplotlib_1_1animation_1_1MovieWriter_a299b985b271a8c409e25d1fdada37414}} 
+\index{matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}!supported\+\_\+formats@{supported\+\_\+formats}}
+\index{supported\+\_\+formats@{supported\+\_\+formats}!matplotlib\+::animation\+::\+Movie\+Writer@{matplotlib\+::animation\+::\+Movie\+Writer}}
+\subsubsection{\texorpdfstring{supported\+\_\+formats}{supported\_formats}}
+{\footnotesize\ttfamily list matplotlib.\+animation.\+Movie\+Writer.\+supported\+\_\+formats = \mbox{[}\char`\"{}rgba\char`\"{}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{animation_8py}{animation.\+py}\end{DoxyCompactItemize}

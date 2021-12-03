@@ -1,0 +1,209 @@
+\hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase}{}\section{matplotlib.\+offsetbox.\+Draggable\+Base Class Reference}
+\label{classmatplotlib_1_1offsetbox_1_1DraggableBase}\index{matplotlib.\+offsetbox.\+Draggable\+Base@{matplotlib.\+offsetbox.\+Draggable\+Base}}
+
+
+Inheritance diagram for matplotlib.\+offsetbox.\+Draggable\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1offsetbox_1_1DraggableBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a373543cce0b5927f9e7810537b27b65d}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_aee9675f921b3b97a1b75e20fc11bf8ba}{ref\+\_\+artist}, use\+\_\+blit=False)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a78decd40119b3605a702514af83b1db0}{on\+\_\+motion} (self, evt)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a11c685179256a9dae612149cca1518af}{on\+\_\+motion\+\_\+blit} (self, evt)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a94cfbf699b8428c8c90fa9904df2e14a}{on\+\_\+pick} (self, evt)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a798a3437dddb1727b94b6260ad45e1d4}{on\+\_\+release} (self, event)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a1de5665472c34ce2ade4e64884c82277}{disconnect} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a4bf11104a5f337a8865c71e6178e5029}{artist\+\_\+picker} (self, artist, evt)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a72b6cf37b188c6ca023c4096a88c1ea2}{save\+\_\+offset} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a0e56a48a0b39d0c10f0ef7ae72c795ef}{update\+\_\+offset} (self, dx, dy)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a5807530f1063baf108e2f33b557675cd}{finalize\+\_\+offset} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_aee9675f921b3b97a1b75e20fc11bf8ba}{ref\+\_\+artist}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a4b802890c82817de2dacca56d4554fcf}{got\+\_\+artist}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a263fd42b79c955d6f2d98afc403cac88}{canvas}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a4e7f0b411ac7e7fe53296aa322af2711}{cids}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a8e4a0c79486802cd30135e490192cf7c}{mouse\+\_\+x}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a6ca99f0057c8d8a277dc132a0a66fd78}{mouse\+\_\+y}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_ab34258eeb6f79839c6fc1c9b6e6ae22c}{background}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1DraggableBase_a828bbdb711ad36f22179e355a67438ca}{alternative}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Helper base class for a draggable artist (legend, offsetbox).
+
+Derived classes must override the following methods::
+
+    def save_offset(self):
+        '''
+        Called when the object is picked for dragging; should save the
+        reference position of the artist.
+        '''
+
+    def update_offset(self, dx, dy):
+        '''
+        Called during the dragging; (*dx*, *dy*) is the pixel offset from
+        the point where the mouse drag started.
+        '''
+
+Optionally, you may override the following method::
+
+    def finalize_offset(self):
+        '''Called when the mouse is released.'''
+
+In the current implementation of `.DraggableLegend` and
+`DraggableAnnotation`, `update_offset` places the artists in display
+coordinates, and `finalize_offset` recalculates their position in axes
+coordinate and set a relevant attribute.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a373543cce0b5927f9e7810537b27b65d}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a373543cce0b5927f9e7810537b27b65d}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Draggable\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ref\+\_\+artist,  }\item[{}]{use\+\_\+blit = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a4bf11104a5f337a8865c71e6178e5029}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a4bf11104a5f337a8865c71e6178e5029}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!artist\+\_\+picker@{artist\+\_\+picker}}
+\index{artist\+\_\+picker@{artist\+\_\+picker}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{artist\+\_\+picker()}{artist\_picker()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Draggable\+Base.\+artist\+\_\+picker (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{artist,  }\item[{}]{evt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a1de5665472c34ce2ade4e64884c82277}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a1de5665472c34ce2ade4e64884c82277}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Draggable\+Base.\+disconnect (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Disconnect the callbacks.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a5807530f1063baf108e2f33b557675cd}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a5807530f1063baf108e2f33b557675cd}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!finalize\+\_\+offset@{finalize\+\_\+offset}}
+\index{finalize\+\_\+offset@{finalize\+\_\+offset}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{finalize\+\_\+offset()}{finalize\_offset()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Draggable\+Base.\+finalize\+\_\+offset (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a78decd40119b3605a702514af83b1db0}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a78decd40119b3605a702514af83b1db0}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!on\+\_\+motion@{on\+\_\+motion}}
+\index{on\+\_\+motion@{on\+\_\+motion}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{on\+\_\+motion()}{on\_motion()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Draggable\+Base.\+on\+\_\+motion (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{evt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a11c685179256a9dae612149cca1518af}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a11c685179256a9dae612149cca1518af}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!on\+\_\+motion\+\_\+blit@{on\+\_\+motion\+\_\+blit}}
+\index{on\+\_\+motion\+\_\+blit@{on\+\_\+motion\+\_\+blit}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{on\+\_\+motion\+\_\+blit()}{on\_motion\_blit()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Draggable\+Base.\+on\+\_\+motion\+\_\+blit (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{evt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a94cfbf699b8428c8c90fa9904df2e14a}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a94cfbf699b8428c8c90fa9904df2e14a}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!on\+\_\+pick@{on\+\_\+pick}}
+\index{on\+\_\+pick@{on\+\_\+pick}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{on\+\_\+pick()}{on\_pick()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Draggable\+Base.\+on\+\_\+pick (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{evt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a798a3437dddb1727b94b6260ad45e1d4}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a798a3437dddb1727b94b6260ad45e1d4}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!on\+\_\+release@{on\+\_\+release}}
+\index{on\+\_\+release@{on\+\_\+release}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{on\+\_\+release()}{on\_release()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Draggable\+Base.\+on\+\_\+release (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a72b6cf37b188c6ca023c4096a88c1ea2}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a72b6cf37b188c6ca023c4096a88c1ea2}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!save\+\_\+offset@{save\+\_\+offset}}
+\index{save\+\_\+offset@{save\+\_\+offset}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{save\+\_\+offset()}{save\_offset()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Draggable\+Base.\+save\+\_\+offset (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a0e56a48a0b39d0c10f0ef7ae72c795ef}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a0e56a48a0b39d0c10f0ef7ae72c795ef}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!update\+\_\+offset@{update\+\_\+offset}}
+\index{update\+\_\+offset@{update\+\_\+offset}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{update\+\_\+offset()}{update\_offset()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Draggable\+Base.\+update\+\_\+offset (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dx,  }\item[{}]{dy }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a828bbdb711ad36f22179e355a67438ca}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a828bbdb711ad36f22179e355a67438ca}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!alternative@{alternative}}
+\index{alternative@{alternative}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{alternative}{alternative}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Draggable\+Base.\+alternative\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_ab34258eeb6f79839c6fc1c9b6e6ae22c}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_ab34258eeb6f79839c6fc1c9b6e6ae22c}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!background@{background}}
+\index{background@{background}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{background}{background}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Draggable\+Base.\+background}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a263fd42b79c955d6f2d98afc403cac88}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a263fd42b79c955d6f2d98afc403cac88}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!canvas@{canvas}}
+\index{canvas@{canvas}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{canvas}{canvas}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Draggable\+Base.\+canvas}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a4e7f0b411ac7e7fe53296aa322af2711}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a4e7f0b411ac7e7fe53296aa322af2711}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!cids@{cids}}
+\index{cids@{cids}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{cids}{cids}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Draggable\+Base.\+cids}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a4b802890c82817de2dacca56d4554fcf}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a4b802890c82817de2dacca56d4554fcf}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!got\+\_\+artist@{got\+\_\+artist}}
+\index{got\+\_\+artist@{got\+\_\+artist}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{got\+\_\+artist}{got\_artist}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Draggable\+Base.\+got\+\_\+artist}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a8e4a0c79486802cd30135e490192cf7c}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a8e4a0c79486802cd30135e490192cf7c}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!mouse\+\_\+x@{mouse\+\_\+x}}
+\index{mouse\+\_\+x@{mouse\+\_\+x}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{mouse\+\_\+x}{mouse\_x}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Draggable\+Base.\+mouse\+\_\+x}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_a6ca99f0057c8d8a277dc132a0a66fd78}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_a6ca99f0057c8d8a277dc132a0a66fd78}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!mouse\+\_\+y@{mouse\+\_\+y}}
+\index{mouse\+\_\+y@{mouse\+\_\+y}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{mouse\+\_\+y}{mouse\_y}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Draggable\+Base.\+mouse\+\_\+y}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1DraggableBase_aee9675f921b3b97a1b75e20fc11bf8ba}\label{classmatplotlib_1_1offsetbox_1_1DraggableBase_aee9675f921b3b97a1b75e20fc11bf8ba}} 
+\index{matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}!ref\+\_\+artist@{ref\+\_\+artist}}
+\index{ref\+\_\+artist@{ref\+\_\+artist}!matplotlib\+::offsetbox\+::\+Draggable\+Base@{matplotlib\+::offsetbox\+::\+Draggable\+Base}}
+\subsubsection{\texorpdfstring{ref\+\_\+artist}{ref\_artist}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Draggable\+Base.\+ref\+\_\+artist}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{offsetbox_8py}{offsetbox.\+py}\end{DoxyCompactItemize}

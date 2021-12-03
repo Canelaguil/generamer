@@ -1,0 +1,215 @@
+\hypertarget{classnumpy_1_1core_1_1records_1_1recarray}{}\section{numpy.\+core.\+records.\+recarray Class Reference}
+\label{classnumpy_1_1core_1_1records_1_1recarray}\index{numpy.\+core.\+records.\+recarray@{numpy.\+core.\+records.\+recarray}}
+
+
+Inheritance diagram for numpy.\+core.\+records.\+recarray\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classnumpy_1_1core_1_1records_1_1recarray__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+core.\+records.\+recarray\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classnumpy_1_1core_1_1records_1_1recarray__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1core_1_1records_1_1recarray_a2f63dd539ba1c8fb07d764ce219429d2}{\+\_\+\+\_\+new\+\_\+\+\_\+} (subtype, \hyperlink{classnumpy_1_1core_1_1records_1_1recarray_a13fed5b032b4bc1284b4e6f2848d49c7}{shape}, \hyperlink{classnumpy_1_1core_1_1records_1_1recarray_a02467375a9bff660dada72aabf09713e}{dtype}=None, buf=None, offset=0, strides=None, formats=None, names=None, titles=None, byteorder=None, aligned=False, order=\textquotesingle{}C\textquotesingle{})
+\item 
+def \hyperlink{classnumpy_1_1core_1_1records_1_1recarray_a0f0d7c04057cd35a49b9904c79948b5e}{\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+} (self, obj)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1records_1_1recarray_a990406e27481dd2428bc811d3fc62758}{\+\_\+\+\_\+getattribute\+\_\+\+\_\+} (self, attr)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1records_1_1recarray_af335d8719a08d4958da41e5f00778921}{\+\_\+\+\_\+setattr\+\_\+\+\_\+} (self, attr, val)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1records_1_1recarray_a4800307fced90ca9bf5f48f978c5722c}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, indx)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1records_1_1recarray_a241f84055c29d3aeaca584e15f69b9b5}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1records_1_1recarray_aa91d3d470efbf3b5e9c2c831e97818da}{field} (self, attr, val=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1core_1_1records_1_1recarray_a02467375a9bff660dada72aabf09713e}{dtype}
+\item 
+\hyperlink{classnumpy_1_1core_1_1records_1_1recarray_a13fed5b032b4bc1284b4e6f2848d49c7}{shape}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Construct an ndarray that allows field access using attributes.
+
+Arrays may have a data-types containing fields, analogous
+to columns in a spread sheet.  An example is ``[(x, int), (y, float)]``,
+where each entry in the array is a pair of ``(int, float)``.  Normally,
+these attributes are accessed using dictionary lookups such as ``arr['x']``
+and ``arr['y']``.  Record arrays allow the fields to be accessed as members
+of the array, using ``arr.x`` and ``arr.y``.
+
+Parameters
+----------
+shape : tuple
+    Shape of output array.
+dtype : data-type, optional
+    The desired data-type.  By default, the data-type is determined
+    from `formats`, `names`, `titles`, `aligned` and `byteorder`.
+formats : list of data-types, optional
+    A list containing the data-types for the different columns, e.g.
+    ``['i4', 'f8', 'i4']``.  `formats` does *not* support the new
+    convention of using types directly, i.e. ``(int, float, int)``.
+    Note that `formats` must be a list, not a tuple.
+    Given that `formats` is somewhat limited, we recommend specifying
+    `dtype` instead.
+names : tuple of str, optional
+    The name of each column, e.g. ``('x', 'y', 'z')``.
+buf : buffer, optional
+    By default, a new array is created of the given shape and data-type.
+    If `buf` is specified and is an object exposing the buffer interface,
+    the array will use the memory from the existing buffer.  In this case,
+    the `offset` and `strides` keywords are available.
+
+Other Parameters
+----------------
+titles : tuple of str, optional
+    Aliases for column names.  For example, if `names` were
+    ``('x', 'y', 'z')`` and `titles` is
+    ``('x_coordinate', 'y_coordinate', 'z_coordinate')``, then
+    ``arr['x']`` is equivalent to both ``arr.x`` and ``arr.x_coordinate``.
+byteorder : {'<', '>', '='}, optional
+    Byte-order for all fields.
+aligned : bool, optional
+    Align the fields in memory as the C-compiler would.
+strides : tuple of ints, optional
+    Buffer (`buf`) is interpreted according to these strides (strides
+    define how many bytes each array element, row, column, etc.
+    occupy in memory).
+offset : int, optional
+    Start reading buffer (`buf`) from this offset onwards.
+order : {'C', 'F'}, optional
+    Row-major (C-style) or column-major (Fortran-style) order.
+
+Returns
+-------
+rec : recarray
+    Empty array of the given shape and type.
+
+See Also
+--------
+core.records.fromrecords : Construct a record array from data.
+record : fundamental data-type for `recarray`.
+format_parser : determine a data-type from formats, names, titles.
+
+Notes
+-----
+This constructor can be compared to ``empty``: it creates a new record
+array but does not fill it with data.  To create a record array from data,
+use one of the following methods:
+
+1. Create a standard ndarray and convert it to a record array,
+   using ``arr.view(np.recarray)``
+2. Use the `buf` keyword.
+3. Use `np.rec.fromrecords`.
+
+Examples
+--------
+Create an array with two fields, ``x`` and ``y``:
+
+>>> x = np.array([(1.0, 2), (3.0, 4)], dtype=[('x', '<f8'), ('y', '<i8')])
+>>> x
+array([(1., 2), (3., 4)], dtype=[('x', '<f8'), ('y', '<i8')])
+
+>>> x['x']
+array([1., 3.])
+
+View the array as a record array:
+
+>>> x = x.view(np.recarray)
+
+>>> x.x
+array([1., 3.])
+
+>>> x.y
+array([2, 4])
+
+Create a new, empty record array:
+
+>>> np.recarray((2,),
+... dtype=[('x', int), ('y', float), ('z', int)]) #doctest: +SKIP
+rec.array([(-1073741821, 1.2249118382103472e-301, 24547520),
+       (3471280, 1.2134086255804012e-316, 0)],
+      dtype=[('x', '<i4'), ('y', '<f8'), ('z', '<i4')])\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1records_1_1recarray_a0f0d7c04057cd35a49b9904c79948b5e}\label{classnumpy_1_1core_1_1records_1_1recarray_a0f0d7c04057cd35a49b9904c79948b5e}} 
+\index{numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}!\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+@{\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+@{\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+}!numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+()}{\_\_array\_finalize\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+records.\+recarray.\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1records_1_1recarray_a990406e27481dd2428bc811d3fc62758}\label{classnumpy_1_1core_1_1records_1_1recarray_a990406e27481dd2428bc811d3fc62758}} 
+\index{numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}!\+\_\+\+\_\+getattribute\+\_\+\+\_\+@{\+\_\+\+\_\+getattribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getattribute\+\_\+\+\_\+@{\+\_\+\+\_\+getattribute\+\_\+\+\_\+}!numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getattribute\+\_\+\+\_\+()}{\_\_getattribute\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+records.\+recarray.\+\_\+\+\_\+getattribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{attr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1records_1_1recarray_a4800307fced90ca9bf5f48f978c5722c}\label{classnumpy_1_1core_1_1records_1_1recarray_a4800307fced90ca9bf5f48f978c5722c}} 
+\index{numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+records.\+recarray.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{indx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1records_1_1recarray_a2f63dd539ba1c8fb07d764ce219429d2}\label{classnumpy_1_1core_1_1records_1_1recarray_a2f63dd539ba1c8fb07d764ce219429d2}} 
+\index{numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}!\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}!numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+new\+\_\+\+\_\+()}{\_\_new\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+records.\+recarray.\+\_\+\+\_\+new\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{subtype,  }\item[{}]{shape,  }\item[{}]{dtype = {\ttfamily None},  }\item[{}]{buf = {\ttfamily None},  }\item[{}]{offset = {\ttfamily 0},  }\item[{}]{strides = {\ttfamily None},  }\item[{}]{formats = {\ttfamily None},  }\item[{}]{names = {\ttfamily None},  }\item[{}]{titles = {\ttfamily None},  }\item[{}]{byteorder = {\ttfamily None},  }\item[{}]{aligned = {\ttfamily False},  }\item[{}]{order = {\ttfamily \textquotesingle{}C\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1records_1_1recarray_a241f84055c29d3aeaca584e15f69b9b5}\label{classnumpy_1_1core_1_1records_1_1recarray_a241f84055c29d3aeaca584e15f69b9b5}} 
+\index{numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+records.\+recarray.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1records_1_1recarray_af335d8719a08d4958da41e5f00778921}\label{classnumpy_1_1core_1_1records_1_1recarray_af335d8719a08d4958da41e5f00778921}} 
+\index{numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}!\+\_\+\+\_\+setattr\+\_\+\+\_\+@{\+\_\+\+\_\+setattr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setattr\+\_\+\+\_\+@{\+\_\+\+\_\+setattr\+\_\+\+\_\+}!numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setattr\+\_\+\+\_\+()}{\_\_setattr\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+records.\+recarray.\+\_\+\+\_\+setattr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{attr,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1records_1_1recarray_aa91d3d470efbf3b5e9c2c831e97818da}\label{classnumpy_1_1core_1_1records_1_1recarray_aa91d3d470efbf3b5e9c2c831e97818da}} 
+\index{numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}!field@{field}}
+\index{field@{field}!numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}}
+\subsubsection{\texorpdfstring{field()}{field()}}
+{\footnotesize\ttfamily def numpy.\+core.\+records.\+recarray.\+field (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{attr,  }\item[{}]{val = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1records_1_1recarray_a02467375a9bff660dada72aabf09713e}\label{classnumpy_1_1core_1_1records_1_1recarray_a02467375a9bff660dada72aabf09713e}} 
+\index{numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}!dtype@{dtype}}
+\index{dtype@{dtype}!numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}}
+\subsubsection{\texorpdfstring{dtype}{dtype}}
+{\footnotesize\ttfamily numpy.\+core.\+records.\+recarray.\+dtype}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1records_1_1recarray_a13fed5b032b4bc1284b4e6f2848d49c7}\label{classnumpy_1_1core_1_1records_1_1recarray_a13fed5b032b4bc1284b4e6f2848d49c7}} 
+\index{numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}!shape@{shape}}
+\index{shape@{shape}!numpy\+::core\+::records\+::recarray@{numpy\+::core\+::records\+::recarray}}
+\subsubsection{\texorpdfstring{shape}{shape}}
+{\footnotesize\ttfamily numpy.\+core.\+records.\+recarray.\+shape}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/core/\hyperlink{records_8py}{records.\+py}\end{DoxyCompactItemize}

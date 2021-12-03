@@ -1,0 +1,128 @@
+\hypertarget{classmatplotlib_1_1offsetbox_1_1PackerBase}{}\section{matplotlib.\+offsetbox.\+Packer\+Base Class Reference}
+\label{classmatplotlib_1_1offsetbox_1_1PackerBase}\index{matplotlib.\+offsetbox.\+Packer\+Base@{matplotlib.\+offsetbox.\+Packer\+Base}}
+
+
+Inheritance diagram for matplotlib.\+offsetbox.\+Packer\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1offsetbox_1_1PackerBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+offsetbox.\+Packer\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classmatplotlib_1_1offsetbox_1_1PackerBase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1PackerBase_a1558fae70b928b23e184e1e7b200b99c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1offsetbox_1_1PackerBase_a14d2679fc7a924d127300a7159ef4a49}{pad}=None, \hyperlink{classmatplotlib_1_1offsetbox_1_1PackerBase_a1f9535c77f7bbd6551c5d89f50e726d4}{sep}=None, \hyperlink{classmatplotlib_1_1offsetbox_1_1PackerBase_aadd03b7d76a7b37fedf4de2019899dd0}{width}=None, \hyperlink{classmatplotlib_1_1offsetbox_1_1PackerBase_afe56db5f552efb848b9756f9aeb04e4e}{height}=None, \hyperlink{classmatplotlib_1_1offsetbox_1_1PackerBase_ab5473ea3854af65868c296303d798607}{align}=\char`\"{}baseline\char`\"{}, mode=\char`\"{}fixed\char`\"{}, children=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1PackerBase_afe56db5f552efb848b9756f9aeb04e4e}{height}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1PackerBase_aadd03b7d76a7b37fedf4de2019899dd0}{width}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1PackerBase_a1f9535c77f7bbd6551c5d89f50e726d4}{sep}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1PackerBase_a14d2679fc7a924d127300a7159ef4a49}{pad}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1PackerBase_a03d68525c5aacb739fc6b1676ca5410e}{mode}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1PackerBase_ab5473ea3854af65868c296303d798607}{align}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PackerBase_a1558fae70b928b23e184e1e7b200b99c}\label{classmatplotlib_1_1offsetbox_1_1PackerBase_a1558fae70b928b23e184e1e7b200b99c}} 
+\index{matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Packer\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pad = {\ttfamily None},  }\item[{}]{sep = {\ttfamily None},  }\item[{}]{width = {\ttfamily None},  }\item[{}]{height = {\ttfamily None},  }\item[{}]{align = {\ttfamily \char`\"{}baseline\char`\"{}},  }\item[{}]{mode = {\ttfamily \char`\"{}fixed\char`\"{}},  }\item[{}]{children = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+pad : float, optional
+    The boundary padding in points.
+
+sep : float, optional
+    The spacing between items in points.
+
+width, height : float, optional
+    Width and height of the container box in pixels, calculated if
+    *None*.
+
+align : {'top', 'bottom', 'left', 'right', 'center', 'baseline'}, \
+default: 'baseline'
+    Alignment of boxes.
+
+mode : {'fixed', 'expand', 'equal'}, default: 'fixed'
+    The packing mode.
+
+    - 'fixed' packs the given `.Artist`\\s tight with *sep* spacing.
+    - 'expand' uses the maximal available space to distribute the
+      artists with equal spacing in between.
+    - 'equal': Each artist an equal fraction of the available space
+      and is left-aligned (or top-aligned) therein.
+
+children : list of `.Artist`
+    The artists to pack.
+
+Notes
+-----
+*pad* and *sep* are in points and will be scaled with the renderer
+dpi, while *width* and *height* are in in pixels.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PackerBase_ab5473ea3854af65868c296303d798607}\label{classmatplotlib_1_1offsetbox_1_1PackerBase_ab5473ea3854af65868c296303d798607}} 
+\index{matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}!align@{align}}
+\index{align@{align}!matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}}
+\subsubsection{\texorpdfstring{align}{align}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Packer\+Base.\+align}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PackerBase_afe56db5f552efb848b9756f9aeb04e4e}\label{classmatplotlib_1_1offsetbox_1_1PackerBase_afe56db5f552efb848b9756f9aeb04e4e}} 
+\index{matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}!height@{height}}
+\index{height@{height}!matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Packer\+Base.\+height}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PackerBase_a03d68525c5aacb739fc6b1676ca5410e}\label{classmatplotlib_1_1offsetbox_1_1PackerBase_a03d68525c5aacb739fc6b1676ca5410e}} 
+\index{matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}!mode@{mode}}
+\index{mode@{mode}!matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Packer\+Base.\+mode}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PackerBase_a14d2679fc7a924d127300a7159ef4a49}\label{classmatplotlib_1_1offsetbox_1_1PackerBase_a14d2679fc7a924d127300a7159ef4a49}} 
+\index{matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}!pad@{pad}}
+\index{pad@{pad}!matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}}
+\subsubsection{\texorpdfstring{pad}{pad}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Packer\+Base.\+pad}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PackerBase_a1f9535c77f7bbd6551c5d89f50e726d4}\label{classmatplotlib_1_1offsetbox_1_1PackerBase_a1f9535c77f7bbd6551c5d89f50e726d4}} 
+\index{matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}!sep@{sep}}
+\index{sep@{sep}!matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}}
+\subsubsection{\texorpdfstring{sep}{sep}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Packer\+Base.\+sep}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1PackerBase_aadd03b7d76a7b37fedf4de2019899dd0}\label{classmatplotlib_1_1offsetbox_1_1PackerBase_aadd03b7d76a7b37fedf4de2019899dd0}} 
+\index{matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}!width@{width}}
+\index{width@{width}!matplotlib\+::offsetbox\+::\+Packer\+Base@{matplotlib\+::offsetbox\+::\+Packer\+Base}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Packer\+Base.\+width}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{offsetbox_8py}{offsetbox.\+py}\end{DoxyCompactItemize}

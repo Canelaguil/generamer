@@ -1,0 +1,95 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1connectivity}{}\section{networkx.\+algorithms.\+assortativity.\+connectivity Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1connectivity}\index{networkx.\+algorithms.\+assortativity.\+connectivity@{networkx.\+algorithms.\+assortativity.\+connectivity}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1assortativity_1_1connectivity_a9cf3f457b301803e48ece3cdf10acde2}{average\+\_\+degree\+\_\+connectivity} (G, source=\char`\"{}in+out\char`\"{}, target=\char`\"{}in+out\char`\"{}, nodes=None, weight=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1assortativity_1_1connectivity_a80631f000db4c5d03bd4c66601addd35}{k\+\_\+nearest\+\_\+neighbors} (G, source=\char`\"{}in+out\char`\"{}, target=\char`\"{}in+out\char`\"{}, nodes=None, weight=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1connectivity_a9cf3f457b301803e48ece3cdf10acde2}\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1connectivity_a9cf3f457b301803e48ece3cdf10acde2}} 
+\index{networkx\+::algorithms\+::assortativity\+::connectivity@{networkx\+::algorithms\+::assortativity\+::connectivity}!average\+\_\+degree\+\_\+connectivity@{average\+\_\+degree\+\_\+connectivity}}
+\index{average\+\_\+degree\+\_\+connectivity@{average\+\_\+degree\+\_\+connectivity}!networkx\+::algorithms\+::assortativity\+::connectivity@{networkx\+::algorithms\+::assortativity\+::connectivity}}
+\subsubsection{\texorpdfstring{average\+\_\+degree\+\_\+connectivity()}{average\_degree\_connectivity()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+assortativity.\+connectivity.\+average\+\_\+degree\+\_\+connectivity (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{source = {\ttfamily \char`\"{}in+out\char`\"{}},  }\item[{}]{target = {\ttfamily \char`\"{}in+out\char`\"{}},  }\item[{}]{nodes = {\ttfamily None},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the average degree connectivity of graph.
+
+The average degree connectivity is the average nearest neighbor degree of
+nodes with degree k. For weighted graphs, an analogous measure can
+be computed using the weighted average neighbors degree defined in
+[1]_, for a node `i`, as
+
+.. math::
+
+    k_{nn,i}^{w} = \frac{1}{s_i} \sum_{j \in N(i)} w_{ij} k_j
+
+where `s_i` is the weighted degree of node `i`,
+`w_{ij}` is the weight of the edge that links `i` and `j`,
+and `N(i)` are the neighbors of node `i`.
+
+Parameters
+----------
+G : NetworkX graph
+
+source :  "in"|"out"|"in+out" (default:"in+out")
+   Directed graphs only. Use "in"- or "out"-degree for source node.
+
+target : "in"|"out"|"in+out" (default:"in+out"
+   Directed graphs only. Use "in"- or "out"-degree for target node.
+
+nodes : list or iterable (optional)
+    Compute neighbor connectivity for these nodes. The default is all
+    nodes.
+
+weight : string or None, optional (default=None)
+   The edge attribute that holds the numerical value used as a weight.
+   If None, then each edge has weight 1.
+
+Returns
+-------
+d : dict
+   A dictionary keyed by degree k with the value of average connectivity.
+
+Raises
+------
+ValueError
+    If either `source` or `target` are not one of 'in',
+    'out', or 'in+out'.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> G.edges[1, 2]["weight"] = 3
+>>> nx.average_degree_connectivity(G)
+{1: 2.0, 2: 1.5}
+>>> nx.average_degree_connectivity(G, weight="weight")
+{1: 2.0, 2: 1.75}
+
+See Also
+--------
+average_neighbor_degree
+
+References
+----------
+.. [1] A. Barrat, M. Barthélemy, R. Pastor-Satorras, and A. Vespignani,
+   "The architecture of complex weighted networks".
+   PNAS 101 (11): 3747–3752 (2004).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1assortativity_1_1connectivity_a80631f000db4c5d03bd4c66601addd35}\label{namespacenetworkx_1_1algorithms_1_1assortativity_1_1connectivity_a80631f000db4c5d03bd4c66601addd35}} 
+\index{networkx\+::algorithms\+::assortativity\+::connectivity@{networkx\+::algorithms\+::assortativity\+::connectivity}!k\+\_\+nearest\+\_\+neighbors@{k\+\_\+nearest\+\_\+neighbors}}
+\index{k\+\_\+nearest\+\_\+neighbors@{k\+\_\+nearest\+\_\+neighbors}!networkx\+::algorithms\+::assortativity\+::connectivity@{networkx\+::algorithms\+::assortativity\+::connectivity}}
+\subsubsection{\texorpdfstring{k\+\_\+nearest\+\_\+neighbors()}{k\_nearest\_neighbors()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+assortativity.\+connectivity.\+k\+\_\+nearest\+\_\+neighbors (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{source = {\ttfamily \char`\"{}in+out\char`\"{}},  }\item[{}]{target = {\ttfamily \char`\"{}in+out\char`\"{}},  }\item[{}]{nodes = {\ttfamily None},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the average degree connectivity of graph.
+
+.. deprecated 2.6
+
+  k_nearest_neighbors function is deprecated and will be removed in v3.0.
+  Use `average_degree_connectivity` instead.
+\end{DoxyVerb}
+ 

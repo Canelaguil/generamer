@@ -1,0 +1,322 @@
+\hypertarget{namespacePIL_1_1ImageOps}{}\section{P\+I\+L.\+Image\+Ops Namespace Reference}
+\label{namespacePIL_1_1ImageOps}\index{P\+I\+L.\+Image\+Ops@{P\+I\+L.\+Image\+Ops}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_afe76c6114e2b0f82a03f4654a5267574}{autocontrast} (image, cutoff=0, ignore=None, mask=None, preserve\+\_\+tone=False)
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_af203d817228bf42ae085f1a90d65b317}{colorize} (image, black, white, mid=None, blackpoint=0, whitepoint=255, midpoint=127)
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_a936e452e4388ae6b0cf19ff6881d562e}{contain} (image, size, method=\hyperlink{namespacePIL_1_1Image_a3824ac5a0532aa60f7072af889d88e59}{Image.\+B\+I\+C\+U\+B\+IC})
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_ab6b83ba1edb453e1fa135e996035817b}{pad} (image, size, method=\hyperlink{namespacePIL_1_1Image_a3824ac5a0532aa60f7072af889d88e59}{Image.\+B\+I\+C\+U\+B\+IC}, color=None, centering=(0.\+5, 0.\+5))
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_a97f0cbbea442db0681e45c7b64395a6d}{crop} (image, border=0)
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_abd1f30ecd4e0780752fb7b161ea36bc9}{scale} (image, factor, resample=\hyperlink{namespacePIL_1_1Image_a3824ac5a0532aa60f7072af889d88e59}{Image.\+B\+I\+C\+U\+B\+IC})
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_a0807122504af438786dd05e716c357b8}{deform} (image, deformer, resample=\hyperlink{namespacePIL_1_1Image_ad4b661d0dee54be6240599760dcf45c8}{Image.\+B\+I\+L\+I\+N\+E\+AR})
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_a1a95dfa2e8119aac5eb69f1d83dc63b5}{equalize} (image, mask=None)
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_a2d9d10f23a0b211caa54efef496aa3eb}{expand} (image, border=0, fill=0)
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_a335558444f171870d2a9ab53c1aab5b9}{fit} (image, size, method=\hyperlink{namespacePIL_1_1Image_a3824ac5a0532aa60f7072af889d88e59}{Image.\+B\+I\+C\+U\+B\+IC}, bleed=0.\+0, centering=(0.\+5, 0.\+5))
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_ab61ed57d5fbd69996b56d4b86d807d0e}{flip} (image)
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_a0d321a776d6eb99f9e897b0778962c73}{grayscale} (image)
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_a8619286122091c6be089d3821e03fb73}{invert} (image)
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_a42e210667db8aeb87a999cbb7033908b}{mirror} (image)
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_a5941e84a0d076c99b105bdc8039df8b5}{posterize} (image, bits)
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_a50420e7239e43ed1ed190fdf84771bcc}{solarize} (image, threshold=128)
+\item 
+def \hyperlink{namespacePIL_1_1ImageOps_ad992424186ace22f9fc9e85f20f1fbe3}{exif\+\_\+transpose} (image)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1ImageOps_afe76c6114e2b0f82a03f4654a5267574}\label{namespacePIL_1_1ImageOps_afe76c6114e2b0f82a03f4654a5267574}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!autocontrast@{autocontrast}}
+\index{autocontrast@{autocontrast}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{autocontrast()}{autocontrast()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+autocontrast (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{cutoff = {\ttfamily 0},  }\item[{}]{ignore = {\ttfamily None},  }\item[{}]{mask = {\ttfamily None},  }\item[{}]{preserve\+\_\+tone = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Maximize (normalize) image contrast. This function calculates a
+histogram of the input image (or mask region), removes ``cutoff`` percent of the
+lightest and darkest pixels from the histogram, and remaps the image
+so that the darkest pixel becomes black (0), and the lightest
+becomes white (255).
+
+:param image: The image to process.
+:param cutoff: The percent to cut off from the histogram on the low and
+               high ends. Either a tuple of (low, high), or a single
+               number for both.
+:param ignore: The background pixel value (use None for no background).
+:param mask: Histogram used in contrast operation is computed using pixels
+             within the mask. If no mask is given the entire image is used
+             for histogram computation.
+:param preserve_tone: Preserve image tone in Photoshop-like style autocontrast.
+
+                      .. versionadded:: 8.2.0
+
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_af203d817228bf42ae085f1a90d65b317}\label{namespacePIL_1_1ImageOps_af203d817228bf42ae085f1a90d65b317}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!colorize@{colorize}}
+\index{colorize@{colorize}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{colorize()}{colorize()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+colorize (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{black,  }\item[{}]{white,  }\item[{}]{mid = {\ttfamily None},  }\item[{}]{blackpoint = {\ttfamily 0},  }\item[{}]{whitepoint = {\ttfamily 255},  }\item[{}]{midpoint = {\ttfamily 127} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Colorize grayscale image.
+This function calculates a color wedge which maps all black pixels in
+the source image to the first color and all white pixels to the
+second color. If ``mid`` is specified, it uses three-color mapping.
+The ``black`` and ``white`` arguments should be RGB tuples or color names;
+optionally you can use three-color mapping by also specifying ``mid``.
+Mapping positions for any of the colors can be specified
+(e.g. ``blackpoint``), where these parameters are the integer
+value corresponding to where the corresponding color should be mapped.
+These parameters must have logical order, such that
+``blackpoint <= midpoint <= whitepoint`` (if ``mid`` is specified).
+
+:param image: The image to colorize.
+:param black: The color to use for black input pixels.
+:param white: The color to use for white input pixels.
+:param mid: The color to use for midtone input pixels.
+:param blackpoint: an int value [0, 255] for the black mapping.
+:param whitepoint: an int value [0, 255] for the white mapping.
+:param midpoint: an int value [0, 255] for the midtone mapping.
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_a936e452e4388ae6b0cf19ff6881d562e}\label{namespacePIL_1_1ImageOps_a936e452e4388ae6b0cf19ff6881d562e}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!contain@{contain}}
+\index{contain@{contain}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{contain()}{contain()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+contain (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{size,  }\item[{}]{method = {\ttfamily \hyperlink{namespacePIL_1_1Image_a3824ac5a0532aa60f7072af889d88e59}{Image.\+B\+I\+C\+U\+B\+IC}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a resized version of the image, set to the maximum width and height
+within the requested size, while maintaining the original aspect ratio.
+
+:param image: The image to resize and crop.
+:param size: The requested output size in pixels, given as a
+             (width, height) tuple.
+:param method: Resampling method to use. Default is
+               :py:attr:`PIL.Image.BICUBIC`. See :ref:`concept-filters`.
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_a97f0cbbea442db0681e45c7b64395a6d}\label{namespacePIL_1_1ImageOps_a97f0cbbea442db0681e45c7b64395a6d}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!crop@{crop}}
+\index{crop@{crop}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{crop()}{crop()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+crop (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{border = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove border from image.  The same amount of pixels are removed
+from all four sides.  This function works on all image modes.
+
+.. seealso:: :py:meth:`~PIL.Image.Image.crop`
+
+:param image: The image to crop.
+:param border: The number of pixels to remove.
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_a0807122504af438786dd05e716c357b8}\label{namespacePIL_1_1ImageOps_a0807122504af438786dd05e716c357b8}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!deform@{deform}}
+\index{deform@{deform}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{deform()}{deform()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+deform (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{deformer,  }\item[{}]{resample = {\ttfamily \hyperlink{namespacePIL_1_1Image_ad4b661d0dee54be6240599760dcf45c8}{Image.\+B\+I\+L\+I\+N\+E\+AR}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Deform the image.
+
+:param image: The image to deform.
+:param deformer: A deformer object.  Any object that implements a
+                ``getmesh`` method can be used.
+:param resample: An optional resampling filter. Same values possible as
+   in the PIL.Image.transform function.
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_a1a95dfa2e8119aac5eb69f1d83dc63b5}\label{namespacePIL_1_1ImageOps_a1a95dfa2e8119aac5eb69f1d83dc63b5}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!equalize@{equalize}}
+\index{equalize@{equalize}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{equalize()}{equalize()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+equalize (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{mask = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Equalize the image histogram. This function applies a non-linear
+mapping to the input image, in order to create a uniform
+distribution of grayscale values in the output image.
+
+:param image: The image to equalize.
+:param mask: An optional mask.  If given, only the pixels selected by
+             the mask are included in the analysis.
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_ad992424186ace22f9fc9e85f20f1fbe3}\label{namespacePIL_1_1ImageOps_ad992424186ace22f9fc9e85f20f1fbe3}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!exif\+\_\+transpose@{exif\+\_\+transpose}}
+\index{exif\+\_\+transpose@{exif\+\_\+transpose}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{exif\+\_\+transpose()}{exif\_transpose()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+exif\+\_\+transpose (\begin{DoxyParamCaption}\item[{}]{image }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}If an image has an EXIF Orientation tag, return a new image that is
+transposed accordingly. Otherwise, return a copy of the image.
+
+:param image: The image to transpose.
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_a2d9d10f23a0b211caa54efef496aa3eb}\label{namespacePIL_1_1ImageOps_a2d9d10f23a0b211caa54efef496aa3eb}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!expand@{expand}}
+\index{expand@{expand}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{expand()}{expand()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+expand (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{border = {\ttfamily 0},  }\item[{}]{fill = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add border to the image
+
+:param image: The image to expand.
+:param border: Border width, in pixels.
+:param fill: Pixel fill value (a color value).  Default is 0 (black).
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_a335558444f171870d2a9ab53c1aab5b9}\label{namespacePIL_1_1ImageOps_a335558444f171870d2a9ab53c1aab5b9}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!fit@{fit}}
+\index{fit@{fit}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{fit()}{fit()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+fit (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{size,  }\item[{}]{method = {\ttfamily \hyperlink{namespacePIL_1_1Image_a3824ac5a0532aa60f7072af889d88e59}{Image.\+B\+I\+C\+U\+B\+IC}},  }\item[{}]{bleed = {\ttfamily 0.0},  }\item[{}]{centering = {\ttfamily (0.5,~0.5)} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a resized and cropped version of the image, cropped to the
+requested aspect ratio and size.
+
+This function was contributed by Kevin Cazabon.
+
+:param image: The image to resize and crop.
+:param size: The requested output size in pixels, given as a
+             (width, height) tuple.
+:param method: Resampling method to use. Default is
+               :py:attr:`PIL.Image.BICUBIC`. See :ref:`concept-filters`.
+:param bleed: Remove a border around the outside of the image from all
+              four edges. The value is a decimal percentage (use 0.01 for
+              one percent). The default value is 0 (no border).
+              Cannot be greater than or equal to 0.5.
+:param centering: Control the cropping position.  Use (0.5, 0.5) for
+                  center cropping (e.g. if cropping the width, take 50% off
+                  of the left side, and therefore 50% off the right side).
+                  (0.0, 0.0) will crop from the top left corner (i.e. if
+                  cropping the width, take all of the crop off of the right
+                  side, and if cropping the height, take all of it off the
+                  bottom).  (1.0, 0.0) will crop from the bottom left
+                  corner, etc. (i.e. if cropping the width, take all of the
+                  crop off the left side, and if cropping the height take
+                  none from the top, and therefore all off the bottom).
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_ab61ed57d5fbd69996b56d4b86d807d0e}\label{namespacePIL_1_1ImageOps_ab61ed57d5fbd69996b56d4b86d807d0e}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!flip@{flip}}
+\index{flip@{flip}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{flip()}{flip()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+flip (\begin{DoxyParamCaption}\item[{}]{image }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flip the image vertically (top to bottom).
+
+:param image: The image to flip.
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_a0d321a776d6eb99f9e897b0778962c73}\label{namespacePIL_1_1ImageOps_a0d321a776d6eb99f9e897b0778962c73}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!grayscale@{grayscale}}
+\index{grayscale@{grayscale}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{grayscale()}{grayscale()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+grayscale (\begin{DoxyParamCaption}\item[{}]{image }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert the image to grayscale.
+
+:param image: The image to convert.
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_a8619286122091c6be089d3821e03fb73}\label{namespacePIL_1_1ImageOps_a8619286122091c6be089d3821e03fb73}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!invert@{invert}}
+\index{invert@{invert}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{invert()}{invert()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+invert (\begin{DoxyParamCaption}\item[{}]{image }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invert (negate) the image.
+
+:param image: The image to invert.
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_a42e210667db8aeb87a999cbb7033908b}\label{namespacePIL_1_1ImageOps_a42e210667db8aeb87a999cbb7033908b}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!mirror@{mirror}}
+\index{mirror@{mirror}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{mirror()}{mirror()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+mirror (\begin{DoxyParamCaption}\item[{}]{image }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flip image horizontally (left to right).
+
+:param image: The image to mirror.
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_ab6b83ba1edb453e1fa135e996035817b}\label{namespacePIL_1_1ImageOps_ab6b83ba1edb453e1fa135e996035817b}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!pad@{pad}}
+\index{pad@{pad}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{pad()}{pad()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+pad (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{size,  }\item[{}]{method = {\ttfamily \hyperlink{namespacePIL_1_1Image_a3824ac5a0532aa60f7072af889d88e59}{Image.\+B\+I\+C\+U\+B\+IC}},  }\item[{}]{color = {\ttfamily None},  }\item[{}]{centering = {\ttfamily (0.5,~0.5)} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a resized and padded version of the image, expanded to fill the
+requested aspect ratio and size.
+
+:param image: The image to resize and crop.
+:param size: The requested output size in pixels, given as a
+             (width, height) tuple.
+:param method: Resampling method to use. Default is
+               :py:attr:`PIL.Image.BICUBIC`. See :ref:`concept-filters`.
+:param color: The background color of the padded image.
+:param centering: Control the position of the original image within the
+                  padded version.
+
+                      (0.5, 0.5) will keep the image centered
+                      (0, 0) will keep the image aligned to the top left
+                      (1, 1) will keep the image aligned to the bottom
+                      right
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_a5941e84a0d076c99b105bdc8039df8b5}\label{namespacePIL_1_1ImageOps_a5941e84a0d076c99b105bdc8039df8b5}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!posterize@{posterize}}
+\index{posterize@{posterize}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{posterize()}{posterize()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+posterize (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{bits }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reduce the number of bits for each color channel.
+
+:param image: The image to posterize.
+:param bits: The number of bits to keep for each channel (1-8).
+:return: An image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_abd1f30ecd4e0780752fb7b161ea36bc9}\label{namespacePIL_1_1ImageOps_abd1f30ecd4e0780752fb7b161ea36bc9}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!scale@{scale}}
+\index{scale@{scale}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+scale (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{factor,  }\item[{}]{resample = {\ttfamily \hyperlink{namespacePIL_1_1Image_a3824ac5a0532aa60f7072af889d88e59}{Image.\+B\+I\+C\+U\+B\+IC}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a rescaled image by a specific factor given in parameter.
+A factor greater than 1 expands the image, between 0 and 1 contracts the
+image.
+
+:param image: The image to rescale.
+:param factor: The expansion factor, as a float.
+:param resample: Resampling method to use. Default is
+                 :py:attr:`PIL.Image.BICUBIC`. See :ref:`concept-filters`.
+:returns: An :py:class:`~PIL.Image.Image` object.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageOps_a50420e7239e43ed1ed190fdf84771bcc}\label{namespacePIL_1_1ImageOps_a50420e7239e43ed1ed190fdf84771bcc}} 
+\index{P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}!solarize@{solarize}}
+\index{solarize@{solarize}!P\+I\+L\+::\+Image\+Ops@{P\+I\+L\+::\+Image\+Ops}}
+\subsubsection{\texorpdfstring{solarize()}{solarize()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Ops.\+solarize (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{threshold = {\ttfamily 128} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invert all pixel values above a threshold.
+
+:param image: The image to solarize.
+:param threshold: All pixels above this greyscale level are inverted.
+:return: An image.
+\end{DoxyVerb}
+ 

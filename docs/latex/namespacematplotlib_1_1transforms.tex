@@ -1,0 +1,242 @@
+\hypertarget{namespacematplotlib_1_1transforms}{}\section{matplotlib.\+transforms Namespace Reference}
+\label{namespacematplotlib_1_1transforms}\index{matplotlib.\+transforms@{matplotlib.\+transforms}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1__BlendedMixin}{\+\_\+\+Blended\+Mixin}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1Affine2D}{Affine2D}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1Affine2DBase}{Affine2\+D\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1AffineBase}{Affine\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1AffineDeltaTransform}{Affine\+Delta\+Transform}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1Bbox}{Bbox}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1BboxBase}{Bbox\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1BboxTransform}{Bbox\+Transform}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1BboxTransformFrom}{Bbox\+Transform\+From}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1BboxTransformTo}{Bbox\+Transform\+To}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1BboxTransformToMaxOnly}{Bbox\+Transform\+To\+Max\+Only}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1BlendedAffine2D}{Blended\+Affine2D}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform}{Blended\+Generic\+Transform}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1CompositeAffine2D}{Composite\+Affine2D}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1CompositeGenericTransform}{Composite\+Generic\+Transform}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1IdentityTransform}{Identity\+Transform}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1LockableBbox}{Lockable\+Bbox}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1ScaledTranslation}{Scaled\+Translation}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1Transform}{Transform}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1TransformedBbox}{Transformed\+Bbox}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1TransformedPatchPath}{Transformed\+Patch\+Path}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1TransformedPath}{Transformed\+Path}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1TransformNode}{Transform\+Node}
+\item 
+class \hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper}{Transform\+Wrapper}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1transforms_ab613558a411c61e719e4a7f8d9679e86}{blended\+\_\+transform\+\_\+factory} (x\+\_\+transform, y\+\_\+transform)
+\item 
+def \hyperlink{namespacematplotlib_1_1transforms_a99c2cda04d18eca32e54021b5a1e5161}{composite\+\_\+transform\+\_\+factory} (a, b)
+\item 
+def \hyperlink{namespacematplotlib_1_1transforms_a65adff0cd8d4b864f5c3657a87e0c375}{nonsingular} (vmin, vmax, expander=0.\+001, tiny=1e-\/15, increasing=\+True)
+\item 
+def \hyperlink{namespacematplotlib_1_1transforms_a42267dbcc8a47f04869559e0de8f29d6}{interval\+\_\+contains} (interval, val)
+\item 
+def \hyperlink{namespacematplotlib_1_1transforms_ae4b88bcadad39caf2af560a8cb37fea0}{interval\+\_\+contains\+\_\+open} (interval, val)
+\item 
+def \hyperlink{namespacematplotlib_1_1transforms_afa3ee002f4ec99121ca7f06a11c6cfc5}{offset\+\_\+copy} (\hyperlink{size_2foo_8f90_afabfd8da71309850231a00e53c61f106}{trans}, fig=None, x=0.\+0, y=0.\+0, units=\textquotesingle{}inches\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1transforms_ac94acdc432ebaea39ea805f68cda4261}{D\+E\+B\+UG}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Matplotlib includes a framework for arbitrary geometric
+transformations that is used determine the final position of all
+elements drawn on the canvas.
+
+Transforms are composed into trees of `TransformNode` objects
+whose actual value depends on their children.  When the contents of
+children change, their parents are automatically invalidated.  The
+next time an invalidated transform is accessed, it is recomputed to
+reflect those changes.  This invalidation/caching approach prevents
+unnecessary recomputations of transforms, and contributes to better
+interactive performance.
+
+For example, here is a graph of the transform tree used to plot data
+to the graph:
+
+.. image:: ../_static/transforms.png
+
+The framework can be used for both affine and non-affine
+transformations.  However, for speed, we want use the backend
+renderers to perform affine transformations whenever possible.
+Therefore, it is possible to perform just the affine or non-affine
+part of a transformation on a set of data.  The affine is always
+assumed to occur after the non-affine.  For any transform::
+
+  full transform == non-affine part + affine part
+
+The backends are not expected to handle non-affine transformations
+themselves.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1transforms_ab613558a411c61e719e4a7f8d9679e86}\label{namespacematplotlib_1_1transforms_ab613558a411c61e719e4a7f8d9679e86}} 
+\index{matplotlib\+::transforms@{matplotlib\+::transforms}!blended\+\_\+transform\+\_\+factory@{blended\+\_\+transform\+\_\+factory}}
+\index{blended\+\_\+transform\+\_\+factory@{blended\+\_\+transform\+\_\+factory}!matplotlib\+::transforms@{matplotlib\+::transforms}}
+\subsubsection{\texorpdfstring{blended\+\_\+transform\+\_\+factory()}{blended\_transform\_factory()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+blended\+\_\+transform\+\_\+factory (\begin{DoxyParamCaption}\item[{}]{x\+\_\+transform,  }\item[{}]{y\+\_\+transform }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new "blended" transform using *x_transform* to transform
+the *x*-axis and *y_transform* to transform the *y*-axis.
+
+A faster version of the blended transform is returned for the case
+where both child transforms are affine.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1transforms_a99c2cda04d18eca32e54021b5a1e5161}\label{namespacematplotlib_1_1transforms_a99c2cda04d18eca32e54021b5a1e5161}} 
+\index{matplotlib\+::transforms@{matplotlib\+::transforms}!composite\+\_\+transform\+\_\+factory@{composite\+\_\+transform\+\_\+factory}}
+\index{composite\+\_\+transform\+\_\+factory@{composite\+\_\+transform\+\_\+factory}!matplotlib\+::transforms@{matplotlib\+::transforms}}
+\subsubsection{\texorpdfstring{composite\+\_\+transform\+\_\+factory()}{composite\_transform\_factory()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+composite\+\_\+transform\+\_\+factory (\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new composite transform that is the result of applying
+transform a then transform b.
+
+Shortcut versions of the blended transform are provided for the
+case where both child transforms are affine, or one or the other
+is the identity transform.
+
+Composite transforms may also be created using the '+' operator,
+e.g.::
+
+  c = a + b
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1transforms_a42267dbcc8a47f04869559e0de8f29d6}\label{namespacematplotlib_1_1transforms_a42267dbcc8a47f04869559e0de8f29d6}} 
+\index{matplotlib\+::transforms@{matplotlib\+::transforms}!interval\+\_\+contains@{interval\+\_\+contains}}
+\index{interval\+\_\+contains@{interval\+\_\+contains}!matplotlib\+::transforms@{matplotlib\+::transforms}}
+\subsubsection{\texorpdfstring{interval\+\_\+contains()}{interval\_contains()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+interval\+\_\+contains (\begin{DoxyParamCaption}\item[{}]{interval,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check, inclusively, whether an interval includes a given value.
+
+Parameters
+----------
+interval : (float, float)
+    The endpoints of the interval.
+val : float
+    Value to check is within interval.
+
+Returns
+-------
+bool
+    Whether *val* is within the *interval*.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1transforms_ae4b88bcadad39caf2af560a8cb37fea0}\label{namespacematplotlib_1_1transforms_ae4b88bcadad39caf2af560a8cb37fea0}} 
+\index{matplotlib\+::transforms@{matplotlib\+::transforms}!interval\+\_\+contains\+\_\+open@{interval\+\_\+contains\+\_\+open}}
+\index{interval\+\_\+contains\+\_\+open@{interval\+\_\+contains\+\_\+open}!matplotlib\+::transforms@{matplotlib\+::transforms}}
+\subsubsection{\texorpdfstring{interval\+\_\+contains\+\_\+open()}{interval\_contains\_open()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+interval\+\_\+contains\+\_\+open (\begin{DoxyParamCaption}\item[{}]{interval,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check, excluding endpoints, whether an interval includes a given value.
+
+Parameters
+----------
+interval : (float, float)
+    The endpoints of the interval.
+val : float
+    Value to check is within interval.
+
+Returns
+-------
+bool
+    Whether *val* is within the *interval*.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1transforms_a65adff0cd8d4b864f5c3657a87e0c375}\label{namespacematplotlib_1_1transforms_a65adff0cd8d4b864f5c3657a87e0c375}} 
+\index{matplotlib\+::transforms@{matplotlib\+::transforms}!nonsingular@{nonsingular}}
+\index{nonsingular@{nonsingular}!matplotlib\+::transforms@{matplotlib\+::transforms}}
+\subsubsection{\texorpdfstring{nonsingular()}{nonsingular()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+nonsingular (\begin{DoxyParamCaption}\item[{}]{vmin,  }\item[{}]{vmax,  }\item[{}]{expander = {\ttfamily 0.001},  }\item[{}]{tiny = {\ttfamily 1e-\/15},  }\item[{}]{increasing = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Modify the endpoints of a range as needed to avoid singularities.
+
+Parameters
+----------
+vmin, vmax : float
+    The initial endpoints.
+expander : float, default: 0.001
+    Fractional amount by which *vmin* and *vmax* are expanded if
+    the original interval is too small, based on *tiny*.
+tiny : float, default: 1e-15
+    Threshold for the ratio of the interval to the maximum absolute
+    value of its endpoints.  If the interval is smaller than
+    this, it will be expanded.  This value should be around
+    1e-15 or larger; otherwise the interval will be approaching
+    the double precision resolution limit.
+increasing : bool, default: True
+    If True, swap *vmin*, *vmax* if *vmin* > *vmax*.
+
+Returns
+-------
+vmin, vmax : float
+    Endpoints, expanded and/or swapped if necessary.
+    If either input is inf or NaN, or if both inputs are 0 or very
+    close to zero, it returns -*expander*, *expander*.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1transforms_afa3ee002f4ec99121ca7f06a11c6cfc5}\label{namespacematplotlib_1_1transforms_afa3ee002f4ec99121ca7f06a11c6cfc5}} 
+\index{matplotlib\+::transforms@{matplotlib\+::transforms}!offset\+\_\+copy@{offset\+\_\+copy}}
+\index{offset\+\_\+copy@{offset\+\_\+copy}!matplotlib\+::transforms@{matplotlib\+::transforms}}
+\subsubsection{\texorpdfstring{offset\+\_\+copy()}{offset\_copy()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+offset\+\_\+copy (\begin{DoxyParamCaption}\item[{}]{trans,  }\item[{}]{fig = {\ttfamily None},  }\item[{}]{x = {\ttfamily 0.0},  }\item[{}]{y = {\ttfamily 0.0},  }\item[{}]{units = {\ttfamily \textquotesingle{}inches\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a new transform with an added offset.
+
+Parameters
+----------
+trans : `Transform` subclass
+    Any transform, to which offset will be applied.
+fig : `~matplotlib.figure.Figure`, default: None
+    Current figure. It can be None if *units* are 'dots'.
+x, y : float, default: 0.0
+    The offset to apply.
+units : {'inches', 'points', 'dots'}, default: 'inches'
+    Units of the offset.
+
+Returns
+-------
+`Transform` subclass
+    Transform with applied offset.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1transforms_ac94acdc432ebaea39ea805f68cda4261}\label{namespacematplotlib_1_1transforms_ac94acdc432ebaea39ea805f68cda4261}} 
+\index{matplotlib\+::transforms@{matplotlib\+::transforms}!D\+E\+B\+UG@{D\+E\+B\+UG}}
+\index{D\+E\+B\+UG@{D\+E\+B\+UG}!matplotlib\+::transforms@{matplotlib\+::transforms}}
+\subsubsection{\texorpdfstring{D\+E\+B\+UG}{DEBUG}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+D\+E\+B\+UG}
+

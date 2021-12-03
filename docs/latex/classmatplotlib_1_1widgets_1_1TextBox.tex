@@ -1,0 +1,270 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1TextBox}{}\section{matplotlib.\+widgets.\+Text\+Box Class Reference}
+\label{classmatplotlib_1_1widgets_1_1TextBox}\index{matplotlib.\+widgets.\+Text\+Box@{matplotlib.\+widgets.\+Text\+Box}}
+
+
+Inheritance diagram for matplotlib.\+widgets.\+Text\+Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1TextBox__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+widgets.\+Text\+Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1TextBox__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1TextBox_afc3ee9630ca2be79b517ba96f5ded944}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_ac0722858b7001d10a42055dc90420b4f}{ax}, \hyperlink{classmatplotlib_1_1widgets_1_1TextBox_aa53ee24464cfcdcd484a6f83bf7ed41f}{label}, initial=\textquotesingle{}\textquotesingle{}, \hyperlink{classmatplotlib_1_1widgets_1_1TextBox_acfeec0fa796162b15e0b91597a3c019a}{color}=\textquotesingle{}.\+95\textquotesingle{}, \hyperlink{classmatplotlib_1_1widgets_1_1TextBox_ab58efe36eb3c8bf787a87f6c133bdceb}{hovercolor}=\textquotesingle{}1\textquotesingle{}, label\+\_\+pad=.\+01)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1TextBox_a4333bf906554246a9add4887b7c526e8}{text} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1TextBox_abb692cbd23569c3e76a75aa49ddec073}{set\+\_\+val} (self, val)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1TextBox_ab6797a0cb90afe38c8b3d4e79d1a70e8}{begin\+\_\+typing} (self, x)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1TextBox_a12baa536affd3087d50837ab47078f84}{stop\+\_\+typing} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1TextBox_a52fbe17d4504d714763d2fb086134571}{position\+\_\+cursor} (self, x)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1TextBox_a8d976d6a87d70d4bcf4ee7f76f65fc12}{on\+\_\+text\+\_\+change} (self, func)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1TextBox_a99841a2730d45a63e6745626f9576338}{on\+\_\+submit} (self, func)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1TextBox_ac53445dd12b77ff01b0da70be22a7cf0}{disconnect} (self, cid)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_afd70b04988e876a78ee5a0b490e36256}{D\+I\+S\+T\+\_\+\+F\+R\+O\+M\+\_\+\+L\+E\+FT}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_aa53ee24464cfcdcd484a6f83bf7ed41f}{label}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_a75098227ce143f5a63fb6d1503e913c6}{text\+\_\+disp}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_ab23a9d42a4346220d4f455d870f879dc}{cursor\+\_\+index}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_acf034e1350085ecee10a9c5055fe6330}{cursor}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_acfeec0fa796162b15e0b91597a3c019a}{color}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_ab58efe36eb3c8bf787a87f6c133bdceb}{hovercolor}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_a2b4f2efaec33501f8e736437689a253a}{capturekeystrokes}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_afd4d918f6ea5f0a6beeb4f3eeb9f7b13}{text}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_a6e041b6c3d58375826cb2050f3d57ab2}{params\+\_\+to\+\_\+disable}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_a548a0ed5e4de7d8ac1ca0741d44024c8}{cnt}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_a92dc9da8e55505a028d06e561d9e848e}{change\+\_\+observers}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1TextBox_a6134130ea862b7f294dbfc53da73f215}{submit\+\_\+observers}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A GUI neutral text input box.
+
+For the text box to remain responsive you must keep a reference to it.
+
+Call `.on_text_change` to be updated whenever the text changes.
+
+Call `.on_submit` to be updated whenever the user hits enter or
+leaves the text entry field.
+
+Attributes
+----------
+ax : `~matplotlib.axes.Axes`
+    The parent axes for the widget.
+label : `.Text`
+
+color : color
+    The color of the text box when not hovering.
+hovercolor : color
+    The color of the text box when hovering.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_afc3ee9630ca2be79b517ba96f5ded944}\label{classmatplotlib_1_1widgets_1_1TextBox_afc3ee9630ca2be79b517ba96f5ded944}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Text\+Box.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{label,  }\item[{}]{initial = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{color = {\ttfamily \textquotesingle{}.95\textquotesingle{}},  }\item[{}]{hovercolor = {\ttfamily \textquotesingle{}1\textquotesingle{}},  }\item[{}]{label\+\_\+pad = {\ttfamily .01} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+ax : `~matplotlib.axes.Axes`
+    The `~.axes.Axes` instance the button will be placed into.
+label : str
+    Label for this text box.
+initial : str
+    Initial value in the text box.
+color : color
+    The color of the box.
+hovercolor : color
+    The color of the box when the mouse is over it.
+label_pad : float
+    The distance between the label and the right side of the textbox.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_ab6797a0cb90afe38c8b3d4e79d1a70e8}\label{classmatplotlib_1_1widgets_1_1TextBox_ab6797a0cb90afe38c8b3d4e79d1a70e8}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!begin\+\_\+typing@{begin\+\_\+typing}}
+\index{begin\+\_\+typing@{begin\+\_\+typing}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{begin\+\_\+typing()}{begin\_typing()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Text\+Box.\+begin\+\_\+typing (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_ac53445dd12b77ff01b0da70be22a7cf0}\label{classmatplotlib_1_1widgets_1_1TextBox_ac53445dd12b77ff01b0da70be22a7cf0}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Text\+Box.\+disconnect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cid }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove the observer with connection id *cid*.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_a99841a2730d45a63e6745626f9576338}\label{classmatplotlib_1_1widgets_1_1TextBox_a99841a2730d45a63e6745626f9576338}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!on\+\_\+submit@{on\+\_\+submit}}
+\index{on\+\_\+submit@{on\+\_\+submit}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{on\+\_\+submit()}{on\_submit()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Text\+Box.\+on\+\_\+submit (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}When the user hits enter or leaves the submission box, call this
+*func* with event.
+
+A connection id is returned which can be used to disconnect.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_a8d976d6a87d70d4bcf4ee7f76f65fc12}\label{classmatplotlib_1_1widgets_1_1TextBox_a8d976d6a87d70d4bcf4ee7f76f65fc12}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!on\+\_\+text\+\_\+change@{on\+\_\+text\+\_\+change}}
+\index{on\+\_\+text\+\_\+change@{on\+\_\+text\+\_\+change}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{on\+\_\+text\+\_\+change()}{on\_text\_change()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Text\+Box.\+on\+\_\+text\+\_\+change (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}When the text changes, call this *func* with event.
+
+A connection id is returned which can be used to disconnect.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_a52fbe17d4504d714763d2fb086134571}\label{classmatplotlib_1_1widgets_1_1TextBox_a52fbe17d4504d714763d2fb086134571}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!position\+\_\+cursor@{position\+\_\+cursor}}
+\index{position\+\_\+cursor@{position\+\_\+cursor}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{position\+\_\+cursor()}{position\_cursor()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Text\+Box.\+position\+\_\+cursor (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_abb692cbd23569c3e76a75aa49ddec073}\label{classmatplotlib_1_1widgets_1_1TextBox_abb692cbd23569c3e76a75aa49ddec073}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!set\+\_\+val@{set\+\_\+val}}
+\index{set\+\_\+val@{set\+\_\+val}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{set\+\_\+val()}{set\_val()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Text\+Box.\+set\+\_\+val (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_a12baa536affd3087d50837ab47078f84}\label{classmatplotlib_1_1widgets_1_1TextBox_a12baa536affd3087d50837ab47078f84}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!stop\+\_\+typing@{stop\+\_\+typing}}
+\index{stop\+\_\+typing@{stop\+\_\+typing}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{stop\+\_\+typing()}{stop\_typing()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Text\+Box.\+stop\+\_\+typing (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_a4333bf906554246a9add4887b7c526e8}\label{classmatplotlib_1_1widgets_1_1TextBox_a4333bf906554246a9add4887b7c526e8}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!text@{text}}
+\index{text@{text}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{text()}{text()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Text\+Box.\+text (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_a2b4f2efaec33501f8e736437689a253a}\label{classmatplotlib_1_1widgets_1_1TextBox_a2b4f2efaec33501f8e736437689a253a}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!capturekeystrokes@{capturekeystrokes}}
+\index{capturekeystrokes@{capturekeystrokes}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{capturekeystrokes}{capturekeystrokes}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+capturekeystrokes}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_a92dc9da8e55505a028d06e561d9e848e}\label{classmatplotlib_1_1widgets_1_1TextBox_a92dc9da8e55505a028d06e561d9e848e}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!change\+\_\+observers@{change\+\_\+observers}}
+\index{change\+\_\+observers@{change\+\_\+observers}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{change\+\_\+observers}{change\_observers}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+change\+\_\+observers\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_a548a0ed5e4de7d8ac1ca0741d44024c8}\label{classmatplotlib_1_1widgets_1_1TextBox_a548a0ed5e4de7d8ac1ca0741d44024c8}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!cnt@{cnt}}
+\index{cnt@{cnt}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{cnt}{cnt}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+cnt\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_acfeec0fa796162b15e0b91597a3c019a}\label{classmatplotlib_1_1widgets_1_1TextBox_acfeec0fa796162b15e0b91597a3c019a}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!color@{color}}
+\index{color@{color}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+color}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_acf034e1350085ecee10a9c5055fe6330}\label{classmatplotlib_1_1widgets_1_1TextBox_acf034e1350085ecee10a9c5055fe6330}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!cursor@{cursor}}
+\index{cursor@{cursor}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{cursor}{cursor}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+cursor}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_ab23a9d42a4346220d4f455d870f879dc}\label{classmatplotlib_1_1widgets_1_1TextBox_ab23a9d42a4346220d4f455d870f879dc}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!cursor\+\_\+index@{cursor\+\_\+index}}
+\index{cursor\+\_\+index@{cursor\+\_\+index}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{cursor\+\_\+index}{cursor\_index}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+cursor\+\_\+index}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_afd70b04988e876a78ee5a0b490e36256}\label{classmatplotlib_1_1widgets_1_1TextBox_afd70b04988e876a78ee5a0b490e36256}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!D\+I\+S\+T\+\_\+\+F\+R\+O\+M\+\_\+\+L\+E\+FT@{D\+I\+S\+T\+\_\+\+F\+R\+O\+M\+\_\+\+L\+E\+FT}}
+\index{D\+I\+S\+T\+\_\+\+F\+R\+O\+M\+\_\+\+L\+E\+FT@{D\+I\+S\+T\+\_\+\+F\+R\+O\+M\+\_\+\+L\+E\+FT}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{D\+I\+S\+T\+\_\+\+F\+R\+O\+M\+\_\+\+L\+E\+FT}{DIST\_FROM\_LEFT}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+D\+I\+S\+T\+\_\+\+F\+R\+O\+M\+\_\+\+L\+E\+FT}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_ab58efe36eb3c8bf787a87f6c133bdceb}\label{classmatplotlib_1_1widgets_1_1TextBox_ab58efe36eb3c8bf787a87f6c133bdceb}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!hovercolor@{hovercolor}}
+\index{hovercolor@{hovercolor}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{hovercolor}{hovercolor}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+hovercolor}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_aa53ee24464cfcdcd484a6f83bf7ed41f}\label{classmatplotlib_1_1widgets_1_1TextBox_aa53ee24464cfcdcd484a6f83bf7ed41f}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!label@{label}}
+\index{label@{label}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+label}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_a6e041b6c3d58375826cb2050f3d57ab2}\label{classmatplotlib_1_1widgets_1_1TextBox_a6e041b6c3d58375826cb2050f3d57ab2}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!params\+\_\+to\+\_\+disable@{params\+\_\+to\+\_\+disable}}
+\index{params\+\_\+to\+\_\+disable@{params\+\_\+to\+\_\+disable}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{params\+\_\+to\+\_\+disable}{params\_to\_disable}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+params\+\_\+to\+\_\+disable\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_a6134130ea862b7f294dbfc53da73f215}\label{classmatplotlib_1_1widgets_1_1TextBox_a6134130ea862b7f294dbfc53da73f215}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!submit\+\_\+observers@{submit\+\_\+observers}}
+\index{submit\+\_\+observers@{submit\+\_\+observers}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{submit\+\_\+observers}{submit\_observers}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+submit\+\_\+observers\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_afd4d918f6ea5f0a6beeb4f3eeb9f7b13}\label{classmatplotlib_1_1widgets_1_1TextBox_afd4d918f6ea5f0a6beeb4f3eeb9f7b13}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!text@{text}}
+\index{text@{text}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+text}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1TextBox_a75098227ce143f5a63fb6d1503e913c6}\label{classmatplotlib_1_1widgets_1_1TextBox_a75098227ce143f5a63fb6d1503e913c6}} 
+\index{matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}!text\+\_\+disp@{text\+\_\+disp}}
+\index{text\+\_\+disp@{text\+\_\+disp}!matplotlib\+::widgets\+::\+Text\+Box@{matplotlib\+::widgets\+::\+Text\+Box}}
+\subsubsection{\texorpdfstring{text\+\_\+disp}{text\_disp}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Text\+Box.\+text\+\_\+disp}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

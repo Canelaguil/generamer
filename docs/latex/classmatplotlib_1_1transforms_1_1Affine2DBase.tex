@@ -1,0 +1,122 @@
+\hypertarget{classmatplotlib_1_1transforms_1_1Affine2DBase}{}\section{matplotlib.\+transforms.\+Affine2\+D\+Base Class Reference}
+\label{classmatplotlib_1_1transforms_1_1Affine2DBase}\index{matplotlib.\+transforms.\+Affine2\+D\+Base@{matplotlib.\+transforms.\+Affine2\+D\+Base}}
+
+
+Inheritance diagram for matplotlib.\+transforms.\+Affine2\+D\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1transforms_1_1Affine2DBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+transforms.\+Affine2\+D\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmatplotlib_1_1transforms_1_1Affine2DBase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2DBase_a487d5b5d9849abd8f1e454d95c5f6ee0}{frozen} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2DBase_a355d61616d1180c96e5000ffdd1d0233}{is\+\_\+separable} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2DBase_a64382ea9756c2afb114162c8d7f7fc19}{to\+\_\+values} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2DBase_adae7e13dce1c7d9b6e0bbed4818c0521}{transform\+\_\+affine} (self, points)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2DBase_adae7e13dce1c7d9b6e0bbed4818c0521}{transform\+\_\+affine} (self, points)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Affine2DBase_a600f98497d32c39277a69afabb3470f3}{inverted} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1Affine2DBase_a6dc719c4fc6d5fdae7347de9de2892f0}{input\+\_\+dims}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1Affine2DBase_a5cf07d8560e1b9eb89e2aed2e56831bf}{output\+\_\+dims}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The base class of all 2D affine transformations.
+
+2D affine transformations are performed using a 3x3 numpy array::
+
+    a c e
+    b d f
+    0 0 1
+
+This class provides the read-only interface.  For a mutable 2D
+affine transformation, use `Affine2D`.
+
+Subclasses of this class will generally only need to override a
+constructor and :meth:`get_matrix` that generates a custom 3x3 matrix.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2DBase_a487d5b5d9849abd8f1e454d95c5f6ee0}\label{classmatplotlib_1_1transforms_1_1Affine2DBase_a487d5b5d9849abd8f1e454d95c5f6ee0}} 
+\index{matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}!frozen@{frozen}}
+\index{frozen@{frozen}!matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}}
+\subsubsection{\texorpdfstring{frozen()}{frozen()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D\+Base.\+frozen (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2DBase_a600f98497d32c39277a69afabb3470f3}\label{classmatplotlib_1_1transforms_1_1Affine2DBase_a600f98497d32c39277a69afabb3470f3}} 
+\index{matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}!inverted@{inverted}}
+\index{inverted@{inverted}!matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}}
+\subsubsection{\texorpdfstring{inverted()}{inverted()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D\+Base.\+inverted (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2DBase_a355d61616d1180c96e5000ffdd1d0233}\label{classmatplotlib_1_1transforms_1_1Affine2DBase_a355d61616d1180c96e5000ffdd1d0233}} 
+\index{matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}!is\+\_\+separable@{is\+\_\+separable}}
+\index{is\+\_\+separable@{is\+\_\+separable}!matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}}
+\subsubsection{\texorpdfstring{is\+\_\+separable()}{is\_separable()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D\+Base.\+is\+\_\+separable (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2DBase_a64382ea9756c2afb114162c8d7f7fc19}\label{classmatplotlib_1_1transforms_1_1Affine2DBase_a64382ea9756c2afb114162c8d7f7fc19}} 
+\index{matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}!to\+\_\+values@{to\+\_\+values}}
+\index{to\+\_\+values@{to\+\_\+values}!matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}}
+\subsubsection{\texorpdfstring{to\+\_\+values()}{to\_values()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D\+Base.\+to\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the values of the matrix as an ``(a, b, c, d, e, f)`` tuple.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2DBase_adae7e13dce1c7d9b6e0bbed4818c0521}\label{classmatplotlib_1_1transforms_1_1Affine2DBase_adae7e13dce1c7d9b6e0bbed4818c0521}} 
+\index{matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}!transform\+\_\+affine@{transform\+\_\+affine}}
+\index{transform\+\_\+affine@{transform\+\_\+affine}!matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}}
+\subsubsection{\texorpdfstring{transform\+\_\+affine()}{transform\_affine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D\+Base.\+transform\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{points }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2DBase_adae7e13dce1c7d9b6e0bbed4818c0521}\label{classmatplotlib_1_1transforms_1_1Affine2DBase_adae7e13dce1c7d9b6e0bbed4818c0521}} 
+\index{matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}!transform\+\_\+affine@{transform\+\_\+affine}}
+\index{transform\+\_\+affine@{transform\+\_\+affine}!matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}}
+\subsubsection{\texorpdfstring{transform\+\_\+affine()}{transform\_affine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Affine2\+D\+Base.\+transform\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{points }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2DBase_a6dc719c4fc6d5fdae7347de9de2892f0}\label{classmatplotlib_1_1transforms_1_1Affine2DBase_a6dc719c4fc6d5fdae7347de9de2892f0}} 
+\index{matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}!input\+\_\+dims@{input\+\_\+dims}}
+\index{input\+\_\+dims@{input\+\_\+dims}!matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}}
+\subsubsection{\texorpdfstring{input\+\_\+dims}{input\_dims}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Affine2\+D\+Base.\+input\+\_\+dims\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Affine2DBase_a5cf07d8560e1b9eb89e2aed2e56831bf}\label{classmatplotlib_1_1transforms_1_1Affine2DBase_a5cf07d8560e1b9eb89e2aed2e56831bf}} 
+\index{matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}!output\+\_\+dims@{output\+\_\+dims}}
+\index{output\+\_\+dims@{output\+\_\+dims}!matplotlib\+::transforms\+::\+Affine2\+D\+Base@{matplotlib\+::transforms\+::\+Affine2\+D\+Base}}
+\subsubsection{\texorpdfstring{output\+\_\+dims}{output\_dims}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Affine2\+D\+Base.\+output\+\_\+dims\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{transforms_8py}{transforms.\+py}\end{DoxyCompactItemize}

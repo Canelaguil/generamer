@@ -1,0 +1,164 @@
+\hypertarget{classmatplotlib_1_1ticker_1_1PercentFormatter}{}\section{matplotlib.\+ticker.\+Percent\+Formatter Class Reference}
+\label{classmatplotlib_1_1ticker_1_1PercentFormatter}\index{matplotlib.\+ticker.\+Percent\+Formatter@{matplotlib.\+ticker.\+Percent\+Formatter}}
+
+
+Inheritance diagram for matplotlib.\+ticker.\+Percent\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classmatplotlib_1_1ticker_1_1PercentFormatter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+ticker.\+Percent\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classmatplotlib_1_1ticker_1_1PercentFormatter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1PercentFormatter_a8e38268a75407946f8f8ce4d98dad562}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1ticker_1_1PercentFormatter_a6fa868c350ce773fc3c0a72e2c60a8a6}{xmax}=100, \hyperlink{classmatplotlib_1_1ticker_1_1PercentFormatter_ac2e325288ffe1238ce69b87a139c4869}{decimals}=None, \hyperlink{classmatplotlib_1_1ticker_1_1PercentFormatter_aaef19a9c79b4051f06e4709c71378ee0}{symbol}=\textquotesingle{}\%\textquotesingle{}, is\+\_\+latex=False)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1PercentFormatter_abd7ea85d4160412336d523f7e0f6cd8b}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, x, pos=None)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1PercentFormatter_a370694639d8af031f543d1927a764460}{format\+\_\+pct} (self, x, display\+\_\+range)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1PercentFormatter_ab3337fd338009d1c3bf68f346b236256}{convert\+\_\+to\+\_\+pct} (self, x)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1PercentFormatter_aaef19a9c79b4051f06e4709c71378ee0}{symbol} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1PercentFormatter_ad89598b89c800715e919690ca2d45be9}{symbol} (self, symbol)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1PercentFormatter_a6fa868c350ce773fc3c0a72e2c60a8a6}{xmax}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1PercentFormatter_ac2e325288ffe1238ce69b87a139c4869}{decimals}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Format numbers as a percentage.
+
+Parameters
+----------
+xmax : float
+    Determines how the number is converted into a percentage.
+    *xmax* is the data value that corresponds to 100%.
+    Percentages are computed as ``x / xmax * 100``. So if the data is
+    already scaled to be percentages, *xmax* will be 100. Another common
+    situation is where *xmax* is 1.0.
+
+decimals : None or int
+    The number of decimal places to place after the point.
+    If *None* (the default), the number will be computed automatically.
+
+symbol : str or None
+    A string that will be appended to the label. It may be
+    *None* or empty to indicate that no symbol should be used. LaTeX
+    special characters are escaped in *symbol* whenever latex mode is
+    enabled, unless *is_latex* is *True*.
+
+is_latex : bool
+    If *False*, reserved LaTeX characters in *symbol* will be escaped.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1PercentFormatter_a8e38268a75407946f8f8ce4d98dad562}\label{classmatplotlib_1_1ticker_1_1PercentFormatter_a8e38268a75407946f8f8ce4d98dad562}} 
+\index{matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Percent\+Formatter.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xmax = {\ttfamily 100},  }\item[{}]{decimals = {\ttfamily None},  }\item[{}]{symbol = {\ttfamily \textquotesingle{}\%\textquotesingle{}},  }\item[{}]{is\+\_\+latex = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1PercentFormatter_abd7ea85d4160412336d523f7e0f6cd8b}\label{classmatplotlib_1_1ticker_1_1PercentFormatter_abd7ea85d4160412336d523f7e0f6cd8b}} 
+\index{matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Percent\+Formatter.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{pos = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format the tick as a percentage with the appropriate scaling.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1PercentFormatter_ab3337fd338009d1c3bf68f346b236256}\label{classmatplotlib_1_1ticker_1_1PercentFormatter_ab3337fd338009d1c3bf68f346b236256}} 
+\index{matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}!convert\+\_\+to\+\_\+pct@{convert\+\_\+to\+\_\+pct}}
+\index{convert\+\_\+to\+\_\+pct@{convert\+\_\+to\+\_\+pct}!matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}}
+\subsubsection{\texorpdfstring{convert\+\_\+to\+\_\+pct()}{convert\_to\_pct()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Percent\+Formatter.\+convert\+\_\+to\+\_\+pct (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1PercentFormatter_a370694639d8af031f543d1927a764460}\label{classmatplotlib_1_1ticker_1_1PercentFormatter_a370694639d8af031f543d1927a764460}} 
+\index{matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}!format\+\_\+pct@{format\+\_\+pct}}
+\index{format\+\_\+pct@{format\+\_\+pct}!matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}}
+\subsubsection{\texorpdfstring{format\+\_\+pct()}{format\_pct()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Percent\+Formatter.\+format\+\_\+pct (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{display\+\_\+range }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format the number as a percentage number with the correct
+number of decimals and adds the percent symbol, if any.
+
+If ``self.decimals`` is `None`, the number of digits after the
+decimal point is set based on the *display_range* of the axis
+as follows:
+
++---------------+----------+------------------------+
+| display_range | decimals |          sample        |
++---------------+----------+------------------------+
+| >50           |     0    | ``x = 34.5`` => 35%    |
++---------------+----------+------------------------+
+| >5            |     1    | ``x = 34.5`` => 34.5%  |
++---------------+----------+------------------------+
+| >0.5          |     2    | ``x = 34.5`` => 34.50% |
++---------------+----------+------------------------+
+|      ...      |    ...   |          ...           |
++---------------+----------+------------------------+
+
+This method will not be very good for tiny axis ranges or
+extremely large ones. It assumes that the values on the chart
+are percentages displayed on a reasonable scale.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1PercentFormatter_aaef19a9c79b4051f06e4709c71378ee0}\label{classmatplotlib_1_1ticker_1_1PercentFormatter_aaef19a9c79b4051f06e4709c71378ee0}} 
+\index{matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}!symbol@{symbol}}
+\index{symbol@{symbol}!matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}}
+\subsubsection{\texorpdfstring{symbol()}{symbol()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Percent\+Formatter.\+symbol (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The configured percent symbol as a string.
+
+If LaTeX is enabled via :rc:`text.usetex`, the special characters
+``{'#', '$', '%', '&', '~', '_', '^', '\', '{', '}'}`` are
+automatically escaped in the string.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1PercentFormatter_ad89598b89c800715e919690ca2d45be9}\label{classmatplotlib_1_1ticker_1_1PercentFormatter_ad89598b89c800715e919690ca2d45be9}} 
+\index{matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}!symbol@{symbol}}
+\index{symbol@{symbol}!matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}}
+\subsubsection{\texorpdfstring{symbol()}{symbol()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Percent\+Formatter.\+symbol (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{symbol }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1PercentFormatter_ac2e325288ffe1238ce69b87a139c4869}\label{classmatplotlib_1_1ticker_1_1PercentFormatter_ac2e325288ffe1238ce69b87a139c4869}} 
+\index{matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}!decimals@{decimals}}
+\index{decimals@{decimals}!matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}}
+\subsubsection{\texorpdfstring{decimals}{decimals}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Percent\+Formatter.\+decimals}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1PercentFormatter_a6fa868c350ce773fc3c0a72e2c60a8a6}\label{classmatplotlib_1_1ticker_1_1PercentFormatter_a6fa868c350ce773fc3c0a72e2c60a8a6}} 
+\index{matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}!xmax@{xmax}}
+\index{xmax@{xmax}!matplotlib\+::ticker\+::\+Percent\+Formatter@{matplotlib\+::ticker\+::\+Percent\+Formatter}}
+\subsubsection{\texorpdfstring{xmax}{xmax}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Percent\+Formatter.\+xmax}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{ticker_8py}{ticker.\+py}\end{DoxyCompactItemize}

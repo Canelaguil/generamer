@@ -1,0 +1,182 @@
+\hypertarget{classnumpy_1_1lib_1_1__datasource_1_1DataSource}{}\section{numpy.\+lib.\+\_\+datasource.\+Data\+Source Class Reference}
+\label{classnumpy_1_1lib_1_1__datasource_1_1DataSource}\index{numpy.\+lib.\+\_\+datasource.\+Data\+Source@{numpy.\+lib.\+\_\+datasource.\+Data\+Source}}
+
+
+Inheritance diagram for numpy.\+lib.\+\_\+datasource.\+Data\+Source\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{classnumpy_1_1lib_1_1__datasource_1_1DataSource__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__datasource_1_1DataSource_a7bfdf9b0b7d6b4d8867e8f84b9cbed49}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, destpath=os.\+curdir)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__datasource_1_1DataSource_ae4ba92c5cb4b68578086c3591efbf5fc}{\+\_\+\+\_\+del\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__datasource_1_1DataSource_a23e237ed3648077ffa3aac44ac47d2b6}{abspath} (self, path)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__datasource_1_1DataSource_a587b7321605892c251f765216a973f52}{exists} (self, path)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__datasource_1_1DataSource_a5192a91989e5bc0a3bc6dcb6b5939f87}{open} (self, path, mode=\textquotesingle{}r\textquotesingle{}, encoding=None, newline=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}DataSource(destpath='.')
+
+A generic data source file (file, http, ftp, ...).
+
+DataSources can be local files or remote files/URLs.  The files may
+also be compressed or uncompressed. DataSource hides some of the
+low-level details of downloading the file, allowing you to simply pass
+in a valid file path (or URL) and obtain a file object.
+
+Parameters
+----------
+destpath : str or None, optional
+    Path to the directory where the source file gets downloaded to for
+    use.  If `destpath` is None, a temporary directory will be created.
+    The default path is the current directory.
+
+Notes
+-----
+URLs require a scheme string (``http://``) to be used, without it they
+will fail::
+
+    >>> repos = np.DataSource()
+    >>> repos.exists('www.google.com/index.html')
+    False
+    >>> repos.exists('http://www.google.com/index.html')
+    True
+
+Temporary directories are deleted when the DataSource is deleted.
+
+Examples
+--------
+::
+
+    >>> ds = np.DataSource('/home/guido')
+    >>> urlname = 'http://www.google.com/'
+    >>> gfile = ds.open('http://www.google.com/')
+    >>> ds.abspath(urlname)
+    '/home/guido/www.google.com/index.html'
+
+    >>> ds = np.DataSource(None)  # use with temporary file
+    >>> ds.open('/home/guido/foobar.txt')
+    <open file '/home/guido.foobar.txt', mode 'r' at 0x91d4430>
+    >>> ds.abspath('/home/guido/foobar.txt')
+    '/tmp/.../home/guido/foobar.txt'\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__datasource_1_1DataSource_a7bfdf9b0b7d6b4d8867e8f84b9cbed49}\label{classnumpy_1_1lib_1_1__datasource_1_1DataSource_a7bfdf9b0b7d6b4d8867e8f84b9cbed49}} 
+\index{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source@{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source@{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+datasource.\+Data\+Source.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{destpath = {\ttfamily os.curdir} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a DataSource with a local path at destpath.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1lib_1_1__datasource_1_1DataSource_ae4ba92c5cb4b68578086c3591efbf5fc}\label{classnumpy_1_1lib_1_1__datasource_1_1DataSource_ae4ba92c5cb4b68578086c3591efbf5fc}} 
+\index{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source@{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source}!\+\_\+\+\_\+del\+\_\+\+\_\+@{\+\_\+\+\_\+del\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+del\+\_\+\+\_\+@{\+\_\+\+\_\+del\+\_\+\+\_\+}!numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source@{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+del\+\_\+\+\_\+()}{\_\_del\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+datasource.\+Data\+Source.\+\_\+\+\_\+del\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__datasource_1_1DataSource_a23e237ed3648077ffa3aac44ac47d2b6}\label{classnumpy_1_1lib_1_1__datasource_1_1DataSource_a23e237ed3648077ffa3aac44ac47d2b6}} 
+\index{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source@{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source}!abspath@{abspath}}
+\index{abspath@{abspath}!numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source@{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source}}
+\subsubsection{\texorpdfstring{abspath()}{abspath()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+datasource.\+Data\+Source.\+abspath (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return absolute path of file in the DataSource directory.
+
+If `path` is an URL, then `abspath` will return either the location
+the file exists locally or the location it would exist when opened
+using the `open` method.
+
+Parameters
+----------
+path : str
+    Can be a local file or a remote URL.
+
+Returns
+-------
+out : str
+    Complete path, including the `DataSource` destination directory.
+
+Notes
+-----
+The functionality is based on `os.path.abspath`.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1lib_1_1__datasource_1_1DataSource_a587b7321605892c251f765216a973f52}\label{classnumpy_1_1lib_1_1__datasource_1_1DataSource_a587b7321605892c251f765216a973f52}} 
+\index{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source@{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source}!exists@{exists}}
+\index{exists@{exists}!numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source@{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source}}
+\subsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+datasource.\+Data\+Source.\+exists (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test if path exists.
+
+Test if `path` exists as (and in this order):
+
+- a local file.
+- a remote URL that has been downloaded and stored locally in the
+  `DataSource` directory.
+- a remote URL that has not been downloaded, but is valid and
+  accessible.
+
+Parameters
+----------
+path : str
+    Can be a local file or a remote URL.
+
+Returns
+-------
+out : bool
+    True if `path` exists.
+
+Notes
+-----
+When `path` is an URL, `exists` will return True if it's either
+stored locally in the `DataSource` directory, or is a valid remote
+URL.  `DataSource` does not discriminate between the two, the file
+is accessible if it exists in either location.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1lib_1_1__datasource_1_1DataSource_a5192a91989e5bc0a3bc6dcb6b5939f87}\label{classnumpy_1_1lib_1_1__datasource_1_1DataSource_a5192a91989e5bc0a3bc6dcb6b5939f87}} 
+\index{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source@{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source}!open@{open}}
+\index{open@{open}!numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source@{numpy\+::lib\+::\+\_\+datasource\+::\+Data\+Source}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+datasource.\+Data\+Source.\+open (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path,  }\item[{}]{mode = {\ttfamily \textquotesingle{}r\textquotesingle{}},  }\item[{}]{encoding = {\ttfamily None},  }\item[{}]{newline = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Open and return file-like object.
+
+If `path` is an URL, it will be downloaded, stored in the
+`DataSource` directory and opened from there.
+
+Parameters
+----------
+path : str
+    Local file path or URL to open.
+mode : {'r', 'w', 'a'}, optional
+    Mode to open `path`.  Mode 'r' for reading, 'w' for writing,
+    'a' to append. Available modes depend on the type of object
+    specified by `path`. Default is 'r'.
+encoding : {None, str}, optional
+    Open text file with given encoding. The default encoding will be
+    what `io.open` uses.
+newline : {None, str}, optional
+    Newline to use when reading text file.
+
+Returns
+-------
+out : file object
+    File object.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/lib/\hyperlink{__datasource_8py}{\+\_\+datasource.\+py}\end{DoxyCompactItemize}

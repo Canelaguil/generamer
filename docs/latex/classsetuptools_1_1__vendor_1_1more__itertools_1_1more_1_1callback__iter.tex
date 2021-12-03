@@ -1,0 +1,122 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter}{}\section{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+callback\+\_\+iter Class Reference}
+\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter}\index{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+callback\+\_\+iter@{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+callback\+\_\+iter}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a025217221fec8d40aca9a6515267562f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, func, callback\+\_\+kwd=\textquotesingle{}callback\textquotesingle{}, wait\+\_\+seconds=0.\+1)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_aca33b386d4e9e486054b5c64ec1316c7}{\+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a1d005c2f4efca60ab2ca87b4904a0aea}{\+\_\+\+\_\+exit\+\_\+\+\_\+} (self, exc\+\_\+type, exc\+\_\+value, traceback)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a2f9f7c026cfa336c5c279b10b0420fb5}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a0b715d772929033fe7f75e4661b82f73}{\+\_\+\+\_\+next\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a7f3002c09765824dce2dde2655d528e7}{done} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a48aef2036093325100f236fdaa7dc0fc}{result} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Convert a function that uses callbacks to an iterator.
+
+Let *func* be a function that takes a `callback` keyword argument.
+For example:
+
+>>> def func(callback=None):
+...     for i, c in [(1, 'a'), (2, 'b'), (3, 'c')]:
+...         if callback:
+...             callback(i, c)
+...     return 4
+
+
+Use ``with callback_iter(func)`` to get an iterator over the parameters
+that are delivered to the callback.
+
+>>> with callback_iter(func) as it:
+...     for args, kwargs in it:
+...         print(args)
+(1, 'a')
+(2, 'b')
+(3, 'c')
+
+The function will be called in a background thread. The ``done`` property
+indicates whether it has completed execution.
+
+>>> it.done
+True
+
+If it completes successfully, its return value will be available
+in the ``result`` property.
+
+>>> it.result
+4
+
+Notes:
+
+* If the function uses some keyword argument besides ``callback``, supply
+  *callback_kwd*.
+* If it finished executing, but raised an exception, accessing the
+  ``result`` property will raise the same exception.
+* If it hasn't finished executing, accessing the ``result``
+  property from within the ``with`` block will raise ``RuntimeError``.
+* If it hasn't finished executing, accessing the ``result`` property from
+  outside the ``with`` block will raise a
+  ``more_itertools.AbortThread`` exception.
+* Provide *wait_seconds* to adjust how frequently the it is polled for
+  output.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a025217221fec8d40aca9a6515267562f}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a025217221fec8d40aca9a6515267562f}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+callback\+\_\+iter.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func,  }\item[{}]{callback\+\_\+kwd = {\ttfamily \textquotesingle{}callback\textquotesingle{}},  }\item[{}]{wait\+\_\+seconds = {\ttfamily 0.1} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_aca33b386d4e9e486054b5c64ec1316c7}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_aca33b386d4e9e486054b5c64ec1316c7}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}!\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+enter\+\_\+\+\_\+()}{\_\_enter\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+callback\+\_\+iter.\+\_\+\+\_\+enter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a1d005c2f4efca60ab2ca87b4904a0aea}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a1d005c2f4efca60ab2ca87b4904a0aea}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}!\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+exit\+\_\+\+\_\+()}{\_\_exit\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+callback\+\_\+iter.\+\_\+\+\_\+exit\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{exc\+\_\+type,  }\item[{}]{exc\+\_\+value,  }\item[{}]{traceback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a2f9f7c026cfa336c5c279b10b0420fb5}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a2f9f7c026cfa336c5c279b10b0420fb5}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+callback\+\_\+iter.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a0b715d772929033fe7f75e4661b82f73}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a0b715d772929033fe7f75e4661b82f73}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}!\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+next\+\_\+\+\_\+()}{\_\_next\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+callback\+\_\+iter.\+\_\+\+\_\+next\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a7f3002c09765824dce2dde2655d528e7}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a7f3002c09765824dce2dde2655d528e7}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}!done@{done}}
+\index{done@{done}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}}
+\subsubsection{\texorpdfstring{done()}{done()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+callback\+\_\+iter.\+done (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a48aef2036093325100f236fdaa7dc0fc}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1callback__iter_a48aef2036093325100f236fdaa7dc0fc}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}!result@{result}}
+\index{result@{result}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::callback\+\_\+iter}}
+\subsubsection{\texorpdfstring{result()}{result()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+callback\+\_\+iter.\+result (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/more\+\_\+itertools/\hyperlink{more_8py}{more.\+py}\end{DoxyCompactItemize}

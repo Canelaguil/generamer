@@ -1,0 +1,199 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers}{}\section{networkx.\+algorithms.\+isomorphism.\+matchhelpers Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers}\index{networkx.\+algorithms.\+isomorphism.\+matchhelpers@{networkx.\+algorithms.\+isomorphism.\+matchhelpers}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a0c57c65af9335af3c771365d68062a1e}{copyfunc} (f, name=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_af7edc13daad9ab9f573fff1c67173d90}{allclose} (x, y, rtol=1.\+0000000000000001e-\/05, atol=1e-\/08)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a89ea313e6d2cabbf490ba429b2f1bd4e}{close} (x, y, rtol=1.\+0000000000000001e-\/05, atol=1e-\/08)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a6e1c6d7bfbb4b060c1761c05c9ab4db7}{categorical\+\_\+node\+\_\+match} (attr, default)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a259f6e2f465c74435d24ff4ab03deb11}{categorical\+\_\+multiedge\+\_\+match} (attr, default)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_ab364ce2d808dd82e81f22293eacf552c}{numerical\+\_\+node\+\_\+match} (attr, default, rtol=1.\+0000000000000001e-\/05, atol=1e-\/08)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a213b9d97a1efe294db3852d8e5a68aa7}{numerical\+\_\+multiedge\+\_\+match} (attr, default, rtol=1.\+0000000000000001e-\/05, atol=1e-\/08)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a3641189500aeeb4cb970a3b23988b0b3}{generic\+\_\+node\+\_\+match} (attr, default, op)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a23f2515abfe9edcda3beba0403fb1ad5}{generic\+\_\+multiedge\+\_\+match} (attr, default, op)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a00aa944f584c0e6960177cd43db11615}{categorical\+\_\+doc}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a514bca1612e4ee443796b864202e10e1}{categorical\+\_\+edge\+\_\+match}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a979615a66b4e48b66acc07acc12eefe4}{tmpdoc}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a39b9a04f89dc319c8c44a26697f020c7}{numerical\+\_\+doc}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a89fd26c87dca5f68cf4476d6177206c4}{numerical\+\_\+edge\+\_\+match}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a6d9fcdab5e01f5ff28b76e58b6df7437}{generic\+\_\+doc}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a8111c8e3b0efe7895ef270c31f3c77fb}{generic\+\_\+edge\+\_\+match}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions which help end users define customize node_match and
+edge_match functions to use during isomorphism checks.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_af7edc13daad9ab9f573fff1c67173d90}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_af7edc13daad9ab9f573fff1c67173d90}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!allclose@{allclose}}
+\index{allclose@{allclose}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{allclose()}{allclose()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+allclose (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{rtol = {\ttfamily 1.0000000000000001e-\/05},  }\item[{}]{atol = {\ttfamily 1e-\/08} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if x and y are sufficiently close, elementwise.
+
+Parameters
+----------
+rtol : float
+    The relative error tolerance.
+atol : float
+    The absolute error tolerance.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a259f6e2f465c74435d24ff4ab03deb11}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a259f6e2f465c74435d24ff4ab03deb11}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!categorical\+\_\+multiedge\+\_\+match@{categorical\+\_\+multiedge\+\_\+match}}
+\index{categorical\+\_\+multiedge\+\_\+match@{categorical\+\_\+multiedge\+\_\+match}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{categorical\+\_\+multiedge\+\_\+match()}{categorical\_multiedge\_match()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+categorical\+\_\+multiedge\+\_\+match (\begin{DoxyParamCaption}\item[{}]{attr,  }\item[{}]{default }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a6e1c6d7bfbb4b060c1761c05c9ab4db7}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a6e1c6d7bfbb4b060c1761c05c9ab4db7}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!categorical\+\_\+node\+\_\+match@{categorical\+\_\+node\+\_\+match}}
+\index{categorical\+\_\+node\+\_\+match@{categorical\+\_\+node\+\_\+match}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{categorical\+\_\+node\+\_\+match()}{categorical\_node\_match()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+categorical\+\_\+node\+\_\+match (\begin{DoxyParamCaption}\item[{}]{attr,  }\item[{}]{default }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a89ea313e6d2cabbf490ba429b2f1bd4e}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a89ea313e6d2cabbf490ba429b2f1bd4e}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!close@{close}}
+\index{close@{close}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+close (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{rtol = {\ttfamily 1.0000000000000001e-\/05},  }\item[{}]{atol = {\ttfamily 1e-\/08} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if x and y are sufficiently close.
+
+Parameters
+----------
+rtol : float
+    The relative error tolerance.
+atol : float
+    The absolute error tolerance.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a0c57c65af9335af3c771365d68062a1e}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a0c57c65af9335af3c771365d68062a1e}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!copyfunc@{copyfunc}}
+\index{copyfunc@{copyfunc}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{copyfunc()}{copyfunc()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+copyfunc (\begin{DoxyParamCaption}\item[{}]{f,  }\item[{}]{name = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a deepcopy of a function.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a23f2515abfe9edcda3beba0403fb1ad5}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a23f2515abfe9edcda3beba0403fb1ad5}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!generic\+\_\+multiedge\+\_\+match@{generic\+\_\+multiedge\+\_\+match}}
+\index{generic\+\_\+multiedge\+\_\+match@{generic\+\_\+multiedge\+\_\+match}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{generic\+\_\+multiedge\+\_\+match()}{generic\_multiedge\_match()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+generic\+\_\+multiedge\+\_\+match (\begin{DoxyParamCaption}\item[{}]{attr,  }\item[{}]{default,  }\item[{}]{op }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a comparison function for a generic attribute.
+
+The value(s) of the attr(s) are compared using the specified
+operators. If all the attributes are equal, then the constructed
+function returns True. Potentially, the constructed edge_match
+function can be slow since it must verify that no isomorphism
+exists between the multiedges before it returns False.
+
+Parameters
+----------
+attr : string | list
+    The edge attribute to compare, or a list of node attributes
+    to compare.
+default : value | list
+    The default value for the edge attribute, or a list of
+    default values for the dgeattributes.
+op : callable | list
+    The operator to use when comparing attribute values, or a list
+    of operators to use when comparing values for each attribute.
+
+Returns
+-------
+match : function
+    The customized, generic `edge_match` function.
+
+Examples
+--------
+>>> from operator import eq
+>>> from networkx.algorithms.isomorphism.matchhelpers import close
+>>> from networkx.algorithms.isomorphism import generic_node_match
+>>> nm = generic_node_match("weight", 1.0, close)
+>>> nm = generic_node_match("color", "red", eq)
+>>> nm = generic_node_match(["weight", "color"], [1.0, "red"], [close, eq])
+...\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a3641189500aeeb4cb970a3b23988b0b3}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a3641189500aeeb4cb970a3b23988b0b3}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!generic\+\_\+node\+\_\+match@{generic\+\_\+node\+\_\+match}}
+\index{generic\+\_\+node\+\_\+match@{generic\+\_\+node\+\_\+match}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{generic\+\_\+node\+\_\+match()}{generic\_node\_match()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+generic\+\_\+node\+\_\+match (\begin{DoxyParamCaption}\item[{}]{attr,  }\item[{}]{default,  }\item[{}]{op }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a213b9d97a1efe294db3852d8e5a68aa7}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a213b9d97a1efe294db3852d8e5a68aa7}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!numerical\+\_\+multiedge\+\_\+match@{numerical\+\_\+multiedge\+\_\+match}}
+\index{numerical\+\_\+multiedge\+\_\+match@{numerical\+\_\+multiedge\+\_\+match}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{numerical\+\_\+multiedge\+\_\+match()}{numerical\_multiedge\_match()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+numerical\+\_\+multiedge\+\_\+match (\begin{DoxyParamCaption}\item[{}]{attr,  }\item[{}]{default,  }\item[{}]{rtol = {\ttfamily 1.0000000000000001e-\/05},  }\item[{}]{atol = {\ttfamily 1e-\/08} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_ab364ce2d808dd82e81f22293eacf552c}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_ab364ce2d808dd82e81f22293eacf552c}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!numerical\+\_\+node\+\_\+match@{numerical\+\_\+node\+\_\+match}}
+\index{numerical\+\_\+node\+\_\+match@{numerical\+\_\+node\+\_\+match}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{numerical\+\_\+node\+\_\+match()}{numerical\_node\_match()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+numerical\+\_\+node\+\_\+match (\begin{DoxyParamCaption}\item[{}]{attr,  }\item[{}]{default,  }\item[{}]{rtol = {\ttfamily 1.0000000000000001e-\/05},  }\item[{}]{atol = {\ttfamily 1e-\/08} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a00aa944f584c0e6960177cd43db11615}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a00aa944f584c0e6960177cd43db11615}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!categorical\+\_\+doc@{categorical\+\_\+doc}}
+\index{categorical\+\_\+doc@{categorical\+\_\+doc}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{categorical\+\_\+doc}{categorical\_doc}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+categorical\+\_\+doc}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a514bca1612e4ee443796b864202e10e1}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a514bca1612e4ee443796b864202e10e1}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!categorical\+\_\+edge\+\_\+match@{categorical\+\_\+edge\+\_\+match}}
+\index{categorical\+\_\+edge\+\_\+match@{categorical\+\_\+edge\+\_\+match}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{categorical\+\_\+edge\+\_\+match}{categorical\_edge\_match}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+categorical\+\_\+edge\+\_\+match}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a6d9fcdab5e01f5ff28b76e58b6df7437}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a6d9fcdab5e01f5ff28b76e58b6df7437}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!generic\+\_\+doc@{generic\+\_\+doc}}
+\index{generic\+\_\+doc@{generic\+\_\+doc}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{generic\+\_\+doc}{generic\_doc}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+generic\+\_\+doc}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a8111c8e3b0efe7895ef270c31f3c77fb}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a8111c8e3b0efe7895ef270c31f3c77fb}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!generic\+\_\+edge\+\_\+match@{generic\+\_\+edge\+\_\+match}}
+\index{generic\+\_\+edge\+\_\+match@{generic\+\_\+edge\+\_\+match}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{generic\+\_\+edge\+\_\+match}{generic\_edge\_match}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+generic\+\_\+edge\+\_\+match}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a39b9a04f89dc319c8c44a26697f020c7}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a39b9a04f89dc319c8c44a26697f020c7}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!numerical\+\_\+doc@{numerical\+\_\+doc}}
+\index{numerical\+\_\+doc@{numerical\+\_\+doc}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{numerical\+\_\+doc}{numerical\_doc}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+numerical\+\_\+doc}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a89fd26c87dca5f68cf4476d6177206c4}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a89fd26c87dca5f68cf4476d6177206c4}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!numerical\+\_\+edge\+\_\+match@{numerical\+\_\+edge\+\_\+match}}
+\index{numerical\+\_\+edge\+\_\+match@{numerical\+\_\+edge\+\_\+match}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{numerical\+\_\+edge\+\_\+match}{numerical\_edge\_match}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+numerical\+\_\+edge\+\_\+match}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a979615a66b4e48b66acc07acc12eefe4}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1matchhelpers_a979615a66b4e48b66acc07acc12eefe4}} 
+\index{networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}!tmpdoc@{tmpdoc}}
+\index{tmpdoc@{tmpdoc}!networkx\+::algorithms\+::isomorphism\+::matchhelpers@{networkx\+::algorithms\+::isomorphism\+::matchhelpers}}
+\subsubsection{\texorpdfstring{tmpdoc}{tmpdoc}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+matchhelpers.\+tmpdoc}
+

@@ -1,0 +1,104 @@
+\hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndindex}{}\section{numpy.\+lib.\+index\+\_\+tricks.\+ndindex Class Reference}
+\label{classnumpy_1_1lib_1_1index__tricks_1_1ndindex}\index{numpy.\+lib.\+index\+\_\+tricks.\+ndindex@{numpy.\+lib.\+index\+\_\+tricks.\+ndindex}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a00b83ede59b9058bc2ca48c36c2abd87}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, shape)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a24e533575421a8f5a35fc3d530444e54}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a90e5b99598cf0164b5c0409049c51861}{ndincr} (self)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a15882d2fe51484db60724b4a3df4759f}{\+\_\+\+\_\+next\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An N-dimensional iterator object to index arrays.
+
+Given the shape of an array, an `ndindex` instance iterates over
+the N-dimensional index of the array. At each iteration a tuple
+of indices is returned, the last dimension is iterated over first.
+
+Parameters
+----------
+shape : ints, or a single tuple of ints
+    The size of each dimension of the array can be passed as 
+    individual parameters or as the elements of a tuple.
+
+See Also
+--------
+ndenumerate, flatiter
+
+Examples
+--------
+# dimensions as individual arguments
+>>> for index in np.ndindex(3, 2, 1):
+...     print(index)
+(0, 0, 0)
+(0, 1, 0)
+(1, 0, 0)
+(1, 1, 0)
+(2, 0, 0)
+(2, 1, 0)
+
+# same dimensions - but in a tuple (3, 2, 1)
+>>> for index in np.ndindex((3, 2, 1)):
+...     print(index)
+(0, 0, 0)
+(0, 1, 0)
+(1, 0, 0)
+(1, 1, 0)
+(2, 0, 0)
+(2, 1, 0)\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a00b83ede59b9058bc2ca48c36c2abd87}\label{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a00b83ede59b9058bc2ca48c36c2abd87}} 
+\index{numpy\+::lib\+::index\+\_\+tricks\+::ndindex@{numpy\+::lib\+::index\+\_\+tricks\+::ndindex}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::lib\+::index\+\_\+tricks\+::ndindex@{numpy\+::lib\+::index\+\_\+tricks\+::ndindex}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+ndindex.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{shape }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a24e533575421a8f5a35fc3d530444e54}\label{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a24e533575421a8f5a35fc3d530444e54}} 
+\index{numpy\+::lib\+::index\+\_\+tricks\+::ndindex@{numpy\+::lib\+::index\+\_\+tricks\+::ndindex}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!numpy\+::lib\+::index\+\_\+tricks\+::ndindex@{numpy\+::lib\+::index\+\_\+tricks\+::ndindex}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+ndindex.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a15882d2fe51484db60724b4a3df4759f}\label{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a15882d2fe51484db60724b4a3df4759f}} 
+\index{numpy\+::lib\+::index\+\_\+tricks\+::ndindex@{numpy\+::lib\+::index\+\_\+tricks\+::ndindex}!\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}!numpy\+::lib\+::index\+\_\+tricks\+::ndindex@{numpy\+::lib\+::index\+\_\+tricks\+::ndindex}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+next\+\_\+\+\_\+()}{\_\_next\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+ndindex.\+\_\+\+\_\+next\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Standard iterator method, updates the index and returns the index
+tuple.
+
+Returns
+-------
+val : tuple of ints
+    Returns a tuple containing the indices of the current
+    iteration.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a90e5b99598cf0164b5c0409049c51861}\label{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a90e5b99598cf0164b5c0409049c51861}} 
+\index{numpy\+::lib\+::index\+\_\+tricks\+::ndindex@{numpy\+::lib\+::index\+\_\+tricks\+::ndindex}!ndincr@{ndincr}}
+\index{ndincr@{ndincr}!numpy\+::lib\+::index\+\_\+tricks\+::ndindex@{numpy\+::lib\+::index\+\_\+tricks\+::ndindex}}
+\subsubsection{\texorpdfstring{ndincr()}{ndincr()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+ndindex.\+ndincr (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Increment the multi-dimensional index by one.
+
+This method is for backward compatibility only: do not use.
+
+.. deprecated:: 1.20.0
+    This method has been advised against since numpy 1.8.0, but only
+    started emitting DeprecationWarning as of this version.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/lib/\hyperlink{lib_2index__tricks_8py}{index\+\_\+tricks.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,88 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1maxcut}{}\section{networkx.\+algorithms.\+approximation.\+maxcut Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1maxcut}\index{networkx.\+algorithms.\+approximation.\+maxcut@{networkx.\+algorithms.\+approximation.\+maxcut}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1maxcut_aba14cb3f2eb41bb77918b1e5a3473ecb}{randomized\+\_\+partitioning} (G, seed=None, p=0.\+5, weight=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1maxcut_ab31fcbeda98de38321d18b6b8aadd120}{one\+\_\+exchange} (G, initial\+\_\+cut=None, seed=None, weight=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1maxcut_ab31fcbeda98de38321d18b6b8aadd120}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1maxcut_ab31fcbeda98de38321d18b6b8aadd120}} 
+\index{networkx\+::algorithms\+::approximation\+::maxcut@{networkx\+::algorithms\+::approximation\+::maxcut}!one\+\_\+exchange@{one\+\_\+exchange}}
+\index{one\+\_\+exchange@{one\+\_\+exchange}!networkx\+::algorithms\+::approximation\+::maxcut@{networkx\+::algorithms\+::approximation\+::maxcut}}
+\subsubsection{\texorpdfstring{one\+\_\+exchange()}{one\_exchange()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+maxcut.\+one\+\_\+exchange (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{initial\+\_\+cut = {\ttfamily None},  }\item[{}]{seed = {\ttfamily None},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute a partitioning of the graphs nodes and the corresponding cut value.
+
+Use a greedy one exchange strategy to find a locally maximal cut
+and its value, it works by finding the best node (one that gives
+the highest gain to the cut value) to add to the current cut
+and repeats this process until no improvement can be made.
+
+Parameters
+----------
+G : networkx Graph
+    Graph to find a maximum cut for.
+
+initial_cut : set
+    Cut to use as a starting point. If not supplied the algorithm
+    starts with an empty cut.
+
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+
+weight : object
+    Edge attribute key to use as weight. If not specified, edges
+    have weight one.
+
+Returns
+-------
+cut_value : scalar
+    Value of the maximum cut.
+
+partition : pair of node sets
+    A partitioning of the nodes that defines a maximum cut.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1maxcut_aba14cb3f2eb41bb77918b1e5a3473ecb}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1maxcut_aba14cb3f2eb41bb77918b1e5a3473ecb}} 
+\index{networkx\+::algorithms\+::approximation\+::maxcut@{networkx\+::algorithms\+::approximation\+::maxcut}!randomized\+\_\+partitioning@{randomized\+\_\+partitioning}}
+\index{randomized\+\_\+partitioning@{randomized\+\_\+partitioning}!networkx\+::algorithms\+::approximation\+::maxcut@{networkx\+::algorithms\+::approximation\+::maxcut}}
+\subsubsection{\texorpdfstring{randomized\+\_\+partitioning()}{randomized\_partitioning()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+maxcut.\+randomized\+\_\+partitioning (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{seed = {\ttfamily None},  }\item[{}]{p = {\ttfamily 0.5},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute a random partitioning of the graph nodes and its cut value.
+
+A partitioning is calculated by observing each node
+and deciding to add it to the partition with probability `p`,
+returning a random cut and its corresponding value (the
+sum of weights of edges connecting different partitions).
+
+Parameters
+----------
+G : NetworkX graph
+
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+
+p : scalar
+    Probability for each node to be part of the first partition.
+    Should be in [0,1]
+
+weight : object
+    Edge attribute key to use as weight. If not specified, edges
+    have weight one.
+
+Returns
+-------
+cut_size : scalar
+    Value of the minimum cut.
+
+partition : pair of node sets
+    A partitioning of the nodes that defines a minimum cut.
+\end{DoxyVerb}
+ 

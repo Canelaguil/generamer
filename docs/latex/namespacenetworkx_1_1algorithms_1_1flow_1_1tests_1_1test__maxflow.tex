@@ -1,0 +1,124 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow}{}\section{networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow}\index{networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow@{networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_1_1TestCutoff}{Test\+Cutoff}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_1_1TestMaxflowMinCutCommon}{Test\+Maxflow\+Min\+Cut\+Common}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_1_1TestMaxFlowMinCutInterface}{Test\+Max\+Flow\+Min\+Cut\+Interface}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a85d975b82fb1c2dfb5d3e9de2cb0e2dd}{compute\+\_\+cutset} (G, partition)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a381efcf1f2e3a8633bd121545f297e2d}{validate\+\_\+flows} (G, s, t, flow\+Dict, soln\+Value, capacity, flow\+\_\+func)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a5e012de15efb319d2f1e45cd6883cc4d}{validate\+\_\+cuts} (G, s, t, soln\+Value, partition, capacity, flow\+\_\+func)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a466ff856a4ac0918bc79cb752539fb7d}{compare\+\_\+flows\+\_\+and\+\_\+cuts} (G, s, t, soln\+Flows, soln\+Value, capacity=\char`\"{}capacity\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_aa113886740c8feaf949dac9140c33297}{test\+\_\+preflow\+\_\+push\+\_\+global\+\_\+relabel\+\_\+freq} ()
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a4abc0138845bd85d5b427118105e65de}{test\+\_\+preflow\+\_\+push\+\_\+makes\+\_\+enough\+\_\+space} ()
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a57f276069d486b1cea3fb3093a027499}{test\+\_\+shortest\+\_\+augmenting\+\_\+path\+\_\+two\+\_\+phase} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_abb13c2380ceef42b60fa8d2ebf37b032}{flow\+\_\+funcs}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a74c4b8d7b404212fe185ddcb4d46c310}{max\+\_\+min\+\_\+funcs}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_ab0276f9b92a6a10ed658d8ccdba8e0ae}{flow\+\_\+value\+\_\+funcs}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_aeb024362830495ed14928aaafb35464b}{interface\+\_\+funcs}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a76755b9a63efd0d86e6b9bf8096fef5a}{all\+\_\+funcs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Maximum flow algorithms test suite.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a466ff856a4ac0918bc79cb752539fb7d}\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a466ff856a4ac0918bc79cb752539fb7d}} 
+\index{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}!compare\+\_\+flows\+\_\+and\+\_\+cuts@{compare\+\_\+flows\+\_\+and\+\_\+cuts}}
+\index{compare\+\_\+flows\+\_\+and\+\_\+cuts@{compare\+\_\+flows\+\_\+and\+\_\+cuts}!networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}}
+\subsubsection{\texorpdfstring{compare\+\_\+flows\+\_\+and\+\_\+cuts()}{compare\_flows\_and\_cuts()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow.\+compare\+\_\+flows\+\_\+and\+\_\+cuts (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{s,  }\item[{}]{t,  }\item[{}]{soln\+Flows,  }\item[{}]{soln\+Value,  }\item[{}]{capacity = {\ttfamily \char`\"{}capacity\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a85d975b82fb1c2dfb5d3e9de2cb0e2dd}\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a85d975b82fb1c2dfb5d3e9de2cb0e2dd}} 
+\index{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}!compute\+\_\+cutset@{compute\+\_\+cutset}}
+\index{compute\+\_\+cutset@{compute\+\_\+cutset}!networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}}
+\subsubsection{\texorpdfstring{compute\+\_\+cutset()}{compute\_cutset()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow.\+compute\+\_\+cutset (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{partition }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_aa113886740c8feaf949dac9140c33297}\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_aa113886740c8feaf949dac9140c33297}} 
+\index{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}!test\+\_\+preflow\+\_\+push\+\_\+global\+\_\+relabel\+\_\+freq@{test\+\_\+preflow\+\_\+push\+\_\+global\+\_\+relabel\+\_\+freq}}
+\index{test\+\_\+preflow\+\_\+push\+\_\+global\+\_\+relabel\+\_\+freq@{test\+\_\+preflow\+\_\+push\+\_\+global\+\_\+relabel\+\_\+freq}!networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}}
+\subsubsection{\texorpdfstring{test\+\_\+preflow\+\_\+push\+\_\+global\+\_\+relabel\+\_\+freq()}{test\_preflow\_push\_global\_relabel\_freq()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow.\+test\+\_\+preflow\+\_\+push\+\_\+global\+\_\+relabel\+\_\+freq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a4abc0138845bd85d5b427118105e65de}\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a4abc0138845bd85d5b427118105e65de}} 
+\index{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}!test\+\_\+preflow\+\_\+push\+\_\+makes\+\_\+enough\+\_\+space@{test\+\_\+preflow\+\_\+push\+\_\+makes\+\_\+enough\+\_\+space}}
+\index{test\+\_\+preflow\+\_\+push\+\_\+makes\+\_\+enough\+\_\+space@{test\+\_\+preflow\+\_\+push\+\_\+makes\+\_\+enough\+\_\+space}!networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}}
+\subsubsection{\texorpdfstring{test\+\_\+preflow\+\_\+push\+\_\+makes\+\_\+enough\+\_\+space()}{test\_preflow\_push\_makes\_enough\_space()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow.\+test\+\_\+preflow\+\_\+push\+\_\+makes\+\_\+enough\+\_\+space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a57f276069d486b1cea3fb3093a027499}\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a57f276069d486b1cea3fb3093a027499}} 
+\index{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}!test\+\_\+shortest\+\_\+augmenting\+\_\+path\+\_\+two\+\_\+phase@{test\+\_\+shortest\+\_\+augmenting\+\_\+path\+\_\+two\+\_\+phase}}
+\index{test\+\_\+shortest\+\_\+augmenting\+\_\+path\+\_\+two\+\_\+phase@{test\+\_\+shortest\+\_\+augmenting\+\_\+path\+\_\+two\+\_\+phase}!networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}}
+\subsubsection{\texorpdfstring{test\+\_\+shortest\+\_\+augmenting\+\_\+path\+\_\+two\+\_\+phase()}{test\_shortest\_augmenting\_path\_two\_phase()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow.\+test\+\_\+shortest\+\_\+augmenting\+\_\+path\+\_\+two\+\_\+phase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a5e012de15efb319d2f1e45cd6883cc4d}\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a5e012de15efb319d2f1e45cd6883cc4d}} 
+\index{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}!validate\+\_\+cuts@{validate\+\_\+cuts}}
+\index{validate\+\_\+cuts@{validate\+\_\+cuts}!networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}}
+\subsubsection{\texorpdfstring{validate\+\_\+cuts()}{validate\_cuts()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow.\+validate\+\_\+cuts (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{s,  }\item[{}]{t,  }\item[{}]{soln\+Value,  }\item[{}]{partition,  }\item[{}]{capacity,  }\item[{}]{flow\+\_\+func }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a381efcf1f2e3a8633bd121545f297e2d}\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a381efcf1f2e3a8633bd121545f297e2d}} 
+\index{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}!validate\+\_\+flows@{validate\+\_\+flows}}
+\index{validate\+\_\+flows@{validate\+\_\+flows}!networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}}
+\subsubsection{\texorpdfstring{validate\+\_\+flows()}{validate\_flows()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow.\+validate\+\_\+flows (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{s,  }\item[{}]{t,  }\item[{}]{flow\+Dict,  }\item[{}]{soln\+Value,  }\item[{}]{capacity,  }\item[{}]{flow\+\_\+func }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a76755b9a63efd0d86e6b9bf8096fef5a}\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a76755b9a63efd0d86e6b9bf8096fef5a}} 
+\index{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}!all\+\_\+funcs@{all\+\_\+funcs}}
+\index{all\+\_\+funcs@{all\+\_\+funcs}!networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}}
+\subsubsection{\texorpdfstring{all\+\_\+funcs}{all\_funcs}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow.\+all\+\_\+funcs}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_abb13c2380ceef42b60fa8d2ebf37b032}\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_abb13c2380ceef42b60fa8d2ebf37b032}} 
+\index{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}!flow\+\_\+funcs@{flow\+\_\+funcs}}
+\index{flow\+\_\+funcs@{flow\+\_\+funcs}!networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}}
+\subsubsection{\texorpdfstring{flow\+\_\+funcs}{flow\_funcs}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow.\+flow\+\_\+funcs}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_ab0276f9b92a6a10ed658d8ccdba8e0ae}\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_ab0276f9b92a6a10ed658d8ccdba8e0ae}} 
+\index{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}!flow\+\_\+value\+\_\+funcs@{flow\+\_\+value\+\_\+funcs}}
+\index{flow\+\_\+value\+\_\+funcs@{flow\+\_\+value\+\_\+funcs}!networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}}
+\subsubsection{\texorpdfstring{flow\+\_\+value\+\_\+funcs}{flow\_value\_funcs}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow.\+flow\+\_\+value\+\_\+funcs}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_aeb024362830495ed14928aaafb35464b}\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_aeb024362830495ed14928aaafb35464b}} 
+\index{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}!interface\+\_\+funcs@{interface\+\_\+funcs}}
+\index{interface\+\_\+funcs@{interface\+\_\+funcs}!networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}}
+\subsubsection{\texorpdfstring{interface\+\_\+funcs}{interface\_funcs}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow.\+interface\+\_\+funcs}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a74c4b8d7b404212fe185ddcb4d46c310}\label{namespacenetworkx_1_1algorithms_1_1flow_1_1tests_1_1test__maxflow_a74c4b8d7b404212fe185ddcb4d46c310}} 
+\index{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}!max\+\_\+min\+\_\+funcs@{max\+\_\+min\+\_\+funcs}}
+\index{max\+\_\+min\+\_\+funcs@{max\+\_\+min\+\_\+funcs}!networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow@{networkx\+::algorithms\+::flow\+::tests\+::test\+\_\+maxflow}}
+\subsubsection{\texorpdfstring{max\+\_\+min\+\_\+funcs}{max\_min\_funcs}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+flow.\+tests.\+test\+\_\+maxflow.\+max\+\_\+min\+\_\+funcs}
+

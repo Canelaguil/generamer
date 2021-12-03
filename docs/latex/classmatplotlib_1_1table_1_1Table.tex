@@ -1,0 +1,298 @@
+\hypertarget{classmatplotlib_1_1table_1_1Table}{}\section{matplotlib.\+table.\+Table Class Reference}
+\label{classmatplotlib_1_1table_1_1Table}\index{matplotlib.\+table.\+Table@{matplotlib.\+table.\+Table}}
+
+
+Inheritance diagram for matplotlib.\+table.\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classmatplotlib_1_1table_1_1Table__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+table.\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classmatplotlib_1_1table_1_1Table__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_afa7c25d35cad9a3687e65c3cfd55277e}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, ax, loc=None, bbox=None, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_a19bb373b8e28f862486599fd9ad4a204}{add\+\_\+cell} (self, row, col, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_a8a4e780c757cefd3fc9e5493bab27296}{\+\_\+\+\_\+setitem\+\_\+\+\_\+} (self, position, cell)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_a7b47a53228d1b4a82c375db6d8f2eef4}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, position)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_ae2a754bbeace53c798410dee6f352edc}{edges} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_a1696117165cb9ae0f44d1fd3f393a9f9}{edges} (self, value)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_a8ee722965afc1db25f2c3f9674766124}{draw} (self, renderer)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_afc20e7ccb91ae26751b26f7dccde82fd}{contains} (self, mouseevent)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_a24aed221960a92b7c146a4b965617576}{get\+\_\+children} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_a09614514d4cb83db4c452c9ee48c06b1}{get\+\_\+window\+\_\+extent} (self, renderer)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_a2b5f5358579cf39869ceac03b4b0fd81}{auto\+\_\+set\+\_\+column\+\_\+width} (self, col)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_a0fc7a804b56aed93aaed1514da6fa0c7}{auto\+\_\+set\+\_\+font\+\_\+size} (self, value=True)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_accfb3c665905c34572540e1448fe3376}{scale} (self, xscale, yscale)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_aec049ca1e0ec6c296d57c22600a391fc}{set\+\_\+fontsize} (self, size)
+\item 
+def \hyperlink{classmatplotlib_1_1table_1_1Table_a8c2a9e7e76f3ae807058106ffe426dc6}{get\+\_\+celld} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1table_1_1Table_af7cbecc998f025a51db935d4be174e83}{stale}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1table_1_1Table_a35ffdad9bb93088b7137348c728009a9}{codes}
+\item 
+\hyperlink{classmatplotlib_1_1table_1_1Table_a81ebc332e35289ae4ce4d7063d6285f0}{F\+O\+N\+T\+S\+I\+ZE}
+\item 
+\hyperlink{classmatplotlib_1_1table_1_1Table_a8f80e5c1118faf3f1a3189ceb34a8953}{A\+X\+E\+S\+P\+AD}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A table of cells.
+
+The table consists of a grid of cells, which are indexed by (row, column).
+
+For a simple table, you'll have a full grid of cells with indices from
+(0, 0) to (num_rows-1, num_cols-1), in which the cell (0, 0) is positioned
+at the top left. However, you can also add cells with negative indices.
+You don't have to add a cell to every grid position, so you can create
+tables that have holes.
+
+*Note*: You'll usually not create an empty table from scratch. Instead use
+`~matplotlib.table.table` to create a table from data.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_afa7c25d35cad9a3687e65c3cfd55277e}\label{classmatplotlib_1_1table_1_1Table_afa7c25d35cad9a3687e65c3cfd55277e}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{loc = {\ttfamily None},  }\item[{}]{bbox = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+ax : `matplotlib.axes.Axes`
+    The `~.axes.Axes` to plot the table into.
+loc : str
+    The position of the cell with respect to *ax*. This must be one of
+    the `~.Table.codes`.
+bbox : `.Bbox` or None
+    A bounding box to draw the table into. If this is not *None*, this
+    overrides *loc*.
+
+Other Parameters
+----------------
+**kwargs
+    `.Artist` properties.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a7b47a53228d1b4a82c375db6d8f2eef4}\label{classmatplotlib_1_1table_1_1Table_a7b47a53228d1b4a82c375db6d8f2eef4}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieve a custom cell from a given position.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a8a4e780c757cefd3fc9e5493bab27296}\label{classmatplotlib_1_1table_1_1Table_a8a4e780c757cefd3fc9e5493bab27296}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!\+\_\+\+\_\+setitem\+\_\+\+\_\+@{\+\_\+\+\_\+setitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setitem\+\_\+\+\_\+@{\+\_\+\+\_\+setitem\+\_\+\+\_\+}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setitem\+\_\+\+\_\+()}{\_\_setitem\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+\_\+\+\_\+setitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position,  }\item[{}]{cell }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set a custom cell in a given position.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a19bb373b8e28f862486599fd9ad4a204}\label{classmatplotlib_1_1table_1_1Table_a19bb373b8e28f862486599fd9ad4a204}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!add\+\_\+cell@{add\+\_\+cell}}
+\index{add\+\_\+cell@{add\+\_\+cell}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{add\+\_\+cell()}{add\_cell()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+add\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{row,  }\item[{}]{col,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a cell and add it to the table.
+
+Parameters
+----------
+row : int
+    Row index.
+col : int
+    Column index.
+*args, **kwargs
+    All other parameters are passed on to `Cell`.
+
+Returns
+-------
+`.Cell`
+    The created cell.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a2b5f5358579cf39869ceac03b4b0fd81}\label{classmatplotlib_1_1table_1_1Table_a2b5f5358579cf39869ceac03b4b0fd81}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!auto\+\_\+set\+\_\+column\+\_\+width@{auto\+\_\+set\+\_\+column\+\_\+width}}
+\index{auto\+\_\+set\+\_\+column\+\_\+width@{auto\+\_\+set\+\_\+column\+\_\+width}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{auto\+\_\+set\+\_\+column\+\_\+width()}{auto\_set\_column\_width()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+auto\+\_\+set\+\_\+column\+\_\+width (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{col }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Automatically set the widths of given columns to optimal sizes.
+
+Parameters
+----------
+col : int or sequence of ints
+    The indices of the columns to auto-scale.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a0fc7a804b56aed93aaed1514da6fa0c7}\label{classmatplotlib_1_1table_1_1Table_a0fc7a804b56aed93aaed1514da6fa0c7}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!auto\+\_\+set\+\_\+font\+\_\+size@{auto\+\_\+set\+\_\+font\+\_\+size}}
+\index{auto\+\_\+set\+\_\+font\+\_\+size@{auto\+\_\+set\+\_\+font\+\_\+size}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{auto\+\_\+set\+\_\+font\+\_\+size()}{auto\_set\_font\_size()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+auto\+\_\+set\+\_\+font\+\_\+size (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Automatically set font size.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_afc20e7ccb91ae26751b26f7dccde82fd}\label{classmatplotlib_1_1table_1_1Table_afc20e7ccb91ae26751b26f7dccde82fd}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!contains@{contains}}
+\index{contains@{contains}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+contains (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{mouseevent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a8ee722965afc1db25f2c3f9674766124}\label{classmatplotlib_1_1table_1_1Table_a8ee722965afc1db25f2c3f9674766124}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!draw@{draw}}
+\index{draw@{draw}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+draw (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_ae2a754bbeace53c798410dee6f352edc}\label{classmatplotlib_1_1table_1_1Table_ae2a754bbeace53c798410dee6f352edc}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!edges@{edges}}
+\index{edges@{edges}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{edges()}{edges()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+edges (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The default value of `~.Cell.visible_edges` for newly added
+cells using `.add_cell`.
+
+Notes
+-----
+This setting does currently only affect newly created cells using
+`.add_cell`.
+
+To change existing cells, you have to set their edges explicitly::
+
+    for c in tab.get_celld().values():
+c.visible_edges = 'horizontal'\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a1696117165cb9ae0f44d1fd3f393a9f9}\label{classmatplotlib_1_1table_1_1Table_a1696117165cb9ae0f44d1fd3f393a9f9}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!edges@{edges}}
+\index{edges@{edges}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{edges()}{edges()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+edges (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a8c2a9e7e76f3ae807058106ffe426dc6}\label{classmatplotlib_1_1table_1_1Table_a8c2a9e7e76f3ae807058106ffe426dc6}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!get\+\_\+celld@{get\+\_\+celld}}
+\index{get\+\_\+celld@{get\+\_\+celld}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{get\+\_\+celld()}{get\_celld()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+get\+\_\+celld (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a dict of cells in the table mapping *(row, column)* to
+`.Cell`\s.
+
+Notes
+-----
+You can also directly index into the Table object to access individual
+cells::
+
+    cell = table[row, col]\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a24aed221960a92b7c146a4b965617576}\label{classmatplotlib_1_1table_1_1Table_a24aed221960a92b7c146a4b965617576}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!get\+\_\+children@{get\+\_\+children}}
+\index{get\+\_\+children@{get\+\_\+children}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{get\+\_\+children()}{get\_children()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+get\+\_\+children (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the Artists contained by the table.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a09614514d4cb83db4c452c9ee48c06b1}\label{classmatplotlib_1_1table_1_1Table_a09614514d4cb83db4c452c9ee48c06b1}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!get\+\_\+window\+\_\+extent@{get\+\_\+window\+\_\+extent}}
+\index{get\+\_\+window\+\_\+extent@{get\+\_\+window\+\_\+extent}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{get\+\_\+window\+\_\+extent()}{get\_window\_extent()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+get\+\_\+window\+\_\+extent (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the bounding box of the table in window coords.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_accfb3c665905c34572540e1448fe3376}\label{classmatplotlib_1_1table_1_1Table_accfb3c665905c34572540e1448fe3376}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!scale@{scale}}
+\index{scale@{scale}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+scale (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xscale,  }\item[{}]{yscale }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Scale column widths by *xscale* and row heights by *yscale*.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_aec049ca1e0ec6c296d57c22600a391fc}\label{classmatplotlib_1_1table_1_1Table_aec049ca1e0ec6c296d57c22600a391fc}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!set\+\_\+fontsize@{set\+\_\+fontsize}}
+\index{set\+\_\+fontsize@{set\+\_\+fontsize}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{set\+\_\+fontsize()}{set\_fontsize()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+Table.\+set\+\_\+fontsize (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{size }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the font size, in points, of the cell text.
+
+Parameters
+----------
+size : float
+
+Notes
+-----
+As long as auto font size has not been disabled, the value will be
+clipped such that the text fits horizontally into the cell.
+
+You can disable this behavior using `.auto_set_font_size`.
+
+>>> the_table.auto_set_font_size(False)
+>>> the_table.set_fontsize(20)
+
+However, there is no automatic scaling of the row height so that the
+text may exceed the cell boundary.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a8f80e5c1118faf3f1a3189ceb34a8953}\label{classmatplotlib_1_1table_1_1Table_a8f80e5c1118faf3f1a3189ceb34a8953}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!A\+X\+E\+S\+P\+AD@{A\+X\+E\+S\+P\+AD}}
+\index{A\+X\+E\+S\+P\+AD@{A\+X\+E\+S\+P\+AD}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{A\+X\+E\+S\+P\+AD}{AXESPAD}}
+{\footnotesize\ttfamily matplotlib.\+table.\+Table.\+A\+X\+E\+S\+P\+AD\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a35ffdad9bb93088b7137348c728009a9}\label{classmatplotlib_1_1table_1_1Table_a35ffdad9bb93088b7137348c728009a9}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!codes@{codes}}
+\index{codes@{codes}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{codes}{codes}}
+{\footnotesize\ttfamily matplotlib.\+table.\+Table.\+codes\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_a81ebc332e35289ae4ce4d7063d6285f0}\label{classmatplotlib_1_1table_1_1Table_a81ebc332e35289ae4ce4d7063d6285f0}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!F\+O\+N\+T\+S\+I\+ZE@{F\+O\+N\+T\+S\+I\+ZE}}
+\index{F\+O\+N\+T\+S\+I\+ZE@{F\+O\+N\+T\+S\+I\+ZE}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{F\+O\+N\+T\+S\+I\+ZE}{FONTSIZE}}
+{\footnotesize\ttfamily matplotlib.\+table.\+Table.\+F\+O\+N\+T\+S\+I\+ZE\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1table_1_1Table_af7cbecc998f025a51db935d4be174e83}\label{classmatplotlib_1_1table_1_1Table_af7cbecc998f025a51db935d4be174e83}} 
+\index{matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::table\+::\+Table@{matplotlib\+::table\+::\+Table}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+table.\+Table.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{table_8py}{table.\+py}\end{DoxyCompactItemize}

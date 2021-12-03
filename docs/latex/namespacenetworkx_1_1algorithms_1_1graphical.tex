@@ -1,0 +1,264 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1graphical}{}\section{networkx.\+algorithms.\+graphical Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1graphical}\index{networkx.\+algorithms.\+graphical@{networkx.\+algorithms.\+graphical}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1graphical_a12a31175e624d480023ceb0defee47b9}{is\+\_\+graphical} (sequence, method=\char`\"{}eg\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1graphical_ae89906b429041d2b846aa372fdc4a427}{is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+havel\+\_\+hakimi} (deg\+\_\+sequence)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1graphical_a27f77443e8204c7a57ea1fd41b56b86f}{is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+erdos\+\_\+gallai} (deg\+\_\+sequence)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1graphical_ad8f62b18333b9b46eb158b4ea15b9a8c}{is\+\_\+multigraphical} (sequence)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1graphical_ac9f720f881776738444ef4dcbab3cf2e}{is\+\_\+pseudographical} (sequence)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1graphical_a2ecbe117263a08ea28a1e807444d5375}{is\+\_\+digraphical} (in\+\_\+sequence, out\+\_\+sequence)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Test sequences for graphiness.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1graphical_a2ecbe117263a08ea28a1e807444d5375}\label{namespacenetworkx_1_1algorithms_1_1graphical_a2ecbe117263a08ea28a1e807444d5375}} 
+\index{networkx\+::algorithms\+::graphical@{networkx\+::algorithms\+::graphical}!is\+\_\+digraphical@{is\+\_\+digraphical}}
+\index{is\+\_\+digraphical@{is\+\_\+digraphical}!networkx\+::algorithms\+::graphical@{networkx\+::algorithms\+::graphical}}
+\subsubsection{\texorpdfstring{is\+\_\+digraphical()}{is\_digraphical()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+graphical.\+is\+\_\+digraphical (\begin{DoxyParamCaption}\item[{}]{in\+\_\+sequence,  }\item[{}]{out\+\_\+sequence }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if some directed graph can realize the in- and out-degree
+sequences.
+
+Parameters
+----------
+in_sequence : list or iterable container
+    A sequence of integer node in-degrees
+
+out_sequence : list or iterable container
+    A sequence of integer node out-degrees
+
+Returns
+-------
+valid : bool
+  True if in and out-sequences are digraphic False if not.
+
+Notes
+-----
+This algorithm is from Kleitman and Wang [1]_.
+The worst case runtime is $O(s \times \log n)$ where $s$ and $n$ are the
+sum and length of the sequences respectively.
+
+References
+----------
+.. [1] D.J. Kleitman and D.L. Wang
+   Algorithms for Constructing Graphs and Digraphs with Given Valences
+   and Factors, Discrete Mathematics, 6(1), pp. 79-88 (1973)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1graphical_a12a31175e624d480023ceb0defee47b9}\label{namespacenetworkx_1_1algorithms_1_1graphical_a12a31175e624d480023ceb0defee47b9}} 
+\index{networkx\+::algorithms\+::graphical@{networkx\+::algorithms\+::graphical}!is\+\_\+graphical@{is\+\_\+graphical}}
+\index{is\+\_\+graphical@{is\+\_\+graphical}!networkx\+::algorithms\+::graphical@{networkx\+::algorithms\+::graphical}}
+\subsubsection{\texorpdfstring{is\+\_\+graphical()}{is\_graphical()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+graphical.\+is\+\_\+graphical (\begin{DoxyParamCaption}\item[{}]{sequence,  }\item[{}]{method = {\ttfamily \char`\"{}eg\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if sequence is a valid degree sequence.
+
+A degree sequence is valid if some graph can realize it.
+
+Parameters
+----------
+sequence : list or iterable container
+    A sequence of integer node degrees
+
+method : "eg" | "hh"  (default: 'eg')
+    The method used to validate the degree sequence.
+    "eg" corresponds to the Erdős-Gallai algorithm
+    [EG1960]_, [choudum1986]_, and
+    "hh" to the Havel-Hakimi algorithm
+    [havel1955]_, [hakimi1962]_, [CL1996]_.
+
+Returns
+-------
+valid : bool
+    True if the sequence is a valid degree sequence and False if not.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> sequence = (d for n, d in G.degree())
+>>> nx.is_graphical(sequence)
+True
+
+References
+----------
+.. [EG1960] Erdős and Gallai, Mat. Lapok 11 264, 1960.
+.. [choudum1986] S.A. Choudum. "A simple proof of the Erdős-Gallai theorem on
+   graph sequences." Bulletin of the Australian Mathematical Society, 33,
+   pp 67-70, 1986. https://doi.org/10.1017/S0004972700002872
+.. [havel1955] Havel, V. "A Remark on the Existence of Finite Graphs"
+   Casopis Pest. Mat. 80, 477-480, 1955.
+.. [hakimi1962] Hakimi, S. "On the Realizability of a Set of Integers as
+   Degrees of the Vertices of a Graph." SIAM J. Appl. Math. 10, 496-506, 1962.
+.. [CL1996] G. Chartrand and L. Lesniak, "Graphs and Digraphs",
+   Chapman and Hall/CRC, 1996.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1graphical_ad8f62b18333b9b46eb158b4ea15b9a8c}\label{namespacenetworkx_1_1algorithms_1_1graphical_ad8f62b18333b9b46eb158b4ea15b9a8c}} 
+\index{networkx\+::algorithms\+::graphical@{networkx\+::algorithms\+::graphical}!is\+\_\+multigraphical@{is\+\_\+multigraphical}}
+\index{is\+\_\+multigraphical@{is\+\_\+multigraphical}!networkx\+::algorithms\+::graphical@{networkx\+::algorithms\+::graphical}}
+\subsubsection{\texorpdfstring{is\+\_\+multigraphical()}{is\_multigraphical()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+graphical.\+is\+\_\+multigraphical (\begin{DoxyParamCaption}\item[{}]{sequence }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if some multigraph can realize the sequence.
+
+Parameters
+----------
+sequence : list
+    A list of integers
+
+Returns
+-------
+valid : bool
+    True if deg_sequence is a multigraphic degree sequence and False if not.
+
+Notes
+-----
+The worst-case run time is $O(n)$ where $n$ is the length of the sequence.
+
+References
+----------
+.. [1] S. L. Hakimi. "On the realizability of a set of integers as
+   degrees of the vertices of a linear graph", J. SIAM, 10, pp. 496-506
+   (1962).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1graphical_ac9f720f881776738444ef4dcbab3cf2e}\label{namespacenetworkx_1_1algorithms_1_1graphical_ac9f720f881776738444ef4dcbab3cf2e}} 
+\index{networkx\+::algorithms\+::graphical@{networkx\+::algorithms\+::graphical}!is\+\_\+pseudographical@{is\+\_\+pseudographical}}
+\index{is\+\_\+pseudographical@{is\+\_\+pseudographical}!networkx\+::algorithms\+::graphical@{networkx\+::algorithms\+::graphical}}
+\subsubsection{\texorpdfstring{is\+\_\+pseudographical()}{is\_pseudographical()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+graphical.\+is\+\_\+pseudographical (\begin{DoxyParamCaption}\item[{}]{sequence }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if some pseudograph can realize the sequence.
+
+Every nonnegative integer sequence with an even sum is pseudographical
+(see [1]_).
+
+Parameters
+----------
+sequence : list or iterable container
+    A sequence of integer node degrees
+
+Returns
+-------
+valid : bool
+  True if the sequence is a pseudographic degree sequence and False if not.
+
+Notes
+-----
+The worst-case run time is $O(n)$ where n is the length of the sequence.
+
+References
+----------
+.. [1] F. Boesch and F. Harary. "Line removal algorithms for graphs
+   and their degree lists", IEEE Trans. Circuits and Systems, CAS-23(12),
+   pp. 778-782 (1976).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1graphical_a27f77443e8204c7a57ea1fd41b56b86f}\label{namespacenetworkx_1_1algorithms_1_1graphical_a27f77443e8204c7a57ea1fd41b56b86f}} 
+\index{networkx\+::algorithms\+::graphical@{networkx\+::algorithms\+::graphical}!is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+erdos\+\_\+gallai@{is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+erdos\+\_\+gallai}}
+\index{is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+erdos\+\_\+gallai@{is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+erdos\+\_\+gallai}!networkx\+::algorithms\+::graphical@{networkx\+::algorithms\+::graphical}}
+\subsubsection{\texorpdfstring{is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+erdos\+\_\+gallai()}{is\_valid\_degree\_sequence\_erdos\_gallai()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+graphical.\+is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+erdos\+\_\+gallai (\begin{DoxyParamCaption}\item[{}]{deg\+\_\+sequence }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if deg_sequence can be realized by a simple graph.
+
+The validation is done using the Erdős-Gallai theorem [EG1960]_.
+
+Parameters
+----------
+deg_sequence : list
+    A list of integers
+
+Returns
+-------
+valid : bool
+    True if deg_sequence is graphical and False if not.
+
+Notes
+-----
+
+This implementation uses an equivalent form of the Erdős-Gallai criterion.
+Worst-case run time is $O(n)$ where $n$ is the length of the sequence.
+
+Specifically, a sequence d is graphical if and only if the
+sum of the sequence is even and for all strong indices k in the sequence,
+
+ .. math::
+
+   \sum_{i=1}^{k} d_i \leq k(k-1) + \sum_{j=k+1}^{n} \min(d_i,k)
+         = k(n-1) - ( k \sum_{j=0}^{k-1} n_j - \sum_{j=0}^{k-1} j n_j )
+
+A strong index k is any index where d_k >= k and the value n_j is the
+number of occurrences of j in d.  The maximal strong index is called the
+Durfee index.
+
+This particular rearrangement comes from the proof of Theorem 3 in [2]_.
+
+The ZZ condition says that for the sequence d if
+
+.. math::
+    |d| >= \frac{(\max(d) + \min(d) + 1)^2}{4*\min(d)}
+
+then d is graphical.  This was shown in Theorem 6 in [2]_.
+
+References
+----------
+.. [1] A. Tripathi and S. Vijay. "A note on a theorem of Erdős & Gallai",
+   Discrete Mathematics, 265, pp. 417-420 (2003).
+.. [2] I.E. Zverovich and V.E. Zverovich. "Contributions to the theory
+   of graphic sequences", Discrete Mathematics, 105, pp. 292-303 (1992).
+.. [EG1960] Erdős and Gallai, Mat. Lapok 11 264, 1960.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1graphical_ae89906b429041d2b846aa372fdc4a427}\label{namespacenetworkx_1_1algorithms_1_1graphical_ae89906b429041d2b846aa372fdc4a427}} 
+\index{networkx\+::algorithms\+::graphical@{networkx\+::algorithms\+::graphical}!is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+havel\+\_\+hakimi@{is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+havel\+\_\+hakimi}}
+\index{is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+havel\+\_\+hakimi@{is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+havel\+\_\+hakimi}!networkx\+::algorithms\+::graphical@{networkx\+::algorithms\+::graphical}}
+\subsubsection{\texorpdfstring{is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+havel\+\_\+hakimi()}{is\_valid\_degree\_sequence\_havel\_hakimi()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+graphical.\+is\+\_\+valid\+\_\+degree\+\_\+sequence\+\_\+havel\+\_\+hakimi (\begin{DoxyParamCaption}\item[{}]{deg\+\_\+sequence }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if deg_sequence can be realized by a simple graph.
+
+The validation proceeds using the Havel-Hakimi theorem
+[havel1955]_, [hakimi1962]_, [CL1996]_.
+Worst-case run time is $O(s)$ where $s$ is the sum of the sequence.
+
+Parameters
+----------
+deg_sequence : list
+    A list of integers where each element specifies the degree of a node
+    in a graph.
+
+Returns
+-------
+valid : bool
+    True if deg_sequence is graphical and False if not.
+
+Notes
+-----
+The ZZ condition says that for the sequence d if
+
+.. math::
+    |d| >= \frac{(\max(d) + \min(d) + 1)^2}{4*\min(d)}
+
+then d is graphical.  This was shown in Theorem 6 in [1]_.
+
+References
+----------
+.. [1] I.E. Zverovich and V.E. Zverovich. "Contributions to the theory
+   of graphic sequences", Discrete Mathematics, 105, pp. 292-303 (1992).
+.. [havel1955] Havel, V. "A Remark on the Existence of Finite Graphs"
+   Casopis Pest. Mat. 80, 477-480, 1955.
+.. [hakimi1962] Hakimi, S. "On the Realizability of a Set of Integers as
+   Degrees of the Vertices of a Graph." SIAM J. Appl. Math. 10, 496-506, 1962.
+.. [CL1996] G. Chartrand and L. Lesniak, "Graphs and Digraphs",
+   Chapman and Hall/CRC, 1996.
+\end{DoxyVerb}
+ 

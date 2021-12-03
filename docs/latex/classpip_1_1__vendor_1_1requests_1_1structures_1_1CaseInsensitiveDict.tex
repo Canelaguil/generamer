@@ -1,0 +1,145 @@
+\hypertarget{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict}{}\section{pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict Class Reference}
+\label{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict}\index{pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict@{pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a85bfaabcd91bb371214d628ca6ed9cf8}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, data=None, kwargs)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a16c056f286a68dde67716640b97c807b}{\+\_\+\+\_\+setitem\+\_\+\+\_\+} (self, key, value)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_ad182b457568f48d8256ddd0f3d449224}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, key)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_aaf6bc922b5d0e1cdd4d7b87a412ff4ab}{\+\_\+\+\_\+delitem\+\_\+\+\_\+} (self, key)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a1f81f59e15854cf8859ca0c37c7d2dfa}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a2042178015c83c026154034f19fcffbd}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_ac97d90e15e0694b54a675b57bcfaac62}{lower\+\_\+items} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a05220b9350871415f0af715ae25e9062}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_ab09b26ce2f2055bd81f41caa028d0a0d}{copy} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_ae73d2c83e34d03369e5bbe0cc16b3115}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A case-insensitive ``dict``-like object.
+
+Implements all methods and operations of
+``MutableMapping`` as well as dict's ``copy``. Also
+provides ``lower_items``.
+
+All keys are expected to be strings. The structure remembers the
+case of the last key to be set, and ``iter(instance)``,
+``keys()``, ``items()``, ``iterkeys()``, and ``iteritems()``
+will contain case-sensitive keys. However, querying and contains
+testing is case insensitive::
+
+    cid = CaseInsensitiveDict()
+    cid['Accept'] = 'application/json'
+    cid['aCCEPT'] == 'application/json'  # True
+    list(cid) == ['Accept']  # True
+
+For example, ``headers['content-encoding']`` will return the
+value of a ``'Content-Encoding'`` response header, regardless
+of how the header name was originally stored.
+
+If the constructor, ``.update``, or equality comparison
+operations are given keys that have equal ``.lower()``s, the
+behavior is undefined.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a85bfaabcd91bb371214d628ca6ed9cf8}\label{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a85bfaabcd91bb371214d628ca6ed9cf8}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_aaf6bc922b5d0e1cdd4d7b87a412ff4ab}\label{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_aaf6bc922b5d0e1cdd4d7b87a412ff4ab}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}!\+\_\+\+\_\+delitem\+\_\+\+\_\+@{\+\_\+\+\_\+delitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+delitem\+\_\+\+\_\+@{\+\_\+\+\_\+delitem\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+delitem\+\_\+\+\_\+()}{\_\_delitem\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict.\+\_\+\+\_\+delitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a05220b9350871415f0af715ae25e9062}\label{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a05220b9350871415f0af715ae25e9062}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+eq\+\_\+\+\_\+()}{\_\_eq\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict.\+\_\+\+\_\+eq\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_ad182b457568f48d8256ddd0f3d449224}\label{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_ad182b457568f48d8256ddd0f3d449224}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a1f81f59e15854cf8859ca0c37c7d2dfa}\label{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a1f81f59e15854cf8859ca0c37c7d2dfa}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a2042178015c83c026154034f19fcffbd}\label{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a2042178015c83c026154034f19fcffbd}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_ae73d2c83e34d03369e5bbe0cc16b3115}\label{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_ae73d2c83e34d03369e5bbe0cc16b3115}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a16c056f286a68dde67716640b97c807b}\label{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_a16c056f286a68dde67716640b97c807b}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}!\+\_\+\+\_\+setitem\+\_\+\+\_\+@{\+\_\+\+\_\+setitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setitem\+\_\+\+\_\+@{\+\_\+\+\_\+setitem\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setitem\+\_\+\+\_\+()}{\_\_setitem\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict.\+\_\+\+\_\+setitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_ab09b26ce2f2055bd81f41caa028d0a0d}\label{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_ab09b26ce2f2055bd81f41caa028d0a0d}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}!copy@{copy}}
+\index{copy@{copy}!pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict.\+copy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_ac97d90e15e0694b54a675b57bcfaac62}\label{classpip_1_1__vendor_1_1requests_1_1structures_1_1CaseInsensitiveDict_ac97d90e15e0694b54a675b57bcfaac62}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}!lower\+\_\+items@{lower\+\_\+items}}
+\index{lower\+\_\+items@{lower\+\_\+items}!pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict@{pip\+::\+\_\+vendor\+::requests\+::structures\+::\+Case\+Insensitive\+Dict}}
+\subsubsection{\texorpdfstring{lower\+\_\+items()}{lower\_items()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+structures.\+Case\+Insensitive\+Dict.\+lower\+\_\+items (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Like iteritems(), but with all lowercase keys.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/requests/\hyperlink{structures_8py}{structures.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,154 @@
+\hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl}{}\section{pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl}\index{pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl@{pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_1_1PyOpenSSLContext}{Py\+Open\+S\+S\+L\+Context}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_1_1UnsupportedExtension}{Unsupported\+Extension}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_1_1WrappedSocket}{Wrapped\+Socket}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a2d09468e8b069804c5b24c0963914bb1}{inject\+\_\+into\+\_\+urllib3} ()
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_ada6a8c2f43866a79e3a3fe798be2ce91}{extract\+\_\+from\+\_\+urllib3} ()
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a52b3ccc3c6845f7cef626166df5c7ead}{get\+\_\+subj\+\_\+alt\+\_\+name} (peer\+\_\+cert)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a779306356dd2d1d73caa0544aa88823f}{makefile} (self, mode, bufsize=-\/1)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_abc41ee2400478d9be7fcc9ff2a226048}{H\+A\+S\+\_\+\+S\+NI}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_ad88b30458265f2cd0753d55b912b1b7a}{S\+S\+L\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+C\+K\+S\+I\+ZE}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a8f3f024f2958a25b6bccdf6df042742e}{orig\+\_\+util\+\_\+\+H\+A\+S\+\_\+\+S\+NI}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a5b03545e439f496ef7afbeab7b4653aa}{orig\+\_\+util\+\_\+\+S\+S\+L\+Context}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a32b1a563572e6b61e68a4ef285bd3769}{log}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a4aa7606b03a4ffd67153cf13157a523d}{makefile}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}TLS with SNI_-support for Python 2. Follow these instructions if you would
+like to verify TLS certificates in Python 2. Note, the default libraries do
+*not* do certificate checking; you need to do additional work to validate
+certificates yourself.
+
+This needs the following packages installed:
+
+* `pyOpenSSL`_ (tested with 16.0.0)
+* `cryptography`_ (minimum 1.3.4, from pyopenssl)
+* `idna`_ (minimum 2.0, from cryptography)
+
+However, pyopenssl depends on cryptography, which depends on idna, so while we
+use all three directly here we end up having relatively few packages required.
+
+You can install them with the following command:
+
+.. code-block:: bash
+
+    $ python -m pip install pyopenssl cryptography idna
+
+To activate certificate checking, call
+:func:`~urllib3.contrib.pyopenssl.inject_into_urllib3` from your Python code
+before you begin making HTTP requests. This can be done in a ``sitecustomize``
+module, or at any other time before your application begins using ``urllib3``,
+like this:
+
+.. code-block:: python
+
+    try:
+import urllib3.contrib.pyopenssl
+urllib3.contrib.pyopenssl.inject_into_urllib3()
+    except ImportError:
+pass
+
+Now you can use :mod:`urllib3` as you normally would, and it will support SNI
+when the required modules are installed.
+
+Activating this module also has the positive side effect of disabling SSL/TLS
+compression in Python 2 (see `CRIME attack`_).
+
+.. _sni: https://en.wikipedia.org/wiki/Server_Name_Indication
+.. _crime attack: https://en.wikipedia.org/wiki/CRIME_(security_exploit)
+.. _pyopenssl: https://www.pyopenssl.org
+.. _cryptography: https://cryptography.io
+.. _idna: https://github.com/kjd/idna
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_ada6a8c2f43866a79e3a3fe798be2ce91}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_ada6a8c2f43866a79e3a3fe798be2ce91}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}!extract\+\_\+from\+\_\+urllib3@{extract\+\_\+from\+\_\+urllib3}}
+\index{extract\+\_\+from\+\_\+urllib3@{extract\+\_\+from\+\_\+urllib3}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}}
+\subsubsection{\texorpdfstring{extract\+\_\+from\+\_\+urllib3()}{extract\_from\_urllib3()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl.\+extract\+\_\+from\+\_\+urllib3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a52b3ccc3c6845f7cef626166df5c7ead}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a52b3ccc3c6845f7cef626166df5c7ead}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}!get\+\_\+subj\+\_\+alt\+\_\+name@{get\+\_\+subj\+\_\+alt\+\_\+name}}
+\index{get\+\_\+subj\+\_\+alt\+\_\+name@{get\+\_\+subj\+\_\+alt\+\_\+name}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}}
+\subsubsection{\texorpdfstring{get\+\_\+subj\+\_\+alt\+\_\+name()}{get\_subj\_alt\_name()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl.\+get\+\_\+subj\+\_\+alt\+\_\+name (\begin{DoxyParamCaption}\item[{}]{peer\+\_\+cert }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given an PyOpenSSL certificate, provides all the subject alternative names.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a2d09468e8b069804c5b24c0963914bb1}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a2d09468e8b069804c5b24c0963914bb1}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}!inject\+\_\+into\+\_\+urllib3@{inject\+\_\+into\+\_\+urllib3}}
+\index{inject\+\_\+into\+\_\+urllib3@{inject\+\_\+into\+\_\+urllib3}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}}
+\subsubsection{\texorpdfstring{inject\+\_\+into\+\_\+urllib3()}{inject\_into\_urllib3()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl.\+inject\+\_\+into\+\_\+urllib3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a779306356dd2d1d73caa0544aa88823f}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a779306356dd2d1d73caa0544aa88823f}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}!makefile@{makefile}}
+\index{makefile@{makefile}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}}
+\subsubsection{\texorpdfstring{makefile()}{makefile()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl.\+makefile (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{mode,  }\item[{}]{bufsize = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_abc41ee2400478d9be7fcc9ff2a226048}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_abc41ee2400478d9be7fcc9ff2a226048}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}!H\+A\+S\+\_\+\+S\+NI@{H\+A\+S\+\_\+\+S\+NI}}
+\index{H\+A\+S\+\_\+\+S\+NI@{H\+A\+S\+\_\+\+S\+NI}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}}
+\subsubsection{\texorpdfstring{H\+A\+S\+\_\+\+S\+NI}{HAS\_SNI}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl.\+H\+A\+S\+\_\+\+S\+NI}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a32b1a563572e6b61e68a4ef285bd3769}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a32b1a563572e6b61e68a4ef285bd3769}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}!log@{log}}
+\index{log@{log}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}}
+\subsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl.\+log}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a4aa7606b03a4ffd67153cf13157a523d}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a4aa7606b03a4ffd67153cf13157a523d}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}!makefile@{makefile}}
+\index{makefile@{makefile}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}}
+\subsubsection{\texorpdfstring{makefile}{makefile}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl.\+makefile}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a8f3f024f2958a25b6bccdf6df042742e}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a8f3f024f2958a25b6bccdf6df042742e}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}!orig\+\_\+util\+\_\+\+H\+A\+S\+\_\+\+S\+NI@{orig\+\_\+util\+\_\+\+H\+A\+S\+\_\+\+S\+NI}}
+\index{orig\+\_\+util\+\_\+\+H\+A\+S\+\_\+\+S\+NI@{orig\+\_\+util\+\_\+\+H\+A\+S\+\_\+\+S\+NI}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}}
+\subsubsection{\texorpdfstring{orig\+\_\+util\+\_\+\+H\+A\+S\+\_\+\+S\+NI}{orig\_util\_HAS\_SNI}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl.\+orig\+\_\+util\+\_\+\+H\+A\+S\+\_\+\+S\+NI}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a5b03545e439f496ef7afbeab7b4653aa}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_a5b03545e439f496ef7afbeab7b4653aa}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}!orig\+\_\+util\+\_\+\+S\+S\+L\+Context@{orig\+\_\+util\+\_\+\+S\+S\+L\+Context}}
+\index{orig\+\_\+util\+\_\+\+S\+S\+L\+Context@{orig\+\_\+util\+\_\+\+S\+S\+L\+Context}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}}
+\subsubsection{\texorpdfstring{orig\+\_\+util\+\_\+\+S\+S\+L\+Context}{orig\_util\_SSLContext}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl.\+orig\+\_\+util\+\_\+\+S\+S\+L\+Context}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_ad88b30458265f2cd0753d55b912b1b7a}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1pyopenssl_ad88b30458265f2cd0753d55b912b1b7a}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}!S\+S\+L\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+C\+K\+S\+I\+ZE@{S\+S\+L\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+C\+K\+S\+I\+ZE}}
+\index{S\+S\+L\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+C\+K\+S\+I\+ZE@{S\+S\+L\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+C\+K\+S\+I\+ZE}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::pyopenssl}}
+\subsubsection{\texorpdfstring{S\+S\+L\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+C\+K\+S\+I\+ZE}{SSL\_WRITE\_BLOCKSIZE}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+pyopenssl.\+S\+S\+L\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+C\+K\+S\+I\+ZE}
+

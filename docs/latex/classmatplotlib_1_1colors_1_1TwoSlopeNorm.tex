@@ -1,0 +1,124 @@
+\hypertarget{classmatplotlib_1_1colors_1_1TwoSlopeNorm}{}\section{matplotlib.\+colors.\+Two\+Slope\+Norm Class Reference}
+\label{classmatplotlib_1_1colors_1_1TwoSlopeNorm}\index{matplotlib.\+colors.\+Two\+Slope\+Norm@{matplotlib.\+colors.\+Two\+Slope\+Norm}}
+
+
+Inheritance diagram for matplotlib.\+colors.\+Two\+Slope\+Norm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classmatplotlib_1_1colors_1_1TwoSlopeNorm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+colors.\+Two\+Slope\+Norm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classmatplotlib_1_1colors_1_1TwoSlopeNorm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1TwoSlopeNorm_a7da303e009f52d4fad0ea3566d5b5514}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1colors_1_1TwoSlopeNorm_a2987f74afa009b4154b22beb11dab5b6}{vcenter}, \hyperlink{classmatplotlib_1_1colors_1_1TwoSlopeNorm_a1422efbdc975b322e39708bd4de4be1e}{vmin}=None, \hyperlink{classmatplotlib_1_1colors_1_1TwoSlopeNorm_ae20ae88824b1d868ed26b710ebe51794}{vmax}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1TwoSlopeNorm_ab2692f06422fd0a5eeb67542fa93c1d1}{autoscale\+\_\+\+None} (self, A)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1TwoSlopeNorm_ac0907bb91e89c8af13fb1ee11361e01e}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, value, \hyperlink{classmatplotlib_1_1colors_1_1Normalize_a7355c143b0fcdd0ec9998c02e2962a8b}{clip}=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1TwoSlopeNorm_a2987f74afa009b4154b22beb11dab5b6}{vcenter}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1TwoSlopeNorm_a1422efbdc975b322e39708bd4de4be1e}{vmin}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1TwoSlopeNorm_ae20ae88824b1d868ed26b710ebe51794}{vmax}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1TwoSlopeNorm_a7da303e009f52d4fad0ea3566d5b5514}\label{classmatplotlib_1_1colors_1_1TwoSlopeNorm_a7da303e009f52d4fad0ea3566d5b5514}} 
+\index{matplotlib\+::colors\+::\+Two\+Slope\+Norm@{matplotlib\+::colors\+::\+Two\+Slope\+Norm}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Two\+Slope\+Norm@{matplotlib\+::colors\+::\+Two\+Slope\+Norm}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Two\+Slope\+Norm.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vcenter,  }\item[{}]{vmin = {\ttfamily None},  }\item[{}]{vmax = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Normalize data with a set center.
+
+Useful when mapping data with an unequal rates of change around a
+conceptual center, e.g., data that range from -2 to 4, with 0 as
+the midpoint.
+
+Parameters
+----------
+vcenter : float
+    The data value that defines ``0.5`` in the normalization.
+vmin : float, optional
+    The data value that defines ``0.0`` in the normalization.
+    Defaults to the min value of the dataset.
+vmax : float, optional
+    The data value that defines ``1.0`` in the normalization.
+    Defaults to the the max value of the dataset.
+
+Examples
+--------
+This maps data value -4000 to 0., 0 to 0.5, and +10000 to 1.0; data
+between is linearly interpolated::
+
+    >>> import matplotlib.colors as mcolors
+    >>> offset = mcolors.TwoSlopeNorm(vmin=-4000.,
+                              vcenter=0., vmax=10000)
+    >>> data = [-4000., -2000., 0., 2500., 5000., 7500., 10000.]
+    >>> offset(data)
+    array([0., 0.25, 0.5, 0.625, 0.75, 0.875, 1.0])
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1TwoSlopeNorm_ac0907bb91e89c8af13fb1ee11361e01e}\label{classmatplotlib_1_1colors_1_1TwoSlopeNorm_ac0907bb91e89c8af13fb1ee11361e01e}} 
+\index{matplotlib\+::colors\+::\+Two\+Slope\+Norm@{matplotlib\+::colors\+::\+Two\+Slope\+Norm}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Two\+Slope\+Norm@{matplotlib\+::colors\+::\+Two\+Slope\+Norm}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Two\+Slope\+Norm.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value,  }\item[{}]{clip = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Map value to the interval [0, 1]. The clip argument is unused.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1TwoSlopeNorm_ab2692f06422fd0a5eeb67542fa93c1d1}\label{classmatplotlib_1_1colors_1_1TwoSlopeNorm_ab2692f06422fd0a5eeb67542fa93c1d1}} 
+\index{matplotlib\+::colors\+::\+Two\+Slope\+Norm@{matplotlib\+::colors\+::\+Two\+Slope\+Norm}!autoscale\+\_\+\+None@{autoscale\+\_\+\+None}}
+\index{autoscale\+\_\+\+None@{autoscale\+\_\+\+None}!matplotlib\+::colors\+::\+Two\+Slope\+Norm@{matplotlib\+::colors\+::\+Two\+Slope\+Norm}}
+\subsubsection{\texorpdfstring{autoscale\+\_\+\+None()}{autoscale\_None()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Two\+Slope\+Norm.\+autoscale\+\_\+\+None (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{A }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get vmin and vmax, and then clip at vcenter
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1TwoSlopeNorm_a2987f74afa009b4154b22beb11dab5b6}\label{classmatplotlib_1_1colors_1_1TwoSlopeNorm_a2987f74afa009b4154b22beb11dab5b6}} 
+\index{matplotlib\+::colors\+::\+Two\+Slope\+Norm@{matplotlib\+::colors\+::\+Two\+Slope\+Norm}!vcenter@{vcenter}}
+\index{vcenter@{vcenter}!matplotlib\+::colors\+::\+Two\+Slope\+Norm@{matplotlib\+::colors\+::\+Two\+Slope\+Norm}}
+\subsubsection{\texorpdfstring{vcenter}{vcenter}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Two\+Slope\+Norm.\+vcenter}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1TwoSlopeNorm_ae20ae88824b1d868ed26b710ebe51794}\label{classmatplotlib_1_1colors_1_1TwoSlopeNorm_ae20ae88824b1d868ed26b710ebe51794}} 
+\index{matplotlib\+::colors\+::\+Two\+Slope\+Norm@{matplotlib\+::colors\+::\+Two\+Slope\+Norm}!vmax@{vmax}}
+\index{vmax@{vmax}!matplotlib\+::colors\+::\+Two\+Slope\+Norm@{matplotlib\+::colors\+::\+Two\+Slope\+Norm}}
+\subsubsection{\texorpdfstring{vmax}{vmax}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Two\+Slope\+Norm.\+vmax}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1TwoSlopeNorm_a1422efbdc975b322e39708bd4de4be1e}\label{classmatplotlib_1_1colors_1_1TwoSlopeNorm_a1422efbdc975b322e39708bd4de4be1e}} 
+\index{matplotlib\+::colors\+::\+Two\+Slope\+Norm@{matplotlib\+::colors\+::\+Two\+Slope\+Norm}!vmin@{vmin}}
+\index{vmin@{vmin}!matplotlib\+::colors\+::\+Two\+Slope\+Norm@{matplotlib\+::colors\+::\+Two\+Slope\+Norm}}
+\subsubsection{\texorpdfstring{vmin}{vmin}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Two\+Slope\+Norm.\+vmin}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{colors_8py}{colors.\+py}\end{DoxyCompactItemize}

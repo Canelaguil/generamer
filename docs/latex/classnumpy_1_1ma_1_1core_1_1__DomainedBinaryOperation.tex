@@ -1,0 +1,104 @@
+\hypertarget{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation}{}\section{numpy.\+ma.\+core.\+\_\+\+Domained\+Binary\+Operation Class Reference}
+\label{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation}\index{numpy.\+ma.\+core.\+\_\+\+Domained\+Binary\+Operation@{numpy.\+ma.\+core.\+\_\+\+Domained\+Binary\+Operation}}
+
+
+Inheritance diagram for numpy.\+ma.\+core.\+\_\+\+Domained\+Binary\+Operation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+ma.\+core.\+\_\+\+Domained\+Binary\+Operation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_a16bb9ffe3b0bc68bd6e836e61142facc}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, dbfunc, \hyperlink{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_aa427c233a0b325090eb04de5f99f7515}{domain}, \hyperlink{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_aec68d6fed6d004e651dc4b9ec193edb3}{fillx}=0, \hyperlink{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_aee133906481810f094e3080e03db5e50}{filly}=0)
+\item 
+def \hyperlink{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_a8962b38091bb7fdfda0de6b016722f15}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, a, b, args, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_aa427c233a0b325090eb04de5f99f7515}{domain}
+\item 
+\hyperlink{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_aec68d6fed6d004e651dc4b9ec193edb3}{fillx}
+\item 
+\hyperlink{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_aee133906481810f094e3080e03db5e50}{filly}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Define binary operations that have a domain, like divide.
+
+They have no reduce, outer or accumulate.
+
+Parameters
+----------
+mbfunc : function
+    The function for which to define a masked version. Made available
+    as ``_DomainedBinaryOperation.f``.
+domain : class instance
+    Default domain for the function. Should be one of the ``_Domain*``
+    classes.
+fillx : scalar, optional
+    Filling value for the first argument, default is 0.
+filly : scalar, optional
+    Filling value for the second argument, default is 0.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_a16bb9ffe3b0bc68bd6e836e61142facc}\label{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_a16bb9ffe3b0bc68bd6e836e61142facc}} 
+\index{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+core.\+\_\+\+Domained\+Binary\+Operation.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dbfunc,  }\item[{}]{domain,  }\item[{}]{fillx = {\ttfamily 0},  }\item[{}]{filly = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}abfunc(fillx, filly) must be defined.
+   abfunc(x, filly) = x for all x to enable reduce.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_a8962b38091bb7fdfda0de6b016722f15}\label{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_a8962b38091bb7fdfda0de6b016722f15}} 
+\index{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+core.\+\_\+\+Domained\+Binary\+Operation.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a,  }\item[{}]{b,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_aa427c233a0b325090eb04de5f99f7515}\label{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_aa427c233a0b325090eb04de5f99f7515}} 
+\index{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation}!domain@{domain}}
+\index{domain@{domain}!numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation}}
+\subsubsection{\texorpdfstring{domain}{domain}}
+{\footnotesize\ttfamily numpy.\+ma.\+core.\+\_\+\+Domained\+Binary\+Operation.\+domain}
+
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_aec68d6fed6d004e651dc4b9ec193edb3}\label{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_aec68d6fed6d004e651dc4b9ec193edb3}} 
+\index{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation}!fillx@{fillx}}
+\index{fillx@{fillx}!numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation}}
+\subsubsection{\texorpdfstring{fillx}{fillx}}
+{\footnotesize\ttfamily numpy.\+ma.\+core.\+\_\+\+Domained\+Binary\+Operation.\+fillx}
+
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_aee133906481810f094e3080e03db5e50}\label{classnumpy_1_1ma_1_1core_1_1__DomainedBinaryOperation_aee133906481810f094e3080e03db5e50}} 
+\index{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation}!filly@{filly}}
+\index{filly@{filly}!numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Domained\+Binary\+Operation}}
+\subsubsection{\texorpdfstring{filly}{filly}}
+{\footnotesize\ttfamily numpy.\+ma.\+core.\+\_\+\+Domained\+Binary\+Operation.\+filly}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/ma/\hyperlink{numpy_2ma_2core_8py}{core.\+py}\end{DoxyCompactItemize}

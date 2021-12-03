@@ -1,0 +1,178 @@
+\hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap}{}\section{matplotlib.\+streamplot.\+Domain\+Map Class Reference}
+\label{classmatplotlib_1_1streamplot_1_1DomainMap}\index{matplotlib.\+streamplot.\+Domain\+Map@{matplotlib.\+streamplot.\+Domain\+Map}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a7926baa65be58918d596fc5a3679b5a4}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a50a523f858cbd2ebb6227242d5d788a7}{grid}, \hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_ada03814a04e3b9e77d2adc6768d16801}{mask})
+\item 
+def \hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a51f106dfc75535497a37f756f1431017}{grid2mask} (self, xi, yi)
+\item 
+def \hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a69bf476af9c6d209c28c4b965f6ce38c}{mask2grid} (self, xm, ym)
+\item 
+def \hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a3bb22d52a6e9eddbd8f259f7d08e508a}{data2grid} (self, xd, yd)
+\item 
+def \hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a747aa575586229e784ac60d5b5b4c959}{grid2data} (self, xg, yg)
+\item 
+def \hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a54c757d4ce71adbd855ae8521600c0c3}{start\+\_\+trajectory} (self, xg, yg)
+\item 
+def \hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a0ff362dd422a03736981268fd01e8a80}{reset\+\_\+start\+\_\+point} (self, xg, yg)
+\item 
+def \hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a8a1577f009298ec9d9af3bcf4bac12ca}{update\+\_\+trajectory} (self, xg, yg)
+\item 
+def \hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_ae384591faa4ee95658d578462b9c7020}{undo\+\_\+trajectory} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a50a523f858cbd2ebb6227242d5d788a7}{grid}
+\item 
+\hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_ada03814a04e3b9e77d2adc6768d16801}{mask}
+\item 
+\hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a884de7078787444b8f76af4b15f6a69b}{x\+\_\+grid2mask}
+\item 
+\hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a997aa780c68bb1863133f9f16a9aecdb}{y\+\_\+grid2mask}
+\item 
+\hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a119e59e4c9e08e3b9726ecf703c369ba}{x\+\_\+mask2grid}
+\item 
+\hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_a3bc2a02209ad836c8fa4ba97d63e7cde}{y\+\_\+mask2grid}
+\item 
+\hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_ae4aef37e39c92a11fdd0d10f0d05d97d}{x\+\_\+data2grid}
+\item 
+\hyperlink{classmatplotlib_1_1streamplot_1_1DomainMap_ab13db5b7861d309e2294679c3c87303c}{y\+\_\+data2grid}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Map representing different coordinate systems.
+
+Coordinate definitions:
+
+* axes-coordinates goes from 0 to 1 in the domain.
+* data-coordinates are specified by the input x-y coordinates.
+* grid-coordinates goes from 0 to N and 0 to M for an N x M grid,
+  where N and M match the shape of the input data.
+* mask-coordinates goes from 0 to N and 0 to M for an N x M mask,
+  where N and M are user-specified to control the density of streamlines.
+
+This class also has methods for adding trajectories to the StreamMask.
+Before adding a trajectory, run `start_trajectory` to keep track of regions
+crossed by a given trajectory. Later, if you decide the trajectory is bad
+(e.g., if the trajectory is very short) just call `undo_trajectory`.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a7926baa65be58918d596fc5a3679b5a4}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a7926baa65be58918d596fc5a3679b5a4}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+streamplot.\+Domain\+Map.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{grid,  }\item[{}]{mask }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a3bb22d52a6e9eddbd8f259f7d08e508a}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a3bb22d52a6e9eddbd8f259f7d08e508a}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!data2grid@{data2grid}}
+\index{data2grid@{data2grid}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{data2grid()}{data2grid()}}
+{\footnotesize\ttfamily def matplotlib.\+streamplot.\+Domain\+Map.\+data2grid (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xd,  }\item[{}]{yd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a747aa575586229e784ac60d5b5b4c959}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a747aa575586229e784ac60d5b5b4c959}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!grid2data@{grid2data}}
+\index{grid2data@{grid2data}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{grid2data()}{grid2data()}}
+{\footnotesize\ttfamily def matplotlib.\+streamplot.\+Domain\+Map.\+grid2data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xg,  }\item[{}]{yg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a51f106dfc75535497a37f756f1431017}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a51f106dfc75535497a37f756f1431017}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!grid2mask@{grid2mask}}
+\index{grid2mask@{grid2mask}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{grid2mask()}{grid2mask()}}
+{\footnotesize\ttfamily def matplotlib.\+streamplot.\+Domain\+Map.\+grid2mask (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xi,  }\item[{}]{yi }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return nearest space in mask-coords from given grid-coords.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a69bf476af9c6d209c28c4b965f6ce38c}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a69bf476af9c6d209c28c4b965f6ce38c}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!mask2grid@{mask2grid}}
+\index{mask2grid@{mask2grid}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{mask2grid()}{mask2grid()}}
+{\footnotesize\ttfamily def matplotlib.\+streamplot.\+Domain\+Map.\+mask2grid (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xm,  }\item[{}]{ym }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a0ff362dd422a03736981268fd01e8a80}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a0ff362dd422a03736981268fd01e8a80}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!reset\+\_\+start\+\_\+point@{reset\+\_\+start\+\_\+point}}
+\index{reset\+\_\+start\+\_\+point@{reset\+\_\+start\+\_\+point}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{reset\+\_\+start\+\_\+point()}{reset\_start\_point()}}
+{\footnotesize\ttfamily def matplotlib.\+streamplot.\+Domain\+Map.\+reset\+\_\+start\+\_\+point (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xg,  }\item[{}]{yg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a54c757d4ce71adbd855ae8521600c0c3}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a54c757d4ce71adbd855ae8521600c0c3}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!start\+\_\+trajectory@{start\+\_\+trajectory}}
+\index{start\+\_\+trajectory@{start\+\_\+trajectory}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{start\+\_\+trajectory()}{start\_trajectory()}}
+{\footnotesize\ttfamily def matplotlib.\+streamplot.\+Domain\+Map.\+start\+\_\+trajectory (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xg,  }\item[{}]{yg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_ae384591faa4ee95658d578462b9c7020}\label{classmatplotlib_1_1streamplot_1_1DomainMap_ae384591faa4ee95658d578462b9c7020}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!undo\+\_\+trajectory@{undo\+\_\+trajectory}}
+\index{undo\+\_\+trajectory@{undo\+\_\+trajectory}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{undo\+\_\+trajectory()}{undo\_trajectory()}}
+{\footnotesize\ttfamily def matplotlib.\+streamplot.\+Domain\+Map.\+undo\+\_\+trajectory (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a8a1577f009298ec9d9af3bcf4bac12ca}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a8a1577f009298ec9d9af3bcf4bac12ca}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!update\+\_\+trajectory@{update\+\_\+trajectory}}
+\index{update\+\_\+trajectory@{update\+\_\+trajectory}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{update\+\_\+trajectory()}{update\_trajectory()}}
+{\footnotesize\ttfamily def matplotlib.\+streamplot.\+Domain\+Map.\+update\+\_\+trajectory (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xg,  }\item[{}]{yg }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a50a523f858cbd2ebb6227242d5d788a7}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a50a523f858cbd2ebb6227242d5d788a7}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!grid@{grid}}
+\index{grid@{grid}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{grid}{grid}}
+{\footnotesize\ttfamily matplotlib.\+streamplot.\+Domain\+Map.\+grid}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_ada03814a04e3b9e77d2adc6768d16801}\label{classmatplotlib_1_1streamplot_1_1DomainMap_ada03814a04e3b9e77d2adc6768d16801}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!mask@{mask}}
+\index{mask@{mask}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{mask}{mask}}
+{\footnotesize\ttfamily matplotlib.\+streamplot.\+Domain\+Map.\+mask}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_ae4aef37e39c92a11fdd0d10f0d05d97d}\label{classmatplotlib_1_1streamplot_1_1DomainMap_ae4aef37e39c92a11fdd0d10f0d05d97d}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!x\+\_\+data2grid@{x\+\_\+data2grid}}
+\index{x\+\_\+data2grid@{x\+\_\+data2grid}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{x\+\_\+data2grid}{x\_data2grid}}
+{\footnotesize\ttfamily matplotlib.\+streamplot.\+Domain\+Map.\+x\+\_\+data2grid}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a884de7078787444b8f76af4b15f6a69b}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a884de7078787444b8f76af4b15f6a69b}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!x\+\_\+grid2mask@{x\+\_\+grid2mask}}
+\index{x\+\_\+grid2mask@{x\+\_\+grid2mask}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{x\+\_\+grid2mask}{x\_grid2mask}}
+{\footnotesize\ttfamily matplotlib.\+streamplot.\+Domain\+Map.\+x\+\_\+grid2mask}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a119e59e4c9e08e3b9726ecf703c369ba}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a119e59e4c9e08e3b9726ecf703c369ba}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!x\+\_\+mask2grid@{x\+\_\+mask2grid}}
+\index{x\+\_\+mask2grid@{x\+\_\+mask2grid}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{x\+\_\+mask2grid}{x\_mask2grid}}
+{\footnotesize\ttfamily matplotlib.\+streamplot.\+Domain\+Map.\+x\+\_\+mask2grid}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_ab13db5b7861d309e2294679c3c87303c}\label{classmatplotlib_1_1streamplot_1_1DomainMap_ab13db5b7861d309e2294679c3c87303c}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!y\+\_\+data2grid@{y\+\_\+data2grid}}
+\index{y\+\_\+data2grid@{y\+\_\+data2grid}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{y\+\_\+data2grid}{y\_data2grid}}
+{\footnotesize\ttfamily matplotlib.\+streamplot.\+Domain\+Map.\+y\+\_\+data2grid}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a997aa780c68bb1863133f9f16a9aecdb}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a997aa780c68bb1863133f9f16a9aecdb}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!y\+\_\+grid2mask@{y\+\_\+grid2mask}}
+\index{y\+\_\+grid2mask@{y\+\_\+grid2mask}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{y\+\_\+grid2mask}{y\_grid2mask}}
+{\footnotesize\ttfamily matplotlib.\+streamplot.\+Domain\+Map.\+y\+\_\+grid2mask}
+
+\mbox{\Hypertarget{classmatplotlib_1_1streamplot_1_1DomainMap_a3bc2a02209ad836c8fa4ba97d63e7cde}\label{classmatplotlib_1_1streamplot_1_1DomainMap_a3bc2a02209ad836c8fa4ba97d63e7cde}} 
+\index{matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}!y\+\_\+mask2grid@{y\+\_\+mask2grid}}
+\index{y\+\_\+mask2grid@{y\+\_\+mask2grid}!matplotlib\+::streamplot\+::\+Domain\+Map@{matplotlib\+::streamplot\+::\+Domain\+Map}}
+\subsubsection{\texorpdfstring{y\+\_\+mask2grid}{y\_mask2grid}}
+{\footnotesize\ttfamily matplotlib.\+streamplot.\+Domain\+Map.\+y\+\_\+mask2grid}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{streamplot_8py}{streamplot.\+py}\end{DoxyCompactItemize}

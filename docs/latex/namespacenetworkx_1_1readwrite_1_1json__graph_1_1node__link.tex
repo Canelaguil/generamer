@@ -1,0 +1,169 @@
+\hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link}{}\section{networkx.\+readwrite.\+json\+\_\+graph.\+node\+\_\+link Namespace Reference}
+\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link}\index{networkx.\+readwrite.\+json\+\_\+graph.\+node\+\_\+link@{networkx.\+readwrite.\+json\+\_\+graph.\+node\+\_\+link}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_a6dddc87ccc630fe3ad6138983ad1c104}{node\+\_\+link\+\_\+data} (G, attrs=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_a3afa2ab08fa08b84be93a597b78a306b}{node\+\_\+link\+\_\+graph} (data, directed=False, multigraph=True, attrs=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_af3d9612f4911f15a5eb87b708d58239d}{source}
+\item 
+\hyperlink{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_a7c79ceda904b7d339eafa76529539622}{target}
+\item 
+\hyperlink{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_aa4902f5534fdd51191b3f6b84e5c032a}{name}
+\item 
+\hyperlink{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_a2fd1ba094fcb4f8118f87826eb942768}{key}
+\item 
+\hyperlink{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_ad5ccfbdf80c0170775bdca3015710abe}{link}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_a6dddc87ccc630fe3ad6138983ad1c104}\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_a6dddc87ccc630fe3ad6138983ad1c104}} 
+\index{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}!node\+\_\+link\+\_\+data@{node\+\_\+link\+\_\+data}}
+\index{node\+\_\+link\+\_\+data@{node\+\_\+link\+\_\+data}!networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}}
+\subsubsection{\texorpdfstring{node\+\_\+link\+\_\+data()}{node\_link\_data()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+json\+\_\+graph.\+node\+\_\+link.\+node\+\_\+link\+\_\+data (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{attrs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns data in node-link format that is suitable for JSON serialization
+and use in Javascript documents.
+
+Parameters
+----------
+G : NetworkX graph
+
+attrs : dict
+    A dictionary that contains five keys 'source', 'target', 'name',
+    'key' and 'link'.  The corresponding values provide the attribute
+    names for storing NetworkX-internal graph data.  The values should
+    be unique.  Default value::
+
+        dict(source='source', target='target', name='id',
+             key='key', link='links')
+
+    If some user-defined graph data use these attribute names as data keys,
+    they may be silently dropped.
+
+Returns
+-------
+data : dict
+   A dictionary with node-link formatted data.
+
+Raises
+------
+NetworkXError
+    If values in attrs are not unique.
+
+Examples
+--------
+>>> from networkx.readwrite import json_graph
+>>> G = nx.Graph([("A", "B")])
+>>> data1 = json_graph.node_link_data(G)
+>>> H = nx.gn_graph(2)
+>>> data2 = json_graph.node_link_data(
+...     H, {"link": "edges", "source": "from", "target": "to"}
+... )
+
+To serialize with json
+
+>>> import json
+>>> s1 = json.dumps(data1)
+>>> s2 = json.dumps(
+...     data2, default={"link": "edges", "source": "from", "target": "to"}
+... )
+
+Notes
+-----
+Graph, node, and link attributes are stored in this format.  Note that
+attribute keys will be converted to strings in order to comply with JSON.
+
+Attribute 'key' is only used for multigraphs.
+
+See Also
+--------
+node_link_graph, adjacency_data, tree_data
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_a3afa2ab08fa08b84be93a597b78a306b}\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_a3afa2ab08fa08b84be93a597b78a306b}} 
+\index{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}!node\+\_\+link\+\_\+graph@{node\+\_\+link\+\_\+graph}}
+\index{node\+\_\+link\+\_\+graph@{node\+\_\+link\+\_\+graph}!networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}}
+\subsubsection{\texorpdfstring{node\+\_\+link\+\_\+graph()}{node\_link\_graph()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+json\+\_\+graph.\+node\+\_\+link.\+node\+\_\+link\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{directed = {\ttfamily False},  }\item[{}]{multigraph = {\ttfamily True},  }\item[{}]{attrs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns graph from node-link data format.
+
+Parameters
+----------
+data : dict
+    node-link formatted graph data
+
+directed : bool
+    If True, and direction not specified in data, return a directed graph.
+
+multigraph : bool
+    If True, and multigraph not specified in data, return a multigraph.
+
+attrs : dict
+    A dictionary that contains five keys 'source', 'target', 'name',
+    'key' and 'link'.  The corresponding values provide the attribute
+    names for storing NetworkX-internal graph data.  Default value:
+
+        dict(source='source', target='target', name='id',
+            key='key', link='links')
+
+Returns
+-------
+G : NetworkX graph
+    A NetworkX graph object
+
+Examples
+--------
+>>> from networkx.readwrite import json_graph
+>>> G = nx.Graph([("A", "B")])
+>>> data = json_graph.node_link_data(G)
+>>> H = json_graph.node_link_graph(data)
+
+Notes
+-----
+Attribute 'key' is only used for multigraphs.
+
+See Also
+--------
+node_link_data, adjacency_data, tree_data
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_a2fd1ba094fcb4f8118f87826eb942768}\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_a2fd1ba094fcb4f8118f87826eb942768}} 
+\index{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}!key@{key}}
+\index{key@{key}!networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}}
+\subsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+json\+\_\+graph.\+node\+\_\+link.\+key}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_ad5ccfbdf80c0170775bdca3015710abe}\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_ad5ccfbdf80c0170775bdca3015710abe}} 
+\index{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}!link@{link}}
+\index{link@{link}!networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}}
+\subsubsection{\texorpdfstring{link}{link}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+json\+\_\+graph.\+node\+\_\+link.\+link}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_aa4902f5534fdd51191b3f6b84e5c032a}\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_aa4902f5534fdd51191b3f6b84e5c032a}} 
+\index{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}!name@{name}}
+\index{name@{name}!networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+json\+\_\+graph.\+node\+\_\+link.\+name}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_af3d9612f4911f15a5eb87b708d58239d}\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_af3d9612f4911f15a5eb87b708d58239d}} 
+\index{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}!source@{source}}
+\index{source@{source}!networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}}
+\subsubsection{\texorpdfstring{source}{source}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+json\+\_\+graph.\+node\+\_\+link.\+source}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_a7c79ceda904b7d339eafa76529539622}\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1node__link_a7c79ceda904b7d339eafa76529539622}} 
+\index{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}!target@{target}}
+\index{target@{target}!networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link@{networkx\+::readwrite\+::json\+\_\+graph\+::node\+\_\+link}}
+\subsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+json\+\_\+graph.\+node\+\_\+link.\+target}
+

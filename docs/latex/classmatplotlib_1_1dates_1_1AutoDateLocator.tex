@@ -1,0 +1,178 @@
+\hypertarget{classmatplotlib_1_1dates_1_1AutoDateLocator}{}\section{matplotlib.\+dates.\+Auto\+Date\+Locator Class Reference}
+\label{classmatplotlib_1_1dates_1_1AutoDateLocator}\index{matplotlib.\+dates.\+Auto\+Date\+Locator@{matplotlib.\+dates.\+Auto\+Date\+Locator}}
+
+
+Inheritance diagram for matplotlib.\+dates.\+Auto\+Date\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classmatplotlib_1_1dates_1_1AutoDateLocator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+dates.\+Auto\+Date\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classmatplotlib_1_1dates_1_1AutoDateLocator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1AutoDateLocator_ad00e4d357d7b24a5f51861ee62bcb81d}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1dates_1_1DateLocator_aa18faf34dbf00ed4820535b64cd7194e}{tz}=None, \hyperlink{classmatplotlib_1_1dates_1_1AutoDateLocator_a3c9772d4e997c861a625f5ac6dc8426b}{minticks}=5, \hyperlink{classmatplotlib_1_1dates_1_1AutoDateLocator_aee36818b4fe02ff583ede0f7e8cba583}{maxticks}=None, \hyperlink{classmatplotlib_1_1dates_1_1AutoDateLocator_a52fbc40022f309b8901e265465e3c0f0}{interval\+\_\+multiples}=True)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1AutoDateLocator_a97ef3f072d16af63adf1ac26e26a436e}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1AutoDateLocator_a63eb45a6809e7f028e64633838639fa6}{tick\+\_\+values} (self, vmin, vmax)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1AutoDateLocator_a99518bb7db17b6315349ac4db4f2dc00}{nonsingular} (self, vmin, vmax)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1AutoDateLocator_a2d726a7808b13a1ae3b3e00dfb9a4e2c}{get\+\_\+locator} (self, dmin, dmax)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1AutoDateLocator_a3c9772d4e997c861a625f5ac6dc8426b}{minticks}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1AutoDateLocator_aee36818b4fe02ff583ede0f7e8cba583}{maxticks}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1AutoDateLocator_a52fbc40022f309b8901e265465e3c0f0}{interval\+\_\+multiples}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1AutoDateLocator_a1864bf3cf0382c202fc1199e40dab156}{intervald}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}On autoscale, this class picks the best `DateLocator` to set the view
+limits and the tick locations.
+
+Attributes
+----------
+intervald : dict
+
+    Mapping of tick frequencies to multiples allowed for that ticking.
+    The default is ::
+
+        self.intervald = {
+            YEARLY  : [1, 2, 4, 5, 10, 20, 40, 50, 100, 200, 400, 500,
+                       1000, 2000, 4000, 5000, 10000],
+            MONTHLY : [1, 2, 3, 4, 6],
+            DAILY   : [1, 2, 3, 7, 14, 21],
+            HOURLY  : [1, 2, 3, 4, 6, 12],
+            MINUTELY: [1, 5, 10, 15, 30],
+            SECONDLY: [1, 5, 10, 15, 30],
+            MICROSECONDLY: [1, 2, 5, 10, 20, 50, 100, 200, 500,
+                            1000, 2000, 5000, 10000, 20000, 50000,
+                            100000, 200000, 500000, 1000000],
+        }
+
+    where the keys are defined in `dateutil.rrule`.
+
+    The interval is used to specify multiples that are appropriate for
+    the frequency of ticking. For instance, every 7 days is sensible
+    for daily ticks, but for minutes/seconds, 15 or 30 make sense.
+
+    When customizing, you should only modify the values for the existing
+    keys. You should not add or delete entries.
+
+    Example for forcing ticks every 3 hours::
+
+        locator = AutoDateLocator()
+        locator.intervald[HOURLY] = [3]  # only show every 3 hours
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateLocator_ad00e4d357d7b24a5f51861ee62bcb81d}\label{classmatplotlib_1_1dates_1_1AutoDateLocator_ad00e4d357d7b24a5f51861ee62bcb81d}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Auto\+Date\+Locator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tz = {\ttfamily None},  }\item[{}]{minticks = {\ttfamily 5},  }\item[{}]{maxticks = {\ttfamily None},  }\item[{}]{interval\+\_\+multiples = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+tz : `datetime.tzinfo`
+    Ticks timezone.
+minticks : int
+    The minimum number of ticks desired; controls whether ticks occur
+    yearly, monthly, etc.
+maxticks : int
+    The maximum number of ticks desired; controls the interval between
+    ticks (ticking every other, every 3, etc.).  For fine-grained
+    control, this can be a dictionary mapping individual rrule
+    frequency constants (YEARLY, MONTHLY, etc.) to their own maximum
+    number of ticks.  This can be used to keep the number of ticks
+    appropriate to the format chosen in `AutoDateFormatter`. Any
+    frequency not specified in this dictionary is given a default
+    value.
+interval_multiples : bool, default: True
+    Whether ticks should be chosen to be multiple of the interval,
+    locking them to 'nicer' locations.  For example, this will force
+    the ticks to be at hours 0, 6, 12, 18 when hourly ticking is done
+    at 6 hour intervals.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateLocator_a97ef3f072d16af63adf1ac26e26a436e}\label{classmatplotlib_1_1dates_1_1AutoDateLocator_a97ef3f072d16af63adf1ac26e26a436e}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Auto\+Date\+Locator.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateLocator_a2d726a7808b13a1ae3b3e00dfb9a4e2c}\label{classmatplotlib_1_1dates_1_1AutoDateLocator_a2d726a7808b13a1ae3b3e00dfb9a4e2c}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}!get\+\_\+locator@{get\+\_\+locator}}
+\index{get\+\_\+locator@{get\+\_\+locator}!matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}}
+\subsubsection{\texorpdfstring{get\+\_\+locator()}{get\_locator()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Auto\+Date\+Locator.\+get\+\_\+locator (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dmin,  }\item[{}]{dmax }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Pick the best locator based on a distance.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateLocator_a99518bb7db17b6315349ac4db4f2dc00}\label{classmatplotlib_1_1dates_1_1AutoDateLocator_a99518bb7db17b6315349ac4db4f2dc00}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}!nonsingular@{nonsingular}}
+\index{nonsingular@{nonsingular}!matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}}
+\subsubsection{\texorpdfstring{nonsingular()}{nonsingular()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Auto\+Date\+Locator.\+nonsingular (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateLocator_a63eb45a6809e7f028e64633838639fa6}\label{classmatplotlib_1_1dates_1_1AutoDateLocator_a63eb45a6809e7f028e64633838639fa6}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}!tick\+\_\+values@{tick\+\_\+values}}
+\index{tick\+\_\+values@{tick\+\_\+values}!matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}}
+\subsubsection{\texorpdfstring{tick\+\_\+values()}{tick\_values()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Auto\+Date\+Locator.\+tick\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateLocator_a52fbc40022f309b8901e265465e3c0f0}\label{classmatplotlib_1_1dates_1_1AutoDateLocator_a52fbc40022f309b8901e265465e3c0f0}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}!interval\+\_\+multiples@{interval\+\_\+multiples}}
+\index{interval\+\_\+multiples@{interval\+\_\+multiples}!matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}}
+\subsubsection{\texorpdfstring{interval\+\_\+multiples}{interval\_multiples}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Auto\+Date\+Locator.\+interval\+\_\+multiples}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateLocator_a1864bf3cf0382c202fc1199e40dab156}\label{classmatplotlib_1_1dates_1_1AutoDateLocator_a1864bf3cf0382c202fc1199e40dab156}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}!intervald@{intervald}}
+\index{intervald@{intervald}!matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}}
+\subsubsection{\texorpdfstring{intervald}{intervald}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Auto\+Date\+Locator.\+intervald}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateLocator_aee36818b4fe02ff583ede0f7e8cba583}\label{classmatplotlib_1_1dates_1_1AutoDateLocator_aee36818b4fe02ff583ede0f7e8cba583}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}!maxticks@{maxticks}}
+\index{maxticks@{maxticks}!matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}}
+\subsubsection{\texorpdfstring{maxticks}{maxticks}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Auto\+Date\+Locator.\+maxticks}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1AutoDateLocator_a3c9772d4e997c861a625f5ac6dc8426b}\label{classmatplotlib_1_1dates_1_1AutoDateLocator_a3c9772d4e997c861a625f5ac6dc8426b}} 
+\index{matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}!minticks@{minticks}}
+\index{minticks@{minticks}!matplotlib\+::dates\+::\+Auto\+Date\+Locator@{matplotlib\+::dates\+::\+Auto\+Date\+Locator}}
+\subsubsection{\texorpdfstring{minticks}{minticks}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Auto\+Date\+Locator.\+minticks}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{dates_8py}{dates.\+py}\end{DoxyCompactItemize}

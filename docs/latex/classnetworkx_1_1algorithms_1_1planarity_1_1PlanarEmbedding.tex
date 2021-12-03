@@ -1,0 +1,374 @@
+\hypertarget{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding}{}\section{networkx.\+algorithms.\+planarity.\+Planar\+Embedding Class Reference}
+\label{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding}\index{networkx.\+algorithms.\+planarity.\+Planar\+Embedding@{networkx.\+algorithms.\+planarity.\+Planar\+Embedding}}
+
+
+Inheritance diagram for networkx.\+algorithms.\+planarity.\+Planar\+Embedding\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for networkx.\+algorithms.\+planarity.\+Planar\+Embedding\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a23df90920ee302d2f8a5a0b93e352fa2}{get\+\_\+data} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_af42aa6cf4751eb81f7439c1f04b36e74}{set\+\_\+data} (self, data)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a22bee82f35b6940d51353ef5d6a92690}{neighbors\+\_\+cw\+\_\+order} (self, v)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a05c1cfdd3a6c1ea0720a12bdae0681a7}{check\+\_\+structure} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a83162c25d4361f39d128074422677ef0}{add\+\_\+half\+\_\+edge\+\_\+ccw} (self, start\+\_\+node, end\+\_\+node, reference\+\_\+neighbor)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a7076b5d10c8076b752010b799d49acc6}{add\+\_\+half\+\_\+edge\+\_\+cw} (self, start\+\_\+node, end\+\_\+node, reference\+\_\+neighbor)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a49f661cc1da51d624ea821680adc7229}{connect\+\_\+components} (self, v, w)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a05923dc85b14af72865ae50d366fc95d}{add\+\_\+half\+\_\+edge\+\_\+first} (self, start\+\_\+node, end\+\_\+node)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a9bca15383a6ad062a1b614046fcfe314}{next\+\_\+face\+\_\+half\+\_\+edge} (self, v, w)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a86753a214cd378f66e4c6c3badba79c0}{traverse\+\_\+face} (self, v, w, mark\+\_\+half\+\_\+edges=None)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a33736436ddce67cafd7effe227676773}{is\+\_\+directed} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Represents a planar graph with its planar embedding.
+
+The planar embedding is given by a `combinatorial embedding
+<https://en.wikipedia.org/wiki/Graph_embedding#Combinatorial_embedding>`_.
+
+**Neighbor ordering:**
+
+In comparison to a usual graph structure, the embedding also stores the
+order of all neighbors for every vertex.
+The order of the neighbors can be given in clockwise (cw) direction or
+counterclockwise (ccw) direction. This order is stored as edge attributes
+in the underlying directed graph. For the edge (u, v) the edge attribute
+'cw' is set to the neighbor of u that follows immediately after v in
+clockwise direction.
+
+In order for a PlanarEmbedding to be valid it must fulfill multiple
+conditions. It is possible to check if these conditions are fulfilled with
+the method :meth:`check_structure`.
+The conditions are:
+
+* Edges must go in both directions (because the edge attributes differ)
+* Every edge must have a 'cw' and 'ccw' attribute which corresponds to a
+  correct planar embedding.
+* A node with non zero degree must have a node attribute 'first_nbr'.
+
+As long as a PlanarEmbedding is invalid only the following methods should
+be called:
+
+* :meth:`add_half_edge_ccw`
+* :meth:`add_half_edge_cw`
+* :meth:`connect_components`
+* :meth:`add_half_edge_first`
+
+Even though the graph is a subclass of nx.DiGraph, it can still be used
+for algorithms that require undirected graphs, because the method
+:meth:`is_directed` is overridden. This is possible, because a valid
+PlanarGraph must have edges in both directions.
+
+**Half edges:**
+
+In methods like `add_half_edge_ccw` the term "half-edge" is used, which is
+a term that is used in `doubly connected edge lists
+<https://en.wikipedia.org/wiki/Doubly_connected_edge_list>`_. It is used
+to emphasize that the edge is only in one direction and there exists
+another half-edge in the opposite direction.
+While conventional edges always have two faces (including outer face) next
+to them, it is possible to assign each half-edge *exactly one* face.
+For a half-edge (u, v) that is orientated such that u is below v then the
+face that belongs to (u, v) is to the right of this half-edge.
+
+Examples
+--------
+
+Create an embedding of a star graph (compare `nx.star_graph(3)`):
+
+>>> G = nx.PlanarEmbedding()
+>>> G.add_half_edge_cw(0, 1, None)
+>>> G.add_half_edge_cw(0, 2, 1)
+>>> G.add_half_edge_cw(0, 3, 2)
+>>> G.add_half_edge_cw(1, 0, None)
+>>> G.add_half_edge_cw(2, 0, None)
+>>> G.add_half_edge_cw(3, 0, None)
+
+Alternatively the same embedding can also be defined in counterclockwise
+orientation. The following results in exactly the same PlanarEmbedding:
+
+>>> G = nx.PlanarEmbedding()
+>>> G.add_half_edge_ccw(0, 1, None)
+>>> G.add_half_edge_ccw(0, 3, 1)
+>>> G.add_half_edge_ccw(0, 2, 3)
+>>> G.add_half_edge_ccw(1, 0, None)
+>>> G.add_half_edge_ccw(2, 0, None)
+>>> G.add_half_edge_ccw(3, 0, None)
+
+After creating a graph, it is possible to validate that the PlanarEmbedding
+object is correct:
+
+>>> G.check_structure()\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a83162c25d4361f39d128074422677ef0}\label{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a83162c25d4361f39d128074422677ef0}} 
+\index{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}!add\+\_\+half\+\_\+edge\+\_\+ccw@{add\+\_\+half\+\_\+edge\+\_\+ccw}}
+\index{add\+\_\+half\+\_\+edge\+\_\+ccw@{add\+\_\+half\+\_\+edge\+\_\+ccw}!networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}}
+\subsubsection{\texorpdfstring{add\+\_\+half\+\_\+edge\+\_\+ccw()}{add\_half\_edge\_ccw()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+Planar\+Embedding.\+add\+\_\+half\+\_\+edge\+\_\+ccw (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{start\+\_\+node,  }\item[{}]{end\+\_\+node,  }\item[{}]{reference\+\_\+neighbor }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a half-edge from start_node to end_node.
+
+The half-edge is added counter clockwise next to the existing half-edge
+(start_node, reference_neighbor).
+
+Parameters
+----------
+start_node : node
+    Start node of inserted edge.
+end_node : node
+    End node of inserted edge.
+reference_neighbor: node
+    End node of reference edge.
+
+Raises
+------
+NetworkXException
+    If the reference_neighbor does not exist.
+
+See Also
+--------
+add_half_edge_cw
+connect_components
+add_half_edge_first\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a7076b5d10c8076b752010b799d49acc6}\label{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a7076b5d10c8076b752010b799d49acc6}} 
+\index{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}!add\+\_\+half\+\_\+edge\+\_\+cw@{add\+\_\+half\+\_\+edge\+\_\+cw}}
+\index{add\+\_\+half\+\_\+edge\+\_\+cw@{add\+\_\+half\+\_\+edge\+\_\+cw}!networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}}
+\subsubsection{\texorpdfstring{add\+\_\+half\+\_\+edge\+\_\+cw()}{add\_half\_edge\_cw()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+Planar\+Embedding.\+add\+\_\+half\+\_\+edge\+\_\+cw (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{start\+\_\+node,  }\item[{}]{end\+\_\+node,  }\item[{}]{reference\+\_\+neighbor }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a half-edge from start_node to end_node.
+
+The half-edge is added clockwise next to the existing half-edge
+(start_node, reference_neighbor).
+
+Parameters
+----------
+start_node : node
+    Start node of inserted edge.
+end_node : node
+    End node of inserted edge.
+reference_neighbor: node
+    End node of reference edge.
+
+Raises
+------
+NetworkXException
+    If the reference_neighbor does not exist.
+
+See Also
+--------
+add_half_edge_ccw
+connect_components
+add_half_edge_first
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a05923dc85b14af72865ae50d366fc95d}\label{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a05923dc85b14af72865ae50d366fc95d}} 
+\index{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}!add\+\_\+half\+\_\+edge\+\_\+first@{add\+\_\+half\+\_\+edge\+\_\+first}}
+\index{add\+\_\+half\+\_\+edge\+\_\+first@{add\+\_\+half\+\_\+edge\+\_\+first}!networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}}
+\subsubsection{\texorpdfstring{add\+\_\+half\+\_\+edge\+\_\+first()}{add\_half\_edge\_first()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+Planar\+Embedding.\+add\+\_\+half\+\_\+edge\+\_\+first (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{start\+\_\+node,  }\item[{}]{end\+\_\+node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The added half-edge is inserted at the first position in the order.
+
+Parameters
+----------
+start_node : node
+end_node : node
+
+See Also
+--------
+add_half_edge_ccw
+add_half_edge_cw
+connect_components
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a05c1cfdd3a6c1ea0720a12bdae0681a7}\label{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a05c1cfdd3a6c1ea0720a12bdae0681a7}} 
+\index{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}!check\+\_\+structure@{check\+\_\+structure}}
+\index{check\+\_\+structure@{check\+\_\+structure}!networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}}
+\subsubsection{\texorpdfstring{check\+\_\+structure()}{check\_structure()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+Planar\+Embedding.\+check\+\_\+structure (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Runs without exceptions if this object is valid.
+
+Checks that the following properties are fulfilled:
+
+* Edges go in both directions (because the edge attributes differ).
+* Every edge has a 'cw' and 'ccw' attribute which corresponds to a
+  correct planar embedding.
+* A node with a degree larger than 0 has a node attribute 'first_nbr'.
+
+Running this method verifies that the underlying Graph must be planar.
+
+Raises
+------
+NetworkXException
+    This exception is raised with a short explanation if the
+    PlanarEmbedding is invalid.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a49f661cc1da51d624ea821680adc7229}\label{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a49f661cc1da51d624ea821680adc7229}} 
+\index{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}!connect\+\_\+components@{connect\+\_\+components}}
+\index{connect\+\_\+components@{connect\+\_\+components}!networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}}
+\subsubsection{\texorpdfstring{connect\+\_\+components()}{connect\_components()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+Planar\+Embedding.\+connect\+\_\+components (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{v,  }\item[{}]{w }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds half-edges for (v, w) and (w, v) at some position.
+
+This method should only be called if v and w are in different
+components, or it might break the embedding.
+This especially means that if `connect_components(v, w)`
+is called it is not allowed to call `connect_components(w, v)`
+afterwards. The neighbor orientations in both directions are
+all set correctly after the first call.
+
+Parameters
+----------
+v : node
+w : node
+
+See Also
+--------
+add_half_edge_ccw
+add_half_edge_cw
+add_half_edge_first
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a23df90920ee302d2f8a5a0b93e352fa2}\label{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a23df90920ee302d2f8a5a0b93e352fa2}} 
+\index{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}!get\+\_\+data@{get\+\_\+data}}
+\index{get\+\_\+data@{get\+\_\+data}!networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}}
+\subsubsection{\texorpdfstring{get\+\_\+data()}{get\_data()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+Planar\+Embedding.\+get\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Converts the adjacency structure into a better readable structure.
+
+Returns
+-------
+embedding : dict
+    A dict mapping all nodes to a list of neighbors sorted in
+    clockwise order.
+
+See Also
+--------
+set_data\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a33736436ddce67cafd7effe227676773}\label{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a33736436ddce67cafd7effe227676773}} 
+\index{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}!is\+\_\+directed@{is\+\_\+directed}}
+\index{is\+\_\+directed@{is\+\_\+directed}!networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}}
+\subsubsection{\texorpdfstring{is\+\_\+directed()}{is\_directed()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+Planar\+Embedding.\+is\+\_\+directed (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A valid PlanarEmbedding is undirected.
+
+All reverse edges are contained, i.e. for every existing
+half-edge (v, w) the half-edge in the opposite direction (w, v) is also
+contained.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a22bee82f35b6940d51353ef5d6a92690}\label{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a22bee82f35b6940d51353ef5d6a92690}} 
+\index{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}!neighbors\+\_\+cw\+\_\+order@{neighbors\+\_\+cw\+\_\+order}}
+\index{neighbors\+\_\+cw\+\_\+order@{neighbors\+\_\+cw\+\_\+order}!networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}}
+\subsubsection{\texorpdfstring{neighbors\+\_\+cw\+\_\+order()}{neighbors\_cw\_order()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+Planar\+Embedding.\+neighbors\+\_\+cw\+\_\+order (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{v }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generator for the neighbors of v in clockwise order.
+
+Parameters
+----------
+v : node
+
+Yields
+------
+node\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a9bca15383a6ad062a1b614046fcfe314}\label{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a9bca15383a6ad062a1b614046fcfe314}} 
+\index{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}!next\+\_\+face\+\_\+half\+\_\+edge@{next\+\_\+face\+\_\+half\+\_\+edge}}
+\index{next\+\_\+face\+\_\+half\+\_\+edge@{next\+\_\+face\+\_\+half\+\_\+edge}!networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}}
+\subsubsection{\texorpdfstring{next\+\_\+face\+\_\+half\+\_\+edge()}{next\_face\_half\_edge()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+Planar\+Embedding.\+next\+\_\+face\+\_\+half\+\_\+edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{v,  }\item[{}]{w }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the following half-edge left of a face.
+
+Parameters
+----------
+v : node
+w : node
+
+Returns
+-------
+half-edge : tuple
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_af42aa6cf4751eb81f7439c1f04b36e74}\label{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_af42aa6cf4751eb81f7439c1f04b36e74}} 
+\index{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}!set\+\_\+data@{set\+\_\+data}}
+\index{set\+\_\+data@{set\+\_\+data}!networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}}
+\subsubsection{\texorpdfstring{set\+\_\+data()}{set\_data()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+Planar\+Embedding.\+set\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Inserts edges according to given sorted neighbor list.
+
+The input format is the same as the output format of get_data().
+
+Parameters
+----------
+data : dict
+    A dict mapping all nodes to a list of neighbors sorted in
+    clockwise order.
+
+See Also
+--------
+get_data\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a86753a214cd378f66e4c6c3badba79c0}\label{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding_a86753a214cd378f66e4c6c3badba79c0}} 
+\index{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}!traverse\+\_\+face@{traverse\+\_\+face}}
+\index{traverse\+\_\+face@{traverse\+\_\+face}!networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding@{networkx\+::algorithms\+::planarity\+::\+Planar\+Embedding}}
+\subsubsection{\texorpdfstring{traverse\+\_\+face()}{traverse\_face()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+Planar\+Embedding.\+traverse\+\_\+face (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{v,  }\item[{}]{w,  }\item[{}]{mark\+\_\+half\+\_\+edges = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns nodes on the face that belong to the half-edge (v, w).
+
+The face that is traversed lies to the right of the half-edge (in an
+orientation where v is below w).
+
+Optionally it is possible to pass a set to which all encountered half
+edges are added. Before calling this method, this set must not include
+any half-edges that belong to the face.
+
+Parameters
+----------
+v : node
+    Start node of half-edge.
+w : node
+    End node of half-edge.
+mark_half_edges: set, optional
+    Set to which all encountered half-edges are added.
+
+Returns
+-------
+face : list
+    A list of nodes that lie on this face.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/algorithms/\hyperlink{planarity_8py}{planarity.\+py}\end{DoxyCompactItemize}

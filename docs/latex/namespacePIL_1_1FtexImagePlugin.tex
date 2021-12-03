@@ -1,0 +1,91 @@
+\hypertarget{namespacePIL_1_1FtexImagePlugin}{}\section{P\+I\+L.\+Ftex\+Image\+Plugin Namespace Reference}
+\label{namespacePIL_1_1FtexImagePlugin}\index{P\+I\+L.\+Ftex\+Image\+Plugin@{P\+I\+L.\+Ftex\+Image\+Plugin}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPIL_1_1FtexImagePlugin_1_1FtexImageFile}{Ftex\+Image\+File}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacePIL_1_1FtexImagePlugin_ac6dd80ba5b83d90cb59a22944884072e}{M\+A\+G\+IC}
+\item 
+\hyperlink{namespacePIL_1_1FtexImagePlugin_a3423bf78d6db48c6f5876fd46cc0e970}{F\+O\+R\+M\+A\+T\+\_\+\+D\+X\+T1}
+\item 
+\hyperlink{namespacePIL_1_1FtexImagePlugin_a5a33d8acad23d85fd665fd0915624681}{F\+O\+R\+M\+A\+T\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A Pillow loader for .ftc and .ftu files (FTEX)
+Jerome Leclanche <jerome@leclan.ch>
+
+The contents of this file are hereby released in the public domain (CC0)
+Full text of the CC0 license:
+  https://creativecommons.org/publicdomain/zero/1.0/
+
+Independence War 2: Edge Of Chaos - Texture File Format - 16 October 2001
+
+The textures used for 3D objects in Independence War 2: Edge Of Chaos are in a
+packed custom format called FTEX. This file format uses file extensions FTC
+and FTU.
+* FTC files are compressed textures (using standard texture compression).
+* FTU files are not compressed.
+Texture File Format
+The FTC and FTU texture files both use the same format. This
+has the following structure:
+{header}
+{format_directory}
+{data}
+Where:
+{header} = {
+    u32:magic,
+    u32:version,
+    u32:width,
+    u32:height,
+    u32:mipmap_count,
+    u32:format_count
+}
+
+* The "magic" number is "FTEX".
+* "width" and "height" are the dimensions of the texture.
+* "mipmap_count" is the number of mipmaps in the texture.
+* "format_count" is the number of texture formats (different versions of the
+same texture) in this file.
+
+{format_directory} = format_count * { u32:format, u32:where }
+
+The format value is 0 for DXT1 compressed textures and 1 for 24-bit RGB
+uncompressed textures.
+The texture data for a format starts at the position "where" in the file.
+
+Each set of texture data in the file has the following structure:
+{data} = format_count * { u32:mipmap_size, mipmap_size * { u8 } }
+* "mipmap_size" is the number of bytes in that mip level. For compressed
+textures this is the size of the texture data compressed with DXT1. For 24 bit
+uncompressed textures, this is 3 * width * height. Following this are the image
+bytes for that mipmap level.
+
+Note: All data is stored in little-Endian (Intel) byte order.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1FtexImagePlugin_a3423bf78d6db48c6f5876fd46cc0e970}\label{namespacePIL_1_1FtexImagePlugin_a3423bf78d6db48c6f5876fd46cc0e970}} 
+\index{P\+I\+L\+::\+Ftex\+Image\+Plugin@{P\+I\+L\+::\+Ftex\+Image\+Plugin}!F\+O\+R\+M\+A\+T\+\_\+\+D\+X\+T1@{F\+O\+R\+M\+A\+T\+\_\+\+D\+X\+T1}}
+\index{F\+O\+R\+M\+A\+T\+\_\+\+D\+X\+T1@{F\+O\+R\+M\+A\+T\+\_\+\+D\+X\+T1}!P\+I\+L\+::\+Ftex\+Image\+Plugin@{P\+I\+L\+::\+Ftex\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{F\+O\+R\+M\+A\+T\+\_\+\+D\+X\+T1}{FORMAT\_DXT1}}
+{\footnotesize\ttfamily P\+I\+L.\+Ftex\+Image\+Plugin.\+F\+O\+R\+M\+A\+T\+\_\+\+D\+X\+T1}
+
+\mbox{\Hypertarget{namespacePIL_1_1FtexImagePlugin_a5a33d8acad23d85fd665fd0915624681}\label{namespacePIL_1_1FtexImagePlugin_a5a33d8acad23d85fd665fd0915624681}} 
+\index{P\+I\+L\+::\+Ftex\+Image\+Plugin@{P\+I\+L\+::\+Ftex\+Image\+Plugin}!F\+O\+R\+M\+A\+T\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED@{F\+O\+R\+M\+A\+T\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED}}
+\index{F\+O\+R\+M\+A\+T\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED@{F\+O\+R\+M\+A\+T\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED}!P\+I\+L\+::\+Ftex\+Image\+Plugin@{P\+I\+L\+::\+Ftex\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{F\+O\+R\+M\+A\+T\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED}{FORMAT\_UNCOMPRESSED}}
+{\footnotesize\ttfamily P\+I\+L.\+Ftex\+Image\+Plugin.\+F\+O\+R\+M\+A\+T\+\_\+\+U\+N\+C\+O\+M\+P\+R\+E\+S\+S\+ED}
+
+\mbox{\Hypertarget{namespacePIL_1_1FtexImagePlugin_ac6dd80ba5b83d90cb59a22944884072e}\label{namespacePIL_1_1FtexImagePlugin_ac6dd80ba5b83d90cb59a22944884072e}} 
+\index{P\+I\+L\+::\+Ftex\+Image\+Plugin@{P\+I\+L\+::\+Ftex\+Image\+Plugin}!M\+A\+G\+IC@{M\+A\+G\+IC}}
+\index{M\+A\+G\+IC@{M\+A\+G\+IC}!P\+I\+L\+::\+Ftex\+Image\+Plugin@{P\+I\+L\+::\+Ftex\+Image\+Plugin}}
+\subsubsection{\texorpdfstring{M\+A\+G\+IC}{MAGIC}}
+{\footnotesize\ttfamily P\+I\+L.\+Ftex\+Image\+Plugin.\+M\+A\+G\+IC}
+

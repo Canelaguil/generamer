@@ -1,0 +1,91 @@
+\hypertarget{classpytz_1_1__CountryTimezoneDict}{}\section{pytz.\+\_\+\+Country\+Timezone\+Dict Class Reference}
+\label{classpytz_1_1__CountryTimezoneDict}\index{pytz.\+\_\+\+Country\+Timezone\+Dict@{pytz.\+\_\+\+Country\+Timezone\+Dict}}
+
+
+Inheritance diagram for pytz.\+\_\+\+Country\+Timezone\+Dict\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classpytz_1_1__CountryTimezoneDict__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pytz.\+\_\+\+Country\+Timezone\+Dict\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classpytz_1_1__CountryTimezoneDict__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpytz_1_1__CountryTimezoneDict_ad7a167f353935da067e3e0e282315023}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, iso3166\+\_\+code)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpytz_1_1__CountryTimezoneDict_aab65f54e51e998a7d9142b38c005cf1c}{data}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Map ISO 3166 country code to a list of timezone names commonly used
+in that country.
+
+iso3166_code is the two letter code used to identify the country.
+
+>>> def print_list(list_of_strings):
+...     'We use a helper so doctests work under Python 2.3 -> 3.x'
+...     for s in list_of_strings:
+...         print(s)
+
+>>> print_list(country_timezones['nz'])
+Pacific/Auckland
+Pacific/Chatham
+>>> print_list(country_timezones['ch'])
+Europe/Zurich
+>>> print_list(country_timezones['CH'])
+Europe/Zurich
+>>> print_list(country_timezones[unicode('ch')])
+Europe/Zurich
+>>> print_list(country_timezones['XXX'])
+Traceback (most recent call last):
+...
+KeyError: 'XXX'
+
+Previously, this information was exposed as a function rather than a
+dictionary. This is still supported::
+
+>>> print_list(country_timezones('nz'))
+Pacific/Auckland
+Pacific/Chatham
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpytz_1_1__CountryTimezoneDict_ad7a167f353935da067e3e0e282315023}\label{classpytz_1_1__CountryTimezoneDict_ad7a167f353935da067e3e0e282315023}} 
+\index{pytz\+::\+\_\+\+Country\+Timezone\+Dict@{pytz\+::\+\_\+\+Country\+Timezone\+Dict}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!pytz\+::\+\_\+\+Country\+Timezone\+Dict@{pytz\+::\+\_\+\+Country\+Timezone\+Dict}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def pytz.\+\_\+\+Country\+Timezone\+Dict.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iso3166\+\_\+code }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Backwards compatibility.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpytz_1_1__CountryTimezoneDict_aab65f54e51e998a7d9142b38c005cf1c}\label{classpytz_1_1__CountryTimezoneDict_aab65f54e51e998a7d9142b38c005cf1c}} 
+\index{pytz\+::\+\_\+\+Country\+Timezone\+Dict@{pytz\+::\+\_\+\+Country\+Timezone\+Dict}!data@{data}}
+\index{data@{data}!pytz\+::\+\_\+\+Country\+Timezone\+Dict@{pytz\+::\+\_\+\+Country\+Timezone\+Dict}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily pytz.\+\_\+\+Country\+Timezone\+Dict.\+data}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pytz/\hyperlink{venv_2lib_2python3_89_2site-packages_2pytz_2____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,43 @@
+\hypertarget{namespacesetuptools_1_1command_1_1setopt}{}\section{setuptools.\+command.\+setopt Namespace Reference}
+\label{namespacesetuptools_1_1command_1_1setopt}\index{setuptools.\+command.\+setopt@{setuptools.\+command.\+setopt}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1command_1_1setopt_1_1option__base}{option\+\_\+base}
+\item 
+class \hyperlink{classsetuptools_1_1command_1_1setopt_1_1setopt}{setopt}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1command_1_1setopt_ad752b37cad3757f6b9457e752a74f87a}{config\+\_\+file} (kind=\char`\"{}local\char`\"{})
+\item 
+def \hyperlink{namespacesetuptools_1_1command_1_1setopt_aea3f5581fe84f5821452ac30e78dd66a}{edit\+\_\+config} (filename, settings, dry\+\_\+run=False)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1command_1_1setopt_ad752b37cad3757f6b9457e752a74f87a}\label{namespacesetuptools_1_1command_1_1setopt_ad752b37cad3757f6b9457e752a74f87a}} 
+\index{setuptools\+::command\+::setopt@{setuptools\+::command\+::setopt}!config\+\_\+file@{config\+\_\+file}}
+\index{config\+\_\+file@{config\+\_\+file}!setuptools\+::command\+::setopt@{setuptools\+::command\+::setopt}}
+\subsubsection{\texorpdfstring{config\+\_\+file()}{config\_file()}}
+{\footnotesize\ttfamily def setuptools.\+command.\+setopt.\+config\+\_\+file (\begin{DoxyParamCaption}\item[{}]{kind = {\ttfamily \char`\"{}local\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the filename of the distutils, local, global, or per-user config
+
+`kind` must be one of "local", "global", or "user"
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1command_1_1setopt_aea3f5581fe84f5821452ac30e78dd66a}\label{namespacesetuptools_1_1command_1_1setopt_aea3f5581fe84f5821452ac30e78dd66a}} 
+\index{setuptools\+::command\+::setopt@{setuptools\+::command\+::setopt}!edit\+\_\+config@{edit\+\_\+config}}
+\index{edit\+\_\+config@{edit\+\_\+config}!setuptools\+::command\+::setopt@{setuptools\+::command\+::setopt}}
+\subsubsection{\texorpdfstring{edit\+\_\+config()}{edit\_config()}}
+{\footnotesize\ttfamily def setuptools.\+command.\+setopt.\+edit\+\_\+config (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{settings,  }\item[{}]{dry\+\_\+run = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Edit a configuration file to include `settings`
+
+`settings` is a dictionary of dictionaries or ``None`` values, keyed by
+command/section name.  A ``None`` value means to delete the entire section,
+while a dictionary lists settings to be changed or deleted in that section.
+A setting of ``None`` means to delete that setting.
+\end{DoxyVerb}
+ 

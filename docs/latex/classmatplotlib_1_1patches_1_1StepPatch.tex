@@ -1,0 +1,124 @@
+\hypertarget{classmatplotlib_1_1patches_1_1StepPatch}{}\section{matplotlib.\+patches.\+Step\+Patch Class Reference}
+\label{classmatplotlib_1_1patches_1_1StepPatch}\index{matplotlib.\+patches.\+Step\+Patch@{matplotlib.\+patches.\+Step\+Patch}}
+
+
+Inheritance diagram for matplotlib.\+patches.\+Step\+Patch\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classmatplotlib_1_1patches_1_1StepPatch__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+patches.\+Step\+Patch\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classmatplotlib_1_1patches_1_1StepPatch__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1StepPatch_af12af89b81c62017cb43beb6bab6301b}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, values, edges, \hyperlink{classmatplotlib_1_1patches_1_1StepPatch_abfc1efe4f3879c17a1275c841faf0ecc}{orientation}=\textquotesingle{}vertical\textquotesingle{}, baseline=0, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1StepPatch_affe718205aa1c9f0169432f1579507a6}{get\+\_\+data} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1StepPatch_a4e91e15ebca84eb49374321a251af2e1}{set\+\_\+data} (self, values=None, edges=None, baseline=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1patches_1_1StepPatch_abfc1efe4f3879c17a1275c841faf0ecc}{orientation}
+\item 
+\hyperlink{classmatplotlib_1_1patches_1_1StepPatch_a7f6e4514d12bc9e724c60ac45e8210d3}{stale}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A path patch describing a stepwise constant function.
+
+By default the path is not closed and starts and stops at
+baseline value.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1StepPatch_af12af89b81c62017cb43beb6bab6301b}\label{classmatplotlib_1_1patches_1_1StepPatch_af12af89b81c62017cb43beb6bab6301b}} 
+\index{matplotlib\+::patches\+::\+Step\+Patch@{matplotlib\+::patches\+::\+Step\+Patch}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::patches\+::\+Step\+Patch@{matplotlib\+::patches\+::\+Step\+Patch}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Step\+Patch.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{values,  }\item[{}]{edges,  }\item[{}]{orientation = {\ttfamily \textquotesingle{}vertical\textquotesingle{}},  }\item[{}]{baseline = {\ttfamily 0},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+values : array-like
+    The step heights.
+
+edges : array-like
+    The edge positions, with ``len(edges) == len(vals) + 1``,
+    between which the curve takes on vals values.
+
+orientation : {'vertical', 'horizontal'}, default: 'vertical'
+    The direction of the steps. Vertical means that *values* are
+    along the y-axis, and edges are along the x-axis.
+
+baseline : float, array-like or None, default: 0
+    The bottom value of the bounding edges or when
+    ``fill=True``, position of lower edge. If *fill* is
+    True or an array is passed to *baseline*, a closed
+    path is drawn.
+
+Other valid keyword arguments are:
+
+%(Patch_kwdoc)s
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1StepPatch_affe718205aa1c9f0169432f1579507a6}\label{classmatplotlib_1_1patches_1_1StepPatch_affe718205aa1c9f0169432f1579507a6}} 
+\index{matplotlib\+::patches\+::\+Step\+Patch@{matplotlib\+::patches\+::\+Step\+Patch}!get\+\_\+data@{get\+\_\+data}}
+\index{get\+\_\+data@{get\+\_\+data}!matplotlib\+::patches\+::\+Step\+Patch@{matplotlib\+::patches\+::\+Step\+Patch}}
+\subsubsection{\texorpdfstring{get\+\_\+data()}{get\_data()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Step\+Patch.\+get\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get `.StepPatch` values, edges and baseline as namedtuple.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1StepPatch_a4e91e15ebca84eb49374321a251af2e1}\label{classmatplotlib_1_1patches_1_1StepPatch_a4e91e15ebca84eb49374321a251af2e1}} 
+\index{matplotlib\+::patches\+::\+Step\+Patch@{matplotlib\+::patches\+::\+Step\+Patch}!set\+\_\+data@{set\+\_\+data}}
+\index{set\+\_\+data@{set\+\_\+data}!matplotlib\+::patches\+::\+Step\+Patch@{matplotlib\+::patches\+::\+Step\+Patch}}
+\subsubsection{\texorpdfstring{set\+\_\+data()}{set\_data()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Step\+Patch.\+set\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{values = {\ttfamily None},  }\item[{}]{edges = {\ttfamily None},  }\item[{}]{baseline = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set `.StepPatch` values, edges and baseline.
+
+Parameters
+----------
+values : 1D array-like or None
+    Will not update values, if passing None
+edges : 1D array-like, optional
+baseline : float, 1D array-like or None
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1StepPatch_abfc1efe4f3879c17a1275c841faf0ecc}\label{classmatplotlib_1_1patches_1_1StepPatch_abfc1efe4f3879c17a1275c841faf0ecc}} 
+\index{matplotlib\+::patches\+::\+Step\+Patch@{matplotlib\+::patches\+::\+Step\+Patch}!orientation@{orientation}}
+\index{orientation@{orientation}!matplotlib\+::patches\+::\+Step\+Patch@{matplotlib\+::patches\+::\+Step\+Patch}}
+\subsubsection{\texorpdfstring{orientation}{orientation}}
+{\footnotesize\ttfamily matplotlib.\+patches.\+Step\+Patch.\+orientation}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1StepPatch_a7f6e4514d12bc9e724c60ac45e8210d3}\label{classmatplotlib_1_1patches_1_1StepPatch_a7f6e4514d12bc9e724c60ac45e8210d3}} 
+\index{matplotlib\+::patches\+::\+Step\+Patch@{matplotlib\+::patches\+::\+Step\+Patch}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::patches\+::\+Step\+Patch@{matplotlib\+::patches\+::\+Step\+Patch}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+patches.\+Step\+Patch.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{patches_8py}{patches.\+py}\end{DoxyCompactItemize}

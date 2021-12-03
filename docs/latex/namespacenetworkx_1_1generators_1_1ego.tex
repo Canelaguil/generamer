@@ -1,0 +1,56 @@
+\hypertarget{namespacenetworkx_1_1generators_1_1ego}{}\section{networkx.\+generators.\+ego Namespace Reference}
+\label{namespacenetworkx_1_1generators_1_1ego}\index{networkx.\+generators.\+ego@{networkx.\+generators.\+ego}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1generators_1_1ego_aa37070299f6ed14983b1546eade3cbcd}{ego\+\_\+graph} (G, n, radius=1, center=True, undirected=False, distance=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Ego graph.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1ego_aa37070299f6ed14983b1546eade3cbcd}\label{namespacenetworkx_1_1generators_1_1ego_aa37070299f6ed14983b1546eade3cbcd}} 
+\index{networkx\+::generators\+::ego@{networkx\+::generators\+::ego}!ego\+\_\+graph@{ego\+\_\+graph}}
+\index{ego\+\_\+graph@{ego\+\_\+graph}!networkx\+::generators\+::ego@{networkx\+::generators\+::ego}}
+\subsubsection{\texorpdfstring{ego\+\_\+graph()}{ego\_graph()}}
+{\footnotesize\ttfamily def networkx.\+generators.\+ego.\+ego\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{n,  }\item[{}]{radius = {\ttfamily 1},  }\item[{}]{center = {\ttfamily True},  }\item[{}]{undirected = {\ttfamily False},  }\item[{}]{distance = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns induced subgraph of neighbors centered at node n within
+a given radius.
+
+Parameters
+----------
+G : graph
+  A NetworkX Graph or DiGraph
+
+n : node
+  A single node
+
+radius : number, optional
+  Include all neighbors of distance<=radius from n.
+
+center : bool, optional
+  If False, do not include center node in graph
+
+undirected : bool, optional
+  If True use both in- and out-neighbors of directed graphs.
+
+distance : key, optional
+  Use specified edge data key as distance.  For example, setting
+  distance='weight' will use the edge weight to measure the
+  distance from the node n.
+
+Notes
+-----
+For directed graphs D this produces the "out" neighborhood
+or successors.  If you want the neighborhood of predecessors
+first reverse the graph with D.reverse().  If you want both
+directions use the keyword argument undirected=True.
+
+Node, edge, and graph attributes are copied to the returned subgraph.
+\end{DoxyVerb}
+ 

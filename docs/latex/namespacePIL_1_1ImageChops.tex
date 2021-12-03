@@ -1,0 +1,337 @@
+\hypertarget{namespacePIL_1_1ImageChops}{}\section{P\+I\+L.\+Image\+Chops Namespace Reference}
+\label{namespacePIL_1_1ImageChops}\index{P\+I\+L.\+Image\+Chops@{P\+I\+L.\+Image\+Chops}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a0a5d85803c6f9839917b8b75aaf86995}{constant} (image, value)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_ad3963abe16bb89faf0687f813b24cabc}{duplicate} (image)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a0d9f80a2da4f82856acd12cba51c05ae}{invert} (image)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a0e6eb49139eb74e7f63daec6838434d6}{lighter} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_abf079eadb4a8045416910230e4379c01}{darker} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a13657e8e933888ae94db7e855cef72a1}{difference} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_ab78375930238a5b4b79812ddbf604135}{multiply} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a9064f4f8184020483ffc7ea98509a4af}{screen} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a23c9f4fef663a1548c2380cc91097831}{soft\+\_\+light} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a4e4ba02de8192166c79530e57868b914}{hard\+\_\+light} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a42606e8a79999207f1f09c7129d78362}{overlay} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a839755de44ce63c6a710b7f4831e0067}{add} (image1, image2, scale=1.\+0, \hyperlink{namespacePIL_1_1ImageChops_aecb249ce586c43bfc14ac7ca6accad58}{offset}=0)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_afcaf43f590a953e3c9b2569cecdf9dcf}{subtract} (image1, image2, scale=1.\+0, \hyperlink{namespacePIL_1_1ImageChops_aecb249ce586c43bfc14ac7ca6accad58}{offset}=0)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_aeaa07196844a79bde521e1e69c5838ea}{add\+\_\+modulo} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a46edd6ee7a7c6f7f04d1582014326483}{subtract\+\_\+modulo} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a54a0fe618f3d418f4bf71deadd5e0b39}{logical\+\_\+and} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a4be1980482ad2366e9b55da5409e418e}{logical\+\_\+or} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a67f21948c21172e1086590a0932ce160}{logical\+\_\+xor} (image1, image2)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_aa43b4e6bb3096e8242768542e0c30c16}{blend} (image1, image2, alpha)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_a92bc38d251b6fb8d2c87a284b3b500ed}{composite} (image1, image2, mask)
+\item 
+def \hyperlink{namespacePIL_1_1ImageChops_aecb249ce586c43bfc14ac7ca6accad58}{offset} (image, xoffset, yoffset=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1ImageChops_a839755de44ce63c6a710b7f4831e0067}\label{namespacePIL_1_1ImageChops_a839755de44ce63c6a710b7f4831e0067}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!add@{add}}
+\index{add@{add}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+add (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2,  }\item[{}]{scale = {\ttfamily 1.0},  }\item[{}]{offset = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds two images, dividing the result by scale and adding the
+offset. If omitted, scale defaults to 1.0, and offset to 0.0.
+
+.. code-block:: python
+
+    out = ((image1 + image2) / scale + offset)
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_aeaa07196844a79bde521e1e69c5838ea}\label{namespacePIL_1_1ImageChops_aeaa07196844a79bde521e1e69c5838ea}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!add\+\_\+modulo@{add\+\_\+modulo}}
+\index{add\+\_\+modulo@{add\+\_\+modulo}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{add\+\_\+modulo()}{add\_modulo()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+add\+\_\+modulo (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add two images, without clipping the result.
+
+.. code-block:: python
+
+    out = ((image1 + image2) % MAX)
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_aa43b4e6bb3096e8242768542e0c30c16}\label{namespacePIL_1_1ImageChops_aa43b4e6bb3096e8242768542e0c30c16}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!blend@{blend}}
+\index{blend@{blend}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{blend()}{blend()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+blend (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2,  }\item[{}]{alpha }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Blend images using constant transparency weight. Alias for
+:py:func:`PIL.Image.blend`.
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a92bc38d251b6fb8d2c87a284b3b500ed}\label{namespacePIL_1_1ImageChops_a92bc38d251b6fb8d2c87a284b3b500ed}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!composite@{composite}}
+\index{composite@{composite}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{composite()}{composite()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+composite (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2,  }\item[{}]{mask }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create composite using transparency mask. Alias for
+:py:func:`PIL.Image.composite`.
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a0a5d85803c6f9839917b8b75aaf86995}\label{namespacePIL_1_1ImageChops_a0a5d85803c6f9839917b8b75aaf86995}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!constant@{constant}}
+\index{constant@{constant}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{constant()}{constant()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+constant (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Fill a channel with a given grey level.
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_abf079eadb4a8045416910230e4379c01}\label{namespacePIL_1_1ImageChops_abf079eadb4a8045416910230e4379c01}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!darker@{darker}}
+\index{darker@{darker}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{darker()}{darker()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+darker (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compares the two images, pixel by pixel, and returns a new image containing
+the darker values.
+
+.. code-block:: python
+
+    out = min(image1, image2)
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a13657e8e933888ae94db7e855cef72a1}\label{namespacePIL_1_1ImageChops_a13657e8e933888ae94db7e855cef72a1}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!difference@{difference}}
+\index{difference@{difference}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{difference()}{difference()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+difference (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the absolute value of the pixel-by-pixel difference between the two
+images.
+
+.. code-block:: python
+
+    out = abs(image1 - image2)
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_ad3963abe16bb89faf0687f813b24cabc}\label{namespacePIL_1_1ImageChops_ad3963abe16bb89faf0687f813b24cabc}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!duplicate@{duplicate}}
+\index{duplicate@{duplicate}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{duplicate()}{duplicate()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+duplicate (\begin{DoxyParamCaption}\item[{}]{image }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Copy a channel. Alias for :py:meth:`PIL.Image.Image.copy`.
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a4e4ba02de8192166c79530e57868b914}\label{namespacePIL_1_1ImageChops_a4e4ba02de8192166c79530e57868b914}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!hard\+\_\+light@{hard\+\_\+light}}
+\index{hard\+\_\+light@{hard\+\_\+light}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{hard\+\_\+light()}{hard\_light()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+hard\+\_\+light (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Superimposes two images on top of each other using the Hard Light algorithm
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a0d9f80a2da4f82856acd12cba51c05ae}\label{namespacePIL_1_1ImageChops_a0d9f80a2da4f82856acd12cba51c05ae}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!invert@{invert}}
+\index{invert@{invert}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{invert()}{invert()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+invert (\begin{DoxyParamCaption}\item[{}]{image }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invert an image (channel).
+
+.. code-block:: python
+
+    out = MAX - image
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a0e6eb49139eb74e7f63daec6838434d6}\label{namespacePIL_1_1ImageChops_a0e6eb49139eb74e7f63daec6838434d6}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!lighter@{lighter}}
+\index{lighter@{lighter}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{lighter()}{lighter()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+lighter (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compares the two images, pixel by pixel, and returns a new image containing
+the lighter values.
+
+.. code-block:: python
+
+    out = max(image1, image2)
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a54a0fe618f3d418f4bf71deadd5e0b39}\label{namespacePIL_1_1ImageChops_a54a0fe618f3d418f4bf71deadd5e0b39}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!logical\+\_\+and@{logical\+\_\+and}}
+\index{logical\+\_\+and@{logical\+\_\+and}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{logical\+\_\+and()}{logical\_and()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+logical\+\_\+and (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logical AND between two images.
+
+Both of the images must have mode "1". If you would like to perform a
+logical AND on an image with a mode other than "1", try
+:py:meth:`~PIL.ImageChops.multiply` instead, using a black-and-white mask
+as the second image.
+
+.. code-block:: python
+
+    out = ((image1 and image2) % MAX)
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a4be1980482ad2366e9b55da5409e418e}\label{namespacePIL_1_1ImageChops_a4be1980482ad2366e9b55da5409e418e}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!logical\+\_\+or@{logical\+\_\+or}}
+\index{logical\+\_\+or@{logical\+\_\+or}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{logical\+\_\+or()}{logical\_or()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+logical\+\_\+or (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logical OR between two images.
+
+Both of the images must have mode "1".
+
+.. code-block:: python
+
+    out = ((image1 or image2) % MAX)
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a67f21948c21172e1086590a0932ce160}\label{namespacePIL_1_1ImageChops_a67f21948c21172e1086590a0932ce160}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!logical\+\_\+xor@{logical\+\_\+xor}}
+\index{logical\+\_\+xor@{logical\+\_\+xor}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{logical\+\_\+xor()}{logical\_xor()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+logical\+\_\+xor (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logical XOR between two images.
+
+Both of the images must have mode "1".
+
+.. code-block:: python
+
+    out = ((bool(image1) != bool(image2)) % MAX)
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_ab78375930238a5b4b79812ddbf604135}\label{namespacePIL_1_1ImageChops_ab78375930238a5b4b79812ddbf604135}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!multiply@{multiply}}
+\index{multiply@{multiply}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+multiply (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Superimposes two images on top of each other.
+
+If you multiply an image with a solid black image, the result is black. If
+you multiply with a solid white image, the image is unaffected.
+
+.. code-block:: python
+
+    out = image1 * image2 / MAX
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_aecb249ce586c43bfc14ac7ca6accad58}\label{namespacePIL_1_1ImageChops_aecb249ce586c43bfc14ac7ca6accad58}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!offset@{offset}}
+\index{offset@{offset}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{offset()}{offset()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+offset (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{xoffset,  }\item[{}]{yoffset = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a copy of the image where data has been offset by the given
+distances. Data wraps around the edges. If ``yoffset`` is omitted, it
+is assumed to be equal to ``xoffset``.
+
+:param xoffset: The horizontal distance.
+:param yoffset: The vertical distance.  If omitted, both
+    distances are set to the same value.
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a42606e8a79999207f1f09c7129d78362}\label{namespacePIL_1_1ImageChops_a42606e8a79999207f1f09c7129d78362}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!overlay@{overlay}}
+\index{overlay@{overlay}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{overlay()}{overlay()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+overlay (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Superimposes two images on top of each other using the Overlay algorithm
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a9064f4f8184020483ffc7ea98509a4af}\label{namespacePIL_1_1ImageChops_a9064f4f8184020483ffc7ea98509a4af}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!screen@{screen}}
+\index{screen@{screen}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{screen()}{screen()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+screen (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Superimposes two inverted images on top of each other.
+
+.. code-block:: python
+
+    out = MAX - ((MAX - image1) * (MAX - image2) / MAX)
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a23c9f4fef663a1548c2380cc91097831}\label{namespacePIL_1_1ImageChops_a23c9f4fef663a1548c2380cc91097831}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!soft\+\_\+light@{soft\+\_\+light}}
+\index{soft\+\_\+light@{soft\+\_\+light}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{soft\+\_\+light()}{soft\_light()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+soft\+\_\+light (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Superimposes two images on top of each other using the Soft Light algorithm
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_afcaf43f590a953e3c9b2569cecdf9dcf}\label{namespacePIL_1_1ImageChops_afcaf43f590a953e3c9b2569cecdf9dcf}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!subtract@{subtract}}
+\index{subtract@{subtract}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{subtract()}{subtract()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+subtract (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2,  }\item[{}]{scale = {\ttfamily 1.0},  }\item[{}]{offset = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Subtracts two images, dividing the result by scale and adding the offset.
+If omitted, scale defaults to 1.0, and offset to 0.0.
+
+.. code-block:: python
+
+    out = ((image1 - image2) / scale + offset)
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageChops_a46edd6ee7a7c6f7f04d1582014326483}\label{namespacePIL_1_1ImageChops_a46edd6ee7a7c6f7f04d1582014326483}} 
+\index{P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}!subtract\+\_\+modulo@{subtract\+\_\+modulo}}
+\index{subtract\+\_\+modulo@{subtract\+\_\+modulo}!P\+I\+L\+::\+Image\+Chops@{P\+I\+L\+::\+Image\+Chops}}
+\subsubsection{\texorpdfstring{subtract\+\_\+modulo()}{subtract\_modulo()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Chops.\+subtract\+\_\+modulo (\begin{DoxyParamCaption}\item[{}]{image1,  }\item[{}]{image2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Subtract two images, without clipping the result.
+
+.. code-block:: python
+
+    out = ((image1 - image2) % MAX)
+
+:rtype: :py:class:`~PIL.Image.Image`
+\end{DoxyVerb}
+ 

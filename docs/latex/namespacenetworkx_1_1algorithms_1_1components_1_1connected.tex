@@ -1,0 +1,170 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1components_1_1connected}{}\section{networkx.\+algorithms.\+components.\+connected Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1components_1_1connected}\index{networkx.\+algorithms.\+components.\+connected@{networkx.\+algorithms.\+components.\+connected}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1components_1_1connected_aa1714f720dc48d8d9aecb4047f6fd5b4}{connected\+\_\+components} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1components_1_1connected_ab49892fb7b043be0c8f1d453c66d0c68}{number\+\_\+connected\+\_\+components} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1components_1_1connected_a9d97441f041c2b3cdd180c70c5f9b3b5}{is\+\_\+connected} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1components_1_1connected_aae266adc38aec6076628b3d894ae63cb}{node\+\_\+connected\+\_\+component} (G, n)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Connected components.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1components_1_1connected_aa1714f720dc48d8d9aecb4047f6fd5b4}\label{namespacenetworkx_1_1algorithms_1_1components_1_1connected_aa1714f720dc48d8d9aecb4047f6fd5b4}} 
+\index{networkx\+::algorithms\+::components\+::connected@{networkx\+::algorithms\+::components\+::connected}!connected\+\_\+components@{connected\+\_\+components}}
+\index{connected\+\_\+components@{connected\+\_\+components}!networkx\+::algorithms\+::components\+::connected@{networkx\+::algorithms\+::components\+::connected}}
+\subsubsection{\texorpdfstring{connected\+\_\+components()}{connected\_components()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+components.\+connected.\+connected\+\_\+components (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate connected components.
+
+Parameters
+----------
+G : NetworkX graph
+   An undirected graph
+
+Returns
+-------
+comp : generator of sets
+   A generator of sets of nodes, one for each component of G.
+
+Raises
+------
+NetworkXNotImplemented
+    If G is directed.
+
+Examples
+--------
+Generate a sorted list of connected components, largest first.
+
+>>> G = nx.path_graph(4)
+>>> nx.add_path(G, [10, 11, 12])
+>>> [len(c) for c in sorted(nx.connected_components(G), key=len, reverse=True)]
+[4, 3]
+
+If you only want the largest connected component, it's more
+efficient to use max instead of sort.
+
+>>> largest_cc = max(nx.connected_components(G), key=len)
+
+To create the induced subgraph of each component use:
+
+>>> S = [G.subgraph(c).copy() for c in nx.connected_components(G)]
+
+See Also
+--------
+strongly_connected_components
+weakly_connected_components
+
+Notes
+-----
+For undirected graphs only.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1components_1_1connected_a9d97441f041c2b3cdd180c70c5f9b3b5}\label{namespacenetworkx_1_1algorithms_1_1components_1_1connected_a9d97441f041c2b3cdd180c70c5f9b3b5}} 
+\index{networkx\+::algorithms\+::components\+::connected@{networkx\+::algorithms\+::components\+::connected}!is\+\_\+connected@{is\+\_\+connected}}
+\index{is\+\_\+connected@{is\+\_\+connected}!networkx\+::algorithms\+::components\+::connected@{networkx\+::algorithms\+::components\+::connected}}
+\subsubsection{\texorpdfstring{is\+\_\+connected()}{is\_connected()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+components.\+connected.\+is\+\_\+connected (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if the graph is connected, False otherwise.
+
+Parameters
+----------
+G : NetworkX Graph
+   An undirected graph.
+
+Returns
+-------
+connected : bool
+  True if the graph is connected, false otherwise.
+
+Raises
+------
+NetworkXNotImplemented
+    If G is directed.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> print(nx.is_connected(G))
+True
+
+See Also
+--------
+is_strongly_connected
+is_weakly_connected
+is_semiconnected
+is_biconnected
+connected_components
+
+Notes
+-----
+For undirected graphs only.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1components_1_1connected_aae266adc38aec6076628b3d894ae63cb}\label{namespacenetworkx_1_1algorithms_1_1components_1_1connected_aae266adc38aec6076628b3d894ae63cb}} 
+\index{networkx\+::algorithms\+::components\+::connected@{networkx\+::algorithms\+::components\+::connected}!node\+\_\+connected\+\_\+component@{node\+\_\+connected\+\_\+component}}
+\index{node\+\_\+connected\+\_\+component@{node\+\_\+connected\+\_\+component}!networkx\+::algorithms\+::components\+::connected@{networkx\+::algorithms\+::components\+::connected}}
+\subsubsection{\texorpdfstring{node\+\_\+connected\+\_\+component()}{node\_connected\_component()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+components.\+connected.\+node\+\_\+connected\+\_\+component (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the set of nodes in the component of graph containing node n.
+
+Parameters
+----------
+G : NetworkX Graph
+   An undirected graph.
+
+n : node label
+   A node in G
+
+Returns
+-------
+comp : set
+   A set of nodes in the component of G containing node n.
+
+Raises
+------
+NetworkXNotImplemented
+    If G is directed.
+
+See Also
+--------
+connected_components
+
+Notes
+-----
+For undirected graphs only.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1components_1_1connected_ab49892fb7b043be0c8f1d453c66d0c68}\label{namespacenetworkx_1_1algorithms_1_1components_1_1connected_ab49892fb7b043be0c8f1d453c66d0c68}} 
+\index{networkx\+::algorithms\+::components\+::connected@{networkx\+::algorithms\+::components\+::connected}!number\+\_\+connected\+\_\+components@{number\+\_\+connected\+\_\+components}}
+\index{number\+\_\+connected\+\_\+components@{number\+\_\+connected\+\_\+components}!networkx\+::algorithms\+::components\+::connected@{networkx\+::algorithms\+::components\+::connected}}
+\subsubsection{\texorpdfstring{number\+\_\+connected\+\_\+components()}{number\_connected\_components()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+components.\+connected.\+number\+\_\+connected\+\_\+components (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the number of connected components.
+
+Parameters
+----------
+G : NetworkX graph
+   An undirected graph.
+
+Returns
+-------
+n : integer
+   Number of connected components
+
+See Also
+--------
+connected_components
+number_weakly_connected_components
+number_strongly_connected_components
+
+Notes
+-----
+For undirected graphs only.\end{DoxyVerb}
+ 

@@ -1,0 +1,79 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1LockDraw}{}\section{matplotlib.\+widgets.\+Lock\+Draw Class Reference}
+\label{classmatplotlib_1_1widgets_1_1LockDraw}\index{matplotlib.\+widgets.\+Lock\+Draw@{matplotlib.\+widgets.\+Lock\+Draw}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1LockDraw_a5d2c0ece78617e055aefe47d312b6975}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1LockDraw_af7c6d17fe7b52579aeed33ef9528703f}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, o)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1LockDraw_aba45173f1e2599493e7cab0095b26d2e}{release} (self, o)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1LockDraw_a5af35f9e7cc7fd8f43927a070db909cd}{available} (self, o)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1LockDraw_ab4a0509bc8ae24a9b461b7af8b84e3e3}{isowner} (self, o)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1LockDraw_a843b041d8a8d495520865ac411ecd3e0}{locked} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Some widgets, like the cursor, draw onto the canvas, and this is not
+desirable under all circumstances, like when the toolbar is in zoom-to-rect
+mode and drawing a rectangle.  To avoid this, a widget can acquire a
+canvas' lock with ``canvas.widgetlock(widget)`` before drawing on the
+canvas; this will prevent other widgets from doing so at the same time (if
+they also try to acquire the lock first).
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1LockDraw_a5d2c0ece78617e055aefe47d312b6975}\label{classmatplotlib_1_1widgets_1_1LockDraw_a5d2c0ece78617e055aefe47d312b6975}} 
+\index{matplotlib\+::widgets\+::\+Lock\+Draw@{matplotlib\+::widgets\+::\+Lock\+Draw}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Lock\+Draw@{matplotlib\+::widgets\+::\+Lock\+Draw}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Lock\+Draw.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1LockDraw_af7c6d17fe7b52579aeed33ef9528703f}\label{classmatplotlib_1_1widgets_1_1LockDraw_af7c6d17fe7b52579aeed33ef9528703f}} 
+\index{matplotlib\+::widgets\+::\+Lock\+Draw@{matplotlib\+::widgets\+::\+Lock\+Draw}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Lock\+Draw@{matplotlib\+::widgets\+::\+Lock\+Draw}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Lock\+Draw.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{o }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reserve the lock for *o*.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1LockDraw_a5af35f9e7cc7fd8f43927a070db909cd}\label{classmatplotlib_1_1widgets_1_1LockDraw_a5af35f9e7cc7fd8f43927a070db909cd}} 
+\index{matplotlib\+::widgets\+::\+Lock\+Draw@{matplotlib\+::widgets\+::\+Lock\+Draw}!available@{available}}
+\index{available@{available}!matplotlib\+::widgets\+::\+Lock\+Draw@{matplotlib\+::widgets\+::\+Lock\+Draw}}
+\subsubsection{\texorpdfstring{available()}{available()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Lock\+Draw.\+available (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{o }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether drawing is available to *o*.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1LockDraw_ab4a0509bc8ae24a9b461b7af8b84e3e3}\label{classmatplotlib_1_1widgets_1_1LockDraw_ab4a0509bc8ae24a9b461b7af8b84e3e3}} 
+\index{matplotlib\+::widgets\+::\+Lock\+Draw@{matplotlib\+::widgets\+::\+Lock\+Draw}!isowner@{isowner}}
+\index{isowner@{isowner}!matplotlib\+::widgets\+::\+Lock\+Draw@{matplotlib\+::widgets\+::\+Lock\+Draw}}
+\subsubsection{\texorpdfstring{isowner()}{isowner()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Lock\+Draw.\+isowner (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{o }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether *o* owns this lock.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1LockDraw_a843b041d8a8d495520865ac411ecd3e0}\label{classmatplotlib_1_1widgets_1_1LockDraw_a843b041d8a8d495520865ac411ecd3e0}} 
+\index{matplotlib\+::widgets\+::\+Lock\+Draw@{matplotlib\+::widgets\+::\+Lock\+Draw}!locked@{locked}}
+\index{locked@{locked}!matplotlib\+::widgets\+::\+Lock\+Draw@{matplotlib\+::widgets\+::\+Lock\+Draw}}
+\subsubsection{\texorpdfstring{locked()}{locked()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Lock\+Draw.\+locked (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether the lock is currently held by an owner.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1LockDraw_aba45173f1e2599493e7cab0095b26d2e}\label{classmatplotlib_1_1widgets_1_1LockDraw_aba45173f1e2599493e7cab0095b26d2e}} 
+\index{matplotlib\+::widgets\+::\+Lock\+Draw@{matplotlib\+::widgets\+::\+Lock\+Draw}!release@{release}}
+\index{release@{release}!matplotlib\+::widgets\+::\+Lock\+Draw@{matplotlib\+::widgets\+::\+Lock\+Draw}}
+\subsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Lock\+Draw.\+release (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{o }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Release the lock from *o*.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,83 @@
+\hypertarget{classaxes__grid1_1_1inset__locator_1_1InsetPosition}{}\section{axes\+\_\+grid1.\+inset\+\_\+locator.\+Inset\+Position Class Reference}
+\label{classaxes__grid1_1_1inset__locator_1_1InsetPosition}\index{axes\+\_\+grid1.\+inset\+\_\+locator.\+Inset\+Position@{axes\+\_\+grid1.\+inset\+\_\+locator.\+Inset\+Position}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classaxes__grid1_1_1inset__locator_1_1InsetPosition_a74f9a23ca6af05f4621c6c2473504781}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classaxes__grid1_1_1inset__locator_1_1InsetPosition_ac716d6053265d680f44093eca188020e}{parent}, \hyperlink{classaxes__grid1_1_1inset__locator_1_1InsetPosition_a2ff82aecea2a7e685c5dc00cda9fe089}{lbwh})
+\item 
+def \hyperlink{classaxes__grid1_1_1inset__locator_1_1InsetPosition_a442ce8d8df64d55c0a939fcf52db759f}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, ax, renderer)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classaxes__grid1_1_1inset__locator_1_1InsetPosition_ac716d6053265d680f44093eca188020e}{parent}
+\item 
+\hyperlink{classaxes__grid1_1_1inset__locator_1_1InsetPosition_a2ff82aecea2a7e685c5dc00cda9fe089}{lbwh}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1inset__locator_1_1InsetPosition_a74f9a23ca6af05f4621c6c2473504781}\label{classaxes__grid1_1_1inset__locator_1_1InsetPosition_a74f9a23ca6af05f4621c6c2473504781}} 
+\index{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+inset\+\_\+locator.\+Inset\+Position.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{parent,  }\item[{}]{lbwh }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}An object for positioning an inset axes.
+
+This is created by specifying the normalized coordinates in the axes,
+instead of the figure.
+
+Parameters
+----------
+parent : `matplotlib.axes.Axes`
+    Axes to use for normalizing coordinates.
+
+lbwh : iterable of four floats
+    The left edge, bottom edge, width, and height of the inset axes, in
+    units of the normalized coordinate of the *parent* axes.
+
+See Also
+--------
+:meth:`matplotlib.axes.Axes.set_axes_locator`
+
+Examples
+--------
+The following bounds the inset axes to a box with 20%% of the parent
+axes's height and 40%% of the width. The size of the axes specified
+([0, 0, 1, 1]) ensures that the axes completely fills the bounding box:
+
+>>> parent_axes = plt.gca()
+>>> ax_ins = plt.axes([0, 0, 1, 1])
+>>> ip = InsetPosition(ax, [0.5, 0.1, 0.4, 0.2])
+>>> ax_ins.set_axes_locator(ip)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1inset__locator_1_1InsetPosition_a442ce8d8df64d55c0a939fcf52db759f}\label{classaxes__grid1_1_1inset__locator_1_1InsetPosition_a442ce8d8df64d55c0a939fcf52db759f}} 
+\index{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+inset\+\_\+locator.\+Inset\+Position.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1inset__locator_1_1InsetPosition_a2ff82aecea2a7e685c5dc00cda9fe089}\label{classaxes__grid1_1_1inset__locator_1_1InsetPosition_a2ff82aecea2a7e685c5dc00cda9fe089}} 
+\index{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position}!lbwh@{lbwh}}
+\index{lbwh@{lbwh}!axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position}}
+\subsubsection{\texorpdfstring{lbwh}{lbwh}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+inset\+\_\+locator.\+Inset\+Position.\+lbwh}
+
+\mbox{\Hypertarget{classaxes__grid1_1_1inset__locator_1_1InsetPosition_ac716d6053265d680f44093eca188020e}\label{classaxes__grid1_1_1inset__locator_1_1InsetPosition_ac716d6053265d680f44093eca188020e}} 
+\index{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position}!parent@{parent}}
+\index{parent@{parent}!axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Inset\+Position}}
+\subsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+inset\+\_\+locator.\+Inset\+Position.\+parent}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/mpl\+\_\+toolkits/axes\+\_\+grid1/\hyperlink{_2inset__locator_8py}{inset\+\_\+locator.\+py}\end{DoxyCompactItemize}

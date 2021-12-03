@@ -1,0 +1,213 @@
+\hypertarget{classnumpy_1_1lib_1_1__iotools_1_1StringConverter}{}\section{numpy.\+lib.\+\_\+iotools.\+String\+Converter Class Reference}
+\label{classnumpy_1_1lib_1_1__iotools_1_1StringConverter}\index{numpy.\+lib.\+\_\+iotools.\+String\+Converter@{numpy.\+lib.\+\_\+iotools.\+String\+Converter}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_abbd532192cd492cab583763380d132d6}{upgrade\+\_\+mapper} (cls, \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a407bb68d9cd86102fabf65b7618c12d9}{func}, \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_af6eeab2aded49e13460876c37f4791f9}{default}=None)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a7a2279b60a9eb15f924f4959258c53f7}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, dtype\+\_\+or\+\_\+func=None, \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_af6eeab2aded49e13460876c37f4791f9}{default}=None, \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a52f3ad6c429500d77e0f111072b2de36}{missing\+\_\+values}=None, locked=False)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a6760fec89a238d4a646f932deef522f2}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, value)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_aaa5ab95c04294d5c4fc113dc89a35475}{upgrade} (self, value)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a9583734df1c8b1ae1f4fd45b32e5c246}{iterupgrade} (self, value)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a55369b13d882ec205f7b66eafeda0a5a}{update} (self, \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a407bb68d9cd86102fabf65b7618c12d9}{func}, \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_af6eeab2aded49e13460876c37f4791f9}{default}=None, testing\+\_\+value=None, \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a52f3ad6c429500d77e0f111072b2de36}{missing\+\_\+values}=\textquotesingle{}\textquotesingle{}, locked=False)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a407bb68d9cd86102fabf65b7618c12d9}{func}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_af6eeab2aded49e13460876c37f4791f9}{default}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a52f3ad6c429500d77e0f111072b2de36}{missing\+\_\+values}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a384ac106a689255808139a75b14bf28f}{type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Factory class for function transforming a string into another object
+(int, float).
+
+After initialization, an instance can be called to transform a string
+into another object. If the string is recognized as representing a
+missing value, a default value is returned.
+
+Attributes
+----------
+func : function
+    Function used for the conversion.
+default : any
+    Default value to return when the input corresponds to a missing
+    value.
+type : type
+    Type of the output.
+_status : int
+    Integer representing the order of the conversion.
+_mapper : sequence of tuples
+    Sequence of tuples (dtype, function, default value) to evaluate in
+    order.
+_locked : bool
+    Holds `locked` parameter.
+
+Parameters
+----------
+dtype_or_func : {None, dtype, function}, optional
+    If a `dtype`, specifies the input data type, used to define a basic
+    function and a default value for missing data. For example, when
+    `dtype` is float, the `func` attribute is set to `float` and the
+    default value to `np.nan`.  If a function, this function is used to
+    convert a string to another object. In this case, it is recommended
+    to give an associated default value as input.
+default : any, optional
+    Value to return by default, that is, when the string to be
+    converted is flagged as missing. If not given, `StringConverter`
+    tries to supply a reasonable default value.
+missing_values : {None, sequence of str}, optional
+    ``None`` or sequence of strings indicating a missing value. If ``None``
+    then missing values are indicated by empty entries. The default is
+    ``None``.
+locked : bool, optional
+    Whether the StringConverter should be locked to prevent automatic
+    upgrade or not. Default is False.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a7a2279b60a9eb15f924f4959258c53f7}\label{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a7a2279b60a9eb15f924f4959258c53f7}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+iotools.\+String\+Converter.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dtype\+\_\+or\+\_\+func = {\ttfamily None},  }\item[{}]{default = {\ttfamily None},  }\item[{}]{missing\+\_\+values = {\ttfamily None},  }\item[{}]{locked = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a6760fec89a238d4a646f932deef522f2}\label{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a6760fec89a238d4a646f932deef522f2}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+iotools.\+String\+Converter.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a9583734df1c8b1ae1f4fd45b32e5c246}\label{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a9583734df1c8b1ae1f4fd45b32e5c246}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}!iterupgrade@{iterupgrade}}
+\index{iterupgrade@{iterupgrade}!numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}}
+\subsubsection{\texorpdfstring{iterupgrade()}{iterupgrade()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+iotools.\+String\+Converter.\+iterupgrade (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a55369b13d882ec205f7b66eafeda0a5a}\label{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a55369b13d882ec205f7b66eafeda0a5a}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}!update@{update}}
+\index{update@{update}!numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+iotools.\+String\+Converter.\+update (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func,  }\item[{}]{default = {\ttfamily None},  }\item[{}]{testing\+\_\+value = {\ttfamily None},  }\item[{}]{missing\+\_\+values = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{locked = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set StringConverter attributes directly.
+
+Parameters
+----------
+func : function
+    Conversion function.
+default : any, optional
+    Value to return by default, that is, when the string to be
+    converted is flagged as missing. If not given,
+    `StringConverter` tries to supply a reasonable default value.
+testing_value : str, optional
+    A string representing a standard input value of the converter.
+    This string is used to help defining a reasonable default
+    value.
+missing_values : {sequence of str, None}, optional
+    Sequence of strings indicating a missing value. If ``None``, then
+    the existing `missing_values` are cleared. The default is `''`.
+locked : bool, optional
+    Whether the StringConverter should be locked to prevent
+    automatic upgrade or not. Default is False.
+
+Notes
+-----
+`update` takes the same parameters as the constructor of
+`StringConverter`, except that `func` does not accept a `dtype`
+whereas `dtype_or_func` in the constructor does.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_aaa5ab95c04294d5c4fc113dc89a35475}\label{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_aaa5ab95c04294d5c4fc113dc89a35475}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}!upgrade@{upgrade}}
+\index{upgrade@{upgrade}!numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}}
+\subsubsection{\texorpdfstring{upgrade()}{upgrade()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+iotools.\+String\+Converter.\+upgrade (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the best converter for a given string, and return the result.
+
+The supplied string `value` is converted by testing different
+converters in order. First the `func` method of the
+`StringConverter` instance is tried, if this fails other available
+converters are tried.  The order in which these other converters
+are tried is determined by the `_status` attribute of the instance.
+
+Parameters
+----------
+value : str
+    The string to convert.
+
+Returns
+-------
+out : any
+    The result of converting `value` with the appropriate converter.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_abbd532192cd492cab583763380d132d6}\label{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_abbd532192cd492cab583763380d132d6}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}!upgrade\+\_\+mapper@{upgrade\+\_\+mapper}}
+\index{upgrade\+\_\+mapper@{upgrade\+\_\+mapper}!numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}}
+\subsubsection{\texorpdfstring{upgrade\+\_\+mapper()}{upgrade\_mapper()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+iotools.\+String\+Converter.\+upgrade\+\_\+mapper (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{func,  }\item[{}]{default = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Upgrade the mapper of a StringConverter by adding a new function and
+its corresponding default.
+
+The input function (or sequence of functions) and its associated
+default value (if any) is inserted in penultimate position of the
+mapper.  The corresponding type is estimated from the dtype of the
+default value.
+
+Parameters
+----------
+func : var
+    Function, or sequence of functions
+
+Examples
+--------
+>>> import dateutil.parser
+>>> import datetime
+>>> dateparser = dateutil.parser.parse
+>>> defaultdate = datetime.date(2000, 1, 1)
+>>> StringConverter.upgrade_mapper(dateparser, default=defaultdate)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_af6eeab2aded49e13460876c37f4791f9}\label{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_af6eeab2aded49e13460876c37f4791f9}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}!default@{default}}
+\index{default@{default}!numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}}
+\subsubsection{\texorpdfstring{default}{default}}
+{\footnotesize\ttfamily numpy.\+lib.\+\_\+iotools.\+String\+Converter.\+default}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a407bb68d9cd86102fabf65b7618c12d9}\label{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a407bb68d9cd86102fabf65b7618c12d9}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}!func@{func}}
+\index{func@{func}!numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}}
+\subsubsection{\texorpdfstring{func}{func}}
+{\footnotesize\ttfamily numpy.\+lib.\+\_\+iotools.\+String\+Converter.\+func}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a52f3ad6c429500d77e0f111072b2de36}\label{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a52f3ad6c429500d77e0f111072b2de36}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}!missing\+\_\+values@{missing\+\_\+values}}
+\index{missing\+\_\+values@{missing\+\_\+values}!numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}}
+\subsubsection{\texorpdfstring{missing\+\_\+values}{missing\_values}}
+{\footnotesize\ttfamily numpy.\+lib.\+\_\+iotools.\+String\+Converter.\+missing\+\_\+values}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a384ac106a689255808139a75b14bf28f}\label{classnumpy_1_1lib_1_1__iotools_1_1StringConverter_a384ac106a689255808139a75b14bf28f}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}!type@{type}}
+\index{type@{type}!numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter@{numpy\+::lib\+::\+\_\+iotools\+::\+String\+Converter}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily numpy.\+lib.\+\_\+iotools.\+String\+Converter.\+type}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/lib/\hyperlink{__iotools_8py}{\+\_\+iotools.\+py}\end{DoxyCompactItemize}

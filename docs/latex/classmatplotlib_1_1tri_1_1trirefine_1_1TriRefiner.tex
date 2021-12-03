@@ -1,0 +1,61 @@
+\hypertarget{classmatplotlib_1_1tri_1_1trirefine_1_1TriRefiner}{}\section{matplotlib.\+tri.\+trirefine.\+Tri\+Refiner Class Reference}
+\label{classmatplotlib_1_1tri_1_1trirefine_1_1TriRefiner}\index{matplotlib.\+tri.\+trirefine.\+Tri\+Refiner@{matplotlib.\+tri.\+trirefine.\+Tri\+Refiner}}
+
+
+Inheritance diagram for matplotlib.\+tri.\+trirefine.\+Tri\+Refiner\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classmatplotlib_1_1tri_1_1trirefine_1_1TriRefiner__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1trirefine_1_1TriRefiner_ab3355dfed0de7977f62f0e4ee3901014}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, triangulation)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Abstract base class for classes implementing mesh refinement.
+
+A TriRefiner encapsulates a Triangulation object and provides tools for
+mesh refinement and interpolation.
+
+Derived classes must implement:
+
+- ``refine_triangulation(return_tri_index=False, **kwargs)`` , where
+  the optional keyword arguments *kwargs* are defined in each
+  TriRefiner concrete implementation, and which returns:
+
+  - a refined triangulation,
+  - optionally (depending on *return_tri_index*), for each
+    point of the refined triangulation: the index of
+    the initial triangulation triangle to which it belongs.
+
+- ``refine_field(z, triinterpolator=None, **kwargs)``, where:
+
+  - *z* array of field values (to refine) defined at the base
+    triangulation nodes,
+  - *triinterpolator* is an optional `~matplotlib.tri.TriInterpolator`,
+  - the other optional keyword arguments *kwargs* are defined in
+    each TriRefiner concrete implementation;
+
+  and which returns (as a tuple) a refined triangular mesh and the
+  interpolated values of the field at the refined triangulation nodes.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1trirefine_1_1TriRefiner_ab3355dfed0de7977f62f0e4ee3901014}\label{classmatplotlib_1_1tri_1_1trirefine_1_1TriRefiner_ab3355dfed0de7977f62f0e4ee3901014}} 
+\index{matplotlib\+::tri\+::trirefine\+::\+Tri\+Refiner@{matplotlib\+::tri\+::trirefine\+::\+Tri\+Refiner}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::tri\+::trirefine\+::\+Tri\+Refiner@{matplotlib\+::tri\+::trirefine\+::\+Tri\+Refiner}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+trirefine.\+Tri\+Refiner.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{triangulation }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/tri/\hyperlink{trirefine_8py}{trirefine.\+py}\end{DoxyCompactItemize}

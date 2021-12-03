@@ -1,0 +1,166 @@
+\hypertarget{namespacematplotlib_1_1dviread}{}\section{matplotlib.\+dviread Namespace Reference}
+\label{namespacematplotlib_1_1dviread}\index{matplotlib.\+dviread@{matplotlib.\+dviread}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1dviread_1_1Dvi}{Dvi}
+\item 
+class \hyperlink{classmatplotlib_1_1dviread_1_1DviFont}{Dvi\+Font}
+\item 
+class \hyperlink{classmatplotlib_1_1dviread_1_1Encoding}{Encoding}
+\item 
+class \hyperlink{classmatplotlib_1_1dviread_1_1PsfontsMap}{Psfonts\+Map}
+\item 
+class \hyperlink{classmatplotlib_1_1dviread_1_1Tfm}{Tfm}
+\item 
+class \hyperlink{classmatplotlib_1_1dviread_1_1Vf}{Vf}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1dviread_aded8f21bc8468b8fd589146ccf72ffce}{find\+\_\+tex\+\_\+file} (filename, format=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1dviread_ab6fc2a9d039280a2b95cca4ea9923e8f}{Page} = namedtuple(\textquotesingle{}Page\textquotesingle{}, \textquotesingle{}text boxes height width descent\textquotesingle{})
+\item 
+\hyperlink{namespacematplotlib_1_1dviread_ab3dd6a531da85833d83b56cd7e439533}{Text} = namedtuple(\textquotesingle{}Text\textquotesingle{}, \textquotesingle{}x y font glyph width\textquotesingle{})
+\item 
+\hyperlink{namespacematplotlib_1_1dviread_ad14c629f30e4deabf3a9e73a55d18bf0}{Box} = namedtuple(\textquotesingle{}Box\textquotesingle{}, \textquotesingle{}x y height width\textquotesingle{})
+\item 
+\hyperlink{namespacematplotlib_1_1dviread_a531c675b4fefac57dcdc95a215ba6b58}{Ps\+Font} = namedtuple(\textquotesingle{}Ps\+Font\textquotesingle{}, \textquotesingle{}texname psname effects encoding filename\textquotesingle{})
+\item 
+\hyperlink{namespacematplotlib_1_1dviread_a948647d17c88526e4b3f20b4376a638a}{parser} = Argument\+Parser()
+\item 
+\hyperlink{namespacematplotlib_1_1dviread_a967ac0b4497e2a5b03371a6ea7704516}{nargs}
+\item 
+\hyperlink{namespacematplotlib_1_1dviread_a68331d7aa39b2a07df46539ee5f772cb}{type}
+\item 
+\hyperlink{namespacematplotlib_1_1dviread_a9febeb276adf40be2abbc8d684399a87}{float}
+\item 
+\hyperlink{namespacematplotlib_1_1dviread_a57000936755bcae8e2c42b5fabd3a19a}{default}
+\item 
+\hyperlink{namespacematplotlib_1_1dviread_a5f306215cb3ae8dcdba5aeecf4263d90}{args} = parser.\+parse\+\_\+args()
+\item 
+\hyperlink{namespacematplotlib_1_1dviread_a76dcfe919cb900ecd6ab9b0d141c1d8c}{fontmap} = \hyperlink{classmatplotlib_1_1dviread_1_1PsfontsMap}{Psfonts\+Map}(\hyperlink{namespacematplotlib_1_1dviread_aded8f21bc8468b8fd589146ccf72ffce}{find\+\_\+tex\+\_\+file}(\textquotesingle{}pdftex.\+map\textquotesingle{}))
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A module for reading dvi files output by TeX. Several limitations make
+this not (currently) useful as a general-purpose dvi preprocessor, but
+it is currently used by the pdf backend for processing usetex text.
+
+Interface::
+
+  with Dvi(filename, 72) as dvi:
+      # iterate over pages:
+      for page in dvi:
+  w, h, d = page.width, page.height, page.descent
+  for x, y, font, glyph, width in page.text:
+      fontname = font.texname
+      pointsize = font.size
+      ...
+  for x, y, height, width in page.boxes:
+      ...
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1dviread_aded8f21bc8468b8fd589146ccf72ffce}\label{namespacematplotlib_1_1dviread_aded8f21bc8468b8fd589146ccf72ffce}} 
+\index{matplotlib\+::dviread@{matplotlib\+::dviread}!find\+\_\+tex\+\_\+file@{find\+\_\+tex\+\_\+file}}
+\index{find\+\_\+tex\+\_\+file@{find\+\_\+tex\+\_\+file}!matplotlib\+::dviread@{matplotlib\+::dviread}}
+\subsubsection{\texorpdfstring{find\+\_\+tex\+\_\+file()}{find\_tex\_file()}}
+{\footnotesize\ttfamily def matplotlib.\+dviread.\+find\+\_\+tex\+\_\+file (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{format = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find a file in the texmf tree.
+
+Calls :program:`kpsewhich` which is an interface to the kpathsea
+library [1]_. Most existing TeX distributions on Unix-like systems use
+kpathsea. It is also available as part of MikTeX, a popular
+distribution on Windows.
+
+*If the file is not found, an empty string is returned*.
+
+Parameters
+----------
+filename : str or path-like
+format : str or bytes
+    Used as the value of the ``--format`` option to :program:`kpsewhich`.
+    Could be e.g. 'tfm' or 'vf' to limit the search to that type of files.
+
+References
+----------
+.. [1] `Kpathsea documentation <http://www.tug.org/kpathsea/>`_
+    The library that :program:`kpsewhich` is part of.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1dviread_a5f306215cb3ae8dcdba5aeecf4263d90}\label{namespacematplotlib_1_1dviread_a5f306215cb3ae8dcdba5aeecf4263d90}} 
+\index{matplotlib\+::dviread@{matplotlib\+::dviread}!args@{args}}
+\index{args@{args}!matplotlib\+::dviread@{matplotlib\+::dviread}}
+\subsubsection{\texorpdfstring{args}{args}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+args = parser.\+parse\+\_\+args()}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1dviread_ad14c629f30e4deabf3a9e73a55d18bf0}\label{namespacematplotlib_1_1dviread_ad14c629f30e4deabf3a9e73a55d18bf0}} 
+\index{matplotlib\+::dviread@{matplotlib\+::dviread}!Box@{Box}}
+\index{Box@{Box}!matplotlib\+::dviread@{matplotlib\+::dviread}}
+\subsubsection{\texorpdfstring{Box}{Box}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Box = namedtuple(\textquotesingle{}Box\textquotesingle{}, \textquotesingle{}x y height width\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1dviread_a57000936755bcae8e2c42b5fabd3a19a}\label{namespacematplotlib_1_1dviread_a57000936755bcae8e2c42b5fabd3a19a}} 
+\index{matplotlib\+::dviread@{matplotlib\+::dviread}!default@{default}}
+\index{default@{default}!matplotlib\+::dviread@{matplotlib\+::dviread}}
+\subsubsection{\texorpdfstring{default}{default}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+default}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1dviread_a9febeb276adf40be2abbc8d684399a87}\label{namespacematplotlib_1_1dviread_a9febeb276adf40be2abbc8d684399a87}} 
+\index{matplotlib\+::dviread@{matplotlib\+::dviread}!float@{float}}
+\index{float@{float}!matplotlib\+::dviread@{matplotlib\+::dviread}}
+\subsubsection{\texorpdfstring{float}{float}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+float}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1dviread_a76dcfe919cb900ecd6ab9b0d141c1d8c}\label{namespacematplotlib_1_1dviread_a76dcfe919cb900ecd6ab9b0d141c1d8c}} 
+\index{matplotlib\+::dviread@{matplotlib\+::dviread}!fontmap@{fontmap}}
+\index{fontmap@{fontmap}!matplotlib\+::dviread@{matplotlib\+::dviread}}
+\subsubsection{\texorpdfstring{fontmap}{fontmap}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+fontmap = \hyperlink{classmatplotlib_1_1dviread_1_1PsfontsMap}{Psfonts\+Map}(\hyperlink{namespacematplotlib_1_1dviread_aded8f21bc8468b8fd589146ccf72ffce}{find\+\_\+tex\+\_\+file}(\textquotesingle{}pdftex.\+map\textquotesingle{}))}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1dviread_a967ac0b4497e2a5b03371a6ea7704516}\label{namespacematplotlib_1_1dviread_a967ac0b4497e2a5b03371a6ea7704516}} 
+\index{matplotlib\+::dviread@{matplotlib\+::dviread}!nargs@{nargs}}
+\index{nargs@{nargs}!matplotlib\+::dviread@{matplotlib\+::dviread}}
+\subsubsection{\texorpdfstring{nargs}{nargs}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+nargs}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1dviread_ab6fc2a9d039280a2b95cca4ea9923e8f}\label{namespacematplotlib_1_1dviread_ab6fc2a9d039280a2b95cca4ea9923e8f}} 
+\index{matplotlib\+::dviread@{matplotlib\+::dviread}!Page@{Page}}
+\index{Page@{Page}!matplotlib\+::dviread@{matplotlib\+::dviread}}
+\subsubsection{\texorpdfstring{Page}{Page}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Page = namedtuple(\textquotesingle{}Page\textquotesingle{}, \textquotesingle{}text boxes height width descent\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1dviread_a948647d17c88526e4b3f20b4376a638a}\label{namespacematplotlib_1_1dviread_a948647d17c88526e4b3f20b4376a638a}} 
+\index{matplotlib\+::dviread@{matplotlib\+::dviread}!parser@{parser}}
+\index{parser@{parser}!matplotlib\+::dviread@{matplotlib\+::dviread}}
+\subsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+parser = Argument\+Parser()}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1dviread_a531c675b4fefac57dcdc95a215ba6b58}\label{namespacematplotlib_1_1dviread_a531c675b4fefac57dcdc95a215ba6b58}} 
+\index{matplotlib\+::dviread@{matplotlib\+::dviread}!Ps\+Font@{Ps\+Font}}
+\index{Ps\+Font@{Ps\+Font}!matplotlib\+::dviread@{matplotlib\+::dviread}}
+\subsubsection{\texorpdfstring{Ps\+Font}{PsFont}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Ps\+Font = namedtuple(\textquotesingle{}Ps\+Font\textquotesingle{}, \textquotesingle{}texname psname effects encoding filename\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1dviread_ab3dd6a531da85833d83b56cd7e439533}\label{namespacematplotlib_1_1dviread_ab3dd6a531da85833d83b56cd7e439533}} 
+\index{matplotlib\+::dviread@{matplotlib\+::dviread}!Text@{Text}}
+\index{Text@{Text}!matplotlib\+::dviread@{matplotlib\+::dviread}}
+\subsubsection{\texorpdfstring{Text}{Text}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Text = namedtuple(\textquotesingle{}Text\textquotesingle{}, \textquotesingle{}x y font glyph width\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1dviread_a68331d7aa39b2a07df46539ee5f772cb}\label{namespacematplotlib_1_1dviread_a68331d7aa39b2a07df46539ee5f772cb}} 
+\index{matplotlib\+::dviread@{matplotlib\+::dviread}!type@{type}}
+\index{type@{type}!matplotlib\+::dviread@{matplotlib\+::dviread}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+type}
+

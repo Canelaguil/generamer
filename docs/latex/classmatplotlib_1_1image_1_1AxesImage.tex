@@ -1,0 +1,189 @@
+\hypertarget{classmatplotlib_1_1image_1_1AxesImage}{}\section{matplotlib.\+image.\+Axes\+Image Class Reference}
+\label{classmatplotlib_1_1image_1_1AxesImage}\index{matplotlib.\+image.\+Axes\+Image@{matplotlib.\+image.\+Axes\+Image}}
+
+
+Inheritance diagram for matplotlib.\+image.\+Axes\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1image_1_1AxesImage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+image.\+Axes\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classmatplotlib_1_1image_1_1AxesImage__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1AxesImage_a7e66b306be8784f81616733543df7a42}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1AxesImage_ac756938f67fd63492f2260aa808ea62f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, ax, \hyperlink{classmatplotlib_1_1cm_1_1ScalarMappable_a3684ebc12a81cc6f2599c0babd1d40af}{cmap}=None, \hyperlink{classmatplotlib_1_1cm_1_1ScalarMappable_a5507985e8c38feaa3d6972f75db09f73}{norm}=None, interpolation=None, \hyperlink{classmatplotlib_1_1image_1_1AxesImage_a5f5dac751a5431dcd62fb896728e0b64}{origin}=None, extent=None, filternorm=True, filterrad=4.\+0, resample=False, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1AxesImage_a8c30519cf18fffe127f830310c9aa685}{get\+\_\+window\+\_\+extent} (self, renderer=None)
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1AxesImage_a5e60e7f383a19221dcf56e47bf8ab1d4}{make\+\_\+image} (self, renderer, magnification=1.\+0, unsampled=False)
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1AxesImage_a83b67f22c5065c58b96e2d3866ddab57}{set\+\_\+extent} (self, extent)
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1AxesImage_a3ea8bf235d707c8cb759dc1ebac3cb78}{get\+\_\+extent} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1AxesImage_a3b1ea95e189d4a9c4f864c886be03333}{get\+\_\+cursor\+\_\+data} (self, event)
+\item 
+def \hyperlink{classmatplotlib_1_1image_1_1AxesImage_a98d5f1acc846041718fcc995b56485c9}{format\+\_\+cursor\+\_\+data} (self, data)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1image_1_1AxesImage_a882587d5cf3345c199857ff9605fa02c}{stale}
+\item 
+\hyperlink{classmatplotlib_1_1image_1_1AxesImage_a5f5dac751a5431dcd62fb896728e0b64}{origin}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An image attached to an Axes.
+
+Parameters
+----------
+ax : `~.axes.Axes`
+    The axes the image will belong to.
+cmap : str or `~matplotlib.colors.Colormap`, default: :rc:`image.cmap`
+    The Colormap instance or registered colormap name used to map scalar
+    data to colors.
+norm : `~matplotlib.colors.Normalize`
+    Maps luminance to 0-1.
+interpolation : str, default: :rc:`image.interpolation`
+    Supported values are 'none', 'antialiased', 'nearest', 'bilinear',
+    'bicubic', 'spline16', 'spline36', 'hanning', 'hamming', 'hermite',
+    'kaiser', 'quadric', 'catrom', 'gaussian', 'bessel', 'mitchell',
+    'sinc', 'lanczos', 'blackman'.
+origin : {'upper', 'lower'}, default: :rc:`image.origin`
+    Place the [0, 0] index of the array in the upper left or lower left
+    corner of the axes. The convention 'upper' is typically used for
+    matrices and images.
+extent : tuple, optional
+    The data axes (left, right, bottom, top) for making image plots
+    registered with data plots.  Default is to label the pixel
+    centers with the zero-based row and column indices.
+filternorm : bool, default: True
+    A parameter for the antigrain image resize filter
+    (see the antigrain documentation).
+    If filternorm is set, the filter normalizes integer values and corrects
+    the rounding errors. It doesn't do anything with the source floating
+    point values, it corrects only integers according to the rule of 1.0
+    which means that any sum of pixel weights must be equal to 1.0. So,
+    the filter function must produce a graph of the proper shape.
+filterrad : float > 0, default: 4
+    The filter radius for filters that have a radius parameter, i.e. when
+    interpolation is one of: 'sinc', 'lanczos' or 'blackman'.
+resample : bool, default: False
+    When True, use a full resampling method. When False, only resample when
+    the output image is larger than the input image.
+**kwargs : `.Artist` properties
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1AxesImage_ac756938f67fd63492f2260aa808ea62f}\label{classmatplotlib_1_1image_1_1AxesImage_ac756938f67fd63492f2260aa808ea62f}} 
+\index{matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Axes\+Image.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{cmap = {\ttfamily None},  }\item[{}]{norm = {\ttfamily None},  }\item[{}]{interpolation = {\ttfamily None},  }\item[{}]{origin = {\ttfamily None},  }\item[{}]{extent = {\ttfamily None},  }\item[{}]{filternorm = {\ttfamily True},  }\item[{}]{filterrad = {\ttfamily 4.0},  }\item[{}]{resample = {\ttfamily False},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1AxesImage_a7e66b306be8784f81616733543df7a42}\label{classmatplotlib_1_1image_1_1AxesImage_a7e66b306be8784f81616733543df7a42}} 
+\index{matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Axes\+Image.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1AxesImage_a98d5f1acc846041718fcc995b56485c9}\label{classmatplotlib_1_1image_1_1AxesImage_a98d5f1acc846041718fcc995b56485c9}} 
+\index{matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}!format\+\_\+cursor\+\_\+data@{format\+\_\+cursor\+\_\+data}}
+\index{format\+\_\+cursor\+\_\+data@{format\+\_\+cursor\+\_\+data}!matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}}
+\subsubsection{\texorpdfstring{format\+\_\+cursor\+\_\+data()}{format\_cursor\_data()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Axes\+Image.\+format\+\_\+cursor\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1AxesImage_a3b1ea95e189d4a9c4f864c886be03333}\label{classmatplotlib_1_1image_1_1AxesImage_a3b1ea95e189d4a9c4f864c886be03333}} 
+\index{matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}!get\+\_\+cursor\+\_\+data@{get\+\_\+cursor\+\_\+data}}
+\index{get\+\_\+cursor\+\_\+data@{get\+\_\+cursor\+\_\+data}!matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}}
+\subsubsection{\texorpdfstring{get\+\_\+cursor\+\_\+data()}{get\_cursor\_data()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Axes\+Image.\+get\+\_\+cursor\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the image value at the event position or *None* if the event is
+outside the image.
+
+See Also
+--------
+matplotlib.artist.Artist.get_cursor_data
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1image_1_1AxesImage_a3ea8bf235d707c8cb759dc1ebac3cb78}\label{classmatplotlib_1_1image_1_1AxesImage_a3ea8bf235d707c8cb759dc1ebac3cb78}} 
+\index{matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}!get\+\_\+extent@{get\+\_\+extent}}
+\index{get\+\_\+extent@{get\+\_\+extent}!matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}}
+\subsubsection{\texorpdfstring{get\+\_\+extent()}{get\_extent()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Axes\+Image.\+get\+\_\+extent (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the image extent as tuple (left, right, bottom, top).\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1image_1_1AxesImage_a8c30519cf18fffe127f830310c9aa685}\label{classmatplotlib_1_1image_1_1AxesImage_a8c30519cf18fffe127f830310c9aa685}} 
+\index{matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}!get\+\_\+window\+\_\+extent@{get\+\_\+window\+\_\+extent}}
+\index{get\+\_\+window\+\_\+extent@{get\+\_\+window\+\_\+extent}!matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}}
+\subsubsection{\texorpdfstring{get\+\_\+window\+\_\+extent()}{get\_window\_extent()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Axes\+Image.\+get\+\_\+window\+\_\+extent (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1AxesImage_a5e60e7f383a19221dcf56e47bf8ab1d4}\label{classmatplotlib_1_1image_1_1AxesImage_a5e60e7f383a19221dcf56e47bf8ab1d4}} 
+\index{matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}!make\+\_\+image@{make\+\_\+image}}
+\index{make\+\_\+image@{make\+\_\+image}!matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}}
+\subsubsection{\texorpdfstring{make\+\_\+image()}{make\_image()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Axes\+Image.\+make\+\_\+image (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer,  }\item[{}]{magnification = {\ttfamily 1.0},  }\item[{}]{unsampled = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1AxesImage_a83b67f22c5065c58b96e2d3866ddab57}\label{classmatplotlib_1_1image_1_1AxesImage_a83b67f22c5065c58b96e2d3866ddab57}} 
+\index{matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}!set\+\_\+extent@{set\+\_\+extent}}
+\index{set\+\_\+extent@{set\+\_\+extent}!matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}}
+\subsubsection{\texorpdfstring{set\+\_\+extent()}{set\_extent()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+Axes\+Image.\+set\+\_\+extent (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{extent }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the image extent.
+
+Parameters
+----------
+extent : 4-tuple of float
+    The position and size of the image as tuple
+    ``(left, right, bottom, top)`` in data coordinates.
+
+Notes
+-----
+This updates ``ax.dataLim``, and, if autoscaling, sets ``ax.viewLim``
+to tightly fit the image, regardless of ``dataLim``.  Autoscaling
+state is not changed, so following this with ``ax.autoscale_view()``
+will redo the autoscaling in accord with ``dataLim``.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1AxesImage_a5f5dac751a5431dcd62fb896728e0b64}\label{classmatplotlib_1_1image_1_1AxesImage_a5f5dac751a5431dcd62fb896728e0b64}} 
+\index{matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}!origin@{origin}}
+\index{origin@{origin}!matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}}
+\subsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily matplotlib.\+image.\+Axes\+Image.\+origin}
+
+\mbox{\Hypertarget{classmatplotlib_1_1image_1_1AxesImage_a882587d5cf3345c199857ff9605fa02c}\label{classmatplotlib_1_1image_1_1AxesImage_a882587d5cf3345c199857ff9605fa02c}} 
+\index{matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::image\+::\+Axes\+Image@{matplotlib\+::image\+::\+Axes\+Image}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+image.\+Axes\+Image.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{image_8py}{image.\+py}\end{DoxyCompactItemize}

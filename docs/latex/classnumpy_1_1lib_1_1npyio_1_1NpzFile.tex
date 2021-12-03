@@ -1,0 +1,239 @@
+\hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile}{}\section{numpy.\+lib.\+npyio.\+Npz\+File Class Reference}
+\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile}\index{numpy.\+lib.\+npyio.\+Npz\+File@{numpy.\+lib.\+npyio.\+Npz\+File}}
+
+
+Inheritance diagram for numpy.\+lib.\+npyio.\+Npz\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classnumpy_1_1lib_1_1npyio_1_1NpzFile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+lib.\+npyio.\+Npz\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classnumpy_1_1lib_1_1npyio_1_1NpzFile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_adf81787a0d2d9a46345a30dfd085d5b3}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a5111469fe872459c2713ed08a41730b8}{fid}, own\+\_\+fid=False, \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a01370fae1d49fefe16759cdd911fe013}{allow\+\_\+pickle}=False, \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a9e182b2b99017abc9b1b857dcb26f37f}{pickle\+\_\+kwargs}=None)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_aa6491d4a0f468ad55691caf7577433f2}{\+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a0e33aed8f407d1c4d53e0260d4751979}{\+\_\+\+\_\+exit\+\_\+\+\_\+} (self, exc\+\_\+type, exc\+\_\+value, traceback)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a733921dd2b5e7e2e123ba35fbf1217a8}{close} (self)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_ab7c79d421e510d91d992226c94bd55fe}{\+\_\+\+\_\+del\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a00755f520d62fd92dfbca8cc9e77736d}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_aadf4d804453dbb6ca7a912e30a2e83cf}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a2fb5158205cc6970fcbc2ca50db9e109}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, key)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a8d28dd09aaf01970df69249aaddf0169}{iteritems} (self)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a211b98e832f585ad22d23c53f108570d}{iterkeys} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a39caf915254dcc868cedeb69dd307406}{files}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a01370fae1d49fefe16759cdd911fe013}{allow\+\_\+pickle}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a9e182b2b99017abc9b1b857dcb26f37f}{pickle\+\_\+kwargs}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a2a281820632477b63ead82d06cef1f3a}{f}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_afff3d523933ebb7eddb3c9d64d35e4d2}{zip}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a5111469fe872459c2713ed08a41730b8}{fid}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}NpzFile(fid)
+
+A dictionary-like object with lazy-loading of files in the zipped
+archive provided on construction.
+
+`NpzFile` is used to load files in the NumPy ``.npz`` data archive
+format. It assumes that files in the archive have a ``.npy`` extension,
+other files are ignored.
+
+The arrays and file strings are lazily loaded on either
+getitem access using ``obj['key']`` or attribute lookup using
+``obj.f.key``. A list of all files (without ``.npy`` extensions) can
+be obtained with ``obj.files`` and the ZipFile object itself using
+``obj.zip``.
+
+Attributes
+----------
+files : list of str
+    List of all files in the archive with a ``.npy`` extension.
+zip : ZipFile instance
+    The ZipFile object initialized with the zipped archive.
+f : BagObj instance
+    An object on which attribute can be performed as an alternative
+    to getitem access on the `NpzFile` instance itself.
+allow_pickle : bool, optional
+    Allow loading pickled data. Default: False
+
+    .. versionchanged:: 1.16.3
+        Made default False in response to CVE-2019-6446.
+
+pickle_kwargs : dict, optional
+    Additional keyword arguments to pass on to pickle.load.
+    These are only useful when loading object arrays saved on
+    Python 2 when using Python 3.
+
+Parameters
+----------
+fid : file or str
+    The zipped archive to open. This is either a file-like object
+    or a string containing the path to the archive.
+own_fid : bool, optional
+    Whether NpzFile should close the file handle.
+    Requires that `fid` is a file-like object.
+
+Examples
+--------
+>>> from tempfile import TemporaryFile
+>>> outfile = TemporaryFile()
+>>> x = np.arange(10)
+>>> y = np.sin(x)
+>>> np.savez(outfile, x=x, y=y)
+>>> _ = outfile.seek(0)
+
+>>> npz = np.load(outfile)
+>>> isinstance(npz, np.lib.io.NpzFile)
+True
+>>> sorted(npz.files)
+['x', 'y']
+>>> npz['x']  # getitem access
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+>>> npz.f.x  # attribute lookup
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_adf81787a0d2d9a46345a30dfd085d5b3}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_adf81787a0d2d9a46345a30dfd085d5b3}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Npz\+File.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fid,  }\item[{}]{own\+\_\+fid = {\ttfamily False},  }\item[{}]{allow\+\_\+pickle = {\ttfamily False},  }\item[{}]{pickle\+\_\+kwargs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_ab7c79d421e510d91d992226c94bd55fe}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_ab7c79d421e510d91d992226c94bd55fe}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!\+\_\+\+\_\+del\+\_\+\+\_\+@{\+\_\+\+\_\+del\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+del\+\_\+\+\_\+@{\+\_\+\+\_\+del\+\_\+\+\_\+}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+del\+\_\+\+\_\+()}{\_\_del\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Npz\+File.\+\_\+\+\_\+del\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_aa6491d4a0f468ad55691caf7577433f2}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_aa6491d4a0f468ad55691caf7577433f2}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+enter\+\_\+\+\_\+()}{\_\_enter\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Npz\+File.\+\_\+\+\_\+enter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a0e33aed8f407d1c4d53e0260d4751979}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a0e33aed8f407d1c4d53e0260d4751979}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+exit\+\_\+\+\_\+()}{\_\_exit\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Npz\+File.\+\_\+\+\_\+exit\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{exc\+\_\+type,  }\item[{}]{exc\+\_\+value,  }\item[{}]{traceback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a2fb5158205cc6970fcbc2ca50db9e109}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a2fb5158205cc6970fcbc2ca50db9e109}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Npz\+File.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a00755f520d62fd92dfbca8cc9e77736d}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a00755f520d62fd92dfbca8cc9e77736d}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Npz\+File.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_aadf4d804453dbb6ca7a912e30a2e83cf}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_aadf4d804453dbb6ca7a912e30a2e83cf}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Npz\+File.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a733921dd2b5e7e2e123ba35fbf1217a8}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a733921dd2b5e7e2e123ba35fbf1217a8}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!close@{close}}
+\index{close@{close}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Npz\+File.\+close (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Close the file.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a8d28dd09aaf01970df69249aaddf0169}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a8d28dd09aaf01970df69249aaddf0169}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!iteritems@{iteritems}}
+\index{iteritems@{iteritems}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{iteritems()}{iteritems()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Npz\+File.\+iteritems (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a211b98e832f585ad22d23c53f108570d}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a211b98e832f585ad22d23c53f108570d}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!iterkeys@{iterkeys}}
+\index{iterkeys@{iterkeys}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{iterkeys()}{iterkeys()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Npz\+File.\+iterkeys (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a01370fae1d49fefe16759cdd911fe013}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a01370fae1d49fefe16759cdd911fe013}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!allow\+\_\+pickle@{allow\+\_\+pickle}}
+\index{allow\+\_\+pickle@{allow\+\_\+pickle}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{allow\+\_\+pickle}{allow\_pickle}}
+{\footnotesize\ttfamily numpy.\+lib.\+npyio.\+Npz\+File.\+allow\+\_\+pickle}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a2a281820632477b63ead82d06cef1f3a}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a2a281820632477b63ead82d06cef1f3a}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!f@{f}}
+\index{f@{f}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily numpy.\+lib.\+npyio.\+Npz\+File.\+f}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a5111469fe872459c2713ed08a41730b8}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a5111469fe872459c2713ed08a41730b8}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!fid@{fid}}
+\index{fid@{fid}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{fid}{fid}}
+{\footnotesize\ttfamily numpy.\+lib.\+npyio.\+Npz\+File.\+fid\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a39caf915254dcc868cedeb69dd307406}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a39caf915254dcc868cedeb69dd307406}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!files@{files}}
+\index{files@{files}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{files}{files}}
+{\footnotesize\ttfamily numpy.\+lib.\+npyio.\+Npz\+File.\+files}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a9e182b2b99017abc9b1b857dcb26f37f}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_a9e182b2b99017abc9b1b857dcb26f37f}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!pickle\+\_\+kwargs@{pickle\+\_\+kwargs}}
+\index{pickle\+\_\+kwargs@{pickle\+\_\+kwargs}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{pickle\+\_\+kwargs}{pickle\_kwargs}}
+{\footnotesize\ttfamily numpy.\+lib.\+npyio.\+Npz\+File.\+pickle\+\_\+kwargs}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1NpzFile_afff3d523933ebb7eddb3c9d64d35e4d2}\label{classnumpy_1_1lib_1_1npyio_1_1NpzFile_afff3d523933ebb7eddb3c9d64d35e4d2}} 
+\index{numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}!zip@{zip}}
+\index{zip@{zip}!numpy\+::lib\+::npyio\+::\+Npz\+File@{numpy\+::lib\+::npyio\+::\+Npz\+File}}
+\subsubsection{\texorpdfstring{zip}{zip}}
+{\footnotesize\ttfamily numpy.\+lib.\+npyio.\+Npz\+File.\+zip\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/lib/\hyperlink{npyio_8py}{npyio.\+py}\end{DoxyCompactItemize}

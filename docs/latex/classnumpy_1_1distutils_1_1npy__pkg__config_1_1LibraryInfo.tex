@@ -1,0 +1,138 @@
+\hypertarget{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo}{}\section{numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info Class Reference}
+\label{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo}\index{numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info@{numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_ac5c2692bfa8b68a3b2c5fa167d4e46c8}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a36a7b6f0ecf3cc02c8c28b71faaa97e1}{name}, \hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_af604254c7be202e2677f6b1d155f80c4}{description}, \hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a527640fd9e0c71c0d42c8b3d1f5d2f5d}{version}, \hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_ac3aefff18e96597a820c5abf13bafa68}{sections}, \hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_abbbe44c4870bfa86f0dbd7b7b27afc94}{vars}, \hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a786eccf7abb966fca0475a2c4d7882dc}{requires}=None)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_ac3aefff18e96597a820c5abf13bafa68}{sections} (self)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_ab17e6c642f429868938a40fe57f5b426}{cflags} (self, \hyperlink{namespacenumpy_1_1distutils_1_1npy__pkg__config_a7241ba52048f1f71984c38727b0c7b1d}{section}=\char`\"{}default\char`\"{})
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a60a520165faf80f954b7ae4bc77bb2c8}{libs} (self, \hyperlink{namespacenumpy_1_1distutils_1_1npy__pkg__config_a7241ba52048f1f71984c38727b0c7b1d}{section}=\char`\"{}default\char`\"{})
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_aa9f5d1a85707ef8637d5549e6aa75423}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a36a7b6f0ecf3cc02c8c28b71faaa97e1}{name}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_af604254c7be202e2677f6b1d155f80c4}{description}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a786eccf7abb966fca0475a2c4d7882dc}{requires}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a527640fd9e0c71c0d42c8b3d1f5d2f5d}{version}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_abbbe44c4870bfa86f0dbd7b7b27afc94}{vars}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Object containing build information about a library.
+
+Parameters
+----------
+name : str
+    The library name.
+description : str
+    Description of the library.
+version : str
+    Version string.
+sections : dict
+    The sections of the configuration file for the library. The keys are
+    the section headers, the values the text under each header.
+vars : class instance
+    A `VariableSet` instance, which contains ``(name, value)`` pairs for
+    variables defined in the configuration file for the library.
+requires : sequence, optional
+    The required libraries for the library to be installed.
+
+Notes
+-----
+All input parameters (except "sections" which is a method) are available as
+attributes of the same name.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_ac5c2692bfa8b68a3b2c5fa167d4e46c8}\label{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_ac5c2692bfa8b68a3b2c5fa167d4e46c8}} 
+\index{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{description,  }\item[{}]{version,  }\item[{}]{sections,  }\item[{}]{vars,  }\item[{}]{requires = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_aa9f5d1a85707ef8637d5549e6aa75423}\label{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_aa9f5d1a85707ef8637d5549e6aa75423}} 
+\index{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_ab17e6c642f429868938a40fe57f5b426}\label{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_ab17e6c642f429868938a40fe57f5b426}} 
+\index{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}!cflags@{cflags}}
+\index{cflags@{cflags}!numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}}
+\subsubsection{\texorpdfstring{cflags()}{cflags()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info.\+cflags (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{section = {\ttfamily \char`\"{}default\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a60a520165faf80f954b7ae4bc77bb2c8}\label{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a60a520165faf80f954b7ae4bc77bb2c8}} 
+\index{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}!libs@{libs}}
+\index{libs@{libs}!numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}}
+\subsubsection{\texorpdfstring{libs()}{libs()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info.\+libs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{section = {\ttfamily \char`\"{}default\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_ac3aefff18e96597a820c5abf13bafa68}\label{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_ac3aefff18e96597a820c5abf13bafa68}} 
+\index{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}!sections@{sections}}
+\index{sections@{sections}!numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}}
+\subsubsection{\texorpdfstring{sections()}{sections()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info.\+sections (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the section headers of the config file.
+
+Parameters
+----------
+None
+
+Returns
+-------
+keys : list of str
+    The list of section headers.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_af604254c7be202e2677f6b1d155f80c4}\label{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_af604254c7be202e2677f6b1d155f80c4}} 
+\index{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}!description@{description}}
+\index{description@{description}!numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}}
+\subsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info.\+description}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a36a7b6f0ecf3cc02c8c28b71faaa97e1}\label{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a36a7b6f0ecf3cc02c8c28b71faaa97e1}} 
+\index{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}!name@{name}}
+\index{name@{name}!numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info.\+name}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a786eccf7abb966fca0475a2c4d7882dc}\label{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a786eccf7abb966fca0475a2c4d7882dc}} 
+\index{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}!requires@{requires}}
+\index{requires@{requires}!numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}}
+\subsubsection{\texorpdfstring{requires}{requires}}
+{\footnotesize\ttfamily numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info.\+requires}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_abbbe44c4870bfa86f0dbd7b7b27afc94}\label{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_abbbe44c4870bfa86f0dbd7b7b27afc94}} 
+\index{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}!vars@{vars}}
+\index{vars@{vars}!numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}}
+\subsubsection{\texorpdfstring{vars}{vars}}
+{\footnotesize\ttfamily numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info.\+vars}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a527640fd9e0c71c0d42c8b3d1f5d2f5d}\label{classnumpy_1_1distutils_1_1npy__pkg__config_1_1LibraryInfo_a527640fd9e0c71c0d42c8b3d1f5d2f5d}} 
+\index{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}!version@{version}}
+\index{version@{version}!numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info@{numpy\+::distutils\+::npy\+\_\+pkg\+\_\+config\+::\+Library\+Info}}
+\subsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily numpy.\+distutils.\+npy\+\_\+pkg\+\_\+config.\+Library\+Info.\+version}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/distutils/\hyperlink{npy__pkg__config_8py}{npy\+\_\+pkg\+\_\+config.\+py}\end{DoxyCompactItemize}

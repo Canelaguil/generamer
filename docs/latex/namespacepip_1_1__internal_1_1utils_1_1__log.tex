@@ -1,0 +1,57 @@
+\hypertarget{namespacepip_1_1__internal_1_1utils_1_1__log}{}\section{pip.\+\_\+internal.\+utils.\+\_\+log Namespace Reference}
+\label{namespacepip_1_1__internal_1_1utils_1_1__log}\index{pip.\+\_\+internal.\+utils.\+\_\+log@{pip.\+\_\+internal.\+utils.\+\_\+log}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1utils_1_1__log_1_1VerboseLogger}{Verbose\+Logger}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1__log_a4e99fc0a88ebcc9c00f60c8d0d1394f9}{get\+Logger}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1utils_1_1__log_aa96252bd23c82602cde80c73a84a88cb}{init\+\_\+logging} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1utils_1_1__log_a08cf4589fc60a5069bfe5028057085d0}{V\+E\+R\+B\+O\+SE}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Customize logging
+
+Defines custom logger class for the `logger.verbose(...)` method.
+
+init_logging() must be called before any other modules that call logging.getLogger.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1__log_a4e99fc0a88ebcc9c00f60c8d0d1394f9}\label{namespacepip_1_1__internal_1_1utils_1_1__log_a4e99fc0a88ebcc9c00f60c8d0d1394f9}} 
+\index{pip\+::\+\_\+internal\+::utils\+::\+\_\+log@{pip\+::\+\_\+internal\+::utils\+::\+\_\+log}!get\+Logger@{get\+Logger}}
+\index{get\+Logger@{get\+Logger}!pip\+::\+\_\+internal\+::utils\+::\+\_\+log@{pip\+::\+\_\+internal\+::utils\+::\+\_\+log}}
+\subsubsection{\texorpdfstring{get\+Logger()}{getLogger()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+\_\+log.\+get\+Logger (\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1__log_aa96252bd23c82602cde80c73a84a88cb}\label{namespacepip_1_1__internal_1_1utils_1_1__log_aa96252bd23c82602cde80c73a84a88cb}} 
+\index{pip\+::\+\_\+internal\+::utils\+::\+\_\+log@{pip\+::\+\_\+internal\+::utils\+::\+\_\+log}!init\+\_\+logging@{init\+\_\+logging}}
+\index{init\+\_\+logging@{init\+\_\+logging}!pip\+::\+\_\+internal\+::utils\+::\+\_\+log@{pip\+::\+\_\+internal\+::utils\+::\+\_\+log}}
+\subsubsection{\texorpdfstring{init\+\_\+logging()}{init\_logging()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+utils.\+\_\+log.\+init\+\_\+logging (\begin{DoxyParamCaption}\item[{}]{None }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register our VerboseLogger and VERBOSE log level.
+
+Should be called before any calls to getLogger(),
+i.e. in pip._internal.__init__
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1utils_1_1__log_a08cf4589fc60a5069bfe5028057085d0}\label{namespacepip_1_1__internal_1_1utils_1_1__log_a08cf4589fc60a5069bfe5028057085d0}} 
+\index{pip\+::\+\_\+internal\+::utils\+::\+\_\+log@{pip\+::\+\_\+internal\+::utils\+::\+\_\+log}!V\+E\+R\+B\+O\+SE@{V\+E\+R\+B\+O\+SE}}
+\index{V\+E\+R\+B\+O\+SE@{V\+E\+R\+B\+O\+SE}!pip\+::\+\_\+internal\+::utils\+::\+\_\+log@{pip\+::\+\_\+internal\+::utils\+::\+\_\+log}}
+\subsubsection{\texorpdfstring{V\+E\+R\+B\+O\+SE}{VERBOSE}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+utils.\+\_\+log.\+V\+E\+R\+B\+O\+SE}
+

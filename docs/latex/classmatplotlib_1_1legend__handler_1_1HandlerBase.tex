@@ -1,0 +1,97 @@
+\hypertarget{classmatplotlib_1_1legend__handler_1_1HandlerBase}{}\section{matplotlib.\+legend\+\_\+handler.\+Handler\+Base Class Reference}
+\label{classmatplotlib_1_1legend__handler_1_1HandlerBase}\index{matplotlib.\+legend\+\_\+handler.\+Handler\+Base@{matplotlib.\+legend\+\_\+handler.\+Handler\+Base}}
+
+
+Inheritance diagram for matplotlib.\+legend\+\_\+handler.\+Handler\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1legend__handler_1_1HandlerBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerBase_a5d635ce240558604bd57cd841cc101b2}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, xpad=0., ypad=0., update\+\_\+func=None)
+\item 
+def \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerBase_aa54fa79fee69bfec676d9b59b76a29e6}{update\+\_\+prop} (self, legend\+\_\+handle, orig\+\_\+handle, legend)
+\item 
+def \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerBase_aff7f166b8af0935e3d1cded5853a38d2}{adjust\+\_\+drawing\+\_\+area} (self, legend, orig\+\_\+handle, xdescent, ydescent, width, height, fontsize)
+\item 
+def \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerBase_a458640f1dbc72904fbb4ae47d6b518cf}{legend\+\_\+artist} (self, legend, orig\+\_\+handle, fontsize, handlebox)
+\item 
+def \hyperlink{classmatplotlib_1_1legend__handler_1_1HandlerBase_a69710f39ecb263cd4d9c803104bc1310}{create\+\_\+artists} (self, legend, orig\+\_\+handle, xdescent, ydescent, width, height, fontsize, \hyperlink{size_2foo_8f90_afabfd8da71309850231a00e53c61f106}{trans})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A Base class for default legend handlers.
+
+The derived classes are meant to override *create_artists* method, which
+has a following signature.::
+
+  def create_artists(self, legend, orig_handle,
+                     xdescent, ydescent, width, height, fontsize,
+                     trans):
+
+The overridden method needs to create artists of the given
+transform that fits in the given dimension (xdescent, ydescent,
+width, height) that are scaled by fontsize if necessary.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1legend__handler_1_1HandlerBase_a5d635ce240558604bd57cd841cc101b2}\label{classmatplotlib_1_1legend__handler_1_1HandlerBase_a5d635ce240558604bd57cd841cc101b2}} 
+\index{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base@{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base@{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+legend\+\_\+handler.\+Handler\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xpad = {\ttfamily 0.},  }\item[{}]{ypad = {\ttfamily 0.},  }\item[{}]{update\+\_\+func = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1legend__handler_1_1HandlerBase_aff7f166b8af0935e3d1cded5853a38d2}\label{classmatplotlib_1_1legend__handler_1_1HandlerBase_aff7f166b8af0935e3d1cded5853a38d2}} 
+\index{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base@{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base}!adjust\+\_\+drawing\+\_\+area@{adjust\+\_\+drawing\+\_\+area}}
+\index{adjust\+\_\+drawing\+\_\+area@{adjust\+\_\+drawing\+\_\+area}!matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base@{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base}}
+\subsubsection{\texorpdfstring{adjust\+\_\+drawing\+\_\+area()}{adjust\_drawing\_area()}}
+{\footnotesize\ttfamily def matplotlib.\+legend\+\_\+handler.\+Handler\+Base.\+adjust\+\_\+drawing\+\_\+area (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{legend,  }\item[{}]{orig\+\_\+handle,  }\item[{}]{xdescent,  }\item[{}]{ydescent,  }\item[{}]{width,  }\item[{}]{height,  }\item[{}]{fontsize }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1legend__handler_1_1HandlerBase_a69710f39ecb263cd4d9c803104bc1310}\label{classmatplotlib_1_1legend__handler_1_1HandlerBase_a69710f39ecb263cd4d9c803104bc1310}} 
+\index{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base@{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base}!create\+\_\+artists@{create\+\_\+artists}}
+\index{create\+\_\+artists@{create\+\_\+artists}!matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base@{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base}}
+\subsubsection{\texorpdfstring{create\+\_\+artists()}{create\_artists()}}
+{\footnotesize\ttfamily def matplotlib.\+legend\+\_\+handler.\+Handler\+Base.\+create\+\_\+artists (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{legend,  }\item[{}]{orig\+\_\+handle,  }\item[{}]{xdescent,  }\item[{}]{ydescent,  }\item[{}]{width,  }\item[{}]{height,  }\item[{}]{fontsize,  }\item[{}]{trans }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1legend__handler_1_1HandlerBase_a458640f1dbc72904fbb4ae47d6b518cf}\label{classmatplotlib_1_1legend__handler_1_1HandlerBase_a458640f1dbc72904fbb4ae47d6b518cf}} 
+\index{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base@{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base}!legend\+\_\+artist@{legend\+\_\+artist}}
+\index{legend\+\_\+artist@{legend\+\_\+artist}!matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base@{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base}}
+\subsubsection{\texorpdfstring{legend\+\_\+artist()}{legend\_artist()}}
+{\footnotesize\ttfamily def matplotlib.\+legend\+\_\+handler.\+Handler\+Base.\+legend\+\_\+artist (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{legend,  }\item[{}]{orig\+\_\+handle,  }\item[{}]{fontsize,  }\item[{}]{handlebox }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the artist that this HandlerBase generates for the given
+original artist/handle.
+
+Parameters
+----------
+legend : `~matplotlib.legend.Legend`
+    The legend for which these legend artists are being created.
+orig_handle : :class:`matplotlib.artist.Artist` or similar
+    The object for which these legend artists are being created.
+fontsize : int
+    The fontsize in pixels. The artists being created should
+    be scaled according to the given fontsize.
+handlebox : `matplotlib.offsetbox.OffsetBox`
+    The box which has been created to hold this legend entry's
+    artists. Artists created in the `legend_artist` method must
+    be added to this handlebox inside this method.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1legend__handler_1_1HandlerBase_aa54fa79fee69bfec676d9b59b76a29e6}\label{classmatplotlib_1_1legend__handler_1_1HandlerBase_aa54fa79fee69bfec676d9b59b76a29e6}} 
+\index{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base@{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base}!update\+\_\+prop@{update\+\_\+prop}}
+\index{update\+\_\+prop@{update\+\_\+prop}!matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base@{matplotlib\+::legend\+\_\+handler\+::\+Handler\+Base}}
+\subsubsection{\texorpdfstring{update\+\_\+prop()}{update\_prop()}}
+{\footnotesize\ttfamily def matplotlib.\+legend\+\_\+handler.\+Handler\+Base.\+update\+\_\+prop (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{legend\+\_\+handle,  }\item[{}]{orig\+\_\+handle,  }\item[{}]{legend }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{legend__handler_8py}{legend\+\_\+handler.\+py}\end{DoxyCompactItemize}

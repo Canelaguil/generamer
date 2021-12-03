@@ -1,0 +1,76 @@
+\hypertarget{namespacenumpy_1_1ma}{}\section{numpy.\+ma Namespace Reference}
+\label{namespacenumpy_1_1ma}\index{numpy.\+ma@{numpy.\+ma}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacenumpy_1_1ma_1_1bench}{bench}
+\item 
+ \hyperlink{namespacenumpy_1_1ma_1_1core}{core}
+\item 
+ \hyperlink{namespacenumpy_1_1ma_1_1extras}{extras}
+\item 
+ \hyperlink{namespacenumpy_1_1ma_1_1mrecords}{mrecords}
+\item 
+ \hyperlink{namespacenumpy_1_1ma_1_1setup}{setup}
+\item 
+ \hyperlink{namespacenumpy_1_1ma_1_1tests}{tests}
+\item 
+ \hyperlink{namespacenumpy_1_1ma_1_1testutils}{testutils}
+\item 
+ \hyperlink{namespacenumpy_1_1ma_1_1timer__comparison}{timer\+\_\+comparison}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1ma_a69031d1783dd0a4d2ce67e6c000ac1ee}{test}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}=============
+Masked Arrays
+=============
+
+Arrays sometimes contain invalid or missing data.  When doing operations
+on such arrays, we wish to suppress invalid values, which is the purpose masked
+arrays fulfill (an example of typical use is given below).
+
+For example, examine the following array:
+
+>>> x = np.array([2, 1, 3, np.nan, 5, 2, 3, np.nan])
+
+When we try to calculate the mean of the data, the result is undetermined:
+
+>>> np.mean(x)
+nan
+
+The mean is calculated using roughly ``np.sum(x)/len(x)``, but since
+any number added to ``NaN`` [1]_ produces ``NaN``, this doesn't work.  Enter
+masked arrays:
+
+>>> m = np.ma.masked_array(x, np.isnan(x))
+>>> m
+masked_array(data = [2.0 1.0 3.0 -- 5.0 2.0 3.0 --],
+      mask = [False False False  True False False False  True],
+      fill_value=1e+20)
+
+Here, we construct a masked array that suppress all ``NaN`` values.  We
+may now proceed to calculate the mean of the other values:
+
+>>> np.mean(m)
+2.6666666666666665
+
+.. [1] Not-a-Number, a floating point value that is the result of an
+       invalid operation.
+
+.. moduleauthor:: Pierre Gerard-Marchant
+.. moduleauthor:: Jarrod Millman\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1ma_a69031d1783dd0a4d2ce67e6c000ac1ee}\label{namespacenumpy_1_1ma_a69031d1783dd0a4d2ce67e6c000ac1ee}} 
+\index{numpy\+::ma@{numpy\+::ma}!test@{test}}
+\index{test@{test}!numpy\+::ma@{numpy\+::ma}}
+\subsubsection{\texorpdfstring{test}{test}}
+{\footnotesize\ttfamily numpy.\+ma.\+test}
+

@@ -1,0 +1,193 @@
+\hypertarget{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph}{}\section{networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph Class Reference}
+\label{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph}\index{networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph@{networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph}}
+
+
+Inheritance diagram for networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_1_1AntiAdjacencyView}{Anti\+Adjacency\+View}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_1_1AntiAtlasView}{Anti\+Atlas\+View}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_1_1AntiDegreeView}{Anti\+Degree\+View}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a3987ff5d9b5e69cf304770ff85a11578}{single\+\_\+edge\+\_\+dict} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_af08acb13478a6ec8ffe23e64524428db}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, n)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_ade3b9ac1f8c30de5887c6ada772143fd}{neighbors} (self, n)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a89cfd13c943f21def31558dbc5321ac1}{adj} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a2b7abffa8b3c87e5ab14e1a705f3171c}{subgraph} (self, nodes)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_ac8f0731c9eb95e35863a7ff414f5b37c}{degree} (self)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a850304106c02025d21d1cb29b26008e6}{adjacency} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a0ed6f4ff5beeafa92463ce170855d13b}{all\+\_\+edge\+\_\+dict}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_affb72b3a7a68234d37d74f2dccbef604}{edge\+\_\+attr\+\_\+dict\+\_\+factory}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Class for complement graphs.
+
+The main goal is to be able to work with big and dense graphs with
+a low memory foodprint.
+
+In this class you add the edges that *do not exist* in the dense graph,
+the report methods of the class return the neighbors, the edges and
+the degree as if it was the dense graph. Thus it's possible to use
+an instance of this class with some of NetworkX functions. In this
+case we only use k-core, connected_components, and biconnected_components.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_af08acb13478a6ec8ffe23e64524428db}\label{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_af08acb13478a6ec8ffe23e64524428db}} 
+\index{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a dict of neighbors of node n in the dense graph.
+
+Parameters
+----------
+n : node
+   A node in the graph.
+
+Returns
+-------
+adj_dict : dictionary
+   The adjacency dictionary for nodes connected to n.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a89cfd13c943f21def31558dbc5321ac1}\label{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a89cfd13c943f21def31558dbc5321ac1}} 
+\index{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}!adj@{adj}}
+\index{adj@{adj}!networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}}
+\subsubsection{\texorpdfstring{adj()}{adj()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph.\+adj (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a850304106c02025d21d1cb29b26008e6}\label{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a850304106c02025d21d1cb29b26008e6}} 
+\index{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}!adjacency@{adjacency}}
+\index{adjacency@{adjacency}!networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}}
+\subsubsection{\texorpdfstring{adjacency()}{adjacency()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph.\+adjacency (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns an iterator of (node, adjacency set) tuples for all nodes
+   in the dense graph.
+
+This is the fastest way to look at every edge.
+For directed graphs, only outgoing adjacencies are included.
+
+Returns
+-------
+adj_iter : iterator
+   An iterator of (node, adjacency set) for all nodes in
+   the graph.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_ac8f0731c9eb95e35863a7ff414f5b37c}\label{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_ac8f0731c9eb95e35863a7ff414f5b37c}} 
+\index{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}!degree@{degree}}
+\index{degree@{degree}!networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}}
+\subsubsection{\texorpdfstring{degree()}{degree()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph.\+degree (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns an iterator for (node, degree) and degree for single node.
+
+The node degree is the number of edges adjacent to the node.
+
+Parameters
+----------
+nbunch : iterable container, optional (default=all nodes)
+    A container of nodes.  The container will be iterated
+    through once.
+
+weight : string or None, optional (default=None)
+   The edge attribute that holds the numerical value used
+   as a weight.  If None, then each edge has weight 1.
+   The degree is the sum of the edge weights adjacent to the node.
+
+Returns
+-------
+deg:
+    Degree of the node, if a single node is passed as argument.
+nd_iter : an iterator
+    The iterator returns two-tuples of (node, degree).
+
+See Also
+--------
+degree
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> G.degree(0)  # node 0 with degree 1
+1
+>>> list(G.degree([0, 1]))
+[(0, 1), (1, 2)]\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_ade3b9ac1f8c30de5887c6ada772143fd}\label{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_ade3b9ac1f8c30de5887c6ada772143fd}} 
+\index{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}!neighbors@{neighbors}}
+\index{neighbors@{neighbors}!networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}}
+\subsubsection{\texorpdfstring{neighbors()}{neighbors()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph.\+neighbors (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns an iterator over all neighbors of node n in the
+dense graph.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a3987ff5d9b5e69cf304770ff85a11578}\label{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a3987ff5d9b5e69cf304770ff85a11578}} 
+\index{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}!single\+\_\+edge\+\_\+dict@{single\+\_\+edge\+\_\+dict}}
+\index{single\+\_\+edge\+\_\+dict@{single\+\_\+edge\+\_\+dict}!networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}}
+\subsubsection{\texorpdfstring{single\+\_\+edge\+\_\+dict()}{single\_edge\_dict()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph.\+single\+\_\+edge\+\_\+dict (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a2b7abffa8b3c87e5ab14e1a705f3171c}\label{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a2b7abffa8b3c87e5ab14e1a705f3171c}} 
+\index{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}!subgraph@{subgraph}}
+\index{subgraph@{subgraph}!networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}}
+\subsubsection{\texorpdfstring{subgraph()}{subgraph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph.\+subgraph (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{nodes }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This subgraph method returns a full AntiGraph. Not a View\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a0ed6f4ff5beeafa92463ce170855d13b}\label{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_a0ed6f4ff5beeafa92463ce170855d13b}} 
+\index{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}!all\+\_\+edge\+\_\+dict@{all\+\_\+edge\+\_\+dict}}
+\index{all\+\_\+edge\+\_\+dict@{all\+\_\+edge\+\_\+dict}!networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}}
+\subsubsection{\texorpdfstring{all\+\_\+edge\+\_\+dict}{all\_edge\_dict}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph.\+all\+\_\+edge\+\_\+dict\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_affb72b3a7a68234d37d74f2dccbef604}\label{classnetworkx_1_1algorithms_1_1approximation_1_1kcomponents_1_1__AntiGraph_affb72b3a7a68234d37d74f2dccbef604}} 
+\index{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}!edge\+\_\+attr\+\_\+dict\+\_\+factory@{edge\+\_\+attr\+\_\+dict\+\_\+factory}}
+\index{edge\+\_\+attr\+\_\+dict\+\_\+factory@{edge\+\_\+attr\+\_\+dict\+\_\+factory}!networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph@{networkx\+::algorithms\+::approximation\+::kcomponents\+::\+\_\+\+Anti\+Graph}}
+\subsubsection{\texorpdfstring{edge\+\_\+attr\+\_\+dict\+\_\+factory}{edge\_attr\_dict\_factory}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+approximation.\+kcomponents.\+\_\+\+Anti\+Graph.\+edge\+\_\+attr\+\_\+dict\+\_\+factory\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/algorithms/approximation/\hyperlink{approximation_2kcomponents_8py}{kcomponents.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,70 @@
+\hypertarget{classnumpy_1_1core_1_1__internal_1_1recursive}{}\section{numpy.\+core.\+\_\+internal.\+recursive Class Reference}
+\label{classnumpy_1_1core_1_1__internal_1_1recursive}\index{numpy.\+core.\+\_\+internal.\+recursive@{numpy.\+core.\+\_\+internal.\+recursive}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1core_1_1__internal_1_1recursive_a84ef575adb57f38c8a5d5e56b2feea35}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnumpy_1_1core_1_1__internal_1_1recursive_a54dcb8bc12265c15f94bbc3daa29cf21}{func})
+\item 
+def \hyperlink{classnumpy_1_1core_1_1__internal_1_1recursive_ad6575004996debbe671ae414474b65eb}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, args, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1core_1_1__internal_1_1recursive_a54dcb8bc12265c15f94bbc3daa29cf21}{func}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A decorator class for recursive nested functions.
+Naive recursive nested functions hold a reference to themselves:
+
+def outer(*args):
+    def stringify_leaky(arg0, *arg1):
+        if len(arg1) > 0:
+            return stringify_leaky(*arg1)  # <- HERE
+        return str(arg0)
+    stringify_leaky(*args)
+
+This design pattern creates a reference cycle that is difficult for a
+garbage collector to resolve. The decorator class prevents the
+cycle by passing the nested function in as an argument `self`:
+
+def outer(*args):
+    @recursive
+    def stringify(self, arg0, *arg1):
+        if len(arg1) > 0:
+            return self(*arg1)
+        return str(arg0)
+    stringify(*args)\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__internal_1_1recursive_a84ef575adb57f38c8a5d5e56b2feea35}\label{classnumpy_1_1core_1_1__internal_1_1recursive_a84ef575adb57f38c8a5d5e56b2feea35}} 
+\index{numpy\+::core\+::\+\_\+internal\+::recursive@{numpy\+::core\+::\+\_\+internal\+::recursive}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::core\+::\+\_\+internal\+::recursive@{numpy\+::core\+::\+\_\+internal\+::recursive}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+\_\+internal.\+recursive.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__internal_1_1recursive_ad6575004996debbe671ae414474b65eb}\label{classnumpy_1_1core_1_1__internal_1_1recursive_ad6575004996debbe671ae414474b65eb}} 
+\index{numpy\+::core\+::\+\_\+internal\+::recursive@{numpy\+::core\+::\+\_\+internal\+::recursive}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!numpy\+::core\+::\+\_\+internal\+::recursive@{numpy\+::core\+::\+\_\+internal\+::recursive}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+\_\+internal.\+recursive.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__internal_1_1recursive_a54dcb8bc12265c15f94bbc3daa29cf21}\label{classnumpy_1_1core_1_1__internal_1_1recursive_a54dcb8bc12265c15f94bbc3daa29cf21}} 
+\index{numpy\+::core\+::\+\_\+internal\+::recursive@{numpy\+::core\+::\+\_\+internal\+::recursive}!func@{func}}
+\index{func@{func}!numpy\+::core\+::\+\_\+internal\+::recursive@{numpy\+::core\+::\+\_\+internal\+::recursive}}
+\subsubsection{\texorpdfstring{func}{func}}
+{\footnotesize\ttfamily numpy.\+core.\+\_\+internal.\+recursive.\+func}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/core/\hyperlink{__internal_8py}{\+\_\+internal.\+py}\end{DoxyCompactItemize}

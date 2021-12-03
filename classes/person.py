@@ -1,6 +1,7 @@
 import random
 import json
 import os, sys
+import queue
 import copy
 import math
 import numpy as np
@@ -38,7 +39,7 @@ class Person:
         self.knowledge = Knowledge(self)
         self.trigger = Trigger(self)
 
-        # binary
+        # Identifiers
         self.key = key
         self.alive = True
         self.birthday = self.get_birthday()
@@ -116,7 +117,7 @@ class Person:
         self.context.person_died(self.key, self.name)
 
         # create bits
-        self.knowledge.add_bit(0, f"Died at age {self.age}{circumstance}.")
+        self.knowledge.add_bit(0, f"Died at age {self.age}{circumstance}.", 'died')
 
         # end relationships
         cause = 'woman_died' if self.sex == 'f' else 'man_died'
@@ -215,7 +216,7 @@ class Person:
             in_values = [hi if hi == 1 else hi-1, hi, hi if hi == 5 else hi+1]
             self.income_class = np.random.choice(in_values, p=in_weights)
             self.knowledge.add_bit(
-                2, f'Became financially stable at {self.age}.')
+                2, f'Became financially stable at {self.age}.', 'finstable')
 
     def personal_events(self):
         self.age += 1
@@ -641,12 +642,40 @@ class Person:
 
 class Trigger:
     def __init__(self, person):
+        self.queue = queue.Queue(0)
         self.person = person
         self.prev_neglect = False
         self.marriages = 0
         self.dead_children = 0
         self.dead_chidren_bit = False
         self.orphanage = False
+
+    def process_triggers(self):
+        pass
+
+    def trigger(self, trigger, param1=None, param2=None):
+        if trigger == 'birth':
+            self.birth()
+        elif trigger == 'marriage':
+            self.marriage(param1)
+        elif trigger == 'moved_outoftown':
+            self.moved_outoftown()
+        elif trigger == 'in_orphanage':
+            self.in_orphanage()
+        elif trigger == 'out_orphanage':
+            self.out_orphanage()
+        elif trigger == 'childbirth': 
+            self.childbirth()
+        elif trigger == 'had_child':
+            self.had_child(param1)
+        elif trigger == 'neglected':
+            self.neglected()
+        elif trigger == 'mother_died':
+            self.mother_died(param1)
+        elif trigger == 'father_died':
+            self.father_died(param1)
+        elif trigger == 'dead_child':
+            self.dead_child(param1, param2)
 
     def trait_influence(self, trait, value, source):
         return
@@ -685,23 +714,23 @@ class Trigger:
         times = ['', 'a second time ', 'a third time ', ' a fourth time ',
                     'the fifth time ', 'the sixth time ', 'the seventh time ']
         self.person.knowledge.add_bit(
-            1, f"Got married {times[self.marriages]} to {partner.name} at age {self.person.age}.")
+            1, f"Got married {times[self.marriages]} to {partner.name} at age {self.person.age}.", 'married')
         self.marriages += 1
         if self.orphanage:
             self.person.context.outside.orphanage.adopt(self.person.key)
             self.orphanage = False
 
     def moved_outoftown(self):
-        self.person.knowledge.add_bit(2, f"Moved out of town.")
+        self.person.knowledge.add_bit(2, f"Moved out of town.", 'outoftown')
         # Communicate to network
         return True
 
     def in_orphanage(self):
-        self.person.knowledge.add_bit(1, f"Went to live in the orphanage at age {self.person.age}.")
+        self.person.knowledge.add_bit(1, f"Went to live in the orphanage at age {self.person.age}.", 'to_orphanage')
         self.orphanage = True
 
     def out_orphanage(self):
-        self.person.knowledge.add_bit(2, f"Left orphanage at the age of {self.person.age}.")
+        self.person.knowledge.add_bit(2, f"Left orphanage at the age of {self.person.age}.", 'out_orphanage')
         self.orphanage = False
 
     def childbirth(self):
@@ -715,26 +744,26 @@ class Trigger:
     def had_child(self, child):
         if self.person.sex == 'f':
             if child.alive and self.person.alive:
-                self.person.knowledge.add_bit(1, f"Gave birth to {child.name} at age {self.person.age}.")
+                self.person.knowledge.add_bit(1, f"Gave birth to {child.name} at age {self.person.age}.", 'good_birth')
             elif not child.alive and not self.person.alive:
-                self.person.knowledge.add_bit(1, f"Died while giving birth to stillborn {child.name} at age {self.person.age}.")
+                self.person.knowledge.add_bit(1, f"Died while giving birth to stillborn {child.name} at age {self.person.age}.", 'all_dead_birth')
             elif child.alive and not self.person.alive:
-                self.person.knowledge.add_bit(1, f"Died while giving birth to {child.name} at age {self.person.age}.")
+                self.person.knowledge.add_bit(1, f"Died while giving birth to {child.name} at age {self.person.age}.", 'mom_dead_birth')
             elif not child.alive and self.person.alive:
-                self.person.knowledge.add_bit(1, f"Gave birth to stillborn {child.name} at age {self.person.age}.")
+                self.person.knowledge.add_bit(1, f"Gave birth to stillborn {child.name} at age {self.person.age}.", 'baby_dead_birth')
         else: 
             child_sex = 'son' if child.sex == 'm' else 'daughter'
             partner = child.parents.woman
             if child.alive and partner.alive:
-                self.person.knowledge.add_bit(1, f"Had a {child_sex} with {partner.name}, {child.name}, at age {self.person.age}.")
+                self.person.knowledge.add_bit(1, f"Had a {child_sex} with {partner.name}, {child.name}, at age {self.person.age}.", 'new_child')
             elif not child.alive and not partner.alive:
-                self.person.knowledge.add_bit(1, f"Lost his wife {partner.name} and their {child_sex} {child.name}  while {partner.name} was giving birth when he was {self.person.age}.")
+                self.person.knowledge.add_bit(1, f"Lost his wife {partner.name} and their {child_sex} {child.name}  while {partner.name} was giving birth when he was {self.person.age}.", 'wifechild_birth_dead')
             elif child.alive and not partner.alive:
-                self.person.knowledge.add_bit(1, f"Lost his wife {partner.name} while she was giving birth to {child.name}.")
+                self.person.knowledge.add_bit(1, f"Lost his wife {partner.name} while she was giving birth to {child.name}.", 'child_birth_dead')
             elif not child.alive and partner.alive:
-                self.person.knowledge.add_bit(1, f"{partner.name} gave birth to their stillborn {child_sex} {child.name}.")
+                self.person.knowledge.add_bit(1, f"{partner.name} gave birth to their stillborn {child_sex} {child.name}.", 'child_birth_dead')
             else:
-                self.person.knowledge.add_bit(1, f"Had {child_sex} {child.name} with {partner.name} at age {self.person.age}.")
+                self.person.knowledge.add_bit(1, f"Had {child_sex} {child.name} with {partner.name} at age {self.person.age}.", 'edge_new_child')
 
         self.person.children += 1
 
@@ -743,29 +772,29 @@ class Trigger:
     """
     def neglected(self):
         if not self.prev_neglect:
-            self.person.knowledge.add_bit(3, f"Was neglected as a child.")
+            self.person.knowledge.add_bit(3, f"Was neglected as a child.", 'neglected')
             self.prev_neglect = True
         return True
 
     def mother_died(self, param=""):
         self.person.knowledge.add_bit(
-            2, f"Lost mother at the age of {self.person.age}{param}.")
+            2, f"Lost mother at the age of {self.person.age}{param}.", 'mother_orphan')
         return True
 
     def father_died(self, param=""):
         self.person.knowledge.add_bit(
-            2, f"Lost father at the age of {self.person.age}{param}.")
+            2, f"Lost father at the age of {self.person.age}{param}.", 'father_orphan')
         return True
     
     def dead_child(self, child, circumstance=""):
         child_sex = 'son' if child.sex == 'm' else 'daughter'
-        self.person.knowledge.add_bit(1, f'Lost {child_sex} {child.name} when {child.name} was {child.age} years old{circumstance}.')
+        self.person.knowledge.add_bit(1, f'Lost {child_sex} {child.name} when {child.name} was {child.age} years old{circumstance}.', 'dead_child')
         self.dead_children += 1
         if self.dead_children > 2 and not self.dead_chidren_bit:
-            self.person.knowledge.add_bit(1, f'Has seen several of their children die.')
+            self.person.knowledge.add_bit(1, f'Has seen several of their children die.', 'many_dead_children')
             self.dead_chidren_bit = True
 
     def dead_sibling(self, sibling, param=""):            
         self.person.knowledge.add_bit(
-            2, f"Lost sibling {sibling.name} {param} when {sibling.name} was {sibling.age}.")
+            2, f"Lost sibling {sibling.name} {param} when {sibling.name} was {sibling.age}.", 'dead_sibling')
         return True

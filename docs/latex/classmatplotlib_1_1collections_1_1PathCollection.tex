@@ -1,0 +1,159 @@
+\hypertarget{classmatplotlib_1_1collections_1_1PathCollection}{}\section{matplotlib.\+collections.\+Path\+Collection Class Reference}
+\label{classmatplotlib_1_1collections_1_1PathCollection}\index{matplotlib.\+collections.\+Path\+Collection@{matplotlib.\+collections.\+Path\+Collection}}
+
+
+Inheritance diagram for matplotlib.\+collections.\+Path\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1collections_1_1PathCollection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+collections.\+Path\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1collections_1_1PathCollection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1PathCollection_a494f67a1ee1481a8ece37908357e79c7}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, paths, sizes=None, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1PathCollection_a896988df6769d687c6845fb43824d0fc}{set\+\_\+paths} (self, paths)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1PathCollection_a3df317b92612cb11c9927861338bf45a}{get\+\_\+paths} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1PathCollection_a2be255d5b379e46ef788a227bc4d4221}{legend\+\_\+elements} (self, prop=\char`\"{}colors\char`\"{}, num=\char`\"{}auto\char`\"{}, fmt=None, func=lambda x\+:x, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1collections_1_1PathCollection_a9758fa19ca05690f0bee6b167bf094db}{stale}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A collection of `~.path.Path`\s, as created by e.g. `~.Axes.scatter`.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1PathCollection_a494f67a1ee1481a8ece37908357e79c7}\label{classmatplotlib_1_1collections_1_1PathCollection_a494f67a1ee1481a8ece37908357e79c7}} 
+\index{matplotlib\+::collections\+::\+Path\+Collection@{matplotlib\+::collections\+::\+Path\+Collection}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::collections\+::\+Path\+Collection@{matplotlib\+::collections\+::\+Path\+Collection}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Path\+Collection.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{paths,  }\item[{}]{sizes = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+paths : list of `.path.Path`
+    The paths that will make up the `.Collection`.
+sizes : array-like
+    The factor by which to scale each drawn `~.path.Path`. One unit
+    squared in the Path's data space is scaled to be ``sizes**2``
+    points when rendered.
+**kwargs
+    Forwarded to `.Collection`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1PathCollection_a3df317b92612cb11c9927861338bf45a}\label{classmatplotlib_1_1collections_1_1PathCollection_a3df317b92612cb11c9927861338bf45a}} 
+\index{matplotlib\+::collections\+::\+Path\+Collection@{matplotlib\+::collections\+::\+Path\+Collection}!get\+\_\+paths@{get\+\_\+paths}}
+\index{get\+\_\+paths@{get\+\_\+paths}!matplotlib\+::collections\+::\+Path\+Collection@{matplotlib\+::collections\+::\+Path\+Collection}}
+\subsubsection{\texorpdfstring{get\+\_\+paths()}{get\_paths()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Path\+Collection.\+get\+\_\+paths (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1PathCollection_a2be255d5b379e46ef788a227bc4d4221}\label{classmatplotlib_1_1collections_1_1PathCollection_a2be255d5b379e46ef788a227bc4d4221}} 
+\index{matplotlib\+::collections\+::\+Path\+Collection@{matplotlib\+::collections\+::\+Path\+Collection}!legend\+\_\+elements@{legend\+\_\+elements}}
+\index{legend\+\_\+elements@{legend\+\_\+elements}!matplotlib\+::collections\+::\+Path\+Collection@{matplotlib\+::collections\+::\+Path\+Collection}}
+\subsubsection{\texorpdfstring{legend\+\_\+elements()}{legend\_elements()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Path\+Collection.\+legend\+\_\+elements (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{prop = {\ttfamily \char`\"{}colors\char`\"{}},  }\item[{}]{num = {\ttfamily \char`\"{}auto\char`\"{}},  }\item[{}]{fmt = {\ttfamily None},  }\item[{}]{func = {\ttfamily lambda~x\+:~x},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create legend handles and labels for a PathCollection.
+
+Each legend handle is a `.Line2D` representing the Path that was drawn,
+and each label is a string what each Path represents.
+
+This is useful for obtaining a legend for a `~.Axes.scatter` plot;
+e.g.::
+
+    scatter = plt.scatter([1, 2, 3],  [4, 5, 6],  c=[7, 2, 3])
+    plt.legend(*scatter.legend_elements())
+
+creates three legend elements, one for each color with the numerical
+values passed to *c* as the labels.
+
+Also see the :ref:`automatedlegendcreation` example.
+
+Parameters
+----------
+prop : {"colors", "sizes"}, default: "colors"
+    If "colors", the legend handles will show the different colors of
+    the collection. If "sizes", the legend will show the different
+    sizes. To set both, use *kwargs* to directly edit the `.Line2D`
+    properties.
+num : int, None, "auto" (default), array-like, or `~.ticker.Locator`
+    Target number of elements to create.
+    If None, use all unique elements of the mappable array. If an
+    integer, target to use *num* elements in the normed range.
+    If *"auto"*, try to determine which option better suits the nature
+    of the data.
+    The number of created elements may slightly deviate from *num* due
+    to a `~.ticker.Locator` being used to find useful locations.
+    If a list or array, use exactly those elements for the legend.
+    Finally, a `~.ticker.Locator` can be provided.
+fmt : str, `~matplotlib.ticker.Formatter`, or None (default)
+    The format or formatter to use for the labels. If a string must be
+    a valid input for a `~.StrMethodFormatter`. If None (the default),
+    use a `~.ScalarFormatter`.
+func : function, default: ``lambda x: x``
+    Function to calculate the labels.  Often the size (or color)
+    argument to `~.Axes.scatter` will have been pre-processed by the
+    user using a function ``s = f(x)`` to make the markers visible;
+    e.g. ``size = np.log10(x)``.  Providing the inverse of this
+    function here allows that pre-processing to be inverted, so that
+    the legend labels have the correct values; e.g. ``func = lambda
+    x: 10**x``.
+**kwargs
+    Allowed keyword arguments are *color* and *size*. E.g. it may be
+    useful to set the color of the markers if *prop="sizes"* is used;
+    similarly to set the size of the markers if *prop="colors"* is
+    used. Any further parameters are passed onto the `.Line2D`
+    instance. This may be useful to e.g. specify a different
+    *markeredgecolor* or *alpha* for the legend handles.
+
+Returns
+-------
+handles : list of `.Line2D`
+    Visual representation of each element of the legend.
+labels : list of str
+    The string labels for elements of the legend.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1collections_1_1PathCollection_a896988df6769d687c6845fb43824d0fc}\label{classmatplotlib_1_1collections_1_1PathCollection_a896988df6769d687c6845fb43824d0fc}} 
+\index{matplotlib\+::collections\+::\+Path\+Collection@{matplotlib\+::collections\+::\+Path\+Collection}!set\+\_\+paths@{set\+\_\+paths}}
+\index{set\+\_\+paths@{set\+\_\+paths}!matplotlib\+::collections\+::\+Path\+Collection@{matplotlib\+::collections\+::\+Path\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+paths()}{set\_paths()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Path\+Collection.\+set\+\_\+paths (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{paths }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1PathCollection_a9758fa19ca05690f0bee6b167bf094db}\label{classmatplotlib_1_1collections_1_1PathCollection_a9758fa19ca05690f0bee6b167bf094db}} 
+\index{matplotlib\+::collections\+::\+Path\+Collection@{matplotlib\+::collections\+::\+Path\+Collection}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::collections\+::\+Path\+Collection@{matplotlib\+::collections\+::\+Path\+Collection}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+collections.\+Path\+Collection.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{collections_8py}{collections.\+py}\end{DoxyCompactItemize}

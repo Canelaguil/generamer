@@ -1,0 +1,112 @@
+\hypertarget{classmatplotlib_1_1dviread_1_1DviFont}{}\section{matplotlib.\+dviread.\+Dvi\+Font Class Reference}
+\label{classmatplotlib_1_1dviread_1_1DviFont}\index{matplotlib.\+dviread.\+Dvi\+Font@{matplotlib.\+dviread.\+Dvi\+Font}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1dviread_1_1DviFont_a37c86c55aae04802fc5467b7e49d14a7}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, scale, tfm, \hyperlink{classmatplotlib_1_1dviread_1_1DviFont_afbc7a99318167fe9ae5782a0f2015625}{texname}, vf)
+\item 
+def \hyperlink{classmatplotlib_1_1dviread_1_1DviFont_a9270ea98c0cc31230de3000ad9325923}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classmatplotlib_1_1dviread_1_1DviFont_a68fc6afb03d3235437d29e64257e281a}{\+\_\+\+\_\+ne\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classmatplotlib_1_1dviread_1_1DviFont_ab069f905e5d40ad30c974ede263b48b9}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1DviFont_afbc7a99318167fe9ae5782a0f2015625}{texname}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1DviFont_a35c7010921a38812047da7c1c77c90e6}{size}
+\item 
+\hyperlink{classmatplotlib_1_1dviread_1_1DviFont_ac039290e1d452c5b257ffaec1108ef39}{widths}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Encapsulation of a font that a DVI file can refer to.
+
+This class holds a font's texname and size, supports comparison,
+and knows the widths of glyphs in the same units as the AFM file.
+There are also internal attributes (for use by dviread.py) that
+are *not* used for comparison.
+
+The size is in Adobe points (converted from TeX points).
+
+Parameters
+----------
+scale : float
+    Factor by which the font is scaled from its natural size.
+tfm : Tfm
+    TeX font metrics for this font
+texname : bytes
+   Name of the font as used internally by TeX and friends, as an ASCII
+   bytestring.  This is usually very different from any external font
+   names; `PsfontsMap` can be used to find the external name of the font.
+vf : Vf
+   A TeX "virtual font" file, or None if this font is not virtual.
+
+Attributes
+----------
+texname : bytes
+size : float
+   Size of the font in Adobe points, converted from the slightly
+   smaller TeX points.
+widths : list
+   Widths of glyphs in glyph-space units, typically 1/1000ths of
+   the point size.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1DviFont_a37c86c55aae04802fc5467b7e49d14a7}\label{classmatplotlib_1_1dviread_1_1DviFont_a37c86c55aae04802fc5467b7e49d14a7}} 
+\index{matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dviread.\+Dvi\+Font.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{scale,  }\item[{}]{tfm,  }\item[{}]{texname,  }\item[{}]{vf }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1DviFont_a9270ea98c0cc31230de3000ad9325923}\label{classmatplotlib_1_1dviread_1_1DviFont_a9270ea98c0cc31230de3000ad9325923}} 
+\index{matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+eq\+\_\+\+\_\+()}{\_\_eq\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dviread.\+Dvi\+Font.\+\_\+\+\_\+eq\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1DviFont_a68fc6afb03d3235437d29e64257e281a}\label{classmatplotlib_1_1dviread_1_1DviFont_a68fc6afb03d3235437d29e64257e281a}} 
+\index{matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}!\+\_\+\+\_\+ne\+\_\+\+\_\+@{\+\_\+\+\_\+ne\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+ne\+\_\+\+\_\+@{\+\_\+\+\_\+ne\+\_\+\+\_\+}!matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+ne\+\_\+\+\_\+()}{\_\_ne\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dviread.\+Dvi\+Font.\+\_\+\+\_\+ne\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1DviFont_ab069f905e5d40ad30c974ede263b48b9}\label{classmatplotlib_1_1dviread_1_1DviFont_ab069f905e5d40ad30c974ede263b48b9}} 
+\index{matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dviread.\+Dvi\+Font.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1DviFont_a35c7010921a38812047da7c1c77c90e6}\label{classmatplotlib_1_1dviread_1_1DviFont_a35c7010921a38812047da7c1c77c90e6}} 
+\index{matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}!size@{size}}
+\index{size@{size}!matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}}
+\subsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi\+Font.\+size}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1DviFont_afbc7a99318167fe9ae5782a0f2015625}\label{classmatplotlib_1_1dviread_1_1DviFont_afbc7a99318167fe9ae5782a0f2015625}} 
+\index{matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}!texname@{texname}}
+\index{texname@{texname}!matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}}
+\subsubsection{\texorpdfstring{texname}{texname}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi\+Font.\+texname}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1DviFont_ac039290e1d452c5b257ffaec1108ef39}\label{classmatplotlib_1_1dviread_1_1DviFont_ac039290e1d452c5b257ffaec1108ef39}} 
+\index{matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}!widths@{widths}}
+\index{widths@{widths}!matplotlib\+::dviread\+::\+Dvi\+Font@{matplotlib\+::dviread\+::\+Dvi\+Font}}
+\subsubsection{\texorpdfstring{widths}{widths}}
+{\footnotesize\ttfamily matplotlib.\+dviread.\+Dvi\+Font.\+widths}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{dviread_8py}{dviread.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,161 @@
+\hypertarget{namespacematplotlib_1_1cm}{}\section{matplotlib.\+cm Namespace Reference}
+\label{namespacematplotlib_1_1cm}\index{matplotlib.\+cm@{matplotlib.\+cm}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1cm_1_1__DeprecatedCmapDictWrapper}{\+\_\+\+Deprecated\+Cmap\+Dict\+Wrapper}
+\item 
+class \hyperlink{classmatplotlib_1_1cm_1_1ScalarMappable}{Scalar\+Mappable}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1cm_aef0b7e3dfd1a5f520c1016f01c1ab0af}{register\+\_\+cmap} (name=None, cmap=None, override\+\_\+builtin=False)
+\item 
+def \hyperlink{namespacematplotlib_1_1cm_ab3c1845ac9e976ab44b80b378541a33a}{get\+\_\+cmap} (name=None, lut=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1cm_a03c39fa84f05a5d6f8f35fbe5ee48e3c}{unregister\+\_\+cmap} (name)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1cm_ace896a2b4d7f8028cc508f0c4da233fe}{L\+U\+T\+S\+I\+ZE} = mpl.\+rc\+Params\mbox{[}\textquotesingle{}image.\+lut\textquotesingle{}\mbox{]}
+\item 
+\hyperlink{namespacematplotlib_1_1cm_ac2dd962b18f824e3ad20f79097390148}{cmap\+\_\+d} = \hyperlink{classmatplotlib_1_1cm_1_1__DeprecatedCmapDictWrapper}{\+\_\+\+Deprecated\+Cmap\+Dict\+Wrapper}(\+\_\+cmap\+\_\+registry)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Builtin colormaps, colormap handling utilities, and the `ScalarMappable` mixin.
+
+.. seealso::
+
+  :doc:`/gallery/color/colormap_reference` for a list of builtin colormaps.
+
+  :doc:`/tutorials/colors/colormap-manipulation` for examples of how to
+  make colormaps.
+
+  :doc:`/tutorials/colors/colormaps` an in-depth discussion of
+  choosing colormaps.
+
+  :doc:`/tutorials/colors/colormapnorms` for more details about data
+  normalization.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1cm_ab3c1845ac9e976ab44b80b378541a33a}\label{namespacematplotlib_1_1cm_ab3c1845ac9e976ab44b80b378541a33a}} 
+\index{matplotlib\+::cm@{matplotlib\+::cm}!get\+\_\+cmap@{get\+\_\+cmap}}
+\index{get\+\_\+cmap@{get\+\_\+cmap}!matplotlib\+::cm@{matplotlib\+::cm}}
+\subsubsection{\texorpdfstring{get\+\_\+cmap()}{get\_cmap()}}
+{\footnotesize\ttfamily def matplotlib.\+cm.\+get\+\_\+cmap (\begin{DoxyParamCaption}\item[{}]{name = {\ttfamily None},  }\item[{}]{lut = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a colormap instance, defaulting to rc values if *name* is None.
+
+Colormaps added with :func:`register_cmap` take precedence over
+built-in colormaps.
+
+Notes
+-----
+Currently, this returns the global colormap object, which is deprecated.
+In Matplotlib 3.5, you will no longer be able to modify the global
+colormaps in-place.
+
+Parameters
+----------
+name : `matplotlib.colors.Colormap` or str or None, default: None
+    If a `.Colormap` instance, it will be returned. Otherwise, the name of
+    a colormap known to Matplotlib, which will be resampled by *lut*. The
+    default, None, means :rc:`image.cmap`.
+lut : int or None, default: None
+    If *name* is not already a Colormap instance and *lut* is not None, the
+    colormap will be resampled to have *lut* entries in the lookup table.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1cm_aef0b7e3dfd1a5f520c1016f01c1ab0af}\label{namespacematplotlib_1_1cm_aef0b7e3dfd1a5f520c1016f01c1ab0af}} 
+\index{matplotlib\+::cm@{matplotlib\+::cm}!register\+\_\+cmap@{register\+\_\+cmap}}
+\index{register\+\_\+cmap@{register\+\_\+cmap}!matplotlib\+::cm@{matplotlib\+::cm}}
+\subsubsection{\texorpdfstring{register\+\_\+cmap()}{register\_cmap()}}
+{\footnotesize\ttfamily def matplotlib.\+cm.\+register\+\_\+cmap (\begin{DoxyParamCaption}\item[{}]{name = {\ttfamily None},  }\item[{}]{cmap = {\ttfamily None},  }\item[{}]{override\+\_\+builtin = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a colormap to the set recognized by :func:`get_cmap`.
+
+Register a new colormap to be accessed by name ::
+
+    LinearSegmentedColormap('swirly', data, lut)
+    register_cmap(cmap=swirly_cmap)
+
+Parameters
+----------
+name : str, optional
+   The name that can be used in :func:`get_cmap` or :rc:`image.cmap`
+
+   If absent, the name will be the :attr:`~matplotlib.colors.Colormap.name`
+   attribute of the *cmap*.
+
+cmap : matplotlib.colors.Colormap
+   Despite being the second argument and having a default value, this
+   is a required argument.
+
+override_builtin : bool
+
+    Allow built-in colormaps to be overridden by a user-supplied
+    colormap.
+
+    Please do not use this unless you are sure you need it.
+
+Notes
+-----
+Registering a colormap stores a reference to the colormap object
+which can currently be modified and inadvertently change the global
+colormap state. This behavior is deprecated and in Matplotlib 3.5
+the registered colormap will be immutable.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1cm_a03c39fa84f05a5d6f8f35fbe5ee48e3c}\label{namespacematplotlib_1_1cm_a03c39fa84f05a5d6f8f35fbe5ee48e3c}} 
+\index{matplotlib\+::cm@{matplotlib\+::cm}!unregister\+\_\+cmap@{unregister\+\_\+cmap}}
+\index{unregister\+\_\+cmap@{unregister\+\_\+cmap}!matplotlib\+::cm@{matplotlib\+::cm}}
+\subsubsection{\texorpdfstring{unregister\+\_\+cmap()}{unregister\_cmap()}}
+{\footnotesize\ttfamily def matplotlib.\+cm.\+unregister\+\_\+cmap (\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove a colormap recognized by :func:`get_cmap`.
+
+You may not remove built-in colormaps.
+
+If the named colormap is not registered, returns with no error, raises
+if you try to de-register a default colormap.
+
+.. warning ::
+
+  Colormap names are currently a shared namespace that may be used
+  by multiple packages. Use `unregister_cmap` only if you know you
+  have registered that name before. In particular, do not
+  unregister just in case to clean the name before registering a
+  new colormap.
+
+Parameters
+----------
+name : str
+    The name of the colormap to be un-registered
+
+Returns
+-------
+ColorMap or None
+    If the colormap was registered, return it if not return `None`
+
+Raises
+------
+ValueError
+   If you try to de-register a default built-in colormap.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1cm_ac2dd962b18f824e3ad20f79097390148}\label{namespacematplotlib_1_1cm_ac2dd962b18f824e3ad20f79097390148}} 
+\index{matplotlib\+::cm@{matplotlib\+::cm}!cmap\+\_\+d@{cmap\+\_\+d}}
+\index{cmap\+\_\+d@{cmap\+\_\+d}!matplotlib\+::cm@{matplotlib\+::cm}}
+\subsubsection{\texorpdfstring{cmap\+\_\+d}{cmap\_d}}
+{\footnotesize\ttfamily matplotlib.\+cm.\+cmap\+\_\+d = \hyperlink{classmatplotlib_1_1cm_1_1__DeprecatedCmapDictWrapper}{\+\_\+\+Deprecated\+Cmap\+Dict\+Wrapper}(\+\_\+cmap\+\_\+registry)}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1cm_ace896a2b4d7f8028cc508f0c4da233fe}\label{namespacematplotlib_1_1cm_ace896a2b4d7f8028cc508f0c4da233fe}} 
+\index{matplotlib\+::cm@{matplotlib\+::cm}!L\+U\+T\+S\+I\+ZE@{L\+U\+T\+S\+I\+ZE}}
+\index{L\+U\+T\+S\+I\+ZE@{L\+U\+T\+S\+I\+ZE}!matplotlib\+::cm@{matplotlib\+::cm}}
+\subsubsection{\texorpdfstring{L\+U\+T\+S\+I\+ZE}{LUTSIZE}}
+{\footnotesize\ttfamily matplotlib.\+cm.\+L\+U\+T\+S\+I\+ZE = mpl.\+rc\+Params\mbox{[}\textquotesingle{}image.\+lut\textquotesingle{}\mbox{]}}
+

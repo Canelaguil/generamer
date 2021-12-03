@@ -1,0 +1,123 @@
+\hypertarget{classmatplotlib_1_1cbook_1_1Grouper}{}\section{matplotlib.\+cbook.\+Grouper Class Reference}
+\label{classmatplotlib_1_1cbook_1_1Grouper}\index{matplotlib.\+cbook.\+Grouper@{matplotlib.\+cbook.\+Grouper}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1Grouper_a8fd0717b9292b4a144174c8947f30259}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, init=())
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1Grouper_aebdecec3f4b2e8ffbc4a906de25dd5f6}{\+\_\+\+\_\+contains\+\_\+\+\_\+} (self, item)
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1Grouper_aa5bf741cc3dfca7bf6b26cc0b7e42385}{clean} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1Grouper_a4bf36936f9e0646e98fa5e53c0ee8a74}{join} (self, a, args)
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1Grouper_ad16464cb2d394ad2bc6d107127367e50}{joined} (self, a, b)
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1Grouper_a4901edd86efb4044eb7c56ab785caa9a}{remove} (self, a)
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1Grouper_abab1aeb7aeaed8d6361220568de94080}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1Grouper_abd75a901fdc68bb20dbd5c2cba15c880}{get\+\_\+siblings} (self, a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A disjoint-set data structure.
+
+Objects can be joined using :meth:`join`, tested for connectedness
+using :meth:`joined`, and all disjoint sets can be retrieved by
+using the object as an iterator.
+
+The objects being joined must be hashable and weak-referenceable.
+
+Examples
+--------
+>>> from matplotlib.cbook import Grouper
+>>> class Foo:
+...     def __init__(self, s):
+...         self.s = s
+...     def __repr__(self):
+...         return self.s
+...
+>>> a, b, c, d, e, f = [Foo(x) for x in 'abcdef']
+>>> grp = Grouper()
+>>> grp.join(a, b)
+>>> grp.join(b, c)
+>>> grp.join(d, e)
+>>> list(grp)
+[[a, b, c], [d, e]]
+>>> grp.joined(a, b)
+True
+>>> grp.joined(a, c)
+True
+>>> grp.joined(a, d)
+False
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1Grouper_a8fd0717b9292b4a144174c8947f30259}\label{classmatplotlib_1_1cbook_1_1Grouper_a8fd0717b9292b4a144174c8947f30259}} 
+\index{matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Grouper.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{init = {\ttfamily ()} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1Grouper_aebdecec3f4b2e8ffbc4a906de25dd5f6}\label{classmatplotlib_1_1cbook_1_1Grouper_aebdecec3f4b2e8ffbc4a906de25dd5f6}} 
+\index{matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}!\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}!matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+contains\+\_\+\+\_\+()}{\_\_contains\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Grouper.\+\_\+\+\_\+contains\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{item }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1Grouper_abab1aeb7aeaed8d6361220568de94080}\label{classmatplotlib_1_1cbook_1_1Grouper_abab1aeb7aeaed8d6361220568de94080}} 
+\index{matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Grouper.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Iterate over each of the disjoint sets as a list.
+
+The iterator is invalid if interleaved with calls to join().
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1Grouper_aa5bf741cc3dfca7bf6b26cc0b7e42385}\label{classmatplotlib_1_1cbook_1_1Grouper_aa5bf741cc3dfca7bf6b26cc0b7e42385}} 
+\index{matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}!clean@{clean}}
+\index{clean@{clean}!matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}}
+\subsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Grouper.\+clean (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Clean dead weak references from the dictionary.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1Grouper_abd75a901fdc68bb20dbd5c2cba15c880}\label{classmatplotlib_1_1cbook_1_1Grouper_abd75a901fdc68bb20dbd5c2cba15c880}} 
+\index{matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}!get\+\_\+siblings@{get\+\_\+siblings}}
+\index{get\+\_\+siblings@{get\+\_\+siblings}!matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}}
+\subsubsection{\texorpdfstring{get\+\_\+siblings()}{get\_siblings()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Grouper.\+get\+\_\+siblings (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return all of the items joined with *a*, including itself.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1Grouper_a4bf36936f9e0646e98fa5e53c0ee8a74}\label{classmatplotlib_1_1cbook_1_1Grouper_a4bf36936f9e0646e98fa5e53c0ee8a74}} 
+\index{matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}!join@{join}}
+\index{join@{join}!matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}}
+\subsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Grouper.\+join (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Join given arguments into the same set.  Accepts one or more arguments.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1Grouper_ad16464cb2d394ad2bc6d107127367e50}\label{classmatplotlib_1_1cbook_1_1Grouper_ad16464cb2d394ad2bc6d107127367e50}} 
+\index{matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}!joined@{joined}}
+\index{joined@{joined}!matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}}
+\subsubsection{\texorpdfstring{joined()}{joined()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Grouper.\+joined (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether *a* and *b* are members of the same set.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1Grouper_a4901edd86efb4044eb7c56ab785caa9a}\label{classmatplotlib_1_1cbook_1_1Grouper_a4901edd86efb4044eb7c56ab785caa9a}} 
+\index{matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}!remove@{remove}}
+\index{remove@{remove}!matplotlib\+::cbook\+::\+Grouper@{matplotlib\+::cbook\+::\+Grouper}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Grouper.\+remove (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/cbook/\hyperlink{venv_2lib_2python3_89_2site-packages_2matplotlib_2cbook_2____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}\end{DoxyCompactItemize}

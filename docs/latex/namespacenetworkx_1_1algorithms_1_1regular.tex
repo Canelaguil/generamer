@@ -1,0 +1,152 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1regular}{}\section{networkx.\+algorithms.\+regular Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1regular}\index{networkx.\+algorithms.\+regular@{networkx.\+algorithms.\+regular}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1regular_abae34f97d8b60cf592b0df161f5787cd}{is\+\_\+regular} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1regular_a988c180a3c8476a8c24dc9b9687ecf4a}{is\+\_\+k\+\_\+regular} (G, \hyperlink{namespacenetworkx_1_1algorithms_1_1regular_a760c57bc8e7607a54a414313bc7bea73}{k})
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1regular_a5835cb58b6f4dc08101480865a67df98}{k\+\_\+factor} (G, \hyperlink{namespacenetworkx_1_1algorithms_1_1regular_a760c57bc8e7607a54a414313bc7bea73}{k}, matching\+\_\+weight=\char`\"{}weight\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1regular_a3fd9042d6bf160d484d365d1cf81bb29}{original}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1regular_ae9b11c353fc115aeb332e152194ede89}{g}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1regular_a760c57bc8e7607a54a414313bc7bea73}{k}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1regular_afb35ddfd995ddf36924ad01374efc296}{degree}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1regular_a30148ad0c5b8423fa4848f796cda5ca4}{outer\+\_\+vertices}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1regular_a8cce5ad9b2df06aa5fd0b7496379265e}{core\+\_\+vertices}
+\item 
+\hyperlink{namespacenetworkx_1_1algorithms_1_1regular_aae7b6ff66ef0ada4e66bd03dfa329082}{inner\+\_\+vertices}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions for computing and verifying regular graphs.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1regular_a988c180a3c8476a8c24dc9b9687ecf4a}\label{namespacenetworkx_1_1algorithms_1_1regular_a988c180a3c8476a8c24dc9b9687ecf4a}} 
+\index{networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}!is\+\_\+k\+\_\+regular@{is\+\_\+k\+\_\+regular}}
+\index{is\+\_\+k\+\_\+regular@{is\+\_\+k\+\_\+regular}!networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}}
+\subsubsection{\texorpdfstring{is\+\_\+k\+\_\+regular()}{is\_k\_regular()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+regular.\+is\+\_\+k\+\_\+regular (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{k }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determines whether the graph ``G`` is a k-regular graph.
+
+A k-regular graph is a graph where each vertex has degree k.
+
+Parameters
+----------
+G : NetworkX graph
+
+Returns
+-------
+bool
+    Whether the given graph is k-regular.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1regular_abae34f97d8b60cf592b0df161f5787cd}\label{namespacenetworkx_1_1algorithms_1_1regular_abae34f97d8b60cf592b0df161f5787cd}} 
+\index{networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}!is\+\_\+regular@{is\+\_\+regular}}
+\index{is\+\_\+regular@{is\+\_\+regular}!networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}}
+\subsubsection{\texorpdfstring{is\+\_\+regular()}{is\_regular()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+regular.\+is\+\_\+regular (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determines whether the graph ``G`` is a regular graph.
+
+A regular graph is a graph where each vertex has the same degree. A
+regular digraph is a graph where the indegree and outdegree of each
+vertex are equal.
+
+Parameters
+----------
+G : NetworkX graph
+
+Returns
+-------
+bool
+    Whether the given graph or digraph is regular.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1regular_a5835cb58b6f4dc08101480865a67df98}\label{namespacenetworkx_1_1algorithms_1_1regular_a5835cb58b6f4dc08101480865a67df98}} 
+\index{networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}!k\+\_\+factor@{k\+\_\+factor}}
+\index{k\+\_\+factor@{k\+\_\+factor}!networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}}
+\subsubsection{\texorpdfstring{k\+\_\+factor()}{k\_factor()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+regular.\+k\+\_\+factor (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{k,  }\item[{}]{matching\+\_\+weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute a k-factor of G
+
+A k-factor of a graph is a spanning k-regular subgraph.
+A spanning k-regular subgraph of G is a subgraph that contains
+each vertex of G and a subset of the edges of G such that each
+vertex has degree k.
+
+Parameters
+----------
+G : NetworkX graph
+  Undirected graph
+
+matching_weight: string, optional (default='weight')
+   Edge data key corresponding to the edge weight.
+   Used for finding the max-weighted perfect matching.
+   If key not found, uses 1 as weight.
+
+Returns
+-------
+G2 : NetworkX graph
+    A k-factor of G
+
+References
+----------
+.. [1] "An algorithm for computing simple k-factors.",
+   Meijer, Henk, Yurai Núñez-Rodríguez, and David Rappaport,
+   Information processing letters, 2009.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1regular_a8cce5ad9b2df06aa5fd0b7496379265e}\label{namespacenetworkx_1_1algorithms_1_1regular_a8cce5ad9b2df06aa5fd0b7496379265e}} 
+\index{networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}!core\+\_\+vertices@{core\+\_\+vertices}}
+\index{core\+\_\+vertices@{core\+\_\+vertices}!networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}}
+\subsubsection{\texorpdfstring{core\+\_\+vertices}{core\_vertices}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+regular.\+core\+\_\+vertices}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1regular_afb35ddfd995ddf36924ad01374efc296}\label{namespacenetworkx_1_1algorithms_1_1regular_afb35ddfd995ddf36924ad01374efc296}} 
+\index{networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}!degree@{degree}}
+\index{degree@{degree}!networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}}
+\subsubsection{\texorpdfstring{degree}{degree}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+regular.\+degree}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1regular_ae9b11c353fc115aeb332e152194ede89}\label{namespacenetworkx_1_1algorithms_1_1regular_ae9b11c353fc115aeb332e152194ede89}} 
+\index{networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}!g@{g}}
+\index{g@{g}!networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}}
+\subsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+regular.\+g}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1regular_aae7b6ff66ef0ada4e66bd03dfa329082}\label{namespacenetworkx_1_1algorithms_1_1regular_aae7b6ff66ef0ada4e66bd03dfa329082}} 
+\index{networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}!inner\+\_\+vertices@{inner\+\_\+vertices}}
+\index{inner\+\_\+vertices@{inner\+\_\+vertices}!networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}}
+\subsubsection{\texorpdfstring{inner\+\_\+vertices}{inner\_vertices}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+regular.\+inner\+\_\+vertices}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1regular_a760c57bc8e7607a54a414313bc7bea73}\label{namespacenetworkx_1_1algorithms_1_1regular_a760c57bc8e7607a54a414313bc7bea73}} 
+\index{networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}!k@{k}}
+\index{k@{k}!networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}}
+\subsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+regular.\+k}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1regular_a3fd9042d6bf160d484d365d1cf81bb29}\label{namespacenetworkx_1_1algorithms_1_1regular_a3fd9042d6bf160d484d365d1cf81bb29}} 
+\index{networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}!original@{original}}
+\index{original@{original}!networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}}
+\subsubsection{\texorpdfstring{original}{original}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+regular.\+original}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1regular_a30148ad0c5b8423fa4848f796cda5ca4}\label{namespacenetworkx_1_1algorithms_1_1regular_a30148ad0c5b8423fa4848f796cda5ca4}} 
+\index{networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}!outer\+\_\+vertices@{outer\+\_\+vertices}}
+\index{outer\+\_\+vertices@{outer\+\_\+vertices}!networkx\+::algorithms\+::regular@{networkx\+::algorithms\+::regular}}
+\subsubsection{\texorpdfstring{outer\+\_\+vertices}{outer\_vertices}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+regular.\+outer\+\_\+vertices}
+

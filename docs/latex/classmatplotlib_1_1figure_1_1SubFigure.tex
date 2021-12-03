@@ -1,0 +1,276 @@
+\hypertarget{classmatplotlib_1_1figure_1_1SubFigure}{}\section{matplotlib.\+figure.\+Sub\+Figure Class Reference}
+\label{classmatplotlib_1_1figure_1_1SubFigure}\index{matplotlib.\+figure.\+Sub\+Figure@{matplotlib.\+figure.\+Sub\+Figure}}
+
+
+Inheritance diagram for matplotlib.\+figure.\+Sub\+Figure\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classmatplotlib_1_1figure_1_1SubFigure__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+figure.\+Sub\+Figure\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classmatplotlib_1_1figure_1_1SubFigure__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a41a31b7d57b06a54e19f70f17904fd31}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, parent, subplotspec, facecolor=None, edgecolor=None, linewidth=0.\+0, \hyperlink{classmatplotlib_1_1figure_1_1FigureBase_a11123dc5aa23e7190a0c4c154430c989}{frameon}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a36bc49dcf866989ca720f851beca8ae4}{dpi} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a6fbfcdcf8c3fc1f3d58642dcf5aaa77d}{dpi} (self, value)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a3fc01e200180239173d3f3985ca9e817}{get\+\_\+constrained\+\_\+layout} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1SubFigure_ab51b41aafe2a90beabaffec591f2f87e}{get\+\_\+constrained\+\_\+layout\+\_\+pads} (self, relative=False)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1SubFigure_aaf2b21d5b97d23345727b7ed49c6c165}{init\+\_\+layoutgrid} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1SubFigure_ad68fb8445ae699f76a7e98b6e60b4aa4}{get\+\_\+axes} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a6760ec6420a660df48f63aa087589c58}{draw} (self, renderer)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a944503cf9515f39b935fd1e36df21ec0}{figure}
+\item 
+\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a7412ac034b30baef983e8d705af4addc}{subplotpars}
+\item 
+\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a519a8382af9e4dce10aab22c44312aef}{dpi\+\_\+scale\+\_\+trans}
+\item 
+\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a629124a72b87adde00af9e1400c9d2b4}{canvas}
+\item 
+\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a5dc3e9de8cbda4dc517d024dfa86a7bd}{trans\+Figure}
+\item 
+\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a13982770991ebc12df2d438d157f3981}{bbox\+\_\+relative}
+\item 
+\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_aa64005a8a0145e3473a64e3abee74201}{figbbox}
+\item 
+\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a933fa724a79eed50175f51b32051deb9}{bbox}
+\item 
+\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_adb667a351540337d7df3e73cc0ba5c52}{trans\+Subfigure}
+\item 
+\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a3cc30deea21bd00c42ac85dc64081adc}{patch}
+\item 
+\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a8e8c6a1f334baafaa11b73b80583a12c}{stale}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_a22811119cafa5097791ece96e30fbb67}{axes} = property(\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_ad68fb8445ae699f76a7e98b6e60b4aa4}{get\+\_\+axes}, doc=)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Logical figure that can be placed inside a figure.
+
+Typically instantiated using `.Figure.add_subfigure` or
+`.SubFigure.add_subfigure`, or `.SubFigure.subfigures`.  A subfigure has
+the same methods as a figure except for those particularly tied to the size
+or dpi of the figure, and is confined to a prescribed region of the figure.
+For example the following puts two subfigures side-by-side::
+
+    fig = plt.figure()
+    sfigs = fig.subfigures(1, 2)
+    axsL = sfigs[0].subplots(1, 2)
+    axsR = sfigs[1].subplots(2, 1)
+
+See :doc:`/gallery/subplots_axes_and_figures/subfigures`
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a41a31b7d57b06a54e19f70f17904fd31}\label{classmatplotlib_1_1figure_1_1SubFigure_a41a31b7d57b06a54e19f70f17904fd31}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+Sub\+Figure.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{parent,  }\item[{}]{subplotspec,  }\item[{}]{facecolor = {\ttfamily None},  }\item[{}]{edgecolor = {\ttfamily None},  }\item[{}]{linewidth = {\ttfamily 0.0},  }\item[{}]{frameon = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+parent : `.figure.Figure` or `.figure.SubFigure`
+    Figure or subfigure that contains the SubFigure.  SubFigures
+    can be nested.
+
+subplotspec : `.gridspec.SubplotSpec`
+    Defines the region in a parent gridspec where the subfigure will
+    be placed.
+
+facecolor : default: :rc:`figure.facecolor`
+    The figure patch face color.
+
+edgecolor : default: :rc:`figure.edgecolor`
+    The figure patch edge color.
+
+linewidth : float
+    The linewidth of the frame (i.e. the edge linewidth of the figure
+    patch).
+
+frameon : bool, default: :rc:`figure.frameon`
+    If ``False``, suppress drawing the figure background patch.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a36bc49dcf866989ca720f851beca8ae4}\label{classmatplotlib_1_1figure_1_1SubFigure_a36bc49dcf866989ca720f851beca8ae4}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!dpi@{dpi}}
+\index{dpi@{dpi}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{dpi()}{dpi()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+Sub\+Figure.\+dpi (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a6fbfcdcf8c3fc1f3d58642dcf5aaa77d}\label{classmatplotlib_1_1figure_1_1SubFigure_a6fbfcdcf8c3fc1f3d58642dcf5aaa77d}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!dpi@{dpi}}
+\index{dpi@{dpi}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{dpi()}{dpi()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+Sub\+Figure.\+dpi (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a6760ec6420a660df48f63aa087589c58}\label{classmatplotlib_1_1figure_1_1SubFigure_a6760ec6420a660df48f63aa087589c58}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!draw@{draw}}
+\index{draw@{draw}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+Sub\+Figure.\+draw (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_ad68fb8445ae699f76a7e98b6e60b4aa4}\label{classmatplotlib_1_1figure_1_1SubFigure_ad68fb8445ae699f76a7e98b6e60b4aa4}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!get\+\_\+axes@{get\+\_\+axes}}
+\index{get\+\_\+axes@{get\+\_\+axes}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{get\+\_\+axes()}{get\_axes()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+Sub\+Figure.\+get\+\_\+axes (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of Axes in the SubFigure. You can access and modify the
+Axes in the Figure through this list.
+
+Do not modify the list itself. Instead, use `~.SubFigure.add_axes`,
+`~.SubFigure.add_subplot` or `~.SubFigure.delaxes` to add or remove an
+Axes.
+
+Note: This is equivalent to the property `~.SubFigure.axes`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a3fc01e200180239173d3f3985ca9e817}\label{classmatplotlib_1_1figure_1_1SubFigure_a3fc01e200180239173d3f3985ca9e817}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!get\+\_\+constrained\+\_\+layout@{get\+\_\+constrained\+\_\+layout}}
+\index{get\+\_\+constrained\+\_\+layout@{get\+\_\+constrained\+\_\+layout}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{get\+\_\+constrained\+\_\+layout()}{get\_constrained\_layout()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+Sub\+Figure.\+get\+\_\+constrained\+\_\+layout (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether constrained layout is being used.
+
+See :doc:`/tutorials/intermediate/constrainedlayout_guide`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_ab51b41aafe2a90beabaffec591f2f87e}\label{classmatplotlib_1_1figure_1_1SubFigure_ab51b41aafe2a90beabaffec591f2f87e}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!get\+\_\+constrained\+\_\+layout\+\_\+pads@{get\+\_\+constrained\+\_\+layout\+\_\+pads}}
+\index{get\+\_\+constrained\+\_\+layout\+\_\+pads@{get\+\_\+constrained\+\_\+layout\+\_\+pads}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{get\+\_\+constrained\+\_\+layout\+\_\+pads()}{get\_constrained\_layout\_pads()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+Sub\+Figure.\+get\+\_\+constrained\+\_\+layout\+\_\+pads (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{relative = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get padding for ``constrained_layout``.
+
+Returns a list of ``w_pad, h_pad`` in inches and
+``wspace`` and ``hspace`` as fractions of the subplot.
+
+See :doc:`/tutorials/intermediate/constrainedlayout_guide`.
+
+Parameters
+----------
+relative : bool
+    If `True`, then convert from inches to figure relative.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_aaf2b21d5b97d23345727b7ed49c6c165}\label{classmatplotlib_1_1figure_1_1SubFigure_aaf2b21d5b97d23345727b7ed49c6c165}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!init\+\_\+layoutgrid@{init\+\_\+layoutgrid}}
+\index{init\+\_\+layoutgrid@{init\+\_\+layoutgrid}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{init\+\_\+layoutgrid()}{init\_layoutgrid()}}
+{\footnotesize\ttfamily def matplotlib.\+figure.\+Sub\+Figure.\+init\+\_\+layoutgrid (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize the layoutgrid for use in constrained_layout.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a933fa724a79eed50175f51b32051deb9}\label{classmatplotlib_1_1figure_1_1SubFigure_a933fa724a79eed50175f51b32051deb9}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!bbox@{bbox}}
+\index{bbox@{bbox}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{bbox}{bbox}}
+{\footnotesize\ttfamily matplotlib.\+figure.\+Sub\+Figure.\+bbox}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a13982770991ebc12df2d438d157f3981}\label{classmatplotlib_1_1figure_1_1SubFigure_a13982770991ebc12df2d438d157f3981}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!bbox\+\_\+relative@{bbox\+\_\+relative}}
+\index{bbox\+\_\+relative@{bbox\+\_\+relative}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{bbox\+\_\+relative}{bbox\_relative}}
+{\footnotesize\ttfamily matplotlib.\+figure.\+Sub\+Figure.\+bbox\+\_\+relative}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a629124a72b87adde00af9e1400c9d2b4}\label{classmatplotlib_1_1figure_1_1SubFigure_a629124a72b87adde00af9e1400c9d2b4}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!canvas@{canvas}}
+\index{canvas@{canvas}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{canvas}{canvas}}
+{\footnotesize\ttfamily matplotlib.\+figure.\+Sub\+Figure.\+canvas}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a519a8382af9e4dce10aab22c44312aef}\label{classmatplotlib_1_1figure_1_1SubFigure_a519a8382af9e4dce10aab22c44312aef}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!dpi\+\_\+scale\+\_\+trans@{dpi\+\_\+scale\+\_\+trans}}
+\index{dpi\+\_\+scale\+\_\+trans@{dpi\+\_\+scale\+\_\+trans}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{dpi\+\_\+scale\+\_\+trans}{dpi\_scale\_trans}}
+{\footnotesize\ttfamily matplotlib.\+figure.\+Sub\+Figure.\+dpi\+\_\+scale\+\_\+trans}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_aa64005a8a0145e3473a64e3abee74201}\label{classmatplotlib_1_1figure_1_1SubFigure_aa64005a8a0145e3473a64e3abee74201}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!figbbox@{figbbox}}
+\index{figbbox@{figbbox}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{figbbox}{figbbox}}
+{\footnotesize\ttfamily matplotlib.\+figure.\+Sub\+Figure.\+figbbox}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a944503cf9515f39b935fd1e36df21ec0}\label{classmatplotlib_1_1figure_1_1SubFigure_a944503cf9515f39b935fd1e36df21ec0}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!figure@{figure}}
+\index{figure@{figure}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{figure}{figure}}
+{\footnotesize\ttfamily matplotlib.\+figure.\+Sub\+Figure.\+figure}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a3cc30deea21bd00c42ac85dc64081adc}\label{classmatplotlib_1_1figure_1_1SubFigure_a3cc30deea21bd00c42ac85dc64081adc}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!patch@{patch}}
+\index{patch@{patch}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{patch}{patch}}
+{\footnotesize\ttfamily matplotlib.\+figure.\+Sub\+Figure.\+patch}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a8e8c6a1f334baafaa11b73b80583a12c}\label{classmatplotlib_1_1figure_1_1SubFigure_a8e8c6a1f334baafaa11b73b80583a12c}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+figure.\+Sub\+Figure.\+stale}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a7412ac034b30baef983e8d705af4addc}\label{classmatplotlib_1_1figure_1_1SubFigure_a7412ac034b30baef983e8d705af4addc}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!subplotpars@{subplotpars}}
+\index{subplotpars@{subplotpars}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{subplotpars}{subplotpars}}
+{\footnotesize\ttfamily matplotlib.\+figure.\+Sub\+Figure.\+subplotpars}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a5dc3e9de8cbda4dc517d024dfa86a7bd}\label{classmatplotlib_1_1figure_1_1SubFigure_a5dc3e9de8cbda4dc517d024dfa86a7bd}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!trans\+Figure@{trans\+Figure}}
+\index{trans\+Figure@{trans\+Figure}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{trans\+Figure}{transFigure}}
+{\footnotesize\ttfamily matplotlib.\+figure.\+Sub\+Figure.\+trans\+Figure}
+
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_adb667a351540337d7df3e73cc0ba5c52}\label{classmatplotlib_1_1figure_1_1SubFigure_adb667a351540337d7df3e73cc0ba5c52}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!trans\+Subfigure@{trans\+Subfigure}}
+\index{trans\+Subfigure@{trans\+Subfigure}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{trans\+Subfigure}{transSubfigure}}
+{\footnotesize\ttfamily matplotlib.\+figure.\+Sub\+Figure.\+trans\+Subfigure}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1figure_1_1SubFigure_a22811119cafa5097791ece96e30fbb67}\label{classmatplotlib_1_1figure_1_1SubFigure_a22811119cafa5097791ece96e30fbb67}} 
+\index{matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}!axes@{axes}}
+\index{axes@{axes}!matplotlib\+::figure\+::\+Sub\+Figure@{matplotlib\+::figure\+::\+Sub\+Figure}}
+\subsubsection{\texorpdfstring{axes}{axes}}
+{\footnotesize\ttfamily matplotlib.\+figure.\+Sub\+Figure.\+axes = property(\hyperlink{classmatplotlib_1_1figure_1_1SubFigure_ad68fb8445ae699f76a7e98b6e60b4aa4}{get\+\_\+axes}, doc=)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{figure_8py}{figure.\+py}\end{DoxyCompactItemize}

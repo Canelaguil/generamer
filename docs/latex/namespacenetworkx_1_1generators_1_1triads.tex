@@ -1,0 +1,59 @@
+\hypertarget{namespacenetworkx_1_1generators_1_1triads}{}\section{networkx.\+generators.\+triads Namespace Reference}
+\label{namespacenetworkx_1_1generators_1_1triads}\index{networkx.\+generators.\+triads@{networkx.\+generators.\+triads}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1generators_1_1triads_aaac18c1833cd1977521e0fc2275687cf}{triad\+\_\+graph} (triad\+\_\+name)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1generators_1_1triads_a3bda613f5c344e00102577b8ba824a29}{T\+R\+I\+A\+D\+\_\+\+E\+D\+G\+ES}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1triads_aaac18c1833cd1977521e0fc2275687cf}\label{namespacenetworkx_1_1generators_1_1triads_aaac18c1833cd1977521e0fc2275687cf}} 
+\index{networkx\+::generators\+::triads@{networkx\+::generators\+::triads}!triad\+\_\+graph@{triad\+\_\+graph}}
+\index{triad\+\_\+graph@{triad\+\_\+graph}!networkx\+::generators\+::triads@{networkx\+::generators\+::triads}}
+\subsubsection{\texorpdfstring{triad\+\_\+graph()}{triad\_graph()}}
+{\footnotesize\ttfamily def networkx.\+generators.\+triads.\+triad\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{triad\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the triad graph with the given name.
+
+Each string in the following tuple is a valid triad name::
+
+    ('003', '012', '102', '021D', '021U', '021C', '111D', '111U',
+     '030T', '030C', '201', '120D', '120U', '120C', '210', '300')
+
+Each triad name corresponds to one of the possible valid digraph on
+three nodes.
+
+Parameters
+----------
+triad_name : string
+    The name of a triad, as described above.
+
+Returns
+-------
+:class:`~networkx.DiGraph`
+    The digraph on three nodes with the given name. The nodes of the
+    graph are the single-character strings 'a', 'b', and 'c'.
+
+Raises
+------
+ValueError
+    If `triad_name` is not the name of a triad.
+
+See also
+--------
+triadic_census\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1triads_a3bda613f5c344e00102577b8ba824a29}\label{namespacenetworkx_1_1generators_1_1triads_a3bda613f5c344e00102577b8ba824a29}} 
+\index{networkx\+::generators\+::triads@{networkx\+::generators\+::triads}!T\+R\+I\+A\+D\+\_\+\+E\+D\+G\+ES@{T\+R\+I\+A\+D\+\_\+\+E\+D\+G\+ES}}
+\index{T\+R\+I\+A\+D\+\_\+\+E\+D\+G\+ES@{T\+R\+I\+A\+D\+\_\+\+E\+D\+G\+ES}!networkx\+::generators\+::triads@{networkx\+::generators\+::triads}}
+\subsubsection{\texorpdfstring{T\+R\+I\+A\+D\+\_\+\+E\+D\+G\+ES}{TRIAD\_EDGES}}
+{\footnotesize\ttfamily networkx.\+generators.\+triads.\+T\+R\+I\+A\+D\+\_\+\+E\+D\+G\+ES}
+

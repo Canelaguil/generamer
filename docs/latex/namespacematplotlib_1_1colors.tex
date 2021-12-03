@@ -1,0 +1,338 @@
+\hypertarget{namespacematplotlib_1_1colors}{}\section{matplotlib.\+colors Namespace Reference}
+\label{namespacematplotlib_1_1colors}\index{matplotlib.\+colors@{matplotlib.\+colors}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1__ColorMapping}{\+\_\+\+Color\+Mapping}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1BoundaryNorm}{Boundary\+Norm}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1CenteredNorm}{Centered\+Norm}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1ColorConverter}{Color\+Converter}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1Colormap}{Colormap}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1FuncNorm}{Func\+Norm}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1LightSource}{Light\+Source}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1LinearSegmentedColormap}{Linear\+Segmented\+Colormap}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1ListedColormap}{Listed\+Colormap}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1LogNorm}{Log\+Norm}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1NoNorm}{No\+Norm}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1Normalize}{Normalize}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1PowerNorm}{Power\+Norm}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1SymLogNorm}{Sym\+Log\+Norm}
+\item 
+class \hyperlink{classmatplotlib_1_1colors_1_1TwoSlopeNorm}{Two\+Slope\+Norm}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1colors_ac1f82f4edf38753f7c7d9239c3698137}{get\+\_\+named\+\_\+colors\+\_\+mapping} ()
+\item 
+def \hyperlink{namespacematplotlib_1_1colors_a084095e38ce77a939da7c30a11a7c8d6}{is\+\_\+color\+\_\+like} (c)
+\item 
+def \hyperlink{namespacematplotlib_1_1colors_a61a26a45c36f62237abf3b79dd36befb}{same\+\_\+color} (c1, c2)
+\item 
+def \hyperlink{namespacematplotlib_1_1colors_ab7a6e21b0eb393bbeedfd1460836a31f}{to\+\_\+rgba} (c, alpha=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1colors_a0bba722bf0433deacb90ea8dc18bbc8d}{to\+\_\+rgba\+\_\+array} (c, alpha=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1colors_a131bb01614d6474f3031c00026bd93ec}{to\+\_\+rgb} (c)
+\item 
+def \hyperlink{namespacematplotlib_1_1colors_a7ddf4279539e8252678d727599925336}{to\+\_\+hex} (c, keep\+\_\+alpha=False)
+\item 
+def \hyperlink{namespacematplotlib_1_1colors_a2a8467e4e5d3ac2adce68fe3b9418d2c}{rgb\+\_\+to\+\_\+hsv} (arr)
+\item 
+def \hyperlink{namespacematplotlib_1_1colors_aa1382dea0b1d8f49082ccbdec1b800ce}{hsv\+\_\+to\+\_\+rgb} (hsv)
+\item 
+def \hyperlink{namespacematplotlib_1_1colors_a0fcfaa1c0452b2bc12641841d54dedf4}{from\+\_\+levels\+\_\+and\+\_\+colors} (levels, colors, extend=\textquotesingle{}neither\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1colors_a5786340f4f4fddf7665e5246eaf75d68}{cnames} = C\+S\+S4\+\_\+\+C\+O\+L\+O\+RS
+\begin{DoxyCompactList}\small\item\em Backwards-\/compatible color-\/conversion A\+PI. \end{DoxyCompactList}\item 
+\hyperlink{namespacematplotlib_1_1colors_af26cd70a131ac31abe1aa77acf04c3d7}{hex\+Color\+Pattern} = re.\+compile(r\char`\"{}\textbackslash{}A\#\mbox{[}a-\/fA-\/F0-\/9\mbox{]}\{6\}\textbackslash{}Z\char`\"{})
+\item 
+def \hyperlink{namespacematplotlib_1_1colors_ac1f1c87b31eac3797245a61b5222aa7d}{rgb2hex} = \hyperlink{namespacematplotlib_1_1colors_a7ddf4279539e8252678d727599925336}{to\+\_\+hex}
+\item 
+def \hyperlink{namespacematplotlib_1_1colors_a14c6e2d10c728267bef28e5b3c9c3142}{hex2color} = \hyperlink{namespacematplotlib_1_1colors_a131bb01614d6474f3031c00026bd93ec}{to\+\_\+rgb}
+\item 
+\hyperlink{namespacematplotlib_1_1colors_ae0f1473cd90343845e171b405e1add8c}{color\+Converter} = \hyperlink{classmatplotlib_1_1colors_1_1ColorConverter}{Color\+Converter}()
+\item 
+\hyperlink{namespacematplotlib_1_1colors_a64fab219e2255adac7821722f85263bf}{vmin}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A module for converting numbers or color arguments to *RGB* or *RGBA*.
+
+*RGB* and *RGBA* are sequences of, respectively, 3 or 4 floats in the
+range 0-1.
+
+This module includes functions and classes for color specification conversions,
+and for mapping numbers to colors in a 1-D array of colors called a colormap.
+
+Mapping data onto colors using a colormap typically involves two steps: a data
+array is first mapped onto the range 0-1 using a subclass of `Normalize`,
+then this number is mapped to a color using a subclass of `Colormap`.  Two
+subclasses of `Colormap` provided here:  `LinearSegmentedColormap`, which uses
+piecewise-linear interpolation to define colormaps, and `ListedColormap`, which
+makes a colormap from a list of colors.
+
+.. seealso::
+
+  :doc:`/tutorials/colors/colormap-manipulation` for examples of how to
+  make colormaps and
+
+  :doc:`/tutorials/colors/colormaps` for a list of built-in colormaps.
+
+  :doc:`/tutorials/colors/colormapnorms` for more details about data
+  normalization
+
+  More colormaps are available at palettable_.
+
+The module also provides functions for checking whether an object can be
+interpreted as a color (`is_color_like`), for converting such an object
+to an RGBA tuple (`to_rgba`) or to an HTML-like hex string in the
+"#rrggbb" format (`to_hex`), and a sequence of colors to an (n, 4)
+RGBA array (`to_rgba_array`).  Caching is used for efficiency.
+
+Matplotlib recognizes the following formats to specify a color:
+
+* an RGB or RGBA (red, green, blue, alpha) tuple of float values in closed
+  interval ``[0, 1]`` (e.g., ``(0.1, 0.2, 0.5)`` or ``(0.1, 0.2, 0.5, 0.3)``);
+* a hex RGB or RGBA string (e.g., ``'#0f0f0f'`` or ``'#0f0f0f80'``;
+  case-insensitive);
+* a shorthand hex RGB or RGBA string, equivalent to the hex RGB or RGBA
+  string obtained by duplicating each character, (e.g., ``'#abc'``, equivalent
+  to ``'#aabbcc'``, or ``'#abcd'``, equivalent to ``'#aabbccdd'``;
+  case-insensitive);
+* a string representation of a float value in ``[0, 1]`` inclusive for gray
+  level (e.g., ``'0.5'``);
+* one of the characters ``{'b', 'g', 'r', 'c', 'm', 'y', 'k', 'w'}``, which
+  are short-hand notations for shades of blue, green, red, cyan, magenta,
+  yellow, black, and white. Note that the colors ``'g', 'c', 'm', 'y'`` do not
+  coincide with the X11/CSS4 colors. Their particular shades were chosen for
+  better visibility of colored lines against typical backgrounds.
+* a X11/CSS4 color name (case-insensitive);
+* a name from the `xkcd color survey`_, prefixed with ``'xkcd:'`` (e.g.,
+  ``'xkcd:sky blue'``; case insensitive);
+* one of the Tableau Colors from the 'T10' categorical palette (the default
+  color cycle): ``{'tab:blue', 'tab:orange', 'tab:green', 'tab:red',
+  'tab:purple', 'tab:brown', 'tab:pink', 'tab:gray', 'tab:olive', 'tab:cyan'}``
+  (case-insensitive);
+* a "CN" color spec, i.e. 'C' followed by a number, which is an index into the
+  default property cycle (:rc:`axes.prop_cycle`); the indexing is intended to
+  occur at rendering time, and defaults to black if the cycle does not include
+  color.
+
+.. _palettable: https://jiffyclub.github.io/palettable/
+.. _xkcd color survey: https://xkcd.com/color/rgb/
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1colors_a0fcfaa1c0452b2bc12641841d54dedf4}\label{namespacematplotlib_1_1colors_a0fcfaa1c0452b2bc12641841d54dedf4}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!from\+\_\+levels\+\_\+and\+\_\+colors@{from\+\_\+levels\+\_\+and\+\_\+colors}}
+\index{from\+\_\+levels\+\_\+and\+\_\+colors@{from\+\_\+levels\+\_\+and\+\_\+colors}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{from\+\_\+levels\+\_\+and\+\_\+colors()}{from\_levels\_and\_colors()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+from\+\_\+levels\+\_\+and\+\_\+colors (\begin{DoxyParamCaption}\item[{}]{levels,  }\item[{}]{colors,  }\item[{}]{extend = {\ttfamily \textquotesingle{}neither\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A helper routine to generate a cmap and a norm instance which
+behave similar to contourf's levels and colors arguments.
+
+Parameters
+----------
+levels : sequence of numbers
+    The quantization levels used to construct the `BoundaryNorm`.
+    Value ``v`` is quantized to level ``i`` if ``lev[i] <= v < lev[i+1]``.
+colors : sequence of colors
+    The fill color to use for each level. If *extend* is "neither" there
+    must be ``n_level - 1`` colors. For an *extend* of "min" or "max" add
+    one extra color, and for an *extend* of "both" add two colors.
+extend : {'neither', 'min', 'max', 'both'}, optional
+    The behaviour when a value falls out of range of the given levels.
+    See `~.Axes.contourf` for details.
+
+Returns
+-------
+cmap : `~matplotlib.colors.Normalize`
+norm : `~matplotlib.colors.Colormap`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1colors_ac1f82f4edf38753f7c7d9239c3698137}\label{namespacematplotlib_1_1colors_ac1f82f4edf38753f7c7d9239c3698137}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!get\+\_\+named\+\_\+colors\+\_\+mapping@{get\+\_\+named\+\_\+colors\+\_\+mapping}}
+\index{get\+\_\+named\+\_\+colors\+\_\+mapping@{get\+\_\+named\+\_\+colors\+\_\+mapping}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{get\+\_\+named\+\_\+colors\+\_\+mapping()}{get\_named\_colors\_mapping()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+get\+\_\+named\+\_\+colors\+\_\+mapping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the global mapping of names to named colors.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1colors_aa1382dea0b1d8f49082ccbdec1b800ce}\label{namespacematplotlib_1_1colors_aa1382dea0b1d8f49082ccbdec1b800ce}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!hsv\+\_\+to\+\_\+rgb@{hsv\+\_\+to\+\_\+rgb}}
+\index{hsv\+\_\+to\+\_\+rgb@{hsv\+\_\+to\+\_\+rgb}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{hsv\+\_\+to\+\_\+rgb()}{hsv\_to\_rgb()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+hsv\+\_\+to\+\_\+rgb (\begin{DoxyParamCaption}\item[{}]{hsv }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert hsv values to rgb.
+
+Parameters
+----------
+hsv : (..., 3) array-like
+   All values assumed to be in range [0, 1]
+
+Returns
+-------
+(..., 3) ndarray
+   Colors converted to RGB values in range [0, 1]
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1colors_a084095e38ce77a939da7c30a11a7c8d6}\label{namespacematplotlib_1_1colors_a084095e38ce77a939da7c30a11a7c8d6}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!is\+\_\+color\+\_\+like@{is\+\_\+color\+\_\+like}}
+\index{is\+\_\+color\+\_\+like@{is\+\_\+color\+\_\+like}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{is\+\_\+color\+\_\+like()}{is\_color\_like()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+is\+\_\+color\+\_\+like (\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether *c* can be interpreted as an RGB(A) color.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1colors_a2a8467e4e5d3ac2adce68fe3b9418d2c}\label{namespacematplotlib_1_1colors_a2a8467e4e5d3ac2adce68fe3b9418d2c}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!rgb\+\_\+to\+\_\+hsv@{rgb\+\_\+to\+\_\+hsv}}
+\index{rgb\+\_\+to\+\_\+hsv@{rgb\+\_\+to\+\_\+hsv}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{rgb\+\_\+to\+\_\+hsv()}{rgb\_to\_hsv()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+rgb\+\_\+to\+\_\+hsv (\begin{DoxyParamCaption}\item[{}]{arr }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert float rgb values (in the range [0, 1]), in a numpy array to hsv
+values.
+
+Parameters
+----------
+arr : (..., 3) array-like
+   All values must be in the range [0, 1]
+
+Returns
+-------
+(..., 3) ndarray
+   Colors converted to hsv values in range [0, 1]
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1colors_a61a26a45c36f62237abf3b79dd36befb}\label{namespacematplotlib_1_1colors_a61a26a45c36f62237abf3b79dd36befb}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!same\+\_\+color@{same\+\_\+color}}
+\index{same\+\_\+color@{same\+\_\+color}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{same\+\_\+color()}{same\_color()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+same\+\_\+color (\begin{DoxyParamCaption}\item[{}]{c1,  }\item[{}]{c2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether the colors *c1* and *c2* are the same.
+
+*c1*, *c2* can be single colors or lists/arrays of colors.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1colors_a7ddf4279539e8252678d727599925336}\label{namespacematplotlib_1_1colors_a7ddf4279539e8252678d727599925336}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!to\+\_\+hex@{to\+\_\+hex}}
+\index{to\+\_\+hex@{to\+\_\+hex}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{to\+\_\+hex()}{to\_hex()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+to\+\_\+hex (\begin{DoxyParamCaption}\item[{}]{c,  }\item[{}]{keep\+\_\+alpha = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert *c* to a hex color.
+
+Uses the ``#rrggbb`` format if *keep_alpha* is False (the default),
+``#rrggbbaa`` otherwise.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1colors_a131bb01614d6474f3031c00026bd93ec}\label{namespacematplotlib_1_1colors_a131bb01614d6474f3031c00026bd93ec}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!to\+\_\+rgb@{to\+\_\+rgb}}
+\index{to\+\_\+rgb@{to\+\_\+rgb}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{to\+\_\+rgb()}{to\_rgb()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+to\+\_\+rgb (\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert *c* to an RGB color, silently dropping the alpha channel.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1colors_ab7a6e21b0eb393bbeedfd1460836a31f}\label{namespacematplotlib_1_1colors_ab7a6e21b0eb393bbeedfd1460836a31f}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!to\+\_\+rgba@{to\+\_\+rgba}}
+\index{to\+\_\+rgba@{to\+\_\+rgba}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{to\+\_\+rgba()}{to\_rgba()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+to\+\_\+rgba (\begin{DoxyParamCaption}\item[{}]{c,  }\item[{}]{alpha = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert *c* to an RGBA color.
+
+Parameters
+----------
+c : Matplotlib color or ``np.ma.masked``
+
+alpha : float, optional
+    If *alpha* is not ``None``, it forces the alpha value, except if *c* is
+    ``"none"`` (case-insensitive), which always maps to ``(0, 0, 0, 0)``.
+
+Returns
+-------
+tuple
+    Tuple of ``(r, g, b, a)`` scalars.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1colors_a0bba722bf0433deacb90ea8dc18bbc8d}\label{namespacematplotlib_1_1colors_a0bba722bf0433deacb90ea8dc18bbc8d}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!to\+\_\+rgba\+\_\+array@{to\+\_\+rgba\+\_\+array}}
+\index{to\+\_\+rgba\+\_\+array@{to\+\_\+rgba\+\_\+array}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{to\+\_\+rgba\+\_\+array()}{to\_rgba\_array()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+to\+\_\+rgba\+\_\+array (\begin{DoxyParamCaption}\item[{}]{c,  }\item[{}]{alpha = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert *c* to a (n, 4) array of RGBA colors.
+
+Parameters
+----------
+c : Matplotlib color or array of colors
+    If *c* is a masked array, an ndarray is returned with a (0, 0, 0, 0)
+    row for each masked value or row in *c*.
+
+alpha : float or sequence of floats, optional
+    If *alpha* is not ``None``, it forces the alpha value, except if *c* is
+    ``"none"`` (case-insensitive), which always maps to ``(0, 0, 0, 0)``.
+    If *alpha* is a sequence and *c* is a single color, *c* will be
+    repeated to match the length of *alpha*.
+
+Returns
+-------
+array
+    (n, 4) array of RGBA colors.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1colors_a5786340f4f4fddf7665e5246eaf75d68}\label{namespacematplotlib_1_1colors_a5786340f4f4fddf7665e5246eaf75d68}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!cnames@{cnames}}
+\index{cnames@{cnames}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{cnames}{cnames}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+cnames = C\+S\+S4\+\_\+\+C\+O\+L\+O\+RS}
+
+
+
+Backwards-\/compatible color-\/conversion A\+PI. 
+
+\mbox{\Hypertarget{namespacematplotlib_1_1colors_ae0f1473cd90343845e171b405e1add8c}\label{namespacematplotlib_1_1colors_ae0f1473cd90343845e171b405e1add8c}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!color\+Converter@{color\+Converter}}
+\index{color\+Converter@{color\+Converter}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{color\+Converter}{colorConverter}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+color\+Converter = \hyperlink{classmatplotlib_1_1colors_1_1ColorConverter}{Color\+Converter}()}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1colors_a14c6e2d10c728267bef28e5b3c9c3142}\label{namespacematplotlib_1_1colors_a14c6e2d10c728267bef28e5b3c9c3142}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!hex2color@{hex2color}}
+\index{hex2color@{hex2color}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{hex2color}{hex2color}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+hex2color = \hyperlink{namespacematplotlib_1_1colors_a131bb01614d6474f3031c00026bd93ec}{to\+\_\+rgb}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1colors_af26cd70a131ac31abe1aa77acf04c3d7}\label{namespacematplotlib_1_1colors_af26cd70a131ac31abe1aa77acf04c3d7}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!hex\+Color\+Pattern@{hex\+Color\+Pattern}}
+\index{hex\+Color\+Pattern@{hex\+Color\+Pattern}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{hex\+Color\+Pattern}{hexColorPattern}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+hex\+Color\+Pattern = re.\+compile(r\char`\"{}\textbackslash{}A\#\mbox{[}a-\/fA-\/F0-\/9\mbox{]}\{6\}\textbackslash{}Z\char`\"{})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1colors_ac1f1c87b31eac3797245a61b5222aa7d}\label{namespacematplotlib_1_1colors_ac1f1c87b31eac3797245a61b5222aa7d}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!rgb2hex@{rgb2hex}}
+\index{rgb2hex@{rgb2hex}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{rgb2hex}{rgb2hex}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+rgb2hex = \hyperlink{namespacematplotlib_1_1colors_a7ddf4279539e8252678d727599925336}{to\+\_\+hex}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1colors_a64fab219e2255adac7821722f85263bf}\label{namespacematplotlib_1_1colors_a64fab219e2255adac7821722f85263bf}} 
+\index{matplotlib\+::colors@{matplotlib\+::colors}!vmin@{vmin}}
+\index{vmin@{vmin}!matplotlib\+::colors@{matplotlib\+::colors}}
+\subsubsection{\texorpdfstring{vmin}{vmin}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+vmin}
+

@@ -1,0 +1,75 @@
+\hypertarget{namespacewheel_1_1metadata}{}\section{wheel.\+metadata Namespace Reference}
+\label{namespacewheel_1_1metadata}\index{wheel.\+metadata@{wheel.\+metadata}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacewheel_1_1metadata_abd414d4e8d357ff4a844dfc7e9dbadce}{requires\+\_\+to\+\_\+requires\+\_\+dist} (requirement)
+\item 
+def \hyperlink{namespacewheel_1_1metadata_a7d4e9805baa0c8b9aefa0de1dec18289}{convert\+\_\+requirements} (requirements)
+\item 
+def \hyperlink{namespacewheel_1_1metadata_a59403b28370dbc99b661a0cfe6ef8928}{generate\+\_\+requirements} (extras\+\_\+require)
+\item 
+def \hyperlink{namespacewheel_1_1metadata_aa37a93d2d42385aab109e48f72755463}{pkginfo\+\_\+to\+\_\+metadata} (egg\+\_\+info\+\_\+path, pkginfo\+\_\+path)
+\item 
+def \hyperlink{namespacewheel_1_1metadata_ab406e279f8fbc5b9da29dc5c15dc952e}{pkginfo\+\_\+unicode} (pkg\+\_\+info, field)
+\item 
+def \hyperlink{namespacewheel_1_1metadata_a695b0aeec77feb2b546d795d2ea755f0}{dedent\+\_\+description} (pkg\+\_\+info)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Tools for converting old- to new-style metadata.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacewheel_1_1metadata_a7d4e9805baa0c8b9aefa0de1dec18289}\label{namespacewheel_1_1metadata_a7d4e9805baa0c8b9aefa0de1dec18289}} 
+\index{wheel\+::metadata@{wheel\+::metadata}!convert\+\_\+requirements@{convert\+\_\+requirements}}
+\index{convert\+\_\+requirements@{convert\+\_\+requirements}!wheel\+::metadata@{wheel\+::metadata}}
+\subsubsection{\texorpdfstring{convert\+\_\+requirements()}{convert\_requirements()}}
+{\footnotesize\ttfamily def wheel.\+metadata.\+convert\+\_\+requirements (\begin{DoxyParamCaption}\item[{}]{requirements }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Yield Requires-Dist: strings for parsed requirements strings.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1metadata_a695b0aeec77feb2b546d795d2ea755f0}\label{namespacewheel_1_1metadata_a695b0aeec77feb2b546d795d2ea755f0}} 
+\index{wheel\+::metadata@{wheel\+::metadata}!dedent\+\_\+description@{dedent\+\_\+description}}
+\index{dedent\+\_\+description@{dedent\+\_\+description}!wheel\+::metadata@{wheel\+::metadata}}
+\subsubsection{\texorpdfstring{dedent\+\_\+description()}{dedent\_description()}}
+{\footnotesize\ttfamily def wheel.\+metadata.\+dedent\+\_\+description (\begin{DoxyParamCaption}\item[{}]{pkg\+\_\+info }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Dedent and convert pkg_info['Description'] to Unicode.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1metadata_a59403b28370dbc99b661a0cfe6ef8928}\label{namespacewheel_1_1metadata_a59403b28370dbc99b661a0cfe6ef8928}} 
+\index{wheel\+::metadata@{wheel\+::metadata}!generate\+\_\+requirements@{generate\+\_\+requirements}}
+\index{generate\+\_\+requirements@{generate\+\_\+requirements}!wheel\+::metadata@{wheel\+::metadata}}
+\subsubsection{\texorpdfstring{generate\+\_\+requirements()}{generate\_requirements()}}
+{\footnotesize\ttfamily def wheel.\+metadata.\+generate\+\_\+requirements (\begin{DoxyParamCaption}\item[{}]{extras\+\_\+require }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert requirements from a setup()-style dictionary to ('Requires-Dist', 'requirement')
+and ('Provides-Extra', 'extra') tuples.
+
+extras_require is a dictionary of {extra: [requirements]} as passed to setup(),
+using the empty extra {'': [requirements]} to hold install_requires.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1metadata_aa37a93d2d42385aab109e48f72755463}\label{namespacewheel_1_1metadata_aa37a93d2d42385aab109e48f72755463}} 
+\index{wheel\+::metadata@{wheel\+::metadata}!pkginfo\+\_\+to\+\_\+metadata@{pkginfo\+\_\+to\+\_\+metadata}}
+\index{pkginfo\+\_\+to\+\_\+metadata@{pkginfo\+\_\+to\+\_\+metadata}!wheel\+::metadata@{wheel\+::metadata}}
+\subsubsection{\texorpdfstring{pkginfo\+\_\+to\+\_\+metadata()}{pkginfo\_to\_metadata()}}
+{\footnotesize\ttfamily def wheel.\+metadata.\+pkginfo\+\_\+to\+\_\+metadata (\begin{DoxyParamCaption}\item[{}]{egg\+\_\+info\+\_\+path,  }\item[{}]{pkginfo\+\_\+path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert .egg-info directory with PKG-INFO to the Metadata 2.1 format
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1metadata_ab406e279f8fbc5b9da29dc5c15dc952e}\label{namespacewheel_1_1metadata_ab406e279f8fbc5b9da29dc5c15dc952e}} 
+\index{wheel\+::metadata@{wheel\+::metadata}!pkginfo\+\_\+unicode@{pkginfo\+\_\+unicode}}
+\index{pkginfo\+\_\+unicode@{pkginfo\+\_\+unicode}!wheel\+::metadata@{wheel\+::metadata}}
+\subsubsection{\texorpdfstring{pkginfo\+\_\+unicode()}{pkginfo\_unicode()}}
+{\footnotesize\ttfamily def wheel.\+metadata.\+pkginfo\+\_\+unicode (\begin{DoxyParamCaption}\item[{}]{pkg\+\_\+info,  }\item[{}]{field }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Hack to coax Unicode out of an email Message() - Python 3.3+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1metadata_abd414d4e8d357ff4a844dfc7e9dbadce}\label{namespacewheel_1_1metadata_abd414d4e8d357ff4a844dfc7e9dbadce}} 
+\index{wheel\+::metadata@{wheel\+::metadata}!requires\+\_\+to\+\_\+requires\+\_\+dist@{requires\+\_\+to\+\_\+requires\+\_\+dist}}
+\index{requires\+\_\+to\+\_\+requires\+\_\+dist@{requires\+\_\+to\+\_\+requires\+\_\+dist}!wheel\+::metadata@{wheel\+::metadata}}
+\subsubsection{\texorpdfstring{requires\+\_\+to\+\_\+requires\+\_\+dist()}{requires\_to\_requires\_dist()}}
+{\footnotesize\ttfamily def wheel.\+metadata.\+requires\+\_\+to\+\_\+requires\+\_\+dist (\begin{DoxyParamCaption}\item[{}]{requirement }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the version specifier for a requirement in PEP 345/566 fashion.\end{DoxyVerb}
+ 

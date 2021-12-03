@@ -1,0 +1,127 @@
+\hypertarget{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency}{}\section{networkx.\+classes.\+coreviews.\+Union\+Adjacency Class Reference}
+\label{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency}\index{networkx.\+classes.\+coreviews.\+Union\+Adjacency@{networkx.\+classes.\+coreviews.\+Union\+Adjacency}}
+
+
+Inheritance diagram for networkx.\+classes.\+coreviews.\+Union\+Adjacency\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for networkx.\+classes.\+coreviews.\+Union\+Adjacency\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a55a583f7316f2ca79aeb4048e8a8cea2}{\+\_\+\+\_\+getstate\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a4e528f035648e755cc55105aa6bde672}{\+\_\+\+\_\+setstate\+\_\+\+\_\+} (self, state)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a3c5908ecd17e6717f141eb1531d4b548}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, succ, pred)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_ac181acdcc8aa1335f9d897f673009f41}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_ae57da836bc2592c648f65633e1c1b697}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a2fda7ec7297c29c4fcd7e17e2caa24f0}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, nbr)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_aeb3f916334c30c45c915b4835da08c01}{copy} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_ab09a92b81d346d060d735eb91a925c24}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a1de445d01f087cb8fbb2af67a80b7074}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A read-only union of dict Adjacencies as a Map of Maps of Maps.
+
+The two input dict-of-dict-of-dicts represent the union of
+`G.succ` and `G.pred`. Return values are UnionAtlas
+The inner level of dict is read-write. But the
+middle and outer levels are read-only.
+
+succ : a dict-of-dict-of-dict {node: nbrdict}
+pred : a dict-of-dict-of-dict {node: nbrdict}
+The keys for the two dicts should be the same
+
+See Also
+========
+UnionAtlas: View into dict-of-dict
+UnionMultiAdjacency: View into dict-of-dict-of-dict-of-dict
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a3c5908ecd17e6717f141eb1531d4b548}\label{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a3c5908ecd17e6717f141eb1531d4b548}} 
+\index{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+coreviews.\+Union\+Adjacency.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{succ,  }\item[{}]{pred }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a2fda7ec7297c29c4fcd7e17e2caa24f0}\label{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a2fda7ec7297c29c4fcd7e17e2caa24f0}} 
+\index{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+coreviews.\+Union\+Adjacency.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{nbr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a55a583f7316f2ca79aeb4048e8a8cea2}\label{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a55a583f7316f2ca79aeb4048e8a8cea2}} 
+\index{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}!\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}!networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getstate\+\_\+\+\_\+()}{\_\_getstate\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+coreviews.\+Union\+Adjacency.\+\_\+\+\_\+getstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_ae57da836bc2592c648f65633e1c1b697}\label{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_ae57da836bc2592c648f65633e1c1b697}} 
+\index{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+coreviews.\+Union\+Adjacency.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_ac181acdcc8aa1335f9d897f673009f41}\label{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_ac181acdcc8aa1335f9d897f673009f41}} 
+\index{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+coreviews.\+Union\+Adjacency.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a1de445d01f087cb8fbb2af67a80b7074}\label{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a1de445d01f087cb8fbb2af67a80b7074}} 
+\index{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+coreviews.\+Union\+Adjacency.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a4e528f035648e755cc55105aa6bde672}\label{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_a4e528f035648e755cc55105aa6bde672}} 
+\index{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}!\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}!networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setstate\+\_\+\+\_\+()}{\_\_setstate\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+coreviews.\+Union\+Adjacency.\+\_\+\+\_\+setstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_ab09a92b81d346d060d735eb91a925c24}\label{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_ab09a92b81d346d060d735eb91a925c24}} 
+\index{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+coreviews.\+Union\+Adjacency.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_aeb3f916334c30c45c915b4835da08c01}\label{classnetworkx_1_1classes_1_1coreviews_1_1UnionAdjacency_aeb3f916334c30c45c915b4835da08c01}} 
+\index{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}!copy@{copy}}
+\index{copy@{copy}!networkx\+::classes\+::coreviews\+::\+Union\+Adjacency@{networkx\+::classes\+::coreviews\+::\+Union\+Adjacency}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+coreviews.\+Union\+Adjacency.\+copy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/classes/\hyperlink{coreviews_8py}{coreviews.\+py}\end{DoxyCompactItemize}

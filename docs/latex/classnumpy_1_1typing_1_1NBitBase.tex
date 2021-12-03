@@ -1,0 +1,108 @@
+\hypertarget{classnumpy_1_1typing_1_1NBitBase}{}\section{numpy.\+typing.\+N\+Bit\+Base Class Reference}
+\label{classnumpy_1_1typing_1_1NBitBase}\index{numpy.\+typing.\+N\+Bit\+Base@{numpy.\+typing.\+N\+Bit\+Base}}
+
+
+Inheritance diagram for numpy.\+typing.\+N\+Bit\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classnumpy_1_1typing_1_1NBitBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1typing_1_1NBitBase_a89234b85204162e77a9a59608b85369a}{\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+} (cls)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An object representing `numpy.number` precision during static type checking.
+
+Used exclusively for the purpose static type checking, `NBitBase`
+represents the base of a hierarchical set of subclasses.
+Each subsequent subclass is herein used for representing a lower level
+of precision, *e.g.* ``64Bit > 32Bit > 16Bit``.
+
+Examples
+--------
+Below is a typical usage example: `NBitBase` is herein used for annotating a
+function that takes a float and integer of arbitrary precision as arguments
+and returns a new float of whichever precision is largest
+(*e.g.* ``np.float16 + np.int64 -> np.float64``).
+
+.. code-block:: python
+
+    >>> from __future__ import annotations
+    >>> from typing import TypeVar, Union, TYPE_CHECKING
+    >>> import numpy as np
+    >>> import numpy.typing as npt
+
+    >>> T1 = TypeVar("T1", bound=npt.NBitBase)
+    >>> T2 = TypeVar("T2", bound=npt.NBitBase)
+
+    >>> def add(a: np.floating[T1], b: np.integer[T2]) -> np.floating[Union[T1, T2]]:
+    ...     return a + b
+
+    >>> a = np.float16()
+    >>> b = np.int64()
+    >>> out = add(a, b)
+
+    >>> if TYPE_CHECKING:
+    ...     reveal_locals()
+    ...     # note: Revealed local types are:
+    ...     # note:     a: numpy.floating[numpy.typing._16Bit*]
+    ...     # note:     b: numpy.signedinteger[numpy.typing._64Bit*]
+    ...     # note:     out: numpy.floating[numpy.typing._64Bit*]\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1typing_1_1NBitBase_a89234b85204162e77a9a59608b85369a}\label{classnumpy_1_1typing_1_1NBitBase_a89234b85204162e77a9a59608b85369a}} 
+\index{numpy\+::typing\+::\+N\+Bit\+Base@{numpy\+::typing\+::\+N\+Bit\+Base}!\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+}!numpy\+::typing\+::\+N\+Bit\+Base@{numpy\+::typing\+::\+N\+Bit\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+()}{\_\_init\_subclass\_\_()}}
+{\footnotesize\ttfamily def numpy.\+typing.\+N\+Bit\+Base.\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{None }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}An object representing `numpy.number` precision during static type checking.
+
+Used exclusively for the purpose static type checking, `NBitBase`
+represents the base of a hierarchical set of subclasses.
+Each subsequent subclass is herein used for representing a lower level
+of precision, *e.g.* ``64Bit > 32Bit > 16Bit``.
+
+Examples
+--------
+Below is a typical usage example: `NBitBase` is herein used for annotating a
+function that takes a float and integer of arbitrary precision as arguments
+and returns a new float of whichever precision is largest
+(*e.g.* ``np.float16 + np.int64 -> np.float64``).
+
+.. code-block:: python
+
+>>> from __future__ import annotations
+>>> from typing import TypeVar, Union, TYPE_CHECKING
+>>> import numpy as np
+>>> import numpy.typing as npt
+
+>>> T1 = TypeVar("T1", bound=npt.NBitBase)
+>>> T2 = TypeVar("T2", bound=npt.NBitBase)
+
+>>> def add(a: np.floating[T1], b: np.integer[T2]) -> np.floating[Union[T1, T2]]:
+...     return a + b
+
+>>> a = np.float16()
+>>> b = np.int64()
+>>> out = add(a, b)
+
+>>> if TYPE_CHECKING:
+...     reveal_locals()
+...     # note: Revealed local types are:
+...     # note:     a: numpy.floating[numpy.typing._16Bit*]
+...     # note:     b: numpy.signedinteger[numpy.typing._64Bit*]
+...     # note:     out: numpy.floating[numpy.typing._64Bit*]\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/typing/\hyperlink{venv_2lib_2python3_89_2site-packages_2numpy_2typing_2____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,238 @@
+\hypertarget{classmatplotlib_1_1colors_1_1Colormap}{}\section{matplotlib.\+colors.\+Colormap Class Reference}
+\label{classmatplotlib_1_1colors_1_1Colormap}\index{matplotlib.\+colors.\+Colormap@{matplotlib.\+colors.\+Colormap}}
+
+
+Inheritance diagram for matplotlib.\+colors.\+Colormap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classmatplotlib_1_1colors_1_1Colormap__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_a7e05ab14cde241da5bfcacaed387ec5e}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1colors_1_1Colormap_aa816ba9aebc8d8438ca791c82bb6198c}{name}, \hyperlink{classmatplotlib_1_1colors_1_1Colormap_a011f75e2d28856dd18ada18febb2bb26}{N}=256)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_a6f531c90c97169b34de276c1380b395b}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, X, alpha=None, bytes=False)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_af0caf818eeb96729b83ec398b4009eec}{\+\_\+\+\_\+copy\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_aeb405af1b60cacd32230d4e3c2491ee4}{get\+\_\+bad} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_adef213282b895fa8918f6301adab8788}{set\+\_\+bad} (self, color=\textquotesingle{}k\textquotesingle{}, alpha=None)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_ae5287c447944154b2061ace2c82402b2}{get\+\_\+under} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_ac1c99fa9d2a3b5ac1000b3f76ed03599}{set\+\_\+under} (self, color=\textquotesingle{}k\textquotesingle{}, alpha=None)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_af71907975bd3cfc394aea0aa2555a939}{get\+\_\+over} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_aa232a6b3a533fa42f35b32bcf533ea2b}{set\+\_\+over} (self, color=\textquotesingle{}k\textquotesingle{}, alpha=None)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_a9038b3b8d92f01f8d33e3a053a60f606}{set\+\_\+extremes} (self, bad=None, under=None, over=None)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_a57afd28dbb0631d58b662c7a53858e21}{with\+\_\+extremes} (self, bad=None, under=None, over=None)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_a16c7de119067241c6ff90ae4f1f88aa3}{is\+\_\+gray} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_a4d568231f3fa026884c1cf80cf984dc2}{reversed} (self, \hyperlink{classmatplotlib_1_1colors_1_1Colormap_aa816ba9aebc8d8438ca791c82bb6198c}{name}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1Colormap_a85c6fe3de1c3585299ac312b8acdaccc}{copy} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1Colormap_aa816ba9aebc8d8438ca791c82bb6198c}{name}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1Colormap_a011f75e2d28856dd18ada18febb2bb26}{N}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1Colormap_ab6d5f011a6654b435e6ec4b369202353}{colorbar\+\_\+extend}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Baseclass for all scalar to RGBA mappings.
+
+Typically, Colormap instances are used to convert data values (floats)
+from the interval ``[0, 1]`` to the RGBA color that the respective
+Colormap represents. For scaling of data into the ``[0, 1]`` interval see
+`matplotlib.colors.Normalize`. Subclasses of `matplotlib.cm.ScalarMappable`
+make heavy use of this ``data -> normalize -> map-to-color`` processing
+chain.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_a7e05ab14cde241da5bfcacaed387ec5e}\label{classmatplotlib_1_1colors_1_1Colormap_a7e05ab14cde241da5bfcacaed387ec5e}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{N = {\ttfamily 256} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+name : str
+    The name of the colormap.
+N : int
+    The number of rgb quantization levels.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_a6f531c90c97169b34de276c1380b395b}\label{classmatplotlib_1_1colors_1_1Colormap_a6f531c90c97169b34de276c1380b395b}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{X,  }\item[{}]{alpha = {\ttfamily None},  }\item[{}]{bytes = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+X : float or int, ndarray or scalar
+    The data value(s) to convert to RGBA.
+    For floats, X should be in the interval ``[0.0, 1.0]`` to
+    return the RGBA values ``X*100`` percent along the Colormap line.
+    For integers, X should be in the interval ``[0, Colormap.N)`` to
+    return RGBA values *indexed* from the Colormap with index ``X``.
+alpha : float or array-like or None
+    Alpha must be a scalar between 0 and 1, a sequence of such
+    floats with shape matching X, or None.
+bytes : bool
+    If False (default), the returned RGBA values will be floats in the
+    interval ``[0, 1]`` otherwise they will be uint8s in the interval
+    ``[0, 255]``.
+
+Returns
+-------
+Tuple of RGBA values if X is scalar, otherwise an array of
+RGBA values with a shape of ``X.shape + (4, )``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_af0caf818eeb96729b83ec398b4009eec}\label{classmatplotlib_1_1colors_1_1Colormap_af0caf818eeb96729b83ec398b4009eec}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!\+\_\+\+\_\+copy\+\_\+\+\_\+@{\+\_\+\+\_\+copy\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+copy\+\_\+\+\_\+@{\+\_\+\+\_\+copy\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+copy\+\_\+\+\_\+()}{\_\_copy\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+\_\+\+\_\+copy\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_a85c6fe3de1c3585299ac312b8acdaccc}\label{classmatplotlib_1_1colors_1_1Colormap_a85c6fe3de1c3585299ac312b8acdaccc}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!copy@{copy}}
+\index{copy@{copy}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+copy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a copy of the colormap.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_aeb405af1b60cacd32230d4e3c2491ee4}\label{classmatplotlib_1_1colors_1_1Colormap_aeb405af1b60cacd32230d4e3c2491ee4}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!get\+\_\+bad@{get\+\_\+bad}}
+\index{get\+\_\+bad@{get\+\_\+bad}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{get\+\_\+bad()}{get\_bad()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+get\+\_\+bad (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the color for masked values.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_af71907975bd3cfc394aea0aa2555a939}\label{classmatplotlib_1_1colors_1_1Colormap_af71907975bd3cfc394aea0aa2555a939}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!get\+\_\+over@{get\+\_\+over}}
+\index{get\+\_\+over@{get\+\_\+over}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{get\+\_\+over()}{get\_over()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+get\+\_\+over (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the color for high out-of-range values.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_ae5287c447944154b2061ace2c82402b2}\label{classmatplotlib_1_1colors_1_1Colormap_ae5287c447944154b2061ace2c82402b2}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!get\+\_\+under@{get\+\_\+under}}
+\index{get\+\_\+under@{get\+\_\+under}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{get\+\_\+under()}{get\_under()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+get\+\_\+under (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the color for low out-of-range values.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_a16c7de119067241c6ff90ae4f1f88aa3}\label{classmatplotlib_1_1colors_1_1Colormap_a16c7de119067241c6ff90ae4f1f88aa3}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!is\+\_\+gray@{is\+\_\+gray}}
+\index{is\+\_\+gray@{is\+\_\+gray}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{is\+\_\+gray()}{is\_gray()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+is\+\_\+gray (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether the colormap is grayscale.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_a4d568231f3fa026884c1cf80cf984dc2}\label{classmatplotlib_1_1colors_1_1Colormap_a4d568231f3fa026884c1cf80cf984dc2}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!reversed@{reversed}}
+\index{reversed@{reversed}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{reversed()}{reversed()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+reversed (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a reversed instance of the Colormap.
+
+.. note:: This function is not implemented for base class.
+
+Parameters
+----------
+name : str, optional
+    The name for the reversed colormap. If it's None the
+    name will be the name of the parent colormap + "_r".
+
+See Also
+--------
+LinearSegmentedColormap.reversed
+ListedColormap.reversed
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_adef213282b895fa8918f6301adab8788}\label{classmatplotlib_1_1colors_1_1Colormap_adef213282b895fa8918f6301adab8788}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!set\+\_\+bad@{set\+\_\+bad}}
+\index{set\+\_\+bad@{set\+\_\+bad}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{set\+\_\+bad()}{set\_bad()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+set\+\_\+bad (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{color = {\ttfamily \textquotesingle{}k\textquotesingle{}},  }\item[{}]{alpha = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the color for masked values.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_a9038b3b8d92f01f8d33e3a053a60f606}\label{classmatplotlib_1_1colors_1_1Colormap_a9038b3b8d92f01f8d33e3a053a60f606}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!set\+\_\+extremes@{set\+\_\+extremes}}
+\index{set\+\_\+extremes@{set\+\_\+extremes}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{set\+\_\+extremes()}{set\_extremes()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+set\+\_\+extremes (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{bad = {\ttfamily None},  }\item[{}]{under = {\ttfamily None},  }\item[{}]{over = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the colors for masked (*bad*) values and, when ``norm.clip =
+False``, low (*under*) and high (*over*) out-of-range values.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_aa232a6b3a533fa42f35b32bcf533ea2b}\label{classmatplotlib_1_1colors_1_1Colormap_aa232a6b3a533fa42f35b32bcf533ea2b}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!set\+\_\+over@{set\+\_\+over}}
+\index{set\+\_\+over@{set\+\_\+over}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{set\+\_\+over()}{set\_over()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+set\+\_\+over (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{color = {\ttfamily \textquotesingle{}k\textquotesingle{}},  }\item[{}]{alpha = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the color for high out-of-range values.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_ac1c99fa9d2a3b5ac1000b3f76ed03599}\label{classmatplotlib_1_1colors_1_1Colormap_ac1c99fa9d2a3b5ac1000b3f76ed03599}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!set\+\_\+under@{set\+\_\+under}}
+\index{set\+\_\+under@{set\+\_\+under}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{set\+\_\+under()}{set\_under()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+set\+\_\+under (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{color = {\ttfamily \textquotesingle{}k\textquotesingle{}},  }\item[{}]{alpha = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the color for low out-of-range values.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_a57afd28dbb0631d58b662c7a53858e21}\label{classmatplotlib_1_1colors_1_1Colormap_a57afd28dbb0631d58b662c7a53858e21}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!with\+\_\+extremes@{with\+\_\+extremes}}
+\index{with\+\_\+extremes@{with\+\_\+extremes}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{with\+\_\+extremes()}{with\_extremes()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Colormap.\+with\+\_\+extremes (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{bad = {\ttfamily None},  }\item[{}]{under = {\ttfamily None},  }\item[{}]{over = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a copy of the colormap, for which the colors for masked (*bad*)
+values and, when ``norm.clip = False``, low (*under*) and high (*over*)
+out-of-range values, have been set accordingly.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_ab6d5f011a6654b435e6ec4b369202353}\label{classmatplotlib_1_1colors_1_1Colormap_ab6d5f011a6654b435e6ec4b369202353}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!colorbar\+\_\+extend@{colorbar\+\_\+extend}}
+\index{colorbar\+\_\+extend@{colorbar\+\_\+extend}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{colorbar\+\_\+extend}{colorbar\_extend}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Colormap.\+colorbar\+\_\+extend}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_a011f75e2d28856dd18ada18febb2bb26}\label{classmatplotlib_1_1colors_1_1Colormap_a011f75e2d28856dd18ada18febb2bb26}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!N@{N}}
+\index{N@{N}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Colormap.\+N}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1Colormap_aa816ba9aebc8d8438ca791c82bb6198c}\label{classmatplotlib_1_1colors_1_1Colormap_aa816ba9aebc8d8438ca791c82bb6198c}} 
+\index{matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}!name@{name}}
+\index{name@{name}!matplotlib\+::colors\+::\+Colormap@{matplotlib\+::colors\+::\+Colormap}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Colormap.\+name}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{colors_8py}{colors.\+py}\end{DoxyCompactItemize}

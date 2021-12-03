@@ -1,0 +1,101 @@
+\hypertarget{classdateutil_1_1tz_1_1win_1_1tzwinlocal}{}\section{dateutil.\+tz.\+win.\+tzwinlocal Class Reference}
+\label{classdateutil_1_1tz_1_1win_1_1tzwinlocal}\index{dateutil.\+tz.\+win.\+tzwinlocal@{dateutil.\+tz.\+win.\+tzwinlocal}}
+
+
+Inheritance diagram for dateutil.\+tz.\+win.\+tzwinlocal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classdateutil_1_1tz_1_1win_1_1tzwinlocal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dateutil.\+tz.\+win.\+tzwinlocal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classdateutil_1_1tz_1_1win_1_1tzwinlocal__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1win_1_1tzwinlocal_a570ce1705314b330918aa8cdd7d09471}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1win_1_1tzwinlocal_aa0a561ee386195a89323a4f0cdb8c2cb}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1win_1_1tzwinlocal_ae06350d6ca3552f34b8bc607f545f88f}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1win_1_1tzwinlocal_ac15c3fe43fb4a0baddc6120c9be4d87c}{\+\_\+\+\_\+reduce\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdateutil_1_1tz_1_1win_1_1tzwinlocal_a7682b0615eb960c3c2e1570012fbaf56}{hasdst}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Class representing the local time zone information in the Windows registry
+
+While :class:`dateutil.tz.tzlocal` makes system calls (via the :mod:`time`
+module) to retrieve time zone information, ``tzwinlocal`` retrieves the
+rules directly from the Windows registry and creates an object like
+:class:`dateutil.tz.tzwin`.
+
+Because Windows does not have an equivalent of :func:`time.tzset`, on
+Windows, :class:`dateutil.tz.tzlocal` instances will always reflect the
+time zone settings *at the time that the process was started*, meaning
+changes to the machine's time zone settings during the run of a program
+on Windows will **not** be reflected by :class:`dateutil.tz.tzlocal`.
+Because ``tzwinlocal`` reads the registry directly, it is unaffected by
+this issue.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1win_1_1tzwinlocal_a570ce1705314b330918aa8cdd7d09471}\label{classdateutil_1_1tz_1_1win_1_1tzwinlocal_a570ce1705314b330918aa8cdd7d09471}} 
+\index{dateutil\+::tz\+::win\+::tzwinlocal@{dateutil\+::tz\+::win\+::tzwinlocal}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!dateutil\+::tz\+::win\+::tzwinlocal@{dateutil\+::tz\+::win\+::tzwinlocal}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+win.\+tzwinlocal.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1win_1_1tzwinlocal_ac15c3fe43fb4a0baddc6120c9be4d87c}\label{classdateutil_1_1tz_1_1win_1_1tzwinlocal_ac15c3fe43fb4a0baddc6120c9be4d87c}} 
+\index{dateutil\+::tz\+::win\+::tzwinlocal@{dateutil\+::tz\+::win\+::tzwinlocal}!\+\_\+\+\_\+reduce\+\_\+\+\_\+@{\+\_\+\+\_\+reduce\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+reduce\+\_\+\+\_\+@{\+\_\+\+\_\+reduce\+\_\+\+\_\+}!dateutil\+::tz\+::win\+::tzwinlocal@{dateutil\+::tz\+::win\+::tzwinlocal}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+reduce\+\_\+\+\_\+()}{\_\_reduce\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+win.\+tzwinlocal.\+\_\+\+\_\+reduce\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1win_1_1tzwinlocal_aa0a561ee386195a89323a4f0cdb8c2cb}\label{classdateutil_1_1tz_1_1win_1_1tzwinlocal_aa0a561ee386195a89323a4f0cdb8c2cb}} 
+\index{dateutil\+::tz\+::win\+::tzwinlocal@{dateutil\+::tz\+::win\+::tzwinlocal}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!dateutil\+::tz\+::win\+::tzwinlocal@{dateutil\+::tz\+::win\+::tzwinlocal}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+win.\+tzwinlocal.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1win_1_1tzwinlocal_ae06350d6ca3552f34b8bc607f545f88f}\label{classdateutil_1_1tz_1_1win_1_1tzwinlocal_ae06350d6ca3552f34b8bc607f545f88f}} 
+\index{dateutil\+::tz\+::win\+::tzwinlocal@{dateutil\+::tz\+::win\+::tzwinlocal}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!dateutil\+::tz\+::win\+::tzwinlocal@{dateutil\+::tz\+::win\+::tzwinlocal}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+win.\+tzwinlocal.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1win_1_1tzwinlocal_a7682b0615eb960c3c2e1570012fbaf56}\label{classdateutil_1_1tz_1_1win_1_1tzwinlocal_a7682b0615eb960c3c2e1570012fbaf56}} 
+\index{dateutil\+::tz\+::win\+::tzwinlocal@{dateutil\+::tz\+::win\+::tzwinlocal}!hasdst@{hasdst}}
+\index{hasdst@{hasdst}!dateutil\+::tz\+::win\+::tzwinlocal@{dateutil\+::tz\+::win\+::tzwinlocal}}
+\subsubsection{\texorpdfstring{hasdst}{hasdst}}
+{\footnotesize\ttfamily dateutil.\+tz.\+win.\+tzwinlocal.\+hasdst}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/dateutil/tz/\hyperlink{win_8py}{win.\+py}\end{DoxyCompactItemize}

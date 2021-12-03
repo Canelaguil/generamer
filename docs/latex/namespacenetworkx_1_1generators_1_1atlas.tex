@@ -1,0 +1,134 @@
+\hypertarget{namespacenetworkx_1_1generators_1_1atlas}{}\section{networkx.\+generators.\+atlas Namespace Reference}
+\label{namespacenetworkx_1_1generators_1_1atlas}\index{networkx.\+generators.\+atlas@{networkx.\+generators.\+atlas}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1generators_1_1atlas_a0f5c0457302a728c831a344aea0266ef}{graph\+\_\+atlas} (i)
+\item 
+def \hyperlink{namespacenetworkx_1_1generators_1_1atlas_a6a2c863330707267be7bd0e301e25832}{graph\+\_\+atlas\+\_\+g} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1generators_1_1atlas_a6517542649befec7745a8b801b49fc7f}{N\+U\+M\+\_\+\+G\+R\+A\+P\+HS}
+\item 
+\hyperlink{namespacenetworkx_1_1generators_1_1atlas_ae901da9f2cf876cf4106dfc256cf1d9a}{T\+H\+I\+S\+\_\+\+D\+IR}
+\item 
+\hyperlink{namespacenetworkx_1_1generators_1_1atlas_abd103c982d8d5c367b08a9a331724590}{A\+T\+L\+A\+S\+\_\+\+F\+I\+LE}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Generators for the small graph atlas.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1atlas_a0f5c0457302a728c831a344aea0266ef}\label{namespacenetworkx_1_1generators_1_1atlas_a0f5c0457302a728c831a344aea0266ef}} 
+\index{networkx\+::generators\+::atlas@{networkx\+::generators\+::atlas}!graph\+\_\+atlas@{graph\+\_\+atlas}}
+\index{graph\+\_\+atlas@{graph\+\_\+atlas}!networkx\+::generators\+::atlas@{networkx\+::generators\+::atlas}}
+\subsubsection{\texorpdfstring{graph\+\_\+atlas()}{graph\_atlas()}}
+{\footnotesize\ttfamily def networkx.\+generators.\+atlas.\+graph\+\_\+atlas (\begin{DoxyParamCaption}\item[{}]{i }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns graph number `i` from the Graph Atlas.
+
+For more information, see :func:`.graph_atlas_g`.
+
+Parameters
+----------
+i : int
+    The index of the graph from the atlas to get. The graph at index
+    0 is assumed to be the null graph.
+
+Returns
+-------
+list
+    A list of :class:`~networkx.Graph` objects, the one at index *i*
+    corresponding to the graph *i* in the Graph Atlas.
+
+See also
+--------
+graph_atlas_g
+
+Notes
+-----
+The time required by this function increases linearly with the
+argument `i`, since it reads a large file sequentially in order to
+generate the graph [1]_.
+
+References
+----------
+.. [1] Ronald C. Read and Robin J. Wilson, *An Atlas of Graphs*.
+       Oxford University Press, 1998.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1atlas_a6a2c863330707267be7bd0e301e25832}\label{namespacenetworkx_1_1generators_1_1atlas_a6a2c863330707267be7bd0e301e25832}} 
+\index{networkx\+::generators\+::atlas@{networkx\+::generators\+::atlas}!graph\+\_\+atlas\+\_\+g@{graph\+\_\+atlas\+\_\+g}}
+\index{graph\+\_\+atlas\+\_\+g@{graph\+\_\+atlas\+\_\+g}!networkx\+::generators\+::atlas@{networkx\+::generators\+::atlas}}
+\subsubsection{\texorpdfstring{graph\+\_\+atlas\+\_\+g()}{graph\_atlas\_g()}}
+{\footnotesize\ttfamily def networkx.\+generators.\+atlas.\+graph\+\_\+atlas\+\_\+g (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the list of all graphs with up to seven nodes named in the
+Graph Atlas.
+
+The graphs are listed in increasing order by
+
+1. number of nodes,
+2. number of edges,
+3. degree sequence (for example 111223 < 112222),
+4. number of automorphisms,
+
+in that order, with three exceptions as described in the *Notes*
+section below. This causes the list to correspond with the index of
+the graphs in the Graph Atlas [atlas]_, with the first graph,
+``G[0]``, being the null graph.
+
+Returns
+-------
+list
+    A list of :class:`~networkx.Graph` objects, the one at index *i*
+    corresponding to the graph *i* in the Graph Atlas.
+
+See also
+--------
+graph_atlas
+
+Notes
+-----
+This function may be expensive in both time and space, since it
+reads a large file sequentially in order to populate the list.
+
+Although the NetworkX atlas functions match the order of graphs
+given in the "Atlas of Graphs" book, there are (at least) three
+errors in the ordering described in the book. The following three
+pairs of nodes violate the lexicographically nondecreasing sorted
+degree sequence rule:
+
+- graphs 55 and 56 with degree sequences 001111 and 000112,
+- graphs 1007 and 1008 with degree sequences 3333444 and 3333336,
+- graphs 1012 and 1213 with degree sequences 1244555 and 1244456.
+
+References
+----------
+.. [atlas] Ronald C. Read and Robin J. Wilson,
+           *An Atlas of Graphs*.
+           Oxford University Press, 1998.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1atlas_abd103c982d8d5c367b08a9a331724590}\label{namespacenetworkx_1_1generators_1_1atlas_abd103c982d8d5c367b08a9a331724590}} 
+\index{networkx\+::generators\+::atlas@{networkx\+::generators\+::atlas}!A\+T\+L\+A\+S\+\_\+\+F\+I\+LE@{A\+T\+L\+A\+S\+\_\+\+F\+I\+LE}}
+\index{A\+T\+L\+A\+S\+\_\+\+F\+I\+LE@{A\+T\+L\+A\+S\+\_\+\+F\+I\+LE}!networkx\+::generators\+::atlas@{networkx\+::generators\+::atlas}}
+\subsubsection{\texorpdfstring{A\+T\+L\+A\+S\+\_\+\+F\+I\+LE}{ATLAS\_FILE}}
+{\footnotesize\ttfamily networkx.\+generators.\+atlas.\+A\+T\+L\+A\+S\+\_\+\+F\+I\+LE}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1atlas_a6517542649befec7745a8b801b49fc7f}\label{namespacenetworkx_1_1generators_1_1atlas_a6517542649befec7745a8b801b49fc7f}} 
+\index{networkx\+::generators\+::atlas@{networkx\+::generators\+::atlas}!N\+U\+M\+\_\+\+G\+R\+A\+P\+HS@{N\+U\+M\+\_\+\+G\+R\+A\+P\+HS}}
+\index{N\+U\+M\+\_\+\+G\+R\+A\+P\+HS@{N\+U\+M\+\_\+\+G\+R\+A\+P\+HS}!networkx\+::generators\+::atlas@{networkx\+::generators\+::atlas}}
+\subsubsection{\texorpdfstring{N\+U\+M\+\_\+\+G\+R\+A\+P\+HS}{NUM\_GRAPHS}}
+{\footnotesize\ttfamily networkx.\+generators.\+atlas.\+N\+U\+M\+\_\+\+G\+R\+A\+P\+HS}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1atlas_ae901da9f2cf876cf4106dfc256cf1d9a}\label{namespacenetworkx_1_1generators_1_1atlas_ae901da9f2cf876cf4106dfc256cf1d9a}} 
+\index{networkx\+::generators\+::atlas@{networkx\+::generators\+::atlas}!T\+H\+I\+S\+\_\+\+D\+IR@{T\+H\+I\+S\+\_\+\+D\+IR}}
+\index{T\+H\+I\+S\+\_\+\+D\+IR@{T\+H\+I\+S\+\_\+\+D\+IR}!networkx\+::generators\+::atlas@{networkx\+::generators\+::atlas}}
+\subsubsection{\texorpdfstring{T\+H\+I\+S\+\_\+\+D\+IR}{THIS\_DIR}}
+{\footnotesize\ttfamily networkx.\+generators.\+atlas.\+T\+H\+I\+S\+\_\+\+D\+IR}
+

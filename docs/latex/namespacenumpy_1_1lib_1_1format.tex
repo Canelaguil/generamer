@@ -1,0 +1,565 @@
+\hypertarget{namespacenumpy_1_1lib_1_1format}{}\section{numpy.\+lib.\+format Namespace Reference}
+\label{namespacenumpy_1_1lib_1_1format}\index{numpy.\+lib.\+format@{numpy.\+lib.\+format}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1format_af833693b9ca599e9e0e3186a817a131b}{magic} (major, minor)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1format_a0c0e8d8c23093f508fffdd5b6cba4d3c}{read\+\_\+magic} (fp)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1format_ae62e215cf66dfa14897e2cbb3e399599}{dtype\+\_\+to\+\_\+descr} (dtype)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1format_a8ef944b60e69a059642419df5bc12fb0}{descr\+\_\+to\+\_\+dtype} (descr)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1format_af34f49d13b4598e1dea0cdad339ff01a}{header\+\_\+data\+\_\+from\+\_\+array\+\_\+1\+\_\+0} (array)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1format_a748ba757811ac4173ff949c21a457b12}{write\+\_\+array\+\_\+header\+\_\+1\+\_\+0} (fp, d)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1format_a8d77dd28d804615fb8be21b34f3f9381}{write\+\_\+array\+\_\+header\+\_\+2\+\_\+0} (fp, d)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1format_a96e510ed462ceebe504bf08d8fbf400b}{read\+\_\+array\+\_\+header\+\_\+1\+\_\+0} (fp)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1format_a81839fc030545f78ce647bbc77ffae20}{read\+\_\+array\+\_\+header\+\_\+2\+\_\+0} (fp)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1format_a3601f00958d232eb85e69c568a5171fe}{write\+\_\+array} (fp, array, version=None, allow\+\_\+pickle=True, pickle\+\_\+kwargs=None)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1format_ad0c61d5ab87819a60263307a3e9623d7}{read\+\_\+array} (fp, allow\+\_\+pickle=False, pickle\+\_\+kwargs=None)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1format_a8f8b17821ffe903261f3b58cabd8f386}{open\+\_\+memmap} (filename, mode=\textquotesingle{}r+\textquotesingle{}, dtype=None, shape=None, fortran\+\_\+order=False, version=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1format_a4fde3524af6f9159461fb1c35b216375}{E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+K\+E\+YS}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1format_a6e2a9d07e25d3d25e2bb17a4826c46a6}{M\+A\+G\+I\+C\+\_\+\+P\+R\+E\+F\+IX}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1format_a0e1fe6e2c976e82771dc813eeb848059}{M\+A\+G\+I\+C\+\_\+\+L\+EN}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1format_ad8b0530c3a11f5a38dd05cab2ee0028c}{A\+R\+R\+A\+Y\+\_\+\+A\+L\+I\+GN}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1format_ab2d75ff40b22ca1ce4b169c5c1907f2c}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Binary serialization
+
+NPY format
+==========
+
+A simple format for saving numpy arrays to disk with the full
+information about them.
+
+The ``.npy`` format is the standard binary file format in NumPy for
+persisting a *single* arbitrary NumPy array on disk. The format stores all
+of the shape and dtype information necessary to reconstruct the array
+correctly even on another machine with a different architecture.
+The format is designed to be as simple as possible while achieving
+its limited goals.
+
+The ``.npz`` format is the standard format for persisting *multiple* NumPy
+arrays on disk. A ``.npz`` file is a zip file containing multiple ``.npy``
+files, one for each array.
+
+Capabilities
+------------
+
+- Can represent all NumPy arrays including nested record arrays and
+  object arrays.
+
+- Represents the data in its native binary form.
+
+- Supports Fortran-contiguous arrays directly.
+
+- Stores all of the necessary information to reconstruct the array
+  including shape and dtype on a machine of a different
+  architecture.  Both little-endian and big-endian arrays are
+  supported, and a file with little-endian numbers will yield
+  a little-endian array on any machine reading the file. The
+  types are described in terms of their actual sizes. For example,
+  if a machine with a 64-bit C "long int" writes out an array with
+  "long ints", a reading machine with 32-bit C "long ints" will yield
+  an array with 64-bit integers.
+
+- Is straightforward to reverse engineer. Datasets often live longer than
+  the programs that created them. A competent developer should be
+  able to create a solution in their preferred programming language to
+  read most ``.npy`` files that they have been given without much
+  documentation.
+
+- Allows memory-mapping of the data. See `open_memmep`.
+
+- Can be read from a filelike stream object instead of an actual file.
+
+- Stores object arrays, i.e. arrays containing elements that are arbitrary
+  Python objects. Files with object arrays are not to be mmapable, but
+  can be read and written to disk.
+
+Limitations
+-----------
+
+- Arbitrary subclasses of numpy.ndarray are not completely preserved.
+  Subclasses will be accepted for writing, but only the array data will
+  be written out. A regular numpy.ndarray object will be created
+  upon reading the file.
+
+.. warning::
+
+  Due to limitations in the interpretation of structured dtypes, dtypes
+  with fields with empty names will have the names replaced by 'f0', 'f1',
+  etc. Such arrays will not round-trip through the format entirely
+  accurately. The data is intact; only the field names will differ. We are
+  working on a fix for this. This fix will not require a change in the
+  file format. The arrays with such structures can still be saved and
+  restored, and the correct dtype may be restored by using the
+  ``loadedarray.view(correct_dtype)`` method.
+
+File extensions
+---------------
+
+We recommend using the ``.npy`` and ``.npz`` extensions for files saved
+in this format. This is by no means a requirement; applications may wish
+to use these file formats but use an extension specific to the
+application. In the absence of an obvious alternative, however,
+we suggest using ``.npy`` and ``.npz``.
+
+Version numbering
+-----------------
+
+The version numbering of these formats is independent of NumPy version
+numbering. If the format is upgraded, the code in `numpy.io` will still
+be able to read and write Version 1.0 files.
+
+Format Version 1.0
+------------------
+
+The first 6 bytes are a magic string: exactly ``\\x93NUMPY``.
+
+The next 1 byte is an unsigned byte: the major version number of the file
+format, e.g. ``\\x01``.
+
+The next 1 byte is an unsigned byte: the minor version number of the file
+format, e.g. ``\\x00``. Note: the version of the file format is not tied
+to the version of the numpy package.
+
+The next 2 bytes form a little-endian unsigned short int: the length of
+the header data HEADER_LEN.
+
+The next HEADER_LEN bytes form the header data describing the array's
+format. It is an ASCII string which contains a Python literal expression
+of a dictionary. It is terminated by a newline (``\\n``) and padded with
+spaces (``\\x20``) to make the total of
+``len(magic string) + 2 + len(length) + HEADER_LEN`` be evenly divisible
+by 64 for alignment purposes.
+
+The dictionary contains three keys:
+
+    "descr" : dtype.descr
+      An object that can be passed as an argument to the `numpy.dtype`
+      constructor to create the array's dtype.
+    "fortran_order" : bool
+      Whether the array data is Fortran-contiguous or not. Since
+      Fortran-contiguous arrays are a common form of non-C-contiguity,
+      we allow them to be written directly to disk for efficiency.
+    "shape" : tuple of int
+      The shape of the array.
+
+For repeatability and readability, the dictionary keys are sorted in
+alphabetic order. This is for convenience only. A writer SHOULD implement
+this if possible. A reader MUST NOT depend on this.
+
+Following the header comes the array data. If the dtype contains Python
+objects (i.e. ``dtype.hasobject is True``), then the data is a Python
+pickle of the array. Otherwise the data is the contiguous (either C-
+or Fortran-, depending on ``fortran_order``) bytes of the array.
+Consumers can figure out the number of bytes by multiplying the number
+of elements given by the shape (noting that ``shape=()`` means there is
+1 element) by ``dtype.itemsize``.
+
+Format Version 2.0
+------------------
+
+The version 1.0 format only allowed the array header to have a total size of
+65535 bytes.  This can be exceeded by structured arrays with a large number of
+columns.  The version 2.0 format extends the header size to 4 GiB.
+`numpy.save` will automatically save in 2.0 format if the data requires it,
+else it will always use the more compatible 1.0 format.
+
+The description of the fourth element of the header therefore has become:
+"The next 4 bytes form a little-endian unsigned int: the length of the header
+data HEADER_LEN."
+
+Format Version 3.0
+------------------
+
+This version replaces the ASCII string (which in practice was latin1) with
+a utf8-encoded string, so supports structured types with any unicode field
+names.
+
+Notes
+-----
+The ``.npy`` format, including motivation for creating it and a comparison of
+alternatives, is described in the
+:doc:`"npy-format" NEP <neps:nep-0001-npy-format>`, however details have
+evolved with time and this document is more current.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_a8ef944b60e69a059642419df5bc12fb0}\label{namespacenumpy_1_1lib_1_1format_a8ef944b60e69a059642419df5bc12fb0}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!descr\+\_\+to\+\_\+dtype@{descr\+\_\+to\+\_\+dtype}}
+\index{descr\+\_\+to\+\_\+dtype@{descr\+\_\+to\+\_\+dtype}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{descr\+\_\+to\+\_\+dtype()}{descr\_to\_dtype()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+format.\+descr\+\_\+to\+\_\+dtype (\begin{DoxyParamCaption}\item[{}]{descr }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a dtype based off the given description.
+
+This is essentially the reverse of `dtype_to_descr()`. It will remove
+the valueless padding fields created by, i.e. simple fields like
+dtype('float32'), and then convert the description to its corresponding
+dtype.
+
+Parameters
+----------
+descr : object
+    The object retreived by dtype.descr. Can be passed to
+    `numpy.dtype()` in order to replicate the input dtype.
+
+Returns
+-------
+dtype : dtype
+    The dtype constructed by the description.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_ae62e215cf66dfa14897e2cbb3e399599}\label{namespacenumpy_1_1lib_1_1format_ae62e215cf66dfa14897e2cbb3e399599}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!dtype\+\_\+to\+\_\+descr@{dtype\+\_\+to\+\_\+descr}}
+\index{dtype\+\_\+to\+\_\+descr@{dtype\+\_\+to\+\_\+descr}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{dtype\+\_\+to\+\_\+descr()}{dtype\_to\_descr()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+format.\+dtype\+\_\+to\+\_\+descr (\begin{DoxyParamCaption}\item[{}]{dtype }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a serializable descriptor from the dtype.
+
+The .descr attribute of a dtype object cannot be round-tripped through
+the dtype() constructor. Simple types, like dtype('float32'), have
+a descr which looks like a record array with one field with '' as
+a name. The dtype() constructor interprets this as a request to give
+a default name.  Instead, we construct descriptor that can be passed to
+dtype().
+
+Parameters
+----------
+dtype : dtype
+    The dtype of the array that will be written to disk.
+
+Returns
+-------
+descr : object
+    An object that can be passed to `numpy.dtype()` in order to
+    replicate the input dtype.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_af34f49d13b4598e1dea0cdad339ff01a}\label{namespacenumpy_1_1lib_1_1format_af34f49d13b4598e1dea0cdad339ff01a}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!header\+\_\+data\+\_\+from\+\_\+array\+\_\+1\+\_\+0@{header\+\_\+data\+\_\+from\+\_\+array\+\_\+1\+\_\+0}}
+\index{header\+\_\+data\+\_\+from\+\_\+array\+\_\+1\+\_\+0@{header\+\_\+data\+\_\+from\+\_\+array\+\_\+1\+\_\+0}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{header\+\_\+data\+\_\+from\+\_\+array\+\_\+1\+\_\+0()}{header\_data\_from\_array\_1\_0()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+format.\+header\+\_\+data\+\_\+from\+\_\+array\+\_\+1\+\_\+0 (\begin{DoxyParamCaption}\item[{}]{array }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the dictionary of header metadata from a numpy.ndarray.
+
+Parameters
+----------
+array : numpy.ndarray
+
+Returns
+-------
+d : dict
+    This has the appropriate entries for writing its string representation
+    to the header of the file.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_af833693b9ca599e9e0e3186a817a131b}\label{namespacenumpy_1_1lib_1_1format_af833693b9ca599e9e0e3186a817a131b}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!magic@{magic}}
+\index{magic@{magic}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{magic()}{magic()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+format.\+magic (\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the magic string for the given file format version.
+
+Parameters
+----------
+major : int in [0, 255]
+minor : int in [0, 255]
+
+Returns
+-------
+magic : str
+
+Raises
+------
+ValueError if the version cannot be formatted.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_a8f8b17821ffe903261f3b58cabd8f386}\label{namespacenumpy_1_1lib_1_1format_a8f8b17821ffe903261f3b58cabd8f386}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!open\+\_\+memmap@{open\+\_\+memmap}}
+\index{open\+\_\+memmap@{open\+\_\+memmap}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{open\+\_\+memmap()}{open\_memmap()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+format.\+open\+\_\+memmap (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{mode = {\ttfamily \textquotesingle{}r+\textquotesingle{}},  }\item[{}]{dtype = {\ttfamily None},  }\item[{}]{shape = {\ttfamily None},  }\item[{}]{fortran\+\_\+order = {\ttfamily False},  }\item[{}]{version = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Open a .npy file as a memory-mapped array.
+
+This may be used to read an existing file or create a new one.
+
+Parameters
+----------
+filename : str or path-like
+    The name of the file on disk.  This may *not* be a file-like
+    object.
+mode : str, optional
+    The mode in which to open the file; the default is 'r+'.  In
+    addition to the standard file modes, 'c' is also accepted to mean
+    "copy on write."  See `memmap` for the available mode strings.
+dtype : data-type, optional
+    The data type of the array if we are creating a new file in "write"
+    mode, if not, `dtype` is ignored.  The default value is None, which
+    results in a data-type of `float64`.
+shape : tuple of int
+    The shape of the array if we are creating a new file in "write"
+    mode, in which case this parameter is required.  Otherwise, this
+    parameter is ignored and is thus optional.
+fortran_order : bool, optional
+    Whether the array should be Fortran-contiguous (True) or
+    C-contiguous (False, the default) if we are creating a new file in
+    "write" mode.
+version : tuple of int (major, minor) or None
+    If the mode is a "write" mode, then this is the version of the file
+    format used to create the file.  None means use the oldest
+    supported version that is able to store the data.  Default: None
+
+Returns
+-------
+marray : memmap
+    The memory-mapped array.
+
+Raises
+------
+ValueError
+    If the data or the mode is invalid.
+IOError
+    If the file is not found or cannot be opened correctly.
+
+See Also
+--------
+numpy.memmap\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_ad0c61d5ab87819a60263307a3e9623d7}\label{namespacenumpy_1_1lib_1_1format_ad0c61d5ab87819a60263307a3e9623d7}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!read\+\_\+array@{read\+\_\+array}}
+\index{read\+\_\+array@{read\+\_\+array}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{read\+\_\+array()}{read\_array()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+format.\+read\+\_\+array (\begin{DoxyParamCaption}\item[{}]{fp,  }\item[{}]{allow\+\_\+pickle = {\ttfamily False},  }\item[{}]{pickle\+\_\+kwargs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read an array from an NPY file.
+
+Parameters
+----------
+fp : file_like object
+    If this is not a real file object, then this may take extra memory
+    and time.
+allow_pickle : bool, optional
+    Whether to allow writing pickled data. Default: False
+
+    .. versionchanged:: 1.16.3
+        Made default False in response to CVE-2019-6446.
+
+pickle_kwargs : dict
+    Additional keyword arguments to pass to pickle.load. These are only
+    useful when loading object arrays saved on Python 2 when using
+    Python 3.
+
+Returns
+-------
+array : ndarray
+    The array from the data on disk.
+
+Raises
+------
+ValueError
+    If the data is invalid, or allow_pickle=False and the file contains
+    an object array.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_a96e510ed462ceebe504bf08d8fbf400b}\label{namespacenumpy_1_1lib_1_1format_a96e510ed462ceebe504bf08d8fbf400b}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!read\+\_\+array\+\_\+header\+\_\+1\+\_\+0@{read\+\_\+array\+\_\+header\+\_\+1\+\_\+0}}
+\index{read\+\_\+array\+\_\+header\+\_\+1\+\_\+0@{read\+\_\+array\+\_\+header\+\_\+1\+\_\+0}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{read\+\_\+array\+\_\+header\+\_\+1\+\_\+0()}{read\_array\_header\_1\_0()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+format.\+read\+\_\+array\+\_\+header\+\_\+1\+\_\+0 (\begin{DoxyParamCaption}\item[{}]{fp }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read an array header from a filelike object using the 1.0 file format
+version.
+
+This will leave the file object located just after the header.
+
+Parameters
+----------
+fp : filelike object
+    A file object or something with a `.read()` method like a file.
+
+Returns
+-------
+shape : tuple of int
+    The shape of the array.
+fortran_order : bool
+    The array data will be written out directly if it is either
+    C-contiguous or Fortran-contiguous. Otherwise, it will be made
+    contiguous before writing it out.
+dtype : dtype
+    The dtype of the file's data.
+
+Raises
+------
+ValueError
+    If the data is invalid.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_a81839fc030545f78ce647bbc77ffae20}\label{namespacenumpy_1_1lib_1_1format_a81839fc030545f78ce647bbc77ffae20}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!read\+\_\+array\+\_\+header\+\_\+2\+\_\+0@{read\+\_\+array\+\_\+header\+\_\+2\+\_\+0}}
+\index{read\+\_\+array\+\_\+header\+\_\+2\+\_\+0@{read\+\_\+array\+\_\+header\+\_\+2\+\_\+0}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{read\+\_\+array\+\_\+header\+\_\+2\+\_\+0()}{read\_array\_header\_2\_0()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+format.\+read\+\_\+array\+\_\+header\+\_\+2\+\_\+0 (\begin{DoxyParamCaption}\item[{}]{fp }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read an array header from a filelike object using the 2.0 file format
+version.
+
+This will leave the file object located just after the header.
+
+.. versionadded:: 1.9.0
+
+Parameters
+----------
+fp : filelike object
+    A file object or something with a `.read()` method like a file.
+
+Returns
+-------
+shape : tuple of int
+    The shape of the array.
+fortran_order : bool
+    The array data will be written out directly if it is either
+    C-contiguous or Fortran-contiguous. Otherwise, it will be made
+    contiguous before writing it out.
+dtype : dtype
+    The dtype of the file's data.
+
+Raises
+------
+ValueError
+    If the data is invalid.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_a0c0e8d8c23093f508fffdd5b6cba4d3c}\label{namespacenumpy_1_1lib_1_1format_a0c0e8d8c23093f508fffdd5b6cba4d3c}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!read\+\_\+magic@{read\+\_\+magic}}
+\index{read\+\_\+magic@{read\+\_\+magic}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{read\+\_\+magic()}{read\_magic()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+format.\+read\+\_\+magic (\begin{DoxyParamCaption}\item[{}]{fp }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read the magic string to get the version of the file format.
+
+Parameters
+----------
+fp : filelike object
+
+Returns
+-------
+major : int
+minor : int
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_a3601f00958d232eb85e69c568a5171fe}\label{namespacenumpy_1_1lib_1_1format_a3601f00958d232eb85e69c568a5171fe}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!write\+\_\+array@{write\+\_\+array}}
+\index{write\+\_\+array@{write\+\_\+array}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{write\+\_\+array()}{write\_array()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+format.\+write\+\_\+array (\begin{DoxyParamCaption}\item[{}]{fp,  }\item[{}]{array,  }\item[{}]{version = {\ttfamily None},  }\item[{}]{allow\+\_\+pickle = {\ttfamily True},  }\item[{}]{pickle\+\_\+kwargs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write an array to an NPY file, including a header.
+
+If the array is neither C-contiguous nor Fortran-contiguous AND the
+file_like object is not a real file object, this function will have to
+copy data in memory.
+
+Parameters
+----------
+fp : file_like object
+    An open, writable file object, or similar object with a
+    ``.write()`` method.
+array : ndarray
+    The array to write to disk.
+version : (int, int) or None, optional
+    The version number of the format. None means use the oldest
+    supported version that is able to store the data.  Default: None
+allow_pickle : bool, optional
+    Whether to allow writing pickled data. Default: True
+pickle_kwargs : dict, optional
+    Additional keyword arguments to pass to pickle.dump, excluding
+    'protocol'. These are only useful when pickling objects in object
+    arrays on Python 3 to Python 2 compatible format.
+
+Raises
+------
+ValueError
+    If the array cannot be persisted. This includes the case of
+    allow_pickle=False and array being an object array.
+Various other errors
+    If the array contains Python objects as part of its dtype, the
+    process of pickling them may raise various errors if the objects
+    are not picklable.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_a748ba757811ac4173ff949c21a457b12}\label{namespacenumpy_1_1lib_1_1format_a748ba757811ac4173ff949c21a457b12}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!write\+\_\+array\+\_\+header\+\_\+1\+\_\+0@{write\+\_\+array\+\_\+header\+\_\+1\+\_\+0}}
+\index{write\+\_\+array\+\_\+header\+\_\+1\+\_\+0@{write\+\_\+array\+\_\+header\+\_\+1\+\_\+0}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{write\+\_\+array\+\_\+header\+\_\+1\+\_\+0()}{write\_array\_header\_1\_0()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+format.\+write\+\_\+array\+\_\+header\+\_\+1\+\_\+0 (\begin{DoxyParamCaption}\item[{}]{fp,  }\item[{}]{d }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write the header for an array using the 1.0 format.
+
+Parameters
+----------
+fp : filelike object
+d : dict
+    This has the appropriate entries for writing its string
+    representation to the header of the file.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_a8d77dd28d804615fb8be21b34f3f9381}\label{namespacenumpy_1_1lib_1_1format_a8d77dd28d804615fb8be21b34f3f9381}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!write\+\_\+array\+\_\+header\+\_\+2\+\_\+0@{write\+\_\+array\+\_\+header\+\_\+2\+\_\+0}}
+\index{write\+\_\+array\+\_\+header\+\_\+2\+\_\+0@{write\+\_\+array\+\_\+header\+\_\+2\+\_\+0}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{write\+\_\+array\+\_\+header\+\_\+2\+\_\+0()}{write\_array\_header\_2\_0()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+format.\+write\+\_\+array\+\_\+header\+\_\+2\+\_\+0 (\begin{DoxyParamCaption}\item[{}]{fp,  }\item[{}]{d }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write the header for an array using the 2.0 format.
+    The 2.0 format allows storing very large structured arrays.
+
+.. versionadded:: 1.9.0
+
+Parameters
+----------
+fp : filelike object
+d : dict
+    This has the appropriate entries for writing its string
+    representation to the header of the file.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_ad8b0530c3a11f5a38dd05cab2ee0028c}\label{namespacenumpy_1_1lib_1_1format_ad8b0530c3a11f5a38dd05cab2ee0028c}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!A\+R\+R\+A\+Y\+\_\+\+A\+L\+I\+GN@{A\+R\+R\+A\+Y\+\_\+\+A\+L\+I\+GN}}
+\index{A\+R\+R\+A\+Y\+\_\+\+A\+L\+I\+GN@{A\+R\+R\+A\+Y\+\_\+\+A\+L\+I\+GN}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+\+A\+L\+I\+GN}{ARRAY\_ALIGN}}
+{\footnotesize\ttfamily numpy.\+lib.\+format.\+A\+R\+R\+A\+Y\+\_\+\+A\+L\+I\+GN}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_ab2d75ff40b22ca1ce4b169c5c1907f2c}\label{namespacenumpy_1_1lib_1_1format_ab2d75ff40b22ca1ce4b169c5c1907f2c}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}
+\index{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}{BUFFER\_SIZE}}
+{\footnotesize\ttfamily numpy.\+lib.\+format.\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_a4fde3524af6f9159461fb1c35b216375}\label{namespacenumpy_1_1lib_1_1format_a4fde3524af6f9159461fb1c35b216375}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+K\+E\+YS@{E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+K\+E\+YS}}
+\index{E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+K\+E\+YS@{E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+K\+E\+YS}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+K\+E\+YS}{EXPECTED\_KEYS}}
+{\footnotesize\ttfamily numpy.\+lib.\+format.\+E\+X\+P\+E\+C\+T\+E\+D\+\_\+\+K\+E\+YS}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_a0e1fe6e2c976e82771dc813eeb848059}\label{namespacenumpy_1_1lib_1_1format_a0e1fe6e2c976e82771dc813eeb848059}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!M\+A\+G\+I\+C\+\_\+\+L\+EN@{M\+A\+G\+I\+C\+\_\+\+L\+EN}}
+\index{M\+A\+G\+I\+C\+\_\+\+L\+EN@{M\+A\+G\+I\+C\+\_\+\+L\+EN}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{M\+A\+G\+I\+C\+\_\+\+L\+EN}{MAGIC\_LEN}}
+{\footnotesize\ttfamily numpy.\+lib.\+format.\+M\+A\+G\+I\+C\+\_\+\+L\+EN}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1format_a6e2a9d07e25d3d25e2bb17a4826c46a6}\label{namespacenumpy_1_1lib_1_1format_a6e2a9d07e25d3d25e2bb17a4826c46a6}} 
+\index{numpy\+::lib\+::format@{numpy\+::lib\+::format}!M\+A\+G\+I\+C\+\_\+\+P\+R\+E\+F\+IX@{M\+A\+G\+I\+C\+\_\+\+P\+R\+E\+F\+IX}}
+\index{M\+A\+G\+I\+C\+\_\+\+P\+R\+E\+F\+IX@{M\+A\+G\+I\+C\+\_\+\+P\+R\+E\+F\+IX}!numpy\+::lib\+::format@{numpy\+::lib\+::format}}
+\subsubsection{\texorpdfstring{M\+A\+G\+I\+C\+\_\+\+P\+R\+E\+F\+IX}{MAGIC\_PREFIX}}
+{\footnotesize\ttfamily numpy.\+lib.\+format.\+M\+A\+G\+I\+C\+\_\+\+P\+R\+E\+F\+IX}
+

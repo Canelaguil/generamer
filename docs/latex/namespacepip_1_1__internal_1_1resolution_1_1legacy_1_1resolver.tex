@@ -1,0 +1,43 @@
+\hypertarget{namespacepip_1_1__internal_1_1resolution_1_1legacy_1_1resolver}{}\section{pip.\+\_\+internal.\+resolution.\+legacy.\+resolver Namespace Reference}
+\label{namespacepip_1_1__internal_1_1resolution_1_1legacy_1_1resolver}\index{pip.\+\_\+internal.\+resolution.\+legacy.\+resolver@{pip.\+\_\+internal.\+resolution.\+legacy.\+resolver}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1resolution_1_1legacy_1_1resolver_1_1Resolver}{Resolver}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1resolution_1_1legacy_1_1resolver_a3eeecbcdbf305341501fe5d777fa7f1a}{logger}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1resolution_1_1legacy_1_1resolver_a24fdb75b68fba6bc49a21f610ba02f30}{Discovered\+Dependencies}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Dependency Resolution
+
+The dependency resolution in pip is performed as follows:
+
+for top-level requirements:
+    a. only one spec allowed per project, regardless of conflicts or not.
+       otherwise a "double requirement" exception is raised
+    b. they override sub-dependency requirements.
+for sub-dependencies
+    a. "first found, wins" (where the order is breadth first)
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1resolution_1_1legacy_1_1resolver_a24fdb75b68fba6bc49a21f610ba02f30}\label{namespacepip_1_1__internal_1_1resolution_1_1legacy_1_1resolver_a24fdb75b68fba6bc49a21f610ba02f30}} 
+\index{pip\+::\+\_\+internal\+::resolution\+::legacy\+::resolver@{pip\+::\+\_\+internal\+::resolution\+::legacy\+::resolver}!Discovered\+Dependencies@{Discovered\+Dependencies}}
+\index{Discovered\+Dependencies@{Discovered\+Dependencies}!pip\+::\+\_\+internal\+::resolution\+::legacy\+::resolver@{pip\+::\+\_\+internal\+::resolution\+::legacy\+::resolver}}
+\subsubsection{\texorpdfstring{Discovered\+Dependencies}{DiscoveredDependencies}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+resolution.\+legacy.\+resolver.\+Discovered\+Dependencies}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1resolution_1_1legacy_1_1resolver_a3eeecbcdbf305341501fe5d777fa7f1a}\label{namespacepip_1_1__internal_1_1resolution_1_1legacy_1_1resolver_a3eeecbcdbf305341501fe5d777fa7f1a}} 
+\index{pip\+::\+\_\+internal\+::resolution\+::legacy\+::resolver@{pip\+::\+\_\+internal\+::resolution\+::legacy\+::resolver}!logger@{logger}}
+\index{logger@{logger}!pip\+::\+\_\+internal\+::resolution\+::legacy\+::resolver@{pip\+::\+\_\+internal\+::resolution\+::legacy\+::resolver}}
+\subsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+resolution.\+legacy.\+resolver.\+logger}
+

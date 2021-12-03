@@ -1,0 +1,119 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Combine}{}\section{pip.\+\_\+vendor.\+pyparsing.\+Combine Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1Combine}\index{pip.\+\_\+vendor.\+pyparsing.\+Combine@{pip.\+\_\+vendor.\+pyparsing.\+Combine}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+Combine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classpip_1_1__vendor_1_1pyparsing_1_1Combine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+Combine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classpip_1_1__vendor_1_1pyparsing_1_1Combine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a405256dc18913b78cb734d63a1760f82}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1ParseElementEnhance_af574b49a0a7d914693fdaa833df7098f}{expr}, \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Combine_ab5a6bba58ca69cd1fca48a09cca161f1}{join\+String}=\char`\"{}\char`\"{}, \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Combine_ab2a725e5ca77b07bf7ce08028fa863e8}{adjacent}=True)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a52c285338d1dcd3aa52ea876620d1053}{ignore} (self, other)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a4f8026a744fafdc7fda560220b27aabe}{post\+Parse} (self, instring, loc, tokenlist)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Combine_ab2a725e5ca77b07bf7ce08028fa863e8}{adjacent}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a54d0ecbf4343411706a60a750cd4bf41}{skip\+Whitespace}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Combine_ab5a6bba58ca69cd1fca48a09cca161f1}{join\+String}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a225a534f9da0520438f99b0ea8c388e8}{call\+Preparse}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Converter to concatenate all matching tokens to a single string.
+By default, the matching patterns must also be contiguous in the
+input string; this can be disabled by specifying
+``'adjacent=False'`` in the constructor.
+
+Example::
+
+    real = Word(nums) + '.' + Word(nums)
+    print(real.parseString('3.1416')) # -> ['3', '.', '1416']
+    # will also erroneously match the following
+    print(real.parseString('3. 1416')) # -> ['3', '.', '1416']
+
+    real = Combine(Word(nums) + '.' + Word(nums))
+    print(real.parseString('3.1416')) # -> ['3.1416']
+    # no match when there are internal spaces
+    print(real.parseString('3. 1416')) # -> Exception: Expected W:(0123...)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a405256dc18913b78cb734d63a1760f82}\label{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a405256dc18913b78cb734d63a1760f82}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+Combine.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{expr,  }\item[{}]{join\+String = {\ttfamily \char`\"{}\char`\"{}},  }\item[{}]{adjacent = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a52c285338d1dcd3aa52ea876620d1053}\label{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a52c285338d1dcd3aa52ea876620d1053}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}!ignore@{ignore}}
+\index{ignore@{ignore}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{ignore()}{ignore()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+Combine.\+ignore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a4f8026a744fafdc7fda560220b27aabe}\label{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a4f8026a744fafdc7fda560220b27aabe}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}!post\+Parse@{post\+Parse}}
+\index{post\+Parse@{post\+Parse}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{post\+Parse()}{postParse()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+Combine.\+post\+Parse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{tokenlist }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Combine_ab2a725e5ca77b07bf7ce08028fa863e8}\label{classpip_1_1__vendor_1_1pyparsing_1_1Combine_ab2a725e5ca77b07bf7ce08028fa863e8}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}!adjacent@{adjacent}}
+\index{adjacent@{adjacent}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{adjacent}{adjacent}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Combine.\+adjacent}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a225a534f9da0520438f99b0ea8c388e8}\label{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a225a534f9da0520438f99b0ea8c388e8}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}!call\+Preparse@{call\+Preparse}}
+\index{call\+Preparse@{call\+Preparse}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{call\+Preparse}{callPreparse}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Combine.\+call\+Preparse}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Combine_ab5a6bba58ca69cd1fca48a09cca161f1}\label{classpip_1_1__vendor_1_1pyparsing_1_1Combine_ab5a6bba58ca69cd1fca48a09cca161f1}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}!join\+String@{join\+String}}
+\index{join\+String@{join\+String}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{join\+String}{joinString}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Combine.\+join\+String}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a54d0ecbf4343411706a60a750cd4bf41}\label{classpip_1_1__vendor_1_1pyparsing_1_1Combine_a54d0ecbf4343411706a60a750cd4bf41}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}!skip\+Whitespace@{skip\+Whitespace}}
+\index{skip\+Whitespace@{skip\+Whitespace}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Combine}}
+\subsubsection{\texorpdfstring{skip\+Whitespace}{skipWhitespace}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Combine.\+skip\+Whitespace}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/\hyperlink{pip_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

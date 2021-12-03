@@ -1,0 +1,70 @@
+\hypertarget{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic}{}\section{pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Base\+Heuristic Class Reference}
+\label{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic}\index{pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Base\+Heuristic@{pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Base\+Heuristic}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Base\+Heuristic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Base\+Heuristic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic_a60981da360ad1a5e7d01adc126f52b58}{warning} (self, response)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic_a497b372f9450576afb8ebfcdbb9a8930}{update\+\_\+headers} (self, response)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic_a71faff258b36ba951716a724386d4d06}{apply} (self, response)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic_a71faff258b36ba951716a724386d4d06}\label{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic_a71faff258b36ba951716a724386d4d06}} 
+\index{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Base\+Heuristic@{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Base\+Heuristic}!apply@{apply}}
+\index{apply@{apply}!pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Base\+Heuristic@{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Base\+Heuristic}}
+\subsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Base\+Heuristic.\+apply (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{response }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic_a497b372f9450576afb8ebfcdbb9a8930}\label{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic_a497b372f9450576afb8ebfcdbb9a8930}} 
+\index{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Base\+Heuristic@{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Base\+Heuristic}!update\+\_\+headers@{update\+\_\+headers}}
+\index{update\+\_\+headers@{update\+\_\+headers}!pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Base\+Heuristic@{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Base\+Heuristic}}
+\subsubsection{\texorpdfstring{update\+\_\+headers()}{update\_headers()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Base\+Heuristic.\+update\+\_\+headers (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{response }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update the response headers with any new headers.
+
+NOTE: This SHOULD always include some Warning header to
+      signify that the response was cached by the client, not
+      by way of the provided headers.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic_a60981da360ad1a5e7d01adc126f52b58}\label{classpip_1_1__vendor_1_1cachecontrol_1_1heuristics_1_1BaseHeuristic_a60981da360ad1a5e7d01adc126f52b58}} 
+\index{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Base\+Heuristic@{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Base\+Heuristic}!warning@{warning}}
+\index{warning@{warning}!pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Base\+Heuristic@{pip\+::\+\_\+vendor\+::cachecontrol\+::heuristics\+::\+Base\+Heuristic}}
+\subsubsection{\texorpdfstring{warning()}{warning()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+cachecontrol.\+heuristics.\+Base\+Heuristic.\+warning (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{response }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a valid 1xx warning header value describing the cache
+adjustments.
+
+The response is provided too allow warnings like 113
+http://tools.ietf.org/html/rfc7234#section-5.5.4 where we need
+to explicitly say response is over 24 hours old.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/cachecontrol/\hyperlink{heuristics_8py}{heuristics.\+py}\end{DoxyCompactItemize}

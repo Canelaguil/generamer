@@ -1,0 +1,261 @@
+\hypertarget{namespacematplotlib_1_1__api_1_1deprecation}{}\section{matplotlib.\+\_\+api.\+deprecation Namespace Reference}
+\label{namespacematplotlib_1_1__api_1_1deprecation}\index{matplotlib.\+\_\+api.\+deprecation@{matplotlib.\+\_\+api.\+deprecation}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1__api_1_1deprecation_1_1__deprecated__parameter__class}{\+\_\+deprecated\+\_\+parameter\+\_\+class}
+\item 
+class \hyperlink{classmatplotlib_1_1__api_1_1deprecation_1_1deprecate__privatize__attribute}{deprecate\+\_\+privatize\+\_\+attribute}
+\item 
+class \hyperlink{classmatplotlib_1_1__api_1_1deprecation_1_1MatplotlibDeprecationWarning}{Matplotlib\+Deprecation\+Warning}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1__api_1_1deprecation_a328933cc8e4e030247d96e1fca1a9c8f}{warn\+\_\+deprecated} (since, message=\textquotesingle{}\textquotesingle{}, name=\textquotesingle{}\textquotesingle{}, alternative=\textquotesingle{}\textquotesingle{}, pending=False, obj\+\_\+type=\textquotesingle{}\textquotesingle{}, addendum=\textquotesingle{}\textquotesingle{}, removal=\textquotesingle{}\textquotesingle{})
+\item 
+def \hyperlink{namespacematplotlib_1_1__api_1_1deprecation_a1b5ff66854ee6a80dd3f3b65a63168eb}{deprecated} (since, message=\textquotesingle{}\textquotesingle{}, name=\textquotesingle{}\textquotesingle{}, alternative=\textquotesingle{}\textquotesingle{}, pending=False, obj\+\_\+type=None, addendum=\textquotesingle{}\textquotesingle{}, removal=\textquotesingle{}\textquotesingle{})
+\item 
+def \hyperlink{namespacematplotlib_1_1__api_1_1deprecation_aa3f0c8301db6195d8340c71376926325}{rename\+\_\+parameter} (since, old, new, func=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1__api_1_1deprecation_a5014ececfdc3ae49f05309499fe2cc4f}{delete\+\_\+parameter} (since, name, func=None, kwargs)
+\item 
+def \hyperlink{namespacematplotlib_1_1__api_1_1deprecation_ad02d93f42fc564edba6813c27483df9c}{make\+\_\+keyword\+\_\+only} (since, name, func=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1__api_1_1deprecation_aae638184cd64ea398cc18609c1290674}{deprecate\+\_\+method\+\_\+override} (method, obj, allow\+\_\+empty=False, kwargs)
+\item 
+def \hyperlink{namespacematplotlib_1_1__api_1_1deprecation_a0ba07ebcb4c5d8a193b7bb41adc2cae1}{suppress\+\_\+matplotlib\+\_\+deprecation\+\_\+warning} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1__api_1_1deprecation_a767421315a82de1665a839b9585cc561}{mpl\+Deprecation} = \hyperlink{classmatplotlib_1_1__api_1_1deprecation_1_1MatplotlibDeprecationWarning}{Matplotlib\+Deprecation\+Warning}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Helper functions for deprecating parts of the Matplotlib API.
+
+This documentation is only relevant for Matplotlib developers, not for users.
+
+.. warning:
+
+This module is for internal use only.  Do not use it in your own code.
+We may change the API at any time with no warning.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1__api_1_1deprecation_a5014ececfdc3ae49f05309499fe2cc4f}\label{namespacematplotlib_1_1__api_1_1deprecation_a5014ececfdc3ae49f05309499fe2cc4f}} 
+\index{matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}!delete\+\_\+parameter@{delete\+\_\+parameter}}
+\index{delete\+\_\+parameter@{delete\+\_\+parameter}!matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}}
+\subsubsection{\texorpdfstring{delete\+\_\+parameter()}{delete\_parameter()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+deprecation.\+delete\+\_\+parameter (\begin{DoxyParamCaption}\item[{}]{since,  }\item[{}]{name,  }\item[{}]{func = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decorator indicating that parameter *name* of *func* is being deprecated.
+
+The actual implementation of *func* should keep the *name* parameter in its
+signature, or accept a ``**kwargs`` argument (through which *name* would be
+passed).
+
+Parameters that come after the deprecated parameter effectively become
+keyword-only (as they cannot be passed positionally without triggering the
+DeprecationWarning on the deprecated parameter), and should be marked as
+such after the deprecation period has passed and the deprecated parameter
+is removed.
+
+Parameters other than *since*, *name*, and *func* are keyword-only and
+forwarded to `.warn_deprecated`.
+
+Examples
+--------
+::
+
+    @_api.delete_parameter("3.1", "unused")
+    def func(used_arg, other_arg, unused, more_args): ...
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1__api_1_1deprecation_aae638184cd64ea398cc18609c1290674}\label{namespacematplotlib_1_1__api_1_1deprecation_aae638184cd64ea398cc18609c1290674}} 
+\index{matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}!deprecate\+\_\+method\+\_\+override@{deprecate\+\_\+method\+\_\+override}}
+\index{deprecate\+\_\+method\+\_\+override@{deprecate\+\_\+method\+\_\+override}!matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}}
+\subsubsection{\texorpdfstring{deprecate\+\_\+method\+\_\+override()}{deprecate\_method\_override()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+deprecation.\+deprecate\+\_\+method\+\_\+override (\begin{DoxyParamCaption}\item[{}]{method,  }\item[{}]{obj,  }\item[{}]{allow\+\_\+empty = {\ttfamily False},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return ``obj.method`` with a deprecation if it was overridden, else None.
+
+Parameters
+----------
+method
+    An unbound method, i.e. an expression of the form
+    ``Class.method_name``.  Remember that within the body of a method, one
+    can always use ``__class__`` to refer to the class that is currently
+    being defined.
+obj
+    Either an object of the class where *method* is defined, or a subclass
+    of that class.
+allow_empty : bool, default: False
+    Whether to allow overrides by "empty" methods without emitting a
+    warning.
+**kwargs
+    Additional parameters passed to `warn_deprecated` to generate the
+    deprecation warning; must at least include the "since" key.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1__api_1_1deprecation_a1b5ff66854ee6a80dd3f3b65a63168eb}\label{namespacematplotlib_1_1__api_1_1deprecation_a1b5ff66854ee6a80dd3f3b65a63168eb}} 
+\index{matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}!deprecated@{deprecated}}
+\index{deprecated@{deprecated}!matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}}
+\subsubsection{\texorpdfstring{deprecated()}{deprecated()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+deprecation.\+deprecated (\begin{DoxyParamCaption}\item[{}]{since,  }\item[{}]{message = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{name = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{alternative = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{pending = {\ttfamily False},  }\item[{}]{obj\+\_\+type = {\ttfamily None},  }\item[{}]{addendum = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{removal = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decorator to mark a function, a class, or a property as deprecated.
+
+When deprecating a classmethod, a staticmethod, or a property, the
+``@deprecated`` decorator should go *under* ``@classmethod`` and
+``@staticmethod`` (i.e., `deprecated` should directly decorate the
+underlying callable), but *over* ``@property``.
+
+When deprecating a class ``C`` intended to be used as a base class in a
+multiple inheritance hierarchy, ``C`` *must* define an ``__init__`` method
+(if ``C`` instead inherited its ``__init__`` from its own base class, then
+``@deprecated`` would mess up ``__init__`` inheritance when installing its
+own (deprecation-emitting) ``C.__init__``).
+
+Parameters
+----------
+since : str
+    The release at which this API became deprecated.
+
+message : str, optional
+    Override the default deprecation message.  The ``%(since)s``,
+    ``%(name)s``, ``%(alternative)s``, ``%(obj_type)s``, ``%(addendum)s``,
+    and ``%(removal)s`` format specifiers will be replaced by the values
+    of the respective arguments passed to this function.
+
+name : str, optional
+    The name used in the deprecation message; if not provided, the name
+    is automatically determined from the deprecated object.
+
+alternative : str, optional
+    An alternative API that the user may use in place of the deprecated
+    API.  The deprecation warning will tell the user about this alternative
+    if provided.
+
+pending : bool, optional
+    If True, uses a PendingDeprecationWarning instead of a
+    DeprecationWarning.  Cannot be used together with *removal*.
+
+obj_type : str, optional
+    The object type being deprecated; by default, 'class' if decorating
+    a class, 'attribute' if decorating a property, 'function' otherwise.
+
+addendum : str, optional
+    Additional text appended directly to the final message.
+
+removal : str, optional
+    The expected removal version.  With the default (an empty string), a
+    removal version is automatically computed from *since*.  Set to other
+    Falsy values to not schedule a removal date.  Cannot be used together
+    with *pending*.
+
+Examples
+--------
+Basic example::
+
+    @deprecated('1.4.0')
+    def the_function_to_deprecate():
+        pass
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1__api_1_1deprecation_ad02d93f42fc564edba6813c27483df9c}\label{namespacematplotlib_1_1__api_1_1deprecation_ad02d93f42fc564edba6813c27483df9c}} 
+\index{matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}!make\+\_\+keyword\+\_\+only@{make\+\_\+keyword\+\_\+only}}
+\index{make\+\_\+keyword\+\_\+only@{make\+\_\+keyword\+\_\+only}!matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}}
+\subsubsection{\texorpdfstring{make\+\_\+keyword\+\_\+only()}{make\_keyword\_only()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+deprecation.\+make\+\_\+keyword\+\_\+only (\begin{DoxyParamCaption}\item[{}]{since,  }\item[{}]{name,  }\item[{}]{func = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decorator indicating that passing parameter *name* (or any of the following
+ones) positionally to *func* is being deprecated.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1__api_1_1deprecation_aa3f0c8301db6195d8340c71376926325}\label{namespacematplotlib_1_1__api_1_1deprecation_aa3f0c8301db6195d8340c71376926325}} 
+\index{matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}!rename\+\_\+parameter@{rename\+\_\+parameter}}
+\index{rename\+\_\+parameter@{rename\+\_\+parameter}!matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}}
+\subsubsection{\texorpdfstring{rename\+\_\+parameter()}{rename\_parameter()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+deprecation.\+rename\+\_\+parameter (\begin{DoxyParamCaption}\item[{}]{since,  }\item[{}]{old,  }\item[{}]{new,  }\item[{}]{func = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decorator indicating that parameter *old* of *func* is renamed to *new*.
+
+The actual implementation of *func* should use *new*, not *old*.  If *old*
+is passed to *func*, a DeprecationWarning is emitted, and its value is
+used, even if *new* is also passed by keyword (this is to simplify pyplot
+wrapper functions, which always pass *new* explicitly to the Axes method).
+If *new* is also passed but positionally, a TypeError will be raised by the
+underlying function during argument binding.
+
+Examples
+--------
+::
+
+    @_api.rename_parameter("3.1", "bad_name", "good_name")
+    def func(good_name): ...
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1__api_1_1deprecation_a0ba07ebcb4c5d8a193b7bb41adc2cae1}\label{namespacematplotlib_1_1__api_1_1deprecation_a0ba07ebcb4c5d8a193b7bb41adc2cae1}} 
+\index{matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}!suppress\+\_\+matplotlib\+\_\+deprecation\+\_\+warning@{suppress\+\_\+matplotlib\+\_\+deprecation\+\_\+warning}}
+\index{suppress\+\_\+matplotlib\+\_\+deprecation\+\_\+warning@{suppress\+\_\+matplotlib\+\_\+deprecation\+\_\+warning}!matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}}
+\subsubsection{\texorpdfstring{suppress\+\_\+matplotlib\+\_\+deprecation\+\_\+warning()}{suppress\_matplotlib\_deprecation\_warning()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+deprecation.\+suppress\+\_\+matplotlib\+\_\+deprecation\+\_\+warning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1__api_1_1deprecation_a328933cc8e4e030247d96e1fca1a9c8f}\label{namespacematplotlib_1_1__api_1_1deprecation_a328933cc8e4e030247d96e1fca1a9c8f}} 
+\index{matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}!warn\+\_\+deprecated@{warn\+\_\+deprecated}}
+\index{warn\+\_\+deprecated@{warn\+\_\+deprecated}!matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}}
+\subsubsection{\texorpdfstring{warn\+\_\+deprecated()}{warn\_deprecated()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+api.\+deprecation.\+warn\+\_\+deprecated (\begin{DoxyParamCaption}\item[{}]{since,  }\item[{}]{message = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{name = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{alternative = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{pending = {\ttfamily False},  }\item[{}]{obj\+\_\+type = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{addendum = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{removal = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Display a standardized deprecation.
+
+Parameters
+----------
+since : str
+    The release at which this API became deprecated.
+
+message : str, optional
+    Override the default deprecation message.  The ``%(since)s``,
+    ``%(name)s``, ``%(alternative)s``, ``%(obj_type)s``, ``%(addendum)s``,
+    and ``%(removal)s`` format specifiers will be replaced by the values
+    of the respective arguments passed to this function.
+
+name : str, optional
+    The name of the deprecated object.
+
+alternative : str, optional
+    An alternative API that the user may use in place of the deprecated
+    API.  The deprecation warning will tell the user about this alternative
+    if provided.
+
+pending : bool, optional
+    If True, uses a PendingDeprecationWarning instead of a
+    DeprecationWarning.  Cannot be used together with *removal*.
+
+obj_type : str, optional
+    The object type being deprecated.
+
+addendum : str, optional
+    Additional text appended directly to the final message.
+
+removal : str, optional
+    The expected removal version.  With the default (an empty string), a
+    removal version is automatically computed from *since*.  Set to other
+    Falsy values to not schedule a removal date.  Cannot be used together
+    with *pending*.
+
+Examples
+--------
+Basic example::
+
+    # To warn of the deprecation of "matplotlib.name_of_module"
+    warn_deprecated('1.4.0', name='matplotlib.name_of_module',
+                    obj_type='module')
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1__api_1_1deprecation_a767421315a82de1665a839b9585cc561}\label{namespacematplotlib_1_1__api_1_1deprecation_a767421315a82de1665a839b9585cc561}} 
+\index{matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}!mpl\+Deprecation@{mpl\+Deprecation}}
+\index{mpl\+Deprecation@{mpl\+Deprecation}!matplotlib\+::\+\_\+api\+::deprecation@{matplotlib\+::\+\_\+api\+::deprecation}}
+\subsubsection{\texorpdfstring{mpl\+Deprecation}{mplDeprecation}}
+{\footnotesize\ttfamily matplotlib.\+\_\+api.\+deprecation.\+mpl\+Deprecation = \hyperlink{classmatplotlib_1_1__api_1_1deprecation_1_1MatplotlibDeprecationWarning}{Matplotlib\+Deprecation\+Warning}}
+

@@ -1,0 +1,81 @@
+\hypertarget{classPIL_1_1ImageFont_1_1ImageFont}{}\section{P\+I\+L.\+Image\+Font.\+Image\+Font Class Reference}
+\label{classPIL_1_1ImageFont_1_1ImageFont}\index{P\+I\+L.\+Image\+Font.\+Image\+Font@{P\+I\+L.\+Image\+Font.\+Image\+Font}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classPIL_1_1ImageFont_1_1ImageFont_addde416540e28d46d1de2d9c5ca65f51}{getsize} (self, text, args, kwargs)
+\item 
+def \hyperlink{classPIL_1_1ImageFont_1_1ImageFont_a444999f042037ba69ee7b75c4a60cd5b}{getmask} (self, text, mode=\char`\"{}\char`\"{}, args, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPIL_1_1ImageFont_1_1ImageFont_a98d1d26b27442a20e03d4365f5bf6e66}{file}
+\item 
+\hyperlink{classPIL_1_1ImageFont_1_1ImageFont_a5f49b01a25de59a70874489684e76dbe}{info}
+\item 
+\hyperlink{classPIL_1_1ImageFont_1_1ImageFont_a5ed0f69eb8834c2fd158b4f43d822530}{font}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPIL_1_1ImageFont_1_1ImageFont_a444999f042037ba69ee7b75c4a60cd5b}\label{classPIL_1_1ImageFont_1_1ImageFont_a444999f042037ba69ee7b75c4a60cd5b}} 
+\index{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font}!getmask@{getmask}}
+\index{getmask@{getmask}!P\+I\+L\+::\+Image\+Font\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font}}
+\subsubsection{\texorpdfstring{getmask()}{getmask()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Font.\+Image\+Font.\+getmask (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{text,  }\item[{}]{mode = {\ttfamily \char`\"{}\char`\"{}},  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a bitmap for the text.
+
+If the font uses antialiasing, the bitmap should have mode ``L`` and use a
+maximum value of 255. Otherwise, it should have mode ``1``.
+
+:param text: Text to render.
+:param mode: Used by some graphics drivers to indicate what mode the
+     driver prefers; if empty, the renderer may return either
+     mode. Note that the mode is always a string, to simplify
+     C-level implementations.
+
+     .. versionadded:: 1.1.5
+
+:return: An internal PIL storage memory instance as defined by the
+ :py:mod:`PIL.Image.core` interface module.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classPIL_1_1ImageFont_1_1ImageFont_addde416540e28d46d1de2d9c5ca65f51}\label{classPIL_1_1ImageFont_1_1ImageFont_addde416540e28d46d1de2d9c5ca65f51}} 
+\index{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font}!getsize@{getsize}}
+\index{getsize@{getsize}!P\+I\+L\+::\+Image\+Font\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font}}
+\subsubsection{\texorpdfstring{getsize()}{getsize()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Font.\+Image\+Font.\+getsize (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{text,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns width and height (in pixels) of given text.
+
+:param text: Text to measure.
+
+:return: (width, height)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPIL_1_1ImageFont_1_1ImageFont_a98d1d26b27442a20e03d4365f5bf6e66}\label{classPIL_1_1ImageFont_1_1ImageFont_a98d1d26b27442a20e03d4365f5bf6e66}} 
+\index{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font}!file@{file}}
+\index{file@{file}!P\+I\+L\+::\+Image\+Font\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font}}
+\subsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Font.\+Image\+Font.\+file}
+
+\mbox{\Hypertarget{classPIL_1_1ImageFont_1_1ImageFont_a5ed0f69eb8834c2fd158b4f43d822530}\label{classPIL_1_1ImageFont_1_1ImageFont_a5ed0f69eb8834c2fd158b4f43d822530}} 
+\index{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font}!font@{font}}
+\index{font@{font}!P\+I\+L\+::\+Image\+Font\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font}}
+\subsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Font.\+Image\+Font.\+font}
+
+\mbox{\Hypertarget{classPIL_1_1ImageFont_1_1ImageFont_a5f49b01a25de59a70874489684e76dbe}\label{classPIL_1_1ImageFont_1_1ImageFont_a5f49b01a25de59a70874489684e76dbe}} 
+\index{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font}!info@{info}}
+\index{info@{info}!P\+I\+L\+::\+Image\+Font\+::\+Image\+Font@{P\+I\+L\+::\+Image\+Font\+::\+Image\+Font}}
+\subsubsection{\texorpdfstring{info}{info}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Font.\+Image\+Font.\+info}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\+P\+I\+L/\hyperlink{ImageFont_8py}{Image\+Font.\+py}\end{DoxyCompactItemize}

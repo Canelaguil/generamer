@@ -1,0 +1,252 @@
+\hypertarget{namespacematplotlib_1_1bezier}{}\section{matplotlib.\+bezier Namespace Reference}
+\label{namespacematplotlib_1_1bezier}\index{matplotlib.\+bezier@{matplotlib.\+bezier}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1bezier_1_1BezierSegment}{Bezier\+Segment}
+\item 
+class \hyperlink{classmatplotlib_1_1bezier_1_1NonIntersectingPathException}{Non\+Intersecting\+Path\+Exception}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_a6f3e6a2fff0ee2c27bf2dc87fdc511c7}{get\+\_\+intersection} (cx1, cy1, cos\+\_\+t1, sin\+\_\+t1, cx2, cy2, cos\+\_\+t2, sin\+\_\+t2)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_a83750c875dd90814c60ff780e32224de}{get\+\_\+normal\+\_\+points} (cx, cy, cos\+\_\+t, sin\+\_\+t, length)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_a39eaa29c167901ce43a1e03ff3397d36}{split\+\_\+de\+\_\+casteljau} (beta, t)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_a9077f52d0ef522b7490a79c9075863d9}{find\+\_\+bezier\+\_\+t\+\_\+intersecting\+\_\+with\+\_\+closedpath} (bezier\+\_\+point\+\_\+at\+\_\+t, inside\+\_\+closedpath, t0=0., t1=1., tolerance=0.\+01)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_a476a969792273227a0918f06955857a4}{split\+\_\+bezier\+\_\+intersecting\+\_\+with\+\_\+closedpath} (bezier, inside\+\_\+closedpath, tolerance=0.\+01)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_aa1e31992c932224101ec7a160cd79c3b}{split\+\_\+path\+\_\+inout} (path, inside, tolerance=0.\+01, reorder\+\_\+inout=False)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_a821fdbdadfd91bc2c65943bd0e825a93}{inside\+\_\+circle} (cx, cy, r)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_affd32e87924de16dc65b98416ade9ae7}{get\+\_\+cos\+\_\+sin} (x0, y0, x1, y1)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_a632097a44132aa1f6b5f71ea60a74495}{check\+\_\+if\+\_\+parallel} (dx1, dy1, dx2, dy2, tolerance=1.e-\/5)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_adb87525c6baca583ac76341c2cc20308}{get\+\_\+parallels} (bezier2, width)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_a384fd769c4cd4e1ca978fda42441ad24}{find\+\_\+control\+\_\+points} (c1x, c1y, mmx, mmy, c2x, c2y)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_a8a1dac2d69f980a2facceedfa1a32cee}{make\+\_\+wedged\+\_\+bezier2} (bezier2, width, w1=1., wm=0.\+5, w2=0.)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_a0c03d7bf08d07e6d6f17e5c2d67a5875}{make\+\_\+path\+\_\+regular} (p)
+\item 
+def \hyperlink{namespacematplotlib_1_1bezier_ad94e57c5dc18ec3824e768991f20a635}{concatenate\+\_\+paths} (paths)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1bezier_acb9a050d8abfc0f15543650934e49eac}{maxsize}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A module providing some utility functions regarding Bezier path manipulation.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1bezier_a632097a44132aa1f6b5f71ea60a74495}\label{namespacematplotlib_1_1bezier_a632097a44132aa1f6b5f71ea60a74495}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!check\+\_\+if\+\_\+parallel@{check\+\_\+if\+\_\+parallel}}
+\index{check\+\_\+if\+\_\+parallel@{check\+\_\+if\+\_\+parallel}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{check\+\_\+if\+\_\+parallel()}{check\_if\_parallel()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+check\+\_\+if\+\_\+parallel (\begin{DoxyParamCaption}\item[{}]{dx1,  }\item[{}]{dy1,  }\item[{}]{dx2,  }\item[{}]{dy2,  }\item[{}]{tolerance = {\ttfamily 1.e-\/5} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if two lines are parallel.
+
+Parameters
+----------
+dx1, dy1, dx2, dy2 : float
+    The gradients *dy*/*dx* of the two lines.
+tolerance : float
+    The angular tolerance in radians up to which the lines are considered
+    parallel.
+
+Returns
+-------
+is_parallel
+    - 1 if two lines are parallel in same direction.
+    - -1 if two lines are parallel in opposite direction.
+    - False otherwise.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1bezier_ad94e57c5dc18ec3824e768991f20a635}\label{namespacematplotlib_1_1bezier_ad94e57c5dc18ec3824e768991f20a635}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!concatenate\+\_\+paths@{concatenate\+\_\+paths}}
+\index{concatenate\+\_\+paths@{concatenate\+\_\+paths}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{concatenate\+\_\+paths()}{concatenate\_paths()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+concatenate\+\_\+paths (\begin{DoxyParamCaption}\item[{}]{paths }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Concatenate a list of paths into a single path.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1bezier_a9077f52d0ef522b7490a79c9075863d9}\label{namespacematplotlib_1_1bezier_a9077f52d0ef522b7490a79c9075863d9}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!find\+\_\+bezier\+\_\+t\+\_\+intersecting\+\_\+with\+\_\+closedpath@{find\+\_\+bezier\+\_\+t\+\_\+intersecting\+\_\+with\+\_\+closedpath}}
+\index{find\+\_\+bezier\+\_\+t\+\_\+intersecting\+\_\+with\+\_\+closedpath@{find\+\_\+bezier\+\_\+t\+\_\+intersecting\+\_\+with\+\_\+closedpath}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{find\+\_\+bezier\+\_\+t\+\_\+intersecting\+\_\+with\+\_\+closedpath()}{find\_bezier\_t\_intersecting\_with\_closedpath()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+find\+\_\+bezier\+\_\+t\+\_\+intersecting\+\_\+with\+\_\+closedpath (\begin{DoxyParamCaption}\item[{}]{bezier\+\_\+point\+\_\+at\+\_\+t,  }\item[{}]{inside\+\_\+closedpath,  }\item[{}]{t0 = {\ttfamily 0.},  }\item[{}]{t1 = {\ttfamily 1.},  }\item[{}]{tolerance = {\ttfamily 0.01} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the intersection of the Bezier curve with a closed path.
+
+The intersection point *t* is approximated by two parameters *t0*, *t1*
+such that *t0* <= *t* <= *t1*.
+
+Search starts from *t0* and *t1* and uses a simple bisecting algorithm
+therefore one of the end points must be inside the path while the other
+doesn't. The search stops when the distance of the points parametrized by
+*t0* and *t1* gets smaller than the given *tolerance*.
+
+Parameters
+----------
+bezier_point_at_t : callable
+    A function returning x, y coordinates of the Bezier at parameter *t*.
+    It must have the signature::
+
+        bezier_point_at_t(t: float) -> tuple[float, float]
+
+inside_closedpath : callable
+    A function returning True if a given point (x, y) is inside the
+    closed path. It must have the signature::
+
+        inside_closedpath(point: tuple[float, float]) -> bool
+
+t0, t1 : float
+    Start parameters for the search.
+
+tolerance : float
+    Maximal allowed distance between the final points.
+
+Returns
+-------
+t0, t1 : float
+    The Bezier path parameters.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1bezier_a384fd769c4cd4e1ca978fda42441ad24}\label{namespacematplotlib_1_1bezier_a384fd769c4cd4e1ca978fda42441ad24}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!find\+\_\+control\+\_\+points@{find\+\_\+control\+\_\+points}}
+\index{find\+\_\+control\+\_\+points@{find\+\_\+control\+\_\+points}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{find\+\_\+control\+\_\+points()}{find\_control\_points()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+find\+\_\+control\+\_\+points (\begin{DoxyParamCaption}\item[{}]{c1x,  }\item[{}]{c1y,  }\item[{}]{mmx,  }\item[{}]{mmy,  }\item[{}]{c2x,  }\item[{}]{c2y }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find control points of the Bezier curve passing through (*c1x*, *c1y*),
+(*mmx*, *mmy*), and (*c2x*, *c2y*), at parametric values 0, 0.5, and 1.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1bezier_affd32e87924de16dc65b98416ade9ae7}\label{namespacematplotlib_1_1bezier_affd32e87924de16dc65b98416ade9ae7}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!get\+\_\+cos\+\_\+sin@{get\+\_\+cos\+\_\+sin}}
+\index{get\+\_\+cos\+\_\+sin@{get\+\_\+cos\+\_\+sin}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{get\+\_\+cos\+\_\+sin()}{get\_cos\_sin()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+get\+\_\+cos\+\_\+sin (\begin{DoxyParamCaption}\item[{}]{x0,  }\item[{}]{y0,  }\item[{}]{x1,  }\item[{}]{y1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1bezier_a6f3e6a2fff0ee2c27bf2dc87fdc511c7}\label{namespacematplotlib_1_1bezier_a6f3e6a2fff0ee2c27bf2dc87fdc511c7}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!get\+\_\+intersection@{get\+\_\+intersection}}
+\index{get\+\_\+intersection@{get\+\_\+intersection}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{get\+\_\+intersection()}{get\_intersection()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+get\+\_\+intersection (\begin{DoxyParamCaption}\item[{}]{cx1,  }\item[{}]{cy1,  }\item[{}]{cos\+\_\+t1,  }\item[{}]{sin\+\_\+t1,  }\item[{}]{cx2,  }\item[{}]{cy2,  }\item[{}]{cos\+\_\+t2,  }\item[{}]{sin\+\_\+t2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the intersection between the line through (*cx1*, *cy1*) at angle
+*t1* and the line through (*cx2*, *cy2*) at angle *t2*.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1bezier_a83750c875dd90814c60ff780e32224de}\label{namespacematplotlib_1_1bezier_a83750c875dd90814c60ff780e32224de}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!get\+\_\+normal\+\_\+points@{get\+\_\+normal\+\_\+points}}
+\index{get\+\_\+normal\+\_\+points@{get\+\_\+normal\+\_\+points}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{get\+\_\+normal\+\_\+points()}{get\_normal\_points()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+get\+\_\+normal\+\_\+points (\begin{DoxyParamCaption}\item[{}]{cx,  }\item[{}]{cy,  }\item[{}]{cos\+\_\+t,  }\item[{}]{sin\+\_\+t,  }\item[{}]{length }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}For a line passing through (*cx*, *cy*) and having an angle *t*, return
+locations of the two points located along its perpendicular line at the
+distance of *length*.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1bezier_adb87525c6baca583ac76341c2cc20308}\label{namespacematplotlib_1_1bezier_adb87525c6baca583ac76341c2cc20308}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!get\+\_\+parallels@{get\+\_\+parallels}}
+\index{get\+\_\+parallels@{get\+\_\+parallels}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{get\+\_\+parallels()}{get\_parallels()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+get\+\_\+parallels (\begin{DoxyParamCaption}\item[{}]{bezier2,  }\item[{}]{width }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given the quadratic Bezier control points *bezier2*, returns
+control points of quadratic Bezier lines roughly parallel to given
+one separated by *width*.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1bezier_a821fdbdadfd91bc2c65943bd0e825a93}\label{namespacematplotlib_1_1bezier_a821fdbdadfd91bc2c65943bd0e825a93}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!inside\+\_\+circle@{inside\+\_\+circle}}
+\index{inside\+\_\+circle@{inside\+\_\+circle}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{inside\+\_\+circle()}{inside\_circle()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+inside\+\_\+circle (\begin{DoxyParamCaption}\item[{}]{cx,  }\item[{}]{cy,  }\item[{}]{r }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a function that checks whether a point is in a circle with center
+(*cx*, *cy*) and radius *r*.
+
+The returned function has the signature::
+
+    f(xy: tuple[float, float]) -> bool
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1bezier_a0c03d7bf08d07e6d6f17e5c2d67a5875}\label{namespacematplotlib_1_1bezier_a0c03d7bf08d07e6d6f17e5c2d67a5875}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!make\+\_\+path\+\_\+regular@{make\+\_\+path\+\_\+regular}}
+\index{make\+\_\+path\+\_\+regular@{make\+\_\+path\+\_\+regular}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{make\+\_\+path\+\_\+regular()}{make\_path\_regular()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+make\+\_\+path\+\_\+regular (\begin{DoxyParamCaption}\item[{}]{p }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}If the ``codes`` attribute of `.Path` *p* is None, return a copy of *p*
+with ``codes`` set to (MOVETO, LINETO, LINETO, ..., LINETO); otherwise
+return *p* itself.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1bezier_a8a1dac2d69f980a2facceedfa1a32cee}\label{namespacematplotlib_1_1bezier_a8a1dac2d69f980a2facceedfa1a32cee}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!make\+\_\+wedged\+\_\+bezier2@{make\+\_\+wedged\+\_\+bezier2}}
+\index{make\+\_\+wedged\+\_\+bezier2@{make\+\_\+wedged\+\_\+bezier2}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{make\+\_\+wedged\+\_\+bezier2()}{make\_wedged\_bezier2()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+make\+\_\+wedged\+\_\+bezier2 (\begin{DoxyParamCaption}\item[{}]{bezier2,  }\item[{}]{width,  }\item[{}]{w1 = {\ttfamily 1.},  }\item[{}]{wm = {\ttfamily 0.5},  }\item[{}]{w2 = {\ttfamily 0.} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Being similar to get_parallels, returns control points of two quadratic
+Bezier lines having a width roughly parallel to given one separated by
+*width*.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1bezier_a476a969792273227a0918f06955857a4}\label{namespacematplotlib_1_1bezier_a476a969792273227a0918f06955857a4}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!split\+\_\+bezier\+\_\+intersecting\+\_\+with\+\_\+closedpath@{split\+\_\+bezier\+\_\+intersecting\+\_\+with\+\_\+closedpath}}
+\index{split\+\_\+bezier\+\_\+intersecting\+\_\+with\+\_\+closedpath@{split\+\_\+bezier\+\_\+intersecting\+\_\+with\+\_\+closedpath}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{split\+\_\+bezier\+\_\+intersecting\+\_\+with\+\_\+closedpath()}{split\_bezier\_intersecting\_with\_closedpath()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+split\+\_\+bezier\+\_\+intersecting\+\_\+with\+\_\+closedpath (\begin{DoxyParamCaption}\item[{}]{bezier,  }\item[{}]{inside\+\_\+closedpath,  }\item[{}]{tolerance = {\ttfamily 0.01} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Split a Bezier curve into two at the intersection with a closed path.
+
+Parameters
+----------
+bezier : (N, 2) array-like
+    Control points of the Bezier segment. See `.BezierSegment`.
+inside_closedpath : callable
+    A function returning True if a given point (x, y) is inside the
+    closed path. See also `.find_bezier_t_intersecting_with_closedpath`.
+tolerance : float
+    The tolerance for the intersection. See also
+    `.find_bezier_t_intersecting_with_closedpath`.
+
+Returns
+-------
+left, right
+    Lists of control points for the two Bezier segments.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1bezier_a39eaa29c167901ce43a1e03ff3397d36}\label{namespacematplotlib_1_1bezier_a39eaa29c167901ce43a1e03ff3397d36}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!split\+\_\+de\+\_\+casteljau@{split\+\_\+de\+\_\+casteljau}}
+\index{split\+\_\+de\+\_\+casteljau@{split\+\_\+de\+\_\+casteljau}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{split\+\_\+de\+\_\+casteljau()}{split\_de\_casteljau()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+split\+\_\+de\+\_\+casteljau (\begin{DoxyParamCaption}\item[{}]{beta,  }\item[{}]{t }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Split a Bezier segment defined by its control points *beta* into two
+separate segments divided at *t* and return their control points.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1bezier_aa1e31992c932224101ec7a160cd79c3b}\label{namespacematplotlib_1_1bezier_aa1e31992c932224101ec7a160cd79c3b}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!split\+\_\+path\+\_\+inout@{split\+\_\+path\+\_\+inout}}
+\index{split\+\_\+path\+\_\+inout@{split\+\_\+path\+\_\+inout}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{split\+\_\+path\+\_\+inout()}{split\_path\_inout()}}
+{\footnotesize\ttfamily def matplotlib.\+bezier.\+split\+\_\+path\+\_\+inout (\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{inside,  }\item[{}]{tolerance = {\ttfamily 0.01},  }\item[{}]{reorder\+\_\+inout = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Divide a path into two segments at the point where ``inside(x, y)`` becomes
+False.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1bezier_acb9a050d8abfc0f15543650934e49eac}\label{namespacematplotlib_1_1bezier_acb9a050d8abfc0f15543650934e49eac}} 
+\index{matplotlib\+::bezier@{matplotlib\+::bezier}!maxsize@{maxsize}}
+\index{maxsize@{maxsize}!matplotlib\+::bezier@{matplotlib\+::bezier}}
+\subsubsection{\texorpdfstring{maxsize}{maxsize}}
+{\footnotesize\ttfamily matplotlib.\+bezier.\+maxsize}
+

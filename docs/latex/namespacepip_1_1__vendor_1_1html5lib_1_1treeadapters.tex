@@ -1,0 +1,29 @@
+\hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treeadapters}{}\section{pip.\+\_\+vendor.\+html5lib.\+treeadapters Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1html5lib_1_1treeadapters}\index{pip.\+\_\+vendor.\+html5lib.\+treeadapters@{pip.\+\_\+vendor.\+html5lib.\+treeadapters}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treeadapters_1_1genshi}{genshi}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treeadapters_1_1sax}{sax}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Tree adapters let you convert from one tree structure to another
+
+Example:
+
+.. code-block:: python
+
+   from pip._vendor import html5lib
+   from pip._vendor.html5lib.treeadapters import genshi
+
+   doc = '<html><body>Hi!</body></html>'
+   treebuilder = html5lib.getTreeBuilder('etree')
+   parser = html5lib.HTMLParser(tree=treebuilder)
+   tree = parser.parse(doc)
+   TreeWalker = html5lib.getTreeWalker('etree')
+
+   genshi_tree = genshi.to_genshi(TreeWalker(tree))\end{DoxyVerb}
+ 

@@ -1,0 +1,93 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1EllipseSelector}{}\section{matplotlib.\+widgets.\+Ellipse\+Selector Class Reference}
+\label{classmatplotlib_1_1widgets_1_1EllipseSelector}\index{matplotlib.\+widgets.\+Ellipse\+Selector@{matplotlib.\+widgets.\+Ellipse\+Selector}}
+
+
+Inheritance diagram for matplotlib.\+widgets.\+Ellipse\+Selector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1EllipseSelector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+widgets.\+Ellipse\+Selector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1EllipseSelector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1EllipseSelector_ac1b1fad4c46fe7a6172e44312f33fb92}{draw\+\_\+shape} (self, \hyperlink{classmatplotlib_1_1widgets_1_1RectangleSelector_a9ce3b014e6e5ba477b57eeedd6a24e3f}{extents})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1EllipseSelector_a90f4ef54eb28c8119317a88b532a3393}{drawtype}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Select an elliptical region of an axes.
+
+For the cursor to remain responsive you must keep a reference to it.
+
+Example usage::
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from matplotlib.widgets import EllipseSelector
+
+    def onselect(eclick, erelease):
+        "eclick and erelease are matplotlib events at press and release."
+        print('startposition: (%f, %f)' % (eclick.xdata, eclick.ydata))
+        print('endposition  : (%f, %f)' % (erelease.xdata, erelease.ydata))
+        print('used button  : ', eclick.button)
+
+    def toggle_selector(event):
+        print(' Key pressed.')
+        if event.key in ['Q', 'q'] and toggle_selector.ES.active:
+            print('EllipseSelector deactivated.')
+            toggle_selector.RS.set_active(False)
+        if event.key in ['A', 'a'] and not toggle_selector.ES.active:
+            print('EllipseSelector activated.')
+            toggle_selector.ES.set_active(True)
+
+    x = np.arange(100.) / 99
+    y = np.sin(x)
+    fig, ax = plt.subplots()
+    ax.plot(x, y)
+
+    toggle_selector.ES = EllipseSelector(ax, onselect, drawtype='line')
+    fig.canvas.mpl_connect('key_press_event', toggle_selector)
+    plt.show()
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1EllipseSelector_ac1b1fad4c46fe7a6172e44312f33fb92}\label{classmatplotlib_1_1widgets_1_1EllipseSelector_ac1b1fad4c46fe7a6172e44312f33fb92}} 
+\index{matplotlib\+::widgets\+::\+Ellipse\+Selector@{matplotlib\+::widgets\+::\+Ellipse\+Selector}!draw\+\_\+shape@{draw\+\_\+shape}}
+\index{draw\+\_\+shape@{draw\+\_\+shape}!matplotlib\+::widgets\+::\+Ellipse\+Selector@{matplotlib\+::widgets\+::\+Ellipse\+Selector}}
+\subsubsection{\texorpdfstring{draw\+\_\+shape()}{draw\_shape()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Ellipse\+Selector.\+draw\+\_\+shape (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{extents }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1EllipseSelector_a90f4ef54eb28c8119317a88b532a3393}\label{classmatplotlib_1_1widgets_1_1EllipseSelector_a90f4ef54eb28c8119317a88b532a3393}} 
+\index{matplotlib\+::widgets\+::\+Ellipse\+Selector@{matplotlib\+::widgets\+::\+Ellipse\+Selector}!drawtype@{drawtype}}
+\index{drawtype@{drawtype}!matplotlib\+::widgets\+::\+Ellipse\+Selector@{matplotlib\+::widgets\+::\+Ellipse\+Selector}}
+\subsubsection{\texorpdfstring{drawtype}{drawtype}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Ellipse\+Selector.\+drawtype}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

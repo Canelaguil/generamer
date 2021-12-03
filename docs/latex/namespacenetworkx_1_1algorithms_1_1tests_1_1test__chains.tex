@@ -1,0 +1,48 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1tests_1_1test__chains}{}\section{networkx.\+algorithms.\+tests.\+test\+\_\+chains Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1tests_1_1test__chains}\index{networkx.\+algorithms.\+tests.\+test\+\_\+chains@{networkx.\+algorithms.\+tests.\+test\+\_\+chains}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1tests_1_1test__chains_1_1TestChainDecomposition}{Test\+Chain\+Decomposition}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1tests_1_1test__chains_a409f71cb34e63dd9a43adcd3ea358d4f}{cycles} (seq)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1tests_1_1test__chains_af14a5326f889f9a37ce0b1137415ce5e}{cyclic\+\_\+equals} (seq1, seq2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Unit tests for the chain decomposition functions.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1tests_1_1test__chains_a409f71cb34e63dd9a43adcd3ea358d4f}\label{namespacenetworkx_1_1algorithms_1_1tests_1_1test__chains_a409f71cb34e63dd9a43adcd3ea358d4f}} 
+\index{networkx\+::algorithms\+::tests\+::test\+\_\+chains@{networkx\+::algorithms\+::tests\+::test\+\_\+chains}!cycles@{cycles}}
+\index{cycles@{cycles}!networkx\+::algorithms\+::tests\+::test\+\_\+chains@{networkx\+::algorithms\+::tests\+::test\+\_\+chains}}
+\subsubsection{\texorpdfstring{cycles()}{cycles()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tests.\+test\+\_\+chains.\+cycles (\begin{DoxyParamCaption}\item[{}]{seq }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Yields cyclic permutations of the given sequence.
+
+For example::
+
+    >>> list(cycles("abc"))
+    [('a', 'b', 'c'), ('b', 'c', 'a'), ('c', 'a', 'b')]\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1tests_1_1test__chains_af14a5326f889f9a37ce0b1137415ce5e}\label{namespacenetworkx_1_1algorithms_1_1tests_1_1test__chains_af14a5326f889f9a37ce0b1137415ce5e}} 
+\index{networkx\+::algorithms\+::tests\+::test\+\_\+chains@{networkx\+::algorithms\+::tests\+::test\+\_\+chains}!cyclic\+\_\+equals@{cyclic\+\_\+equals}}
+\index{cyclic\+\_\+equals@{cyclic\+\_\+equals}!networkx\+::algorithms\+::tests\+::test\+\_\+chains@{networkx\+::algorithms\+::tests\+::test\+\_\+chains}}
+\subsubsection{\texorpdfstring{cyclic\+\_\+equals()}{cyclic\_equals()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+tests.\+test\+\_\+chains.\+cyclic\+\_\+equals (\begin{DoxyParamCaption}\item[{}]{seq1,  }\item[{}]{seq2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decide whether two sequences are equal up to cyclic permutations.
+
+For example::
+
+    >>> cyclic_equals("xyz", "zxy")
+    True
+    >>> cyclic_equals("xyz", "zyx")
+    False\end{DoxyVerb}
+ 

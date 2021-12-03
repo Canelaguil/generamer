@@ -1,0 +1,116 @@
+\hypertarget{classmatplotlib_1_1colors_1_1ListedColormap}{}\section{matplotlib.\+colors.\+Listed\+Colormap Class Reference}
+\label{classmatplotlib_1_1colors_1_1ListedColormap}\index{matplotlib.\+colors.\+Listed\+Colormap@{matplotlib.\+colors.\+Listed\+Colormap}}
+
+
+Inheritance diagram for matplotlib.\+colors.\+Listed\+Colormap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classmatplotlib_1_1colors_1_1ListedColormap__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+colors.\+Listed\+Colormap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classmatplotlib_1_1colors_1_1ListedColormap__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1ListedColormap_ac483ad0759a1da7ad3736ea90c599269}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1colors_1_1ListedColormap_a5b2b5608ce664672fd9a2da21ee3de3d}{colors}, \hyperlink{classmatplotlib_1_1colors_1_1Colormap_aa816ba9aebc8d8438ca791c82bb6198c}{name}=\textquotesingle{}from\+\_\+list\textquotesingle{}, \hyperlink{classmatplotlib_1_1colors_1_1Colormap_a011f75e2d28856dd18ada18febb2bb26}{N}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1ListedColormap_aeabbbadac6c7784563dd2dd2896e9fef}{reversed} (self, \hyperlink{classmatplotlib_1_1colors_1_1Colormap_aa816ba9aebc8d8438ca791c82bb6198c}{name}=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1ListedColormap_a3c360f0c566a67e2836aa838e776ad48}{monochrome}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1ListedColormap_a5b2b5608ce664672fd9a2da21ee3de3d}{colors}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Colormap object generated from a list of colors.
+
+This may be most useful when indexing directly into a colormap,
+but it can also be used to generate special colormaps for ordinary
+mapping.
+
+Parameters
+----------
+colors : list, array
+    List of Matplotlib color specifications, or an equivalent Nx3 or Nx4
+    floating point array (*N* rgb or rgba values).
+name : str, optional
+    String to identify the colormap.
+N : int, optional
+    Number of entries in the map. The default is *None*, in which case
+    there is one colormap entry for each element in the list of colors.
+    If ::
+
+        N < len(colors)
+
+    the list will be truncated at *N*. If ::
+
+        N > len(colors)
+
+    the list will be extended by repetition.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1ListedColormap_ac483ad0759a1da7ad3736ea90c599269}\label{classmatplotlib_1_1colors_1_1ListedColormap_ac483ad0759a1da7ad3736ea90c599269}} 
+\index{matplotlib\+::colors\+::\+Listed\+Colormap@{matplotlib\+::colors\+::\+Listed\+Colormap}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Listed\+Colormap@{matplotlib\+::colors\+::\+Listed\+Colormap}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Listed\+Colormap.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{colors,  }\item[{}]{name = {\ttfamily \textquotesingle{}from\+\_\+list\textquotesingle{}},  }\item[{}]{N = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1ListedColormap_aeabbbadac6c7784563dd2dd2896e9fef}\label{classmatplotlib_1_1colors_1_1ListedColormap_aeabbbadac6c7784563dd2dd2896e9fef}} 
+\index{matplotlib\+::colors\+::\+Listed\+Colormap@{matplotlib\+::colors\+::\+Listed\+Colormap}!reversed@{reversed}}
+\index{reversed@{reversed}!matplotlib\+::colors\+::\+Listed\+Colormap@{matplotlib\+::colors\+::\+Listed\+Colormap}}
+\subsubsection{\texorpdfstring{reversed()}{reversed()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Listed\+Colormap.\+reversed (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a reversed instance of the Colormap.
+
+Parameters
+----------
+name : str, optional
+    The name for the reversed colormap. If it's None the
+    name will be the name of the parent colormap + "_r".
+
+Returns
+-------
+ListedColormap
+    A reversed instance of the colormap.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1ListedColormap_a5b2b5608ce664672fd9a2da21ee3de3d}\label{classmatplotlib_1_1colors_1_1ListedColormap_a5b2b5608ce664672fd9a2da21ee3de3d}} 
+\index{matplotlib\+::colors\+::\+Listed\+Colormap@{matplotlib\+::colors\+::\+Listed\+Colormap}!colors@{colors}}
+\index{colors@{colors}!matplotlib\+::colors\+::\+Listed\+Colormap@{matplotlib\+::colors\+::\+Listed\+Colormap}}
+\subsubsection{\texorpdfstring{colors}{colors}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Listed\+Colormap.\+colors}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1ListedColormap_a3c360f0c566a67e2836aa838e776ad48}\label{classmatplotlib_1_1colors_1_1ListedColormap_a3c360f0c566a67e2836aa838e776ad48}} 
+\index{matplotlib\+::colors\+::\+Listed\+Colormap@{matplotlib\+::colors\+::\+Listed\+Colormap}!monochrome@{monochrome}}
+\index{monochrome@{monochrome}!matplotlib\+::colors\+::\+Listed\+Colormap@{matplotlib\+::colors\+::\+Listed\+Colormap}}
+\subsubsection{\texorpdfstring{monochrome}{monochrome}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Listed\+Colormap.\+monochrome}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{colors_8py}{colors.\+py}\end{DoxyCompactItemize}

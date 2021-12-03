@@ -1,0 +1,129 @@
+\hypertarget{namespacenetworkx_1_1utils_1_1random__sequence}{}\section{networkx.\+utils.\+random\+\_\+sequence Namespace Reference}
+\label{namespacenetworkx_1_1utils_1_1random__sequence}\index{networkx.\+utils.\+random\+\_\+sequence@{networkx.\+utils.\+random\+\_\+sequence}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1random__sequence_acc7ecaff954cb4c276746ad0f1a679b0}{powerlaw\+\_\+sequence} (n, exponent=2.\+0, seed=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1random__sequence_a08968e4ec4cbbb119b4d22d415a4186b}{zipf\+\_\+rv} (alpha, xmin=1, seed=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1random__sequence_a2f8a70b0f52671f185de7245dcb3f40f}{cumulative\+\_\+distribution} (distribution)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1random__sequence_a5f8c7a8a6de006f5ecc0b44530949bae}{discrete\+\_\+sequence} (n, distribution=None, cdistribution=None, seed=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1random__sequence_a8f3014b204ae237de04167b9a7afc8c1}{random\+\_\+weighted\+\_\+sample} (mapping, k, seed=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1random__sequence_ad9f55d9570fb72f739f539f71e32e459}{weighted\+\_\+choice} (mapping, seed=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Utilities for generating random numbers, random sequences, and
+random selections.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1random__sequence_a2f8a70b0f52671f185de7245dcb3f40f}\label{namespacenetworkx_1_1utils_1_1random__sequence_a2f8a70b0f52671f185de7245dcb3f40f}} 
+\index{networkx\+::utils\+::random\+\_\+sequence@{networkx\+::utils\+::random\+\_\+sequence}!cumulative\+\_\+distribution@{cumulative\+\_\+distribution}}
+\index{cumulative\+\_\+distribution@{cumulative\+\_\+distribution}!networkx\+::utils\+::random\+\_\+sequence@{networkx\+::utils\+::random\+\_\+sequence}}
+\subsubsection{\texorpdfstring{cumulative\+\_\+distribution()}{cumulative\_distribution()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+random\+\_\+sequence.\+cumulative\+\_\+distribution (\begin{DoxyParamCaption}\item[{}]{distribution }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns normalized cumulative distribution from discrete distribution.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1random__sequence_a5f8c7a8a6de006f5ecc0b44530949bae}\label{namespacenetworkx_1_1utils_1_1random__sequence_a5f8c7a8a6de006f5ecc0b44530949bae}} 
+\index{networkx\+::utils\+::random\+\_\+sequence@{networkx\+::utils\+::random\+\_\+sequence}!discrete\+\_\+sequence@{discrete\+\_\+sequence}}
+\index{discrete\+\_\+sequence@{discrete\+\_\+sequence}!networkx\+::utils\+::random\+\_\+sequence@{networkx\+::utils\+::random\+\_\+sequence}}
+\subsubsection{\texorpdfstring{discrete\+\_\+sequence()}{discrete\_sequence()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+random\+\_\+sequence.\+discrete\+\_\+sequence (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{distribution = {\ttfamily None},  }\item[{}]{cdistribution = {\ttfamily None},  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return sample sequence of length n from a given discrete distribution
+or discrete cumulative distribution.
+
+One of the following must be specified.
+
+distribution = histogram of values, will be normalized
+
+cdistribution = normalized discrete cumulative distribution\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1random__sequence_acc7ecaff954cb4c276746ad0f1a679b0}\label{namespacenetworkx_1_1utils_1_1random__sequence_acc7ecaff954cb4c276746ad0f1a679b0}} 
+\index{networkx\+::utils\+::random\+\_\+sequence@{networkx\+::utils\+::random\+\_\+sequence}!powerlaw\+\_\+sequence@{powerlaw\+\_\+sequence}}
+\index{powerlaw\+\_\+sequence@{powerlaw\+\_\+sequence}!networkx\+::utils\+::random\+\_\+sequence@{networkx\+::utils\+::random\+\_\+sequence}}
+\subsubsection{\texorpdfstring{powerlaw\+\_\+sequence()}{powerlaw\_sequence()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+random\+\_\+sequence.\+powerlaw\+\_\+sequence (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{exponent = {\ttfamily 2.0},  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return sample sequence of length n from a power law distribution.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1random__sequence_a8f3014b204ae237de04167b9a7afc8c1}\label{namespacenetworkx_1_1utils_1_1random__sequence_a8f3014b204ae237de04167b9a7afc8c1}} 
+\index{networkx\+::utils\+::random\+\_\+sequence@{networkx\+::utils\+::random\+\_\+sequence}!random\+\_\+weighted\+\_\+sample@{random\+\_\+weighted\+\_\+sample}}
+\index{random\+\_\+weighted\+\_\+sample@{random\+\_\+weighted\+\_\+sample}!networkx\+::utils\+::random\+\_\+sequence@{networkx\+::utils\+::random\+\_\+sequence}}
+\subsubsection{\texorpdfstring{random\+\_\+weighted\+\_\+sample()}{random\_weighted\_sample()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+random\+\_\+sequence.\+random\+\_\+weighted\+\_\+sample (\begin{DoxyParamCaption}\item[{}]{mapping,  }\item[{}]{k,  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns k items without replacement from a weighted sample.
+
+The input is a dictionary of items with weights as values.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1random__sequence_ad9f55d9570fb72f739f539f71e32e459}\label{namespacenetworkx_1_1utils_1_1random__sequence_ad9f55d9570fb72f739f539f71e32e459}} 
+\index{networkx\+::utils\+::random\+\_\+sequence@{networkx\+::utils\+::random\+\_\+sequence}!weighted\+\_\+choice@{weighted\+\_\+choice}}
+\index{weighted\+\_\+choice@{weighted\+\_\+choice}!networkx\+::utils\+::random\+\_\+sequence@{networkx\+::utils\+::random\+\_\+sequence}}
+\subsubsection{\texorpdfstring{weighted\+\_\+choice()}{weighted\_choice()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+random\+\_\+sequence.\+weighted\+\_\+choice (\begin{DoxyParamCaption}\item[{}]{mapping,  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a single element from a weighted sample.
+
+The input is a dictionary of items with weights as values.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1random__sequence_a08968e4ec4cbbb119b4d22d415a4186b}\label{namespacenetworkx_1_1utils_1_1random__sequence_a08968e4ec4cbbb119b4d22d415a4186b}} 
+\index{networkx\+::utils\+::random\+\_\+sequence@{networkx\+::utils\+::random\+\_\+sequence}!zipf\+\_\+rv@{zipf\+\_\+rv}}
+\index{zipf\+\_\+rv@{zipf\+\_\+rv}!networkx\+::utils\+::random\+\_\+sequence@{networkx\+::utils\+::random\+\_\+sequence}}
+\subsubsection{\texorpdfstring{zipf\+\_\+rv()}{zipf\_rv()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+random\+\_\+sequence.\+zipf\+\_\+rv (\begin{DoxyParamCaption}\item[{}]{alpha,  }\item[{}]{xmin = {\ttfamily 1},  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a random value chosen from the Zipf distribution.
+
+The return value is an integer drawn from the probability distribution
+
+.. math::
+
+    p(x)=\frac{x^{-\alpha}}{\zeta(\alpha, x_{\min})},
+
+where $\zeta(\alpha, x_{\min})$ is the Hurwitz zeta function.
+
+Parameters
+----------
+alpha : float
+  Exponent value of the distribution
+xmin : int
+  Minimum value
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+
+Returns
+-------
+x : int
+  Random value from Zipf distribution
+
+Raises
+------
+ValueError:
+  If xmin < 1 or
+  If alpha <= 1
+
+Notes
+-----
+The rejection algorithm generates random values for a the power-law
+distribution in uniformly bounded expected time dependent on
+parameters.  See [1]_ for details on its operation.
+
+Examples
+--------
+>>> nx.utils.zipf_rv(alpha=2, xmin=3, seed=42)
+8
+
+References
+----------
+.. [1] Luc Devroye, Non-Uniform Random Variate Generation,
+   Springer-Verlag, New York, 1986.
+\end{DoxyVerb}
+ 

@@ -1,0 +1,180 @@
+\hypertarget{classmatplotlib_1_1transforms_1_1TransformNode}{}\section{matplotlib.\+transforms.\+Transform\+Node Class Reference}
+\label{classmatplotlib_1_1transforms_1_1TransformNode}\index{matplotlib.\+transforms.\+Transform\+Node@{matplotlib.\+transforms.\+Transform\+Node}}
+
+
+Inheritance diagram for matplotlib.\+transforms.\+Transform\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1transforms_1_1TransformNode__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_ad4ffeea20a242e470bba379e7f0c9cb7}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, shorthand\+\_\+name=None)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_aa6858e8f223461629fac0b43cd3c14a9}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_ad72105c25f5f6dcf148bb264b50a2721}{\+\_\+\+\_\+getstate\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_aef9fd3cf7eacacc06719488bc6ce667b}{\+\_\+\+\_\+setstate\+\_\+\+\_\+} (self, data\+\_\+dict)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_ab16afb5e1d976fa5604f8e72b49730ef}{\+\_\+\+\_\+copy\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_a359589c058e3567d7c47cffa4e607753}{\+\_\+\+\_\+deepcopy\+\_\+\+\_\+} (self, memo)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_ae1544e935b8b0a669c853b203c23f7a3}{invalidate} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_a63457ed969d643c0716d892944ac808b}{set\+\_\+children} (self, children)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_a4cca47dab4b9166db56368c471175909}{frozen} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_a7537629a8c01feeed15e332f6945a738}{I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_a4bd6f9f180aa2a7cc845a57c7e01bf50}{I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+F\+F\+I\+NE}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_accd5660807dd45594449717bd1836d45}{I\+N\+V\+A\+L\+ID}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_a2f370925a5e006ed8760a9c71ec04e4b}{is\+\_\+affine}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_a2b630eb822ac826fd06aec6b87d92947}{is\+\_\+bbox}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformNode_a18c8b6a43ab4769ff18d337994e96893}{pass\+\_\+through}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The base class for anything that participates in the transform tree
+and needs to invalidate its parents or be invalidated.  This includes
+classes that are not really transforms, such as bounding boxes, since some
+transforms depend on bounding boxes to compute their values.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_ad4ffeea20a242e470bba379e7f0c9cb7}\label{classmatplotlib_1_1transforms_1_1TransformNode_ad4ffeea20a242e470bba379e7f0c9cb7}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Node.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{shorthand\+\_\+name = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+shorthand_name : str
+    A string representing the "name" of the transform. The name carries
+    no significance other than to improve the readability of
+    ``str(transform)`` when DEBUG=True.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_ab16afb5e1d976fa5604f8e72b49730ef}\label{classmatplotlib_1_1transforms_1_1TransformNode_ab16afb5e1d976fa5604f8e72b49730ef}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!\+\_\+\+\_\+copy\+\_\+\+\_\+@{\+\_\+\+\_\+copy\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+copy\+\_\+\+\_\+@{\+\_\+\+\_\+copy\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+copy\+\_\+\+\_\+()}{\_\_copy\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Node.\+\_\+\+\_\+copy\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_a359589c058e3567d7c47cffa4e607753}\label{classmatplotlib_1_1transforms_1_1TransformNode_a359589c058e3567d7c47cffa4e607753}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!\+\_\+\+\_\+deepcopy\+\_\+\+\_\+@{\+\_\+\+\_\+deepcopy\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+deepcopy\+\_\+\+\_\+@{\+\_\+\+\_\+deepcopy\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+deepcopy\+\_\+\+\_\+()}{\_\_deepcopy\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Node.\+\_\+\+\_\+deepcopy\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{memo }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_ad72105c25f5f6dcf148bb264b50a2721}\label{classmatplotlib_1_1transforms_1_1TransformNode_ad72105c25f5f6dcf148bb264b50a2721}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getstate\+\_\+\+\_\+()}{\_\_getstate\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Node.\+\_\+\+\_\+getstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_aef9fd3cf7eacacc06719488bc6ce667b}\label{classmatplotlib_1_1transforms_1_1TransformNode_aef9fd3cf7eacacc06719488bc6ce667b}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setstate\+\_\+\+\_\+()}{\_\_setstate\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Node.\+\_\+\+\_\+setstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data\+\_\+dict }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_aa6858e8f223461629fac0b43cd3c14a9}\label{classmatplotlib_1_1transforms_1_1TransformNode_aa6858e8f223461629fac0b43cd3c14a9}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Node.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_a4cca47dab4b9166db56368c471175909}\label{classmatplotlib_1_1transforms_1_1TransformNode_a4cca47dab4b9166db56368c471175909}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!frozen@{frozen}}
+\index{frozen@{frozen}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{frozen()}{frozen()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Node.\+frozen (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a frozen copy of this transform node.  The frozen copy will not
+be updated when its children change.  Useful for storing a previously
+known state of a transform where ``copy.deepcopy()`` might normally be
+used.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_ae1544e935b8b0a669c853b203c23f7a3}\label{classmatplotlib_1_1transforms_1_1TransformNode_ae1544e935b8b0a669c853b203c23f7a3}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!invalidate@{invalidate}}
+\index{invalidate@{invalidate}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{invalidate()}{invalidate()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Node.\+invalidate (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invalidate this `TransformNode` and triggers an invalidation of its
+ancestors.  Should be called any time the transform changes.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_a63457ed969d643c0716d892944ac808b}\label{classmatplotlib_1_1transforms_1_1TransformNode_a63457ed969d643c0716d892944ac808b}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!set\+\_\+children@{set\+\_\+children}}
+\index{set\+\_\+children@{set\+\_\+children}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{set\+\_\+children()}{set\_children()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Node.\+set\+\_\+children (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{children }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the children of the transform, to let the invalidation
+system know which transforms can invalidate this transform.
+Should be called from the constructor of any transforms that
+depend on other transforms.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_accd5660807dd45594449717bd1836d45}\label{classmatplotlib_1_1transforms_1_1TransformNode_accd5660807dd45594449717bd1836d45}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!I\+N\+V\+A\+L\+ID@{I\+N\+V\+A\+L\+ID}}
+\index{I\+N\+V\+A\+L\+ID@{I\+N\+V\+A\+L\+ID}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{I\+N\+V\+A\+L\+ID}{INVALID}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Node.\+I\+N\+V\+A\+L\+ID\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_a4bd6f9f180aa2a7cc845a57c7e01bf50}\label{classmatplotlib_1_1transforms_1_1TransformNode_a4bd6f9f180aa2a7cc845a57c7e01bf50}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+F\+F\+I\+NE@{I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+F\+F\+I\+NE}}
+\index{I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+F\+F\+I\+NE@{I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+F\+F\+I\+NE}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+F\+F\+I\+NE}{INVALID\_AFFINE}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Node.\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+F\+F\+I\+NE\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_a7537629a8c01feeed15e332f6945a738}\label{classmatplotlib_1_1transforms_1_1TransformNode_a7537629a8c01feeed15e332f6945a738}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE@{I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE}}
+\index{I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE@{I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE}{INVALID\_NON\_AFFINE}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Node.\+I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_a2f370925a5e006ed8760a9c71ec04e4b}\label{classmatplotlib_1_1transforms_1_1TransformNode_a2f370925a5e006ed8760a9c71ec04e4b}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!is\+\_\+affine@{is\+\_\+affine}}
+\index{is\+\_\+affine@{is\+\_\+affine}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{is\+\_\+affine}{is\_affine}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Node.\+is\+\_\+affine\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_a2b630eb822ac826fd06aec6b87d92947}\label{classmatplotlib_1_1transforms_1_1TransformNode_a2b630eb822ac826fd06aec6b87d92947}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!is\+\_\+bbox@{is\+\_\+bbox}}
+\index{is\+\_\+bbox@{is\+\_\+bbox}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{is\+\_\+bbox}{is\_bbox}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Node.\+is\+\_\+bbox\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformNode_a18c8b6a43ab4769ff18d337994e96893}\label{classmatplotlib_1_1transforms_1_1TransformNode_a18c8b6a43ab4769ff18d337994e96893}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}!pass\+\_\+through@{pass\+\_\+through}}
+\index{pass\+\_\+through@{pass\+\_\+through}!matplotlib\+::transforms\+::\+Transform\+Node@{matplotlib\+::transforms\+::\+Transform\+Node}}
+\subsubsection{\texorpdfstring{pass\+\_\+through}{pass\_through}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Node.\+pass\+\_\+through\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{transforms_8py}{transforms.\+py}\end{DoxyCompactItemize}

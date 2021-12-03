@@ -1,0 +1,118 @@
+\hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager}{}\section{pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager Class Reference}
+\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager}\index{pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager@{pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a326752207b6e6a55e0227e4e3bbe410a}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1request_1_1RequestMethods_a507ade459b427bd81a5a8849563702e3}{headers}=None, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a24843a36de1346f7d21cd4782d2e83c5}{retries}=None, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a2879d8f7ad8c21d427ed63f232f08fe7}{validate\+\_\+certificate}=True, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a83b60dd1620e648d4c13ab6664efd325}{urlfetch\+\_\+retries}=True)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a2fc3da25ad5cb657e66403d4b199998e}{\+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_ad32aa393de5408a17ab2a07e552a3e5f}{\+\_\+\+\_\+exit\+\_\+\+\_\+} (self, exc\+\_\+type, exc\+\_\+val, exc\+\_\+tb)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_ad1dcd5af93b340ad2b199ce5ddb532fb}{urlopen} (self, method, url, body=None, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1request_1_1RequestMethods_a507ade459b427bd81a5a8849563702e3}{headers}=None, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a24843a36de1346f7d21cd4782d2e83c5}{retries}=None, redirect=True, timeout=\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_ab2e2090779413149cdac51e5b0908e12}{Timeout.\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}, response\+\_\+kw)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a2879d8f7ad8c21d427ed63f232f08fe7}{validate\+\_\+certificate}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a83b60dd1620e648d4c13ab6664efd325}{urlfetch\+\_\+retries}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a24843a36de1346f7d21cd4782d2e83c5}{retries}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Connection manager for Google App Engine sandbox applications.
+
+This manager uses the URLFetch service directly instead of using the
+emulated httplib, and is subject to URLFetch limitations as described in
+the App Engine documentation `here
+<https://cloud.google.com/appengine/docs/python/urlfetch>`_.
+
+Notably it will raise an :class:`AppEnginePlatformError` if:
+    * URLFetch is not available.
+    * If you attempt to use this on App Engine Flexible, as full socket
+      support is available.
+    * If a request size is more than 10 megabytes.
+    * If a response size is more than 32 megabytes.
+    * If you use an unsupported request method such as OPTIONS.
+
+Beyond those cases, it will raise normal urllib3 errors.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a326752207b6e6a55e0227e4e3bbe410a}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a326752207b6e6a55e0227e4e3bbe410a}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{headers = {\ttfamily None},  }\item[{}]{retries = {\ttfamily None},  }\item[{}]{validate\+\_\+certificate = {\ttfamily True},  }\item[{}]{urlfetch\+\_\+retries = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a2fc3da25ad5cb657e66403d4b199998e}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a2fc3da25ad5cb657e66403d4b199998e}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}!\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+enter\+\_\+\+\_\+()}{\_\_enter\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager.\+\_\+\+\_\+enter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_ad32aa393de5408a17ab2a07e552a3e5f}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_ad32aa393de5408a17ab2a07e552a3e5f}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}!\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+exit\+\_\+\+\_\+()}{\_\_exit\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager.\+\_\+\+\_\+exit\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{exc\+\_\+type,  }\item[{}]{exc\+\_\+val,  }\item[{}]{exc\+\_\+tb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_ad1dcd5af93b340ad2b199ce5ddb532fb}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_ad1dcd5af93b340ad2b199ce5ddb532fb}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}!urlopen@{urlopen}}
+\index{urlopen@{urlopen}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}}
+\subsubsection{\texorpdfstring{urlopen()}{urlopen()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager.\+urlopen (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{method,  }\item[{}]{url,  }\item[{}]{body = {\ttfamily None},  }\item[{}]{headers = {\ttfamily None},  }\item[{}]{retries = {\ttfamily None},  }\item[{}]{redirect = {\ttfamily True},  }\item[{}]{timeout = {\ttfamily \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_ab2e2090779413149cdac51e5b0908e12}{Timeout.\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}},  }\item[{}]{response\+\_\+kw }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a24843a36de1346f7d21cd4782d2e83c5}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a24843a36de1346f7d21cd4782d2e83c5}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}!retries@{retries}}
+\index{retries@{retries}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}}
+\subsubsection{\texorpdfstring{retries}{retries}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager.\+retries}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a83b60dd1620e648d4c13ab6664efd325}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a83b60dd1620e648d4c13ab6664efd325}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}!urlfetch\+\_\+retries@{urlfetch\+\_\+retries}}
+\index{urlfetch\+\_\+retries@{urlfetch\+\_\+retries}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}}
+\subsubsection{\texorpdfstring{urlfetch\+\_\+retries}{urlfetch\_retries}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager.\+urlfetch\+\_\+retries}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a2879d8f7ad8c21d427ed63f232f08fe7}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a2879d8f7ad8c21d427ed63f232f08fe7}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}!validate\+\_\+certificate@{validate\+\_\+certificate}}
+\index{validate\+\_\+certificate@{validate\+\_\+certificate}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine\+::\+App\+Engine\+Manager}}
+\subsubsection{\texorpdfstring{validate\+\_\+certificate}{validate\_certificate}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager.\+validate\+\_\+certificate}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/urllib3/contrib/\hyperlink{appengine_8py}{appengine.\+py}\end{DoxyCompactItemize}

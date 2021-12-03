@@ -1,0 +1,190 @@
+\hypertarget{classpkg__resources_1_1Environment}{}\section{pkg\+\_\+resources.\+Environment Class Reference}
+\label{classpkg__resources_1_1Environment}\index{pkg\+\_\+resources.\+Environment@{pkg\+\_\+resources.\+Environment}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpkg__resources_1_1Environment_ac17977fcfff1f90f694316f938090eb2}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, search\+\_\+path=None, \hyperlink{classpkg__resources_1_1Environment_a8512772df91acc77fc4ea47e2d483e7a}{platform}=\hyperlink{namespacepkg__resources_a2ad1c6a7e428d89c722264e41cc9214e}{get\+\_\+supported\+\_\+platform}(), \hyperlink{classpkg__resources_1_1Environment_a92643caa8139bba1bd63c32c22d1878c}{python}=\hyperlink{namespacepkg__resources_a27901fd744697f2b2d55b6f1255cf020}{P\+Y\+\_\+\+M\+A\+J\+OR})
+\item 
+def \hyperlink{classpkg__resources_1_1Environment_ac68862356ee785bb410b3d2a503952f1}{can\+\_\+add} (self, dist)
+\item 
+def \hyperlink{classpkg__resources_1_1Environment_aa51b1c4f8c8c146f2fc83a833608a0d1}{remove} (self, dist)
+\item 
+def \hyperlink{classpkg__resources_1_1Environment_a2dd1caa73a329d4c50b0ab9fdec9c1d4}{scan} (self, search\+\_\+path=None)
+\item 
+def \hyperlink{classpkg__resources_1_1Environment_af401af1f867613b8f268ab93a1275aff}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, project\+\_\+name)
+\item 
+def \hyperlink{classpkg__resources_1_1Environment_a0ba8999abdb4cbc7a1965766560197fc}{add} (self, dist)
+\item 
+def \hyperlink{classpkg__resources_1_1Environment_a7738575eddd2a89e35eff52f3462f20b}{best\+\_\+match} (self, req, \hyperlink{namespacepkg__resources_a5eecf7277dc4e63e653bfa39a805e4d2}{working\+\_\+set}, installer=None, replace\+\_\+conflicting=False)
+\item 
+def \hyperlink{classpkg__resources_1_1Environment_af631296df13a518bb3cd97f04efa25fd}{obtain} (self, requirement, installer=None)
+\item 
+def \hyperlink{classpkg__resources_1_1Environment_a7f967904be209cefe39230614470ca3f}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpkg__resources_1_1Environment_ac8fc54442fe5e9c647b57320e7ccf78a}{\+\_\+\+\_\+iadd\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classpkg__resources_1_1Environment_a8f9750420dd62e8b71b0b2f06f424c57}{\+\_\+\+\_\+add\+\_\+\+\_\+} (self, other)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpkg__resources_1_1Environment_a8512772df91acc77fc4ea47e2d483e7a}{platform}
+\item 
+\hyperlink{classpkg__resources_1_1Environment_a92643caa8139bba1bd63c32c22d1878c}{python}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Searchable snapshot of distributions on a search path\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1Environment_ac17977fcfff1f90f694316f938090eb2}\label{classpkg__resources_1_1Environment_ac17977fcfff1f90f694316f938090eb2}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Environment.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{search\+\_\+path = {\ttfamily None},  }\item[{}]{platform = {\ttfamily \hyperlink{namespacepkg__resources_a2ad1c6a7e428d89c722264e41cc9214e}{get\+\_\+supported\+\_\+platform}()},  }\item[{}]{python = {\ttfamily \hyperlink{namespacepkg__resources_a27901fd744697f2b2d55b6f1255cf020}{P\+Y\+\_\+\+M\+A\+J\+OR}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Snapshot distributions available on a search path
+
+Any distributions found on `search_path` are added to the environment.
+`search_path` should be a sequence of ``sys.path`` items.  If not
+supplied, ``sys.path`` is used.
+
+`platform` is an optional string specifying the name of the platform
+that platform-specific distributions must be compatible with.  If
+unspecified, it defaults to the current platform.  `python` is an
+optional string naming the desired version of Python (e.g. ``'3.6'``);
+it defaults to the current version.
+
+You may explicitly set `platform` (and/or `python`) to ``None`` if you
+wish to map *all* distributions, not just those compatible with the
+running platform or Python version.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1Environment_a8f9750420dd62e8b71b0b2f06f424c57}\label{classpkg__resources_1_1Environment_a8f9750420dd62e8b71b0b2f06f424c57}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!\+\_\+\+\_\+add\+\_\+\+\_\+@{\+\_\+\+\_\+add\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+add\+\_\+\+\_\+@{\+\_\+\+\_\+add\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+add\+\_\+\+\_\+()}{\_\_add\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Environment.\+\_\+\+\_\+add\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add an environment or distribution to an environment\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1Environment_af401af1f867613b8f268ab93a1275aff}\label{classpkg__resources_1_1Environment_af401af1f867613b8f268ab93a1275aff}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Environment.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{project\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a newest-to-oldest list of distributions for `project_name`
+
+Uses case-insensitive `project_name` comparison, assuming all the
+project's distributions use their project's name converted to all
+lowercase as their key.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1Environment_ac8fc54442fe5e9c647b57320e7ccf78a}\label{classpkg__resources_1_1Environment_ac8fc54442fe5e9c647b57320e7ccf78a}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!\+\_\+\+\_\+iadd\+\_\+\+\_\+@{\+\_\+\+\_\+iadd\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iadd\+\_\+\+\_\+@{\+\_\+\+\_\+iadd\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iadd\+\_\+\+\_\+()}{\_\_iadd\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Environment.\+\_\+\+\_\+iadd\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}In-place addition of a distribution or environment\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1Environment_a7f967904be209cefe39230614470ca3f}\label{classpkg__resources_1_1Environment_a7f967904be209cefe39230614470ca3f}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Environment.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Yield the unique project names of the available distributions\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1Environment_a0ba8999abdb4cbc7a1965766560197fc}\label{classpkg__resources_1_1Environment_a0ba8999abdb4cbc7a1965766560197fc}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!add@{add}}
+\index{add@{add}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Environment.\+add (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dist }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add `dist` if we ``can_add()`` it and it has not already been added
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1Environment_a7738575eddd2a89e35eff52f3462f20b}\label{classpkg__resources_1_1Environment_a7738575eddd2a89e35eff52f3462f20b}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!best\+\_\+match@{best\+\_\+match}}
+\index{best\+\_\+match@{best\+\_\+match}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{best\+\_\+match()}{best\_match()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Environment.\+best\+\_\+match (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{req,  }\item[{}]{working\+\_\+set,  }\item[{}]{installer = {\ttfamily None},  }\item[{}]{replace\+\_\+conflicting = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find distribution best matching `req` and usable on `working_set`
+
+This calls the ``find(req)`` method of the `working_set` to see if a
+suitable distribution is already active.  (This may raise
+``VersionConflict`` if an unsuitable version of the project is already
+active in the specified `working_set`.)  If a suitable distribution
+isn't active, this method returns the newest distribution in the
+environment that meets the ``Requirement`` in `req`.  If no suitable
+distribution is found, and `installer` is supplied, then the result of
+calling the environment's ``obtain(req, installer)`` method will be
+returned.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1Environment_ac68862356ee785bb410b3d2a503952f1}\label{classpkg__resources_1_1Environment_ac68862356ee785bb410b3d2a503952f1}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!can\+\_\+add@{can\+\_\+add}}
+\index{can\+\_\+add@{can\+\_\+add}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{can\+\_\+add()}{can\_add()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Environment.\+can\+\_\+add (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dist }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Is distribution `dist` acceptable for this environment?
+
+The distribution must match the platform and python version
+requirements specified when this environment was created, or False
+is returned.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1Environment_af631296df13a518bb3cd97f04efa25fd}\label{classpkg__resources_1_1Environment_af631296df13a518bb3cd97f04efa25fd}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!obtain@{obtain}}
+\index{obtain@{obtain}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{obtain()}{obtain()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Environment.\+obtain (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{requirement,  }\item[{}]{installer = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Obtain a distribution matching `requirement` (e.g. via download)
+
+Obtain a distro that matches requirement (e.g. via download).  In the
+base ``Environment`` class, this routine just returns
+``installer(requirement)``, unless `installer` is None, in which case
+None is returned instead.  This method is a hook that allows subclasses
+to attempt other ways of obtaining a distribution before falling back
+to the `installer` argument.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1Environment_aa51b1c4f8c8c146f2fc83a833608a0d1}\label{classpkg__resources_1_1Environment_aa51b1c4f8c8c146f2fc83a833608a0d1}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!remove@{remove}}
+\index{remove@{remove}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Environment.\+remove (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dist }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove `dist` from the environment\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1Environment_a2dd1caa73a329d4c50b0ab9fdec9c1d4}\label{classpkg__resources_1_1Environment_a2dd1caa73a329d4c50b0ab9fdec9c1d4}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!scan@{scan}}
+\index{scan@{scan}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{scan()}{scan()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Environment.\+scan (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{search\+\_\+path = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Scan `search_path` for distributions usable in this environment
+
+Any distributions found are added to the environment.
+`search_path` should be a sequence of ``sys.path`` items.  If not
+supplied, ``sys.path`` is used.  Only distributions conforming to
+the platform/python version defined at initialization are added.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1Environment_a8512772df91acc77fc4ea47e2d483e7a}\label{classpkg__resources_1_1Environment_a8512772df91acc77fc4ea47e2d483e7a}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!platform@{platform}}
+\index{platform@{platform}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{platform}{platform}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+Environment.\+platform}
+
+\mbox{\Hypertarget{classpkg__resources_1_1Environment_a92643caa8139bba1bd63c32c22d1878c}\label{classpkg__resources_1_1Environment_a92643caa8139bba1bd63c32c22d1878c}} 
+\index{pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}!python@{python}}
+\index{python@{python}!pkg\+\_\+resources\+::\+Environment@{pkg\+\_\+resources\+::\+Environment}}
+\subsubsection{\texorpdfstring{python}{python}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+Environment.\+python}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pkg\+\_\+resources/\hyperlink{venv_2lib_2python3_89_2site-packages_2pkg__resources_2____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}\end{DoxyCompactItemize}

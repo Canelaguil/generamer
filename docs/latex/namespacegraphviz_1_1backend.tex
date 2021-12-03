@@ -1,0 +1,222 @@
+\hypertarget{namespacegraphviz_1_1backend}{}\section{graphviz.\+backend Namespace Reference}
+\label{namespacegraphviz_1_1backend}\index{graphviz.\+backend@{graphviz.\+backend}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classgraphviz_1_1backend_1_1CalledProcessError}{Called\+Process\+Error}
+\item 
+class \hyperlink{classgraphviz_1_1backend_1_1ExecutableNotFound}{Executable\+Not\+Found}
+\item 
+class \hyperlink{classgraphviz_1_1backend_1_1RequiredArgumentError}{Required\+Argument\+Error}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacegraphviz_1_1backend_a86178c80a9e749c977ab49783cc391d8}{command}
+\item 
+def \hyperlink{namespacegraphviz_1_1backend_a6ce9f12deeddd6800e99eb28917c0694}{get\+\_\+startupinfo} ()
+\item 
+def \hyperlink{namespacegraphviz_1_1backend_ad0353ed739611eea5924f8af4b3a3618}{run}
+\item 
+def \hyperlink{namespacegraphviz_1_1backend_a55b58f5b91d47863d02f536d4b883a23}{render}
+\item 
+def \hyperlink{namespacegraphviz_1_1backend_ac97a4806e0f00ac9af2a14434af13bed}{pipe}
+\item 
+def \hyperlink{namespacegraphviz_1_1backend_ae10adeb73d6d33c09857d5b5e0fb0ede}{unflatten}
+\item 
+def \hyperlink{namespacegraphviz_1_1backend_ac098062fcef1b6bb74f4a4fff2f064bf}{version} ()
+\item 
+def \hyperlink{namespacegraphviz_1_1backend_a72d0d5c4b883d45119cd0044f18adbb1}{view}
+\item 
+def \hyperlink{namespacegraphviz_1_1backend_a498c99db93eb0697bdcace197fb8c429}{view\+\_\+darwin}
+\item 
+def \hyperlink{namespacegraphviz_1_1backend_a9d75d1ee28b04b876f40dd7d3a700391}{view\+\_\+unixoid}
+\item 
+def \hyperlink{namespacegraphviz_1_1backend_a6fb956ad5a3edba967d1e372acce0589}{view\+\_\+windows}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dictionary \hyperlink{namespacegraphviz_1_1backend_a84a2f16c27cdea0584e49dff5c211c71}{E\+N\+G\+I\+N\+ES}
+\item 
+dictionary \hyperlink{namespacegraphviz_1_1backend_aeb48a9f6c54ada7a24d4e3e072fcf124}{F\+O\+R\+M\+A\+TS}
+\item 
+dictionary \hyperlink{namespacegraphviz_1_1backend_a64f08e302b7e178aa4f30500d7759f8b}{R\+E\+N\+D\+E\+R\+E\+RS}
+\item 
+dictionary \hyperlink{namespacegraphviz_1_1backend_a6f09436e6e2f80c0f273a34f90058d25}{F\+O\+R\+M\+A\+T\+T\+E\+RS} = \{\textquotesingle{}cairo\textquotesingle{}, \textquotesingle{}core\textquotesingle{}, \textquotesingle{}gd\textquotesingle{}, \textquotesingle{}gdiplus\textquotesingle{}, \textquotesingle{}gdwbmp\textquotesingle{}, \textquotesingle{}xlib\textquotesingle{}\}
+\item 
+string \hyperlink{namespacegraphviz_1_1backend_aaa5c3555a484c96a0b0e5356ce3a577d}{E\+N\+C\+O\+D\+I\+NG} = \textquotesingle{}utf-\/8\textquotesingle{}
+\item 
+\hyperlink{namespacegraphviz_1_1backend_abda60bab76c42637d4633cd3c7304120}{P\+L\+A\+T\+F\+O\+RM} = platform.\+system().lower()
+\item 
+\hyperlink{namespacegraphviz_1_1backend_a91f9698a7f0533d6513e76131e97ec94}{log} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Execute rendering subprocesses and open files in viewer.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_a86178c80a9e749c977ab49783cc391d8}\label{namespacegraphviz_1_1backend_a86178c80a9e749c977ab49783cc391d8}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!command@{command}}
+\index{command@{command}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{command()}{command()}}
+{\footnotesize\ttfamily def graphviz.\+backend.\+command (\begin{DoxyParamCaption}\item[{}]{engine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_a6ce9f12deeddd6800e99eb28917c0694}\label{namespacegraphviz_1_1backend_a6ce9f12deeddd6800e99eb28917c0694}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!get\+\_\+startupinfo@{get\+\_\+startupinfo}}
+\index{get\+\_\+startupinfo@{get\+\_\+startupinfo}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{get\+\_\+startupinfo()}{get\_startupinfo()}}
+{\footnotesize\ttfamily def graphviz.\+backend.\+get\+\_\+startupinfo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return subprocess.STARTUPINFO instance hiding the console window.\end{DoxyVerb}
+
+
+\begin{DoxyVerb}Return None for startupinfo argument of ``subprocess.Popen``.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacegraphviz_1_1backend_ac97a4806e0f00ac9af2a14434af13bed}\label{namespacegraphviz_1_1backend_ac97a4806e0f00ac9af2a14434af13bed}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!pipe@{pipe}}
+\index{pipe@{pipe}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{pipe()}{pipe()}}
+{\footnotesize\ttfamily def graphviz.\+backend.\+pipe (\begin{DoxyParamCaption}\item[{}]{engine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_a55b58f5b91d47863d02f536d4b883a23}\label{namespacegraphviz_1_1backend_a55b58f5b91d47863d02f536d4b883a23}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!render@{render}}
+\index{render@{render}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily def graphviz.\+backend.\+render (\begin{DoxyParamCaption}\item[{}]{engine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_ad0353ed739611eea5924f8af4b3a3618}\label{namespacegraphviz_1_1backend_ad0353ed739611eea5924f8af4b3a3618}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!run@{run}}
+\index{run@{run}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily def graphviz.\+backend.\+run (\begin{DoxyParamCaption}\item[{}]{cmd,  }\item[{}]{input = {\ttfamily None},  }\item[{}]{capture\+\_\+output }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_ae10adeb73d6d33c09857d5b5e0fb0ede}\label{namespacegraphviz_1_1backend_ae10adeb73d6d33c09857d5b5e0fb0ede}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!unflatten@{unflatten}}
+\index{unflatten@{unflatten}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{unflatten()}{unflatten()}}
+{\footnotesize\ttfamily def graphviz.\+backend.\+unflatten (\begin{DoxyParamCaption}\item[{}]{source }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_ac098062fcef1b6bb74f4a4fff2f064bf}\label{namespacegraphviz_1_1backend_ac098062fcef1b6bb74f4a4fff2f064bf}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!version@{version}}
+\index{version@{version}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{version()}{version()}}
+{\footnotesize\ttfamily def graphviz.\+backend.\+version (\begin{DoxyParamCaption}\item[{}]{typing,  }\item[{}]{Tuple,  }\item[{}]{int }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the version number tuple from the ``stderr`` output of ``dot -V``.
+
+Returns:
+    Two, three, or four ``int`` version ``tuple``.
+
+Raises:
+    graphviz.ExecutableNotFound: If the Graphviz executable is not found.
+    subprocess.CalledProcessError: If the exit status is non-zero.
+    RuntimeError: If the output cannot be parsed into a version number.
+
+Example:
+    >>> import graphviz
+    >>> graphviz.version()
+    (...)
+
+Note:
+    Ignores the ``~dev.<YYYYmmdd.HHMM>`` portion of development versions.
+
+See also:
+    Graphviz Release version entry format:
+    https://gitlab.com/graphviz/graphviz/-/blob/f94e91ba819cef51a4b9dcb2d76153684d06a913/gen_version.py#L17-20
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacegraphviz_1_1backend_a72d0d5c4b883d45119cd0044f18adbb1}\label{namespacegraphviz_1_1backend_a72d0d5c4b883d45119cd0044f18adbb1}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!view@{view}}
+\index{view@{view}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{view()}{view()}}
+{\footnotesize\ttfamily def graphviz.\+backend.\+view (\begin{DoxyParamCaption}\item[{}]{filepath,  }\item[{}]{quiet }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_a498c99db93eb0697bdcace197fb8c429}\label{namespacegraphviz_1_1backend_a498c99db93eb0697bdcace197fb8c429}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!view\+\_\+darwin@{view\+\_\+darwin}}
+\index{view\+\_\+darwin@{view\+\_\+darwin}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{view\+\_\+darwin()}{view\_darwin()}}
+{\footnotesize\ttfamily def graphviz.\+backend.\+view\+\_\+darwin (\begin{DoxyParamCaption}\item[{}]{filepath,  }\item[{}]{quiet }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_a9d75d1ee28b04b876f40dd7d3a700391}\label{namespacegraphviz_1_1backend_a9d75d1ee28b04b876f40dd7d3a700391}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!view\+\_\+unixoid@{view\+\_\+unixoid}}
+\index{view\+\_\+unixoid@{view\+\_\+unixoid}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{view\+\_\+unixoid()}{view\_unixoid()}}
+{\footnotesize\ttfamily def graphviz.\+backend.\+view\+\_\+unixoid (\begin{DoxyParamCaption}\item[{}]{filepath,  }\item[{}]{quiet }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_a6fb956ad5a3edba967d1e372acce0589}\label{namespacegraphviz_1_1backend_a6fb956ad5a3edba967d1e372acce0589}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!view\+\_\+windows@{view\+\_\+windows}}
+\index{view\+\_\+windows@{view\+\_\+windows}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{view\+\_\+windows()}{view\_windows()}}
+{\footnotesize\ttfamily def graphviz.\+backend.\+view\+\_\+windows (\begin{DoxyParamCaption}\item[{}]{filepath,  }\item[{}]{quiet }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_aaa5c3555a484c96a0b0e5356ce3a577d}\label{namespacegraphviz_1_1backend_aaa5c3555a484c96a0b0e5356ce3a577d}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!E\+N\+C\+O\+D\+I\+NG@{E\+N\+C\+O\+D\+I\+NG}}
+\index{E\+N\+C\+O\+D\+I\+NG@{E\+N\+C\+O\+D\+I\+NG}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{E\+N\+C\+O\+D\+I\+NG}{ENCODING}}
+{\footnotesize\ttfamily string graphviz.\+backend.\+E\+N\+C\+O\+D\+I\+NG = \textquotesingle{}utf-\/8\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_a84a2f16c27cdea0584e49dff5c211c71}\label{namespacegraphviz_1_1backend_a84a2f16c27cdea0584e49dff5c211c71}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!E\+N\+G\+I\+N\+ES@{E\+N\+G\+I\+N\+ES}}
+\index{E\+N\+G\+I\+N\+ES@{E\+N\+G\+I\+N\+ES}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{E\+N\+G\+I\+N\+ES}{ENGINES}}
+{\footnotesize\ttfamily dictionary graphviz.\+backend.\+E\+N\+G\+I\+N\+ES}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{  \textcolor{comment}{# http://www.graphviz.org/pdf/dot.1.pdf}
+2     \textcolor{stringliteral}{'dot'}, \textcolor{stringliteral}{'neato'}, \textcolor{stringliteral}{'twopi'}, \textcolor{stringliteral}{'circo'}, \textcolor{stringliteral}{'fdp'}, \textcolor{stringliteral}{'sfdp'}, \textcolor{stringliteral}{'patchwork'}, \textcolor{stringliteral}{'osage'},
+3 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_aeb48a9f6c54ada7a24d4e3e072fcf124}\label{namespacegraphviz_1_1backend_aeb48a9f6c54ada7a24d4e3e072fcf124}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!F\+O\+R\+M\+A\+TS@{F\+O\+R\+M\+A\+TS}}
+\index{F\+O\+R\+M\+A\+TS@{F\+O\+R\+M\+A\+TS}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{F\+O\+R\+M\+A\+TS}{FORMATS}}
+{\footnotesize\ttfamily dictionary graphviz.\+backend.\+F\+O\+R\+M\+A\+TS}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_a6f09436e6e2f80c0f273a34f90058d25}\label{namespacegraphviz_1_1backend_a6f09436e6e2f80c0f273a34f90058d25}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!F\+O\+R\+M\+A\+T\+T\+E\+RS@{F\+O\+R\+M\+A\+T\+T\+E\+RS}}
+\index{F\+O\+R\+M\+A\+T\+T\+E\+RS@{F\+O\+R\+M\+A\+T\+T\+E\+RS}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{F\+O\+R\+M\+A\+T\+T\+E\+RS}{FORMATTERS}}
+{\footnotesize\ttfamily dictionary graphviz.\+backend.\+F\+O\+R\+M\+A\+T\+T\+E\+RS = \{\textquotesingle{}cairo\textquotesingle{}, \textquotesingle{}core\textquotesingle{}, \textquotesingle{}gd\textquotesingle{}, \textquotesingle{}gdiplus\textquotesingle{}, \textquotesingle{}gdwbmp\textquotesingle{}, \textquotesingle{}xlib\textquotesingle{}\}}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_a91f9698a7f0533d6513e76131e97ec94}\label{namespacegraphviz_1_1backend_a91f9698a7f0533d6513e76131e97ec94}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!log@{log}}
+\index{log@{log}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily graphviz.\+backend.\+log = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_abda60bab76c42637d4633cd3c7304120}\label{namespacegraphviz_1_1backend_abda60bab76c42637d4633cd3c7304120}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!P\+L\+A\+T\+F\+O\+RM@{P\+L\+A\+T\+F\+O\+RM}}
+\index{P\+L\+A\+T\+F\+O\+RM@{P\+L\+A\+T\+F\+O\+RM}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{P\+L\+A\+T\+F\+O\+RM}{PLATFORM}}
+{\footnotesize\ttfamily graphviz.\+backend.\+P\+L\+A\+T\+F\+O\+RM = platform.\+system().lower()}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1backend_a64f08e302b7e178aa4f30500d7759f8b}\label{namespacegraphviz_1_1backend_a64f08e302b7e178aa4f30500d7759f8b}} 
+\index{graphviz\+::backend@{graphviz\+::backend}!R\+E\+N\+D\+E\+R\+E\+RS@{R\+E\+N\+D\+E\+R\+E\+RS}}
+\index{R\+E\+N\+D\+E\+R\+E\+RS@{R\+E\+N\+D\+E\+R\+E\+RS}!graphviz\+::backend@{graphviz\+::backend}}
+\subsubsection{\texorpdfstring{R\+E\+N\+D\+E\+R\+E\+RS}{RENDERERS}}
+{\footnotesize\ttfamily dictionary graphviz.\+backend.\+R\+E\+N\+D\+E\+R\+E\+RS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{  \textcolor{comment}{# $ dot -T:}
+2     \textcolor{stringliteral}{'cairo'},
+3     \textcolor{stringliteral}{'dot'},
+4     \textcolor{stringliteral}{'fig'},
+5     \textcolor{stringliteral}{'gd'},
+6     \textcolor{stringliteral}{'gdiplus'},
+7     \textcolor{stringliteral}{'map'},
+8     \textcolor{stringliteral}{'pic'},
+9     \textcolor{stringliteral}{'pov'},
+10     \textcolor{stringliteral}{'ps'},
+11     \textcolor{stringliteral}{'svg'},
+12     \textcolor{stringliteral}{'tk'},
+13     \textcolor{stringliteral}{'vml'},
+14     \textcolor{stringliteral}{'vrml'},
+15     \textcolor{stringliteral}{'xdot'},
+16 \}
+\end{DoxyCode}

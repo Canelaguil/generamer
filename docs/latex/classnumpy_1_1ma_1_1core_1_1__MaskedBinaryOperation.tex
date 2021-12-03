@@ -1,0 +1,124 @@
+\hypertarget{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation}{}\section{numpy.\+ma.\+core.\+\_\+\+Masked\+Binary\+Operation Class Reference}
+\label{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation}\index{numpy.\+ma.\+core.\+\_\+\+Masked\+Binary\+Operation@{numpy.\+ma.\+core.\+\_\+\+Masked\+Binary\+Operation}}
+
+
+Inheritance diagram for numpy.\+ma.\+core.\+\_\+\+Masked\+Binary\+Operation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+ma.\+core.\+\_\+\+Masked\+Binary\+Operation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_afdb9dfe9d454b38298f08e18b20f4ce1}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, mbfunc, \hyperlink{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_a61f16041049af788ed536efab9e6608c}{fillx}=0, \hyperlink{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_ad368116f443eebd9a9db8d7d5eac8ec1}{filly}=0)
+\item 
+def \hyperlink{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_aa97f7cd7d2c19a7be3653fe1980766ef}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, a, b, args, kwargs)
+\item 
+def \hyperlink{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_a91abf0a92e6991b04f733cd25f02fb40}{reduce} (self, target, axis=0, dtype=\hyperlink{namespacenumpy_1_1ma_1_1core_a647ee1848dfa3692fe35a663a2aa40b3}{None})
+\item 
+def \hyperlink{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_a86abbe489290548f1df13a93d012098d}{outer} (self, a, b)
+\item 
+def \hyperlink{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_ae7f213b8b017a81797b2f513dc677a99}{accumulate} (self, target, axis=0)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_a61f16041049af788ed536efab9e6608c}{fillx}
+\item 
+\hyperlink{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_ad368116f443eebd9a9db8d7d5eac8ec1}{filly}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Define masked version of binary operations, where invalid
+values are pre-masked.
+
+Parameters
+----------
+mbfunc : function
+    The function for which to define a masked version. Made available
+    as ``_MaskedBinaryOperation.f``.
+domain : class instance
+    Default domain for the function. Should be one of the ``_Domain*``
+    classes. Default is None.
+fillx : scalar, optional
+    Filling value for the first argument, default is 0.
+filly : scalar, optional
+    Filling value for the second argument, default is 0.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_afdb9dfe9d454b38298f08e18b20f4ce1}\label{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_afdb9dfe9d454b38298f08e18b20f4ce1}} 
+\index{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+core.\+\_\+\+Masked\+Binary\+Operation.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{mbfunc,  }\item[{}]{fillx = {\ttfamily 0},  }\item[{}]{filly = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}abfunc(fillx, filly) must be defined.
+
+abfunc(x, filly) = x for all x to enable reduce.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_aa97f7cd7d2c19a7be3653fe1980766ef}\label{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_aa97f7cd7d2c19a7be3653fe1980766ef}} 
+\index{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+core.\+\_\+\+Masked\+Binary\+Operation.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a,  }\item[{}]{b,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Execute the call behavior.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_ae7f213b8b017a81797b2f513dc677a99}\label{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_ae7f213b8b017a81797b2f513dc677a99}} 
+\index{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}!accumulate@{accumulate}}
+\index{accumulate@{accumulate}!numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}}
+\subsubsection{\texorpdfstring{accumulate()}{accumulate()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+core.\+\_\+\+Masked\+Binary\+Operation.\+accumulate (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{target,  }\item[{}]{axis = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Accumulate `target` along `axis` after filling with y fill
+value.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_a86abbe489290548f1df13a93d012098d}\label{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_a86abbe489290548f1df13a93d012098d}} 
+\index{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}!outer@{outer}}
+\index{outer@{outer}!numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}}
+\subsubsection{\texorpdfstring{outer()}{outer()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+core.\+\_\+\+Masked\+Binary\+Operation.\+outer (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the function applied to the outer product of a and b.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_a91abf0a92e6991b04f733cd25f02fb40}\label{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_a91abf0a92e6991b04f733cd25f02fb40}} 
+\index{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}!reduce@{reduce}}
+\index{reduce@{reduce}!numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}}
+\subsubsection{\texorpdfstring{reduce()}{reduce()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+core.\+\_\+\+Masked\+Binary\+Operation.\+reduce (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{target,  }\item[{}]{axis = {\ttfamily 0},  }\item[{}]{dtype = {\ttfamily \hyperlink{namespacenumpy_1_1ma_1_1core_a647ee1848dfa3692fe35a663a2aa40b3}{None}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reduce `target` along the given `axis`.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_a61f16041049af788ed536efab9e6608c}\label{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_a61f16041049af788ed536efab9e6608c}} 
+\index{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}!fillx@{fillx}}
+\index{fillx@{fillx}!numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}}
+\subsubsection{\texorpdfstring{fillx}{fillx}}
+{\footnotesize\ttfamily numpy.\+ma.\+core.\+\_\+\+Masked\+Binary\+Operation.\+fillx}
+
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_ad368116f443eebd9a9db8d7d5eac8ec1}\label{classnumpy_1_1ma_1_1core_1_1__MaskedBinaryOperation_ad368116f443eebd9a9db8d7d5eac8ec1}} 
+\index{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}!filly@{filly}}
+\index{filly@{filly}!numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation@{numpy\+::ma\+::core\+::\+\_\+\+Masked\+Binary\+Operation}}
+\subsubsection{\texorpdfstring{filly}{filly}}
+{\footnotesize\ttfamily numpy.\+ma.\+core.\+\_\+\+Masked\+Binary\+Operation.\+filly}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/ma/\hyperlink{numpy_2ma_2core_8py}{core.\+py}\end{DoxyCompactItemize}

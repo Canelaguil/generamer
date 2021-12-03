@@ -1,0 +1,58 @@
+\hypertarget{namespacematplotlib_1_1__text__layout}{}\section{matplotlib.\+\_\+text\+\_\+layout Namespace Reference}
+\label{namespacematplotlib_1_1__text__layout}\index{matplotlib.\+\_\+text\+\_\+layout@{matplotlib.\+\_\+text\+\_\+layout}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1__text__layout_a5084556602e59bed17c982150c649b8d}{layout} (string, font, kern\+\_\+mode=K\+E\+R\+N\+I\+N\+G\+\_\+\+D\+E\+F\+A\+U\+LT)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1__text__layout_a78dfba3922ceb65ef13eca17b681de6e}{Layout\+Item}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Text layouting utilities.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1__text__layout_a5084556602e59bed17c982150c649b8d}\label{namespacematplotlib_1_1__text__layout_a5084556602e59bed17c982150c649b8d}} 
+\index{matplotlib\+::\+\_\+text\+\_\+layout@{matplotlib\+::\+\_\+text\+\_\+layout}!layout@{layout}}
+\index{layout@{layout}!matplotlib\+::\+\_\+text\+\_\+layout@{matplotlib\+::\+\_\+text\+\_\+layout}}
+\subsubsection{\texorpdfstring{layout()}{layout()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+text\+\_\+layout.\+layout (\begin{DoxyParamCaption}\item[{}]{string,  }\item[{}]{font,  }\item[{}]{kern\+\_\+mode = {\ttfamily KERNING\+\_\+DEFAULT} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Render *string* with *font*.  For each character in *string*, yield a
+(glyph-index, x-position) pair.  When such a pair is yielded, the font's
+glyph is set to the corresponding character.
+
+Parameters
+----------
+string : str
+    The string to be rendered.
+font : FT2Font
+    The font.
+kern_mode : int
+    A FreeType kerning mode.
+
+Yields
+------
+glyph_index : int
+x_position : float
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1__text__layout_a78dfba3922ceb65ef13eca17b681de6e}\label{namespacematplotlib_1_1__text__layout_a78dfba3922ceb65ef13eca17b681de6e}} 
+\index{matplotlib\+::\+\_\+text\+\_\+layout@{matplotlib\+::\+\_\+text\+\_\+layout}!Layout\+Item@{Layout\+Item}}
+\index{Layout\+Item@{Layout\+Item}!matplotlib\+::\+\_\+text\+\_\+layout@{matplotlib\+::\+\_\+text\+\_\+layout}}
+\subsubsection{\texorpdfstring{Layout\+Item}{LayoutItem}}
+{\footnotesize\ttfamily matplotlib.\+\_\+text\+\_\+layout.\+Layout\+Item}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  dataclasses.make\_dataclass(
+2     \textcolor{stringliteral}{"LayoutItem"}, [\textcolor{stringliteral}{"char"}, \textcolor{stringliteral}{"glyph\_idx"}, \textcolor{stringliteral}{"x"}, \textcolor{stringliteral}{"prev\_kern"}])
+\end{DoxyCode}

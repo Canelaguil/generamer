@@ -1,0 +1,147 @@
+\hypertarget{classmatplotlib_1_1patches_1_1ArrowStyle}{}\section{matplotlib.\+patches.\+Arrow\+Style Class Reference}
+\label{classmatplotlib_1_1patches_1_1ArrowStyle}\index{matplotlib.\+patches.\+Arrow\+Style@{matplotlib.\+patches.\+Arrow\+Style}}
+
+
+Inheritance diagram for matplotlib.\+patches.\+Arrow\+Style\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classmatplotlib_1_1patches_1_1ArrowStyle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+patches.\+Arrow\+Style\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classmatplotlib_1_1patches_1_1ArrowStyle__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base}{\+\_\+\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Bracket}{\+\_\+\+Bracket}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Curve}{\+\_\+\+Curve}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1BarAB}{Bar\+AB}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1BracketA}{BracketA}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1BracketAB}{Bracket\+AB}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1BracketB}{BracketB}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1Curve}{Curve}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1CurveA}{CurveA}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1CurveAB}{Curve\+AB}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1CurveB}{CurveB}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1CurveFilledA}{Curve\+FilledA}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1CurveFilledAB}{Curve\+Filled\+AB}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1CurveFilledB}{Curve\+FilledB}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1Fancy}{Fancy}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1Simple}{Simple}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1Wedge}{Wedge}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_aef62456f52e5800fb2787bfcda630ebd}{name}
+\item 
+\hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_af10810a2f2227c7cea3dd8a8a3f2c57e}{Available\+Boxstyles}
+\item 
+\hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_ac93d8558743bde3410b570fdc229fd5c}{List\+Boxstyles}
+\item 
+\hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_a5a4558c31e16095b3fbf9a7a42467a62}{Available\+Arrowstyles}
+\item 
+\hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_a8996dbaf0826eb87eb6ef89f162c7ee2}{Available\+Connectorstyles}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}`ArrowStyle` is a container class which defines several
+arrowstyle classes, which is used to create an arrow path along a
+given path.  These are mainly used with `FancyArrowPatch`.
+
+A arrowstyle object can be either created as::
+
+       ArrowStyle.Fancy(head_length=.4, head_width=.4, tail_width=.4)
+
+or::
+
+       ArrowStyle("Fancy", head_length=.4, head_width=.4, tail_width=.4)
+
+or::
+
+       ArrowStyle("Fancy, head_length=.4, head_width=.4, tail_width=.4")
+
+The following classes are defined
+
+%(AvailableArrowstyles)s
+
+An instance of any arrow style class is a callable object,
+whose call signature is::
+
+    __call__(self, path, mutation_size, linewidth, aspect_ratio=1.)
+
+and it returns a tuple of a `.Path` instance and a boolean
+value. *path* is a `.Path` instance along which the arrow
+will be drawn. *mutation_size* and *aspect_ratio* have the same
+meaning as in `BoxStyle`. *linewidth* is a line width to be
+stroked. This is meant to be used to correct the location of the
+head so that it does not overshoot the destination point, but not all
+classes support it.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1ArrowStyle_a5a4558c31e16095b3fbf9a7a42467a62}\label{classmatplotlib_1_1patches_1_1ArrowStyle_a5a4558c31e16095b3fbf9a7a42467a62}} 
+\index{matplotlib\+::patches\+::\+Arrow\+Style@{matplotlib\+::patches\+::\+Arrow\+Style}!Available\+Arrowstyles@{Available\+Arrowstyles}}
+\index{Available\+Arrowstyles@{Available\+Arrowstyles}!matplotlib\+::patches\+::\+Arrow\+Style@{matplotlib\+::patches\+::\+Arrow\+Style}}
+\subsubsection{\texorpdfstring{Available\+Arrowstyles}{AvailableArrowstyles}}
+{\footnotesize\ttfamily matplotlib.\+patches.\+Arrow\+Style.\+Available\+Arrowstyles\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1ArrowStyle_af10810a2f2227c7cea3dd8a8a3f2c57e}\label{classmatplotlib_1_1patches_1_1ArrowStyle_af10810a2f2227c7cea3dd8a8a3f2c57e}} 
+\index{matplotlib\+::patches\+::\+Arrow\+Style@{matplotlib\+::patches\+::\+Arrow\+Style}!Available\+Boxstyles@{Available\+Boxstyles}}
+\index{Available\+Boxstyles@{Available\+Boxstyles}!matplotlib\+::patches\+::\+Arrow\+Style@{matplotlib\+::patches\+::\+Arrow\+Style}}
+\subsubsection{\texorpdfstring{Available\+Boxstyles}{AvailableBoxstyles}}
+{\footnotesize\ttfamily matplotlib.\+patches.\+Arrow\+Style.\+Available\+Boxstyles\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1ArrowStyle_a8996dbaf0826eb87eb6ef89f162c7ee2}\label{classmatplotlib_1_1patches_1_1ArrowStyle_a8996dbaf0826eb87eb6ef89f162c7ee2}} 
+\index{matplotlib\+::patches\+::\+Arrow\+Style@{matplotlib\+::patches\+::\+Arrow\+Style}!Available\+Connectorstyles@{Available\+Connectorstyles}}
+\index{Available\+Connectorstyles@{Available\+Connectorstyles}!matplotlib\+::patches\+::\+Arrow\+Style@{matplotlib\+::patches\+::\+Arrow\+Style}}
+\subsubsection{\texorpdfstring{Available\+Connectorstyles}{AvailableConnectorstyles}}
+{\footnotesize\ttfamily matplotlib.\+patches.\+Arrow\+Style.\+Available\+Connectorstyles\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1ArrowStyle_ac93d8558743bde3410b570fdc229fd5c}\label{classmatplotlib_1_1patches_1_1ArrowStyle_ac93d8558743bde3410b570fdc229fd5c}} 
+\index{matplotlib\+::patches\+::\+Arrow\+Style@{matplotlib\+::patches\+::\+Arrow\+Style}!List\+Boxstyles@{List\+Boxstyles}}
+\index{List\+Boxstyles@{List\+Boxstyles}!matplotlib\+::patches\+::\+Arrow\+Style@{matplotlib\+::patches\+::\+Arrow\+Style}}
+\subsubsection{\texorpdfstring{List\+Boxstyles}{ListBoxstyles}}
+{\footnotesize\ttfamily matplotlib.\+patches.\+Arrow\+Style.\+List\+Boxstyles\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1ArrowStyle_aef62456f52e5800fb2787bfcda630ebd}\label{classmatplotlib_1_1patches_1_1ArrowStyle_aef62456f52e5800fb2787bfcda630ebd}} 
+\index{matplotlib\+::patches\+::\+Arrow\+Style@{matplotlib\+::patches\+::\+Arrow\+Style}!name@{name}}
+\index{name@{name}!matplotlib\+::patches\+::\+Arrow\+Style@{matplotlib\+::patches\+::\+Arrow\+Style}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily matplotlib.\+patches.\+Arrow\+Style.\+name\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{patches_8py}{patches.\+py}\end{DoxyCompactItemize}

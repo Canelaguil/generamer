@@ -1,0 +1,104 @@
+\hypertarget{classnumpy_1_1distutils_1_1system__info_1_1blas__info}{}\section{numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info Class Reference}
+\label{classnumpy_1_1distutils_1_1system__info_1_1blas__info}\index{numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info@{numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info}}
+
+
+Inheritance diagram for numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnumpy_1_1distutils_1_1system__info_1_1blas__info__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classnumpy_1_1distutils_1_1system__info_1_1blas__info__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1system__info_1_1blas__info_accafdaaed8300b2e39300f8296218f69}{calc\+\_\+info} (self)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1system__info_1_1blas__info_a536a7fd300d4c5f24f45fdfe9a9877b0}{get\+\_\+cblas\+\_\+libs} (self, info)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1system__info_1_1blas__info_abd72dd7c409bcf19150d5bd6ec796f71}{section}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1system__info_1_1blas__info_a0f214a8b756d2ceaa311ef8d9ad6b765}{dir\+\_\+env\+\_\+var}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1system__info_1_1blas__info_aaaedd90dec4dfa5ca0518abd47b6d5fa}{notfounderror}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1system__info_1_1blas__info_accafdaaed8300b2e39300f8296218f69}\label{classnumpy_1_1distutils_1_1system__info_1_1blas__info_accafdaaed8300b2e39300f8296218f69}} 
+\index{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info@{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info}!calc\+\_\+info@{calc\+\_\+info}}
+\index{calc\+\_\+info@{calc\+\_\+info}!numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info@{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info}}
+\subsubsection{\texorpdfstring{calc\+\_\+info()}{calc\_info()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info.\+calc\+\_\+info (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1system__info_1_1blas__info_a536a7fd300d4c5f24f45fdfe9a9877b0}\label{classnumpy_1_1distutils_1_1system__info_1_1blas__info_a536a7fd300d4c5f24f45fdfe9a9877b0}} 
+\index{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info@{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info}!get\+\_\+cblas\+\_\+libs@{get\+\_\+cblas\+\_\+libs}}
+\index{get\+\_\+cblas\+\_\+libs@{get\+\_\+cblas\+\_\+libs}!numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info@{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info}}
+\subsubsection{\texorpdfstring{get\+\_\+cblas\+\_\+libs()}{get\_cblas\_libs()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info.\+get\+\_\+cblas\+\_\+libs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{info }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check whether we can link with CBLAS interface
+
+This method will search through several combinations of libraries
+to check whether CBLAS is present:
+
+1. Libraries in ``info['libraries']``, as is
+2. As 1. but also explicitly adding ``'cblas'`` as a library
+3. As 1. but also explicitly adding ``'blas'`` as a library
+4. Check only library ``'cblas'``
+5. Check only library ``'blas'``
+
+Parameters
+----------
+info : dict
+   system information dictionary for compilation and linking
+
+Returns
+-------
+libraries : list of str or None
+    a list of libraries that enables the use of CBLAS interface.
+    Returns None if not found or a compilation error occurs.
+
+    Since 1.17 returns a list.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1system__info_1_1blas__info_a0f214a8b756d2ceaa311ef8d9ad6b765}\label{classnumpy_1_1distutils_1_1system__info_1_1blas__info_a0f214a8b756d2ceaa311ef8d9ad6b765}} 
+\index{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info@{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info}!dir\+\_\+env\+\_\+var@{dir\+\_\+env\+\_\+var}}
+\index{dir\+\_\+env\+\_\+var@{dir\+\_\+env\+\_\+var}!numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info@{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info}}
+\subsubsection{\texorpdfstring{dir\+\_\+env\+\_\+var}{dir\_env\_var}}
+{\footnotesize\ttfamily numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info.\+dir\+\_\+env\+\_\+var\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1system__info_1_1blas__info_aaaedd90dec4dfa5ca0518abd47b6d5fa}\label{classnumpy_1_1distutils_1_1system__info_1_1blas__info_aaaedd90dec4dfa5ca0518abd47b6d5fa}} 
+\index{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info@{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info}!notfounderror@{notfounderror}}
+\index{notfounderror@{notfounderror}!numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info@{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info}}
+\subsubsection{\texorpdfstring{notfounderror}{notfounderror}}
+{\footnotesize\ttfamily numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info.\+notfounderror\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1system__info_1_1blas__info_abd72dd7c409bcf19150d5bd6ec796f71}\label{classnumpy_1_1distutils_1_1system__info_1_1blas__info_abd72dd7c409bcf19150d5bd6ec796f71}} 
+\index{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info@{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info}!section@{section}}
+\index{section@{section}!numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info@{numpy\+::distutils\+::system\+\_\+info\+::blas\+\_\+info}}
+\subsubsection{\texorpdfstring{section}{section}}
+{\footnotesize\ttfamily numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info.\+section\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/distutils/\hyperlink{system__info_8py}{system\+\_\+info.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,157 @@
+\hypertarget{classaxes__grid1_1_1axes__divider_1_1SubplotDivider}{}\section{axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider Class Reference}
+\label{classaxes__grid1_1_1axes__divider_1_1SubplotDivider}\index{axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider@{axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider}}
+
+
+Inheritance diagram for axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classaxes__grid1_1_1axes__divider_1_1SubplotDivider__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classaxes__grid1_1_1axes__divider_1_1SubplotDivider__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_adaf9b883194737fe03564c33d74f7cdd}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, fig, args, horizontal=None, vertical=None, aspect=None, anchor=\textquotesingle{}C\textquotesingle{})
+\item 
+def \hyperlink{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a460e2f330dbacd14c3828eedbc85d3a9}{get\+\_\+position} (self)
+\item 
+def \hyperlink{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a3013557e176de18c1c3a5341bd75a2ad}{figbox} (self)
+\item 
+def \hyperlink{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_ab6ed6cc3b4764d08f5f63a949ad7bbae}{update\+\_\+params} (self)
+\item 
+def \hyperlink{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a8dd5a4ea0004dfc23872a1b215cb8c3b}{get\+\_\+geometry} (self)
+\item 
+def \hyperlink{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a2c7065101ef639ffa4eed74b73b12cb2}{change\+\_\+geometry} (self, numrows, numcols, num)
+\item 
+def \hyperlink{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a017f435c4c968979fa43b75ede0b7b71}{get\+\_\+subplotspec} (self)
+\item 
+def \hyperlink{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_adce63c553e47ace4016db0a43ad34eff}{set\+\_\+subplotspec} (self, subplotspec)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_ac1e19f29e24965f294377fc52a1fa6bd}{figure}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a236de25d17ac1538723b37267a9d8705}{alternative}
+\item 
+\hyperlink{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a8580519c508839dc9767fd4d8a182c74}{addendum}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The Divider class whose rectangle area is specified as a subplot geometry.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_adaf9b883194737fe03564c33d74f7cdd}\label{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_adaf9b883194737fe03564c33d74f7cdd}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fig,  }\item[{}]{args,  }\item[{}]{horizontal = {\ttfamily None},  }\item[{}]{vertical = {\ttfamily None},  }\item[{}]{aspect = {\ttfamily None},  }\item[{}]{anchor = {\ttfamily \textquotesingle{}C\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+fig : `matplotlib.figure.Figure`
+
+*args : tuple (*nrows*, *ncols*, *index*) or int
+    The array of subplots in the figure has dimensions ``(nrows,
+    ncols)``, and *index* is the index of the subplot being created.
+    *index* starts at 1 in the upper left corner and increases to the
+    right.
+
+    If *nrows*, *ncols*, and *index* are all single digit numbers, then
+    *args* can be passed as a single 3-digit number (e.g. 234 for
+    (2, 3, 4)).
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a2c7065101ef639ffa4eed74b73b12cb2}\label{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a2c7065101ef639ffa4eed74b73b12cb2}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}!change\+\_\+geometry@{change\+\_\+geometry}}
+\index{change\+\_\+geometry@{change\+\_\+geometry}!axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}}
+\subsubsection{\texorpdfstring{change\+\_\+geometry()}{change\_geometry()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider.\+change\+\_\+geometry (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{numrows,  }\item[{}]{numcols,  }\item[{}]{num }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Change subplot geometry, e.g., from (1, 1, 1) to (2, 2, 3).\end{DoxyVerb}
+ \mbox{\Hypertarget{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a3013557e176de18c1c3a5341bd75a2ad}\label{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a3013557e176de18c1c3a5341bd75a2ad}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}!figbox@{figbox}}
+\index{figbox@{figbox}!axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}}
+\subsubsection{\texorpdfstring{figbox()}{figbox()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider.\+figbox (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a8dd5a4ea0004dfc23872a1b215cb8c3b}\label{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a8dd5a4ea0004dfc23872a1b215cb8c3b}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}!get\+\_\+geometry@{get\+\_\+geometry}}
+\index{get\+\_\+geometry@{get\+\_\+geometry}!axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}}
+\subsubsection{\texorpdfstring{get\+\_\+geometry()}{get\_geometry()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider.\+get\+\_\+geometry (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the subplot geometry, e.g., (2, 2, 3).\end{DoxyVerb}
+ \mbox{\Hypertarget{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a460e2f330dbacd14c3828eedbc85d3a9}\label{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a460e2f330dbacd14c3828eedbc85d3a9}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}!get\+\_\+position@{get\+\_\+position}}
+\index{get\+\_\+position@{get\+\_\+position}!axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}}
+\subsubsection{\texorpdfstring{get\+\_\+position()}{get\_position()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider.\+get\+\_\+position (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the bounds of the subplot box.\end{DoxyVerb}
+ \mbox{\Hypertarget{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a017f435c4c968979fa43b75ede0b7b71}\label{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a017f435c4c968979fa43b75ede0b7b71}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}!get\+\_\+subplotspec@{get\+\_\+subplotspec}}
+\index{get\+\_\+subplotspec@{get\+\_\+subplotspec}!axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}}
+\subsubsection{\texorpdfstring{get\+\_\+subplotspec()}{get\_subplotspec()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider.\+get\+\_\+subplotspec (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the SubplotSpec instance.\end{DoxyVerb}
+ \mbox{\Hypertarget{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_adce63c553e47ace4016db0a43ad34eff}\label{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_adce63c553e47ace4016db0a43ad34eff}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}!set\+\_\+subplotspec@{set\+\_\+subplotspec}}
+\index{set\+\_\+subplotspec@{set\+\_\+subplotspec}!axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}}
+\subsubsection{\texorpdfstring{set\+\_\+subplotspec()}{set\_subplotspec()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider.\+set\+\_\+subplotspec (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{subplotspec }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the SubplotSpec instance.\end{DoxyVerb}
+ \mbox{\Hypertarget{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_ab6ed6cc3b4764d08f5f63a949ad7bbae}\label{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_ab6ed6cc3b4764d08f5f63a949ad7bbae}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}!update\+\_\+params@{update\+\_\+params}}
+\index{update\+\_\+params@{update\+\_\+params}!axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}}
+\subsubsection{\texorpdfstring{update\+\_\+params()}{update\_params()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider.\+update\+\_\+params (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a8580519c508839dc9767fd4d8a182c74}\label{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a8580519c508839dc9767fd4d8a182c74}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}!addendum@{addendum}}
+\index{addendum@{addendum}!axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}}
+\subsubsection{\texorpdfstring{addendum}{addendum}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider.\+addendum\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a236de25d17ac1538723b37267a9d8705}\label{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_a236de25d17ac1538723b37267a9d8705}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}!alternative@{alternative}}
+\index{alternative@{alternative}!axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}}
+\subsubsection{\texorpdfstring{alternative}{alternative}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider.\+alternative\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_ac1e19f29e24965f294377fc52a1fa6bd}\label{classaxes__grid1_1_1axes__divider_1_1SubplotDivider_ac1e19f29e24965f294377fc52a1fa6bd}} 
+\index{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}!figure@{figure}}
+\index{figure@{figure}!axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider@{axes\+\_\+grid1\+::axes\+\_\+divider\+::\+Subplot\+Divider}}
+\subsubsection{\texorpdfstring{figure}{figure}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+axes\+\_\+divider.\+Subplot\+Divider.\+figure}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/mpl\+\_\+toolkits/axes\+\_\+grid1/\hyperlink{axes__grid1_2axes__divider_8py}{axes\+\_\+divider.\+py}\end{DoxyCompactItemize}

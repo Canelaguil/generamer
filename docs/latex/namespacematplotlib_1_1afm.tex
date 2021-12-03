@@ -1,0 +1,67 @@
+\hypertarget{namespacematplotlib_1_1afm}{}\section{matplotlib.\+afm Namespace Reference}
+\label{namespacematplotlib_1_1afm}\index{matplotlib.\+afm@{matplotlib.\+afm}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1afm_1_1AFM}{A\+FM}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1afm_ae55dadceac9ed5b9c5e9326a76dc7689}{Char\+Metrics} = namedtuple(\textquotesingle{}Char\+Metrics\textquotesingle{}, \textquotesingle{}width, name, bbox\textquotesingle{})
+\item 
+\hyperlink{namespacematplotlib_1_1afm_a42a94c487f627cf4358a47a8e2008bd2}{Composite\+Part} = namedtuple(\textquotesingle{}Composite\+Part\textquotesingle{}, \textquotesingle{}name, dx, dy\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A python interface to Adobe Font Metrics Files.
+
+Although a number of other python implementations exist, and may be more
+complete than this, it was decided not to go with them because they were
+either:
+
+1) copyrighted or used a non-BSD compatible license
+2) had too many dependencies and a free standing lib was needed
+3) did more than needed and it was easier to write afresh rather than
+   figure out how to get just what was needed.
+
+It is pretty easy to use, and has no external dependencies:
+
+>>> import matplotlib as mpl
+>>> from pathlib import Path
+>>> afm_path = Path(mpl.get_data_path(), 'fonts', 'afm', 'ptmr8a.afm')
+>>>
+>>> from matplotlib.afm import AFM
+>>> with afm_path.open('rb') as fh:
+...     afm = AFM(fh)
+>>> afm.string_width_height('What the heck?')
+(6220.0, 694)
+>>> afm.get_fontname()
+'Times-Roman'
+>>> afm.get_kern_dist('A', 'f')
+0
+>>> afm.get_kern_dist('A', 'y')
+-92.0
+>>> afm.get_bbox_char('!')
+[130, -9, 238, 676]
+
+As in the Adobe Font Metrics File Format Specification, all dimensions
+are given in units of 1/1000 of the scale factor (point size) of the font
+being used.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1afm_ae55dadceac9ed5b9c5e9326a76dc7689}\label{namespacematplotlib_1_1afm_ae55dadceac9ed5b9c5e9326a76dc7689}} 
+\index{matplotlib\+::afm@{matplotlib\+::afm}!Char\+Metrics@{Char\+Metrics}}
+\index{Char\+Metrics@{Char\+Metrics}!matplotlib\+::afm@{matplotlib\+::afm}}
+\subsubsection{\texorpdfstring{Char\+Metrics}{CharMetrics}}
+{\footnotesize\ttfamily matplotlib.\+afm.\+Char\+Metrics = namedtuple(\textquotesingle{}Char\+Metrics\textquotesingle{}, \textquotesingle{}width, name, bbox\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1afm_a42a94c487f627cf4358a47a8e2008bd2}\label{namespacematplotlib_1_1afm_a42a94c487f627cf4358a47a8e2008bd2}} 
+\index{matplotlib\+::afm@{matplotlib\+::afm}!Composite\+Part@{Composite\+Part}}
+\index{Composite\+Part@{Composite\+Part}!matplotlib\+::afm@{matplotlib\+::afm}}
+\subsubsection{\texorpdfstring{Composite\+Part}{CompositePart}}
+{\footnotesize\ttfamily matplotlib.\+afm.\+Composite\+Part = namedtuple(\textquotesingle{}Composite\+Part\textquotesingle{}, \textquotesingle{}name, dx, dy\textquotesingle{})}
+

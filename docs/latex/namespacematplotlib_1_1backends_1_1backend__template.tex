@@ -1,0 +1,116 @@
+\hypertarget{namespacematplotlib_1_1backends_1_1backend__template}{}\section{matplotlib.\+backends.\+backend\+\_\+template Namespace Reference}
+\label{namespacematplotlib_1_1backends_1_1backend__template}\index{matplotlib.\+backends.\+backend\+\_\+template@{matplotlib.\+backends.\+backend\+\_\+template}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate}{Figure\+Canvas\+Template}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1backend__template_1_1FigureManagerTemplate}{Figure\+Manager\+Template}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1backend__template_1_1GraphicsContextTemplate}{Graphics\+Context\+Template}
+\item 
+class \hyperlink{classmatplotlib_1_1backends_1_1backend__template_1_1RendererTemplate}{Renderer\+Template}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1backends_1_1backend__template_ab9f6122de25129df7d0774db8efa8f44}{draw\+\_\+if\+\_\+interactive} ()
+\item 
+def \hyperlink{namespacematplotlib_1_1backends_1_1backend__template_ae98264bf3966793c6428e1795fdac8d6}{show} (block=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1backends_1_1backend__template_a508f73dd99bc0bc5be1c980aeae5bbe5}{new\+\_\+figure\+\_\+manager} (num, args, Figure\+Class=\hyperlink{classmatplotlib_1_1figure_1_1Figure}{Figure}, kwargs)
+\item 
+def \hyperlink{namespacematplotlib_1_1backends_1_1backend__template_aca13ba6fb1ff5437f6a162699af45f74}{new\+\_\+figure\+\_\+manager\+\_\+given\+\_\+figure} (num, figure)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1backends_1_1backend__template_af766f50365e7bb5944cc0b140e3b3200}{Figure\+Canvas} = \hyperlink{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate}{Figure\+Canvas\+Template}
+\item 
+\hyperlink{namespacematplotlib_1_1backends_1_1backend__template_a44c2f2ee4fb04bd94b280dfaa2f76cec}{Figure\+Manager} = \hyperlink{classmatplotlib_1_1backends_1_1backend__template_1_1FigureManagerTemplate}{Figure\+Manager\+Template}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A fully functional, do-nothing backend intended as a template for backend
+writers.  It is fully functional in that you can select it as a backend e.g.
+with ::
+
+    import matplotlib
+    matplotlib.use("template")
+
+and your program will (should!) run without error, though no output is
+produced.  This provides a starting point for backend writers; you can
+selectively implement drawing methods (`~.RendererTemplate.draw_path`,
+`~.RendererTemplate.draw_image`, etc.) and slowly see your figure come to life
+instead having to have a full blown implementation before getting any results.
+
+Copy this file to a directory outside of the Matplotlib source tree, somewhere
+where Python can import it (by adding the directory to your ``sys.path`` or by
+packaging it as a normal Python package); if the backend is importable as
+``import my.backend`` you can then select it using ::
+
+    import matplotlib
+    matplotlib.use("module://my.backend")
+
+If your backend implements support for saving figures (i.e. has a `print_xyz`
+method), you can register it as the default handler for a given file type::
+
+    from matplotlib.backend_bases import register_backend
+    register_backend('xyz', 'my_backend', 'XYZ File Format')
+    ...
+    plt.savefig("figure.xyz")
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__template_ab9f6122de25129df7d0774db8efa8f44}\label{namespacematplotlib_1_1backends_1_1backend__template_ab9f6122de25129df7d0774db8efa8f44}} 
+\index{matplotlib\+::backends\+::backend\+\_\+template@{matplotlib\+::backends\+::backend\+\_\+template}!draw\+\_\+if\+\_\+interactive@{draw\+\_\+if\+\_\+interactive}}
+\index{draw\+\_\+if\+\_\+interactive@{draw\+\_\+if\+\_\+interactive}!matplotlib\+::backends\+::backend\+\_\+template@{matplotlib\+::backends\+::backend\+\_\+template}}
+\subsubsection{\texorpdfstring{draw\+\_\+if\+\_\+interactive()}{draw\_if\_interactive()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+template.\+draw\+\_\+if\+\_\+interactive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}For image backends - is not required.
+For GUI backends - this should be overridden if drawing should be done in
+interactive python mode.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__template_a508f73dd99bc0bc5be1c980aeae5bbe5}\label{namespacematplotlib_1_1backends_1_1backend__template_a508f73dd99bc0bc5be1c980aeae5bbe5}} 
+\index{matplotlib\+::backends\+::backend\+\_\+template@{matplotlib\+::backends\+::backend\+\_\+template}!new\+\_\+figure\+\_\+manager@{new\+\_\+figure\+\_\+manager}}
+\index{new\+\_\+figure\+\_\+manager@{new\+\_\+figure\+\_\+manager}!matplotlib\+::backends\+::backend\+\_\+template@{matplotlib\+::backends\+::backend\+\_\+template}}
+\subsubsection{\texorpdfstring{new\+\_\+figure\+\_\+manager()}{new\_figure\_manager()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+template.\+new\+\_\+figure\+\_\+manager (\begin{DoxyParamCaption}\item[{}]{num,  }\item[{}]{args,  }\item[{}]{Figure\+Class = {\ttfamily \hyperlink{classmatplotlib_1_1figure_1_1Figure}{Figure}},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new figure manager instance.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__template_aca13ba6fb1ff5437f6a162699af45f74}\label{namespacematplotlib_1_1backends_1_1backend__template_aca13ba6fb1ff5437f6a162699af45f74}} 
+\index{matplotlib\+::backends\+::backend\+\_\+template@{matplotlib\+::backends\+::backend\+\_\+template}!new\+\_\+figure\+\_\+manager\+\_\+given\+\_\+figure@{new\+\_\+figure\+\_\+manager\+\_\+given\+\_\+figure}}
+\index{new\+\_\+figure\+\_\+manager\+\_\+given\+\_\+figure@{new\+\_\+figure\+\_\+manager\+\_\+given\+\_\+figure}!matplotlib\+::backends\+::backend\+\_\+template@{matplotlib\+::backends\+::backend\+\_\+template}}
+\subsubsection{\texorpdfstring{new\+\_\+figure\+\_\+manager\+\_\+given\+\_\+figure()}{new\_figure\_manager\_given\_figure()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+template.\+new\+\_\+figure\+\_\+manager\+\_\+given\+\_\+figure (\begin{DoxyParamCaption}\item[{}]{num,  }\item[{}]{figure }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new figure manager instance for the given figure.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__template_ae98264bf3966793c6428e1795fdac8d6}\label{namespacematplotlib_1_1backends_1_1backend__template_ae98264bf3966793c6428e1795fdac8d6}} 
+\index{matplotlib\+::backends\+::backend\+\_\+template@{matplotlib\+::backends\+::backend\+\_\+template}!show@{show}}
+\index{show@{show}!matplotlib\+::backends\+::backend\+\_\+template@{matplotlib\+::backends\+::backend\+\_\+template}}
+\subsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+template.\+show (\begin{DoxyParamCaption}\item[{}]{block = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}For image backends - is not required.
+For GUI backends - show() is usually the last line of a pyplot script and
+tells the backend that it is time to draw.  In interactive mode, this
+should do nothing.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__template_af766f50365e7bb5944cc0b140e3b3200}\label{namespacematplotlib_1_1backends_1_1backend__template_af766f50365e7bb5944cc0b140e3b3200}} 
+\index{matplotlib\+::backends\+::backend\+\_\+template@{matplotlib\+::backends\+::backend\+\_\+template}!Figure\+Canvas@{Figure\+Canvas}}
+\index{Figure\+Canvas@{Figure\+Canvas}!matplotlib\+::backends\+::backend\+\_\+template@{matplotlib\+::backends\+::backend\+\_\+template}}
+\subsubsection{\texorpdfstring{Figure\+Canvas}{FigureCanvas}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+template.\+Figure\+Canvas = \hyperlink{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate}{Figure\+Canvas\+Template}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1backend__template_a44c2f2ee4fb04bd94b280dfaa2f76cec}\label{namespacematplotlib_1_1backends_1_1backend__template_a44c2f2ee4fb04bd94b280dfaa2f76cec}} 
+\index{matplotlib\+::backends\+::backend\+\_\+template@{matplotlib\+::backends\+::backend\+\_\+template}!Figure\+Manager@{Figure\+Manager}}
+\index{Figure\+Manager@{Figure\+Manager}!matplotlib\+::backends\+::backend\+\_\+template@{matplotlib\+::backends\+::backend\+\_\+template}}
+\subsubsection{\texorpdfstring{Figure\+Manager}{FigureManager}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+template.\+Figure\+Manager = \hyperlink{classmatplotlib_1_1backends_1_1backend__template_1_1FigureManagerTemplate}{Figure\+Manager\+Template}}
+

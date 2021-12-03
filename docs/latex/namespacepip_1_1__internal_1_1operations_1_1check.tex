@@ -1,0 +1,121 @@
+\hypertarget{namespacepip_1_1__internal_1_1operations_1_1check}{}\section{pip.\+\_\+internal.\+operations.\+check Namespace Reference}
+\label{namespacepip_1_1__internal_1_1operations_1_1check}\index{pip.\+\_\+internal.\+operations.\+check@{pip.\+\_\+internal.\+operations.\+check}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1operations_1_1check_1_1PackageDetails}{Package\+Details}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1check_a16f9450b88a86043db9fc201080a6315}{create\+\_\+package\+\_\+set\+\_\+from\+\_\+installed} ()
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1check_a1ae204e94552bedc2f09993016f77e4e}{check\+\_\+package\+\_\+set} (package\+\_\+set, should\+\_\+ignore=None)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1check_a872c01627dab38f37f73bcbf182260f2}{check\+\_\+install\+\_\+conflicts} (to\+\_\+install)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1operations_1_1check_ae884318312138e6f7ab45bd1d45180d7}{logger}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1operations_1_1check_a772274a200eddcd0a3574e45e825c1e4}{Package\+Set}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1operations_1_1check_aca51bd22558103df3ace175abcb0e024}{Missing}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1operations_1_1check_a6e1d711030dfddbacc38304bfc8ef87a}{Conflicting}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1operations_1_1check_a36e097c8c839760cdb999e39b799944c}{Missing\+Dict}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1operations_1_1check_a5b777bebebaee1d9c6751c1b639b72f4}{Conflicting\+Dict}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1operations_1_1check_acd52e1ca33b255f0f9a8b19883a9c7f4}{Check\+Result}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1operations_1_1check_a83b303238632b9b573cd69697b9a45e3}{Conflict\+Details}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Validation of dependencies of packages
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1check_a872c01627dab38f37f73bcbf182260f2}\label{namespacepip_1_1__internal_1_1operations_1_1check_a872c01627dab38f37f73bcbf182260f2}} 
+\index{pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}!check\+\_\+install\+\_\+conflicts@{check\+\_\+install\+\_\+conflicts}}
+\index{check\+\_\+install\+\_\+conflicts@{check\+\_\+install\+\_\+conflicts}!pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}}
+\subsubsection{\texorpdfstring{check\+\_\+install\+\_\+conflicts()}{check\_install\_conflicts()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+check.\+check\+\_\+install\+\_\+conflicts (\begin{DoxyParamCaption}\item[{}]{to\+\_\+install }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}For checking if the dependency graph would be consistent after \
+installing given requirements
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1check_a1ae204e94552bedc2f09993016f77e4e}\label{namespacepip_1_1__internal_1_1operations_1_1check_a1ae204e94552bedc2f09993016f77e4e}} 
+\index{pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}!check\+\_\+package\+\_\+set@{check\+\_\+package\+\_\+set}}
+\index{check\+\_\+package\+\_\+set@{check\+\_\+package\+\_\+set}!pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}}
+\subsubsection{\texorpdfstring{check\+\_\+package\+\_\+set()}{check\_package\_set()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+check.\+check\+\_\+package\+\_\+set (\begin{DoxyParamCaption}\item[{}]{package\+\_\+set,  }\item[{}]{should\+\_\+ignore = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if a package set is consistent
+
+If should_ignore is passed, it should be a callable that takes a
+package name and returns a boolean.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1check_a16f9450b88a86043db9fc201080a6315}\label{namespacepip_1_1__internal_1_1operations_1_1check_a16f9450b88a86043db9fc201080a6315}} 
+\index{pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}!create\+\_\+package\+\_\+set\+\_\+from\+\_\+installed@{create\+\_\+package\+\_\+set\+\_\+from\+\_\+installed}}
+\index{create\+\_\+package\+\_\+set\+\_\+from\+\_\+installed@{create\+\_\+package\+\_\+set\+\_\+from\+\_\+installed}!pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}}
+\subsubsection{\texorpdfstring{create\+\_\+package\+\_\+set\+\_\+from\+\_\+installed()}{create\_package\_set\_from\_installed()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+check.\+create\+\_\+package\+\_\+set\+\_\+from\+\_\+installed (\begin{DoxyParamCaption}\item[{}]{Tuple,  }\item[{}]{Package\+Set,  }\item[{}]{bool }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Converts a list of distributions into a PackageSet.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1check_acd52e1ca33b255f0f9a8b19883a9c7f4}\label{namespacepip_1_1__internal_1_1operations_1_1check_acd52e1ca33b255f0f9a8b19883a9c7f4}} 
+\index{pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}!Check\+Result@{Check\+Result}}
+\index{Check\+Result@{Check\+Result}!pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}}
+\subsubsection{\texorpdfstring{Check\+Result}{CheckResult}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+operations.\+check.\+Check\+Result}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1check_a83b303238632b9b573cd69697b9a45e3}\label{namespacepip_1_1__internal_1_1operations_1_1check_a83b303238632b9b573cd69697b9a45e3}} 
+\index{pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}!Conflict\+Details@{Conflict\+Details}}
+\index{Conflict\+Details@{Conflict\+Details}!pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}}
+\subsubsection{\texorpdfstring{Conflict\+Details}{ConflictDetails}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+operations.\+check.\+Conflict\+Details}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1check_a6e1d711030dfddbacc38304bfc8ef87a}\label{namespacepip_1_1__internal_1_1operations_1_1check_a6e1d711030dfddbacc38304bfc8ef87a}} 
+\index{pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}!Conflicting@{Conflicting}}
+\index{Conflicting@{Conflicting}!pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}}
+\subsubsection{\texorpdfstring{Conflicting}{Conflicting}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+operations.\+check.\+Conflicting}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1check_a5b777bebebaee1d9c6751c1b639b72f4}\label{namespacepip_1_1__internal_1_1operations_1_1check_a5b777bebebaee1d9c6751c1b639b72f4}} 
+\index{pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}!Conflicting\+Dict@{Conflicting\+Dict}}
+\index{Conflicting\+Dict@{Conflicting\+Dict}!pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}}
+\subsubsection{\texorpdfstring{Conflicting\+Dict}{ConflictingDict}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+operations.\+check.\+Conflicting\+Dict}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1check_ae884318312138e6f7ab45bd1d45180d7}\label{namespacepip_1_1__internal_1_1operations_1_1check_ae884318312138e6f7ab45bd1d45180d7}} 
+\index{pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}!logger@{logger}}
+\index{logger@{logger}!pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}}
+\subsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+operations.\+check.\+logger}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1check_aca51bd22558103df3ace175abcb0e024}\label{namespacepip_1_1__internal_1_1operations_1_1check_aca51bd22558103df3ace175abcb0e024}} 
+\index{pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}!Missing@{Missing}}
+\index{Missing@{Missing}!pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}}
+\subsubsection{\texorpdfstring{Missing}{Missing}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+operations.\+check.\+Missing}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1check_a36e097c8c839760cdb999e39b799944c}\label{namespacepip_1_1__internal_1_1operations_1_1check_a36e097c8c839760cdb999e39b799944c}} 
+\index{pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}!Missing\+Dict@{Missing\+Dict}}
+\index{Missing\+Dict@{Missing\+Dict}!pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}}
+\subsubsection{\texorpdfstring{Missing\+Dict}{MissingDict}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+operations.\+check.\+Missing\+Dict}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1check_a772274a200eddcd0a3574e45e825c1e4}\label{namespacepip_1_1__internal_1_1operations_1_1check_a772274a200eddcd0a3574e45e825c1e4}} 
+\index{pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}!Package\+Set@{Package\+Set}}
+\index{Package\+Set@{Package\+Set}!pip\+::\+\_\+internal\+::operations\+::check@{pip\+::\+\_\+internal\+::operations\+::check}}
+\subsubsection{\texorpdfstring{Package\+Set}{PackageSet}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+operations.\+check.\+Package\+Set}
+

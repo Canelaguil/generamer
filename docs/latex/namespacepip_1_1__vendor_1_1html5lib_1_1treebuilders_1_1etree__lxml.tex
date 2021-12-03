@@ -1,0 +1,77 @@
+\hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml}{}\section{pip.\+\_\+vendor.\+html5lib.\+treebuilders.\+etree\+\_\+lxml Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml}\index{pip.\+\_\+vendor.\+html5lib.\+treebuilders.\+etree\+\_\+lxml@{pip.\+\_\+vendor.\+html5lib.\+treebuilders.\+etree\+\_\+lxml}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_1_1Document}{Document}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_1_1DocumentType}{Document\+Type}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_1_1TreeBuilder}{Tree\+Builder}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_aa7b80f9257214665ee9b57995e458cb2}{test\+Serializer} (element)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_af108ba67eca36b49a3d75e78d0d35be8}{tostring} (element)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_aba667d4a2a267d7c030329d4182b5810}{full\+Tree}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_ac56cb1903d366869ebbc73f2aeef1ebe}{tag\+\_\+regexp}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_a8613b8362263a338310f8fcd95866c83}{comment\+\_\+type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Module for supporting the lxml.etree library. The idea here is to use as much
+of the native library as possible, without using fragile hacks like custom element
+names that break between releases. The downside of this is that we cannot represent
+all possible trees; specifically the following are known to cause problems:
+
+Text or comments as siblings of the root element
+Docypes with no name
+
+When any of these things occur, we emit a DataLossWarning
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_aa7b80f9257214665ee9b57995e458cb2}\label{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_aa7b80f9257214665ee9b57995e458cb2}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml}!test\+Serializer@{test\+Serializer}}
+\index{test\+Serializer@{test\+Serializer}!pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml}}
+\subsubsection{\texorpdfstring{test\+Serializer()}{testSerializer()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+html5lib.\+treebuilders.\+etree\+\_\+lxml.\+test\+Serializer (\begin{DoxyParamCaption}\item[{}]{element }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_af108ba67eca36b49a3d75e78d0d35be8}\label{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_af108ba67eca36b49a3d75e78d0d35be8}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml}!tostring@{tostring}}
+\index{tostring@{tostring}!pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml}}
+\subsubsection{\texorpdfstring{tostring()}{tostring()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+html5lib.\+treebuilders.\+etree\+\_\+lxml.\+tostring (\begin{DoxyParamCaption}\item[{}]{element }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Serialize an element and its child nodes to a string\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_a8613b8362263a338310f8fcd95866c83}\label{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_a8613b8362263a338310f8fcd95866c83}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml}!comment\+\_\+type@{comment\+\_\+type}}
+\index{comment\+\_\+type@{comment\+\_\+type}!pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml}}
+\subsubsection{\texorpdfstring{comment\+\_\+type}{comment\_type}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+html5lib.\+treebuilders.\+etree\+\_\+lxml.\+comment\+\_\+type}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_aba667d4a2a267d7c030329d4182b5810}\label{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_aba667d4a2a267d7c030329d4182b5810}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml}!full\+Tree@{full\+Tree}}
+\index{full\+Tree@{full\+Tree}!pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml}}
+\subsubsection{\texorpdfstring{full\+Tree}{fullTree}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+html5lib.\+treebuilders.\+etree\+\_\+lxml.\+full\+Tree}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_ac56cb1903d366869ebbc73f2aeef1ebe}\label{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml_ac56cb1903d366869ebbc73f2aeef1ebe}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml}!tag\+\_\+regexp@{tag\+\_\+regexp}}
+\index{tag\+\_\+regexp@{tag\+\_\+regexp}!pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders\+::etree\+\_\+lxml}}
+\subsubsection{\texorpdfstring{tag\+\_\+regexp}{tag\_regexp}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+html5lib.\+treebuilders.\+etree\+\_\+lxml.\+tag\+\_\+regexp}
+

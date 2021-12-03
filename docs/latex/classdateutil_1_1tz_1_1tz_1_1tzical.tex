@@ -1,0 +1,98 @@
+\hypertarget{classdateutil_1_1tz_1_1tz_1_1tzical}{}\section{dateutil.\+tz.\+tz.\+tzical Class Reference}
+\label{classdateutil_1_1tz_1_1tz_1_1tzical}\index{dateutil.\+tz.\+tz.\+tzical@{dateutil.\+tz.\+tz.\+tzical}}
+
+
+Inheritance diagram for dateutil.\+tz.\+tz.\+tzical\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classdateutil_1_1tz_1_1tz_1_1tzical__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dateutil.\+tz.\+tz.\+tzical\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classdateutil_1_1tz_1_1tz_1_1tzical__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzical_ab63dc4cae6ef16d7c738c3cc56d8136b}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, fileobj)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzical_a90cbed637b2fe6f2340107910823efb4}{keys} (self)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzical_ae45347e1bed90941d4767d415dd66bb8}{get} (self, tzid=None)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzical_aafd14c1858e6721546e85648f1415899}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This object is designed to parse an iCalendar-style ``VTIMEZONE`` structure
+as set out in `RFC 5545`_ Section 4.6.5 into one or more `tzinfo` objects.
+
+:param `fileobj`:
+    A file or stream in iCalendar format, which should be UTF-8 encoded
+    with CRLF endings.
+
+.. _`RFC 5545`: https://tools.ietf.org/html/rfc5545
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzical_ab63dc4cae6ef16d7c738c3cc56d8136b}\label{classdateutil_1_1tz_1_1tz_1_1tzical_ab63dc4cae6ef16d7c738c3cc56d8136b}} 
+\index{dateutil\+::tz\+::tz\+::tzical@{dateutil\+::tz\+::tz\+::tzical}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!dateutil\+::tz\+::tz\+::tzical@{dateutil\+::tz\+::tz\+::tzical}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzical.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fileobj }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzical_aafd14c1858e6721546e85648f1415899}\label{classdateutil_1_1tz_1_1tz_1_1tzical_aafd14c1858e6721546e85648f1415899}} 
+\index{dateutil\+::tz\+::tz\+::tzical@{dateutil\+::tz\+::tz\+::tzical}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!dateutil\+::tz\+::tz\+::tzical@{dateutil\+::tz\+::tz\+::tzical}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzical.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzical_ae45347e1bed90941d4767d415dd66bb8}\label{classdateutil_1_1tz_1_1tz_1_1tzical_ae45347e1bed90941d4767d415dd66bb8}} 
+\index{dateutil\+::tz\+::tz\+::tzical@{dateutil\+::tz\+::tz\+::tzical}!get@{get}}
+\index{get@{get}!dateutil\+::tz\+::tz\+::tzical@{dateutil\+::tz\+::tz\+::tzical}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzical.\+get (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tzid = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieve a :py:class:`datetime.tzinfo` object by its ``tzid``.
+
+:param tzid:
+    If there is exactly one time zone available, omitting ``tzid``
+    or passing :py:const:`None` value returns it. Otherwise a valid
+    key (which can be retrieved from :func:`keys`) is required.
+
+:raises ValueError:
+    Raised if ``tzid`` is not specified but there are either more
+    or fewer than 1 zone defined.
+
+:returns:
+    Returns either a :py:class:`datetime.tzinfo` object representing
+    the relevant time zone or :py:const:`None` if the ``tzid`` was
+    not found.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzical_a90cbed637b2fe6f2340107910823efb4}\label{classdateutil_1_1tz_1_1tz_1_1tzical_a90cbed637b2fe6f2340107910823efb4}} 
+\index{dateutil\+::tz\+::tz\+::tzical@{dateutil\+::tz\+::tz\+::tzical}!keys@{keys}}
+\index{keys@{keys}!dateutil\+::tz\+::tz\+::tzical@{dateutil\+::tz\+::tz\+::tzical}}
+\subsubsection{\texorpdfstring{keys()}{keys()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzical.\+keys (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves the available time zones as a list.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/dateutil/tz/\hyperlink{tz_8py}{tz.\+py}\end{DoxyCompactItemize}

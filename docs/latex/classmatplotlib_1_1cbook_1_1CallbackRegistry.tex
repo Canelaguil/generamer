@@ -1,0 +1,140 @@
+\hypertarget{classmatplotlib_1_1cbook_1_1CallbackRegistry}{}\section{matplotlib.\+cbook.\+Callback\+Registry Class Reference}
+\label{classmatplotlib_1_1cbook_1_1CallbackRegistry}\index{matplotlib.\+cbook.\+Callback\+Registry@{matplotlib.\+cbook.\+Callback\+Registry}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1CallbackRegistry_a9f3b264a1b4c5d2f700636a58d947178}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1cbook_1_1CallbackRegistry_a2c68ab86f7ec16b687844de1ad5ce879}{exception\+\_\+handler}=\+\_\+exception\+\_\+printer)
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1CallbackRegistry_a5bf985dc3fc71122fc3fbdaa24df21d1}{\+\_\+\+\_\+getstate\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1CallbackRegistry_a50ad3b506119392cf96d74538fa20cd3}{\+\_\+\+\_\+setstate\+\_\+\+\_\+} (self, state)
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1CallbackRegistry_ac3f96e0c304d3926e7f8693571f4144a}{connect} (self, signal, func)
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1CallbackRegistry_a1f7119ba320ac9bfc61f6680f2c08411}{disconnect} (self, cid)
+\item 
+def \hyperlink{classmatplotlib_1_1cbook_1_1CallbackRegistry_a8c0c087b6c657c760860d14cf3e8b75f}{process} (self, s, args, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1cbook_1_1CallbackRegistry_a2c68ab86f7ec16b687844de1ad5ce879}{exception\+\_\+handler}
+\item 
+\hyperlink{classmatplotlib_1_1cbook_1_1CallbackRegistry_a9ea234f5259f5647b3a9b0a9c04770e3}{callbacks}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Handle registering and disconnecting for a set of signals and callbacks:
+
+    >>> def oneat(x):
+    ...    print('eat', x)
+    >>> def ondrink(x):
+    ...    print('drink', x)
+
+    >>> from matplotlib.cbook import CallbackRegistry
+    >>> callbacks = CallbackRegistry()
+
+    >>> id_eat = callbacks.connect('eat', oneat)
+    >>> id_drink = callbacks.connect('drink', ondrink)
+
+    >>> callbacks.process('drink', 123)
+    drink 123
+    >>> callbacks.process('eat', 456)
+    eat 456
+    >>> callbacks.process('be merry', 456) # nothing will be called
+    >>> callbacks.disconnect(id_eat)
+    >>> callbacks.process('eat', 456)      # nothing will be called
+
+In practice, one should always disconnect all callbacks when they are
+no longer needed to avoid dangling references (and thus memory leaks).
+However, real code in Matplotlib rarely does so, and due to its design,
+it is rather difficult to place this kind of code.  To get around this,
+and prevent this class of memory leaks, we instead store weak references
+to bound methods only, so when the destination object needs to die, the
+CallbackRegistry won't keep it alive.
+
+Parameters
+----------
+exception_handler : callable, optional
+   If not None, *exception_handler* must be a function that takes an
+   `Exception` as single parameter.  It gets called with any `Exception`
+   raised by the callbacks during `CallbackRegistry.process`, and may
+   either re-raise the exception or handle it in another manner.
+
+   The default handler prints the exception (with `traceback.print_exc`) if
+   an interactive event loop is running; it re-raises the exception if no
+   interactive event loop is running.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1CallbackRegistry_a9f3b264a1b4c5d2f700636a58d947178}\label{classmatplotlib_1_1cbook_1_1CallbackRegistry_a9f3b264a1b4c5d2f700636a58d947178}} 
+\index{matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Callback\+Registry.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{exception\+\_\+handler = {\ttfamily \+\_\+exception\+\_\+printer} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1CallbackRegistry_a5bf985dc3fc71122fc3fbdaa24df21d1}\label{classmatplotlib_1_1cbook_1_1CallbackRegistry_a5bf985dc3fc71122fc3fbdaa24df21d1}} 
+\index{matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}!\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}!matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getstate\+\_\+\+\_\+()}{\_\_getstate\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Callback\+Registry.\+\_\+\+\_\+getstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1CallbackRegistry_a50ad3b506119392cf96d74538fa20cd3}\label{classmatplotlib_1_1cbook_1_1CallbackRegistry_a50ad3b506119392cf96d74538fa20cd3}} 
+\index{matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}!\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}!matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setstate\+\_\+\+\_\+()}{\_\_setstate\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Callback\+Registry.\+\_\+\+\_\+setstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1CallbackRegistry_ac3f96e0c304d3926e7f8693571f4144a}\label{classmatplotlib_1_1cbook_1_1CallbackRegistry_ac3f96e0c304d3926e7f8693571f4144a}} 
+\index{matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}!connect@{connect}}
+\index{connect@{connect}!matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}}
+\subsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Callback\+Registry.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{signal,  }\item[{}]{func }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register *func* to be called when signal *signal* is generated.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1CallbackRegistry_a1f7119ba320ac9bfc61f6680f2c08411}\label{classmatplotlib_1_1cbook_1_1CallbackRegistry_a1f7119ba320ac9bfc61f6680f2c08411}} 
+\index{matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}}
+\subsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Callback\+Registry.\+disconnect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cid }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Disconnect the callback registered with callback id *cid*.
+
+No error is raised if such a callback does not exist.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1CallbackRegistry_a8c0c087b6c657c760860d14cf3e8b75f}\label{classmatplotlib_1_1cbook_1_1CallbackRegistry_a8c0c087b6c657c760860d14cf3e8b75f}} 
+\index{matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}!process@{process}}
+\index{process@{process}!matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}}
+\subsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily def matplotlib.\+cbook.\+Callback\+Registry.\+process (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{s,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Process signal *s*.
+
+All of the functions registered to receive callbacks on *s* will be
+called with ``*args`` and ``**kwargs``.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1CallbackRegistry_a9ea234f5259f5647b3a9b0a9c04770e3}\label{classmatplotlib_1_1cbook_1_1CallbackRegistry_a9ea234f5259f5647b3a9b0a9c04770e3}} 
+\index{matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}!callbacks@{callbacks}}
+\index{callbacks@{callbacks}!matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}}
+\subsubsection{\texorpdfstring{callbacks}{callbacks}}
+{\footnotesize\ttfamily matplotlib.\+cbook.\+Callback\+Registry.\+callbacks}
+
+\mbox{\Hypertarget{classmatplotlib_1_1cbook_1_1CallbackRegistry_a2c68ab86f7ec16b687844de1ad5ce879}\label{classmatplotlib_1_1cbook_1_1CallbackRegistry_a2c68ab86f7ec16b687844de1ad5ce879}} 
+\index{matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}!exception\+\_\+handler@{exception\+\_\+handler}}
+\index{exception\+\_\+handler@{exception\+\_\+handler}!matplotlib\+::cbook\+::\+Callback\+Registry@{matplotlib\+::cbook\+::\+Callback\+Registry}}
+\subsubsection{\texorpdfstring{exception\+\_\+handler}{exception\_handler}}
+{\footnotesize\ttfamily matplotlib.\+cbook.\+Callback\+Registry.\+exception\+\_\+handler}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/cbook/\hyperlink{venv_2lib_2python3_89_2site-packages_2matplotlib_2cbook_2____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}\end{DoxyCompactItemize}

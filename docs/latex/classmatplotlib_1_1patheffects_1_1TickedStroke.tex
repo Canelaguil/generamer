@@ -1,0 +1,96 @@
+\hypertarget{classmatplotlib_1_1patheffects_1_1TickedStroke}{}\section{matplotlib.\+patheffects.\+Ticked\+Stroke Class Reference}
+\label{classmatplotlib_1_1patheffects_1_1TickedStroke}\index{matplotlib.\+patheffects.\+Ticked\+Stroke@{matplotlib.\+patheffects.\+Ticked\+Stroke}}
+
+
+Inheritance diagram for matplotlib.\+patheffects.\+Ticked\+Stroke\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classmatplotlib_1_1patheffects_1_1TickedStroke__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+patheffects.\+Ticked\+Stroke\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classmatplotlib_1_1patheffects_1_1TickedStroke__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1patheffects_1_1TickedStroke_aa306391297e13180c8df34f4b4c97fad}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, offset=(0, 0), spacing=10.\+0, angle=45.\+0, length=np.\+sqrt(2), kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1patheffects_1_1TickedStroke_ad2aedb41ade5de1d45ab82b6e2e445f2}{draw\+\_\+path} (self, renderer, gc, tpath, affine, rgb\+Face)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A line-based PathEffect which draws a path with a ticked style.
+
+This line style is frequently used to represent constraints in
+optimization.  The ticks may be used to indicate that one side
+of the line is invalid or to represent a closed boundary of a
+domain (i.e. a wall or the edge of a pipe).
+
+The spacing, length, and angle of ticks can be controlled.
+
+This line style is sometimes referred to as a hatched line.
+
+See also the :doc:`contour demo example
+</gallery/lines_bars_and_markers/lines_with_ticks_demo>`.
+
+See also the :doc:`contours in optimization example
+</gallery/images_contours_and_fields/contours_in_optimization_demo>`.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patheffects_1_1TickedStroke_aa306391297e13180c8df34f4b4c97fad}\label{classmatplotlib_1_1patheffects_1_1TickedStroke_aa306391297e13180c8df34f4b4c97fad}} 
+\index{matplotlib\+::patheffects\+::\+Ticked\+Stroke@{matplotlib\+::patheffects\+::\+Ticked\+Stroke}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::patheffects\+::\+Ticked\+Stroke@{matplotlib\+::patheffects\+::\+Ticked\+Stroke}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+patheffects.\+Ticked\+Stroke.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offset = {\ttfamily (0,~0)},  }\item[{}]{spacing = {\ttfamily 10.0},  }\item[{}]{angle = {\ttfamily 45.0},  }\item[{}]{length = {\ttfamily np.sqrt(2)},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+offset : (float, float), default: (0, 0)
+    The (x, y) offset to apply to the path, in points.
+spacing : float, default: 10.0
+    The spacing between ticks in points.
+angle : float, default: 45.0
+    The angle between the path and the tick in degrees.  The angle
+    is measured as if you were an ant walking along the curve, with
+    zero degrees pointing directly ahead, 90 to your left, -90
+    to your right, and 180 behind you.
+length : float, default: 1.414
+    The length of the tick relative to spacing.
+    Recommended length = 1.414 (sqrt(2)) when angle=45, length=1.0
+    when angle=90 and length=2.0 when angle=60.
+**kwargs
+    Extra keywords are stored and passed through to
+    :meth:`AbstractPathEffect._update_gc`.
+
+Examples
+--------
+See :doc:`/gallery/misc/tickedstroke_demo`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patheffects_1_1TickedStroke_ad2aedb41ade5de1d45ab82b6e2e445f2}\label{classmatplotlib_1_1patheffects_1_1TickedStroke_ad2aedb41ade5de1d45ab82b6e2e445f2}} 
+\index{matplotlib\+::patheffects\+::\+Ticked\+Stroke@{matplotlib\+::patheffects\+::\+Ticked\+Stroke}!draw\+\_\+path@{draw\+\_\+path}}
+\index{draw\+\_\+path@{draw\+\_\+path}!matplotlib\+::patheffects\+::\+Ticked\+Stroke@{matplotlib\+::patheffects\+::\+Ticked\+Stroke}}
+\subsubsection{\texorpdfstring{draw\+\_\+path()}{draw\_path()}}
+{\footnotesize\ttfamily def matplotlib.\+patheffects.\+Ticked\+Stroke.\+draw\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer,  }\item[{}]{gc,  }\item[{}]{tpath,  }\item[{}]{affine,  }\item[{}]{rgb\+Face }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw the path with updated gc.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{patheffects_8py}{patheffects.\+py}\end{DoxyCompactItemize}

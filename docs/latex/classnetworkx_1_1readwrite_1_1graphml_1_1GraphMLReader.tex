@@ -1,0 +1,147 @@
+\hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader}{}\section{networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader Class Reference}
+\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader}\index{networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader@{networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader}}
+
+
+Inheritance diagram for networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a756b1c25522fb085a0347965c51d2408}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_ad620d46e7dc0ad416f9219fcc2d3acf8}{node\+\_\+type}=str, \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_af4e6ae7fc857e3fd6613a28628b021fe}{edge\+\_\+key\+\_\+type}=int, force\+\_\+multigraph=False)
+\item 
+def \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a3d90d4aa678f271c4181011c867bd4bc}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, path=None, string=None)
+\item 
+def \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a08bdae7ad05a12452eb2b688ac2c85a3}{make\+\_\+graph} (self, graph\+\_\+xml, graphml\+\_\+keys, defaults, G=None)
+\item 
+def \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_aa13535e05c406b959a0100425d5d3482}{add\+\_\+node} (self, G, node\+\_\+xml, graphml\+\_\+keys, defaults)
+\item 
+def \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a5f123d9add76a4d4deb84c9a29f5912d}{add\+\_\+edge} (self, G, edge\+\_\+element, graphml\+\_\+keys)
+\item 
+def \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_ae086537e3e8d692a1fdb77e768cf83ad}{decode\+\_\+data\+\_\+elements} (self, graphml\+\_\+keys, obj\+\_\+xml)
+\item 
+def \hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a2345656849daa060eac22952a1977701}{find\+\_\+graphml\+\_\+keys} (self, graph\+\_\+element)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_ad620d46e7dc0ad416f9219fcc2d3acf8}{node\+\_\+type}
+\item 
+\hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_af4e6ae7fc857e3fd6613a28628b021fe}{edge\+\_\+key\+\_\+type}
+\item 
+\hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_af494d18442bcec8ab3678400189c3ddd}{multigraph}
+\item 
+\hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a9f985a28328aa02403238c36c2fbcf0b}{edge\+\_\+ids}
+\item 
+\hyperlink{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_ad7f9c068c88d3b8e9330eb400e52e8c2}{xml}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Read a GraphML document.  Produces NetworkX graph objects.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a756b1c25522fb085a0347965c51d2408}\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a756b1c25522fb085a0347965c51d2408}} 
+\index{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node\+\_\+type = {\ttfamily str},  }\item[{}]{edge\+\_\+key\+\_\+type = {\ttfamily int},  }\item[{}]{force\+\_\+multigraph = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a3d90d4aa678f271c4181011c867bd4bc}\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a3d90d4aa678f271c4181011c867bd4bc}} 
+\index{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path = {\ttfamily None},  }\item[{}]{string = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a5f123d9add76a4d4deb84c9a29f5912d}\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a5f123d9add76a4d4deb84c9a29f5912d}} 
+\index{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}!add\+\_\+edge@{add\+\_\+edge}}
+\index{add\+\_\+edge@{add\+\_\+edge}!networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}}
+\subsubsection{\texorpdfstring{add\+\_\+edge()}{add\_edge()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader.\+add\+\_\+edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G,  }\item[{}]{edge\+\_\+element,  }\item[{}]{graphml\+\_\+keys }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add an edge to the graph.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_aa13535e05c406b959a0100425d5d3482}\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_aa13535e05c406b959a0100425d5d3482}} 
+\index{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}!add\+\_\+node@{add\+\_\+node}}
+\index{add\+\_\+node@{add\+\_\+node}!networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}}
+\subsubsection{\texorpdfstring{add\+\_\+node()}{add\_node()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader.\+add\+\_\+node (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G,  }\item[{}]{node\+\_\+xml,  }\item[{}]{graphml\+\_\+keys,  }\item[{}]{defaults }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a node to the graph.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_ae086537e3e8d692a1fdb77e768cf83ad}\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_ae086537e3e8d692a1fdb77e768cf83ad}} 
+\index{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}!decode\+\_\+data\+\_\+elements@{decode\+\_\+data\+\_\+elements}}
+\index{decode\+\_\+data\+\_\+elements@{decode\+\_\+data\+\_\+elements}!networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}}
+\subsubsection{\texorpdfstring{decode\+\_\+data\+\_\+elements()}{decode\_data\_elements()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader.\+decode\+\_\+data\+\_\+elements (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graphml\+\_\+keys,  }\item[{}]{obj\+\_\+xml }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Use the key information to decode the data XML if present.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a2345656849daa060eac22952a1977701}\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a2345656849daa060eac22952a1977701}} 
+\index{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}!find\+\_\+graphml\+\_\+keys@{find\+\_\+graphml\+\_\+keys}}
+\index{find\+\_\+graphml\+\_\+keys@{find\+\_\+graphml\+\_\+keys}!networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}}
+\subsubsection{\texorpdfstring{find\+\_\+graphml\+\_\+keys()}{find\_graphml\_keys()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader.\+find\+\_\+graphml\+\_\+keys (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph\+\_\+element }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extracts all the keys and key defaults from the xml.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a08bdae7ad05a12452eb2b688ac2c85a3}\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a08bdae7ad05a12452eb2b688ac2c85a3}} 
+\index{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}!make\+\_\+graph@{make\+\_\+graph}}
+\index{make\+\_\+graph@{make\+\_\+graph}!networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}}
+\subsubsection{\texorpdfstring{make\+\_\+graph()}{make\_graph()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader.\+make\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph\+\_\+xml,  }\item[{}]{graphml\+\_\+keys,  }\item[{}]{defaults,  }\item[{}]{G = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a9f985a28328aa02403238c36c2fbcf0b}\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_a9f985a28328aa02403238c36c2fbcf0b}} 
+\index{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}!edge\+\_\+ids@{edge\+\_\+ids}}
+\index{edge\+\_\+ids@{edge\+\_\+ids}!networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}}
+\subsubsection{\texorpdfstring{edge\+\_\+ids}{edge\_ids}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader.\+edge\+\_\+ids}
+
+\mbox{\Hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_af4e6ae7fc857e3fd6613a28628b021fe}\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_af4e6ae7fc857e3fd6613a28628b021fe}} 
+\index{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}!edge\+\_\+key\+\_\+type@{edge\+\_\+key\+\_\+type}}
+\index{edge\+\_\+key\+\_\+type@{edge\+\_\+key\+\_\+type}!networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}}
+\subsubsection{\texorpdfstring{edge\+\_\+key\+\_\+type}{edge\_key\_type}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader.\+edge\+\_\+key\+\_\+type}
+
+\mbox{\Hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_af494d18442bcec8ab3678400189c3ddd}\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_af494d18442bcec8ab3678400189c3ddd}} 
+\index{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}!multigraph@{multigraph}}
+\index{multigraph@{multigraph}!networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}}
+\subsubsection{\texorpdfstring{multigraph}{multigraph}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader.\+multigraph}
+
+\mbox{\Hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_ad620d46e7dc0ad416f9219fcc2d3acf8}\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_ad620d46e7dc0ad416f9219fcc2d3acf8}} 
+\index{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}!node\+\_\+type@{node\+\_\+type}}
+\index{node\+\_\+type@{node\+\_\+type}!networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}}
+\subsubsection{\texorpdfstring{node\+\_\+type}{node\_type}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader.\+node\+\_\+type}
+
+\mbox{\Hypertarget{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_ad7f9c068c88d3b8e9330eb400e52e8c2}\label{classnetworkx_1_1readwrite_1_1graphml_1_1GraphMLReader_ad7f9c068c88d3b8e9330eb400e52e8c2}} 
+\index{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}!xml@{xml}}
+\index{xml@{xml}!networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader@{networkx\+::readwrite\+::graphml\+::\+Graph\+M\+L\+Reader}}
+\subsubsection{\texorpdfstring{xml}{xml}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+graphml.\+Graph\+M\+L\+Reader.\+xml}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/readwrite/\hyperlink{graphml_8py}{graphml.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,70 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Suppress}{}\section{setuptools.\+\_\+vendor.\+pyparsing.\+Suppress Class Reference}
+\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Suppress}\index{setuptools.\+\_\+vendor.\+pyparsing.\+Suppress@{setuptools.\+\_\+vendor.\+pyparsing.\+Suppress}}
+
+
+Inheritance diagram for setuptools.\+\_\+vendor.\+pyparsing.\+Suppress\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1Suppress__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for setuptools.\+\_\+vendor.\+pyparsing.\+Suppress\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1Suppress__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Suppress_a99f780117a65983c3f486a3a0c5c7e73}{post\+Parse} (self, instring, loc, tokenlist)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1Suppress_a92b705f99f29fbc08b3c1eadec9cc090}{suppress} (self)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Converter for ignoring the results of a parsed expression.
+
+Example::
+    source = "a, b, c,d"
+    wd = Word(alphas)
+    wd_list1 = wd + ZeroOrMore(',' + wd)
+    print(wd_list1.parseString(source))
+
+    # often, delimiters that are useful during parsing are just in the
+    # way afterward - use Suppress to keep them out of the parsed output
+    wd_list2 = wd + ZeroOrMore(Suppress(',') + wd)
+    print(wd_list2.parseString(source))
+prints::
+    ['a', ',', 'b', ',', 'c', ',', 'd']
+    ['a', 'b', 'c', 'd']
+(See also L{delimitedList}.)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Suppress_a99f780117a65983c3f486a3a0c5c7e73}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Suppress_a99f780117a65983c3f486a3a0c5c7e73}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Suppress@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Suppress}!post\+Parse@{post\+Parse}}
+\index{post\+Parse@{post\+Parse}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Suppress@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Suppress}}
+\subsubsection{\texorpdfstring{post\+Parse()}{postParse()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+pyparsing.\+Suppress.\+post\+Parse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{tokenlist }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1Suppress_a92b705f99f29fbc08b3c1eadec9cc090}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1Suppress_a92b705f99f29fbc08b3c1eadec9cc090}} 
+\index{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Suppress@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Suppress}!suppress@{suppress}}
+\index{suppress@{suppress}!setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Suppress@{setuptools\+::\+\_\+vendor\+::pyparsing\+::\+Suppress}}
+\subsubsection{\texorpdfstring{suppress()}{suppress()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+pyparsing.\+Suppress.\+suppress (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/\hyperlink{setuptools_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

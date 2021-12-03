@@ -1,0 +1,60 @@
+\hypertarget{namespacesetuptools_1_1__vendor_1_1packaging_1_1__typing}{}\section{setuptools.\+\_\+vendor.\+packaging.\+\_\+typing Namespace Reference}
+\label{namespacesetuptools_1_1__vendor_1_1packaging_1_1__typing}\index{setuptools.\+\_\+vendor.\+packaging.\+\_\+typing@{setuptools.\+\_\+vendor.\+packaging.\+\_\+typing}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1__vendor_1_1packaging_1_1__typing_abf22b34489ca3a1d164be475a003377a}{cast} (type\+\_\+, value)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1__vendor_1_1packaging_1_1__typing_a8a2f3959976c667cd26443830f348e0a}{T\+Y\+P\+E\+\_\+\+C\+H\+E\+C\+K\+I\+NG}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}For neatly implementing static typing in packaging.
+
+`mypy` - the static type analysis tool we use - uses the `typing` module, which
+provides core functionality fundamental to mypy's functioning.
+
+Generally, `typing` would be imported at runtime and used in that fashion -
+it acts as a no-op at runtime and does not have any run-time overhead by
+design.
+
+As it turns out, `typing` is not vendorable - it uses separate sources for
+Python 2/Python 3. Thus, this codebase can not expect it to be present.
+To work around this, mypy allows the typing import to be behind a False-y
+optional to prevent it from running at runtime and type-comments can be used
+to remove the need for the types to be accessible directly during runtime.
+
+This module provides the False-y guard in a nicely named fashion so that a
+curious maintainer can reach here to read this.
+
+In packaging, all static-typing related imports should be guarded as follows:
+
+    from packaging._typing import TYPE_CHECKING
+
+    if TYPE_CHECKING:
+from typing import ...
+
+Ref: https://github.com/python/mypy/issues/3216
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__vendor_1_1packaging_1_1__typing_abf22b34489ca3a1d164be475a003377a}\label{namespacesetuptools_1_1__vendor_1_1packaging_1_1__typing_abf22b34489ca3a1d164be475a003377a}} 
+\index{setuptools\+::\+\_\+vendor\+::packaging\+::\+\_\+typing@{setuptools\+::\+\_\+vendor\+::packaging\+::\+\_\+typing}!cast@{cast}}
+\index{cast@{cast}!setuptools\+::\+\_\+vendor\+::packaging\+::\+\_\+typing@{setuptools\+::\+\_\+vendor\+::packaging\+::\+\_\+typing}}
+\subsubsection{\texorpdfstring{cast()}{cast()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+packaging.\+\_\+typing.\+cast (\begin{DoxyParamCaption}\item[{}]{type\+\_\+,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__vendor_1_1packaging_1_1__typing_a8a2f3959976c667cd26443830f348e0a}\label{namespacesetuptools_1_1__vendor_1_1packaging_1_1__typing_a8a2f3959976c667cd26443830f348e0a}} 
+\index{setuptools\+::\+\_\+vendor\+::packaging\+::\+\_\+typing@{setuptools\+::\+\_\+vendor\+::packaging\+::\+\_\+typing}!T\+Y\+P\+E\+\_\+\+C\+H\+E\+C\+K\+I\+NG@{T\+Y\+P\+E\+\_\+\+C\+H\+E\+C\+K\+I\+NG}}
+\index{T\+Y\+P\+E\+\_\+\+C\+H\+E\+C\+K\+I\+NG@{T\+Y\+P\+E\+\_\+\+C\+H\+E\+C\+K\+I\+NG}!setuptools\+::\+\_\+vendor\+::packaging\+::\+\_\+typing@{setuptools\+::\+\_\+vendor\+::packaging\+::\+\_\+typing}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+C\+H\+E\+C\+K\+I\+NG}{TYPE\_CHECKING}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+packaging.\+\_\+typing.\+T\+Y\+P\+E\+\_\+\+C\+H\+E\+C\+K\+I\+NG}
+

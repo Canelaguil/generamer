@@ -1,0 +1,122 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1planarity}{}\section{networkx.\+algorithms.\+planarity Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1planarity}\index{networkx.\+algorithms.\+planarity@{networkx.\+algorithms.\+planarity}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1ConflictPair}{Conflict\+Pair}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1Interval}{Interval}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1LRPlanarity}{L\+R\+Planarity}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1planarity_1_1PlanarEmbedding}{Planar\+Embedding}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1planarity_aa8143fee916a7ba1661ba6c9eb312758}{check\+\_\+planarity} (G, counterexample=False)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1planarity_a24f924dcf458682337d2a5d97582f027}{check\+\_\+planarity\+\_\+recursive} (G, counterexample=False)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1planarity_a97ea2c6e41104ab6c6ec657ca362a0cf}{get\+\_\+counterexample} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1planarity_a229d1aa5c79f2e3fd5cecb59f947d955}{get\+\_\+counterexample\+\_\+recursive} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1planarity_ad9d14e1fb52877b3f48cb8b3cc6dd3d6}{top\+\_\+of\+\_\+stack} (l)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1planarity_aa8143fee916a7ba1661ba6c9eb312758}\label{namespacenetworkx_1_1algorithms_1_1planarity_aa8143fee916a7ba1661ba6c9eb312758}} 
+\index{networkx\+::algorithms\+::planarity@{networkx\+::algorithms\+::planarity}!check\+\_\+planarity@{check\+\_\+planarity}}
+\index{check\+\_\+planarity@{check\+\_\+planarity}!networkx\+::algorithms\+::planarity@{networkx\+::algorithms\+::planarity}}
+\subsubsection{\texorpdfstring{check\+\_\+planarity()}{check\_planarity()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+check\+\_\+planarity (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{counterexample = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if a graph is planar and return a counterexample or an embedding.
+
+A graph is planar iff it can be drawn in a plane without
+any edge intersections.
+
+Parameters
+----------
+G : NetworkX graph
+counterexample : bool
+    A Kuratowski subgraph (to proof non planarity) is only returned if set
+    to true.
+
+Returns
+-------
+(is_planar, certificate) : (bool, NetworkX graph) tuple
+    is_planar is true if the graph is planar.
+    If the graph is planar `certificate` is a PlanarEmbedding
+    otherwise it is a Kuratowski subgraph.
+
+Notes
+-----
+A (combinatorial) embedding consists of cyclic orderings of the incident
+edges at each vertex. Given such an embedding there are multiple approaches
+discussed in literature to drawing the graph (subject to various
+constraints, e.g. integer coordinates), see e.g. [2].
+
+The planarity check algorithm and extraction of the combinatorial embedding
+is based on the Left-Right Planarity Test [1].
+
+A counterexample is only generated if the corresponding parameter is set,
+because the complexity of the counterexample generation is higher.
+
+References
+----------
+.. [1] Ulrik Brandes:
+    The Left-Right Planarity Test
+    2009
+    http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.217.9208
+.. [2] Takao Nishizeki, Md Saidur Rahman:
+    Planar graph drawing
+    Lecture Notes Series on Computing: Volume 12
+    2004
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1planarity_a24f924dcf458682337d2a5d97582f027}\label{namespacenetworkx_1_1algorithms_1_1planarity_a24f924dcf458682337d2a5d97582f027}} 
+\index{networkx\+::algorithms\+::planarity@{networkx\+::algorithms\+::planarity}!check\+\_\+planarity\+\_\+recursive@{check\+\_\+planarity\+\_\+recursive}}
+\index{check\+\_\+planarity\+\_\+recursive@{check\+\_\+planarity\+\_\+recursive}!networkx\+::algorithms\+::planarity@{networkx\+::algorithms\+::planarity}}
+\subsubsection{\texorpdfstring{check\+\_\+planarity\+\_\+recursive()}{check\_planarity\_recursive()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+check\+\_\+planarity\+\_\+recursive (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{counterexample = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Recursive version of :meth:`check_planarity`.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1planarity_a97ea2c6e41104ab6c6ec657ca362a0cf}\label{namespacenetworkx_1_1algorithms_1_1planarity_a97ea2c6e41104ab6c6ec657ca362a0cf}} 
+\index{networkx\+::algorithms\+::planarity@{networkx\+::algorithms\+::planarity}!get\+\_\+counterexample@{get\+\_\+counterexample}}
+\index{get\+\_\+counterexample@{get\+\_\+counterexample}!networkx\+::algorithms\+::planarity@{networkx\+::algorithms\+::planarity}}
+\subsubsection{\texorpdfstring{get\+\_\+counterexample()}{get\_counterexample()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+get\+\_\+counterexample (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Obtains a Kuratowski subgraph.
+
+Raises nx.NetworkXException if G is planar.
+
+The function removes edges such that the graph is still not planar.
+At some point the removal of any edge would make the graph planar.
+This subgraph must be a Kuratowski subgraph.
+
+Parameters
+----------
+G : NetworkX graph
+
+Returns
+-------
+subgraph : NetworkX graph
+    A Kuratowski subgraph that proves that G is not planar.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1planarity_a229d1aa5c79f2e3fd5cecb59f947d955}\label{namespacenetworkx_1_1algorithms_1_1planarity_a229d1aa5c79f2e3fd5cecb59f947d955}} 
+\index{networkx\+::algorithms\+::planarity@{networkx\+::algorithms\+::planarity}!get\+\_\+counterexample\+\_\+recursive@{get\+\_\+counterexample\+\_\+recursive}}
+\index{get\+\_\+counterexample\+\_\+recursive@{get\+\_\+counterexample\+\_\+recursive}!networkx\+::algorithms\+::planarity@{networkx\+::algorithms\+::planarity}}
+\subsubsection{\texorpdfstring{get\+\_\+counterexample\+\_\+recursive()}{get\_counterexample\_recursive()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+get\+\_\+counterexample\+\_\+recursive (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Recursive version of :meth:`get_counterexample`.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1planarity_ad9d14e1fb52877b3f48cb8b3cc6dd3d6}\label{namespacenetworkx_1_1algorithms_1_1planarity_ad9d14e1fb52877b3f48cb8b3cc6dd3d6}} 
+\index{networkx\+::algorithms\+::planarity@{networkx\+::algorithms\+::planarity}!top\+\_\+of\+\_\+stack@{top\+\_\+of\+\_\+stack}}
+\index{top\+\_\+of\+\_\+stack@{top\+\_\+of\+\_\+stack}!networkx\+::algorithms\+::planarity@{networkx\+::algorithms\+::planarity}}
+\subsubsection{\texorpdfstring{top\+\_\+of\+\_\+stack()}{top\_of\_stack()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+planarity.\+top\+\_\+of\+\_\+stack (\begin{DoxyParamCaption}\item[{}]{l }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the element on top of the stack.\end{DoxyVerb}
+ 

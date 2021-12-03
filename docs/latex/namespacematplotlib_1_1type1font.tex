@@ -1,0 +1,32 @@
+\hypertarget{namespacematplotlib_1_1type1font}{}\section{matplotlib.\+type1font Namespace Reference}
+\label{namespacematplotlib_1_1type1font}\index{matplotlib.\+type1font@{matplotlib.\+type1font}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1type1font_1_1Type1Font}{Type1\+Font}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A class representing a Type 1 font.
+
+This version reads pfa and pfb files and splits them for embedding in
+pdf files. It also supports SlantFont and ExtendFont transformations,
+similarly to pdfTeX and friends. There is no support yet for subsetting.
+
+Usage::
+
+   >>> font = Type1Font(filename)
+   >>> clear_part, encrypted_part, finale = font.parts
+   >>> slanted_font = font.transform({'slant': 0.167})
+   >>> extended_font = font.transform({'extend': 1.2})
+
+Sources:
+
+* Adobe Technical Note #5040, Supporting Downloadable PostScript
+  Language Fonts.
+
+* Adobe Type 1 Font Format, Adobe Systems Incorporated, third printing,
+  v1.1, 1993. ISBN 0-201-57044-0.
+\end{DoxyVerb}
+ 

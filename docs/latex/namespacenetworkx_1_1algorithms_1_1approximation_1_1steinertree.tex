@@ -1,0 +1,78 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1steinertree}{}\section{networkx.\+algorithms.\+approximation.\+steinertree Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1steinertree}\index{networkx.\+algorithms.\+approximation.\+steinertree@{networkx.\+algorithms.\+approximation.\+steinertree}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1steinertree_ad7127d00994e89fe7ec2ed86a0738048}{metric\+\_\+closure} (G, weight=\char`\"{}weight\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1steinertree_a855a6b604c977181e6247a476b568391}{steiner\+\_\+tree} (G, terminal\+\_\+nodes, weight=\char`\"{}weight\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1steinertree_ad7127d00994e89fe7ec2ed86a0738048}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1steinertree_ad7127d00994e89fe7ec2ed86a0738048}} 
+\index{networkx\+::algorithms\+::approximation\+::steinertree@{networkx\+::algorithms\+::approximation\+::steinertree}!metric\+\_\+closure@{metric\+\_\+closure}}
+\index{metric\+\_\+closure@{metric\+\_\+closure}!networkx\+::algorithms\+::approximation\+::steinertree@{networkx\+::algorithms\+::approximation\+::steinertree}}
+\subsubsection{\texorpdfstring{metric\+\_\+closure()}{metric\_closure()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+steinertree.\+metric\+\_\+closure (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the metric closure of a graph.
+
+The metric closure of a graph *G* is the complete graph in which each edge
+is weighted by the shortest path distance between the nodes in *G* .
+
+Parameters
+----------
+G : NetworkX graph
+
+Returns
+-------
+NetworkX graph
+    Metric closure of the graph `G`.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1steinertree_a855a6b604c977181e6247a476b568391}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1steinertree_a855a6b604c977181e6247a476b568391}} 
+\index{networkx\+::algorithms\+::approximation\+::steinertree@{networkx\+::algorithms\+::approximation\+::steinertree}!steiner\+\_\+tree@{steiner\+\_\+tree}}
+\index{steiner\+\_\+tree@{steiner\+\_\+tree}!networkx\+::algorithms\+::approximation\+::steinertree@{networkx\+::algorithms\+::approximation\+::steinertree}}
+\subsubsection{\texorpdfstring{steiner\+\_\+tree()}{steiner\_tree()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+steinertree.\+steiner\+\_\+tree (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{terminal\+\_\+nodes,  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return an approximation to the minimum Steiner tree of a graph.
+
+The minimum Steiner tree of `G` w.r.t a set of `terminal_nodes`
+is a tree within `G` that spans those nodes and has minimum size
+(sum of edge weights) among all such trees.
+
+The minimum Steiner tree can be approximated by computing the minimum
+spanning tree of the subgraph of the metric closure of *G* induced by the
+terminal nodes, where the metric closure of *G* is the complete graph in
+which each edge is weighted by the shortest path distance between the
+nodes in *G* .
+This algorithm produces a tree whose weight is within a (2 - (2 / t))
+factor of the weight of the optimal Steiner tree where *t* is number of
+terminal nodes.
+
+Parameters
+----------
+G : NetworkX graph
+
+terminal_nodes : list
+     A list of terminal nodes for which minimum steiner tree is
+     to be found.
+
+Returns
+-------
+NetworkX graph
+    Approximation to the minimum steiner tree of `G` induced by
+    `terminal_nodes` .
+
+Notes
+-----
+For multigraphs, the edge between two nodes with minimum weight is the
+edge put into the Steiner tree.
+
+
+References
+----------
+.. [1] Steiner_tree_problem on Wikipedia.
+   https://en.wikipedia.org/wiki/Steiner_tree_problem
+\end{DoxyVerb}
+ 

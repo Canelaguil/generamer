@@ -1,0 +1,114 @@
+\hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator}{}\section{pip.\+\_\+vendor.\+distlib.\+locators.\+Aggregating\+Locator Class Reference}
+\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator}\index{pip.\+\_\+vendor.\+distlib.\+locators.\+Aggregating\+Locator@{pip.\+\_\+vendor.\+distlib.\+locators.\+Aggregating\+Locator}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+distlib.\+locators.\+Aggregating\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+distlib.\+locators.\+Aggregating\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_af826191209a23190440e116c42c46511}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_a9869012125339537c92f63813b577a27}{locators}, kwargs)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_a937d4d11aa45376977d68da1656ae82a}{clear\+\_\+cache} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_abdaa0caa07f2874b2b48536d1a4af19a}{get\+\_\+distribution\+\_\+names} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_ae3e06402656d79dfb3ca18a4952b0a35}{merge}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_a9869012125339537c92f63813b577a27}{locators}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_af0c471c0f3403873f5d41240f3fbc34a}{scheme} = property(Locator.\+scheme.\+fget, \+\_\+set\+\_\+scheme)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This class allows you to chain and/or merge a list of locators.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_af826191209a23190440e116c42c46511}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_af826191209a23190440e116c42c46511}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Aggregating\+Locator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{locators,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialise an instance.
+
+:param locators: The list of locators to search.
+:param kwargs: Passed to the superclass constructor,
+       except for:
+       * merge - if False (the default), the first successful
+         search from any of the locators is returned. If True,
+         the results from all locators are merged (this can be
+         slow).
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_a937d4d11aa45376977d68da1656ae82a}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_a937d4d11aa45376977d68da1656ae82a}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator}!clear\+\_\+cache@{clear\+\_\+cache}}
+\index{clear\+\_\+cache@{clear\+\_\+cache}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator}}
+\subsubsection{\texorpdfstring{clear\+\_\+cache()}{clear\_cache()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Aggregating\+Locator.\+clear\+\_\+cache (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_abdaa0caa07f2874b2b48536d1a4af19a}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_abdaa0caa07f2874b2b48536d1a4af19a}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator}!get\+\_\+distribution\+\_\+names@{get\+\_\+distribution\+\_\+names}}
+\index{get\+\_\+distribution\+\_\+names@{get\+\_\+distribution\+\_\+names}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator}}
+\subsubsection{\texorpdfstring{get\+\_\+distribution\+\_\+names()}{get\_distribution\_names()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Aggregating\+Locator.\+get\+\_\+distribution\+\_\+names (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return all the distribution names known to this locator.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_a9869012125339537c92f63813b577a27}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_a9869012125339537c92f63813b577a27}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator}!locators@{locators}}
+\index{locators@{locators}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator}}
+\subsubsection{\texorpdfstring{locators}{locators}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Aggregating\+Locator.\+locators}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_ae3e06402656d79dfb3ca18a4952b0a35}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_ae3e06402656d79dfb3ca18a4952b0a35}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator}!merge@{merge}}
+\index{merge@{merge}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator}}
+\subsubsection{\texorpdfstring{merge}{merge}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Aggregating\+Locator.\+merge}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_af0c471c0f3403873f5d41240f3fbc34a}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1AggregatingLocator_af0c471c0f3403873f5d41240f3fbc34a}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator}!scheme@{scheme}}
+\index{scheme@{scheme}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Aggregating\+Locator}}
+\subsubsection{\texorpdfstring{scheme}{scheme}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Aggregating\+Locator.\+scheme = property(Locator.\+scheme.\+fget, \+\_\+set\+\_\+scheme)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/distlib/\hyperlink{locators_8py}{locators.\+py}\end{DoxyCompactItemize}

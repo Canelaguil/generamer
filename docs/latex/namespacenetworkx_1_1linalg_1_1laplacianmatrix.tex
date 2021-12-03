@@ -1,0 +1,242 @@
+\hypertarget{namespacenetworkx_1_1linalg_1_1laplacianmatrix}{}\section{networkx.\+linalg.\+laplacianmatrix Namespace Reference}
+\label{namespacenetworkx_1_1linalg_1_1laplacianmatrix}\index{networkx.\+linalg.\+laplacianmatrix@{networkx.\+linalg.\+laplacianmatrix}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1laplacianmatrix_a74be88be72c1aafd144a63202df9e77f}{laplacian\+\_\+matrix} (G, nodelist=None, weight=\char`\"{}weight\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1laplacianmatrix_ac26531196d011cf45284a537796ac537}{normalized\+\_\+laplacian\+\_\+matrix} (G, nodelist=None, weight=\char`\"{}weight\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1laplacianmatrix_accd9ad151a806626d9a2577168a2fb42}{directed\+\_\+laplacian\+\_\+matrix} (G, nodelist=None, weight=\char`\"{}weight\char`\"{}, walk\+\_\+type=None, alpha=0.\+95)
+\begin{DoxyCompactList}\small\item\em Code based on \href{https://bitbucket.org/bedwards/networkx-community/src/370bd69fc02f/networkx/algorithms/community/}{\tt https\+://bitbucket.\+org/bedwards/networkx-\/community/src/370bd69fc02f/networkx/algorithms/community/}. \end{DoxyCompactList}\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1laplacianmatrix_a6b45724805b344924a5bf8cc15a35472}{directed\+\_\+combinatorial\+\_\+laplacian\+\_\+matrix} (G, nodelist=None, weight=\char`\"{}weight\char`\"{}, walk\+\_\+type=None, alpha=0.\+95)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Laplacian matrix of graphs.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1laplacianmatrix_a6b45724805b344924a5bf8cc15a35472}\label{namespacenetworkx_1_1linalg_1_1laplacianmatrix_a6b45724805b344924a5bf8cc15a35472}} 
+\index{networkx\+::linalg\+::laplacianmatrix@{networkx\+::linalg\+::laplacianmatrix}!directed\+\_\+combinatorial\+\_\+laplacian\+\_\+matrix@{directed\+\_\+combinatorial\+\_\+laplacian\+\_\+matrix}}
+\index{directed\+\_\+combinatorial\+\_\+laplacian\+\_\+matrix@{directed\+\_\+combinatorial\+\_\+laplacian\+\_\+matrix}!networkx\+::linalg\+::laplacianmatrix@{networkx\+::linalg\+::laplacianmatrix}}
+\subsubsection{\texorpdfstring{directed\+\_\+combinatorial\+\_\+laplacian\+\_\+matrix()}{directed\_combinatorial\_laplacian\_matrix()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+laplacianmatrix.\+directed\+\_\+combinatorial\+\_\+laplacian\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodelist = {\ttfamily None},  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}},  }\item[{}]{walk\+\_\+type = {\ttfamily None},  }\item[{}]{alpha = {\ttfamily 0.95} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the directed combinatorial Laplacian matrix of G.
+
+The graph directed combinatorial Laplacian is the matrix
+
+.. math::
+
+    L = \Phi - (\Phi P + P^T \Phi) / 2
+
+where `P` is the transition matrix of the graph and `\Phi` a matrix
+with the Perron vector of `P` in the diagonal and zeros elsewhere.
+
+Depending on the value of walk_type, `P` can be the transition matrix
+induced by a random walk, a lazy random walk, or a random walk with
+teleportation (PageRank).
+
+Parameters
+----------
+G : DiGraph
+   A NetworkX graph
+
+nodelist : list, optional
+   The rows and columns are ordered according to the nodes in nodelist.
+   If nodelist is None, then the ordering is produced by G.nodes().
+
+weight : string or None, optional (default='weight')
+   The edge data key used to compute each value in the matrix.
+   If None, then each edge has weight 1.
+
+walk_type : string or None, optional (default=None)
+   If None, `P` is selected depending on the properties of the
+   graph. Otherwise is one of 'random', 'lazy', or 'pagerank'
+
+alpha : real
+   (1 - alpha) is the teleportation probability used with pagerank
+
+Returns
+-------
+L : NumPy matrix
+  Combinatorial Laplacian of G.
+
+Notes
+-----
+Only implemented for DiGraphs
+
+See Also
+--------
+laplacian_matrix
+
+References
+----------
+.. [1] Fan Chung (2005).
+   Laplacians and the Cheeger inequality for directed graphs.
+   Annals of Combinatorics, 9(1), 2005
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1laplacianmatrix_accd9ad151a806626d9a2577168a2fb42}\label{namespacenetworkx_1_1linalg_1_1laplacianmatrix_accd9ad151a806626d9a2577168a2fb42}} 
+\index{networkx\+::linalg\+::laplacianmatrix@{networkx\+::linalg\+::laplacianmatrix}!directed\+\_\+laplacian\+\_\+matrix@{directed\+\_\+laplacian\+\_\+matrix}}
+\index{directed\+\_\+laplacian\+\_\+matrix@{directed\+\_\+laplacian\+\_\+matrix}!networkx\+::linalg\+::laplacianmatrix@{networkx\+::linalg\+::laplacianmatrix}}
+\subsubsection{\texorpdfstring{directed\+\_\+laplacian\+\_\+matrix()}{directed\_laplacian\_matrix()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+laplacianmatrix.\+directed\+\_\+laplacian\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodelist = {\ttfamily None},  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}},  }\item[{}]{walk\+\_\+type = {\ttfamily None},  }\item[{}]{alpha = {\ttfamily 0.95} }\end{DoxyParamCaption})}
+
+
+
+Code based on \href{https://bitbucket.org/bedwards/networkx-community/src/370bd69fc02f/networkx/algorithms/community/}{\tt https\+://bitbucket.\+org/bedwards/networkx-\/community/src/370bd69fc02f/networkx/algorithms/community/}. 
+
+\begin{DoxyVerb}Returns the directed Laplacian matrix of G.
+
+The graph directed Laplacian is the matrix
+
+.. math::
+
+    L = I - (\Phi^{1/2} P \Phi^{-1/2} + \Phi^{-1/2} P^T \Phi^{1/2} ) / 2
+
+where `I` is the identity matrix, `P` is the transition matrix of the
+graph, and `\Phi` a matrix with the Perron vector of `P` in the diagonal and
+zeros elsewhere.
+
+Depending on the value of walk_type, `P` can be the transition matrix
+induced by a random walk, a lazy random walk, or a random walk with
+teleportation (PageRank).
+
+Parameters
+----------
+G : DiGraph
+   A NetworkX graph
+
+nodelist : list, optional
+   The rows and columns are ordered according to the nodes in nodelist.
+   If nodelist is None, then the ordering is produced by G.nodes().
+
+weight : string or None, optional (default='weight')
+   The edge data key used to compute each value in the matrix.
+   If None, then each edge has weight 1.
+
+walk_type : string or None, optional (default=None)
+   If None, `P` is selected depending on the properties of the
+   graph. Otherwise is one of 'random', 'lazy', or 'pagerank'
+
+alpha : real
+   (1 - alpha) is the teleportation probability used with pagerank
+
+Returns
+-------
+L : NumPy matrix
+  Normalized Laplacian of G.
+
+Notes
+-----
+Only implemented for DiGraphs
+
+See Also
+--------
+laplacian_matrix
+
+References
+----------
+.. [1] Fan Chung (2005).
+   Laplacians and the Cheeger inequality for directed graphs.
+   Annals of Combinatorics, 9(1), 2005
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1laplacianmatrix_a74be88be72c1aafd144a63202df9e77f}\label{namespacenetworkx_1_1linalg_1_1laplacianmatrix_a74be88be72c1aafd144a63202df9e77f}} 
+\index{networkx\+::linalg\+::laplacianmatrix@{networkx\+::linalg\+::laplacianmatrix}!laplacian\+\_\+matrix@{laplacian\+\_\+matrix}}
+\index{laplacian\+\_\+matrix@{laplacian\+\_\+matrix}!networkx\+::linalg\+::laplacianmatrix@{networkx\+::linalg\+::laplacianmatrix}}
+\subsubsection{\texorpdfstring{laplacian\+\_\+matrix()}{laplacian\_matrix()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+laplacianmatrix.\+laplacian\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodelist = {\ttfamily None},  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the Laplacian matrix of G.
+
+The graph Laplacian is the matrix L = D - A, where
+A is the adjacency matrix and D is the diagonal matrix of node degrees.
+
+Parameters
+----------
+G : graph
+   A NetworkX graph
+
+nodelist : list, optional
+   The rows and columns are ordered according to the nodes in nodelist.
+   If nodelist is None, then the ordering is produced by G.nodes().
+
+weight : string or None, optional (default='weight')
+   The edge data key used to compute each value in the matrix.
+   If None, then each edge has weight 1.
+
+Returns
+-------
+L : SciPy sparse matrix
+  The Laplacian matrix of G.
+
+Notes
+-----
+For MultiGraph/MultiDiGraph, the edges weights are summed.
+
+See Also
+--------
+to_numpy_array
+normalized_laplacian_matrix
+laplacian_spectrum
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1laplacianmatrix_ac26531196d011cf45284a537796ac537}\label{namespacenetworkx_1_1linalg_1_1laplacianmatrix_ac26531196d011cf45284a537796ac537}} 
+\index{networkx\+::linalg\+::laplacianmatrix@{networkx\+::linalg\+::laplacianmatrix}!normalized\+\_\+laplacian\+\_\+matrix@{normalized\+\_\+laplacian\+\_\+matrix}}
+\index{normalized\+\_\+laplacian\+\_\+matrix@{normalized\+\_\+laplacian\+\_\+matrix}!networkx\+::linalg\+::laplacianmatrix@{networkx\+::linalg\+::laplacianmatrix}}
+\subsubsection{\texorpdfstring{normalized\+\_\+laplacian\+\_\+matrix()}{normalized\_laplacian\_matrix()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+laplacianmatrix.\+normalized\+\_\+laplacian\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodelist = {\ttfamily None},  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the normalized Laplacian matrix of G.
+
+The normalized graph Laplacian is the matrix
+
+.. math::
+
+    N = D^{-1/2} L D^{-1/2}
+
+where `L` is the graph Laplacian and `D` is the diagonal matrix of
+node degrees.
+
+Parameters
+----------
+G : graph
+   A NetworkX graph
+
+nodelist : list, optional
+   The rows and columns are ordered according to the nodes in nodelist.
+   If nodelist is None, then the ordering is produced by G.nodes().
+
+weight : string or None, optional (default='weight')
+   The edge data key used to compute each value in the matrix.
+   If None, then each edge has weight 1.
+
+Returns
+-------
+N : Scipy sparse matrix
+  The normalized Laplacian matrix of G.
+
+Notes
+-----
+For MultiGraph/MultiDiGraph, the edges weights are summed.
+See to_numpy_array for other options.
+
+If the Graph contains selfloops, D is defined as diag(sum(A,1)), where A is
+the adjacency matrix [2]_.
+
+See Also
+--------
+laplacian_matrix
+normalized_laplacian_spectrum
+
+References
+----------
+.. [1] Fan Chung-Graham, Spectral Graph Theory,
+   CBMS Regional Conference Series in Mathematics, Number 92, 1997.
+.. [2] Steve Butler, Interlacing For Weighted Graphs Using The Normalized
+   Laplacian, Electronic Journal of Linear Algebra, Volume 16, pp. 90-98,
+   March 2007.
+\end{DoxyVerb}
+ 

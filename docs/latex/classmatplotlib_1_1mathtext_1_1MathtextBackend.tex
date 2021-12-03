@@ -1,0 +1,133 @@
+\hypertarget{classmatplotlib_1_1mathtext_1_1MathtextBackend}{}\section{matplotlib.\+mathtext.\+Mathtext\+Backend Class Reference}
+\label{classmatplotlib_1_1mathtext_1_1MathtextBackend}\index{matplotlib.\+mathtext.\+Mathtext\+Backend@{matplotlib.\+mathtext.\+Mathtext\+Backend}}
+
+
+Inheritance diagram for matplotlib.\+mathtext.\+Mathtext\+Backend\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1mathtext_1_1MathtextBackend__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1mathtext_1_1MathtextBackend_a11b11ee83093b7f054b23afea850c583}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1mathtext_1_1MathtextBackend_a384aa41ed05bd94734ba0ddefb01a062}{set\+\_\+canvas\+\_\+size} (self, w, h, d)
+\item 
+def \hyperlink{classmatplotlib_1_1mathtext_1_1MathtextBackend_ad8202b1bd3ffcfab70e8a6ebde875e53}{render\+\_\+glyph} (self, ox, oy, info)
+\item 
+def \hyperlink{classmatplotlib_1_1mathtext_1_1MathtextBackend_ad6ed2ad494da028610ccdaf7c69b439a}{render\+\_\+rect\+\_\+filled} (self, x1, y1, x2, y2)
+\item 
+def \hyperlink{classmatplotlib_1_1mathtext_1_1MathtextBackend_a5e597cc67478f25db0a6146787eba318}{get\+\_\+results} (self, box)
+\item 
+def \hyperlink{classmatplotlib_1_1mathtext_1_1MathtextBackend_a82a25dc7f2bd4b4f7909f8193025de67}{get\+\_\+hinting\+\_\+type} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1mathtext_1_1MathtextBackend_ad814a6749327f635a37e31146d4dfa65}{width}
+\item 
+\hyperlink{classmatplotlib_1_1mathtext_1_1MathtextBackend_ae7787c5fd41ffdb57b64865e397d3cd6}{height}
+\item 
+\hyperlink{classmatplotlib_1_1mathtext_1_1MathtextBackend_a8c5a95b8ca9f470f04d829216f13658c}{depth}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The base class for the mathtext backend-specific code.  `MathtextBackend`
+subclasses interface between mathtext and specific Matplotlib graphics
+backends.
+
+Subclasses need to override the following:
+
+- :meth:`render_glyph`
+- :meth:`render_rect_filled`
+- :meth:`get_results`
+
+And optionally, if you need to use a FreeType hinting style:
+
+- :meth:`get_hinting_type`
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1mathtext_1_1MathtextBackend_a11b11ee83093b7f054b23afea850c583}\label{classmatplotlib_1_1mathtext_1_1MathtextBackend_a11b11ee83093b7f054b23afea850c583}} 
+\index{matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+mathtext.\+Mathtext\+Backend.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1mathtext_1_1MathtextBackend_a82a25dc7f2bd4b4f7909f8193025de67}\label{classmatplotlib_1_1mathtext_1_1MathtextBackend_a82a25dc7f2bd4b4f7909f8193025de67}} 
+\index{matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}!get\+\_\+hinting\+\_\+type@{get\+\_\+hinting\+\_\+type}}
+\index{get\+\_\+hinting\+\_\+type@{get\+\_\+hinting\+\_\+type}!matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}}
+\subsubsection{\texorpdfstring{get\+\_\+hinting\+\_\+type()}{get\_hinting\_type()}}
+{\footnotesize\ttfamily def matplotlib.\+mathtext.\+Mathtext\+Backend.\+get\+\_\+hinting\+\_\+type (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the FreeType hinting type to use with this particular
+backend.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1mathtext_1_1MathtextBackend_a5e597cc67478f25db0a6146787eba318}\label{classmatplotlib_1_1mathtext_1_1MathtextBackend_a5e597cc67478f25db0a6146787eba318}} 
+\index{matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}!get\+\_\+results@{get\+\_\+results}}
+\index{get\+\_\+results@{get\+\_\+results}!matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}}
+\subsubsection{\texorpdfstring{get\+\_\+results()}{get\_results()}}
+{\footnotesize\ttfamily def matplotlib.\+mathtext.\+Mathtext\+Backend.\+get\+\_\+results (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{box }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a backend-specific tuple to return to the backend after
+all processing is done.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1mathtext_1_1MathtextBackend_ad8202b1bd3ffcfab70e8a6ebde875e53}\label{classmatplotlib_1_1mathtext_1_1MathtextBackend_ad8202b1bd3ffcfab70e8a6ebde875e53}} 
+\index{matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}!render\+\_\+glyph@{render\+\_\+glyph}}
+\index{render\+\_\+glyph@{render\+\_\+glyph}!matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}}
+\subsubsection{\texorpdfstring{render\+\_\+glyph()}{render\_glyph()}}
+{\footnotesize\ttfamily def matplotlib.\+mathtext.\+Mathtext\+Backend.\+render\+\_\+glyph (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ox,  }\item[{}]{oy,  }\item[{}]{info }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw a glyph described by *info* to the reference point (*ox*,
+*oy*).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1mathtext_1_1MathtextBackend_ad6ed2ad494da028610ccdaf7c69b439a}\label{classmatplotlib_1_1mathtext_1_1MathtextBackend_ad6ed2ad494da028610ccdaf7c69b439a}} 
+\index{matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}!render\+\_\+rect\+\_\+filled@{render\+\_\+rect\+\_\+filled}}
+\index{render\+\_\+rect\+\_\+filled@{render\+\_\+rect\+\_\+filled}!matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}}
+\subsubsection{\texorpdfstring{render\+\_\+rect\+\_\+filled()}{render\_rect\_filled()}}
+{\footnotesize\ttfamily def matplotlib.\+mathtext.\+Mathtext\+Backend.\+render\+\_\+rect\+\_\+filled (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x1,  }\item[{}]{y1,  }\item[{}]{x2,  }\item[{}]{y2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw a filled black rectangle from (*x1*, *y1*) to (*x2*, *y2*).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1mathtext_1_1MathtextBackend_a384aa41ed05bd94734ba0ddefb01a062}\label{classmatplotlib_1_1mathtext_1_1MathtextBackend_a384aa41ed05bd94734ba0ddefb01a062}} 
+\index{matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}!set\+\_\+canvas\+\_\+size@{set\+\_\+canvas\+\_\+size}}
+\index{set\+\_\+canvas\+\_\+size@{set\+\_\+canvas\+\_\+size}!matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}}
+\subsubsection{\texorpdfstring{set\+\_\+canvas\+\_\+size()}{set\_canvas\_size()}}
+{\footnotesize\ttfamily def matplotlib.\+mathtext.\+Mathtext\+Backend.\+set\+\_\+canvas\+\_\+size (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{w,  }\item[{}]{h,  }\item[{}]{d }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the dimension of the drawing canvas.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1mathtext_1_1MathtextBackend_a8c5a95b8ca9f470f04d829216f13658c}\label{classmatplotlib_1_1mathtext_1_1MathtextBackend_a8c5a95b8ca9f470f04d829216f13658c}} 
+\index{matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}!depth@{depth}}
+\index{depth@{depth}!matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}}
+\subsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily matplotlib.\+mathtext.\+Mathtext\+Backend.\+depth}
+
+\mbox{\Hypertarget{classmatplotlib_1_1mathtext_1_1MathtextBackend_ae7787c5fd41ffdb57b64865e397d3cd6}\label{classmatplotlib_1_1mathtext_1_1MathtextBackend_ae7787c5fd41ffdb57b64865e397d3cd6}} 
+\index{matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}!height@{height}}
+\index{height@{height}!matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily matplotlib.\+mathtext.\+Mathtext\+Backend.\+height}
+
+\mbox{\Hypertarget{classmatplotlib_1_1mathtext_1_1MathtextBackend_ad814a6749327f635a37e31146d4dfa65}\label{classmatplotlib_1_1mathtext_1_1MathtextBackend_ad814a6749327f635a37e31146d4dfa65}} 
+\index{matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}!width@{width}}
+\index{width@{width}!matplotlib\+::mathtext\+::\+Mathtext\+Backend@{matplotlib\+::mathtext\+::\+Mathtext\+Backend}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily matplotlib.\+mathtext.\+Mathtext\+Backend.\+width}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{mathtext_8py}{mathtext.\+py}\end{DoxyCompactItemize}

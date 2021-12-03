@@ -1,0 +1,126 @@
+\hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream}{}\section{matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream Class Reference}
+\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream}\index{matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream@{matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_adda86c35662f554973c6ede5621614e0}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_aeda274c158466fe4aac1c8a7f8ed44cf}{id}, \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_ad1c8337db314a00e1af7d944c34af21d}{len}, \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a9be461dcc33fd5c0ee5802149475f8e0}{file}, \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a75d9c477e09a34910561a308b12cad47}{extra}=None, png=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a32be4cffbc4297b9137f57386213a32c}{end} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a5587b814638f28aaeed8ce109555e639}{write} (self, data)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_aeda274c158466fe4aac1c8a7f8ed44cf}{id}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_ad1c8337db314a00e1af7d944c34af21d}{len}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_aa65361205e5e013779fca88b2f4a5d4c}{pdf\+File}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a9be461dcc33fd5c0ee5802149475f8e0}{file}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a33ba58a69eb8b11bebbbdce4f4adac1c}{compressobj}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a75d9c477e09a34910561a308b12cad47}{extra}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a451ac5d7a96af9fbc8598cccb618a0d9}{pos}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}PDF stream object.
+
+This has no pdfRepr method. Instead, call begin(), then output the
+contents of the stream by calling write(), and finally call end().
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_adda86c35662f554973c6ede5621614e0}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_adda86c35662f554973c6ede5621614e0}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{id,  }\item[{}]{len,  }\item[{}]{file,  }\item[{}]{extra = {\ttfamily None},  }\item[{}]{png = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+id : int
+    Object id of the stream.
+len : Reference or None
+    An unused Reference object for the length of the stream;
+    None means to use a memory buffer so the length can be inlined.
+file : PdfFile
+    The underlying object to write the stream to.
+extra : dict from Name to anything, or None
+    Extra key-value pairs to include in the stream header.
+png : dict or None
+    If the data is already png encoded, the decode parameters.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a32be4cffbc4297b9137f57386213a32c}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a32be4cffbc4297b9137f57386213a32c}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}!end@{end}}
+\index{end@{end}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream.\+end (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Finalize stream.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a5587b814638f28aaeed8ce109555e639}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a5587b814638f28aaeed8ce109555e639}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}!write@{write}}
+\index{write@{write}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream.\+write (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write some data on the stream.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a33ba58a69eb8b11bebbbdce4f4adac1c}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a33ba58a69eb8b11bebbbdce4f4adac1c}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}!compressobj@{compressobj}}
+\index{compressobj@{compressobj}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}}
+\subsubsection{\texorpdfstring{compressobj}{compressobj}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream.\+compressobj}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a75d9c477e09a34910561a308b12cad47}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a75d9c477e09a34910561a308b12cad47}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}!extra@{extra}}
+\index{extra@{extra}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}}
+\subsubsection{\texorpdfstring{extra}{extra}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream.\+extra}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a9be461dcc33fd5c0ee5802149475f8e0}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a9be461dcc33fd5c0ee5802149475f8e0}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}!file@{file}}
+\index{file@{file}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}}
+\subsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream.\+file}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_aeda274c158466fe4aac1c8a7f8ed44cf}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_aeda274c158466fe4aac1c8a7f8ed44cf}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}!id@{id}}
+\index{id@{id}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream.\+id}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_ad1c8337db314a00e1af7d944c34af21d}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_ad1c8337db314a00e1af7d944c34af21d}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}!len@{len}}
+\index{len@{len}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}}
+\subsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream.\+len}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_aa65361205e5e013779fca88b2f4a5d4c}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_aa65361205e5e013779fca88b2f4a5d4c}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}!pdf\+File@{pdf\+File}}
+\index{pdf\+File@{pdf\+File}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}}
+\subsubsection{\texorpdfstring{pdf\+File}{pdfFile}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream.\+pdf\+File}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a451ac5d7a96af9fbc8598cccb618a0d9}\label{classmatplotlib_1_1backends_1_1backend__pdf_1_1Stream_a451ac5d7a96af9fbc8598cccb618a0d9}} 
+\index{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}!pos@{pos}}
+\index{pos@{pos}!matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream@{matplotlib\+::backends\+::backend\+\_\+pdf\+::\+Stream}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+pdf.\+Stream.\+pos}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/backends/\hyperlink{backend__pdf_8py}{backend\+\_\+pdf.\+py}\end{DoxyCompactItemize}

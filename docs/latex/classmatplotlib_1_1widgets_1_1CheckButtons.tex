@@ -1,0 +1,183 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1CheckButtons}{}\section{matplotlib.\+widgets.\+Check\+Buttons Class Reference}
+\label{classmatplotlib_1_1widgets_1_1CheckButtons}\index{matplotlib.\+widgets.\+Check\+Buttons@{matplotlib.\+widgets.\+Check\+Buttons}}
+
+
+Inheritance diagram for matplotlib.\+widgets.\+Check\+Buttons\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1CheckButtons__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+widgets.\+Check\+Buttons\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1CheckButtons__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1CheckButtons_a263cab4962771dad32ae9f7bff5ac9b4}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_ac0722858b7001d10a42055dc90420b4f}{ax}, \hyperlink{classmatplotlib_1_1widgets_1_1CheckButtons_a6cc26f36564fa6fcffd3637dd1d29317}{labels}, actives=None)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1CheckButtons_a50ef24a39aa238582d6d492797ce42a6}{set\+\_\+active} (self, index)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1CheckButtons_a19e5321e6e1910bcfbb11538a0d979b4}{get\+\_\+status} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1CheckButtons_a2521d9a8165bfbe0463537e8acc36b94}{on\+\_\+clicked} (self, func)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1CheckButtons_a17c09771d95c7842999dfaa6f296127c}{disconnect} (self, cid)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1CheckButtons_a6cc26f36564fa6fcffd3637dd1d29317}{labels}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1CheckButtons_a7b97d3a4d391ba49f71f3d462dd28394}{lines}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1CheckButtons_ac37fbe05a3f11927188a0594b8ac90b6}{rectangles}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1CheckButtons_ad5be6ba7cd19eb0658d87d575ba73688}{cnt}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1CheckButtons_adcaf55ed36a6713517bb55e61f73a740}{observers}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A GUI neutral set of check buttons.
+
+For the check buttons to remain responsive you must keep a
+reference to this object.
+
+Connect to the CheckButtons with the `.on_clicked` method.
+
+Attributes
+----------
+ax : `~matplotlib.axes.Axes`
+    The parent axes for the widget.
+labels : list of `.Text`
+
+rectangles : list of `.Rectangle`
+
+lines : list of (`.Line2D`, `.Line2D`) pairs
+    List of lines for the x's in the check boxes.  These lines exist for
+    each box, but have ``set_visible(False)`` when its box is not checked.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1CheckButtons_a263cab4962771dad32ae9f7bff5ac9b4}\label{classmatplotlib_1_1widgets_1_1CheckButtons_a263cab4962771dad32ae9f7bff5ac9b4}} 
+\index{matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Check\+Buttons.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{labels,  }\item[{}]{actives = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add check buttons to `matplotlib.axes.Axes` instance *ax*.
+
+Parameters
+----------
+ax : `~matplotlib.axes.Axes`
+    The parent axes for the widget.
+
+labels : list of str
+    The labels of the check buttons.
+
+actives : list of bool, optional
+    The initial check states of the buttons. The list must have the
+    same length as *labels*. If not given, all buttons are unchecked.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1CheckButtons_a17c09771d95c7842999dfaa6f296127c}\label{classmatplotlib_1_1widgets_1_1CheckButtons_a17c09771d95c7842999dfaa6f296127c}} 
+\index{matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}}
+\subsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Check\+Buttons.\+disconnect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cid }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove the observer with connection id *cid*.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1CheckButtons_a19e5321e6e1910bcfbb11538a0d979b4}\label{classmatplotlib_1_1widgets_1_1CheckButtons_a19e5321e6e1910bcfbb11538a0d979b4}} 
+\index{matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}!get\+\_\+status@{get\+\_\+status}}
+\index{get\+\_\+status@{get\+\_\+status}!matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}}
+\subsubsection{\texorpdfstring{get\+\_\+status()}{get\_status()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Check\+Buttons.\+get\+\_\+status (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a tuple of the status (True/False) of all of the check buttons.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1CheckButtons_a2521d9a8165bfbe0463537e8acc36b94}\label{classmatplotlib_1_1widgets_1_1CheckButtons_a2521d9a8165bfbe0463537e8acc36b94}} 
+\index{matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}!on\+\_\+clicked@{on\+\_\+clicked}}
+\index{on\+\_\+clicked@{on\+\_\+clicked}!matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}}
+\subsubsection{\texorpdfstring{on\+\_\+clicked()}{on\_clicked()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Check\+Buttons.\+on\+\_\+clicked (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Connect the callback function *func* to button click events.
+
+Returns a connection id, which can be used to disconnect the callback.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1CheckButtons_a50ef24a39aa238582d6d492797ce42a6}\label{classmatplotlib_1_1widgets_1_1CheckButtons_a50ef24a39aa238582d6d492797ce42a6}} 
+\index{matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}!set\+\_\+active@{set\+\_\+active}}
+\index{set\+\_\+active@{set\+\_\+active}!matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}}
+\subsubsection{\texorpdfstring{set\+\_\+active()}{set\_active()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Check\+Buttons.\+set\+\_\+active (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Toggle (activate or deactivate) a check button by index.
+
+Callbacks will be triggered if :attr:`eventson` is True.
+
+Parameters
+----------
+index : int
+    Index of the check button to toggle.
+
+Raises
+------
+ValueError
+    If *index* is invalid.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1CheckButtons_ad5be6ba7cd19eb0658d87d575ba73688}\label{classmatplotlib_1_1widgets_1_1CheckButtons_ad5be6ba7cd19eb0658d87d575ba73688}} 
+\index{matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}!cnt@{cnt}}
+\index{cnt@{cnt}!matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}}
+\subsubsection{\texorpdfstring{cnt}{cnt}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Check\+Buttons.\+cnt\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1CheckButtons_a6cc26f36564fa6fcffd3637dd1d29317}\label{classmatplotlib_1_1widgets_1_1CheckButtons_a6cc26f36564fa6fcffd3637dd1d29317}} 
+\index{matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}!labels@{labels}}
+\index{labels@{labels}!matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}}
+\subsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Check\+Buttons.\+labels}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1CheckButtons_a7b97d3a4d391ba49f71f3d462dd28394}\label{classmatplotlib_1_1widgets_1_1CheckButtons_a7b97d3a4d391ba49f71f3d462dd28394}} 
+\index{matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}!lines@{lines}}
+\index{lines@{lines}!matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}}
+\subsubsection{\texorpdfstring{lines}{lines}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Check\+Buttons.\+lines}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1CheckButtons_adcaf55ed36a6713517bb55e61f73a740}\label{classmatplotlib_1_1widgets_1_1CheckButtons_adcaf55ed36a6713517bb55e61f73a740}} 
+\index{matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}!observers@{observers}}
+\index{observers@{observers}!matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}}
+\subsubsection{\texorpdfstring{observers}{observers}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Check\+Buttons.\+observers\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1CheckButtons_ac37fbe05a3f11927188a0594b8ac90b6}\label{classmatplotlib_1_1widgets_1_1CheckButtons_ac37fbe05a3f11927188a0594b8ac90b6}} 
+\index{matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}!rectangles@{rectangles}}
+\index{rectangles@{rectangles}!matplotlib\+::widgets\+::\+Check\+Buttons@{matplotlib\+::widgets\+::\+Check\+Buttons}}
+\subsubsection{\texorpdfstring{rectangles}{rectangles}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Check\+Buttons.\+rectangles}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

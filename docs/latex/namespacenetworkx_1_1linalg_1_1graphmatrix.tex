@@ -1,0 +1,149 @@
+\hypertarget{namespacenetworkx_1_1linalg_1_1graphmatrix}{}\section{networkx.\+linalg.\+graphmatrix Namespace Reference}
+\label{namespacenetworkx_1_1linalg_1_1graphmatrix}\index{networkx.\+linalg.\+graphmatrix@{networkx.\+linalg.\+graphmatrix}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1graphmatrix_adaf5556e243da34e5fba7abf1886ee7f}{incidence\+\_\+matrix} (G, nodelist=None, edgelist=None, oriented=False, weight=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1linalg_1_1graphmatrix_a585d62b07b9294f28c58a4e9265b279d}{adjacency\+\_\+matrix} (G, nodelist=None, dtype=None, weight=\char`\"{}weight\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1linalg_1_1graphmatrix_a8143b2f489f4c1c82ffd1c3a67544956}{adj\+\_\+matrix}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Adjacency matrix and incidence matrix of graphs.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1graphmatrix_a585d62b07b9294f28c58a4e9265b279d}\label{namespacenetworkx_1_1linalg_1_1graphmatrix_a585d62b07b9294f28c58a4e9265b279d}} 
+\index{networkx\+::linalg\+::graphmatrix@{networkx\+::linalg\+::graphmatrix}!adjacency\+\_\+matrix@{adjacency\+\_\+matrix}}
+\index{adjacency\+\_\+matrix@{adjacency\+\_\+matrix}!networkx\+::linalg\+::graphmatrix@{networkx\+::linalg\+::graphmatrix}}
+\subsubsection{\texorpdfstring{adjacency\+\_\+matrix()}{adjacency\_matrix()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+graphmatrix.\+adjacency\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodelist = {\ttfamily None},  }\item[{}]{dtype = {\ttfamily None},  }\item[{}]{weight = {\ttfamily \char`\"{}weight\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns adjacency matrix of G.
+
+Parameters
+----------
+G : graph
+   A NetworkX graph
+
+nodelist : list, optional
+   The rows and columns are ordered according to the nodes in nodelist.
+   If nodelist is None, then the ordering is produced by G.nodes().
+
+dtype : NumPy data-type, optional
+    The desired data-type for the array.
+    If None, then the NumPy default is used.
+
+weight : string or None, optional (default='weight')
+   The edge data key used to provide each value in the matrix.
+   If None, then each edge has weight 1.
+
+Returns
+-------
+A : SciPy sparse matrix
+  Adjacency matrix representation of G.
+
+Notes
+-----
+For directed graphs, entry i,j corresponds to an edge from i to j.
+
+If you want a pure Python adjacency matrix representation try
+networkx.convert.to_dict_of_dicts which will return a
+dictionary-of-dictionaries format that can be addressed as a
+sparse matrix.
+
+For MultiGraph/MultiDiGraph with parallel edges the weights are summed.
+See `to_numpy_array` for other options.
+
+The convention used for self-loop edges in graphs is to assign the
+diagonal matrix entry value to the edge weight attribute
+(or the number 1 if the edge has no weight attribute).  If the
+alternate convention of doubling the edge weight is desired the
+resulting Scipy sparse matrix can be modified as follows:
+
+>>> G = nx.Graph([(1, 1)])
+>>> A = nx.adjacency_matrix(G)
+>>> print(A.todense())
+[[1]]
+>>> A.setdiag(A.diagonal() * 2)
+>>> print(A.todense())
+[[2]]
+
+See Also
+--------
+to_numpy_array
+to_scipy_sparse_matrix
+to_dict_of_dicts
+adjacency_spectrum
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1graphmatrix_adaf5556e243da34e5fba7abf1886ee7f}\label{namespacenetworkx_1_1linalg_1_1graphmatrix_adaf5556e243da34e5fba7abf1886ee7f}} 
+\index{networkx\+::linalg\+::graphmatrix@{networkx\+::linalg\+::graphmatrix}!incidence\+\_\+matrix@{incidence\+\_\+matrix}}
+\index{incidence\+\_\+matrix@{incidence\+\_\+matrix}!networkx\+::linalg\+::graphmatrix@{networkx\+::linalg\+::graphmatrix}}
+\subsubsection{\texorpdfstring{incidence\+\_\+matrix()}{incidence\_matrix()}}
+{\footnotesize\ttfamily def networkx.\+linalg.\+graphmatrix.\+incidence\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodelist = {\ttfamily None},  }\item[{}]{edgelist = {\ttfamily None},  }\item[{}]{oriented = {\ttfamily False},  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns incidence matrix of G.
+
+The incidence matrix assigns each row to a node and each column to an edge.
+For a standard incidence matrix a 1 appears wherever a row's node is
+incident on the column's edge.  For an oriented incidence matrix each
+edge is assigned an orientation (arbitrarily for undirected and aligning to
+direction for directed).  A -1 appears for the source (tail) of an edge and
+1 for the destination (head) of the edge.  The elements are zero otherwise.
+
+Parameters
+----------
+G : graph
+   A NetworkX graph
+
+nodelist : list, optional   (default= all nodes in G)
+   The rows are ordered according to the nodes in nodelist.
+   If nodelist is None, then the ordering is produced by G.nodes().
+
+edgelist : list, optional (default= all edges in G)
+   The columns are ordered according to the edges in edgelist.
+   If edgelist is None, then the ordering is produced by G.edges().
+
+oriented: bool, optional (default=False)
+   If True, matrix elements are +1 or -1 for the head or tail node
+   respectively of each edge.  If False, +1 occurs at both nodes.
+
+weight : string or None, optional (default=None)
+   The edge data key used to provide each value in the matrix.
+   If None, then each edge has weight 1.  Edge weights, if used,
+   should be positive so that the orientation can provide the sign.
+
+Returns
+-------
+A : SciPy sparse matrix
+  The incidence matrix of G.
+
+Notes
+-----
+For MultiGraph/MultiDiGraph, the edges in edgelist should be
+(u,v,key) 3-tuples.
+
+"Networks are the best discrete model for so many problems in
+applied mathematics" [1]_.
+
+References
+----------
+.. [1] Gil Strang, Network applications: A = incidence matrix,
+   http://videolectures.net/mit18085f07_strang_lec03/
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1linalg_1_1graphmatrix_a8143b2f489f4c1c82ffd1c3a67544956}\label{namespacenetworkx_1_1linalg_1_1graphmatrix_a8143b2f489f4c1c82ffd1c3a67544956}} 
+\index{networkx\+::linalg\+::graphmatrix@{networkx\+::linalg\+::graphmatrix}!adj\+\_\+matrix@{adj\+\_\+matrix}}
+\index{adj\+\_\+matrix@{adj\+\_\+matrix}!networkx\+::linalg\+::graphmatrix@{networkx\+::linalg\+::graphmatrix}}
+\subsubsection{\texorpdfstring{adj\+\_\+matrix}{adj\_matrix}}
+{\footnotesize\ttfamily networkx.\+linalg.\+graphmatrix.\+adj\+\_\+matrix}
+

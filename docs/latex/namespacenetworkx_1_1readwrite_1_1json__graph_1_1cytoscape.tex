@@ -1,0 +1,143 @@
+\hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1cytoscape}{}\section{networkx.\+readwrite.\+json\+\_\+graph.\+cytoscape Namespace Reference}
+\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1cytoscape}\index{networkx.\+readwrite.\+json\+\_\+graph.\+cytoscape@{networkx.\+readwrite.\+json\+\_\+graph.\+cytoscape}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1json__graph_1_1cytoscape_a0cf8bd87b601b805fed94f85daa21ddb}{cytoscape\+\_\+data} (G, attrs=None, name=\char`\"{}name\char`\"{}, ident=\char`\"{}id\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1json__graph_1_1cytoscape_a53e0da9b4289a61f98c229aa3fa6deb6}{cytoscape\+\_\+graph} (data, attrs=None, name=\char`\"{}name\char`\"{}, ident=\char`\"{}id\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1cytoscape_a0cf8bd87b601b805fed94f85daa21ddb}\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1cytoscape_a0cf8bd87b601b805fed94f85daa21ddb}} 
+\index{networkx\+::readwrite\+::json\+\_\+graph\+::cytoscape@{networkx\+::readwrite\+::json\+\_\+graph\+::cytoscape}!cytoscape\+\_\+data@{cytoscape\+\_\+data}}
+\index{cytoscape\+\_\+data@{cytoscape\+\_\+data}!networkx\+::readwrite\+::json\+\_\+graph\+::cytoscape@{networkx\+::readwrite\+::json\+\_\+graph\+::cytoscape}}
+\subsubsection{\texorpdfstring{cytoscape\+\_\+data()}{cytoscape\_data()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+json\+\_\+graph.\+cytoscape.\+cytoscape\+\_\+data (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{attrs = {\ttfamily None},  }\item[{}]{name = {\ttfamily \char`\"{}name\char`\"{}},  }\item[{}]{ident = {\ttfamily \char`\"{}id\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns data in Cytoscape JSON format (cyjs).
+
+Parameters
+----------
+G : NetworkX Graph
+    The graph to convert to cytoscape format
+attrs : dict or None (default=None)
+    A dictionary containing the keys 'name' and 'ident' which are mapped to
+    the 'name' and 'id' node elements in cyjs format. All other keys are
+    ignored. Default is `None` which results in the default mapping
+    ``dict(name="name", ident="id")``.
+
+    .. deprecated:: 2.6
+
+       The `attrs` keyword argument will be replaced with `name` and
+       `ident` in networkx 3.0
+
+name : string
+    A string which is mapped to the 'name' node element in cyjs format.
+    Must not have the same value as `ident`.
+ident : string
+    A string which is mapped to the 'id' node element in cyjs format.
+    Must not have the same value as `name`.
+
+Returns
+-------
+data: dict
+    A dictionary with cyjs formatted data.
+
+Raises
+------
+NetworkXError
+    If the values for `name` and `ident` are identical.
+
+See Also
+--------
+cytoscape_graph: convert a dictionary in cyjs format to a graph
+
+References
+----------
+.. [1] Cytoscape user's manual:
+   http://manual.cytoscape.org/en/stable/index.html
+
+Examples
+--------
+>>> G = nx.path_graph(2)
+>>> nx.cytoscape_data(G)  # doctest: +SKIP
+{'data': [],
+ 'directed': False,
+ 'multigraph': False,
+ 'elements': {'nodes': [{'data': {'id': '0', 'value': 0, 'name': '0'}},
+   {'data': {'id': '1', 'value': 1, 'name': '1'}}],
+  'edges': [{'data': {'source': 0, 'target': 1}}]}}
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1cytoscape_a53e0da9b4289a61f98c229aa3fa6deb6}\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1cytoscape_a53e0da9b4289a61f98c229aa3fa6deb6}} 
+\index{networkx\+::readwrite\+::json\+\_\+graph\+::cytoscape@{networkx\+::readwrite\+::json\+\_\+graph\+::cytoscape}!cytoscape\+\_\+graph@{cytoscape\+\_\+graph}}
+\index{cytoscape\+\_\+graph@{cytoscape\+\_\+graph}!networkx\+::readwrite\+::json\+\_\+graph\+::cytoscape@{networkx\+::readwrite\+::json\+\_\+graph\+::cytoscape}}
+\subsubsection{\texorpdfstring{cytoscape\+\_\+graph()}{cytoscape\_graph()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+json\+\_\+graph.\+cytoscape.\+cytoscape\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{attrs = {\ttfamily None},  }\item[{}]{name = {\ttfamily \char`\"{}name\char`\"{}},  }\item[{}]{ident = {\ttfamily \char`\"{}id\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a NetworkX graph from a dictionary in cytoscape JSON format.
+
+Parameters
+----------
+data : dict
+    A dictionary of data conforming to cytoscape JSON format.
+attrs : dict or None (default=None)
+    A dictionary containing the keys 'name' and 'ident' which are mapped to
+    the 'name' and 'id' node elements in cyjs format. All other keys are
+    ignored. Default is `None` which results in the default mapping
+    ``dict(name="name", ident="id")``.
+
+    .. deprecated:: 2.6
+
+       The `attrs` keyword argument will be replaced with `name` and
+       `ident` in networkx 3.0
+
+name : string
+    A string which is mapped to the 'name' node element in cyjs format.
+    Must not have the same value as `ident`.
+ident : string
+    A string which is mapped to the 'id' node element in cyjs format.
+    Must not have the same value as `name`.
+
+Returns
+-------
+graph : a NetworkX graph instance
+    The `graph` can be an instance of `Graph`, `DiGraph`, `MultiGraph`, or
+    `MultiDiGraph` depending on the input data.
+
+Raises
+------
+NetworkXError
+    If the `name` and `ident` attributes are identical.
+
+See Also
+--------
+cytoscape_data: convert a NetworkX graph to a dict in cyjs format
+
+References
+----------
+.. [1] Cytoscape user's manual:
+   http://manual.cytoscape.org/en/stable/index.html
+
+Examples
+--------
+>>> data_dict = {
+...     'data': [],
+...     'directed': False,
+...     'multigraph': False,
+...     'elements': {'nodes': [{'data': {'id': '0', 'value': 0, 'name': '0'}},
+...       {'data': {'id': '1', 'value': 1, 'name': '1'}}],
+...      'edges': [{'data': {'source': 0, 'target': 1}}]}
+... }
+>>> G = nx.cytoscape_graph(data_dict)
+>>> G.name
+''
+>>> G.nodes()
+NodeView((0, 1))
+>>> G.nodes(data=True)[0]
+{'id': '0', 'value': 0, 'name': '0'}
+>>> G.edges(data=True)
+EdgeDataView([(0, 1, {'source': 0, 'target': 1})])
+\end{DoxyVerb}
+ 

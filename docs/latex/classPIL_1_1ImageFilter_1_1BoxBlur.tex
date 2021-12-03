@@ -1,0 +1,90 @@
+\hypertarget{classPIL_1_1ImageFilter_1_1BoxBlur}{}\section{P\+I\+L.\+Image\+Filter.\+Box\+Blur Class Reference}
+\label{classPIL_1_1ImageFilter_1_1BoxBlur}\index{P\+I\+L.\+Image\+Filter.\+Box\+Blur@{P\+I\+L.\+Image\+Filter.\+Box\+Blur}}
+
+
+Inheritance diagram for P\+I\+L.\+Image\+Filter.\+Box\+Blur\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classPIL_1_1ImageFilter_1_1BoxBlur__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+I\+L.\+Image\+Filter.\+Box\+Blur\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classPIL_1_1ImageFilter_1_1BoxBlur__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classPIL_1_1ImageFilter_1_1BoxBlur_a2d181412dd3b81932dd127acbdfc17f9}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classPIL_1_1ImageFilter_1_1BoxBlur_a26a090753606f60baa94f7c9e36b4a2d}{radius})
+\item 
+def \hyperlink{classPIL_1_1ImageFilter_1_1BoxBlur_af4c9cf011d360e75f3fb99a184658316}{filter} (self, image)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPIL_1_1ImageFilter_1_1BoxBlur_a26a090753606f60baa94f7c9e36b4a2d}{radius}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPIL_1_1ImageFilter_1_1BoxBlur_af54502af36f37e766e46c00e9786b740}{name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Blurs the image by setting each pixel to the average value of the pixels
+in a square box extending radius pixels in each direction.
+Supports float radius of arbitrary size. Uses an optimized implementation
+which runs in linear time relative to the size of the image
+for any radius value.
+
+:param radius: Size of the box in one direction. Radius 0 does not blur,
+               returns an identical image. Radius 1 takes 1 pixel
+               in each direction, i.e. 9 pixels in total.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPIL_1_1ImageFilter_1_1BoxBlur_a2d181412dd3b81932dd127acbdfc17f9}\label{classPIL_1_1ImageFilter_1_1BoxBlur_a2d181412dd3b81932dd127acbdfc17f9}} 
+\index{P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur@{P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur@{P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Filter.\+Box\+Blur.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{radius }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPIL_1_1ImageFilter_1_1BoxBlur_af4c9cf011d360e75f3fb99a184658316}\label{classPIL_1_1ImageFilter_1_1BoxBlur_af4c9cf011d360e75f3fb99a184658316}} 
+\index{P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur@{P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur}!filter@{filter}}
+\index{filter@{filter}!P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur@{P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur}}
+\subsubsection{\texorpdfstring{filter()}{filter()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Filter.\+Box\+Blur.\+filter (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{image }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPIL_1_1ImageFilter_1_1BoxBlur_af54502af36f37e766e46c00e9786b740}\label{classPIL_1_1ImageFilter_1_1BoxBlur_af54502af36f37e766e46c00e9786b740}} 
+\index{P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur@{P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur}!name@{name}}
+\index{name@{name}!P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur@{P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Filter.\+Box\+Blur.\+name\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPIL_1_1ImageFilter_1_1BoxBlur_a26a090753606f60baa94f7c9e36b4a2d}\label{classPIL_1_1ImageFilter_1_1BoxBlur_a26a090753606f60baa94f7c9e36b4a2d}} 
+\index{P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur@{P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur}!radius@{radius}}
+\index{radius@{radius}!P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur@{P\+I\+L\+::\+Image\+Filter\+::\+Box\+Blur}}
+\subsubsection{\texorpdfstring{radius}{radius}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Filter.\+Box\+Blur.\+radius}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\+P\+I\+L/\hyperlink{ImageFilter_8py}{Image\+Filter.\+py}\end{DoxyCompactItemize}

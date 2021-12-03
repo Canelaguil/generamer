@@ -1,0 +1,199 @@
+\hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase}{}\section{matplotlib.\+backend\+\_\+bases.\+Timer\+Base Class Reference}
+\label{classmatplotlib_1_1backend__bases_1_1TimerBase}\index{matplotlib.\+backend\+\_\+bases.\+Timer\+Base@{matplotlib.\+backend\+\_\+bases.\+Timer\+Base}}
+
+
+Inheritance diagram for matplotlib.\+backend\+\_\+bases.\+Timer\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classmatplotlib_1_1backend__bases_1_1TimerBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_accab61924e1bbf99cc279c4623f765f0}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_a3070e43370c069bffa933a51f5c1b9d7}{interval}=None, \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_aec6debcd3cd82e1faef08eae87f2ae3f}{callbacks}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_a152a5a66ba075701ed935b2b2428f9e0}{\+\_\+\+\_\+del\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_a1b96fbbb1dfafc76731ccdd84079f0b1}{start} (self, \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_a3070e43370c069bffa933a51f5c1b9d7}{interval}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_aa303005348c43f5a084830ee283cabde}{stop} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_a1dee6c43410451f2b0d9e409eda754af}{interval} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_a59501ba97b0422e2e0606c7703f85bf9}{interval} (self, interval)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_a1dc74a3c8b17800cbced995985c0635b}{single\+\_\+shot} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_a17d83b97785c95a40ff98af4230c46b5}{single\+\_\+shot} (self, ss)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_a8ad446b09f04c87ee93d440e1079885d}{add\+\_\+callback} (self, func, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_ab3ec2638a4c890bd7230005891ddefdd}{remove\+\_\+callback} (self, func, args, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_aec6debcd3cd82e1faef08eae87f2ae3f}{callbacks}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_a3070e43370c069bffa933a51f5c1b9d7}{interval}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase_ae796176ccaeb226e0e25b20e03feb1f3}{single\+\_\+shot}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A base class for providing timer events, useful for things animations.
+Backends need to implement a few specific methods in order to use their
+own timing mechanisms so that the timer events are integrated into their
+event loops.
+
+Subclasses must override the following methods:
+
+- ``_timer_start``: Backend-specific code for starting the timer.
+- ``_timer_stop``: Backend-specific code for stopping the timer.
+
+Subclasses may additionally override the following methods:
+
+- ``_timer_set_single_shot``: Code for setting the timer to single shot
+  operating mode, if supported by the timer object.  If not, the `Timer`
+  class itself will store the flag and the ``_on_timer`` method should be
+  overridden to support such behavior.
+
+- ``_timer_set_interval``: Code for setting the interval on the timer, if
+  there is a method for doing so on the timer object.
+
+- ``_on_timer``: The internal function that any timer object should call,
+  which will handle the task of running all callbacks that have been set.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_accab61924e1bbf99cc279c4623f765f0}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_accab61924e1bbf99cc279c4623f765f0}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{interval = {\ttfamily None},  }\item[{}]{callbacks = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+interval : int, default: 1000ms
+    The time between timer events in milliseconds.  Will be stored as
+    ``timer.interval``.
+callbacks : list[tuple[callable, tuple, dict]]
+    List of (func, args, kwargs) tuples that will be called upon
+    timer events.  This list is accessible as ``timer.callbacks`` and
+    can be manipulated directly, or the functions `add_callback` and
+    `remove_callback` can be used.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_a152a5a66ba075701ed935b2b2428f9e0}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_a152a5a66ba075701ed935b2b2428f9e0}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!\+\_\+\+\_\+del\+\_\+\+\_\+@{\+\_\+\+\_\+del\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+del\+\_\+\+\_\+@{\+\_\+\+\_\+del\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+del\+\_\+\+\_\+()}{\_\_del\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+\_\+\+\_\+del\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Need to stop timer and possibly disconnect timer.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_a8ad446b09f04c87ee93d440e1079885d}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_a8ad446b09f04c87ee93d440e1079885d}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!add\+\_\+callback@{add\+\_\+callback}}
+\index{add\+\_\+callback@{add\+\_\+callback}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{add\+\_\+callback()}{add\_callback()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+add\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register *func* to be called by timer when the event fires. Any
+additional arguments provided will be passed to *func*.
+
+This function returns *func*, which makes it possible to use it as a
+decorator.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_a1dee6c43410451f2b0d9e409eda754af}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_a1dee6c43410451f2b0d9e409eda754af}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!interval@{interval}}
+\index{interval@{interval}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{interval()}{interval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+interval (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The time between timer events, in milliseconds.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_a59501ba97b0422e2e0606c7703f85bf9}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_a59501ba97b0422e2e0606c7703f85bf9}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!interval@{interval}}
+\index{interval@{interval}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{interval()}{interval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+interval (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{interval }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_ab3ec2638a4c890bd7230005891ddefdd}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_ab3ec2638a4c890bd7230005891ddefdd}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!remove\+\_\+callback@{remove\+\_\+callback}}
+\index{remove\+\_\+callback@{remove\+\_\+callback}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{remove\+\_\+callback()}{remove\_callback()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+remove\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove *func* from list of callbacks.
+
+*args* and *kwargs* are optional and used to distinguish between copies
+of the same function registered to be called with different arguments.
+This behavior is deprecated.  In the future, ``*args, **kwargs`` won't
+be considered anymore; to keep a specific callback removable by itself,
+pass it to `add_callback` as a `functools.partial` object.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_a1dc74a3c8b17800cbced995985c0635b}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_a1dc74a3c8b17800cbced995985c0635b}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!single\+\_\+shot@{single\+\_\+shot}}
+\index{single\+\_\+shot@{single\+\_\+shot}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{single\+\_\+shot()}{single\_shot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+single\+\_\+shot (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Whether this timer should stop after a single run.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_a17d83b97785c95a40ff98af4230c46b5}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_a17d83b97785c95a40ff98af4230c46b5}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!single\+\_\+shot@{single\+\_\+shot}}
+\index{single\+\_\+shot@{single\+\_\+shot}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{single\+\_\+shot()}{single\_shot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+single\+\_\+shot (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ss }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_a1b96fbbb1dfafc76731ccdd84079f0b1}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_a1b96fbbb1dfafc76731ccdd84079f0b1}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!start@{start}}
+\index{start@{start}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+start (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{interval = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Start the timer object.
+
+Parameters
+----------
+interval : int, optional
+    Timer interval in milliseconds; overrides a previously set interval
+    if provided.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_aa303005348c43f5a084830ee283cabde}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_aa303005348c43f5a084830ee283cabde}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!stop@{stop}}
+\index{stop@{stop}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+stop (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Stop the timer.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_aec6debcd3cd82e1faef08eae87f2ae3f}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_aec6debcd3cd82e1faef08eae87f2ae3f}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!callbacks@{callbacks}}
+\index{callbacks@{callbacks}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{callbacks}{callbacks}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+callbacks}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_a3070e43370c069bffa933a51f5c1b9d7}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_a3070e43370c069bffa933a51f5c1b9d7}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!interval@{interval}}
+\index{interval@{interval}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{interval}{interval}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+interval}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1TimerBase_ae796176ccaeb226e0e25b20e03feb1f3}\label{classmatplotlib_1_1backend__bases_1_1TimerBase_ae796176ccaeb226e0e25b20e03feb1f3}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}!single\+\_\+shot@{single\+\_\+shot}}
+\index{single\+\_\+shot@{single\+\_\+shot}!matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Timer\+Base}}
+\subsubsection{\texorpdfstring{single\+\_\+shot}{single\_shot}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Timer\+Base.\+single\+\_\+shot}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{backend__bases_8py}{backend\+\_\+bases.\+py}\end{DoxyCompactItemize}

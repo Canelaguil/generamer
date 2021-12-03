@@ -1,0 +1,191 @@
+\hypertarget{namespacematplotlib_1_1testing_1_1compare}{}\section{matplotlib.\+testing.\+compare Namespace Reference}
+\label{namespacematplotlib_1_1testing_1_1compare}\index{matplotlib.\+testing.\+compare@{matplotlib.\+testing.\+compare}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1testing_1_1compare_1_1__Converter}{\+\_\+\+Converter}
+\item 
+class \hyperlink{classmatplotlib_1_1testing_1_1compare_1_1__ConverterError}{\+\_\+\+Converter\+Error}
+\item 
+class \hyperlink{classmatplotlib_1_1testing_1_1compare_1_1__GSConverter}{\+\_\+\+G\+S\+Converter}
+\item 
+class \hyperlink{classmatplotlib_1_1testing_1_1compare_1_1__SVGConverter}{\+\_\+\+S\+V\+G\+Converter}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1compare_af2961b8f2b91f72b4634b876fe39f41f}{make\+\_\+test\+\_\+filename} (fname, purpose)
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1compare_a1996334d8a1c816f484bb22504a74b33}{get\+\_\+cache\+\_\+dir} ()
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1compare_a5f24669dccb05c0f33e0efc1f308857e}{get\+\_\+file\+\_\+hash} (path, block\+\_\+size=2 $\ast$$\ast$20)
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1compare_a28850cf5cd8dfc3495aa3ef20791c882}{make\+\_\+external\+\_\+conversion\+\_\+command} (cmd)
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1compare_af7dc5b0b19a6b50cca0100898c47bc2b}{comparable\+\_\+formats} ()
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1compare_afbe684c21fe258bb99af64ddb97623bf}{convert} (filename, cache)
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1compare_a90cba8809a5706e2c0b31a908de4924d}{crop\+\_\+to\+\_\+same} (actual\+\_\+path, actual\+\_\+image, expected\+\_\+path, expected\+\_\+image)
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1compare_a2037ee97b13d2baa4e243a239dda5ce3}{calculate\+\_\+rms} (expected\+\_\+image, actual\+\_\+image)
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1compare_a099a97a667c7cf9e562db6717243fb76}{compare\+\_\+images} (expected, actual, tol, in\+\_\+decorator=False)
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1compare_ab116a8a80cb7cbb6705b679fc2ba6b6b}{save\+\_\+diff\+\_\+image} (expected, actual, output)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1testing_1_1compare_af172c07fb213547199bf93cd4ca94f6c}{converter}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Utilities for comparing image results.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1compare_a2037ee97b13d2baa4e243a239dda5ce3}\label{namespacematplotlib_1_1testing_1_1compare_a2037ee97b13d2baa4e243a239dda5ce3}} 
+\index{matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}!calculate\+\_\+rms@{calculate\+\_\+rms}}
+\index{calculate\+\_\+rms@{calculate\+\_\+rms}!matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}}
+\subsubsection{\texorpdfstring{calculate\+\_\+rms()}{calculate\_rms()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+compare.\+calculate\+\_\+rms (\begin{DoxyParamCaption}\item[{}]{expected\+\_\+image,  }\item[{}]{actual\+\_\+image }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate the per-pixel errors, then compute the root mean square error.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1compare_af7dc5b0b19a6b50cca0100898c47bc2b}\label{namespacematplotlib_1_1testing_1_1compare_af7dc5b0b19a6b50cca0100898c47bc2b}} 
+\index{matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}!comparable\+\_\+formats@{comparable\+\_\+formats}}
+\index{comparable\+\_\+formats@{comparable\+\_\+formats}!matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}}
+\subsubsection{\texorpdfstring{comparable\+\_\+formats()}{comparable\_formats()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+compare.\+comparable\+\_\+formats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the list of file formats that `.compare_images` can compare
+on this system.
+
+Returns
+-------
+list of str
+    E.g. ``['png', 'pdf', 'svg', 'eps']``.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1compare_a099a97a667c7cf9e562db6717243fb76}\label{namespacematplotlib_1_1testing_1_1compare_a099a97a667c7cf9e562db6717243fb76}} 
+\index{matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}!compare\+\_\+images@{compare\+\_\+images}}
+\index{compare\+\_\+images@{compare\+\_\+images}!matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}}
+\subsubsection{\texorpdfstring{compare\+\_\+images()}{compare\_images()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+compare.\+compare\+\_\+images (\begin{DoxyParamCaption}\item[{}]{expected,  }\item[{}]{actual,  }\item[{}]{tol,  }\item[{}]{in\+\_\+decorator = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compare two "image" files checking differences within a tolerance.
+
+The two given filenames may point to files which are convertible to
+PNG via the `.converter` dictionary. The underlying RMS is calculated
+with the `.calculate_rms` function.
+
+Parameters
+----------
+expected : str
+    The filename of the expected image.
+actual : str
+    The filename of the actual image.
+tol : float
+    The tolerance (a color value difference, where 255 is the
+    maximal difference).  The test fails if the average pixel
+    difference is greater than this value.
+in_decorator : bool
+    Determines the output format. If called from image_comparison
+    decorator, this should be True. (default=False)
+
+Returns
+-------
+None or dict or str
+    Return *None* if the images are equal within the given tolerance.
+
+    If the images differ, the return value depends on  *in_decorator*.
+    If *in_decorator* is true, a dict with the following entries is
+    returned:
+
+    - *rms*: The RMS of the image difference.
+    - *expected*: The filename of the expected image.
+    - *actual*: The filename of the actual image.
+    - *diff_image*: The filename of the difference image.
+    - *tol*: The comparison tolerance.
+
+    Otherwise, a human-readable multi-line string representation of this
+    information is returned.
+
+Examples
+--------
+::
+
+    img1 = "./baseline/plot.png"
+    img2 = "./output/plot.png"
+    compare_images(img1, img2, 0.001)\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1compare_afbe684c21fe258bb99af64ddb97623bf}\label{namespacematplotlib_1_1testing_1_1compare_afbe684c21fe258bb99af64ddb97623bf}} 
+\index{matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}!convert@{convert}}
+\index{convert@{convert}!matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}}
+\subsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+compare.\+convert (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{cache }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert the named file to png; return the name of the created file.
+
+If *cache* is True, the result of the conversion is cached in
+`matplotlib.get_cachedir() + '/test_cache/'`.  The caching is based on a
+hash of the exact contents of the input file.  Old cache entries are
+automatically deleted as needed to keep the size of the cache capped to
+twice the size of all baseline images.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1compare_a90cba8809a5706e2c0b31a908de4924d}\label{namespacematplotlib_1_1testing_1_1compare_a90cba8809a5706e2c0b31a908de4924d}} 
+\index{matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}!crop\+\_\+to\+\_\+same@{crop\+\_\+to\+\_\+same}}
+\index{crop\+\_\+to\+\_\+same@{crop\+\_\+to\+\_\+same}!matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}}
+\subsubsection{\texorpdfstring{crop\+\_\+to\+\_\+same()}{crop\_to\_same()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+compare.\+crop\+\_\+to\+\_\+same (\begin{DoxyParamCaption}\item[{}]{actual\+\_\+path,  }\item[{}]{actual\+\_\+image,  }\item[{}]{expected\+\_\+path,  }\item[{}]{expected\+\_\+image }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1compare_a1996334d8a1c816f484bb22504a74b33}\label{namespacematplotlib_1_1testing_1_1compare_a1996334d8a1c816f484bb22504a74b33}} 
+\index{matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}!get\+\_\+cache\+\_\+dir@{get\+\_\+cache\+\_\+dir}}
+\index{get\+\_\+cache\+\_\+dir@{get\+\_\+cache\+\_\+dir}!matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}}
+\subsubsection{\texorpdfstring{get\+\_\+cache\+\_\+dir()}{get\_cache\_dir()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+compare.\+get\+\_\+cache\+\_\+dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1compare_a5f24669dccb05c0f33e0efc1f308857e}\label{namespacematplotlib_1_1testing_1_1compare_a5f24669dccb05c0f33e0efc1f308857e}} 
+\index{matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}!get\+\_\+file\+\_\+hash@{get\+\_\+file\+\_\+hash}}
+\index{get\+\_\+file\+\_\+hash@{get\+\_\+file\+\_\+hash}!matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}}
+\subsubsection{\texorpdfstring{get\+\_\+file\+\_\+hash()}{get\_file\_hash()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+compare.\+get\+\_\+file\+\_\+hash (\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{block\+\_\+size = {\ttfamily 2~$\ast$$\ast$~20} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1compare_a28850cf5cd8dfc3495aa3ef20791c882}\label{namespacematplotlib_1_1testing_1_1compare_a28850cf5cd8dfc3495aa3ef20791c882}} 
+\index{matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}!make\+\_\+external\+\_\+conversion\+\_\+command@{make\+\_\+external\+\_\+conversion\+\_\+command}}
+\index{make\+\_\+external\+\_\+conversion\+\_\+command@{make\+\_\+external\+\_\+conversion\+\_\+command}!matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}}
+\subsubsection{\texorpdfstring{make\+\_\+external\+\_\+conversion\+\_\+command()}{make\_external\_conversion\_command()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+compare.\+make\+\_\+external\+\_\+conversion\+\_\+command (\begin{DoxyParamCaption}\item[{}]{cmd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1compare_af2961b8f2b91f72b4634b876fe39f41f}\label{namespacematplotlib_1_1testing_1_1compare_af2961b8f2b91f72b4634b876fe39f41f}} 
+\index{matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}!make\+\_\+test\+\_\+filename@{make\+\_\+test\+\_\+filename}}
+\index{make\+\_\+test\+\_\+filename@{make\+\_\+test\+\_\+filename}!matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}}
+\subsubsection{\texorpdfstring{make\+\_\+test\+\_\+filename()}{make\_test\_filename()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+compare.\+make\+\_\+test\+\_\+filename (\begin{DoxyParamCaption}\item[{}]{fname,  }\item[{}]{purpose }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make a new filename by inserting *purpose* before the file's extension.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1compare_ab116a8a80cb7cbb6705b679fc2ba6b6b}\label{namespacematplotlib_1_1testing_1_1compare_ab116a8a80cb7cbb6705b679fc2ba6b6b}} 
+\index{matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}!save\+\_\+diff\+\_\+image@{save\+\_\+diff\+\_\+image}}
+\index{save\+\_\+diff\+\_\+image@{save\+\_\+diff\+\_\+image}!matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}}
+\subsubsection{\texorpdfstring{save\+\_\+diff\+\_\+image()}{save\_diff\_image()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+compare.\+save\+\_\+diff\+\_\+image (\begin{DoxyParamCaption}\item[{}]{expected,  }\item[{}]{actual,  }\item[{}]{output }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+expected : str
+    File path of expected image.
+actual : str
+    File path of actual image.
+output : str
+    File path to save difference image to.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1compare_af172c07fb213547199bf93cd4ca94f6c}\label{namespacematplotlib_1_1testing_1_1compare_af172c07fb213547199bf93cd4ca94f6c}} 
+\index{matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}!converter@{converter}}
+\index{converter@{converter}!matplotlib\+::testing\+::compare@{matplotlib\+::testing\+::compare}}
+\subsubsection{\texorpdfstring{converter}{converter}}
+{\footnotesize\ttfamily matplotlib.\+testing.\+compare.\+converter}
+

@@ -1,0 +1,396 @@
+\hypertarget{classmatplotlib_1_1colors_1_1LightSource}{}\section{matplotlib.\+colors.\+Light\+Source Class Reference}
+\label{classmatplotlib_1_1colors_1_1LightSource}\index{matplotlib.\+colors.\+Light\+Source@{matplotlib.\+colors.\+Light\+Source}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LightSource_a40db8291ed06130afff9f8b4dfc99ed5}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1colors_1_1LightSource_a882cb0069579a96b1cbee030da7e6dcf}{azdeg}=315, \hyperlink{classmatplotlib_1_1colors_1_1LightSource_a2777dfac6339c6a79f36de3caa2f81de}{altdeg}=45, \hyperlink{classmatplotlib_1_1colors_1_1LightSource_aa1fa26d6651f24ebd79c5faa0ab204b0}{hsv\+\_\+min\+\_\+val}=0, \hyperlink{classmatplotlib_1_1colors_1_1LightSource_a5471de9515029d4224f86972aa459e81}{hsv\+\_\+max\+\_\+val}=1, \hyperlink{classmatplotlib_1_1colors_1_1LightSource_af935fb94e31a3e49d91816818fcc078f}{hsv\+\_\+min\+\_\+sat}=1, \hyperlink{classmatplotlib_1_1colors_1_1LightSource_af495af78687fda8abd0c4a94b9ebb7ac}{hsv\+\_\+max\+\_\+sat}=0)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LightSource_a2ad08bc8b71ed120352b6afc1a3d6299}{direction} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LightSource_a5e4963ea3c81293011cd6a1fb337f1f8}{hillshade} (self, elevation, vert\+\_\+exag=1, dx=1, dy=1, fraction=1.)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LightSource_a467508ec8a8aba2145df2209faf360c9}{shade\+\_\+normals} (self, normals, fraction=1.)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LightSource_afb47b7b28c92dd87ec518dd671863e20}{shade} (self, data, cmap, norm=None, blend\+\_\+mode=\textquotesingle{}overlay\textquotesingle{}, \hyperlink{namespacematplotlib_1_1colors_a64fab219e2255adac7821722f85263bf}{vmin}=None, vmax=None, vert\+\_\+exag=1, dx=1, dy=1, fraction=1, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LightSource_a0da23fa89436a964e61cedab112b47af}{shade\+\_\+rgb} (self, rgb, elevation, fraction=1., blend\+\_\+mode=\textquotesingle{}hsv\textquotesingle{}, vert\+\_\+exag=1, dx=1, dy=1, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LightSource_a5111ad7bc8b948ff94ed9995a9e25a11}{blend\+\_\+hsv} (self, rgb, intensity, \hyperlink{classmatplotlib_1_1colors_1_1LightSource_af495af78687fda8abd0c4a94b9ebb7ac}{hsv\+\_\+max\+\_\+sat}=None, \hyperlink{classmatplotlib_1_1colors_1_1LightSource_a5471de9515029d4224f86972aa459e81}{hsv\+\_\+max\+\_\+val}=None, \hyperlink{classmatplotlib_1_1colors_1_1LightSource_aa1fa26d6651f24ebd79c5faa0ab204b0}{hsv\+\_\+min\+\_\+val}=None, \hyperlink{classmatplotlib_1_1colors_1_1LightSource_af935fb94e31a3e49d91816818fcc078f}{hsv\+\_\+min\+\_\+sat}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LightSource_ac3fb1dce58f1e80de2f168bccaf36ccd}{blend\+\_\+soft\+\_\+light} (self, rgb, intensity)
+\item 
+def \hyperlink{classmatplotlib_1_1colors_1_1LightSource_a0c50b1c06aeafa8731c651e4281d2e0b}{blend\+\_\+overlay} (self, rgb, intensity)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1LightSource_a882cb0069579a96b1cbee030da7e6dcf}{azdeg}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1LightSource_a2777dfac6339c6a79f36de3caa2f81de}{altdeg}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1LightSource_aa1fa26d6651f24ebd79c5faa0ab204b0}{hsv\+\_\+min\+\_\+val}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1LightSource_a5471de9515029d4224f86972aa459e81}{hsv\+\_\+max\+\_\+val}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1LightSource_af935fb94e31a3e49d91816818fcc078f}{hsv\+\_\+min\+\_\+sat}
+\item 
+\hyperlink{classmatplotlib_1_1colors_1_1LightSource_af495af78687fda8abd0c4a94b9ebb7ac}{hsv\+\_\+max\+\_\+sat}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Create a light source coming from the specified azimuth and elevation.
+Angles are in degrees, with the azimuth measured
+clockwise from north and elevation up from the zero plane of the surface.
+
+`shade` is used to produce "shaded" rgb values for a data array.
+`shade_rgb` can be used to combine an rgb image with an elevation map.
+`hillshade` produces an illumination map of a surface.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_a40db8291ed06130afff9f8b4dfc99ed5}\label{classmatplotlib_1_1colors_1_1LightSource_a40db8291ed06130afff9f8b4dfc99ed5}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Light\+Source.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{azdeg = {\ttfamily 315},  }\item[{}]{altdeg = {\ttfamily 45},  }\item[{}]{hsv\+\_\+min\+\_\+val = {\ttfamily 0},  }\item[{}]{hsv\+\_\+max\+\_\+val = {\ttfamily 1},  }\item[{}]{hsv\+\_\+min\+\_\+sat = {\ttfamily 1},  }\item[{}]{hsv\+\_\+max\+\_\+sat = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Specify the azimuth (measured clockwise from south) and altitude
+(measured up from the plane of the surface) of the light source
+in degrees.
+
+Parameters
+----------
+azdeg : float, default: 315 degrees (from the northwest)
+    The azimuth (0-360, degrees clockwise from North) of the light
+    source.
+altdeg : float, default: 45 degrees
+    The altitude (0-90, degrees up from horizontal) of the light
+    source.
+
+Notes
+-----
+For backwards compatibility, the parameters *hsv_min_val*,
+*hsv_max_val*, *hsv_min_sat*, and *hsv_max_sat* may be supplied at
+initialization as well.  However, these parameters will only be used if
+"blend_mode='hsv'" is passed into `shade` or `shade_rgb`.
+See the documentation for `blend_hsv` for more details.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_a5111ad7bc8b948ff94ed9995a9e25a11}\label{classmatplotlib_1_1colors_1_1LightSource_a5111ad7bc8b948ff94ed9995a9e25a11}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!blend\+\_\+hsv@{blend\+\_\+hsv}}
+\index{blend\+\_\+hsv@{blend\+\_\+hsv}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{blend\+\_\+hsv()}{blend\_hsv()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Light\+Source.\+blend\+\_\+hsv (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{rgb,  }\item[{}]{intensity,  }\item[{}]{hsv\+\_\+max\+\_\+sat = {\ttfamily None},  }\item[{}]{hsv\+\_\+max\+\_\+val = {\ttfamily None},  }\item[{}]{hsv\+\_\+min\+\_\+val = {\ttfamily None},  }\item[{}]{hsv\+\_\+min\+\_\+sat = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Take the input data array, convert to HSV values in the given colormap,
+then adjust those color values to give the impression of a shaded
+relief map with a specified light source.  RGBA values are returned,
+which can then be used to plot the shaded image with imshow.
+
+The color of the resulting image will be darkened by moving the (s, v)
+values (in hsv colorspace) toward (hsv_min_sat, hsv_min_val) in the
+shaded regions, or lightened by sliding (s, v) toward (hsv_max_sat,
+hsv_max_val) in regions that are illuminated.  The default extremes are
+chose so that completely shaded points are nearly black (s = 1, v = 0)
+and completely illuminated points are nearly white (s = 0, v = 1).
+
+Parameters
+----------
+rgb : ndarray
+    An MxNx3 RGB array of floats ranging from 0 to 1 (color image).
+intensity : ndarray
+    An MxNx1 array of floats ranging from 0 to 1 (grayscale image).
+hsv_max_sat : number, default: 1
+    The maximum saturation value that the *intensity* map can shift the
+    output image to.
+hsv_min_sat : number, optional
+    The minimum saturation value that the *intensity* map can shift the
+    output image to. Defaults to 0.
+hsv_max_val : number, optional
+    The maximum value ("v" in "hsv") that the *intensity* map can shift
+    the output image to. Defaults to 1.
+hsv_min_val : number, optional
+    The minimum value ("v" in "hsv") that the *intensity* map can shift
+    the output image to. Defaults to 0.
+
+Returns
+-------
+ndarray
+    An MxNx3 RGB array representing the combined images.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_a0c50b1c06aeafa8731c651e4281d2e0b}\label{classmatplotlib_1_1colors_1_1LightSource_a0c50b1c06aeafa8731c651e4281d2e0b}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!blend\+\_\+overlay@{blend\+\_\+overlay}}
+\index{blend\+\_\+overlay@{blend\+\_\+overlay}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{blend\+\_\+overlay()}{blend\_overlay()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Light\+Source.\+blend\+\_\+overlay (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{rgb,  }\item[{}]{intensity }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Combines an rgb image with an intensity map using "overlay" blending.
+
+Parameters
+----------
+rgb : ndarray
+    An MxNx3 RGB array of floats ranging from 0 to 1 (color image).
+intensity : ndarray
+    An MxNx1 array of floats ranging from 0 to 1 (grayscale image).
+
+Returns
+-------
+ndarray
+    An MxNx3 RGB array representing the combined images.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_ac3fb1dce58f1e80de2f168bccaf36ccd}\label{classmatplotlib_1_1colors_1_1LightSource_ac3fb1dce58f1e80de2f168bccaf36ccd}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!blend\+\_\+soft\+\_\+light@{blend\+\_\+soft\+\_\+light}}
+\index{blend\+\_\+soft\+\_\+light@{blend\+\_\+soft\+\_\+light}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{blend\+\_\+soft\+\_\+light()}{blend\_soft\_light()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Light\+Source.\+blend\+\_\+soft\+\_\+light (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{rgb,  }\item[{}]{intensity }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Combine an rgb image with an intensity map using "soft light" blending,
+using the "pegtop" formula.
+
+Parameters
+----------
+rgb : ndarray
+    An MxNx3 RGB array of floats ranging from 0 to 1 (color image).
+intensity : ndarray
+    An MxNx1 array of floats ranging from 0 to 1 (grayscale image).
+
+Returns
+-------
+ndarray
+    An MxNx3 RGB array representing the combined images.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_a2ad08bc8b71ed120352b6afc1a3d6299}\label{classmatplotlib_1_1colors_1_1LightSource_a2ad08bc8b71ed120352b6afc1a3d6299}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!direction@{direction}}
+\index{direction@{direction}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{direction()}{direction()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Light\+Source.\+direction (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The unit vector direction towards the light source.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_a5e4963ea3c81293011cd6a1fb337f1f8}\label{classmatplotlib_1_1colors_1_1LightSource_a5e4963ea3c81293011cd6a1fb337f1f8}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!hillshade@{hillshade}}
+\index{hillshade@{hillshade}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{hillshade()}{hillshade()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Light\+Source.\+hillshade (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{elevation,  }\item[{}]{vert\+\_\+exag = {\ttfamily 1},  }\item[{}]{dx = {\ttfamily 1},  }\item[{}]{dy = {\ttfamily 1},  }\item[{}]{fraction = {\ttfamily 1.} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate the illumination intensity for a surface using the defined
+azimuth and elevation for the light source.
+
+This computes the normal vectors for the surface, and then passes them
+on to `shade_normals`
+
+Parameters
+----------
+elevation : 2D array-like
+    The height values used to generate an illumination map
+vert_exag : number, optional
+    The amount to exaggerate the elevation values by when calculating
+    illumination. This can be used either to correct for differences in
+    units between the x-y coordinate system and the elevation
+    coordinate system (e.g. decimal degrees vs. meters) or to
+    exaggerate or de-emphasize topographic effects.
+dx : number, optional
+    The x-spacing (columns) of the input *elevation* grid.
+dy : number, optional
+    The y-spacing (rows) of the input *elevation* grid.
+fraction : number, optional
+    Increases or decreases the contrast of the hillshade.  Values
+    greater than one will cause intermediate values to move closer to
+    full illumination or shadow (and clipping any values that move
+    beyond 0 or 1). Note that this is not visually or mathematically
+    the same as vertical exaggeration.
+
+Returns
+-------
+ndarray
+    A 2D array of illumination values between 0-1, where 0 is
+    completely in shadow and 1 is completely illuminated.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_afb47b7b28c92dd87ec518dd671863e20}\label{classmatplotlib_1_1colors_1_1LightSource_afb47b7b28c92dd87ec518dd671863e20}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!shade@{shade}}
+\index{shade@{shade}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{shade()}{shade()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Light\+Source.\+shade (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data,  }\item[{}]{cmap,  }\item[{}]{norm = {\ttfamily None},  }\item[{}]{blend\+\_\+mode = {\ttfamily \textquotesingle{}overlay\textquotesingle{}},  }\item[{}]{vmin = {\ttfamily None},  }\item[{}]{vmax = {\ttfamily None},  }\item[{}]{vert\+\_\+exag = {\ttfamily 1},  }\item[{}]{dx = {\ttfamily 1},  }\item[{}]{dy = {\ttfamily 1},  }\item[{}]{fraction = {\ttfamily 1},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Combine colormapped data values with an illumination intensity map
+(a.k.a.  "hillshade") of the values.
+
+Parameters
+----------
+data : 2D array-like
+    The height values used to generate a shaded map.
+cmap : `~matplotlib.colors.Colormap`
+    The colormap used to color the *data* array. Note that this must be
+    a `~matplotlib.colors.Colormap` instance.  For example, rather than
+    passing in ``cmap='gist_earth'``, use
+    ``cmap=plt.get_cmap('gist_earth')`` instead.
+norm : `~matplotlib.colors.Normalize` instance, optional
+    The normalization used to scale values before colormapping. If
+    None, the input will be linearly scaled between its min and max.
+blend_mode : {'hsv', 'overlay', 'soft'} or callable, optional
+    The type of blending used to combine the colormapped data
+    values with the illumination intensity.  Default is
+    "overlay".  Note that for most topographic surfaces,
+    "overlay" or "soft" appear more visually realistic. If a
+    user-defined function is supplied, it is expected to
+    combine an MxNx3 RGB array of floats (ranging 0 to 1) with
+    an MxNx1 hillshade array (also 0 to 1).  (Call signature
+    ``func(rgb, illum, **kwargs)``) Additional kwargs supplied
+    to this function will be passed on to the *blend_mode*
+    function.
+vmin : float or None, optional
+    The minimum value used in colormapping *data*. If *None* the
+    minimum value in *data* is used. If *norm* is specified, then this
+    argument will be ignored.
+vmax : float or None, optional
+    The maximum value used in colormapping *data*. If *None* the
+    maximum value in *data* is used. If *norm* is specified, then this
+    argument will be ignored.
+vert_exag : number, optional
+    The amount to exaggerate the elevation values by when calculating
+    illumination. This can be used either to correct for differences in
+    units between the x-y coordinate system and the elevation
+    coordinate system (e.g. decimal degrees vs. meters) or to
+    exaggerate or de-emphasize topography.
+dx : number, optional
+    The x-spacing (columns) of the input *elevation* grid.
+dy : number, optional
+    The y-spacing (rows) of the input *elevation* grid.
+fraction : number, optional
+    Increases or decreases the contrast of the hillshade.  Values
+    greater than one will cause intermediate values to move closer to
+    full illumination or shadow (and clipping any values that move
+    beyond 0 or 1). Note that this is not visually or mathematically
+    the same as vertical exaggeration.
+Additional kwargs are passed on to the *blend_mode* function.
+
+Returns
+-------
+ndarray
+    An MxNx4 array of floats ranging between 0-1.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_a467508ec8a8aba2145df2209faf360c9}\label{classmatplotlib_1_1colors_1_1LightSource_a467508ec8a8aba2145df2209faf360c9}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!shade\+\_\+normals@{shade\+\_\+normals}}
+\index{shade\+\_\+normals@{shade\+\_\+normals}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{shade\+\_\+normals()}{shade\_normals()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Light\+Source.\+shade\+\_\+normals (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{normals,  }\item[{}]{fraction = {\ttfamily 1.} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate the illumination intensity for the normal vectors of a
+surface using the defined azimuth and elevation for the light source.
+
+Imagine an artificial sun placed at infinity in some azimuth and
+elevation position illuminating our surface. The parts of the surface
+that slope toward the sun should brighten while those sides facing away
+should become darker.
+
+Parameters
+----------
+fraction : number, optional
+    Increases or decreases the contrast of the hillshade.  Values
+    greater than one will cause intermediate values to move closer to
+    full illumination or shadow (and clipping any values that move
+    beyond 0 or 1). Note that this is not visually or mathematically
+    the same as vertical exaggeration.
+
+Returns
+-------
+ndarray
+    A 2D array of illumination values between 0-1, where 0 is
+    completely in shadow and 1 is completely illuminated.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_a0da23fa89436a964e61cedab112b47af}\label{classmatplotlib_1_1colors_1_1LightSource_a0da23fa89436a964e61cedab112b47af}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!shade\+\_\+rgb@{shade\+\_\+rgb}}
+\index{shade\+\_\+rgb@{shade\+\_\+rgb}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{shade\+\_\+rgb()}{shade\_rgb()}}
+{\footnotesize\ttfamily def matplotlib.\+colors.\+Light\+Source.\+shade\+\_\+rgb (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{rgb,  }\item[{}]{elevation,  }\item[{}]{fraction = {\ttfamily 1.},  }\item[{}]{blend\+\_\+mode = {\ttfamily \textquotesingle{}hsv\textquotesingle{}},  }\item[{}]{vert\+\_\+exag = {\ttfamily 1},  }\item[{}]{dx = {\ttfamily 1},  }\item[{}]{dy = {\ttfamily 1},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Use this light source to adjust the colors of the *rgb* input array to
+give the impression of a shaded relief map with the given *elevation*.
+
+Parameters
+----------
+rgb : array-like
+    An (M, N, 3) RGB array, assumed to be in the range of 0 to 1.
+elevation : array-like
+    An (M, N) array of the height values used to generate a shaded map.
+fraction : number
+    Increases or decreases the contrast of the hillshade.  Values
+    greater than one will cause intermediate values to move closer to
+    full illumination or shadow (and clipping any values that move
+    beyond 0 or 1). Note that this is not visually or mathematically
+    the same as vertical exaggeration.
+blend_mode : {'hsv', 'overlay', 'soft'} or callable, optional
+    The type of blending used to combine the colormapped data values
+    with the illumination intensity.  For backwards compatibility, this
+    defaults to "hsv". Note that for most topographic surfaces,
+    "overlay" or "soft" appear more visually realistic. If a
+    user-defined function is supplied, it is expected to combine an
+    MxNx3 RGB array of floats (ranging 0 to 1) with an MxNx1 hillshade
+    array (also 0 to 1).  (Call signature
+    ``func(rgb, illum, **kwargs)``)
+    Additional kwargs supplied to this function will be passed on to
+    the *blend_mode* function.
+vert_exag : number, optional
+    The amount to exaggerate the elevation values by when calculating
+    illumination. This can be used either to correct for differences in
+    units between the x-y coordinate system and the elevation
+    coordinate system (e.g. decimal degrees vs. meters) or to
+    exaggerate or de-emphasize topography.
+dx : number, optional
+    The x-spacing (columns) of the input *elevation* grid.
+dy : number, optional
+    The y-spacing (rows) of the input *elevation* grid.
+Additional kwargs are passed on to the *blend_mode* function.
+
+Returns
+-------
+ndarray
+    An (m, n, 3) array of floats ranging between 0-1.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_a2777dfac6339c6a79f36de3caa2f81de}\label{classmatplotlib_1_1colors_1_1LightSource_a2777dfac6339c6a79f36de3caa2f81de}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!altdeg@{altdeg}}
+\index{altdeg@{altdeg}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{altdeg}{altdeg}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Light\+Source.\+altdeg}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_a882cb0069579a96b1cbee030da7e6dcf}\label{classmatplotlib_1_1colors_1_1LightSource_a882cb0069579a96b1cbee030da7e6dcf}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!azdeg@{azdeg}}
+\index{azdeg@{azdeg}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{azdeg}{azdeg}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Light\+Source.\+azdeg}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_af495af78687fda8abd0c4a94b9ebb7ac}\label{classmatplotlib_1_1colors_1_1LightSource_af495af78687fda8abd0c4a94b9ebb7ac}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!hsv\+\_\+max\+\_\+sat@{hsv\+\_\+max\+\_\+sat}}
+\index{hsv\+\_\+max\+\_\+sat@{hsv\+\_\+max\+\_\+sat}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{hsv\+\_\+max\+\_\+sat}{hsv\_max\_sat}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Light\+Source.\+hsv\+\_\+max\+\_\+sat}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_a5471de9515029d4224f86972aa459e81}\label{classmatplotlib_1_1colors_1_1LightSource_a5471de9515029d4224f86972aa459e81}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!hsv\+\_\+max\+\_\+val@{hsv\+\_\+max\+\_\+val}}
+\index{hsv\+\_\+max\+\_\+val@{hsv\+\_\+max\+\_\+val}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{hsv\+\_\+max\+\_\+val}{hsv\_max\_val}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Light\+Source.\+hsv\+\_\+max\+\_\+val}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_af935fb94e31a3e49d91816818fcc078f}\label{classmatplotlib_1_1colors_1_1LightSource_af935fb94e31a3e49d91816818fcc078f}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!hsv\+\_\+min\+\_\+sat@{hsv\+\_\+min\+\_\+sat}}
+\index{hsv\+\_\+min\+\_\+sat@{hsv\+\_\+min\+\_\+sat}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{hsv\+\_\+min\+\_\+sat}{hsv\_min\_sat}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Light\+Source.\+hsv\+\_\+min\+\_\+sat}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colors_1_1LightSource_aa1fa26d6651f24ebd79c5faa0ab204b0}\label{classmatplotlib_1_1colors_1_1LightSource_aa1fa26d6651f24ebd79c5faa0ab204b0}} 
+\index{matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}!hsv\+\_\+min\+\_\+val@{hsv\+\_\+min\+\_\+val}}
+\index{hsv\+\_\+min\+\_\+val@{hsv\+\_\+min\+\_\+val}!matplotlib\+::colors\+::\+Light\+Source@{matplotlib\+::colors\+::\+Light\+Source}}
+\subsubsection{\texorpdfstring{hsv\+\_\+min\+\_\+val}{hsv\_min\_val}}
+{\footnotesize\ttfamily matplotlib.\+colors.\+Light\+Source.\+hsv\+\_\+min\+\_\+val}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{colors_8py}{colors.\+py}\end{DoxyCompactItemize}

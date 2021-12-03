@@ -1,0 +1,89 @@
+\hypertarget{namespacematplotlib_1_1scale}{}\section{matplotlib.\+scale Namespace Reference}
+\label{namespacematplotlib_1_1scale}\index{matplotlib.\+scale@{matplotlib.\+scale}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1FuncScale}{Func\+Scale}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1FuncScaleLog}{Func\+Scale\+Log}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1FuncTransform}{Func\+Transform}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1InvertedLogTransform}{Inverted\+Log\+Transform}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1InvertedSymmetricalLogTransform}{Inverted\+Symmetrical\+Log\+Transform}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1LinearScale}{Linear\+Scale}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1LogisticTransform}{Logistic\+Transform}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1LogitScale}{Logit\+Scale}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1LogitTransform}{Logit\+Transform}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1LogScale}{Log\+Scale}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1LogTransform}{Log\+Transform}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1ScaleBase}{Scale\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogScale}{Symmetrical\+Log\+Scale}
+\item 
+class \hyperlink{classmatplotlib_1_1scale_1_1SymmetricalLogTransform}{Symmetrical\+Log\+Transform}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1scale_aef5ece5d6c1a21c81f913a8345ff3c98}{get\+\_\+scale\+\_\+names} ()
+\item 
+def \hyperlink{namespacematplotlib_1_1scale_a0d68d41a05f9a8f65cc3b073460ba814}{scale\+\_\+factory} (scale, axis, kwargs)
+\item 
+def \hyperlink{namespacematplotlib_1_1scale_ae254463327993a3dd7e72b28186a6183}{register\+\_\+scale} (scale\+\_\+class)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Scales define the distribution of data values on an axis, e.g. a log scaling.
+
+They are attached to an `~.axis.Axis` and hold a `.Transform`, which is
+responsible for the actual data transformation.
+
+See also `.axes.Axes.set_xscale` and the scales examples in the documentation.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1scale_aef5ece5d6c1a21c81f913a8345ff3c98}\label{namespacematplotlib_1_1scale_aef5ece5d6c1a21c81f913a8345ff3c98}} 
+\index{matplotlib\+::scale@{matplotlib\+::scale}!get\+\_\+scale\+\_\+names@{get\+\_\+scale\+\_\+names}}
+\index{get\+\_\+scale\+\_\+names@{get\+\_\+scale\+\_\+names}!matplotlib\+::scale@{matplotlib\+::scale}}
+\subsubsection{\texorpdfstring{get\+\_\+scale\+\_\+names()}{get\_scale\_names()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+get\+\_\+scale\+\_\+names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the names of the available scales.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1scale_ae254463327993a3dd7e72b28186a6183}\label{namespacematplotlib_1_1scale_ae254463327993a3dd7e72b28186a6183}} 
+\index{matplotlib\+::scale@{matplotlib\+::scale}!register\+\_\+scale@{register\+\_\+scale}}
+\index{register\+\_\+scale@{register\+\_\+scale}!matplotlib\+::scale@{matplotlib\+::scale}}
+\subsubsection{\texorpdfstring{register\+\_\+scale()}{register\_scale()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+register\+\_\+scale (\begin{DoxyParamCaption}\item[{}]{scale\+\_\+class }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a new kind of scale.
+
+Parameters
+----------
+scale_class : subclass of `ScaleBase`
+    The scale to register.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1scale_a0d68d41a05f9a8f65cc3b073460ba814}\label{namespacematplotlib_1_1scale_a0d68d41a05f9a8f65cc3b073460ba814}} 
+\index{matplotlib\+::scale@{matplotlib\+::scale}!scale\+\_\+factory@{scale\+\_\+factory}}
+\index{scale\+\_\+factory@{scale\+\_\+factory}!matplotlib\+::scale@{matplotlib\+::scale}}
+\subsubsection{\texorpdfstring{scale\+\_\+factory()}{scale\_factory()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+scale\+\_\+factory (\begin{DoxyParamCaption}\item[{}]{scale,  }\item[{}]{axis,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a scale class by name.
+
+Parameters
+----------
+scale : {%(names)s}
+axis : `matplotlib.axis.Axis`
+\end{DoxyVerb}
+ 

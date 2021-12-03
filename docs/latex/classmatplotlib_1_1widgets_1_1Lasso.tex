@@ -1,0 +1,128 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1Lasso}{}\section{matplotlib.\+widgets.\+Lasso Class Reference}
+\label{classmatplotlib_1_1widgets_1_1Lasso}\index{matplotlib.\+widgets.\+Lasso@{matplotlib.\+widgets.\+Lasso}}
+
+
+Inheritance diagram for matplotlib.\+widgets.\+Lasso\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1Lasso__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+widgets.\+Lasso\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1Lasso__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1Lasso_a1372ded6248404a0bd8b557d721c709e}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_ac0722858b7001d10a42055dc90420b4f}{ax}, xy, \hyperlink{classmatplotlib_1_1widgets_1_1Lasso_a2f36c686c61f23fac32f46ff53f799e3}{callback}=None, \hyperlink{classmatplotlib_1_1widgets_1_1Lasso_aab5d4a819bf45d0b5cc79880c892e9a7}{useblit}=True)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1Lasso_ac10ca528009f6d8273fc16770dac96d2}{onrelease} (self, event)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1Lasso_a9246d06eb71f545df91a7447d1784113}{onmove} (self, event)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1Lasso_aab5d4a819bf45d0b5cc79880c892e9a7}{useblit}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1Lasso_a244a2608f74ee76e61797df5011710f2}{background}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1Lasso_a3494c78c57cfa6ca47f9b47bca82fe43}{verts}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1Lasso_a7f872c906ff25706ba9aef42dba2a657}{line}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1Lasso_a2f36c686c61f23fac32f46ff53f799e3}{callback}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Selection curve of an arbitrary shape.
+
+The selected path can be used in conjunction with
+`~matplotlib.path.Path.contains_point` to select data points from an image.
+
+Unlike `LassoSelector`, this must be initialized with a starting
+point *xy*, and the `Lasso` events are destroyed upon release.
+
+Parameters
+----------
+ax : `~matplotlib.axes.Axes`
+    The parent axes for the widget.
+xy : (float, float)
+    Coordinates of the start of the lasso.
+callback : callable
+    Whenever the lasso is released, the *callback* function is called and
+    passed the vertices of the selected path.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Lasso_a1372ded6248404a0bd8b557d721c709e}\label{classmatplotlib_1_1widgets_1_1Lasso_a1372ded6248404a0bd8b557d721c709e}} 
+\index{matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Lasso.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{xy,  }\item[{}]{callback = {\ttfamily None},  }\item[{}]{useblit = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Lasso_a9246d06eb71f545df91a7447d1784113}\label{classmatplotlib_1_1widgets_1_1Lasso_a9246d06eb71f545df91a7447d1784113}} 
+\index{matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}!onmove@{onmove}}
+\index{onmove@{onmove}!matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}}
+\subsubsection{\texorpdfstring{onmove()}{onmove()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Lasso.\+onmove (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Lasso_ac10ca528009f6d8273fc16770dac96d2}\label{classmatplotlib_1_1widgets_1_1Lasso_ac10ca528009f6d8273fc16770dac96d2}} 
+\index{matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}!onrelease@{onrelease}}
+\index{onrelease@{onrelease}!matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}}
+\subsubsection{\texorpdfstring{onrelease()}{onrelease()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Lasso.\+onrelease (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Lasso_a244a2608f74ee76e61797df5011710f2}\label{classmatplotlib_1_1widgets_1_1Lasso_a244a2608f74ee76e61797df5011710f2}} 
+\index{matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}!background@{background}}
+\index{background@{background}!matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}}
+\subsubsection{\texorpdfstring{background}{background}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Lasso.\+background}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Lasso_a2f36c686c61f23fac32f46ff53f799e3}\label{classmatplotlib_1_1widgets_1_1Lasso_a2f36c686c61f23fac32f46ff53f799e3}} 
+\index{matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}!callback@{callback}}
+\index{callback@{callback}!matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}}
+\subsubsection{\texorpdfstring{callback}{callback}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Lasso.\+callback}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Lasso_a7f872c906ff25706ba9aef42dba2a657}\label{classmatplotlib_1_1widgets_1_1Lasso_a7f872c906ff25706ba9aef42dba2a657}} 
+\index{matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}!line@{line}}
+\index{line@{line}!matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}}
+\subsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Lasso.\+line}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Lasso_aab5d4a819bf45d0b5cc79880c892e9a7}\label{classmatplotlib_1_1widgets_1_1Lasso_aab5d4a819bf45d0b5cc79880c892e9a7}} 
+\index{matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}!useblit@{useblit}}
+\index{useblit@{useblit}!matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}}
+\subsubsection{\texorpdfstring{useblit}{useblit}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Lasso.\+useblit}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1Lasso_a3494c78c57cfa6ca47f9b47bca82fe43}\label{classmatplotlib_1_1widgets_1_1Lasso_a3494c78c57cfa6ca47f9b47bca82fe43}} 
+\index{matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}!verts@{verts}}
+\index{verts@{verts}!matplotlib\+::widgets\+::\+Lasso@{matplotlib\+::widgets\+::\+Lasso}}
+\subsubsection{\texorpdfstring{verts}{verts}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Lasso.\+verts}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

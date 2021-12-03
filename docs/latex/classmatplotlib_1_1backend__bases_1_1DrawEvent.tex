@@ -1,0 +1,78 @@
+\hypertarget{classmatplotlib_1_1backend__bases_1_1DrawEvent}{}\section{matplotlib.\+backend\+\_\+bases.\+Draw\+Event Class Reference}
+\label{classmatplotlib_1_1backend__bases_1_1DrawEvent}\index{matplotlib.\+backend\+\_\+bases.\+Draw\+Event@{matplotlib.\+backend\+\_\+bases.\+Draw\+Event}}
+
+
+Inheritance diagram for matplotlib.\+backend\+\_\+bases.\+Draw\+Event\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classmatplotlib_1_1backend__bases_1_1DrawEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+backend\+\_\+bases.\+Draw\+Event\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classmatplotlib_1_1backend__bases_1_1DrawEvent__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1DrawEvent_aedf520abb31386ce4d87ea9f076cae4c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1backend__bases_1_1Event_a4b10ea7af7c8a0b20bcdbb9ca03e1654}{name}, \hyperlink{classmatplotlib_1_1backend__bases_1_1Event_a7721d867d81a1255b1aeb51babec4e14}{canvas}, \hyperlink{classmatplotlib_1_1backend__bases_1_1DrawEvent_ae702afe085dcd8aa2fbd6b1ac80a10d3}{renderer})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1DrawEvent_ae702afe085dcd8aa2fbd6b1ac80a10d3}{renderer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An event triggered by a draw operation on the canvas
+
+In most backends callbacks subscribed to this callback will be
+fired after the rendering is complete but before the screen is
+updated.  Any extra artists drawn to the canvas's renderer will
+be reflected without an explicit call to ``blit``.
+
+.. warning::
+
+   Calling ``canvas.draw`` and ``canvas.blit`` in these callbacks may
+   not be safe with all backends and may cause infinite recursion.
+
+In addition to the `Event` attributes, the following event
+attributes are defined:
+
+Attributes
+----------
+renderer : `RendererBase`
+    The renderer for the draw event.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1DrawEvent_aedf520abb31386ce4d87ea9f076cae4c}\label{classmatplotlib_1_1backend__bases_1_1DrawEvent_aedf520abb31386ce4d87ea9f076cae4c}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Draw\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Draw\+Event}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+bases\+::\+Draw\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Draw\+Event}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Draw\+Event.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{canvas,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1DrawEvent_ae702afe085dcd8aa2fbd6b1ac80a10d3}\label{classmatplotlib_1_1backend__bases_1_1DrawEvent_ae702afe085dcd8aa2fbd6b1ac80a10d3}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Draw\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Draw\+Event}!renderer@{renderer}}
+\index{renderer@{renderer}!matplotlib\+::backend\+\_\+bases\+::\+Draw\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Draw\+Event}}
+\subsubsection{\texorpdfstring{renderer}{renderer}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Draw\+Event.\+renderer}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{backend__bases_8py}{backend\+\_\+bases.\+py}\end{DoxyCompactItemize}

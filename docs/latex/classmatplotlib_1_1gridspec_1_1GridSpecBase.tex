@@ -1,0 +1,227 @@
+\hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase}{}\section{matplotlib.\+gridspec.\+Grid\+Spec\+Base Class Reference}
+\label{classmatplotlib_1_1gridspec_1_1GridSpecBase}\index{matplotlib.\+gridspec.\+Grid\+Spec\+Base@{matplotlib.\+gridspec.\+Grid\+Spec\+Base}}
+
+
+Inheritance diagram for matplotlib.\+gridspec.\+Grid\+Spec\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1gridspec_1_1GridSpecBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_aa7323731118c46021bffc09f83b9d12e}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_a610c62c29d638e1ed969419091c97f74}{nrows}, \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_ad86cfae5903f2bf4e2fc878fd39461f3}{ncols}, height\+\_\+ratios=None, width\+\_\+ratios=None)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_afcb5eb447fb5c7d896d062ca331e404e}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_a5573c4215322cc4f949dca53462387a2}{get\+\_\+geometry} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_a4eac56d7bc403f516ad3159d81949f44}{get\+\_\+subplot\+\_\+params} (self, figure=None)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_a371e095a03c211ee7b141a2c698484fc}{new\+\_\+subplotspec} (self, loc, rowspan=1, colspan=1)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_ac41a6e9b9fa15ab24cf88386507e063d}{set\+\_\+width\+\_\+ratios} (self, width\+\_\+ratios)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_ab75773e6b14e1aa2afb5d0ab88ca019e}{get\+\_\+width\+\_\+ratios} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_acc9d8b828917df50e639187a53f689b4}{set\+\_\+height\+\_\+ratios} (self, height\+\_\+ratios)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_a536a3b2325dd513f8d45d772fb4182c2}{get\+\_\+height\+\_\+ratios} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_a26fab381dc449ba96f2f1846f5c0ccaa}{get\+\_\+grid\+\_\+positions} (self, fig, raw=False)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_a3fa8a0ae248f9e788b68dbed90231caf}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, key)
+\item 
+def \hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_a7d3bdfe4e0991646111adb0388ebc9c7}{subplots} (self, sharex=False, sharey=False, squeeze=True, subplot\+\_\+kw=None)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_a610c62c29d638e1ed969419091c97f74}{nrows}
+\item 
+\hyperlink{classmatplotlib_1_1gridspec_1_1GridSpecBase_ad86cfae5903f2bf4e2fc878fd39461f3}{ncols}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A base class of GridSpec that specifies the geometry of the grid
+that a subplot will be placed.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_aa7323731118c46021bffc09f83b9d12e}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_aa7323731118c46021bffc09f83b9d12e}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{nrows,  }\item[{}]{ncols,  }\item[{}]{height\+\_\+ratios = {\ttfamily None},  }\item[{}]{width\+\_\+ratios = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+nrows, ncols : int
+    The number of rows and columns of the grid.
+width_ratios : array-like of length *ncols*, optional
+    Defines the relative widths of the columns. Each column gets a
+    relative width of ``width_ratios[i] / sum(width_ratios)``.
+    If not given, all columns will have the same width.
+height_ratios : array-like of length *nrows*, optional
+    Defines the relative heights of the rows. Each column gets a
+    relative height of ``height_ratios[i] / sum(height_ratios)``.
+    If not given, all rows will have the same height.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_a3fa8a0ae248f9e788b68dbed90231caf}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_a3fa8a0ae248f9e788b68dbed90231caf}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create and return a `.SubplotSpec` instance.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_afcb5eb447fb5c7d896d062ca331e404e}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_afcb5eb447fb5c7d896d062ca331e404e}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_a5573c4215322cc4f949dca53462387a2}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_a5573c4215322cc4f949dca53462387a2}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!get\+\_\+geometry@{get\+\_\+geometry}}
+\index{get\+\_\+geometry@{get\+\_\+geometry}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{get\+\_\+geometry()}{get\_geometry()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+get\+\_\+geometry (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a tuple containing the number of rows and columns in the grid.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_a26fab381dc449ba96f2f1846f5c0ccaa}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_a26fab381dc449ba96f2f1846f5c0ccaa}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!get\+\_\+grid\+\_\+positions@{get\+\_\+grid\+\_\+positions}}
+\index{get\+\_\+grid\+\_\+positions@{get\+\_\+grid\+\_\+positions}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{get\+\_\+grid\+\_\+positions()}{get\_grid\_positions()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+get\+\_\+grid\+\_\+positions (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fig,  }\item[{}]{raw = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the positions of the grid cells in figure coordinates.
+
+Parameters
+----------
+fig : `~matplotlib.figure.Figure`
+    The figure the grid should be applied to. The subplot parameters
+    (margins and spacing between subplots) are taken from *fig*.
+raw : bool, default: False
+    If *True*, the subplot parameters of the figure are not taken
+    into account. The grid spans the range [0, 1] in both directions
+    without margins and there is no space between grid cells. This is
+    used for constrained_layout.
+
+Returns
+-------
+bottoms, tops, lefts, rights : array
+    The bottom, top, left, right positions of the grid cells in
+    figure coordinates.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_a536a3b2325dd513f8d45d772fb4182c2}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_a536a3b2325dd513f8d45d772fb4182c2}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!get\+\_\+height\+\_\+ratios@{get\+\_\+height\+\_\+ratios}}
+\index{get\+\_\+height\+\_\+ratios@{get\+\_\+height\+\_\+ratios}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{get\+\_\+height\+\_\+ratios()}{get\_height\_ratios()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+get\+\_\+height\+\_\+ratios (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the height ratios.
+
+This is *None* if no height ratios have been set explicitly.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_a4eac56d7bc403f516ad3159d81949f44}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_a4eac56d7bc403f516ad3159d81949f44}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!get\+\_\+subplot\+\_\+params@{get\+\_\+subplot\+\_\+params}}
+\index{get\+\_\+subplot\+\_\+params@{get\+\_\+subplot\+\_\+params}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{get\+\_\+subplot\+\_\+params()}{get\_subplot\_params()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+get\+\_\+subplot\+\_\+params (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{figure = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_ab75773e6b14e1aa2afb5d0ab88ca019e}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_ab75773e6b14e1aa2afb5d0ab88ca019e}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!get\+\_\+width\+\_\+ratios@{get\+\_\+width\+\_\+ratios}}
+\index{get\+\_\+width\+\_\+ratios@{get\+\_\+width\+\_\+ratios}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{get\+\_\+width\+\_\+ratios()}{get\_width\_ratios()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+get\+\_\+width\+\_\+ratios (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the width ratios.
+
+This is *None* if no width ratios have been set explicitly.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_a371e095a03c211ee7b141a2c698484fc}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_a371e095a03c211ee7b141a2c698484fc}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!new\+\_\+subplotspec@{new\+\_\+subplotspec}}
+\index{new\+\_\+subplotspec@{new\+\_\+subplotspec}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{new\+\_\+subplotspec()}{new\_subplotspec()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+new\+\_\+subplotspec (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{loc,  }\item[{}]{rowspan = {\ttfamily 1},  }\item[{}]{colspan = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create and return a `.SubplotSpec` instance.
+
+Parameters
+----------
+loc : (int, int)
+    The position of the subplot in the grid as
+    ``(row_index, column_index)``.
+rowspan, colspan : int, default: 1
+    The number of rows and columns the subplot should span in the grid.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_acc9d8b828917df50e639187a53f689b4}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_acc9d8b828917df50e639187a53f689b4}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!set\+\_\+height\+\_\+ratios@{set\+\_\+height\+\_\+ratios}}
+\index{set\+\_\+height\+\_\+ratios@{set\+\_\+height\+\_\+ratios}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{set\+\_\+height\+\_\+ratios()}{set\_height\_ratios()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+set\+\_\+height\+\_\+ratios (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{height\+\_\+ratios }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the relative heights of the rows.
+
+*height_ratios* must be of length *nrows*. Each row gets a relative
+height of ``height_ratios[i] / sum(height_ratios)``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_ac41a6e9b9fa15ab24cf88386507e063d}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_ac41a6e9b9fa15ab24cf88386507e063d}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!set\+\_\+width\+\_\+ratios@{set\+\_\+width\+\_\+ratios}}
+\index{set\+\_\+width\+\_\+ratios@{set\+\_\+width\+\_\+ratios}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{set\+\_\+width\+\_\+ratios()}{set\_width\_ratios()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+set\+\_\+width\+\_\+ratios (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{width\+\_\+ratios }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the relative widths of the columns.
+
+*width_ratios* must be of length *ncols*. Each column gets a relative
+width of ``width_ratios[i] / sum(width_ratios)``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_a7d3bdfe4e0991646111adb0388ebc9c7}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_a7d3bdfe4e0991646111adb0388ebc9c7}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!subplots@{subplots}}
+\index{subplots@{subplots}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{subplots()}{subplots()}}
+{\footnotesize\ttfamily def matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+subplots (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{sharex = {\ttfamily False},  }\item[{}]{sharey = {\ttfamily False},  }\item[{}]{squeeze = {\ttfamily True},  }\item[{}]{subplot\+\_\+kw = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add all subplots specified by this `GridSpec` to its parent figure.
+
+See `.Figure.subplots` for detailed documentation.
+\end{DoxyVerb}
+ 
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_ad86cfae5903f2bf4e2fc878fd39461f3}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_ad86cfae5903f2bf4e2fc878fd39461f3}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!ncols@{ncols}}
+\index{ncols@{ncols}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{ncols}{ncols}}
+{\footnotesize\ttfamily matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+ncols\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  property(\textcolor{keyword}{lambda} self: self.\_ncols,
+                     doc=\textcolor{stringliteral}{"The number of columns in the grid."})
+\end{DoxyCode}
+\mbox{\Hypertarget{classmatplotlib_1_1gridspec_1_1GridSpecBase_a610c62c29d638e1ed969419091c97f74}\label{classmatplotlib_1_1gridspec_1_1GridSpecBase_a610c62c29d638e1ed969419091c97f74}} 
+\index{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}!nrows@{nrows}}
+\index{nrows@{nrows}!matplotlib\+::gridspec\+::\+Grid\+Spec\+Base@{matplotlib\+::gridspec\+::\+Grid\+Spec\+Base}}
+\subsubsection{\texorpdfstring{nrows}{nrows}}
+{\footnotesize\ttfamily matplotlib.\+gridspec.\+Grid\+Spec\+Base.\+nrows\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  property(\textcolor{keyword}{lambda} self: self.\_nrows,
+                     doc=\textcolor{stringliteral}{"The number of rows in the grid."})
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{gridspec_8py}{gridspec.\+py}\end{DoxyCompactItemize}

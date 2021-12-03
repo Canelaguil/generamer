@@ -1,0 +1,63 @@
+\hypertarget{classaxisartist_1_1axislines_1_1AxisArtistHelper}{}\section{axisartist.\+axislines.\+Axis\+Artist\+Helper Class Reference}
+\label{classaxisartist_1_1axislines_1_1AxisArtistHelper}\index{axisartist.\+axislines.\+Axis\+Artist\+Helper@{axisartist.\+axislines.\+Axis\+Artist\+Helper}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classaxisartist_1_1axislines_1_1AxisArtistHelper_1_1__Base}{\+\_\+\+Base}
+\item 
+class \hyperlink{classaxisartist_1_1axislines_1_1AxisArtistHelper_1_1Fixed}{Fixed}
+\item 
+class \hyperlink{classaxisartist_1_1axislines_1_1AxisArtistHelper_1_1Floating}{Floating}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}AxisArtistHelper should define
+following method with given APIs. Note that the first axes argument
+will be axes attribute of the caller artist.::
+
+
+    # LINE (spinal line?)
+
+    def get_line(self, axes):
+        # path : Path
+        return path
+
+    def get_line_transform(self, axes):
+        # ...
+        # trans : transform
+        return trans
+
+    # LABEL
+
+    def get_label_pos(self, axes):
+        # x, y : position
+        return (x, y), trans
+
+
+    def get_label_offset_transform(self,
+            axes,
+            pad_points, fontprops, renderer,
+            bboxes,
+            ):
+        # va : vertical alignment
+        # ha : horizontal alignment
+        # a : angle
+        return trans, va, ha, a
+
+    # TICK
+
+    def get_tick_transform(self, axes):
+        return trans
+
+    def get_tick_iterators(self, axes):
+        # iter : iterable object that yields (c, angle, l) where
+        # c, angle, l is position, tick angle, and label
+
+        return iter_major, iter_minor
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/mpl\+\_\+toolkits/axisartist/\hyperlink{axisartist_2axislines_8py}{axislines.\+py}\end{DoxyCompactItemize}

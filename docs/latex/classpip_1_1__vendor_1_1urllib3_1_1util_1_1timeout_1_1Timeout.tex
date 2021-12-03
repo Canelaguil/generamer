@@ -1,0 +1,260 @@
+\hypertarget{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout}{}\section{pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout Class Reference}
+\label{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout}\index{pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout@{pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a95d7bf91164983c9b8e92e818bc42eb5}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a88da27bdf2a3046ec4d250c68adaf9d8}{total}=None, connect=\+\_\+\+Default, read=\+\_\+\+Default)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a9a76003f9636c1bcf4237db00466b1a9}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a8cdbc1816a9c7a7ce81f3040ef7bc4a5}{from\+\_\+float} (cls, timeout)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_adf3e93289276c7920b5bfa24ce7ad651}{clone} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a53b5261d7c65cda49be436bd2725d56e}{start\+\_\+connect} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_afddcb98e83bd70962fec705090d0bd98}{get\+\_\+connect\+\_\+duration} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a11c5e5576fdd38589cae3145439f0eeb}{connect\+\_\+timeout} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a80e30330a46f06753000948ee107cc2c}{read\+\_\+timeout} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a88da27bdf2a3046ec4d250c68adaf9d8}{total}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_ab2e2090779413149cdac51e5b0908e12}{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Timeout configuration.
+
+Timeouts can be defined as a default for a pool:
+
+.. code-block:: python
+
+   timeout = Timeout(connect=2.0, read=7.0)
+   http = PoolManager(timeout=timeout)
+   response = http.request('GET', 'http://example.com/')
+
+Or per-request (which overrides the default for the pool):
+
+.. code-block:: python
+
+   response = http.request('GET', 'http://example.com/', timeout=Timeout(10))
+
+Timeouts can be disabled by setting all the parameters to ``None``:
+
+.. code-block:: python
+
+   no_timeout = Timeout(connect=None, read=None)
+   response = http.request('GET', 'http://example.com/, timeout=no_timeout)
+
+
+:param total:
+    This combines the connect and read timeouts into one; the read timeout
+    will be set to the time leftover from the connect attempt. In the
+    event that both a connect timeout and a total are specified, or a read
+    timeout and a total are specified, the shorter timeout will be applied.
+
+    Defaults to None.
+
+:type total: int, float, or None
+
+:param connect:
+    The maximum amount of time (in seconds) to wait for a connection
+    attempt to a server to succeed. Omitting the parameter will default the
+    connect timeout to the system default, probably `the global default
+    timeout in socket.py
+    <http://hg.python.org/cpython/file/603b4d593758/Lib/socket.py#l535>`_.
+    None will set an infinite timeout for connection attempts.
+
+:type connect: int, float, or None
+
+:param read:
+    The maximum amount of time (in seconds) to wait between consecutive
+    read operations for a response from the server. Omitting the parameter
+    will default the read timeout to the system default, probably `the
+    global default timeout in socket.py
+    <http://hg.python.org/cpython/file/603b4d593758/Lib/socket.py#l535>`_.
+    None will set an infinite timeout.
+
+:type read: int, float, or None
+
+.. note::
+
+    Many factors can affect the total amount of time for urllib3 to return
+    an HTTP response.
+
+    For example, Python's DNS resolver does not obey the timeout specified
+    on the socket. Other factors that can affect total request time include
+    high CPU load, high swap, the program running at a low priority level,
+    or other behaviors.
+
+    In addition, the read and total timeouts only measure the time between
+    read operations on the socket connecting the client and the server,
+    not the total amount of time for the request to return a complete
+    response. For most requests, the timeout is raised because the server
+    has not sent the first byte in the specified time. This is not always
+    the case; if a server streams one byte every fifteen seconds, a timeout
+    of 20 seconds will not trigger, even though the request will take
+    several minutes to complete.
+
+    If your goal is to cut off any request after a set amount of wall clock
+    time, consider having a second "watcher" thread to cut off a slow
+    request.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a95d7bf91164983c9b8e92e818bc42eb5}\label{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a95d7bf91164983c9b8e92e818bc42eb5}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{total = {\ttfamily None},  }\item[{}]{connect = {\ttfamily \+\_\+Default},  }\item[{}]{read = {\ttfamily \+\_\+Default} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a9a76003f9636c1bcf4237db00466b1a9}\label{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a9a76003f9636c1bcf4237db00466b1a9}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_adf3e93289276c7920b5bfa24ce7ad651}\label{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_adf3e93289276c7920b5bfa24ce7ad651}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}!clone@{clone}}
+\index{clone@{clone}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout.\+clone (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a copy of the timeout object
+
+Timeout properties are stored per-pool but each request needs a fresh
+Timeout object to ensure each one has its own start/stop configured.
+
+:return: a copy of the timeout object
+:rtype: :class:`Timeout`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a11c5e5576fdd38589cae3145439f0eeb}\label{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a11c5e5576fdd38589cae3145439f0eeb}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}!connect\+\_\+timeout@{connect\+\_\+timeout}}
+\index{connect\+\_\+timeout@{connect\+\_\+timeout}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}}
+\subsubsection{\texorpdfstring{connect\+\_\+timeout()}{connect\_timeout()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout.\+connect\+\_\+timeout (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the value to use when setting a connection timeout.
+
+This will be a positive float or integer, the value None
+(never timeout), or the default system timeout.
+
+:return: Connect timeout.
+:rtype: int, float, :attr:`Timeout.DEFAULT_TIMEOUT` or None
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a8cdbc1816a9c7a7ce81f3040ef7bc4a5}\label{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a8cdbc1816a9c7a7ce81f3040ef7bc4a5}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}!from\+\_\+float@{from\+\_\+float}}
+\index{from\+\_\+float@{from\+\_\+float}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}}
+\subsubsection{\texorpdfstring{from\+\_\+float()}{from\_float()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout.\+from\+\_\+float (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{timeout }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new Timeout from a legacy timeout value.
+
+The timeout value used by httplib.py sets the same timeout on the
+connect(), and recv() socket requests. This creates a :class:`Timeout`
+object that sets the individual timeouts to the ``timeout`` value
+passed to this function.
+
+:param timeout: The legacy timeout value.
+:type timeout: integer, float, sentinel default object, or None
+:return: Timeout object
+:rtype: :class:`Timeout`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_afddcb98e83bd70962fec705090d0bd98}\label{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_afddcb98e83bd70962fec705090d0bd98}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}!get\+\_\+connect\+\_\+duration@{get\+\_\+connect\+\_\+duration}}
+\index{get\+\_\+connect\+\_\+duration@{get\+\_\+connect\+\_\+duration}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}}
+\subsubsection{\texorpdfstring{get\+\_\+connect\+\_\+duration()}{get\_connect\_duration()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout.\+get\+\_\+connect\+\_\+duration (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Gets the time elapsed since the call to :meth:`start_connect`.
+
+:return: Elapsed time in seconds.
+:rtype: float
+:raises urllib3.exceptions.TimeoutStateError: if you attempt
+    to get duration for a timer that hasn't been started.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a80e30330a46f06753000948ee107cc2c}\label{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a80e30330a46f06753000948ee107cc2c}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}!read\+\_\+timeout@{read\+\_\+timeout}}
+\index{read\+\_\+timeout@{read\+\_\+timeout}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}}
+\subsubsection{\texorpdfstring{read\+\_\+timeout()}{read\_timeout()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout.\+read\+\_\+timeout (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the value for the read timeout.
+
+This assumes some time has elapsed in the connection timeout and
+computes the read timeout appropriately.
+
+If self.total is set, the read timeout is dependent on the amount of
+time taken by the connect timeout. If the connection time has not been
+established, a :exc:`~urllib3.exceptions.TimeoutStateError` will be
+raised.
+
+:return: Value to use for the read timeout.
+:rtype: int, float, :attr:`Timeout.DEFAULT_TIMEOUT` or None
+:raises urllib3.exceptions.TimeoutStateError: If :meth:`start_connect`
+    has not yet been called on this object.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a53b5261d7c65cda49be436bd2725d56e}\label{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a53b5261d7c65cda49be436bd2725d56e}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}!start\+\_\+connect@{start\+\_\+connect}}
+\index{start\+\_\+connect@{start\+\_\+connect}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}}
+\subsubsection{\texorpdfstring{start\+\_\+connect()}{start\_connect()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout.\+start\+\_\+connect (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Start the timeout clock, used during a connect() attempt
+
+:raises urllib3.exceptions.TimeoutStateError: if you attempt
+    to start a timer that has been started already.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_ab2e2090779413149cdac51e5b0908e12}\label{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_ab2e2090779413149cdac51e5b0908e12}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}!D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT@{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT@{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}{DEFAULT\_TIMEOUT}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout.\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a88da27bdf2a3046ec4d250c68adaf9d8}\label{classpip_1_1__vendor_1_1urllib3_1_1util_1_1timeout_1_1Timeout_a88da27bdf2a3046ec4d250c68adaf9d8}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}!total@{total}}
+\index{total@{total}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::timeout\+::\+Timeout}}
+\subsubsection{\texorpdfstring{total}{total}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+util.\+timeout.\+Timeout.\+total}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/urllib3/util/\hyperlink{timeout_8py}{timeout.\+py}\end{DoxyCompactItemize}

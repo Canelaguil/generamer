@@ -1,0 +1,226 @@
+\hypertarget{namespacenumpy_1_1testing_1_1__private_1_1decorators}{}\section{numpy.\+testing.\+\_\+private.\+decorators Namespace Reference}
+\label{namespacenumpy_1_1testing_1_1__private_1_1decorators}\index{numpy.\+testing.\+\_\+private.\+decorators@{numpy.\+testing.\+\_\+private.\+decorators}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1__private_1_1decorators_a6e89bc2d3f956de807a5413afee38bd5}{slow} (t)
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1__private_1_1decorators_a1507a52f3f465b8f127fe6c639e09d02}{setastest} (tf=True)
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1__private_1_1decorators_a959e2eca3bd6bd2d50ab3a1c4d05faa3}{skipif} (skip\+\_\+condition, \hyperlink{namespacenumpy_ab96122eb8e44294b488b0ef93ec27d38}{msg}=None)
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1__private_1_1decorators_aad1876fbbd179bf5da34024026d008f6}{knownfailureif} (fail\+\_\+condition, \hyperlink{namespacenumpy_ab96122eb8e44294b488b0ef93ec27d38}{msg}=None)
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1__private_1_1decorators_a8c284617f70345ce6ded679abb07aaa9}{deprecated} (conditional=True)
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1__private_1_1decorators_aa6cf833d5d841e31f13cc84d4228d78a}{parametrize} (vars, input)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Decorators for labeling and modifying behavior of test objects.
+
+Decorators that merely return a modified version of the original
+function object are straightforward. Decorators that return a new
+function object need to use
+::
+
+  nose.tools.make_decorator(original_function)(decorator)
+
+in returning the decorator, in order to preserve meta-data such as
+function name, setup and teardown functions and so on - see
+``nose.tools`` for more information.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1testing_1_1__private_1_1decorators_a8c284617f70345ce6ded679abb07aaa9}\label{namespacenumpy_1_1testing_1_1__private_1_1decorators_a8c284617f70345ce6ded679abb07aaa9}} 
+\index{numpy\+::testing\+::\+\_\+private\+::decorators@{numpy\+::testing\+::\+\_\+private\+::decorators}!deprecated@{deprecated}}
+\index{deprecated@{deprecated}!numpy\+::testing\+::\+\_\+private\+::decorators@{numpy\+::testing\+::\+\_\+private\+::decorators}}
+\subsubsection{\texorpdfstring{deprecated()}{deprecated()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+decorators.\+deprecated (\begin{DoxyParamCaption}\item[{}]{conditional = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}.. deprecated:: 1.21
+    This decorator is retained for compatibility with the nose testing framework, which is being phased out.
+    Please use the nose2 or pytest frameworks instead.
+
+Filter deprecation warnings while running the test suite.
+
+This decorator can be used to filter DeprecationWarning's, to avoid
+printing them during the test suite run, while checking that the test
+actually raises a DeprecationWarning.
+
+Parameters
+----------
+conditional : bool or callable, optional
+    Flag to determine whether to mark test as deprecated or not. If the
+    condition is a callable, it is used at runtime to dynamically make the
+    decision. Default is True.
+
+Returns
+-------
+decorator : function
+    The `deprecated` decorator itself.
+
+Notes
+-----
+.. versionadded:: 1.4.0\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1testing_1_1__private_1_1decorators_aad1876fbbd179bf5da34024026d008f6}\label{namespacenumpy_1_1testing_1_1__private_1_1decorators_aad1876fbbd179bf5da34024026d008f6}} 
+\index{numpy\+::testing\+::\+\_\+private\+::decorators@{numpy\+::testing\+::\+\_\+private\+::decorators}!knownfailureif@{knownfailureif}}
+\index{knownfailureif@{knownfailureif}!numpy\+::testing\+::\+\_\+private\+::decorators@{numpy\+::testing\+::\+\_\+private\+::decorators}}
+\subsubsection{\texorpdfstring{knownfailureif()}{knownfailureif()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+decorators.\+knownfailureif (\begin{DoxyParamCaption}\item[{}]{fail\+\_\+condition,  }\item[{}]{msg = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}.. deprecated:: 1.21
+    This decorator is retained for compatibility with the nose testing framework, which is being phased out.
+    Please use the nose2 or pytest frameworks instead.
+
+Make function raise KnownFailureException exception if given condition is true.
+
+If the condition is a callable, it is used at runtime to dynamically
+make the decision. This is useful for tests that may require costly
+imports, to delay the cost until the test suite is actually executed.
+
+Parameters
+----------
+fail_condition : bool or callable
+    Flag to determine whether to mark the decorated test as a known
+    failure (if True) or not (if False).
+msg : str, optional
+    Message to give on raising a KnownFailureException exception.
+    Default is None.
+
+Returns
+-------
+decorator : function
+    Decorator, which, when applied to a function, causes
+    KnownFailureException to be raised when `fail_condition` is True,
+    and the function to be called normally otherwise.
+
+Notes
+-----
+The decorator itself is decorated with the ``nose.tools.make_decorator``
+function in order to transmit function name, and various other metadata.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1testing_1_1__private_1_1decorators_aa6cf833d5d841e31f13cc84d4228d78a}\label{namespacenumpy_1_1testing_1_1__private_1_1decorators_aa6cf833d5d841e31f13cc84d4228d78a}} 
+\index{numpy\+::testing\+::\+\_\+private\+::decorators@{numpy\+::testing\+::\+\_\+private\+::decorators}!parametrize@{parametrize}}
+\index{parametrize@{parametrize}!numpy\+::testing\+::\+\_\+private\+::decorators@{numpy\+::testing\+::\+\_\+private\+::decorators}}
+\subsubsection{\texorpdfstring{parametrize()}{parametrize()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+decorators.\+parametrize (\begin{DoxyParamCaption}\item[{}]{vars,  }\item[{}]{input }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}.. deprecated:: 1.21
+    This decorator is retained for compatibility with the nose testing framework, which is being phased out.
+    Please use the nose2 or pytest frameworks instead.
+
+Pytest compatibility class. This implements the simplest level of
+pytest.mark.parametrize for use in nose as an aid in making the transition
+to pytest. It achieves that by adding a dummy var parameter and ignoring
+the doc_func parameter of the base class. It does not support variable
+substitution by name, nor does it support nesting or classes. See the
+pytest documentation for usage.
+
+.. versionadded:: 1.14.0\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1testing_1_1__private_1_1decorators_a1507a52f3f465b8f127fe6c639e09d02}\label{namespacenumpy_1_1testing_1_1__private_1_1decorators_a1507a52f3f465b8f127fe6c639e09d02}} 
+\index{numpy\+::testing\+::\+\_\+private\+::decorators@{numpy\+::testing\+::\+\_\+private\+::decorators}!setastest@{setastest}}
+\index{setastest@{setastest}!numpy\+::testing\+::\+\_\+private\+::decorators@{numpy\+::testing\+::\+\_\+private\+::decorators}}
+\subsubsection{\texorpdfstring{setastest()}{setastest()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+decorators.\+setastest (\begin{DoxyParamCaption}\item[{}]{tf = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}.. deprecated:: 1.21
+    This decorator is retained for compatibility with the nose testing framework, which is being phased out.
+    Please use the nose2 or pytest frameworks instead.
+
+Signals to nose that this function is or is not a test.
+
+Parameters
+----------
+tf : bool
+    If True, specifies that the decorated callable is a test.
+    If False, specifies that the decorated callable is not a test.
+    Default is True.
+
+Notes
+-----
+This decorator can't use the nose namespace, because it can be
+called from a non-test module. See also ``istest`` and ``nottest`` in
+``nose.tools``.
+
+Examples
+--------
+`setastest` can be used in the following way::
+
+  from numpy.testing import dec
+
+  @dec.setastest(False)
+  def func_with_test_in_name(arg1, arg2):
+      pass\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1testing_1_1__private_1_1decorators_a959e2eca3bd6bd2d50ab3a1c4d05faa3}\label{namespacenumpy_1_1testing_1_1__private_1_1decorators_a959e2eca3bd6bd2d50ab3a1c4d05faa3}} 
+\index{numpy\+::testing\+::\+\_\+private\+::decorators@{numpy\+::testing\+::\+\_\+private\+::decorators}!skipif@{skipif}}
+\index{skipif@{skipif}!numpy\+::testing\+::\+\_\+private\+::decorators@{numpy\+::testing\+::\+\_\+private\+::decorators}}
+\subsubsection{\texorpdfstring{skipif()}{skipif()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+decorators.\+skipif (\begin{DoxyParamCaption}\item[{}]{skip\+\_\+condition,  }\item[{}]{msg = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}.. deprecated:: 1.21
+    This decorator is retained for compatibility with the nose testing framework, which is being phased out.
+    Please use the nose2 or pytest frameworks instead.
+
+Make function raise SkipTest exception if a given condition is true.
+
+If the condition is a callable, it is used at runtime to dynamically
+make the decision. This is useful for tests that may require costly
+imports, to delay the cost until the test suite is actually executed.
+
+Parameters
+----------
+skip_condition : bool or callable
+    Flag to determine whether to skip the decorated test.
+msg : str, optional
+    Message to give on raising a SkipTest exception. Default is None.
+
+Returns
+-------
+decorator : function
+    Decorator which, when applied to a function, causes SkipTest
+    to be raised when `skip_condition` is True, and the function
+    to be called normally otherwise.
+
+Notes
+-----
+The decorator itself is decorated with the ``nose.tools.make_decorator``
+function in order to transmit function name, and various other metadata.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1testing_1_1__private_1_1decorators_a6e89bc2d3f956de807a5413afee38bd5}\label{namespacenumpy_1_1testing_1_1__private_1_1decorators_a6e89bc2d3f956de807a5413afee38bd5}} 
+\index{numpy\+::testing\+::\+\_\+private\+::decorators@{numpy\+::testing\+::\+\_\+private\+::decorators}!slow@{slow}}
+\index{slow@{slow}!numpy\+::testing\+::\+\_\+private\+::decorators@{numpy\+::testing\+::\+\_\+private\+::decorators}}
+\subsubsection{\texorpdfstring{slow()}{slow()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+decorators.\+slow (\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}.. deprecated:: 1.21
+    This decorator is retained for compatibility with the nose testing framework, which is being phased out.
+    Please use the nose2 or pytest frameworks instead.
+
+Label a test as 'slow'.
+
+The exact definition of a slow test is obviously both subjective and
+hardware-dependent, but in general any individual test that requires more
+than a second or two should be labeled as slow (the whole suite consists of
+thousands of tests, so even a second is significant).
+
+Parameters
+----------
+t : callable
+    The test to label as slow.
+
+Returns
+-------
+t : callable
+    The decorated test `t`.
+
+Examples
+--------
+The `numpy.testing` module includes ``import decorators as dec``.
+A test can be decorated as slow like this::
+
+  from numpy.testing import *
+
+  @dec.slow
+  def test_big(self):
+      print('Big, slow test')\end{DoxyVerb}
+ 

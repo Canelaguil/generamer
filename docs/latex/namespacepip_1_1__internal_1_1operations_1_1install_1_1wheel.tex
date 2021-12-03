@@ -1,0 +1,153 @@
+\hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel}{}\section{pip.\+\_\+internal.\+operations.\+install.\+wheel Namespace Reference}
+\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel}\index{pip.\+\_\+internal.\+operations.\+install.\+wheel@{pip.\+\_\+internal.\+operations.\+install.\+wheel}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1operations_1_1install_1_1wheel_1_1File}{File}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1operations_1_1install_1_1wheel_1_1MissingCallableSuffix}{Missing\+Callable\+Suffix}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1operations_1_1install_1_1wheel_1_1PipScriptMaker}{Pip\+Script\+Maker}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1operations_1_1install_1_1wheel_1_1ScriptFile}{Script\+File}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1operations_1_1install_1_1wheel_1_1ZipBackedFile}{Zip\+Backed\+File}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a44f28544cec7abc21fd7359d33710de7}{rehash} (path, blocksize=1$<$$<$ 20)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a9fdfc84b0b3d56d65ab108349305aece}{csv\+\_\+io\+\_\+kwargs} (mode)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_af29b95fd607efbf97139389b7e374a22}{fix\+\_\+script} (path)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a6039518537c5934929587be3c98ad2c8}{wheel\+\_\+root\+\_\+is\+\_\+purelib} (metadata)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a704d5b164434af6e4ac4ad55d73206b0}{get\+\_\+entrypoints}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a95576e0abb83220198635fee076c272a}{message\+\_\+about\+\_\+scripts\+\_\+not\+\_\+on\+\_\+\+P\+A\+TH} (scripts)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a3ce373268f0c58e6200a83f5cf011178}{get\+\_\+csv\+\_\+rows\+\_\+for\+\_\+installed} (old\+\_\+csv\+\_\+rows, installed, changed, generated, lib\+\_\+dir)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a05db2d34068442e6e937bf4ea73a049a}{get\+\_\+console\+\_\+script\+\_\+specs} (console)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a8fa65a14c0a2703563b2d4b54fdb8efd}{req\+\_\+error\+\_\+context} (req\+\_\+description)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a2a206ecfa963eb599bec740849d711da}{install\+\_\+wheel} (name, wheel\+\_\+path, scheme, req\+\_\+description, pycompile=True, warn\+\_\+script\+\_\+location=True, direct\+\_\+url=None, requested=False)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a7ea6a5636c15a59204a7f90ab0a5bd3f}{logger}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_aa83c7ecb8dd69b844ed57ed1fa3a7209}{Record\+Path}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_abc61841c3e2aeebdb596030b6f827a62}{Installed\+C\+S\+V\+Row}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Support for installing and building the "wheel" binary package format.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a9fdfc84b0b3d56d65ab108349305aece}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a9fdfc84b0b3d56d65ab108349305aece}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!csv\+\_\+io\+\_\+kwargs@{csv\+\_\+io\+\_\+kwargs}}
+\index{csv\+\_\+io\+\_\+kwargs@{csv\+\_\+io\+\_\+kwargs}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{csv\+\_\+io\+\_\+kwargs()}{csv\_io\_kwargs()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+install.\+wheel.\+csv\+\_\+io\+\_\+kwargs (\begin{DoxyParamCaption}\item[{}]{mode }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return keyword arguments to properly open a CSV file
+in the given mode.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_af29b95fd607efbf97139389b7e374a22}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_af29b95fd607efbf97139389b7e374a22}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!fix\+\_\+script@{fix\+\_\+script}}
+\index{fix\+\_\+script@{fix\+\_\+script}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{fix\+\_\+script()}{fix\_script()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+install.\+wheel.\+fix\+\_\+script (\begin{DoxyParamCaption}\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Replace #!python with #!/path/to/python
+Return True if file was changed.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a05db2d34068442e6e937bf4ea73a049a}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a05db2d34068442e6e937bf4ea73a049a}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!get\+\_\+console\+\_\+script\+\_\+specs@{get\+\_\+console\+\_\+script\+\_\+specs}}
+\index{get\+\_\+console\+\_\+script\+\_\+specs@{get\+\_\+console\+\_\+script\+\_\+specs}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{get\+\_\+console\+\_\+script\+\_\+specs()}{get\_console\_script\_specs()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+install.\+wheel.\+get\+\_\+console\+\_\+script\+\_\+specs (\begin{DoxyParamCaption}\item[{}]{console }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given the mapping from entrypoint name to callable, return the relevant
+console script specs.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a3ce373268f0c58e6200a83f5cf011178}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a3ce373268f0c58e6200a83f5cf011178}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!get\+\_\+csv\+\_\+rows\+\_\+for\+\_\+installed@{get\+\_\+csv\+\_\+rows\+\_\+for\+\_\+installed}}
+\index{get\+\_\+csv\+\_\+rows\+\_\+for\+\_\+installed@{get\+\_\+csv\+\_\+rows\+\_\+for\+\_\+installed}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{get\+\_\+csv\+\_\+rows\+\_\+for\+\_\+installed()}{get\_csv\_rows\_for\_installed()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+install.\+wheel.\+get\+\_\+csv\+\_\+rows\+\_\+for\+\_\+installed (\begin{DoxyParamCaption}\item[{}]{old\+\_\+csv\+\_\+rows,  }\item[{}]{installed,  }\item[{}]{changed,  }\item[{}]{generated,  }\item[{}]{lib\+\_\+dir }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:param installed: A map from archive RECORD path to installation RECORD
+    path.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a704d5b164434af6e4ac4ad55d73206b0}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a704d5b164434af6e4ac4ad55d73206b0}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!get\+\_\+entrypoints@{get\+\_\+entrypoints}}
+\index{get\+\_\+entrypoints@{get\+\_\+entrypoints}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{get\+\_\+entrypoints()}{get\_entrypoints()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+install.\+wheel.\+get\+\_\+entrypoints (\begin{DoxyParamCaption}\item[{}]{dist }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a2a206ecfa963eb599bec740849d711da}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a2a206ecfa963eb599bec740849d711da}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!install\+\_\+wheel@{install\+\_\+wheel}}
+\index{install\+\_\+wheel@{install\+\_\+wheel}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{install\+\_\+wheel()}{install\_wheel()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+install.\+wheel.\+install\+\_\+wheel (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{wheel\+\_\+path,  }\item[{}]{scheme,  }\item[{}]{req\+\_\+description,  }\item[{}]{pycompile = {\ttfamily True},  }\item[{}]{warn\+\_\+script\+\_\+location = {\ttfamily True},  }\item[{}]{direct\+\_\+url = {\ttfamily None},  }\item[{}]{requested = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a95576e0abb83220198635fee076c272a}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a95576e0abb83220198635fee076c272a}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!message\+\_\+about\+\_\+scripts\+\_\+not\+\_\+on\+\_\+\+P\+A\+TH@{message\+\_\+about\+\_\+scripts\+\_\+not\+\_\+on\+\_\+\+P\+A\+TH}}
+\index{message\+\_\+about\+\_\+scripts\+\_\+not\+\_\+on\+\_\+\+P\+A\+TH@{message\+\_\+about\+\_\+scripts\+\_\+not\+\_\+on\+\_\+\+P\+A\+TH}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{message\+\_\+about\+\_\+scripts\+\_\+not\+\_\+on\+\_\+\+P\+A\+T\+H()}{message\_about\_scripts\_not\_on\_PATH()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+install.\+wheel.\+message\+\_\+about\+\_\+scripts\+\_\+not\+\_\+on\+\_\+\+P\+A\+TH (\begin{DoxyParamCaption}\item[{}]{scripts }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determine if any scripts are not on PATH and format a warning.
+Returns a warning message if one or more scripts are not on PATH,
+otherwise None.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a44f28544cec7abc21fd7359d33710de7}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a44f28544cec7abc21fd7359d33710de7}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!rehash@{rehash}}
+\index{rehash@{rehash}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{rehash()}{rehash()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+install.\+wheel.\+rehash (\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{blocksize = {\ttfamily 1~$<$$<$~20} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return (encoded_digest, length) for path using hashlib.sha256()\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a8fa65a14c0a2703563b2d4b54fdb8efd}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a8fa65a14c0a2703563b2d4b54fdb8efd}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!req\+\_\+error\+\_\+context@{req\+\_\+error\+\_\+context}}
+\index{req\+\_\+error\+\_\+context@{req\+\_\+error\+\_\+context}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{req\+\_\+error\+\_\+context()}{req\_error\_context()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+install.\+wheel.\+req\+\_\+error\+\_\+context (\begin{DoxyParamCaption}\item[{}]{req\+\_\+description }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a6039518537c5934929587be3c98ad2c8}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a6039518537c5934929587be3c98ad2c8}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!wheel\+\_\+root\+\_\+is\+\_\+purelib@{wheel\+\_\+root\+\_\+is\+\_\+purelib}}
+\index{wheel\+\_\+root\+\_\+is\+\_\+purelib@{wheel\+\_\+root\+\_\+is\+\_\+purelib}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{wheel\+\_\+root\+\_\+is\+\_\+purelib()}{wheel\_root\_is\_purelib()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+operations.\+install.\+wheel.\+wheel\+\_\+root\+\_\+is\+\_\+purelib (\begin{DoxyParamCaption}\item[{}]{metadata }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_abc61841c3e2aeebdb596030b6f827a62}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_abc61841c3e2aeebdb596030b6f827a62}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!Installed\+C\+S\+V\+Row@{Installed\+C\+S\+V\+Row}}
+\index{Installed\+C\+S\+V\+Row@{Installed\+C\+S\+V\+Row}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{Installed\+C\+S\+V\+Row}{InstalledCSVRow}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+operations.\+install.\+wheel.\+Installed\+C\+S\+V\+Row}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a7ea6a5636c15a59204a7f90ab0a5bd3f}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_a7ea6a5636c15a59204a7f90ab0a5bd3f}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!logger@{logger}}
+\index{logger@{logger}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+operations.\+install.\+wheel.\+logger}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_aa83c7ecb8dd69b844ed57ed1fa3a7209}\label{namespacepip_1_1__internal_1_1operations_1_1install_1_1wheel_aa83c7ecb8dd69b844ed57ed1fa3a7209}} 
+\index{pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}!Record\+Path@{Record\+Path}}
+\index{Record\+Path@{Record\+Path}!pip\+::\+\_\+internal\+::operations\+::install\+::wheel@{pip\+::\+\_\+internal\+::operations\+::install\+::wheel}}
+\subsubsection{\texorpdfstring{Record\+Path}{RecordPath}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+operations.\+install.\+wheel.\+Record\+Path}
+

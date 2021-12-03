@@ -1,0 +1,53 @@
+\hypertarget{namespacesetuptools_1_1depends}{}\section{setuptools.\+depends Namespace Reference}
+\label{namespacesetuptools_1_1depends}\index{setuptools.\+depends@{setuptools.\+depends}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1depends_1_1Require}{Require}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1depends_a31c80f31ba714fa03597dedf762d244c}{maybe\+\_\+close} (f)
+\item 
+def \hyperlink{namespacesetuptools_1_1depends_a5a13c841cb5ec0ec368eb437b3e7c615}{get\+\_\+module\+\_\+constant} (module, symbol, default=-\/1, paths=None)
+\item 
+def \hyperlink{namespacesetuptools_1_1depends_a49bf4636dee480cc02cef0d9e81ca05e}{extract\+\_\+constant} (code, symbol, default=-\/1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1depends_a49bf4636dee480cc02cef0d9e81ca05e}\label{namespacesetuptools_1_1depends_a49bf4636dee480cc02cef0d9e81ca05e}} 
+\index{setuptools\+::depends@{setuptools\+::depends}!extract\+\_\+constant@{extract\+\_\+constant}}
+\index{extract\+\_\+constant@{extract\+\_\+constant}!setuptools\+::depends@{setuptools\+::depends}}
+\subsubsection{\texorpdfstring{extract\+\_\+constant()}{extract\_constant()}}
+{\footnotesize\ttfamily def setuptools.\+depends.\+extract\+\_\+constant (\begin{DoxyParamCaption}\item[{}]{code,  }\item[{}]{symbol,  }\item[{}]{default = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extract the constant value of 'symbol' from 'code'
+
+If the name 'symbol' is bound to a constant value by the Python code
+object 'code', return that value.  If 'symbol' is bound to an expression,
+return 'default'.  Otherwise, return 'None'.
+
+Return value is based on the first assignment to 'symbol'.  'symbol' must
+be a global, or at least a non-"fast" local in the code block.  That is,
+only 'STORE_NAME' and 'STORE_GLOBAL' opcodes are checked, and 'symbol'
+must be present in 'code.co_names'.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1depends_a5a13c841cb5ec0ec368eb437b3e7c615}\label{namespacesetuptools_1_1depends_a5a13c841cb5ec0ec368eb437b3e7c615}} 
+\index{setuptools\+::depends@{setuptools\+::depends}!get\+\_\+module\+\_\+constant@{get\+\_\+module\+\_\+constant}}
+\index{get\+\_\+module\+\_\+constant@{get\+\_\+module\+\_\+constant}!setuptools\+::depends@{setuptools\+::depends}}
+\subsubsection{\texorpdfstring{get\+\_\+module\+\_\+constant()}{get\_module\_constant()}}
+{\footnotesize\ttfamily def setuptools.\+depends.\+get\+\_\+module\+\_\+constant (\begin{DoxyParamCaption}\item[{}]{module,  }\item[{}]{symbol,  }\item[{}]{default = {\ttfamily -\/1},  }\item[{}]{paths = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find 'module' by searching 'paths', and extract 'symbol'
+
+Return 'None' if 'module' does not exist on 'paths', or it does not define
+'symbol'.  If the module defines 'symbol' as a constant, return the
+constant.  Otherwise, return 'default'.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1depends_a31c80f31ba714fa03597dedf762d244c}\label{namespacesetuptools_1_1depends_a31c80f31ba714fa03597dedf762d244c}} 
+\index{setuptools\+::depends@{setuptools\+::depends}!maybe\+\_\+close@{maybe\+\_\+close}}
+\index{maybe\+\_\+close@{maybe\+\_\+close}!setuptools\+::depends@{setuptools\+::depends}}
+\subsubsection{\texorpdfstring{maybe\+\_\+close()}{maybe\_close()}}
+{\footnotesize\ttfamily def setuptools.\+depends.\+maybe\+\_\+close (\begin{DoxyParamCaption}\item[{}]{f }\end{DoxyParamCaption})}
+

@@ -1,0 +1,111 @@
+\hypertarget{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket}{}\section{matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket Class Reference}
+\label{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket}\index{matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket@{matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a0d4d24c80f1e8b2c729159db5172d11f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_aa425f5864211cd83e421fe39b4f2ad67}{manager})
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_af3c42ae24d3f16965203e8f73807804c}{is\+\_\+open} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a61aa04ac1a8894cdf5f61833525e0500}{on\+\_\+close} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_adcb0049f0e71fe8fd1e7c0f306aadff8}{send\+\_\+json} (self, content)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_abdabbec2038acae6ce7001b96b9f8e57}{send\+\_\+binary} (self, blob)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a0c7fe65c894b53e96d4b7707e96196fc}{on\+\_\+message} (self, message)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a1c353abd1b21a98263db8a1f39fa3d49}{supports\+\_\+binary}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_aa425f5864211cd83e421fe39b4f2ad67}{manager}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a146e2a6e4e69325a0a99e6b94115f910}{uuid}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_ae70c65325f63d0cbab8c44670476aa88}{comm}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Manages the Comm connection between IPython and the browser (client).
+
+Comms are 2 way, with the CommSocket being able to publish a message
+via the send_json method, and handle a message with on_message. On the
+JS side figure.send_message and figure.ws.onmessage do the sending and
+receiving respectively.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a0d4d24c80f1e8b2c729159db5172d11f}\label{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a0d4d24c80f1e8b2c729159db5172d11f}} 
+\index{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{manager }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_af3c42ae24d3f16965203e8f73807804c}\label{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_af3c42ae24d3f16965203e8f73807804c}} 
+\index{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}!is\+\_\+open@{is\+\_\+open}}
+\index{is\+\_\+open@{is\+\_\+open}!matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}}
+\subsubsection{\texorpdfstring{is\+\_\+open()}{is\_open()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket.\+is\+\_\+open (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a61aa04ac1a8894cdf5f61833525e0500}\label{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a61aa04ac1a8894cdf5f61833525e0500}} 
+\index{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}!on\+\_\+close@{on\+\_\+close}}
+\index{on\+\_\+close@{on\+\_\+close}!matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}}
+\subsubsection{\texorpdfstring{on\+\_\+close()}{on\_close()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket.\+on\+\_\+close (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a0c7fe65c894b53e96d4b7707e96196fc}\label{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a0c7fe65c894b53e96d4b7707e96196fc}} 
+\index{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}!on\+\_\+message@{on\+\_\+message}}
+\index{on\+\_\+message@{on\+\_\+message}!matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}}
+\subsubsection{\texorpdfstring{on\+\_\+message()}{on\_message()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket.\+on\+\_\+message (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_abdabbec2038acae6ce7001b96b9f8e57}\label{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_abdabbec2038acae6ce7001b96b9f8e57}} 
+\index{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}!send\+\_\+binary@{send\+\_\+binary}}
+\index{send\+\_\+binary@{send\+\_\+binary}!matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}}
+\subsubsection{\texorpdfstring{send\+\_\+binary()}{send\_binary()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket.\+send\+\_\+binary (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{blob }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_adcb0049f0e71fe8fd1e7c0f306aadff8}\label{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_adcb0049f0e71fe8fd1e7c0f306aadff8}} 
+\index{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}!send\+\_\+json@{send\+\_\+json}}
+\index{send\+\_\+json@{send\+\_\+json}!matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}}
+\subsubsection{\texorpdfstring{send\+\_\+json()}{send\_json()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket.\+send\+\_\+json (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{content }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_ae70c65325f63d0cbab8c44670476aa88}\label{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_ae70c65325f63d0cbab8c44670476aa88}} 
+\index{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}!comm@{comm}}
+\index{comm@{comm}!matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}}
+\subsubsection{\texorpdfstring{comm}{comm}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket.\+comm}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_aa425f5864211cd83e421fe39b4f2ad67}\label{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_aa425f5864211cd83e421fe39b4f2ad67}} 
+\index{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}!manager@{manager}}
+\index{manager@{manager}!matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}}
+\subsubsection{\texorpdfstring{manager}{manager}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket.\+manager}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a1c353abd1b21a98263db8a1f39fa3d49}\label{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a1c353abd1b21a98263db8a1f39fa3d49}} 
+\index{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}!supports\+\_\+binary@{supports\+\_\+binary}}
+\index{supports\+\_\+binary@{supports\+\_\+binary}!matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}}
+\subsubsection{\texorpdfstring{supports\+\_\+binary}{supports\_binary}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket.\+supports\+\_\+binary}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a146e2a6e4e69325a0a99e6b94115f910}\label{classmatplotlib_1_1backends_1_1backend__nbagg_1_1CommSocket_a146e2a6e4e69325a0a99e6b94115f910}} 
+\index{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}!uuid@{uuid}}
+\index{uuid@{uuid}!matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket@{matplotlib\+::backends\+::backend\+\_\+nbagg\+::\+Comm\+Socket}}
+\subsubsection{\texorpdfstring{uuid}{uuid}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+backend\+\_\+nbagg.\+Comm\+Socket.\+uuid}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/backends/\hyperlink{backend__nbagg_8py}{backend\+\_\+nbagg.\+py}\end{DoxyCompactItemize}

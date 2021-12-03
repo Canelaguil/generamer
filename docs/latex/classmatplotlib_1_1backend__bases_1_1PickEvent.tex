@@ -1,0 +1,99 @@
+\hypertarget{classmatplotlib_1_1backend__bases_1_1PickEvent}{}\section{matplotlib.\+backend\+\_\+bases.\+Pick\+Event Class Reference}
+\label{classmatplotlib_1_1backend__bases_1_1PickEvent}\index{matplotlib.\+backend\+\_\+bases.\+Pick\+Event@{matplotlib.\+backend\+\_\+bases.\+Pick\+Event}}
+
+
+Inheritance diagram for matplotlib.\+backend\+\_\+bases.\+Pick\+Event\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classmatplotlib_1_1backend__bases_1_1PickEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+backend\+\_\+bases.\+Pick\+Event\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classmatplotlib_1_1backend__bases_1_1PickEvent__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1PickEvent_a41e924a637edce5c41b53af069010088}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1backend__bases_1_1Event_a4b10ea7af7c8a0b20bcdbb9ca03e1654}{name}, \hyperlink{classmatplotlib_1_1backend__bases_1_1Event_a7721d867d81a1255b1aeb51babec4e14}{canvas}, \hyperlink{classmatplotlib_1_1backend__bases_1_1PickEvent_a7e31be143b06959f137dc76492d1003a}{mouseevent}, \hyperlink{classmatplotlib_1_1backend__bases_1_1PickEvent_af977e67ad3b466ad148fbd219fc08e9a}{artist}, \hyperlink{classmatplotlib_1_1backend__bases_1_1Event_a6cc1dc3c9479b3e5f227f329037adb98}{gui\+Event}=None, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1PickEvent_a7e31be143b06959f137dc76492d1003a}{mouseevent}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1PickEvent_af977e67ad3b466ad148fbd219fc08e9a}{artist}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A pick event, fired when the user picks a location on the canvas
+sufficiently close to an artist that has been made pickable with
+`.Artist.set_picker`.
+
+Attrs: all the `Event` attributes plus
+
+Attributes
+----------
+mouseevent : `MouseEvent`
+    The mouse event that generated the pick.
+artist : `matplotlib.artist.Artist`
+    The picked artist.  Note that artists are not pickable by default
+    (see `.Artist.set_picker`).
+other
+    Additional attributes may be present depending on the type of the
+    picked object; e.g., a `~.Line2D` pick may define different extra
+    attributes than a `~.PatchCollection` pick.
+
+Examples
+--------
+Bind a function ``on_pick()`` to pick events, that prints the coordinates
+of the picked data point::
+
+    ax.plot(np.rand(100), 'o', picker=5)  # 5 points tolerance
+
+    def on_pick(event):
+        line = event.artist
+        xdata, ydata = line.get_data()
+        ind = event.ind
+        print('on pick line:', np.array([xdata[ind], ydata[ind]]).T)
+
+    cid = fig.canvas.mpl_connect('pick_event', on_pick)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1PickEvent_a41e924a637edce5c41b53af069010088}\label{classmatplotlib_1_1backend__bases_1_1PickEvent_a41e924a637edce5c41b53af069010088}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Pick\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Pick\+Event}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+bases\+::\+Pick\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Pick\+Event}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Pick\+Event.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{canvas,  }\item[{}]{mouseevent,  }\item[{}]{artist,  }\item[{}]{gui\+Event = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1PickEvent_af977e67ad3b466ad148fbd219fc08e9a}\label{classmatplotlib_1_1backend__bases_1_1PickEvent_af977e67ad3b466ad148fbd219fc08e9a}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Pick\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Pick\+Event}!artist@{artist}}
+\index{artist@{artist}!matplotlib\+::backend\+\_\+bases\+::\+Pick\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Pick\+Event}}
+\subsubsection{\texorpdfstring{artist}{artist}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Pick\+Event.\+artist}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1PickEvent_a7e31be143b06959f137dc76492d1003a}\label{classmatplotlib_1_1backend__bases_1_1PickEvent_a7e31be143b06959f137dc76492d1003a}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Pick\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Pick\+Event}!mouseevent@{mouseevent}}
+\index{mouseevent@{mouseevent}!matplotlib\+::backend\+\_\+bases\+::\+Pick\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Pick\+Event}}
+\subsubsection{\texorpdfstring{mouseevent}{mouseevent}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Pick\+Event.\+mouseevent}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{backend__bases_8py}{backend\+\_\+bases.\+py}\end{DoxyCompactItemize}

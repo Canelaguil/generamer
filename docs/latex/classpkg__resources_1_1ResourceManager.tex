@@ -1,0 +1,218 @@
+\hypertarget{classpkg__resources_1_1ResourceManager}{}\section{pkg\+\_\+resources.\+Resource\+Manager Class Reference}
+\label{classpkg__resources_1_1ResourceManager}\index{pkg\+\_\+resources.\+Resource\+Manager@{pkg\+\_\+resources.\+Resource\+Manager}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpkg__resources_1_1ResourceManager_a9673742b6f33a0e9e50964d778d88147}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpkg__resources_1_1ResourceManager_ad1b6e05f2dbd4022e832ce0fce52a49c}{resource\+\_\+exists} (self, package\+\_\+or\+\_\+requirement, resource\+\_\+name)
+\item 
+def \hyperlink{classpkg__resources_1_1ResourceManager_a32204e72f09b8a5f92e50d8ef1636bc6}{resource\+\_\+isdir} (self, package\+\_\+or\+\_\+requirement, resource\+\_\+name)
+\item 
+def \hyperlink{classpkg__resources_1_1ResourceManager_a6c85868c8de9cb637490e298ff1252c0}{resource\+\_\+filename} (self, package\+\_\+or\+\_\+requirement, resource\+\_\+name)
+\item 
+def \hyperlink{classpkg__resources_1_1ResourceManager_a8656d0d38efd4f2afe70595e001838fc}{resource\+\_\+stream} (self, package\+\_\+or\+\_\+requirement, resource\+\_\+name)
+\item 
+def \hyperlink{classpkg__resources_1_1ResourceManager_ae1e5f9bafec64d9271aea875f7d491bf}{resource\+\_\+string} (self, package\+\_\+or\+\_\+requirement, resource\+\_\+name)
+\item 
+def \hyperlink{classpkg__resources_1_1ResourceManager_aa613cb6baad8c9bdb748e6592536022d}{resource\+\_\+listdir} (self, package\+\_\+or\+\_\+requirement, resource\+\_\+name)
+\item 
+def \hyperlink{classpkg__resources_1_1ResourceManager_a39f27f35ad11069273856a00d26df314}{extraction\+\_\+error} (self)
+\item 
+def \hyperlink{classpkg__resources_1_1ResourceManager_a79de123f8cc5bf426ae33bd6b6b21e0c}{get\+\_\+cache\+\_\+path} (self, archive\+\_\+name, names=())
+\item 
+def \hyperlink{classpkg__resources_1_1ResourceManager_af459cd9904c680589c54e462b0e6cf4d}{postprocess} (self, tempname, filename)
+\item 
+def \hyperlink{classpkg__resources_1_1ResourceManager_aa07a3bbaed612c6837984c00c8d162eb}{set\+\_\+extraction\+\_\+path} (self, path)
+\item 
+def \hyperlink{classpkg__resources_1_1ResourceManager_a85ba051ec7d82f0803dd96e45df1d21d}{cleanup\+\_\+resources} (self, force=False)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpkg__resources_1_1ResourceManager_a73e8a505d671a5662efa4f9213a32c32}{cached\+\_\+files}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpkg__resources_1_1ResourceManager_a6120904625d6624b7ecae0f9175ea9dd}{extraction\+\_\+path}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Manage resource extraction and packages\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_a9673742b6f33a0e9e50964d778d88147}\label{classpkg__resources_1_1ResourceManager_a9673742b6f33a0e9e50964d778d88147}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Resource\+Manager.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_a85ba051ec7d82f0803dd96e45df1d21d}\label{classpkg__resources_1_1ResourceManager_a85ba051ec7d82f0803dd96e45df1d21d}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!cleanup\+\_\+resources@{cleanup\+\_\+resources}}
+\index{cleanup\+\_\+resources@{cleanup\+\_\+resources}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{cleanup\+\_\+resources()}{cleanup\_resources()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Resource\+Manager.\+cleanup\+\_\+resources (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{force = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Delete all extracted resource files and directories, returning a list
+of the file and directory names that could not be successfully removed.
+This function does not have any concurrency protection, so it should
+generally only be called when the extraction path is a temporary
+directory exclusive to a single process.  This method is not
+automatically called; you must call it explicitly or register it as an
+``atexit`` function if you wish to ensure cleanup of a temporary
+directory used for extractions.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_a39f27f35ad11069273856a00d26df314}\label{classpkg__resources_1_1ResourceManager_a39f27f35ad11069273856a00d26df314}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!extraction\+\_\+error@{extraction\+\_\+error}}
+\index{extraction\+\_\+error@{extraction\+\_\+error}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{extraction\+\_\+error()}{extraction\_error()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Resource\+Manager.\+extraction\+\_\+error (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Give an error message for problems extracting file(s)\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_a79de123f8cc5bf426ae33bd6b6b21e0c}\label{classpkg__resources_1_1ResourceManager_a79de123f8cc5bf426ae33bd6b6b21e0c}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!get\+\_\+cache\+\_\+path@{get\+\_\+cache\+\_\+path}}
+\index{get\+\_\+cache\+\_\+path@{get\+\_\+cache\+\_\+path}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+cache\+\_\+path()}{get\_cache\_path()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Resource\+Manager.\+get\+\_\+cache\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{archive\+\_\+name,  }\item[{}]{names = {\ttfamily ()} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return absolute location in cache for `archive_name` and `names`
+
+The parent directory of the resulting path will be created if it does
+not already exist.  `archive_name` should be the base filename of the
+enclosing egg (which may not be the name of the enclosing zipfile!),
+including its ".egg" extension.  `names`, if provided, should be a
+sequence of path name parts "under" the egg's extraction location.
+
+This method should only be called by resource providers that need to
+obtain an extraction location, and only for names they intend to
+extract, as it tracks the generated names for possible cleanup later.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_af459cd9904c680589c54e462b0e6cf4d}\label{classpkg__resources_1_1ResourceManager_af459cd9904c680589c54e462b0e6cf4d}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!postprocess@{postprocess}}
+\index{postprocess@{postprocess}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{postprocess()}{postprocess()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Resource\+Manager.\+postprocess (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tempname,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Perform any platform-specific postprocessing of `tempname`
+
+This is where Mac header rewrites should be done; other platforms don't
+have anything special they should do.
+
+Resource providers should call this method ONLY after successfully
+extracting a compressed resource.  They must NOT call it on resources
+that are already in the filesystem.
+
+`tempname` is the current (temporary) name of the file, and `filename`
+is the name it will be renamed to by the caller after this routine
+returns.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_ad1b6e05f2dbd4022e832ce0fce52a49c}\label{classpkg__resources_1_1ResourceManager_ad1b6e05f2dbd4022e832ce0fce52a49c}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!resource\+\_\+exists@{resource\+\_\+exists}}
+\index{resource\+\_\+exists@{resource\+\_\+exists}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{resource\+\_\+exists()}{resource\_exists()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Resource\+Manager.\+resource\+\_\+exists (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{package\+\_\+or\+\_\+requirement,  }\item[{}]{resource\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Does the named resource exist?\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_a6c85868c8de9cb637490e298ff1252c0}\label{classpkg__resources_1_1ResourceManager_a6c85868c8de9cb637490e298ff1252c0}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!resource\+\_\+filename@{resource\+\_\+filename}}
+\index{resource\+\_\+filename@{resource\+\_\+filename}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{resource\+\_\+filename()}{resource\_filename()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Resource\+Manager.\+resource\+\_\+filename (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{package\+\_\+or\+\_\+requirement,  }\item[{}]{resource\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a true filesystem path for specified resource\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_a32204e72f09b8a5f92e50d8ef1636bc6}\label{classpkg__resources_1_1ResourceManager_a32204e72f09b8a5f92e50d8ef1636bc6}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!resource\+\_\+isdir@{resource\+\_\+isdir}}
+\index{resource\+\_\+isdir@{resource\+\_\+isdir}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{resource\+\_\+isdir()}{resource\_isdir()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Resource\+Manager.\+resource\+\_\+isdir (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{package\+\_\+or\+\_\+requirement,  }\item[{}]{resource\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Is the named resource an existing directory?\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_aa613cb6baad8c9bdb748e6592536022d}\label{classpkg__resources_1_1ResourceManager_aa613cb6baad8c9bdb748e6592536022d}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!resource\+\_\+listdir@{resource\+\_\+listdir}}
+\index{resource\+\_\+listdir@{resource\+\_\+listdir}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{resource\+\_\+listdir()}{resource\_listdir()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Resource\+Manager.\+resource\+\_\+listdir (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{package\+\_\+or\+\_\+requirement,  }\item[{}]{resource\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}List the contents of the named resource directory\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_a8656d0d38efd4f2afe70595e001838fc}\label{classpkg__resources_1_1ResourceManager_a8656d0d38efd4f2afe70595e001838fc}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!resource\+\_\+stream@{resource\+\_\+stream}}
+\index{resource\+\_\+stream@{resource\+\_\+stream}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{resource\+\_\+stream()}{resource\_stream()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Resource\+Manager.\+resource\+\_\+stream (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{package\+\_\+or\+\_\+requirement,  }\item[{}]{resource\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a readable file-like object for specified resource\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_ae1e5f9bafec64d9271aea875f7d491bf}\label{classpkg__resources_1_1ResourceManager_ae1e5f9bafec64d9271aea875f7d491bf}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!resource\+\_\+string@{resource\+\_\+string}}
+\index{resource\+\_\+string@{resource\+\_\+string}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{resource\+\_\+string()}{resource\_string()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Resource\+Manager.\+resource\+\_\+string (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{package\+\_\+or\+\_\+requirement,  }\item[{}]{resource\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return specified resource as a string\end{DoxyVerb}
+ \mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_aa07a3bbaed612c6837984c00c8d162eb}\label{classpkg__resources_1_1ResourceManager_aa07a3bbaed612c6837984c00c8d162eb}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!set\+\_\+extraction\+\_\+path@{set\+\_\+extraction\+\_\+path}}
+\index{set\+\_\+extraction\+\_\+path@{set\+\_\+extraction\+\_\+path}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{set\+\_\+extraction\+\_\+path()}{set\_extraction\_path()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Resource\+Manager.\+set\+\_\+extraction\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the base path where resources will be extracted to, if needed.
+
+If you do not call this routine before any extractions take place, the
+path defaults to the return value of ``get_default_cache()``.  (Which
+is based on the ``PYTHON_EGG_CACHE`` environment variable, with various
+platform-specific fallbacks.  See that routine's documentation for more
+details.)
+
+Resources are extracted to subdirectories of this path based upon
+information given by the ``IResourceProvider``.  You may set this to a
+temporary directory, but then you must call ``cleanup_resources()`` to
+delete the extracted files when done.  There is no guarantee that
+``cleanup_resources()`` will be able to remove all extracted files.
+
+(Note: you may not change the extraction path for a given resource
+manager once resources have been extracted, unless you first call
+``cleanup_resources()``.)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_a73e8a505d671a5662efa4f9213a32c32}\label{classpkg__resources_1_1ResourceManager_a73e8a505d671a5662efa4f9213a32c32}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!cached\+\_\+files@{cached\+\_\+files}}
+\index{cached\+\_\+files@{cached\+\_\+files}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{cached\+\_\+files}{cached\_files}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+Resource\+Manager.\+cached\+\_\+files}
+
+\mbox{\Hypertarget{classpkg__resources_1_1ResourceManager_a6120904625d6624b7ecae0f9175ea9dd}\label{classpkg__resources_1_1ResourceManager_a6120904625d6624b7ecae0f9175ea9dd}} 
+\index{pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}!extraction\+\_\+path@{extraction\+\_\+path}}
+\index{extraction\+\_\+path@{extraction\+\_\+path}!pkg\+\_\+resources\+::\+Resource\+Manager@{pkg\+\_\+resources\+::\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{extraction\+\_\+path}{extraction\_path}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+Resource\+Manager.\+extraction\+\_\+path\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Set the base path where resources will be extracted to, if needed.
+
+If you do not call this routine before any extractions take place, the
+path defaults to the return value of ``get_default_cache()``.  (Which
+is based on the ``PYTHON_EGG_CACHE`` environment variable, with various
+platform-specific fallbacks.  See that routine's documentation for more
+details.)
+
+Resources are extracted to subdirectories of this path based upon
+information given by the ``IResourceProvider``.  You may set this to a
+temporary directory, but then you must call ``cleanup_resources()`` to
+delete the extracted files when done.  There is no guarantee that
+``cleanup_resources()`` will be able to remove all extracted files.
+
+(Note: you may not change the extraction path for a given resource
+manager once resources have been extracted, unless you first call
+``cleanup_resources()``.)
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pkg\+\_\+resources/\hyperlink{venv_2lib_2python3_89_2site-packages_2pkg__resources_2____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}\end{DoxyCompactItemize}

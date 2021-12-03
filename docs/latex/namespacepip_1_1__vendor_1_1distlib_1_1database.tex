@@ -1,0 +1,140 @@
+\hypertarget{namespacepip_1_1__vendor_1_1distlib_1_1database}{}\section{pip.\+\_\+vendor.\+distlib.\+database Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1distlib_1_1database}\index{pip.\+\_\+vendor.\+distlib.\+database@{pip.\+\_\+vendor.\+distlib.\+database}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1__Cache}{\+\_\+\+Cache}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1BaseInstalledDistribution}{Base\+Installed\+Distribution}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DependencyGraph}{Dependency\+Graph}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1Distribution}{Distribution}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1DistributionPath}{Distribution\+Path}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1EggInfoDistribution}{Egg\+Info\+Distribution}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1distlib_1_1database_1_1InstalledDistribution}{Installed\+Distribution}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1distlib_1_1database_ad5cd1646c2526fe39bb39eb0c87da7b9}{make\+\_\+graph} (dists, scheme=\textquotesingle{}default\textquotesingle{})
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1distlib_1_1database_a8f519f4fa277d7754db81c4e7310c96f}{get\+\_\+dependent\+\_\+dists} (dists, dist)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1distlib_1_1database_a56612672fda608b5d09d6fe736c1270c}{get\+\_\+required\+\_\+dists} (dists, dist)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1distlib_1_1database_ae4d947316c0bd48b1cf8de07d4bc5665}{make\+\_\+dist} (name, version, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1distlib_1_1database_af347bcfaf4f42a2c197872ae66160fc7}{logger}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1distlib_1_1database_a5d2e542360c1aa05cd9fc46d72b4bfec}{E\+X\+P\+O\+R\+T\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1distlib_1_1database_a5f2dd43a7bbc0b02722962070a231b11}{C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1distlib_1_1database_a615737510a68a582f3bf83dc1f0d97d5}{D\+I\+S\+T\+\_\+\+F\+I\+L\+ES}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1distlib_1_1database_a88d674ca816bece6cec0b36a6f084489}{D\+I\+S\+T\+I\+N\+F\+O\+\_\+\+E\+XT}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1distlib_1_1database_a51e6e974a0aea8f0ab182ac829c83565}{new\+\_\+dist\+\_\+class}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1distlib_1_1database_a19b01881e214d52e16534949d8ee9002}{old\+\_\+dist\+\_\+class}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1distlib_1_1database_a8f519f4fa277d7754db81c4e7310c96f}\label{namespacepip_1_1__vendor_1_1distlib_1_1database_a8f519f4fa277d7754db81c4e7310c96f}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}!get\+\_\+dependent\+\_\+dists@{get\+\_\+dependent\+\_\+dists}}
+\index{get\+\_\+dependent\+\_\+dists@{get\+\_\+dependent\+\_\+dists}!pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}}
+\subsubsection{\texorpdfstring{get\+\_\+dependent\+\_\+dists()}{get\_dependent\_dists()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+get\+\_\+dependent\+\_\+dists (\begin{DoxyParamCaption}\item[{}]{dists,  }\item[{}]{dist }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Recursively generate a list of distributions from *dists* that are
+dependent on *dist*.
+
+:param dists: a list of distributions
+:param dist: a distribution, member of *dists* for which we are interested
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1distlib_1_1database_a56612672fda608b5d09d6fe736c1270c}\label{namespacepip_1_1__vendor_1_1distlib_1_1database_a56612672fda608b5d09d6fe736c1270c}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}!get\+\_\+required\+\_\+dists@{get\+\_\+required\+\_\+dists}}
+\index{get\+\_\+required\+\_\+dists@{get\+\_\+required\+\_\+dists}!pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}}
+\subsubsection{\texorpdfstring{get\+\_\+required\+\_\+dists()}{get\_required\_dists()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+get\+\_\+required\+\_\+dists (\begin{DoxyParamCaption}\item[{}]{dists,  }\item[{}]{dist }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Recursively generate a list of distributions from *dists* that are
+required by *dist*.
+
+:param dists: a list of distributions
+:param dist: a distribution, member of *dists* for which we are interested
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1distlib_1_1database_ae4d947316c0bd48b1cf8de07d4bc5665}\label{namespacepip_1_1__vendor_1_1distlib_1_1database_ae4d947316c0bd48b1cf8de07d4bc5665}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}!make\+\_\+dist@{make\+\_\+dist}}
+\index{make\+\_\+dist@{make\+\_\+dist}!pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}}
+\subsubsection{\texorpdfstring{make\+\_\+dist()}{make\_dist()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+make\+\_\+dist (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{version,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A convenience method for making a dist given just a name and version.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1distlib_1_1database_ad5cd1646c2526fe39bb39eb0c87da7b9}\label{namespacepip_1_1__vendor_1_1distlib_1_1database_ad5cd1646c2526fe39bb39eb0c87da7b9}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}!make\+\_\+graph@{make\+\_\+graph}}
+\index{make\+\_\+graph@{make\+\_\+graph}!pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}}
+\subsubsection{\texorpdfstring{make\+\_\+graph()}{make\_graph()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+database.\+make\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{dists,  }\item[{}]{scheme = {\ttfamily \textquotesingle{}default\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Makes a dependency graph from the given distributions.
+
+:parameter dists: a list of distributions
+:type dists: list of :class:`distutils2.database.InstalledDistribution` and
+             :class:`distutils2.database.EggInfoDistribution` instances
+:rtype: a :class:`DependencyGraph` instance
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1distlib_1_1database_a5f2dd43a7bbc0b02722962070a231b11}\label{namespacepip_1_1__vendor_1_1distlib_1_1database_a5f2dd43a7bbc0b02722962070a231b11}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}!C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME@{C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME}}
+\index{C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME@{C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME}!pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}}
+\subsubsection{\texorpdfstring{C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME}{COMMANDS\_FILENAME}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1distlib_1_1database_a615737510a68a582f3bf83dc1f0d97d5}\label{namespacepip_1_1__vendor_1_1distlib_1_1database_a615737510a68a582f3bf83dc1f0d97d5}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}!D\+I\+S\+T\+\_\+\+F\+I\+L\+ES@{D\+I\+S\+T\+\_\+\+F\+I\+L\+ES}}
+\index{D\+I\+S\+T\+\_\+\+F\+I\+L\+ES@{D\+I\+S\+T\+\_\+\+F\+I\+L\+ES}!pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}}
+\subsubsection{\texorpdfstring{D\+I\+S\+T\+\_\+\+F\+I\+L\+ES}{DIST\_FILES}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+D\+I\+S\+T\+\_\+\+F\+I\+L\+ES}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1distlib_1_1database_a88d674ca816bece6cec0b36a6f084489}\label{namespacepip_1_1__vendor_1_1distlib_1_1database_a88d674ca816bece6cec0b36a6f084489}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}!D\+I\+S\+T\+I\+N\+F\+O\+\_\+\+E\+XT@{D\+I\+S\+T\+I\+N\+F\+O\+\_\+\+E\+XT}}
+\index{D\+I\+S\+T\+I\+N\+F\+O\+\_\+\+E\+XT@{D\+I\+S\+T\+I\+N\+F\+O\+\_\+\+E\+XT}!pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}}
+\subsubsection{\texorpdfstring{D\+I\+S\+T\+I\+N\+F\+O\+\_\+\+E\+XT}{DISTINFO\_EXT}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+D\+I\+S\+T\+I\+N\+F\+O\+\_\+\+E\+XT}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1distlib_1_1database_a5d2e542360c1aa05cd9fc46d72b4bfec}\label{namespacepip_1_1__vendor_1_1distlib_1_1database_a5d2e542360c1aa05cd9fc46d72b4bfec}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}!E\+X\+P\+O\+R\+T\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME@{E\+X\+P\+O\+R\+T\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME}}
+\index{E\+X\+P\+O\+R\+T\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME@{E\+X\+P\+O\+R\+T\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME}!pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}}
+\subsubsection{\texorpdfstring{E\+X\+P\+O\+R\+T\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME}{EXPORTS\_FILENAME}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+E\+X\+P\+O\+R\+T\+S\+\_\+\+F\+I\+L\+E\+N\+A\+ME}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1distlib_1_1database_af347bcfaf4f42a2c197872ae66160fc7}\label{namespacepip_1_1__vendor_1_1distlib_1_1database_af347bcfaf4f42a2c197872ae66160fc7}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}!logger@{logger}}
+\index{logger@{logger}!pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}}
+\subsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+logger}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1distlib_1_1database_a51e6e974a0aea8f0ab182ac829c83565}\label{namespacepip_1_1__vendor_1_1distlib_1_1database_a51e6e974a0aea8f0ab182ac829c83565}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}!new\+\_\+dist\+\_\+class@{new\+\_\+dist\+\_\+class}}
+\index{new\+\_\+dist\+\_\+class@{new\+\_\+dist\+\_\+class}!pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}}
+\subsubsection{\texorpdfstring{new\+\_\+dist\+\_\+class}{new\_dist\_class}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+new\+\_\+dist\+\_\+class}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1distlib_1_1database_a19b01881e214d52e16534949d8ee9002}\label{namespacepip_1_1__vendor_1_1distlib_1_1database_a19b01881e214d52e16534949d8ee9002}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}!old\+\_\+dist\+\_\+class@{old\+\_\+dist\+\_\+class}}
+\index{old\+\_\+dist\+\_\+class@{old\+\_\+dist\+\_\+class}!pip\+::\+\_\+vendor\+::distlib\+::database@{pip\+::\+\_\+vendor\+::distlib\+::database}}
+\subsubsection{\texorpdfstring{old\+\_\+dist\+\_\+class}{old\_dist\_class}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+database.\+old\+\_\+dist\+\_\+class}
+

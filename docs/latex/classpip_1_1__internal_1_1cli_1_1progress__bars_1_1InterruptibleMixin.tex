@@ -1,0 +1,92 @@
+\hypertarget{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin}{}\section{pip.\+\_\+internal.\+cli.\+progress\+\_\+bars.\+Interruptible\+Mixin Class Reference}
+\label{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin}\index{pip.\+\_\+internal.\+cli.\+progress\+\_\+bars.\+Interruptible\+Mixin@{pip.\+\_\+internal.\+cli.\+progress\+\_\+bars.\+Interruptible\+Mixin}}
+
+
+Inheritance diagram for pip.\+\_\+internal.\+cli.\+progress\+\_\+bars.\+Interruptible\+Mixin\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin_a68e5844e2a3fb4012a74b4f31010564e}{\+\_\+\+\_\+init\+\_\+\+\_\+}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin_ac1d9459a8b58f1d12b3335e169457771}{finish} (self)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin_a34e51c4e78987d66d0ec66f03bd60b4d}{handle\+\_\+sigint} (self, signum, frame)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin_aeeeaee21bc85a7548923f3b7b81a24f0}{original\+\_\+handler}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Helper to ensure that self.finish() gets called on keyboard interrupt.
+
+This allows downloads to be interrupted without leaving temporary state
+(like hidden cursors) behind.
+
+This class is similar to the progress library's existing SigIntMixin
+helper, but as of version 1.2, that helper has the following problems:
+
+1. It calls sys.exit().
+2. It discards the existing SIGINT handler completely.
+3. It leaves its own handler in place even after an uninterrupted finish,
+   which will have unexpected delayed effects if the user triggers an
+   unrelated keyboard interrupt some time after a progress-displaying
+   download has already completed, for example.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin_a68e5844e2a3fb4012a74b4f31010564e}\label{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin_a68e5844e2a3fb4012a74b4f31010564e}} 
+\index{pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin@{pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin@{pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+progress\+\_\+bars.\+Interruptible\+Mixin.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin_ac1d9459a8b58f1d12b3335e169457771}\label{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin_ac1d9459a8b58f1d12b3335e169457771}} 
+\index{pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin@{pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin}!finish@{finish}}
+\index{finish@{finish}!pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin@{pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin}}
+\subsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+progress\+\_\+bars.\+Interruptible\+Mixin.\+finish (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{None }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Restore the original SIGINT handler after finishing.
+
+This should happen regardless of whether the progress display finishes
+normally, or gets interrupted.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin_a34e51c4e78987d66d0ec66f03bd60b4d}\label{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin_a34e51c4e78987d66d0ec66f03bd60b4d}} 
+\index{pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin@{pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin}!handle\+\_\+sigint@{handle\+\_\+sigint}}
+\index{handle\+\_\+sigint@{handle\+\_\+sigint}!pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin@{pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin}}
+\subsubsection{\texorpdfstring{handle\+\_\+sigint()}{handle\_sigint()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+progress\+\_\+bars.\+Interruptible\+Mixin.\+handle\+\_\+sigint (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{signum,  }\item[{}]{frame }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Call self.finish() before delegating to the original SIGINT handler.
+
+This handler should only be in place while the progress display is
+active.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin_aeeeaee21bc85a7548923f3b7b81a24f0}\label{classpip_1_1__internal_1_1cli_1_1progress__bars_1_1InterruptibleMixin_aeeeaee21bc85a7548923f3b7b81a24f0}} 
+\index{pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin@{pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin}!original\+\_\+handler@{original\+\_\+handler}}
+\index{original\+\_\+handler@{original\+\_\+handler}!pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin@{pip\+::\+\_\+internal\+::cli\+::progress\+\_\+bars\+::\+Interruptible\+Mixin}}
+\subsubsection{\texorpdfstring{original\+\_\+handler}{original\_handler}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+cli.\+progress\+\_\+bars.\+Interruptible\+Mixin.\+original\+\_\+handler}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+internal/cli/\hyperlink{progress__bars_8py}{progress\+\_\+bars.\+py}\end{DoxyCompactItemize}

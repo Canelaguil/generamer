@@ -1,0 +1,317 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1distance__measures}{}\section{networkx.\+algorithms.\+distance\+\_\+measures Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1distance__measures}\index{networkx.\+algorithms.\+distance\+\_\+measures@{networkx.\+algorithms.\+distance\+\_\+measures}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1distance__measures_ad6f5c3c2bbcbb92abf774214b84ddc31}{extrema\+\_\+bounding} (G, compute=\char`\"{}diameter\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1distance__measures_aa09822182da9f014bc660e3bfe00f8a7}{eccentricity} (G, v=None, sp=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1distance__measures_a1fbf5089b3e4894da24660e947bdbcfb}{diameter} (G, e=None, usebounds=False)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1distance__measures_a83a03687f3376c56cb956839a6e020df}{periphery} (G, e=None, usebounds=False)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1distance__measures_a2bcc1cd0cceac3e3440218a488d28773}{radius} (G, e=None, usebounds=False)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1distance__measures_a03f5865f14e2dc2b14e15dfc0f9a8d66}{center} (G, e=None, usebounds=False)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1distance__measures_a6460ec432e7ad6676432e56e7c1e4dca}{barycenter} (G, weight=None, attr=None, sp=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1distance__measures_a70a703783d4b11fc37ebf082199cb321}{resistance\+\_\+distance} (G, nodeA, nodeB, weight=None, invert\+\_\+weight=True)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Graph diameter, radius, eccentricity and other properties.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1distance__measures_a6460ec432e7ad6676432e56e7c1e4dca}\label{namespacenetworkx_1_1algorithms_1_1distance__measures_a6460ec432e7ad6676432e56e7c1e4dca}} 
+\index{networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}!barycenter@{barycenter}}
+\index{barycenter@{barycenter}!networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}}
+\subsubsection{\texorpdfstring{barycenter()}{barycenter()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+distance\+\_\+measures.\+barycenter (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{weight = {\ttfamily None},  }\item[{}]{attr = {\ttfamily None},  }\item[{}]{sp = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate barycenter of a connected graph, optionally with edge weights.
+
+The :dfn:`barycenter` a
+:func:`connected <networkx.algorithms.components.is_connected>` graph
+:math:`G` is the subgraph induced by the set of its nodes :math:`v`
+minimizing the objective function
+
+.. math::
+
+    \sum_{u \in V(G)} d_G(u, v),
+
+where :math:`d_G` is the (possibly weighted) :func:`path length
+<networkx.algorithms.shortest_paths.generic.shortest_path_length>`.
+The barycenter is also called the :dfn:`median`. See [West01]_, p. 78.
+
+Parameters
+----------
+G : :class:`networkx.Graph`
+    The connected graph :math:`G`.
+weight : :class:`str`, optional
+    Passed through to
+    :func:`~networkx.algorithms.shortest_paths.generic.shortest_path_length`.
+attr : :class:`str`, optional
+    If given, write the value of the objective function to each node's
+    `attr` attribute. Otherwise do not store the value.
+sp : dict of dicts, optional
+   All pairs shortest path lengths as a dictionary of dictionaries
+
+Returns
+-------
+list
+    Nodes of `G` that induce the barycenter of `G`.
+
+Raises
+------
+NetworkXNoPath
+    If `G` is disconnected. `G` may appear disconnected to
+    :func:`barycenter` if `sp` is given but is missing shortest path
+    lengths for any pairs.
+ValueError
+    If `sp` and `weight` are both given.
+
+See Also
+--------
+center
+periphery
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1distance__measures_a03f5865f14e2dc2b14e15dfc0f9a8d66}\label{namespacenetworkx_1_1algorithms_1_1distance__measures_a03f5865f14e2dc2b14e15dfc0f9a8d66}} 
+\index{networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}!center@{center}}
+\index{center@{center}!networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}}
+\subsubsection{\texorpdfstring{center()}{center()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+distance\+\_\+measures.\+center (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{e = {\ttfamily None},  }\item[{}]{usebounds = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the center of the graph G.
+
+The center is the set of nodes with eccentricity equal to radius.
+
+Parameters
+----------
+G : NetworkX graph
+   A graph
+
+e : eccentricity dictionary, optional
+  A precomputed dictionary of eccentricities.
+
+Returns
+-------
+c : list
+   List of nodes in center
+
+See Also
+--------
+barycenter
+periphery
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1distance__measures_a1fbf5089b3e4894da24660e947bdbcfb}\label{namespacenetworkx_1_1algorithms_1_1distance__measures_a1fbf5089b3e4894da24660e947bdbcfb}} 
+\index{networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}!diameter@{diameter}}
+\index{diameter@{diameter}!networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}}
+\subsubsection{\texorpdfstring{diameter()}{diameter()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+distance\+\_\+measures.\+diameter (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{e = {\ttfamily None},  }\item[{}]{usebounds = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the diameter of the graph G.
+
+The diameter is the maximum eccentricity.
+
+Parameters
+----------
+G : NetworkX graph
+   A graph
+
+e : eccentricity dictionary, optional
+  A precomputed dictionary of eccentricities.
+
+Returns
+-------
+d : integer
+   Diameter of graph
+
+See Also
+--------
+eccentricity
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1distance__measures_aa09822182da9f014bc660e3bfe00f8a7}\label{namespacenetworkx_1_1algorithms_1_1distance__measures_aa09822182da9f014bc660e3bfe00f8a7}} 
+\index{networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}!eccentricity@{eccentricity}}
+\index{eccentricity@{eccentricity}!networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}}
+\subsubsection{\texorpdfstring{eccentricity()}{eccentricity()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+distance\+\_\+measures.\+eccentricity (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{v = {\ttfamily None},  }\item[{}]{sp = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the eccentricity of nodes in G.
+
+The eccentricity of a node v is the maximum distance from v to
+all other nodes in G.
+
+Parameters
+----------
+G : NetworkX graph
+   A graph
+
+v : node, optional
+   Return value of specified node
+
+sp : dict of dicts, optional
+   All pairs shortest path lengths as a dictionary of dictionaries
+
+Returns
+-------
+ecc : dictionary
+   A dictionary of eccentricity values keyed by node.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1distance__measures_ad6f5c3c2bbcbb92abf774214b84ddc31}\label{namespacenetworkx_1_1algorithms_1_1distance__measures_ad6f5c3c2bbcbb92abf774214b84ddc31}} 
+\index{networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}!extrema\+\_\+bounding@{extrema\+\_\+bounding}}
+\index{extrema\+\_\+bounding@{extrema\+\_\+bounding}!networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}}
+\subsubsection{\texorpdfstring{extrema\+\_\+bounding()}{extrema\_bounding()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+distance\+\_\+measures.\+extrema\+\_\+bounding (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{compute = {\ttfamily \char`\"{}diameter\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute requested extreme distance metric of undirected graph G
+
+Computation is based on smart lower and upper bounds, and in practice
+linear in the number of nodes, rather than quadratic (except for some
+border cases such as complete graphs or circle shaped graphs).
+
+Parameters
+----------
+G : NetworkX graph
+   An undirected graph
+
+compute : string denoting the requesting metric
+   "diameter" for the maximal eccentricity value,
+   "radius" for the minimal eccentricity value,
+   "periphery" for the set of nodes with eccentricity equal to the diameter
+   "center" for the set of nodes with eccentricity equal to the radius
+
+Returns
+-------
+value : value of the requested metric
+   int for "diameter" and "radius" or
+   list of nodes for "center" and "periphery"
+
+Raises
+------
+NetworkXError
+    If the graph consists of multiple components
+
+Notes
+-----
+This algorithm was proposed in the following papers:
+
+F.W. Takes and W.A. Kosters, Determining the Diameter of Small World
+Networks, in Proceedings of the 20th ACM International Conference on
+Information and Knowledge Management (CIKM 2011), pp. 1191-1196, 2011.
+doi: https://doi.org/10.1145/2063576.2063748
+
+F.W. Takes and W.A. Kosters, Computing the Eccentricity Distribution of
+Large Graphs, Algorithms 6(1): 100-118, 2013.
+doi: https://doi.org/10.3390/a6010100
+
+M. Borassi, P. Crescenzi, M. Habib, W.A. Kosters, A. Marino and F.W. Takes,
+Fast Graph Diameter and Radius BFS-Based Computation in (Weakly Connected)
+Real-World Graphs, Theoretical Computer Science 586: 59-80, 2015.
+doi: https://doi.org/10.1016/j.tcs.2015.02.033
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1distance__measures_a83a03687f3376c56cb956839a6e020df}\label{namespacenetworkx_1_1algorithms_1_1distance__measures_a83a03687f3376c56cb956839a6e020df}} 
+\index{networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}!periphery@{periphery}}
+\index{periphery@{periphery}!networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}}
+\subsubsection{\texorpdfstring{periphery()}{periphery()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+distance\+\_\+measures.\+periphery (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{e = {\ttfamily None},  }\item[{}]{usebounds = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the periphery of the graph G.
+
+The periphery is the set of nodes with eccentricity equal to the diameter.
+
+Parameters
+----------
+G : NetworkX graph
+   A graph
+
+e : eccentricity dictionary, optional
+  A precomputed dictionary of eccentricities.
+
+Returns
+-------
+p : list
+   List of nodes in periphery
+
+See Also
+--------
+barycenter
+center
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1distance__measures_a2bcc1cd0cceac3e3440218a488d28773}\label{namespacenetworkx_1_1algorithms_1_1distance__measures_a2bcc1cd0cceac3e3440218a488d28773}} 
+\index{networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}!radius@{radius}}
+\index{radius@{radius}!networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}}
+\subsubsection{\texorpdfstring{radius()}{radius()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+distance\+\_\+measures.\+radius (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{e = {\ttfamily None},  }\item[{}]{usebounds = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the radius of the graph G.
+
+The radius is the minimum eccentricity.
+
+Parameters
+----------
+G : NetworkX graph
+   A graph
+
+e : eccentricity dictionary, optional
+  A precomputed dictionary of eccentricities.
+
+Returns
+-------
+r : integer
+   Radius of graph
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1distance__measures_a70a703783d4b11fc37ebf082199cb321}\label{namespacenetworkx_1_1algorithms_1_1distance__measures_a70a703783d4b11fc37ebf082199cb321}} 
+\index{networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}!resistance\+\_\+distance@{resistance\+\_\+distance}}
+\index{resistance\+\_\+distance@{resistance\+\_\+distance}!networkx\+::algorithms\+::distance\+\_\+measures@{networkx\+::algorithms\+::distance\+\_\+measures}}
+\subsubsection{\texorpdfstring{resistance\+\_\+distance()}{resistance\_distance()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+distance\+\_\+measures.\+resistance\+\_\+distance (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodeA,  }\item[{}]{nodeB,  }\item[{}]{weight = {\ttfamily None},  }\item[{}]{invert\+\_\+weight = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the resistance distance between node A and node B on graph G.
+
+The resistance distance between two nodes of a graph is akin to treating
+the graph as a grid of resistorses with a resistance equal to the provided
+weight.
+
+If weight is not provided, then a weight of 1 is used for all edges.
+
+Parameters
+----------
+G : NetworkX graph
+   A graph
+
+nodeA : node
+  A node within graph G.
+
+nodeB : node
+  A node within graph G, exclusive of Node A.
+
+weight : string or None, optional (default=None)
+   The edge data key used to compute the resistance distance.
+   If None, then each edge has weight 1.
+
+invert_weight : boolean (default=True)
+    Proper calculation of resistance distance requires building the
+    Laplacian matrix with the reciprocal of the weight. Not required
+    if the weight is already inverted. Weight cannot be zero.
+
+Returns
+-------
+rd : float
+   Value of effective resistance distance
+
+Notes
+-----
+Overview discussion:
+* https://en.wikipedia.org/wiki/Resistance_distance
+* http://mathworld.wolfram.com/ResistanceDistance.html
+
+Additional details:
+Vaya Sapobi Samui Vos, “Methods for determining the effective resistance,” M.S.,
+Mathematisch Instituut, Universiteit Leiden, Leiden, Netherlands, 2016
+Available: `Link to thesis <https://www.universiteitleiden.nl/binaries/content/assets/science/mi/scripties/master/vos_vaya_master.pdf>`_
+\end{DoxyVerb}
+ 

@@ -1,0 +1,73 @@
+\hypertarget{classmatplotlib_1_1animation_1_1ArtistAnimation}{}\section{matplotlib.\+animation.\+Artist\+Animation Class Reference}
+\label{classmatplotlib_1_1animation_1_1ArtistAnimation}\index{matplotlib.\+animation.\+Artist\+Animation@{matplotlib.\+animation.\+Artist\+Animation}}
+
+
+Inheritance diagram for matplotlib.\+animation.\+Artist\+Animation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classmatplotlib_1_1animation_1_1ArtistAnimation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+animation.\+Artist\+Animation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classmatplotlib_1_1animation_1_1ArtistAnimation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1ArtistAnimation_a4e5c4a33b17b5fdea648c2cda0ffbedf}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, fig, artists, args, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Animation using a fixed set of `.Artist` objects.
+
+Before creating an instance, all plotting should have taken place
+and the relevant artists saved.
+
+.. note::
+
+    You must store the created Animation in a variable that lives as long
+    as the animation should run. Otherwise, the Animation object will be
+    garbage-collected and the animation stops.
+
+Parameters
+----------
+fig : `~matplotlib.figure.Figure`
+    The figure object used to get needed events, such as draw or resize.
+artists : list
+    Each list entry is a collection of `.Artist` objects that are made
+    visible on the corresponding frame.  Other artists are made invisible.
+interval : int, default: 200
+    Delay between frames in milliseconds.
+repeat_delay : int, default: 0
+    The delay in milliseconds between consecutive animation runs, if
+    *repeat* is True.
+repeat : bool, default: True
+    Whether the animation repeats when the sequence of frames is completed.
+blit : bool, default: False
+    Whether blitting is used to optimize drawing.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1ArtistAnimation_a4e5c4a33b17b5fdea648c2cda0ffbedf}\label{classmatplotlib_1_1animation_1_1ArtistAnimation_a4e5c4a33b17b5fdea648c2cda0ffbedf}} 
+\index{matplotlib\+::animation\+::\+Artist\+Animation@{matplotlib\+::animation\+::\+Artist\+Animation}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::animation\+::\+Artist\+Animation@{matplotlib\+::animation\+::\+Artist\+Animation}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Artist\+Animation.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fig,  }\item[{}]{artists,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{animation_8py}{animation.\+py}\end{DoxyCompactItemize}

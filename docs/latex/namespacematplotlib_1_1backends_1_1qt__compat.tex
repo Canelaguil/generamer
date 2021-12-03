@@ -1,0 +1,109 @@
+\hypertarget{namespacematplotlib_1_1backends_1_1qt__compat}{}\section{matplotlib.\+backends.\+qt\+\_\+compat Namespace Reference}
+\label{namespacematplotlib_1_1backends_1_1qt__compat}\index{matplotlib.\+backends.\+qt\+\_\+compat@{matplotlib.\+backends.\+qt\+\_\+compat}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{namespacematplotlib_1_1backends_1_1qt__compat_a8d8f1a06f087058adcea6d57df20d312}{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+T5} = \char`\"{}Py\+Qt5\char`\"{}
+\item 
+string \hyperlink{namespacematplotlib_1_1backends_1_1qt__compat_af1b862e90f8ef56d5a153a60c8257f86}{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+D\+E2} = \char`\"{}Py\+Side2\char`\"{}
+\item 
+string \hyperlink{namespacematplotlib_1_1backends_1_1qt__compat_a9874053d712de95ccf5dcb67fb940b23}{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+Tv2} = \char`\"{}Py\+Qt4v2\char`\"{}
+\item 
+string \hyperlink{namespacematplotlib_1_1backends_1_1qt__compat_a6ea62796b474c5afc4c7e59ba3dd7bc5}{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+DE} = \char`\"{}Py\+Side\char`\"{}
+\item 
+string \hyperlink{namespacematplotlib_1_1backends_1_1qt__compat_a7df10feb04c5741fdb878b2cc7595427}{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+QT} = \char`\"{}Py\+Qt4\char`\"{}
+\item 
+\hyperlink{namespacematplotlib_1_1backends_1_1qt__compat_af9c7b70aff9f5191860f343b043d8ab5}{Q\+T\+\_\+\+A\+P\+I\+\_\+\+E\+NV} = os.\+environ.\+get(\char`\"{}Q\+T\+\_\+\+A\+PI\char`\"{})
+\item 
+string \hyperlink{namespacematplotlib_1_1backends_1_1qt__compat_abc3fe127b919119ea9a2ccb7cc577d20}{Q\+T\+\_\+\+A\+PI} = \hyperlink{namespacematplotlib_1_1backends_1_1qt__compat_a8d8f1a06f087058adcea6d57df20d312}{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+T5}
+\item 
+\hyperlink{namespacematplotlib_1_1backends_1_1qt__compat_ade944931ef795d61fc0510787d37fcf4}{E\+TS}
+\item 
+\hyperlink{namespacematplotlib_1_1backends_1_1qt__compat_aa867bfd3a3a5f3f03af780f6f91d70b7}{Q\+T\+\_\+\+R\+C\+\_\+\+M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON} = int(Qt\+Core.\+q\+Version().split(\char`\"{}.\char`\"{})\mbox{[}0\mbox{]})
+\item 
+\hyperlink{namespacematplotlib_1_1backends_1_1qt__compat_a4fe46769f3a1c4704d0b4adfd920ef0d}{name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Qt binding and backend selector.
+
+The selection logic is as follows:
+- if any of PyQt5, PySide2, PyQt4 or PySide have already been imported
+  (checked in that order), use it;
+- otherwise, if the QT_API environment variable (used by Enthought) is set, use
+  it to determine which binding to use (but do not change the backend based on
+  it; i.e. if the Qt5Agg backend is requested but QT_API is set to "pyqt4",
+  then actually use Qt5 with PyQt5 or PySide2 (whichever can be imported);
+- otherwise, use whatever the rcParams indicate.
+
+Support for PyQt4 is deprecated.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1qt__compat_ade944931ef795d61fc0510787d37fcf4}\label{namespacematplotlib_1_1backends_1_1qt__compat_ade944931ef795d61fc0510787d37fcf4}} 
+\index{matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}!E\+TS@{E\+TS}}
+\index{E\+TS@{E\+TS}!matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}}
+\subsubsection{\texorpdfstring{E\+TS}{ETS}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+qt\+\_\+compat.\+E\+TS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  dict(pyqt=(QT\_API\_PYQTv2, 4), pyside=(QT\_API\_PYSIDE, 4),
+2            pyqt5=(QT\_API\_PYQT5, 5), pyside2=(QT\_API\_PYSIDE2, 5))
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1qt__compat_a4fe46769f3a1c4704d0b4adfd920ef0d}\label{namespacematplotlib_1_1backends_1_1qt__compat_a4fe46769f3a1c4704d0b4adfd920ef0d}} 
+\index{matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}!name@{name}}
+\index{name@{name}!matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+qt\+\_\+compat.\+name}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1qt__compat_abc3fe127b919119ea9a2ccb7cc577d20}\label{namespacematplotlib_1_1backends_1_1qt__compat_abc3fe127b919119ea9a2ccb7cc577d20}} 
+\index{matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}!Q\+T\+\_\+\+A\+PI@{Q\+T\+\_\+\+A\+PI}}
+\index{Q\+T\+\_\+\+A\+PI@{Q\+T\+\_\+\+A\+PI}!matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}}
+\subsubsection{\texorpdfstring{Q\+T\+\_\+\+A\+PI}{QT\_API}}
+{\footnotesize\ttfamily dictionary matplotlib.\+backends.\+qt\+\_\+compat.\+Q\+T\+\_\+\+A\+PI = \hyperlink{namespacematplotlib_1_1backends_1_1qt__compat_a8d8f1a06f087058adcea6d57df20d312}{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+T5}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1qt__compat_af9c7b70aff9f5191860f343b043d8ab5}\label{namespacematplotlib_1_1backends_1_1qt__compat_af9c7b70aff9f5191860f343b043d8ab5}} 
+\index{matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}!Q\+T\+\_\+\+A\+P\+I\+\_\+\+E\+NV@{Q\+T\+\_\+\+A\+P\+I\+\_\+\+E\+NV}}
+\index{Q\+T\+\_\+\+A\+P\+I\+\_\+\+E\+NV@{Q\+T\+\_\+\+A\+P\+I\+\_\+\+E\+NV}!matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}}
+\subsubsection{\texorpdfstring{Q\+T\+\_\+\+A\+P\+I\+\_\+\+E\+NV}{QT\_API\_ENV}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+qt\+\_\+compat.\+Q\+T\+\_\+\+A\+P\+I\+\_\+\+E\+NV = os.\+environ.\+get(\char`\"{}Q\+T\+\_\+\+A\+PI\char`\"{})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1qt__compat_a7df10feb04c5741fdb878b2cc7595427}\label{namespacematplotlib_1_1backends_1_1qt__compat_a7df10feb04c5741fdb878b2cc7595427}} 
+\index{matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}!Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+QT@{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+QT}}
+\index{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+QT@{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+QT}!matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}}
+\subsubsection{\texorpdfstring{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+QT}{QT\_API\_PYQT}}
+{\footnotesize\ttfamily string matplotlib.\+backends.\+qt\+\_\+compat.\+Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+QT = \char`\"{}Py\+Qt4\char`\"{}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1qt__compat_a8d8f1a06f087058adcea6d57df20d312}\label{namespacematplotlib_1_1backends_1_1qt__compat_a8d8f1a06f087058adcea6d57df20d312}} 
+\index{matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}!Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+T5@{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+T5}}
+\index{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+T5@{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+T5}!matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}}
+\subsubsection{\texorpdfstring{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+T5}{QT\_API\_PYQT5}}
+{\footnotesize\ttfamily string matplotlib.\+backends.\+qt\+\_\+compat.\+Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+T5 = \char`\"{}Py\+Qt5\char`\"{}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1qt__compat_a9874053d712de95ccf5dcb67fb940b23}\label{namespacematplotlib_1_1backends_1_1qt__compat_a9874053d712de95ccf5dcb67fb940b23}} 
+\index{matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}!Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+Tv2@{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+Tv2}}
+\index{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+Tv2@{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+Tv2}!matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}}
+\subsubsection{\texorpdfstring{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+Tv2}{QT\_API\_PYQTv2}}
+{\footnotesize\ttfamily string matplotlib.\+backends.\+qt\+\_\+compat.\+Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+Q\+Tv2 = \char`\"{}Py\+Qt4v2\char`\"{}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1qt__compat_a6ea62796b474c5afc4c7e59ba3dd7bc5}\label{namespacematplotlib_1_1backends_1_1qt__compat_a6ea62796b474c5afc4c7e59ba3dd7bc5}} 
+\index{matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}!Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+DE@{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+DE}}
+\index{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+DE@{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+DE}!matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}}
+\subsubsection{\texorpdfstring{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+DE}{QT\_API\_PYSIDE}}
+{\footnotesize\ttfamily string matplotlib.\+backends.\+qt\+\_\+compat.\+Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+DE = \char`\"{}Py\+Side\char`\"{}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1qt__compat_af1b862e90f8ef56d5a153a60c8257f86}\label{namespacematplotlib_1_1backends_1_1qt__compat_af1b862e90f8ef56d5a153a60c8257f86}} 
+\index{matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}!Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+D\+E2@{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+D\+E2}}
+\index{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+D\+E2@{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+D\+E2}!matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}}
+\subsubsection{\texorpdfstring{Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+D\+E2}{QT\_API\_PYSIDE2}}
+{\footnotesize\ttfamily string matplotlib.\+backends.\+qt\+\_\+compat.\+Q\+T\+\_\+\+A\+P\+I\+\_\+\+P\+Y\+S\+I\+D\+E2 = \char`\"{}Py\+Side2\char`\"{}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1backends_1_1qt__compat_aa867bfd3a3a5f3f03af780f6f91d70b7}\label{namespacematplotlib_1_1backends_1_1qt__compat_aa867bfd3a3a5f3f03af780f6f91d70b7}} 
+\index{matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}!Q\+T\+\_\+\+R\+C\+\_\+\+M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON@{Q\+T\+\_\+\+R\+C\+\_\+\+M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{Q\+T\+\_\+\+R\+C\+\_\+\+M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON@{Q\+T\+\_\+\+R\+C\+\_\+\+M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON}!matplotlib\+::backends\+::qt\+\_\+compat@{matplotlib\+::backends\+::qt\+\_\+compat}}
+\subsubsection{\texorpdfstring{Q\+T\+\_\+\+R\+C\+\_\+\+M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON}{QT\_RC\_MAJOR\_VERSION}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+qt\+\_\+compat.\+Q\+T\+\_\+\+R\+C\+\_\+\+M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+ON = int(Qt\+Core.\+q\+Version().split(\char`\"{}.\char`\"{})\mbox{[}0\mbox{]})}
+

@@ -1,0 +1,68 @@
+\hypertarget{namespacedateutil_1_1tz_1_1__common}{}\section{dateutil.\+tz.\+\_\+common Namespace Reference}
+\label{namespacedateutil_1_1tz_1_1__common}\index{dateutil.\+tz.\+\_\+common@{dateutil.\+tz.\+\_\+common}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1__common_1_1__DatetimeWithFold}{\+\_\+\+Datetime\+With\+Fold}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1__common_1_1__tzinfo}{\+\_\+tzinfo}
+\item 
+class \hyperlink{classdateutil_1_1tz_1_1__common_1_1tzrangebase}{tzrangebase}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacedateutil_1_1tz_1_1__common_a589776d93a5a80470ff37521c784d7f3}{tzname\+\_\+in\+\_\+python2} (namefunc)
+\item 
+def \hyperlink{namespacedateutil_1_1tz_1_1__common_a69beb3070686450aea078d6537f86956}{enfold} (dt, fold=1)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacedateutil_1_1tz_1_1__common_a63ae4d0250c5dc4580b5b5b4da72781b}{Z\+E\+RO} = \hyperlink{noprefix_8h_ae6feacec25f59b525f6e0c442ef75ff7}{timedelta}(0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacedateutil_1_1tz_1_1__common_a69beb3070686450aea078d6537f86956}\label{namespacedateutil_1_1tz_1_1__common_a69beb3070686450aea078d6537f86956}} 
+\index{dateutil\+::tz\+::\+\_\+common@{dateutil\+::tz\+::\+\_\+common}!enfold@{enfold}}
+\index{enfold@{enfold}!dateutil\+::tz\+::\+\_\+common@{dateutil\+::tz\+::\+\_\+common}}
+\subsubsection{\texorpdfstring{enfold()}{enfold()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+\_\+common.\+enfold (\begin{DoxyParamCaption}\item[{}]{dt,  }\item[{}]{fold = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Provides a unified interface for assigning the ``fold`` attribute to
+datetimes both before and after the implementation of PEP-495.
+
+:param fold:
+    The value for the ``fold`` attribute in the returned datetime. This
+    should be either 0 or 1.
+
+:return:
+    Returns an object for which ``getattr(dt, 'fold', 0)`` returns
+    ``fold`` for all versions of Python. In versions prior to
+    Python 3.6, this is a ``_DatetimeWithFold`` object, which is a
+    subclass of :py:class:`datetime.datetime` with the ``fold``
+    attribute added, if ``fold`` is 1.
+
+.. versionadded:: 2.6.0
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacedateutil_1_1tz_1_1__common_a589776d93a5a80470ff37521c784d7f3}\label{namespacedateutil_1_1tz_1_1__common_a589776d93a5a80470ff37521c784d7f3}} 
+\index{dateutil\+::tz\+::\+\_\+common@{dateutil\+::tz\+::\+\_\+common}!tzname\+\_\+in\+\_\+python2@{tzname\+\_\+in\+\_\+python2}}
+\index{tzname\+\_\+in\+\_\+python2@{tzname\+\_\+in\+\_\+python2}!dateutil\+::tz\+::\+\_\+common@{dateutil\+::tz\+::\+\_\+common}}
+\subsubsection{\texorpdfstring{tzname\+\_\+in\+\_\+python2()}{tzname\_in\_python2()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+\_\+common.\+tzname\+\_\+in\+\_\+python2 (\begin{DoxyParamCaption}\item[{}]{namefunc }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Change unicode output into bytestrings in Python 2
+
+tzname() API changed in Python 3. It used to return bytes, but was changed
+to unicode strings
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacedateutil_1_1tz_1_1__common_a63ae4d0250c5dc4580b5b5b4da72781b}\label{namespacedateutil_1_1tz_1_1__common_a63ae4d0250c5dc4580b5b5b4da72781b}} 
+\index{dateutil\+::tz\+::\+\_\+common@{dateutil\+::tz\+::\+\_\+common}!Z\+E\+RO@{Z\+E\+RO}}
+\index{Z\+E\+RO@{Z\+E\+RO}!dateutil\+::tz\+::\+\_\+common@{dateutil\+::tz\+::\+\_\+common}}
+\subsubsection{\texorpdfstring{Z\+E\+RO}{ZERO}}
+{\footnotesize\ttfamily dateutil.\+tz.\+\_\+common.\+Z\+E\+RO = \hyperlink{noprefix_8h_ae6feacec25f59b525f6e0c442ef75ff7}{timedelta}(0)}
+

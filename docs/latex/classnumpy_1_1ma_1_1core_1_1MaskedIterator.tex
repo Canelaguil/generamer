@@ -1,0 +1,146 @@
+\hypertarget{classnumpy_1_1ma_1_1core_1_1MaskedIterator}{}\section{numpy.\+ma.\+core.\+Masked\+Iterator Class Reference}
+\label{classnumpy_1_1ma_1_1core_1_1MaskedIterator}\index{numpy.\+ma.\+core.\+Masked\+Iterator@{numpy.\+ma.\+core.\+Masked\+Iterator}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a463c3a68c63c19d1f930f176e0d112da}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnumpy_1_1ma_1_1core_1_1MaskedIterator_abdc7ff042b9f1cc315be20ec7ded9556}{ma})
+\item 
+def \hyperlink{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a679059e4938b24a77c156ee3842e64db}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a230491e9cf0be21a50ca2453bd0e08b5}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, indx)
+\item 
+def \hyperlink{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a9d010e3bb8b98b905e2eb658a376544d}{\+\_\+\+\_\+setitem\+\_\+\+\_\+} (self, index, value)
+\item 
+def \hyperlink{classnumpy_1_1ma_1_1core_1_1MaskedIterator_ad6e087a8c1178f7a4e9a5bbd39280fdc}{\+\_\+\+\_\+next\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1ma_1_1core_1_1MaskedIterator_abdc7ff042b9f1cc315be20ec7ded9556}{ma}
+\item 
+\hyperlink{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a863465dfe0e9e0f22c2e69e3531b47b7}{dataiter}
+\item 
+\hyperlink{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a24d2362de9cd2c46a023d29b3b956dfb}{maskiter}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Flat iterator object to iterate over masked arrays.
+
+A `MaskedIterator` iterator is returned by ``x.flat`` for any masked array
+`x`. It allows iterating over the array as if it were a 1-D array,
+either in a for-loop or by calling its `next` method.
+
+Iteration is done in C-contiguous style, with the last index varying the
+fastest. The iterator can also be indexed using basic slicing or
+advanced indexing.
+
+See Also
+--------
+MaskedArray.flat : Return a flat iterator over an array.
+MaskedArray.flatten : Returns a flattened copy of an array.
+
+Notes
+-----
+`MaskedIterator` is not exported by the `ma` module. Instead of
+instantiating a `MaskedIterator` directly, use `MaskedArray.flat`.
+
+Examples
+--------
+>>> x = np.ma.array(arange(6).reshape(2, 3))
+>>> fl = x.flat
+>>> type(fl)
+<class 'numpy.ma.core.MaskedIterator'>
+>>> for item in fl:
+...     print(item)
+...
+0
+1
+2
+3
+4
+5
+
+Extracting more than a single element b indexing the `MaskedIterator`
+returns a masked array:
+
+>>> fl[2:4]
+masked_array(data = [2 3],
+             mask = False,
+       fill_value = 999999)\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a463c3a68c63c19d1f930f176e0d112da}\label{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a463c3a68c63c19d1f930f176e0d112da}} 
+\index{numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+core.\+Masked\+Iterator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ma }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a230491e9cf0be21a50ca2453bd0e08b5}\label{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a230491e9cf0be21a50ca2453bd0e08b5}} 
+\index{numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+core.\+Masked\+Iterator.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{indx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a679059e4938b24a77c156ee3842e64db}\label{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a679059e4938b24a77c156ee3842e64db}} 
+\index{numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+core.\+Masked\+Iterator.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1MaskedIterator_ad6e087a8c1178f7a4e9a5bbd39280fdc}\label{classnumpy_1_1ma_1_1core_1_1MaskedIterator_ad6e087a8c1178f7a4e9a5bbd39280fdc}} 
+\index{numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}!\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}!numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+next\+\_\+\+\_\+()}{\_\_next\_\_()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+core.\+Masked\+Iterator.\+\_\+\+\_\+next\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the next value, or raise StopIteration.
+
+Examples
+--------
+>>> x = np.ma.array([3, 2], mask=[0, 1])
+>>> fl = x.flat
+>>> next(fl)
+3
+>>> next(fl)
+masked
+>>> next(fl)
+Traceback (most recent call last):
+  ...
+StopIteration\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a9d010e3bb8b98b905e2eb658a376544d}\label{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a9d010e3bb8b98b905e2eb658a376544d}} 
+\index{numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}!\+\_\+\+\_\+setitem\+\_\+\+\_\+@{\+\_\+\+\_\+setitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setitem\+\_\+\+\_\+@{\+\_\+\+\_\+setitem\+\_\+\+\_\+}!numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setitem\+\_\+\+\_\+()}{\_\_setitem\_\_()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+core.\+Masked\+Iterator.\+\_\+\+\_\+setitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a863465dfe0e9e0f22c2e69e3531b47b7}\label{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a863465dfe0e9e0f22c2e69e3531b47b7}} 
+\index{numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}!dataiter@{dataiter}}
+\index{dataiter@{dataiter}!numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}}
+\subsubsection{\texorpdfstring{dataiter}{dataiter}}
+{\footnotesize\ttfamily numpy.\+ma.\+core.\+Masked\+Iterator.\+dataiter}
+
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1MaskedIterator_abdc7ff042b9f1cc315be20ec7ded9556}\label{classnumpy_1_1ma_1_1core_1_1MaskedIterator_abdc7ff042b9f1cc315be20ec7ded9556}} 
+\index{numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}!ma@{ma}}
+\index{ma@{ma}!numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}}
+\subsubsection{\texorpdfstring{ma}{ma}}
+{\footnotesize\ttfamily numpy.\+ma.\+core.\+Masked\+Iterator.\+ma}
+
+\mbox{\Hypertarget{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a24d2362de9cd2c46a023d29b3b956dfb}\label{classnumpy_1_1ma_1_1core_1_1MaskedIterator_a24d2362de9cd2c46a023d29b3b956dfb}} 
+\index{numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}!maskiter@{maskiter}}
+\index{maskiter@{maskiter}!numpy\+::ma\+::core\+::\+Masked\+Iterator@{numpy\+::ma\+::core\+::\+Masked\+Iterator}}
+\subsubsection{\texorpdfstring{maskiter}{maskiter}}
+{\footnotesize\ttfamily numpy.\+ma.\+core.\+Masked\+Iterator.\+maskiter}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/ma/\hyperlink{numpy_2ma_2core_8py}{core.\+py}\end{DoxyCompactItemize}

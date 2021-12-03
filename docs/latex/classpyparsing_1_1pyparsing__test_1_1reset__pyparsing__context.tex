@@ -1,0 +1,79 @@
+\hypertarget{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context}{}\section{pyparsing.\+pyparsing\+\_\+test.\+reset\+\_\+pyparsing\+\_\+context Class Reference}
+\label{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context}\index{pyparsing.\+pyparsing\+\_\+test.\+reset\+\_\+pyparsing\+\_\+context@{pyparsing.\+pyparsing\+\_\+test.\+reset\+\_\+pyparsing\+\_\+context}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_af3eb28926b076d7aec92c06276ea3139}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_ae33e964df4b6d7e87a52a79c3be41d81}{save} (self)
+\item 
+def \hyperlink{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_ab4dfd7fcafdfc3bba3aeeb8b82a66931}{restore} (self)
+\item 
+def \hyperlink{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_ae79dc3e722a264b553b3752b2dc126d9}{\+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_ac2b0a653249e99b83018cef51a4502be}{\+\_\+\+\_\+exit\+\_\+\+\_\+} (self, args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Context manager to be used when writing unit tests that modify pyparsing config values:
+ - packrat parsing
+ - default whitespace characters.
+ - default keyword characters
+ - literal string auto-conversion class
+ - __diag__ settings
+
+Example:
+    with reset_pyparsing_context():
+# test that literals used to construct a grammar are automatically suppressed
+ParserElement.inlineLiteralsUsing(Suppress)
+
+term = Word(alphas) | Word(nums)
+group = Group('(' + term[...] + ')')
+
+# assert that the '()' characters are not included in the parsed tokens
+self.assertParseAndCheckLisst(group, "(abc 123 def)", ['abc', '123', 'def'])
+
+    # after exiting context manager, literals are converted to Literal expressions again
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_af3eb28926b076d7aec92c06276ea3139}\label{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_af3eb28926b076d7aec92c06276ea3139}} 
+\index{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context@{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context@{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+pyparsing\+\_\+test.\+reset\+\_\+pyparsing\+\_\+context.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_ae79dc3e722a264b553b3752b2dc126d9}\label{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_ae79dc3e722a264b553b3752b2dc126d9}} 
+\index{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context@{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context}!\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}!pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context@{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+enter\+\_\+\+\_\+()}{\_\_enter\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+pyparsing\+\_\+test.\+reset\+\_\+pyparsing\+\_\+context.\+\_\+\+\_\+enter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_ac2b0a653249e99b83018cef51a4502be}\label{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_ac2b0a653249e99b83018cef51a4502be}} 
+\index{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context@{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context}!\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}!pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context@{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+exit\+\_\+\+\_\+()}{\_\_exit\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+pyparsing\+\_\+test.\+reset\+\_\+pyparsing\+\_\+context.\+\_\+\+\_\+exit\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_ab4dfd7fcafdfc3bba3aeeb8b82a66931}\label{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_ab4dfd7fcafdfc3bba3aeeb8b82a66931}} 
+\index{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context@{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context}!restore@{restore}}
+\index{restore@{restore}!pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context@{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context}}
+\subsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily def pyparsing.\+pyparsing\+\_\+test.\+reset\+\_\+pyparsing\+\_\+context.\+restore (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_ae33e964df4b6d7e87a52a79c3be41d81}\label{classpyparsing_1_1pyparsing__test_1_1reset__pyparsing__context_ae33e964df4b6d7e87a52a79c3be41d81}} 
+\index{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context@{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context}!save@{save}}
+\index{save@{save}!pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context@{pyparsing\+::pyparsing\+\_\+test\+::reset\+\_\+pyparsing\+\_\+context}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily def pyparsing.\+pyparsing\+\_\+test.\+reset\+\_\+pyparsing\+\_\+context.\+save (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\hyperlink{pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

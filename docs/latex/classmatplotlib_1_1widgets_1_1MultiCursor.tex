@@ -1,0 +1,188 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor}{}\section{matplotlib.\+widgets.\+Multi\+Cursor Class Reference}
+\label{classmatplotlib_1_1widgets_1_1MultiCursor}\index{matplotlib.\+widgets.\+Multi\+Cursor@{matplotlib.\+widgets.\+Multi\+Cursor}}
+
+
+Inheritance diagram for matplotlib.\+widgets.\+Multi\+Cursor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classmatplotlib_1_1widgets_1_1MultiCursor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+widgets.\+Multi\+Cursor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classmatplotlib_1_1widgets_1_1MultiCursor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a13b587cc88fd5939293b6172dc65edbd}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a53b87f01c4591398f4f42e1e8852b6bd}{canvas}, \hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a40f3498fea3710487d9f9c827052d48d}{axes}, \hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a7c61d66b87dfc7f8bf44b272c7b2116d}{useblit}=True, \hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a4169fa323f17c3b8ba0f887531633704}{horiz\+On}=False, \hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a019f42179207723a771763a89ddcc6cb}{vert\+On}=True, lineprops)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a6576a351e4c7faa5f7d4c117efa2f50c}{connect} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a3ca29a3a91fbbc5cd4d27f1a06070b23}{disconnect} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a08b59a7076a41a4f3d8e7105843dfd0b}{clear} (self, event)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a8aa78dcdcce470694cba6ab8bcdfe006}{onmove} (self, event)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a53b87f01c4591398f4f42e1e8852b6bd}{canvas}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a40f3498fea3710487d9f9c827052d48d}{axes}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a4169fa323f17c3b8ba0f887531633704}{horiz\+On}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a019f42179207723a771763a89ddcc6cb}{vert\+On}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a458255e4545f3dcd1e79493eaea66e9c}{visible}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a7c61d66b87dfc7f8bf44b272c7b2116d}{useblit}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a70849f1cd4bf553c2f7f2254bcca0fc4}{background}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_aee3271ab54465d649855da6c8c69ce34}{needclear}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a743ea101b150c07f9c99d02558d634e6}{vlines}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1MultiCursor_a047396b64ca7e8a72d51d9a472cc550d}{hlines}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Provide a vertical (default) and/or horizontal line cursor shared between
+multiple axes.
+
+For the cursor to remain responsive you must keep a reference to it.
+
+Example usage::
+
+    from matplotlib.widgets import MultiCursor
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    fig, (ax1, ax2) = plt.subplots(nrows=2, sharex=True)
+    t = np.arange(0.0, 2.0, 0.01)
+    ax1.plot(t, np.sin(2*np.pi*t))
+    ax2.plot(t, np.sin(4*np.pi*t))
+
+    multi = MultiCursor(fig.canvas, (ax1, ax2), color='r', lw=1,
+                        horizOn=False, vertOn=True)
+    plt.show()\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a13b587cc88fd5939293b6172dc65edbd}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a13b587cc88fd5939293b6172dc65edbd}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Multi\+Cursor.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{canvas,  }\item[{}]{axes,  }\item[{}]{useblit = {\ttfamily True},  }\item[{}]{horiz\+On = {\ttfamily False},  }\item[{}]{vert\+On = {\ttfamily True},  }\item[{}]{lineprops }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a08b59a7076a41a4f3d8e7105843dfd0b}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a08b59a7076a41a4f3d8e7105843dfd0b}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!clear@{clear}}
+\index{clear@{clear}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Multi\+Cursor.\+clear (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Clear the cursor.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a6576a351e4c7faa5f7d4c117efa2f50c}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a6576a351e4c7faa5f7d4c117efa2f50c}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!connect@{connect}}
+\index{connect@{connect}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Multi\+Cursor.\+connect (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Connect events.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a3ca29a3a91fbbc5cd4d27f1a06070b23}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a3ca29a3a91fbbc5cd4d27f1a06070b23}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Multi\+Cursor.\+disconnect (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Disconnect events.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a8aa78dcdcce470694cba6ab8bcdfe006}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a8aa78dcdcce470694cba6ab8bcdfe006}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!onmove@{onmove}}
+\index{onmove@{onmove}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{onmove()}{onmove()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Multi\+Cursor.\+onmove (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a40f3498fea3710487d9f9c827052d48d}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a40f3498fea3710487d9f9c827052d48d}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!axes@{axes}}
+\index{axes@{axes}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{axes}{axes}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Multi\+Cursor.\+axes}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a70849f1cd4bf553c2f7f2254bcca0fc4}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a70849f1cd4bf553c2f7f2254bcca0fc4}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!background@{background}}
+\index{background@{background}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{background}{background}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Multi\+Cursor.\+background}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a53b87f01c4591398f4f42e1e8852b6bd}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a53b87f01c4591398f4f42e1e8852b6bd}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!canvas@{canvas}}
+\index{canvas@{canvas}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{canvas}{canvas}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Multi\+Cursor.\+canvas}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a047396b64ca7e8a72d51d9a472cc550d}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a047396b64ca7e8a72d51d9a472cc550d}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!hlines@{hlines}}
+\index{hlines@{hlines}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{hlines}{hlines}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Multi\+Cursor.\+hlines}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a4169fa323f17c3b8ba0f887531633704}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a4169fa323f17c3b8ba0f887531633704}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!horiz\+On@{horiz\+On}}
+\index{horiz\+On@{horiz\+On}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{horiz\+On}{horizOn}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Multi\+Cursor.\+horiz\+On}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_aee3271ab54465d649855da6c8c69ce34}\label{classmatplotlib_1_1widgets_1_1MultiCursor_aee3271ab54465d649855da6c8c69ce34}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!needclear@{needclear}}
+\index{needclear@{needclear}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{needclear}{needclear}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Multi\+Cursor.\+needclear}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a7c61d66b87dfc7f8bf44b272c7b2116d}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a7c61d66b87dfc7f8bf44b272c7b2116d}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!useblit@{useblit}}
+\index{useblit@{useblit}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{useblit}{useblit}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Multi\+Cursor.\+useblit}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a019f42179207723a771763a89ddcc6cb}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a019f42179207723a771763a89ddcc6cb}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!vert\+On@{vert\+On}}
+\index{vert\+On@{vert\+On}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{vert\+On}{vertOn}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Multi\+Cursor.\+vert\+On}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a458255e4545f3dcd1e79493eaea66e9c}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a458255e4545f3dcd1e79493eaea66e9c}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!visible@{visible}}
+\index{visible@{visible}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{visible}{visible}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Multi\+Cursor.\+visible}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1MultiCursor_a743ea101b150c07f9c99d02558d634e6}\label{classmatplotlib_1_1widgets_1_1MultiCursor_a743ea101b150c07f9c99d02558d634e6}} 
+\index{matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}!vlines@{vlines}}
+\index{vlines@{vlines}!matplotlib\+::widgets\+::\+Multi\+Cursor@{matplotlib\+::widgets\+::\+Multi\+Cursor}}
+\subsubsection{\texorpdfstring{vlines}{vlines}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Multi\+Cursor.\+vlines}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

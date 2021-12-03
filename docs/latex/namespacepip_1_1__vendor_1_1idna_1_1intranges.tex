@@ -1,0 +1,40 @@
+\hypertarget{namespacepip_1_1__vendor_1_1idna_1_1intranges}{}\section{pip.\+\_\+vendor.\+idna.\+intranges Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1idna_1_1intranges}\index{pip.\+\_\+vendor.\+idna.\+intranges@{pip.\+\_\+vendor.\+idna.\+intranges}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1idna_1_1intranges_a418221786b0d94e50db7779ad9ea5735}{intranges\+\_\+from\+\_\+list} (list\+\_\+)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1idna_1_1intranges_abcdc067f2c261e1663789054ba59f597}{intranges\+\_\+contain} (int\+\_\+, ranges)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Given a list of integers, made up of (hopefully) a small number of long runs
+of consecutive integers, compute a representation of the form
+((start1, end1), (start2, end2) ...). Then answer the question "was x present
+in the original list?" in time O(log(# runs)).
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1idna_1_1intranges_abcdc067f2c261e1663789054ba59f597}\label{namespacepip_1_1__vendor_1_1idna_1_1intranges_abcdc067f2c261e1663789054ba59f597}} 
+\index{pip\+::\+\_\+vendor\+::idna\+::intranges@{pip\+::\+\_\+vendor\+::idna\+::intranges}!intranges\+\_\+contain@{intranges\+\_\+contain}}
+\index{intranges\+\_\+contain@{intranges\+\_\+contain}!pip\+::\+\_\+vendor\+::idna\+::intranges@{pip\+::\+\_\+vendor\+::idna\+::intranges}}
+\subsubsection{\texorpdfstring{intranges\+\_\+contain()}{intranges\_contain()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+idna.\+intranges.\+intranges\+\_\+contain (\begin{DoxyParamCaption}\item[{}]{int\+\_\+,  }\item[{}]{ranges }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determine if `int_` falls into one of the ranges in `ranges`.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1idna_1_1intranges_a418221786b0d94e50db7779ad9ea5735}\label{namespacepip_1_1__vendor_1_1idna_1_1intranges_a418221786b0d94e50db7779ad9ea5735}} 
+\index{pip\+::\+\_\+vendor\+::idna\+::intranges@{pip\+::\+\_\+vendor\+::idna\+::intranges}!intranges\+\_\+from\+\_\+list@{intranges\+\_\+from\+\_\+list}}
+\index{intranges\+\_\+from\+\_\+list@{intranges\+\_\+from\+\_\+list}!pip\+::\+\_\+vendor\+::idna\+::intranges@{pip\+::\+\_\+vendor\+::idna\+::intranges}}
+\subsubsection{\texorpdfstring{intranges\+\_\+from\+\_\+list()}{intranges\_from\_list()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+idna.\+intranges.\+intranges\+\_\+from\+\_\+list (\begin{DoxyParamCaption}\item[{}]{list\+\_\+ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Represent a list of integers as a sequence of ranges:
+((start_0, end_0), (start_1, end_1), ...), such that the original
+integers are exactly those x such that start_i <= x < end_i for some i.
+
+Ranges are encoded as single integers (start << 32 | end), not as tuples.
+\end{DoxyVerb}
+ 

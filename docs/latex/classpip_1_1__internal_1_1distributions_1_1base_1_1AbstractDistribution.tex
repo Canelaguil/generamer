@@ -1,0 +1,91 @@
+\hypertarget{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution}{}\section{pip.\+\_\+internal.\+distributions.\+base.\+Abstract\+Distribution Class Reference}
+\label{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution}\index{pip.\+\_\+internal.\+distributions.\+base.\+Abstract\+Distribution@{pip.\+\_\+internal.\+distributions.\+base.\+Abstract\+Distribution}}
+
+
+Inheritance diagram for pip.\+\_\+internal.\+distributions.\+base.\+Abstract\+Distribution\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+internal.\+distributions.\+base.\+Abstract\+Distribution\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a79ff978845d5e7f5e6df9e46ab0afd77}{\+\_\+\+\_\+init\+\_\+\+\_\+}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a4f5e44d5d087f72ea3633a0e6fb0615f}{get\+\_\+pkg\+\_\+resources\+\_\+distribution} (self)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a1aa25d967011f992a34601c7ef5f1d04}{prepare\+\_\+distribution\+\_\+metadata}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a4e0f5834a91b4f3ab6be563959652df9}{req}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A base class for handling installable artifacts.
+
+The requirements for anything installable are as follows:
+
+ - we must be able to determine the requirement name
+   (or we can't correctly handle the non-upgrade case).
+
+ - for packages with setup requirements, we must also be able
+   to determine their requirements without installing additional
+   packages (for the same reason as run-time dependencies)
+
+ - we must be able to create a Distribution object exposing the
+   above metadata.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a79ff978845d5e7f5e6df9e46ab0afd77}\label{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a79ff978845d5e7f5e6df9e46ab0afd77}} 
+\index{pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution@{pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution@{pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+distributions.\+base.\+Abstract\+Distribution.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{req }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a4f5e44d5d087f72ea3633a0e6fb0615f}\label{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a4f5e44d5d087f72ea3633a0e6fb0615f}} 
+\index{pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution@{pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution}!get\+\_\+pkg\+\_\+resources\+\_\+distribution@{get\+\_\+pkg\+\_\+resources\+\_\+distribution}}
+\index{get\+\_\+pkg\+\_\+resources\+\_\+distribution@{get\+\_\+pkg\+\_\+resources\+\_\+distribution}!pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution@{pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution}}
+\subsubsection{\texorpdfstring{get\+\_\+pkg\+\_\+resources\+\_\+distribution()}{get\_pkg\_resources\_distribution()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+distributions.\+base.\+Abstract\+Distribution.\+get\+\_\+pkg\+\_\+resources\+\_\+distribution (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{Optional,  }\item[{}]{Distribution }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a1aa25d967011f992a34601c7ef5f1d04}\label{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a1aa25d967011f992a34601c7ef5f1d04}} 
+\index{pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution@{pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution}!prepare\+\_\+distribution\+\_\+metadata@{prepare\+\_\+distribution\+\_\+metadata}}
+\index{prepare\+\_\+distribution\+\_\+metadata@{prepare\+\_\+distribution\+\_\+metadata}!pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution@{pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution}}
+\subsubsection{\texorpdfstring{prepare\+\_\+distribution\+\_\+metadata()}{prepare\_distribution\_metadata()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+distributions.\+base.\+Abstract\+Distribution.\+prepare\+\_\+distribution\+\_\+metadata (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{finder }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a4e0f5834a91b4f3ab6be563959652df9}\label{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a4e0f5834a91b4f3ab6be563959652df9}} 
+\index{pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution@{pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution}!req@{req}}
+\index{req@{req}!pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution@{pip\+::\+\_\+internal\+::distributions\+::base\+::\+Abstract\+Distribution}}
+\subsubsection{\texorpdfstring{req}{req}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+distributions.\+base.\+Abstract\+Distribution.\+req}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+internal/distributions/\hyperlink{__internal_2distributions_2base_8py}{base.\+py}\end{DoxyCompactItemize}

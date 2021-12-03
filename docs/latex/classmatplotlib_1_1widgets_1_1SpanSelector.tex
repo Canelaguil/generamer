@@ -1,0 +1,218 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector}{}\section{matplotlib.\+widgets.\+Span\+Selector Class Reference}
+\label{classmatplotlib_1_1widgets_1_1SpanSelector}\index{matplotlib.\+widgets.\+Span\+Selector@{matplotlib.\+widgets.\+Span\+Selector}}
+
+
+Inheritance diagram for matplotlib.\+widgets.\+Span\+Selector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classmatplotlib_1_1widgets_1_1SpanSelector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+widgets.\+Span\+Selector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classmatplotlib_1_1widgets_1_1SpanSelector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_ab22b5bf4635f88e6648794d393b3c4e0}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_aa8892b223c155d636534bd94c19afb16}{ax}, \hyperlink{classmatplotlib_1_1widgets_1_1__SelectorWidget_ad893af1ad010d595c7cce1106b48d854}{onselect}, \hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_a8d088006a62702b98be45481c8aec82e}{direction}, \hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_a5104df236cba524cff0b4e9ab8e10c63}{minspan}=None, \hyperlink{classmatplotlib_1_1widgets_1_1__SelectorWidget_a6d178ef2dd7ec61c11b18302de3f43bf}{useblit}=False, \hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_a2d3e724bbd1972ca638085908fd7640a}{rectprops}=None, \hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_ac5074f31aa549cb91d944d41db212a55}{onmove\+\_\+callback}=None, \hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_a50326a48b2ae33185e2d69134e7def56}{span\+\_\+stays}=False, button=None)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_aadd8ad216da5bef741fa102ff65d259a}{new\+\_\+axes} (self, \hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_aa8892b223c155d636534bd94c19afb16}{ax})
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_a14b04d9b22c4bcd668d194a488b7b968}{ignore} (self, event)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_a8d088006a62702b98be45481c8aec82e}{direction}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_a5aa0d6991261a746694068075898e224}{rect}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_aa54858dccb5905007caf6353ed169600}{pressv}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_a2d3e724bbd1972ca638085908fd7640a}{rectprops}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_ac5074f31aa549cb91d944d41db212a55}{onmove\+\_\+callback}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_a5104df236cba524cff0b4e9ab8e10c63}{minspan}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_a50326a48b2ae33185e2d69134e7def56}{span\+\_\+stays}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_af739e9453025c74a0f01751ceb8a036c}{prev}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_acbdb1c68061c11288dcb6a3f26513680}{canvas}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_aa8892b223c155d636534bd94c19afb16}{ax}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_a1942ae4ff7a139cb3e4c1006621cf3af}{stay\+\_\+rect}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1SpanSelector_a57b62ab3c6ccc290b7c01b138eb92563}{artists}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Visually select a min/max range on a single axis and call a function with
+those values.
+
+To guarantee that the selector remains responsive, keep a reference to it.
+
+In order to turn off the SpanSelector, set ``span_selector.active`` to
+False.  To turn it back on, set it to True.
+
+Parameters
+----------
+ax : `matplotlib.axes.Axes`
+
+onselect : func(min, max), min/max are floats
+
+direction : {"horizontal", "vertical"}
+    The direction along which to draw the span selector.
+
+minspan : float, default: None
+    If selection is less than *minspan*, do not call *onselect*.
+
+useblit : bool, default: False
+    If True, use the backend-dependent blitting features for faster
+    canvas updates.
+
+rectprops : dict, default: None
+    Dictionary of `matplotlib.patches.Patch` properties.
+
+onmove_callback : func(min, max), min/max are floats, default: None
+    Called on mouse move while the span is being selected.
+
+span_stays : bool, default: False
+    If True, the span stays visible after the mouse is released.
+
+button : `.MouseButton` or list of `.MouseButton`
+    The mouse buttons which activate the span selector.
+
+Examples
+--------
+>>> import matplotlib.pyplot as plt
+>>> import matplotlib.widgets as mwidgets
+>>> fig, ax = plt.subplots()
+>>> ax.plot([1, 2, 3], [10, 50, 100])
+>>> def onselect(vmin, vmax):
+...     print(vmin, vmax)
+>>> rectprops = dict(facecolor='blue', alpha=0.5)
+>>> span = mwidgets.SpanSelector(ax, onselect, 'horizontal',
+...                              rectprops=rectprops)
+>>> fig.show()
+
+See also: :doc:`/gallery/widgets/span_selector`
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_ab22b5bf4635f88e6648794d393b3c4e0}\label{classmatplotlib_1_1widgets_1_1SpanSelector_ab22b5bf4635f88e6648794d393b3c4e0}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Span\+Selector.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{onselect,  }\item[{}]{direction,  }\item[{}]{minspan = {\ttfamily None},  }\item[{}]{useblit = {\ttfamily False},  }\item[{}]{rectprops = {\ttfamily None},  }\item[{}]{onmove\+\_\+callback = {\ttfamily None},  }\item[{}]{span\+\_\+stays = {\ttfamily False},  }\item[{}]{button = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_a14b04d9b22c4bcd668d194a488b7b968}\label{classmatplotlib_1_1widgets_1_1SpanSelector_a14b04d9b22c4bcd668d194a488b7b968}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!ignore@{ignore}}
+\index{ignore@{ignore}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{ignore()}{ignore()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Span\+Selector.\+ignore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_aadd8ad216da5bef741fa102ff65d259a}\label{classmatplotlib_1_1widgets_1_1SpanSelector_aadd8ad216da5bef741fa102ff65d259a}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!new\+\_\+axes@{new\+\_\+axes}}
+\index{new\+\_\+axes@{new\+\_\+axes}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{new\+\_\+axes()}{new\_axes()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Span\+Selector.\+new\+\_\+axes (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set SpanSelector to operate on a new Axes.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_a57b62ab3c6ccc290b7c01b138eb92563}\label{classmatplotlib_1_1widgets_1_1SpanSelector_a57b62ab3c6ccc290b7c01b138eb92563}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!artists@{artists}}
+\index{artists@{artists}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{artists}{artists}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Span\+Selector.\+artists}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_aa8892b223c155d636534bd94c19afb16}\label{classmatplotlib_1_1widgets_1_1SpanSelector_aa8892b223c155d636534bd94c19afb16}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!ax@{ax}}
+\index{ax@{ax}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{ax}{ax}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Span\+Selector.\+ax}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_acbdb1c68061c11288dcb6a3f26513680}\label{classmatplotlib_1_1widgets_1_1SpanSelector_acbdb1c68061c11288dcb6a3f26513680}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!canvas@{canvas}}
+\index{canvas@{canvas}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{canvas}{canvas}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Span\+Selector.\+canvas}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_a8d088006a62702b98be45481c8aec82e}\label{classmatplotlib_1_1widgets_1_1SpanSelector_a8d088006a62702b98be45481c8aec82e}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!direction@{direction}}
+\index{direction@{direction}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Span\+Selector.\+direction}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_a5104df236cba524cff0b4e9ab8e10c63}\label{classmatplotlib_1_1widgets_1_1SpanSelector_a5104df236cba524cff0b4e9ab8e10c63}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!minspan@{minspan}}
+\index{minspan@{minspan}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{minspan}{minspan}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Span\+Selector.\+minspan}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_ac5074f31aa549cb91d944d41db212a55}\label{classmatplotlib_1_1widgets_1_1SpanSelector_ac5074f31aa549cb91d944d41db212a55}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!onmove\+\_\+callback@{onmove\+\_\+callback}}
+\index{onmove\+\_\+callback@{onmove\+\_\+callback}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{onmove\+\_\+callback}{onmove\_callback}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Span\+Selector.\+onmove\+\_\+callback}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_aa54858dccb5905007caf6353ed169600}\label{classmatplotlib_1_1widgets_1_1SpanSelector_aa54858dccb5905007caf6353ed169600}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!pressv@{pressv}}
+\index{pressv@{pressv}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{pressv}{pressv}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Span\+Selector.\+pressv}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_af739e9453025c74a0f01751ceb8a036c}\label{classmatplotlib_1_1widgets_1_1SpanSelector_af739e9453025c74a0f01751ceb8a036c}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!prev@{prev}}
+\index{prev@{prev}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{prev}{prev}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Span\+Selector.\+prev}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_a5aa0d6991261a746694068075898e224}\label{classmatplotlib_1_1widgets_1_1SpanSelector_a5aa0d6991261a746694068075898e224}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!rect@{rect}}
+\index{rect@{rect}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{rect}{rect}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Span\+Selector.\+rect}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_a2d3e724bbd1972ca638085908fd7640a}\label{classmatplotlib_1_1widgets_1_1SpanSelector_a2d3e724bbd1972ca638085908fd7640a}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!rectprops@{rectprops}}
+\index{rectprops@{rectprops}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{rectprops}{rectprops}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Span\+Selector.\+rectprops}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_a50326a48b2ae33185e2d69134e7def56}\label{classmatplotlib_1_1widgets_1_1SpanSelector_a50326a48b2ae33185e2d69134e7def56}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!span\+\_\+stays@{span\+\_\+stays}}
+\index{span\+\_\+stays@{span\+\_\+stays}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{span\+\_\+stays}{span\_stays}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Span\+Selector.\+span\+\_\+stays}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1SpanSelector_a1942ae4ff7a139cb3e4c1006621cf3af}\label{classmatplotlib_1_1widgets_1_1SpanSelector_a1942ae4ff7a139cb3e4c1006621cf3af}} 
+\index{matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}!stay\+\_\+rect@{stay\+\_\+rect}}
+\index{stay\+\_\+rect@{stay\+\_\+rect}!matplotlib\+::widgets\+::\+Span\+Selector@{matplotlib\+::widgets\+::\+Span\+Selector}}
+\subsubsection{\texorpdfstring{stay\+\_\+rect}{stay\_rect}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Span\+Selector.\+stay\+\_\+rect}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

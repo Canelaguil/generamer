@@ -1,0 +1,70 @@
+\hypertarget{namespacepip_1_1__internal_1_1cli_1_1req__command}{}\section{pip.\+\_\+internal.\+cli.\+req\+\_\+command Namespace Reference}
+\label{namespacepip_1_1__internal_1_1cli_1_1req__command}\index{pip.\+\_\+internal.\+cli.\+req\+\_\+command@{pip.\+\_\+internal.\+cli.\+req\+\_\+command}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1cli_1_1req__command_1_1IndexGroupCommand}{Index\+Group\+Command}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1cli_1_1req__command_1_1RequirementCommand}{Requirement\+Command}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1cli_1_1req__command_1_1SessionCommandMixin}{Session\+Command\+Mixin}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1req__command_a49ed2c503c37454eb2cd554c9a903df3}{warn\+\_\+if\+\_\+run\+\_\+as\+\_\+root} ()
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1req__command_a01483dc3b1ec20f28893314cdbf697fb}{with\+\_\+cleanup}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1cli_1_1req__command_ab18cc0612f20d821fa933b64f3a1b605}{logger}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1cli_1_1req__command_af2721765d615a7e7386857707b788dde}{K\+E\+E\+P\+A\+B\+L\+E\+\_\+\+T\+E\+M\+P\+D\+I\+R\+\_\+\+T\+Y\+P\+ES}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Contains the Command base classes that depend on PipSession.
+
+The classes in this module are in a separate module so the commands not
+needing download / PackageFinder capability don't unnecessarily import the
+PackageFinder machinery and all its vendored dependencies, etc.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1req__command_a49ed2c503c37454eb2cd554c9a903df3}\label{namespacepip_1_1__internal_1_1cli_1_1req__command_a49ed2c503c37454eb2cd554c9a903df3}} 
+\index{pip\+::\+\_\+internal\+::cli\+::req\+\_\+command@{pip\+::\+\_\+internal\+::cli\+::req\+\_\+command}!warn\+\_\+if\+\_\+run\+\_\+as\+\_\+root@{warn\+\_\+if\+\_\+run\+\_\+as\+\_\+root}}
+\index{warn\+\_\+if\+\_\+run\+\_\+as\+\_\+root@{warn\+\_\+if\+\_\+run\+\_\+as\+\_\+root}!pip\+::\+\_\+internal\+::cli\+::req\+\_\+command@{pip\+::\+\_\+internal\+::cli\+::req\+\_\+command}}
+\subsubsection{\texorpdfstring{warn\+\_\+if\+\_\+run\+\_\+as\+\_\+root()}{warn\_if\_run\_as\_root()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+req\+\_\+command.\+warn\+\_\+if\+\_\+run\+\_\+as\+\_\+root (\begin{DoxyParamCaption}\item[{}]{None }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Output a warning for sudo users on Unix.
+
+In a virtual environment, sudo pip still writes to virtualenv.
+On Windows, users may run pip as Administrator without issues.
+This warning only applies to Unix root users outside of virtualenv.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1req__command_a01483dc3b1ec20f28893314cdbf697fb}\label{namespacepip_1_1__internal_1_1cli_1_1req__command_a01483dc3b1ec20f28893314cdbf697fb}} 
+\index{pip\+::\+\_\+internal\+::cli\+::req\+\_\+command@{pip\+::\+\_\+internal\+::cli\+::req\+\_\+command}!with\+\_\+cleanup@{with\+\_\+cleanup}}
+\index{with\+\_\+cleanup@{with\+\_\+cleanup}!pip\+::\+\_\+internal\+::cli\+::req\+\_\+command@{pip\+::\+\_\+internal\+::cli\+::req\+\_\+command}}
+\subsubsection{\texorpdfstring{with\+\_\+cleanup()}{with\_cleanup()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+req\+\_\+command.\+with\+\_\+cleanup (\begin{DoxyParamCaption}\item[{}]{func }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1req__command_af2721765d615a7e7386857707b788dde}\label{namespacepip_1_1__internal_1_1cli_1_1req__command_af2721765d615a7e7386857707b788dde}} 
+\index{pip\+::\+\_\+internal\+::cli\+::req\+\_\+command@{pip\+::\+\_\+internal\+::cli\+::req\+\_\+command}!K\+E\+E\+P\+A\+B\+L\+E\+\_\+\+T\+E\+M\+P\+D\+I\+R\+\_\+\+T\+Y\+P\+ES@{K\+E\+E\+P\+A\+B\+L\+E\+\_\+\+T\+E\+M\+P\+D\+I\+R\+\_\+\+T\+Y\+P\+ES}}
+\index{K\+E\+E\+P\+A\+B\+L\+E\+\_\+\+T\+E\+M\+P\+D\+I\+R\+\_\+\+T\+Y\+P\+ES@{K\+E\+E\+P\+A\+B\+L\+E\+\_\+\+T\+E\+M\+P\+D\+I\+R\+\_\+\+T\+Y\+P\+ES}!pip\+::\+\_\+internal\+::cli\+::req\+\_\+command@{pip\+::\+\_\+internal\+::cli\+::req\+\_\+command}}
+\subsubsection{\texorpdfstring{K\+E\+E\+P\+A\+B\+L\+E\+\_\+\+T\+E\+M\+P\+D\+I\+R\+\_\+\+T\+Y\+P\+ES}{KEEPABLE\_TEMPDIR\_TYPES}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+cli.\+req\+\_\+command.\+K\+E\+E\+P\+A\+B\+L\+E\+\_\+\+T\+E\+M\+P\+D\+I\+R\+\_\+\+T\+Y\+P\+ES}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1req__command_ab18cc0612f20d821fa933b64f3a1b605}\label{namespacepip_1_1__internal_1_1cli_1_1req__command_ab18cc0612f20d821fa933b64f3a1b605}} 
+\index{pip\+::\+\_\+internal\+::cli\+::req\+\_\+command@{pip\+::\+\_\+internal\+::cli\+::req\+\_\+command}!logger@{logger}}
+\index{logger@{logger}!pip\+::\+\_\+internal\+::cli\+::req\+\_\+command@{pip\+::\+\_\+internal\+::cli\+::req\+\_\+command}}
+\subsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+cli.\+req\+\_\+command.\+logger}
+

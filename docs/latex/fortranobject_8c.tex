@@ -1,0 +1,195 @@
+\hypertarget{fortranobject_8c}{}\section{venv/lib/python3.9/site-\/packages/numpy/f2py/src/fortranobject.c File Reference}
+\label{fortranobject_8c}\index{venv/lib/python3.\+9/site-\/packages/numpy/f2py/src/fortranobject.\+c@{venv/lib/python3.\+9/site-\/packages/numpy/f2py/src/fortranobject.\+c}}
+{\ttfamily \#include \char`\"{}fortranobject.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for fortranobject.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fortranobject_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{fortranobject_8c_a0d30258a0d86b7d3c11499e2754a6087}{F\+O\+R\+T\+R\+A\+N\+O\+B\+J\+E\+C\+T\+\_\+C}
+\item 
+\#define \hyperlink{fortranobject_8c_a38eb56fff49b938b9b8144bdff9847f1}{F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+RR}
+\item 
+\#define \hyperlink{fortranobject_8c_afdfddd3f733bd9f8fcd0f92cf5937f0a}{F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+NY}
+\item 
+\#define \hyperlink{fortranobject_8c_a90222168aa5567a5331a7131be6661cd}{S\+W\+A\+P\+T\+Y\+PE}(a,  b,  t)~\{t c; c = (a); (a) = (b); (b) = c; \}
+\item 
+\#define \hyperlink{fortranobject_8c_af7015ea6b7d15ee295bf2723e9005d04}{A\+R\+R\+A\+Y\+\_\+\+I\+S\+C\+O\+M\+P\+A\+T\+I\+B\+LE}(arr,  type\+\_\+num)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Py\+Object $\ast$($\ast$ \hyperlink{fortranobject_8c_aca88da41fedb2f00e9d97e7ce56bdac4}{fortranfunc}) (Py\+Object $\ast$, Py\+Object $\ast$, Py\+Object $\ast$, void $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{fortranobject_8c_a4e850949e4434cff9bc2d34d95e67a1e}{F2\+Py\+Dict\+\_\+\+Set\+Item\+String} (Py\+Object $\ast$dict, char $\ast$name, Py\+Object $\ast$obj)
+\item 
+void $\ast$ \hyperlink{fortranobject_8c_a993fbcebd676ccb425d168486aab16f6}{F2\+Py\+Swap\+Thread\+Local\+Callback\+Ptr} (char $\ast$key, void $\ast$ptr)
+\item 
+void $\ast$ \hyperlink{fortranobject_8c_a02b4e641e189e07149c83eafaec0324a}{F2\+Py\+Get\+Thread\+Local\+Callback\+Ptr} (char $\ast$key)
+\item 
+Py\+Object $\ast$ \hyperlink{fortranobject_8c_a580f0ee1fb71cc53928fd54ddb47dca8}{Py\+Fortran\+Object\+\_\+\+New} (\hyperlink{structFortranDataDef}{Fortran\+Data\+Def} $\ast$defs, \hyperlink{fortranobject_8h_a7d9c08c3ea8cfdad0b1f0a0dc94f093b}{f2py\+\_\+void\+\_\+func} init)
+\item 
+Py\+Object $\ast$ \hyperlink{fortranobject_8c_a303a8ff7198559798525641cdbb1e6fc}{Py\+Fortran\+Object\+\_\+\+New\+As\+Attr} (\hyperlink{structFortranDataDef}{Fortran\+Data\+Def} $\ast$defs)
+\item 
+\hyperlink{ndarraytypes_8h_af074aa0de75119b0769c7eff2bacf784}{Py\+Array\+Object} $\ast$ \hyperlink{fortranobject_8c_aa488f3ee63980788bbac34b8e155d979}{array\+\_\+from\+\_\+pyobj} (const int type\+\_\+num, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp} $\ast$dims, const int rank, const int intent, Py\+Object $\ast$obj)
+\item 
+int \hyperlink{fortranobject_8c_a11666898370bf0f487db5d8e60d7bd8c}{copy\+\_\+\+N\+D\+\_\+array} (const \hyperlink{ndarraytypes_8h_af074aa0de75119b0769c7eff2bacf784}{Py\+Array\+Object} $\ast$arr, \hyperlink{ndarraytypes_8h_af074aa0de75119b0769c7eff2bacf784}{Py\+Array\+Object} $\ast$out)
+\item 
+Py\+Object $\ast$ \hyperlink{fortranobject_8c_a29bc5e1d50f699b92b2a5c2a26da570f}{F2\+Py\+Capsule\+\_\+\+From\+Void\+Ptr} (void $\ast$ptr, void($\ast$dtor)(Py\+Object $\ast$))
+\item 
+void $\ast$ \hyperlink{fortranobject_8c_a6bafde87c6f84dea2979eff5ecaf19ec}{F2\+Py\+Capsule\+\_\+\+As\+Void\+Ptr} (Py\+Object $\ast$obj)
+\item 
+int \hyperlink{fortranobject_8c_a688d507d78750d3bac202a3e9851cefd}{F2\+Py\+Capsule\+\_\+\+Check} (Py\+Object $\ast$ptr)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Py\+Type\+Object \hyperlink{fortranobject_8c_acaa417f3700e11ef00efbc9ccc0d81b6}{Py\+Fortran\+\_\+\+Type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fortranobject_8c_af7015ea6b7d15ee295bf2723e9005d04}\label{fortranobject_8c_af7015ea6b7d15ee295bf2723e9005d04}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!A\+R\+R\+A\+Y\+\_\+\+I\+S\+C\+O\+M\+P\+A\+T\+I\+B\+LE@{A\+R\+R\+A\+Y\+\_\+\+I\+S\+C\+O\+M\+P\+A\+T\+I\+B\+LE}}
+\index{A\+R\+R\+A\+Y\+\_\+\+I\+S\+C\+O\+M\+P\+A\+T\+I\+B\+LE@{A\+R\+R\+A\+Y\+\_\+\+I\+S\+C\+O\+M\+P\+A\+T\+I\+B\+LE}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+\+I\+S\+C\+O\+M\+P\+A\+T\+I\+B\+LE}{ARRAY\_ISCOMPATIBLE}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+\+I\+S\+C\+O\+M\+P\+A\+T\+I\+B\+LE(\begin{DoxyParamCaption}\item[{}]{arr,  }\item[{}]{type\+\_\+num }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(  (\hyperlink{ndarraytypes_8h_a191efa752acabd75ebf92cac20f6a159}{PyArray\_ISINTEGER}(arr) && \hyperlink{ndarraytypes_8h_a8f8450a8f99c43826795fab5cecf013b}{PyTypeNum\_ISINTEGER}(type\_num))        \(\backslash\)
+       ||(\hyperlink{ndarraytypes_8h_a834f15f8185f40bd07d2e2eee1a9a332}{PyArray\_ISFLOAT}(arr) && \hyperlink{ndarraytypes_8h_ac05c12edd2fa08ca6ad3b0bcb2e4ac57}{PyTypeNum\_ISFLOAT}(type\_num))          \(\backslash\)
+       ||(\hyperlink{ndarraytypes_8h_ad55f5bee07ae60ad9a2b07d8e9f532fa}{PyArray\_ISCOMPLEX}(arr) && \hyperlink{ndarraytypes_8h_a703bc3d8ab6e3a820651f47d34c3b6bf}{PyTypeNum\_ISCOMPLEX}(type\_num))     
+       \(\backslash\)
+       ||(\hyperlink{ndarraytypes_8h_ac6b1a1049ceb70fdd341eb3231fc1176}{PyArray\_ISBOOL}(arr) && \hyperlink{ndarraytypes_8h_a71d28e69b6afe06112ae900f85d1aadd}{PyTypeNum\_ISBOOL}(type\_num))            \(\backslash\)
+       )
+\end{DoxyCode}
+\mbox{\Hypertarget{fortranobject_8c_afdfddd3f733bd9f8fcd0f92cf5937f0a}\label{fortranobject_8c_afdfddd3f733bd9f8fcd0f92cf5937f0a}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+NY@{F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+NY}}
+\index{F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+NY@{F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+NY}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+NY}{F2PY\_REPORT\_ON\_ARRAY\_COPY\_FROMANY}}
+{\footnotesize\ttfamily \#define F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+NY}
+
+\mbox{\Hypertarget{fortranobject_8c_a38eb56fff49b938b9b8144bdff9847f1}\label{fortranobject_8c_a38eb56fff49b938b9b8144bdff9847f1}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+RR@{F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+RR}}
+\index{F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+RR@{F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+RR}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+RR}{F2PY\_REPORT\_ON\_ARRAY\_COPY\_FROMARR}}
+{\footnotesize\ttfamily \#define F2\+P\+Y\+\_\+\+R\+E\+P\+O\+R\+T\+\_\+\+O\+N\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+C\+O\+P\+Y\+\_\+\+F\+R\+O\+M\+A\+RR}
+
+\mbox{\Hypertarget{fortranobject_8c_a0d30258a0d86b7d3c11499e2754a6087}\label{fortranobject_8c_a0d30258a0d86b7d3c11499e2754a6087}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!F\+O\+R\+T\+R\+A\+N\+O\+B\+J\+E\+C\+T\+\_\+C@{F\+O\+R\+T\+R\+A\+N\+O\+B\+J\+E\+C\+T\+\_\+C}}
+\index{F\+O\+R\+T\+R\+A\+N\+O\+B\+J\+E\+C\+T\+\_\+C@{F\+O\+R\+T\+R\+A\+N\+O\+B\+J\+E\+C\+T\+\_\+C}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{F\+O\+R\+T\+R\+A\+N\+O\+B\+J\+E\+C\+T\+\_\+C}{FORTRANOBJECT\_C}}
+{\footnotesize\ttfamily \#define F\+O\+R\+T\+R\+A\+N\+O\+B\+J\+E\+C\+T\+\_\+C}
+
+\mbox{\Hypertarget{fortranobject_8c_a90222168aa5567a5331a7131be6661cd}\label{fortranobject_8c_a90222168aa5567a5331a7131be6661cd}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!S\+W\+A\+P\+T\+Y\+PE@{S\+W\+A\+P\+T\+Y\+PE}}
+\index{S\+W\+A\+P\+T\+Y\+PE@{S\+W\+A\+P\+T\+Y\+PE}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{S\+W\+A\+P\+T\+Y\+PE}{SWAPTYPE}}
+{\footnotesize\ttfamily \#define S\+W\+A\+P\+T\+Y\+PE(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{t }\end{DoxyParamCaption})~\{t c; c = (a); (a) = (b); (b) = c; \}}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{fortranobject_8c_aca88da41fedb2f00e9d97e7ce56bdac4}\label{fortranobject_8c_aca88da41fedb2f00e9d97e7ce56bdac4}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!fortranfunc@{fortranfunc}}
+\index{fortranfunc@{fortranfunc}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{fortranfunc}{fortranfunc}}
+{\footnotesize\ttfamily typedef Py\+Object$\ast$($\ast$ fortranfunc) (Py\+Object $\ast$, Py\+Object $\ast$, Py\+Object $\ast$, void $\ast$)}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{fortranobject_8c_aa488f3ee63980788bbac34b8e155d979}\label{fortranobject_8c_aa488f3ee63980788bbac34b8e155d979}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!array\+\_\+from\+\_\+pyobj@{array\+\_\+from\+\_\+pyobj}}
+\index{array\+\_\+from\+\_\+pyobj@{array\+\_\+from\+\_\+pyobj}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{array\+\_\+from\+\_\+pyobj()}{array\_from\_pyobj()}}
+{\footnotesize\ttfamily \hyperlink{ndarraytypes_8h_af074aa0de75119b0769c7eff2bacf784}{Py\+Array\+Object}$\ast$ array\+\_\+from\+\_\+pyobj (\begin{DoxyParamCaption}\item[{const int}]{type\+\_\+num,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp} $\ast$}]{dims,  }\item[{const int}]{rank,  }\item[{const int}]{intent,  }\item[{Py\+Object $\ast$}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fortranobject_8c_a11666898370bf0f487db5d8e60d7bd8c}\label{fortranobject_8c_a11666898370bf0f487db5d8e60d7bd8c}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!copy\+\_\+\+N\+D\+\_\+array@{copy\+\_\+\+N\+D\+\_\+array}}
+\index{copy\+\_\+\+N\+D\+\_\+array@{copy\+\_\+\+N\+D\+\_\+array}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{copy\+\_\+\+N\+D\+\_\+array()}{copy\_ND\_array()}}
+{\footnotesize\ttfamily int copy\+\_\+\+N\+D\+\_\+array (\begin{DoxyParamCaption}\item[{const \hyperlink{ndarraytypes_8h_af074aa0de75119b0769c7eff2bacf784}{Py\+Array\+Object} $\ast$}]{arr,  }\item[{\hyperlink{ndarraytypes_8h_af074aa0de75119b0769c7eff2bacf784}{Py\+Array\+Object} $\ast$}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fortranobject_8c_a6bafde87c6f84dea2979eff5ecaf19ec}\label{fortranobject_8c_a6bafde87c6f84dea2979eff5ecaf19ec}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!F2\+Py\+Capsule\+\_\+\+As\+Void\+Ptr@{F2\+Py\+Capsule\+\_\+\+As\+Void\+Ptr}}
+\index{F2\+Py\+Capsule\+\_\+\+As\+Void\+Ptr@{F2\+Py\+Capsule\+\_\+\+As\+Void\+Ptr}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{F2\+Py\+Capsule\+\_\+\+As\+Void\+Ptr()}{F2PyCapsule\_AsVoidPtr()}}
+{\footnotesize\ttfamily void$\ast$ F2\+Py\+Capsule\+\_\+\+As\+Void\+Ptr (\begin{DoxyParamCaption}\item[{Py\+Object $\ast$}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fortranobject_8c_a688d507d78750d3bac202a3e9851cefd}\label{fortranobject_8c_a688d507d78750d3bac202a3e9851cefd}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!F2\+Py\+Capsule\+\_\+\+Check@{F2\+Py\+Capsule\+\_\+\+Check}}
+\index{F2\+Py\+Capsule\+\_\+\+Check@{F2\+Py\+Capsule\+\_\+\+Check}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{F2\+Py\+Capsule\+\_\+\+Check()}{F2PyCapsule\_Check()}}
+{\footnotesize\ttfamily int F2\+Py\+Capsule\+\_\+\+Check (\begin{DoxyParamCaption}\item[{Py\+Object $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fortranobject_8c_a29bc5e1d50f699b92b2a5c2a26da570f}\label{fortranobject_8c_a29bc5e1d50f699b92b2a5c2a26da570f}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!F2\+Py\+Capsule\+\_\+\+From\+Void\+Ptr@{F2\+Py\+Capsule\+\_\+\+From\+Void\+Ptr}}
+\index{F2\+Py\+Capsule\+\_\+\+From\+Void\+Ptr@{F2\+Py\+Capsule\+\_\+\+From\+Void\+Ptr}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{F2\+Py\+Capsule\+\_\+\+From\+Void\+Ptr()}{F2PyCapsule\_FromVoidPtr()}}
+{\footnotesize\ttfamily Py\+Object$\ast$ F2\+Py\+Capsule\+\_\+\+From\+Void\+Ptr (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{void($\ast$)(Py\+Object $\ast$)}]{dtor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fortranobject_8c_a4e850949e4434cff9bc2d34d95e67a1e}\label{fortranobject_8c_a4e850949e4434cff9bc2d34d95e67a1e}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!F2\+Py\+Dict\+\_\+\+Set\+Item\+String@{F2\+Py\+Dict\+\_\+\+Set\+Item\+String}}
+\index{F2\+Py\+Dict\+\_\+\+Set\+Item\+String@{F2\+Py\+Dict\+\_\+\+Set\+Item\+String}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{F2\+Py\+Dict\+\_\+\+Set\+Item\+String()}{F2PyDict\_SetItemString()}}
+{\footnotesize\ttfamily int F2\+Py\+Dict\+\_\+\+Set\+Item\+String (\begin{DoxyParamCaption}\item[{Py\+Object $\ast$}]{dict,  }\item[{char $\ast$}]{name,  }\item[{Py\+Object $\ast$}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fortranobject_8c_a02b4e641e189e07149c83eafaec0324a}\label{fortranobject_8c_a02b4e641e189e07149c83eafaec0324a}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!F2\+Py\+Get\+Thread\+Local\+Callback\+Ptr@{F2\+Py\+Get\+Thread\+Local\+Callback\+Ptr}}
+\index{F2\+Py\+Get\+Thread\+Local\+Callback\+Ptr@{F2\+Py\+Get\+Thread\+Local\+Callback\+Ptr}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{F2\+Py\+Get\+Thread\+Local\+Callback\+Ptr()}{F2PyGetThreadLocalCallbackPtr()}}
+{\footnotesize\ttfamily void$\ast$ F2\+Py\+Get\+Thread\+Local\+Callback\+Ptr (\begin{DoxyParamCaption}\item[{char $\ast$}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fortranobject_8c_a993fbcebd676ccb425d168486aab16f6}\label{fortranobject_8c_a993fbcebd676ccb425d168486aab16f6}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!F2\+Py\+Swap\+Thread\+Local\+Callback\+Ptr@{F2\+Py\+Swap\+Thread\+Local\+Callback\+Ptr}}
+\index{F2\+Py\+Swap\+Thread\+Local\+Callback\+Ptr@{F2\+Py\+Swap\+Thread\+Local\+Callback\+Ptr}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{F2\+Py\+Swap\+Thread\+Local\+Callback\+Ptr()}{F2PySwapThreadLocalCallbackPtr()}}
+{\footnotesize\ttfamily void$\ast$ F2\+Py\+Swap\+Thread\+Local\+Callback\+Ptr (\begin{DoxyParamCaption}\item[{char $\ast$}]{key,  }\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fortranobject_8c_a580f0ee1fb71cc53928fd54ddb47dca8}\label{fortranobject_8c_a580f0ee1fb71cc53928fd54ddb47dca8}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!Py\+Fortran\+Object\+\_\+\+New@{Py\+Fortran\+Object\+\_\+\+New}}
+\index{Py\+Fortran\+Object\+\_\+\+New@{Py\+Fortran\+Object\+\_\+\+New}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{Py\+Fortran\+Object\+\_\+\+New()}{PyFortranObject\_New()}}
+{\footnotesize\ttfamily Py\+Object$\ast$ Py\+Fortran\+Object\+\_\+\+New (\begin{DoxyParamCaption}\item[{\hyperlink{structFortranDataDef}{Fortran\+Data\+Def} $\ast$}]{defs,  }\item[{\hyperlink{fortranobject_8h_a7d9c08c3ea8cfdad0b1f0a0dc94f093b}{f2py\+\_\+void\+\_\+func}}]{init }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fortranobject_8c_a303a8ff7198559798525641cdbb1e6fc}\label{fortranobject_8c_a303a8ff7198559798525641cdbb1e6fc}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!Py\+Fortran\+Object\+\_\+\+New\+As\+Attr@{Py\+Fortran\+Object\+\_\+\+New\+As\+Attr}}
+\index{Py\+Fortran\+Object\+\_\+\+New\+As\+Attr@{Py\+Fortran\+Object\+\_\+\+New\+As\+Attr}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{Py\+Fortran\+Object\+\_\+\+New\+As\+Attr()}{PyFortranObject\_NewAsAttr()}}
+{\footnotesize\ttfamily Py\+Object$\ast$ Py\+Fortran\+Object\+\_\+\+New\+As\+Attr (\begin{DoxyParamCaption}\item[{\hyperlink{structFortranDataDef}{Fortran\+Data\+Def} $\ast$}]{defs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{fortranobject_8c_acaa417f3700e11ef00efbc9ccc0d81b6}\label{fortranobject_8c_acaa417f3700e11ef00efbc9ccc0d81b6}} 
+\index{fortranobject.\+c@{fortranobject.\+c}!Py\+Fortran\+\_\+\+Type@{Py\+Fortran\+\_\+\+Type}}
+\index{Py\+Fortran\+\_\+\+Type@{Py\+Fortran\+\_\+\+Type}!fortranobject.\+c@{fortranobject.\+c}}
+\subsubsection{\texorpdfstring{Py\+Fortran\+\_\+\+Type}{PyFortran\_Type}}
+{\footnotesize\ttfamily Py\+Type\+Object Py\+Fortran\+\_\+\+Type}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    PyVarObject\_HEAD\_INIT(NULL, 0)
+    .tp\_name =\textcolor{stringliteral}{"fortran"},
+    .tp\_basicsize = \textcolor{keyword}{sizeof}(\hyperlink{structPyFortranObject}{PyFortranObject}),
+    .tp\_dealloc = (destructor)fortran\_dealloc,
+    .tp\_getattr = (getattrfunc)fortran\_getattr,
+    .tp\_setattr = (setattrfunc)fortran\_setattr,
+    .tp\_repr = (reprfunc)fortran\_repr,
+    .tp\_call = (ternaryfunc)fortran\_call,
+\}
+\end{DoxyCode}

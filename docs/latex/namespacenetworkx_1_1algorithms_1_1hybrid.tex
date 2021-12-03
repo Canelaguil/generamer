@@ -1,0 +1,114 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1hybrid}{}\section{networkx.\+algorithms.\+hybrid Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1hybrid}\index{networkx.\+algorithms.\+hybrid@{networkx.\+algorithms.\+hybrid}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1hybrid_a60a2f68aaa5743b5c042b8b038b716df}{kl\+\_\+connected\+\_\+subgraph} (G, k, l, low\+\_\+memory=False, same\+\_\+as\+\_\+graph=False)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1hybrid_a813d117e8f8d65dacb939e3a1bbaf411}{is\+\_\+kl\+\_\+connected} (G, k, l, low\+\_\+memory=False)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Provides functions for finding and testing for locally `(k, l)`-connected
+graphs.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1hybrid_a813d117e8f8d65dacb939e3a1bbaf411}\label{namespacenetworkx_1_1algorithms_1_1hybrid_a813d117e8f8d65dacb939e3a1bbaf411}} 
+\index{networkx\+::algorithms\+::hybrid@{networkx\+::algorithms\+::hybrid}!is\+\_\+kl\+\_\+connected@{is\+\_\+kl\+\_\+connected}}
+\index{is\+\_\+kl\+\_\+connected@{is\+\_\+kl\+\_\+connected}!networkx\+::algorithms\+::hybrid@{networkx\+::algorithms\+::hybrid}}
+\subsubsection{\texorpdfstring{is\+\_\+kl\+\_\+connected()}{is\_kl\_connected()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+hybrid.\+is\+\_\+kl\+\_\+connected (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{k,  }\item[{}]{l,  }\item[{}]{low\+\_\+memory = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if and only if `G` is locally `(k, l)`-connected.
+
+A graph is locally `(k, l)`-connected if for each edge `(u, v)` in the
+graph there are at least `l` edge-disjoint paths of length at most `k`
+joining `u` to `v`.
+
+Parameters
+----------
+G : NetworkX graph
+    The graph to test for local `(k, l)`-connectedness.
+
+k : integer
+    The maximum length of paths to consider. A higher number means a looser
+    connectivity requirement.
+
+l : integer
+    The number of edge-disjoint paths. A higher number means a stricter
+    connectivity requirement.
+
+low_memory : bool
+    If this is True, this function uses an algorithm that uses slightly
+    more time but less memory.
+
+Returns
+-------
+bool
+    Whether the graph is locally `(k, l)`-connected subgraph.
+
+See also
+--------
+kl_connected_subgraph
+
+References
+----------
+.. [1] Chung, Fan and Linyuan Lu. "The Small World Phenomenon in Hybrid
+       Power Law Graphs." *Complex Networks*. Springer Berlin Heidelberg,
+       2004. 89--104.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1hybrid_a60a2f68aaa5743b5c042b8b038b716df}\label{namespacenetworkx_1_1algorithms_1_1hybrid_a60a2f68aaa5743b5c042b8b038b716df}} 
+\index{networkx\+::algorithms\+::hybrid@{networkx\+::algorithms\+::hybrid}!kl\+\_\+connected\+\_\+subgraph@{kl\+\_\+connected\+\_\+subgraph}}
+\index{kl\+\_\+connected\+\_\+subgraph@{kl\+\_\+connected\+\_\+subgraph}!networkx\+::algorithms\+::hybrid@{networkx\+::algorithms\+::hybrid}}
+\subsubsection{\texorpdfstring{kl\+\_\+connected\+\_\+subgraph()}{kl\_connected\_subgraph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+hybrid.\+kl\+\_\+connected\+\_\+subgraph (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{k,  }\item[{}]{l,  }\item[{}]{low\+\_\+memory = {\ttfamily False},  }\item[{}]{same\+\_\+as\+\_\+graph = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the maximum locally `(k, l)`-connected subgraph of `G`.
+
+A graph is locally `(k, l)`-connected if for each edge `(u, v)` in the
+graph there are at least `l` edge-disjoint paths of length at most `k`
+joining `u` to `v`.
+
+Parameters
+----------
+G : NetworkX graph
+    The graph in which to find a maximum locally `(k, l)`-connected
+    subgraph.
+
+k : integer
+    The maximum length of paths to consider. A higher number means a looser
+    connectivity requirement.
+
+l : integer
+    The number of edge-disjoint paths. A higher number means a stricter
+    connectivity requirement.
+
+low_memory : bool
+    If this is True, this function uses an algorithm that uses slightly
+    more time but less memory.
+
+same_as_graph : bool
+    If True then return a tuple of the form `(H, is_same)`,
+    where `H` is the maximum locally `(k, l)`-connected subgraph and
+    `is_same` is a Boolean representing whether `G` is locally `(k,
+    l)`-connected (and hence, whether `H` is simply a copy of the input
+    graph `G`).
+
+Returns
+-------
+NetworkX graph or two-tuple
+    If `same_as_graph` is True, then this function returns a
+    two-tuple as described above. Otherwise, it returns only the maximum
+    locally `(k, l)`-connected subgraph.
+
+See also
+--------
+is_kl_connected
+
+References
+----------
+.. [1] Chung, Fan and Linyuan Lu. "The Small World Phenomenon in Hybrid
+       Power Law Graphs." *Complex Networks*. Springer Berlin Heidelberg,
+       2004. 89--104.\end{DoxyVerb}
+ 

@@ -1,0 +1,205 @@
+\hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection}{}\section{mplot3d.\+art3d.\+Poly3\+D\+Collection Class Reference}
+\label{classmplot3d_1_1art3d_1_1Poly3DCollection}\index{mplot3d.\+art3d.\+Poly3\+D\+Collection@{mplot3d.\+art3d.\+Poly3\+D\+Collection}}
+
+
+Inheritance diagram for mplot3d.\+art3d.\+Poly3\+D\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmplot3d_1_1art3d_1_1Poly3DCollection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for mplot3d.\+art3d.\+Poly3\+D\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmplot3d_1_1art3d_1_1Poly3DCollection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_a7cec4a76a7d728f590eff00292460ae6}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, verts, args, zsort=\textquotesingle{}average\textquotesingle{}, kwargs)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_a8a955218bbd6c7d19ec8ab69befd69c7}{set\+\_\+zsort} (self, zsort)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_a9b668fe020177bdde177216bfb3b01ee}{get\+\_\+vector} (self, segments3d)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_a10a18953be3d095e01b3174e90d06f07}{set\+\_\+verts} (self, verts, closed=True)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_a111d19bcfc683c59c952959d06c65168}{set\+\_\+verts\+\_\+and\+\_\+codes} (self, verts, codes)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_a11f9ca81d9f5964d4da9c123003b4e7d}{set\+\_\+3d\+\_\+properties} (self)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_a4484ae943f6159ab6c86db99d42ccc15}{set\+\_\+sort\+\_\+zpos} (self, val)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_a15ea0337f78c6885b621ffff20748afd}{do\+\_\+3d\+\_\+projection} (self, renderer=None)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_a118a39301661fed37da5052d17f9df04}{set\+\_\+facecolor} (self, colors)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_a5b6268d430e252ab54a7f0c29b098d56}{set\+\_\+edgecolor} (self, colors)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_a69ce77b322761d15316cfb8c3ec06a8b}{set\+\_\+alpha} (self, alpha)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_afb7ce9c83609e38ea2cb8c6321d2ee9e}{get\+\_\+facecolor} (self)
+\item 
+def \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_ac4741cb0e74c11c625d05a629f29d138}{get\+\_\+edgecolor} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection_aa3b22f8300418e7eac479beef44f41c9}{stale}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A collection of 3D polygons.
+
+.. note::
+    **Filling of 3D polygons**
+
+    There is no simple definition of the enclosed surface of a 3D polygon
+    unless the polygon is planar.
+
+    In practice, Matplotlib fills the 2D projection of the polygon. This
+    gives a correct filling appearance only for planar polygons. For all
+    other polygons, you'll find orientations in which the edges of the
+    polygon intersect in the projection. This will lead to an incorrect
+    visualization of the 3D area.
+
+    If you need filled areas, it is recommended to create them via
+    `~mpl_toolkits.mplot3d.axes3d.Axes3D.plot_trisurf`, which creates a
+    triangulation and thus generates consistent surfaces.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_a7cec4a76a7d728f590eff00292460ae6}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_a7cec4a76a7d728f590eff00292460ae6}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{verts,  }\item[{}]{args,  }\item[{}]{zsort = {\ttfamily \textquotesingle{}average\textquotesingle{}},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+verts : list of (N, 3) array-like
+    Each element describes a polygon as a sequence of ``N_i`` points
+    ``(x, y, z)``.
+zsort : {'average', 'min', 'max'}, default: 'average'
+    The calculation method for the z-order.
+    See `~.Poly3DCollection.set_zsort` for details.
+*args, **kwargs
+    All other parameters are forwarded to `.PolyCollection`.
+
+Notes
+-----
+Note that this class does a bit of magic with the _facecolors
+and _edgecolors properties.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_a15ea0337f78c6885b621ffff20748afd}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_a15ea0337f78c6885b621ffff20748afd}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!do\+\_\+3d\+\_\+projection@{do\+\_\+3d\+\_\+projection}}
+\index{do\+\_\+3d\+\_\+projection@{do\+\_\+3d\+\_\+projection}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{do\+\_\+3d\+\_\+projection()}{do\_3d\_projection()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+do\+\_\+3d\+\_\+projection (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Perform the 3D projection for this object.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_ac4741cb0e74c11c625d05a629f29d138}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_ac4741cb0e74c11c625d05a629f29d138}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!get\+\_\+edgecolor@{get\+\_\+edgecolor}}
+\index{get\+\_\+edgecolor@{get\+\_\+edgecolor}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{get\+\_\+edgecolor()}{get\_edgecolor()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+get\+\_\+edgecolor (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_afb7ce9c83609e38ea2cb8c6321d2ee9e}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_afb7ce9c83609e38ea2cb8c6321d2ee9e}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!get\+\_\+facecolor@{get\+\_\+facecolor}}
+\index{get\+\_\+facecolor@{get\+\_\+facecolor}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{get\+\_\+facecolor()}{get\_facecolor()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+get\+\_\+facecolor (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_a9b668fe020177bdde177216bfb3b01ee}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_a9b668fe020177bdde177216bfb3b01ee}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!get\+\_\+vector@{get\+\_\+vector}}
+\index{get\+\_\+vector@{get\+\_\+vector}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{get\+\_\+vector()}{get\_vector()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+get\+\_\+vector (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{segments3d }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Optimize points for projection.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_a11f9ca81d9f5964d4da9c123003b4e7d}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_a11f9ca81d9f5964d4da9c123003b4e7d}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!set\+\_\+3d\+\_\+properties@{set\+\_\+3d\+\_\+properties}}
+\index{set\+\_\+3d\+\_\+properties@{set\+\_\+3d\+\_\+properties}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+3d\+\_\+properties()}{set\_3d\_properties()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+set\+\_\+3d\+\_\+properties (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_a69ce77b322761d15316cfb8c3ec06a8b}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_a69ce77b322761d15316cfb8c3ec06a8b}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!set\+\_\+alpha@{set\+\_\+alpha}}
+\index{set\+\_\+alpha@{set\+\_\+alpha}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+alpha()}{set\_alpha()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+set\+\_\+alpha (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{alpha }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_a5b6268d430e252ab54a7f0c29b098d56}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_a5b6268d430e252ab54a7f0c29b098d56}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!set\+\_\+edgecolor@{set\+\_\+edgecolor}}
+\index{set\+\_\+edgecolor@{set\+\_\+edgecolor}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+edgecolor()}{set\_edgecolor()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+set\+\_\+edgecolor (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{colors }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_a118a39301661fed37da5052d17f9df04}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_a118a39301661fed37da5052d17f9df04}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!set\+\_\+facecolor@{set\+\_\+facecolor}}
+\index{set\+\_\+facecolor@{set\+\_\+facecolor}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+facecolor()}{set\_facecolor()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+set\+\_\+facecolor (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{colors }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_a4484ae943f6159ab6c86db99d42ccc15}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_a4484ae943f6159ab6c86db99d42ccc15}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!set\+\_\+sort\+\_\+zpos@{set\+\_\+sort\+\_\+zpos}}
+\index{set\+\_\+sort\+\_\+zpos@{set\+\_\+sort\+\_\+zpos}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+sort\+\_\+zpos()}{set\_sort\_zpos()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+set\+\_\+sort\+\_\+zpos (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the position to use for z-sorting.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_a10a18953be3d095e01b3174e90d06f07}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_a10a18953be3d095e01b3174e90d06f07}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!set\+\_\+verts@{set\+\_\+verts}}
+\index{set\+\_\+verts@{set\+\_\+verts}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+verts()}{set\_verts()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+set\+\_\+verts (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{verts,  }\item[{}]{closed = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set 3D vertices.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_a111d19bcfc683c59c952959d06c65168}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_a111d19bcfc683c59c952959d06c65168}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!set\+\_\+verts\+\_\+and\+\_\+codes@{set\+\_\+verts\+\_\+and\+\_\+codes}}
+\index{set\+\_\+verts\+\_\+and\+\_\+codes@{set\+\_\+verts\+\_\+and\+\_\+codes}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+verts\+\_\+and\+\_\+codes()}{set\_verts\_and\_codes()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+set\+\_\+verts\+\_\+and\+\_\+codes (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{verts,  }\item[{}]{codes }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set 3D vertices with path codes.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_a8a955218bbd6c7d19ec8ab69befd69c7}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_a8a955218bbd6c7d19ec8ab69befd69c7}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!set\+\_\+zsort@{set\+\_\+zsort}}
+\index{set\+\_\+zsort@{set\+\_\+zsort}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{set\+\_\+zsort()}{set\_zsort()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+Poly3\+D\+Collection.\+set\+\_\+zsort (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{zsort }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the calculation method for the z-order.
+
+Parameters
+----------
+zsort : {'average', 'min', 'max'}
+    The function applied on the z-coordinates of the vertices in the
+    viewer's coordinate system, to determine the z-order.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmplot3d_1_1art3d_1_1Poly3DCollection_aa3b22f8300418e7eac479beef44f41c9}\label{classmplot3d_1_1art3d_1_1Poly3DCollection_aa3b22f8300418e7eac479beef44f41c9}} 
+\index{mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}!stale@{stale}}
+\index{stale@{stale}!mplot3d\+::art3d\+::\+Poly3\+D\+Collection@{mplot3d\+::art3d\+::\+Poly3\+D\+Collection}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily mplot3d.\+art3d.\+Poly3\+D\+Collection.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/mpl\+\_\+toolkits/mplot3d/\hyperlink{art3d_8py}{art3d.\+py}\end{DoxyCompactItemize}

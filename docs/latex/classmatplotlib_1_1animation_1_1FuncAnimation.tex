@@ -1,0 +1,164 @@
+\hypertarget{classmatplotlib_1_1animation_1_1FuncAnimation}{}\section{matplotlib.\+animation.\+Func\+Animation Class Reference}
+\label{classmatplotlib_1_1animation_1_1FuncAnimation}\index{matplotlib.\+animation.\+Func\+Animation@{matplotlib.\+animation.\+Func\+Animation}}
+
+
+Inheritance diagram for matplotlib.\+animation.\+Func\+Animation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classmatplotlib_1_1animation_1_1FuncAnimation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+animation.\+Func\+Animation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classmatplotlib_1_1animation_1_1FuncAnimation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1FuncAnimation_ab3f83d2945e80b4ba681bc0acef28e7f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, fig, func, frames=None, init\+\_\+func=None, fargs=None, \hyperlink{classmatplotlib_1_1animation_1_1FuncAnimation_a6d11b6844fe1906cf3048f9cd0cab8ea}{save\+\_\+count}=None, cache\+\_\+frame\+\_\+data=True, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1FuncAnimation_a819b80ef9a05864cd4f4d68df9e9aa06}{new\+\_\+frame\+\_\+seq} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1FuncAnimation_a790029ef3ba3bd1bcdd229176960ad15}{new\+\_\+saved\+\_\+frame\+\_\+seq} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1FuncAnimation_a6d11b6844fe1906cf3048f9cd0cab8ea}{save\+\_\+count}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Makes an animation by repeatedly calling a function *func*.
+
+.. note::
+
+    You must store the created Animation in a variable that lives as long
+    as the animation should run. Otherwise, the Animation object will be
+    garbage-collected and the animation stops.
+
+Parameters
+----------
+fig : `~matplotlib.figure.Figure`
+    The figure object used to get needed events, such as draw or resize.
+
+func : callable
+    The function to call at each frame.  The first argument will
+    be the next value in *frames*.   Any additional positional
+    arguments can be supplied via the *fargs* parameter.
+
+    The required signature is::
+
+        def func(frame, *fargs) -> iterable_of_artists
+
+    If ``blit == True``, *func* must return an iterable of all artists
+    that were modified or created. This information is used by the blitting
+    algorithm to determine which parts of the figure have to be updated.
+    The return value is unused if ``blit == False`` and may be omitted in
+    that case.
+
+frames : iterable, int, generator function, or None, optional
+    Source of data to pass *func* and each frame of the animation
+
+    - If an iterable, then simply use the values provided.  If the
+      iterable has a length, it will override the *save_count* kwarg.
+
+    - If an integer, then equivalent to passing ``range(frames)``
+
+    - If a generator function, then must have the signature::
+
+         def gen_function() -> obj
+
+    - If *None*, then equivalent to passing ``itertools.count``.
+
+    In all of these cases, the values in *frames* is simply passed through
+    to the user-supplied *func* and thus can be of any type.
+
+init_func : callable, optional
+    A function used to draw a clear frame. If not given, the results of
+    drawing from the first item in the frames sequence will be used. This
+    function will be called once before the first frame.
+
+    The required signature is::
+
+        def init_func() -> iterable_of_artists
+
+    If ``blit == True``, *init_func* must return an iterable of artists
+    to be re-drawn. This information is used by the blitting algorithm to
+    determine which parts of the figure have to be updated.  The return
+    value is unused if ``blit == False`` and may be omitted in that case.
+
+fargs : tuple or None, optional
+    Additional arguments to pass to each call to *func*.
+
+save_count : int, default: 100
+    Fallback for the number of values from *frames* to cache. This is
+    only used if the number of frames cannot be inferred from *frames*,
+    i.e. when it's an iterator without length or a generator.
+
+interval : int, default: 200
+    Delay between frames in milliseconds.
+
+repeat_delay : int, default: 0
+    The delay in milliseconds between consecutive animation runs, if
+    *repeat* is True.
+
+repeat : bool, default: True
+    Whether the animation repeats when the sequence of frames is completed.
+
+blit : bool, default: False
+    Whether blitting is used to optimize drawing.  Note: when using
+    blitting, any animated artists will be drawn according to their zorder;
+    however, they will be drawn on top of any previous artists, regardless
+    of their zorder.
+
+cache_frame_data : bool, default: True
+    Whether frame data is cached.  Disabling cache might be helpful when
+    frames contain large objects.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1FuncAnimation_ab3f83d2945e80b4ba681bc0acef28e7f}\label{classmatplotlib_1_1animation_1_1FuncAnimation_ab3f83d2945e80b4ba681bc0acef28e7f}} 
+\index{matplotlib\+::animation\+::\+Func\+Animation@{matplotlib\+::animation\+::\+Func\+Animation}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::animation\+::\+Func\+Animation@{matplotlib\+::animation\+::\+Func\+Animation}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Func\+Animation.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fig,  }\item[{}]{func,  }\item[{}]{frames = {\ttfamily None},  }\item[{}]{init\+\_\+func = {\ttfamily None},  }\item[{}]{fargs = {\ttfamily None},  }\item[{}]{save\+\_\+count = {\ttfamily None},  }\item[{}]{cache\+\_\+frame\+\_\+data = {\ttfamily True},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1FuncAnimation_a819b80ef9a05864cd4f4d68df9e9aa06}\label{classmatplotlib_1_1animation_1_1FuncAnimation_a819b80ef9a05864cd4f4d68df9e9aa06}} 
+\index{matplotlib\+::animation\+::\+Func\+Animation@{matplotlib\+::animation\+::\+Func\+Animation}!new\+\_\+frame\+\_\+seq@{new\+\_\+frame\+\_\+seq}}
+\index{new\+\_\+frame\+\_\+seq@{new\+\_\+frame\+\_\+seq}!matplotlib\+::animation\+::\+Func\+Animation@{matplotlib\+::animation\+::\+Func\+Animation}}
+\subsubsection{\texorpdfstring{new\+\_\+frame\+\_\+seq()}{new\_frame\_seq()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Func\+Animation.\+new\+\_\+frame\+\_\+seq (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1FuncAnimation_a790029ef3ba3bd1bcdd229176960ad15}\label{classmatplotlib_1_1animation_1_1FuncAnimation_a790029ef3ba3bd1bcdd229176960ad15}} 
+\index{matplotlib\+::animation\+::\+Func\+Animation@{matplotlib\+::animation\+::\+Func\+Animation}!new\+\_\+saved\+\_\+frame\+\_\+seq@{new\+\_\+saved\+\_\+frame\+\_\+seq}}
+\index{new\+\_\+saved\+\_\+frame\+\_\+seq@{new\+\_\+saved\+\_\+frame\+\_\+seq}!matplotlib\+::animation\+::\+Func\+Animation@{matplotlib\+::animation\+::\+Func\+Animation}}
+\subsubsection{\texorpdfstring{new\+\_\+saved\+\_\+frame\+\_\+seq()}{new\_saved\_frame\_seq()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Func\+Animation.\+new\+\_\+saved\+\_\+frame\+\_\+seq (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1FuncAnimation_a6d11b6844fe1906cf3048f9cd0cab8ea}\label{classmatplotlib_1_1animation_1_1FuncAnimation_a6d11b6844fe1906cf3048f9cd0cab8ea}} 
+\index{matplotlib\+::animation\+::\+Func\+Animation@{matplotlib\+::animation\+::\+Func\+Animation}!save\+\_\+count@{save\+\_\+count}}
+\index{save\+\_\+count@{save\+\_\+count}!matplotlib\+::animation\+::\+Func\+Animation@{matplotlib\+::animation\+::\+Func\+Animation}}
+\subsubsection{\texorpdfstring{save\+\_\+count}{save\_count}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Func\+Animation.\+save\+\_\+count}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{animation_8py}{animation.\+py}\end{DoxyCompactItemize}

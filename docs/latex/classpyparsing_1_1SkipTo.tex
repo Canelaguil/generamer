@@ -1,0 +1,175 @@
+\hypertarget{classpyparsing_1_1SkipTo}{}\section{pyparsing.\+Skip\+To Class Reference}
+\label{classpyparsing_1_1SkipTo}\index{pyparsing.\+Skip\+To@{pyparsing.\+Skip\+To}}
+
+
+Inheritance diagram for pyparsing.\+Skip\+To\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classpyparsing_1_1SkipTo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pyparsing.\+Skip\+To\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classpyparsing_1_1SkipTo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpyparsing_1_1SkipTo_a2b9335c3694c26bf610e029a47455f13}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, other, include=False, \hyperlink{classpyparsing_1_1ParseElementEnhance_a905d181fa723dd7f828d423362ba040c}{ignore}=None, \hyperlink{classpyparsing_1_1SkipTo_a548f926356d8b839cde70e7fa1a14cd5}{fail\+On}=None)
+\item 
+def \hyperlink{classpyparsing_1_1SkipTo_affb6cec655458cb1406ab9ae384dda5d}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpyparsing_1_1SkipTo_a4247e97e3cf6ebe46a24948c01739c34}{ignore\+Expr}
+\item 
+\hyperlink{classpyparsing_1_1SkipTo_aea4cbf8d96b8bbec6d6fc4f648cca24c}{may\+Return\+Empty}
+\item 
+\hyperlink{classpyparsing_1_1SkipTo_aa38b70dfd8de84b7632a39fcd114ba05}{may\+Index\+Error}
+\item 
+\hyperlink{classpyparsing_1_1SkipTo_a723c5d4e54061e189bb14ae32b261a1a}{include\+Match}
+\item 
+\hyperlink{classpyparsing_1_1SkipTo_a6bab6f9b7ddb9a8f737d0757b381def8}{save\+As\+List}
+\item 
+\hyperlink{classpyparsing_1_1SkipTo_a548f926356d8b839cde70e7fa1a14cd5}{fail\+On}
+\item 
+\hyperlink{classpyparsing_1_1SkipTo_a2763971e4ce1e994a80ac878f50b5463}{errmsg}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Token for skipping over all undefined text until the matched
+expression is found.
+
+Parameters:
+ - expr - target expression marking the end of the data to be skipped
+ - include - (default= ``False``) if True, the target expression is also parsed
+      (the skipped text and target expression are returned as a 2-element list).
+ - ignore - (default= ``None``) used to define grammars (typically quoted strings and
+      comments) that might contain false matches to the target expression
+ - failOn - (default= ``None``) define expressions that are not allowed to be
+      included in the skipped test; if found before the target expression is found,
+      the SkipTo is not a match
+
+Example::
+
+    report = '''
+        Outstanding Issues Report - 1 Jan 2000
+
+           # | Severity | Description                               |  Days Open
+        -----+----------+-------------------------------------------+-----------
+         101 | Critical | Intermittent system crash                 |          6
+          94 | Cosmetic | Spelling error on Login ('log|n')         |         14
+          79 | Minor    | System slow when running too many reports |         47
+        '''
+    integer = Word(nums)
+    SEP = Suppress('|')
+    # use SkipTo to simply match everything up until the next SEP
+    # - ignore quoted strings, so that a '|' character inside a quoted string does not match
+    # - parse action will call token.strip() for each matched token, i.e., the description body
+    string_data = SkipTo(SEP, ignore=quotedString)
+    string_data.setParseAction(tokenMap(str.strip))
+    ticket_expr = (integer("issue_num") + SEP
+                  + string_data("sev") + SEP
+                  + string_data("desc") + SEP
+                  + integer("days_open"))
+
+    for tkt in ticket_expr.searchString(report):
+        print tkt.dump()
+
+prints::
+
+    ['101', 'Critical', 'Intermittent system crash', '6']
+    - days_open: 6
+    - desc: Intermittent system crash
+    - issue_num: 101
+    - sev: Critical
+    ['94', 'Cosmetic', "Spelling error on Login ('log|n')", '14']
+    - days_open: 14
+    - desc: Spelling error on Login ('log|n')
+    - issue_num: 94
+    - sev: Cosmetic
+    ['79', 'Minor', 'System slow when running too many reports', '47']
+    - days_open: 47
+    - desc: System slow when running too many reports
+    - issue_num: 79
+    - sev: Minor
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1SkipTo_a2b9335c3694c26bf610e029a47455f13}\label{classpyparsing_1_1SkipTo_a2b9335c3694c26bf610e029a47455f13}} 
+\index{pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Skip\+To.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other,  }\item[{}]{include = {\ttfamily False},  }\item[{}]{ignore = {\ttfamily None},  }\item[{}]{fail\+On = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1SkipTo_affb6cec655458cb1406ab9ae384dda5d}\label{classpyparsing_1_1SkipTo_affb6cec655458cb1406ab9ae384dda5d}} 
+\index{pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pyparsing.\+Skip\+To.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1SkipTo_a2763971e4ce1e994a80ac878f50b5463}\label{classpyparsing_1_1SkipTo_a2763971e4ce1e994a80ac878f50b5463}} 
+\index{pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}!errmsg@{errmsg}}
+\index{errmsg@{errmsg}!pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{errmsg}{errmsg}}
+{\footnotesize\ttfamily pyparsing.\+Skip\+To.\+errmsg}
+
+\mbox{\Hypertarget{classpyparsing_1_1SkipTo_a548f926356d8b839cde70e7fa1a14cd5}\label{classpyparsing_1_1SkipTo_a548f926356d8b839cde70e7fa1a14cd5}} 
+\index{pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}!fail\+On@{fail\+On}}
+\index{fail\+On@{fail\+On}!pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{fail\+On}{failOn}}
+{\footnotesize\ttfamily pyparsing.\+Skip\+To.\+fail\+On}
+
+\mbox{\Hypertarget{classpyparsing_1_1SkipTo_a4247e97e3cf6ebe46a24948c01739c34}\label{classpyparsing_1_1SkipTo_a4247e97e3cf6ebe46a24948c01739c34}} 
+\index{pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}!ignore\+Expr@{ignore\+Expr}}
+\index{ignore\+Expr@{ignore\+Expr}!pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{ignore\+Expr}{ignoreExpr}}
+{\footnotesize\ttfamily pyparsing.\+Skip\+To.\+ignore\+Expr}
+
+\mbox{\Hypertarget{classpyparsing_1_1SkipTo_a723c5d4e54061e189bb14ae32b261a1a}\label{classpyparsing_1_1SkipTo_a723c5d4e54061e189bb14ae32b261a1a}} 
+\index{pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}!include\+Match@{include\+Match}}
+\index{include\+Match@{include\+Match}!pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{include\+Match}{includeMatch}}
+{\footnotesize\ttfamily pyparsing.\+Skip\+To.\+include\+Match}
+
+\mbox{\Hypertarget{classpyparsing_1_1SkipTo_aa38b70dfd8de84b7632a39fcd114ba05}\label{classpyparsing_1_1SkipTo_aa38b70dfd8de84b7632a39fcd114ba05}} 
+\index{pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}!may\+Index\+Error@{may\+Index\+Error}}
+\index{may\+Index\+Error@{may\+Index\+Error}!pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{may\+Index\+Error}{mayIndexError}}
+{\footnotesize\ttfamily pyparsing.\+Skip\+To.\+may\+Index\+Error}
+
+\mbox{\Hypertarget{classpyparsing_1_1SkipTo_aea4cbf8d96b8bbec6d6fc4f648cca24c}\label{classpyparsing_1_1SkipTo_aea4cbf8d96b8bbec6d6fc4f648cca24c}} 
+\index{pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily pyparsing.\+Skip\+To.\+may\+Return\+Empty}
+
+\mbox{\Hypertarget{classpyparsing_1_1SkipTo_a6bab6f9b7ddb9a8f737d0757b381def8}\label{classpyparsing_1_1SkipTo_a6bab6f9b7ddb9a8f737d0757b381def8}} 
+\index{pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}!save\+As\+List@{save\+As\+List}}
+\index{save\+As\+List@{save\+As\+List}!pyparsing\+::\+Skip\+To@{pyparsing\+::\+Skip\+To}}
+\subsubsection{\texorpdfstring{save\+As\+List}{saveAsList}}
+{\footnotesize\ttfamily pyparsing.\+Skip\+To.\+save\+As\+List}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\hyperlink{pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

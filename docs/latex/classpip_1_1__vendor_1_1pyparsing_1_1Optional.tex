@@ -1,0 +1,138 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Optional}{}\section{pip.\+\_\+vendor.\+pyparsing.\+Optional Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1Optional}\index{pip.\+\_\+vendor.\+pyparsing.\+Optional@{pip.\+\_\+vendor.\+pyparsing.\+Optional}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+Optional\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1Optional__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+Optional\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1Optional__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Optional_af7743bf78646c9edf865f668e73f5a4a}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1ParseElementEnhance_af574b49a0a7d914693fdaa833df7098f}{expr}, \hyperlink{namespacepip_1_1__vendor_1_1pyparsing_aa7f054391cbdb7da5185dae6fabc5acf}{default}=\+\_\+\+\_\+optional\+Not\+Matched)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a8295c646c3730e129feac4198aeb1035}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a5aa903625e47739056ebb73a911d4763}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Optional_ad4fe641ffece45cd41716cfeb6389433}{save\+As\+List}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a8dbd9a3a8e5e2cc870942e6e08f7d314}{default\+Value}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a7e40ff231f8cfc5dcc2c9c0a828af1cc}{may\+Return\+Empty}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a4c7eaebea3a4d1d2a04c64391f0dd6f0}{str\+Repr}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Optional matching of the given expression.
+
+Parameters:
+ - expr - expression that must match zero or more times
+ - default (optional) - value to be returned if the optional expression is not found.
+
+Example::
+
+    # US postal code can be a 5-digit zip, plus optional 4-digit qualifier
+    zip = Combine(Word(nums, exact=5) + Optional('-' + Word(nums, exact=4)))
+    zip.runTests('''
+        # traditional ZIP code
+        12345
+
+        # ZIP+4 form
+        12101-0001
+
+        # invalid ZIP
+        98765-
+        ''')
+
+prints::
+
+    # traditional ZIP code
+    12345
+    ['12345']
+
+    # ZIP+4 form
+    12101-0001
+    ['12101-0001']
+
+    # invalid ZIP
+    98765-
+         ^
+    FAIL: Expected end of text (at char 5), (line:1, col:6)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Optional_af7743bf78646c9edf865f668e73f5a4a}\label{classpip_1_1__vendor_1_1pyparsing_1_1Optional_af7743bf78646c9edf865f668e73f5a4a}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+Optional.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{expr,  }\item[{}]{default = {\ttfamily \+\_\+\+\_\+optionalNotMatched} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a5aa903625e47739056ebb73a911d4763}\label{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a5aa903625e47739056ebb73a911d4763}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+Optional.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a8295c646c3730e129feac4198aeb1035}\label{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a8295c646c3730e129feac4198aeb1035}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+Optional.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a8dbd9a3a8e5e2cc870942e6e08f7d314}\label{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a8dbd9a3a8e5e2cc870942e6e08f7d314}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}!default\+Value@{default\+Value}}
+\index{default\+Value@{default\+Value}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{default\+Value}{defaultValue}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Optional.\+default\+Value}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a7e40ff231f8cfc5dcc2c9c0a828af1cc}\label{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a7e40ff231f8cfc5dcc2c9c0a828af1cc}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Optional.\+may\+Return\+Empty}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Optional_ad4fe641ffece45cd41716cfeb6389433}\label{classpip_1_1__vendor_1_1pyparsing_1_1Optional_ad4fe641ffece45cd41716cfeb6389433}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}!save\+As\+List@{save\+As\+List}}
+\index{save\+As\+List@{save\+As\+List}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{save\+As\+List}{saveAsList}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Optional.\+save\+As\+List}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a4c7eaebea3a4d1d2a04c64391f0dd6f0}\label{classpip_1_1__vendor_1_1pyparsing_1_1Optional_a4c7eaebea3a4d1d2a04c64391f0dd6f0}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}!str\+Repr@{str\+Repr}}
+\index{str\+Repr@{str\+Repr}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Optional}}
+\subsubsection{\texorpdfstring{str\+Repr}{strRepr}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Optional.\+str\+Repr}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/\hyperlink{pip_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

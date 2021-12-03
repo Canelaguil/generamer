@@ -1,0 +1,42 @@
+\hypertarget{namespacematplotlib_1_1tight__bbox}{}\section{matplotlib.\+tight\+\_\+bbox Namespace Reference}
+\label{namespacematplotlib_1_1tight__bbox}\index{matplotlib.\+tight\+\_\+bbox@{matplotlib.\+tight\+\_\+bbox}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1tight__bbox_ae91a4eb1dc5433c8e2a424bc5d0ceb6e}{adjust\+\_\+bbox} (fig, bbox\+\_\+inches, fixed\+\_\+dpi=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1tight__bbox_aa7e1c204edc0c9be0236568e0c8f9f5c}{process\+\_\+figure\+\_\+for\+\_\+rasterizing} (fig, bbox\+\_\+inches\+\_\+restore, fixed\+\_\+dpi=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Helper module for the *bbox_inches* parameter in `.Figure.savefig`.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1tight__bbox_ae91a4eb1dc5433c8e2a424bc5d0ceb6e}\label{namespacematplotlib_1_1tight__bbox_ae91a4eb1dc5433c8e2a424bc5d0ceb6e}} 
+\index{matplotlib\+::tight\+\_\+bbox@{matplotlib\+::tight\+\_\+bbox}!adjust\+\_\+bbox@{adjust\+\_\+bbox}}
+\index{adjust\+\_\+bbox@{adjust\+\_\+bbox}!matplotlib\+::tight\+\_\+bbox@{matplotlib\+::tight\+\_\+bbox}}
+\subsubsection{\texorpdfstring{adjust\+\_\+bbox()}{adjust\_bbox()}}
+{\footnotesize\ttfamily def matplotlib.\+tight\+\_\+bbox.\+adjust\+\_\+bbox (\begin{DoxyParamCaption}\item[{}]{fig,  }\item[{}]{bbox\+\_\+inches,  }\item[{}]{fixed\+\_\+dpi = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Temporarily adjust the figure so that only the specified area
+(bbox_inches) is saved.
+
+It modifies fig.bbox, fig.bbox_inches,
+fig.transFigure._boxout, and fig.patch.  While the figure size
+changes, the scale of the original figure is conserved.  A
+function which restores the original values are returned.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1tight__bbox_aa7e1c204edc0c9be0236568e0c8f9f5c}\label{namespacematplotlib_1_1tight__bbox_aa7e1c204edc0c9be0236568e0c8f9f5c}} 
+\index{matplotlib\+::tight\+\_\+bbox@{matplotlib\+::tight\+\_\+bbox}!process\+\_\+figure\+\_\+for\+\_\+rasterizing@{process\+\_\+figure\+\_\+for\+\_\+rasterizing}}
+\index{process\+\_\+figure\+\_\+for\+\_\+rasterizing@{process\+\_\+figure\+\_\+for\+\_\+rasterizing}!matplotlib\+::tight\+\_\+bbox@{matplotlib\+::tight\+\_\+bbox}}
+\subsubsection{\texorpdfstring{process\+\_\+figure\+\_\+for\+\_\+rasterizing()}{process\_figure\_for\_rasterizing()}}
+{\footnotesize\ttfamily def matplotlib.\+tight\+\_\+bbox.\+process\+\_\+figure\+\_\+for\+\_\+rasterizing (\begin{DoxyParamCaption}\item[{}]{fig,  }\item[{}]{bbox\+\_\+inches\+\_\+restore,  }\item[{}]{fixed\+\_\+dpi = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A function that needs to be called when figure dpi changes during the
+drawing (e.g., rasterizing).  It recovers the bbox and re-adjust it with
+the new dpi.
+\end{DoxyVerb}
+ 

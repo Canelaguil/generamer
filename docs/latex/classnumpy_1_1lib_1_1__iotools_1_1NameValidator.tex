@@ -1,0 +1,169 @@
+\hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator}{}\section{numpy.\+lib.\+\_\+iotools.\+Name\+Validator Class Reference}
+\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator}\index{numpy.\+lib.\+\_\+iotools.\+Name\+Validator@{numpy.\+lib.\+\_\+iotools.\+Name\+Validator}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_af2fea61d528aa285cd2c3a975c43dbc1}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_ad240b448f3804b44b247d506d56c7a30}{excludelist}=None, \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a60c4685bb3479da696d680c322de1c26}{deletechars}=None, case\+\_\+sensitive=None, \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a6b2416d12020f22e325e8e001ba314ca}{replace\+\_\+space}=\textquotesingle{}\+\_\+\textquotesingle{})
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a4c6df4cd621243673cfc0d48569ff4c5}{validate} (self, names, defaultfmt=\char`\"{}f\%i\char`\"{}, nbfields=None)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a4305cc5d683dfeb520c1e933c78878ae}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, names, defaultfmt=\char`\"{}f\%i\char`\"{}, nbfields=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_ad240b448f3804b44b247d506d56c7a30}{excludelist}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a60c4685bb3479da696d680c322de1c26}{deletechars}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a2681b70582c336b3a67095923bac684d}{case\+\_\+converter}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a6b2416d12020f22e325e8e001ba314ca}{replace\+\_\+space}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_ad138c05d8d78ec5dca1aae4fa7547ffb}{defaultexcludelist}
+\item 
+\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a25e444d6c4ace7882608a9217f475c34}{defaultdeletechars}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Object to validate a list of strings to use as field names.
+
+The strings are stripped of any non alphanumeric character, and spaces
+are replaced by '_'. During instantiation, the user can define a list
+of names to exclude, as well as a list of invalid characters. Names in
+the exclusion list are appended a '_' character.
+
+Once an instance has been created, it can be called with a list of
+names, and a list of valid names will be created.  The `__call__`
+method accepts an optional keyword "default" that sets the default name
+in case of ambiguity. By default this is 'f', so that names will
+default to `f0`, `f1`, etc.
+
+Parameters
+----------
+excludelist : sequence, optional
+    A list of names to exclude. This list is appended to the default
+    list ['return', 'file', 'print']. Excluded names are appended an
+    underscore: for example, `file` becomes `file_` if supplied.
+deletechars : str, optional
+    A string combining invalid characters that must be deleted from the
+    names.
+case_sensitive : {True, False, 'upper', 'lower'}, optional
+    * If True, field names are case-sensitive.
+    * If False or 'upper', field names are converted to upper case.
+    * If 'lower', field names are converted to lower case.
+
+    The default value is True.
+replace_space : '_', optional
+    Character(s) used in replacement of white spaces.
+
+Notes
+-----
+Calling an instance of `NameValidator` is the same as calling its
+method `validate`.
+
+Examples
+--------
+>>> validator = np.lib._iotools.NameValidator()
+>>> validator(['file', 'field2', 'with space', 'CaSe'])
+('file_', 'field2', 'with_space', 'CaSe')
+
+>>> validator = np.lib._iotools.NameValidator(excludelist=['excl'],
+...                                           deletechars='q',
+...                                           case_sensitive=False)
+>>> validator(['excl', 'field2', 'no_q', 'with space', 'CaSe'])
+('EXCL', 'FIELD2', 'NO_Q', 'WITH_SPACE', 'CASE')\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_af2fea61d528aa285cd2c3a975c43dbc1}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_af2fea61d528aa285cd2c3a975c43dbc1}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+iotools.\+Name\+Validator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{excludelist = {\ttfamily None},  }\item[{}]{deletechars = {\ttfamily None},  }\item[{}]{case\+\_\+sensitive = {\ttfamily None},  }\item[{}]{replace\+\_\+space = {\ttfamily \textquotesingle{}\+\_\+\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a4305cc5d683dfeb520c1e933c78878ae}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a4305cc5d683dfeb520c1e933c78878ae}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+iotools.\+Name\+Validator.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names,  }\item[{}]{defaultfmt = {\ttfamily \char`\"{}f\%i\char`\"{}},  }\item[{}]{nbfields = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a4c6df4cd621243673cfc0d48569ff4c5}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a4c6df4cd621243673cfc0d48569ff4c5}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}!validate@{validate}}
+\index{validate@{validate}!numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}}
+\subsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+iotools.\+Name\+Validator.\+validate (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names,  }\item[{}]{defaultfmt = {\ttfamily \char`\"{}f\%i\char`\"{}},  }\item[{}]{nbfields = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Validate a list of strings as field names for a structured array.
+
+Parameters
+----------
+names : sequence of str
+    Strings to be validated.
+defaultfmt : str, optional
+    Default format string, used if validating a given string
+    reduces its length to zero.
+nbfields : integer, optional
+    Final number of validated names, used to expand or shrink the
+    initial list of names.
+
+Returns
+-------
+validatednames : list of str
+    The list of validated field names.
+
+Notes
+-----
+A `NameValidator` instance can be called directly, which is the
+same as calling `validate`. For examples, see `NameValidator`.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a2681b70582c336b3a67095923bac684d}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a2681b70582c336b3a67095923bac684d}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}!case\+\_\+converter@{case\+\_\+converter}}
+\index{case\+\_\+converter@{case\+\_\+converter}!numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}}
+\subsubsection{\texorpdfstring{case\+\_\+converter}{case\_converter}}
+{\footnotesize\ttfamily numpy.\+lib.\+\_\+iotools.\+Name\+Validator.\+case\+\_\+converter}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a25e444d6c4ace7882608a9217f475c34}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a25e444d6c4ace7882608a9217f475c34}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}!defaultdeletechars@{defaultdeletechars}}
+\index{defaultdeletechars@{defaultdeletechars}!numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}}
+\subsubsection{\texorpdfstring{defaultdeletechars}{defaultdeletechars}}
+{\footnotesize\ttfamily numpy.\+lib.\+\_\+iotools.\+Name\+Validator.\+defaultdeletechars\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_ad138c05d8d78ec5dca1aae4fa7547ffb}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_ad138c05d8d78ec5dca1aae4fa7547ffb}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}!defaultexcludelist@{defaultexcludelist}}
+\index{defaultexcludelist@{defaultexcludelist}!numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}}
+\subsubsection{\texorpdfstring{defaultexcludelist}{defaultexcludelist}}
+{\footnotesize\ttfamily numpy.\+lib.\+\_\+iotools.\+Name\+Validator.\+defaultexcludelist\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a60c4685bb3479da696d680c322de1c26}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a60c4685bb3479da696d680c322de1c26}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}!deletechars@{deletechars}}
+\index{deletechars@{deletechars}!numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}}
+\subsubsection{\texorpdfstring{deletechars}{deletechars}}
+{\footnotesize\ttfamily numpy.\+lib.\+\_\+iotools.\+Name\+Validator.\+deletechars}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_ad240b448f3804b44b247d506d56c7a30}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_ad240b448f3804b44b247d506d56c7a30}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}!excludelist@{excludelist}}
+\index{excludelist@{excludelist}!numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}}
+\subsubsection{\texorpdfstring{excludelist}{excludelist}}
+{\footnotesize\ttfamily numpy.\+lib.\+\_\+iotools.\+Name\+Validator.\+excludelist}
+
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a6b2416d12020f22e325e8e001ba314ca}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a6b2416d12020f22e325e8e001ba314ca}} 
+\index{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}!replace\+\_\+space@{replace\+\_\+space}}
+\index{replace\+\_\+space@{replace\+\_\+space}!numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator@{numpy\+::lib\+::\+\_\+iotools\+::\+Name\+Validator}}
+\subsubsection{\texorpdfstring{replace\+\_\+space}{replace\_space}}
+{\footnotesize\ttfamily numpy.\+lib.\+\_\+iotools.\+Name\+Validator.\+replace\+\_\+space}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/lib/\hyperlink{__iotools_8py}{\+\_\+iotools.\+py}\end{DoxyCompactItemize}

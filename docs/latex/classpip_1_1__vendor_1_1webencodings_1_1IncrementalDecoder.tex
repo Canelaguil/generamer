@@ -1,0 +1,83 @@
+\hypertarget{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder}{}\section{pip.\+\_\+vendor.\+webencodings.\+Incremental\+Decoder Class Reference}
+\label{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder}\index{pip.\+\_\+vendor.\+webencodings.\+Incremental\+Decoder@{pip.\+\_\+vendor.\+webencodings.\+Incremental\+Decoder}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+webencodings.\+Incremental\+Decoder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+webencodings.\+Incremental\+Decoder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder_aef7dedd595b534dd2ed1d77c1df01d23}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, fallback\+\_\+encoding, errors=\textquotesingle{}replace\textquotesingle{})
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder_a289670326c90e6a11d420fb6ad9dcb62}{decode} (self, input, final=False)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder_a7251fe0361b0320f6579f7b8635609ee}{encoding}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}“Push”-based decoder.
+
+:param fallback_encoding:
+    An :class:`Encoding` object or a label string.
+    The encoding to use if :obj:`input` does note have a BOM.
+:param errors: Type of error handling. See :func:`codecs.register`.
+:raises: :exc:`~exceptions.LookupError` for an unknown encoding label.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder_aef7dedd595b534dd2ed1d77c1df01d23}\label{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder_aef7dedd595b534dd2ed1d77c1df01d23}} 
+\index{pip\+::\+\_\+vendor\+::webencodings\+::\+Incremental\+Decoder@{pip\+::\+\_\+vendor\+::webencodings\+::\+Incremental\+Decoder}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::webencodings\+::\+Incremental\+Decoder@{pip\+::\+\_\+vendor\+::webencodings\+::\+Incremental\+Decoder}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+webencodings.\+Incremental\+Decoder.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fallback\+\_\+encoding,  }\item[{}]{errors = {\ttfamily \textquotesingle{}replace\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder_a289670326c90e6a11d420fb6ad9dcb62}\label{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder_a289670326c90e6a11d420fb6ad9dcb62}} 
+\index{pip\+::\+\_\+vendor\+::webencodings\+::\+Incremental\+Decoder@{pip\+::\+\_\+vendor\+::webencodings\+::\+Incremental\+Decoder}!decode@{decode}}
+\index{decode@{decode}!pip\+::\+\_\+vendor\+::webencodings\+::\+Incremental\+Decoder@{pip\+::\+\_\+vendor\+::webencodings\+::\+Incremental\+Decoder}}
+\subsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+webencodings.\+Incremental\+Decoder.\+decode (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{input,  }\item[{}]{final = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decode one chunk of the input.
+
+:param input: A byte string.
+:param final:
+    Indicate that no more input is available.
+    Must be :obj:`True` if this is the last call.
+:returns: An Unicode string.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder_a7251fe0361b0320f6579f7b8635609ee}\label{classpip_1_1__vendor_1_1webencodings_1_1IncrementalDecoder_a7251fe0361b0320f6579f7b8635609ee}} 
+\index{pip\+::\+\_\+vendor\+::webencodings\+::\+Incremental\+Decoder@{pip\+::\+\_\+vendor\+::webencodings\+::\+Incremental\+Decoder}!encoding@{encoding}}
+\index{encoding@{encoding}!pip\+::\+\_\+vendor\+::webencodings\+::\+Incremental\+Decoder@{pip\+::\+\_\+vendor\+::webencodings\+::\+Incremental\+Decoder}}
+\subsubsection{\texorpdfstring{encoding}{encoding}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+webencodings.\+Incremental\+Decoder.\+encoding}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/webencodings/\hyperlink{venv_2lib_2python3_89_2site-packages_2pip_2__vendor_2webencodings_2____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}\end{DoxyCompactItemize}

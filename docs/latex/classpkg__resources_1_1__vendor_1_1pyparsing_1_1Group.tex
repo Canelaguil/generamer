@@ -1,0 +1,82 @@
+\hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group}{}\section{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Group Class Reference}
+\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group}\index{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Group@{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Group}}
+
+
+Inheritance diagram for pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Group\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Group\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group_a4027ca22a29af1111ae2c7c0194bb330}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1ParseElementEnhance_a34e02b3404b2a545ca1be8b522758896}{expr})
+\item 
+def \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group_a2fdaf84a40e16b32658acd842a7c8582}{post\+Parse} (self, instring, loc, tokenlist)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group_a24b2b05e0aecefa6623eb3ffe38ec492}{save\+As\+List}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Converter to return the matched tokens as a list - useful for returning tokens of C{L{ZeroOrMore}} and C{L{OneOrMore}} expressions.
+
+Example::
+    ident = Word(alphas)
+    num = Word(nums)
+    term = ident | num
+    func = ident + Optional(delimitedList(term))
+    print(func.parseString("fn a,b,100"))  # -> ['fn', 'a', 'b', '100']
+
+    func = ident + Group(Optional(delimitedList(term)))
+    print(func.parseString("fn a,b,100"))  # -> ['fn', ['a', 'b', '100']]
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group_a4027ca22a29af1111ae2c7c0194bb330}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group_a4027ca22a29af1111ae2c7c0194bb330}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Group@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Group}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Group@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Group}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Group.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{expr }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group_a2fdaf84a40e16b32658acd842a7c8582}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group_a2fdaf84a40e16b32658acd842a7c8582}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Group@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Group}!post\+Parse@{post\+Parse}}
+\index{post\+Parse@{post\+Parse}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Group@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Group}}
+\subsubsection{\texorpdfstring{post\+Parse()}{postParse()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Group.\+post\+Parse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{tokenlist }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group_a24b2b05e0aecefa6623eb3ffe38ec492}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Group_a24b2b05e0aecefa6623eb3ffe38ec492}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Group@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Group}!save\+As\+List@{save\+As\+List}}
+\index{save\+As\+List@{save\+As\+List}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Group@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Group}}
+\subsubsection{\texorpdfstring{save\+As\+List}{saveAsList}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Group.\+save\+As\+List}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pkg\+\_\+resources/\+\_\+vendor/\hyperlink{pkg__resources_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

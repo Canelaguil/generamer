@@ -1,0 +1,160 @@
+\hypertarget{classdateutil_1_1tz_1_1tz_1_1tzrange}{}\section{dateutil.\+tz.\+tz.\+tzrange Class Reference}
+\label{classdateutil_1_1tz_1_1tz_1_1tzrange}\index{dateutil.\+tz.\+tz.\+tzrange@{dateutil.\+tz.\+tz.\+tzrange}}
+
+
+Inheritance diagram for dateutil.\+tz.\+tz.\+tzrange\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classdateutil_1_1tz_1_1tz_1_1tzrange__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dateutil.\+tz.\+tz.\+tzrange\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classdateutil_1_1tz_1_1tz_1_1tzrange__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzrange_a52f4af837a27b0ef43c6f25177a92c2d}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, stdabbr, stdoffset=None, dstabbr=None, dstoffset=None, start=None, end=None)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzrange_a1d065e90e5f92050296b7d419dadb3e0}{transitions} (self, year)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzrange_af334a07f2b7e87f5fda0834843adce3a}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdateutil_1_1tz_1_1tz_1_1tzrange_ad0c561e159c0b15b22303ebb6f751ec3}{hasdst}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The ``tzrange`` object is a time zone specified by a set of offsets and
+abbreviations, equivalent to the way the ``TZ`` variable can be specified
+in POSIX-like systems, but using Python delta objects to specify DST
+start, end and offsets.
+
+:param stdabbr:
+    The abbreviation for standard time (e.g. ``'EST'``).
+
+:param stdoffset:
+    An integer or :class:`datetime.timedelta` object or equivalent
+    specifying the base offset from UTC.
+
+    If unspecified, +00:00 is used.
+
+:param dstabbr:
+    The abbreviation for DST / "Summer" time (e.g. ``'EDT'``).
+
+    If specified, with no other DST information, DST is assumed to occur
+    and the default behavior or ``dstoffset``, ``start`` and ``end`` is
+    used. If unspecified and no other DST information is specified, it
+    is assumed that this zone has no DST.
+
+    If this is unspecified and other DST information is *is* specified,
+    DST occurs in the zone but the time zone abbreviation is left
+    unchanged.
+
+:param dstoffset:
+    A an integer or :class:`datetime.timedelta` object or equivalent
+    specifying the UTC offset during DST. If unspecified and any other DST
+    information is specified, it is assumed to be the STD offset +1 hour.
+
+:param start:
+    A :class:`relativedelta.relativedelta` object or equivalent specifying
+    the time and time of year that daylight savings time starts. To
+    specify, for example, that DST starts at 2AM on the 2nd Sunday in
+    March, pass:
+
+        ``relativedelta(hours=2, month=3, day=1, weekday=SU(+2))``
+
+    If unspecified and any other DST information is specified, the default
+    value is 2 AM on the first Sunday in April.
+
+:param end:
+    A :class:`relativedelta.relativedelta` object or equivalent
+    representing the time and time of year that daylight savings time
+    ends, with the same specification method as in ``start``. One note is
+    that this should point to the first time in the *standard* zone, so if
+    a transition occurs at 2AM in the DST zone and the clocks are set back
+    1 hour to 1AM, set the ``hours`` parameter to +1.
+
+
+**Examples:**
+
+.. testsetup:: tzrange
+
+    from dateutil.tz import tzrange, tzstr
+
+.. doctest:: tzrange
+
+    >>> tzstr('EST5EDT') == tzrange("EST", -18000, "EDT")
+    True
+
+    >>> from dateutil.relativedelta import *
+    >>> range1 = tzrange("EST", -18000, "EDT")
+    >>> range2 = tzrange("EST", -18000, "EDT", -14400,
+    ...                  relativedelta(hours=+2, month=4, day=1,
+    ...                                weekday=SU(+1)),
+    ...                  relativedelta(hours=+1, month=10, day=31,
+    ...                                weekday=SU(-1)))
+    >>> tzstr('EST5EDT') == range1 == range2
+    True\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzrange_a52f4af837a27b0ef43c6f25177a92c2d}\label{classdateutil_1_1tz_1_1tz_1_1tzrange_a52f4af837a27b0ef43c6f25177a92c2d}} 
+\index{dateutil\+::tz\+::tz\+::tzrange@{dateutil\+::tz\+::tz\+::tzrange}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!dateutil\+::tz\+::tz\+::tzrange@{dateutil\+::tz\+::tz\+::tzrange}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzrange.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{stdabbr,  }\item[{}]{stdoffset = {\ttfamily None},  }\item[{}]{dstabbr = {\ttfamily None},  }\item[{}]{dstoffset = {\ttfamily None},  }\item[{}]{start = {\ttfamily None},  }\item[{}]{end = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzrange_af334a07f2b7e87f5fda0834843adce3a}\label{classdateutil_1_1tz_1_1tz_1_1tzrange_af334a07f2b7e87f5fda0834843adce3a}} 
+\index{dateutil\+::tz\+::tz\+::tzrange@{dateutil\+::tz\+::tz\+::tzrange}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!dateutil\+::tz\+::tz\+::tzrange@{dateutil\+::tz\+::tz\+::tzrange}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+eq\+\_\+\+\_\+()}{\_\_eq\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzrange.\+\_\+\+\_\+eq\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzrange_a1d065e90e5f92050296b7d419dadb3e0}\label{classdateutil_1_1tz_1_1tz_1_1tzrange_a1d065e90e5f92050296b7d419dadb3e0}} 
+\index{dateutil\+::tz\+::tz\+::tzrange@{dateutil\+::tz\+::tz\+::tzrange}!transitions@{transitions}}
+\index{transitions@{transitions}!dateutil\+::tz\+::tz\+::tzrange@{dateutil\+::tz\+::tz\+::tzrange}}
+\subsubsection{\texorpdfstring{transitions()}{transitions()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzrange.\+transitions (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{year }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}For a given year, get the DST on and off transition times, expressed
+always on the standard time side. For zones with no transitions, this
+function returns ``None``.
+
+:param year:
+    The year whose transitions you would like to query.
+
+:return:
+    Returns a :class:`tuple` of :class:`datetime.datetime` objects,
+    ``(dston, dstoff)`` for zones with an annual DST transition, or
+    ``None`` for fixed offset zones.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzrange_ad0c561e159c0b15b22303ebb6f751ec3}\label{classdateutil_1_1tz_1_1tz_1_1tzrange_ad0c561e159c0b15b22303ebb6f751ec3}} 
+\index{dateutil\+::tz\+::tz\+::tzrange@{dateutil\+::tz\+::tz\+::tzrange}!hasdst@{hasdst}}
+\index{hasdst@{hasdst}!dateutil\+::tz\+::tz\+::tzrange@{dateutil\+::tz\+::tz\+::tzrange}}
+\subsubsection{\texorpdfstring{hasdst}{hasdst}}
+{\footnotesize\ttfamily dateutil.\+tz.\+tz.\+tzrange.\+hasdst}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/dateutil/tz/\hyperlink{tz_8py}{tz.\+py}\end{DoxyCompactItemize}

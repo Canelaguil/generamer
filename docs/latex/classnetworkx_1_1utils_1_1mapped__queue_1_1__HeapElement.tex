@@ -1,0 +1,126 @@
+\hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement}{}\section{networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element Class Reference}
+\label{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement}\index{networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element@{networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a8b6cde8ccbc44a76f73bab76eac6b6ee}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_ae7a91aff4e379dbdee68da8d797fdc89}{priority}, \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a02d1ece42ec5e7458bec0337c766bb24}{element})
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a1d3f10e1738a9700b514d1f4f7a79f4e}{\+\_\+\+\_\+lt\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_af283047ac1c65fcad3884453c8f1d271}{\+\_\+\+\_\+gt\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_ae1ed41594dc4c46efbbd8b6b92cbbe14}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_ab9d4fc76614c4d17590db986e3881d33}{\+\_\+\+\_\+hash\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a5e5ff987fb520508c36df6d47094d08f}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, indx)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a1c387129238489848f909b9e106093a6}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a0978152fbc6f98ebdc291b4902f82f34}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_ae7a91aff4e379dbdee68da8d797fdc89}{priority}
+\item 
+\hyperlink{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a02d1ece42ec5e7458bec0337c766bb24}{element}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This proxy class separates the heap element from its priority.
+
+The idea is that using a 2-tuple (priority, element) works
+for sorting, but not for dict lookup because priorities are
+often floating point values so round-off can mess up equality.
+
+So, we need inequalities to look at the priority (for sorting)
+and equality (and hash) to look at the element to enable
+updates to the priority.
+
+Unfortunately, this class can be tricky to work with if you forget that
+`__lt__` compares the priority while `__eq__` compares the element.
+In `greedy_modularity_communities()` the following code is
+used to check that two _HeapElements differ in either element or priority:
+
+    if d_oldmax != row_max or d_oldmax.priority != row_max.priority:
+
+If the priorities are the same, this implementation uses the element
+as a tiebreaker. This provides compatibility with older systems that
+use tuples to combine priority and elements.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a8b6cde8ccbc44a76f73bab76eac6b6ee}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a8b6cde8ccbc44a76f73bab76eac6b6ee}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{priority,  }\item[{}]{element }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_ae1ed41594dc4c46efbbd8b6b92cbbe14}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_ae1ed41594dc4c46efbbd8b6b92cbbe14}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+eq\+\_\+\+\_\+()}{\_\_eq\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element.\+\_\+\+\_\+eq\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a5e5ff987fb520508c36df6d47094d08f}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a5e5ff987fb520508c36df6d47094d08f}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{indx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_af283047ac1c65fcad3884453c8f1d271}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_af283047ac1c65fcad3884453c8f1d271}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}!\+\_\+\+\_\+gt\+\_\+\+\_\+@{\+\_\+\+\_\+gt\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+gt\+\_\+\+\_\+@{\+\_\+\+\_\+gt\+\_\+\+\_\+}!networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+gt\+\_\+\+\_\+()}{\_\_gt\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element.\+\_\+\+\_\+gt\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_ab9d4fc76614c4d17590db986e3881d33}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_ab9d4fc76614c4d17590db986e3881d33}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}!\+\_\+\+\_\+hash\+\_\+\+\_\+@{\+\_\+\+\_\+hash\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+hash\+\_\+\+\_\+@{\+\_\+\+\_\+hash\+\_\+\+\_\+}!networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+hash\+\_\+\+\_\+()}{\_\_hash\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element.\+\_\+\+\_\+hash\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a1c387129238489848f909b9e106093a6}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a1c387129238489848f909b9e106093a6}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a1d3f10e1738a9700b514d1f4f7a79f4e}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a1d3f10e1738a9700b514d1f4f7a79f4e}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}!\+\_\+\+\_\+lt\+\_\+\+\_\+@{\+\_\+\+\_\+lt\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+lt\+\_\+\+\_\+@{\+\_\+\+\_\+lt\+\_\+\+\_\+}!networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+lt\+\_\+\+\_\+()}{\_\_lt\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element.\+\_\+\+\_\+lt\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a0978152fbc6f98ebdc291b4902f82f34}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a0978152fbc6f98ebdc291b4902f82f34}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a02d1ece42ec5e7458bec0337c766bb24}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_a02d1ece42ec5e7458bec0337c766bb24}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}!element@{element}}
+\index{element@{element}!networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}}
+\subsubsection{\texorpdfstring{element}{element}}
+{\footnotesize\ttfamily networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element.\+element}
+
+\mbox{\Hypertarget{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_ae7a91aff4e379dbdee68da8d797fdc89}\label{classnetworkx_1_1utils_1_1mapped__queue_1_1__HeapElement_ae7a91aff4e379dbdee68da8d797fdc89}} 
+\index{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}!priority@{priority}}
+\index{priority@{priority}!networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element@{networkx\+::utils\+::mapped\+\_\+queue\+::\+\_\+\+Heap\+Element}}
+\subsubsection{\texorpdfstring{priority}{priority}}
+{\footnotesize\ttfamily networkx.\+utils.\+mapped\+\_\+queue.\+\_\+\+Heap\+Element.\+priority}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/utils/\hyperlink{mapped__queue_8py}{mapped\+\_\+queue.\+py}\end{DoxyCompactItemize}

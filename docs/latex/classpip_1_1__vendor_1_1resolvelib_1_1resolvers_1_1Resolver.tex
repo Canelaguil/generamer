@@ -1,0 +1,87 @@
+\hypertarget{classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1Resolver}{}\section{pip.\+\_\+vendor.\+resolvelib.\+resolvers.\+Resolver Class Reference}
+\label{classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1Resolver}\index{pip.\+\_\+vendor.\+resolvelib.\+resolvers.\+Resolver@{pip.\+\_\+vendor.\+resolvelib.\+resolvers.\+Resolver}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+resolvelib.\+resolvers.\+Resolver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1Resolver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+resolvelib.\+resolvers.\+Resolver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1Resolver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1Resolver_ac3d279df685a65982b3d6bf3ace896da}{resolve} (self, requirements, max\+\_\+rounds=100)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1Resolver_a608c37b1bb3d51c83b5d253b54aaa071}{base\+\_\+exception}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The thing that performs the actual resolution work.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1Resolver_ac3d279df685a65982b3d6bf3ace896da}\label{classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1Resolver_ac3d279df685a65982b3d6bf3ace896da}} 
+\index{pip\+::\+\_\+vendor\+::resolvelib\+::resolvers\+::\+Resolver@{pip\+::\+\_\+vendor\+::resolvelib\+::resolvers\+::\+Resolver}!resolve@{resolve}}
+\index{resolve@{resolve}!pip\+::\+\_\+vendor\+::resolvelib\+::resolvers\+::\+Resolver@{pip\+::\+\_\+vendor\+::resolvelib\+::resolvers\+::\+Resolver}}
+\subsubsection{\texorpdfstring{resolve()}{resolve()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+resolvelib.\+resolvers.\+Resolver.\+resolve (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{requirements,  }\item[{}]{max\+\_\+rounds = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Take a collection of constraints, spit out the resolution result.
+
+The return value is a representation to the final resolution result. It
+is a tuple subclass with three public members:
+
+* `mapping`: A dict of resolved candidates. Each key is an identifier
+    of a requirement (as returned by the provider's `identify` method),
+    and the value is the resolved candidate.
+* `graph`: A `DirectedGraph` instance representing the dependency tree.
+    The vertices are keys of `mapping`, and each edge represents *why*
+    a particular package is included. A special vertex `None` is
+    included to represent parents of user-supplied requirements.
+* `criteria`: A dict of "criteria" that hold detailed information on
+    how edges in the graph are derived. Each key is an identifier of a
+    requirement, and the value is a `Criterion` instance.
+
+The following exceptions may be raised if a resolution cannot be found:
+
+* `ResolutionImpossible`: A resolution cannot be found for the given
+    combination of requirements. The `causes` attribute of the
+    exception is a list of (requirement, parent), giving the
+    requirements that could not be satisfied.
+* `ResolutionTooDeep`: The dependency tree is too deeply nested and
+    the resolver gave up. This is usually caused by a circular
+    dependency, but you can try to resolve this by increasing the
+    `max_rounds` argument.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1Resolver_a608c37b1bb3d51c83b5d253b54aaa071}\label{classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1Resolver_a608c37b1bb3d51c83b5d253b54aaa071}} 
+\index{pip\+::\+\_\+vendor\+::resolvelib\+::resolvers\+::\+Resolver@{pip\+::\+\_\+vendor\+::resolvelib\+::resolvers\+::\+Resolver}!base\+\_\+exception@{base\+\_\+exception}}
+\index{base\+\_\+exception@{base\+\_\+exception}!pip\+::\+\_\+vendor\+::resolvelib\+::resolvers\+::\+Resolver@{pip\+::\+\_\+vendor\+::resolvelib\+::resolvers\+::\+Resolver}}
+\subsubsection{\texorpdfstring{base\+\_\+exception}{base\_exception}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+resolvelib.\+resolvers.\+Resolver.\+base\+\_\+exception\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/resolvelib/\hyperlink{resolvers_8py}{resolvers.\+py}\end{DoxyCompactItemize}

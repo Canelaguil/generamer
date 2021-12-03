@@ -1,0 +1,158 @@
+\hypertarget{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops}{}\section{numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops Class Reference}
+\label{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops}\index{numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops@{numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_1_1foo}{foo}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a3b48379f0df33c2bb33e0a0770e0934b}{test\+\_\+unary\+\_\+\+Py\+U\+Func} (self, input\+\_\+dtype, output\+\_\+dtype, f=np.\+exp, x=0, y=1)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_ab4c7f17e3885d1bab81506ef9fa88076}{f2} (x, y)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a01bdf31918b2bba3ce0185e4f3f77893}{test\+\_\+binary\+\_\+\+Py\+U\+Func} (self, input\+\_\+dtype, output\+\_\+dtype, f=\hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_ab4c7f17e3885d1bab81506ef9fa88076}{f2}, x=0, y=1)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a8e9c0b7bd8f4e73abf010dd2ecd7c5ec}{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+O} (self)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a439efc5901727ff98d2fb9d46699e28a}{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+simple} (self, \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_1_1foo}{foo}=\hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_1_1foo}{foo})
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a553e8549ae34e7b5e6a3dd48abe733a3}{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+O} (self)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a7c7e04722826493088df3b2bed7d62b4}{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+\+O\+\_\+method} (self, \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_1_1foo}{foo}=\hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_1_1foo}{foo})
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_ad05fca5c54fca7d9f3a8cd2306bfaac1}{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+On\+\_\+\+Om\+\_\+method} (self, \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_1_1foo}{foo}=\hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_1_1foo}{foo})
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_abe1facf8eae46690c740c6285de9f1fa}{test\+\_\+python\+\_\+complex\+\_\+conjugate} (self)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_acbaa1a01ab52e5f3bd7206babd5e3a9a}{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+full} (self, ufunc)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a809c17a282711607db54e16bafe02fcb}{np\+\_\+dtypes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Test generic loops.
+
+The loops to be tested are:
+
+    PyUFunc_ff_f_As_dd_d
+    PyUFunc_ff_f
+    PyUFunc_dd_d
+    PyUFunc_gg_g
+    PyUFunc_FF_F_As_DD_D
+    PyUFunc_DD_D
+    PyUFunc_FF_F
+    PyUFunc_GG_G
+    PyUFunc_OO_O
+    PyUFunc_OO_O_method
+    PyUFunc_f_f_As_d_d
+    PyUFunc_d_d
+    PyUFunc_f_f
+    PyUFunc_g_g
+    PyUFunc_F_F_As_D_D
+    PyUFunc_F_F
+    PyUFunc_D_D
+    PyUFunc_G_G
+    PyUFunc_O_O
+    PyUFunc_O_O_method
+    PyUFunc_On_Om
+
+Where:
+
+    f -- float
+    d -- double
+    g -- long double
+    F -- complex float
+    D -- complex double
+    G -- complex long double
+    O -- python object
+
+It is difficult to assure that each of these loops is entered from the
+Python level as the special cased loops are a moving target and the
+corresponding types are architecture dependent. We probably need to
+define C level testing ufuncs to get at them. For the time being, I've
+just looked at the signatures registered in the build directory to find
+relevant functions.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_ab4c7f17e3885d1bab81506ef9fa88076}\label{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_ab4c7f17e3885d1bab81506ef9fa88076}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}!f2@{f2}}
+\index{f2@{f2}!numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}}
+\subsubsection{\texorpdfstring{f2()}{f2()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops.\+f2 (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a01bdf31918b2bba3ce0185e4f3f77893}\label{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a01bdf31918b2bba3ce0185e4f3f77893}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}!test\+\_\+binary\+\_\+\+Py\+U\+Func@{test\+\_\+binary\+\_\+\+Py\+U\+Func}}
+\index{test\+\_\+binary\+\_\+\+Py\+U\+Func@{test\+\_\+binary\+\_\+\+Py\+U\+Func}!numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}}
+\subsubsection{\texorpdfstring{test\+\_\+binary\+\_\+\+Py\+U\+Func()}{test\_binary\_PyUFunc()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops.\+test\+\_\+binary\+\_\+\+Py\+U\+Func (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{input\+\_\+dtype,  }\item[{}]{output\+\_\+dtype,  }\item[{}]{f = {\ttfamily \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_ab4c7f17e3885d1bab81506ef9fa88076}{f2}},  }\item[{}]{x = {\ttfamily 0},  }\item[{}]{y = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_ad05fca5c54fca7d9f3a8cd2306bfaac1}\label{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_ad05fca5c54fca7d9f3a8cd2306bfaac1}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}!test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+On\+\_\+\+Om\+\_\+method@{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+On\+\_\+\+Om\+\_\+method}}
+\index{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+On\+\_\+\+Om\+\_\+method@{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+On\+\_\+\+Om\+\_\+method}!numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}}
+\subsubsection{\texorpdfstring{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+On\+\_\+\+Om\+\_\+method()}{test\_binary\_PyUFunc\_On\_Om\_method()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops.\+test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+On\+\_\+\+Om\+\_\+method (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{foo = {\ttfamily \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_1_1foo}{foo}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a553e8549ae34e7b5e6a3dd48abe733a3}\label{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a553e8549ae34e7b5e6a3dd48abe733a3}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}!test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+O@{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+O}}
+\index{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+O@{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+O}!numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}}
+\subsubsection{\texorpdfstring{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+\+O()}{test\_binary\_PyUFunc\_OO\_O()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops.\+test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+O (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a7c7e04722826493088df3b2bed7d62b4}\label{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a7c7e04722826493088df3b2bed7d62b4}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}!test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+\+O\+\_\+method@{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+\+O\+\_\+method}}
+\index{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+\+O\+\_\+method@{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+\+O\+\_\+method}!numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}}
+\subsubsection{\texorpdfstring{test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+\+O\+\_\+method()}{test\_binary\_PyUFunc\_OO\_O\_method()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops.\+test\+\_\+binary\+\_\+\+Py\+U\+Func\+\_\+\+O\+O\+\_\+\+O\+\_\+method (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{foo = {\ttfamily \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_1_1foo}{foo}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_abe1facf8eae46690c740c6285de9f1fa}\label{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_abe1facf8eae46690c740c6285de9f1fa}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}!test\+\_\+python\+\_\+complex\+\_\+conjugate@{test\+\_\+python\+\_\+complex\+\_\+conjugate}}
+\index{test\+\_\+python\+\_\+complex\+\_\+conjugate@{test\+\_\+python\+\_\+complex\+\_\+conjugate}!numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}}
+\subsubsection{\texorpdfstring{test\+\_\+python\+\_\+complex\+\_\+conjugate()}{test\_python\_complex\_conjugate()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops.\+test\+\_\+python\+\_\+complex\+\_\+conjugate (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a3b48379f0df33c2bb33e0a0770e0934b}\label{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a3b48379f0df33c2bb33e0a0770e0934b}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}!test\+\_\+unary\+\_\+\+Py\+U\+Func@{test\+\_\+unary\+\_\+\+Py\+U\+Func}}
+\index{test\+\_\+unary\+\_\+\+Py\+U\+Func@{test\+\_\+unary\+\_\+\+Py\+U\+Func}!numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}}
+\subsubsection{\texorpdfstring{test\+\_\+unary\+\_\+\+Py\+U\+Func()}{test\_unary\_PyUFunc()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops.\+test\+\_\+unary\+\_\+\+Py\+U\+Func (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{input\+\_\+dtype,  }\item[{}]{output\+\_\+dtype,  }\item[{}]{f = {\ttfamily np.exp},  }\item[{}]{x = {\ttfamily 0},  }\item[{}]{y = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a8e9c0b7bd8f4e73abf010dd2ecd7c5ec}\label{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a8e9c0b7bd8f4e73abf010dd2ecd7c5ec}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}!test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+O@{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+O}}
+\index{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+O@{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+O}!numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}}
+\subsubsection{\texorpdfstring{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O()}{test\_unary\_PyUFunc\_O\_O()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops.\+test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+O (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_acbaa1a01ab52e5f3bd7206babd5e3a9a}\label{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_acbaa1a01ab52e5f3bd7206babd5e3a9a}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}!test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+full@{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+full}}
+\index{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+full@{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+full}!numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}}
+\subsubsection{\texorpdfstring{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+full()}{test\_unary\_PyUFunc\_O\_O\_method\_full()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops.\+test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+full (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ufunc }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compare the result of the object loop with non-object one\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a439efc5901727ff98d2fb9d46699e28a}\label{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a439efc5901727ff98d2fb9d46699e28a}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}!test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+simple@{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+simple}}
+\index{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+simple@{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+simple}!numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}}
+\subsubsection{\texorpdfstring{test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+simple()}{test\_unary\_PyUFunc\_O\_O\_method\_simple()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops.\+test\+\_\+unary\+\_\+\+Py\+U\+Func\+\_\+\+O\+\_\+\+O\+\_\+method\+\_\+simple (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{foo = {\ttfamily \hyperlink{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_1_1foo}{foo}} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a809c17a282711607db54e16bafe02fcb}\label{classnumpy_1_1core_1_1tests_1_1test__ufunc_1_1TestUfuncGenericLoops_a809c17a282711607db54e16bafe02fcb}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}!np\+\_\+dtypes@{np\+\_\+dtypes}}
+\index{np\+\_\+dtypes@{np\+\_\+dtypes}!numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops@{numpy\+::core\+::tests\+::test\+\_\+ufunc\+::\+Test\+Ufunc\+Generic\+Loops}}
+\subsubsection{\texorpdfstring{np\+\_\+dtypes}{np\_dtypes}}
+{\footnotesize\ttfamily numpy.\+core.\+tests.\+test\+\_\+ufunc.\+Test\+Ufunc\+Generic\+Loops.\+np\+\_\+dtypes\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/core/tests/\hyperlink{test__ufunc_8py}{test\+\_\+ufunc.\+py}\end{DoxyCompactItemize}

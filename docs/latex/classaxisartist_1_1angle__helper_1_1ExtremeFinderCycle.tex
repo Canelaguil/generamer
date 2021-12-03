@@ -1,0 +1,118 @@
+\hypertarget{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle}{}\section{axisartist.\+angle\+\_\+helper.\+Extreme\+Finder\+Cycle Class Reference}
+\label{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle}\index{axisartist.\+angle\+\_\+helper.\+Extreme\+Finder\+Cycle@{axisartist.\+angle\+\_\+helper.\+Extreme\+Finder\+Cycle}}
+
+
+Inheritance diagram for axisartist.\+angle\+\_\+helper.\+Extreme\+Finder\+Cycle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for axisartist.\+angle\+\_\+helper.\+Extreme\+Finder\+Cycle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_ae27ee1ae7224f650481d2f7fa2e879a3}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, nx, \hyperlink{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a26592fd68e560cdab11cead304f06c01}{ny}, lon\+\_\+cycle=360., \hyperlink{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a85bd95b92274dc617e5550021b3d84d1}{lat\+\_\+cycle}=None, \hyperlink{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a9007345db124849f201064d5475b156a}{lon\+\_\+minmax}=None, \hyperlink{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a6b90e8baee5b642fb154e1ab499fbfb5}{lat\+\_\+minmax}=(-\/90, 90))
+\item 
+def \hyperlink{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a3c017e0932e1df8c7e3effec0d4045e6}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, transform\+\_\+xy, x1, y1, x2, y2)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a26592fd68e560cdab11cead304f06c01}{ny}
+\item 
+\hyperlink{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a85bd95b92274dc617e5550021b3d84d1}{lat\+\_\+cycle}
+\item 
+\hyperlink{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a9007345db124849f201064d5475b156a}{lon\+\_\+minmax}
+\item 
+\hyperlink{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a6b90e8baee5b642fb154e1ab499fbfb5}{lat\+\_\+minmax}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_ae27ee1ae7224f650481d2f7fa2e879a3}\label{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_ae27ee1ae7224f650481d2f7fa2e879a3}} 
+\index{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle@{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle@{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def axisartist.\+angle\+\_\+helper.\+Extreme\+Finder\+Cycle.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{nx,  }\item[{}]{ny,  }\item[{}]{lon\+\_\+cycle = {\ttfamily 360.},  }\item[{}]{lat\+\_\+cycle = {\ttfamily None},  }\item[{}]{lon\+\_\+minmax = {\ttfamily None},  }\item[{}]{lat\+\_\+minmax = {\ttfamily (-\/90,~90)} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This subclass handles the case where one or both coordinates should be
+taken modulo 360, or be restricted to not exceed a specific range.
+
+Parameters
+----------
+nx, ny : int
+    The number of samples in each direction.
+
+lon_cycle, lat_cycle : 360 or None
+    If not None, values in the corresponding direction are taken modulo
+    *lon_cycle* or *lat_cycle*; in theory this can be any number but
+    the implementation actually assumes that it is 360 (if not None);
+    other values give nonsensical results.
+
+    This is done by "unwrapping" the transformed grid coordinates so
+    that jumps are less than a half-cycle; then normalizing the span to
+    no more than a full cycle.
+
+    For example, if values are in the union of the [0, 2] and
+    [358, 360] intervals (typically, angles measured modulo 360), the
+    values in the second interval are normalized to [-2, 0] instead so
+    that the values now cover [-2, 2].  If values are in a range of
+    [5, 1000], this gets normalized to [5, 365].
+
+lon_minmax, lat_minmax : (float, float) or None
+    If not None, the computed bounding box is clipped to the given
+    range in the corresponding direction.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a3c017e0932e1df8c7e3effec0d4045e6}\label{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a3c017e0932e1df8c7e3effec0d4045e6}} 
+\index{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle@{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle@{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def axisartist.\+angle\+\_\+helper.\+Extreme\+Finder\+Cycle.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{transform\+\_\+xy,  }\item[{}]{x1,  }\item[{}]{y1,  }\item[{}]{x2,  }\item[{}]{y2 }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a85bd95b92274dc617e5550021b3d84d1}\label{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a85bd95b92274dc617e5550021b3d84d1}} 
+\index{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle@{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle}!lat\+\_\+cycle@{lat\+\_\+cycle}}
+\index{lat\+\_\+cycle@{lat\+\_\+cycle}!axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle@{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle}}
+\subsubsection{\texorpdfstring{lat\+\_\+cycle}{lat\_cycle}}
+{\footnotesize\ttfamily axisartist.\+angle\+\_\+helper.\+Extreme\+Finder\+Cycle.\+lat\+\_\+cycle}
+
+\mbox{\Hypertarget{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a6b90e8baee5b642fb154e1ab499fbfb5}\label{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a6b90e8baee5b642fb154e1ab499fbfb5}} 
+\index{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle@{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle}!lat\+\_\+minmax@{lat\+\_\+minmax}}
+\index{lat\+\_\+minmax@{lat\+\_\+minmax}!axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle@{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle}}
+\subsubsection{\texorpdfstring{lat\+\_\+minmax}{lat\_minmax}}
+{\footnotesize\ttfamily axisartist.\+angle\+\_\+helper.\+Extreme\+Finder\+Cycle.\+lat\+\_\+minmax}
+
+\mbox{\Hypertarget{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a9007345db124849f201064d5475b156a}\label{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a9007345db124849f201064d5475b156a}} 
+\index{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle@{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle}!lon\+\_\+minmax@{lon\+\_\+minmax}}
+\index{lon\+\_\+minmax@{lon\+\_\+minmax}!axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle@{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle}}
+\subsubsection{\texorpdfstring{lon\+\_\+minmax}{lon\_minmax}}
+{\footnotesize\ttfamily axisartist.\+angle\+\_\+helper.\+Extreme\+Finder\+Cycle.\+lon\+\_\+minmax}
+
+\mbox{\Hypertarget{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a26592fd68e560cdab11cead304f06c01}\label{classaxisartist_1_1angle__helper_1_1ExtremeFinderCycle_a26592fd68e560cdab11cead304f06c01}} 
+\index{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle@{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle}!ny@{ny}}
+\index{ny@{ny}!axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle@{axisartist\+::angle\+\_\+helper\+::\+Extreme\+Finder\+Cycle}}
+\subsubsection{\texorpdfstring{ny}{ny}}
+{\footnotesize\ttfamily axisartist.\+angle\+\_\+helper.\+Extreme\+Finder\+Cycle.\+ny}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/mpl\+\_\+toolkits/axisartist/\hyperlink{axisartist_2angle__helper_8py}{angle\+\_\+helper.\+py}\end{DoxyCompactItemize}

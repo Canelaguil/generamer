@@ -1,0 +1,161 @@
+\hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk}{}\section{matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk Class Reference}
+\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk}\index{matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk@{matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk}}
+
+
+Inheritance diagram for matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a7afa94dcd10e7282faa36d3e1d35f735}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, canvas, \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_ac2400269fa4ddffda6c46f4fe51737df}{window}, pack\+\_\+toolbar=True)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a17dcbd91364a5ef0da08f2a6485feac5}{pan} (self, args)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a18669b849986fd50482c99f913b49c83}{zoom} (self, args)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a1b1067ccd80632b71396bc23fcf6193c}{set\+\_\+message} (self, s)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a54be92f7ac024ea9da10e49b8eee6529}{draw\+\_\+rubberband} (self, event, x0, y0, x1, y1)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a25a34268e0ccc3af0c0877809a790014}{release\+\_\+zoom} (self, event)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_ad8020a19fe57b9e640f9637e1d44f29e}{set\+\_\+cursor} (self, cursor)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a4d7aa55ecd060d00fa7b06f03e5f53e4}{save\+\_\+figure} (self, args)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a9ca7aaee914f1fd8dc2c2685d65f0bce}{set\+\_\+history\+\_\+buttons} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_ac2400269fa4ddffda6c46f4fe51737df}{window}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_aba48618c61b6958db4bbc0dde14e1e87}{message}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a49e11c736172204cba9ac8bf3f3bb4e0}{mode}
+\item 
+\hyperlink{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_ab38f73f2380b861c0322fd18ca2f12e9}{lastrect}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Attributes
+----------
+canvas : `FigureCanvas`
+    The figure canvas on which to operate.
+win : tk.Window
+    The tk.Window which owns this toolbar.
+pack_toolbar : bool, default: True
+    If True, add the toolbar to the parent's pack manager's packing list
+    during initialization with ``side='bottom'`` and ``fill='x'``.
+    If you want to use the toolbar with a different layout manager, use
+    ``pack_toolbar=False``.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a7afa94dcd10e7282faa36d3e1d35f735}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a7afa94dcd10e7282faa36d3e1d35f735}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{canvas,  }\item[{}]{window,  }\item[{}]{pack\+\_\+toolbar = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a54be92f7ac024ea9da10e49b8eee6529}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a54be92f7ac024ea9da10e49b8eee6529}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!draw\+\_\+rubberband@{draw\+\_\+rubberband}}
+\index{draw\+\_\+rubberband@{draw\+\_\+rubberband}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{draw\+\_\+rubberband()}{draw\_rubberband()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+draw\+\_\+rubberband (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event,  }\item[{}]{x0,  }\item[{}]{y0,  }\item[{}]{x1,  }\item[{}]{y1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a17dcbd91364a5ef0da08f2a6485feac5}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a17dcbd91364a5ef0da08f2a6485feac5}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!pan@{pan}}
+\index{pan@{pan}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{pan()}{pan()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+pan (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a25a34268e0ccc3af0c0877809a790014}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a25a34268e0ccc3af0c0877809a790014}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!release\+\_\+zoom@{release\+\_\+zoom}}
+\index{release\+\_\+zoom@{release\+\_\+zoom}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{release\+\_\+zoom()}{release\_zoom()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+release\+\_\+zoom (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a4d7aa55ecd060d00fa7b06f03e5f53e4}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a4d7aa55ecd060d00fa7b06f03e5f53e4}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!save\+\_\+figure@{save\+\_\+figure}}
+\index{save\+\_\+figure@{save\+\_\+figure}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{save\+\_\+figure()}{save\_figure()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+save\+\_\+figure (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_ad8020a19fe57b9e640f9637e1d44f29e}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_ad8020a19fe57b9e640f9637e1d44f29e}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!set\+\_\+cursor@{set\+\_\+cursor}}
+\index{set\+\_\+cursor@{set\+\_\+cursor}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{set\+\_\+cursor()}{set\_cursor()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+set\+\_\+cursor (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cursor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a9ca7aaee914f1fd8dc2c2685d65f0bce}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a9ca7aaee914f1fd8dc2c2685d65f0bce}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!set\+\_\+history\+\_\+buttons@{set\+\_\+history\+\_\+buttons}}
+\index{set\+\_\+history\+\_\+buttons@{set\+\_\+history\+\_\+buttons}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{set\+\_\+history\+\_\+buttons()}{set\_history\_buttons()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+set\+\_\+history\+\_\+buttons (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a1b1067ccd80632b71396bc23fcf6193c}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a1b1067ccd80632b71396bc23fcf6193c}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!set\+\_\+message@{set\+\_\+message}}
+\index{set\+\_\+message@{set\+\_\+message}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{set\+\_\+message()}{set\_message()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+set\+\_\+message (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a18669b849986fd50482c99f913b49c83}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a18669b849986fd50482c99f913b49c83}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!zoom@{zoom}}
+\index{zoom@{zoom}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{zoom()}{zoom()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+zoom (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_ab38f73f2380b861c0322fd18ca2f12e9}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_ab38f73f2380b861c0322fd18ca2f12e9}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!lastrect@{lastrect}}
+\index{lastrect@{lastrect}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{lastrect}{lastrect}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+lastrect}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_aba48618c61b6958db4bbc0dde14e1e87}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_aba48618c61b6958db4bbc0dde14e1e87}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!message@{message}}
+\index{message@{message}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{message}{message}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+message}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a49e11c736172204cba9ac8bf3f3bb4e0}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_a49e11c736172204cba9ac8bf3f3bb4e0}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!mode@{mode}}
+\index{mode@{mode}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+mode}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_ac2400269fa4ddffda6c46f4fe51737df}\label{classmatplotlib_1_1backends_1_1__backend__tk_1_1NavigationToolbar2Tk_ac2400269fa4ddffda6c46f4fe51737df}} 
+\index{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}!window@{window}}
+\index{window@{window}!matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk@{matplotlib\+::backends\+::\+\_\+backend\+\_\+tk\+::\+Navigation\+Toolbar2\+Tk}}
+\subsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily matplotlib.\+backends.\+\_\+backend\+\_\+tk.\+Navigation\+Toolbar2\+Tk.\+window}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/backends/\hyperlink{__backend__tk_8py}{\+\_\+backend\+\_\+tk.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,79 @@
+\hypertarget{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base}{}\section{matplotlib.\+patches.\+Arrow\+Style.\+\_\+\+Base Class Reference}
+\label{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base}\index{matplotlib.\+patches.\+Arrow\+Style.\+\_\+\+Base@{matplotlib.\+patches.\+Arrow\+Style.\+\_\+\+Base}}
+
+
+Inheritance diagram for matplotlib.\+patches.\+Arrow\+Style.\+\_\+\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base_ae476ccd3f777a9e6f457106ce7ee0de7}{transmute} (self, path, mutation\+\_\+size, linewidth)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base_a11d4ecff5c52fbe88934045e623ad254}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, path, mutation\+\_\+size, linewidth, aspect\+\_\+ratio=1.)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base_a71cf7a38dd76269d0de075449ea799ba}{ensure\+\_\+quadratic\+\_\+bezier} (path)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Arrow Transmuter Base class
+
+ArrowTransmuterBase and its derivatives are used to make a fancy
+arrow around a given path. The __call__ method returns a path
+(which will be used to create a PathPatch instance) and a boolean
+value indicating the path is open therefore is not fillable.  This
+class is not an artist and actual drawing of the fancy arrow is
+done by the FancyArrowPatch class.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base_a11d4ecff5c52fbe88934045e623ad254}\label{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base_a11d4ecff5c52fbe88934045e623ad254}} 
+\index{matplotlib\+::patches\+::\+Arrow\+Style\+::\+\_\+\+Base@{matplotlib\+::patches\+::\+Arrow\+Style\+::\+\_\+\+Base}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::patches\+::\+Arrow\+Style\+::\+\_\+\+Base@{matplotlib\+::patches\+::\+Arrow\+Style\+::\+\_\+\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Arrow\+Style.\+\_\+\+Base.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path,  }\item[{}]{mutation\+\_\+size,  }\item[{}]{linewidth,  }\item[{}]{aspect\+\_\+ratio = {\ttfamily 1.} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The __call__ method is a thin wrapper around the transmute method
+and takes care of the aspect ratio.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base_a71cf7a38dd76269d0de075449ea799ba}\label{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base_a71cf7a38dd76269d0de075449ea799ba}} 
+\index{matplotlib\+::patches\+::\+Arrow\+Style\+::\+\_\+\+Base@{matplotlib\+::patches\+::\+Arrow\+Style\+::\+\_\+\+Base}!ensure\+\_\+quadratic\+\_\+bezier@{ensure\+\_\+quadratic\+\_\+bezier}}
+\index{ensure\+\_\+quadratic\+\_\+bezier@{ensure\+\_\+quadratic\+\_\+bezier}!matplotlib\+::patches\+::\+Arrow\+Style\+::\+\_\+\+Base@{matplotlib\+::patches\+::\+Arrow\+Style\+::\+\_\+\+Base}}
+\subsubsection{\texorpdfstring{ensure\+\_\+quadratic\+\_\+bezier()}{ensure\_quadratic\_bezier()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Arrow\+Style.\+\_\+\+Base.\+ensure\+\_\+quadratic\+\_\+bezier (\begin{DoxyParamCaption}\item[{}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Some ArrowStyle class only works with a simple quadratic Bezier
+curve (created with Arc3Connection or Angle3Connector). This static
+method is to check if the provided path is a simple quadratic
+Bezier curve and returns its control points if true.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base_ae476ccd3f777a9e6f457106ce7ee0de7}\label{classmatplotlib_1_1patches_1_1ArrowStyle_1_1__Base_ae476ccd3f777a9e6f457106ce7ee0de7}} 
+\index{matplotlib\+::patches\+::\+Arrow\+Style\+::\+\_\+\+Base@{matplotlib\+::patches\+::\+Arrow\+Style\+::\+\_\+\+Base}!transmute@{transmute}}
+\index{transmute@{transmute}!matplotlib\+::patches\+::\+Arrow\+Style\+::\+\_\+\+Base@{matplotlib\+::patches\+::\+Arrow\+Style\+::\+\_\+\+Base}}
+\subsubsection{\texorpdfstring{transmute()}{transmute()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Arrow\+Style.\+\_\+\+Base.\+transmute (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path,  }\item[{}]{mutation\+\_\+size,  }\item[{}]{linewidth }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The transmute method is the very core of the ArrowStyle class and
+must be overridden in the subclasses. It receives the path object
+along which the arrow will be drawn, and the mutation_size, with
+which the arrow head etc. will be scaled. The linewidth may be
+used to adjust the path so that it does not pass beyond the given
+points. It returns a tuple of a Path instance and a boolean. The
+boolean value indicate whether the path can be filled or not. The
+return value can also be a list of paths and list of booleans of a
+same length.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{patches_8py}{patches.\+py}\end{DoxyCompactItemize}

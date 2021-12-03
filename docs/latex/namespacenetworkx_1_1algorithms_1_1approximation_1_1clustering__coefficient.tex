@@ -1,0 +1,60 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1clustering__coefficient}{}\section{networkx.\+algorithms.\+approximation.\+clustering\+\_\+coefficient Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1clustering__coefficient}\index{networkx.\+algorithms.\+approximation.\+clustering\+\_\+coefficient@{networkx.\+algorithms.\+approximation.\+clustering\+\_\+coefficient}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1clustering__coefficient_a199cf6917972b6d8aee9830642002586}{average\+\_\+clustering} (G, trials=1000, seed=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1clustering__coefficient_a199cf6917972b6d8aee9830642002586}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1clustering__coefficient_a199cf6917972b6d8aee9830642002586}} 
+\index{networkx\+::algorithms\+::approximation\+::clustering\+\_\+coefficient@{networkx\+::algorithms\+::approximation\+::clustering\+\_\+coefficient}!average\+\_\+clustering@{average\+\_\+clustering}}
+\index{average\+\_\+clustering@{average\+\_\+clustering}!networkx\+::algorithms\+::approximation\+::clustering\+\_\+coefficient@{networkx\+::algorithms\+::approximation\+::clustering\+\_\+coefficient}}
+\subsubsection{\texorpdfstring{average\+\_\+clustering()}{average\_clustering()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+clustering\+\_\+coefficient.\+average\+\_\+clustering (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{trials = {\ttfamily 1000},  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Estimates the average clustering coefficient of G.
+
+The local clustering of each node in `G` is the fraction of triangles
+that actually exist over all possible triangles in its neighborhood.
+The average clustering coefficient of a graph `G` is the mean of
+local clusterings.
+
+This function finds an approximate average clustering coefficient
+for G by repeating `n` times (defined in `trials`) the following
+experiment: choose a node at random, choose two of its neighbors
+at random, and check if they are connected. The approximate
+coefficient is the fraction of triangles found over the number
+of trials [1]_.
+
+Parameters
+----------
+G : NetworkX graph
+
+trials : integer
+    Number of trials to perform (default 1000).
+
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+
+Returns
+-------
+c : float
+    Approximated average clustering coefficient.
+
+Examples
+--------
+>>> from networkx.algorithms import approximation
+>>> G = nx.erdos_renyi_graph(10, 0.2, seed=10)
+>>> approximation.average_clustering(G, trials=1000, seed=10)
+0.214
+
+References
+----------
+.. [1] Schank, Thomas, and Dorothea Wagner. Approximating clustering
+   coefficient and transitivity. Universität Karlsruhe, Fakultät für
+   Informatik, 2004.
+   https://doi.org/10.5445/IR/1000001239\end{DoxyVerb}
+ 

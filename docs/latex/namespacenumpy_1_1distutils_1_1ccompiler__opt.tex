@@ -1,0 +1,61 @@
+\hypertarget{namespacenumpy_1_1distutils_1_1ccompiler__opt}{}\section{numpy.\+distutils.\+ccompiler\+\_\+opt Namespace Reference}
+\label{namespacenumpy_1_1distutils_1_1ccompiler__opt}\index{numpy.\+distutils.\+ccompiler\+\_\+opt@{numpy.\+distutils.\+ccompiler\+\_\+opt}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache}{\+\_\+\+Cache}
+\item 
+class \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__CCompiler}{\+\_\+\+C\+Compiler}
+\item 
+class \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config}{\+\_\+\+Config}
+\item 
+class \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils}{\+\_\+\+Distutils}
+\item 
+class \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature}{\+\_\+\+Feature}
+\item 
+class \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse}{\+\_\+\+Parse}
+\item 
+class \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt}{C\+Compiler\+Opt}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1distutils_1_1ccompiler__opt_a0024a946b633d7b74ad51236f7f49569}{new\+\_\+ccompiler\+\_\+opt} (compiler, dispatch\+\_\+hpath, kwargs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Provides the `CCompilerOpt` class, used for handling the CPU/hardware
+optimization, starting from parsing the command arguments, to managing the
+relation between the CPU baseline and dispatch-able features,
+also generating the required C headers and ending with compiling
+the sources with proper compiler's flags.
+
+`CCompilerOpt` doesn't provide runtime detection for the CPU features,
+instead only focuses on the compiler side, but it creates abstract C headers
+that can be used later for the final runtime dispatching process.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1ccompiler__opt_a0024a946b633d7b74ad51236f7f49569}\label{namespacenumpy_1_1distutils_1_1ccompiler__opt_a0024a946b633d7b74ad51236f7f49569}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt@{numpy\+::distutils\+::ccompiler\+\_\+opt}!new\+\_\+ccompiler\+\_\+opt@{new\+\_\+ccompiler\+\_\+opt}}
+\index{new\+\_\+ccompiler\+\_\+opt@{new\+\_\+ccompiler\+\_\+opt}!numpy\+::distutils\+::ccompiler\+\_\+opt@{numpy\+::distutils\+::ccompiler\+\_\+opt}}
+\subsubsection{\texorpdfstring{new\+\_\+ccompiler\+\_\+opt()}{new\_ccompiler\_opt()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+new\+\_\+ccompiler\+\_\+opt (\begin{DoxyParamCaption}\item[{}]{compiler,  }\item[{}]{dispatch\+\_\+hpath,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new instance of 'CCompilerOpt' and generate the dispatch header
+which contains the #definitions and headers of platform-specific instruction-sets for
+the enabled CPU baseline and dispatch-able features.
+
+Parameters
+----------
+compiler : CCompiler instance
+dispatch_hpath : str
+    path of the dispatch header
+
+**kwargs: passed as-is to `CCompilerOpt(...)`
+Returns
+-------
+new instance of CCompilerOpt
+\end{DoxyVerb}
+ 

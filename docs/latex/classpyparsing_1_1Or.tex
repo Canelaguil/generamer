@@ -1,0 +1,134 @@
+\hypertarget{classpyparsing_1_1Or}{}\section{pyparsing.\+Or Class Reference}
+\label{classpyparsing_1_1Or}\index{pyparsing.\+Or@{pyparsing.\+Or}}
+
+
+Inheritance diagram for pyparsing.\+Or\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classpyparsing_1_1Or__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pyparsing.\+Or\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classpyparsing_1_1Or__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpyparsing_1_1Or_a6cd23cffb3f65b69c5b3ce51e7f1919f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpyparsing_1_1ParseExpression_a18a085fff96b65ee97761c3bf27d3675}{exprs}, savelist=False)
+\item 
+def \hyperlink{classpyparsing_1_1Or_a933e95b02f43d742d475edc1e0e25cfd}{streamline} (self)
+\item 
+def \hyperlink{classpyparsing_1_1Or_a7085f759a9ab87fbc509053abd465ed2}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\item 
+def \hyperlink{classpyparsing_1_1Or_a9c84836a3a0b451893d4ffa5989caeaa}{\+\_\+\+\_\+ixor\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classpyparsing_1_1Or_a8717ef90cb745d353c1b745d3706e0fd}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpyparsing_1_1Or_ac9088225b281200d39d49118b0a0ab54}{check\+Recursion} (self, parse\+Element\+List)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpyparsing_1_1Or_a4f703a6a209f8308c55ca5070309bf40}{may\+Return\+Empty}
+\item 
+\hyperlink{classpyparsing_1_1Or_adbf4f1a3c56f5d74365edbbe89ce40d3}{save\+As\+List}
+\item 
+\hyperlink{classpyparsing_1_1Or_af37830587dcd6e29c614ec72f5500177}{str\+Repr}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Requires that at least one :class:`ParseExpression` is found. If
+two expressions match, the expression that matches the longest
+string will be used. May be constructed using the ``'^'``
+operator.
+
+Example::
+
+    # construct Or using '^' operator
+
+    number = Word(nums) ^ Combine(Word(nums) + '.' + Word(nums))
+    print(number.searchString("123 3.1416 789"))
+
+prints::
+
+    [['123'], ['3.1416'], ['789']]
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Or_a6cd23cffb3f65b69c5b3ce51e7f1919f}\label{classpyparsing_1_1Or_a6cd23cffb3f65b69c5b3ce51e7f1919f}} 
+\index{pyparsing\+::\+Or@{pyparsing\+::\+Or}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pyparsing\+::\+Or@{pyparsing\+::\+Or}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Or.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{exprs,  }\item[{}]{savelist = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Or_a9c84836a3a0b451893d4ffa5989caeaa}\label{classpyparsing_1_1Or_a9c84836a3a0b451893d4ffa5989caeaa}} 
+\index{pyparsing\+::\+Or@{pyparsing\+::\+Or}!\+\_\+\+\_\+ixor\+\_\+\+\_\+@{\+\_\+\+\_\+ixor\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+ixor\+\_\+\+\_\+@{\+\_\+\+\_\+ixor\+\_\+\+\_\+}!pyparsing\+::\+Or@{pyparsing\+::\+Or}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+ixor\+\_\+\+\_\+()}{\_\_ixor\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Or.\+\_\+\+\_\+ixor\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpyparsing_1_1Or_a8717ef90cb745d353c1b745d3706e0fd}\label{classpyparsing_1_1Or_a8717ef90cb745d353c1b745d3706e0fd}} 
+\index{pyparsing\+::\+Or@{pyparsing\+::\+Or}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!pyparsing\+::\+Or@{pyparsing\+::\+Or}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Or.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpyparsing_1_1Or_ac9088225b281200d39d49118b0a0ab54}\label{classpyparsing_1_1Or_ac9088225b281200d39d49118b0a0ab54}} 
+\index{pyparsing\+::\+Or@{pyparsing\+::\+Or}!check\+Recursion@{check\+Recursion}}
+\index{check\+Recursion@{check\+Recursion}!pyparsing\+::\+Or@{pyparsing\+::\+Or}}
+\subsubsection{\texorpdfstring{check\+Recursion()}{checkRecursion()}}
+{\footnotesize\ttfamily def pyparsing.\+Or.\+check\+Recursion (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{parse\+Element\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpyparsing_1_1Or_a7085f759a9ab87fbc509053abd465ed2}\label{classpyparsing_1_1Or_a7085f759a9ab87fbc509053abd465ed2}} 
+\index{pyparsing\+::\+Or@{pyparsing\+::\+Or}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pyparsing\+::\+Or@{pyparsing\+::\+Or}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pyparsing.\+Or.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpyparsing_1_1Or_a933e95b02f43d742d475edc1e0e25cfd}\label{classpyparsing_1_1Or_a933e95b02f43d742d475edc1e0e25cfd}} 
+\index{pyparsing\+::\+Or@{pyparsing\+::\+Or}!streamline@{streamline}}
+\index{streamline@{streamline}!pyparsing\+::\+Or@{pyparsing\+::\+Or}}
+\subsubsection{\texorpdfstring{streamline()}{streamline()}}
+{\footnotesize\ttfamily def pyparsing.\+Or.\+streamline (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Or_a4f703a6a209f8308c55ca5070309bf40}\label{classpyparsing_1_1Or_a4f703a6a209f8308c55ca5070309bf40}} 
+\index{pyparsing\+::\+Or@{pyparsing\+::\+Or}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!pyparsing\+::\+Or@{pyparsing\+::\+Or}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily pyparsing.\+Or.\+may\+Return\+Empty}
+
+\mbox{\Hypertarget{classpyparsing_1_1Or_adbf4f1a3c56f5d74365edbbe89ce40d3}\label{classpyparsing_1_1Or_adbf4f1a3c56f5d74365edbbe89ce40d3}} 
+\index{pyparsing\+::\+Or@{pyparsing\+::\+Or}!save\+As\+List@{save\+As\+List}}
+\index{save\+As\+List@{save\+As\+List}!pyparsing\+::\+Or@{pyparsing\+::\+Or}}
+\subsubsection{\texorpdfstring{save\+As\+List}{saveAsList}}
+{\footnotesize\ttfamily pyparsing.\+Or.\+save\+As\+List}
+
+\mbox{\Hypertarget{classpyparsing_1_1Or_af37830587dcd6e29c614ec72f5500177}\label{classpyparsing_1_1Or_af37830587dcd6e29c614ec72f5500177}} 
+\index{pyparsing\+::\+Or@{pyparsing\+::\+Or}!str\+Repr@{str\+Repr}}
+\index{str\+Repr@{str\+Repr}!pyparsing\+::\+Or@{pyparsing\+::\+Or}}
+\subsubsection{\texorpdfstring{str\+Repr}{strRepr}}
+{\footnotesize\ttfamily pyparsing.\+Or.\+str\+Repr}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\hyperlink{pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

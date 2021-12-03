@@ -1,0 +1,152 @@
+\hypertarget{classmatplotlib_1_1scale_1_1LogScale}{}\section{matplotlib.\+scale.\+Log\+Scale Class Reference}
+\label{classmatplotlib_1_1scale_1_1LogScale}\index{matplotlib.\+scale.\+Log\+Scale@{matplotlib.\+scale.\+Log\+Scale}}
+
+
+Inheritance diagram for matplotlib.\+scale.\+Log\+Scale\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classmatplotlib_1_1scale_1_1LogScale__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+scale.\+Log\+Scale\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classmatplotlib_1_1scale_1_1LogScale__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1LogScale_a5994bbe37b47db237e3518eab9f396bb}{Log\+Transform} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1LogScale_a18b84bbc3e4693ac3264c0e6a80d27cb}{Inverted\+Log\+Transform} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1LogScale_a002cc58f3b849415280acc91715748e8}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, axis, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1LogScale_afc05cda9c038f9ac57985d9904b5844c}{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters} (self, axis)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1LogScale_ad2c46e6c35a5f95d07d3beaa767767b2}{get\+\_\+transform} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1LogScale_a404bb8d2c35a58536ef53bc5c271e5be}{limit\+\_\+range\+\_\+for\+\_\+scale} (self, vmin, vmax, minpos)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1LogScale_acda0fd8f8118b1168b2729d21031e5d5}{subs}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1LogScale_ae93d03020c9ebc4e8d3e48c76462f26f}{name}
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1LogScale_a2b20df1e27110220677bd06798ea875b}{alternative}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1LogScale_a9aaf08f762a334b88c0d03ae90cc92f6}{base} = property(lambda self\+: self.\+\_\+transform.\+base)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A standard logarithmic scale.  Care is taken to only plot positive values.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogScale_a002cc58f3b849415280acc91715748e8}\label{classmatplotlib_1_1scale_1_1LogScale_a002cc58f3b849415280acc91715748e8}} 
+\index{matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Log\+Scale.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{axis,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+axis : `~matplotlib.axis.Axis`
+    The axis for the scale.
+base : float, default: 10
+    The base of the logarithm.
+nonpositive : {'clip', 'mask'}, default: 'clip'
+    Determines the behavior for non-positive values. They can either
+    be masked as invalid, or clipped to a very small positive number.
+subs : sequence of int, default: None
+    Where to place the subticks between each major tick.  For example,
+    in a log10 scale, ``[2, 3, 4, 5, 6, 7, 8, 9]`` will place 8
+    logarithmically spaced minor ticks between each major tick.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogScale_ad2c46e6c35a5f95d07d3beaa767767b2}\label{classmatplotlib_1_1scale_1_1LogScale_ad2c46e6c35a5f95d07d3beaa767767b2}} 
+\index{matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}!get\+\_\+transform@{get\+\_\+transform}}
+\index{get\+\_\+transform@{get\+\_\+transform}!matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}}
+\subsubsection{\texorpdfstring{get\+\_\+transform()}{get\_transform()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Log\+Scale.\+get\+\_\+transform (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the `.LogTransform` associated with this scale.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogScale_a18b84bbc3e4693ac3264c0e6a80d27cb}\label{classmatplotlib_1_1scale_1_1LogScale_a18b84bbc3e4693ac3264c0e6a80d27cb}} 
+\index{matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}!Inverted\+Log\+Transform@{Inverted\+Log\+Transform}}
+\index{Inverted\+Log\+Transform@{Inverted\+Log\+Transform}!matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}}
+\subsubsection{\texorpdfstring{Inverted\+Log\+Transform()}{InvertedLogTransform()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Log\+Scale.\+Inverted\+Log\+Transform (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogScale_a404bb8d2c35a58536ef53bc5c271e5be}\label{classmatplotlib_1_1scale_1_1LogScale_a404bb8d2c35a58536ef53bc5c271e5be}} 
+\index{matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}!limit\+\_\+range\+\_\+for\+\_\+scale@{limit\+\_\+range\+\_\+for\+\_\+scale}}
+\index{limit\+\_\+range\+\_\+for\+\_\+scale@{limit\+\_\+range\+\_\+for\+\_\+scale}!matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}}
+\subsubsection{\texorpdfstring{limit\+\_\+range\+\_\+for\+\_\+scale()}{limit\_range\_for\_scale()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Log\+Scale.\+limit\+\_\+range\+\_\+for\+\_\+scale (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax,  }\item[{}]{minpos }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Limit the domain to positive values.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogScale_a5994bbe37b47db237e3518eab9f396bb}\label{classmatplotlib_1_1scale_1_1LogScale_a5994bbe37b47db237e3518eab9f396bb}} 
+\index{matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}!Log\+Transform@{Log\+Transform}}
+\index{Log\+Transform@{Log\+Transform}!matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}}
+\subsubsection{\texorpdfstring{Log\+Transform()}{LogTransform()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Log\+Scale.\+Log\+Transform (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogScale_afc05cda9c038f9ac57985d9904b5844c}\label{classmatplotlib_1_1scale_1_1LogScale_afc05cda9c038f9ac57985d9904b5844c}} 
+\index{matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}!set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters@{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters}}
+\index{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters@{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters}!matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}}
+\subsubsection{\texorpdfstring{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters()}{set\_default\_locators\_and\_formatters()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Log\+Scale.\+set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{axis }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogScale_a2b20df1e27110220677bd06798ea875b}\label{classmatplotlib_1_1scale_1_1LogScale_a2b20df1e27110220677bd06798ea875b}} 
+\index{matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}!alternative@{alternative}}
+\index{alternative@{alternative}!matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}}
+\subsubsection{\texorpdfstring{alternative}{alternative}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Log\+Scale.\+alternative\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogScale_ae93d03020c9ebc4e8d3e48c76462f26f}\label{classmatplotlib_1_1scale_1_1LogScale_ae93d03020c9ebc4e8d3e48c76462f26f}} 
+\index{matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}!name@{name}}
+\index{name@{name}!matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Log\+Scale.\+name\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogScale_acda0fd8f8118b1168b2729d21031e5d5}\label{classmatplotlib_1_1scale_1_1LogScale_acda0fd8f8118b1168b2729d21031e5d5}} 
+\index{matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}!subs@{subs}}
+\index{subs@{subs}!matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}}
+\subsubsection{\texorpdfstring{subs}{subs}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Log\+Scale.\+subs}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogScale_a9aaf08f762a334b88c0d03ae90cc92f6}\label{classmatplotlib_1_1scale_1_1LogScale_a9aaf08f762a334b88c0d03ae90cc92f6}} 
+\index{matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}!base@{base}}
+\index{base@{base}!matplotlib\+::scale\+::\+Log\+Scale@{matplotlib\+::scale\+::\+Log\+Scale}}
+\subsubsection{\texorpdfstring{base}{base}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Log\+Scale.\+base = property(lambda self\+: self.\+\_\+transform.\+base)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{scale_8py}{scale.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,227 @@
+\hypertarget{namespaceaxisartist_1_1axis__artist}{}\section{axisartist.\+axis\+\_\+artist Namespace Reference}
+\label{namespaceaxisartist_1_1axis__artist}\index{axisartist.\+axis\+\_\+artist@{axisartist.\+axis\+\_\+artist}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classaxisartist_1_1axis__artist_1_1AttributeCopier}{Attribute\+Copier}
+\item 
+class \hyperlink{classaxisartist_1_1axis__artist_1_1AxisArtist}{Axis\+Artist}
+\item 
+class \hyperlink{classaxisartist_1_1axis__artist_1_1AxisLabel}{Axis\+Label}
+\item 
+class \hyperlink{classaxisartist_1_1axis__artist_1_1GridlinesCollection}{Gridlines\+Collection}
+\item 
+class \hyperlink{classaxisartist_1_1axis__artist_1_1LabelBase}{Label\+Base}
+\item 
+class \hyperlink{classaxisartist_1_1axis__artist_1_1TickLabels}{Tick\+Labels}
+\item 
+class \hyperlink{classaxisartist_1_1axis__artist_1_1Ticks}{Ticks}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceaxisartist_1_1axis__artist_a1e2971fc727b631279986c595e3bc496}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, axis\+\_\+direction=\char`\"{}bottom\char`\"{}, kwargs)
+\item 
+def \hyperlink{namespaceaxisartist_1_1axis__artist_a1740504eeff89a936875b4afc3877d80}{get\+\_\+ref\+\_\+artist} (self)
+\item 
+def \hyperlink{namespaceaxisartist_1_1axis__artist_aeb95e617b6b9d1470337ba529bc8f297}{set\+\_\+axis\+\_\+direction} (self, label\+\_\+direction)
+\item 
+def \hyperlink{namespaceaxisartist_1_1axis__artist_a51baf8d8c240bcffcaee93cf40f9e477}{invert\+\_\+axis\+\_\+direction} (self)
+\item 
+def \hyperlink{namespaceaxisartist_1_1axis__artist_ab4988671b9cff3610746758c6d74ffb0}{draw} (self, renderer)
+\item 
+def \hyperlink{namespaceaxisartist_1_1axis__artist_ad360dcaf18e33e925cb4653b00eab87a}{set\+\_\+locs\+\_\+angles\+\_\+labels} (self, locs\+\_\+angles\+\_\+labels)
+\item 
+def \hyperlink{namespaceaxisartist_1_1axis__artist_a47cb2fd071c18e898be29e8401f2d769}{get\+\_\+window\+\_\+extents} (self, renderer)
+\item 
+def \hyperlink{namespaceaxisartist_1_1axis__artist_a69d406f2ae1e537923cbb64749917bd6}{get\+\_\+texts\+\_\+widths\+\_\+heights\+\_\+descents} (self, renderer)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceaxisartist_1_1axis__artist_a313e15c7c0768e51a3ebd9ba1566047d}{left}
+\item 
+\hyperlink{namespaceaxisartist_1_1axis__artist_a5cda7b060b692c648a111743ac8e6659}{right}
+\item 
+\hyperlink{namespaceaxisartist_1_1axis__artist_ac0c8e3afc2b40cfbdff4ca573a6b0eac}{bottom}
+\item 
+\hyperlink{namespaceaxisartist_1_1axis__artist_abfcebdad0e09f8158552cce47fbebdfe}{top}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The :mod:`.axis_artist` module implements custom artists to draw axis elements
+(axis lines and labels, tick lines and labels, grid lines).
+
+Axis lines and labels and tick lines and labels are managed by the `AxisArtist`
+class; grid lines are managed by the `GridlinesCollection` class.
+
+There is one `AxisArtist` per Axis; it can be accessed through
+the ``axis`` dictionary of the parent Axes (which should be a
+`mpl_toolkits.axislines.Axes`), e.g. ``ax.axis["bottom"]``.
+
+Children of the AxisArtist are accessed as attributes: ``.line`` and ``.label``
+for the axis line and label, ``.major_ticks``, ``.major_ticklabels``,
+``.minor_ticks``, ``.minor_ticklabels`` for the tick lines and labels (e.g.
+``ax.axis["bottom"].line``).
+
+Children properties (colors, fonts, line widths, etc.) can be set using
+setters, e.g. ::
+
+  # Make the major ticks of the bottom axis red.
+  ax.axis["bottom"].major_ticks.set_color("red")
+
+However, things like the locations of ticks, and their ticklabels need to be
+changed from the side of the grid_helper.
+
+axis_direction
+--------------
+
+`AxisArtist`, `AxisLabel`, `TickLabels` have an *axis_direction* attribute,
+which adjusts the location, angle, etc. The *axis_direction* must be one of
+"left", "right", "bottom", "top", and follows the Matplotlib convention for
+rectangular axis.
+
+For example, for the *bottom* axis (the left and right is relative to the
+direction of the increasing coordinate),
+
+* ticklabels and axislabel are on the right
+* ticklabels and axislabel have text angle of 0
+* ticklabels are baseline, center-aligned
+* axislabel is top, center-aligned
+
+The text angles are actually relative to (90 + angle of the direction to the
+ticklabel), which gives 0 for bottom axis.
+
+=================== ====== ======== ====== ========
+Parameter           left   bottom   right  top
+=================== ====== ======== ====== ========
+ticklabels location left   right    right  left
+axislabel location  left   right    right  left
+ticklabels angle    90     0        -90    180
+axislabel angle     180    0        0      180
+ticklabel va        center baseline center baseline
+axislabel va        center top      center bottom
+ticklabel ha        right  center   right  center
+axislabel ha        right  center   right  center
+=================== ====== ======== ====== ========
+
+Ticks are by default direct opposite side of the ticklabels. To make ticks to
+the same side of the ticklabels, ::
+
+  ax.axis["bottom"].major_ticks.set_tick_out(True)
+
+The following attributes can be customized (use the ``set_xxx`` methods):
+
+* `Ticks`: ticksize, tick_out
+* `TickLabels`: pad
+* `AxisLabel`: pad
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceaxisartist_1_1axis__artist_a1e2971fc727b631279986c595e3bc496}\label{namespaceaxisartist_1_1axis__artist_a1e2971fc727b631279986c595e3bc496}} 
+\index{axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def axisartist.\+axis\+\_\+artist.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{axis\+\_\+direction = {\ttfamily \char`\"{}bottom\char`\"{}},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tick Labels. While derived from Text, this single artist draws all
+ticklabels. As in AxisLabel, the position of the text is updated
+in the fly, so changing text position has no effect. Otherwise,
+the properties can be changed as a normal Text. Unlike the
+ticklabels of the mainline matplotlib, properties of single
+ticklabel alone cannot modified.
+
+To change the pad between ticks and ticklabels, use set_pad.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceaxisartist_1_1axis__artist_ab4988671b9cff3610746758c6d74ffb0}\label{namespaceaxisartist_1_1axis__artist_ab4988671b9cff3610746758c6d74ffb0}} 
+\index{axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}!draw@{draw}}
+\index{draw@{draw}!axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily def axisartist.\+axis\+\_\+artist.\+draw (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceaxisartist_1_1axis__artist_a1740504eeff89a936875b4afc3877d80}\label{namespaceaxisartist_1_1axis__artist_a1740504eeff89a936875b4afc3877d80}} 
+\index{axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}!get\+\_\+ref\+\_\+artist@{get\+\_\+ref\+\_\+artist}}
+\index{get\+\_\+ref\+\_\+artist@{get\+\_\+ref\+\_\+artist}!axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}}
+\subsubsection{\texorpdfstring{get\+\_\+ref\+\_\+artist()}{get\_ref\_artist()}}
+{\footnotesize\ttfamily def axisartist.\+axis\+\_\+artist.\+get\+\_\+ref\+\_\+artist (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceaxisartist_1_1axis__artist_a69d406f2ae1e537923cbb64749917bd6}\label{namespaceaxisartist_1_1axis__artist_a69d406f2ae1e537923cbb64749917bd6}} 
+\index{axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}!get\+\_\+texts\+\_\+widths\+\_\+heights\+\_\+descents@{get\+\_\+texts\+\_\+widths\+\_\+heights\+\_\+descents}}
+\index{get\+\_\+texts\+\_\+widths\+\_\+heights\+\_\+descents@{get\+\_\+texts\+\_\+widths\+\_\+heights\+\_\+descents}!axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}}
+\subsubsection{\texorpdfstring{get\+\_\+texts\+\_\+widths\+\_\+heights\+\_\+descents()}{get\_texts\_widths\_heights\_descents()}}
+{\footnotesize\ttfamily def axisartist.\+axis\+\_\+artist.\+get\+\_\+texts\+\_\+widths\+\_\+heights\+\_\+descents (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of ``(width, height, descent)`` tuples for ticklabels.
+
+Empty labels are left out.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceaxisartist_1_1axis__artist_a47cb2fd071c18e898be29e8401f2d769}\label{namespaceaxisartist_1_1axis__artist_a47cb2fd071c18e898be29e8401f2d769}} 
+\index{axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}!get\+\_\+window\+\_\+extents@{get\+\_\+window\+\_\+extents}}
+\index{get\+\_\+window\+\_\+extents@{get\+\_\+window\+\_\+extents}!axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}}
+\subsubsection{\texorpdfstring{get\+\_\+window\+\_\+extents()}{get\_window\_extents()}}
+{\footnotesize\ttfamily def axisartist.\+axis\+\_\+artist.\+get\+\_\+window\+\_\+extents (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceaxisartist_1_1axis__artist_a51baf8d8c240bcffcaee93cf40f9e477}\label{namespaceaxisartist_1_1axis__artist_a51baf8d8c240bcffcaee93cf40f9e477}} 
+\index{axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}!invert\+\_\+axis\+\_\+direction@{invert\+\_\+axis\+\_\+direction}}
+\index{invert\+\_\+axis\+\_\+direction@{invert\+\_\+axis\+\_\+direction}!axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}}
+\subsubsection{\texorpdfstring{invert\+\_\+axis\+\_\+direction()}{invert\_axis\_direction()}}
+{\footnotesize\ttfamily def axisartist.\+axis\+\_\+artist.\+invert\+\_\+axis\+\_\+direction (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceaxisartist_1_1axis__artist_aeb95e617b6b9d1470337ba529bc8f297}\label{namespaceaxisartist_1_1axis__artist_aeb95e617b6b9d1470337ba529bc8f297}} 
+\index{axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}!set\+\_\+axis\+\_\+direction@{set\+\_\+axis\+\_\+direction}}
+\index{set\+\_\+axis\+\_\+direction@{set\+\_\+axis\+\_\+direction}!axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}}
+\subsubsection{\texorpdfstring{set\+\_\+axis\+\_\+direction()}{set\_axis\_direction()}}
+{\footnotesize\ttfamily def axisartist.\+axis\+\_\+artist.\+set\+\_\+axis\+\_\+direction (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{label\+\_\+direction }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adjust the text angle and text alignment of ticklabels
+according to the matplotlib convention.
+
+The *label_direction* must be one of [left, right, bottom, top].
+
+=====================    ========== ========= ========== ==========
+property                 left       bottom    right      top
+=====================    ========== ========= ========== ==========
+ticklabels angle         90         0         -90        180
+ticklabel va             center     baseline  center     baseline
+ticklabel ha             right      center    right      center
+=====================    ========== ========= ========== ==========
+
+Note that the text angles are actually relative to (90 + angle
+of the direction to the ticklabel), which gives 0 for bottom
+axis.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceaxisartist_1_1axis__artist_ad360dcaf18e33e925cb4653b00eab87a}\label{namespaceaxisartist_1_1axis__artist_ad360dcaf18e33e925cb4653b00eab87a}} 
+\index{axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}!set\+\_\+locs\+\_\+angles\+\_\+labels@{set\+\_\+locs\+\_\+angles\+\_\+labels}}
+\index{set\+\_\+locs\+\_\+angles\+\_\+labels@{set\+\_\+locs\+\_\+angles\+\_\+labels}!axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}}
+\subsubsection{\texorpdfstring{set\+\_\+locs\+\_\+angles\+\_\+labels()}{set\_locs\_angles\_labels()}}
+{\footnotesize\ttfamily def axisartist.\+axis\+\_\+artist.\+set\+\_\+locs\+\_\+angles\+\_\+labels (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{locs\+\_\+angles\+\_\+labels }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceaxisartist_1_1axis__artist_ac0c8e3afc2b40cfbdff4ca573a6b0eac}\label{namespaceaxisartist_1_1axis__artist_ac0c8e3afc2b40cfbdff4ca573a6b0eac}} 
+\index{axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}!bottom@{bottom}}
+\index{bottom@{bottom}!axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}}
+\subsubsection{\texorpdfstring{bottom}{bottom}}
+{\footnotesize\ttfamily axisartist.\+axis\+\_\+artist.\+bottom}
+
+\mbox{\Hypertarget{namespaceaxisartist_1_1axis__artist_a313e15c7c0768e51a3ebd9ba1566047d}\label{namespaceaxisartist_1_1axis__artist_a313e15c7c0768e51a3ebd9ba1566047d}} 
+\index{axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}!left@{left}}
+\index{left@{left}!axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}}
+\subsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily axisartist.\+axis\+\_\+artist.\+left}
+
+\mbox{\Hypertarget{namespaceaxisartist_1_1axis__artist_a5cda7b060b692c648a111743ac8e6659}\label{namespaceaxisartist_1_1axis__artist_a5cda7b060b692c648a111743ac8e6659}} 
+\index{axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}!right@{right}}
+\index{right@{right}!axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}}
+\subsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily axisartist.\+axis\+\_\+artist.\+right}
+
+\mbox{\Hypertarget{namespaceaxisartist_1_1axis__artist_abfcebdad0e09f8158552cce47fbebdfe}\label{namespaceaxisartist_1_1axis__artist_abfcebdad0e09f8158552cce47fbebdfe}} 
+\index{axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}!top@{top}}
+\index{top@{top}!axisartist\+::axis\+\_\+artist@{axisartist\+::axis\+\_\+artist}}
+\subsubsection{\texorpdfstring{top}{top}}
+{\footnotesize\ttfamily axisartist.\+axis\+\_\+artist.\+top}
+

@@ -1,0 +1,72 @@
+\hypertarget{namespacepip_1_1__vendor_1_1requests_1_1sessions}{}\section{pip.\+\_\+vendor.\+requests.\+sessions Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1requests_1_1sessions}\index{pip.\+\_\+vendor.\+requests.\+sessions@{pip.\+\_\+vendor.\+requests.\+sessions}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1requests_1_1sessions_1_1Session}{Session}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1requests_1_1sessions_1_1SessionRedirectMixin}{Session\+Redirect\+Mixin}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1requests_1_1sessions_a4f29ff9c970b63962ea01301a9b406e4}{merge\+\_\+setting} (request\+\_\+setting, session\+\_\+setting, dict\+\_\+class=Ordered\+Dict)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1requests_1_1sessions_ad4b4950ea137a1727b4b84551756171a}{merge\+\_\+hooks} (request\+\_\+hooks, session\+\_\+hooks, dict\+\_\+class=Ordered\+Dict)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1requests_1_1sessions_acc89a2821821ae3e690b07883d088881}{session} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1requests_1_1sessions_a0618d2af0b89575673584b3f3a7ec0c4}{preferred\+\_\+clock}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1requests_1_1sessions_ad4b4950ea137a1727b4b84551756171a}\label{namespacepip_1_1__vendor_1_1requests_1_1sessions_ad4b4950ea137a1727b4b84551756171a}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::sessions@{pip\+::\+\_\+vendor\+::requests\+::sessions}!merge\+\_\+hooks@{merge\+\_\+hooks}}
+\index{merge\+\_\+hooks@{merge\+\_\+hooks}!pip\+::\+\_\+vendor\+::requests\+::sessions@{pip\+::\+\_\+vendor\+::requests\+::sessions}}
+\subsubsection{\texorpdfstring{merge\+\_\+hooks()}{merge\_hooks()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+sessions.\+merge\+\_\+hooks (\begin{DoxyParamCaption}\item[{}]{request\+\_\+hooks,  }\item[{}]{session\+\_\+hooks,  }\item[{}]{dict\+\_\+class = {\ttfamily OrderedDict} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Properly merges both requests and session hooks.
+
+This is necessary because when request_hooks == {'response': []}, the
+merge breaks Session hooks entirely.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1requests_1_1sessions_a4f29ff9c970b63962ea01301a9b406e4}\label{namespacepip_1_1__vendor_1_1requests_1_1sessions_a4f29ff9c970b63962ea01301a9b406e4}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::sessions@{pip\+::\+\_\+vendor\+::requests\+::sessions}!merge\+\_\+setting@{merge\+\_\+setting}}
+\index{merge\+\_\+setting@{merge\+\_\+setting}!pip\+::\+\_\+vendor\+::requests\+::sessions@{pip\+::\+\_\+vendor\+::requests\+::sessions}}
+\subsubsection{\texorpdfstring{merge\+\_\+setting()}{merge\_setting()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+sessions.\+merge\+\_\+setting (\begin{DoxyParamCaption}\item[{}]{request\+\_\+setting,  }\item[{}]{session\+\_\+setting,  }\item[{}]{dict\+\_\+class = {\ttfamily OrderedDict} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determines appropriate setting for a given request, taking into account
+the explicit setting on that request, and the setting in the session. If a
+setting is a dictionary, they will be merged together using `dict_class`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1requests_1_1sessions_acc89a2821821ae3e690b07883d088881}\label{namespacepip_1_1__vendor_1_1requests_1_1sessions_acc89a2821821ae3e690b07883d088881}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::sessions@{pip\+::\+\_\+vendor\+::requests\+::sessions}!session@{session}}
+\index{session@{session}!pip\+::\+\_\+vendor\+::requests\+::sessions@{pip\+::\+\_\+vendor\+::requests\+::sessions}}
+\subsubsection{\texorpdfstring{session()}{session()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+sessions.\+session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a :class:`Session` for context-management.
+
+.. deprecated:: 1.0.0
+
+    This method has been deprecated since version 1.0.0 and is only kept for
+    backwards compatibility. New code should use :class:`~requests.sessions.Session`
+    to create a session. This may be removed at a future date.
+
+:rtype: Session
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1requests_1_1sessions_a0618d2af0b89575673584b3f3a7ec0c4}\label{namespacepip_1_1__vendor_1_1requests_1_1sessions_a0618d2af0b89575673584b3f3a7ec0c4}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::sessions@{pip\+::\+\_\+vendor\+::requests\+::sessions}!preferred\+\_\+clock@{preferred\+\_\+clock}}
+\index{preferred\+\_\+clock@{preferred\+\_\+clock}!pip\+::\+\_\+vendor\+::requests\+::sessions@{pip\+::\+\_\+vendor\+::requests\+::sessions}}
+\subsubsection{\texorpdfstring{preferred\+\_\+clock}{preferred\_clock}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+requests.\+sessions.\+preferred\+\_\+clock}
+

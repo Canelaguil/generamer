@@ -1,0 +1,63 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1components_1_1semiconnected}{}\section{networkx.\+algorithms.\+components.\+semiconnected Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1components_1_1semiconnected}\index{networkx.\+algorithms.\+components.\+semiconnected@{networkx.\+algorithms.\+components.\+semiconnected}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1components_1_1semiconnected_a0fb86e2bc80ad893912c224c1758d8e0}{is\+\_\+semiconnected} (G, topo\+\_\+order=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Semiconnectedness.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1components_1_1semiconnected_a0fb86e2bc80ad893912c224c1758d8e0}\label{namespacenetworkx_1_1algorithms_1_1components_1_1semiconnected_a0fb86e2bc80ad893912c224c1758d8e0}} 
+\index{networkx\+::algorithms\+::components\+::semiconnected@{networkx\+::algorithms\+::components\+::semiconnected}!is\+\_\+semiconnected@{is\+\_\+semiconnected}}
+\index{is\+\_\+semiconnected@{is\+\_\+semiconnected}!networkx\+::algorithms\+::components\+::semiconnected@{networkx\+::algorithms\+::components\+::semiconnected}}
+\subsubsection{\texorpdfstring{is\+\_\+semiconnected()}{is\_semiconnected()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+components.\+semiconnected.\+is\+\_\+semiconnected (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{topo\+\_\+order = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if the graph is semiconnected, False otherwise.
+
+A graph is semiconnected if, and only if, for any pair of nodes, either one
+is reachable from the other, or they are mutually reachable.
+
+Parameters
+----------
+G : NetworkX graph
+    A directed graph.
+
+topo_order: list or tuple, optional
+    A topological order for G (if None, the function will compute one)
+
+Returns
+-------
+semiconnected : bool
+    True if the graph is semiconnected, False otherwise.
+
+Raises
+------
+NetworkXNotImplemented
+    If the input graph is undirected.
+
+NetworkXPointlessConcept
+    If the graph is empty.
+
+Examples
+--------
+>>> G = nx.path_graph(4, create_using=nx.DiGraph())
+>>> print(nx.is_semiconnected(G))
+True
+>>> G = nx.DiGraph([(1, 2), (3, 2)])
+>>> print(nx.is_semiconnected(G))
+False
+
+See Also
+--------
+is_strongly_connected
+is_weakly_connected
+is_connected
+is_biconnected
+\end{DoxyVerb}
+ 

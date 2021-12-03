@@ -1,0 +1,138 @@
+\hypertarget{namespaceextending__distributions}{}\section{extending\+\_\+distributions Namespace Reference}
+\label{namespaceextending__distributions}\index{extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceextending__distributions_a8cd6f6a6f39a44acdbfe824e35fb88fb}{normals} (n, \hyperlink{namespaceextending__distributions_a7aeefe715cc042aa2c49c5046ca387e2}{bit\+\_\+generator})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceextending__distributions_a0bd63c106a8c7b1a9447728da1168838}{ffi}
+\item 
+\hyperlink{namespaceextending__distributions_a30f3390d3a1428643dc1120bc9db764c}{lib}
+\item 
+\hyperlink{namespaceextending__distributions_ac15eda22ab1fccb8a7d1bbf1ce96f925}{x}
+\item 
+\hyperlink{namespaceextending__distributions_af1688954c460d7d5c2e0009f7d65e619}{xffi}
+\item 
+\hyperlink{namespaceextending__distributions_a7aeefe715cc042aa2c49c5046ca387e2}{bit\+\_\+generator}
+\item 
+\hyperlink{namespaceextending__distributions_a455cadea4d1fdf5354ecb9d5de0546e1}{random\+\_\+standard\+\_\+normal}
+\item 
+\hyperlink{namespaceextending__distributions_a4279c0495c5644bbd23fb3bb28195b61}{normalsj}
+\item 
+\hyperlink{namespaceextending__distributions_a2354488752e5c9d937201b9ee8d4bde4}{normals}
+\item 
+\hyperlink{namespaceextending__distributions_a7888cf41ad9dd3d4bee2f128f2976a07}{nopython}
+\item 
+\hyperlink{namespaceextending__distributions_a534e7ac133b4b284777a1c1965a5eea0}{bit\+\_\+generator\+\_\+address}
+\item 
+\hyperlink{namespaceextending__distributions_a976ea6c6e452e3b2820868d1aabb3829}{norm}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Building the required library in this example requires a source distribution
+of NumPy or clone of the NumPy git repository since distributions.c is not
+included in binary distributions.
+
+On *nix, execute in numpy/random/src/distributions
+
+export ${PYTHON_VERSION}=3.8 # Python version
+export PYTHON_INCLUDE=#path to Python's include folder, usually \
+    ${PYTHON_HOME}/include/python${PYTHON_VERSION}m
+export NUMPY_INCLUDE=#path to numpy's include folder, usually \
+    ${PYTHON_HOME}/lib/python${PYTHON_VERSION}/site-packages/numpy/core/include
+gcc -shared -o libdistributions.so -fPIC distributions.c \
+    -I${NUMPY_INCLUDE} -I${PYTHON_INCLUDE}
+mv libdistributions.so ../../_examples/numba/
+
+On Windows
+
+rem PYTHON_HOME and PYTHON_VERSION are setup dependent, this is an example
+set PYTHON_HOME=c:\Anaconda
+set PYTHON_VERSION=38
+cl.exe /LD .\distributions.c -DDLL_EXPORT \
+    -I%PYTHON_HOME%\lib\site-packages\numpy\core\include \
+    -I%PYTHON_HOME%\include %PYTHON_HOME%\libs\python%PYTHON_VERSION%.lib
+move distributions.dll ../../_examples/numba/
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceextending__distributions_a8cd6f6a6f39a44acdbfe824e35fb88fb}\label{namespaceextending__distributions_a8cd6f6a6f39a44acdbfe824e35fb88fb}} 
+\index{extending\+\_\+distributions@{extending\+\_\+distributions}!normals@{normals}}
+\index{normals@{normals}!extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsubsection{\texorpdfstring{normals()}{normals()}}
+{\footnotesize\ttfamily def extending\+\_\+distributions.\+normals (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{bit\+\_\+generator }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceextending__distributions_a7aeefe715cc042aa2c49c5046ca387e2}\label{namespaceextending__distributions_a7aeefe715cc042aa2c49c5046ca387e2}} 
+\index{extending\+\_\+distributions@{extending\+\_\+distributions}!bit\+\_\+generator@{bit\+\_\+generator}}
+\index{bit\+\_\+generator@{bit\+\_\+generator}!extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsubsection{\texorpdfstring{bit\+\_\+generator}{bit\_generator}}
+{\footnotesize\ttfamily extending\+\_\+distributions.\+bit\+\_\+generator}
+
+\mbox{\Hypertarget{namespaceextending__distributions_a534e7ac133b4b284777a1c1965a5eea0}\label{namespaceextending__distributions_a534e7ac133b4b284777a1c1965a5eea0}} 
+\index{extending\+\_\+distributions@{extending\+\_\+distributions}!bit\+\_\+generator\+\_\+address@{bit\+\_\+generator\+\_\+address}}
+\index{bit\+\_\+generator\+\_\+address@{bit\+\_\+generator\+\_\+address}!extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsubsection{\texorpdfstring{bit\+\_\+generator\+\_\+address}{bit\_generator\_address}}
+{\footnotesize\ttfamily extending\+\_\+distributions.\+bit\+\_\+generator\+\_\+address}
+
+\mbox{\Hypertarget{namespaceextending__distributions_a0bd63c106a8c7b1a9447728da1168838}\label{namespaceextending__distributions_a0bd63c106a8c7b1a9447728da1168838}} 
+\index{extending\+\_\+distributions@{extending\+\_\+distributions}!ffi@{ffi}}
+\index{ffi@{ffi}!extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsubsection{\texorpdfstring{ffi}{ffi}}
+{\footnotesize\ttfamily extending\+\_\+distributions.\+ffi}
+
+\mbox{\Hypertarget{namespaceextending__distributions_a30f3390d3a1428643dc1120bc9db764c}\label{namespaceextending__distributions_a30f3390d3a1428643dc1120bc9db764c}} 
+\index{extending\+\_\+distributions@{extending\+\_\+distributions}!lib@{lib}}
+\index{lib@{lib}!extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsubsection{\texorpdfstring{lib}{lib}}
+{\footnotesize\ttfamily extending\+\_\+distributions.\+lib}
+
+\mbox{\Hypertarget{namespaceextending__distributions_a7888cf41ad9dd3d4bee2f128f2976a07}\label{namespaceextending__distributions_a7888cf41ad9dd3d4bee2f128f2976a07}} 
+\index{extending\+\_\+distributions@{extending\+\_\+distributions}!nopython@{nopython}}
+\index{nopython@{nopython}!extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsubsection{\texorpdfstring{nopython}{nopython}}
+{\footnotesize\ttfamily extending\+\_\+distributions.\+nopython}
+
+\mbox{\Hypertarget{namespaceextending__distributions_a976ea6c6e452e3b2820868d1aabb3829}\label{namespaceextending__distributions_a976ea6c6e452e3b2820868d1aabb3829}} 
+\index{extending\+\_\+distributions@{extending\+\_\+distributions}!norm@{norm}}
+\index{norm@{norm}!extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsubsection{\texorpdfstring{norm}{norm}}
+{\footnotesize\ttfamily extending\+\_\+distributions.\+norm}
+
+\mbox{\Hypertarget{namespaceextending__distributions_a2354488752e5c9d937201b9ee8d4bde4}\label{namespaceextending__distributions_a2354488752e5c9d937201b9ee8d4bde4}} 
+\index{extending\+\_\+distributions@{extending\+\_\+distributions}!normals@{normals}}
+\index{normals@{normals}!extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsubsection{\texorpdfstring{normals}{normals}}
+{\footnotesize\ttfamily extending\+\_\+distributions.\+normals}
+
+\mbox{\Hypertarget{namespaceextending__distributions_a4279c0495c5644bbd23fb3bb28195b61}\label{namespaceextending__distributions_a4279c0495c5644bbd23fb3bb28195b61}} 
+\index{extending\+\_\+distributions@{extending\+\_\+distributions}!normalsj@{normalsj}}
+\index{normalsj@{normalsj}!extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsubsection{\texorpdfstring{normalsj}{normalsj}}
+{\footnotesize\ttfamily extending\+\_\+distributions.\+normalsj}
+
+\mbox{\Hypertarget{namespaceextending__distributions_a455cadea4d1fdf5354ecb9d5de0546e1}\label{namespaceextending__distributions_a455cadea4d1fdf5354ecb9d5de0546e1}} 
+\index{extending\+\_\+distributions@{extending\+\_\+distributions}!random\+\_\+standard\+\_\+normal@{random\+\_\+standard\+\_\+normal}}
+\index{random\+\_\+standard\+\_\+normal@{random\+\_\+standard\+\_\+normal}!extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+normal}{random\_standard\_normal}}
+{\footnotesize\ttfamily extending\+\_\+distributions.\+random\+\_\+standard\+\_\+normal}
+
+\mbox{\Hypertarget{namespaceextending__distributions_ac15eda22ab1fccb8a7d1bbf1ce96f925}\label{namespaceextending__distributions_ac15eda22ab1fccb8a7d1bbf1ce96f925}} 
+\index{extending\+\_\+distributions@{extending\+\_\+distributions}!x@{x}}
+\index{x@{x}!extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily extending\+\_\+distributions.\+x}
+
+\mbox{\Hypertarget{namespaceextending__distributions_af1688954c460d7d5c2e0009f7d65e619}\label{namespaceextending__distributions_af1688954c460d7d5c2e0009f7d65e619}} 
+\index{extending\+\_\+distributions@{extending\+\_\+distributions}!xffi@{xffi}}
+\index{xffi@{xffi}!extending\+\_\+distributions@{extending\+\_\+distributions}}
+\subsubsection{\texorpdfstring{xffi}{xffi}}
+{\footnotesize\ttfamily extending\+\_\+distributions.\+xffi}
+

@@ -1,0 +1,103 @@
+\hypertarget{namespacenetworkx_1_1readwrite_1_1p2g}{}\section{networkx.\+readwrite.\+p2g Namespace Reference}
+\label{namespacenetworkx_1_1readwrite_1_1p2g}\index{networkx.\+readwrite.\+p2g@{networkx.\+readwrite.\+p2g}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1p2g_adb94867390c6490add27ac393aece7a2}{write\+\_\+p2g} (G, path, encoding=\char`\"{}utf-\/8\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1p2g_aa7b2cdffc6bc84649b43cd4b9945d4e9}{read\+\_\+p2g} (path, encoding=\char`\"{}utf-\/8\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1p2g_aeaae5630a70e06903b697c48467c194c}{parse\+\_\+p2g} (lines)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1readwrite_1_1p2g_afe5b4706a0fa57001ebb88764be24d83}{mode}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This module provides the following: read and write of p2g format
+used in metabolic pathway studies.
+
+See https://web.archive.org/web/20080626113807/http://www.cs.purdue.edu/homes/koyuturk/pathway/ for a description.
+
+The summary is included here:
+
+A file that describes a uniquely labeled graph (with extension ".gr")
+format looks like the following:
+
+
+name
+3 4
+a
+1 2
+b
+
+c
+0 2
+
+"name" is simply a description of what the graph corresponds to. The
+second line displays the number of nodes and number of edges,
+respectively. This sample graph contains three nodes labeled "a", "b",
+and "c". The rest of the graph contains two lines for each node. The
+first line for a node contains the node label. After the declaration
+of the node label, the out-edges of that node in the graph are
+provided. For instance, "a" is linked to nodes 1 and 2, which are
+labeled "b" and "c", while the node labeled "b" has no outgoing
+edges. Observe that node labeled "c" has an outgoing edge to
+itself. Indeed, self-loops are allowed. Node index starts from 0.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1p2g_aeaae5630a70e06903b697c48467c194c}\label{namespacenetworkx_1_1readwrite_1_1p2g_aeaae5630a70e06903b697c48467c194c}} 
+\index{networkx\+::readwrite\+::p2g@{networkx\+::readwrite\+::p2g}!parse\+\_\+p2g@{parse\+\_\+p2g}}
+\index{parse\+\_\+p2g@{parse\+\_\+p2g}!networkx\+::readwrite\+::p2g@{networkx\+::readwrite\+::p2g}}
+\subsubsection{\texorpdfstring{parse\+\_\+p2g()}{parse\_p2g()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+p2g.\+parse\+\_\+p2g (\begin{DoxyParamCaption}\item[{}]{lines }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse p2g format graph from string or iterable.
+
+Returns
+-------
+MultiDiGraph
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1p2g_aa7b2cdffc6bc84649b43cd4b9945d4e9}\label{namespacenetworkx_1_1readwrite_1_1p2g_aa7b2cdffc6bc84649b43cd4b9945d4e9}} 
+\index{networkx\+::readwrite\+::p2g@{networkx\+::readwrite\+::p2g}!read\+\_\+p2g@{read\+\_\+p2g}}
+\index{read\+\_\+p2g@{read\+\_\+p2g}!networkx\+::readwrite\+::p2g@{networkx\+::readwrite\+::p2g}}
+\subsubsection{\texorpdfstring{read\+\_\+p2g()}{read\_p2g()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+p2g.\+read\+\_\+p2g (\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{encoding = {\ttfamily \char`\"{}utf-\/8\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read graph in p2g format from path.
+
+Returns
+-------
+MultiDiGraph
+
+Notes
+-----
+If you want a DiGraph (with no self loops allowed and no edge data)
+use D=networkx.DiGraph(read_p2g(path))
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1p2g_adb94867390c6490add27ac393aece7a2}\label{namespacenetworkx_1_1readwrite_1_1p2g_adb94867390c6490add27ac393aece7a2}} 
+\index{networkx\+::readwrite\+::p2g@{networkx\+::readwrite\+::p2g}!write\+\_\+p2g@{write\+\_\+p2g}}
+\index{write\+\_\+p2g@{write\+\_\+p2g}!networkx\+::readwrite\+::p2g@{networkx\+::readwrite\+::p2g}}
+\subsubsection{\texorpdfstring{write\+\_\+p2g()}{write\_p2g()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+p2g.\+write\+\_\+p2g (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{path,  }\item[{}]{encoding = {\ttfamily \char`\"{}utf-\/8\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write NetworkX graph in p2g format.
+
+Notes
+-----
+This format is meant to be used with directed graphs with
+possible self loops.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1p2g_afe5b4706a0fa57001ebb88764be24d83}\label{namespacenetworkx_1_1readwrite_1_1p2g_afe5b4706a0fa57001ebb88764be24d83}} 
+\index{networkx\+::readwrite\+::p2g@{networkx\+::readwrite\+::p2g}!mode@{mode}}
+\index{mode@{mode}!networkx\+::readwrite\+::p2g@{networkx\+::readwrite\+::p2g}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+p2g.\+mode}
+

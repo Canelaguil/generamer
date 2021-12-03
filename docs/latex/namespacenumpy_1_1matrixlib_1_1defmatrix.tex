@@ -1,0 +1,120 @@
+\hypertarget{namespacenumpy_1_1matrixlib_1_1defmatrix}{}\section{numpy.\+matrixlib.\+defmatrix Namespace Reference}
+\label{namespacenumpy_1_1matrixlib_1_1defmatrix}\index{numpy.\+matrixlib.\+defmatrix@{numpy.\+matrixlib.\+defmatrix}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnumpy_1_1matrixlib_1_1defmatrix_1_1matrix}{matrix}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1matrixlib_1_1defmatrix_a4f175cbf1fd84e4278db145347496477}{asmatrix} (data, dtype=None)
+\item 
+def \hyperlink{namespacenumpy_1_1matrixlib_1_1defmatrix_a104688195ee702143122d056de815da2}{bmat} (obj, ldict=None, gdict=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1matrixlib_1_1defmatrix_a2d2fc1443b6077c6e5a7989a5331fc62}{mat}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1matrixlib_1_1defmatrix_a4f175cbf1fd84e4278db145347496477}\label{namespacenumpy_1_1matrixlib_1_1defmatrix_a4f175cbf1fd84e4278db145347496477}} 
+\index{numpy\+::matrixlib\+::defmatrix@{numpy\+::matrixlib\+::defmatrix}!asmatrix@{asmatrix}}
+\index{asmatrix@{asmatrix}!numpy\+::matrixlib\+::defmatrix@{numpy\+::matrixlib\+::defmatrix}}
+\subsubsection{\texorpdfstring{asmatrix()}{asmatrix()}}
+{\footnotesize\ttfamily def numpy.\+matrixlib.\+defmatrix.\+asmatrix (\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{dtype = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Interpret the input as a matrix.
+
+Unlike `matrix`, `asmatrix` does not make a copy if the input is already
+a matrix or an ndarray.  Equivalent to ``matrix(data, copy=False)``.
+
+Parameters
+----------
+data : array_like
+    Input data.
+dtype : data-type
+   Data-type of the output matrix.
+
+Returns
+-------
+mat : matrix
+    `data` interpreted as a matrix.
+
+Examples
+--------
+>>> x = np.array([[1, 2], [3, 4]])
+
+>>> m = np.asmatrix(x)
+
+>>> x[0,0] = 5
+
+>>> m
+matrix([[5, 2],
+        [3, 4]])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1matrixlib_1_1defmatrix_a104688195ee702143122d056de815da2}\label{namespacenumpy_1_1matrixlib_1_1defmatrix_a104688195ee702143122d056de815da2}} 
+\index{numpy\+::matrixlib\+::defmatrix@{numpy\+::matrixlib\+::defmatrix}!bmat@{bmat}}
+\index{bmat@{bmat}!numpy\+::matrixlib\+::defmatrix@{numpy\+::matrixlib\+::defmatrix}}
+\subsubsection{\texorpdfstring{bmat()}{bmat()}}
+{\footnotesize\ttfamily def numpy.\+matrixlib.\+defmatrix.\+bmat (\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{ldict = {\ttfamily None},  }\item[{}]{gdict = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Build a matrix object from a string, nested sequence, or array.
+
+Parameters
+----------
+obj : str or array_like
+    Input data. If a string, variables in the current scope may be
+    referenced by name.
+ldict : dict, optional
+    A dictionary that replaces local operands in current frame.
+    Ignored if `obj` is not a string or `gdict` is None.
+gdict : dict, optional
+    A dictionary that replaces global operands in current frame.
+    Ignored if `obj` is not a string.
+
+Returns
+-------
+out : matrix
+    Returns a matrix object, which is a specialized 2-D array.
+
+See Also
+--------
+block :
+    A generalization of this function for N-d arrays, that returns normal
+    ndarrays.
+
+Examples
+--------
+>>> A = np.mat('1 1; 1 1')
+>>> B = np.mat('2 2; 2 2')
+>>> C = np.mat('3 4; 5 6')
+>>> D = np.mat('7 8; 9 0')
+
+All the following expressions construct the same block matrix:
+
+>>> np.bmat([[A, B], [C, D]])
+matrix([[1, 1, 2, 2],
+        [1, 1, 2, 2],
+        [3, 4, 7, 8],
+        [5, 6, 9, 0]])
+>>> np.bmat(np.r_[np.c_[A, B], np.c_[C, D]])
+matrix([[1, 1, 2, 2],
+        [1, 1, 2, 2],
+        [3, 4, 7, 8],
+        [5, 6, 9, 0]])
+>>> np.bmat('A,B; C,D')
+matrix([[1, 1, 2, 2],
+        [1, 1, 2, 2],
+        [3, 4, 7, 8],
+        [5, 6, 9, 0]])\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1matrixlib_1_1defmatrix_a2d2fc1443b6077c6e5a7989a5331fc62}\label{namespacenumpy_1_1matrixlib_1_1defmatrix_a2d2fc1443b6077c6e5a7989a5331fc62}} 
+\index{numpy\+::matrixlib\+::defmatrix@{numpy\+::matrixlib\+::defmatrix}!mat@{mat}}
+\index{mat@{mat}!numpy\+::matrixlib\+::defmatrix@{numpy\+::matrixlib\+::defmatrix}}
+\subsubsection{\texorpdfstring{mat}{mat}}
+{\footnotesize\ttfamily numpy.\+matrixlib.\+defmatrix.\+mat}
+

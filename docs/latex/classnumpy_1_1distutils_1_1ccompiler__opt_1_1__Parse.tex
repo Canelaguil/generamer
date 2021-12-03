@@ -1,0 +1,155 @@
+\hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse}{}\section{numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Parse Class Reference}
+\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse}\index{numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Parse@{numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Parse}}
+
+
+Inheritance diagram for numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Parse\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a3e565e0727ad1875f0ecb204c8e36fac}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, cpu\+\_\+baseline, cpu\+\_\+dispatch)
+\item 
+def \hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a1b04ad8127ca1410e8be8576623edd88}{parse\+\_\+targets} (self, source)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a767db7f9d758235c2461bba1cafd22ad}{parse\+\_\+baseline\+\_\+names}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a39f95ce69d4a9772908a63d85cd27d39}{parse\+\_\+baseline\+\_\+flags}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a5c0be4f27207645e10900632684c2865}{parse\+\_\+dispatch\+\_\+names}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_ac8c64bd8c62e47553c630f798d8c1f60}{parse\+\_\+target\+\_\+groups}
+\item 
+\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_abc52c0e3997d7a9ad6df4a34120b4ef5}{parse\+\_\+is\+\_\+cached}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A helper class that parsing main arguments of `CCompilerOpt`,
+also parsing configuration statements in dispatch-able sources.
+
+Parameters
+----------
+cpu_baseline: str or None
+    minimal set of required CPU features or special options.
+
+cpu_dispatch: str or None
+    dispatched set of additional CPU features or special options.
+
+Special options can be:
+    - **MIN**: Enables the minimum CPU features that utilized via `_Config.conf_min_features`
+    - **MAX**: Enables all supported CPU features by the Compiler and platform.
+    - **NATIVE**: Enables all CPU features that supported by the current machine.
+    - **NONE**: Enables nothing
+    - **Operand +/-**: remove or add features, useful with options **MAX**, **MIN** and **NATIVE**.
+        NOTE: operand + is only added for nominal reason.
+
+NOTES:
+    - Case-insensitive among all CPU features and special options.
+    - Comma or space can be used as a separator.
+    - If the CPU feature is not supported by the user platform or compiler,
+      it will be skipped rather than raising a fatal error.
+    - Any specified CPU features to 'cpu_dispatch' will be skipped if its part of CPU baseline features
+    - 'cpu_baseline' force enables implied features.
+
+Attributes
+----------
+parse_baseline_names : list
+    Final CPU baseline's feature names(sorted from low to high)
+parse_baseline_flags : list
+    Compiler flags of baseline features
+parse_dispatch_names : list
+    Final CPU dispatch-able feature names(sorted from low to high)
+parse_target_groups : dict
+    Dictionary containing initialized target groups that configured
+    through class attribute `conf_target_groups`.
+
+    The key is represent the group name and value is a tuple
+    contains three items :
+        - bool, True if group has the 'baseline' option.
+        - list, list of CPU features.
+        - list, list of extra compiler flags.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a3e565e0727ad1875f0ecb204c8e36fac}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a3e565e0727ad1875f0ecb204c8e36fac}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Parse.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cpu\+\_\+baseline,  }\item[{}]{cpu\+\_\+dispatch }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a1b04ad8127ca1410e8be8576623edd88}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a1b04ad8127ca1410e8be8576623edd88}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}!parse\+\_\+targets@{parse\+\_\+targets}}
+\index{parse\+\_\+targets@{parse\+\_\+targets}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}}
+\subsubsection{\texorpdfstring{parse\+\_\+targets()}{parse\_targets()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Parse.\+parse\+\_\+targets (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{source }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Fetch and parse configuration statements that required for
+defining the targeted CPU features, statements should be declared
+in the top of source in between **C** comment and start
+with a special mark **@targets**.
+
+Configuration statements are sort of keywords representing
+CPU features names, group of statements and policies, combined
+together to determine the required optimization.
+
+Parameters
+----------
+source: str
+    the path of **C** source file.
+
+Returns
+-------
+- bool, True if group has the 'baseline' option
+- list, list of CPU features
+- list, list of extra compiler flags
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a39f95ce69d4a9772908a63d85cd27d39}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a39f95ce69d4a9772908a63d85cd27d39}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}!parse\+\_\+baseline\+\_\+flags@{parse\+\_\+baseline\+\_\+flags}}
+\index{parse\+\_\+baseline\+\_\+flags@{parse\+\_\+baseline\+\_\+flags}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}}
+\subsubsection{\texorpdfstring{parse\+\_\+baseline\+\_\+flags}{parse\_baseline\_flags}}
+{\footnotesize\ttfamily numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Parse.\+parse\+\_\+baseline\+\_\+flags}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a767db7f9d758235c2461bba1cafd22ad}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a767db7f9d758235c2461bba1cafd22ad}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}!parse\+\_\+baseline\+\_\+names@{parse\+\_\+baseline\+\_\+names}}
+\index{parse\+\_\+baseline\+\_\+names@{parse\+\_\+baseline\+\_\+names}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}}
+\subsubsection{\texorpdfstring{parse\+\_\+baseline\+\_\+names}{parse\_baseline\_names}}
+{\footnotesize\ttfamily numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Parse.\+parse\+\_\+baseline\+\_\+names}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a5c0be4f27207645e10900632684c2865}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_a5c0be4f27207645e10900632684c2865}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}!parse\+\_\+dispatch\+\_\+names@{parse\+\_\+dispatch\+\_\+names}}
+\index{parse\+\_\+dispatch\+\_\+names@{parse\+\_\+dispatch\+\_\+names}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}}
+\subsubsection{\texorpdfstring{parse\+\_\+dispatch\+\_\+names}{parse\_dispatch\_names}}
+{\footnotesize\ttfamily numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Parse.\+parse\+\_\+dispatch\+\_\+names}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_abc52c0e3997d7a9ad6df4a34120b4ef5}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_abc52c0e3997d7a9ad6df4a34120b4ef5}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}!parse\+\_\+is\+\_\+cached@{parse\+\_\+is\+\_\+cached}}
+\index{parse\+\_\+is\+\_\+cached@{parse\+\_\+is\+\_\+cached}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}}
+\subsubsection{\texorpdfstring{parse\+\_\+is\+\_\+cached}{parse\_is\_cached}}
+{\footnotesize\ttfamily numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Parse.\+parse\+\_\+is\+\_\+cached}
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_ac8c64bd8c62e47553c630f798d8c1f60}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse_ac8c64bd8c62e47553c630f798d8c1f60}} 
+\index{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}!parse\+\_\+target\+\_\+groups@{parse\+\_\+target\+\_\+groups}}
+\index{parse\+\_\+target\+\_\+groups@{parse\+\_\+target\+\_\+groups}!numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse@{numpy\+::distutils\+::ccompiler\+\_\+opt\+::\+\_\+\+Parse}}
+\subsubsection{\texorpdfstring{parse\+\_\+target\+\_\+groups}{parse\_target\_groups}}
+{\footnotesize\ttfamily numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Parse.\+parse\+\_\+target\+\_\+groups}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/distutils/\hyperlink{ccompiler__opt_8py}{ccompiler\+\_\+opt.\+py}\end{DoxyCompactItemize}

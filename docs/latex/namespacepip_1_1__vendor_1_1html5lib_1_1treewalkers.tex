@@ -1,0 +1,96 @@
+\hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers}{}\section{pip.\+\_\+vendor.\+html5lib.\+treewalkers Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers}\index{pip.\+\_\+vendor.\+html5lib.\+treewalkers@{pip.\+\_\+vendor.\+html5lib.\+treewalkers}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_1_1base}{base}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_1_1dom}{dom}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_1_1etree}{etree}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_1_1etree__lxml}{etree\+\_\+lxml}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_1_1genshi}{genshi}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_afd1e779f070509c261273bdf7b3028f4}{get\+Tree\+Walker} (tree\+Type, implementation=None, kwargs)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_aab9e4c5d1e598b631dc17cadf71c546e}{concatenate\+Character\+Tokens} (tokens)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_a97bbd349deba74525c5ede6f1db95596}{pprint} (walker)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_a55d556756856eebe0f8e79ece5d07858}{tree\+Walker\+Cache}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A collection of modules for iterating through different kinds of
+tree, generating tokens identical to those produced by the tokenizer
+module.
+
+To create a tree walker for a new type of tree, you need to
+implement a tree walker object (called TreeWalker by convention) that
+implements a 'serialize' method which takes a tree as sole argument and
+returns an iterator which generates tokens.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_aab9e4c5d1e598b631dc17cadf71c546e}\label{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_aab9e4c5d1e598b631dc17cadf71c546e}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::treewalkers@{pip\+::\+\_\+vendor\+::html5lib\+::treewalkers}!concatenate\+Character\+Tokens@{concatenate\+Character\+Tokens}}
+\index{concatenate\+Character\+Tokens@{concatenate\+Character\+Tokens}!pip\+::\+\_\+vendor\+::html5lib\+::treewalkers@{pip\+::\+\_\+vendor\+::html5lib\+::treewalkers}}
+\subsubsection{\texorpdfstring{concatenate\+Character\+Tokens()}{concatenateCharacterTokens()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+html5lib.\+treewalkers.\+concatenate\+Character\+Tokens (\begin{DoxyParamCaption}\item[{}]{tokens }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_afd1e779f070509c261273bdf7b3028f4}\label{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_afd1e779f070509c261273bdf7b3028f4}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::treewalkers@{pip\+::\+\_\+vendor\+::html5lib\+::treewalkers}!get\+Tree\+Walker@{get\+Tree\+Walker}}
+\index{get\+Tree\+Walker@{get\+Tree\+Walker}!pip\+::\+\_\+vendor\+::html5lib\+::treewalkers@{pip\+::\+\_\+vendor\+::html5lib\+::treewalkers}}
+\subsubsection{\texorpdfstring{get\+Tree\+Walker()}{getTreeWalker()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+html5lib.\+treewalkers.\+get\+Tree\+Walker (\begin{DoxyParamCaption}\item[{}]{tree\+Type,  }\item[{}]{implementation = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a TreeWalker class for various types of tree with built-in support
+
+:arg str treeType: the name of the tree type required (case-insensitive).
+    Supported values are:
+
+    * "dom": The xml.dom.minidom DOM implementation
+    * "etree": A generic walker for tree implementations exposing an
+      elementtree-like interface (known to work with ElementTree,
+      cElementTree and lxml.etree).
+    * "lxml": Optimized walker for lxml.etree
+    * "genshi": a Genshi stream
+
+:arg implementation: A module implementing the tree type e.g.
+    xml.etree.ElementTree or cElementTree (Currently applies to the "etree"
+    tree type only).
+
+:arg kwargs: keyword arguments passed to the etree walker--for other
+    walkers, this has no effect
+
+:returns: a TreeWalker class\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_a97bbd349deba74525c5ede6f1db95596}\label{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_a97bbd349deba74525c5ede6f1db95596}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::treewalkers@{pip\+::\+\_\+vendor\+::html5lib\+::treewalkers}!pprint@{pprint}}
+\index{pprint@{pprint}!pip\+::\+\_\+vendor\+::html5lib\+::treewalkers@{pip\+::\+\_\+vendor\+::html5lib\+::treewalkers}}
+\subsubsection{\texorpdfstring{pprint()}{pprint()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+html5lib.\+treewalkers.\+pprint (\begin{DoxyParamCaption}\item[{}]{walker }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Pretty printer for tree walkers
+
+Takes a TreeWalker instance and pretty prints the output of walking the tree.
+
+:arg walker: a TreeWalker instance\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_a55d556756856eebe0f8e79ece5d07858}\label{namespacepip_1_1__vendor_1_1html5lib_1_1treewalkers_a55d556756856eebe0f8e79ece5d07858}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::treewalkers@{pip\+::\+\_\+vendor\+::html5lib\+::treewalkers}!tree\+Walker\+Cache@{tree\+Walker\+Cache}}
+\index{tree\+Walker\+Cache@{tree\+Walker\+Cache}!pip\+::\+\_\+vendor\+::html5lib\+::treewalkers@{pip\+::\+\_\+vendor\+::html5lib\+::treewalkers}}
+\subsubsection{\texorpdfstring{tree\+Walker\+Cache}{treeWalkerCache}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+html5lib.\+treewalkers.\+tree\+Walker\+Cache}
+

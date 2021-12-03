@@ -1,0 +1,103 @@
+\hypertarget{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate}{}\section{matplotlib.\+backends.\+backend\+\_\+template.\+Figure\+Canvas\+Template Class Reference}
+\label{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate}\index{matplotlib.\+backends.\+backend\+\_\+template.\+Figure\+Canvas\+Template@{matplotlib.\+backends.\+backend\+\_\+template.\+Figure\+Canvas\+Template}}
+
+
+Inheritance diagram for matplotlib.\+backends.\+backend\+\_\+template.\+Figure\+Canvas\+Template\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+backends.\+backend\+\_\+template.\+Figure\+Canvas\+Template\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate_a87aeb5dea0cb776a35f1707ba788291d}{draw} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate_a225fa67f3e366b2ff15839a6e5532427}{print\+\_\+foo} (self, filename, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate_a96adc0da4ecff8e4823a2a371c8a9174}{get\+\_\+default\+\_\+filetype} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+dictionary \hyperlink{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate_ab9cdc635dc04f51bd9afc9e93d54660d}{filetypes} = \{$\ast$$\ast$Figure\+Canvas\+Base.\+filetypes, \textquotesingle{}\hyperlink{size_2foo_8f90_a6e9dfcbd55e5ab1066524746915b4f19}{foo}\textquotesingle{}\+: \textquotesingle{}My magic Foo format\textquotesingle{}\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The canvas the figure renders into.  Calls the draw and print fig
+methods, creates the renderers, etc.
+
+Note: GUI templates will want to connect events for button presses,
+mouse movements and key presses to functions that call the base
+class methods button_press_event, button_release_event,
+motion_notify_event, key_press_event, and key_release_event.  See the
+implementations of the interactive backends for examples.
+
+Attributes
+----------
+figure : `matplotlib.figure.Figure`
+    A high-level Figure instance
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate_a87aeb5dea0cb776a35f1707ba788291d}\label{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate_a87aeb5dea0cb776a35f1707ba788291d}} 
+\index{matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template@{matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template}!draw@{draw}}
+\index{draw@{draw}!matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template@{matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+template.\+Figure\+Canvas\+Template.\+draw (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw the figure using the renderer.
+
+It is important that this method actually walk the artist tree
+even if not output is produced because this will trigger
+deferred work (like computing limits auto-limits and tick
+values) that users may want access to before saving to disk.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate_a96adc0da4ecff8e4823a2a371c8a9174}\label{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate_a96adc0da4ecff8e4823a2a371c8a9174}} 
+\index{matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template@{matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template}!get\+\_\+default\+\_\+filetype@{get\+\_\+default\+\_\+filetype}}
+\index{get\+\_\+default\+\_\+filetype@{get\+\_\+default\+\_\+filetype}!matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template@{matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template}}
+\subsubsection{\texorpdfstring{get\+\_\+default\+\_\+filetype()}{get\_default\_filetype()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+template.\+Figure\+Canvas\+Template.\+get\+\_\+default\+\_\+filetype (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate_a225fa67f3e366b2ff15839a6e5532427}\label{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate_a225fa67f3e366b2ff15839a6e5532427}} 
+\index{matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template@{matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template}!print\+\_\+foo@{print\+\_\+foo}}
+\index{print\+\_\+foo@{print\+\_\+foo}!matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template@{matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template}}
+\subsubsection{\texorpdfstring{print\+\_\+foo()}{print\_foo()}}
+{\footnotesize\ttfamily def matplotlib.\+backends.\+backend\+\_\+template.\+Figure\+Canvas\+Template.\+print\+\_\+foo (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write out format foo.
+
+This method is normally called via `.Figure.savefig` and
+`.FigureCanvasBase.print_figure`, which take care of setting the figure
+facecolor, edgecolor, and dpi to the desired output values, and will
+restore them to the original values.  Therefore, `print_foo` does not
+need to handle these settings.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate_ab9cdc635dc04f51bd9afc9e93d54660d}\label{classmatplotlib_1_1backends_1_1backend__template_1_1FigureCanvasTemplate_ab9cdc635dc04f51bd9afc9e93d54660d}} 
+\index{matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template@{matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template}!filetypes@{filetypes}}
+\index{filetypes@{filetypes}!matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template@{matplotlib\+::backends\+::backend\+\_\+template\+::\+Figure\+Canvas\+Template}}
+\subsubsection{\texorpdfstring{filetypes}{filetypes}}
+{\footnotesize\ttfamily dictionary matplotlib.\+backends.\+backend\+\_\+template.\+Figure\+Canvas\+Template.\+filetypes = \{$\ast$$\ast$Figure\+Canvas\+Base.\+filetypes, \textquotesingle{}\hyperlink{size_2foo_8f90_a6e9dfcbd55e5ab1066524746915b4f19}{foo}\textquotesingle{}\+: \textquotesingle{}My magic Foo format\textquotesingle{}\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/backends/\hyperlink{backend__template_8py}{backend\+\_\+template.\+py}\end{DoxyCompactItemize}

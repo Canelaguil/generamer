@@ -1,0 +1,225 @@
+\hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper}{}\section{matplotlib.\+transforms.\+Transform\+Wrapper Class Reference}
+\label{classmatplotlib_1_1transforms_1_1TransformWrapper}\index{matplotlib.\+transforms.\+Transform\+Wrapper@{matplotlib.\+transforms.\+Transform\+Wrapper}}
+
+
+Inheritance diagram for matplotlib.\+transforms.\+Transform\+Wrapper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmatplotlib_1_1transforms_1_1TransformWrapper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+transforms.\+Transform\+Wrapper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmatplotlib_1_1transforms_1_1TransformWrapper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a19c4902a2a5a4721e5068c3380cf17d7}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, child)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_aa5765250837ef9181e27dd3bee0a4cd3}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a3d8be3320bfbb24a90143e00cd05770c}{frozen} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a836772f0cb1a7f061db955939bf46941}{set} (self, child)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a7470b2132cf0141c5a31ff4a8c6fdd7c}{input\+\_\+dims}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a55f55596c9576eb3550aa05ba37136d9}{output\+\_\+dims}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a47be92fd82776aa005b0ca78668e5753}{transform}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a98d8570736befa3209c126a3aa7a0cff}{transform\+\_\+affine}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a4616ba51d0414568382684b14f7ca955}{transform\+\_\+non\+\_\+affine}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_ae02c2468a85493a3ceacabfaf6d1141f}{transform\+\_\+path}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_af1466a3e0958fc24ff89b6ab90944078}{transform\+\_\+path\+\_\+affine}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a6625f5193667d1662aa846dacbdf8f57}{transform\+\_\+path\+\_\+non\+\_\+affine}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a148a87b6ecf446d5abee4507ef544dce}{get\+\_\+affine}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a7f8513567532cd3348192d6440be8a67}{inverted}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_aec20934b100823841cdb976ac6432f66}{get\+\_\+matrix}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a8150a6ac727470d6fe735685792290d8}{pass\+\_\+through}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a9ca115930bbc38b1a17e322ea005f428}{is\+\_\+affine} = property(lambda self\+: self.\+\_\+child.\+is\+\_\+affine)
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a70e7a6a89879866c3b526d3a54e44f32}{is\+\_\+separable} = property(lambda self\+: self.\+\_\+child.\+is\+\_\+separable)
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformWrapper_a55a64cd8c3c4330fda3fe863ad17d3c2}{has\+\_\+inverse} = property(lambda self\+: self.\+\_\+child.\+has\+\_\+inverse)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A helper class that holds a single child transform and acts
+equivalently to it.
+
+This is useful if a node of the transform tree must be replaced at
+run time with a transform of a different type.  This class allows
+that replacement to correctly trigger invalidation.
+
+`TransformWrapper` instances must have the same input and output dimensions
+during their entire lifetime, so the child transform may only be replaced
+with another child transform of the same dimensions.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a19c4902a2a5a4721e5068c3380cf17d7}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a19c4902a2a5a4721e5068c3380cf17d7}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Wrapper.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{child }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}*child*: A `Transform` instance.  This child may later
+be replaced with :meth:`set`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_aa5765250837ef9181e27dd3bee0a4cd3}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_aa5765250837ef9181e27dd3bee0a4cd3}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+eq\+\_\+\+\_\+()}{\_\_eq\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Wrapper.\+\_\+\+\_\+eq\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a3d8be3320bfbb24a90143e00cd05770c}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a3d8be3320bfbb24a90143e00cd05770c}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!frozen@{frozen}}
+\index{frozen@{frozen}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{frozen()}{frozen()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Wrapper.\+frozen (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a836772f0cb1a7f061db955939bf46941}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a836772f0cb1a7f061db955939bf46941}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!set@{set}}
+\index{set@{set}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform\+Wrapper.\+set (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{child }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Replace the current child of this transform with another one.
+
+The new child must have the same number of input and output
+dimensions as the current child.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a148a87b6ecf446d5abee4507ef544dce}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a148a87b6ecf446d5abee4507ef544dce}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!get\+\_\+affine@{get\+\_\+affine}}
+\index{get\+\_\+affine@{get\+\_\+affine}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{get\+\_\+affine}{get\_affine}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+get\+\_\+affine}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_aec20934b100823841cdb976ac6432f66}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_aec20934b100823841cdb976ac6432f66}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!get\+\_\+matrix@{get\+\_\+matrix}}
+\index{get\+\_\+matrix@{get\+\_\+matrix}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{get\+\_\+matrix}{get\_matrix}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+get\+\_\+matrix}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a7470b2132cf0141c5a31ff4a8c6fdd7c}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a7470b2132cf0141c5a31ff4a8c6fdd7c}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!input\+\_\+dims@{input\+\_\+dims}}
+\index{input\+\_\+dims@{input\+\_\+dims}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{input\+\_\+dims}{input\_dims}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+input\+\_\+dims}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a7f8513567532cd3348192d6440be8a67}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a7f8513567532cd3348192d6440be8a67}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!inverted@{inverted}}
+\index{inverted@{inverted}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{inverted}{inverted}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+inverted}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a55f55596c9576eb3550aa05ba37136d9}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a55f55596c9576eb3550aa05ba37136d9}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!output\+\_\+dims@{output\+\_\+dims}}
+\index{output\+\_\+dims@{output\+\_\+dims}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{output\+\_\+dims}{output\_dims}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+output\+\_\+dims}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a8150a6ac727470d6fe735685792290d8}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a8150a6ac727470d6fe735685792290d8}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!pass\+\_\+through@{pass\+\_\+through}}
+\index{pass\+\_\+through@{pass\+\_\+through}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{pass\+\_\+through}{pass\_through}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+pass\+\_\+through\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a47be92fd82776aa005b0ca78668e5753}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a47be92fd82776aa005b0ca78668e5753}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!transform@{transform}}
+\index{transform@{transform}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+transform}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a98d8570736befa3209c126a3aa7a0cff}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a98d8570736befa3209c126a3aa7a0cff}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!transform\+\_\+affine@{transform\+\_\+affine}}
+\index{transform\+\_\+affine@{transform\+\_\+affine}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{transform\+\_\+affine}{transform\_affine}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+transform\+\_\+affine}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a4616ba51d0414568382684b14f7ca955}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a4616ba51d0414568382684b14f7ca955}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!transform\+\_\+non\+\_\+affine@{transform\+\_\+non\+\_\+affine}}
+\index{transform\+\_\+non\+\_\+affine@{transform\+\_\+non\+\_\+affine}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{transform\+\_\+non\+\_\+affine}{transform\_non\_affine}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+transform\+\_\+non\+\_\+affine}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_ae02c2468a85493a3ceacabfaf6d1141f}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_ae02c2468a85493a3ceacabfaf6d1141f}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!transform\+\_\+path@{transform\+\_\+path}}
+\index{transform\+\_\+path@{transform\+\_\+path}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{transform\+\_\+path}{transform\_path}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+transform\+\_\+path}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_af1466a3e0958fc24ff89b6ab90944078}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_af1466a3e0958fc24ff89b6ab90944078}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!transform\+\_\+path\+\_\+affine@{transform\+\_\+path\+\_\+affine}}
+\index{transform\+\_\+path\+\_\+affine@{transform\+\_\+path\+\_\+affine}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{transform\+\_\+path\+\_\+affine}{transform\_path\_affine}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+transform\+\_\+path\+\_\+affine}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a6625f5193667d1662aa846dacbdf8f57}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a6625f5193667d1662aa846dacbdf8f57}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!transform\+\_\+path\+\_\+non\+\_\+affine@{transform\+\_\+path\+\_\+non\+\_\+affine}}
+\index{transform\+\_\+path\+\_\+non\+\_\+affine@{transform\+\_\+path\+\_\+non\+\_\+affine}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{transform\+\_\+path\+\_\+non\+\_\+affine}{transform\_path\_non\_affine}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+transform\+\_\+path\+\_\+non\+\_\+affine}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a55a64cd8c3c4330fda3fe863ad17d3c2}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a55a64cd8c3c4330fda3fe863ad17d3c2}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!has\+\_\+inverse@{has\+\_\+inverse}}
+\index{has\+\_\+inverse@{has\+\_\+inverse}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{has\+\_\+inverse}{has\_inverse}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+has\+\_\+inverse = property(lambda self\+: self.\+\_\+child.\+has\+\_\+inverse)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a9ca115930bbc38b1a17e322ea005f428}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a9ca115930bbc38b1a17e322ea005f428}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!is\+\_\+affine@{is\+\_\+affine}}
+\index{is\+\_\+affine@{is\+\_\+affine}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{is\+\_\+affine}{is\_affine}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+is\+\_\+affine = property(lambda self\+: self.\+\_\+child.\+is\+\_\+affine)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformWrapper_a70e7a6a89879866c3b526d3a54e44f32}\label{classmatplotlib_1_1transforms_1_1TransformWrapper_a70e7a6a89879866c3b526d3a54e44f32}} 
+\index{matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}!is\+\_\+separable@{is\+\_\+separable}}
+\index{is\+\_\+separable@{is\+\_\+separable}!matplotlib\+::transforms\+::\+Transform\+Wrapper@{matplotlib\+::transforms\+::\+Transform\+Wrapper}}
+\subsubsection{\texorpdfstring{is\+\_\+separable}{is\_separable}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform\+Wrapper.\+is\+\_\+separable = property(lambda self\+: self.\+\_\+child.\+is\+\_\+separable)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{transforms_8py}{transforms.\+py}\end{DoxyCompactItemize}

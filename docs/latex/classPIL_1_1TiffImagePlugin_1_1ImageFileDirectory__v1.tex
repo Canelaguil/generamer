@@ -1,0 +1,157 @@
+\hypertarget{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1}{}\section{P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1 Class Reference}
+\label{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1}\index{P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1@{P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1}}
+
+
+Inheritance diagram for P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a9be3897477790918096954417321566d}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, args, kwargs)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_af822a11825740351d5eeae942dca726f}{from\+\_\+v2} (cls, original)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a767487c5f2e7514f25df82485688db61}{to\+\_\+v2} (self)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a746bf5f4faa1b992dbb857b18438426e}{\+\_\+\+\_\+contains\+\_\+\+\_\+} (self, tag)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_aae2b6964abd87699db6b5620cb170513}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a2e1e92f2dc84ed57171aabbfd2b7ba5e}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a160b5d97e3aede405016e0f1b3ab3a52}{\+\_\+\+\_\+setitem\+\_\+\+\_\+} (self, tag, value)
+\item 
+def \hyperlink{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a289cfd3b894de01487b39bbbca403c77}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, tag)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a9283b5823c9436a5751ed37a73368f28}{tags} = property(lambda self\+: self.\+\_\+tags\+\_\+v1)
+\item 
+\hyperlink{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a5384f5bda2e66169c9cb30667cdad42a}{tagdata} = property(lambda self\+: self.\+\_\+tagdata)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This class represents the **legacy** interface to a TIFF tag directory.
+
+Exposes a dictionary interface of the tags in the directory::
+
+    ifd = ImageFileDirectory_v1()
+    ifd[key] = 'Some Data'
+    ifd.tagtype[key] = TiffTags.ASCII
+    print(ifd[key])
+    ('Some Data',)
+
+Also contains a dictionary of tag types as read from the tiff image file,
+:attr:`~PIL.TiffImagePlugin.ImageFileDirectory_v1.tagtype`.
+
+Values are returned as a tuple.
+
+..  deprecated:: 3.0.0
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a9be3897477790918096954417321566d}\label{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a9be3897477790918096954417321566d}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a746bf5f4faa1b992dbb857b18438426e}\label{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a746bf5f4faa1b992dbb857b18438426e}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}!\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+contains\+\_\+\+\_\+()}{\_\_contains\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1.\+\_\+\+\_\+contains\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a289cfd3b894de01487b39bbbca403c77}\label{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a289cfd3b894de01487b39bbbca403c77}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a2e1e92f2dc84ed57171aabbfd2b7ba5e}\label{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a2e1e92f2dc84ed57171aabbfd2b7ba5e}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_aae2b6964abd87699db6b5620cb170513}\label{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_aae2b6964abd87699db6b5620cb170513}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a160b5d97e3aede405016e0f1b3ab3a52}\label{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a160b5d97e3aede405016e0f1b3ab3a52}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}!\+\_\+\+\_\+setitem\+\_\+\+\_\+@{\+\_\+\+\_\+setitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setitem\+\_\+\+\_\+@{\+\_\+\+\_\+setitem\+\_\+\+\_\+}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setitem\+\_\+\+\_\+()}{\_\_setitem\_\_()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1.\+\_\+\+\_\+setitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tag,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_af822a11825740351d5eeae942dca726f}\label{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_af822a11825740351d5eeae942dca726f}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}!from\+\_\+v2@{from\+\_\+v2}}
+\index{from\+\_\+v2@{from\+\_\+v2}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}}
+\subsubsection{\texorpdfstring{from\+\_\+v2()}{from\_v2()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1.\+from\+\_\+v2 (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{original }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns an
+:py:class:`~PIL.TiffImagePlugin.ImageFileDirectory_v1`
+instance with the same data as is contained in the original
+:py:class:`~PIL.TiffImagePlugin.ImageFileDirectory_v2`
+instance.
+
+:returns: :py:class:`~PIL.TiffImagePlugin.ImageFileDirectory_v1`\end{DoxyVerb}
+ \mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a767487c5f2e7514f25df82485688db61}\label{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a767487c5f2e7514f25df82485688db61}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}!to\+\_\+v2@{to\+\_\+v2}}
+\index{to\+\_\+v2@{to\+\_\+v2}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}}
+\subsubsection{\texorpdfstring{to\+\_\+v2()}{to\_v2()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1.\+to\+\_\+v2 (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns an
+:py:class:`~PIL.TiffImagePlugin.ImageFileDirectory_v2`
+instance with the same data as is contained in the original
+:py:class:`~PIL.TiffImagePlugin.ImageFileDirectory_v1`
+instance.
+
+:returns: :py:class:`~PIL.TiffImagePlugin.ImageFileDirectory_v2`\end{DoxyVerb}
+ 
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a5384f5bda2e66169c9cb30667cdad42a}\label{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a5384f5bda2e66169c9cb30667cdad42a}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}!tagdata@{tagdata}}
+\index{tagdata@{tagdata}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}}
+\subsubsection{\texorpdfstring{tagdata}{tagdata}}
+{\footnotesize\ttfamily P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1.\+tagdata = property(lambda self\+: self.\+\_\+tagdata)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a9283b5823c9436a5751ed37a73368f28}\label{classPIL_1_1TiffImagePlugin_1_1ImageFileDirectory__v1_a9283b5823c9436a5751ed37a73368f28}} 
+\index{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}!tags@{tags}}
+\index{tags@{tags}!P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1@{P\+I\+L\+::\+Tiff\+Image\+Plugin\+::\+Image\+File\+Directory\+\_\+v1}}
+\subsubsection{\texorpdfstring{tags}{tags}}
+{\footnotesize\ttfamily P\+I\+L.\+Tiff\+Image\+Plugin.\+Image\+File\+Directory\+\_\+v1.\+tags = property(lambda self\+: self.\+\_\+tags\+\_\+v1)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\+P\+I\+L/\hyperlink{TiffImagePlugin_8py}{Tiff\+Image\+Plugin.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,428 @@
+\hypertarget{classmatplotlib_1_1transforms_1_1Transform}{}\section{matplotlib.\+transforms.\+Transform Class Reference}
+\label{classmatplotlib_1_1transforms_1_1Transform}\index{matplotlib.\+transforms.\+Transform@{matplotlib.\+transforms.\+Transform}}
+
+
+Inheritance diagram for matplotlib.\+transforms.\+Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1transforms_1_1Transform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+transforms.\+Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmatplotlib_1_1transforms_1_1Transform__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a1fc178971ba9c826d86e196d1c1aac20}{\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+} (cls)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a31fb50cbd6cef81aa01a2d9977528da6}{\+\_\+\+\_\+add\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_afddcaf14031c8ee61890b0306adb71ed}{depth} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_af83fa5fa2bd74e402f7cf30d0c6d0a75}{contains\+\_\+branch} (self, other)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a7c31b4e3f8b8b73cd7dca724be0d9a17}{contains\+\_\+branch\+\_\+seperately} (self, other\+\_\+transform)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a0d3d7f11e49556cea178d7110350572d}{\+\_\+\+\_\+sub\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a43fce7ae28a7b4801ccd4bde51ac9200}{\+\_\+\+\_\+array\+\_\+\+\_\+} (self, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a8ed5dd2238236f5f238726473f93942d}{transform} (self, values)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_aae16cba4769018c803bf591dfd01bae1}{transform\+\_\+affine} (self, values)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a3b6fee992defc1eff51988efbc5c1780}{transform\+\_\+non\+\_\+affine} (self, values)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a02f3d6a939960103da7e6e0c617e3298}{transform\+\_\+bbox} (self, bbox)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a590587b99bea670e821c6c65cf669c49}{get\+\_\+affine} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a88c05fdde2e3ccb870217439d4785dff}{get\+\_\+matrix} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a27944a83583b47754ef882922a00093d}{transform\+\_\+point} (self, point)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a387a1221c1e91cd48b3c0bada34551ae}{transform\+\_\+path} (self, path)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a53f9be50f7b90fd84dc10db6dcf5f9e6}{transform\+\_\+path\+\_\+affine} (self, path)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a3f73b45bb73b28efddbbb8ff6f828c8d}{transform\+\_\+path\+\_\+non\+\_\+affine} (self, path)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_ae40bef230e0a307b714546a64e7b1ede}{transform\+\_\+angles} (self, angles, pts, radians=False, pushoff=1e-\/5)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1Transform_a0da24d34489dd79c2dade8c51e2e2582}{inverted} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1Transform_a96d2969a2a9cbc5105534e2c848d0112}{input\+\_\+dims}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1Transform_a54640edfc4c4cec07e567f82a756f767}{output\+\_\+dims}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1Transform_af81ccab23877735961f7d384a9947e8c}{is\+\_\+separable}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1Transform_a9cd7be3f8ed35b38c6a86c8d843121b0}{has\+\_\+inverse}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The base class of all `TransformNode` instances that
+actually perform a transformation.
+
+All non-affine transformations should be subclasses of this class.
+New affine transformations should be subclasses of `Affine2D`.
+
+Subclasses of this class should override the following members (at
+minimum):
+
+- :attr:`input_dims`
+- :attr:`output_dims`
+- :meth:`transform`
+- :meth:`inverted` (if an inverse exists)
+
+The following attributes may be overridden if the default is unsuitable:
+
+- :attr:`is_separable` (defaults to True for 1D -> 1D transforms, False
+  otherwise)
+- :attr:`has_inverse` (defaults to True if :meth:`inverted` is overridden,
+  False otherwise)
+
+If the transform needs to do something non-standard with
+`matplotlib.path.Path` objects, such as adding curves
+where there were once line segments, it should override:
+
+- :meth:`transform_path`
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a31fb50cbd6cef81aa01a2d9977528da6}\label{classmatplotlib_1_1transforms_1_1Transform_a31fb50cbd6cef81aa01a2d9977528da6}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!\+\_\+\+\_\+add\+\_\+\+\_\+@{\+\_\+\+\_\+add\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+add\+\_\+\+\_\+@{\+\_\+\+\_\+add\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+add\+\_\+\+\_\+()}{\_\_add\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+\_\+\+\_\+add\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compose two transforms together so that *self* is followed by *other*.
+
+``A + B`` returns a transform ``C`` so that
+``C.transform(x) == B.transform(A.transform(x))``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a43fce7ae28a7b4801ccd4bde51ac9200}\label{classmatplotlib_1_1transforms_1_1Transform_a43fce7ae28a7b4801ccd4bde51ac9200}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!\+\_\+\+\_\+array\+\_\+\+\_\+@{\+\_\+\+\_\+array\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+array\+\_\+\+\_\+@{\+\_\+\+\_\+array\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+array\+\_\+\+\_\+()}{\_\_array\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+\_\+\+\_\+array\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Array interface to get at this Transform's affine matrix.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a1fc178971ba9c826d86e196d1c1aac20}\label{classmatplotlib_1_1transforms_1_1Transform_a1fc178971ba9c826d86e196d1c1aac20}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+()}{\_\_init\_subclass\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+\_\+\+\_\+init\+\_\+subclass\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{cls }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a0d3d7f11e49556cea178d7110350572d}\label{classmatplotlib_1_1transforms_1_1Transform_a0d3d7f11e49556cea178d7110350572d}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!\+\_\+\+\_\+sub\+\_\+\+\_\+@{\+\_\+\+\_\+sub\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+sub\+\_\+\+\_\+@{\+\_\+\+\_\+sub\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+sub\+\_\+\+\_\+()}{\_\_sub\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+\_\+\+\_\+sub\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compose *self* with the inverse of *other*, cancelling identical terms
+if any::
+
+    # In general:
+    A - B == A + B.inverted()
+    # (but see note regarding frozen transforms below).
+
+    # If A "ends with" B (i.e. A == A' + B for some A') we can cancel
+    # out B:
+    (A' + B) - B == A'
+
+    # Likewise, if B "starts with" A (B = A + B'), we can cancel out A:
+    A - (A + B') == B'.inverted() == B'^-1
+
+Cancellation (rather than naively returning ``A + B.inverted()``) is
+important for multiple reasons:
+
+- It avoids floating-point inaccuracies when computing the inverse of
+  B: ``B - B`` is guaranteed to cancel out exactly (resulting in the
+  identity transform), whereas ``B + B.inverted()`` may differ by a
+  small epsilon.
+- ``B.inverted()`` always returns a frozen transform: if one computes
+  ``A + B + B.inverted()`` and later mutates ``B``, then
+  ``B.inverted()`` won't be updated and the last two terms won't cancel
+  out anymore; on the other hand, ``A + B - B`` will always be equal to
+  ``A`` even if ``B`` is mutated.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_af83fa5fa2bd74e402f7cf30d0c6d0a75}\label{classmatplotlib_1_1transforms_1_1Transform_af83fa5fa2bd74e402f7cf30d0c6d0a75}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!contains\+\_\+branch@{contains\+\_\+branch}}
+\index{contains\+\_\+branch@{contains\+\_\+branch}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{contains\+\_\+branch()}{contains\_branch()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+contains\+\_\+branch (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether the given transform is a sub-tree of this transform.
+
+This routine uses transform equality to identify sub-trees, therefore
+in many situations it is object id which will be used.
+
+For the case where the given transform represents the whole
+of this transform, returns True.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a7c31b4e3f8b8b73cd7dca724be0d9a17}\label{classmatplotlib_1_1transforms_1_1Transform_a7c31b4e3f8b8b73cd7dca724be0d9a17}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!contains\+\_\+branch\+\_\+seperately@{contains\+\_\+branch\+\_\+seperately}}
+\index{contains\+\_\+branch\+\_\+seperately@{contains\+\_\+branch\+\_\+seperately}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{contains\+\_\+branch\+\_\+seperately()}{contains\_branch\_seperately()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+contains\+\_\+branch\+\_\+seperately (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other\+\_\+transform }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether the given branch is a sub-tree of this transform on
+each separate dimension.
+
+A common use for this method is to identify if a transform is a blended
+transform containing an axes' data transform. e.g.::
+
+    x_isdata, y_isdata = trans.contains_branch_seperately(ax.transData)\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_afddcaf14031c8ee61890b0306adb71ed}\label{classmatplotlib_1_1transforms_1_1Transform_afddcaf14031c8ee61890b0306adb71ed}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!depth@{depth}}
+\index{depth@{depth}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{depth()}{depth()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+depth (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the number of transforms which have been chained
+together to form this Transform instance.
+
+.. note::
+
+    For the special case of a Composite transform, the maximum depth
+    of the two is returned.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a590587b99bea670e821c6c65cf669c49}\label{classmatplotlib_1_1transforms_1_1Transform_a590587b99bea670e821c6c65cf669c49}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!get\+\_\+affine@{get\+\_\+affine}}
+\index{get\+\_\+affine@{get\+\_\+affine}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{get\+\_\+affine()}{get\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+get\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the affine part of this transform.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a88c05fdde2e3ccb870217439d4785dff}\label{classmatplotlib_1_1transforms_1_1Transform_a88c05fdde2e3ccb870217439d4785dff}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!get\+\_\+matrix@{get\+\_\+matrix}}
+\index{get\+\_\+matrix@{get\+\_\+matrix}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{get\+\_\+matrix()}{get\_matrix()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+get\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the matrix for the affine part of this transform.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a0da24d34489dd79c2dade8c51e2e2582}\label{classmatplotlib_1_1transforms_1_1Transform_a0da24d34489dd79c2dade8c51e2e2582}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!inverted@{inverted}}
+\index{inverted@{inverted}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{inverted()}{inverted()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+inverted (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the corresponding inverse transformation.
+
+It holds ``x == self.inverted().transform(self.transform(x))``.
+
+The return value of this method should be treated as
+temporary.  An update to *self* does not cause a corresponding
+update to its inverted copy.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a8ed5dd2238236f5f238726473f93942d}\label{classmatplotlib_1_1transforms_1_1Transform_a8ed5dd2238236f5f238726473f93942d}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!transform@{transform}}
+\index{transform@{transform}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+transform (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{values }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply this transformation on the given array of *values*.
+
+Parameters
+----------
+values : array
+    The input values as NumPy array of length :attr:`input_dims` or
+    shape (N x :attr:`input_dims`).
+
+Returns
+-------
+array
+    The output values as NumPy array of length :attr:`input_dims` or
+    shape (N x :attr:`output_dims`), depending on the input.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_aae16cba4769018c803bf591dfd01bae1}\label{classmatplotlib_1_1transforms_1_1Transform_aae16cba4769018c803bf591dfd01bae1}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!transform\+\_\+affine@{transform\+\_\+affine}}
+\index{transform\+\_\+affine@{transform\+\_\+affine}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+affine()}{transform\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+transform\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{values }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply only the affine part of this transformation on the
+given array of values.
+
+``transform(values)`` is always equivalent to
+``transform_affine(transform_non_affine(values))``.
+
+In non-affine transformations, this is generally a no-op.  In
+affine transformations, this is equivalent to
+``transform(values)``.
+
+Parameters
+----------
+values : array
+    The input values as NumPy array of length :attr:`input_dims` or
+    shape (N x :attr:`input_dims`).
+
+Returns
+-------
+array
+    The output values as NumPy array of length :attr:`input_dims` or
+    shape (N x :attr:`output_dims`), depending on the input.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_ae40bef230e0a307b714546a64e7b1ede}\label{classmatplotlib_1_1transforms_1_1Transform_ae40bef230e0a307b714546a64e7b1ede}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!transform\+\_\+angles@{transform\+\_\+angles}}
+\index{transform\+\_\+angles@{transform\+\_\+angles}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+angles()}{transform\_angles()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+transform\+\_\+angles (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{angles,  }\item[{}]{pts,  }\item[{}]{radians = {\ttfamily False},  }\item[{}]{pushoff = {\ttfamily 1e-\/5} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Transform a set of angles anchored at specific locations.
+
+Parameters
+----------
+angles : (N,) array-like
+    The angles to transform.
+pts : (N, 2) array-like
+    The points where the angles are anchored.
+radians : bool, default: False
+    Whether *angles* are radians or degrees.
+pushoff : float
+    For each point in *pts* and angle in *angles*, the transformed
+    angle is computed by transforming a segment of length *pushoff*
+    starting at that point and making that angle relative to the
+    horizontal axis, and measuring the angle between the horizontal
+    axis and the transformed segment.
+
+Returns
+-------
+(N,) array
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a02f3d6a939960103da7e6e0c617e3298}\label{classmatplotlib_1_1transforms_1_1Transform_a02f3d6a939960103da7e6e0c617e3298}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!transform\+\_\+bbox@{transform\+\_\+bbox}}
+\index{transform\+\_\+bbox@{transform\+\_\+bbox}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+bbox()}{transform\_bbox()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+transform\+\_\+bbox (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{bbox }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Transform the given bounding box.
+
+For smarter transforms including caching (a common requirement in
+Matplotlib), see `TransformedBbox`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a3b6fee992defc1eff51988efbc5c1780}\label{classmatplotlib_1_1transforms_1_1Transform_a3b6fee992defc1eff51988efbc5c1780}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!transform\+\_\+non\+\_\+affine@{transform\+\_\+non\+\_\+affine}}
+\index{transform\+\_\+non\+\_\+affine@{transform\+\_\+non\+\_\+affine}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+non\+\_\+affine()}{transform\_non\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+transform\+\_\+non\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{values }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply only the non-affine part of this transformation.
+
+``transform(values)`` is always equivalent to
+``transform_affine(transform_non_affine(values))``.
+
+In non-affine transformations, this is generally equivalent to
+``transform(values)``.  In affine transformations, this is
+always a no-op.
+
+Parameters
+----------
+values : array
+    The input values as NumPy array of length :attr:`input_dims` or
+    shape (N x :attr:`input_dims`).
+
+Returns
+-------
+array
+    The output values as NumPy array of length :attr:`input_dims` or
+    shape (N x :attr:`output_dims`), depending on the input.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a387a1221c1e91cd48b3c0bada34551ae}\label{classmatplotlib_1_1transforms_1_1Transform_a387a1221c1e91cd48b3c0bada34551ae}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!transform\+\_\+path@{transform\+\_\+path}}
+\index{transform\+\_\+path@{transform\+\_\+path}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+path()}{transform\_path()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+transform\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply the transform to `.Path` *path*, returning a new `.Path`.
+
+In some cases, this transform may insert curves into the path
+that began as line segments.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a53f9be50f7b90fd84dc10db6dcf5f9e6}\label{classmatplotlib_1_1transforms_1_1Transform_a53f9be50f7b90fd84dc10db6dcf5f9e6}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!transform\+\_\+path\+\_\+affine@{transform\+\_\+path\+\_\+affine}}
+\index{transform\+\_\+path\+\_\+affine@{transform\+\_\+path\+\_\+affine}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+path\+\_\+affine()}{transform\_path\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+transform\+\_\+path\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply the affine part of this transform to `.Path` *path*, returning a
+new `.Path`.
+
+``transform_path(path)`` is equivalent to
+``transform_path_affine(transform_path_non_affine(values))``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a3f73b45bb73b28efddbbb8ff6f828c8d}\label{classmatplotlib_1_1transforms_1_1Transform_a3f73b45bb73b28efddbbb8ff6f828c8d}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!transform\+\_\+path\+\_\+non\+\_\+affine@{transform\+\_\+path\+\_\+non\+\_\+affine}}
+\index{transform\+\_\+path\+\_\+non\+\_\+affine@{transform\+\_\+path\+\_\+non\+\_\+affine}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+path\+\_\+non\+\_\+affine()}{transform\_path\_non\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+transform\+\_\+path\+\_\+non\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply the non-affine part of this transform to `.Path` *path*,
+returning a new `.Path`.
+
+``transform_path(path)`` is equivalent to
+``transform_path_affine(transform_path_non_affine(values))``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a27944a83583b47754ef882922a00093d}\label{classmatplotlib_1_1transforms_1_1Transform_a27944a83583b47754ef882922a00093d}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!transform\+\_\+point@{transform\+\_\+point}}
+\index{transform\+\_\+point@{transform\+\_\+point}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+point()}{transform\_point()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transform.\+transform\+\_\+point (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{point }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a transformed point.
+
+This function is only kept for backcompatibility; the more general
+`.transform` method is capable of transforming both a list of points
+and a single point.
+
+The point is given as a sequence of length :attr:`input_dims`.
+The transformed point is returned as a sequence of length
+:attr:`output_dims`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a9cd7be3f8ed35b38c6a86c8d843121b0}\label{classmatplotlib_1_1transforms_1_1Transform_a9cd7be3f8ed35b38c6a86c8d843121b0}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!has\+\_\+inverse@{has\+\_\+inverse}}
+\index{has\+\_\+inverse@{has\+\_\+inverse}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{has\+\_\+inverse}{has\_inverse}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform.\+has\+\_\+inverse\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a96d2969a2a9cbc5105534e2c848d0112}\label{classmatplotlib_1_1transforms_1_1Transform_a96d2969a2a9cbc5105534e2c848d0112}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!input\+\_\+dims@{input\+\_\+dims}}
+\index{input\+\_\+dims@{input\+\_\+dims}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{input\+\_\+dims}{input\_dims}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform.\+input\+\_\+dims\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_af81ccab23877735961f7d384a9947e8c}\label{classmatplotlib_1_1transforms_1_1Transform_af81ccab23877735961f7d384a9947e8c}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!is\+\_\+separable@{is\+\_\+separable}}
+\index{is\+\_\+separable@{is\+\_\+separable}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{is\+\_\+separable}{is\_separable}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform.\+is\+\_\+separable\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1Transform_a54640edfc4c4cec07e567f82a756f767}\label{classmatplotlib_1_1transforms_1_1Transform_a54640edfc4c4cec07e567f82a756f767}} 
+\index{matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}!output\+\_\+dims@{output\+\_\+dims}}
+\index{output\+\_\+dims@{output\+\_\+dims}!matplotlib\+::transforms\+::\+Transform@{matplotlib\+::transforms\+::\+Transform}}
+\subsubsection{\texorpdfstring{output\+\_\+dims}{output\_dims}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transform.\+output\+\_\+dims\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{transforms_8py}{transforms.\+py}\end{DoxyCompactItemize}

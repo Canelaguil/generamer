@@ -1,0 +1,203 @@
+\hypertarget{classmatplotlib_1_1dates_1_1ConciseDateFormatter}{}\section{matplotlib.\+dates.\+Concise\+Date\+Formatter Class Reference}
+\label{classmatplotlib_1_1dates_1_1ConciseDateFormatter}\index{matplotlib.\+dates.\+Concise\+Date\+Formatter@{matplotlib.\+dates.\+Concise\+Date\+Formatter}}
+
+
+Inheritance diagram for matplotlib.\+dates.\+Concise\+Date\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classmatplotlib_1_1dates_1_1ConciseDateFormatter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+dates.\+Concise\+Date\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classmatplotlib_1_1dates_1_1ConciseDateFormatter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_adb5b715bcae62cfa81c66975a3144351}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, locator, tz=None, \hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_abd44e4b13413f87fa5f08805087ac6ee}{formats}=None, \hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_ad9e5e3d113020240d3da5cb6be4cbb27}{offset\+\_\+formats}=None, \hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a51143b34a781033e2956bfa1c964bd24}{zero\+\_\+formats}=None, \hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a39b357d4510dca33a53a696c2b42ee9b}{show\+\_\+offset}=True, usetex=None)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_ae1db09ba04fd86bc5fe74f76dbd62501}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, x, pos=None)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a9458546a09f65ac36fb3876f535579e8}{format\+\_\+ticks} (self, values)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_ac75e88571909ae53fd696459834f84f7}{get\+\_\+offset} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a0db87572f53aa1783bd4dfa2e0c7e9df}{format\+\_\+data\+\_\+short} (self, value)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a45d828e4aa6ea8a57a821eb4a659aa39}{defaultfmt}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_abd44e4b13413f87fa5f08805087ac6ee}{formats}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a51143b34a781033e2956bfa1c964bd24}{zero\+\_\+formats}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_ad9e5e3d113020240d3da5cb6be4cbb27}{offset\+\_\+formats}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a1a607db02a07c9b06d42e4f953187f01}{offset\+\_\+string}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a39b357d4510dca33a53a696c2b42ee9b}{show\+\_\+offset}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A `.Formatter` which attempts to figure out the best format to use for the
+date, and to make it as compact as possible, but still be complete. This is
+most useful when used with the `AutoDateLocator`::
+
+>>> locator = AutoDateLocator()
+>>> formatter = ConciseDateFormatter(locator)
+
+Parameters
+----------
+locator : `.ticker.Locator`
+    Locator that this axis is using.
+
+tz : str, optional
+    Passed to `.dates.date2num`.
+
+formats : list of 6 strings, optional
+    Format strings for 6 levels of tick labelling: mostly years,
+    months, days, hours, minutes, and seconds.  Strings use
+    the same format codes as `~datetime.datetime.strftime`.  Default is
+    ``['%Y', '%b', '%d', '%H:%M', '%H:%M', '%S.%f']``
+
+zero_formats : list of 6 strings, optional
+    Format strings for tick labels that are "zeros" for a given tick
+    level.  For instance, if most ticks are months, ticks around 1 Jan 2005
+    will be labeled "Dec", "2005", "Feb".  The default is
+    ``['', '%Y', '%b', '%b-%d', '%H:%M', '%H:%M']``
+
+offset_formats : list of 6 strings, optional
+    Format strings for the 6 levels that is applied to the "offset"
+    string found on the right side of an x-axis, or top of a y-axis.
+    Combined with the tick labels this should completely specify the
+    date.  The default is::
+
+        ['', '%Y', '%Y-%b', '%Y-%b-%d', '%Y-%b-%d', '%Y-%b-%d %H:%M']
+
+show_offset : bool, default: True
+    Whether to show the offset or not.
+
+usetex : bool, default: :rc:`text.usetex`
+    To enable/disable the use of TeX's math mode for rendering the results
+    of the formatter.
+
+Examples
+--------
+See :doc:`/gallery/ticks_and_spines/date_concise_formatter`
+
+.. plot::
+
+    import datetime
+    import matplotlib.dates as mdates
+
+    base = datetime.datetime(2005, 2, 1)
+    dates = np.array([base + datetime.timedelta(hours=(2 * i))
+                      for i in range(732)])
+    N = len(dates)
+    np.random.seed(19680801)
+    y = np.cumsum(np.random.randn(N))
+
+    fig, ax = plt.subplots(constrained_layout=True)
+    locator = mdates.AutoDateLocator()
+    formatter = mdates.ConciseDateFormatter(locator)
+    ax.xaxis.set_major_locator(locator)
+    ax.xaxis.set_major_formatter(formatter)
+
+    ax.plot(dates, y)
+    ax.set_title('Concise Date Formatter')\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1ConciseDateFormatter_adb5b715bcae62cfa81c66975a3144351}\label{classmatplotlib_1_1dates_1_1ConciseDateFormatter_adb5b715bcae62cfa81c66975a3144351}} 
+\index{matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Concise\+Date\+Formatter.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{locator,  }\item[{}]{tz = {\ttfamily None},  }\item[{}]{formats = {\ttfamily None},  }\item[{}]{offset\+\_\+formats = {\ttfamily None},  }\item[{}]{zero\+\_\+formats = {\ttfamily None},  }\item[{}]{show\+\_\+offset = {\ttfamily True},  }\item[{}]{usetex = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Autoformat the date labels.  The default format is used to form an
+initial string, and then redundant elements are removed.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1ConciseDateFormatter_ae1db09ba04fd86bc5fe74f76dbd62501}\label{classmatplotlib_1_1dates_1_1ConciseDateFormatter_ae1db09ba04fd86bc5fe74f76dbd62501}} 
+\index{matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Concise\+Date\+Formatter.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{pos = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a0db87572f53aa1783bd4dfa2e0c7e9df}\label{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a0db87572f53aa1783bd4dfa2e0c7e9df}} 
+\index{matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}!format\+\_\+data\+\_\+short@{format\+\_\+data\+\_\+short}}
+\index{format\+\_\+data\+\_\+short@{format\+\_\+data\+\_\+short}!matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{format\+\_\+data\+\_\+short()}{format\_data\_short()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Concise\+Date\+Formatter.\+format\+\_\+data\+\_\+short (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a9458546a09f65ac36fb3876f535579e8}\label{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a9458546a09f65ac36fb3876f535579e8}} 
+\index{matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}!format\+\_\+ticks@{format\+\_\+ticks}}
+\index{format\+\_\+ticks@{format\+\_\+ticks}!matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{format\+\_\+ticks()}{format\_ticks()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Concise\+Date\+Formatter.\+format\+\_\+ticks (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1ConciseDateFormatter_ac75e88571909ae53fd696459834f84f7}\label{classmatplotlib_1_1dates_1_1ConciseDateFormatter_ac75e88571909ae53fd696459834f84f7}} 
+\index{matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}!get\+\_\+offset@{get\+\_\+offset}}
+\index{get\+\_\+offset@{get\+\_\+offset}!matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{get\+\_\+offset()}{get\_offset()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Concise\+Date\+Formatter.\+get\+\_\+offset (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a45d828e4aa6ea8a57a821eb4a659aa39}\label{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a45d828e4aa6ea8a57a821eb4a659aa39}} 
+\index{matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}!defaultfmt@{defaultfmt}}
+\index{defaultfmt@{defaultfmt}!matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{defaultfmt}{defaultfmt}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Concise\+Date\+Formatter.\+defaultfmt}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1ConciseDateFormatter_abd44e4b13413f87fa5f08805087ac6ee}\label{classmatplotlib_1_1dates_1_1ConciseDateFormatter_abd44e4b13413f87fa5f08805087ac6ee}} 
+\index{matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}!formats@{formats}}
+\index{formats@{formats}!matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{formats}{formats}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Concise\+Date\+Formatter.\+formats}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1ConciseDateFormatter_ad9e5e3d113020240d3da5cb6be4cbb27}\label{classmatplotlib_1_1dates_1_1ConciseDateFormatter_ad9e5e3d113020240d3da5cb6be4cbb27}} 
+\index{matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}!offset\+\_\+formats@{offset\+\_\+formats}}
+\index{offset\+\_\+formats@{offset\+\_\+formats}!matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{offset\+\_\+formats}{offset\_formats}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Concise\+Date\+Formatter.\+offset\+\_\+formats}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a1a607db02a07c9b06d42e4f953187f01}\label{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a1a607db02a07c9b06d42e4f953187f01}} 
+\index{matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}!offset\+\_\+string@{offset\+\_\+string}}
+\index{offset\+\_\+string@{offset\+\_\+string}!matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{offset\+\_\+string}{offset\_string}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Concise\+Date\+Formatter.\+offset\+\_\+string}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a39b357d4510dca33a53a696c2b42ee9b}\label{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a39b357d4510dca33a53a696c2b42ee9b}} 
+\index{matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}!show\+\_\+offset@{show\+\_\+offset}}
+\index{show\+\_\+offset@{show\+\_\+offset}!matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{show\+\_\+offset}{show\_offset}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Concise\+Date\+Formatter.\+show\+\_\+offset}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a51143b34a781033e2956bfa1c964bd24}\label{classmatplotlib_1_1dates_1_1ConciseDateFormatter_a51143b34a781033e2956bfa1c964bd24}} 
+\index{matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}!zero\+\_\+formats@{zero\+\_\+formats}}
+\index{zero\+\_\+formats@{zero\+\_\+formats}!matplotlib\+::dates\+::\+Concise\+Date\+Formatter@{matplotlib\+::dates\+::\+Concise\+Date\+Formatter}}
+\subsubsection{\texorpdfstring{zero\+\_\+formats}{zero\_formats}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Concise\+Date\+Formatter.\+zero\+\_\+formats}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{dates_8py}{dates.\+py}\end{DoxyCompactItemize}

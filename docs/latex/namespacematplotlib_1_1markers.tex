@@ -1,0 +1,175 @@
+\hypertarget{namespacematplotlib_1_1markers}{}\section{matplotlib.\+markers Namespace Reference}
+\label{namespacematplotlib_1_1markers}\index{matplotlib.\+markers@{matplotlib.\+markers}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1markers_1_1MarkerStyle}{Marker\+Style}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1markers_a8b13ef1a96196c1aae3bdf759e792898}{C\+A\+R\+E\+T\+L\+E\+F\+T\+B\+A\+SE}
+\item 
+\hyperlink{namespacematplotlib_1_1markers_a3fa2dc502a4db698f3c55f5f50cd36d6}{C\+A\+R\+E\+T\+R\+I\+G\+H\+T\+B\+A\+SE}
+\item 
+\hyperlink{namespacematplotlib_1_1markers_a7f46f8c348a1df6afe29403e32e15017}{C\+A\+R\+E\+T\+U\+P\+B\+A\+SE}
+\item 
+\hyperlink{namespacematplotlib_1_1markers_ad59a941a1c452731fa5d0fa01f163891}{C\+A\+R\+E\+T\+D\+O\+W\+N\+B\+A\+SE}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions to handle markers; used by the marker functionality of
+`~matplotlib.axes.Axes.plot`, `~matplotlib.axes.Axes.scatter`, and
+`~matplotlib.axes.Axes.errorbar`.
+
+All possible markers are defined here:
+
+============================== ====== =========================================
+marker                         symbol description
+============================== ====== =========================================
+``"."``                        |m00|  point
+``","``                        |m01|  pixel
+``"o"``                        |m02|  circle
+``"v"``                        |m03|  triangle_down
+``"^"``                        |m04|  triangle_up
+``"<"``                        |m05|  triangle_left
+``">"``                        |m06|  triangle_right
+``"1"``                        |m07|  tri_down
+``"2"``                        |m08|  tri_up
+``"3"``                        |m09|  tri_left
+``"4"``                        |m10|  tri_right
+``"8"``                        |m11|  octagon
+``"s"``                        |m12|  square
+``"p"``                        |m13|  pentagon
+``"P"``                        |m23|  plus (filled)
+``"*"``                        |m14|  star
+``"h"``                        |m15|  hexagon1
+``"H"``                        |m16|  hexagon2
+``"+"``                        |m17|  plus
+``"x"``                        |m18|  x
+``"X"``                        |m24|  x (filled)
+``"D"``                        |m19|  diamond
+``"d"``                        |m20|  thin_diamond
+``"|"``                        |m21|  vline
+``"_"``                        |m22|  hline
+``0`` (``TICKLEFT``)           |m25|  tickleft
+``1`` (``TICKRIGHT``)          |m26|  tickright
+``2`` (``TICKUP``)             |m27|  tickup
+``3`` (``TICKDOWN``)           |m28|  tickdown
+``4`` (``CARETLEFT``)          |m29|  caretleft
+``5`` (``CARETRIGHT``)         |m30|  caretright
+``6`` (``CARETUP``)            |m31|  caretup
+``7`` (``CARETDOWN``)          |m32|  caretdown
+``8`` (``CARETLEFTBASE``)      |m33|  caretleft (centered at base)
+``9`` (``CARETRIGHTBASE``)     |m34|  caretright (centered at base)
+``10`` (``CARETUPBASE``)       |m35|  caretup (centered at base)
+``11`` (``CARETDOWNBASE``)     |m36|  caretdown (centered at base)
+``"None"``, ``" "`` or  ``""``        nothing
+``'$...$'``                    |m37|  Render the string using mathtext.
+                              E.g ``"$f$"`` for marker showing the
+                              letter ``f``.
+``verts``                             A list of (x, y) pairs used for Path
+                              vertices. The center of the marker is
+                              located at (0, 0) and the size is
+                              normalized, such that the created path
+                              is encapsulated inside the unit cell.
+path                                  A `~matplotlib.path.Path` instance.
+``(numsides, 0, angle)``              A regular polygon with ``numsides``
+                              sides, rotated by ``angle``.
+``(numsides, 1, angle)``              A star-like symbol with ``numsides``
+                              sides, rotated by ``angle``.
+``(numsides, 2, angle)``              An asterisk with ``numsides`` sides,
+                              rotated by ``angle``.
+============================== ====== =========================================
+
+``None`` is the default which means 'nothing', however this table is
+referred to from other docs for the valid inputs from marker inputs and in
+those cases ``None`` still means 'default'.
+
+Note that special symbols can be defined via the
+:doc:`STIX math font </tutorials/text/mathtext>`,
+e.g. ``"$\u266B$"``. For an overview over the STIX font symbols refer to the
+`STIX font table <http://www.stixfonts.org/allGlyphs.html>`_.
+Also see the :doc:`/gallery/text_labels_and_annotations/stix_fonts_demo`.
+
+Integer numbers from ``0`` to ``11`` create lines and triangles. Those are
+equally accessible via capitalized variables, like ``CARETDOWNBASE``.
+Hence the following are equivalent::
+
+    plt.plot([1, 2, 3], marker=11)
+    plt.plot([1, 2, 3], marker=matplotlib.markers.CARETDOWNBASE)
+
+Examples showing the use of markers:
+
+* :doc:`/gallery/lines_bars_and_markers/marker_reference`
+* :doc:`/gallery/shapes_and_collections/marker_path`
+* :doc:`/gallery/lines_bars_and_markers/scatter_star_poly`
+
+
+.. |m00| image:: /_static/markers/m00.png
+.. |m01| image:: /_static/markers/m01.png
+.. |m02| image:: /_static/markers/m02.png
+.. |m03| image:: /_static/markers/m03.png
+.. |m04| image:: /_static/markers/m04.png
+.. |m05| image:: /_static/markers/m05.png
+.. |m06| image:: /_static/markers/m06.png
+.. |m07| image:: /_static/markers/m07.png
+.. |m08| image:: /_static/markers/m08.png
+.. |m09| image:: /_static/markers/m09.png
+.. |m10| image:: /_static/markers/m10.png
+.. |m11| image:: /_static/markers/m11.png
+.. |m12| image:: /_static/markers/m12.png
+.. |m13| image:: /_static/markers/m13.png
+.. |m14| image:: /_static/markers/m14.png
+.. |m15| image:: /_static/markers/m15.png
+.. |m16| image:: /_static/markers/m16.png
+.. |m17| image:: /_static/markers/m17.png
+.. |m18| image:: /_static/markers/m18.png
+.. |m19| image:: /_static/markers/m19.png
+.. |m20| image:: /_static/markers/m20.png
+.. |m21| image:: /_static/markers/m21.png
+.. |m22| image:: /_static/markers/m22.png
+.. |m23| image:: /_static/markers/m23.png
+.. |m24| image:: /_static/markers/m24.png
+.. |m25| image:: /_static/markers/m25.png
+.. |m26| image:: /_static/markers/m26.png
+.. |m27| image:: /_static/markers/m27.png
+.. |m28| image:: /_static/markers/m28.png
+.. |m29| image:: /_static/markers/m29.png
+.. |m30| image:: /_static/markers/m30.png
+.. |m31| image:: /_static/markers/m31.png
+.. |m32| image:: /_static/markers/m32.png
+.. |m33| image:: /_static/markers/m33.png
+.. |m34| image:: /_static/markers/m34.png
+.. |m35| image:: /_static/markers/m35.png
+.. |m36| image:: /_static/markers/m36.png
+.. |m37| image:: /_static/markers/m37.png
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1markers_ad59a941a1c452731fa5d0fa01f163891}\label{namespacematplotlib_1_1markers_ad59a941a1c452731fa5d0fa01f163891}} 
+\index{matplotlib\+::markers@{matplotlib\+::markers}!C\+A\+R\+E\+T\+D\+O\+W\+N\+B\+A\+SE@{C\+A\+R\+E\+T\+D\+O\+W\+N\+B\+A\+SE}}
+\index{C\+A\+R\+E\+T\+D\+O\+W\+N\+B\+A\+SE@{C\+A\+R\+E\+T\+D\+O\+W\+N\+B\+A\+SE}!matplotlib\+::markers@{matplotlib\+::markers}}
+\subsubsection{\texorpdfstring{C\+A\+R\+E\+T\+D\+O\+W\+N\+B\+A\+SE}{CARETDOWNBASE}}
+{\footnotesize\ttfamily matplotlib.\+markers.\+C\+A\+R\+E\+T\+D\+O\+W\+N\+B\+A\+SE}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1markers_a8b13ef1a96196c1aae3bdf759e792898}\label{namespacematplotlib_1_1markers_a8b13ef1a96196c1aae3bdf759e792898}} 
+\index{matplotlib\+::markers@{matplotlib\+::markers}!C\+A\+R\+E\+T\+L\+E\+F\+T\+B\+A\+SE@{C\+A\+R\+E\+T\+L\+E\+F\+T\+B\+A\+SE}}
+\index{C\+A\+R\+E\+T\+L\+E\+F\+T\+B\+A\+SE@{C\+A\+R\+E\+T\+L\+E\+F\+T\+B\+A\+SE}!matplotlib\+::markers@{matplotlib\+::markers}}
+\subsubsection{\texorpdfstring{C\+A\+R\+E\+T\+L\+E\+F\+T\+B\+A\+SE}{CARETLEFTBASE}}
+{\footnotesize\ttfamily matplotlib.\+markers.\+C\+A\+R\+E\+T\+L\+E\+F\+T\+B\+A\+SE}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1markers_a3fa2dc502a4db698f3c55f5f50cd36d6}\label{namespacematplotlib_1_1markers_a3fa2dc502a4db698f3c55f5f50cd36d6}} 
+\index{matplotlib\+::markers@{matplotlib\+::markers}!C\+A\+R\+E\+T\+R\+I\+G\+H\+T\+B\+A\+SE@{C\+A\+R\+E\+T\+R\+I\+G\+H\+T\+B\+A\+SE}}
+\index{C\+A\+R\+E\+T\+R\+I\+G\+H\+T\+B\+A\+SE@{C\+A\+R\+E\+T\+R\+I\+G\+H\+T\+B\+A\+SE}!matplotlib\+::markers@{matplotlib\+::markers}}
+\subsubsection{\texorpdfstring{C\+A\+R\+E\+T\+R\+I\+G\+H\+T\+B\+A\+SE}{CARETRIGHTBASE}}
+{\footnotesize\ttfamily matplotlib.\+markers.\+C\+A\+R\+E\+T\+R\+I\+G\+H\+T\+B\+A\+SE}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1markers_a7f46f8c348a1df6afe29403e32e15017}\label{namespacematplotlib_1_1markers_a7f46f8c348a1df6afe29403e32e15017}} 
+\index{matplotlib\+::markers@{matplotlib\+::markers}!C\+A\+R\+E\+T\+U\+P\+B\+A\+SE@{C\+A\+R\+E\+T\+U\+P\+B\+A\+SE}}
+\index{C\+A\+R\+E\+T\+U\+P\+B\+A\+SE@{C\+A\+R\+E\+T\+U\+P\+B\+A\+SE}!matplotlib\+::markers@{matplotlib\+::markers}}
+\subsubsection{\texorpdfstring{C\+A\+R\+E\+T\+U\+P\+B\+A\+SE}{CARETUPBASE}}
+{\footnotesize\ttfamily matplotlib.\+markers.\+C\+A\+R\+E\+T\+U\+P\+B\+A\+SE}
+

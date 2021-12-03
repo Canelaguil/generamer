@@ -1,0 +1,101 @@
+\hypertarget{classdateutil_1_1rrule_1_1rruleset}{}\section{dateutil.\+rrule.\+rruleset Class Reference}
+\label{classdateutil_1_1rrule_1_1rruleset}\index{dateutil.\+rrule.\+rruleset@{dateutil.\+rrule.\+rruleset}}
+
+
+Inheritance diagram for dateutil.\+rrule.\+rruleset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classdateutil_1_1rrule_1_1rruleset__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dateutil.\+rrule.\+rruleset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classdateutil_1_1rrule_1_1rruleset__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classdateutil_1_1rrule_1_1rruleset_1_1__genitem}{\+\_\+genitem}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classdateutil_1_1rrule_1_1rruleset_a4fa06d6953ecf56a37bc1847dd1b27af}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, cache=False)
+\item 
+def \hyperlink{classdateutil_1_1rrule_1_1rruleset_aeb2fa0bbb0410de7982b05ef805ff106}{rrule} (self, \hyperlink{classdateutil_1_1rrule_1_1rrule}{rrule})
+\item 
+def \hyperlink{classdateutil_1_1rrule_1_1rruleset_af980109179485ba7fd6e2a736206e3e1}{rdate} (self, rdate)
+\item 
+def \hyperlink{classdateutil_1_1rrule_1_1rruleset_abba38d9fb938ddaa7814df05e110ca9c}{exrule} (self, exrule)
+\item 
+def \hyperlink{classdateutil_1_1rrule_1_1rruleset_a434ff66add95e9a8f4c7480b574b3601}{exdate} (self, exdate)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The rruleset type allows more complex recurrence setups, mixing
+multiple rules, dates, exclusion rules, and exclusion dates. The type
+constructor takes the following keyword arguments:
+
+:param cache: If True, caching of results will be enabled, improving
+              performance of multiple queries considerably. \end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdateutil_1_1rrule_1_1rruleset_a4fa06d6953ecf56a37bc1847dd1b27af}\label{classdateutil_1_1rrule_1_1rruleset_a4fa06d6953ecf56a37bc1847dd1b27af}} 
+\index{dateutil\+::rrule\+::rruleset@{dateutil\+::rrule\+::rruleset}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!dateutil\+::rrule\+::rruleset@{dateutil\+::rrule\+::rruleset}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+rrule.\+rruleset.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cache = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdateutil_1_1rrule_1_1rruleset_a434ff66add95e9a8f4c7480b574b3601}\label{classdateutil_1_1rrule_1_1rruleset_a434ff66add95e9a8f4c7480b574b3601}} 
+\index{dateutil\+::rrule\+::rruleset@{dateutil\+::rrule\+::rruleset}!exdate@{exdate}}
+\index{exdate@{exdate}!dateutil\+::rrule\+::rruleset@{dateutil\+::rrule\+::rruleset}}
+\subsubsection{\texorpdfstring{exdate()}{exdate()}}
+{\footnotesize\ttfamily def dateutil.\+rrule.\+rruleset.\+exdate (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{exdate }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Include the given datetime instance in the recurrence set
+    exclusion list. Dates included that way will not be generated,
+    even if some inclusive rrule or rdate matches them. \end{DoxyVerb}
+ \mbox{\Hypertarget{classdateutil_1_1rrule_1_1rruleset_abba38d9fb938ddaa7814df05e110ca9c}\label{classdateutil_1_1rrule_1_1rruleset_abba38d9fb938ddaa7814df05e110ca9c}} 
+\index{dateutil\+::rrule\+::rruleset@{dateutil\+::rrule\+::rruleset}!exrule@{exrule}}
+\index{exrule@{exrule}!dateutil\+::rrule\+::rruleset@{dateutil\+::rrule\+::rruleset}}
+\subsubsection{\texorpdfstring{exrule()}{exrule()}}
+{\footnotesize\ttfamily def dateutil.\+rrule.\+rruleset.\+exrule (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{exrule }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Include the given rrule instance in the recurrence set exclusion
+    list. Dates which are part of the given recurrence rules will not
+    be generated, even if some inclusive rrule or rdate matches them.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classdateutil_1_1rrule_1_1rruleset_af980109179485ba7fd6e2a736206e3e1}\label{classdateutil_1_1rrule_1_1rruleset_af980109179485ba7fd6e2a736206e3e1}} 
+\index{dateutil\+::rrule\+::rruleset@{dateutil\+::rrule\+::rruleset}!rdate@{rdate}}
+\index{rdate@{rdate}!dateutil\+::rrule\+::rruleset@{dateutil\+::rrule\+::rruleset}}
+\subsubsection{\texorpdfstring{rdate()}{rdate()}}
+{\footnotesize\ttfamily def dateutil.\+rrule.\+rruleset.\+rdate (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{rdate }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Include the given :py:class:`datetime` instance in the recurrence
+    set generation. \end{DoxyVerb}
+ \mbox{\Hypertarget{classdateutil_1_1rrule_1_1rruleset_aeb2fa0bbb0410de7982b05ef805ff106}\label{classdateutil_1_1rrule_1_1rruleset_aeb2fa0bbb0410de7982b05ef805ff106}} 
+\index{dateutil\+::rrule\+::rruleset@{dateutil\+::rrule\+::rruleset}!rrule@{rrule}}
+\index{rrule@{rrule}!dateutil\+::rrule\+::rruleset@{dateutil\+::rrule\+::rruleset}}
+\subsubsection{\texorpdfstring{rrule()}{rrule()}}
+{\footnotesize\ttfamily def dateutil.\+rrule.\+rruleset.\+rrule (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{rrule }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Include the given :py:class:`rrule` instance in the recurrence set
+    generation. \end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/dateutil/\hyperlink{rrule_8py}{rrule.\+py}\end{DoxyCompactItemize}

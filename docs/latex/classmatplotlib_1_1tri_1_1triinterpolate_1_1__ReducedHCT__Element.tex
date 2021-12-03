@@ -1,0 +1,304 @@
+\hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element}{}\section{matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element Class Reference}
+\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element}\index{matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_ae02a0ad48004a518f336deb2968c2665}{get\+\_\+function\+\_\+values} (self, alpha, ecc, dofs)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a8fcdb80b7f68008f5f0111efa0630c86}{get\+\_\+function\+\_\+derivatives} (self, alpha, J, ecc, dofs)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a63ff9ad49e37549dcf349c97862d3a4b}{get\+\_\+function\+\_\+hessians} (self, alpha, J, ecc, dofs)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a09c1c4848e269ea62d018b68aef58593}{get\+\_\+d2\+Sidksij2} (self, alpha, ecc)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a0d08bd16a2f48a0989f0de1efc6c9079}{get\+\_\+bending\+\_\+matrices} (self, J, ecc)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a55a70fad206d70afeed24b77ad30ab34}{get\+\_\+\+Hrot\+\_\+from\+\_\+J} (self, J, return\+\_\+area=False)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a3b0e4db823a716604d1a9d0dc9b1bc06}{get\+\_\+\+Kff\+\_\+and\+\_\+\+Ff} (self, J, ecc, triangles, Uc)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a0b6a0d1d0e12df4c862cc9eb0df3ed92}{M}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a0be8745f48e255ee410e97c8c27e46c4}{M0}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a4f83d42a79a73a57f289d88ebb06d10f}{M1}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_aca359ccdfc5a337767f26f550d897fb4}{M2}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a3b04c57be930bd60ca14e2161439befd}{rotate\+\_\+dV}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a3ffb880583f62b9af76b7d8f22919107}{rotate\+\_\+d2V}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_aa32358cffb9f5cc7a1246e7397337c6e}{n\+\_\+gauss}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a4311fb2b118847f0646cd8e2e802a555}{gauss\+\_\+pts}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_af91526793c04164e4dcc22d47c25f1d1}{dtype}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a646f087f8208b5ddb4f26f934653173b}{gauss\+\_\+w}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_af2ee8b4aa1709a48a352953862b7b43e}{E}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a16477a2dae6de33e78dcb5e037b68cf8}{J0\+\_\+to\+\_\+\+J1}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a2711cfc85e607241d3ad7f88712dc9bb}{J0\+\_\+to\+\_\+\+J2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Implementation of reduced HCT triangular element with explicit shape
+functions.
+
+Computes z, dz, d2z and the element stiffness matrix for bending energy:
+E(f) = integral( (d2z/dx2 + d2z/dy2)**2 dA)
+
+*** Reference for the shape functions: ***
+[1] Basis functions for general Hsieh-Clough-Tocher _triangles, complete or
+    reduced.
+    Michel Bernadou, Kamal Hassan
+    International Journal for Numerical Methods in Engineering.
+    17(5):784 - 789.  2.01
+
+*** Element description: ***
+9 dofs: z and dz given at 3 apex
+C1 (conform)\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a0d08bd16a2f48a0989f0de1efc6c9079}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a0d08bd16a2f48a0989f0de1efc6c9079}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!get\+\_\+bending\+\_\+matrices@{get\+\_\+bending\+\_\+matrices}}
+\index{get\+\_\+bending\+\_\+matrices@{get\+\_\+bending\+\_\+matrices}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{get\+\_\+bending\+\_\+matrices()}{get\_bending\_matrices()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+get\+\_\+bending\+\_\+matrices (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{J,  }\item[{}]{ecc }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+*J* is a (N x 2 x 2) array of jacobian matrices (jacobian matrix at
+triangle first apex)
+*ecc* is a (N x 3 x 1) array (array of column-matrices) of triangle
+eccentricities
+
+Returns
+-------
+Returns the element K matrices for bending energy expressed in
+GLOBAL nodal coordinates.
+K_ij = integral [ (d2zi/dx2 + d2zi/dy2) * (d2zj/dx2 + d2zj/dy2) dA]
+tri_J is needed to rotate dofs from local basis to global basis
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a09c1c4848e269ea62d018b68aef58593}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a09c1c4848e269ea62d018b68aef58593}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!get\+\_\+d2\+Sidksij2@{get\+\_\+d2\+Sidksij2}}
+\index{get\+\_\+d2\+Sidksij2@{get\+\_\+d2\+Sidksij2}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{get\+\_\+d2\+Sidksij2()}{get\_d2Sidksij2()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+get\+\_\+d2\+Sidksij2 (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{alpha,  }\item[{}]{ecc }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+*alpha* is a (N x 3 x 1) array (array of column-matrices) of
+barycentric coordinates
+*ecc* is a (N x 3 x 1) array (array of column-matrices) of triangle
+eccentricities
+
+Returns
+-------
+Returns the arrays d2sdksi2 (N x 3 x 1) Hessian of shape functions
+expressed in covariant coordinates in first apex basis.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a8fcdb80b7f68008f5f0111efa0630c86}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a8fcdb80b7f68008f5f0111efa0630c86}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!get\+\_\+function\+\_\+derivatives@{get\+\_\+function\+\_\+derivatives}}
+\index{get\+\_\+function\+\_\+derivatives@{get\+\_\+function\+\_\+derivatives}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{get\+\_\+function\+\_\+derivatives()}{get\_function\_derivatives()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+get\+\_\+function\+\_\+derivatives (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{alpha,  }\item[{}]{J,  }\item[{}]{ecc,  }\item[{}]{dofs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+*alpha* is a (N x 3 x 1) array (array of column-matrices of
+barycentric coordinates)
+*J* is a (N x 2 x 2) array of jacobian matrices (jacobian matrix at
+triangle first apex)
+*ecc* is a (N x 3 x 1) array (array of column-matrices of triangle
+eccentricities)
+*dofs* is a (N x 1 x 9) arrays (arrays of row-matrices) of computed
+degrees of freedom.
+
+Returns
+-------
+Returns the values of interpolated function derivatives [dz/dx, dz/dy]
+in global coordinates at locations alpha, as a column-matrices of
+shape (N x 2 x 1).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a63ff9ad49e37549dcf349c97862d3a4b}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a63ff9ad49e37549dcf349c97862d3a4b}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!get\+\_\+function\+\_\+hessians@{get\+\_\+function\+\_\+hessians}}
+\index{get\+\_\+function\+\_\+hessians@{get\+\_\+function\+\_\+hessians}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{get\+\_\+function\+\_\+hessians()}{get\_function\_hessians()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+get\+\_\+function\+\_\+hessians (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{alpha,  }\item[{}]{J,  }\item[{}]{ecc,  }\item[{}]{dofs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+*alpha* is a (N x 3 x 1) array (array of column-matrices) of
+barycentric coordinates
+*J* is a (N x 2 x 2) array of jacobian matrices (jacobian matrix at
+triangle first apex)
+*ecc* is a (N x 3 x 1) array (array of column-matrices) of triangle
+eccentricities
+*dofs* is a (N x 1 x 9) arrays (arrays of row-matrices) of computed
+degrees of freedom.
+
+Returns
+-------
+Returns the values of interpolated function 2nd-derivatives
+[d2z/dx2, d2z/dy2, d2z/dxdy] in global coordinates at locations alpha,
+as a column-matrices of shape (N x 3 x 1).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_ae02a0ad48004a518f336deb2968c2665}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_ae02a0ad48004a518f336deb2968c2665}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!get\+\_\+function\+\_\+values@{get\+\_\+function\+\_\+values}}
+\index{get\+\_\+function\+\_\+values@{get\+\_\+function\+\_\+values}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{get\+\_\+function\+\_\+values()}{get\_function\_values()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+get\+\_\+function\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{alpha,  }\item[{}]{ecc,  }\item[{}]{dofs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+alpha : is a (N x 3 x 1) array (array of column-matrices) of
+barycentric coordinates,
+ecc : is a (N x 3 x 1) array (array of column-matrices) of triangle
+eccentricities,
+dofs : is a (N x 1 x 9) arrays (arrays of row-matrices) of computed
+degrees of freedom.
+
+Returns
+-------
+Returns the N-array of interpolated function values.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a55a70fad206d70afeed24b77ad30ab34}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a55a70fad206d70afeed24b77ad30ab34}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!get\+\_\+\+Hrot\+\_\+from\+\_\+J@{get\+\_\+\+Hrot\+\_\+from\+\_\+J}}
+\index{get\+\_\+\+Hrot\+\_\+from\+\_\+J@{get\+\_\+\+Hrot\+\_\+from\+\_\+J}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{get\+\_\+\+Hrot\+\_\+from\+\_\+\+J()}{get\_Hrot\_from\_J()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+get\+\_\+\+Hrot\+\_\+from\+\_\+J (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{J,  }\item[{}]{return\+\_\+area = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+*J* is a (N x 2 x 2) array of jacobian matrices (jacobian matrix at
+triangle first apex)
+
+Returns
+-------
+Returns H_rot used to rotate Hessian from local basis of first apex,
+to global coordinates.
+if *return_area* is True, returns also the triangle area (0.5*det(J))
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a3b0e4db823a716604d1a9d0dc9b1bc06}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a3b0e4db823a716604d1a9d0dc9b1bc06}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!get\+\_\+\+Kff\+\_\+and\+\_\+\+Ff@{get\+\_\+\+Kff\+\_\+and\+\_\+\+Ff}}
+\index{get\+\_\+\+Kff\+\_\+and\+\_\+\+Ff@{get\+\_\+\+Kff\+\_\+and\+\_\+\+Ff}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{get\+\_\+\+Kff\+\_\+and\+\_\+\+Ff()}{get\_Kff\_and\_Ff()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+get\+\_\+\+Kff\+\_\+and\+\_\+\+Ff (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{J,  }\item[{}]{ecc,  }\item[{}]{triangles,  }\item[{}]{Uc }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Build K and F for the following elliptic formulation:
+minimization of curvature energy with value of function at node
+imposed and derivatives 'free'.
+
+Build the global Kff matrix in cco format.
+Build the full Ff vec Ff = - Kfc x Uc.
+
+Parameters
+----------
+*J* is a (N x 2 x 2) array of jacobian matrices (jacobian matrix at
+triangle first apex)
+*ecc* is a (N x 3 x 1) array (array of column-matrices) of triangle
+eccentricities
+*triangles* is a (N x 3) array of nodes indexes.
+*Uc* is (N x 3) array of imposed displacements at nodes
+
+Returns
+-------
+(Kff_rows, Kff_cols, Kff_vals) Kff matrix in coo format - Duplicate
+(row, col) entries must be summed.
+Ff: force vector - dim npts * 3
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_af91526793c04164e4dcc22d47c25f1d1}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_af91526793c04164e4dcc22d47c25f1d1}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!dtype@{dtype}}
+\index{dtype@{dtype}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{dtype}{dtype}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+dtype\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_af2ee8b4aa1709a48a352953862b7b43e}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_af2ee8b4aa1709a48a352953862b7b43e}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!E@{E}}
+\index{E@{E}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{E}{E}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+E\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a4311fb2b118847f0646cd8e2e802a555}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a4311fb2b118847f0646cd8e2e802a555}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!gauss\+\_\+pts@{gauss\+\_\+pts}}
+\index{gauss\+\_\+pts@{gauss\+\_\+pts}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{gauss\+\_\+pts}{gauss\_pts}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+gauss\+\_\+pts\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a646f087f8208b5ddb4f26f934653173b}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a646f087f8208b5ddb4f26f934653173b}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!gauss\+\_\+w@{gauss\+\_\+w}}
+\index{gauss\+\_\+w@{gauss\+\_\+w}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{gauss\+\_\+w}{gauss\_w}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+gauss\+\_\+w\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a16477a2dae6de33e78dcb5e037b68cf8}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a16477a2dae6de33e78dcb5e037b68cf8}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!J0\+\_\+to\+\_\+\+J1@{J0\+\_\+to\+\_\+\+J1}}
+\index{J0\+\_\+to\+\_\+\+J1@{J0\+\_\+to\+\_\+\+J1}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{J0\+\_\+to\+\_\+\+J1}{J0\_to\_J1}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+J0\+\_\+to\+\_\+\+J1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a2711cfc85e607241d3ad7f88712dc9bb}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a2711cfc85e607241d3ad7f88712dc9bb}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!J0\+\_\+to\+\_\+\+J2@{J0\+\_\+to\+\_\+\+J2}}
+\index{J0\+\_\+to\+\_\+\+J2@{J0\+\_\+to\+\_\+\+J2}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{J0\+\_\+to\+\_\+\+J2}{J0\_to\_J2}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+J0\+\_\+to\+\_\+\+J2\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a0b6a0d1d0e12df4c862cc9eb0df3ed92}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a0b6a0d1d0e12df4c862cc9eb0df3ed92}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!M@{M}}
+\index{M@{M}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{M}{M}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+M\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a0be8745f48e255ee410e97c8c27e46c4}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a0be8745f48e255ee410e97c8c27e46c4}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!M0@{M0}}
+\index{M0@{M0}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{M0}{M0}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+M0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a4f83d42a79a73a57f289d88ebb06d10f}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a4f83d42a79a73a57f289d88ebb06d10f}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!M1@{M1}}
+\index{M1@{M1}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{M1}{M1}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+M1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_aca359ccdfc5a337767f26f550d897fb4}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_aca359ccdfc5a337767f26f550d897fb4}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!M2@{M2}}
+\index{M2@{M2}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{M2}{M2}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+M2\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_aa32358cffb9f5cc7a1246e7397337c6e}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_aa32358cffb9f5cc7a1246e7397337c6e}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!n\+\_\+gauss@{n\+\_\+gauss}}
+\index{n\+\_\+gauss@{n\+\_\+gauss}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{n\+\_\+gauss}{n\_gauss}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+n\+\_\+gauss\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a3ffb880583f62b9af76b7d8f22919107}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a3ffb880583f62b9af76b7d8f22919107}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!rotate\+\_\+d2V@{rotate\+\_\+d2V}}
+\index{rotate\+\_\+d2V@{rotate\+\_\+d2V}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{rotate\+\_\+d2V}{rotate\_d2V}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+rotate\+\_\+d2V\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a3b04c57be930bd60ca14e2161439befd}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__ReducedHCT__Element_a3b04c57be930bd60ca14e2161439befd}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}!rotate\+\_\+dV@{rotate\+\_\+dV}}
+\index{rotate\+\_\+dV@{rotate\+\_\+dV}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element}}
+\subsubsection{\texorpdfstring{rotate\+\_\+dV}{rotate\_dV}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+Reduced\+H\+C\+T\+\_\+\+Element.\+rotate\+\_\+dV\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/tri/\hyperlink{triinterpolate_8py}{triinterpolate.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,598 @@
+\hypertarget{ndarrayobject_8h}{}\section{venv/lib/python3.9/site-\/packages/numpy/core/include/numpy/ndarrayobject.h File Reference}
+\label{ndarrayobject_8h}\index{venv/lib/python3.\+9/site-\/packages/numpy/core/include/numpy/ndarrayobject.\+h@{venv/lib/python3.\+9/site-\/packages/numpy/core/include/numpy/ndarrayobject.\+h}}
+{\ttfamily \#include $<$Python.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ndarraytypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}\+\_\+\+\_\+multiarray\+\_\+api.\+h\char`\"{}}\newline
+Include dependency graph for ndarrayobject.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ndarrayobject_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ndarrayobject_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ndarrayobject_8h_aa6258c4f35d90e1cd3728de158accb1d}{Py\+Array\+\_\+\+Descr\+Check}(op)~Py\+Object\+\_\+\+Type\+Check(op, \&\hyperlink{____multiarray__api_8h_a51dc1975ede08aa527eaf65b71e19660}{Py\+Array\+Descr\+\_\+\+Type})
+\item 
+\#define \hyperlink{ndarrayobject_8h_a09c10f2e12476322abc6af54e9445173}{Py\+Array\+\_\+\+Check}(op)~Py\+Object\+\_\+\+Type\+Check(op, \&\hyperlink{____multiarray__api_8h_a3ea8d0bfb4922105d724bdb9950068db}{Py\+Array\+\_\+\+Type})
+\item 
+\#define \hyperlink{ndarrayobject_8h_ad8ad33ef7547dcc051860f8ccfccf551}{Py\+Array\+\_\+\+Check\+Exact}(op)~(((Py\+Object$\ast$)(op))-\/$>$ob\+\_\+type == \&\hyperlink{____multiarray__api_8h_a3ea8d0bfb4922105d724bdb9950068db}{Py\+Array\+\_\+\+Type})
+\item 
+\#define \hyperlink{ndarrayobject_8h_a0fc6ef8ae6a7f15a9bf6c3c1f3670b03}{Py\+Array\+\_\+\+Has\+Array\+Interface\+Type}(op,  type,  context,  out)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a3e6ee93667522b505120a0d1736e9c0c}{Py\+Array\+\_\+\+Has\+Array\+Interface}(op,  out)~\hyperlink{ndarrayobject_8h_a0fc6ef8ae6a7f15a9bf6c3c1f3670b03}{Py\+Array\+\_\+\+Has\+Array\+Interface\+Type}(op, N\+U\+LL, N\+U\+LL, out)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a082ddf88dcd0fc397362e7c13075aa77}{Py\+Array\+\_\+\+Is\+Zero\+Dim}(op)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a2be6bfc86247a27ffd240cc32752c709}{Py\+Array\+\_\+\+Is\+Scalar}(obj,  cls)~(Py\+Object\+\_\+\+Type\+Check(obj, \&Py\#\#cls\#\#Arr\+Type\+\_\+\+Type))
+\item 
+\#define \hyperlink{ndarrayobject_8h_a0133892dc5dbd54ccf5962f03951552c}{Py\+Array\+\_\+\+Check\+Scalar}(m)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a6665e161c7d46e164af481b2825ea0f9}{Py\+Array\+\_\+\+Is\+Python\+Number}(obj)
+\item 
+\#define \hyperlink{ndarrayobject_8h_ab32d6f12bce4150f637342696174bcb1}{Py\+Array\+\_\+\+Is\+Integer\+Scalar}(obj)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a085537d41b5905cedba3902551df3a32}{Py\+Array\+\_\+\+Is\+Python\+Scalar}(obj)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a903ef1ad52b4f73e6edd69511f915136}{Py\+Array\+\_\+\+Is\+Any\+Scalar}(obj)~(\hyperlink{ndarrayobject_8h_a2be6bfc86247a27ffd240cc32752c709}{Py\+Array\+\_\+\+Is\+Scalar}(obj, Generic) $\vert$$\vert$ \hyperlink{ndarrayobject_8h_a085537d41b5905cedba3902551df3a32}{Py\+Array\+\_\+\+Is\+Python\+Scalar}(obj))
+\item 
+\#define \hyperlink{ndarrayobject_8h_adff4ca07dc6da20c99b78a58927bfa44}{Py\+Array\+\_\+\+Check\+Any\+Scalar}(obj)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a3a8487e2af6c17ad634719584c6b63ac}{Py\+Array\+\_\+\+G\+E\+T\+C\+O\+N\+T\+I\+G\+U\+O\+US}(m)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a1cd7d4051422b47eb63f367b65c30e3c}{Py\+Array\+\_\+\+S\+A\+M\+E\+S\+H\+A\+PE}(a1,  a2)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a9b0cbad553822c316291e3cd99b61731}{Py\+Array\+\_\+\+S\+I\+ZE}(m)~\hyperlink{____multiarray__api_8h_a7b0e50570f254f56f9582641765dd440}{Py\+Array\+\_\+\+Multiply\+List}(\hyperlink{ndarraytypes_8h_ae81668078f2bb479e36c1c1fd43088c0}{Py\+Array\+\_\+\+D\+I\+MS}(m), \hyperlink{ndarraytypes_8h_a768c4d3af1729ad446bcb2b0555dfb43}{Py\+Array\+\_\+\+N\+D\+IM}(m))
+\item 
+\#define \hyperlink{ndarrayobject_8h_a181fbdc71fb2151a5428504eca6dcbc9}{Py\+Array\+\_\+\+N\+B\+Y\+T\+ES}(m)~(\hyperlink{ndarraytypes_8h_a484628bd1c8d61fa38b1b98ba99eed80}{Py\+Array\+\_\+\+I\+T\+E\+M\+S\+I\+ZE}(m) $\ast$ \hyperlink{ndarrayobject_8h_a9b0cbad553822c316291e3cd99b61731}{Py\+Array\+\_\+\+S\+I\+ZE}(m))
+\item 
+\#define \hyperlink{ndarrayobject_8h_a7999a1882cd1f95af65daf4bbcbc7868}{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+O}(m)~\hyperlink{____multiarray__api_8h_abdba8cb8480d45fc57458ae2aa1bd41e}{Py\+Array\+\_\+\+From\+Any}(m, N\+U\+LL, 0, 0, 0, N\+U\+LL)
+\item 
+\#define \hyperlink{ndarrayobject_8h_ac0f3b7369223878f74ba09feea48f5e5}{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OF}(m,  flags)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a28fcafb0ef0c1a7980cd62a34ae2ac4d}{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OT}(m,  type)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a41f5ceebdb8726e867dc025825c366e0}{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+O\+TF}(m,  type,  flags)
+\item 
+\#define \hyperlink{ndarrayobject_8h_ab5bca0999cfe5b227a70083857e907ec}{Py\+Array\+\_\+\+F\+R\+O\+M\+A\+NY}(m,  type,  min,  max,  flags)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a9669e6eaeea8dfde31c0785ffe614c8f}{Py\+Array\+\_\+\+Z\+E\+R\+OS}(m,  dims,  type,  is\+\_\+f\+\_\+order)~\hyperlink{____multiarray__api_8h_aee05d767c9fcbaf516a7c4a0b2741ae4}{Py\+Array\+\_\+\+Zeros}(m, dims, \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{Py\+Array\+\_\+\+Descr\+From\+Type}(type), is\+\_\+f\+\_\+order)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a604025a2d03535043454d42b9f691760}{Py\+Array\+\_\+\+E\+M\+P\+TY}(m,  dims,  type,  is\+\_\+f\+\_\+order)~\hyperlink{____multiarray__api_8h_a5a8b5ca4325c65e9c7eae7ea57ac70d4}{Py\+Array\+\_\+\+Empty}(m, dims, \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{Py\+Array\+\_\+\+Descr\+From\+Type}(type), is\+\_\+f\+\_\+order)
+\item 
+\#define \hyperlink{ndarrayobject_8h_adbc14f0792a26f1edb8b0cc50f61ade3}{Py\+Array\+\_\+\+F\+I\+L\+L\+W\+B\+Y\+TE}(obj,  val)
+\item 
+\#define \hyperlink{ndarrayobject_8h_adc090b9d2ecb67324437aba7ccdbb054}{Py\+Array\+\_\+\+R\+E\+F\+C\+O\+U\+NT}(obj)~(((Py\+Object $\ast$)(obj))-\/$>$ob\+\_\+refcnt)
+\item 
+\#define \hyperlink{ndarrayobject_8h_af00f200170ddda4b9263efc877d94610}{N\+P\+Y\+\_\+\+R\+E\+F\+C\+O\+U\+NT}~\hyperlink{ndarrayobject_8h_adc090b9d2ecb67324437aba7ccdbb054}{Py\+Array\+\_\+\+R\+E\+F\+C\+O\+U\+NT}
+\item 
+\#define \hyperlink{ndarrayobject_8h_ac6d04f344fc458ddc6fe7bef254e8b47}{N\+P\+Y\+\_\+\+M\+A\+X\+\_\+\+E\+L\+S\+I\+ZE}~(2 $\ast$ \hyperlink{__numpyconfig_8h_a17caa35bd5b7caf978691c571e2c3229}{N\+P\+Y\+\_\+\+S\+I\+Z\+E\+O\+F\+\_\+\+L\+O\+N\+G\+D\+O\+U\+B\+LE})
+\item 
+\#define \hyperlink{ndarrayobject_8h_a23929e9df29c9d63f2dca54b7c930da7}{Py\+Array\+\_\+\+Contiguous\+From\+Any}(op,  type,  min\+\_\+depth,  max\+\_\+depth)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a0183110c7a79750cb7cf9e3a0b89bfd3}{Py\+Array\+\_\+\+Equiv\+Arr\+Types}(a1,  a2)~\hyperlink{____multiarray__api_8h_a604a1f8aa60d2f6cd8237ffa30d1daf8}{Py\+Array\+\_\+\+Equiv\+Types}(\hyperlink{ndarraytypes_8h_a97e75459c83b7e31038553f469eb9050}{Py\+Array\+\_\+\+D\+E\+S\+CR}(a1), \hyperlink{ndarraytypes_8h_a97e75459c83b7e31038553f469eb9050}{Py\+Array\+\_\+\+D\+E\+S\+CR}(a2))
+\item 
+\#define \hyperlink{ndarrayobject_8h_a6dda19d3ece4127a91e62b178fabe869}{Py\+Array\+\_\+\+Equiv\+Byteorders}(b1,  b2)~(((b1) == (b2)) $\vert$$\vert$ (\hyperlink{ndarraytypes_8h_abe117f37a447a76b170040fb77f089ea}{Py\+Array\+\_\+\+I\+S\+N\+BO}(b1) == \hyperlink{ndarraytypes_8h_abe117f37a447a76b170040fb77f089ea}{Py\+Array\+\_\+\+I\+S\+N\+BO}(b2)))
+\item 
+\#define \hyperlink{ndarrayobject_8h_a2478390c4ceeff736ff03d5677276890}{Py\+Array\+\_\+\+Simple\+New}(nd,  dims,  typenum)~\hyperlink{____multiarray__api_8h_a586fb7931719ec257ed4b0e6dcf56404}{Py\+Array\+\_\+\+New}(\&\hyperlink{____multiarray__api_8h_a3ea8d0bfb4922105d724bdb9950068db}{Py\+Array\+\_\+\+Type}, nd, dims, typenum, N\+U\+LL, N\+U\+LL, 0, 0, N\+U\+LL)
+\item 
+\#define \hyperlink{ndarrayobject_8h_ab3d47cab39dbec2a8efd0c9bcfa3b6c9}{Py\+Array\+\_\+\+Simple\+New\+From\+Data}(nd,  dims,  typenum,  data)
+\item 
+\#define \hyperlink{ndarrayobject_8h_ae8a2a9175a4cf6a0fb112acf34179bc6}{Py\+Array\+\_\+\+Simple\+New\+From\+Descr}(nd,  dims,  descr)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a75e0b3ba7b5ecf9584bfbc7721b52ea2}{Py\+Array\+\_\+\+To\+Scalar}(data,  arr)~\hyperlink{____multiarray__api_8h_a486ea83577bf8faf5cada1f48497d145}{Py\+Array\+\_\+\+Scalar}(data, \hyperlink{ndarraytypes_8h_a97e75459c83b7e31038553f469eb9050}{Py\+Array\+\_\+\+D\+E\+S\+CR}(arr), (Py\+Object $\ast$)arr)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a837b37c9f3932c866f07a8b725528ee0}{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R1}(obj,  i)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a3f4c93001c52c2a324ee5e8f51952671}{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R2}(obj,  i,  j)
+\item 
+\#define \hyperlink{ndarrayobject_8h_ac08418ac940f2bd4843a790ff7038e44}{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R3}(obj,  i,  j,  k)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a5c1d60f8c88b86985f46f71741102a70}{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R4}(obj,  i,  j,  k,  l)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a9d36e06cb25babb2af75c6cf4e7ec6d4}{Py\+Array\+\_\+\+D\+E\+S\+C\+R\+\_\+\+R\+E\+P\+L\+A\+CE}(descr)
+\item 
+\#define \hyperlink{ndarrayobject_8h_af9122a7b6dbb28619597620f1e4120b6}{Py\+Array\+\_\+\+Copy}(obj)~\hyperlink{____multiarray__api_8h_a0ccfc75e53c944d1bd7d479c29a8f612}{Py\+Array\+\_\+\+New\+Copy}(obj, \hyperlink{ndarraytypes_8h_a6573f6abf65cf58d6596d9214915eae2a0cfb9331ea8ab6a8d22b915dfc5bafaa}{N\+P\+Y\+\_\+\+C\+O\+R\+D\+ER})
+\item 
+\#define \hyperlink{ndarrayobject_8h_af527a2b0be26080c5fb7df3f02b8f895}{Py\+Array\+\_\+\+From\+Object}(op,  type,  min\+\_\+depth,  max\+\_\+depth)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a4ba9581d66bf75a56987eac5a65ddf7d}{Py\+Array\+\_\+\+Contiguous\+From\+Object}(op,  type,  min\+\_\+depth,  max\+\_\+depth)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a2c2e7dad3109db6cdc4523d83cf5fe5c}{Py\+Array\+\_\+\+Copy\+From\+Object}(op,  type,  min\+\_\+depth,  max\+\_\+depth)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a7b3a25b72b096db3ebea4462645c9820}{Py\+Array\+\_\+\+Cast}(mp,  type\+\_\+num)~\hyperlink{____multiarray__api_8h_acbd65687c241f6c6c9b22b0bc7417822}{Py\+Array\+\_\+\+Cast\+To\+Type}(mp, \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{Py\+Array\+\_\+\+Descr\+From\+Type}(type\+\_\+num), 0)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a8a1506137354222d0062dbc6d9fb6e82}{Py\+Array\+\_\+\+Take}(ap,  items,  axis)~\hyperlink{____multiarray__api_8h_ad330ca3149ec5428e0e1535fbeb0ebc1}{Py\+Array\+\_\+\+Take\+From}(ap, items, axis, N\+U\+LL, \hyperlink{ndarraytypes_8h_a6e8684db34aca83192e2d0b7a9f6b649a96755da9ac6bd5d824deeabe8b8c4f0d}{N\+P\+Y\+\_\+\+R\+A\+I\+SE})
+\item 
+\#define \hyperlink{ndarrayobject_8h_addb3764ce9916cdb1697dc436975a033}{Py\+Array\+\_\+\+Put}(ap,  items,  values)~\hyperlink{____multiarray__api_8h_a2cbc0e948a28a782cfd7d244a09b8baa}{Py\+Array\+\_\+\+Put\+To}(ap, items, values, \hyperlink{ndarraytypes_8h_a6e8684db34aca83192e2d0b7a9f6b649a96755da9ac6bd5d824deeabe8b8c4f0d}{N\+P\+Y\+\_\+\+R\+A\+I\+SE})
+\item 
+\#define \hyperlink{ndarrayobject_8h_a79236946c17e5cf6709c1c5f6e01ad9e}{Py\+Array\+\_\+\+From\+Dims\+And\+Data}(nd,  d,  type,  data)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a10316926e828c127d465d486ed4da907}{N\+P\+Y\+\_\+\+T\+I\+T\+L\+E\+\_\+\+K\+EY}(key,  value)~(N\+P\+Y\+\_\+\+T\+I\+T\+L\+E\+\_\+\+K\+E\+Y\+\_\+check((key), (value)))
+\item 
+\#define \hyperlink{ndarrayobject_8h_a82eab3e0d900b395bc91d8491cfcc651}{D\+E\+P\+R\+E\+C\+A\+TE}(msg)~Py\+Err\+\_\+\+Warn\+Ex(Py\+Exc\+\_\+\+Deprecation\+Warning,msg,1)
+\item 
+\#define \hyperlink{ndarrayobject_8h_a2624a2aabf4de6bf05b9f030551616ab}{D\+E\+P\+R\+E\+C\+A\+T\+E\+\_\+\+F\+U\+T\+U\+R\+E\+W\+A\+R\+N\+I\+NG}(msg)~Py\+Err\+\_\+\+Warn\+Ex(Py\+Exc\+\_\+\+Future\+Warning,msg,1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ndarrayobject_8h_a82eab3e0d900b395bc91d8491cfcc651}\label{ndarrayobject_8h_a82eab3e0d900b395bc91d8491cfcc651}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!D\+E\+P\+R\+E\+C\+A\+TE@{D\+E\+P\+R\+E\+C\+A\+TE}}
+\index{D\+E\+P\+R\+E\+C\+A\+TE@{D\+E\+P\+R\+E\+C\+A\+TE}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{D\+E\+P\+R\+E\+C\+A\+TE}{DEPRECATE}}
+{\footnotesize\ttfamily \#define D\+E\+P\+R\+E\+C\+A\+TE(\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})~Py\+Err\+\_\+\+Warn\+Ex(Py\+Exc\+\_\+\+Deprecation\+Warning,msg,1)}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a2624a2aabf4de6bf05b9f030551616ab}\label{ndarrayobject_8h_a2624a2aabf4de6bf05b9f030551616ab}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!D\+E\+P\+R\+E\+C\+A\+T\+E\+\_\+\+F\+U\+T\+U\+R\+E\+W\+A\+R\+N\+I\+NG@{D\+E\+P\+R\+E\+C\+A\+T\+E\+\_\+\+F\+U\+T\+U\+R\+E\+W\+A\+R\+N\+I\+NG}}
+\index{D\+E\+P\+R\+E\+C\+A\+T\+E\+\_\+\+F\+U\+T\+U\+R\+E\+W\+A\+R\+N\+I\+NG@{D\+E\+P\+R\+E\+C\+A\+T\+E\+\_\+\+F\+U\+T\+U\+R\+E\+W\+A\+R\+N\+I\+NG}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{D\+E\+P\+R\+E\+C\+A\+T\+E\+\_\+\+F\+U\+T\+U\+R\+E\+W\+A\+R\+N\+I\+NG}{DEPRECATE\_FUTUREWARNING}}
+{\footnotesize\ttfamily \#define D\+E\+P\+R\+E\+C\+A\+T\+E\+\_\+\+F\+U\+T\+U\+R\+E\+W\+A\+R\+N\+I\+NG(\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})~Py\+Err\+\_\+\+Warn\+Ex(Py\+Exc\+\_\+\+Future\+Warning,msg,1)}
+
+\mbox{\Hypertarget{ndarrayobject_8h_ac6d04f344fc458ddc6fe7bef254e8b47}\label{ndarrayobject_8h_ac6d04f344fc458ddc6fe7bef254e8b47}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!N\+P\+Y\+\_\+\+M\+A\+X\+\_\+\+E\+L\+S\+I\+ZE@{N\+P\+Y\+\_\+\+M\+A\+X\+\_\+\+E\+L\+S\+I\+ZE}}
+\index{N\+P\+Y\+\_\+\+M\+A\+X\+\_\+\+E\+L\+S\+I\+ZE@{N\+P\+Y\+\_\+\+M\+A\+X\+\_\+\+E\+L\+S\+I\+ZE}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{N\+P\+Y\+\_\+\+M\+A\+X\+\_\+\+E\+L\+S\+I\+ZE}{NPY\_MAX\_ELSIZE}}
+{\footnotesize\ttfamily \#define N\+P\+Y\+\_\+\+M\+A\+X\+\_\+\+E\+L\+S\+I\+ZE~(2 $\ast$ \hyperlink{__numpyconfig_8h_a17caa35bd5b7caf978691c571e2c3229}{N\+P\+Y\+\_\+\+S\+I\+Z\+E\+O\+F\+\_\+\+L\+O\+N\+G\+D\+O\+U\+B\+LE})}
+
+\mbox{\Hypertarget{ndarrayobject_8h_af00f200170ddda4b9263efc877d94610}\label{ndarrayobject_8h_af00f200170ddda4b9263efc877d94610}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!N\+P\+Y\+\_\+\+R\+E\+F\+C\+O\+U\+NT@{N\+P\+Y\+\_\+\+R\+E\+F\+C\+O\+U\+NT}}
+\index{N\+P\+Y\+\_\+\+R\+E\+F\+C\+O\+U\+NT@{N\+P\+Y\+\_\+\+R\+E\+F\+C\+O\+U\+NT}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{N\+P\+Y\+\_\+\+R\+E\+F\+C\+O\+U\+NT}{NPY\_REFCOUNT}}
+{\footnotesize\ttfamily \#define N\+P\+Y\+\_\+\+R\+E\+F\+C\+O\+U\+NT~\hyperlink{ndarrayobject_8h_adc090b9d2ecb67324437aba7ccdbb054}{Py\+Array\+\_\+\+R\+E\+F\+C\+O\+U\+NT}}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a10316926e828c127d465d486ed4da907}\label{ndarrayobject_8h_a10316926e828c127d465d486ed4da907}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!N\+P\+Y\+\_\+\+T\+I\+T\+L\+E\+\_\+\+K\+EY@{N\+P\+Y\+\_\+\+T\+I\+T\+L\+E\+\_\+\+K\+EY}}
+\index{N\+P\+Y\+\_\+\+T\+I\+T\+L\+E\+\_\+\+K\+EY@{N\+P\+Y\+\_\+\+T\+I\+T\+L\+E\+\_\+\+K\+EY}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{N\+P\+Y\+\_\+\+T\+I\+T\+L\+E\+\_\+\+K\+EY}{NPY\_TITLE\_KEY}}
+{\footnotesize\ttfamily \#define N\+P\+Y\+\_\+\+T\+I\+T\+L\+E\+\_\+\+K\+EY(\begin{DoxyParamCaption}\item[{}]{key,  }\item[{}]{value }\end{DoxyParamCaption})~(N\+P\+Y\+\_\+\+T\+I\+T\+L\+E\+\_\+\+K\+E\+Y\+\_\+check((key), (value)))}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a7b3a25b72b096db3ebea4462645c9820}\label{ndarrayobject_8h_a7b3a25b72b096db3ebea4462645c9820}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Cast@{Py\+Array\+\_\+\+Cast}}
+\index{Py\+Array\+\_\+\+Cast@{Py\+Array\+\_\+\+Cast}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Cast}{PyArray\_Cast}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Cast(\begin{DoxyParamCaption}\item[{}]{mp,  }\item[{}]{type\+\_\+num }\end{DoxyParamCaption})~\hyperlink{____multiarray__api_8h_acbd65687c241f6c6c9b22b0bc7417822}{Py\+Array\+\_\+\+Cast\+To\+Type}(mp, \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{Py\+Array\+\_\+\+Descr\+From\+Type}(type\+\_\+num), 0)}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a09c10f2e12476322abc6af54e9445173}\label{ndarrayobject_8h_a09c10f2e12476322abc6af54e9445173}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Check@{Py\+Array\+\_\+\+Check}}
+\index{Py\+Array\+\_\+\+Check@{Py\+Array\+\_\+\+Check}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Check}{PyArray\_Check}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Check(\begin{DoxyParamCaption}\item[{}]{op }\end{DoxyParamCaption})~Py\+Object\+\_\+\+Type\+Check(op, \&\hyperlink{____multiarray__api_8h_a3ea8d0bfb4922105d724bdb9950068db}{Py\+Array\+\_\+\+Type})}
+
+\mbox{\Hypertarget{ndarrayobject_8h_adff4ca07dc6da20c99b78a58927bfa44}\label{ndarrayobject_8h_adff4ca07dc6da20c99b78a58927bfa44}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Check\+Any\+Scalar@{Py\+Array\+\_\+\+Check\+Any\+Scalar}}
+\index{Py\+Array\+\_\+\+Check\+Any\+Scalar@{Py\+Array\+\_\+\+Check\+Any\+Scalar}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Check\+Any\+Scalar}{PyArray\_CheckAnyScalar}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Check\+Any\+Scalar(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\hyperlink{ndarrayobject_8h_a085537d41b5905cedba3902551df3a32}{PyArray\_IsPythonScalar}(obj) ||           \(\backslash\)
+                                     PyArray\_CheckScalar(obj))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_ad8ad33ef7547dcc051860f8ccfccf551}\label{ndarrayobject_8h_ad8ad33ef7547dcc051860f8ccfccf551}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Check\+Exact@{Py\+Array\+\_\+\+Check\+Exact}}
+\index{Py\+Array\+\_\+\+Check\+Exact@{Py\+Array\+\_\+\+Check\+Exact}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Check\+Exact}{PyArray\_CheckExact}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Check\+Exact(\begin{DoxyParamCaption}\item[{}]{op }\end{DoxyParamCaption})~(((Py\+Object$\ast$)(op))-\/$>$ob\+\_\+type == \&\hyperlink{____multiarray__api_8h_a3ea8d0bfb4922105d724bdb9950068db}{Py\+Array\+\_\+\+Type})}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a0133892dc5dbd54ccf5962f03951552c}\label{ndarrayobject_8h_a0133892dc5dbd54ccf5962f03951552c}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Check\+Scalar@{Py\+Array\+\_\+\+Check\+Scalar}}
+\index{Py\+Array\+\_\+\+Check\+Scalar@{Py\+Array\+\_\+\+Check\+Scalar}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Check\+Scalar}{PyArray\_CheckScalar}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Check\+Scalar(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\hyperlink{ndarrayobject_8h_a2be6bfc86247a27ffd240cc32752c709}{PyArray\_IsScalar}(\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}{m}, Generic) ||               \(\backslash\)
+                                PyArray\_IsZeroDim(\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}{m}))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a23929e9df29c9d63f2dca54b7c930da7}\label{ndarrayobject_8h_a23929e9df29c9d63f2dca54b7c930da7}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Contiguous\+From\+Any@{Py\+Array\+\_\+\+Contiguous\+From\+Any}}
+\index{Py\+Array\+\_\+\+Contiguous\+From\+Any@{Py\+Array\+\_\+\+Contiguous\+From\+Any}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Contiguous\+From\+Any}{PyArray\_ContiguousFromAny}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Contiguous\+From\+Any(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{type,  }\item[{}]{min\+\_\+depth,  }\item[{}]{max\+\_\+depth }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{____multiarray__api_8h_abdba8cb8480d45fc57458ae2aa1bd41e}{PyArray\_FromAny}(op, \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{PyArray\_DescrFromType}(
+      \hyperlink{namespacehistory_a83a2419001ff099ae979da1aafb842fa}{type}), min\_depth, \(\backslash\)
+                              max\_depth, \hyperlink{ndarraytypes_8h_aa7b8a0ac65c7cbae56fef33a1a446a37}{NPY\_ARRAY\_DEFAULT}, NULL)
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a4ba9581d66bf75a56987eac5a65ddf7d}\label{ndarrayobject_8h_a4ba9581d66bf75a56987eac5a65ddf7d}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Contiguous\+From\+Object@{Py\+Array\+\_\+\+Contiguous\+From\+Object}}
+\index{Py\+Array\+\_\+\+Contiguous\+From\+Object@{Py\+Array\+\_\+\+Contiguous\+From\+Object}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Contiguous\+From\+Object}{PyArray\_ContiguousFromObject}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Contiguous\+From\+Object(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{type,  }\item[{}]{min\+\_\+depth,  }\item[{}]{max\+\_\+depth }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{____multiarray__api_8h_abdba8cb8480d45fc57458ae2aa1bd41e}{PyArray\_FromAny}(op, \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{PyArray\_DescrFromType}(
+      \hyperlink{namespacehistory_a83a2419001ff099ae979da1aafb842fa}{type}), min\_depth, \(\backslash\)
+                              max\_depth, \hyperlink{ndarraytypes_8h_aa7b8a0ac65c7cbae56fef33a1a446a37}{NPY\_ARRAY\_DEFAULT} | \(\backslash\)
+                                         \hyperlink{ndarraytypes_8h_a7083c767f63691cc5f2d2a81c643fa4d}{NPY\_ARRAY\_ENSUREARRAY}, NULL)
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_af9122a7b6dbb28619597620f1e4120b6}\label{ndarrayobject_8h_af9122a7b6dbb28619597620f1e4120b6}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Copy@{Py\+Array\+\_\+\+Copy}}
+\index{Py\+Array\+\_\+\+Copy@{Py\+Array\+\_\+\+Copy}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Copy}{PyArray\_Copy}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Copy(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})~\hyperlink{____multiarray__api_8h_a0ccfc75e53c944d1bd7d479c29a8f612}{Py\+Array\+\_\+\+New\+Copy}(obj, \hyperlink{ndarraytypes_8h_a6573f6abf65cf58d6596d9214915eae2a0cfb9331ea8ab6a8d22b915dfc5bafaa}{N\+P\+Y\+\_\+\+C\+O\+R\+D\+ER})}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a2c2e7dad3109db6cdc4523d83cf5fe5c}\label{ndarrayobject_8h_a2c2e7dad3109db6cdc4523d83cf5fe5c}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Copy\+From\+Object@{Py\+Array\+\_\+\+Copy\+From\+Object}}
+\index{Py\+Array\+\_\+\+Copy\+From\+Object@{Py\+Array\+\_\+\+Copy\+From\+Object}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Copy\+From\+Object}{PyArray\_CopyFromObject}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Copy\+From\+Object(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{type,  }\item[{}]{min\+\_\+depth,  }\item[{}]{max\+\_\+depth }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{____multiarray__api_8h_abdba8cb8480d45fc57458ae2aa1bd41e}{PyArray\_FromAny}(op, \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{PyArray\_DescrFromType}(
+      \hyperlink{namespacehistory_a83a2419001ff099ae979da1aafb842fa}{type}), min\_depth, \(\backslash\)
+                        max\_depth, \hyperlink{ndarraytypes_8h_ad2aa9bb879ea9cb16204792c586720b7}{NPY\_ARRAY\_ENSURECOPY} | \(\backslash\)
+                                   \hyperlink{ndarraytypes_8h_aa7b8a0ac65c7cbae56fef33a1a446a37}{NPY\_ARRAY\_DEFAULT} | \(\backslash\)
+                                   \hyperlink{ndarraytypes_8h_a7083c767f63691cc5f2d2a81c643fa4d}{NPY\_ARRAY\_ENSUREARRAY}, NULL)
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a9d36e06cb25babb2af75c6cf4e7ec6d4}\label{ndarrayobject_8h_a9d36e06cb25babb2af75c6cf4e7ec6d4}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+D\+E\+S\+C\+R\+\_\+\+R\+E\+P\+L\+A\+CE@{Py\+Array\+\_\+\+D\+E\+S\+C\+R\+\_\+\+R\+E\+P\+L\+A\+CE}}
+\index{Py\+Array\+\_\+\+D\+E\+S\+C\+R\+\_\+\+R\+E\+P\+L\+A\+CE@{Py\+Array\+\_\+\+D\+E\+S\+C\+R\+\_\+\+R\+E\+P\+L\+A\+CE}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+D\+E\+S\+C\+R\+\_\+\+R\+E\+P\+L\+A\+CE}{PyArray\_DESCR\_REPLACE}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+D\+E\+S\+C\+R\+\_\+\+R\+E\+P\+L\+A\+CE(\begin{DoxyParamCaption}\item[{}]{descr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{ \(\backslash\)
+                PyArray\_Descr *\_new\_; \(\backslash\)
+                \_new\_ = \hyperlink{____multiarray__api_8h_a95811ebf072610e93980ee1a8e329e69}{PyArray\_DescrNew}(descr); \(\backslash\)
+                Py\_XDECREF(descr); \(\backslash\)
+                descr = \_new\_; \(\backslash\)
+        \} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_aa6258c4f35d90e1cd3728de158accb1d}\label{ndarrayobject_8h_aa6258c4f35d90e1cd3728de158accb1d}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Descr\+Check@{Py\+Array\+\_\+\+Descr\+Check}}
+\index{Py\+Array\+\_\+\+Descr\+Check@{Py\+Array\+\_\+\+Descr\+Check}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Descr\+Check}{PyArray\_DescrCheck}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Descr\+Check(\begin{DoxyParamCaption}\item[{}]{op }\end{DoxyParamCaption})~Py\+Object\+\_\+\+Type\+Check(op, \&\hyperlink{____multiarray__api_8h_a51dc1975ede08aa527eaf65b71e19660}{Py\+Array\+Descr\+\_\+\+Type})}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a604025a2d03535043454d42b9f691760}\label{ndarrayobject_8h_a604025a2d03535043454d42b9f691760}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+E\+M\+P\+TY@{Py\+Array\+\_\+\+E\+M\+P\+TY}}
+\index{Py\+Array\+\_\+\+E\+M\+P\+TY@{Py\+Array\+\_\+\+E\+M\+P\+TY}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+E\+M\+P\+TY}{PyArray\_EMPTY}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+E\+M\+P\+TY(\begin{DoxyParamCaption}\item[{}]{m,  }\item[{}]{dims,  }\item[{}]{type,  }\item[{}]{is\+\_\+f\+\_\+order }\end{DoxyParamCaption})~\hyperlink{____multiarray__api_8h_a5a8b5ca4325c65e9c7eae7ea57ac70d4}{Py\+Array\+\_\+\+Empty}(m, dims, \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{Py\+Array\+\_\+\+Descr\+From\+Type}(type), is\+\_\+f\+\_\+order)}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a0183110c7a79750cb7cf9e3a0b89bfd3}\label{ndarrayobject_8h_a0183110c7a79750cb7cf9e3a0b89bfd3}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Equiv\+Arr\+Types@{Py\+Array\+\_\+\+Equiv\+Arr\+Types}}
+\index{Py\+Array\+\_\+\+Equiv\+Arr\+Types@{Py\+Array\+\_\+\+Equiv\+Arr\+Types}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Equiv\+Arr\+Types}{PyArray\_EquivArrTypes}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Equiv\+Arr\+Types(\begin{DoxyParamCaption}\item[{}]{a1,  }\item[{}]{a2 }\end{DoxyParamCaption})~\hyperlink{____multiarray__api_8h_a604a1f8aa60d2f6cd8237ffa30d1daf8}{Py\+Array\+\_\+\+Equiv\+Types}(\hyperlink{ndarraytypes_8h_a97e75459c83b7e31038553f469eb9050}{Py\+Array\+\_\+\+D\+E\+S\+CR}(a1), \hyperlink{ndarraytypes_8h_a97e75459c83b7e31038553f469eb9050}{Py\+Array\+\_\+\+D\+E\+S\+CR}(a2))}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a6dda19d3ece4127a91e62b178fabe869}\label{ndarrayobject_8h_a6dda19d3ece4127a91e62b178fabe869}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Equiv\+Byteorders@{Py\+Array\+\_\+\+Equiv\+Byteorders}}
+\index{Py\+Array\+\_\+\+Equiv\+Byteorders@{Py\+Array\+\_\+\+Equiv\+Byteorders}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Equiv\+Byteorders}{PyArray\_EquivByteorders}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Equiv\+Byteorders(\begin{DoxyParamCaption}\item[{}]{b1,  }\item[{}]{b2 }\end{DoxyParamCaption})~(((b1) == (b2)) $\vert$$\vert$ (\hyperlink{ndarraytypes_8h_abe117f37a447a76b170040fb77f089ea}{Py\+Array\+\_\+\+I\+S\+N\+BO}(b1) == \hyperlink{ndarraytypes_8h_abe117f37a447a76b170040fb77f089ea}{Py\+Array\+\_\+\+I\+S\+N\+BO}(b2)))}
+
+\mbox{\Hypertarget{ndarrayobject_8h_adbc14f0792a26f1edb8b0cc50f61ade3}\label{ndarrayobject_8h_adbc14f0792a26f1edb8b0cc50f61ade3}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+F\+I\+L\+L\+W\+B\+Y\+TE@{Py\+Array\+\_\+\+F\+I\+L\+L\+W\+B\+Y\+TE}}
+\index{Py\+Array\+\_\+\+F\+I\+L\+L\+W\+B\+Y\+TE@{Py\+Array\+\_\+\+F\+I\+L\+L\+W\+B\+Y\+TE}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+F\+I\+L\+L\+W\+B\+Y\+TE}{PyArray\_FILLWBYTE}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+F\+I\+L\+L\+W\+B\+Y\+TE(\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+memset(\hyperlink{ndarraytypes_8h_a3e9abb3b2a1e9f2ed2e6080aa51bc3ec}{PyArray\_DATA}(obj), \hyperlink{namespacematplotlib_1_1tests_1_1test__spines_aff3474f224034184c567818da0315bf6}{val}, \(\backslash\)
+                                           \hyperlink{ndarrayobject_8h_a181fbdc71fb2151a5428504eca6dcbc9}{PyArray\_NBYTES}(obj))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a7999a1882cd1f95af65daf4bbcbc7868}\label{ndarrayobject_8h_a7999a1882cd1f95af65daf4bbcbc7868}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+O@{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+O}}
+\index{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+O@{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+O}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+O}{PyArray\_FROM\_O}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+O(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})~\hyperlink{____multiarray__api_8h_abdba8cb8480d45fc57458ae2aa1bd41e}{Py\+Array\+\_\+\+From\+Any}(m, N\+U\+LL, 0, 0, 0, N\+U\+LL)}
+
+\mbox{\Hypertarget{ndarrayobject_8h_ac0f3b7369223878f74ba09feea48f5e5}\label{ndarrayobject_8h_ac0f3b7369223878f74ba09feea48f5e5}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OF@{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OF}}
+\index{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OF@{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OF}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OF}{PyArray\_FROM\_OF}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OF(\begin{DoxyParamCaption}\item[{}]{m,  }\item[{}]{flags }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{____multiarray__api_8h_a4deff1fd41662360678b056d4f4e54b8}{PyArray\_CheckFromAny}(\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}{m}, NULL, 0, 0, \hyperlink{namespacenumpy_1_1testing_1_1print__coercion__tables_addc42039913afa565c867a0cfd93b195}{flags},   \(\backslash\)
+                                                      NULL)
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a28fcafb0ef0c1a7980cd62a34ae2ac4d}\label{ndarrayobject_8h_a28fcafb0ef0c1a7980cd62a34ae2ac4d}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OT@{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OT}}
+\index{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OT@{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OT}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OT}{PyArray\_FROM\_OT}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+OT(\begin{DoxyParamCaption}\item[{}]{m,  }\item[{}]{type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{____multiarray__api_8h_abdba8cb8480d45fc57458ae2aa1bd41e}{PyArray\_FromAny}(\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}{m},                            \(\backslash\)
+                                \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{PyArray\_DescrFromType}(\hyperlink{namespacehistory_a83a2419001ff099ae979da1aafb842fa}{type}), 0, 0, 0, NULL)
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a41f5ceebdb8726e867dc025825c366e0}\label{ndarrayobject_8h_a41f5ceebdb8726e867dc025825c366e0}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+O\+TF@{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+O\+TF}}
+\index{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+O\+TF@{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+O\+TF}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+O\+TF}{PyArray\_FROM\_OTF}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+F\+R\+O\+M\+\_\+\+O\+TF(\begin{DoxyParamCaption}\item[{}]{m,  }\item[{}]{type,  }\item[{}]{flags }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{____multiarray__api_8h_abdba8cb8480d45fc57458ae2aa1bd41e}{PyArray\_FromAny}(\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}{m}, \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{PyArray\_DescrFromType}(
+      \hyperlink{namespacehistory_a83a2419001ff099ae979da1aafb842fa}{type}), 0, 0, \(\backslash\)
+                        (((\hyperlink{namespacenumpy_1_1testing_1_1print__coercion__tables_addc42039913afa565c867a0cfd93b195}{flags}) & \hyperlink{ndarraytypes_8h_ad2aa9bb879ea9cb16204792c586720b7}{NPY\_ARRAY\_ENSURECOPY}) ? \(\backslash\)
+                         ((\hyperlink{namespacenumpy_1_1testing_1_1print__coercion__tables_addc42039913afa565c867a0cfd93b195}{flags}) | \hyperlink{ndarraytypes_8h_aa7b8a0ac65c7cbae56fef33a1a446a37}{NPY\_ARRAY\_DEFAULT}) : (
+      \hyperlink{namespacenumpy_1_1testing_1_1print__coercion__tables_addc42039913afa565c867a0cfd93b195}{flags})), NULL)
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_ab5bca0999cfe5b227a70083857e907ec}\label{ndarrayobject_8h_ab5bca0999cfe5b227a70083857e907ec}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+F\+R\+O\+M\+A\+NY@{Py\+Array\+\_\+\+F\+R\+O\+M\+A\+NY}}
+\index{Py\+Array\+\_\+\+F\+R\+O\+M\+A\+NY@{Py\+Array\+\_\+\+F\+R\+O\+M\+A\+NY}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+F\+R\+O\+M\+A\+NY}{PyArray\_FROMANY}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+F\+R\+O\+M\+A\+NY(\begin{DoxyParamCaption}\item[{}]{m,  }\item[{}]{type,  }\item[{}]{min,  }\item[{}]{max,  }\item[{}]{flags }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{____multiarray__api_8h_abdba8cb8480d45fc57458ae2aa1bd41e}{PyArray\_FromAny}(\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}{m}, \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{PyArray\_DescrFromType}(
+      \hyperlink{namespacehistory_a83a2419001ff099ae979da1aafb842fa}{type}), \hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_a51cb5000e0910f6ae23d7fe223e7d6ea}{min}, \hyperlink{namespacenumpy_1_1ma_1_1core_a60f41b3ef35da9042299c6b19d7c8c56}{max}, \(\backslash\)
+                        (((\hyperlink{namespacenumpy_1_1testing_1_1print__coercion__tables_addc42039913afa565c867a0cfd93b195}{flags}) & \hyperlink{ndarraytypes_8h_ad2aa9bb879ea9cb16204792c586720b7}{NPY\_ARRAY\_ENSURECOPY}) ? \(\backslash\)
+                         (\hyperlink{namespacenumpy_1_1testing_1_1print__coercion__tables_addc42039913afa565c867a0cfd93b195}{flags}) | \hyperlink{ndarraytypes_8h_aa7b8a0ac65c7cbae56fef33a1a446a37}{NPY\_ARRAY\_DEFAULT} : (
+      \hyperlink{namespacenumpy_1_1testing_1_1print__coercion__tables_addc42039913afa565c867a0cfd93b195}{flags})), NULL)
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a79236946c17e5cf6709c1c5f6e01ad9e}\label{ndarrayobject_8h_a79236946c17e5cf6709c1c5f6e01ad9e}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+From\+Dims\+And\+Data@{Py\+Array\+\_\+\+From\+Dims\+And\+Data}}
+\index{Py\+Array\+\_\+\+From\+Dims\+And\+Data@{Py\+Array\+\_\+\+From\+Dims\+And\+Data}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+From\+Dims\+And\+Data}{PyArray\_FromDimsAndData}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+From\+Dims\+And\+Data(\begin{DoxyParamCaption}\item[{}]{nd,  }\item[{}]{d,  }\item[{}]{type,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{____multiarray__api_8h_aae833496b2bab16276214fe8d4e6b11f}{PyArray\_FromDimsAndDataAndDescr}(\hyperlink{namespacendarray__conversion_a599c6f93420dff1d8bd242c7b4180f13}{nd}, \hyperlink{namespacenumpy_1_1distutils_1_1npy__pkg__config_a70a37a3117c09425d291198550beef04}{d}, 
+      \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{PyArray\_DescrFromType}(\hyperlink{namespacehistory_a83a2419001ff099ae979da1aafb842fa}{type}),   \(\backslash\)
+                                        \hyperlink{namespaceanalysis_a8e5c6c55793a8249397435e05eda6968}{data})
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_af527a2b0be26080c5fb7df3f02b8f895}\label{ndarrayobject_8h_af527a2b0be26080c5fb7df3f02b8f895}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+From\+Object@{Py\+Array\+\_\+\+From\+Object}}
+\index{Py\+Array\+\_\+\+From\+Object@{Py\+Array\+\_\+\+From\+Object}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+From\+Object}{PyArray\_FromObject}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+From\+Object(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{type,  }\item[{}]{min\+\_\+depth,  }\item[{}]{max\+\_\+depth }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{____multiarray__api_8h_abdba8cb8480d45fc57458ae2aa1bd41e}{PyArray\_FromAny}(op, \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{PyArray\_DescrFromType}(
+      \hyperlink{namespacehistory_a83a2419001ff099ae979da1aafb842fa}{type}), min\_depth, \(\backslash\)
+                              max\_depth, \hyperlink{ndarraytypes_8h_a0a5db6321d4e23a2a6b06a9b130ff3a0}{NPY\_ARRAY\_BEHAVED} | \(\backslash\)
+                                         \hyperlink{ndarraytypes_8h_a7083c767f63691cc5f2d2a81c643fa4d}{NPY\_ARRAY\_ENSUREARRAY}, NULL)
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a3a8487e2af6c17ad634719584c6b63ac}\label{ndarrayobject_8h_a3a8487e2af6c17ad634719584c6b63ac}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+G\+E\+T\+C\+O\+N\+T\+I\+G\+U\+O\+US@{Py\+Array\+\_\+\+G\+E\+T\+C\+O\+N\+T\+I\+G\+U\+O\+US}}
+\index{Py\+Array\+\_\+\+G\+E\+T\+C\+O\+N\+T\+I\+G\+U\+O\+US@{Py\+Array\+\_\+\+G\+E\+T\+C\+O\+N\+T\+I\+G\+U\+O\+US}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+G\+E\+T\+C\+O\+N\+T\+I\+G\+U\+O\+US}{PyArray\_GETCONTIGUOUS}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+G\+E\+T\+C\+O\+N\+T\+I\+G\+U\+O\+US(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\hyperlink{ndarraytypes_8h_a8d6231bd1c106fbbe61b84663e9f7eda}{PyArray\_ISCONTIGUOUS}(\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}{m}) ?                   \(\backslash\)
+                                  Py\_INCREF(\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}{m}), (\hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}{m}) :                         \(\backslash\)
+                                  (\hyperlink{structtagPyArrayObject__fields}{PyArrayObject} *)(\hyperlink{ndarrayobject_8h_af9122a7b6dbb28619597620f1e4120b6}{PyArray\_Copy}(
+      \hyperlink{namespacematplotlib_1_1testing_1_1jpl__units_adcd6e5df161d1faae4aa5148af9cae94}{m})))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a837b37c9f3932c866f07a8b725528ee0}\label{ndarrayobject_8h_a837b37c9f3932c866f07a8b725528ee0}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R1@{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R1}}
+\index{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R1@{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R1}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R1}{PyArray\_GETPTR1}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R1(\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{i }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((\textcolor{keywordtype}{void} *)(\hyperlink{ndarraytypes_8h_a7e2963426b818aa54b4e3e2395c40668}{PyArray\_BYTES}(obj) + \(\backslash\)
+                                         (\hyperlink{namespacemod_a8a14377c000c6d68d147c76d36fbd53d}{i})*\hyperlink{ndarraytypes_8h_a37a648bc4d53c5f52b4997c299a271bf}{PyArray\_STRIDES}(obj)[0]))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a3f4c93001c52c2a324ee5e8f51952671}\label{ndarrayobject_8h_a3f4c93001c52c2a324ee5e8f51952671}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R2@{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R2}}
+\index{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R2@{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R2}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R2}{PyArray\_GETPTR2}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R2(\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{i,  }\item[{}]{j }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((\textcolor{keywordtype}{void} *)(\hyperlink{ndarraytypes_8h_a7e2963426b818aa54b4e3e2395c40668}{PyArray\_BYTES}(obj) + \(\backslash\)
+                                            (\hyperlink{namespacemod_a8a14377c000c6d68d147c76d36fbd53d}{i})*\hyperlink{ndarraytypes_8h_a37a648bc4d53c5f52b4997c299a271bf}{PyArray\_STRIDES}(obj)[0] + \(\backslash\)
+                                            (\hyperlink{namespacearray__constructors_ad694f9e8ff9373af12619788da50f7d9}{j})*\hyperlink{ndarraytypes_8h_a37a648bc4d53c5f52b4997c299a271bf}{PyArray\_STRIDES}(obj)[1]))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_ac08418ac940f2bd4843a790ff7038e44}\label{ndarrayobject_8h_ac08418ac940f2bd4843a790ff7038e44}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R3@{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R3}}
+\index{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R3@{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R3}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R3}{PyArray\_GETPTR3}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R3(\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{i,  }\item[{}]{j,  }\item[{}]{k }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((\textcolor{keywordtype}{void} *)(\hyperlink{ndarraytypes_8h_a7e2963426b818aa54b4e3e2395c40668}{PyArray\_BYTES}(obj) + \(\backslash\)
+                                            (\hyperlink{namespacemod_a8a14377c000c6d68d147c76d36fbd53d}{i})*\hyperlink{ndarraytypes_8h_a37a648bc4d53c5f52b4997c299a271bf}{PyArray\_STRIDES}(obj)[0] + \(\backslash\)
+                                            (\hyperlink{namespacearray__constructors_ad694f9e8ff9373af12619788da50f7d9}{j})*\hyperlink{ndarraytypes_8h_a37a648bc4d53c5f52b4997c299a271bf}{PyArray\_STRIDES}(obj)[1] + \(\backslash\)
+                                            (\hyperlink{namespacenetworkx_1_1algorithms_1_1regular_a760c57bc8e7607a54a414313bc7bea73}{k})*\hyperlink{ndarraytypes_8h_a37a648bc4d53c5f52b4997c299a271bf}{PyArray\_STRIDES}(obj)[2]))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a5c1d60f8c88b86985f46f71741102a70}\label{ndarrayobject_8h_a5c1d60f8c88b86985f46f71741102a70}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R4@{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R4}}
+\index{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R4@{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R4}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R4}{PyArray\_GETPTR4}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+G\+E\+T\+P\+T\+R4(\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{i,  }\item[{}]{j,  }\item[{}]{k,  }\item[{}]{l }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((\textcolor{keywordtype}{void} *)(\hyperlink{ndarraytypes_8h_a7e2963426b818aa54b4e3e2395c40668}{PyArray\_BYTES}(obj) + \(\backslash\)
+                                            (\hyperlink{namespacemod_a8a14377c000c6d68d147c76d36fbd53d}{i})*\hyperlink{ndarraytypes_8h_a37a648bc4d53c5f52b4997c299a271bf}{PyArray\_STRIDES}(obj)[0] + \(\backslash\)
+                                            (\hyperlink{namespacearray__constructors_ad694f9e8ff9373af12619788da50f7d9}{j})*\hyperlink{ndarraytypes_8h_a37a648bc4d53c5f52b4997c299a271bf}{PyArray\_STRIDES}(obj)[1] + \(\backslash\)
+                                            (\hyperlink{namespacenetworkx_1_1algorithms_1_1regular_a760c57bc8e7607a54a414313bc7bea73}{k})*\hyperlink{ndarraytypes_8h_a37a648bc4d53c5f52b4997c299a271bf}{PyArray\_STRIDES}(obj)[2] + \(\backslash\)
+                                            (l)*\hyperlink{ndarraytypes_8h_a37a648bc4d53c5f52b4997c299a271bf}{PyArray\_STRIDES}(obj)[3]))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a3e6ee93667522b505120a0d1736e9c0c}\label{ndarrayobject_8h_a3e6ee93667522b505120a0d1736e9c0c}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Has\+Array\+Interface@{Py\+Array\+\_\+\+Has\+Array\+Interface}}
+\index{Py\+Array\+\_\+\+Has\+Array\+Interface@{Py\+Array\+\_\+\+Has\+Array\+Interface}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Has\+Array\+Interface}{PyArray\_HasArrayInterface}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Has\+Array\+Interface(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{out }\end{DoxyParamCaption})~\hyperlink{ndarrayobject_8h_a0fc6ef8ae6a7f15a9bf6c3c1f3670b03}{Py\+Array\+\_\+\+Has\+Array\+Interface\+Type}(op, N\+U\+LL, N\+U\+LL, out)}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a0fc6ef8ae6a7f15a9bf6c3c1f3670b03}\label{ndarrayobject_8h_a0fc6ef8ae6a7f15a9bf6c3c1f3670b03}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Has\+Array\+Interface\+Type@{Py\+Array\+\_\+\+Has\+Array\+Interface\+Type}}
+\index{Py\+Array\+\_\+\+Has\+Array\+Interface\+Type@{Py\+Array\+\_\+\+Has\+Array\+Interface\+Type}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Has\+Array\+Interface\+Type}{PyArray\_HasArrayInterfaceType}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Has\+Array\+Interface\+Type(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{type,  }\item[{}]{context,  }\item[{}]{out }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((((\hyperlink{namespaceeinsumfunc_a944a87548d05c13c63b0adbc60f5c7a2}{out})=\hyperlink{____multiarray__api_8h_aad41a159e2ae55b84b5807fe801f6625}{PyArray\_FromStructInterface}(op)) != Py\_NotImplemented) ||    \(\backslash\)
+         (((\hyperlink{namespaceeinsumfunc_a944a87548d05c13c63b0adbc60f5c7a2}{out})=\hyperlink{____multiarray__api_8h_adfd6c91cafc089fffc90f54d9f89cffe}{PyArray\_FromInterface}(op)) != Py\_NotImplemented) ||          \(\backslash\)
+         (((\hyperlink{namespaceeinsumfunc_a944a87548d05c13c63b0adbc60f5c7a2}{out})=\hyperlink{____multiarray__api_8h_a7b81b7049a288122328cac640300fd74}{PyArray\_FromArrayAttr}(op, \hyperlink{namespacehistory_a83a2419001ff099ae979da1aafb842fa}{type}, 
+      \hyperlink{namespacematplotlib_1_1style_1_1core_a4b6573cbad37ba7c73edd44c7b64e387}{context})) !=                 \(\backslash\)
+          Py\_NotImplemented))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a903ef1ad52b4f73e6edd69511f915136}\label{ndarrayobject_8h_a903ef1ad52b4f73e6edd69511f915136}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Is\+Any\+Scalar@{Py\+Array\+\_\+\+Is\+Any\+Scalar}}
+\index{Py\+Array\+\_\+\+Is\+Any\+Scalar@{Py\+Array\+\_\+\+Is\+Any\+Scalar}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Is\+Any\+Scalar}{PyArray\_IsAnyScalar}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Is\+Any\+Scalar(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})~(\hyperlink{ndarrayobject_8h_a2be6bfc86247a27ffd240cc32752c709}{Py\+Array\+\_\+\+Is\+Scalar}(obj, Generic) $\vert$$\vert$ \hyperlink{ndarrayobject_8h_a085537d41b5905cedba3902551df3a32}{Py\+Array\+\_\+\+Is\+Python\+Scalar}(obj))}
+
+\mbox{\Hypertarget{ndarrayobject_8h_ab32d6f12bce4150f637342696174bcb1}\label{ndarrayobject_8h_ab32d6f12bce4150f637342696174bcb1}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Is\+Integer\+Scalar@{Py\+Array\+\_\+\+Is\+Integer\+Scalar}}
+\index{Py\+Array\+\_\+\+Is\+Integer\+Scalar@{Py\+Array\+\_\+\+Is\+Integer\+Scalar}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Is\+Integer\+Scalar}{PyArray\_IsIntegerScalar}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Is\+Integer\+Scalar(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(PyLong\_Check(obj)                       \(\backslash\)
+              || \hyperlink{ndarrayobject_8h_a2be6bfc86247a27ffd240cc32752c709}{PyArray\_IsScalar}((obj), Integer))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a6665e161c7d46e164af481b2825ea0f9}\label{ndarrayobject_8h_a6665e161c7d46e164af481b2825ea0f9}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Is\+Python\+Number@{Py\+Array\+\_\+\+Is\+Python\+Number}}
+\index{Py\+Array\+\_\+\+Is\+Python\+Number@{Py\+Array\+\_\+\+Is\+Python\+Number}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Is\+Python\+Number}{PyArray\_IsPythonNumber}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Is\+Python\+Number(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(PyFloat\_Check(obj) || PyComplex\_Check(obj) ||                        \(\backslash\)
+         PyLong\_Check(obj) || PyBool\_Check(obj))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a085537d41b5905cedba3902551df3a32}\label{ndarrayobject_8h_a085537d41b5905cedba3902551df3a32}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Is\+Python\+Scalar@{Py\+Array\+\_\+\+Is\+Python\+Scalar}}
+\index{Py\+Array\+\_\+\+Is\+Python\+Scalar@{Py\+Array\+\_\+\+Is\+Python\+Scalar}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Is\+Python\+Scalar}{PyArray\_IsPythonScalar}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Is\+Python\+Scalar(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\hyperlink{ndarrayobject_8h_a6665e161c7d46e164af481b2825ea0f9}{PyArray\_IsPythonNumber}(obj) || PyBytes\_Check(obj) ||                 \(\backslash\)
+         PyUnicode\_Check(obj))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a2be6bfc86247a27ffd240cc32752c709}\label{ndarrayobject_8h_a2be6bfc86247a27ffd240cc32752c709}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Is\+Scalar@{Py\+Array\+\_\+\+Is\+Scalar}}
+\index{Py\+Array\+\_\+\+Is\+Scalar@{Py\+Array\+\_\+\+Is\+Scalar}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Is\+Scalar}{PyArray\_IsScalar}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Is\+Scalar(\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{cls }\end{DoxyParamCaption})~(Py\+Object\+\_\+\+Type\+Check(obj, \&Py\#\#cls\#\#Arr\+Type\+\_\+\+Type))}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a082ddf88dcd0fc397362e7c13075aa77}\label{ndarrayobject_8h_a082ddf88dcd0fc397362e7c13075aa77}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Is\+Zero\+Dim@{Py\+Array\+\_\+\+Is\+Zero\+Dim}}
+\index{Py\+Array\+\_\+\+Is\+Zero\+Dim@{Py\+Array\+\_\+\+Is\+Zero\+Dim}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Is\+Zero\+Dim}{PyArray\_IsZeroDim}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Is\+Zero\+Dim(\begin{DoxyParamCaption}\item[{}]{op }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\hyperlink{ndarrayobject_8h_a09c10f2e12476322abc6af54e9445173}{PyArray\_Check}(op) && \(\backslash\)
+                               (\hyperlink{ndarraytypes_8h_a768c4d3af1729ad446bcb2b0555dfb43}{PyArray\_NDIM}((\hyperlink{structtagPyArrayObject__fields}{PyArrayObject} *)op) == 0))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a181fbdc71fb2151a5428504eca6dcbc9}\label{ndarrayobject_8h_a181fbdc71fb2151a5428504eca6dcbc9}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+N\+B\+Y\+T\+ES@{Py\+Array\+\_\+\+N\+B\+Y\+T\+ES}}
+\index{Py\+Array\+\_\+\+N\+B\+Y\+T\+ES@{Py\+Array\+\_\+\+N\+B\+Y\+T\+ES}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+N\+B\+Y\+T\+ES}{PyArray\_NBYTES}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+N\+B\+Y\+T\+ES(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})~(\hyperlink{ndarraytypes_8h_a484628bd1c8d61fa38b1b98ba99eed80}{Py\+Array\+\_\+\+I\+T\+E\+M\+S\+I\+ZE}(m) $\ast$ \hyperlink{ndarrayobject_8h_a9b0cbad553822c316291e3cd99b61731}{Py\+Array\+\_\+\+S\+I\+ZE}(m))}
+
+\mbox{\Hypertarget{ndarrayobject_8h_addb3764ce9916cdb1697dc436975a033}\label{ndarrayobject_8h_addb3764ce9916cdb1697dc436975a033}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Put@{Py\+Array\+\_\+\+Put}}
+\index{Py\+Array\+\_\+\+Put@{Py\+Array\+\_\+\+Put}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Put}{PyArray\_Put}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Put(\begin{DoxyParamCaption}\item[{}]{ap,  }\item[{}]{items,  }\item[{}]{values }\end{DoxyParamCaption})~\hyperlink{____multiarray__api_8h_a2cbc0e948a28a782cfd7d244a09b8baa}{Py\+Array\+\_\+\+Put\+To}(ap, items, values, \hyperlink{ndarraytypes_8h_a6e8684db34aca83192e2d0b7a9f6b649a96755da9ac6bd5d824deeabe8b8c4f0d}{N\+P\+Y\+\_\+\+R\+A\+I\+SE})}
+
+\mbox{\Hypertarget{ndarrayobject_8h_adc090b9d2ecb67324437aba7ccdbb054}\label{ndarrayobject_8h_adc090b9d2ecb67324437aba7ccdbb054}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+R\+E\+F\+C\+O\+U\+NT@{Py\+Array\+\_\+\+R\+E\+F\+C\+O\+U\+NT}}
+\index{Py\+Array\+\_\+\+R\+E\+F\+C\+O\+U\+NT@{Py\+Array\+\_\+\+R\+E\+F\+C\+O\+U\+NT}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+R\+E\+F\+C\+O\+U\+NT}{PyArray\_REFCOUNT}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+R\+E\+F\+C\+O\+U\+NT(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})~(((Py\+Object $\ast$)(obj))-\/$>$ob\+\_\+refcnt)}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a1cd7d4051422b47eb63f367b65c30e3c}\label{ndarrayobject_8h_a1cd7d4051422b47eb63f367b65c30e3c}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+S\+A\+M\+E\+S\+H\+A\+PE@{Py\+Array\+\_\+\+S\+A\+M\+E\+S\+H\+A\+PE}}
+\index{Py\+Array\+\_\+\+S\+A\+M\+E\+S\+H\+A\+PE@{Py\+Array\+\_\+\+S\+A\+M\+E\+S\+H\+A\+PE}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+S\+A\+M\+E\+S\+H\+A\+PE}{PyArray\_SAMESHAPE}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+S\+A\+M\+E\+S\+H\+A\+PE(\begin{DoxyParamCaption}\item[{}]{a1,  }\item[{}]{a2 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((\hyperlink{ndarraytypes_8h_a768c4d3af1729ad446bcb2b0555dfb43}{PyArray\_NDIM}(a1) == \hyperlink{ndarraytypes_8h_a768c4d3af1729ad446bcb2b0555dfb43}{PyArray\_NDIM}(a2)) &&   \(\backslash\)
+                                  \hyperlink{____multiarray__api_8h_ae06f7745be0edd4e8f3e364337b70a35}{PyArray\_CompareLists}(
+      \hyperlink{ndarraytypes_8h_ae81668078f2bb479e36c1c1fd43088c0}{PyArray\_DIMS}(a1),      \(\backslash\)
+                                                       PyArray\_DIMS(a2),      \(\backslash\)
+                                                       PyArray\_NDIM(a1)))
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a2478390c4ceeff736ff03d5677276890}\label{ndarrayobject_8h_a2478390c4ceeff736ff03d5677276890}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Simple\+New@{Py\+Array\+\_\+\+Simple\+New}}
+\index{Py\+Array\+\_\+\+Simple\+New@{Py\+Array\+\_\+\+Simple\+New}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Simple\+New}{PyArray\_SimpleNew}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Simple\+New(\begin{DoxyParamCaption}\item[{}]{nd,  }\item[{}]{dims,  }\item[{}]{typenum }\end{DoxyParamCaption})~\hyperlink{____multiarray__api_8h_a586fb7931719ec257ed4b0e6dcf56404}{Py\+Array\+\_\+\+New}(\&\hyperlink{____multiarray__api_8h_a3ea8d0bfb4922105d724bdb9950068db}{Py\+Array\+\_\+\+Type}, nd, dims, typenum, N\+U\+LL, N\+U\+LL, 0, 0, N\+U\+LL)}
+
+\mbox{\Hypertarget{ndarrayobject_8h_ab3d47cab39dbec2a8efd0c9bcfa3b6c9}\label{ndarrayobject_8h_ab3d47cab39dbec2a8efd0c9bcfa3b6c9}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Simple\+New\+From\+Data@{Py\+Array\+\_\+\+Simple\+New\+From\+Data}}
+\index{Py\+Array\+\_\+\+Simple\+New\+From\+Data@{Py\+Array\+\_\+\+Simple\+New\+From\+Data}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Simple\+New\+From\+Data}{PyArray\_SimpleNewFromData}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Simple\+New\+From\+Data(\begin{DoxyParamCaption}\item[{}]{nd,  }\item[{}]{dims,  }\item[{}]{typenum,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{____multiarray__api_8h_a586fb7931719ec257ed4b0e6dcf56404}{PyArray\_New}(&\hyperlink{____multiarray__api_8h_a3ea8d0bfb4922105d724bdb9950068db}{PyArray\_Type}, \hyperlink{namespacendarray__conversion_a599c6f93420dff1d8bd242c7b4180f13}{nd}, dims, typenum, NULL, \(\backslash\)
+                    \hyperlink{namespaceanalysis_a8e5c6c55793a8249397435e05eda6968}{data}, 0, \hyperlink{ndarraytypes_8h_ace8d585bb7126f364631bd27dba5054a}{NPY\_ARRAY\_CARRAY}, NULL)
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_ae8a2a9175a4cf6a0fb112acf34179bc6}\label{ndarrayobject_8h_ae8a2a9175a4cf6a0fb112acf34179bc6}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Simple\+New\+From\+Descr@{Py\+Array\+\_\+\+Simple\+New\+From\+Descr}}
+\index{Py\+Array\+\_\+\+Simple\+New\+From\+Descr@{Py\+Array\+\_\+\+Simple\+New\+From\+Descr}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Simple\+New\+From\+Descr}{PyArray\_SimpleNewFromDescr}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Simple\+New\+From\+Descr(\begin{DoxyParamCaption}\item[{}]{nd,  }\item[{}]{dims,  }\item[{}]{descr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{____multiarray__api_8h_a6a93806a0de201b81947148d214a7bb5}{PyArray\_NewFromDescr}(&\hyperlink{____multiarray__api_8h_a3ea8d0bfb4922105d724bdb9950068db}{PyArray\_Type}, descr, \hyperlink{namespacendarray__conversion_a599c6f93420dff1d8bd242c7b4180f13}{nd}, dims, \(\backslash\)
+                             NULL, NULL, 0, NULL)
+\end{DoxyCode}
+\mbox{\Hypertarget{ndarrayobject_8h_a9b0cbad553822c316291e3cd99b61731}\label{ndarrayobject_8h_a9b0cbad553822c316291e3cd99b61731}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+S\+I\+ZE@{Py\+Array\+\_\+\+S\+I\+ZE}}
+\index{Py\+Array\+\_\+\+S\+I\+ZE@{Py\+Array\+\_\+\+S\+I\+ZE}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+S\+I\+ZE}{PyArray\_SIZE}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+S\+I\+ZE(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})~\hyperlink{____multiarray__api_8h_a7b0e50570f254f56f9582641765dd440}{Py\+Array\+\_\+\+Multiply\+List}(\hyperlink{ndarraytypes_8h_ae81668078f2bb479e36c1c1fd43088c0}{Py\+Array\+\_\+\+D\+I\+MS}(m), \hyperlink{ndarraytypes_8h_a768c4d3af1729ad446bcb2b0555dfb43}{Py\+Array\+\_\+\+N\+D\+IM}(m))}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a8a1506137354222d0062dbc6d9fb6e82}\label{ndarrayobject_8h_a8a1506137354222d0062dbc6d9fb6e82}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Take@{Py\+Array\+\_\+\+Take}}
+\index{Py\+Array\+\_\+\+Take@{Py\+Array\+\_\+\+Take}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Take}{PyArray\_Take}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Take(\begin{DoxyParamCaption}\item[{}]{ap,  }\item[{}]{items,  }\item[{}]{axis }\end{DoxyParamCaption})~\hyperlink{____multiarray__api_8h_ad330ca3149ec5428e0e1535fbeb0ebc1}{Py\+Array\+\_\+\+Take\+From}(ap, items, axis, N\+U\+LL, \hyperlink{ndarraytypes_8h_a6e8684db34aca83192e2d0b7a9f6b649a96755da9ac6bd5d824deeabe8b8c4f0d}{N\+P\+Y\+\_\+\+R\+A\+I\+SE})}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a75e0b3ba7b5ecf9584bfbc7721b52ea2}\label{ndarrayobject_8h_a75e0b3ba7b5ecf9584bfbc7721b52ea2}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+To\+Scalar@{Py\+Array\+\_\+\+To\+Scalar}}
+\index{Py\+Array\+\_\+\+To\+Scalar@{Py\+Array\+\_\+\+To\+Scalar}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+To\+Scalar}{PyArray\_ToScalar}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+To\+Scalar(\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{arr }\end{DoxyParamCaption})~\hyperlink{____multiarray__api_8h_a486ea83577bf8faf5cada1f48497d145}{Py\+Array\+\_\+\+Scalar}(data, \hyperlink{ndarraytypes_8h_a97e75459c83b7e31038553f469eb9050}{Py\+Array\+\_\+\+D\+E\+S\+CR}(arr), (Py\+Object $\ast$)arr)}
+
+\mbox{\Hypertarget{ndarrayobject_8h_a9669e6eaeea8dfde31c0785ffe614c8f}\label{ndarrayobject_8h_a9669e6eaeea8dfde31c0785ffe614c8f}} 
+\index{ndarrayobject.\+h@{ndarrayobject.\+h}!Py\+Array\+\_\+\+Z\+E\+R\+OS@{Py\+Array\+\_\+\+Z\+E\+R\+OS}}
+\index{Py\+Array\+\_\+\+Z\+E\+R\+OS@{Py\+Array\+\_\+\+Z\+E\+R\+OS}!ndarrayobject.\+h@{ndarrayobject.\+h}}
+\subsubsection{\texorpdfstring{Py\+Array\+\_\+\+Z\+E\+R\+OS}{PyArray\_ZEROS}}
+{\footnotesize\ttfamily \#define Py\+Array\+\_\+\+Z\+E\+R\+OS(\begin{DoxyParamCaption}\item[{}]{m,  }\item[{}]{dims,  }\item[{}]{type,  }\item[{}]{is\+\_\+f\+\_\+order }\end{DoxyParamCaption})~\hyperlink{____multiarray__api_8h_aee05d767c9fcbaf516a7c4a0b2741ae4}{Py\+Array\+\_\+\+Zeros}(m, dims, \hyperlink{____multiarray__api_8h_aac96d266efe69f9b030d361dc52d6251}{Py\+Array\+\_\+\+Descr\+From\+Type}(type), is\+\_\+f\+\_\+order)}
+

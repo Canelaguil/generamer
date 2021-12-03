@@ -1,0 +1,159 @@
+\hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions}{}\section{pip.\+\_\+internal.\+cli.\+cmdoptions Namespace Reference}
+\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions}\index{pip.\+\_\+internal.\+cli.\+cmdoptions@{pip.\+\_\+internal.\+cli.\+cmdoptions}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1cli_1_1cmdoptions_1_1PipOption}{Pip\+Option}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a13124f60d6e91ffc8c04e860c85e1865}{raise\+\_\+option\+\_\+error}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_ab68c8a0374f17468ca7a89e4e2278207}{make\+\_\+option\+\_\+group}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_ab18ec6879429bb5b0f943bf15100dbec}{check\+\_\+install\+\_\+build\+\_\+global}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a3085fdde429b762187382eba782d5b24}{check\+\_\+dist\+\_\+restriction}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a270bc2eab0a184c79eb6609b6fc9c75a}{exists\+\_\+action} ()
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a04d64495effb51b936d4a4da0533249d}{extra\+\_\+index\+\_\+url} ()
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a9e0e720e5bade69893ed628a802f2428}{find\+\_\+links} ()
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a937f60d822d2243b02dcf5f8510401f0}{trusted\+\_\+host} ()
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_ae7f9ecebcf1f89c1bfd22333499da6e2}{constraints} ()
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a611177b4be8bcd4384cfa1d3aad5f078}{requirements} ()
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_aefac535fa110f26629e2add826324529}{editable} ()
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a7686192f1441195728bb354702c2c8ad}{no\+\_\+binary} ()
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a163f5aaf304a4cae5f0eb2f8eb3b4435}{only\+\_\+binary} ()
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_ad57144ab587a6d6c283cbd69d8823be9}{add\+\_\+target\+\_\+python\+\_\+options}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a0923ea27232a8c31017dd86ef4a4aea3}{make\+\_\+target\+\_\+python}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_aa069bf43d3a501305bbbaeee0af42c9e}{prefer\+\_\+binary} ()
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a1b4c5c4ae86410e3489a4509229ae6da}{check\+\_\+list\+\_\+path\+\_\+option}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}shared options and groups
+
+The principle here is to define options once, but *not* instantiate them
+globally. One reason being that options with action='append' can carry state
+between parses. pip parses general options twice internally, and shouldn't
+pass on state. To be consistent, all options will follow this design.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_ad57144ab587a6d6c283cbd69d8823be9}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_ad57144ab587a6d6c283cbd69d8823be9}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!add\+\_\+target\+\_\+python\+\_\+options@{add\+\_\+target\+\_\+python\+\_\+options}}
+\index{add\+\_\+target\+\_\+python\+\_\+options@{add\+\_\+target\+\_\+python\+\_\+options}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{add\+\_\+target\+\_\+python\+\_\+options()}{add\_target\_python\_options()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+add\+\_\+target\+\_\+python\+\_\+options (\begin{DoxyParamCaption}\item[{}]{cmd\+\_\+opts }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a3085fdde429b762187382eba782d5b24}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a3085fdde429b762187382eba782d5b24}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!check\+\_\+dist\+\_\+restriction@{check\+\_\+dist\+\_\+restriction}}
+\index{check\+\_\+dist\+\_\+restriction@{check\+\_\+dist\+\_\+restriction}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{check\+\_\+dist\+\_\+restriction()}{check\_dist\_restriction()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+check\+\_\+dist\+\_\+restriction (\begin{DoxyParamCaption}\item[{}]{options }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_ab18ec6879429bb5b0f943bf15100dbec}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_ab18ec6879429bb5b0f943bf15100dbec}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!check\+\_\+install\+\_\+build\+\_\+global@{check\+\_\+install\+\_\+build\+\_\+global}}
+\index{check\+\_\+install\+\_\+build\+\_\+global@{check\+\_\+install\+\_\+build\+\_\+global}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{check\+\_\+install\+\_\+build\+\_\+global()}{check\_install\_build\_global()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+check\+\_\+install\+\_\+build\+\_\+global (\begin{DoxyParamCaption}\item[{}]{options }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a1b4c5c4ae86410e3489a4509229ae6da}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a1b4c5c4ae86410e3489a4509229ae6da}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!check\+\_\+list\+\_\+path\+\_\+option@{check\+\_\+list\+\_\+path\+\_\+option}}
+\index{check\+\_\+list\+\_\+path\+\_\+option@{check\+\_\+list\+\_\+path\+\_\+option}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{check\+\_\+list\+\_\+path\+\_\+option()}{check\_list\_path\_option()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+check\+\_\+list\+\_\+path\+\_\+option (\begin{DoxyParamCaption}\item[{}]{options }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_ae7f9ecebcf1f89c1bfd22333499da6e2}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_ae7f9ecebcf1f89c1bfd22333499da6e2}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!constraints@{constraints}}
+\index{constraints@{constraints}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{constraints()}{constraints()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+constraints (\begin{DoxyParamCaption}\item[{}]{Option }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_aefac535fa110f26629e2add826324529}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_aefac535fa110f26629e2add826324529}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!editable@{editable}}
+\index{editable@{editable}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{editable()}{editable()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+editable (\begin{DoxyParamCaption}\item[{}]{Option }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a270bc2eab0a184c79eb6609b6fc9c75a}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a270bc2eab0a184c79eb6609b6fc9c75a}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!exists\+\_\+action@{exists\+\_\+action}}
+\index{exists\+\_\+action@{exists\+\_\+action}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{exists\+\_\+action()}{exists\_action()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+exists\+\_\+action (\begin{DoxyParamCaption}\item[{}]{Option }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a04d64495effb51b936d4a4da0533249d}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a04d64495effb51b936d4a4da0533249d}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!extra\+\_\+index\+\_\+url@{extra\+\_\+index\+\_\+url}}
+\index{extra\+\_\+index\+\_\+url@{extra\+\_\+index\+\_\+url}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{extra\+\_\+index\+\_\+url()}{extra\_index\_url()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+extra\+\_\+index\+\_\+url (\begin{DoxyParamCaption}\item[{}]{Option }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a9e0e720e5bade69893ed628a802f2428}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a9e0e720e5bade69893ed628a802f2428}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!find\+\_\+links@{find\+\_\+links}}
+\index{find\+\_\+links@{find\+\_\+links}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{find\+\_\+links()}{find\_links()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+find\+\_\+links (\begin{DoxyParamCaption}\item[{}]{Option }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_ab68c8a0374f17468ca7a89e4e2278207}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_ab68c8a0374f17468ca7a89e4e2278207}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!make\+\_\+option\+\_\+group@{make\+\_\+option\+\_\+group}}
+\index{make\+\_\+option\+\_\+group@{make\+\_\+option\+\_\+group}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{make\+\_\+option\+\_\+group()}{make\_option\_group()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+make\+\_\+option\+\_\+group (\begin{DoxyParamCaption}\item[{}]{group }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a0923ea27232a8c31017dd86ef4a4aea3}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a0923ea27232a8c31017dd86ef4a4aea3}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!make\+\_\+target\+\_\+python@{make\+\_\+target\+\_\+python}}
+\index{make\+\_\+target\+\_\+python@{make\+\_\+target\+\_\+python}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{make\+\_\+target\+\_\+python()}{make\_target\_python()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+make\+\_\+target\+\_\+python (\begin{DoxyParamCaption}\item[{}]{options }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a7686192f1441195728bb354702c2c8ad}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a7686192f1441195728bb354702c2c8ad}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!no\+\_\+binary@{no\+\_\+binary}}
+\index{no\+\_\+binary@{no\+\_\+binary}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{no\+\_\+binary()}{no\_binary()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+no\+\_\+binary (\begin{DoxyParamCaption}\item[{}]{Option }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a163f5aaf304a4cae5f0eb2f8eb3b4435}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a163f5aaf304a4cae5f0eb2f8eb3b4435}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!only\+\_\+binary@{only\+\_\+binary}}
+\index{only\+\_\+binary@{only\+\_\+binary}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{only\+\_\+binary()}{only\_binary()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+only\+\_\+binary (\begin{DoxyParamCaption}\item[{}]{Option }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_aa069bf43d3a501305bbbaeee0af42c9e}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_aa069bf43d3a501305bbbaeee0af42c9e}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!prefer\+\_\+binary@{prefer\+\_\+binary}}
+\index{prefer\+\_\+binary@{prefer\+\_\+binary}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{prefer\+\_\+binary()}{prefer\_binary()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+prefer\+\_\+binary (\begin{DoxyParamCaption}\item[{}]{Option }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a13124f60d6e91ffc8c04e860c85e1865}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a13124f60d6e91ffc8c04e860c85e1865}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!raise\+\_\+option\+\_\+error@{raise\+\_\+option\+\_\+error}}
+\index{raise\+\_\+option\+\_\+error@{raise\+\_\+option\+\_\+error}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{raise\+\_\+option\+\_\+error()}{raise\_option\_error()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+raise\+\_\+option\+\_\+error (\begin{DoxyParamCaption}\item[{}]{parser }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a611177b4be8bcd4384cfa1d3aad5f078}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a611177b4be8bcd4384cfa1d3aad5f078}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!requirements@{requirements}}
+\index{requirements@{requirements}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{requirements()}{requirements()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+requirements (\begin{DoxyParamCaption}\item[{}]{Option }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a937f60d822d2243b02dcf5f8510401f0}\label{namespacepip_1_1__internal_1_1cli_1_1cmdoptions_a937f60d822d2243b02dcf5f8510401f0}} 
+\index{pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}!trusted\+\_\+host@{trusted\+\_\+host}}
+\index{trusted\+\_\+host@{trusted\+\_\+host}!pip\+::\+\_\+internal\+::cli\+::cmdoptions@{pip\+::\+\_\+internal\+::cli\+::cmdoptions}}
+\subsubsection{\texorpdfstring{trusted\+\_\+host()}{trusted\_host()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cli.\+cmdoptions.\+trusted\+\_\+host (\begin{DoxyParamCaption}\item[{}]{Option }\end{DoxyParamCaption})}
+

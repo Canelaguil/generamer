@@ -1,0 +1,57 @@
+\hypertarget{namespacenetworkx_1_1generators_1_1interval__graph}{}\section{networkx.\+generators.\+interval\+\_\+graph Namespace Reference}
+\label{namespacenetworkx_1_1generators_1_1interval__graph}\index{networkx.\+generators.\+interval\+\_\+graph@{networkx.\+generators.\+interval\+\_\+graph}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1generators_1_1interval__graph_a9a2cb8659fa8937b85acb73409304587}{interval\+\_\+graph} (intervals)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Generators for interval graph.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1interval__graph_a9a2cb8659fa8937b85acb73409304587}\label{namespacenetworkx_1_1generators_1_1interval__graph_a9a2cb8659fa8937b85acb73409304587}} 
+\index{networkx\+::generators\+::interval\+\_\+graph@{networkx\+::generators\+::interval\+\_\+graph}!interval\+\_\+graph@{interval\+\_\+graph}}
+\index{interval\+\_\+graph@{interval\+\_\+graph}!networkx\+::generators\+::interval\+\_\+graph@{networkx\+::generators\+::interval\+\_\+graph}}
+\subsubsection{\texorpdfstring{interval\+\_\+graph()}{interval\_graph()}}
+{\footnotesize\ttfamily def networkx.\+generators.\+interval\+\_\+graph.\+interval\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{intervals }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generates an interval graph for a list of intervals given.
+
+In graph theory, an interval graph is an undirected graph formed from a set
+of closed intervals on the real line, with a vertex for each interval
+and an edge between vertices whose intervals intersect.
+It is the intersection graph of the intervals.
+
+More information can be found at:
+https://en.wikipedia.org/wiki/Interval_graph
+
+Parameters
+----------
+intervals : a sequence of intervals, say (l, r) where l is the left end,
+and r is the right end of the closed interval.
+
+Returns
+-------
+G : networkx graph
+
+Examples
+--------
+>>> intervals = [(-2, 3), [1, 4], (2, 3), (4, 6)]
+>>> G = nx.interval_graph(intervals)
+>>> sorted(G.edges)
+[((-2, 3), (1, 4)), ((-2, 3), (2, 3)), ((1, 4), (2, 3)), ((1, 4), (4, 6))]
+
+Raises
+------
+:exc:`TypeError`
+    if `intervals` contains None or an element which is not
+    collections.abc.Sequence or not a length of 2.
+:exc:`ValueError`
+    if `intervals` contains an interval such that min1 > max1
+    where min1,max1 = interval
+\end{DoxyVerb}
+ 

@@ -1,0 +1,174 @@
+\hypertarget{namespacenumpy_1_1ma_1_1testutils}{}\section{numpy.\+ma.\+testutils Namespace Reference}
+\label{namespacenumpy_1_1ma_1_1testutils}\index{numpy.\+ma.\+testutils@{numpy.\+ma.\+testutils}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_a63e89230b485a280aee83e841a57e320}{approx} (a, b, fill\+\_\+value=True, rtol=1e-\/5, atol=1e-\/8)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_a65073eb9423d35e7ff9024d5864a0181}{almost} (a, b, decimal=6, fill\+\_\+value=True)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_aa7a7a93a895fff7a36cb50c69caf225c}{assert\+\_\+equal\+\_\+records} (a, b)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_a612cf458d771647b91fcaeb3bc82f1e5}{assert\+\_\+equal} (actual, desired, err\+\_\+msg=\textquotesingle{}\textquotesingle{})
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_abe23305ac24d44d355993629b3c83b28}{fail\+\_\+if\+\_\+equal} (actual, desired, err\+\_\+msg=\textquotesingle{}\textquotesingle{})
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_a1d3b6577ce3b9428c1803d7d4cd53595}{assert\+\_\+almost\+\_\+equal} (actual, desired, decimal=7, err\+\_\+msg=\textquotesingle{}\textquotesingle{}, verbose=True)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_adf7ee5d1d3849b011141e565b24735ad}{assert\+\_\+array\+\_\+compare} (comparison, x, y, err\+\_\+msg=\textquotesingle{}\textquotesingle{}, verbose=True, header=\textquotesingle{}\textquotesingle{}, fill\+\_\+value=True)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_a3fc5e4393ebc1781a31f9a7300fedb6c}{assert\+\_\+array\+\_\+equal} (x, y, err\+\_\+msg=\textquotesingle{}\textquotesingle{}, verbose=True)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_abef9da4309066abec0dd9f382abe7c4f}{fail\+\_\+if\+\_\+array\+\_\+equal} (x, y, err\+\_\+msg=\textquotesingle{}\textquotesingle{}, verbose=True)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_a4a03954c84c9d6dba64bcd2529c4a98d}{assert\+\_\+array\+\_\+approx\+\_\+equal} (x, y, decimal=6, err\+\_\+msg=\textquotesingle{}\textquotesingle{}, verbose=True)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_af045714a2168bc5b4c62169632355210}{assert\+\_\+array\+\_\+almost\+\_\+equal} (x, y, decimal=6, err\+\_\+msg=\textquotesingle{}\textquotesingle{}, verbose=True)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_a589669f9fd4d77f178c9d40186ba6858}{assert\+\_\+array\+\_\+less} (x, y, err\+\_\+msg=\textquotesingle{}\textquotesingle{}, verbose=True)
+\item 
+def \hyperlink{namespacenumpy_1_1ma_1_1testutils_ad7bec1fa9a0cef1745c6bacf233c5b46}{assert\+\_\+mask\+\_\+equal} (m1, m2, err\+\_\+msg=\textquotesingle{}\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1ma_1_1testutils_ada3f29727691024d2df793ecd026cf75}{assert\+\_\+not\+\_\+equal}
+\item 
+\hyperlink{namespacenumpy_1_1ma_1_1testutils_a2e57c74f10427169556edf257048dcda}{assert\+\_\+close}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Miscellaneous functions for testing masked arrays and subclasses
+
+:author: Pierre Gerard-Marchant
+:contact: pierregm_at_uga_dot_edu
+:version: $Id: testutils.py 3529 2007-11-13 08:01:14Z jarrod.millman $\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_a65073eb9423d35e7ff9024d5864a0181}\label{namespacenumpy_1_1ma_1_1testutils_a65073eb9423d35e7ff9024d5864a0181}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!almost@{almost}}
+\index{almost@{almost}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{almost()}{almost()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+almost (\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{decimal = {\ttfamily 6},  }\item[{}]{fill\+\_\+value = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if a and b are equal up to decimal places.
+
+If fill_value is True, masked values considered equal. Otherwise,
+masked values are considered unequal.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_a63e89230b485a280aee83e841a57e320}\label{namespacenumpy_1_1ma_1_1testutils_a63e89230b485a280aee83e841a57e320}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!approx@{approx}}
+\index{approx@{approx}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{approx()}{approx()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+approx (\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{fill\+\_\+value = {\ttfamily True},  }\item[{}]{rtol = {\ttfamily 1e-\/5},  }\item[{}]{atol = {\ttfamily 1e-\/8} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns true if all components of a and b are equal to given tolerances.
+
+If fill_value is True, masked values considered equal. Otherwise,
+masked values are considered unequal.  The relative error rtol should
+be positive and << 1.0 The absolute error atol comes into play for
+those elements of b that are very small or zero; it says how small a
+must be also.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_a1d3b6577ce3b9428c1803d7d4cd53595}\label{namespacenumpy_1_1ma_1_1testutils_a1d3b6577ce3b9428c1803d7d4cd53595}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!assert\+\_\+almost\+\_\+equal@{assert\+\_\+almost\+\_\+equal}}
+\index{assert\+\_\+almost\+\_\+equal@{assert\+\_\+almost\+\_\+equal}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{assert\+\_\+almost\+\_\+equal()}{assert\_almost\_equal()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+assert\+\_\+almost\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{actual,  }\item[{}]{desired,  }\item[{}]{decimal = {\ttfamily 7},  }\item[{}]{err\+\_\+msg = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{verbose = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asserts that two items are almost equal.
+
+The test is equivalent to abs(desired-actual) < 0.5 * 10**(-decimal).\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_af045714a2168bc5b4c62169632355210}\label{namespacenumpy_1_1ma_1_1testutils_af045714a2168bc5b4c62169632355210}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!assert\+\_\+array\+\_\+almost\+\_\+equal@{assert\+\_\+array\+\_\+almost\+\_\+equal}}
+\index{assert\+\_\+array\+\_\+almost\+\_\+equal@{assert\+\_\+array\+\_\+almost\+\_\+equal}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{assert\+\_\+array\+\_\+almost\+\_\+equal()}{assert\_array\_almost\_equal()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+assert\+\_\+array\+\_\+almost\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{decimal = {\ttfamily 6},  }\item[{}]{err\+\_\+msg = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{verbose = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks the equality of two masked arrays, up to given number odecimals.
+
+The equality is checked elementwise.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_a4a03954c84c9d6dba64bcd2529c4a98d}\label{namespacenumpy_1_1ma_1_1testutils_a4a03954c84c9d6dba64bcd2529c4a98d}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!assert\+\_\+array\+\_\+approx\+\_\+equal@{assert\+\_\+array\+\_\+approx\+\_\+equal}}
+\index{assert\+\_\+array\+\_\+approx\+\_\+equal@{assert\+\_\+array\+\_\+approx\+\_\+equal}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{assert\+\_\+array\+\_\+approx\+\_\+equal()}{assert\_array\_approx\_equal()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+assert\+\_\+array\+\_\+approx\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{decimal = {\ttfamily 6},  }\item[{}]{err\+\_\+msg = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{verbose = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks the equality of two masked arrays, up to given number odecimals.
+
+The equality is checked elementwise.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_adf7ee5d1d3849b011141e565b24735ad}\label{namespacenumpy_1_1ma_1_1testutils_adf7ee5d1d3849b011141e565b24735ad}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!assert\+\_\+array\+\_\+compare@{assert\+\_\+array\+\_\+compare}}
+\index{assert\+\_\+array\+\_\+compare@{assert\+\_\+array\+\_\+compare}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{assert\+\_\+array\+\_\+compare()}{assert\_array\_compare()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+assert\+\_\+array\+\_\+compare (\begin{DoxyParamCaption}\item[{}]{comparison,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{err\+\_\+msg = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{verbose = {\ttfamily True},  }\item[{}]{header = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{fill\+\_\+value = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asserts that comparison between two masked arrays is satisfied.
+
+The comparison is elementwise.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_a3fc5e4393ebc1781a31f9a7300fedb6c}\label{namespacenumpy_1_1ma_1_1testutils_a3fc5e4393ebc1781a31f9a7300fedb6c}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!assert\+\_\+array\+\_\+equal@{assert\+\_\+array\+\_\+equal}}
+\index{assert\+\_\+array\+\_\+equal@{assert\+\_\+array\+\_\+equal}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{assert\+\_\+array\+\_\+equal()}{assert\_array\_equal()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+assert\+\_\+array\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{err\+\_\+msg = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{verbose = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks the elementwise equality of two masked arrays.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_a589669f9fd4d77f178c9d40186ba6858}\label{namespacenumpy_1_1ma_1_1testutils_a589669f9fd4d77f178c9d40186ba6858}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!assert\+\_\+array\+\_\+less@{assert\+\_\+array\+\_\+less}}
+\index{assert\+\_\+array\+\_\+less@{assert\+\_\+array\+\_\+less}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{assert\+\_\+array\+\_\+less()}{assert\_array\_less()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+assert\+\_\+array\+\_\+less (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{err\+\_\+msg = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{verbose = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks that x is smaller than y elementwise.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_a612cf458d771647b91fcaeb3bc82f1e5}\label{namespacenumpy_1_1ma_1_1testutils_a612cf458d771647b91fcaeb3bc82f1e5}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!assert\+\_\+equal@{assert\+\_\+equal}}
+\index{assert\+\_\+equal@{assert\+\_\+equal}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{assert\+\_\+equal()}{assert\_equal()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+assert\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{actual,  }\item[{}]{desired,  }\item[{}]{err\+\_\+msg = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asserts that two items are equal.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_aa7a7a93a895fff7a36cb50c69caf225c}\label{namespacenumpy_1_1ma_1_1testutils_aa7a7a93a895fff7a36cb50c69caf225c}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!assert\+\_\+equal\+\_\+records@{assert\+\_\+equal\+\_\+records}}
+\index{assert\+\_\+equal\+\_\+records@{assert\+\_\+equal\+\_\+records}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{assert\+\_\+equal\+\_\+records()}{assert\_equal\_records()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+assert\+\_\+equal\+\_\+records (\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asserts that two records are equal.
+
+Pretty crude for now.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_ad7bec1fa9a0cef1745c6bacf233c5b46}\label{namespacenumpy_1_1ma_1_1testutils_ad7bec1fa9a0cef1745c6bacf233c5b46}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!assert\+\_\+mask\+\_\+equal@{assert\+\_\+mask\+\_\+equal}}
+\index{assert\+\_\+mask\+\_\+equal@{assert\+\_\+mask\+\_\+equal}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{assert\+\_\+mask\+\_\+equal()}{assert\_mask\_equal()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+assert\+\_\+mask\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{m1,  }\item[{}]{m2,  }\item[{}]{err\+\_\+msg = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asserts the equality of two masks.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_abef9da4309066abec0dd9f382abe7c4f}\label{namespacenumpy_1_1ma_1_1testutils_abef9da4309066abec0dd9f382abe7c4f}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!fail\+\_\+if\+\_\+array\+\_\+equal@{fail\+\_\+if\+\_\+array\+\_\+equal}}
+\index{fail\+\_\+if\+\_\+array\+\_\+equal@{fail\+\_\+if\+\_\+array\+\_\+equal}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{fail\+\_\+if\+\_\+array\+\_\+equal()}{fail\_if\_array\_equal()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+fail\+\_\+if\+\_\+array\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{err\+\_\+msg = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{verbose = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Raises an assertion error if two masked arrays are not equal elementwise.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_abe23305ac24d44d355993629b3c83b28}\label{namespacenumpy_1_1ma_1_1testutils_abe23305ac24d44d355993629b3c83b28}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!fail\+\_\+if\+\_\+equal@{fail\+\_\+if\+\_\+equal}}
+\index{fail\+\_\+if\+\_\+equal@{fail\+\_\+if\+\_\+equal}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{fail\+\_\+if\+\_\+equal()}{fail\_if\_equal()}}
+{\footnotesize\ttfamily def numpy.\+ma.\+testutils.\+fail\+\_\+if\+\_\+equal (\begin{DoxyParamCaption}\item[{}]{actual,  }\item[{}]{desired,  }\item[{}]{err\+\_\+msg = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Raises an assertion error if two items are equal.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_a2e57c74f10427169556edf257048dcda}\label{namespacenumpy_1_1ma_1_1testutils_a2e57c74f10427169556edf257048dcda}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!assert\+\_\+close@{assert\+\_\+close}}
+\index{assert\+\_\+close@{assert\+\_\+close}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{assert\+\_\+close}{assert\_close}}
+{\footnotesize\ttfamily numpy.\+ma.\+testutils.\+assert\+\_\+close}
+
+\mbox{\Hypertarget{namespacenumpy_1_1ma_1_1testutils_ada3f29727691024d2df793ecd026cf75}\label{namespacenumpy_1_1ma_1_1testutils_ada3f29727691024d2df793ecd026cf75}} 
+\index{numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}!assert\+\_\+not\+\_\+equal@{assert\+\_\+not\+\_\+equal}}
+\index{assert\+\_\+not\+\_\+equal@{assert\+\_\+not\+\_\+equal}!numpy\+::ma\+::testutils@{numpy\+::ma\+::testutils}}
+\subsubsection{\texorpdfstring{assert\+\_\+not\+\_\+equal}{assert\_not\_equal}}
+{\footnotesize\ttfamily numpy.\+ma.\+testutils.\+assert\+\_\+not\+\_\+equal}
+

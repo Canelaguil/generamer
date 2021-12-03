@@ -1,0 +1,118 @@
+\hypertarget{namespacenetworkx_1_1readwrite_1_1gpickle}{}\section{networkx.\+readwrite.\+gpickle Namespace Reference}
+\label{namespacenetworkx_1_1readwrite_1_1gpickle}\index{networkx.\+readwrite.\+gpickle@{networkx.\+readwrite.\+gpickle}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1gpickle_a58e61477e773f922a302f97374b2880e}{write\+\_\+gpickle} (G, path, protocol=pickle.\+H\+I\+G\+H\+E\+S\+T\+\_\+\+P\+R\+O\+T\+O\+C\+OL)
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1gpickle_a733db274ef3b0b0eb420eb3c5949cbee}{read\+\_\+gpickle} (path)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1readwrite_1_1gpickle_abd01337093697403592fcbf5de20d3e7}{mode}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}**************
+Pickled Graphs
+**************
+Read and write NetworkX graphs as Python pickles.
+
+"The pickle module implements a fundamental, but powerful algorithm
+for serializing and de-serializing a Python object
+structure. "Pickling" is the process whereby a Python object hierarchy
+is converted into a byte stream, and "unpickling" is the inverse
+operation, whereby a byte stream is converted back into an object
+hierarchy."
+
+Note that NetworkX graphs can contain any hashable Python object as
+node (not just integers and strings).  For arbitrary data types it may
+be difficult to represent the data as text.  In that case using Python
+pickles to store the graph data can be used.
+
+Format
+------
+See https://docs.python.org/3/library/pickle.html
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1gpickle_a733db274ef3b0b0eb420eb3c5949cbee}\label{namespacenetworkx_1_1readwrite_1_1gpickle_a733db274ef3b0b0eb420eb3c5949cbee}} 
+\index{networkx\+::readwrite\+::gpickle@{networkx\+::readwrite\+::gpickle}!read\+\_\+gpickle@{read\+\_\+gpickle}}
+\index{read\+\_\+gpickle@{read\+\_\+gpickle}!networkx\+::readwrite\+::gpickle@{networkx\+::readwrite\+::gpickle}}
+\subsubsection{\texorpdfstring{read\+\_\+gpickle()}{read\_gpickle()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+gpickle.\+read\+\_\+gpickle (\begin{DoxyParamCaption}\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read graph object in Python pickle format.
+
+Pickles are a serialized byte stream of a Python object [1]_.
+This format will preserve Python objects used as nodes or edges.
+
+Parameters
+----------
+path : file or string
+   File or filename to write.
+   Filenames ending in .gz or .bz2 will be uncompressed.
+
+Returns
+-------
+G : graph
+   A NetworkX graph
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> nx.write_gpickle(G, "test.gpickle")
+>>> G = nx.read_gpickle("test.gpickle")
+
+References
+----------
+.. [1] https://docs.python.org/3/library/pickle.html
+
+.. deprecated:: 2.6
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1gpickle_a58e61477e773f922a302f97374b2880e}\label{namespacenetworkx_1_1readwrite_1_1gpickle_a58e61477e773f922a302f97374b2880e}} 
+\index{networkx\+::readwrite\+::gpickle@{networkx\+::readwrite\+::gpickle}!write\+\_\+gpickle@{write\+\_\+gpickle}}
+\index{write\+\_\+gpickle@{write\+\_\+gpickle}!networkx\+::readwrite\+::gpickle@{networkx\+::readwrite\+::gpickle}}
+\subsubsection{\texorpdfstring{write\+\_\+gpickle()}{write\_gpickle()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+gpickle.\+write\+\_\+gpickle (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{path,  }\item[{}]{protocol = {\ttfamily pickle.HIGHEST\+\_\+PROTOCOL} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write graph in Python pickle format.
+
+Pickles are a serialized byte stream of a Python object [1]_.
+This format will preserve Python objects used as nodes or edges.
+
+Parameters
+----------
+G : graph
+   A NetworkX graph
+
+path : file or string
+   File or filename to write.
+   Filenames ending in .gz or .bz2 will be compressed.
+
+protocol : integer
+    Pickling protocol to use. Default value: ``pickle.HIGHEST_PROTOCOL``.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> nx.write_gpickle(G, "test.gpickle")
+
+References
+----------
+.. [1] https://docs.python.org/3/library/pickle.html
+
+.. deprecated:: 2.6
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1gpickle_abd01337093697403592fcbf5de20d3e7}\label{namespacenetworkx_1_1readwrite_1_1gpickle_abd01337093697403592fcbf5de20d3e7}} 
+\index{networkx\+::readwrite\+::gpickle@{networkx\+::readwrite\+::gpickle}!mode@{mode}}
+\index{mode@{mode}!networkx\+::readwrite\+::gpickle@{networkx\+::readwrite\+::gpickle}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+gpickle.\+mode}
+

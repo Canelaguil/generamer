@@ -1,0 +1,84 @@
+\hypertarget{classmatplotlib_1_1patches_1_1BoxStyle}{}\section{matplotlib.\+patches.\+Box\+Style Class Reference}
+\label{classmatplotlib_1_1patches_1_1BoxStyle}\index{matplotlib.\+patches.\+Box\+Style@{matplotlib.\+patches.\+Box\+Style}}
+
+
+Inheritance diagram for matplotlib.\+patches.\+Box\+Style\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classmatplotlib_1_1patches_1_1BoxStyle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+patches.\+Box\+Style\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classmatplotlib_1_1patches_1_1BoxStyle__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1BoxStyle_1_1__Base}{\+\_\+\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1BoxStyle_1_1Circle}{Circle}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1BoxStyle_1_1DArrow}{D\+Arrow}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1BoxStyle_1_1LArrow}{L\+Arrow}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1BoxStyle_1_1RArrow}{R\+Arrow}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1BoxStyle_1_1Round}{Round}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1BoxStyle_1_1Round4}{Round4}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1BoxStyle_1_1Roundtooth}{Roundtooth}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1BoxStyle_1_1Sawtooth}{Sawtooth}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1BoxStyle_1_1Square}{Square}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}`BoxStyle` is a container class which defines several
+boxstyle classes, which are used for `FancyBboxPatch`.
+
+A style object can be created as::
+
+       BoxStyle.Round(pad=0.2)
+
+or::
+
+       BoxStyle("Round", pad=0.2)
+
+or::
+
+       BoxStyle("Round, pad=0.2")
+
+The following boxstyle classes are defined.
+
+%(AvailableBoxstyles)s
+
+An instance of any boxstyle class is an callable object,
+whose call signature is::
+
+   __call__(self, x0, y0, width, height, mutation_size)
+
+and returns a `.Path` instance. *x0*, *y0*, *width* and
+*height* specify the location and size of the box to be
+drawn. *mutation_scale* determines the overall size of the
+mutation (by which I mean the transformation of the rectangle to
+the fancy box).
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{patches_8py}{patches.\+py}\end{DoxyCompactItemize}

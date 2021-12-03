@@ -1,0 +1,192 @@
+\hypertarget{namespaceplot__beam__search}{}\section{plot\+\_\+beam\+\_\+search Namespace Reference}
+\label{namespaceplot__beam__search}\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceplot__beam__search_a0a30e40d2760d912c16dc2d13f2090df}{progressive\+\_\+widening\+\_\+search} (\hyperlink{namespaceplot__beam__search_a10893bc053b99c5aa8a4a19ae98104a0}{G}, \hyperlink{namespaceplot__beam__search_a214105633466006a101573ac80d34b35}{source}, \hyperlink{namespaceplot__beam__search_a989923cc074314f9dad692411af51033}{value}, \hyperlink{namespaceplot__beam__search_aadefc81469153d44cac9a5b2371d7fb9}{condition}, initial\+\_\+width=1)
+\item 
+def \hyperlink{namespaceplot__beam__search_a0ee3c919d7b8ed3b289e043ad45a8379}{has\+\_\+high\+\_\+centrality} (v)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceplot__beam__search_a7496b019ca48a27ac5f30d110fe9c71d}{seed}
+\begin{DoxyCompactList}\small\item\em Search for a node with high centrality. \end{DoxyCompactList}\item 
+\hyperlink{namespaceplot__beam__search_a10893bc053b99c5aa8a4a19ae98104a0}{G}
+\item 
+\hyperlink{namespaceplot__beam__search_a2127cfdf584fcc5fceaf72a9c6962ca1}{centrality}
+\item 
+\hyperlink{namespaceplot__beam__search_ad7970e9a7d727e860e65a2d5bb8e47a7}{avg\+\_\+centrality}
+\item 
+\hyperlink{namespaceplot__beam__search_a214105633466006a101573ac80d34b35}{source}
+\item 
+\hyperlink{namespaceplot__beam__search_a989923cc074314f9dad692411af51033}{value}
+\item 
+\hyperlink{namespaceplot__beam__search_aadefc81469153d44cac9a5b2371d7fb9}{condition}
+\item 
+\hyperlink{namespaceplot__beam__search_a3dce5c54866e5c472535e07bd0c97312}{found\+\_\+node}
+\item 
+\hyperlink{namespaceplot__beam__search_a116a29b0a8cc8677b855f6e4f26bd74b}{c}
+\item 
+\hyperlink{namespaceplot__beam__search_a2964437dfed0dd420a36693a674d653e}{pos}
+\item 
+\hyperlink{namespaceplot__beam__search_a78655c0fb046a354d96db17e787acee5}{options}
+\item 
+\hyperlink{namespaceplot__beam__search_ad297ad4e7ff7b90bb1ffa95896776424}{nodelist}
+\item 
+\hyperlink{namespaceplot__beam__search_aba0c84cbbcf9fe96ec5522581bd7fdb0}{node\+\_\+size}
+\item 
+\hyperlink{namespaceplot__beam__search_a5229b181964523cce4292b58501de170}{node\+\_\+color}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}===========
+Beam Search
+===========
+
+Beam search with dynamic beam width.
+
+The progressive widening beam search repeatedly executes a beam search
+with increasing beam width until the target node is found.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceplot__beam__search_a0ee3c919d7b8ed3b289e043ad45a8379}\label{namespaceplot__beam__search_a0ee3c919d7b8ed3b289e043ad45a8379}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!has\+\_\+high\+\_\+centrality@{has\+\_\+high\+\_\+centrality}}
+\index{has\+\_\+high\+\_\+centrality@{has\+\_\+high\+\_\+centrality}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{has\+\_\+high\+\_\+centrality()}{has\_high\_centrality()}}
+{\footnotesize\ttfamily def plot\+\_\+beam\+\_\+search.\+has\+\_\+high\+\_\+centrality (\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_a0a30e40d2760d912c16dc2d13f2090df}\label{namespaceplot__beam__search_a0a30e40d2760d912c16dc2d13f2090df}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!progressive\+\_\+widening\+\_\+search@{progressive\+\_\+widening\+\_\+search}}
+\index{progressive\+\_\+widening\+\_\+search@{progressive\+\_\+widening\+\_\+search}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{progressive\+\_\+widening\+\_\+search()}{progressive\_widening\_search()}}
+{\footnotesize\ttfamily def plot\+\_\+beam\+\_\+search.\+progressive\+\_\+widening\+\_\+search (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{source,  }\item[{}]{value,  }\item[{}]{condition,  }\item[{}]{initial\+\_\+width = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Progressive widening beam search to find a node.
+
+The progressive widening beam search involves a repeated beam
+search, starting with a small beam width then extending to
+progressively larger beam widths if the target node is not
+found. This implementation simply returns the first node found that
+matches the termination condition.
+
+`G` is a NetworkX graph.
+
+`source` is a node in the graph. The search for the node of interest
+begins here and extends only to those nodes in the (weakly)
+connected component of this node.
+
+`value` is a function that returns a real number indicating how good
+a potential neighbor node is when deciding which neighbor nodes to
+enqueue in the breadth-first search. Only the best nodes within the
+current beam width will be enqueued at each step.
+
+`condition` is the termination condition for the search. This is a
+function that takes a node as input and return a Boolean indicating
+whether the node is the target. If no node matches the termination
+condition, this function raises :exc:`NodeNotFound`.
+
+`initial_width` is the starting beam width for the beam search (the
+default is one). If no node matching the `condition` is found with
+this beam width, the beam search is restarted from the `source` node
+with a beam width that is twice as large (so the beam width
+increases exponentially). The search terminates after the beam width
+exceeds the number of nodes in the graph.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceplot__beam__search_ad7970e9a7d727e860e65a2d5bb8e47a7}\label{namespaceplot__beam__search_ad7970e9a7d727e860e65a2d5bb8e47a7}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!avg\+\_\+centrality@{avg\+\_\+centrality}}
+\index{avg\+\_\+centrality@{avg\+\_\+centrality}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{avg\+\_\+centrality}{avg\_centrality}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+avg\+\_\+centrality}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_a116a29b0a8cc8677b855f6e4f26bd74b}\label{namespaceplot__beam__search_a116a29b0a8cc8677b855f6e4f26bd74b}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!c@{c}}
+\index{c@{c}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+c}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_a2127cfdf584fcc5fceaf72a9c6962ca1}\label{namespaceplot__beam__search_a2127cfdf584fcc5fceaf72a9c6962ca1}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!centrality@{centrality}}
+\index{centrality@{centrality}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{centrality}{centrality}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+centrality}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_aadefc81469153d44cac9a5b2371d7fb9}\label{namespaceplot__beam__search_aadefc81469153d44cac9a5b2371d7fb9}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!condition@{condition}}
+\index{condition@{condition}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{condition}{condition}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+condition}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_a3dce5c54866e5c472535e07bd0c97312}\label{namespaceplot__beam__search_a3dce5c54866e5c472535e07bd0c97312}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!found\+\_\+node@{found\+\_\+node}}
+\index{found\+\_\+node@{found\+\_\+node}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{found\+\_\+node}{found\_node}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+found\+\_\+node}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_a10893bc053b99c5aa8a4a19ae98104a0}\label{namespaceplot__beam__search_a10893bc053b99c5aa8a4a19ae98104a0}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!G@{G}}
+\index{G@{G}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+G}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_a5229b181964523cce4292b58501de170}\label{namespaceplot__beam__search_a5229b181964523cce4292b58501de170}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!node\+\_\+color@{node\+\_\+color}}
+\index{node\+\_\+color@{node\+\_\+color}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{node\+\_\+color}{node\_color}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+node\+\_\+color}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_aba0c84cbbcf9fe96ec5522581bd7fdb0}\label{namespaceplot__beam__search_aba0c84cbbcf9fe96ec5522581bd7fdb0}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!node\+\_\+size@{node\+\_\+size}}
+\index{node\+\_\+size@{node\+\_\+size}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{node\+\_\+size}{node\_size}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+node\+\_\+size}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_ad297ad4e7ff7b90bb1ffa95896776424}\label{namespaceplot__beam__search_ad297ad4e7ff7b90bb1ffa95896776424}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!nodelist@{nodelist}}
+\index{nodelist@{nodelist}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{nodelist}{nodelist}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+nodelist}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_a78655c0fb046a354d96db17e787acee5}\label{namespaceplot__beam__search_a78655c0fb046a354d96db17e787acee5}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!options@{options}}
+\index{options@{options}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{options}{options}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+options}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_a2964437dfed0dd420a36693a674d653e}\label{namespaceplot__beam__search_a2964437dfed0dd420a36693a674d653e}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!pos@{pos}}
+\index{pos@{pos}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+pos}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_a7496b019ca48a27ac5f30d110fe9c71d}\label{namespaceplot__beam__search_a7496b019ca48a27ac5f30d110fe9c71d}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!seed@{seed}}
+\index{seed@{seed}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{seed}{seed}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+seed}
+
+
+
+Search for a node with high centrality. 
+
+
+
+
+
+We generate a random graph, compute the centrality of each node, then perform the progressive widening search in order to find a node of high centrality. \mbox{\Hypertarget{namespaceplot__beam__search_a214105633466006a101573ac80d34b35}\label{namespaceplot__beam__search_a214105633466006a101573ac80d34b35}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!source@{source}}
+\index{source@{source}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{source}{source}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+source}
+
+\mbox{\Hypertarget{namespaceplot__beam__search_a989923cc074314f9dad692411af51033}\label{namespaceplot__beam__search_a989923cc074314f9dad692411af51033}} 
+\index{plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}!value@{value}}
+\index{value@{value}!plot\+\_\+beam\+\_\+search@{plot\+\_\+beam\+\_\+search}}
+\subsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily plot\+\_\+beam\+\_\+search.\+value}
+

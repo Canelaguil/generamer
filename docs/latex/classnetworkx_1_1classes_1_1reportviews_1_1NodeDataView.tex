@@ -1,0 +1,127 @@
+\hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView}{}\section{networkx.\+classes.\+reportviews.\+Node\+Data\+View Class Reference}
+\label{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView}\index{networkx.\+classes.\+reportviews.\+Node\+Data\+View@{networkx.\+classes.\+reportviews.\+Node\+Data\+View}}
+
+
+Inheritance diagram for networkx.\+classes.\+reportviews.\+Node\+Data\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for networkx.\+classes.\+reportviews.\+Node\+Data\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a123061bcbddb4f02ef81682a4a207cd7}{\+\_\+\+\_\+getstate\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a865a109ce4f700ca9b2cd1b409ed5b0f}{\+\_\+\+\_\+setstate\+\_\+\+\_\+} (self, state)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a1f23092eaffd68cbd49213cb61684ff8}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, nodedict, data=False, default=None)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a505f15ed7f97248d6645a7ecce613033}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a209559ecf3306d902f395fa0167b710f}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_ab7d9f2b1cd394ddbf4343f95bcbef1d4}{\+\_\+\+\_\+contains\+\_\+\+\_\+} (self, n)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_ac56965db7c345623782c302cbe188cd1}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, n)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a11767c71df5d2c74a3d31a8ee2e69e77}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a6aae95436a476c118d7f2bfa3dd06437}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A DataView class for nodes of a NetworkX Graph
+
+The main use for this class is to iterate through node-data pairs.
+The data can be the entire data-dictionary for each node, or it
+can be a specific attribute (with default) for each node.
+Set operations are enabled with NodeDataView, but don't work in
+cases where the data is not hashable. Use with caution.
+Typically, set operations on nodes use NodeView, not NodeDataView.
+That is, they use `G.nodes` instead of `G.nodes(data='foo')`.
+
+Parameters
+==========
+graph : NetworkX graph-like class
+data : bool or string (default=False)
+default : object (default=None)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a1f23092eaffd68cbd49213cb61684ff8}\label{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a1f23092eaffd68cbd49213cb61684ff8}} 
+\index{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Node\+Data\+View.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{nodedict,  }\item[{}]{data = {\ttfamily False},  }\item[{}]{default = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_ab7d9f2b1cd394ddbf4343f95bcbef1d4}\label{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_ab7d9f2b1cd394ddbf4343f95bcbef1d4}} 
+\index{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}!\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+contains\+\_\+\+\_\+()}{\_\_contains\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Node\+Data\+View.\+\_\+\+\_\+contains\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_ac56965db7c345623782c302cbe188cd1}\label{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_ac56965db7c345623782c302cbe188cd1}} 
+\index{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Node\+Data\+View.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a123061bcbddb4f02ef81682a4a207cd7}\label{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a123061bcbddb4f02ef81682a4a207cd7}} 
+\index{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}!\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getstate\+\_\+\+\_\+()}{\_\_getstate\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Node\+Data\+View.\+\_\+\+\_\+getstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a209559ecf3306d902f395fa0167b710f}\label{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a209559ecf3306d902f395fa0167b710f}} 
+\index{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Node\+Data\+View.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a505f15ed7f97248d6645a7ecce613033}\label{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a505f15ed7f97248d6645a7ecce613033}} 
+\index{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Node\+Data\+View.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a6aae95436a476c118d7f2bfa3dd06437}\label{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a6aae95436a476c118d7f2bfa3dd06437}} 
+\index{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Node\+Data\+View.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a865a109ce4f700ca9b2cd1b409ed5b0f}\label{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a865a109ce4f700ca9b2cd1b409ed5b0f}} 
+\index{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}!\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setstate\+\_\+\+\_\+()}{\_\_setstate\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Node\+Data\+View.\+\_\+\+\_\+setstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a11767c71df5d2c74a3d31a8ee2e69e77}\label{classnetworkx_1_1classes_1_1reportviews_1_1NodeDataView_a11767c71df5d2c74a3d31a8ee2e69e77}} 
+\index{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Node\+Data\+View@{networkx\+::classes\+::reportviews\+::\+Node\+Data\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Node\+Data\+View.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/classes/\hyperlink{reportviews_8py}{reportviews.\+py}\end{DoxyCompactItemize}

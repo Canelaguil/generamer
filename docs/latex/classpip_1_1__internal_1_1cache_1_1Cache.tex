@@ -1,0 +1,97 @@
+\hypertarget{classpip_1_1__internal_1_1cache_1_1Cache}{}\section{pip.\+\_\+internal.\+cache.\+Cache Class Reference}
+\label{classpip_1_1__internal_1_1cache_1_1Cache}\index{pip.\+\_\+internal.\+cache.\+Cache@{pip.\+\_\+internal.\+cache.\+Cache}}
+
+
+Inheritance diagram for pip.\+\_\+internal.\+cache.\+Cache\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__internal_1_1cache_1_1Cache__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1cache_1_1Cache_a4b7761f49e02faa5e273b43eb21742f4}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__internal_1_1cache_1_1Cache_aed8f0121963b4d3095aaa0b2ea344012}{cache\+\_\+dir}, \hyperlink{classpip_1_1__internal_1_1cache_1_1Cache_ac6051e5c3dff9ba7c7e5968e82acc9d2}{format\+\_\+control}, \hyperlink{classpip_1_1__internal_1_1cache_1_1Cache_a367ac1a183aca35d140712d557adb388}{allowed\+\_\+formats})
+\item 
+def \hyperlink{classpip_1_1__internal_1_1cache_1_1Cache_a95a2a7b3fd47f18987558738366660fe}{get\+\_\+path\+\_\+for\+\_\+link} (self, link)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1cache_1_1Cache_ad68488daa2dd21db48b7c82b72d35e32}{get} (self, link, package\+\_\+name, supported\+\_\+tags)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__internal_1_1cache_1_1Cache_aed8f0121963b4d3095aaa0b2ea344012}{cache\+\_\+dir}
+\item 
+\hyperlink{classpip_1_1__internal_1_1cache_1_1Cache_ac6051e5c3dff9ba7c7e5968e82acc9d2}{format\+\_\+control}
+\item 
+\hyperlink{classpip_1_1__internal_1_1cache_1_1Cache_a367ac1a183aca35d140712d557adb388}{allowed\+\_\+formats}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An abstract class - provides cache directories for data from links
+
+
+    :param cache_dir: The root of the cache.
+    :param format_control: An object of FormatControl class to limit
+        binaries being read from the cache.
+    :param allowed_formats: which formats of files the cache should store.
+        ('binary' and 'source' are the only allowed values)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1cache_1_1Cache_a4b7761f49e02faa5e273b43eb21742f4}\label{classpip_1_1__internal_1_1cache_1_1Cache_a4b7761f49e02faa5e273b43eb21742f4}} 
+\index{pip\+::\+\_\+internal\+::cache\+::\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Cache}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::cache\+::\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Cache}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cache.\+Cache.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cache\+\_\+dir,  }\item[{}]{format\+\_\+control,  }\item[{}]{allowed\+\_\+formats }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1cache_1_1Cache_ad68488daa2dd21db48b7c82b72d35e32}\label{classpip_1_1__internal_1_1cache_1_1Cache_ad68488daa2dd21db48b7c82b72d35e32}} 
+\index{pip\+::\+\_\+internal\+::cache\+::\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Cache}!get@{get}}
+\index{get@{get}!pip\+::\+\_\+internal\+::cache\+::\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Cache}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cache.\+Cache.\+get (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{link,  }\item[{}]{package\+\_\+name,  }\item[{}]{supported\+\_\+tags }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a link to a cached item if it exists, otherwise returns the
+passed link.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__internal_1_1cache_1_1Cache_a95a2a7b3fd47f18987558738366660fe}\label{classpip_1_1__internal_1_1cache_1_1Cache_a95a2a7b3fd47f18987558738366660fe}} 
+\index{pip\+::\+\_\+internal\+::cache\+::\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Cache}!get\+\_\+path\+\_\+for\+\_\+link@{get\+\_\+path\+\_\+for\+\_\+link}}
+\index{get\+\_\+path\+\_\+for\+\_\+link@{get\+\_\+path\+\_\+for\+\_\+link}!pip\+::\+\_\+internal\+::cache\+::\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Cache}}
+\subsubsection{\texorpdfstring{get\+\_\+path\+\_\+for\+\_\+link()}{get\_path\_for\_link()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+cache.\+Cache.\+get\+\_\+path\+\_\+for\+\_\+link (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{link }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a directory to store cached items in for link.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1cache_1_1Cache_a367ac1a183aca35d140712d557adb388}\label{classpip_1_1__internal_1_1cache_1_1Cache_a367ac1a183aca35d140712d557adb388}} 
+\index{pip\+::\+\_\+internal\+::cache\+::\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Cache}!allowed\+\_\+formats@{allowed\+\_\+formats}}
+\index{allowed\+\_\+formats@{allowed\+\_\+formats}!pip\+::\+\_\+internal\+::cache\+::\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Cache}}
+\subsubsection{\texorpdfstring{allowed\+\_\+formats}{allowed\_formats}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+cache.\+Cache.\+allowed\+\_\+formats}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1cache_1_1Cache_aed8f0121963b4d3095aaa0b2ea344012}\label{classpip_1_1__internal_1_1cache_1_1Cache_aed8f0121963b4d3095aaa0b2ea344012}} 
+\index{pip\+::\+\_\+internal\+::cache\+::\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Cache}!cache\+\_\+dir@{cache\+\_\+dir}}
+\index{cache\+\_\+dir@{cache\+\_\+dir}!pip\+::\+\_\+internal\+::cache\+::\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Cache}}
+\subsubsection{\texorpdfstring{cache\+\_\+dir}{cache\_dir}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+cache.\+Cache.\+cache\+\_\+dir}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1cache_1_1Cache_ac6051e5c3dff9ba7c7e5968e82acc9d2}\label{classpip_1_1__internal_1_1cache_1_1Cache_ac6051e5c3dff9ba7c7e5968e82acc9d2}} 
+\index{pip\+::\+\_\+internal\+::cache\+::\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Cache}!format\+\_\+control@{format\+\_\+control}}
+\index{format\+\_\+control@{format\+\_\+control}!pip\+::\+\_\+internal\+::cache\+::\+Cache@{pip\+::\+\_\+internal\+::cache\+::\+Cache}}
+\subsubsection{\texorpdfstring{format\+\_\+control}{format\_control}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+cache.\+Cache.\+format\+\_\+control}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+internal/\hyperlink{__internal_2cache_8py}{cache.\+py}\end{DoxyCompactItemize}

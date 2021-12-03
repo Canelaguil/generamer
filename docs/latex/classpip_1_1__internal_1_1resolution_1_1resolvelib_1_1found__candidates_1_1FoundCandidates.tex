@@ -1,0 +1,100 @@
+\hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates}{}\section{pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates.\+Found\+Candidates Class Reference}
+\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates}\index{pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates.\+Found\+Candidates@{pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates.\+Found\+Candidates}}
+
+
+Inheritance diagram for pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates.\+Found\+Candidates\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates.\+Found\+Candidates\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_afe7969035db73cbc740db7bded5bc325}{\+\_\+\+\_\+init\+\_\+\+\_\+}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_a47434afaa314b70b83444086f64789d4}{\+\_\+\+\_\+getitem\+\_\+\+\_\+}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_a5427eeef2f0b83a2729c28d1e7ae6fcf}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_aec51b736a3ea58dd8669280d3ac731c5}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_ad8a21f0ca93568b9ffe2d4d7bb080662}{\+\_\+\+\_\+bool\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_a2733380d0b248d5c6ad7aeeb204ae90d}{maxsize}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A lazy sequence to provide candidates to the resolver.
+
+The intended usage is to return this from `find_matches()` so the resolver
+can iterate through the sequence multiple times, but only access the index
+page when remote packages are actually needed. This improve performances
+when suitable candidates are already installed on disk.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_afe7969035db73cbc740db7bded5bc325}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_afe7969035db73cbc740db7bded5bc325}} 
+\index{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates.\+Found\+Candidates.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{get\+\_\+infos }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_ad8a21f0ca93568b9ffe2d4d7bb080662}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_ad8a21f0ca93568b9ffe2d4d7bb080662}} 
+\index{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates}!\+\_\+\+\_\+bool\+\_\+\+\_\+@{\+\_\+\+\_\+bool\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+bool\+\_\+\+\_\+@{\+\_\+\+\_\+bool\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+bool\+\_\+\+\_\+()}{\_\_bool\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates.\+Found\+Candidates.\+\_\+\+\_\+bool\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{bool }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_a47434afaa314b70b83444086f64789d4}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_a47434afaa314b70b83444086f64789d4}} 
+\index{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates.\+Found\+Candidates.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_a5427eeef2f0b83a2729c28d1e7ae6fcf}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_a5427eeef2f0b83a2729c28d1e7ae6fcf}} 
+\index{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates.\+Found\+Candidates.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{Iterator,  }\item[{}]{Candidate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_aec51b736a3ea58dd8669280d3ac731c5}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_aec51b736a3ea58dd8669280d3ac731c5}} 
+\index{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates.\+Found\+Candidates.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{int }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_a2733380d0b248d5c6ad7aeeb204ae90d}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1found__candidates_1_1FoundCandidates_a2733380d0b248d5c6ad7aeeb204ae90d}} 
+\index{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates}!maxsize@{maxsize}}
+\index{maxsize@{maxsize}!pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates@{pip\+::\+\_\+internal\+::resolution\+::resolvelib\+::found\+\_\+candidates\+::\+Found\+Candidates}}
+\subsubsection{\texorpdfstring{maxsize}{maxsize}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+resolution.\+resolvelib.\+found\+\_\+candidates.\+Found\+Candidates.\+maxsize\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+internal/resolution/resolvelib/\hyperlink{found__candidates_8py}{found\+\_\+candidates.\+py}\end{DoxyCompactItemize}

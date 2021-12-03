@@ -1,0 +1,102 @@
+\hypertarget{classmatplotlib_1_1patheffects_1_1PathEffectRenderer}{}\section{matplotlib.\+patheffects.\+Path\+Effect\+Renderer Class Reference}
+\label{classmatplotlib_1_1patheffects_1_1PathEffectRenderer}\index{matplotlib.\+patheffects.\+Path\+Effect\+Renderer@{matplotlib.\+patheffects.\+Path\+Effect\+Renderer}}
+
+
+Inheritance diagram for matplotlib.\+patheffects.\+Path\+Effect\+Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classmatplotlib_1_1patheffects_1_1PathEffectRenderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+patheffects.\+Path\+Effect\+Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classmatplotlib_1_1patheffects_1_1PathEffectRenderer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_ab66e2ac17ed5c48f7b41ad76886257ec}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, path\+\_\+effects, renderer)
+\item 
+def \hyperlink{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a7d03abb1e00bec7e2fd2e77923aa39fc}{copy\+\_\+with\+\_\+path\+\_\+effect} (self, path\+\_\+effects)
+\item 
+def \hyperlink{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a2f8787b0d39d373ebb2e303877ddfcd6}{draw\+\_\+path} (self, gc, tpath, affine, rgb\+Face=None)
+\item 
+def \hyperlink{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a959af761b5cd6ac3845bded4f68ab339}{draw\+\_\+markers} (self, gc, marker\+\_\+path, marker\+\_\+trans, path, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a5c7e5693aefa235c120791e25698cb65}{draw\+\_\+path\+\_\+collection} (self, gc, master\+\_\+transform, paths, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a99559fd9310d78cc7bfef8b4359ea8fc}{\+\_\+\+\_\+getattribute\+\_\+\+\_\+} (self, name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Implements a Renderer which contains another renderer.
+
+This proxy then intercepts draw calls, calling the appropriate
+:class:`AbstractPathEffect` draw method.
+
+.. note::
+    Not all methods have been overridden on this RendererBase subclass.
+    It may be necessary to add further methods to extend the PathEffects
+    capabilities further.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_ab66e2ac17ed5c48f7b41ad76886257ec}\label{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_ab66e2ac17ed5c48f7b41ad76886257ec}} 
+\index{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer@{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer@{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+patheffects.\+Path\+Effect\+Renderer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path\+\_\+effects,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+path_effects : iterable of :class:`AbstractPathEffect`
+    The path effects which this renderer represents.
+renderer : `matplotlib.backend_bases.RendererBase` subclass\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a99559fd9310d78cc7bfef8b4359ea8fc}\label{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a99559fd9310d78cc7bfef8b4359ea8fc}} 
+\index{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer@{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer}!\+\_\+\+\_\+getattribute\+\_\+\+\_\+@{\+\_\+\+\_\+getattribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getattribute\+\_\+\+\_\+@{\+\_\+\+\_\+getattribute\+\_\+\+\_\+}!matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer@{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getattribute\+\_\+\+\_\+()}{\_\_getattribute\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+patheffects.\+Path\+Effect\+Renderer.\+\_\+\+\_\+getattribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a7d03abb1e00bec7e2fd2e77923aa39fc}\label{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a7d03abb1e00bec7e2fd2e77923aa39fc}} 
+\index{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer@{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer}!copy\+\_\+with\+\_\+path\+\_\+effect@{copy\+\_\+with\+\_\+path\+\_\+effect}}
+\index{copy\+\_\+with\+\_\+path\+\_\+effect@{copy\+\_\+with\+\_\+path\+\_\+effect}!matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer@{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer}}
+\subsubsection{\texorpdfstring{copy\+\_\+with\+\_\+path\+\_\+effect()}{copy\_with\_path\_effect()}}
+{\footnotesize\ttfamily def matplotlib.\+patheffects.\+Path\+Effect\+Renderer.\+copy\+\_\+with\+\_\+path\+\_\+effect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path\+\_\+effects }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a959af761b5cd6ac3845bded4f68ab339}\label{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a959af761b5cd6ac3845bded4f68ab339}} 
+\index{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer@{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer}!draw\+\_\+markers@{draw\+\_\+markers}}
+\index{draw\+\_\+markers@{draw\+\_\+markers}!matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer@{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer}}
+\subsubsection{\texorpdfstring{draw\+\_\+markers()}{draw\_markers()}}
+{\footnotesize\ttfamily def matplotlib.\+patheffects.\+Path\+Effect\+Renderer.\+draw\+\_\+markers (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{gc,  }\item[{}]{marker\+\_\+path,  }\item[{}]{marker\+\_\+trans,  }\item[{}]{path,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a2f8787b0d39d373ebb2e303877ddfcd6}\label{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a2f8787b0d39d373ebb2e303877ddfcd6}} 
+\index{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer@{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer}!draw\+\_\+path@{draw\+\_\+path}}
+\index{draw\+\_\+path@{draw\+\_\+path}!matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer@{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer}}
+\subsubsection{\texorpdfstring{draw\+\_\+path()}{draw\_path()}}
+{\footnotesize\ttfamily def matplotlib.\+patheffects.\+Path\+Effect\+Renderer.\+draw\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{gc,  }\item[{}]{tpath,  }\item[{}]{affine,  }\item[{}]{rgb\+Face = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a5c7e5693aefa235c120791e25698cb65}\label{classmatplotlib_1_1patheffects_1_1PathEffectRenderer_a5c7e5693aefa235c120791e25698cb65}} 
+\index{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer@{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer}!draw\+\_\+path\+\_\+collection@{draw\+\_\+path\+\_\+collection}}
+\index{draw\+\_\+path\+\_\+collection@{draw\+\_\+path\+\_\+collection}!matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer@{matplotlib\+::patheffects\+::\+Path\+Effect\+Renderer}}
+\subsubsection{\texorpdfstring{draw\+\_\+path\+\_\+collection()}{draw\_path\_collection()}}
+{\footnotesize\ttfamily def matplotlib.\+patheffects.\+Path\+Effect\+Renderer.\+draw\+\_\+path\+\_\+collection (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{gc,  }\item[{}]{master\+\_\+transform,  }\item[{}]{paths,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{patheffects_8py}{patheffects.\+py}\end{DoxyCompactItemize}

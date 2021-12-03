@@ -1,0 +1,97 @@
+\hypertarget{classmatplotlib_1_1scale_1_1ScaleBase}{}\section{matplotlib.\+scale.\+Scale\+Base Class Reference}
+\label{classmatplotlib_1_1scale_1_1ScaleBase}\index{matplotlib.\+scale.\+Scale\+Base@{matplotlib.\+scale.\+Scale\+Base}}
+
+
+Inheritance diagram for matplotlib.\+scale.\+Scale\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1scale_1_1ScaleBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1ScaleBase_a456a86d8e26a298462ae1dcc5a4dfa78}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, axis)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1ScaleBase_acf648f9d8a75c9acd5d89dbbca10668c}{get\+\_\+transform} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1ScaleBase_aa483d098bc7dfb64f6b9e799c14f377a}{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters} (self, axis)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1ScaleBase_ad39a31685b8be84d28b9f257ab94569b}{limit\+\_\+range\+\_\+for\+\_\+scale} (self, vmin, vmax, minpos)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The base class for all scales.
+
+Scales are separable transformations, working on a single dimension.
+
+Any subclasses will want to override:
+
+- :attr:`name`
+- :meth:`get_transform`
+- :meth:`set_default_locators_and_formatters`
+
+And optionally:
+
+- :meth:`limit_range_for_scale`\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1ScaleBase_a456a86d8e26a298462ae1dcc5a4dfa78}\label{classmatplotlib_1_1scale_1_1ScaleBase_a456a86d8e26a298462ae1dcc5a4dfa78}} 
+\index{matplotlib\+::scale\+::\+Scale\+Base@{matplotlib\+::scale\+::\+Scale\+Base}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::scale\+::\+Scale\+Base@{matplotlib\+::scale\+::\+Scale\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Scale\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{axis }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Construct a new scale.
+
+Notes
+-----
+The following note is for scale implementors.
+
+For back-compatibility reasons, scales take an `~matplotlib.axis.Axis`
+object as first argument.  However, this argument should not
+be used: a single scale object should be usable by multiple
+`~matplotlib.axis.Axis`\es at the same time.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1ScaleBase_acf648f9d8a75c9acd5d89dbbca10668c}\label{classmatplotlib_1_1scale_1_1ScaleBase_acf648f9d8a75c9acd5d89dbbca10668c}} 
+\index{matplotlib\+::scale\+::\+Scale\+Base@{matplotlib\+::scale\+::\+Scale\+Base}!get\+\_\+transform@{get\+\_\+transform}}
+\index{get\+\_\+transform@{get\+\_\+transform}!matplotlib\+::scale\+::\+Scale\+Base@{matplotlib\+::scale\+::\+Scale\+Base}}
+\subsubsection{\texorpdfstring{get\+\_\+transform()}{get\_transform()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Scale\+Base.\+get\+\_\+transform (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the :class:`~matplotlib.transforms.Transform` object
+associated with this scale.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1scale_1_1ScaleBase_ad39a31685b8be84d28b9f257ab94569b}\label{classmatplotlib_1_1scale_1_1ScaleBase_ad39a31685b8be84d28b9f257ab94569b}} 
+\index{matplotlib\+::scale\+::\+Scale\+Base@{matplotlib\+::scale\+::\+Scale\+Base}!limit\+\_\+range\+\_\+for\+\_\+scale@{limit\+\_\+range\+\_\+for\+\_\+scale}}
+\index{limit\+\_\+range\+\_\+for\+\_\+scale@{limit\+\_\+range\+\_\+for\+\_\+scale}!matplotlib\+::scale\+::\+Scale\+Base@{matplotlib\+::scale\+::\+Scale\+Base}}
+\subsubsection{\texorpdfstring{limit\+\_\+range\+\_\+for\+\_\+scale()}{limit\_range\_for\_scale()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Scale\+Base.\+limit\+\_\+range\+\_\+for\+\_\+scale (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax,  }\item[{}]{minpos }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the range *vmin*, *vmax*, restricted to the
+domain supported by this scale (if any).
+
+*minpos* should be the minimum positive value in the data.
+This is used by log scales to determine a minimum value.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1scale_1_1ScaleBase_aa483d098bc7dfb64f6b9e799c14f377a}\label{classmatplotlib_1_1scale_1_1ScaleBase_aa483d098bc7dfb64f6b9e799c14f377a}} 
+\index{matplotlib\+::scale\+::\+Scale\+Base@{matplotlib\+::scale\+::\+Scale\+Base}!set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters@{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters}}
+\index{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters@{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters}!matplotlib\+::scale\+::\+Scale\+Base@{matplotlib\+::scale\+::\+Scale\+Base}}
+\subsubsection{\texorpdfstring{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters()}{set\_default\_locators\_and\_formatters()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Scale\+Base.\+set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{axis }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the locators and formatters of *axis* to instances suitable for
+this scale.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{scale_8py}{scale.\+py}\end{DoxyCompactItemize}

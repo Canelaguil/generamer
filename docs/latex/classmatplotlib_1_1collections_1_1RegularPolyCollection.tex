@@ -1,0 +1,101 @@
+\hypertarget{classmatplotlib_1_1collections_1_1RegularPolyCollection}{}\section{matplotlib.\+collections.\+Regular\+Poly\+Collection Class Reference}
+\label{classmatplotlib_1_1collections_1_1RegularPolyCollection}\index{matplotlib.\+collections.\+Regular\+Poly\+Collection@{matplotlib.\+collections.\+Regular\+Poly\+Collection}}
+
+
+Inheritance diagram for matplotlib.\+collections.\+Regular\+Poly\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1collections_1_1RegularPolyCollection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+collections.\+Regular\+Poly\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1collections_1_1RegularPolyCollection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1RegularPolyCollection_afda450c5bf471e56f666fcd45d5632d5}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, numsides, rotation=0, sizes=(1,), kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1RegularPolyCollection_af4c0bf0bf8e8ff9c99bea071cc81efea}{get\+\_\+numsides} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1RegularPolyCollection_ae7d6c7b3db17710c52c9f6733cd3b649}{get\+\_\+rotation} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1collections_1_1RegularPolyCollection_abb5880647d32c4e7b2cb869d12702038}{draw} (self, renderer)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A collection of n-sided regular polygons.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1RegularPolyCollection_afda450c5bf471e56f666fcd45d5632d5}\label{classmatplotlib_1_1collections_1_1RegularPolyCollection_afda450c5bf471e56f666fcd45d5632d5}} 
+\index{matplotlib\+::collections\+::\+Regular\+Poly\+Collection@{matplotlib\+::collections\+::\+Regular\+Poly\+Collection}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::collections\+::\+Regular\+Poly\+Collection@{matplotlib\+::collections\+::\+Regular\+Poly\+Collection}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Regular\+Poly\+Collection.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{numsides,  }\item[{}]{rotation = {\ttfamily 0},  }\item[{}]{sizes = {\ttfamily (1,)},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+numsides : int
+    The number of sides of the polygon.
+rotation : float
+    The rotation of the polygon in radians.
+sizes : tuple of float
+    The area of the circle circumscribing the polygon in points^2.
+**kwargs
+    Forwarded to `.Collection`.
+
+Examples
+--------
+See :doc:`/gallery/event_handling/lasso_demo` for a complete example::
+
+    offsets = np.random.rand(20, 2)
+    facecolors = [cm.jet(x) for x in np.random.rand(20)]
+
+    collection = RegularPolyCollection(
+numsides=5, # a pentagon
+rotation=0, sizes=(50,),
+facecolors=facecolors,
+edgecolors=("black",),
+linewidths=(1,),
+offsets=offsets,
+transOffset=ax.transData,
+)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1RegularPolyCollection_abb5880647d32c4e7b2cb869d12702038}\label{classmatplotlib_1_1collections_1_1RegularPolyCollection_abb5880647d32c4e7b2cb869d12702038}} 
+\index{matplotlib\+::collections\+::\+Regular\+Poly\+Collection@{matplotlib\+::collections\+::\+Regular\+Poly\+Collection}!draw@{draw}}
+\index{draw@{draw}!matplotlib\+::collections\+::\+Regular\+Poly\+Collection@{matplotlib\+::collections\+::\+Regular\+Poly\+Collection}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Regular\+Poly\+Collection.\+draw (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1RegularPolyCollection_af4c0bf0bf8e8ff9c99bea071cc81efea}\label{classmatplotlib_1_1collections_1_1RegularPolyCollection_af4c0bf0bf8e8ff9c99bea071cc81efea}} 
+\index{matplotlib\+::collections\+::\+Regular\+Poly\+Collection@{matplotlib\+::collections\+::\+Regular\+Poly\+Collection}!get\+\_\+numsides@{get\+\_\+numsides}}
+\index{get\+\_\+numsides@{get\+\_\+numsides}!matplotlib\+::collections\+::\+Regular\+Poly\+Collection@{matplotlib\+::collections\+::\+Regular\+Poly\+Collection}}
+\subsubsection{\texorpdfstring{get\+\_\+numsides()}{get\_numsides()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Regular\+Poly\+Collection.\+get\+\_\+numsides (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1collections_1_1RegularPolyCollection_ae7d6c7b3db17710c52c9f6733cd3b649}\label{classmatplotlib_1_1collections_1_1RegularPolyCollection_ae7d6c7b3db17710c52c9f6733cd3b649}} 
+\index{matplotlib\+::collections\+::\+Regular\+Poly\+Collection@{matplotlib\+::collections\+::\+Regular\+Poly\+Collection}!get\+\_\+rotation@{get\+\_\+rotation}}
+\index{get\+\_\+rotation@{get\+\_\+rotation}!matplotlib\+::collections\+::\+Regular\+Poly\+Collection@{matplotlib\+::collections\+::\+Regular\+Poly\+Collection}}
+\subsubsection{\texorpdfstring{get\+\_\+rotation()}{get\_rotation()}}
+{\footnotesize\ttfamily def matplotlib.\+collections.\+Regular\+Poly\+Collection.\+get\+\_\+rotation (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{collections_8py}{collections.\+py}\end{DoxyCompactItemize}

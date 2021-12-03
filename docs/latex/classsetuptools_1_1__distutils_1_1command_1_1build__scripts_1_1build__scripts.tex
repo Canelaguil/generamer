@@ -1,0 +1,151 @@
+\hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts}{}\section{setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts Class Reference}
+\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts}\index{setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts@{setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts}}
+
+
+Inheritance diagram for setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a1e0b311ea1ca78e7627ccf3c4616f710}{initialize\+\_\+options} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a95103ec2fe75225d0afcba03aa8ccf04}{finalize\+\_\+options} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a088e684c0035c26de371d9a79f73e3bc}{get\+\_\+source\+\_\+files} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_ae4b3bc4a2e0dd39d298dab878bffa3cf}{run} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_abce1fbb50d4fa5a832f4241f5a452482}{copy\+\_\+scripts} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a87ca57ba67a1d1a416c52e65712974c7}{build\+\_\+dir}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a16c2f09c7948005c041642a4b44ac1e6}{scripts}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a07c86038d70d442730e486f49428e5de}{force}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a39391853aedeaec9f08f086d4da82494}{executable}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_afb2b9d8a0548408968f5a895403d4204}{outfiles}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a483940402ec1f11ea57ede7148edc06f}{description}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a8803f8736b970ec52d1b1e56c5383732}{user\+\_\+options}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a6087bd332851367aec7c8b2f2688a3c0}{boolean\+\_\+options}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_abce1fbb50d4fa5a832f4241f5a452482}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_abce1fbb50d4fa5a832f4241f5a452482}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!copy\+\_\+scripts@{copy\+\_\+scripts}}
+\index{copy\+\_\+scripts@{copy\+\_\+scripts}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{copy\+\_\+scripts()}{copy\_scripts()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+copy\+\_\+scripts (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Copy each script listed in 'self.scripts'; if it's marked as a
+Python script in the Unix way (first line matches 'first_line_re',
+ie. starts with "\#!" and contains "python"), then adjust the first
+line to refer to the current Python interpreter as we copy.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a95103ec2fe75225d0afcba03aa8ccf04}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a95103ec2fe75225d0afcba03aa8ccf04}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!finalize\+\_\+options@{finalize\+\_\+options}}
+\index{finalize\+\_\+options@{finalize\+\_\+options}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{finalize\+\_\+options()}{finalize\_options()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+finalize\+\_\+options (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a088e684c0035c26de371d9a79f73e3bc}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a088e684c0035c26de371d9a79f73e3bc}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!get\+\_\+source\+\_\+files@{get\+\_\+source\+\_\+files}}
+\index{get\+\_\+source\+\_\+files@{get\+\_\+source\+\_\+files}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{get\+\_\+source\+\_\+files()}{get\_source\_files()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+get\+\_\+source\+\_\+files (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a1e0b311ea1ca78e7627ccf3c4616f710}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a1e0b311ea1ca78e7627ccf3c4616f710}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!initialize\+\_\+options@{initialize\+\_\+options}}
+\index{initialize\+\_\+options@{initialize\+\_\+options}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{initialize\+\_\+options()}{initialize\_options()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+initialize\+\_\+options (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_ae4b3bc4a2e0dd39d298dab878bffa3cf}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_ae4b3bc4a2e0dd39d298dab878bffa3cf}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!run@{run}}
+\index{run@{run}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+run (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a6087bd332851367aec7c8b2f2688a3c0}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a6087bd332851367aec7c8b2f2688a3c0}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!boolean\+\_\+options@{boolean\+\_\+options}}
+\index{boolean\+\_\+options@{boolean\+\_\+options}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{boolean\+\_\+options}{boolean\_options}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+boolean\+\_\+options\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a87ca57ba67a1d1a416c52e65712974c7}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a87ca57ba67a1d1a416c52e65712974c7}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!build\+\_\+dir@{build\+\_\+dir}}
+\index{build\+\_\+dir@{build\+\_\+dir}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{build\+\_\+dir}{build\_dir}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+build\+\_\+dir}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a483940402ec1f11ea57ede7148edc06f}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a483940402ec1f11ea57ede7148edc06f}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!description@{description}}
+\index{description@{description}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+description\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a39391853aedeaec9f08f086d4da82494}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a39391853aedeaec9f08f086d4da82494}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!executable@{executable}}
+\index{executable@{executable}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{executable}{executable}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+executable}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a07c86038d70d442730e486f49428e5de}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a07c86038d70d442730e486f49428e5de}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!force@{force}}
+\index{force@{force}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{force}{force}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+force}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_afb2b9d8a0548408968f5a895403d4204}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_afb2b9d8a0548408968f5a895403d4204}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!outfiles@{outfiles}}
+\index{outfiles@{outfiles}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{outfiles}{outfiles}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+outfiles}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a16c2f09c7948005c041642a4b44ac1e6}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a16c2f09c7948005c041642a4b44ac1e6}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!scripts@{scripts}}
+\index{scripts@{scripts}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{scripts}{scripts}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+scripts}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a8803f8736b970ec52d1b1e56c5383732}\label{classsetuptools_1_1__distutils_1_1command_1_1build__scripts_1_1build__scripts_a8803f8736b970ec52d1b1e56c5383732}} 
+\index{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}!user\+\_\+options@{user\+\_\+options}}
+\index{user\+\_\+options@{user\+\_\+options}!setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts@{setuptools\+::\+\_\+distutils\+::command\+::build\+\_\+scripts\+::build\+\_\+scripts}}
+\subsubsection{\texorpdfstring{user\+\_\+options}{user\_options}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+command.\+build\+\_\+scripts.\+build\+\_\+scripts.\+user\+\_\+options\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+distutils/command/\hyperlink{setuptools_2__distutils_2command_2build__scripts_8py}{build\+\_\+scripts.\+py}\end{DoxyCompactItemize}

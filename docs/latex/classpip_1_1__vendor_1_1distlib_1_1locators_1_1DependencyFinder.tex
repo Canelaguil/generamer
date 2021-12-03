@@ -1,0 +1,214 @@
+\hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder}{}\section{pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder Class Reference}
+\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder}\index{pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder@{pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a884dbcb6f6d3c0996c218834d06fc48c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_af5d15a4b648c9474454323afb55d388a}{locator}=None)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a256ba1ddbc7415fedc398a1c9acc90ae}{add\+\_\+distribution} (self, dist)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a59c66e9bfaeefec64bd58bb58e5427ec}{remove\+\_\+distribution} (self, dist)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_abc4b69b38d73d3501a3cf44eadf39528}{get\+\_\+matcher} (self, reqt)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_ac3932b4a3b8d90ee83ae21a847619727}{find\+\_\+providers} (self, reqt)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_ae5188bef19f3bfb756cb122d2ffbd6a7}{try\+\_\+to\+\_\+replace} (self, provider, other, problems)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a5819c2bb2cd8f2467194e31cd08e7269}{find} (self, requirement, meta\+\_\+extras=None, prereleases=False)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_af5d15a4b648c9474454323afb55d388a}{locator}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a5cbf9ff0e487307e9ba594c95e29eccb}{scheme}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a10a6892b039a71d5517977dc22cbf79b}{provided}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a6f9eef84e7877dae26151fdecc1b0c38}{dists}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a86978c9b883283e34d3f978d93dca928}{dists\+\_\+by\+\_\+name}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_ac940cc5cdb7c6291d9a581a247e3fc24}{reqts}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Locate dependencies for distributions.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a884dbcb6f6d3c0996c218834d06fc48c}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a884dbcb6f6d3c0996c218834d06fc48c}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{locator = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialise an instance, using the specified locator
+to locate distributions.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a256ba1ddbc7415fedc398a1c9acc90ae}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a256ba1ddbc7415fedc398a1c9acc90ae}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!add\+\_\+distribution@{add\+\_\+distribution}}
+\index{add\+\_\+distribution@{add\+\_\+distribution}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{add\+\_\+distribution()}{add\_distribution()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+add\+\_\+distribution (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dist }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a distribution to the finder. This will update internal information
+about who provides what.
+:param dist: The distribution to add.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a5819c2bb2cd8f2467194e31cd08e7269}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a5819c2bb2cd8f2467194e31cd08e7269}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!find@{find}}
+\index{find@{find}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+find (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{requirement,  }\item[{}]{meta\+\_\+extras = {\ttfamily None},  }\item[{}]{prereleases = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find a distribution and all distributions it depends on.
+
+:param requirement: The requirement specifying the distribution to
+            find, or a Distribution instance.
+:param meta_extras: A list of meta extras such as :test:, :build: and
+            so on.
+:param prereleases: If ``True``, allow pre-release versions to be
+            returned - otherwise, don't return prereleases
+            unless they're all that's available.
+
+Return a set of :class:`Distribution` instances and a set of
+problems.
+
+The distributions returned should be such that they have the
+:attr:`required` attribute set to ``True`` if they were
+from the ``requirement`` passed to ``find()``, and they have the
+:attr:`build_time_dependency` attribute set to ``True`` unless they
+are post-installation dependencies of the ``requirement``.
+
+The problems should be a tuple consisting of the string
+``'unsatisfied'`` and the requirement which couldn't be satisfied
+by any distribution known to the locator.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_ac3932b4a3b8d90ee83ae21a847619727}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_ac3932b4a3b8d90ee83ae21a847619727}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!find\+\_\+providers@{find\+\_\+providers}}
+\index{find\+\_\+providers@{find\+\_\+providers}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{find\+\_\+providers()}{find\_providers()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+find\+\_\+providers (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{reqt }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the distributions which can fulfill a requirement.
+
+:param reqt: The requirement.
+ :type reqt: str
+:return: A set of distribution which can fulfill the requirement.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_abc4b69b38d73d3501a3cf44eadf39528}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_abc4b69b38d73d3501a3cf44eadf39528}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!get\+\_\+matcher@{get\+\_\+matcher}}
+\index{get\+\_\+matcher@{get\+\_\+matcher}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{get\+\_\+matcher()}{get\_matcher()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+get\+\_\+matcher (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{reqt }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a version matcher for a requirement.
+:param reqt: The requirement
+:type reqt: str
+:return: A version matcher (an instance of
+ :class:`distlib.version.Matcher`).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a59c66e9bfaeefec64bd58bb58e5427ec}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a59c66e9bfaeefec64bd58bb58e5427ec}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!remove\+\_\+distribution@{remove\+\_\+distribution}}
+\index{remove\+\_\+distribution@{remove\+\_\+distribution}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{remove\+\_\+distribution()}{remove\_distribution()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+remove\+\_\+distribution (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dist }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove a distribution from the finder. This will update internal
+information about who provides what.
+:param dist: The distribution to remove.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_ae5188bef19f3bfb756cb122d2ffbd6a7}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_ae5188bef19f3bfb756cb122d2ffbd6a7}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!try\+\_\+to\+\_\+replace@{try\+\_\+to\+\_\+replace}}
+\index{try\+\_\+to\+\_\+replace@{try\+\_\+to\+\_\+replace}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{try\+\_\+to\+\_\+replace()}{try\_to\_replace()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+try\+\_\+to\+\_\+replace (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{provider,  }\item[{}]{other,  }\item[{}]{problems }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Attempt to replace one provider with another. This is typically used
+when resolving dependencies from multiple sources, e.g. A requires
+(B >= 1.0) while C requires (B >= 1.1).
+
+For successful replacement, ``provider`` must meet all the requirements
+which ``other`` fulfills.
+
+:param provider: The provider we are trying to replace with.
+:param other: The provider we're trying to replace.
+:param problems: If False is returned, this will contain what
+         problems prevented replacement. This is currently
+         a tuple of the literal string 'cantreplace',
+         ``provider``, ``other``  and the set of requirements
+         that ``provider`` couldn't fulfill.
+:return: True if we can replace ``other`` with ``provider``, else
+ False.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a6f9eef84e7877dae26151fdecc1b0c38}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a6f9eef84e7877dae26151fdecc1b0c38}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!dists@{dists}}
+\index{dists@{dists}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{dists}{dists}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+dists}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a86978c9b883283e34d3f978d93dca928}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a86978c9b883283e34d3f978d93dca928}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!dists\+\_\+by\+\_\+name@{dists\+\_\+by\+\_\+name}}
+\index{dists\+\_\+by\+\_\+name@{dists\+\_\+by\+\_\+name}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{dists\+\_\+by\+\_\+name}{dists\_by\_name}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+dists\+\_\+by\+\_\+name}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_af5d15a4b648c9474454323afb55d388a}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_af5d15a4b648c9474454323afb55d388a}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!locator@{locator}}
+\index{locator@{locator}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{locator}{locator}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+locator}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a10a6892b039a71d5517977dc22cbf79b}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a10a6892b039a71d5517977dc22cbf79b}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!provided@{provided}}
+\index{provided@{provided}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{provided}{provided}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+provided}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_ac940cc5cdb7c6291d9a581a247e3fc24}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_ac940cc5cdb7c6291d9a581a247e3fc24}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!reqts@{reqts}}
+\index{reqts@{reqts}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{reqts}{reqts}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+reqts}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a5cbf9ff0e487307e9ba594c95e29eccb}\label{classpip_1_1__vendor_1_1distlib_1_1locators_1_1DependencyFinder_a5cbf9ff0e487307e9ba594c95e29eccb}} 
+\index{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}!scheme@{scheme}}
+\index{scheme@{scheme}!pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder@{pip\+::\+\_\+vendor\+::distlib\+::locators\+::\+Dependency\+Finder}}
+\subsubsection{\texorpdfstring{scheme}{scheme}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+distlib.\+locators.\+Dependency\+Finder.\+scheme}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/distlib/\hyperlink{locators_8py}{locators.\+py}\end{DoxyCompactItemize}

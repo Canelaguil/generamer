@@ -1,0 +1,74 @@
+\hypertarget{classpyparsing_1_1Suppress}{}\section{pyparsing.\+Suppress Class Reference}
+\label{classpyparsing_1_1Suppress}\index{pyparsing.\+Suppress@{pyparsing.\+Suppress}}
+
+
+Inheritance diagram for pyparsing.\+Suppress\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classpyparsing_1_1Suppress__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pyparsing.\+Suppress\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classpyparsing_1_1Suppress__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpyparsing_1_1Suppress_a3623365e15025916e5beae7b7606770c}{post\+Parse} (self, instring, loc, tokenlist)
+\item 
+def \hyperlink{classpyparsing_1_1Suppress_a7c1cd39f8e2c641fb6d34a5fb8f6af2f}{suppress} (self)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Converter for ignoring the results of a parsed expression.
+
+Example::
+
+    source = "a, b, c,d"
+    wd = Word(alphas)
+    wd_list1 = wd + ZeroOrMore(',' + wd)
+    print(wd_list1.parseString(source))
+
+    # often, delimiters that are useful during parsing are just in the
+    # way afterward - use Suppress to keep them out of the parsed output
+    wd_list2 = wd + ZeroOrMore(Suppress(',') + wd)
+    print(wd_list2.parseString(source))
+
+prints::
+
+    ['a', ',', 'b', ',', 'c', ',', 'd']
+    ['a', 'b', 'c', 'd']
+
+(See also :class:`delimitedList`.)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Suppress_a3623365e15025916e5beae7b7606770c}\label{classpyparsing_1_1Suppress_a3623365e15025916e5beae7b7606770c}} 
+\index{pyparsing\+::\+Suppress@{pyparsing\+::\+Suppress}!post\+Parse@{post\+Parse}}
+\index{post\+Parse@{post\+Parse}!pyparsing\+::\+Suppress@{pyparsing\+::\+Suppress}}
+\subsubsection{\texorpdfstring{post\+Parse()}{postParse()}}
+{\footnotesize\ttfamily def pyparsing.\+Suppress.\+post\+Parse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{tokenlist }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpyparsing_1_1Suppress_a7c1cd39f8e2c641fb6d34a5fb8f6af2f}\label{classpyparsing_1_1Suppress_a7c1cd39f8e2c641fb6d34a5fb8f6af2f}} 
+\index{pyparsing\+::\+Suppress@{pyparsing\+::\+Suppress}!suppress@{suppress}}
+\index{suppress@{suppress}!pyparsing\+::\+Suppress@{pyparsing\+::\+Suppress}}
+\subsubsection{\texorpdfstring{suppress()}{suppress()}}
+{\footnotesize\ttfamily def pyparsing.\+Suppress.\+suppress (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\hyperlink{pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

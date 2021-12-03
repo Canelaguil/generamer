@@ -1,0 +1,131 @@
+\hypertarget{classpyparsing_1_1Literal}{}\section{pyparsing.\+Literal Class Reference}
+\label{classpyparsing_1_1Literal}\index{pyparsing.\+Literal@{pyparsing.\+Literal}}
+
+
+Inheritance diagram for pyparsing.\+Literal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpyparsing_1_1Literal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pyparsing.\+Literal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classpyparsing_1_1Literal__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpyparsing_1_1Literal_aa7ffdb748d2a2c899d7d779891d9f429}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, match\+String)
+\item 
+def \hyperlink{classpyparsing_1_1Literal_a06a69fe8ed5caaf2f729123f3ec30d98}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpyparsing_1_1Literal_a5642fac7301b0ae02f4f7591a4485bf8}{match}
+\item 
+\hyperlink{classpyparsing_1_1Literal_a6a876e14f816e720eede2ed7b807db78}{match\+Len}
+\item 
+\hyperlink{classpyparsing_1_1Literal_ac594b6726f1df90af69dceda26b87901}{first\+Match\+Char}
+\item 
+\hyperlink{classpyparsing_1_1Literal_a48d01fabdbe2ba85e4191118de141afa}{name}
+\item 
+\hyperlink{classpyparsing_1_1Literal_a7974308dc89ecfc14cdd5d101d69756f}{errmsg}
+\item 
+\hyperlink{classpyparsing_1_1Literal_a074c101847c2ad122c48e058d4c7c602}{may\+Return\+Empty}
+\item 
+\hyperlink{classpyparsing_1_1Literal_a7922d9067f1e7fc001c784e697e35345}{may\+Index\+Error}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Token to exactly match a specified string.
+
+Example::
+
+    Literal('blah').parseString('blah')  # -> ['blah']
+    Literal('blah').parseString('blahfooblah')  # -> ['blah']
+    Literal('blah').parseString('bla')  # -> Exception: Expected "blah"
+
+For case-insensitive matching, use :class:`CaselessLiteral`.
+
+For keyword matching (force word break before and after the matched string),
+use :class:`Keyword` or :class:`CaselessKeyword`.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Literal_aa7ffdb748d2a2c899d7d779891d9f429}\label{classpyparsing_1_1Literal_aa7ffdb748d2a2c899d7d779891d9f429}} 
+\index{pyparsing\+::\+Literal@{pyparsing\+::\+Literal}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pyparsing\+::\+Literal@{pyparsing\+::\+Literal}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Literal.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{match\+String }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Literal_a06a69fe8ed5caaf2f729123f3ec30d98}\label{classpyparsing_1_1Literal_a06a69fe8ed5caaf2f729123f3ec30d98}} 
+\index{pyparsing\+::\+Literal@{pyparsing\+::\+Literal}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pyparsing\+::\+Literal@{pyparsing\+::\+Literal}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pyparsing.\+Literal.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1Literal_a7974308dc89ecfc14cdd5d101d69756f}\label{classpyparsing_1_1Literal_a7974308dc89ecfc14cdd5d101d69756f}} 
+\index{pyparsing\+::\+Literal@{pyparsing\+::\+Literal}!errmsg@{errmsg}}
+\index{errmsg@{errmsg}!pyparsing\+::\+Literal@{pyparsing\+::\+Literal}}
+\subsubsection{\texorpdfstring{errmsg}{errmsg}}
+{\footnotesize\ttfamily pyparsing.\+Literal.\+errmsg}
+
+\mbox{\Hypertarget{classpyparsing_1_1Literal_ac594b6726f1df90af69dceda26b87901}\label{classpyparsing_1_1Literal_ac594b6726f1df90af69dceda26b87901}} 
+\index{pyparsing\+::\+Literal@{pyparsing\+::\+Literal}!first\+Match\+Char@{first\+Match\+Char}}
+\index{first\+Match\+Char@{first\+Match\+Char}!pyparsing\+::\+Literal@{pyparsing\+::\+Literal}}
+\subsubsection{\texorpdfstring{first\+Match\+Char}{firstMatchChar}}
+{\footnotesize\ttfamily pyparsing.\+Literal.\+first\+Match\+Char}
+
+\mbox{\Hypertarget{classpyparsing_1_1Literal_a5642fac7301b0ae02f4f7591a4485bf8}\label{classpyparsing_1_1Literal_a5642fac7301b0ae02f4f7591a4485bf8}} 
+\index{pyparsing\+::\+Literal@{pyparsing\+::\+Literal}!match@{match}}
+\index{match@{match}!pyparsing\+::\+Literal@{pyparsing\+::\+Literal}}
+\subsubsection{\texorpdfstring{match}{match}}
+{\footnotesize\ttfamily pyparsing.\+Literal.\+match}
+
+\mbox{\Hypertarget{classpyparsing_1_1Literal_a6a876e14f816e720eede2ed7b807db78}\label{classpyparsing_1_1Literal_a6a876e14f816e720eede2ed7b807db78}} 
+\index{pyparsing\+::\+Literal@{pyparsing\+::\+Literal}!match\+Len@{match\+Len}}
+\index{match\+Len@{match\+Len}!pyparsing\+::\+Literal@{pyparsing\+::\+Literal}}
+\subsubsection{\texorpdfstring{match\+Len}{matchLen}}
+{\footnotesize\ttfamily pyparsing.\+Literal.\+match\+Len}
+
+\mbox{\Hypertarget{classpyparsing_1_1Literal_a7922d9067f1e7fc001c784e697e35345}\label{classpyparsing_1_1Literal_a7922d9067f1e7fc001c784e697e35345}} 
+\index{pyparsing\+::\+Literal@{pyparsing\+::\+Literal}!may\+Index\+Error@{may\+Index\+Error}}
+\index{may\+Index\+Error@{may\+Index\+Error}!pyparsing\+::\+Literal@{pyparsing\+::\+Literal}}
+\subsubsection{\texorpdfstring{may\+Index\+Error}{mayIndexError}}
+{\footnotesize\ttfamily pyparsing.\+Literal.\+may\+Index\+Error}
+
+\mbox{\Hypertarget{classpyparsing_1_1Literal_a074c101847c2ad122c48e058d4c7c602}\label{classpyparsing_1_1Literal_a074c101847c2ad122c48e058d4c7c602}} 
+\index{pyparsing\+::\+Literal@{pyparsing\+::\+Literal}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!pyparsing\+::\+Literal@{pyparsing\+::\+Literal}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily pyparsing.\+Literal.\+may\+Return\+Empty}
+
+\mbox{\Hypertarget{classpyparsing_1_1Literal_a48d01fabdbe2ba85e4191118de141afa}\label{classpyparsing_1_1Literal_a48d01fabdbe2ba85e4191118de141afa}} 
+\index{pyparsing\+::\+Literal@{pyparsing\+::\+Literal}!name@{name}}
+\index{name@{name}!pyparsing\+::\+Literal@{pyparsing\+::\+Literal}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily pyparsing.\+Literal.\+name}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\hyperlink{pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

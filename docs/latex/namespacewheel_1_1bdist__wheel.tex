@@ -1,0 +1,111 @@
+\hypertarget{namespacewheel_1_1bdist__wheel}{}\section{wheel.\+bdist\+\_\+wheel Namespace Reference}
+\label{namespacewheel_1_1bdist__wheel}\index{wheel.\+bdist\+\_\+wheel@{wheel.\+bdist\+\_\+wheel}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classwheel_1_1bdist__wheel_1_1bdist__wheel}{bdist\+\_\+wheel}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacewheel_1_1bdist__wheel_abfd7e653d6f0bf0130d7b8775b9ba27e}{python\+\_\+tag} ()
+\item 
+def \hyperlink{namespacewheel_1_1bdist__wheel_aa327aba8fe11c2c8c8bf04093b9d0d96}{get\+\_\+platform} (archive\+\_\+root)
+\item 
+def \hyperlink{namespacewheel_1_1bdist__wheel_ad78961082011fad391e05a61a9e67a3b}{get\+\_\+flag} (var, fallback, expected=True, warn=True)
+\item 
+def \hyperlink{namespacewheel_1_1bdist__wheel_a6eb23762f46bbd118ec204d9aa5bc875}{get\+\_\+abi\+\_\+tag} ()
+\item 
+def \hyperlink{namespacewheel_1_1bdist__wheel_aeae02a8cd1a921eb5d388ae30791711d}{safer\+\_\+name} (name)
+\item 
+def \hyperlink{namespacewheel_1_1bdist__wheel_a4af993e7621146af0469af1519de205d}{safer\+\_\+version} (version)
+\item 
+def \hyperlink{namespacewheel_1_1bdist__wheel_a6ae0a4a0c313d1abf67df73ab6f921f2}{remove\+\_\+readonly} (func, path, excinfo)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacewheel_1_1bdist__wheel_a8790f4863c5ddc8bfaa0113d7f59d3d4}{safe\+\_\+name}
+\item 
+\hyperlink{namespacewheel_1_1bdist__wheel_a7a190b73600dedd30095d57645b520bd}{safe\+\_\+version}
+\item 
+\hyperlink{namespacewheel_1_1bdist__wheel_a28201c7992bcfdde7b323a7d0cbebfbb}{P\+Y\+\_\+\+L\+I\+M\+I\+T\+E\+D\+\_\+\+A\+P\+I\+\_\+\+P\+A\+T\+T\+E\+RN}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Create a wheel (.whl) distribution.
+
+A wheel is a built archive format.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacewheel_1_1bdist__wheel_a6eb23762f46bbd118ec204d9aa5bc875}\label{namespacewheel_1_1bdist__wheel_a6eb23762f46bbd118ec204d9aa5bc875}} 
+\index{wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}!get\+\_\+abi\+\_\+tag@{get\+\_\+abi\+\_\+tag}}
+\index{get\+\_\+abi\+\_\+tag@{get\+\_\+abi\+\_\+tag}!wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}}
+\subsubsection{\texorpdfstring{get\+\_\+abi\+\_\+tag()}{get\_abi\_tag()}}
+{\footnotesize\ttfamily def wheel.\+bdist\+\_\+wheel.\+get\+\_\+abi\+\_\+tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the ABI tag based on SOABI (if available) or emulate SOABI
+(CPython 2, PyPy).\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1bdist__wheel_ad78961082011fad391e05a61a9e67a3b}\label{namespacewheel_1_1bdist__wheel_ad78961082011fad391e05a61a9e67a3b}} 
+\index{wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}!get\+\_\+flag@{get\+\_\+flag}}
+\index{get\+\_\+flag@{get\+\_\+flag}!wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}}
+\subsubsection{\texorpdfstring{get\+\_\+flag()}{get\_flag()}}
+{\footnotesize\ttfamily def wheel.\+bdist\+\_\+wheel.\+get\+\_\+flag (\begin{DoxyParamCaption}\item[{}]{var,  }\item[{}]{fallback,  }\item[{}]{expected = {\ttfamily True},  }\item[{}]{warn = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Use a fallback value for determining SOABI flags if the needed config
+var is unset or unavailable.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1bdist__wheel_aa327aba8fe11c2c8c8bf04093b9d0d96}\label{namespacewheel_1_1bdist__wheel_aa327aba8fe11c2c8c8bf04093b9d0d96}} 
+\index{wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}!get\+\_\+platform@{get\+\_\+platform}}
+\index{get\+\_\+platform@{get\+\_\+platform}!wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}}
+\subsubsection{\texorpdfstring{get\+\_\+platform()}{get\_platform()}}
+{\footnotesize\ttfamily def wheel.\+bdist\+\_\+wheel.\+get\+\_\+platform (\begin{DoxyParamCaption}\item[{}]{archive\+\_\+root }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return our platform name 'win32', 'linux_x86_64'\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewheel_1_1bdist__wheel_abfd7e653d6f0bf0130d7b8775b9ba27e}\label{namespacewheel_1_1bdist__wheel_abfd7e653d6f0bf0130d7b8775b9ba27e}} 
+\index{wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}!python\+\_\+tag@{python\+\_\+tag}}
+\index{python\+\_\+tag@{python\+\_\+tag}!wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}}
+\subsubsection{\texorpdfstring{python\+\_\+tag()}{python\_tag()}}
+{\footnotesize\ttfamily def wheel.\+bdist\+\_\+wheel.\+python\+\_\+tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacewheel_1_1bdist__wheel_a6ae0a4a0c313d1abf67df73ab6f921f2}\label{namespacewheel_1_1bdist__wheel_a6ae0a4a0c313d1abf67df73ab6f921f2}} 
+\index{wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}!remove\+\_\+readonly@{remove\+\_\+readonly}}
+\index{remove\+\_\+readonly@{remove\+\_\+readonly}!wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}}
+\subsubsection{\texorpdfstring{remove\+\_\+readonly()}{remove\_readonly()}}
+{\footnotesize\ttfamily def wheel.\+bdist\+\_\+wheel.\+remove\+\_\+readonly (\begin{DoxyParamCaption}\item[{}]{func,  }\item[{}]{path,  }\item[{}]{excinfo }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacewheel_1_1bdist__wheel_aeae02a8cd1a921eb5d388ae30791711d}\label{namespacewheel_1_1bdist__wheel_aeae02a8cd1a921eb5d388ae30791711d}} 
+\index{wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}!safer\+\_\+name@{safer\+\_\+name}}
+\index{safer\+\_\+name@{safer\+\_\+name}!wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}}
+\subsubsection{\texorpdfstring{safer\+\_\+name()}{safer\_name()}}
+{\footnotesize\ttfamily def wheel.\+bdist\+\_\+wheel.\+safer\+\_\+name (\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacewheel_1_1bdist__wheel_a4af993e7621146af0469af1519de205d}\label{namespacewheel_1_1bdist__wheel_a4af993e7621146af0469af1519de205d}} 
+\index{wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}!safer\+\_\+version@{safer\+\_\+version}}
+\index{safer\+\_\+version@{safer\+\_\+version}!wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}}
+\subsubsection{\texorpdfstring{safer\+\_\+version()}{safer\_version()}}
+{\footnotesize\ttfamily def wheel.\+bdist\+\_\+wheel.\+safer\+\_\+version (\begin{DoxyParamCaption}\item[{}]{version }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacewheel_1_1bdist__wheel_a28201c7992bcfdde7b323a7d0cbebfbb}\label{namespacewheel_1_1bdist__wheel_a28201c7992bcfdde7b323a7d0cbebfbb}} 
+\index{wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}!P\+Y\+\_\+\+L\+I\+M\+I\+T\+E\+D\+\_\+\+A\+P\+I\+\_\+\+P\+A\+T\+T\+E\+RN@{P\+Y\+\_\+\+L\+I\+M\+I\+T\+E\+D\+\_\+\+A\+P\+I\+\_\+\+P\+A\+T\+T\+E\+RN}}
+\index{P\+Y\+\_\+\+L\+I\+M\+I\+T\+E\+D\+\_\+\+A\+P\+I\+\_\+\+P\+A\+T\+T\+E\+RN@{P\+Y\+\_\+\+L\+I\+M\+I\+T\+E\+D\+\_\+\+A\+P\+I\+\_\+\+P\+A\+T\+T\+E\+RN}!wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}}
+\subsubsection{\texorpdfstring{P\+Y\+\_\+\+L\+I\+M\+I\+T\+E\+D\+\_\+\+A\+P\+I\+\_\+\+P\+A\+T\+T\+E\+RN}{PY\_LIMITED\_API\_PATTERN}}
+{\footnotesize\ttfamily wheel.\+bdist\+\_\+wheel.\+P\+Y\+\_\+\+L\+I\+M\+I\+T\+E\+D\+\_\+\+A\+P\+I\+\_\+\+P\+A\+T\+T\+E\+RN}
+
+\mbox{\Hypertarget{namespacewheel_1_1bdist__wheel_a8790f4863c5ddc8bfaa0113d7f59d3d4}\label{namespacewheel_1_1bdist__wheel_a8790f4863c5ddc8bfaa0113d7f59d3d4}} 
+\index{wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}!safe\+\_\+name@{safe\+\_\+name}}
+\index{safe\+\_\+name@{safe\+\_\+name}!wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}}
+\subsubsection{\texorpdfstring{safe\+\_\+name}{safe\_name}}
+{\footnotesize\ttfamily wheel.\+bdist\+\_\+wheel.\+safe\+\_\+name}
+
+\mbox{\Hypertarget{namespacewheel_1_1bdist__wheel_a7a190b73600dedd30095d57645b520bd}\label{namespacewheel_1_1bdist__wheel_a7a190b73600dedd30095d57645b520bd}} 
+\index{wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}!safe\+\_\+version@{safe\+\_\+version}}
+\index{safe\+\_\+version@{safe\+\_\+version}!wheel\+::bdist\+\_\+wheel@{wheel\+::bdist\+\_\+wheel}}
+\subsubsection{\texorpdfstring{safe\+\_\+version}{safe\_version}}
+{\footnotesize\ttfamily wheel.\+bdist\+\_\+wheel.\+safe\+\_\+version}
+

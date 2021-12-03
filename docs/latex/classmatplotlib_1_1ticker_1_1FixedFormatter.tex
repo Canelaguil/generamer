@@ -1,0 +1,107 @@
+\hypertarget{classmatplotlib_1_1ticker_1_1FixedFormatter}{}\section{matplotlib.\+ticker.\+Fixed\+Formatter Class Reference}
+\label{classmatplotlib_1_1ticker_1_1FixedFormatter}\index{matplotlib.\+ticker.\+Fixed\+Formatter@{matplotlib.\+ticker.\+Fixed\+Formatter}}
+
+
+Inheritance diagram for matplotlib.\+ticker.\+Fixed\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmatplotlib_1_1ticker_1_1FixedFormatter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+ticker.\+Fixed\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmatplotlib_1_1ticker_1_1FixedFormatter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1FixedFormatter_a1239d8bb2a79e2df7ccb57a43a06c754}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1ticker_1_1FixedFormatter_a9d84c4cba6efcea9477feab1161103cd}{seq})
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1FixedFormatter_aaec78a7c893b47ae9c18039aba98a9bb}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, x, pos=None)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1FixedFormatter_a7aedd3f688c8f04c19eab8097a7aa7d6}{get\+\_\+offset} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1FixedFormatter_a3b54557a9c8656415e8e1561b4c5e9de}{set\+\_\+offset\+\_\+string} (self, ofs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1FixedFormatter_a9d84c4cba6efcea9477feab1161103cd}{seq}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1FixedFormatter_a67761d51e6f7fe844db57e1820a2395d}{offset\+\_\+string}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Return fixed strings for tick labels based only on position, not value.
+
+.. note::
+    `.FixedFormatter` should only be used together with `.FixedLocator`.
+    Otherwise, the labels may end up in unexpected positions.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1FixedFormatter_a1239d8bb2a79e2df7ccb57a43a06c754}\label{classmatplotlib_1_1ticker_1_1FixedFormatter_a1239d8bb2a79e2df7ccb57a43a06c754}} 
+\index{matplotlib\+::ticker\+::\+Fixed\+Formatter@{matplotlib\+::ticker\+::\+Fixed\+Formatter}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Fixed\+Formatter@{matplotlib\+::ticker\+::\+Fixed\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Fixed\+Formatter.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{seq }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the sequence *seq* of strings that will be used for labels.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1FixedFormatter_aaec78a7c893b47ae9c18039aba98a9bb}\label{classmatplotlib_1_1ticker_1_1FixedFormatter_aaec78a7c893b47ae9c18039aba98a9bb}} 
+\index{matplotlib\+::ticker\+::\+Fixed\+Formatter@{matplotlib\+::ticker\+::\+Fixed\+Formatter}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Fixed\+Formatter@{matplotlib\+::ticker\+::\+Fixed\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Fixed\+Formatter.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{pos = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the label that matches the position, regardless of the value.
+
+For positions ``pos < len(seq)``, return ``seq[i]`` regardless of
+*x*. Otherwise return empty string. ``seq`` is the sequence of
+strings that this object was initialized with.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1FixedFormatter_a7aedd3f688c8f04c19eab8097a7aa7d6}\label{classmatplotlib_1_1ticker_1_1FixedFormatter_a7aedd3f688c8f04c19eab8097a7aa7d6}} 
+\index{matplotlib\+::ticker\+::\+Fixed\+Formatter@{matplotlib\+::ticker\+::\+Fixed\+Formatter}!get\+\_\+offset@{get\+\_\+offset}}
+\index{get\+\_\+offset@{get\+\_\+offset}!matplotlib\+::ticker\+::\+Fixed\+Formatter@{matplotlib\+::ticker\+::\+Fixed\+Formatter}}
+\subsubsection{\texorpdfstring{get\+\_\+offset()}{get\_offset()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Fixed\+Formatter.\+get\+\_\+offset (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1FixedFormatter_a3b54557a9c8656415e8e1561b4c5e9de}\label{classmatplotlib_1_1ticker_1_1FixedFormatter_a3b54557a9c8656415e8e1561b4c5e9de}} 
+\index{matplotlib\+::ticker\+::\+Fixed\+Formatter@{matplotlib\+::ticker\+::\+Fixed\+Formatter}!set\+\_\+offset\+\_\+string@{set\+\_\+offset\+\_\+string}}
+\index{set\+\_\+offset\+\_\+string@{set\+\_\+offset\+\_\+string}!matplotlib\+::ticker\+::\+Fixed\+Formatter@{matplotlib\+::ticker\+::\+Fixed\+Formatter}}
+\subsubsection{\texorpdfstring{set\+\_\+offset\+\_\+string()}{set\_offset\_string()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Fixed\+Formatter.\+set\+\_\+offset\+\_\+string (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ofs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1FixedFormatter_a67761d51e6f7fe844db57e1820a2395d}\label{classmatplotlib_1_1ticker_1_1FixedFormatter_a67761d51e6f7fe844db57e1820a2395d}} 
+\index{matplotlib\+::ticker\+::\+Fixed\+Formatter@{matplotlib\+::ticker\+::\+Fixed\+Formatter}!offset\+\_\+string@{offset\+\_\+string}}
+\index{offset\+\_\+string@{offset\+\_\+string}!matplotlib\+::ticker\+::\+Fixed\+Formatter@{matplotlib\+::ticker\+::\+Fixed\+Formatter}}
+\subsubsection{\texorpdfstring{offset\+\_\+string}{offset\_string}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Fixed\+Formatter.\+offset\+\_\+string}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1FixedFormatter_a9d84c4cba6efcea9477feab1161103cd}\label{classmatplotlib_1_1ticker_1_1FixedFormatter_a9d84c4cba6efcea9477feab1161103cd}} 
+\index{matplotlib\+::ticker\+::\+Fixed\+Formatter@{matplotlib\+::ticker\+::\+Fixed\+Formatter}!seq@{seq}}
+\index{seq@{seq}!matplotlib\+::ticker\+::\+Fixed\+Formatter@{matplotlib\+::ticker\+::\+Fixed\+Formatter}}
+\subsubsection{\texorpdfstring{seq}{seq}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Fixed\+Formatter.\+seq}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{ticker_8py}{ticker.\+py}\end{DoxyCompactItemize}

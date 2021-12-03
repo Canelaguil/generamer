@@ -1,0 +1,48 @@
+\hypertarget{namespaceplot__spectral__grid}{}\section{plot\+\_\+spectral\+\_\+grid Namespace Reference}
+\label{namespaceplot__spectral__grid}\index{plot\+\_\+spectral\+\_\+grid@{plot\+\_\+spectral\+\_\+grid}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceplot__spectral__grid_a400e3ca3ba7676e918708c5bb4dfdc83}{options}
+\item 
+\hyperlink{namespaceplot__spectral__grid_a6571da1bdc3ad003985b718ebe5b9908}{G}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}==================
+Spectral Embedding
+==================
+
+The spectral layout positions the nodes of the graph based on the
+eigenvectors of the graph Laplacian $L = D - A$, where $A$ is the
+adjacency matrix and $D$ is the degree matrix of the graph.
+By default, the spectral layout will embed the graph in two
+dimensions (you can embed your graph in other dimensions using the
+``dim`` argument to either :func:`~drawing.nx_pylab.draw_spectral` or
+:func:`~drawing.layout.spectral_layout`).
+
+When the edges of the graph represent similarity between the incident
+nodes, the spectral embedding will place highly similar nodes closer
+to one another than nodes which are less similar.
+
+This is particularly striking when you spectrally embed a grid
+graph.  In the full grid graph, the nodes in the center of the
+graph are pulled apart more than nodes on the periphery.
+As you remove internal nodes, this effect increases.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceplot__spectral__grid_a6571da1bdc3ad003985b718ebe5b9908}\label{namespaceplot__spectral__grid_a6571da1bdc3ad003985b718ebe5b9908}} 
+\index{plot\+\_\+spectral\+\_\+grid@{plot\+\_\+spectral\+\_\+grid}!G@{G}}
+\index{G@{G}!plot\+\_\+spectral\+\_\+grid@{plot\+\_\+spectral\+\_\+grid}}
+\subsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily plot\+\_\+spectral\+\_\+grid.\+G}
+
+\mbox{\Hypertarget{namespaceplot__spectral__grid_a400e3ca3ba7676e918708c5bb4dfdc83}\label{namespaceplot__spectral__grid_a400e3ca3ba7676e918708c5bb4dfdc83}} 
+\index{plot\+\_\+spectral\+\_\+grid@{plot\+\_\+spectral\+\_\+grid}!options@{options}}
+\index{options@{options}!plot\+\_\+spectral\+\_\+grid@{plot\+\_\+spectral\+\_\+grid}}
+\subsubsection{\texorpdfstring{options}{options}}
+{\footnotesize\ttfamily plot\+\_\+spectral\+\_\+grid.\+options}
+

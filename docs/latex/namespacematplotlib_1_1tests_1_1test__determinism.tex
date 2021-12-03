@@ -1,0 +1,82 @@
+\hypertarget{namespacematplotlib_1_1tests_1_1test__determinism}{}\section{matplotlib.\+tests.\+test\+\_\+determinism Namespace Reference}
+\label{namespacematplotlib_1_1tests_1_1test__determinism}\index{matplotlib.\+tests.\+test\+\_\+determinism@{matplotlib.\+tests.\+test\+\_\+determinism}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1tests_1_1test__determinism_ad5a271d24a2393fa56bae8e37564a59c}{test\+\_\+determinism\+\_\+check} (objects, fmt, usetex)
+\item 
+def \hyperlink{namespacematplotlib_1_1tests_1_1test__determinism_a43452efa2aa142d4fc977f9f112ec4ec}{test\+\_\+determinism\+\_\+source\+\_\+date\+\_\+epoch} (fmt, string)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1tests_1_1test__determinism_ae7992b77be02f452cf0c24621d3b2a52}{needs\+\_\+ghostscript}
+\item 
+\hyperlink{namespacematplotlib_1_1tests_1_1test__determinism_a06e27c3c2f003a21bb557523f92f9cbc}{reason}
+\item 
+\hyperlink{namespacematplotlib_1_1tests_1_1test__determinism_a89a7d0d328d9e5108a203402ee1029dc}{needs\+\_\+usetex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Test output reproducibility.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1tests_1_1test__determinism_ad5a271d24a2393fa56bae8e37564a59c}\label{namespacematplotlib_1_1tests_1_1test__determinism_ad5a271d24a2393fa56bae8e37564a59c}} 
+\index{matplotlib\+::tests\+::test\+\_\+determinism@{matplotlib\+::tests\+::test\+\_\+determinism}!test\+\_\+determinism\+\_\+check@{test\+\_\+determinism\+\_\+check}}
+\index{test\+\_\+determinism\+\_\+check@{test\+\_\+determinism\+\_\+check}!matplotlib\+::tests\+::test\+\_\+determinism@{matplotlib\+::tests\+::test\+\_\+determinism}}
+\subsubsection{\texorpdfstring{test\+\_\+determinism\+\_\+check()}{test\_determinism\_check()}}
+{\footnotesize\ttfamily def matplotlib.\+tests.\+test\+\_\+determinism.\+test\+\_\+determinism\+\_\+check (\begin{DoxyParamCaption}\item[{}]{objects,  }\item[{}]{fmt,  }\item[{}]{usetex }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Output three times the same graphs and checks that the outputs are exactly
+the same.
+
+Parameters
+----------
+objects : str
+    Objects to be included in the test document: 'm' for markers, 'h' for
+    hatch patterns, 'i' for images.
+fmt : {"pdf", "ps", "svg"}
+    Output format.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1tests_1_1test__determinism_a43452efa2aa142d4fc977f9f112ec4ec}\label{namespacematplotlib_1_1tests_1_1test__determinism_a43452efa2aa142d4fc977f9f112ec4ec}} 
+\index{matplotlib\+::tests\+::test\+\_\+determinism@{matplotlib\+::tests\+::test\+\_\+determinism}!test\+\_\+determinism\+\_\+source\+\_\+date\+\_\+epoch@{test\+\_\+determinism\+\_\+source\+\_\+date\+\_\+epoch}}
+\index{test\+\_\+determinism\+\_\+source\+\_\+date\+\_\+epoch@{test\+\_\+determinism\+\_\+source\+\_\+date\+\_\+epoch}!matplotlib\+::tests\+::test\+\_\+determinism@{matplotlib\+::tests\+::test\+\_\+determinism}}
+\subsubsection{\texorpdfstring{test\+\_\+determinism\+\_\+source\+\_\+date\+\_\+epoch()}{test\_determinism\_source\_date\_epoch()}}
+{\footnotesize\ttfamily def matplotlib.\+tests.\+test\+\_\+determinism.\+test\+\_\+determinism\+\_\+source\+\_\+date\+\_\+epoch (\begin{DoxyParamCaption}\item[{}]{fmt,  }\item[{}]{string }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test SOURCE_DATE_EPOCH support. Output a document with the environment
+variable SOURCE_DATE_EPOCH set to 2000-01-01 00:00 UTC and check that the
+document contains the timestamp that corresponds to this date (given as an
+argument).
+
+Parameters
+----------
+fmt : {"pdf", "ps", "svg"}
+    Output format.
+string : bytes
+    Timestamp string for 2000-01-01 00:00 UTC.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1tests_1_1test__determinism_ae7992b77be02f452cf0c24621d3b2a52}\label{namespacematplotlib_1_1tests_1_1test__determinism_ae7992b77be02f452cf0c24621d3b2a52}} 
+\index{matplotlib\+::tests\+::test\+\_\+determinism@{matplotlib\+::tests\+::test\+\_\+determinism}!needs\+\_\+ghostscript@{needs\+\_\+ghostscript}}
+\index{needs\+\_\+ghostscript@{needs\+\_\+ghostscript}!matplotlib\+::tests\+::test\+\_\+determinism@{matplotlib\+::tests\+::test\+\_\+determinism}}
+\subsubsection{\texorpdfstring{needs\+\_\+ghostscript}{needs\_ghostscript}}
+{\footnotesize\ttfamily matplotlib.\+tests.\+test\+\_\+determinism.\+needs\+\_\+ghostscript}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1tests_1_1test__determinism_a89a7d0d328d9e5108a203402ee1029dc}\label{namespacematplotlib_1_1tests_1_1test__determinism_a89a7d0d328d9e5108a203402ee1029dc}} 
+\index{matplotlib\+::tests\+::test\+\_\+determinism@{matplotlib\+::tests\+::test\+\_\+determinism}!needs\+\_\+usetex@{needs\+\_\+usetex}}
+\index{needs\+\_\+usetex@{needs\+\_\+usetex}!matplotlib\+::tests\+::test\+\_\+determinism@{matplotlib\+::tests\+::test\+\_\+determinism}}
+\subsubsection{\texorpdfstring{needs\+\_\+usetex}{needs\_usetex}}
+{\footnotesize\ttfamily matplotlib.\+tests.\+test\+\_\+determinism.\+needs\+\_\+usetex}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1tests_1_1test__determinism_a06e27c3c2f003a21bb557523f92f9cbc}\label{namespacematplotlib_1_1tests_1_1test__determinism_a06e27c3c2f003a21bb557523f92f9cbc}} 
+\index{matplotlib\+::tests\+::test\+\_\+determinism@{matplotlib\+::tests\+::test\+\_\+determinism}!reason@{reason}}
+\index{reason@{reason}!matplotlib\+::tests\+::test\+\_\+determinism@{matplotlib\+::tests\+::test\+\_\+determinism}}
+\subsubsection{\texorpdfstring{reason}{reason}}
+{\footnotesize\ttfamily matplotlib.\+tests.\+test\+\_\+determinism.\+reason}
+

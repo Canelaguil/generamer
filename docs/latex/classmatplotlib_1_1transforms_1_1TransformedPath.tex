@@ -1,0 +1,119 @@
+\hypertarget{classmatplotlib_1_1transforms_1_1TransformedPath}{}\section{matplotlib.\+transforms.\+Transformed\+Path Class Reference}
+\label{classmatplotlib_1_1transforms_1_1TransformedPath}\index{matplotlib.\+transforms.\+Transformed\+Path@{matplotlib.\+transforms.\+Transformed\+Path}}
+
+
+Inheritance diagram for matplotlib.\+transforms.\+Transformed\+Path\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classmatplotlib_1_1transforms_1_1TransformedPath__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+transforms.\+Transformed\+Path\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classmatplotlib_1_1transforms_1_1TransformedPath__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformedPath_a8e6aab2c3cfc8dc7c6b946127fb20b29}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, path, transform)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformedPath_a29dcaf6458ee4e6c83b07b27a22e4895}{get\+\_\+transformed\+\_\+points\+\_\+and\+\_\+affine} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformedPath_afa5ef708c5f2524371af6493c49b4c0a}{get\+\_\+transformed\+\_\+path\+\_\+and\+\_\+affine} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformedPath_a91cfb0e7175fb03c40b13d06658a1e91}{get\+\_\+fully\+\_\+transformed\+\_\+path} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1TransformedPath_a07347ba55573daea8ed8491413ed71f7}{get\+\_\+affine} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1TransformedPath_a3a044a40e9a73c51b511feaecdac0e9b}{I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A `TransformedPath` caches a non-affine transformed copy of the
+`~.path.Path`.  This cached copy is automatically updated when the
+non-affine part of the transform changes.
+
+.. note::
+
+    Paths are considered immutable by this class. Any update to the
+    path's vertices/codes will not trigger a transform recomputation.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformedPath_a8e6aab2c3cfc8dc7c6b946127fb20b29}\label{classmatplotlib_1_1transforms_1_1TransformedPath_a8e6aab2c3cfc8dc7c6b946127fb20b29}} 
+\index{matplotlib\+::transforms\+::\+Transformed\+Path@{matplotlib\+::transforms\+::\+Transformed\+Path}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Transformed\+Path@{matplotlib\+::transforms\+::\+Transformed\+Path}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transformed\+Path.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path,  }\item[{}]{transform }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+path : `~.path.Path`
+transform : `Transform`
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformedPath_a07347ba55573daea8ed8491413ed71f7}\label{classmatplotlib_1_1transforms_1_1TransformedPath_a07347ba55573daea8ed8491413ed71f7}} 
+\index{matplotlib\+::transforms\+::\+Transformed\+Path@{matplotlib\+::transforms\+::\+Transformed\+Path}!get\+\_\+affine@{get\+\_\+affine}}
+\index{get\+\_\+affine@{get\+\_\+affine}!matplotlib\+::transforms\+::\+Transformed\+Path@{matplotlib\+::transforms\+::\+Transformed\+Path}}
+\subsubsection{\texorpdfstring{get\+\_\+affine()}{get\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transformed\+Path.\+get\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformedPath_a91cfb0e7175fb03c40b13d06658a1e91}\label{classmatplotlib_1_1transforms_1_1TransformedPath_a91cfb0e7175fb03c40b13d06658a1e91}} 
+\index{matplotlib\+::transforms\+::\+Transformed\+Path@{matplotlib\+::transforms\+::\+Transformed\+Path}!get\+\_\+fully\+\_\+transformed\+\_\+path@{get\+\_\+fully\+\_\+transformed\+\_\+path}}
+\index{get\+\_\+fully\+\_\+transformed\+\_\+path@{get\+\_\+fully\+\_\+transformed\+\_\+path}!matplotlib\+::transforms\+::\+Transformed\+Path@{matplotlib\+::transforms\+::\+Transformed\+Path}}
+\subsubsection{\texorpdfstring{get\+\_\+fully\+\_\+transformed\+\_\+path()}{get\_fully\_transformed\_path()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transformed\+Path.\+get\+\_\+fully\+\_\+transformed\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a fully-transformed copy of the child path.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformedPath_afa5ef708c5f2524371af6493c49b4c0a}\label{classmatplotlib_1_1transforms_1_1TransformedPath_afa5ef708c5f2524371af6493c49b4c0a}} 
+\index{matplotlib\+::transforms\+::\+Transformed\+Path@{matplotlib\+::transforms\+::\+Transformed\+Path}!get\+\_\+transformed\+\_\+path\+\_\+and\+\_\+affine@{get\+\_\+transformed\+\_\+path\+\_\+and\+\_\+affine}}
+\index{get\+\_\+transformed\+\_\+path\+\_\+and\+\_\+affine@{get\+\_\+transformed\+\_\+path\+\_\+and\+\_\+affine}!matplotlib\+::transforms\+::\+Transformed\+Path@{matplotlib\+::transforms\+::\+Transformed\+Path}}
+\subsubsection{\texorpdfstring{get\+\_\+transformed\+\_\+path\+\_\+and\+\_\+affine()}{get\_transformed\_path\_and\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transformed\+Path.\+get\+\_\+transformed\+\_\+path\+\_\+and\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a copy of the child path, with the non-affine part of
+the transform already applied, along with the affine part of
+the path necessary to complete the transformation.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformedPath_a29dcaf6458ee4e6c83b07b27a22e4895}\label{classmatplotlib_1_1transforms_1_1TransformedPath_a29dcaf6458ee4e6c83b07b27a22e4895}} 
+\index{matplotlib\+::transforms\+::\+Transformed\+Path@{matplotlib\+::transforms\+::\+Transformed\+Path}!get\+\_\+transformed\+\_\+points\+\_\+and\+\_\+affine@{get\+\_\+transformed\+\_\+points\+\_\+and\+\_\+affine}}
+\index{get\+\_\+transformed\+\_\+points\+\_\+and\+\_\+affine@{get\+\_\+transformed\+\_\+points\+\_\+and\+\_\+affine}!matplotlib\+::transforms\+::\+Transformed\+Path@{matplotlib\+::transforms\+::\+Transformed\+Path}}
+\subsubsection{\texorpdfstring{get\+\_\+transformed\+\_\+points\+\_\+and\+\_\+affine()}{get\_transformed\_points\_and\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Transformed\+Path.\+get\+\_\+transformed\+\_\+points\+\_\+and\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a copy of the child path, with the non-affine part of
+the transform already applied, along with the affine part of
+the path necessary to complete the transformation.  Unlike
+:meth:`get_transformed_path_and_affine`, no interpolation will
+be performed.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1TransformedPath_a3a044a40e9a73c51b511feaecdac0e9b}\label{classmatplotlib_1_1transforms_1_1TransformedPath_a3a044a40e9a73c51b511feaecdac0e9b}} 
+\index{matplotlib\+::transforms\+::\+Transformed\+Path@{matplotlib\+::transforms\+::\+Transformed\+Path}!I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE@{I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE}}
+\index{I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE@{I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE}!matplotlib\+::transforms\+::\+Transformed\+Path@{matplotlib\+::transforms\+::\+Transformed\+Path}}
+\subsubsection{\texorpdfstring{I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE}{INVALID\_NON\_AFFINE}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Transformed\+Path.\+I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+O\+N\+\_\+\+A\+F\+F\+I\+NE}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{transforms_8py}{transforms.\+py}\end{DoxyCompactItemize}

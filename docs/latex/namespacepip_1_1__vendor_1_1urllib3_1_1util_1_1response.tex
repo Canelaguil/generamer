@@ -1,0 +1,55 @@
+\hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1util_1_1response}{}\section{pip.\+\_\+vendor.\+urllib3.\+util.\+response Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1urllib3_1_1util_1_1response}\index{pip.\+\_\+vendor.\+urllib3.\+util.\+response@{pip.\+\_\+vendor.\+urllib3.\+util.\+response}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1util_1_1response_a19156ded47f236d89ea54974733eb005}{is\+\_\+fp\+\_\+closed} (obj)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1util_1_1response_a78e7c62a37f162a536bec248b15b0aec}{assert\+\_\+header\+\_\+parsing} (headers)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1util_1_1response_aca408bfc7dd979b6bc8f433bd104f689}{is\+\_\+response\+\_\+to\+\_\+head} (response)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1util_1_1response_a78e7c62a37f162a536bec248b15b0aec}\label{namespacepip_1_1__vendor_1_1urllib3_1_1util_1_1response_a78e7c62a37f162a536bec248b15b0aec}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::response@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::response}!assert\+\_\+header\+\_\+parsing@{assert\+\_\+header\+\_\+parsing}}
+\index{assert\+\_\+header\+\_\+parsing@{assert\+\_\+header\+\_\+parsing}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::response@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::response}}
+\subsubsection{\texorpdfstring{assert\+\_\+header\+\_\+parsing()}{assert\_header\_parsing()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+util.\+response.\+assert\+\_\+header\+\_\+parsing (\begin{DoxyParamCaption}\item[{}]{headers }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asserts whether all headers have been successfully parsed.
+Extracts encountered errors from the result of parsing headers.
+
+Only works on Python 3.
+
+:param http.client.HTTPMessage headers: Headers to verify.
+
+:raises urllib3.exceptions.HeaderParsingError:
+    If parsing errors are found.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1util_1_1response_a19156ded47f236d89ea54974733eb005}\label{namespacepip_1_1__vendor_1_1urllib3_1_1util_1_1response_a19156ded47f236d89ea54974733eb005}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::response@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::response}!is\+\_\+fp\+\_\+closed@{is\+\_\+fp\+\_\+closed}}
+\index{is\+\_\+fp\+\_\+closed@{is\+\_\+fp\+\_\+closed}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::response@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::response}}
+\subsubsection{\texorpdfstring{is\+\_\+fp\+\_\+closed()}{is\_fp\_closed()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+util.\+response.\+is\+\_\+fp\+\_\+closed (\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks whether a given file-like object is closed.
+
+:param obj:
+    The file-like object to check.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1util_1_1response_aca408bfc7dd979b6bc8f433bd104f689}\label{namespacepip_1_1__vendor_1_1urllib3_1_1util_1_1response_aca408bfc7dd979b6bc8f433bd104f689}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::util\+::response@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::response}!is\+\_\+response\+\_\+to\+\_\+head@{is\+\_\+response\+\_\+to\+\_\+head}}
+\index{is\+\_\+response\+\_\+to\+\_\+head@{is\+\_\+response\+\_\+to\+\_\+head}!pip\+::\+\_\+vendor\+::urllib3\+::util\+::response@{pip\+::\+\_\+vendor\+::urllib3\+::util\+::response}}
+\subsubsection{\texorpdfstring{is\+\_\+response\+\_\+to\+\_\+head()}{is\_response\_to\_head()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+util.\+response.\+is\+\_\+response\+\_\+to\+\_\+head (\begin{DoxyParamCaption}\item[{}]{response }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks whether the request of a response has been a HEAD-request.
+Handles the quirks of AppEngine.
+
+:param http.client.HTTPResponse response:
+    Response to check if the originating request
+    used 'HEAD' as a method.
+\end{DoxyVerb}
+ 

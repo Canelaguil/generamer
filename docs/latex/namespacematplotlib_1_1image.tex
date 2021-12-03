@@ -1,0 +1,220 @@
+\hypertarget{namespacematplotlib_1_1image}{}\section{matplotlib.\+image Namespace Reference}
+\label{namespacematplotlib_1_1image}\index{matplotlib.\+image@{matplotlib.\+image}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1image_1_1__ImageBase}{\+\_\+\+Image\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1image_1_1AxesImage}{Axes\+Image}
+\item 
+class \hyperlink{classmatplotlib_1_1image_1_1BboxImage}{Bbox\+Image}
+\item 
+class \hyperlink{classmatplotlib_1_1image_1_1FigureImage}{Figure\+Image}
+\item 
+class \hyperlink{classmatplotlib_1_1image_1_1NonUniformImage}{Non\+Uniform\+Image}
+\item 
+class \hyperlink{classmatplotlib_1_1image_1_1PcolorImage}{Pcolor\+Image}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1image_a3b7ffb382d966856338cedc8ced3a15d}{composite\+\_\+images} (images, renderer, magnification=1.\+0)
+\item 
+def \hyperlink{namespacematplotlib_1_1image_a31944ffacf7bad0c380b9d4708c9b770}{imread} (fname, format=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1image_a3937a6644e227cd804a36cfe4e9969e7}{imsave} (fname, arr, vmin=None, vmax=None, cmap=None, format=None, origin=None, dpi=100, metadata=None, pil\+\_\+kwargs=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1image_a989574f28f8a0552ce1d17bf89493c92}{pil\+\_\+to\+\_\+array} (pil\+Image)
+\item 
+def \hyperlink{namespacematplotlib_1_1image_a7d35eeb8c37e2a731eed617339d3d831}{thumbnail} (infile, thumbfile, scale=0.\+1, interpolation=\textquotesingle{}bilinear\textquotesingle{}, preview=False)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1image_a9ce609a0506b1fe66055be71a42bdd0d}{interpolations\+\_\+names} = set(\+\_\+interpd\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The image module supports basic image loading, rescaling and display
+operations.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1image_a3b7ffb382d966856338cedc8ced3a15d}\label{namespacematplotlib_1_1image_a3b7ffb382d966856338cedc8ced3a15d}} 
+\index{matplotlib\+::image@{matplotlib\+::image}!composite\+\_\+images@{composite\+\_\+images}}
+\index{composite\+\_\+images@{composite\+\_\+images}!matplotlib\+::image@{matplotlib\+::image}}
+\subsubsection{\texorpdfstring{composite\+\_\+images()}{composite\_images()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+composite\+\_\+images (\begin{DoxyParamCaption}\item[{}]{images,  }\item[{}]{renderer,  }\item[{}]{magnification = {\ttfamily 1.0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Composite a number of RGBA images into one.  The images are
+composited in the order in which they appear in the *images* list.
+
+Parameters
+----------
+images : list of Images
+    Each must have a `make_image` method.  For each image,
+    `can_composite` should return `True`, though this is not
+    enforced by this function.  Each image must have a purely
+    affine transformation with no shear.
+
+renderer : `.RendererBase`
+
+magnification : float, default: 1
+    The additional magnification to apply for the renderer in use.
+
+Returns
+-------
+image : uint8 array (M, N, 4)
+    The composited RGBA image.
+offset_x, offset_y : float
+    The (left, bottom) offset where the composited image should be placed
+    in the output figure.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1image_a31944ffacf7bad0c380b9d4708c9b770}\label{namespacematplotlib_1_1image_a31944ffacf7bad0c380b9d4708c9b770}} 
+\index{matplotlib\+::image@{matplotlib\+::image}!imread@{imread}}
+\index{imread@{imread}!matplotlib\+::image@{matplotlib\+::image}}
+\subsubsection{\texorpdfstring{imread()}{imread()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+imread (\begin{DoxyParamCaption}\item[{}]{fname,  }\item[{}]{format = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read an image from a file into an array.
+
+Parameters
+----------
+fname : str or file-like
+    The image file to read: a filename, a URL or a file-like object opened
+    in read-binary mode.
+
+    Passing a URL is deprecated.  Please open the URL
+    for reading and pass the result to Pillow, e.g. with
+    ``PIL.Image.open(urllib.request.urlopen(url))``.
+format : str, optional
+    The image file format assumed for reading the data. If not
+    given, the format is deduced from the filename.  If nothing can
+    be deduced, PNG is tried.
+
+Returns
+-------
+`numpy.array`
+    The image data. The returned array has shape
+
+    - (M, N) for grayscale images.
+    - (M, N, 3) for RGB images.
+    - (M, N, 4) for RGBA images.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1image_a3937a6644e227cd804a36cfe4e9969e7}\label{namespacematplotlib_1_1image_a3937a6644e227cd804a36cfe4e9969e7}} 
+\index{matplotlib\+::image@{matplotlib\+::image}!imsave@{imsave}}
+\index{imsave@{imsave}!matplotlib\+::image@{matplotlib\+::image}}
+\subsubsection{\texorpdfstring{imsave()}{imsave()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+imsave (\begin{DoxyParamCaption}\item[{}]{fname,  }\item[{}]{arr,  }\item[{}]{vmin = {\ttfamily None},  }\item[{}]{vmax = {\ttfamily None},  }\item[{}]{cmap = {\ttfamily None},  }\item[{}]{format = {\ttfamily None},  }\item[{}]{origin = {\ttfamily None},  }\item[{}]{dpi = {\ttfamily 100},  }\item[{}]{metadata = {\ttfamily None},  }\item[{}]{pil\+\_\+kwargs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Save an array as an image file.
+
+Parameters
+----------
+fname : str or path-like or file-like
+    A path or a file-like object to store the image in.
+    If *format* is not set, then the output format is inferred from the
+    extension of *fname*, if any, and from :rc:`savefig.format` otherwise.
+    If *format* is set, it determines the output format.
+arr : array-like
+    The image data. The shape can be one of
+    MxN (luminance), MxNx3 (RGB) or MxNx4 (RGBA).
+vmin, vmax : float, optional
+    *vmin* and *vmax* set the color scaling for the image by fixing the
+    values that map to the colormap color limits. If either *vmin*
+    or *vmax* is None, that limit is determined from the *arr*
+    min/max value.
+cmap : str or `~matplotlib.colors.Colormap`, default: :rc:`image.cmap`
+    A Colormap instance or registered colormap name. The colormap
+    maps scalar data to colors. It is ignored for RGB(A) data.
+format : str, optional
+    The file format, e.g. 'png', 'pdf', 'svg', ...  The behavior when this
+    is unset is documented under *fname*.
+origin : {'upper', 'lower'}, default: :rc:`image.origin`
+    Indicates whether the ``(0, 0)`` index of the array is in the upper
+    left or lower left corner of the axes.
+dpi : float
+    The DPI to store in the metadata of the file.  This does not affect the
+    resolution of the output image.  Depending on file format, this may be
+    rounded to the nearest integer.
+metadata : dict, optional
+    Metadata in the image file.  The supported keys depend on the output
+    format, see the documentation of the respective backends for more
+    information.
+pil_kwargs : dict, optional
+    Keyword arguments passed to `PIL.Image.Image.save`.  If the 'pnginfo'
+    key is present, it completely overrides *metadata*, including the
+    default 'Software' key.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1image_a989574f28f8a0552ce1d17bf89493c92}\label{namespacematplotlib_1_1image_a989574f28f8a0552ce1d17bf89493c92}} 
+\index{matplotlib\+::image@{matplotlib\+::image}!pil\+\_\+to\+\_\+array@{pil\+\_\+to\+\_\+array}}
+\index{pil\+\_\+to\+\_\+array@{pil\+\_\+to\+\_\+array}!matplotlib\+::image@{matplotlib\+::image}}
+\subsubsection{\texorpdfstring{pil\+\_\+to\+\_\+array()}{pil\_to\_array()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+pil\+\_\+to\+\_\+array (\begin{DoxyParamCaption}\item[{}]{pil\+Image }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load a `PIL image`_ and return it as a numpy int array.
+
+.. _PIL image: https://pillow.readthedocs.io/en/latest/reference/Image.html
+
+Returns
+-------
+numpy.array
+
+    The array shape depends on the image type:
+
+    - (M, N) for grayscale images.
+    - (M, N, 3) for RGB images.
+    - (M, N, 4) for RGBA images.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1image_a7d35eeb8c37e2a731eed617339d3d831}\label{namespacematplotlib_1_1image_a7d35eeb8c37e2a731eed617339d3d831}} 
+\index{matplotlib\+::image@{matplotlib\+::image}!thumbnail@{thumbnail}}
+\index{thumbnail@{thumbnail}!matplotlib\+::image@{matplotlib\+::image}}
+\subsubsection{\texorpdfstring{thumbnail()}{thumbnail()}}
+{\footnotesize\ttfamily def matplotlib.\+image.\+thumbnail (\begin{DoxyParamCaption}\item[{}]{infile,  }\item[{}]{thumbfile,  }\item[{}]{scale = {\ttfamily 0.1},  }\item[{}]{interpolation = {\ttfamily \textquotesingle{}bilinear\textquotesingle{}},  }\item[{}]{preview = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make a thumbnail of image in *infile* with output filename *thumbfile*.
+
+See :doc:`/gallery/misc/image_thumbnail_sgskip`.
+
+Parameters
+----------
+infile : str or file-like
+    The image file. Matplotlib relies on Pillow_ for image reading, and
+    thus supports a wide range of file formats, including PNG, JPG, TIFF
+    and others.
+
+    .. _Pillow: https://python-pillow.org/
+
+thumbfile : str or file-like
+    The thumbnail filename.
+
+scale : float, default: 0.1
+    The scale factor for the thumbnail.
+
+interpolation : str, default: 'bilinear'
+    The interpolation scheme used in the resampling. See the
+    *interpolation* parameter of `~.Axes.imshow` for possible values.
+
+preview : bool, default: False
+    If True, the default backend (presumably a user interface
+    backend) will be used which will cause a figure to be raised if
+    `~matplotlib.pyplot.show` is called.  If it is False, the figure is
+    created using `.FigureCanvasBase` and the drawing backend is selected
+    as `.Figure.savefig` would normally do.
+
+Returns
+-------
+`~.figure.Figure`
+    The figure instance containing the thumbnail.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1image_a9ce609a0506b1fe66055be71a42bdd0d}\label{namespacematplotlib_1_1image_a9ce609a0506b1fe66055be71a42bdd0d}} 
+\index{matplotlib\+::image@{matplotlib\+::image}!interpolations\+\_\+names@{interpolations\+\_\+names}}
+\index{interpolations\+\_\+names@{interpolations\+\_\+names}!matplotlib\+::image@{matplotlib\+::image}}
+\subsubsection{\texorpdfstring{interpolations\+\_\+names}{interpolations\_names}}
+{\footnotesize\ttfamily matplotlib.\+image.\+interpolations\+\_\+names = set(\+\_\+interpd\+\_\+)}
+

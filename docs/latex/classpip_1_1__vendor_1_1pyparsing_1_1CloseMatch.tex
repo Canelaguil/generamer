@@ -1,0 +1,142 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch}{}\section{pip.\+\_\+vendor.\+pyparsing.\+Close\+Match Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch}\index{pip.\+\_\+vendor.\+pyparsing.\+Close\+Match@{pip.\+\_\+vendor.\+pyparsing.\+Close\+Match}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+Close\+Match\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+Close\+Match\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a13cd5d95fb3b9acd7c319e23bf2eb9a3}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a079ae4c2b640c5ea69a37045f9a0d0e5}{match\+\_\+string}, \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a1b857e7ad8bee83cfa095ae2f6a93ded}{max\+Mismatches}=1)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a6245088327e1cdd3762253d2b29a8ca9}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_ae2bd9defb37ab10d5ee3c120206af374}{name}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a079ae4c2b640c5ea69a37045f9a0d0e5}{match\+\_\+string}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a1b857e7ad8bee83cfa095ae2f6a93ded}{max\+Mismatches}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_ad39812441188c8d432e4f0794efc9083}{errmsg}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a8cf082da29831433c016742e7087f8d2}{may\+Index\+Error}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a9ebbfb9f01c6f16b2f79749ecce70047}{may\+Return\+Empty}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A variation on :class:`Literal` which matches "close" matches,
+that is, strings with at most 'n' mismatching characters.
+:class:`CloseMatch` takes parameters:
+
+ - ``match_string`` - string to be matched
+ - ``maxMismatches`` - (``default=1``) maximum number of
+   mismatches allowed to count as a match
+
+The results from a successful parse will contain the matched text
+from the input string and the following named results:
+
+ - ``mismatches`` - a list of the positions within the
+   match_string where mismatches were found
+ - ``original`` - the original match_string used to compare
+   against the input string
+
+If ``mismatches`` is an empty list, then the match was an exact
+match.
+
+Example::
+
+    patt = CloseMatch("ATCATCGAATGGA")
+    patt.parseString("ATCATCGAAXGGA") # -> (['ATCATCGAAXGGA'], {'mismatches': [[9]], 'original': ['ATCATCGAATGGA']})
+    patt.parseString("ATCAXCGAAXGGA") # -> Exception: Expected 'ATCATCGAATGGA' (with up to 1 mismatches) (at char 0), (line:1, col:1)
+
+    # exact match
+    patt.parseString("ATCATCGAATGGA") # -> (['ATCATCGAATGGA'], {'mismatches': [[]], 'original': ['ATCATCGAATGGA']})
+
+    # close match allowing up to 2 mismatches
+    patt = CloseMatch("ATCATCGAATGGA", maxMismatches=2)
+    patt.parseString("ATCAXCGAAXGGA") # -> (['ATCAXCGAAXGGA'], {'mismatches': [[4, 9]], 'original': ['ATCATCGAATGGA']})
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a13cd5d95fb3b9acd7c319e23bf2eb9a3}\label{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a13cd5d95fb3b9acd7c319e23bf2eb9a3}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+Close\+Match.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{match\+\_\+string,  }\item[{}]{max\+Mismatches = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a6245088327e1cdd3762253d2b29a8ca9}\label{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a6245088327e1cdd3762253d2b29a8ca9}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+Close\+Match.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_ad39812441188c8d432e4f0794efc9083}\label{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_ad39812441188c8d432e4f0794efc9083}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}!errmsg@{errmsg}}
+\index{errmsg@{errmsg}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}}
+\subsubsection{\texorpdfstring{errmsg}{errmsg}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Close\+Match.\+errmsg}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a079ae4c2b640c5ea69a37045f9a0d0e5}\label{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a079ae4c2b640c5ea69a37045f9a0d0e5}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}!match\+\_\+string@{match\+\_\+string}}
+\index{match\+\_\+string@{match\+\_\+string}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}}
+\subsubsection{\texorpdfstring{match\+\_\+string}{match\_string}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Close\+Match.\+match\+\_\+string}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a1b857e7ad8bee83cfa095ae2f6a93ded}\label{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a1b857e7ad8bee83cfa095ae2f6a93ded}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}!max\+Mismatches@{max\+Mismatches}}
+\index{max\+Mismatches@{max\+Mismatches}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}}
+\subsubsection{\texorpdfstring{max\+Mismatches}{maxMismatches}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Close\+Match.\+max\+Mismatches}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a8cf082da29831433c016742e7087f8d2}\label{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a8cf082da29831433c016742e7087f8d2}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}!may\+Index\+Error@{may\+Index\+Error}}
+\index{may\+Index\+Error@{may\+Index\+Error}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}}
+\subsubsection{\texorpdfstring{may\+Index\+Error}{mayIndexError}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Close\+Match.\+may\+Index\+Error}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a9ebbfb9f01c6f16b2f79749ecce70047}\label{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_a9ebbfb9f01c6f16b2f79749ecce70047}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Close\+Match.\+may\+Return\+Empty}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_ae2bd9defb37ab10d5ee3c120206af374}\label{classpip_1_1__vendor_1_1pyparsing_1_1CloseMatch_ae2bd9defb37ab10d5ee3c120206af374}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}!name@{name}}
+\index{name@{name}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Close\+Match}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Close\+Match.\+name}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/\hyperlink{pip_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

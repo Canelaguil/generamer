@@ -1,0 +1,147 @@
+\hypertarget{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer}{}\section{pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container Class Reference}
+\label{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer}\index{pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container@{pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a78753b96981aa1d67e4de46545a15e9d}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, maxsize=10, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a6908905d7bf0d4f609c0be45f1759923}{dispose\+\_\+func}=None)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a2f9a0b12be09f80a9217b1cd38731371}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, key)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a4dfbdf0e6ca22811b5e541392fd53a72}{\+\_\+\+\_\+setitem\+\_\+\+\_\+} (self, key, value)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a39749d045cdca10aa493a3e1289a7826}{\+\_\+\+\_\+delitem\+\_\+\+\_\+} (self, key)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_aa19b6fee7214fb10c95645fd5384f2ee}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_ad7d9a829fe0774ab2e087dc1b60acfc9}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a06b0bf88fc61087b84afd22b94d1d9b0}{clear} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a47e1eb6af6289091b9e1116259cf6408}{keys} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a6908905d7bf0d4f609c0be45f1759923}{dispose\+\_\+func}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a52296cd6452d0b736b5099f93d5e739f}{lock}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a8b21aa274ddd0bea802addb8387ccc86}{Container\+Cls}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Provides a thread-safe dict-like container which maintains up to
+``maxsize`` keys while throwing away the least-recently-used keys beyond
+``maxsize``.
+
+:param maxsize:
+    Maximum number of recent elements to retain.
+
+:param dispose_func:
+    Every time an item is evicted from the container,
+    ``dispose_func(value)`` is called.  Callback which will get called
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a78753b96981aa1d67e4de46545a15e9d}\label{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a78753b96981aa1d67e4de46545a15e9d}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{maxsize = {\ttfamily 10},  }\item[{}]{dispose\+\_\+func = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a39749d045cdca10aa493a3e1289a7826}\label{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a39749d045cdca10aa493a3e1289a7826}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}!\+\_\+\+\_\+delitem\+\_\+\+\_\+@{\+\_\+\+\_\+delitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+delitem\+\_\+\+\_\+@{\+\_\+\+\_\+delitem\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+delitem\+\_\+\+\_\+()}{\_\_delitem\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container.\+\_\+\+\_\+delitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a2f9a0b12be09f80a9217b1cd38731371}\label{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a2f9a0b12be09f80a9217b1cd38731371}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_ad7d9a829fe0774ab2e087dc1b60acfc9}\label{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_ad7d9a829fe0774ab2e087dc1b60acfc9}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_aa19b6fee7214fb10c95645fd5384f2ee}\label{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_aa19b6fee7214fb10c95645fd5384f2ee}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a4dfbdf0e6ca22811b5e541392fd53a72}\label{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a4dfbdf0e6ca22811b5e541392fd53a72}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}!\+\_\+\+\_\+setitem\+\_\+\+\_\+@{\+\_\+\+\_\+setitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setitem\+\_\+\+\_\+@{\+\_\+\+\_\+setitem\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setitem\+\_\+\+\_\+()}{\_\_setitem\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container.\+\_\+\+\_\+setitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a06b0bf88fc61087b84afd22b94d1d9b0}\label{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a06b0bf88fc61087b84afd22b94d1d9b0}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}!clear@{clear}}
+\index{clear@{clear}!pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container.\+clear (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a47e1eb6af6289091b9e1116259cf6408}\label{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a47e1eb6af6289091b9e1116259cf6408}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}!keys@{keys}}
+\index{keys@{keys}!pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}}
+\subsubsection{\texorpdfstring{keys()}{keys()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container.\+keys (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a8b21aa274ddd0bea802addb8387ccc86}\label{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a8b21aa274ddd0bea802addb8387ccc86}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}!Container\+Cls@{Container\+Cls}}
+\index{Container\+Cls@{Container\+Cls}!pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}}
+\subsubsection{\texorpdfstring{Container\+Cls}{ContainerCls}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container.\+Container\+Cls\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a6908905d7bf0d4f609c0be45f1759923}\label{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a6908905d7bf0d4f609c0be45f1759923}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}!dispose\+\_\+func@{dispose\+\_\+func}}
+\index{dispose\+\_\+func@{dispose\+\_\+func}!pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}}
+\subsubsection{\texorpdfstring{dispose\+\_\+func}{dispose\_func}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container.\+dispose\+\_\+func}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a52296cd6452d0b736b5099f93d5e739f}\label{classpip_1_1__vendor_1_1urllib3_1_1__collections_1_1RecentlyUsedContainer_a52296cd6452d0b736b5099f93d5e739f}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}!lock@{lock}}
+\index{lock@{lock}!pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container@{pip\+::\+\_\+vendor\+::urllib3\+::\+\_\+collections\+::\+Recently\+Used\+Container}}
+\subsubsection{\texorpdfstring{lock}{lock}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+\_\+collections.\+Recently\+Used\+Container.\+lock}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/urllib3/\hyperlink{__collections_8py}{\+\_\+collections.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,133 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1efficiency__measures}{}\section{networkx.\+algorithms.\+efficiency\+\_\+measures Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1efficiency__measures}\index{networkx.\+algorithms.\+efficiency\+\_\+measures@{networkx.\+algorithms.\+efficiency\+\_\+measures}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1efficiency__measures_a1807807c931a1db6b41ca57f0e8cd0f1}{efficiency} (G, u, v)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1efficiency__measures_a25868f63960e002d393a52de5ed6dc5a}{global\+\_\+efficiency} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1efficiency__measures_a5b866c32c97ea0ac623533ebcc4949b5}{local\+\_\+efficiency} (G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Provides functions for computing the efficiency of nodes and graphs.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1efficiency__measures_a1807807c931a1db6b41ca57f0e8cd0f1}\label{namespacenetworkx_1_1algorithms_1_1efficiency__measures_a1807807c931a1db6b41ca57f0e8cd0f1}} 
+\index{networkx\+::algorithms\+::efficiency\+\_\+measures@{networkx\+::algorithms\+::efficiency\+\_\+measures}!efficiency@{efficiency}}
+\index{efficiency@{efficiency}!networkx\+::algorithms\+::efficiency\+\_\+measures@{networkx\+::algorithms\+::efficiency\+\_\+measures}}
+\subsubsection{\texorpdfstring{efficiency()}{efficiency()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+efficiency\+\_\+measures.\+efficiency (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{u,  }\item[{}]{v }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the efficiency of a pair of nodes in a graph.
+
+The *efficiency* of a pair of nodes is the multiplicative inverse of the
+shortest path distance between the nodes [1]_. Returns 0 if no path
+between nodes.
+
+Parameters
+----------
+G : :class:`networkx.Graph`
+    An undirected graph for which to compute the average local efficiency.
+u, v : node
+    Nodes in the graph ``G``.
+
+Returns
+-------
+float
+    Multiplicative inverse of the shortest path distance between the nodes.
+
+Notes
+-----
+Edge weights are ignored when computing the shortest path distances.
+
+See also
+--------
+local_efficiency
+global_efficiency
+
+References
+----------
+.. [1] Latora, Vito, and Massimo Marchiori.
+       "Efficient behavior of small-world networks."
+       *Physical Review Letters* 87.19 (2001): 198701.
+       <https://doi.org/10.1103/PhysRevLett.87.198701>\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1efficiency__measures_a25868f63960e002d393a52de5ed6dc5a}\label{namespacenetworkx_1_1algorithms_1_1efficiency__measures_a25868f63960e002d393a52de5ed6dc5a}} 
+\index{networkx\+::algorithms\+::efficiency\+\_\+measures@{networkx\+::algorithms\+::efficiency\+\_\+measures}!global\+\_\+efficiency@{global\+\_\+efficiency}}
+\index{global\+\_\+efficiency@{global\+\_\+efficiency}!networkx\+::algorithms\+::efficiency\+\_\+measures@{networkx\+::algorithms\+::efficiency\+\_\+measures}}
+\subsubsection{\texorpdfstring{global\+\_\+efficiency()}{global\_efficiency()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+efficiency\+\_\+measures.\+global\+\_\+efficiency (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the average global efficiency of the graph.
+
+The *efficiency* of a pair of nodes in a graph is the multiplicative
+inverse of the shortest path distance between the nodes. The *average
+global efficiency* of a graph is the average efficiency of all pairs of
+nodes [1]_.
+
+Parameters
+----------
+G : :class:`networkx.Graph`
+    An undirected graph for which to compute the average global efficiency.
+
+Returns
+-------
+float
+    The average global efficiency of the graph.
+
+Notes
+-----
+Edge weights are ignored when computing the shortest path distances.
+
+See also
+--------
+local_efficiency
+
+References
+----------
+.. [1] Latora, Vito, and Massimo Marchiori.
+       "Efficient behavior of small-world networks."
+       *Physical Review Letters* 87.19 (2001): 198701.
+       <https://doi.org/10.1103/PhysRevLett.87.198701>\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1efficiency__measures_a5b866c32c97ea0ac623533ebcc4949b5}\label{namespacenetworkx_1_1algorithms_1_1efficiency__measures_a5b866c32c97ea0ac623533ebcc4949b5}} 
+\index{networkx\+::algorithms\+::efficiency\+\_\+measures@{networkx\+::algorithms\+::efficiency\+\_\+measures}!local\+\_\+efficiency@{local\+\_\+efficiency}}
+\index{local\+\_\+efficiency@{local\+\_\+efficiency}!networkx\+::algorithms\+::efficiency\+\_\+measures@{networkx\+::algorithms\+::efficiency\+\_\+measures}}
+\subsubsection{\texorpdfstring{local\+\_\+efficiency()}{local\_efficiency()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+efficiency\+\_\+measures.\+local\+\_\+efficiency (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the average local efficiency of the graph.
+
+The *efficiency* of a pair of nodes in a graph is the multiplicative
+inverse of the shortest path distance between the nodes. The *local
+efficiency* of a node in the graph is the average global efficiency of the
+subgraph induced by the neighbors of the node. The *average local
+efficiency* is the average of the local efficiencies of each node [1]_.
+
+Parameters
+----------
+G : :class:`networkx.Graph`
+    An undirected graph for which to compute the average local efficiency.
+
+Returns
+-------
+float
+    The average local efficiency of the graph.
+
+Notes
+-----
+Edge weights are ignored when computing the shortest path distances.
+
+See also
+--------
+global_efficiency
+
+References
+----------
+.. [1] Latora, Vito, and Massimo Marchiori.
+       "Efficient behavior of small-world networks."
+       *Physical Review Letters* 87.19 (2001): 198701.
+       <https://doi.org/10.1103/PhysRevLett.87.198701>\end{DoxyVerb}
+ 

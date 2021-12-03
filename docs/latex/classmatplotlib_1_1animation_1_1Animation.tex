@@ -1,0 +1,253 @@
+\hypertarget{classmatplotlib_1_1animation_1_1Animation}{}\section{matplotlib.\+animation.\+Animation Class Reference}
+\label{classmatplotlib_1_1animation_1_1Animation}\index{matplotlib.\+animation.\+Animation@{matplotlib.\+animation.\+Animation}}
+
+
+Inheritance diagram for matplotlib.\+animation.\+Animation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1animation_1_1Animation__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1Animation_ae37d92e1feb40bc1e99dbc67f19b63d0}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, fig, \hyperlink{classmatplotlib_1_1animation_1_1Animation_a7c178d14af9c70d7dc3de5dc78b7a70a}{event\+\_\+source}=None, blit=False)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1Animation_aa1367127973e0d011e9878a4826b8b66}{\+\_\+\+\_\+del\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1Animation_a0a349e2b499cbd08b014a2bafb86a8f8}{save} (self, filename, writer=None, fps=None, dpi=None, codec=None, bitrate=None, extra\+\_\+args=None, metadata=None, extra\+\_\+anim=None, savefig\+\_\+kwargs=None, progress\+\_\+callback=None)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1Animation_a7758eb094d3aaae46842947d28fedc57}{new\+\_\+frame\+\_\+seq} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1Animation_aca004f083f83ac7bdfd5401796cc104a}{new\+\_\+saved\+\_\+frame\+\_\+seq} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1Animation_a531d83a2681bf63cdf173bd1ee660efb}{to\+\_\+html5\+\_\+video} (self, embed\+\_\+limit=None)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1Animation_a92a7136dc2e70f027d416bd0747851fb}{to\+\_\+jshtml} (self, fps=None, embed\+\_\+frames=True, default\+\_\+mode=None)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1Animation_a2e007cee4cebf13e23fc7d97dcbd6619}{pause} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1animation_1_1Animation_ab48ae2a1cb4116bca127975df3cefe43}{resume} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1Animation_a282fac725479a1151724a18a8fdce81d}{frame\+\_\+seq}
+\item 
+\hyperlink{classmatplotlib_1_1animation_1_1Animation_a7c178d14af9c70d7dc3de5dc78b7a70a}{event\+\_\+source}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A base class for Animations.
+
+This class is not usable as is, and should be subclassed to provide needed
+behavior.
+
+.. note::
+
+    You must store the created Animation in a variable that lives as long
+    as the animation should run. Otherwise, the Animation object will be
+    garbage-collected and the animation stops.
+
+Parameters
+----------
+fig : `~matplotlib.figure.Figure`
+    The figure object used to get needed events, such as draw or resize.
+
+event_source : object, optional
+    A class that can run a callback when desired events
+    are generated, as well as be stopped and started.
+
+    Examples include timers (see `TimedAnimation`) and file
+    system notifications.
+
+blit : bool, default: False
+    Whether blitting is used to optimize drawing.
+
+See Also
+--------
+FuncAnimation,  ArtistAnimation
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1Animation_ae37d92e1feb40bc1e99dbc67f19b63d0}\label{classmatplotlib_1_1animation_1_1Animation_ae37d92e1feb40bc1e99dbc67f19b63d0}} 
+\index{matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Animation.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fig,  }\item[{}]{event\+\_\+source = {\ttfamily None},  }\item[{}]{blit = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1Animation_aa1367127973e0d011e9878a4826b8b66}\label{classmatplotlib_1_1animation_1_1Animation_aa1367127973e0d011e9878a4826b8b66}} 
+\index{matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}!\+\_\+\+\_\+del\+\_\+\+\_\+@{\+\_\+\+\_\+del\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+del\+\_\+\+\_\+@{\+\_\+\+\_\+del\+\_\+\+\_\+}!matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+del\+\_\+\+\_\+()}{\_\_del\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Animation.\+\_\+\+\_\+del\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1Animation_a7758eb094d3aaae46842947d28fedc57}\label{classmatplotlib_1_1animation_1_1Animation_a7758eb094d3aaae46842947d28fedc57}} 
+\index{matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}!new\+\_\+frame\+\_\+seq@{new\+\_\+frame\+\_\+seq}}
+\index{new\+\_\+frame\+\_\+seq@{new\+\_\+frame\+\_\+seq}!matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}}
+\subsubsection{\texorpdfstring{new\+\_\+frame\+\_\+seq()}{new\_frame\_seq()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Animation.\+new\+\_\+frame\+\_\+seq (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a new sequence of frame information.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1Animation_aca004f083f83ac7bdfd5401796cc104a}\label{classmatplotlib_1_1animation_1_1Animation_aca004f083f83ac7bdfd5401796cc104a}} 
+\index{matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}!new\+\_\+saved\+\_\+frame\+\_\+seq@{new\+\_\+saved\+\_\+frame\+\_\+seq}}
+\index{new\+\_\+saved\+\_\+frame\+\_\+seq@{new\+\_\+saved\+\_\+frame\+\_\+seq}!matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}}
+\subsubsection{\texorpdfstring{new\+\_\+saved\+\_\+frame\+\_\+seq()}{new\_saved\_frame\_seq()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Animation.\+new\+\_\+saved\+\_\+frame\+\_\+seq (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a new sequence of saved/cached frame information.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1Animation_a2e007cee4cebf13e23fc7d97dcbd6619}\label{classmatplotlib_1_1animation_1_1Animation_a2e007cee4cebf13e23fc7d97dcbd6619}} 
+\index{matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}!pause@{pause}}
+\index{pause@{pause}!matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}}
+\subsubsection{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Animation.\+pause (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Pause the animation.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1Animation_ab48ae2a1cb4116bca127975df3cefe43}\label{classmatplotlib_1_1animation_1_1Animation_ab48ae2a1cb4116bca127975df3cefe43}} 
+\index{matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}!resume@{resume}}
+\index{resume@{resume}!matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}}
+\subsubsection{\texorpdfstring{resume()}{resume()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Animation.\+resume (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Resume the animation.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1Animation_a0a349e2b499cbd08b014a2bafb86a8f8}\label{classmatplotlib_1_1animation_1_1Animation_a0a349e2b499cbd08b014a2bafb86a8f8}} 
+\index{matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}!save@{save}}
+\index{save@{save}!matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Animation.\+save (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename,  }\item[{}]{writer = {\ttfamily None},  }\item[{}]{fps = {\ttfamily None},  }\item[{}]{dpi = {\ttfamily None},  }\item[{}]{codec = {\ttfamily None},  }\item[{}]{bitrate = {\ttfamily None},  }\item[{}]{extra\+\_\+args = {\ttfamily None},  }\item[{}]{metadata = {\ttfamily None},  }\item[{}]{extra\+\_\+anim = {\ttfamily None},  }\item[{}]{savefig\+\_\+kwargs = {\ttfamily None},  }\item[{}]{progress\+\_\+callback = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Save the animation as a movie file by drawing every frame.
+
+Parameters
+----------
+filename : str
+    The output filename, e.g., :file:`mymovie.mp4`.
+
+writer : `MovieWriter` or str, default: :rc:`animation.writer`
+    A `MovieWriter` instance to use or a key that identifies a
+    class to use, such as 'ffmpeg'.
+
+fps : int, optional
+    Movie frame rate (per second).  If not set, the frame rate from the
+    animation's frame interval.
+
+dpi : float, default: :rc:`savefig.dpi`
+    Controls the dots per inch for the movie frames.  Together with
+    the figure's size in inches, this controls the size of the movie.
+
+codec : str, default: :rc:`animation.codec`.
+    The video codec to use.  Not all codecs are supported by a given
+    `MovieWriter`.
+
+bitrate : int, default: :rc:`animation.bitrate`
+    The bitrate of the movie, in kilobits per second.  Higher values
+    means higher quality movies, but increase the file size.  A value
+    of -1 lets the underlying movie encoder select the bitrate.
+
+extra_args : list of str or None, optional
+    Extra command-line arguments passed to the underlying movie
+    encoder.  The default, None, means to use
+    :rc:`animation.[name-of-encoder]_args` for the builtin writers.
+
+metadata : dict[str, str], default: {}
+    Dictionary of keys and values for metadata to include in
+    the output file. Some keys that may be of use include:
+    title, artist, genre, subject, copyright, srcform, comment.
+
+extra_anim : list, default: []
+    Additional `Animation` objects that should be included
+    in the saved movie file. These need to be from the same
+    `matplotlib.figure.Figure` instance. Also, animation frames will
+    just be simply combined, so there should be a 1:1 correspondence
+    between the frames from the different animations.
+
+savefig_kwargs : dict, default: {}
+    Keyword arguments passed to each `~.Figure.savefig` call used to
+    save the individual frames.
+
+progress_callback : function, optional
+    A callback function that will be called for every frame to notify
+    the saving progress. It must have the signature ::
+
+def func(current_frame: int, total_frames: int) -> Any
+
+    where *current_frame* is the current frame number and
+    *total_frames* is the total number of frames to be saved.
+    *total_frames* is set to None, if the total number of frames can
+    not be determined. Return values may exist but are ignored.
+
+    Example code to write the progress to stdout::
+
+progress_callback =\
+    lambda i, n: print(f'Saving frame {i} of {n}')
+
+Notes
+-----
+*fps*, *codec*, *bitrate*, *extra_args* and *metadata* are used to
+construct a `.MovieWriter` instance and can only be passed if
+*writer* is a string.  If they are passed as non-*None* and *writer*
+is a `.MovieWriter`, a `RuntimeError` will be raised.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1Animation_a531d83a2681bf63cdf173bd1ee660efb}\label{classmatplotlib_1_1animation_1_1Animation_a531d83a2681bf63cdf173bd1ee660efb}} 
+\index{matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}!to\+\_\+html5\+\_\+video@{to\+\_\+html5\+\_\+video}}
+\index{to\+\_\+html5\+\_\+video@{to\+\_\+html5\+\_\+video}!matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}}
+\subsubsection{\texorpdfstring{to\+\_\+html5\+\_\+video()}{to\_html5\_video()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Animation.\+to\+\_\+html5\+\_\+video (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{embed\+\_\+limit = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert the animation to an HTML5 ``<video>`` tag.
+
+This saves the animation as an h264 video, encoded in base64
+directly into the HTML5 video tag. This respects :rc:`animation.writer`
+and :rc:`animation.bitrate`. This also makes use of the
+``interval`` to control the speed, and uses the ``repeat``
+parameter to decide whether to loop.
+
+Parameters
+----------
+embed_limit : float, optional
+    Limit, in MB, of the returned animation. No animation is created
+    if the limit is exceeded.
+    Defaults to :rc:`animation.embed_limit` = 20.0.
+
+Returns
+-------
+str
+    An HTML5 video tag with the animation embedded as base64 encoded
+    h264 video.
+    If the *embed_limit* is exceeded, this returns the string
+    "Video too large to embed."
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1animation_1_1Animation_a92a7136dc2e70f027d416bd0747851fb}\label{classmatplotlib_1_1animation_1_1Animation_a92a7136dc2e70f027d416bd0747851fb}} 
+\index{matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}!to\+\_\+jshtml@{to\+\_\+jshtml}}
+\index{to\+\_\+jshtml@{to\+\_\+jshtml}!matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}}
+\subsubsection{\texorpdfstring{to\+\_\+jshtml()}{to\_jshtml()}}
+{\footnotesize\ttfamily def matplotlib.\+animation.\+Animation.\+to\+\_\+jshtml (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fps = {\ttfamily None},  }\item[{}]{embed\+\_\+frames = {\ttfamily True},  }\item[{}]{default\+\_\+mode = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate HTML representation of the animation\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1Animation_a7c178d14af9c70d7dc3de5dc78b7a70a}\label{classmatplotlib_1_1animation_1_1Animation_a7c178d14af9c70d7dc3de5dc78b7a70a}} 
+\index{matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}!event\+\_\+source@{event\+\_\+source}}
+\index{event\+\_\+source@{event\+\_\+source}!matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}}
+\subsubsection{\texorpdfstring{event\+\_\+source}{event\_source}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Animation.\+event\+\_\+source}
+
+\mbox{\Hypertarget{classmatplotlib_1_1animation_1_1Animation_a282fac725479a1151724a18a8fdce81d}\label{classmatplotlib_1_1animation_1_1Animation_a282fac725479a1151724a18a8fdce81d}} 
+\index{matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}!frame\+\_\+seq@{frame\+\_\+seq}}
+\index{frame\+\_\+seq@{frame\+\_\+seq}!matplotlib\+::animation\+::\+Animation@{matplotlib\+::animation\+::\+Animation}}
+\subsubsection{\texorpdfstring{frame\+\_\+seq}{frame\_seq}}
+{\footnotesize\ttfamily matplotlib.\+animation.\+Animation.\+frame\+\_\+seq}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{animation_8py}{animation.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\hypertarget{namespacematplotlib_1_1fontconfig__pattern}{}\section{matplotlib.\+fontconfig\+\_\+pattern Namespace Reference}
+\label{namespacematplotlib_1_1fontconfig__pattern}\index{matplotlib.\+fontconfig\+\_\+pattern@{matplotlib.\+fontconfig\+\_\+pattern}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1fontconfig__pattern_1_1FontconfigPatternParser}{Fontconfig\+Pattern\+Parser}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1fontconfig__pattern_a5cdabe2597ceb298395ca891b2ee7935}{generate\+\_\+fontconfig\+\_\+pattern} (d)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{namespacematplotlib_1_1fontconfig__pattern_a7f5efae0e380b70ce181d1ac16fc11c3}{family\+\_\+punc} = r\textquotesingle{}\textbackslash{}\textbackslash{}\textbackslash{}-\/\+:,\textquotesingle{}
+\item 
+\hyperlink{namespacematplotlib_1_1fontconfig__pattern_acda67bca6512386531c4088fba81946d}{family\+\_\+unescape} = re.\+compile(r\textquotesingle{}\textbackslash{}\textbackslash{}(\mbox{[}\%s\mbox{]})\textquotesingle{} \% \hyperlink{namespacematplotlib_1_1fontconfig__pattern_a7f5efae0e380b70ce181d1ac16fc11c3}{family\+\_\+punc}).sub
+\item 
+\hyperlink{namespacematplotlib_1_1fontconfig__pattern_a32b2f305eb822794bd2b538b6a4b8c88}{family\+\_\+escape} = re.\+compile(r\textquotesingle{}(\mbox{[}\%s\mbox{]})\textquotesingle{} \% \hyperlink{namespacematplotlib_1_1fontconfig__pattern_a7f5efae0e380b70ce181d1ac16fc11c3}{family\+\_\+punc}).sub
+\item 
+string \hyperlink{namespacematplotlib_1_1fontconfig__pattern_acb250aed669612c4beeffe27db8a2695}{value\+\_\+punc} = r\textquotesingle{}\textbackslash{}\textbackslash{}=\+\_\+\+:,\textquotesingle{}
+\item 
+\hyperlink{namespacematplotlib_1_1fontconfig__pattern_a300528c498890d20349896d13b41ca21}{value\+\_\+unescape} = re.\+compile(r\textquotesingle{}\textbackslash{}\textbackslash{}(\mbox{[}\%s\mbox{]})\textquotesingle{} \% \hyperlink{namespacematplotlib_1_1fontconfig__pattern_acb250aed669612c4beeffe27db8a2695}{value\+\_\+punc}).sub
+\item 
+\hyperlink{namespacematplotlib_1_1fontconfig__pattern_a70dd2600dcde40804ff2edc53f5d8157}{value\+\_\+escape} = re.\+compile(r\textquotesingle{}(\mbox{[}\%s\mbox{]})\textquotesingle{} \% \hyperlink{namespacematplotlib_1_1fontconfig__pattern_acb250aed669612c4beeffe27db8a2695}{value\+\_\+punc}).sub
+\item 
+\hyperlink{namespacematplotlib_1_1fontconfig__pattern_aa463a2f0658d5bd0d98bfca74c9b2c81}{parse\+\_\+fontconfig\+\_\+pattern} = lru\+\_\+cache()(\hyperlink{classmatplotlib_1_1fontconfig__pattern_1_1FontconfigPatternParser}{Fontconfig\+Pattern\+Parser}().parse)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A module for parsing and generating `fontconfig patterns`_.
+
+.. _fontconfig patterns:
+   https://www.freedesktop.org/software/fontconfig/fontconfig-user.html
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1fontconfig__pattern_a5cdabe2597ceb298395ca891b2ee7935}\label{namespacematplotlib_1_1fontconfig__pattern_a5cdabe2597ceb298395ca891b2ee7935}} 
+\index{matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}!generate\+\_\+fontconfig\+\_\+pattern@{generate\+\_\+fontconfig\+\_\+pattern}}
+\index{generate\+\_\+fontconfig\+\_\+pattern@{generate\+\_\+fontconfig\+\_\+pattern}!matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}}
+\subsubsection{\texorpdfstring{generate\+\_\+fontconfig\+\_\+pattern()}{generate\_fontconfig\_pattern()}}
+{\footnotesize\ttfamily def matplotlib.\+fontconfig\+\_\+pattern.\+generate\+\_\+fontconfig\+\_\+pattern (\begin{DoxyParamCaption}\item[{}]{d }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given a dictionary of key/value pairs, generates a fontconfig
+pattern string.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1fontconfig__pattern_a32b2f305eb822794bd2b538b6a4b8c88}\label{namespacematplotlib_1_1fontconfig__pattern_a32b2f305eb822794bd2b538b6a4b8c88}} 
+\index{matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}!family\+\_\+escape@{family\+\_\+escape}}
+\index{family\+\_\+escape@{family\+\_\+escape}!matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}}
+\subsubsection{\texorpdfstring{family\+\_\+escape}{family\_escape}}
+{\footnotesize\ttfamily matplotlib.\+fontconfig\+\_\+pattern.\+family\+\_\+escape = re.\+compile(r\textquotesingle{}(\mbox{[}\%s\mbox{]})\textquotesingle{} \% \hyperlink{namespacematplotlib_1_1fontconfig__pattern_a7f5efae0e380b70ce181d1ac16fc11c3}{family\+\_\+punc}).sub}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1fontconfig__pattern_a7f5efae0e380b70ce181d1ac16fc11c3}\label{namespacematplotlib_1_1fontconfig__pattern_a7f5efae0e380b70ce181d1ac16fc11c3}} 
+\index{matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}!family\+\_\+punc@{family\+\_\+punc}}
+\index{family\+\_\+punc@{family\+\_\+punc}!matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}}
+\subsubsection{\texorpdfstring{family\+\_\+punc}{family\_punc}}
+{\footnotesize\ttfamily string matplotlib.\+fontconfig\+\_\+pattern.\+family\+\_\+punc = r\textquotesingle{}\textbackslash{}\textbackslash{}\textbackslash{}-\/\+:,\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1fontconfig__pattern_acda67bca6512386531c4088fba81946d}\label{namespacematplotlib_1_1fontconfig__pattern_acda67bca6512386531c4088fba81946d}} 
+\index{matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}!family\+\_\+unescape@{family\+\_\+unescape}}
+\index{family\+\_\+unescape@{family\+\_\+unescape}!matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}}
+\subsubsection{\texorpdfstring{family\+\_\+unescape}{family\_unescape}}
+{\footnotesize\ttfamily matplotlib.\+fontconfig\+\_\+pattern.\+family\+\_\+unescape = re.\+compile(r\textquotesingle{}\textbackslash{}\textbackslash{}(\mbox{[}\%s\mbox{]})\textquotesingle{} \% \hyperlink{namespacematplotlib_1_1fontconfig__pattern_a7f5efae0e380b70ce181d1ac16fc11c3}{family\+\_\+punc}).sub}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1fontconfig__pattern_aa463a2f0658d5bd0d98bfca74c9b2c81}\label{namespacematplotlib_1_1fontconfig__pattern_aa463a2f0658d5bd0d98bfca74c9b2c81}} 
+\index{matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}!parse\+\_\+fontconfig\+\_\+pattern@{parse\+\_\+fontconfig\+\_\+pattern}}
+\index{parse\+\_\+fontconfig\+\_\+pattern@{parse\+\_\+fontconfig\+\_\+pattern}!matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}}
+\subsubsection{\texorpdfstring{parse\+\_\+fontconfig\+\_\+pattern}{parse\_fontconfig\_pattern}}
+{\footnotesize\ttfamily matplotlib.\+fontconfig\+\_\+pattern.\+parse\+\_\+fontconfig\+\_\+pattern = lru\+\_\+cache()(\hyperlink{classmatplotlib_1_1fontconfig__pattern_1_1FontconfigPatternParser}{Fontconfig\+Pattern\+Parser}().parse)}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1fontconfig__pattern_a70dd2600dcde40804ff2edc53f5d8157}\label{namespacematplotlib_1_1fontconfig__pattern_a70dd2600dcde40804ff2edc53f5d8157}} 
+\index{matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}!value\+\_\+escape@{value\+\_\+escape}}
+\index{value\+\_\+escape@{value\+\_\+escape}!matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}}
+\subsubsection{\texorpdfstring{value\+\_\+escape}{value\_escape}}
+{\footnotesize\ttfamily matplotlib.\+fontconfig\+\_\+pattern.\+value\+\_\+escape = re.\+compile(r\textquotesingle{}(\mbox{[}\%s\mbox{]})\textquotesingle{} \% \hyperlink{namespacematplotlib_1_1fontconfig__pattern_acb250aed669612c4beeffe27db8a2695}{value\+\_\+punc}).sub}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1fontconfig__pattern_acb250aed669612c4beeffe27db8a2695}\label{namespacematplotlib_1_1fontconfig__pattern_acb250aed669612c4beeffe27db8a2695}} 
+\index{matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}!value\+\_\+punc@{value\+\_\+punc}}
+\index{value\+\_\+punc@{value\+\_\+punc}!matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}}
+\subsubsection{\texorpdfstring{value\+\_\+punc}{value\_punc}}
+{\footnotesize\ttfamily string matplotlib.\+fontconfig\+\_\+pattern.\+value\+\_\+punc = r\textquotesingle{}\textbackslash{}\textbackslash{}=\+\_\+\+:,\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1fontconfig__pattern_a300528c498890d20349896d13b41ca21}\label{namespacematplotlib_1_1fontconfig__pattern_a300528c498890d20349896d13b41ca21}} 
+\index{matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}!value\+\_\+unescape@{value\+\_\+unescape}}
+\index{value\+\_\+unescape@{value\+\_\+unescape}!matplotlib\+::fontconfig\+\_\+pattern@{matplotlib\+::fontconfig\+\_\+pattern}}
+\subsubsection{\texorpdfstring{value\+\_\+unescape}{value\_unescape}}
+{\footnotesize\ttfamily matplotlib.\+fontconfig\+\_\+pattern.\+value\+\_\+unescape = re.\+compile(r\textquotesingle{}\textbackslash{}\textbackslash{}(\mbox{[}\%s\mbox{]})\textquotesingle{} \% \hyperlink{namespacematplotlib_1_1fontconfig__pattern_acb250aed669612c4beeffe27db8a2695}{value\+\_\+punc}).sub}
+

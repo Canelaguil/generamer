@@ -1,0 +1,231 @@
+\hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection}{}\section{pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection Class Reference}
+\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection}\index{pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection@{pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ad63fe1e5e68008fee982ea14c3f31606}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, args, kw)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ad3b2b3f74cfd3ac1d9288c40e86dbfca}{host} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a68587ff6bb26a75d8bea4a96dd1237f3}{host} (self, value)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a303347a3223952a6860e9d3ae44a2ba3}{connect} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a611c9e37436696a1af29ac624ea77def}{putrequest} (self, method, url, args, kwargs)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a9ca92a84ad051041cfd318c6e08d39cd}{putheader} (self, header, values)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ae44707607a133fa0d27085cc2ea9ef85}{request} (self, method, url, body=None, headers=None)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ad0ce9861382a0268d64ee1d58d3d83c4}{request\+\_\+chunked} (self, method, url, body=None, headers=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_abd9f28f7d024b3e544e7b3d3bb9d8a77}{source\+\_\+address}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ad4e19482415e22a06e228552ada6f142}{socket\+\_\+options}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a70e46c5372379c8b6635dc4b618d7ee4}{proxy}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_aafe0298528579b9eb8c0c72f6b8504e6}{proxy\+\_\+config}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a6631f9573fa1094b5c85f9af535a8c1c}{sock}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a018e186c223f9de2fc1884bfc6acf012}{auto\+\_\+open}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a8a50af5ab906f795fbe4e6661a850914}{default\+\_\+port}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a1c33c719c092837e02e22aeb2605acc3}{default\+\_\+socket\+\_\+options}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a7187ea97b79a6a5aa8ff2dc3f6a66a73}{is\+\_\+verified}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Based on :class:`http.client.HTTPConnection` but provides an extra constructor
+backwards-compatibility layer between older and newer Pythons.
+
+Additional keyword parameters are used to configure attributes of the connection.
+Accepted parameters include:
+
+- ``strict``: See the documentation on :class:`urllib3.connectionpool.HTTPConnectionPool`
+- ``source_address``: Set the source address for the current connection.
+- ``socket_options``: Set specific options on the underlying socket. If not specified, then
+  defaults are loaded from ``HTTPConnection.default_socket_options`` which includes disabling
+  Nagle's algorithm (sets TCP_NODELAY to 1) unless the connection is behind a proxy.
+
+  For example, if you wish to enable TCP Keep Alive in addition to the defaults,
+  you might pass:
+
+  .. code-block:: python
+
+     HTTPConnection.default_socket_options + [
+         (socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1),
+     ]
+
+  Or you may want to disable the defaults by passing an empty list (e.g., ``[]``).
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ad63fe1e5e68008fee982ea14c3f31606}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ad63fe1e5e68008fee982ea14c3f31606}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{kw }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a303347a3223952a6860e9d3ae44a2ba3}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a303347a3223952a6860e9d3ae44a2ba3}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!connect@{connect}}
+\index{connect@{connect}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+connect (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ad3b2b3f74cfd3ac1d9288c40e86dbfca}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ad3b2b3f74cfd3ac1d9288c40e86dbfca}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!host@{host}}
+\index{host@{host}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{host()}{host()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+host (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Getter method to remove any trailing dots that indicate the hostname is an FQDN.
+
+In general, SSL certificates don't include the trailing dot indicating a
+fully-qualified domain name, and thus, they don't validate properly when
+checked against a domain name that includes the dot. In addition, some
+servers may not expect to receive the trailing dot when provided.
+
+However, the hostname with trailing dot is critical to DNS resolution; doing a
+lookup with the trailing dot will properly only resolve the appropriate FQDN,
+whereas a lookup without a trailing dot will search the system's search domain
+list. Thus, it's important to keep the original host around for use only in
+those cases where it's appropriate (i.e., when doing DNS lookup to establish the
+actual TCP connection across which we're going to send HTTP requests).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a68587ff6bb26a75d8bea4a96dd1237f3}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a68587ff6bb26a75d8bea4a96dd1237f3}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!host@{host}}
+\index{host@{host}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{host()}{host()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+host (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Setter for the `host` property.
+
+We assume that only urllib3 uses the _dns_host attribute; httplib itself
+only uses `host`, and it seems reasonable that other libraries follow suit.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a9ca92a84ad051041cfd318c6e08d39cd}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a9ca92a84ad051041cfd318c6e08d39cd}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!putheader@{putheader}}
+\index{putheader@{putheader}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{putheader()}{putheader()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+putheader (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{header,  }\item[{}]{values }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a611c9e37436696a1af29ac624ea77def}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a611c9e37436696a1af29ac624ea77def}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!putrequest@{putrequest}}
+\index{putrequest@{putrequest}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{putrequest()}{putrequest()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+putrequest (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{method,  }\item[{}]{url,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ae44707607a133fa0d27085cc2ea9ef85}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ae44707607a133fa0d27085cc2ea9ef85}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!request@{request}}
+\index{request@{request}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{request()}{request()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+request (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{method,  }\item[{}]{url,  }\item[{}]{body = {\ttfamily None},  }\item[{}]{headers = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ad0ce9861382a0268d64ee1d58d3d83c4}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ad0ce9861382a0268d64ee1d58d3d83c4}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!request\+\_\+chunked@{request\+\_\+chunked}}
+\index{request\+\_\+chunked@{request\+\_\+chunked}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{request\+\_\+chunked()}{request\_chunked()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+request\+\_\+chunked (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{method,  }\item[{}]{url,  }\item[{}]{body = {\ttfamily None},  }\item[{}]{headers = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Alternative to the common request method, which sends the
+body with chunked encoding and not as one block
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a018e186c223f9de2fc1884bfc6acf012}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a018e186c223f9de2fc1884bfc6acf012}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!auto\+\_\+open@{auto\+\_\+open}}
+\index{auto\+\_\+open@{auto\+\_\+open}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{auto\+\_\+open}{auto\_open}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+auto\+\_\+open}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a8a50af5ab906f795fbe4e6661a850914}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a8a50af5ab906f795fbe4e6661a850914}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!default\+\_\+port@{default\+\_\+port}}
+\index{default\+\_\+port@{default\+\_\+port}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{default\+\_\+port}{default\_port}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+default\+\_\+port\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a1c33c719c092837e02e22aeb2605acc3}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a1c33c719c092837e02e22aeb2605acc3}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!default\+\_\+socket\+\_\+options@{default\+\_\+socket\+\_\+options}}
+\index{default\+\_\+socket\+\_\+options@{default\+\_\+socket\+\_\+options}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{default\+\_\+socket\+\_\+options}{default\_socket\_options}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+default\+\_\+socket\+\_\+options\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a7187ea97b79a6a5aa8ff2dc3f6a66a73}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a7187ea97b79a6a5aa8ff2dc3f6a66a73}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!is\+\_\+verified@{is\+\_\+verified}}
+\index{is\+\_\+verified@{is\+\_\+verified}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{is\+\_\+verified}{is\_verified}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+is\+\_\+verified\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a70e46c5372379c8b6635dc4b618d7ee4}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a70e46c5372379c8b6635dc4b618d7ee4}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!proxy@{proxy}}
+\index{proxy@{proxy}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{proxy}{proxy}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+proxy}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_aafe0298528579b9eb8c0c72f6b8504e6}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_aafe0298528579b9eb8c0c72f6b8504e6}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!proxy\+\_\+config@{proxy\+\_\+config}}
+\index{proxy\+\_\+config@{proxy\+\_\+config}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{proxy\+\_\+config}{proxy\_config}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+proxy\+\_\+config}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a6631f9573fa1094b5c85f9af535a8c1c}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_a6631f9573fa1094b5c85f9af535a8c1c}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!sock@{sock}}
+\index{sock@{sock}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{sock}{sock}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+sock}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ad4e19482415e22a06e228552ada6f142}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_ad4e19482415e22a06e228552ada6f142}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!socket\+\_\+options@{socket\+\_\+options}}
+\index{socket\+\_\+options@{socket\+\_\+options}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{socket\+\_\+options}{socket\_options}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+socket\+\_\+options}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_abd9f28f7d024b3e544e7b3d3bb9d8a77}\label{classpip_1_1__vendor_1_1urllib3_1_1connection_1_1HTTPConnection_abd9f28f7d024b3e544e7b3d3bb9d8a77}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}!source\+\_\+address@{source\+\_\+address}}
+\index{source\+\_\+address@{source\+\_\+address}!pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection@{pip\+::\+\_\+vendor\+::urllib3\+::connection\+::\+H\+T\+T\+P\+Connection}}
+\subsubsection{\texorpdfstring{source\+\_\+address}{source\_address}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+connection.\+H\+T\+T\+P\+Connection.\+source\+\_\+address}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/urllib3/\hyperlink{connection_8py}{connection.\+py}\end{DoxyCompactItemize}

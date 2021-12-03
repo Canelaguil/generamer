@@ -1,0 +1,110 @@
+\hypertarget{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch}{}\section{axes\+\_\+grid1.\+inset\+\_\+locator.\+Bbox\+Connector\+Patch Class Reference}
+\label{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch}\index{axes\+\_\+grid1.\+inset\+\_\+locator.\+Bbox\+Connector\+Patch@{axes\+\_\+grid1.\+inset\+\_\+locator.\+Bbox\+Connector\+Patch}}
+
+
+Inheritance diagram for axes\+\_\+grid1.\+inset\+\_\+locator.\+Bbox\+Connector\+Patch\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for axes\+\_\+grid1.\+inset\+\_\+locator.\+Bbox\+Connector\+Patch\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_ad6a0fc5a7438f4c6b402a6006e953e9c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classaxes__grid1_1_1inset__locator_1_1BboxConnector_a63b35233dec9f318cdc800f53aef552b}{bbox1}, \hyperlink{classaxes__grid1_1_1inset__locator_1_1BboxConnector_aaa2486406736d2f2229ef0ac71b49c30}{bbox2}, loc1a, loc2a, \hyperlink{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_a08064f4f6cbf2a6839d434313c59ce92}{loc1b}, \hyperlink{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_aa9eeb94282e8dbe4c15d1d7e1f2b7299}{loc2b}, kwargs)
+\item 
+def \hyperlink{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_aae1ec15e58fe97285b3d3809c3f72185}{get\+\_\+path} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_a08064f4f6cbf2a6839d434313c59ce92}{loc1b}
+\item 
+\hyperlink{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_aa9eeb94282e8dbe4c15d1d7e1f2b7299}{loc2b}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_ad6a0fc5a7438f4c6b402a6006e953e9c}\label{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_ad6a0fc5a7438f4c6b402a6006e953e9c}} 
+\index{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+inset\+\_\+locator.\+Bbox\+Connector\+Patch.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{bbox1,  }\item[{}]{bbox2,  }\item[{}]{loc1a,  }\item[{}]{loc2a,  }\item[{}]{loc1b,  }\item[{}]{loc2b,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Connect two bboxes with a quadrilateral.
+
+The quadrilateral is specified by two lines that start and end at
+corners of the bboxes. The four sides of the quadrilateral are defined
+by the two lines given, the line between the two corners specified in
+*bbox1* and the line between the two corners specified in *bbox2*.
+
+Parameters
+----------
+bbox1, bbox2 : `matplotlib.transforms.Bbox`
+    Bounding boxes to connect.
+
+loc1a, loc2a : {1, 2, 3, 4}
+    Corners of *bbox1* and *bbox2* to draw the first line.
+    Valid values are::
+
+'upper right'  : 1,
+'upper left'   : 2,
+'lower left'   : 3,
+'lower right'  : 4
+
+loc1b, loc2b : {1, 2, 3, 4}
+    Corners of *bbox1* and *bbox2* to draw the second line.
+    Valid values are::
+
+'upper right'  : 1,
+'upper left'   : 2,
+'lower left'   : 3,
+'lower right'  : 4
+
+**kwargs
+    Patch properties for the line drawn:
+
+    %(Patch_kwdoc)s
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_aae1ec15e58fe97285b3d3809c3f72185}\label{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_aae1ec15e58fe97285b3d3809c3f72185}} 
+\index{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch}!get\+\_\+path@{get\+\_\+path}}
+\index{get\+\_\+path@{get\+\_\+path}!axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch}}
+\subsubsection{\texorpdfstring{get\+\_\+path()}{get\_path()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+inset\+\_\+locator.\+Bbox\+Connector\+Patch.\+get\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_a08064f4f6cbf2a6839d434313c59ce92}\label{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_a08064f4f6cbf2a6839d434313c59ce92}} 
+\index{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch}!loc1b@{loc1b}}
+\index{loc1b@{loc1b}!axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch}}
+\subsubsection{\texorpdfstring{loc1b}{loc1b}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+inset\+\_\+locator.\+Bbox\+Connector\+Patch.\+loc1b}
+
+\mbox{\Hypertarget{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_aa9eeb94282e8dbe4c15d1d7e1f2b7299}\label{classaxes__grid1_1_1inset__locator_1_1BboxConnectorPatch_aa9eeb94282e8dbe4c15d1d7e1f2b7299}} 
+\index{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch}!loc2b@{loc2b}}
+\index{loc2b@{loc2b}!axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch@{axes\+\_\+grid1\+::inset\+\_\+locator\+::\+Bbox\+Connector\+Patch}}
+\subsubsection{\texorpdfstring{loc2b}{loc2b}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+inset\+\_\+locator.\+Bbox\+Connector\+Patch.\+loc2b}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/mpl\+\_\+toolkits/axes\+\_\+grid1/\hyperlink{_2inset__locator_8py}{inset\+\_\+locator.\+py}\end{DoxyCompactItemize}

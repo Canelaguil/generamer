@@ -1,0 +1,64 @@
+\hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1wrappers}{}\section{pip.\+\_\+vendor.\+pep517.\+wrappers Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1pep517_1_1wrappers}\index{pip.\+\_\+vendor.\+pep517.\+wrappers@{pip.\+\_\+vendor.\+pep517.\+wrappers}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1pep517_1_1wrappers_1_1BackendInvalid}{Backend\+Invalid}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1pep517_1_1wrappers_1_1BackendUnavailable}{Backend\+Unavailable}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1pep517_1_1wrappers_1_1HookMissing}{Hook\+Missing}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1pep517_1_1wrappers_1_1LoggerWrapper}{Logger\+Wrapper}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1pep517_1_1wrappers_1_1Pep517HookCaller}{Pep517\+Hook\+Caller}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1pep517_1_1wrappers_1_1UnsupportedOperation}{Unsupported\+Operation}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1wrappers_a72a2439d5dd78f24fc642bc33542528c}{tempdir} ()
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1wrappers_a3ef0c37471ef2d4cf3f8785181fb612a}{default\+\_\+subprocess\+\_\+runner} (cmd, cwd=None, extra\+\_\+environ=None)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1wrappers_a1689b35b066adc0bf1134063047e5376}{quiet\+\_\+subprocess\+\_\+runner} (cmd, cwd=None, extra\+\_\+environ=None)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1pep517_1_1wrappers_a83ac74f6c71d771d200d6fc8da57db83}{norm\+\_\+and\+\_\+check} (source\+\_\+tree, requested)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1wrappers_a3ef0c37471ef2d4cf3f8785181fb612a}\label{namespacepip_1_1__vendor_1_1pep517_1_1wrappers_a3ef0c37471ef2d4cf3f8785181fb612a}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::wrappers@{pip\+::\+\_\+vendor\+::pep517\+::wrappers}!default\+\_\+subprocess\+\_\+runner@{default\+\_\+subprocess\+\_\+runner}}
+\index{default\+\_\+subprocess\+\_\+runner@{default\+\_\+subprocess\+\_\+runner}!pip\+::\+\_\+vendor\+::pep517\+::wrappers@{pip\+::\+\_\+vendor\+::pep517\+::wrappers}}
+\subsubsection{\texorpdfstring{default\+\_\+subprocess\+\_\+runner()}{default\_subprocess\_runner()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+wrappers.\+default\+\_\+subprocess\+\_\+runner (\begin{DoxyParamCaption}\item[{}]{cmd,  }\item[{}]{cwd = {\ttfamily None},  }\item[{}]{extra\+\_\+environ = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The default method of calling the wrapper subprocess.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1wrappers_a83ac74f6c71d771d200d6fc8da57db83}\label{namespacepip_1_1__vendor_1_1pep517_1_1wrappers_a83ac74f6c71d771d200d6fc8da57db83}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::wrappers@{pip\+::\+\_\+vendor\+::pep517\+::wrappers}!norm\+\_\+and\+\_\+check@{norm\+\_\+and\+\_\+check}}
+\index{norm\+\_\+and\+\_\+check@{norm\+\_\+and\+\_\+check}!pip\+::\+\_\+vendor\+::pep517\+::wrappers@{pip\+::\+\_\+vendor\+::pep517\+::wrappers}}
+\subsubsection{\texorpdfstring{norm\+\_\+and\+\_\+check()}{norm\_and\_check()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+wrappers.\+norm\+\_\+and\+\_\+check (\begin{DoxyParamCaption}\item[{}]{source\+\_\+tree,  }\item[{}]{requested }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Normalise and check a backend path.
+
+Ensure that the requested backend path is specified as a relative path,
+and resolves to a location under the given source tree.
+
+Return an absolute version of the requested path.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1wrappers_a1689b35b066adc0bf1134063047e5376}\label{namespacepip_1_1__vendor_1_1pep517_1_1wrappers_a1689b35b066adc0bf1134063047e5376}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::wrappers@{pip\+::\+\_\+vendor\+::pep517\+::wrappers}!quiet\+\_\+subprocess\+\_\+runner@{quiet\+\_\+subprocess\+\_\+runner}}
+\index{quiet\+\_\+subprocess\+\_\+runner@{quiet\+\_\+subprocess\+\_\+runner}!pip\+::\+\_\+vendor\+::pep517\+::wrappers@{pip\+::\+\_\+vendor\+::pep517\+::wrappers}}
+\subsubsection{\texorpdfstring{quiet\+\_\+subprocess\+\_\+runner()}{quiet\_subprocess\_runner()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+wrappers.\+quiet\+\_\+subprocess\+\_\+runner (\begin{DoxyParamCaption}\item[{}]{cmd,  }\item[{}]{cwd = {\ttfamily None},  }\item[{}]{extra\+\_\+environ = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A method of calling the wrapper subprocess while suppressing output.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pep517_1_1wrappers_a72a2439d5dd78f24fc642bc33542528c}\label{namespacepip_1_1__vendor_1_1pep517_1_1wrappers_a72a2439d5dd78f24fc642bc33542528c}} 
+\index{pip\+::\+\_\+vendor\+::pep517\+::wrappers@{pip\+::\+\_\+vendor\+::pep517\+::wrappers}!tempdir@{tempdir}}
+\index{tempdir@{tempdir}!pip\+::\+\_\+vendor\+::pep517\+::wrappers@{pip\+::\+\_\+vendor\+::pep517\+::wrappers}}
+\subsubsection{\texorpdfstring{tempdir()}{tempdir()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pep517.\+wrappers.\+tempdir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

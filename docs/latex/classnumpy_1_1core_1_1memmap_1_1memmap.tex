@@ -1,0 +1,296 @@
+\hypertarget{classnumpy_1_1core_1_1memmap_1_1memmap}{}\section{numpy.\+core.\+memmap.\+memmap Class Reference}
+\label{classnumpy_1_1core_1_1memmap_1_1memmap}\index{numpy.\+core.\+memmap.\+memmap@{numpy.\+core.\+memmap.\+memmap}}
+
+
+Inheritance diagram for numpy.\+core.\+memmap.\+memmap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classnumpy_1_1core_1_1memmap_1_1memmap__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+core.\+memmap.\+memmap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classnumpy_1_1core_1_1memmap_1_1memmap__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1core_1_1memmap_1_1memmap_a1381dc62dcae10138a3bb342bfe922a4}{\+\_\+\+\_\+new\+\_\+\+\_\+} (subtype, \hyperlink{classnumpy_1_1core_1_1memmap_1_1memmap_aaf39d85a8ca4308dc1dc17d6bba866c0}{filename}, dtype=uint8, \hyperlink{classnumpy_1_1core_1_1memmap_1_1memmap_a19f056ece80c20f2817e83390b24ef87}{mode}=\textquotesingle{}r+\textquotesingle{}, \hyperlink{classnumpy_1_1core_1_1memmap_1_1memmap_ae552d11a1c1aa9623603f05b65a85bae}{offset}=0, shape=None, order=\textquotesingle{}C\textquotesingle{})
+\item 
+def \hyperlink{classnumpy_1_1core_1_1memmap_1_1memmap_afa78d47fbad8b8d586ff4207b698054f}{\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+} (self, obj)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1memmap_1_1memmap_a584744d69f6cae686962a274fb4d2782}{flush} (self)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1memmap_1_1memmap_a17c3311888838c62dcdd94fa0ea1169e}{\+\_\+\+\_\+array\+\_\+wrap\+\_\+\+\_\+} (self, arr, context=None)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1memmap_1_1memmap_a9edb0849df301b01f6d847bf3a533920}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, index)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1core_1_1memmap_1_1memmap_ae552d11a1c1aa9623603f05b65a85bae}{offset}
+\item 
+\hyperlink{classnumpy_1_1core_1_1memmap_1_1memmap_a19f056ece80c20f2817e83390b24ef87}{mode}
+\item 
+\hyperlink{classnumpy_1_1core_1_1memmap_1_1memmap_aaf39d85a8ca4308dc1dc17d6bba866c0}{filename}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Create a memory-map to an array stored in a *binary* file on disk.
+
+Memory-mapped files are used for accessing small segments of large files
+on disk, without reading the entire file into memory.  NumPy's
+memmap's are array-like objects.  This differs from Python's ``mmap``
+module, which uses file-like objects.
+
+This subclass of ndarray has some unpleasant interactions with
+some operations, because it doesn't quite fit properly as a subclass.
+An alternative to using this subclass is to create the ``mmap``
+object yourself, then create an ndarray with ndarray.__new__ directly,
+passing the object created in its 'buffer=' parameter.
+
+This class may at some point be turned into a factory function
+which returns a view into an mmap buffer.
+
+Flush the memmap instance to write the changes to the file. Currently there
+is no API to close the underlying ``mmap``. It is tricky to ensure the
+resource is actually closed, since it may be shared between different
+memmap instances.
+
+
+Parameters
+----------
+filename : str, file-like object, or pathlib.Path instance
+    The file name or file object to be used as the array data buffer.
+dtype : data-type, optional
+    The data-type used to interpret the file contents.
+    Default is `uint8`.
+mode : {'r+', 'r', 'w+', 'c'}, optional
+    The file is opened in this mode:
+
+    +------+-------------------------------------------------------------+
+    | 'r'  | Open existing file for reading only.                        |
+    +------+-------------------------------------------------------------+
+    | 'r+' | Open existing file for reading and writing.                 |
+    +------+-------------------------------------------------------------+
+    | 'w+' | Create or overwrite existing file for reading and writing.  |
+    +------+-------------------------------------------------------------+
+    | 'c'  | Copy-on-write: assignments affect data in memory, but       |
+    |      | changes are not saved to disk.  The file on disk is         |
+    |      | read-only.                                                  |
+    +------+-------------------------------------------------------------+
+
+    Default is 'r+'.
+offset : int, optional
+    In the file, array data starts at this offset. Since `offset` is
+    measured in bytes, it should normally be a multiple of the byte-size
+    of `dtype`. When ``mode != 'r'``, even positive offsets beyond end of
+    file are valid; The file will be extended to accommodate the
+    additional data. By default, ``memmap`` will start at the beginning of
+    the file, even if ``filename`` is a file pointer ``fp`` and
+    ``fp.tell() != 0``.
+shape : tuple, optional
+    The desired shape of the array. If ``mode == 'r'`` and the number
+    of remaining bytes after `offset` is not a multiple of the byte-size
+    of `dtype`, you must specify `shape`. By default, the returned array
+    will be 1-D with the number of elements determined by file size
+    and data-type.
+order : {'C', 'F'}, optional
+    Specify the order of the ndarray memory layout:
+    :term:`row-major`, C-style or :term:`column-major`,
+    Fortran-style.  This only has an effect if the shape is
+    greater than 1-D.  The default order is 'C'.
+
+Attributes
+----------
+filename : str or pathlib.Path instance
+    Path to the mapped file.
+offset : int
+    Offset position in the file.
+mode : str
+    File mode.
+
+Methods
+-------
+flush
+    Flush any changes in memory to file on disk.
+    When you delete a memmap object, flush is called first to write
+    changes to disk.
+
+
+See also
+--------
+lib.format.open_memmap : Create or load a memory-mapped ``.npy`` file.
+
+Notes
+-----
+The memmap object can be used anywhere an ndarray is accepted.
+Given a memmap ``fp``, ``isinstance(fp, numpy.ndarray)`` returns
+``True``.
+
+Memory-mapped files cannot be larger than 2GB on 32-bit systems.
+
+When a memmap causes a file to be created or extended beyond its
+current size in the filesystem, the contents of the new part are
+unspecified. On systems with POSIX filesystem semantics, the extended
+part will be filled with zero bytes.
+
+Examples
+--------
+>>> data = np.arange(12, dtype='float32')
+>>> data.resize((3,4))
+
+This example uses a temporary file so that doctest doesn't write
+files to your directory. You would use a 'normal' filename.
+
+>>> from tempfile import mkdtemp
+>>> import os.path as path
+>>> filename = path.join(mkdtemp(), 'newfile.dat')
+
+Create a memmap with dtype and shape that matches our data:
+
+>>> fp = np.memmap(filename, dtype='float32', mode='w+', shape=(3,4))
+>>> fp
+memmap([[0., 0., 0., 0.],
+        [0., 0., 0., 0.],
+        [0., 0., 0., 0.]], dtype=float32)
+
+Write data to memmap array:
+
+>>> fp[:] = data[:]
+>>> fp
+memmap([[  0.,   1.,   2.,   3.],
+        [  4.,   5.,   6.,   7.],
+        [  8.,   9.,  10.,  11.]], dtype=float32)
+
+>>> fp.filename == path.abspath(filename)
+True
+
+Flushes memory changes to disk in order to read them back
+
+>>> fp.flush()
+
+Load the memmap and verify data was stored:
+
+>>> newfp = np.memmap(filename, dtype='float32', mode='r', shape=(3,4))
+>>> newfp
+memmap([[  0.,   1.,   2.,   3.],
+        [  4.,   5.,   6.,   7.],
+        [  8.,   9.,  10.,  11.]], dtype=float32)
+
+Read-only memmap:
+
+>>> fpr = np.memmap(filename, dtype='float32', mode='r', shape=(3,4))
+>>> fpr.flags.writeable
+False
+
+Copy-on-write memmap:
+
+>>> fpc = np.memmap(filename, dtype='float32', mode='c', shape=(3,4))
+>>> fpc.flags.writeable
+True
+
+It's possible to assign to copy-on-write array, but values are only
+written into the memory copy of the array, and not written to disk:
+
+>>> fpc
+memmap([[  0.,   1.,   2.,   3.],
+        [  4.,   5.,   6.,   7.],
+        [  8.,   9.,  10.,  11.]], dtype=float32)
+>>> fpc[0,:] = 0
+>>> fpc
+memmap([[  0.,   0.,   0.,   0.],
+        [  4.,   5.,   6.,   7.],
+        [  8.,   9.,  10.,  11.]], dtype=float32)
+
+File on disk is unchanged:
+
+>>> fpr
+memmap([[  0.,   1.,   2.,   3.],
+        [  4.,   5.,   6.,   7.],
+        [  8.,   9.,  10.,  11.]], dtype=float32)
+
+Offset into a memmap:
+
+>>> fpo = np.memmap(filename, dtype='float32', mode='r', offset=16)
+>>> fpo
+memmap([  4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.], dtype=float32)\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1memmap_1_1memmap_afa78d47fbad8b8d586ff4207b698054f}\label{classnumpy_1_1core_1_1memmap_1_1memmap_afa78d47fbad8b8d586ff4207b698054f}} 
+\index{numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}!\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+@{\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+@{\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+}!numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+()}{\_\_array\_finalize\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+memmap.\+memmap.\+\_\+\+\_\+array\+\_\+finalize\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1memmap_1_1memmap_a17c3311888838c62dcdd94fa0ea1169e}\label{classnumpy_1_1core_1_1memmap_1_1memmap_a17c3311888838c62dcdd94fa0ea1169e}} 
+\index{numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}!\+\_\+\+\_\+array\+\_\+wrap\+\_\+\+\_\+@{\+\_\+\+\_\+array\+\_\+wrap\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+array\+\_\+wrap\+\_\+\+\_\+@{\+\_\+\+\_\+array\+\_\+wrap\+\_\+\+\_\+}!numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+array\+\_\+wrap\+\_\+\+\_\+()}{\_\_array\_wrap\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+memmap.\+memmap.\+\_\+\+\_\+array\+\_\+wrap\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{arr,  }\item[{}]{context = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1memmap_1_1memmap_a9edb0849df301b01f6d847bf3a533920}\label{classnumpy_1_1core_1_1memmap_1_1memmap_a9edb0849df301b01f6d847bf3a533920}} 
+\index{numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+memmap.\+memmap.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1memmap_1_1memmap_a1381dc62dcae10138a3bb342bfe922a4}\label{classnumpy_1_1core_1_1memmap_1_1memmap_a1381dc62dcae10138a3bb342bfe922a4}} 
+\index{numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}!\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}!numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+new\+\_\+\+\_\+()}{\_\_new\_\_()}}
+{\footnotesize\ttfamily def numpy.\+core.\+memmap.\+memmap.\+\_\+\+\_\+new\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{subtype,  }\item[{}]{filename,  }\item[{}]{dtype = {\ttfamily uint8},  }\item[{}]{mode = {\ttfamily \textquotesingle{}r+\textquotesingle{}},  }\item[{}]{offset = {\ttfamily 0},  }\item[{}]{shape = {\ttfamily None},  }\item[{}]{order = {\ttfamily \textquotesingle{}C\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1memmap_1_1memmap_a584744d69f6cae686962a274fb4d2782}\label{classnumpy_1_1core_1_1memmap_1_1memmap_a584744d69f6cae686962a274fb4d2782}} 
+\index{numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}!flush@{flush}}
+\index{flush@{flush}!numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}}
+\subsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily def numpy.\+core.\+memmap.\+memmap.\+flush (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write any changes in the array to the file on disk.
+
+For further information, see `memmap`.
+
+Parameters
+----------
+None
+
+See Also
+--------
+memmap\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1memmap_1_1memmap_aaf39d85a8ca4308dc1dc17d6bba866c0}\label{classnumpy_1_1core_1_1memmap_1_1memmap_aaf39d85a8ca4308dc1dc17d6bba866c0}} 
+\index{numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}!filename@{filename}}
+\index{filename@{filename}!numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}}
+\subsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily numpy.\+core.\+memmap.\+memmap.\+filename}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1memmap_1_1memmap_a19f056ece80c20f2817e83390b24ef87}\label{classnumpy_1_1core_1_1memmap_1_1memmap_a19f056ece80c20f2817e83390b24ef87}} 
+\index{numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}!mode@{mode}}
+\index{mode@{mode}!numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily numpy.\+core.\+memmap.\+memmap.\+mode}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1memmap_1_1memmap_ae552d11a1c1aa9623603f05b65a85bae}\label{classnumpy_1_1core_1_1memmap_1_1memmap_ae552d11a1c1aa9623603f05b65a85bae}} 
+\index{numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}!offset@{offset}}
+\index{offset@{offset}!numpy\+::core\+::memmap\+::memmap@{numpy\+::core\+::memmap\+::memmap}}
+\subsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily numpy.\+core.\+memmap.\+memmap.\+offset}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/core/\hyperlink{memmap_8py}{memmap.\+py}\end{DoxyCompactItemize}

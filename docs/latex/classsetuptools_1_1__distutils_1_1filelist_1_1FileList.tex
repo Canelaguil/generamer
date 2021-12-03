@@ -1,0 +1,175 @@
+\hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList}{}\section{setuptools.\+\_\+distutils.\+filelist.\+File\+List Class Reference}
+\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList}\index{setuptools.\+\_\+distutils.\+filelist.\+File\+List@{setuptools.\+\_\+distutils.\+filelist.\+File\+List}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a0c88f59650d62464970a15a6ef558594}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, warn=None, \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a103c77716abc8d6da34630a969d4c233}{debug\+\_\+print}=None)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a0d0864c8fa5b5e82f554a639bfa6ab02}{set\+\_\+allfiles} (self, \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a1819dd24956f65d94ba94baea3f548c4}{allfiles})
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_ae50770e059c38abacfd2d4844f5cf3da}{findall} (self, dir=os.\+curdir)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a103c77716abc8d6da34630a969d4c233}{debug\+\_\+print} (self, msg)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_ad959a965cf3f8da9546d718ce7a15d9d}{append} (self, item)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a857522eaf9de6edd66fc3937bf0af493}{extend} (self, items)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a8adcd030f9caf347455b26063b2aebf5}{sort} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a834d31a5a36d8a9db6b760c4c0735e97}{remove\+\_\+duplicates} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a9aa34753e0a1f54ab3e31035c1f9afa9}{process\+\_\+template\+\_\+line} (self, line)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a91dd74782ce2e90e381652cc4b51cf7a}{include\+\_\+pattern} (self, pattern, anchor=1, prefix=None, is\+\_\+regex=0)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a87ae6b570df4626843c43720164b87d2}{exclude\+\_\+pattern} (self, pattern, anchor=1, prefix=None, is\+\_\+regex=0)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a1819dd24956f65d94ba94baea3f548c4}{allfiles}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a5ef6a0159293f5a4ce1febf8a41891f0}{files}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A list of files built by on exploring the filesystem and filtered by
+applying various patterns to what we find there.
+
+Instance attributes:
+  dir
+    directory from which files will be taken -- only used if
+    'allfiles' not supplied to constructor
+  files
+    list of filenames currently being built/filtered/manipulated
+  allfiles
+    complete list of files under consideration (ie. without any
+    filtering applied)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a0c88f59650d62464970a15a6ef558594}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a0c88f59650d62464970a15a6ef558594}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{warn = {\ttfamily None},  }\item[{}]{debug\+\_\+print = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_ad959a965cf3f8da9546d718ce7a15d9d}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_ad959a965cf3f8da9546d718ce7a15d9d}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!append@{append}}
+\index{append@{append}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+append (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{item }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a103c77716abc8d6da34630a969d4c233}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a103c77716abc8d6da34630a969d4c233}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!debug\+\_\+print@{debug\+\_\+print}}
+\index{debug\+\_\+print@{debug\+\_\+print}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{debug\+\_\+print()}{debug\_print()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+debug\+\_\+print (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{msg }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Print 'msg' to stdout if the global DEBUG (taken from the
+DISTUTILS_DEBUG environment variable) flag is true.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a87ae6b570df4626843c43720164b87d2}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a87ae6b570df4626843c43720164b87d2}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!exclude\+\_\+pattern@{exclude\+\_\+pattern}}
+\index{exclude\+\_\+pattern@{exclude\+\_\+pattern}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{exclude\+\_\+pattern()}{exclude\_pattern()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+exclude\+\_\+pattern (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pattern,  }\item[{}]{anchor = {\ttfamily 1},  }\item[{}]{prefix = {\ttfamily None},  }\item[{}]{is\+\_\+regex = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove strings (presumably filenames) from 'files' that match
+'pattern'.  Other parameters are the same as for
+'include_pattern()', above.
+The list 'self.files' is modified in place.
+Return True if files are found, False otherwise.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a857522eaf9de6edd66fc3937bf0af493}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a857522eaf9de6edd66fc3937bf0af493}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!extend@{extend}}
+\index{extend@{extend}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{extend()}{extend()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+extend (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{items }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_ae50770e059c38abacfd2d4844f5cf3da}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_ae50770e059c38abacfd2d4844f5cf3da}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!findall@{findall}}
+\index{findall@{findall}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{findall()}{findall()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+findall (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dir = {\ttfamily os.curdir} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a91dd74782ce2e90e381652cc4b51cf7a}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a91dd74782ce2e90e381652cc4b51cf7a}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!include\+\_\+pattern@{include\+\_\+pattern}}
+\index{include\+\_\+pattern@{include\+\_\+pattern}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{include\+\_\+pattern()}{include\_pattern()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+include\+\_\+pattern (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pattern,  }\item[{}]{anchor = {\ttfamily 1},  }\item[{}]{prefix = {\ttfamily None},  }\item[{}]{is\+\_\+regex = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Select strings (presumably filenames) from 'self.files' that
+match 'pattern', a Unix-style wildcard (glob) pattern.  Patterns
+are not quite the same as implemented by the 'fnmatch' module: '*'
+and '?'  match non-special characters, where "special" is platform-
+dependent: slash on Unix; colon, slash, and backslash on
+DOS/Windows; and colon on Mac OS.
+
+If 'anchor' is true (the default), then the pattern match is more
+stringent: "*.py" will match "foo.py" but not "foo/bar.py".  If
+'anchor' is false, both of these will match.
+
+If 'prefix' is supplied, then only filenames starting with 'prefix'
+(itself a pattern) and ending with 'pattern', with anything in between
+them, will match.  'anchor' is ignored in this case.
+
+If 'is_regex' is true, 'anchor' and 'prefix' are ignored, and
+'pattern' is assumed to be either a string containing a regex or a
+regex object -- no translation is done, the regex is just compiled
+and used as-is.
+
+Selected strings will be added to self.files.
+
+Return True if files are found, False otherwise.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a9aa34753e0a1f54ab3e31035c1f9afa9}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a9aa34753e0a1f54ab3e31035c1f9afa9}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!process\+\_\+template\+\_\+line@{process\+\_\+template\+\_\+line}}
+\index{process\+\_\+template\+\_\+line@{process\+\_\+template\+\_\+line}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{process\+\_\+template\+\_\+line()}{process\_template\_line()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+process\+\_\+template\+\_\+line (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{line }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a834d31a5a36d8a9db6b760c4c0735e97}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a834d31a5a36d8a9db6b760c4c0735e97}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!remove\+\_\+duplicates@{remove\+\_\+duplicates}}
+\index{remove\+\_\+duplicates@{remove\+\_\+duplicates}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{remove\+\_\+duplicates()}{remove\_duplicates()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+remove\+\_\+duplicates (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a0d0864c8fa5b5e82f554a639bfa6ab02}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a0d0864c8fa5b5e82f554a639bfa6ab02}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!set\+\_\+allfiles@{set\+\_\+allfiles}}
+\index{set\+\_\+allfiles@{set\+\_\+allfiles}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{set\+\_\+allfiles()}{set\_allfiles()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+set\+\_\+allfiles (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{allfiles }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a8adcd030f9caf347455b26063b2aebf5}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a8adcd030f9caf347455b26063b2aebf5}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!sort@{sort}}
+\index{sort@{sort}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+sort (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a1819dd24956f65d94ba94baea3f548c4}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a1819dd24956f65d94ba94baea3f548c4}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!allfiles@{allfiles}}
+\index{allfiles@{allfiles}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{allfiles}{allfiles}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+allfiles}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a5ef6a0159293f5a4ce1febf8a41891f0}\label{classsetuptools_1_1__distutils_1_1filelist_1_1FileList_a5ef6a0159293f5a4ce1febf8a41891f0}} 
+\index{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}!files@{files}}
+\index{files@{files}!setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List@{setuptools\+::\+\_\+distutils\+::filelist\+::\+File\+List}}
+\subsubsection{\texorpdfstring{files}{files}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+filelist.\+File\+List.\+files}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+distutils/\hyperlink{filelist_8py}{filelist.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,173 @@
+\hypertarget{classmatplotlib_1_1ticker_1_1LogitFormatter}{}\section{matplotlib.\+ticker.\+Logit\+Formatter Class Reference}
+\label{classmatplotlib_1_1ticker_1_1LogitFormatter}\index{matplotlib.\+ticker.\+Logit\+Formatter@{matplotlib.\+ticker.\+Logit\+Formatter}}
+
+
+Inheritance diagram for matplotlib.\+ticker.\+Logit\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1ticker_1_1LogitFormatter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+ticker.\+Logit\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1ticker_1_1LogitFormatter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogitFormatter_a2183bcd411372f9df66cd49fad3ccca7}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1ticker_1_1LogitFormatter_a06a8cecbc20660d3c48cff86356eb835}{use\+\_\+overline}=False, one\+\_\+half=r\char`\"{}\textbackslash{}ac\{1\}\{2\}\char`\"{}, minor=False, minor\+\_\+threshold=25, minor\+\_\+number=6)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogitFormatter_a06a8cecbc20660d3c48cff86356eb835}{use\+\_\+overline} (self, use\+\_\+overline)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogitFormatter_a65fc194bf13642e9f72098b07ffc2233}{set\+\_\+one\+\_\+half} (self, one\+\_\+half)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogitFormatter_a715a09ef25cd17dd1f09bb1ee80be3df}{set\+\_\+minor\+\_\+threshold} (self, minor\+\_\+threshold)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogitFormatter_ab9bf9643850834554b42f009493c1f80}{set\+\_\+minor\+\_\+number} (self, minor\+\_\+number)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogitFormatter_a17bb706d812121d4007b3a94a336b380}{set\+\_\+locs} (self, \hyperlink{classmatplotlib_1_1ticker_1_1LogitFormatter_a9aec1538b923c7a83ce5269964c33940}{locs})
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogitFormatter_ad7dcb2c5b656b3ec474f5ed19872c403}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, x, pos=None)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogitFormatter_a99b6283e713459e69d328fb3b380e5f9}{format\+\_\+data\+\_\+short} (self, value)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1LogitFormatter_a9aec1538b923c7a83ce5269964c33940}{locs}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Probability formatter (using Math text).
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogitFormatter_a2183bcd411372f9df66cd49fad3ccca7}\label{classmatplotlib_1_1ticker_1_1LogitFormatter_a2183bcd411372f9df66cd49fad3ccca7}} 
+\index{matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Logit\+Formatter.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{use\+\_\+overline = {\ttfamily False},  }\item[{}]{one\+\_\+half = {\ttfamily r\char`\"{}\textbackslash{}frac\{1\}\{2\}\char`\"{}},  }\item[{}]{minor = {\ttfamily False},  }\item[{}]{minor\+\_\+threshold = {\ttfamily 25},  }\item[{}]{minor\+\_\+number = {\ttfamily 6} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+use_overline : bool, default: False
+    If x > 1/2, with x = 1-v, indicate if x should be displayed as
+    $\overline{v}$. The default is to display $1-v$.
+
+one_half : str, default: r"\frac{1}{2}"
+    The string used to represent 1/2.
+
+minor : bool, default: False
+    Indicate if the formatter is formatting minor ticks or not.
+    Basically minor ticks are not labelled, except when only few ticks
+    are provided, ticks with most space with neighbor ticks are
+    labelled. See other parameters to change the default behavior.
+
+minor_threshold : int, default: 25
+    Maximum number of locs for labelling some minor ticks. This
+    parameter have no effect if minor is False.
+
+minor_number : int, default: 6
+    Number of ticks which are labelled when the number of ticks is
+    below the threshold.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogitFormatter_ad7dcb2c5b656b3ec474f5ed19872c403}\label{classmatplotlib_1_1ticker_1_1LogitFormatter_ad7dcb2c5b656b3ec474f5ed19872c403}} 
+\index{matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Logit\+Formatter.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{pos = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogitFormatter_a99b6283e713459e69d328fb3b380e5f9}\label{classmatplotlib_1_1ticker_1_1LogitFormatter_a99b6283e713459e69d328fb3b380e5f9}} 
+\index{matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}!format\+\_\+data\+\_\+short@{format\+\_\+data\+\_\+short}}
+\index{format\+\_\+data\+\_\+short@{format\+\_\+data\+\_\+short}!matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}}
+\subsubsection{\texorpdfstring{format\+\_\+data\+\_\+short()}{format\_data\_short()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Logit\+Formatter.\+format\+\_\+data\+\_\+short (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogitFormatter_a17bb706d812121d4007b3a94a336b380}\label{classmatplotlib_1_1ticker_1_1LogitFormatter_a17bb706d812121d4007b3a94a336b380}} 
+\index{matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}!set\+\_\+locs@{set\+\_\+locs}}
+\index{set\+\_\+locs@{set\+\_\+locs}!matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}}
+\subsubsection{\texorpdfstring{set\+\_\+locs()}{set\_locs()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Logit\+Formatter.\+set\+\_\+locs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{locs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogitFormatter_ab9bf9643850834554b42f009493c1f80}\label{classmatplotlib_1_1ticker_1_1LogitFormatter_ab9bf9643850834554b42f009493c1f80}} 
+\index{matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}!set\+\_\+minor\+\_\+number@{set\+\_\+minor\+\_\+number}}
+\index{set\+\_\+minor\+\_\+number@{set\+\_\+minor\+\_\+number}!matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}}
+\subsubsection{\texorpdfstring{set\+\_\+minor\+\_\+number()}{set\_minor\_number()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Logit\+Formatter.\+set\+\_\+minor\+\_\+number (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{minor\+\_\+number }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the number of minor ticks to label when some minor ticks are
+labelled.
+
+Parameters
+----------
+minor_number : int
+    Number of ticks which are labelled when the number of ticks is
+    below the threshold.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogitFormatter_a715a09ef25cd17dd1f09bb1ee80be3df}\label{classmatplotlib_1_1ticker_1_1LogitFormatter_a715a09ef25cd17dd1f09bb1ee80be3df}} 
+\index{matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}!set\+\_\+minor\+\_\+threshold@{set\+\_\+minor\+\_\+threshold}}
+\index{set\+\_\+minor\+\_\+threshold@{set\+\_\+minor\+\_\+threshold}!matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}}
+\subsubsection{\texorpdfstring{set\+\_\+minor\+\_\+threshold()}{set\_minor\_threshold()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Logit\+Formatter.\+set\+\_\+minor\+\_\+threshold (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{minor\+\_\+threshold }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the threshold for labelling minors ticks.
+
+Parameters
+----------
+minor_threshold : int
+    Maximum number of locations for labelling some minor ticks. This
+    parameter have no effect if minor is False.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogitFormatter_a65fc194bf13642e9f72098b07ffc2233}\label{classmatplotlib_1_1ticker_1_1LogitFormatter_a65fc194bf13642e9f72098b07ffc2233}} 
+\index{matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}!set\+\_\+one\+\_\+half@{set\+\_\+one\+\_\+half}}
+\index{set\+\_\+one\+\_\+half@{set\+\_\+one\+\_\+half}!matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}}
+\subsubsection{\texorpdfstring{set\+\_\+one\+\_\+half()}{set\_one\_half()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Logit\+Formatter.\+set\+\_\+one\+\_\+half (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{one\+\_\+half }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the way one half is displayed.
+
+one_half : str, default: r"\frac{1}{2}"
+    The string used to represent 1/2.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogitFormatter_a06a8cecbc20660d3c48cff86356eb835}\label{classmatplotlib_1_1ticker_1_1LogitFormatter_a06a8cecbc20660d3c48cff86356eb835}} 
+\index{matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}!use\+\_\+overline@{use\+\_\+overline}}
+\index{use\+\_\+overline@{use\+\_\+overline}!matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}}
+\subsubsection{\texorpdfstring{use\+\_\+overline()}{use\_overline()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Logit\+Formatter.\+use\+\_\+overline (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{use\+\_\+overline }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Switch display mode with overline for labelling p>1/2.
+
+Parameters
+----------
+use_overline : bool, default: False
+    If x > 1/2, with x = 1-v, indicate if x should be displayed as
+    $\overline{v}$. The default is to display $1-v$.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogitFormatter_a9aec1538b923c7a83ce5269964c33940}\label{classmatplotlib_1_1ticker_1_1LogitFormatter_a9aec1538b923c7a83ce5269964c33940}} 
+\index{matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}!locs@{locs}}
+\index{locs@{locs}!matplotlib\+::ticker\+::\+Logit\+Formatter@{matplotlib\+::ticker\+::\+Logit\+Formatter}}
+\subsubsection{\texorpdfstring{locs}{locs}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Logit\+Formatter.\+locs}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{ticker_8py}{ticker.\+py}\end{DoxyCompactItemize}

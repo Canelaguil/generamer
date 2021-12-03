@@ -1,0 +1,100 @@
+\hypertarget{classmatplotlib_1_1scale_1_1FuncTransform}{}\section{matplotlib.\+scale.\+Func\+Transform Class Reference}
+\label{classmatplotlib_1_1scale_1_1FuncTransform}\index{matplotlib.\+scale.\+Func\+Transform@{matplotlib.\+scale.\+Func\+Transform}}
+
+
+Inheritance diagram for matplotlib.\+scale.\+Func\+Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmatplotlib_1_1scale_1_1FuncTransform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+scale.\+Func\+Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmatplotlib_1_1scale_1_1FuncTransform__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1FuncTransform_af218e5bca8d3a9e6a37af155367192f3}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, forward, inverse)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1FuncTransform_ae927de7ab1725cf98fa8e21df13c74b9}{transform\+\_\+non\+\_\+affine} (self, values)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1FuncTransform_a84aff6aa144ebf8642a34243177b766f}{inverted} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1FuncTransform_ad8d6cd365042d469e74937caaba2c1e2}{input\+\_\+dims}
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1FuncTransform_a6612724ca3327805cb103f4879ca7c3c}{output\+\_\+dims}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A simple transform that takes and arbitrary function for the
+forward and inverse transform.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1FuncTransform_af218e5bca8d3a9e6a37af155367192f3}\label{classmatplotlib_1_1scale_1_1FuncTransform_af218e5bca8d3a9e6a37af155367192f3}} 
+\index{matplotlib\+::scale\+::\+Func\+Transform@{matplotlib\+::scale\+::\+Func\+Transform}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::scale\+::\+Func\+Transform@{matplotlib\+::scale\+::\+Func\+Transform}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Func\+Transform.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{forward,  }\item[{}]{inverse }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+forward : callable
+    The forward function for the transform.  This function must have
+    an inverse and, for best behavior, be monotonic.
+    It must have the signature::
+
+       def forward(values: array-like) -> array-like
+
+inverse : callable
+    The inverse of the forward function.  Signature as ``forward``.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1FuncTransform_a84aff6aa144ebf8642a34243177b766f}\label{classmatplotlib_1_1scale_1_1FuncTransform_a84aff6aa144ebf8642a34243177b766f}} 
+\index{matplotlib\+::scale\+::\+Func\+Transform@{matplotlib\+::scale\+::\+Func\+Transform}!inverted@{inverted}}
+\index{inverted@{inverted}!matplotlib\+::scale\+::\+Func\+Transform@{matplotlib\+::scale\+::\+Func\+Transform}}
+\subsubsection{\texorpdfstring{inverted()}{inverted()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Func\+Transform.\+inverted (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1FuncTransform_ae927de7ab1725cf98fa8e21df13c74b9}\label{classmatplotlib_1_1scale_1_1FuncTransform_ae927de7ab1725cf98fa8e21df13c74b9}} 
+\index{matplotlib\+::scale\+::\+Func\+Transform@{matplotlib\+::scale\+::\+Func\+Transform}!transform\+\_\+non\+\_\+affine@{transform\+\_\+non\+\_\+affine}}
+\index{transform\+\_\+non\+\_\+affine@{transform\+\_\+non\+\_\+affine}!matplotlib\+::scale\+::\+Func\+Transform@{matplotlib\+::scale\+::\+Func\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+non\+\_\+affine()}{transform\_non\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Func\+Transform.\+transform\+\_\+non\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{values }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1FuncTransform_ad8d6cd365042d469e74937caaba2c1e2}\label{classmatplotlib_1_1scale_1_1FuncTransform_ad8d6cd365042d469e74937caaba2c1e2}} 
+\index{matplotlib\+::scale\+::\+Func\+Transform@{matplotlib\+::scale\+::\+Func\+Transform}!input\+\_\+dims@{input\+\_\+dims}}
+\index{input\+\_\+dims@{input\+\_\+dims}!matplotlib\+::scale\+::\+Func\+Transform@{matplotlib\+::scale\+::\+Func\+Transform}}
+\subsubsection{\texorpdfstring{input\+\_\+dims}{input\_dims}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Func\+Transform.\+input\+\_\+dims\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1FuncTransform_a6612724ca3327805cb103f4879ca7c3c}\label{classmatplotlib_1_1scale_1_1FuncTransform_a6612724ca3327805cb103f4879ca7c3c}} 
+\index{matplotlib\+::scale\+::\+Func\+Transform@{matplotlib\+::scale\+::\+Func\+Transform}!output\+\_\+dims@{output\+\_\+dims}}
+\index{output\+\_\+dims@{output\+\_\+dims}!matplotlib\+::scale\+::\+Func\+Transform@{matplotlib\+::scale\+::\+Func\+Transform}}
+\subsubsection{\texorpdfstring{output\+\_\+dims}{output\_dims}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Func\+Transform.\+output\+\_\+dims\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{scale_8py}{scale.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,154 @@
+\hypertarget{namespacemplot3d_1_1art3d}{}\section{mplot3d.\+art3d Namespace Reference}
+\label{namespacemplot3d_1_1art3d}\index{mplot3d.\+art3d@{mplot3d.\+art3d}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmplot3d_1_1art3d_1_1Line3D}{Line3D}
+\item 
+class \hyperlink{classmplot3d_1_1art3d_1_1Line3DCollection}{Line3\+D\+Collection}
+\item 
+class \hyperlink{classmplot3d_1_1art3d_1_1Patch3D}{Patch3D}
+\item 
+class \hyperlink{classmplot3d_1_1art3d_1_1Patch3DCollection}{Patch3\+D\+Collection}
+\item 
+class \hyperlink{classmplot3d_1_1art3d_1_1Path3DCollection}{Path3\+D\+Collection}
+\item 
+class \hyperlink{classmplot3d_1_1art3d_1_1PathPatch3D}{Path\+Patch3D}
+\item 
+class \hyperlink{classmplot3d_1_1art3d_1_1Poly3DCollection}{Poly3\+D\+Collection}
+\item 
+class \hyperlink{classmplot3d_1_1art3d_1_1Text3D}{Text3D}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacemplot3d_1_1art3d_af8006fadbd6eb70fb551e3b82205591d}{get\+\_\+dir\+\_\+vector} (zdir)
+\item 
+def \hyperlink{namespacemplot3d_1_1art3d_a840e0bb22665293a0de891ffeb8f7d77}{text\+\_\+2d\+\_\+to\+\_\+3d} (obj, z=0, zdir=\textquotesingle{}z\textquotesingle{})
+\item 
+def \hyperlink{namespacemplot3d_1_1art3d_ab5414deecc5c73ab6130fee1cbd5528f}{line\+\_\+2d\+\_\+to\+\_\+3d} (line, zs=0, zdir=\textquotesingle{}z\textquotesingle{})
+\item 
+def \hyperlink{namespacemplot3d_1_1art3d_a1d140cd224fc1c70909b879baf17eac2}{line\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d} (col, zs=0, zdir=\textquotesingle{}z\textquotesingle{})
+\item 
+def \hyperlink{namespacemplot3d_1_1art3d_aaa3aaa8baa36dfff3aed3f84dc126aa5}{patch\+\_\+2d\+\_\+to\+\_\+3d} (patch, z=0, zdir=\textquotesingle{}z\textquotesingle{})
+\item 
+def \hyperlink{namespacemplot3d_1_1art3d_a7535eb7d41ebf54ac9eb7d90c1412c3a}{pathpatch\+\_\+2d\+\_\+to\+\_\+3d} (pathpatch, z=0, zdir=\textquotesingle{}z\textquotesingle{})
+\item 
+def \hyperlink{namespacemplot3d_1_1art3d_adda6f5823961c62812d0ac5dedabf63e}{patch\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d} (col, zs=0, zdir=\textquotesingle{}z\textquotesingle{}, depthshade=True)
+\item 
+def \hyperlink{namespacemplot3d_1_1art3d_aec62e64d4d408e7099b314aba960ad18}{poly\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d} (col, zs=0, zdir=\textquotesingle{}z\textquotesingle{})
+\item 
+def \hyperlink{namespacemplot3d_1_1art3d_ab3ce3a08ef64e17416f8ed492862e739}{juggle\+\_\+axes} (xs, ys, zs, zdir)
+\item 
+def \hyperlink{namespacemplot3d_1_1art3d_af7d66f4517b1fa207956e9ec72ab26d1}{rotate\+\_\+axes} (xs, ys, zs, zdir)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacemplot3d_1_1art3d_af8006fadbd6eb70fb551e3b82205591d}\label{namespacemplot3d_1_1art3d_af8006fadbd6eb70fb551e3b82205591d}} 
+\index{mplot3d\+::art3d@{mplot3d\+::art3d}!get\+\_\+dir\+\_\+vector@{get\+\_\+dir\+\_\+vector}}
+\index{get\+\_\+dir\+\_\+vector@{get\+\_\+dir\+\_\+vector}!mplot3d\+::art3d@{mplot3d\+::art3d}}
+\subsubsection{\texorpdfstring{get\+\_\+dir\+\_\+vector()}{get\_dir\_vector()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+get\+\_\+dir\+\_\+vector (\begin{DoxyParamCaption}\item[{}]{zdir }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a direction vector.
+
+Parameters
+----------
+zdir : {'x', 'y', 'z', None, 3-tuple}
+    The direction. Possible values are:
+
+    - 'x': equivalent to (1, 0, 0)
+    - 'y': equivalent to (0, 1, 0)
+    - 'z': equivalent to (0, 0, 1)
+    - *None*: equivalent to (0, 0, 0)
+    - an iterable (x, y, z) is converted to a NumPy array, if not already
+
+Returns
+-------
+x, y, z : array-like
+    The direction vector.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemplot3d_1_1art3d_ab3ce3a08ef64e17416f8ed492862e739}\label{namespacemplot3d_1_1art3d_ab3ce3a08ef64e17416f8ed492862e739}} 
+\index{mplot3d\+::art3d@{mplot3d\+::art3d}!juggle\+\_\+axes@{juggle\+\_\+axes}}
+\index{juggle\+\_\+axes@{juggle\+\_\+axes}!mplot3d\+::art3d@{mplot3d\+::art3d}}
+\subsubsection{\texorpdfstring{juggle\+\_\+axes()}{juggle\_axes()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+juggle\+\_\+axes (\begin{DoxyParamCaption}\item[{}]{xs,  }\item[{}]{ys,  }\item[{}]{zs,  }\item[{}]{zdir }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reorder coordinates so that 2D xs, ys can be plotted in the plane
+orthogonal to zdir. zdir is normally x, y or z. However, if zdir
+starts with a '-' it is interpreted as a compensation for rotate_axes.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemplot3d_1_1art3d_ab5414deecc5c73ab6130fee1cbd5528f}\label{namespacemplot3d_1_1art3d_ab5414deecc5c73ab6130fee1cbd5528f}} 
+\index{mplot3d\+::art3d@{mplot3d\+::art3d}!line\+\_\+2d\+\_\+to\+\_\+3d@{line\+\_\+2d\+\_\+to\+\_\+3d}}
+\index{line\+\_\+2d\+\_\+to\+\_\+3d@{line\+\_\+2d\+\_\+to\+\_\+3d}!mplot3d\+::art3d@{mplot3d\+::art3d}}
+\subsubsection{\texorpdfstring{line\+\_\+2d\+\_\+to\+\_\+3d()}{line\_2d\_to\_3d()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+line\+\_\+2d\+\_\+to\+\_\+3d (\begin{DoxyParamCaption}\item[{}]{line,  }\item[{}]{zs = {\ttfamily 0},  }\item[{}]{zdir = {\ttfamily \textquotesingle{}z\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a 2D line to 3D.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemplot3d_1_1art3d_a1d140cd224fc1c70909b879baf17eac2}\label{namespacemplot3d_1_1art3d_a1d140cd224fc1c70909b879baf17eac2}} 
+\index{mplot3d\+::art3d@{mplot3d\+::art3d}!line\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d@{line\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d}}
+\index{line\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d@{line\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d}!mplot3d\+::art3d@{mplot3d\+::art3d}}
+\subsubsection{\texorpdfstring{line\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d()}{line\_collection\_2d\_to\_3d()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+line\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d (\begin{DoxyParamCaption}\item[{}]{col,  }\item[{}]{zs = {\ttfamily 0},  }\item[{}]{zdir = {\ttfamily \textquotesingle{}z\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a LineCollection to a Line3DCollection object.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemplot3d_1_1art3d_aaa3aaa8baa36dfff3aed3f84dc126aa5}\label{namespacemplot3d_1_1art3d_aaa3aaa8baa36dfff3aed3f84dc126aa5}} 
+\index{mplot3d\+::art3d@{mplot3d\+::art3d}!patch\+\_\+2d\+\_\+to\+\_\+3d@{patch\+\_\+2d\+\_\+to\+\_\+3d}}
+\index{patch\+\_\+2d\+\_\+to\+\_\+3d@{patch\+\_\+2d\+\_\+to\+\_\+3d}!mplot3d\+::art3d@{mplot3d\+::art3d}}
+\subsubsection{\texorpdfstring{patch\+\_\+2d\+\_\+to\+\_\+3d()}{patch\_2d\_to\_3d()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+patch\+\_\+2d\+\_\+to\+\_\+3d (\begin{DoxyParamCaption}\item[{}]{patch,  }\item[{}]{z = {\ttfamily 0},  }\item[{}]{zdir = {\ttfamily \textquotesingle{}z\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a Patch to a Patch3D object.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemplot3d_1_1art3d_adda6f5823961c62812d0ac5dedabf63e}\label{namespacemplot3d_1_1art3d_adda6f5823961c62812d0ac5dedabf63e}} 
+\index{mplot3d\+::art3d@{mplot3d\+::art3d}!patch\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d@{patch\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d}}
+\index{patch\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d@{patch\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d}!mplot3d\+::art3d@{mplot3d\+::art3d}}
+\subsubsection{\texorpdfstring{patch\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d()}{patch\_collection\_2d\_to\_3d()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+patch\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d (\begin{DoxyParamCaption}\item[{}]{col,  }\item[{}]{zs = {\ttfamily 0},  }\item[{}]{zdir = {\ttfamily \textquotesingle{}z\textquotesingle{}},  }\item[{}]{depthshade = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a :class:`~matplotlib.collections.PatchCollection` into a
+:class:`Patch3DCollection` object
+(or a :class:`~matplotlib.collections.PathCollection` into a
+:class:`Path3DCollection` object).
+
+Parameters
+----------
+za
+    The location or locations to place the patches in the collection along
+    the *zdir* axis. Default: 0.
+zdir
+    The axis in which to place the patches. Default: "z".
+depthshade
+    Whether to shade the patches to give a sense of depth. Default: *True*.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemplot3d_1_1art3d_a7535eb7d41ebf54ac9eb7d90c1412c3a}\label{namespacemplot3d_1_1art3d_a7535eb7d41ebf54ac9eb7d90c1412c3a}} 
+\index{mplot3d\+::art3d@{mplot3d\+::art3d}!pathpatch\+\_\+2d\+\_\+to\+\_\+3d@{pathpatch\+\_\+2d\+\_\+to\+\_\+3d}}
+\index{pathpatch\+\_\+2d\+\_\+to\+\_\+3d@{pathpatch\+\_\+2d\+\_\+to\+\_\+3d}!mplot3d\+::art3d@{mplot3d\+::art3d}}
+\subsubsection{\texorpdfstring{pathpatch\+\_\+2d\+\_\+to\+\_\+3d()}{pathpatch\_2d\_to\_3d()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+pathpatch\+\_\+2d\+\_\+to\+\_\+3d (\begin{DoxyParamCaption}\item[{}]{pathpatch,  }\item[{}]{z = {\ttfamily 0},  }\item[{}]{zdir = {\ttfamily \textquotesingle{}z\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a PathPatch to a PathPatch3D object.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemplot3d_1_1art3d_aec62e64d4d408e7099b314aba960ad18}\label{namespacemplot3d_1_1art3d_aec62e64d4d408e7099b314aba960ad18}} 
+\index{mplot3d\+::art3d@{mplot3d\+::art3d}!poly\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d@{poly\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d}}
+\index{poly\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d@{poly\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d}!mplot3d\+::art3d@{mplot3d\+::art3d}}
+\subsubsection{\texorpdfstring{poly\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d()}{poly\_collection\_2d\_to\_3d()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+poly\+\_\+collection\+\_\+2d\+\_\+to\+\_\+3d (\begin{DoxyParamCaption}\item[{}]{col,  }\item[{}]{zs = {\ttfamily 0},  }\item[{}]{zdir = {\ttfamily \textquotesingle{}z\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a PolyCollection to a Poly3DCollection object.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemplot3d_1_1art3d_af7d66f4517b1fa207956e9ec72ab26d1}\label{namespacemplot3d_1_1art3d_af7d66f4517b1fa207956e9ec72ab26d1}} 
+\index{mplot3d\+::art3d@{mplot3d\+::art3d}!rotate\+\_\+axes@{rotate\+\_\+axes}}
+\index{rotate\+\_\+axes@{rotate\+\_\+axes}!mplot3d\+::art3d@{mplot3d\+::art3d}}
+\subsubsection{\texorpdfstring{rotate\+\_\+axes()}{rotate\_axes()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+rotate\+\_\+axes (\begin{DoxyParamCaption}\item[{}]{xs,  }\item[{}]{ys,  }\item[{}]{zs,  }\item[{}]{zdir }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reorder coordinates so that the axes are rotated with zdir along
+the original z axis. Prepending the axis with a '-' does the
+inverse transform, so zdir can be x, -x, y, -y, z or -z
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemplot3d_1_1art3d_a840e0bb22665293a0de891ffeb8f7d77}\label{namespacemplot3d_1_1art3d_a840e0bb22665293a0de891ffeb8f7d77}} 
+\index{mplot3d\+::art3d@{mplot3d\+::art3d}!text\+\_\+2d\+\_\+to\+\_\+3d@{text\+\_\+2d\+\_\+to\+\_\+3d}}
+\index{text\+\_\+2d\+\_\+to\+\_\+3d@{text\+\_\+2d\+\_\+to\+\_\+3d}!mplot3d\+::art3d@{mplot3d\+::art3d}}
+\subsubsection{\texorpdfstring{text\+\_\+2d\+\_\+to\+\_\+3d()}{text\_2d\_to\_3d()}}
+{\footnotesize\ttfamily def mplot3d.\+art3d.\+text\+\_\+2d\+\_\+to\+\_\+3d (\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{z = {\ttfamily 0},  }\item[{}]{zdir = {\ttfamily \textquotesingle{}z\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a Text to a Text3D object.\end{DoxyVerb}
+ 

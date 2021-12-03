@@ -1,0 +1,124 @@
+\hypertarget{namespacenumpy_1_1core_1_1overrides}{}\section{numpy.\+core.\+overrides Namespace Reference}
+\label{namespacenumpy_1_1core_1_1overrides}\index{numpy.\+core.\+overrides@{numpy.\+core.\+overrides}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1overrides_a993f5a8f781a2b8e83a52737349ed80f}{set\+\_\+array\+\_\+function\+\_\+like\+\_\+doc} (public\+\_\+api)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1overrides_ab6b113a10534f8d0b1506da657c648af}{verify\+\_\+matching\+\_\+signatures} (implementation, dispatcher)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1overrides_a6c5301f4b04cbf4f35da7bc9ed3f9c73}{set\+\_\+module} (module)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1overrides_a1f1970e59f9a4e93ebdc06fcaaa3bb72}{array\+\_\+function\+\_\+dispatch} (dispatcher, module=None, verify=True, docs\+\_\+from\+\_\+dispatcher=False)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1overrides_a6eac64f23de359be7b5239e457ce253c}{array\+\_\+function\+\_\+from\+\_\+dispatcher} (implementation, module=None, verify=True, docs\+\_\+from\+\_\+dispatcher=True)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1overrides_a6f0d38d03fb38e7da160a12049419fe1}{A\+R\+R\+A\+Y\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+E\+N\+A\+B\+L\+ED}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1overrides_ac11b1b3bcfbf1f156c18c103abb17747}{array\+\_\+function\+\_\+like\+\_\+doc}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1overrides_a9253de10972f3734974a0a37adfa7cdd}{Arg\+Spec}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Implementation of __array_function__ overrides from NEP-18.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1overrides_a1f1970e59f9a4e93ebdc06fcaaa3bb72}\label{namespacenumpy_1_1core_1_1overrides_a1f1970e59f9a4e93ebdc06fcaaa3bb72}} 
+\index{numpy\+::core\+::overrides@{numpy\+::core\+::overrides}!array\+\_\+function\+\_\+dispatch@{array\+\_\+function\+\_\+dispatch}}
+\index{array\+\_\+function\+\_\+dispatch@{array\+\_\+function\+\_\+dispatch}!numpy\+::core\+::overrides@{numpy\+::core\+::overrides}}
+\subsubsection{\texorpdfstring{array\+\_\+function\+\_\+dispatch()}{array\_function\_dispatch()}}
+{\footnotesize\ttfamily def numpy.\+core.\+overrides.\+array\+\_\+function\+\_\+dispatch (\begin{DoxyParamCaption}\item[{}]{dispatcher,  }\item[{}]{module = {\ttfamily None},  }\item[{}]{verify = {\ttfamily True},  }\item[{}]{docs\+\_\+from\+\_\+dispatcher = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decorator for adding dispatch with the __array_function__ protocol.
+
+See NEP-18 for example usage.
+
+Parameters
+----------
+dispatcher : callable
+    Function that when called like ``dispatcher(*args, **kwargs)`` with
+    arguments from the NumPy function call returns an iterable of
+    array-like arguments to check for ``__array_function__``.
+module : str, optional
+    __module__ attribute to set on new function, e.g., ``module='numpy'``.
+    By default, module is copied from the decorated function.
+verify : bool, optional
+    If True, verify the that the signature of the dispatcher and decorated
+    function signatures match exactly: all required and optional arguments
+    should appear in order with the same names, but the default values for
+    all optional arguments should be ``None``. Only disable verification
+    if the dispatcher's signature needs to deviate for some particular
+    reason, e.g., because the function has a signature like
+    ``func(*args, **kwargs)``.
+docs_from_dispatcher : bool, optional
+    If True, copy docs from the dispatcher function onto the dispatched
+    function, rather than from the implementation. This is useful for
+    functions defined in C, which otherwise don't have docstrings.
+
+Returns
+-------
+Function suitable for decorating the implementation of a NumPy function.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1overrides_a6eac64f23de359be7b5239e457ce253c}\label{namespacenumpy_1_1core_1_1overrides_a6eac64f23de359be7b5239e457ce253c}} 
+\index{numpy\+::core\+::overrides@{numpy\+::core\+::overrides}!array\+\_\+function\+\_\+from\+\_\+dispatcher@{array\+\_\+function\+\_\+from\+\_\+dispatcher}}
+\index{array\+\_\+function\+\_\+from\+\_\+dispatcher@{array\+\_\+function\+\_\+from\+\_\+dispatcher}!numpy\+::core\+::overrides@{numpy\+::core\+::overrides}}
+\subsubsection{\texorpdfstring{array\+\_\+function\+\_\+from\+\_\+dispatcher()}{array\_function\_from\_dispatcher()}}
+{\footnotesize\ttfamily def numpy.\+core.\+overrides.\+array\+\_\+function\+\_\+from\+\_\+dispatcher (\begin{DoxyParamCaption}\item[{}]{implementation,  }\item[{}]{module = {\ttfamily None},  }\item[{}]{verify = {\ttfamily True},  }\item[{}]{docs\+\_\+from\+\_\+dispatcher = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Like array_function_dispatcher, but with function arguments flipped.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1overrides_a993f5a8f781a2b8e83a52737349ed80f}\label{namespacenumpy_1_1core_1_1overrides_a993f5a8f781a2b8e83a52737349ed80f}} 
+\index{numpy\+::core\+::overrides@{numpy\+::core\+::overrides}!set\+\_\+array\+\_\+function\+\_\+like\+\_\+doc@{set\+\_\+array\+\_\+function\+\_\+like\+\_\+doc}}
+\index{set\+\_\+array\+\_\+function\+\_\+like\+\_\+doc@{set\+\_\+array\+\_\+function\+\_\+like\+\_\+doc}!numpy\+::core\+::overrides@{numpy\+::core\+::overrides}}
+\subsubsection{\texorpdfstring{set\+\_\+array\+\_\+function\+\_\+like\+\_\+doc()}{set\_array\_function\_like\_doc()}}
+{\footnotesize\ttfamily def numpy.\+core.\+overrides.\+set\+\_\+array\+\_\+function\+\_\+like\+\_\+doc (\begin{DoxyParamCaption}\item[{}]{public\+\_\+api }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1overrides_a6c5301f4b04cbf4f35da7bc9ed3f9c73}\label{namespacenumpy_1_1core_1_1overrides_a6c5301f4b04cbf4f35da7bc9ed3f9c73}} 
+\index{numpy\+::core\+::overrides@{numpy\+::core\+::overrides}!set\+\_\+module@{set\+\_\+module}}
+\index{set\+\_\+module@{set\+\_\+module}!numpy\+::core\+::overrides@{numpy\+::core\+::overrides}}
+\subsubsection{\texorpdfstring{set\+\_\+module()}{set\_module()}}
+{\footnotesize\ttfamily def numpy.\+core.\+overrides.\+set\+\_\+module (\begin{DoxyParamCaption}\item[{}]{module }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decorator for overriding __module__ on a function or class.
+
+Example usage::
+
+    @set_module('numpy')
+    def example():
+        pass
+
+    assert example.__module__ == 'numpy'
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1overrides_ab6b113a10534f8d0b1506da657c648af}\label{namespacenumpy_1_1core_1_1overrides_ab6b113a10534f8d0b1506da657c648af}} 
+\index{numpy\+::core\+::overrides@{numpy\+::core\+::overrides}!verify\+\_\+matching\+\_\+signatures@{verify\+\_\+matching\+\_\+signatures}}
+\index{verify\+\_\+matching\+\_\+signatures@{verify\+\_\+matching\+\_\+signatures}!numpy\+::core\+::overrides@{numpy\+::core\+::overrides}}
+\subsubsection{\texorpdfstring{verify\+\_\+matching\+\_\+signatures()}{verify\_matching\_signatures()}}
+{\footnotesize\ttfamily def numpy.\+core.\+overrides.\+verify\+\_\+matching\+\_\+signatures (\begin{DoxyParamCaption}\item[{}]{implementation,  }\item[{}]{dispatcher }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Verify that a dispatcher function has the right signature.\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1overrides_a9253de10972f3734974a0a37adfa7cdd}\label{namespacenumpy_1_1core_1_1overrides_a9253de10972f3734974a0a37adfa7cdd}} 
+\index{numpy\+::core\+::overrides@{numpy\+::core\+::overrides}!Arg\+Spec@{Arg\+Spec}}
+\index{Arg\+Spec@{Arg\+Spec}!numpy\+::core\+::overrides@{numpy\+::core\+::overrides}}
+\subsubsection{\texorpdfstring{Arg\+Spec}{ArgSpec}}
+{\footnotesize\ttfamily numpy.\+core.\+overrides.\+Arg\+Spec}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1overrides_a6f0d38d03fb38e7da160a12049419fe1}\label{namespacenumpy_1_1core_1_1overrides_a6f0d38d03fb38e7da160a12049419fe1}} 
+\index{numpy\+::core\+::overrides@{numpy\+::core\+::overrides}!A\+R\+R\+A\+Y\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+E\+N\+A\+B\+L\+ED@{A\+R\+R\+A\+Y\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+E\+N\+A\+B\+L\+ED}}
+\index{A\+R\+R\+A\+Y\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+E\+N\+A\+B\+L\+ED@{A\+R\+R\+A\+Y\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+E\+N\+A\+B\+L\+ED}!numpy\+::core\+::overrides@{numpy\+::core\+::overrides}}
+\subsubsection{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+E\+N\+A\+B\+L\+ED}{ARRAY\_FUNCTION\_ENABLED}}
+{\footnotesize\ttfamily numpy.\+core.\+overrides.\+A\+R\+R\+A\+Y\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+E\+N\+A\+B\+L\+ED}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1overrides_ac11b1b3bcfbf1f156c18c103abb17747}\label{namespacenumpy_1_1core_1_1overrides_ac11b1b3bcfbf1f156c18c103abb17747}} 
+\index{numpy\+::core\+::overrides@{numpy\+::core\+::overrides}!array\+\_\+function\+\_\+like\+\_\+doc@{array\+\_\+function\+\_\+like\+\_\+doc}}
+\index{array\+\_\+function\+\_\+like\+\_\+doc@{array\+\_\+function\+\_\+like\+\_\+doc}!numpy\+::core\+::overrides@{numpy\+::core\+::overrides}}
+\subsubsection{\texorpdfstring{array\+\_\+function\+\_\+like\+\_\+doc}{array\_function\_like\_doc}}
+{\footnotesize\ttfamily numpy.\+core.\+overrides.\+array\+\_\+function\+\_\+like\+\_\+doc}
+

@@ -1,0 +1,117 @@
+\hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst}{}\section{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Match\+First Class Reference}
+\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst}\index{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Match\+First@{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Match\+First}}
+
+
+Inheritance diagram for pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Match\+First\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Match\+First\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_acc3d30ea535be38efbcf99066d89209c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1ParseExpression_ae9e07a06d183190717e964e7ff907363}{exprs}, savelist=False)
+\item 
+def \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_ae9b2ce37fba253237d80615c98f71b5f}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\item 
+def \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_a685ce1ceb8cb54316cced1e61638a85b}{\+\_\+\+\_\+ior\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_a2de89959b1bde892b75753caad1789ee}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_addab39b620dc0ddd580d497248827dd3}{check\+Recursion} (self, parse\+Element\+List)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_a9ab2320992630796ee7fdda75dbaeeeb}{may\+Return\+Empty}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_ad83e15622522a01209dc770db5fe54e6}{str\+Repr}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Requires that at least one C{ParseExpression} is found.
+If two expressions match, the first one listed is the one that will match.
+May be constructed using the C{'|'} operator.
+
+Example::
+    # construct MatchFirst using '|' operator
+    
+    # watch the order of expressions to match
+    number = Word(nums) | Combine(Word(nums) + '.' + Word(nums))
+    print(number.searchString("123 3.1416 789")) #  Fail! -> [['123'], ['3'], ['1416'], ['789']]
+
+    # put more selective expression first
+    number = Combine(Word(nums) + '.' + Word(nums)) | Word(nums)
+    print(number.searchString("123 3.1416 789")) #  Better -> [['123'], ['3.1416'], ['789']]
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_acc3d30ea535be38efbcf99066d89209c}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_acc3d30ea535be38efbcf99066d89209c}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Match\+First.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{exprs,  }\item[{}]{savelist = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_a685ce1ceb8cb54316cced1e61638a85b}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_a685ce1ceb8cb54316cced1e61638a85b}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}!\+\_\+\+\_\+ior\+\_\+\+\_\+@{\+\_\+\+\_\+ior\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+ior\+\_\+\+\_\+@{\+\_\+\+\_\+ior\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+ior\+\_\+\+\_\+()}{\_\_ior\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Match\+First.\+\_\+\+\_\+ior\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_a2de89959b1bde892b75753caad1789ee}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_a2de89959b1bde892b75753caad1789ee}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Match\+First.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_addab39b620dc0ddd580d497248827dd3}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_addab39b620dc0ddd580d497248827dd3}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}!check\+Recursion@{check\+Recursion}}
+\index{check\+Recursion@{check\+Recursion}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}}
+\subsubsection{\texorpdfstring{check\+Recursion()}{checkRecursion()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Match\+First.\+check\+Recursion (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{parse\+Element\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_ae9b2ce37fba253237d80615c98f71b5f}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_ae9b2ce37fba253237d80615c98f71b5f}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Match\+First.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_a9ab2320992630796ee7fdda75dbaeeeb}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_a9ab2320992630796ee7fdda75dbaeeeb}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Match\+First.\+may\+Return\+Empty}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_ad83e15622522a01209dc770db5fe54e6}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1MatchFirst_ad83e15622522a01209dc770db5fe54e6}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}!str\+Repr@{str\+Repr}}
+\index{str\+Repr@{str\+Repr}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Match\+First}}
+\subsubsection{\texorpdfstring{str\+Repr}{strRepr}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Match\+First.\+str\+Repr}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pkg\+\_\+resources/\+\_\+vendor/\hyperlink{pkg__resources_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

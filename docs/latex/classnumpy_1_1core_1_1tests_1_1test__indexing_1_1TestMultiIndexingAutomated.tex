@@ -1,0 +1,111 @@
+\hypertarget{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated}{}\section{numpy.\+core.\+tests.\+test\+\_\+indexing.\+Test\+Multi\+Indexing\+Automated Class Reference}
+\label{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated}\index{numpy.\+core.\+tests.\+test\+\_\+indexing.\+Test\+Multi\+Indexing\+Automated@{numpy.\+core.\+tests.\+test\+\_\+indexing.\+Test\+Multi\+Indexing\+Automated}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a8c5f355096c9aae6f677db5f7dc8bc92}{setup} (self)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_ae2145a2b695456a8f8c95964d48230e6}{test\+\_\+boolean} (self)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a53fe97978c6cb5b56ab337919346635f}{test\+\_\+multidim} (self)
+\item 
+def \hyperlink{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_ab5f38f06e7f114a08824a967e1c6d04f}{test\+\_\+1d} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a9b8cf096dcad6b41774ddefa30c70414}{a}
+\item 
+\hyperlink{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a878205ba5dd5b4f95cb4047f9e3be49b}{b}
+\item 
+\hyperlink{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a81a274e1e8a87850cd999b1e77924833}{complex\+\_\+indices}
+\item 
+\hyperlink{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_aa5d0ef566c5f3b6025f6d7d2d0b1166e}{simple\+\_\+indices}
+\item 
+\hyperlink{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a02eb4baf53b4a71ff974dfd7f0681649}{fill\+\_\+indices}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}These tests use code to mimic the C-Code indexing for selection.
+
+NOTE:
+
+    * This still lacks tests for complex item setting.
+    * If you change behavior of indexing, you might want to modify
+      these tests to try more combinations.
+    * Behavior was written to match numpy version 1.8. (though a
+      first version matched 1.7.)
+    * Only tuple indices are supported by the mimicking code.
+      (and tested as of writing this)
+    * Error types should match most of the time as long as there
+      is only one error. For multiple errors, what gets raised
+      will usually not be the same one. They are *not* tested.
+
+Update 2016-11-30: It is probably not worth maintaining this test
+indefinitely and it can be dropped if maintenance becomes a burden.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a8c5f355096c9aae6f677db5f7dc8bc92}\label{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a8c5f355096c9aae6f677db5f7dc8bc92}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}!setup@{setup}}
+\index{setup@{setup}!numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}}
+\subsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+indexing.\+Test\+Multi\+Indexing\+Automated.\+setup (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_ab5f38f06e7f114a08824a967e1c6d04f}\label{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_ab5f38f06e7f114a08824a967e1c6d04f}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}!test\+\_\+1d@{test\+\_\+1d}}
+\index{test\+\_\+1d@{test\+\_\+1d}!numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}}
+\subsubsection{\texorpdfstring{test\+\_\+1d()}{test\_1d()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+indexing.\+Test\+Multi\+Indexing\+Automated.\+test\+\_\+1d (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_ae2145a2b695456a8f8c95964d48230e6}\label{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_ae2145a2b695456a8f8c95964d48230e6}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}!test\+\_\+boolean@{test\+\_\+boolean}}
+\index{test\+\_\+boolean@{test\+\_\+boolean}!numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}}
+\subsubsection{\texorpdfstring{test\+\_\+boolean()}{test\_boolean()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+indexing.\+Test\+Multi\+Indexing\+Automated.\+test\+\_\+boolean (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a53fe97978c6cb5b56ab337919346635f}\label{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a53fe97978c6cb5b56ab337919346635f}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}!test\+\_\+multidim@{test\+\_\+multidim}}
+\index{test\+\_\+multidim@{test\+\_\+multidim}!numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}}
+\subsubsection{\texorpdfstring{test\+\_\+multidim()}{test\_multidim()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+indexing.\+Test\+Multi\+Indexing\+Automated.\+test\+\_\+multidim (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a9b8cf096dcad6b41774ddefa30c70414}\label{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a9b8cf096dcad6b41774ddefa30c70414}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}!a@{a}}
+\index{a@{a}!numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}}
+\subsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily numpy.\+core.\+tests.\+test\+\_\+indexing.\+Test\+Multi\+Indexing\+Automated.\+a}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a878205ba5dd5b4f95cb4047f9e3be49b}\label{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a878205ba5dd5b4f95cb4047f9e3be49b}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}!b@{b}}
+\index{b@{b}!numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}}
+\subsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily numpy.\+core.\+tests.\+test\+\_\+indexing.\+Test\+Multi\+Indexing\+Automated.\+b}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a81a274e1e8a87850cd999b1e77924833}\label{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a81a274e1e8a87850cd999b1e77924833}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}!complex\+\_\+indices@{complex\+\_\+indices}}
+\index{complex\+\_\+indices@{complex\+\_\+indices}!numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}}
+\subsubsection{\texorpdfstring{complex\+\_\+indices}{complex\_indices}}
+{\footnotesize\ttfamily numpy.\+core.\+tests.\+test\+\_\+indexing.\+Test\+Multi\+Indexing\+Automated.\+complex\+\_\+indices}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a02eb4baf53b4a71ff974dfd7f0681649}\label{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_a02eb4baf53b4a71ff974dfd7f0681649}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}!fill\+\_\+indices@{fill\+\_\+indices}}
+\index{fill\+\_\+indices@{fill\+\_\+indices}!numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}}
+\subsubsection{\texorpdfstring{fill\+\_\+indices}{fill\_indices}}
+{\footnotesize\ttfamily numpy.\+core.\+tests.\+test\+\_\+indexing.\+Test\+Multi\+Indexing\+Automated.\+fill\+\_\+indices}
+
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_aa5d0ef566c5f3b6025f6d7d2d0b1166e}\label{classnumpy_1_1core_1_1tests_1_1test__indexing_1_1TestMultiIndexingAutomated_aa5d0ef566c5f3b6025f6d7d2d0b1166e}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}!simple\+\_\+indices@{simple\+\_\+indices}}
+\index{simple\+\_\+indices@{simple\+\_\+indices}!numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated@{numpy\+::core\+::tests\+::test\+\_\+indexing\+::\+Test\+Multi\+Indexing\+Automated}}
+\subsubsection{\texorpdfstring{simple\+\_\+indices}{simple\_indices}}
+{\footnotesize\ttfamily numpy.\+core.\+tests.\+test\+\_\+indexing.\+Test\+Multi\+Indexing\+Automated.\+simple\+\_\+indices}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/core/tests/\hyperlink{test__indexing_8py}{test\+\_\+indexing.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,144 @@
+\hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized}{}\section{numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized Class Reference}
+\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized}\index{numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized@{numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a6cdd9fb0bb2817f59b25dea9f841d8f4}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, input, \hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a1107701ccce67924c8f473db0aa437e2}{doc\+\_\+func}=None)
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_ad58fb1474f5a2d5d6ec0682f2e1beac1}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, test\+\_\+func)
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_afbd31db21c4afb66f3f30485cacb4ac8}{param\+\_\+as\+\_\+nose\+\_\+tuple} (self, test\+\_\+self, func, num, p)
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a83ea62e3485af4f4b91426c5cdaa85d9}{assert\+\_\+not\+\_\+in\+\_\+testcase\+\_\+subclass} (self)
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_afab367d8a333ac80862e229b8f2551f3}{input\+\_\+as\+\_\+callable} (cls, input)
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a5383d6a1672201b4ebefbaed0915f3c2}{check\+\_\+input\+\_\+values} (cls, input\+\_\+values)
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a27ee6a4054e5c7a868190ad28a4d4c50}{expand} (cls, input, name\+\_\+func=None, \hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a1107701ccce67924c8f473db0aa437e2}{doc\+\_\+func}=None, legacy)
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a05d68a0910ac5bc5b1136ddad9c896a5}{param\+\_\+as\+\_\+standalone\+\_\+func} (cls, p, func, name)
+\item 
+def \hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_ab4333694f712e362a86e73564daef4eb}{to\+\_\+safe\+\_\+name} (cls, s)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a0c27d341ee3a2178eacd020326c02269}{get\+\_\+input}
+\item 
+\hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a1107701ccce67924c8f473db0aa437e2}{doc\+\_\+func}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Parameterize a test case::
+
+        class TestInt:
+            @parameterized([
+                ("A", 10),
+                ("F", 15),
+                param("10", 42, base=42)
+            ])
+            def test_int(self, input, expected, base=16):
+                actual = int(input, base=base)
+                assert_equal(actual, expected)
+
+        @parameterized([
+            (2, 3, 5)
+            (3, 5, 8),
+        ])
+        def test_add(a, b, expected):
+            assert_equal(a + b, expected)\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a6cdd9fb0bb2817f59b25dea9f841d8f4}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a6cdd9fb0bb2817f59b25dea9f841d8f4}} 
+\index{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{input,  }\item[{}]{doc\+\_\+func = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_ad58fb1474f5a2d5d6ec0682f2e1beac1}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_ad58fb1474f5a2d5d6ec0682f2e1beac1}} 
+\index{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{test\+\_\+func }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a83ea62e3485af4f4b91426c5cdaa85d9}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a83ea62e3485af4f4b91426c5cdaa85d9}} 
+\index{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}!assert\+\_\+not\+\_\+in\+\_\+testcase\+\_\+subclass@{assert\+\_\+not\+\_\+in\+\_\+testcase\+\_\+subclass}}
+\index{assert\+\_\+not\+\_\+in\+\_\+testcase\+\_\+subclass@{assert\+\_\+not\+\_\+in\+\_\+testcase\+\_\+subclass}!numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}}
+\subsubsection{\texorpdfstring{assert\+\_\+not\+\_\+in\+\_\+testcase\+\_\+subclass()}{assert\_not\_in\_testcase\_subclass()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized.\+assert\+\_\+not\+\_\+in\+\_\+testcase\+\_\+subclass (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a5383d6a1672201b4ebefbaed0915f3c2}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a5383d6a1672201b4ebefbaed0915f3c2}} 
+\index{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}!check\+\_\+input\+\_\+values@{check\+\_\+input\+\_\+values}}
+\index{check\+\_\+input\+\_\+values@{check\+\_\+input\+\_\+values}!numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}}
+\subsubsection{\texorpdfstring{check\+\_\+input\+\_\+values()}{check\_input\_values()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized.\+check\+\_\+input\+\_\+values (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{input\+\_\+values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a27ee6a4054e5c7a868190ad28a4d4c50}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a27ee6a4054e5c7a868190ad28a4d4c50}} 
+\index{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}!expand@{expand}}
+\index{expand@{expand}!numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}}
+\subsubsection{\texorpdfstring{expand()}{expand()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized.\+expand (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{input,  }\item[{}]{name\+\_\+func = {\ttfamily None},  }\item[{}]{doc\+\_\+func = {\ttfamily None},  }\item[{}]{legacy }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A "brute force" method of parameterizing test cases. Creates new
+    test cases and injects them into the namespace that the wrapped
+    function is being defined in. Useful for parameterizing tests in
+    subclasses of 'UnitTest', where Nose test generators don't work.
+
+    >>> @parameterized.expand([("foo", 1, 2)])
+    ... def test_add1(name, input, expected):
+    ...     actual = add1(input)
+    ...     assert_equal(actual, expected)
+    ...
+    >>> locals()
+    ... 'test_add1_foo_0': <function ...> ...
+    >>>\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_afab367d8a333ac80862e229b8f2551f3}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_afab367d8a333ac80862e229b8f2551f3}} 
+\index{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}!input\+\_\+as\+\_\+callable@{input\+\_\+as\+\_\+callable}}
+\index{input\+\_\+as\+\_\+callable@{input\+\_\+as\+\_\+callable}!numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}}
+\subsubsection{\texorpdfstring{input\+\_\+as\+\_\+callable()}{input\_as\_callable()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized.\+input\+\_\+as\+\_\+callable (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{input }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_afbd31db21c4afb66f3f30485cacb4ac8}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_afbd31db21c4afb66f3f30485cacb4ac8}} 
+\index{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}!param\+\_\+as\+\_\+nose\+\_\+tuple@{param\+\_\+as\+\_\+nose\+\_\+tuple}}
+\index{param\+\_\+as\+\_\+nose\+\_\+tuple@{param\+\_\+as\+\_\+nose\+\_\+tuple}!numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}}
+\subsubsection{\texorpdfstring{param\+\_\+as\+\_\+nose\+\_\+tuple()}{param\_as\_nose\_tuple()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized.\+param\+\_\+as\+\_\+nose\+\_\+tuple (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{test\+\_\+self,  }\item[{}]{func,  }\item[{}]{num,  }\item[{}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a05d68a0910ac5bc5b1136ddad9c896a5}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a05d68a0910ac5bc5b1136ddad9c896a5}} 
+\index{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}!param\+\_\+as\+\_\+standalone\+\_\+func@{param\+\_\+as\+\_\+standalone\+\_\+func}}
+\index{param\+\_\+as\+\_\+standalone\+\_\+func@{param\+\_\+as\+\_\+standalone\+\_\+func}!numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}}
+\subsubsection{\texorpdfstring{param\+\_\+as\+\_\+standalone\+\_\+func()}{param\_as\_standalone\_func()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized.\+param\+\_\+as\+\_\+standalone\+\_\+func (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{p,  }\item[{}]{func,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_ab4333694f712e362a86e73564daef4eb}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_ab4333694f712e362a86e73564daef4eb}} 
+\index{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}!to\+\_\+safe\+\_\+name@{to\+\_\+safe\+\_\+name}}
+\index{to\+\_\+safe\+\_\+name@{to\+\_\+safe\+\_\+name}!numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}}
+\subsubsection{\texorpdfstring{to\+\_\+safe\+\_\+name()}{to\_safe\_name()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized.\+to\+\_\+safe\+\_\+name (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a1107701ccce67924c8f473db0aa437e2}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a1107701ccce67924c8f473db0aa437e2}} 
+\index{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}!doc\+\_\+func@{doc\+\_\+func}}
+\index{doc\+\_\+func@{doc\+\_\+func}!numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}}
+\subsubsection{\texorpdfstring{doc\+\_\+func}{doc\_func}}
+{\footnotesize\ttfamily numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized.\+doc\+\_\+func}
+
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a0c27d341ee3a2178eacd020326c02269}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a0c27d341ee3a2178eacd020326c02269}} 
+\index{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}!get\+\_\+input@{get\+\_\+input}}
+\index{get\+\_\+input@{get\+\_\+input}!numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized@{numpy\+::testing\+::\+\_\+private\+::parameterized\+::parameterized}}
+\subsubsection{\texorpdfstring{get\+\_\+input}{get\_input}}
+{\footnotesize\ttfamily numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized.\+get\+\_\+input}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/testing/\+\_\+private/\hyperlink{parameterized_8py}{parameterized.\+py}\end{DoxyCompactItemize}

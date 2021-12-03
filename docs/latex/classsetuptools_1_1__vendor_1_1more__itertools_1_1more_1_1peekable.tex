@@ -1,0 +1,160 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable}{}\section{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+peekable Class Reference}
+\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable}\index{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+peekable@{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+peekable}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_a266d9ceb455a2762664b49d0a4dd6497}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, iterable)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_a036610b06e3a9235db4f9b073462deb5}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_af7e592856e4d088bcdb0894d0a9f500b}{\+\_\+\+\_\+bool\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_aa43a1b52c4f8dc9527b3eaa23f66582f}{peek} (self, default=\+\_\+marker)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_ab6bdf003955fee893e47e15f0bb85a5a}{prepend} (self, items)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_adb9a31f31c2d4aede835abf091887192}{\+\_\+\+\_\+next\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_ad3f156a7d03b9ec9d79760dbc2fd91d4}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, index)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Wrap an iterator to allow lookahead and prepending elements.
+
+Call :meth:`peek` on the result to get the value that will be returned
+by :func:`next`. This won't advance the iterator:
+
+    >>> p = peekable(['a', 'b'])
+    >>> p.peek()
+    'a'
+    >>> next(p)
+    'a'
+
+Pass :meth:`peek` a default value to return that instead of raising
+``StopIteration`` when the iterator is exhausted.
+
+    >>> p = peekable([])
+    >>> p.peek('hi')
+    'hi'
+
+peekables also offer a :meth:`prepend` method, which "inserts" items
+at the head of the iterable:
+
+    >>> p = peekable([1, 2, 3])
+    >>> p.prepend(10, 11, 12)
+    >>> next(p)
+    10
+    >>> p.peek()
+    11
+    >>> list(p)
+    [11, 12, 1, 2, 3]
+
+peekables can be indexed. Index 0 is the item that will be returned by
+:func:`next`, index 1 is the item after that, and so on:
+The values up to the given index will be cached.
+
+    >>> p = peekable(['a', 'b', 'c', 'd'])
+    >>> p[0]
+    'a'
+    >>> p[1]
+    'b'
+    >>> next(p)
+    'a'
+
+Negative indexes are supported, but be aware that they will cache the
+remaining items in the source iterator, which may require significant
+storage.
+
+To check whether a peekable is exhausted, check its truth value:
+
+    >>> p = peekable(['a', 'b'])
+    >>> if p:  # peekable has items
+    ...     list(p)
+    ['a', 'b']
+    >>> if not p:  # peekable is exhausted
+    ...     list(p)
+    []\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_a266d9ceb455a2762664b49d0a4dd6497}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_a266d9ceb455a2762664b49d0a4dd6497}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+peekable.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iterable }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_af7e592856e4d088bcdb0894d0a9f500b}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_af7e592856e4d088bcdb0894d0a9f500b}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}!\+\_\+\+\_\+bool\+\_\+\+\_\+@{\+\_\+\+\_\+bool\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+bool\+\_\+\+\_\+@{\+\_\+\+\_\+bool\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+bool\+\_\+\+\_\+()}{\_\_bool\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+peekable.\+\_\+\+\_\+bool\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_ad3f156a7d03b9ec9d79760dbc2fd91d4}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_ad3f156a7d03b9ec9d79760dbc2fd91d4}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+peekable.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_a036610b06e3a9235db4f9b073462deb5}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_a036610b06e3a9235db4f9b073462deb5}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+peekable.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_adb9a31f31c2d4aede835abf091887192}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_adb9a31f31c2d4aede835abf091887192}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}!\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+next\+\_\+\+\_\+()}{\_\_next\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+peekable.\+\_\+\+\_\+next\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_aa43a1b52c4f8dc9527b3eaa23f66582f}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_aa43a1b52c4f8dc9527b3eaa23f66582f}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}!peek@{peek}}
+\index{peek@{peek}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}}
+\subsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+peekable.\+peek (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{default = {\ttfamily \+\_\+marker} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the item that will be next returned from ``next()``.
+
+Return ``default`` if there are no items left. If ``default`` is not
+provided, raise ``StopIteration``.\end{DoxyVerb}
+ \mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_ab6bdf003955fee893e47e15f0bb85a5a}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1peekable_ab6bdf003955fee893e47e15f0bb85a5a}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}!prepend@{prepend}}
+\index{prepend@{prepend}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::peekable}}
+\subsubsection{\texorpdfstring{prepend()}{prepend()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+peekable.\+prepend (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{items }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Stack up items to be the next ones returned from ``next()`` or
+``self.peek()``. The items will be returned in
+first in, first out order::
+
+    >>> p = peekable([1, 2, 3])
+    >>> p.prepend(10, 11, 12)
+    >>> next(p)
+    10
+    >>> list(p)
+    [11, 12, 1, 2, 3]
+
+It is possible, by prepending items, to "resurrect" a peekable that
+previously raised ``StopIteration``.
+
+    >>> p = peekable([])
+    >>> next(p)
+    Traceback (most recent call last):
+      ...
+    StopIteration
+    >>> p.prepend(1)
+    >>> next(p)
+    1
+    >>> next(p)
+    Traceback (most recent call last):
+      ...
+    StopIteration\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/more\+\_\+itertools/\hyperlink{more_8py}{more.\+py}\end{DoxyCompactItemize}

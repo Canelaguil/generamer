@@ -1,0 +1,72 @@
+\hypertarget{classnumpy_1_1lib_1_1npyio_1_1BagObj}{}\section{numpy.\+lib.\+npyio.\+Bag\+Obj Class Reference}
+\label{classnumpy_1_1lib_1_1npyio_1_1BagObj}\index{numpy.\+lib.\+npyio.\+Bag\+Obj@{numpy.\+lib.\+npyio.\+Bag\+Obj}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1BagObj_a3945c91157103a4bd94288aff11cf65c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, obj)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1BagObj_aa6a98ffbeeebe6a1eb8d8a214cceaf8a}{\+\_\+\+\_\+getattribute\+\_\+\+\_\+} (self, key)
+\item 
+def \hyperlink{classnumpy_1_1lib_1_1npyio_1_1BagObj_aaa00f6ebdb940c991b9d28585f808854}{\+\_\+\+\_\+dir\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}BagObj(obj)
+
+Convert attribute look-ups to getitems on the object passed in.
+
+Parameters
+----------
+obj : class instance
+    Object on which attribute look-up is performed.
+
+Examples
+--------
+>>> from numpy.lib.npyio import BagObj as BO
+>>> class BagDemo:
+...     def __getitem__(self, key): # An instance of BagObj(BagDemo)
+...                                 # will call this method when any
+...                                 # attribute look-up is required
+...         result = "Doesn't matter what you want, "
+...         return result + "you're gonna get this"
+...
+>>> demo_obj = BagDemo()
+>>> bagobj = BO(demo_obj)
+>>> bagobj.hello_there
+"Doesn't matter what you want, you're gonna get this"
+>>> bagobj.I_can_be_anything
+"Doesn't matter what you want, you're gonna get this"\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1BagObj_a3945c91157103a4bd94288aff11cf65c}\label{classnumpy_1_1lib_1_1npyio_1_1BagObj_a3945c91157103a4bd94288aff11cf65c}} 
+\index{numpy\+::lib\+::npyio\+::\+Bag\+Obj@{numpy\+::lib\+::npyio\+::\+Bag\+Obj}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!numpy\+::lib\+::npyio\+::\+Bag\+Obj@{numpy\+::lib\+::npyio\+::\+Bag\+Obj}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Bag\+Obj.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1BagObj_aaa00f6ebdb940c991b9d28585f808854}\label{classnumpy_1_1lib_1_1npyio_1_1BagObj_aaa00f6ebdb940c991b9d28585f808854}} 
+\index{numpy\+::lib\+::npyio\+::\+Bag\+Obj@{numpy\+::lib\+::npyio\+::\+Bag\+Obj}!\+\_\+\+\_\+dir\+\_\+\+\_\+@{\+\_\+\+\_\+dir\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+dir\+\_\+\+\_\+@{\+\_\+\+\_\+dir\+\_\+\+\_\+}!numpy\+::lib\+::npyio\+::\+Bag\+Obj@{numpy\+::lib\+::npyio\+::\+Bag\+Obj}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dir\+\_\+\+\_\+()}{\_\_dir\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Bag\+Obj.\+\_\+\+\_\+dir\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Enables dir(bagobj) to list the files in an NpzFile.
+
+This also enables tab-completion in an interpreter or IPython.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1lib_1_1npyio_1_1BagObj_aa6a98ffbeeebe6a1eb8d8a214cceaf8a}\label{classnumpy_1_1lib_1_1npyio_1_1BagObj_aa6a98ffbeeebe6a1eb8d8a214cceaf8a}} 
+\index{numpy\+::lib\+::npyio\+::\+Bag\+Obj@{numpy\+::lib\+::npyio\+::\+Bag\+Obj}!\+\_\+\+\_\+getattribute\+\_\+\+\_\+@{\+\_\+\+\_\+getattribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getattribute\+\_\+\+\_\+@{\+\_\+\+\_\+getattribute\+\_\+\+\_\+}!numpy\+::lib\+::npyio\+::\+Bag\+Obj@{numpy\+::lib\+::npyio\+::\+Bag\+Obj}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getattribute\+\_\+\+\_\+()}{\_\_getattribute\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+npyio.\+Bag\+Obj.\+\_\+\+\_\+getattribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/numpy/lib/\hyperlink{npyio_8py}{npyio.\+py}\end{DoxyCompactItemize}

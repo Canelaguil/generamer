@@ -1,0 +1,93 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1dominating__set}{}\section{networkx.\+algorithms.\+approximation.\+dominating\+\_\+set Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1dominating__set}\index{networkx.\+algorithms.\+approximation.\+dominating\+\_\+set@{networkx.\+algorithms.\+approximation.\+dominating\+\_\+set}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1dominating__set_a5404da3f7c2e2af8fa3f63875171a1c2}{min\+\_\+weighted\+\_\+dominating\+\_\+set} (G, weight=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1approximation_1_1dominating__set_a3ae6f0613bd8caf029105533b436a1be}{min\+\_\+edge\+\_\+dominating\+\_\+set} (G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Functions for finding node and edge dominating sets.
+
+A `dominating set`_ for an undirected graph *G* with vertex set *V*
+and edge set *E* is a subset *D* of *V* such that every vertex not in
+*D* is adjacent to at least one member of *D*. An `edge dominating set`_
+is a subset *F* of *E* such that every edge not in *F* is
+incident to an endpoint of at least one edge in *F*.
+
+.. _dominating set: https://en.wikipedia.org/wiki/Dominating_set
+.. _edge dominating set: https://en.wikipedia.org/wiki/Edge_dominating_set\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1dominating__set_a3ae6f0613bd8caf029105533b436a1be}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1dominating__set_a3ae6f0613bd8caf029105533b436a1be}} 
+\index{networkx\+::algorithms\+::approximation\+::dominating\+\_\+set@{networkx\+::algorithms\+::approximation\+::dominating\+\_\+set}!min\+\_\+edge\+\_\+dominating\+\_\+set@{min\+\_\+edge\+\_\+dominating\+\_\+set}}
+\index{min\+\_\+edge\+\_\+dominating\+\_\+set@{min\+\_\+edge\+\_\+dominating\+\_\+set}!networkx\+::algorithms\+::approximation\+::dominating\+\_\+set@{networkx\+::algorithms\+::approximation\+::dominating\+\_\+set}}
+\subsubsection{\texorpdfstring{min\+\_\+edge\+\_\+dominating\+\_\+set()}{min\_edge\_dominating\_set()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+dominating\+\_\+set.\+min\+\_\+edge\+\_\+dominating\+\_\+set (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns minimum cardinality edge dominating set.
+
+Parameters
+----------
+G : NetworkX graph
+  Undirected graph
+
+Returns
+-------
+min_edge_dominating_set : set
+  Returns a set of dominating edges whose size is no more than 2 * OPT.
+
+Notes
+-----
+The algorithm computes an approximate solution to the edge dominating set
+problem. The result is no more than 2 * OPT in terms of size of the set.
+Runtime of the algorithm is $O(|E|)$.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1approximation_1_1dominating__set_a5404da3f7c2e2af8fa3f63875171a1c2}\label{namespacenetworkx_1_1algorithms_1_1approximation_1_1dominating__set_a5404da3f7c2e2af8fa3f63875171a1c2}} 
+\index{networkx\+::algorithms\+::approximation\+::dominating\+\_\+set@{networkx\+::algorithms\+::approximation\+::dominating\+\_\+set}!min\+\_\+weighted\+\_\+dominating\+\_\+set@{min\+\_\+weighted\+\_\+dominating\+\_\+set}}
+\index{min\+\_\+weighted\+\_\+dominating\+\_\+set@{min\+\_\+weighted\+\_\+dominating\+\_\+set}!networkx\+::algorithms\+::approximation\+::dominating\+\_\+set@{networkx\+::algorithms\+::approximation\+::dominating\+\_\+set}}
+\subsubsection{\texorpdfstring{min\+\_\+weighted\+\_\+dominating\+\_\+set()}{min\_weighted\_dominating\_set()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+approximation.\+dominating\+\_\+set.\+min\+\_\+weighted\+\_\+dominating\+\_\+set (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a dominating set that approximates the minimum weight node
+dominating set.
+
+Parameters
+----------
+G : NetworkX graph
+    Undirected graph.
+
+weight : string
+    The node attribute storing the weight of an node. If provided,
+    the node attribute with this key must be a number for each
+    node. If not provided, each node is assumed to have weight one.
+
+Returns
+-------
+min_weight_dominating_set : set
+    A set of nodes, the sum of whose weights is no more than `(\log
+    w(V)) w(V^*)`, where `w(V)` denotes the sum of the weights of
+    each node in the graph and `w(V^*)` denotes the sum of the
+    weights of each node in the minimum weight dominating set.
+
+Notes
+-----
+This algorithm computes an approximate minimum weighted dominating
+set for the graph `G`. The returned solution has weight `(\log
+w(V)) w(V^*)`, where `w(V)` denotes the sum of the weights of each
+node in the graph and `w(V^*)` denotes the sum of the weights of
+each node in the minimum weight dominating set for the graph.
+
+This implementation of the algorithm runs in $O(m)$ time, where $m$
+is the number of edges in the graph.
+
+References
+----------
+.. [1] Vazirani, Vijay V.
+       *Approximation Algorithms*.
+       Springer Science & Business Media, 2001.\end{DoxyVerb}
+ 

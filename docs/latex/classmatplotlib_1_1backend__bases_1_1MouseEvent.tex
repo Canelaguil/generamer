@@ -1,0 +1,142 @@
+\hypertarget{classmatplotlib_1_1backend__bases_1_1MouseEvent}{}\section{matplotlib.\+backend\+\_\+bases.\+Mouse\+Event Class Reference}
+\label{classmatplotlib_1_1backend__bases_1_1MouseEvent}\index{matplotlib.\+backend\+\_\+bases.\+Mouse\+Event@{matplotlib.\+backend\+\_\+bases.\+Mouse\+Event}}
+
+
+Inheritance diagram for matplotlib.\+backend\+\_\+bases.\+Mouse\+Event\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classmatplotlib_1_1backend__bases_1_1MouseEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+backend\+\_\+bases.\+Mouse\+Event\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classmatplotlib_1_1backend__bases_1_1MouseEvent__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1MouseEvent_a50d4773771416d12a692e5c5086fdc97}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1backend__bases_1_1Event_a4b10ea7af7c8a0b20bcdbb9ca03e1654}{name}, \hyperlink{classmatplotlib_1_1backend__bases_1_1Event_a7721d867d81a1255b1aeb51babec4e14}{canvas}, \hyperlink{classmatplotlib_1_1backend__bases_1_1LocationEvent_aad07eb863241b9e4a4bfce29833a693b}{x}, \hyperlink{classmatplotlib_1_1backend__bases_1_1LocationEvent_a77dbd95e105ce5a66024d85dac58943b}{y}, \hyperlink{classmatplotlib_1_1backend__bases_1_1MouseEvent_a4027cbeddeef5c645d789bce26678a5c}{button}=None, \hyperlink{classmatplotlib_1_1backend__bases_1_1MouseEvent_a821fb262544e599613e22805f701e177}{key}=None, \hyperlink{classmatplotlib_1_1backend__bases_1_1MouseEvent_ab03b6123a5a55aedd1361a15f8a6cd34}{step}=0, \hyperlink{classmatplotlib_1_1backend__bases_1_1MouseEvent_a758e38e1d89671e3e26f089cf07192dc}{dblclick}=False, \hyperlink{classmatplotlib_1_1backend__bases_1_1Event_a6cc1dc3c9479b3e5f227f329037adb98}{gui\+Event}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1MouseEvent_a3449be2a850a789e771d608fe711e771}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1MouseEvent_a4027cbeddeef5c645d789bce26678a5c}{button}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1MouseEvent_a821fb262544e599613e22805f701e177}{key}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1MouseEvent_ab03b6123a5a55aedd1361a15f8a6cd34}{step}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1MouseEvent_a758e38e1d89671e3e26f089cf07192dc}{dblclick}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A mouse event ('button_press_event',
+               'button_release_event',
+               'scroll_event',
+               'motion_notify_event').
+
+In addition to the `Event` and `LocationEvent`
+attributes, the following attributes are defined:
+
+Attributes
+----------
+button : None or `MouseButton` or {'up', 'down'}
+    The button pressed. 'up' and 'down' are used for scroll events.
+    Note that LEFT and RIGHT actually refer to the "primary" and
+    "secondary" buttons, i.e. if the user inverts their left and right
+    buttons ("left-handed setting") then the LEFT button will be the one
+    physically on the right.
+
+key : None or str
+    The key pressed when the mouse event triggered, e.g. 'shift'.
+    See `KeyEvent`.
+
+    .. warning::
+       This key is currently obtained from the last 'key_press_event' or
+       'key_release_event' that occurred within the canvas.  Thus, if the
+       last change of keyboard state occurred while the canvas did not have
+       focus, this attribute will be wrong.
+
+step : float
+    The number of scroll steps (positive for 'up', negative for 'down').
+    This applies only to 'scroll_event' and defaults to 0 otherwise.
+
+dblclick : bool
+    Whether the event is a double-click. This applies only to
+    'button_press_event' and is False otherwise. In particular, it's
+    not used in 'button_release_event'.
+
+Examples
+--------
+::
+
+    def on_press(event):
+        print('you pressed', event.button, event.xdata, event.ydata)
+
+    cid = fig.canvas.mpl_connect('button_press_event', on_press)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1MouseEvent_a50d4773771416d12a692e5c5086fdc97}\label{classmatplotlib_1_1backend__bases_1_1MouseEvent_a50d4773771416d12a692e5c5086fdc97}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Mouse\+Event.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{canvas,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{button = {\ttfamily None},  }\item[{}]{key = {\ttfamily None},  }\item[{}]{step = {\ttfamily 0},  }\item[{}]{dblclick = {\ttfamily False},  }\item[{}]{gui\+Event = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}(*x*, *y*) in figure coords ((0, 0) = bottom left)
+button pressed None, 1, 2, 3, 'up', 'down'
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1MouseEvent_a3449be2a850a789e771d608fe711e771}\label{classmatplotlib_1_1backend__bases_1_1MouseEvent_a3449be2a850a789e771d608fe711e771}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Mouse\+Event.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1MouseEvent_a4027cbeddeef5c645d789bce26678a5c}\label{classmatplotlib_1_1backend__bases_1_1MouseEvent_a4027cbeddeef5c645d789bce26678a5c}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event}!button@{button}}
+\index{button@{button}!matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event}}
+\subsubsection{\texorpdfstring{button}{button}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Mouse\+Event.\+button}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1MouseEvent_a758e38e1d89671e3e26f089cf07192dc}\label{classmatplotlib_1_1backend__bases_1_1MouseEvent_a758e38e1d89671e3e26f089cf07192dc}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event}!dblclick@{dblclick}}
+\index{dblclick@{dblclick}!matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event}}
+\subsubsection{\texorpdfstring{dblclick}{dblclick}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Mouse\+Event.\+dblclick}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1MouseEvent_a821fb262544e599613e22805f701e177}\label{classmatplotlib_1_1backend__bases_1_1MouseEvent_a821fb262544e599613e22805f701e177}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event}!key@{key}}
+\index{key@{key}!matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event}}
+\subsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Mouse\+Event.\+key}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1MouseEvent_ab03b6123a5a55aedd1361a15f8a6cd34}\label{classmatplotlib_1_1backend__bases_1_1MouseEvent_ab03b6123a5a55aedd1361a15f8a6cd34}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event}!step@{step}}
+\index{step@{step}!matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event@{matplotlib\+::backend\+\_\+bases\+::\+Mouse\+Event}}
+\subsubsection{\texorpdfstring{step}{step}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Mouse\+Event.\+step}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{backend__bases_8py}{backend\+\_\+bases.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,54 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1centrality_1_1dispersion}{}\section{networkx.\+algorithms.\+centrality.\+dispersion Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1centrality_1_1dispersion}\index{networkx.\+algorithms.\+centrality.\+dispersion@{networkx.\+algorithms.\+centrality.\+dispersion}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1centrality_1_1dispersion_a5e58783535f5eac06c83fd634ec4ca9d}{dispersion} (G, u=None, v=None, normalized=True, alpha=1.\+0, b=0.\+0, c=0.\+0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1centrality_1_1dispersion_a5e58783535f5eac06c83fd634ec4ca9d}\label{namespacenetworkx_1_1algorithms_1_1centrality_1_1dispersion_a5e58783535f5eac06c83fd634ec4ca9d}} 
+\index{networkx\+::algorithms\+::centrality\+::dispersion@{networkx\+::algorithms\+::centrality\+::dispersion}!dispersion@{dispersion}}
+\index{dispersion@{dispersion}!networkx\+::algorithms\+::centrality\+::dispersion@{networkx\+::algorithms\+::centrality\+::dispersion}}
+\subsubsection{\texorpdfstring{dispersion()}{dispersion()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+centrality.\+dispersion.\+dispersion (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{u = {\ttfamily None},  }\item[{}]{v = {\ttfamily None},  }\item[{}]{normalized = {\ttfamily True},  }\item[{}]{alpha = {\ttfamily 1.0},  }\item[{}]{b = {\ttfamily 0.0},  }\item[{}]{c = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate dispersion between `u` and `v` in `G`.
+
+A link between two actors (`u` and `v`) has a high dispersion when their
+mutual ties (`s` and `t`) are not well connected with each other.
+
+Parameters
+----------
+G : graph
+    A NetworkX graph.
+u : node, optional
+    The source for the dispersion score (e.g. ego node of the network).
+v : node, optional
+    The target of the dispersion score if specified.
+normalized : bool
+    If True (default) normalize by the embededness of the nodes (u and v).
+
+Returns
+-------
+nodes : dictionary
+    If u (v) is specified, returns a dictionary of nodes with dispersion
+    score for all "target" ("source") nodes. If neither u nor v is
+    specified, returns a dictionary of dictionaries for all nodes 'u' in the
+    graph with a dispersion score for each node 'v'.
+
+Notes
+-----
+This implementation follows Lars Backstrom and Jon Kleinberg [1]_. Typical
+usage would be to run dispersion on the ego network $G_u$ if $u$ were
+specified.  Running :func:`dispersion` with neither $u$ nor $v$ specified
+can take some time to complete.
+
+References
+----------
+.. [1] Romantic Partnerships and the Dispersion of Social Ties:
+    A Network Analysis of Relationship Status on Facebook.
+    Lars Backstrom, Jon Kleinberg.
+    https://arxiv.org/pdf/1310.6753v1.pdf\end{DoxyVerb}
+ 

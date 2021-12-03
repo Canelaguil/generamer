@@ -1,0 +1,127 @@
+\hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors}{}\section{pip.\+\_\+internal.\+req.\+constructors Namespace Reference}
+\label{namespacepip_1_1__internal_1_1req_1_1constructors}\index{pip.\+\_\+internal.\+req.\+constructors@{pip.\+\_\+internal.\+req.\+constructors}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1req_1_1constructors_1_1RequirementParts}{Requirement\+Parts}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1req_1_1constructors_a5108be7488d43adcb3f503889f4fb408}{convert\+\_\+extras}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1req_1_1constructors_af93616282ee31edaf44f8e1bae5cdfd6}{parse\+\_\+editable}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1req_1_1constructors_a4613ab05443f6497b7f1319ed7a38a36}{deduce\+\_\+helpful\+\_\+msg}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1req_1_1constructors_a24eef9afab1d7c3cd8d62f70cb7578d6}{parse\+\_\+req\+\_\+from\+\_\+editable}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1req_1_1constructors_a8714c4349479bab7f7e0f6ac4519da59}{install\+\_\+req\+\_\+from\+\_\+editable}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1req_1_1constructors_ab692d24649d0caae52bc3014fb6c510b}{parse\+\_\+req\+\_\+from\+\_\+line}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1req_1_1constructors_aecf104e520e07677279c842aae3dbe61}{install\+\_\+req\+\_\+from\+\_\+line}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1req_1_1constructors_a7f068e3d662c7c54d73f10f8539ae3aa}{install\+\_\+req\+\_\+from\+\_\+req\+\_\+string}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1req_1_1constructors_afd9e5cf6b3fea6b24d8d884ae41f16c7}{install\+\_\+req\+\_\+from\+\_\+parsed\+\_\+requirement}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1req_1_1constructors_a78b90a5d9750def943a952f6dd631147}{install\+\_\+req\+\_\+from\+\_\+link\+\_\+and\+\_\+ireq}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1req_1_1constructors_a3fa73cdce7cd1839ac123a5fea17055d}{logger}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1req_1_1constructors_ae91c811dff5ff188e8d6847af9823118}{operators}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Backing implementation for InstallRequirement's various constructors
+
+The idea here is that these formed a major chunk of InstallRequirement's size
+so, moving them and support code dedicated to them outside of that class
+helps creates for better understandability for the rest of the code.
+
+These are meant to be used elsewhere within pip to create instances of
+InstallRequirement.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors_a5108be7488d43adcb3f503889f4fb408}\label{namespacepip_1_1__internal_1_1req_1_1constructors_a5108be7488d43adcb3f503889f4fb408}} 
+\index{pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}!convert\+\_\+extras@{convert\+\_\+extras}}
+\index{convert\+\_\+extras@{convert\+\_\+extras}!pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}}
+\subsubsection{\texorpdfstring{convert\+\_\+extras()}{convert\_extras()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+constructors.\+convert\+\_\+extras (\begin{DoxyParamCaption}\item[{}]{extras }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors_a4613ab05443f6497b7f1319ed7a38a36}\label{namespacepip_1_1__internal_1_1req_1_1constructors_a4613ab05443f6497b7f1319ed7a38a36}} 
+\index{pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}!deduce\+\_\+helpful\+\_\+msg@{deduce\+\_\+helpful\+\_\+msg}}
+\index{deduce\+\_\+helpful\+\_\+msg@{deduce\+\_\+helpful\+\_\+msg}!pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}}
+\subsubsection{\texorpdfstring{deduce\+\_\+helpful\+\_\+msg()}{deduce\_helpful\_msg()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+constructors.\+deduce\+\_\+helpful\+\_\+msg (\begin{DoxyParamCaption}\item[{}]{req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors_a8714c4349479bab7f7e0f6ac4519da59}\label{namespacepip_1_1__internal_1_1req_1_1constructors_a8714c4349479bab7f7e0f6ac4519da59}} 
+\index{pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}!install\+\_\+req\+\_\+from\+\_\+editable@{install\+\_\+req\+\_\+from\+\_\+editable}}
+\index{install\+\_\+req\+\_\+from\+\_\+editable@{install\+\_\+req\+\_\+from\+\_\+editable}!pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}}
+\subsubsection{\texorpdfstring{install\+\_\+req\+\_\+from\+\_\+editable()}{install\_req\_from\_editable()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+constructors.\+install\+\_\+req\+\_\+from\+\_\+editable (\begin{DoxyParamCaption}\item[{}]{editable\+\_\+req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors_aecf104e520e07677279c842aae3dbe61}\label{namespacepip_1_1__internal_1_1req_1_1constructors_aecf104e520e07677279c842aae3dbe61}} 
+\index{pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}!install\+\_\+req\+\_\+from\+\_\+line@{install\+\_\+req\+\_\+from\+\_\+line}}
+\index{install\+\_\+req\+\_\+from\+\_\+line@{install\+\_\+req\+\_\+from\+\_\+line}!pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}}
+\subsubsection{\texorpdfstring{install\+\_\+req\+\_\+from\+\_\+line()}{install\_req\_from\_line()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+constructors.\+install\+\_\+req\+\_\+from\+\_\+line (\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors_a78b90a5d9750def943a952f6dd631147}\label{namespacepip_1_1__internal_1_1req_1_1constructors_a78b90a5d9750def943a952f6dd631147}} 
+\index{pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}!install\+\_\+req\+\_\+from\+\_\+link\+\_\+and\+\_\+ireq@{install\+\_\+req\+\_\+from\+\_\+link\+\_\+and\+\_\+ireq}}
+\index{install\+\_\+req\+\_\+from\+\_\+link\+\_\+and\+\_\+ireq@{install\+\_\+req\+\_\+from\+\_\+link\+\_\+and\+\_\+ireq}!pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}}
+\subsubsection{\texorpdfstring{install\+\_\+req\+\_\+from\+\_\+link\+\_\+and\+\_\+ireq()}{install\_req\_from\_link\_and\_ireq()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+constructors.\+install\+\_\+req\+\_\+from\+\_\+link\+\_\+and\+\_\+ireq (\begin{DoxyParamCaption}\item[{}]{link }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors_afd9e5cf6b3fea6b24d8d884ae41f16c7}\label{namespacepip_1_1__internal_1_1req_1_1constructors_afd9e5cf6b3fea6b24d8d884ae41f16c7}} 
+\index{pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}!install\+\_\+req\+\_\+from\+\_\+parsed\+\_\+requirement@{install\+\_\+req\+\_\+from\+\_\+parsed\+\_\+requirement}}
+\index{install\+\_\+req\+\_\+from\+\_\+parsed\+\_\+requirement@{install\+\_\+req\+\_\+from\+\_\+parsed\+\_\+requirement}!pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}}
+\subsubsection{\texorpdfstring{install\+\_\+req\+\_\+from\+\_\+parsed\+\_\+requirement()}{install\_req\_from\_parsed\_requirement()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+constructors.\+install\+\_\+req\+\_\+from\+\_\+parsed\+\_\+requirement (\begin{DoxyParamCaption}\item[{}]{parsed\+\_\+req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors_a7f068e3d662c7c54d73f10f8539ae3aa}\label{namespacepip_1_1__internal_1_1req_1_1constructors_a7f068e3d662c7c54d73f10f8539ae3aa}} 
+\index{pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}!install\+\_\+req\+\_\+from\+\_\+req\+\_\+string@{install\+\_\+req\+\_\+from\+\_\+req\+\_\+string}}
+\index{install\+\_\+req\+\_\+from\+\_\+req\+\_\+string@{install\+\_\+req\+\_\+from\+\_\+req\+\_\+string}!pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}}
+\subsubsection{\texorpdfstring{install\+\_\+req\+\_\+from\+\_\+req\+\_\+string()}{install\_req\_from\_req\_string()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+constructors.\+install\+\_\+req\+\_\+from\+\_\+req\+\_\+string (\begin{DoxyParamCaption}\item[{}]{req\+\_\+string }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors_af93616282ee31edaf44f8e1bae5cdfd6}\label{namespacepip_1_1__internal_1_1req_1_1constructors_af93616282ee31edaf44f8e1bae5cdfd6}} 
+\index{pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}!parse\+\_\+editable@{parse\+\_\+editable}}
+\index{parse\+\_\+editable@{parse\+\_\+editable}!pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}}
+\subsubsection{\texorpdfstring{parse\+\_\+editable()}{parse\_editable()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+constructors.\+parse\+\_\+editable (\begin{DoxyParamCaption}\item[{}]{editable\+\_\+req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors_a24eef9afab1d7c3cd8d62f70cb7578d6}\label{namespacepip_1_1__internal_1_1req_1_1constructors_a24eef9afab1d7c3cd8d62f70cb7578d6}} 
+\index{pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}!parse\+\_\+req\+\_\+from\+\_\+editable@{parse\+\_\+req\+\_\+from\+\_\+editable}}
+\index{parse\+\_\+req\+\_\+from\+\_\+editable@{parse\+\_\+req\+\_\+from\+\_\+editable}!pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}}
+\subsubsection{\texorpdfstring{parse\+\_\+req\+\_\+from\+\_\+editable()}{parse\_req\_from\_editable()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+constructors.\+parse\+\_\+req\+\_\+from\+\_\+editable (\begin{DoxyParamCaption}\item[{}]{editable\+\_\+req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors_ab692d24649d0caae52bc3014fb6c510b}\label{namespacepip_1_1__internal_1_1req_1_1constructors_ab692d24649d0caae52bc3014fb6c510b}} 
+\index{pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}!parse\+\_\+req\+\_\+from\+\_\+line@{parse\+\_\+req\+\_\+from\+\_\+line}}
+\index{parse\+\_\+req\+\_\+from\+\_\+line@{parse\+\_\+req\+\_\+from\+\_\+line}!pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}}
+\subsubsection{\texorpdfstring{parse\+\_\+req\+\_\+from\+\_\+line()}{parse\_req\_from\_line()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+constructors.\+parse\+\_\+req\+\_\+from\+\_\+line (\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors_a3fa73cdce7cd1839ac123a5fea17055d}\label{namespacepip_1_1__internal_1_1req_1_1constructors_a3fa73cdce7cd1839ac123a5fea17055d}} 
+\index{pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}!logger@{logger}}
+\index{logger@{logger}!pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}}
+\subsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+req.\+constructors.\+logger}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1req_1_1constructors_ae91c811dff5ff188e8d6847af9823118}\label{namespacepip_1_1__internal_1_1req_1_1constructors_ae91c811dff5ff188e8d6847af9823118}} 
+\index{pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}!operators@{operators}}
+\index{operators@{operators}!pip\+::\+\_\+internal\+::req\+::constructors@{pip\+::\+\_\+internal\+::req\+::constructors}}
+\subsubsection{\texorpdfstring{operators}{operators}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+req.\+constructors.\+operators}
+

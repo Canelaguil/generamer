@@ -1,0 +1,33 @@
+\hypertarget{namespacenetworkx_1_1utils_1_1contextmanagers}{}\section{networkx.\+utils.\+contextmanagers Namespace Reference}
+\label{namespacenetworkx_1_1utils_1_1contextmanagers}\index{networkx.\+utils.\+contextmanagers@{networkx.\+utils.\+contextmanagers}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1utils_1_1contextmanagers_a4e3b4106b6f9cb6fc63f243422536eab}{reversed} (G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1utils_1_1contextmanagers_a4e3b4106b6f9cb6fc63f243422536eab}\label{namespacenetworkx_1_1utils_1_1contextmanagers_a4e3b4106b6f9cb6fc63f243422536eab}} 
+\index{networkx\+::utils\+::contextmanagers@{networkx\+::utils\+::contextmanagers}!reversed@{reversed}}
+\index{reversed@{reversed}!networkx\+::utils\+::contextmanagers@{networkx\+::utils\+::contextmanagers}}
+\subsubsection{\texorpdfstring{reversed()}{reversed()}}
+{\footnotesize\ttfamily def networkx.\+utils.\+contextmanagers.\+reversed (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A context manager for temporarily reversing a directed graph in place.
+
+This is a no-op for undirected graphs.
+
+Parameters
+----------
+G : graph
+    A NetworkX graph.
+
+Warning
+-------
+The reversed context manager is deprecated in favor
+of G.reverse(copy=False). The view allows multiple threads to use the
+same graph without confusion while the context manager does not.
+This context manager is scheduled to be removed in version 3.0.
+\end{DoxyVerb}
+ 

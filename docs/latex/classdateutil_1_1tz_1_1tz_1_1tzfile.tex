@@ -1,0 +1,222 @@
+\hypertarget{classdateutil_1_1tz_1_1tz_1_1tzfile}{}\section{dateutil.\+tz.\+tz.\+tzfile Class Reference}
+\label{classdateutil_1_1tz_1_1tz_1_1tzfile}\index{dateutil.\+tz.\+tz.\+tzfile@{dateutil.\+tz.\+tz.\+tzfile}}
+
+
+Inheritance diagram for dateutil.\+tz.\+tz.\+tzfile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classdateutil_1_1tz_1_1tz_1_1tzfile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dateutil.\+tz.\+tz.\+tzfile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classdateutil_1_1tz_1_1tz_1_1tzfile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzfile_ab69d4b19e76529f70b57573027839e99}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, fileobj, filename=None)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzfile_a8c6d4edca5ed781e176a92ccca3cfb6b}{fromutc} (self, dt)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzfile_a3b1d738119ae0027df8735c886c0d154}{is\+\_\+ambiguous} (self, dt, idx=None)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzfile_a958135319a0ba1cca1949b48c65f4c93}{utcoffset} (self, dt)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzfile_a5a7e65b60111a3df7366852a72d00457}{dst} (self, dt)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzfile_adcc1cb91aeb3064b12d54ee4a57ac38f}{tzname} (self, dt)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzfile_a51e376f853af97b8db20702c26b97c3d}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzfile_a6b9160a0bf48fff0fec46b770e6873c7}{\+\_\+\+\_\+ne\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzfile_a632cdefdc1134bfb153828c88605a55d}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzfile_a31cbe77d6e922e2e0abd9d8bbc954d56}{\+\_\+\+\_\+reduce\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1tz_1_1tzfile_a63da6aeab6b64c519054fd0cb90f2fe0}{\+\_\+\+\_\+reduce\+\_\+ex\+\_\+\+\_\+} (self, protocol)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This is a ``tzinfo`` subclass that allows one to use the ``tzfile(5)``
+format timezone files to extract current and historical zone information.
+
+:param fileobj:
+    This can be an opened file stream or a file name that the time zone
+    information can be read from.
+
+:param filename:
+    This is an optional parameter specifying the source of the time zone
+    information in the event that ``fileobj`` is a file object. If omitted
+    and ``fileobj`` is a file stream, this parameter will be set either to
+    ``fileobj``'s ``name`` attribute or to ``repr(fileobj)``.
+
+See `Sources for Time Zone and Daylight Saving Time Data
+<https://data.iana.org/time-zones/tz-link.html>`_ for more information.
+Time zone files can be compiled from the `IANA Time Zone database files
+<https://www.iana.org/time-zones>`_ with the `zic time zone compiler
+<https://www.freebsd.org/cgi/man.cgi?query=zic&sektion=8>`_
+
+.. note::
+
+    Only construct a ``tzfile`` directly if you have a specific timezone
+    file on disk that you want to read into a Python ``tzinfo`` object.
+    If you want to get a ``tzfile`` representing a specific IANA zone,
+    (e.g. ``'America/New_York'``), you should call
+    :func:`dateutil.tz.gettz` with the zone identifier.
+
+
+**Examples:**
+
+Using the US Eastern time zone as an example, we can see that a ``tzfile``
+provides time zone information for the standard Daylight Saving offsets:
+
+.. testsetup:: tzfile
+
+    from dateutil.tz import gettz
+    from datetime import datetime
+
+.. doctest:: tzfile
+
+    >>> NYC = gettz('America/New_York')
+    >>> NYC
+    tzfile('/usr/share/zoneinfo/America/New_York')
+
+    >>> print(datetime(2016, 1, 3, tzinfo=NYC))     # EST
+    2016-01-03 00:00:00-05:00
+
+    >>> print(datetime(2016, 7, 7, tzinfo=NYC))     # EDT
+    2016-07-07 00:00:00-04:00
+
+
+The ``tzfile`` structure contains a fully history of the time zone,
+so historical dates will also have the right offsets. For example, before
+the adoption of the UTC standards, New York used local solar  mean time:
+
+.. doctest:: tzfile
+
+   >>> print(datetime(1901, 4, 12, tzinfo=NYC))    # LMT
+   1901-04-12 00:00:00-04:56
+
+And during World War II, New York was on "Eastern War Time", which was a
+state of permanent daylight saving time:
+
+.. doctest:: tzfile
+
+    >>> print(datetime(1944, 2, 7, tzinfo=NYC))    # EWT
+    1944-02-07 00:00:00-04:00\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzfile_ab69d4b19e76529f70b57573027839e99}\label{classdateutil_1_1tz_1_1tz_1_1tzfile_ab69d4b19e76529f70b57573027839e99}} 
+\index{dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzfile.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fileobj,  }\item[{}]{filename = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzfile_a51e376f853af97b8db20702c26b97c3d}\label{classdateutil_1_1tz_1_1tz_1_1tzfile_a51e376f853af97b8db20702c26b97c3d}} 
+\index{dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+eq\+\_\+\+\_\+()}{\_\_eq\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzfile.\+\_\+\+\_\+eq\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzfile_a6b9160a0bf48fff0fec46b770e6873c7}\label{classdateutil_1_1tz_1_1tz_1_1tzfile_a6b9160a0bf48fff0fec46b770e6873c7}} 
+\index{dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}!\+\_\+\+\_\+ne\+\_\+\+\_\+@{\+\_\+\+\_\+ne\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+ne\+\_\+\+\_\+@{\+\_\+\+\_\+ne\+\_\+\+\_\+}!dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+ne\+\_\+\+\_\+()}{\_\_ne\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzfile.\+\_\+\+\_\+ne\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzfile_a31cbe77d6e922e2e0abd9d8bbc954d56}\label{classdateutil_1_1tz_1_1tz_1_1tzfile_a31cbe77d6e922e2e0abd9d8bbc954d56}} 
+\index{dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}!\+\_\+\+\_\+reduce\+\_\+\+\_\+@{\+\_\+\+\_\+reduce\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+reduce\+\_\+\+\_\+@{\+\_\+\+\_\+reduce\+\_\+\+\_\+}!dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+reduce\+\_\+\+\_\+()}{\_\_reduce\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzfile.\+\_\+\+\_\+reduce\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzfile_a63da6aeab6b64c519054fd0cb90f2fe0}\label{classdateutil_1_1tz_1_1tz_1_1tzfile_a63da6aeab6b64c519054fd0cb90f2fe0}} 
+\index{dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}!\+\_\+\+\_\+reduce\+\_\+ex\+\_\+\+\_\+@{\+\_\+\+\_\+reduce\+\_\+ex\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+reduce\+\_\+ex\+\_\+\+\_\+@{\+\_\+\+\_\+reduce\+\_\+ex\+\_\+\+\_\+}!dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+reduce\+\_\+ex\+\_\+\+\_\+()}{\_\_reduce\_ex\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzfile.\+\_\+\+\_\+reduce\+\_\+ex\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{protocol }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzfile_a632cdefdc1134bfb153828c88605a55d}\label{classdateutil_1_1tz_1_1tz_1_1tzfile_a632cdefdc1134bfb153828c88605a55d}} 
+\index{dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzfile.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzfile_a5a7e65b60111a3df7366852a72d00457}\label{classdateutil_1_1tz_1_1tz_1_1tzfile_a5a7e65b60111a3df7366852a72d00457}} 
+\index{dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}!dst@{dst}}
+\index{dst@{dst}!dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}}
+\subsubsection{\texorpdfstring{dst()}{dst()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzfile.\+dst (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzfile_a8c6d4edca5ed781e176a92ccca3cfb6b}\label{classdateutil_1_1tz_1_1tz_1_1tzfile_a8c6d4edca5ed781e176a92ccca3cfb6b}} 
+\index{dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}!fromutc@{fromutc}}
+\index{fromutc@{fromutc}!dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}}
+\subsubsection{\texorpdfstring{fromutc()}{fromutc()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzfile.\+fromutc (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dt }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The ``tzfile`` implementation of :py:func:`datetime.tzinfo.fromutc`.
+
+:param dt:
+    A :py:class:`datetime.datetime` object.
+
+:raises TypeError:
+    Raised if ``dt`` is not a :py:class:`datetime.datetime` object.
+
+:raises ValueError:
+    Raised if this is called with a ``dt`` which does not have this
+    ``tzinfo`` attached.
+
+:return:
+    Returns a :py:class:`datetime.datetime` object representing the
+    wall time in ``self``'s time zone.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzfile_a3b1d738119ae0027df8735c886c0d154}\label{classdateutil_1_1tz_1_1tz_1_1tzfile_a3b1d738119ae0027df8735c886c0d154}} 
+\index{dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}!is\+\_\+ambiguous@{is\+\_\+ambiguous}}
+\index{is\+\_\+ambiguous@{is\+\_\+ambiguous}!dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}}
+\subsubsection{\texorpdfstring{is\+\_\+ambiguous()}{is\_ambiguous()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzfile.\+is\+\_\+ambiguous (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dt,  }\item[{}]{idx = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Whether or not the "wall time" of a given datetime is ambiguous in this
+zone.
+
+:param dt:
+    A :py:class:`datetime.datetime`, naive or time zone aware.
+
+
+:return:
+    Returns ``True`` if ambiguous, ``False`` otherwise.
+
+.. versionadded:: 2.6.0
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzfile_adcc1cb91aeb3064b12d54ee4a57ac38f}\label{classdateutil_1_1tz_1_1tz_1_1tzfile_adcc1cb91aeb3064b12d54ee4a57ac38f}} 
+\index{dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}!tzname@{tzname}}
+\index{tzname@{tzname}!dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}}
+\subsubsection{\texorpdfstring{tzname()}{tzname()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzfile.\+tzname (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1tz_1_1tzfile_a958135319a0ba1cca1949b48c65f4c93}\label{classdateutil_1_1tz_1_1tz_1_1tzfile_a958135319a0ba1cca1949b48c65f4c93}} 
+\index{dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}!utcoffset@{utcoffset}}
+\index{utcoffset@{utcoffset}!dateutil\+::tz\+::tz\+::tzfile@{dateutil\+::tz\+::tz\+::tzfile}}
+\subsubsection{\texorpdfstring{utcoffset()}{utcoffset()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+tz.\+tzfile.\+utcoffset (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dt }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/dateutil/tz/\hyperlink{tz_8py}{tz.\+py}\end{DoxyCompactItemize}

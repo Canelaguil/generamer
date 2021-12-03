@@ -1,0 +1,100 @@
+\hypertarget{namespaceplot__parallel__betweenness}{}\section{plot\+\_\+parallel\+\_\+betweenness Namespace Reference}
+\label{namespaceplot__parallel__betweenness}\index{plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceplot__parallel__betweenness_a12a74e041def2d649403c69d0fe0345b}{chunks} (l, n)
+\item 
+def \hyperlink{namespaceplot__parallel__betweenness_a12f186c06f1573546f40373301f884d4}{betweenness\+\_\+centrality\+\_\+parallel} (G, processes=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceplot__parallel__betweenness_ae72acd07b6fdbd677b133ab23c70a221}{G\+\_\+ba}
+\item 
+\hyperlink{namespaceplot__parallel__betweenness_a9731ff361a8c9ed5b91730c092e39cff}{G\+\_\+er}
+\item 
+\hyperlink{namespaceplot__parallel__betweenness_a482003f6c1ab419fa7e1a012131a109f}{G\+\_\+ws}
+\item 
+\hyperlink{namespaceplot__parallel__betweenness_a2ad5c57ac685472a48912b89fc7fc0f0}{start}
+\item 
+\hyperlink{namespaceplot__parallel__betweenness_ab0de598d353ebbcd7b37f9d63d9e5e1b}{bt}
+\item 
+\hyperlink{namespaceplot__parallel__betweenness_ad6bb279dc486a0dc35e22633e9f4353d}{node\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}====================
+Parallel Betweenness
+====================
+
+Example of parallel implementation of betweenness centrality using the
+multiprocessing module from Python Standard Library.
+
+The function betweenness centrality accepts a bunch of nodes and computes
+the contribution of those nodes to the betweenness centrality of the whole
+network. Here we divide the network in chunks of nodes and we compute their
+contribution to the betweenness centrality of the whole network.
+
+Note: The example output below shows that the non-parallel implementation is
+faster. This is a limitation of our CI/CD pipeline running on a single core.
+
+Depending on your setup, you will likely observe a speedup.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceplot__parallel__betweenness_a12f186c06f1573546f40373301f884d4}\label{namespaceplot__parallel__betweenness_a12f186c06f1573546f40373301f884d4}} 
+\index{plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}!betweenness\+\_\+centrality\+\_\+parallel@{betweenness\+\_\+centrality\+\_\+parallel}}
+\index{betweenness\+\_\+centrality\+\_\+parallel@{betweenness\+\_\+centrality\+\_\+parallel}!plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}}
+\subsubsection{\texorpdfstring{betweenness\+\_\+centrality\+\_\+parallel()}{betweenness\_centrality\_parallel()}}
+{\footnotesize\ttfamily def plot\+\_\+parallel\+\_\+betweenness.\+betweenness\+\_\+centrality\+\_\+parallel (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{processes = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parallel betweenness centrality  function\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceplot__parallel__betweenness_a12a74e041def2d649403c69d0fe0345b}\label{namespaceplot__parallel__betweenness_a12a74e041def2d649403c69d0fe0345b}} 
+\index{plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}!chunks@{chunks}}
+\index{chunks@{chunks}!plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}}
+\subsubsection{\texorpdfstring{chunks()}{chunks()}}
+{\footnotesize\ttfamily def plot\+\_\+parallel\+\_\+betweenness.\+chunks (\begin{DoxyParamCaption}\item[{}]{l,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Divide a list of nodes `l` in `n` chunks\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceplot__parallel__betweenness_ab0de598d353ebbcd7b37f9d63d9e5e1b}\label{namespaceplot__parallel__betweenness_ab0de598d353ebbcd7b37f9d63d9e5e1b}} 
+\index{plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}!bt@{bt}}
+\index{bt@{bt}!plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}}
+\subsubsection{\texorpdfstring{bt}{bt}}
+{\footnotesize\ttfamily plot\+\_\+parallel\+\_\+betweenness.\+bt}
+
+\mbox{\Hypertarget{namespaceplot__parallel__betweenness_ae72acd07b6fdbd677b133ab23c70a221}\label{namespaceplot__parallel__betweenness_ae72acd07b6fdbd677b133ab23c70a221}} 
+\index{plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}!G\+\_\+ba@{G\+\_\+ba}}
+\index{G\+\_\+ba@{G\+\_\+ba}!plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}}
+\subsubsection{\texorpdfstring{G\+\_\+ba}{G\_ba}}
+{\footnotesize\ttfamily plot\+\_\+parallel\+\_\+betweenness.\+G\+\_\+ba}
+
+\mbox{\Hypertarget{namespaceplot__parallel__betweenness_a9731ff361a8c9ed5b91730c092e39cff}\label{namespaceplot__parallel__betweenness_a9731ff361a8c9ed5b91730c092e39cff}} 
+\index{plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}!G\+\_\+er@{G\+\_\+er}}
+\index{G\+\_\+er@{G\+\_\+er}!plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}}
+\subsubsection{\texorpdfstring{G\+\_\+er}{G\_er}}
+{\footnotesize\ttfamily plot\+\_\+parallel\+\_\+betweenness.\+G\+\_\+er}
+
+\mbox{\Hypertarget{namespaceplot__parallel__betweenness_a482003f6c1ab419fa7e1a012131a109f}\label{namespaceplot__parallel__betweenness_a482003f6c1ab419fa7e1a012131a109f}} 
+\index{plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}!G\+\_\+ws@{G\+\_\+ws}}
+\index{G\+\_\+ws@{G\+\_\+ws}!plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}}
+\subsubsection{\texorpdfstring{G\+\_\+ws}{G\_ws}}
+{\footnotesize\ttfamily plot\+\_\+parallel\+\_\+betweenness.\+G\+\_\+ws}
+
+\mbox{\Hypertarget{namespaceplot__parallel__betweenness_ad6bb279dc486a0dc35e22633e9f4353d}\label{namespaceplot__parallel__betweenness_ad6bb279dc486a0dc35e22633e9f4353d}} 
+\index{plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}!node\+\_\+size@{node\+\_\+size}}
+\index{node\+\_\+size@{node\+\_\+size}!plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}}
+\subsubsection{\texorpdfstring{node\+\_\+size}{node\_size}}
+{\footnotesize\ttfamily plot\+\_\+parallel\+\_\+betweenness.\+node\+\_\+size}
+
+\mbox{\Hypertarget{namespaceplot__parallel__betweenness_a2ad5c57ac685472a48912b89fc7fc0f0}\label{namespaceplot__parallel__betweenness_a2ad5c57ac685472a48912b89fc7fc0f0}} 
+\index{plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}!start@{start}}
+\index{start@{start}!plot\+\_\+parallel\+\_\+betweenness@{plot\+\_\+parallel\+\_\+betweenness}}
+\subsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily plot\+\_\+parallel\+\_\+betweenness.\+start}
+

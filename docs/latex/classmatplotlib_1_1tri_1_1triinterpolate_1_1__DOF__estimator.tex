@@ -1,0 +1,117 @@
+\hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator}{}\section{matplotlib.\+tri.\+triinterpolate.\+\_\+\+D\+O\+F\+\_\+estimator Class Reference}
+\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator}\index{matplotlib.\+tri.\+triinterpolate.\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib.\+tri.\+triinterpolate.\+\_\+\+D\+O\+F\+\_\+estimator}}
+
+
+Inheritance diagram for matplotlib.\+tri.\+triinterpolate.\+\_\+\+D\+O\+F\+\_\+estimator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_a3f79e9bc6536e5b67d05ea80b37668a0}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, interpolator, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_aaa8ee58a8d2647eef9ef4e3a264a6519}{compute\+\_\+dz} (self, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_a82e241f9ae7de44ef3fe71a87ce20b66}{compute\+\_\+dof\+\_\+from\+\_\+df} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_a52f8c3d59afa7c339b7785aa10f8f543}{get\+\_\+dof\+\_\+vec} (tri\+\_\+z, tri\+\_\+dz, J)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_af4538d8f14141b5652b804ae343e7af0}{z}
+\item 
+\hyperlink{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_a6ef7582c428debb80338362626b24ce7}{dz}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Abstract base class for classes used to estimate a function's first
+derivatives, and deduce the dofs for a CubicTriInterpolator using a
+reduced HCT element formulation.
+
+Derived classes implement ``compute_df(self, **kwargs)``, returning
+``np.vstack([dfx, dfy]).T`` where ``dfx, dfy`` are the estimation of the 2
+gradient coordinates.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_a3f79e9bc6536e5b67d05ea80b37668a0}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_a3f79e9bc6536e5b67d05ea80b37668a0}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+\_\+\+D\+O\+F\+\_\+estimator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{interpolator,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_a82e241f9ae7de44ef3fe71a87ce20b66}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_a82e241f9ae7de44ef3fe71a87ce20b66}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator}!compute\+\_\+dof\+\_\+from\+\_\+df@{compute\+\_\+dof\+\_\+from\+\_\+df}}
+\index{compute\+\_\+dof\+\_\+from\+\_\+df@{compute\+\_\+dof\+\_\+from\+\_\+df}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator}}
+\subsubsection{\texorpdfstring{compute\+\_\+dof\+\_\+from\+\_\+df()}{compute\_dof\_from\_df()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+\_\+\+D\+O\+F\+\_\+estimator.\+compute\+\_\+dof\+\_\+from\+\_\+df (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute reduced-HCT elements degrees of freedom, from the gradient.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_aaa8ee58a8d2647eef9ef4e3a264a6519}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_aaa8ee58a8d2647eef9ef4e3a264a6519}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator}!compute\+\_\+dz@{compute\+\_\+dz}}
+\index{compute\+\_\+dz@{compute\+\_\+dz}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator}}
+\subsubsection{\texorpdfstring{compute\+\_\+dz()}{compute\_dz()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+\_\+\+D\+O\+F\+\_\+estimator.\+compute\+\_\+dz (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_a52f8c3d59afa7c339b7785aa10f8f543}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_a52f8c3d59afa7c339b7785aa10f8f543}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator}!get\+\_\+dof\+\_\+vec@{get\+\_\+dof\+\_\+vec}}
+\index{get\+\_\+dof\+\_\+vec@{get\+\_\+dof\+\_\+vec}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator}}
+\subsubsection{\texorpdfstring{get\+\_\+dof\+\_\+vec()}{get\_dof\_vec()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+triinterpolate.\+\_\+\+D\+O\+F\+\_\+estimator.\+get\+\_\+dof\+\_\+vec (\begin{DoxyParamCaption}\item[{}]{tri\+\_\+z,  }\item[{}]{tri\+\_\+dz,  }\item[{}]{J }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Compute the dof vector of a triangle, from the value of f, df and
+of the local Jacobian at each node.
+
+Parameters
+----------
+tri_z : shape (3,) array
+    f nodal values.
+tri_dz : shape (3, 2) array
+    df/dx, df/dy nodal values.
+J
+    Jacobian matrix in local basis of apex 0.
+
+Returns
+-------
+dof : shape (9,) array
+    For each apex ``iapex``::
+
+dof[iapex*3+0] = f(Ai)
+dof[iapex*3+1] = df(Ai).(AiAi+)
+dof[iapex*3+2] = df(Ai).(AiAi-)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_a6ef7582c428debb80338362626b24ce7}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_a6ef7582c428debb80338362626b24ce7}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator}!dz@{dz}}
+\index{dz@{dz}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator}}
+\subsubsection{\texorpdfstring{dz}{dz}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+D\+O\+F\+\_\+estimator.\+dz}
+
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_af4538d8f14141b5652b804ae343e7af0}\label{classmatplotlib_1_1tri_1_1triinterpolate_1_1__DOF__estimator_af4538d8f14141b5652b804ae343e7af0}} 
+\index{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator}!z@{z}}
+\index{z@{z}!matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator@{matplotlib\+::tri\+::triinterpolate\+::\+\_\+\+D\+O\+F\+\_\+estimator}}
+\subsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily matplotlib.\+tri.\+triinterpolate.\+\_\+\+D\+O\+F\+\_\+estimator.\+z}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/tri/\hyperlink{triinterpolate_8py}{triinterpolate.\+py}\end{DoxyCompactItemize}

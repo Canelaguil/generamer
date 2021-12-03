@@ -1,0 +1,107 @@
+\hypertarget{classmatplotlib_1_1scale_1_1LogitScale}{}\section{matplotlib.\+scale.\+Logit\+Scale Class Reference}
+\label{classmatplotlib_1_1scale_1_1LogitScale}\index{matplotlib.\+scale.\+Logit\+Scale@{matplotlib.\+scale.\+Logit\+Scale}}
+
+
+Inheritance diagram for matplotlib.\+scale.\+Logit\+Scale\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classmatplotlib_1_1scale_1_1LogitScale__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+scale.\+Logit\+Scale\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classmatplotlib_1_1scale_1_1LogitScale__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1LogitScale_a3717aebdbe34786fbac997c17052fc70}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, axis, nonpositive=\textquotesingle{}mask\textquotesingle{}, one\+\_\+half=r\char`\"{}\textbackslash{}ac\{1\}\{2\}\char`\"{}, use\+\_\+overline=False)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1LogitScale_adeb19e0a28722c2323c193183eee433c}{get\+\_\+transform} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1LogitScale_a69157cd11823ad5f313e9f00b334cb96}{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters} (self, axis)
+\item 
+def \hyperlink{classmatplotlib_1_1scale_1_1LogitScale_a863cef01980b0584b7ffab159d0d6b8c}{limit\+\_\+range\+\_\+for\+\_\+scale} (self, vmin, vmax, minpos)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1scale_1_1LogitScale_af0ef0ee2181fb6a5fb7a955a78c5d5a2}{name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Logit scale for data between zero and one, both excluded.
+
+This scale is similar to a log scale close to zero and to one, and almost
+linear around 0.5. It maps the interval ]0, 1[ onto ]-infty, +infty[.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogitScale_a3717aebdbe34786fbac997c17052fc70}\label{classmatplotlib_1_1scale_1_1LogitScale_a3717aebdbe34786fbac997c17052fc70}} 
+\index{matplotlib\+::scale\+::\+Logit\+Scale@{matplotlib\+::scale\+::\+Logit\+Scale}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::scale\+::\+Logit\+Scale@{matplotlib\+::scale\+::\+Logit\+Scale}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Logit\+Scale.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{axis,  }\item[{}]{nonpositive = {\ttfamily \textquotesingle{}mask\textquotesingle{}},  }\item[{}]{one\+\_\+half = {\ttfamily r\char`\"{}\textbackslash{}frac\{1\}\{2\}\char`\"{}},  }\item[{}]{use\+\_\+overline = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+axis : `matplotlib.axis.Axis`
+    Currently unused.
+nonpositive : {'mask', 'clip'}
+    Determines the behavior for values beyond the open interval ]0, 1[.
+    They can either be masked as invalid, or clipped to a number very
+    close to 0 or 1.
+use_overline : bool, default: False
+    Indicate the usage of survival notation (\overline{x}) in place of
+    standard notation (1-x) for probability close to one.
+one_half : str, default: r"\frac{1}{2}"
+    The string used for ticks formatter to represent 1/2.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogitScale_adeb19e0a28722c2323c193183eee433c}\label{classmatplotlib_1_1scale_1_1LogitScale_adeb19e0a28722c2323c193183eee433c}} 
+\index{matplotlib\+::scale\+::\+Logit\+Scale@{matplotlib\+::scale\+::\+Logit\+Scale}!get\+\_\+transform@{get\+\_\+transform}}
+\index{get\+\_\+transform@{get\+\_\+transform}!matplotlib\+::scale\+::\+Logit\+Scale@{matplotlib\+::scale\+::\+Logit\+Scale}}
+\subsubsection{\texorpdfstring{get\+\_\+transform()}{get\_transform()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Logit\+Scale.\+get\+\_\+transform (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the `.LogitTransform` associated with this scale.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogitScale_a863cef01980b0584b7ffab159d0d6b8c}\label{classmatplotlib_1_1scale_1_1LogitScale_a863cef01980b0584b7ffab159d0d6b8c}} 
+\index{matplotlib\+::scale\+::\+Logit\+Scale@{matplotlib\+::scale\+::\+Logit\+Scale}!limit\+\_\+range\+\_\+for\+\_\+scale@{limit\+\_\+range\+\_\+for\+\_\+scale}}
+\index{limit\+\_\+range\+\_\+for\+\_\+scale@{limit\+\_\+range\+\_\+for\+\_\+scale}!matplotlib\+::scale\+::\+Logit\+Scale@{matplotlib\+::scale\+::\+Logit\+Scale}}
+\subsubsection{\texorpdfstring{limit\+\_\+range\+\_\+for\+\_\+scale()}{limit\_range\_for\_scale()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Logit\+Scale.\+limit\+\_\+range\+\_\+for\+\_\+scale (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax,  }\item[{}]{minpos }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Limit the domain to values between 0 and 1 (excluded).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogitScale_a69157cd11823ad5f313e9f00b334cb96}\label{classmatplotlib_1_1scale_1_1LogitScale_a69157cd11823ad5f313e9f00b334cb96}} 
+\index{matplotlib\+::scale\+::\+Logit\+Scale@{matplotlib\+::scale\+::\+Logit\+Scale}!set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters@{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters}}
+\index{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters@{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters}!matplotlib\+::scale\+::\+Logit\+Scale@{matplotlib\+::scale\+::\+Logit\+Scale}}
+\subsubsection{\texorpdfstring{set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters()}{set\_default\_locators\_and\_formatters()}}
+{\footnotesize\ttfamily def matplotlib.\+scale.\+Logit\+Scale.\+set\+\_\+default\+\_\+locators\+\_\+and\+\_\+formatters (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{axis }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1scale_1_1LogitScale_af0ef0ee2181fb6a5fb7a955a78c5d5a2}\label{classmatplotlib_1_1scale_1_1LogitScale_af0ef0ee2181fb6a5fb7a955a78c5d5a2}} 
+\index{matplotlib\+::scale\+::\+Logit\+Scale@{matplotlib\+::scale\+::\+Logit\+Scale}!name@{name}}
+\index{name@{name}!matplotlib\+::scale\+::\+Logit\+Scale@{matplotlib\+::scale\+::\+Logit\+Scale}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily matplotlib.\+scale.\+Logit\+Scale.\+name\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{scale_8py}{scale.\+py}\end{DoxyCompactItemize}

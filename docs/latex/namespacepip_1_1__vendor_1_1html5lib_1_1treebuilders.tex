@@ -1,0 +1,96 @@
+\hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders}{}\section{pip.\+\_\+vendor.\+html5lib.\+treebuilders Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders}\index{pip.\+\_\+vendor.\+html5lib.\+treebuilders@{pip.\+\_\+vendor.\+html5lib.\+treebuilders}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1base}{base}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1dom}{dom}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree}{etree}
+\item 
+ \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_1_1etree__lxml}{etree\+\_\+lxml}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_a127aeb9dfbb8079a4ec65284e191d81c}{get\+Tree\+Builder} (tree\+Type, implementation=None, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_af20116ca2f6a2765396a54f21e84261e}{tree\+Builder\+Cache}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A collection of modules for building different kinds of trees from HTML
+documents.
+
+To create a treebuilder for a new type of tree, you need to do
+implement several things:
+
+1. A set of classes for various types of elements: Document, Doctype, Comment,
+   Element. These must implement the interface of ``base.treebuilders.Node``
+   (although comment nodes have a different signature for their constructor,
+   see ``treebuilders.etree.Comment``) Textual content may also be implemented
+   as another node type, or not, as your tree implementation requires.
+
+2. A treebuilder object (called ``TreeBuilder`` by convention) that inherits
+   from ``treebuilders.base.TreeBuilder``. This has 4 required attributes:
+
+   * ``documentClass`` - the class to use for the bottommost node of a document
+   * ``elementClass`` - the class to use for HTML Elements
+   * ``commentClass`` - the class to use for comments
+   * ``doctypeClass`` - the class to use for doctypes
+
+   It also has one required method:
+
+   * ``getDocument`` - Returns the root node of the complete document tree
+
+3. If you wish to run the unit tests, you must also create a ``testSerializer``
+   method on your treebuilder which accepts a node and returns a string
+   containing Node and its children serialized according to the format used in
+   the unittests\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_a127aeb9dfbb8079a4ec65284e191d81c}\label{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_a127aeb9dfbb8079a4ec65284e191d81c}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders}!get\+Tree\+Builder@{get\+Tree\+Builder}}
+\index{get\+Tree\+Builder@{get\+Tree\+Builder}!pip\+::\+\_\+vendor\+::html5lib\+::treebuilders@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders}}
+\subsubsection{\texorpdfstring{get\+Tree\+Builder()}{getTreeBuilder()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+html5lib.\+treebuilders.\+get\+Tree\+Builder (\begin{DoxyParamCaption}\item[{}]{tree\+Type,  }\item[{}]{implementation = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a TreeBuilder class for various types of trees with built-in support
+
+:arg treeType: the name of the tree type required (case-insensitive). Supported
+    values are:
+
+    * "dom" - A generic builder for DOM implementations, defaulting to a
+      xml.dom.minidom based implementation.
+    * "etree" - A generic builder for tree implementations exposing an
+      ElementTree-like interface, defaulting to xml.etree.cElementTree if
+      available and xml.etree.ElementTree if not.
+    * "lxml" - A etree-based builder for lxml.etree, handling limitations
+      of lxml's implementation.
+
+:arg implementation: (Currently applies to the "etree" and "dom" tree
+    types). A module implementing the tree type e.g. xml.etree.ElementTree
+    or xml.etree.cElementTree.
+
+:arg kwargs: Any additional options to pass to the TreeBuilder when
+    creating it.
+
+Example:
+
+>>> from html5lib.treebuilders import getTreeBuilder
+>>> builder = getTreeBuilder('etree')\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_af20116ca2f6a2765396a54f21e84261e}\label{namespacepip_1_1__vendor_1_1html5lib_1_1treebuilders_af20116ca2f6a2765396a54f21e84261e}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders}!tree\+Builder\+Cache@{tree\+Builder\+Cache}}
+\index{tree\+Builder\+Cache@{tree\+Builder\+Cache}!pip\+::\+\_\+vendor\+::html5lib\+::treebuilders@{pip\+::\+\_\+vendor\+::html5lib\+::treebuilders}}
+\subsubsection{\texorpdfstring{tree\+Builder\+Cache}{treeBuilderCache}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+html5lib.\+treebuilders.\+tree\+Builder\+Cache}
+

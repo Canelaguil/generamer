@@ -1,0 +1,80 @@
+\hypertarget{classmatplotlib_1_1patches_1_1ConnectionStyle}{}\section{matplotlib.\+patches.\+Connection\+Style Class Reference}
+\label{classmatplotlib_1_1patches_1_1ConnectionStyle}\index{matplotlib.\+patches.\+Connection\+Style@{matplotlib.\+patches.\+Connection\+Style}}
+
+
+Inheritance diagram for matplotlib.\+patches.\+Connection\+Style\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classmatplotlib_1_1patches_1_1ConnectionStyle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+patches.\+Connection\+Style\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classmatplotlib_1_1patches_1_1ConnectionStyle__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1__Base}{\+\_\+\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1Angle}{Angle}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1Angle3}{Angle3}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1Arc}{Arc}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1Arc3}{Arc3}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1Bar}{Bar}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}`ConnectionStyle` is a container class which defines
+several connectionstyle classes, which is used to create a path
+between two points.  These are mainly used with `FancyArrowPatch`.
+
+A connectionstyle object can be either created as::
+
+       ConnectionStyle.Arc3(rad=0.2)
+
+or::
+
+       ConnectionStyle("Arc3", rad=0.2)
+
+or::
+
+       ConnectionStyle("Arc3, rad=0.2")
+
+The following classes are defined
+
+%(AvailableConnectorstyles)s
+
+An instance of any connection style class is an callable object,
+whose call signature is::
+
+    __call__(self, posA, posB,
+             patchA=None, patchB=None,
+             shrinkA=2., shrinkB=2.)
+
+and it returns a `.Path` instance. *posA* and *posB* are
+tuples of (x, y) coordinates of the two points to be
+connected. *patchA* (or *patchB*) is given, the returned path is
+clipped so that it start (or end) from the boundary of the
+patch. The path is further shrunk by *shrinkA* (or *shrinkB*)
+which is given in points.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{patches_8py}{patches.\+py}\end{DoxyCompactItemize}

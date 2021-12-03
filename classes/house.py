@@ -60,11 +60,11 @@ class House:
             text = f"{inhabitant.name} moved to {self.key} at {inhabitant.age}."
         else:
             text = f"{inhabitant.name} moved to {self.key} at age {inhabitant.age} because of {reason}."
-        inhabitant.knowledge.add_bit(0, text)
+        inhabitant.knowledge.add_bit(0, text, f'{reason}_move')
 
         inhabitant.house = self
         self.inhabitants.append(inhabitant)
-        if inhabitant.age < 13:
+        if inhabitant.age < 13 or inhabitant.age > 70:
             self.care_dependant.append(inhabitant)
 
     def add_people(self, inhabitants, reason='moved'):
@@ -97,7 +97,7 @@ class House:
 
     def appoint_breadwinner(self, bread_candidate):
         bread_candidate.breadwinner = True
-        bread_candidate.knowledge.add_bit(2, f"Became breadwinner of household.")
+        bread_candidate.knowledge.add_bit(2, f"Became breadwinner of household.", 'became_breadwinner')
         self.breadwinners.append(bread_candidate)
 
     def appoint_caretaker(self, care_candidate):
@@ -110,10 +110,10 @@ class House:
             for ch in self.care_dependant:
                 if ch.key != care_candidate.key:
                     ch.knowledge.add_bit(
-                        2, f"{care_candidate.name} took care of {ch.name} since {ch.name} was {ch.age}.")
+                        2, f"{care_candidate.name} took care of {ch.name} since {ch.name} was {ch.age}.", 'taken_careof')
                     children += f"{ch.name}, "
             care_candidate.knowledge.add_bit(
-                2, f"Became caretaker of {children[:-2]} at age {care_candidate.age}.")
+                2, f"Became caretaker of {children[:-2]} at age {care_candidate.age}.", 'became_caretaker')
 
     def update_roles(self, care_candidate=None, bread_candidate=None):
         if care_candidate != None:
@@ -176,7 +176,7 @@ class House:
 
     def relocate_members(self):
         for i in self.inhabitants:
-            i.knowledge.add_bit(4, f"Left {self.key} for lack of a breadwinner.")
+            i.knowledge.add_bit(4, f"Left {self.key} for lack of a breadwinner.", 'relocate_bcof_breadwinner')
             self.remove_person(i.key, 'orphaned')
             self.city.community.find_house_for(i)                 
 

@@ -1,0 +1,130 @@
+\hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1tree}{}\section{networkx.\+readwrite.\+json\+\_\+graph.\+tree Namespace Reference}
+\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1tree}\index{networkx.\+readwrite.\+json\+\_\+graph.\+tree@{networkx.\+readwrite.\+json\+\_\+graph.\+tree}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1json__graph_1_1tree_af98ef67adaa8ae409fc008e8c84425e1}{tree\+\_\+data} (G, root, attrs=None, ident=\char`\"{}id\char`\"{}, children=\char`\"{}children\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1json__graph_1_1tree_aef119a559fb1947b2d159beabb83001e}{tree\+\_\+graph} (data, attrs=None, ident=\char`\"{}id\char`\"{}, children=\char`\"{}children\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1tree_af98ef67adaa8ae409fc008e8c84425e1}\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1tree_af98ef67adaa8ae409fc008e8c84425e1}} 
+\index{networkx\+::readwrite\+::json\+\_\+graph\+::tree@{networkx\+::readwrite\+::json\+\_\+graph\+::tree}!tree\+\_\+data@{tree\+\_\+data}}
+\index{tree\+\_\+data@{tree\+\_\+data}!networkx\+::readwrite\+::json\+\_\+graph\+::tree@{networkx\+::readwrite\+::json\+\_\+graph\+::tree}}
+\subsubsection{\texorpdfstring{tree\+\_\+data()}{tree\_data()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+json\+\_\+graph.\+tree.\+tree\+\_\+data (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{root,  }\item[{}]{attrs = {\ttfamily None},  }\item[{}]{ident = {\ttfamily \char`\"{}id\char`\"{}},  }\item[{}]{children = {\ttfamily \char`\"{}children\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns data in tree format that is suitable for JSON serialization
+and use in Javascript documents.
+
+Parameters
+----------
+G : NetworkX graph
+   G must be an oriented tree
+
+root : node
+   The root of the tree
+
+attrs : dict
+    A dictionary that contains two keys 'id' and 'children'. The
+    corresponding values provide the attribute names for storing
+    NetworkX-internal graph data. The values should be unique. Default
+    value: :samp:`dict(id='id', children='children')`.
+
+    If some user-defined graph data use these attribute names as data keys,
+    they may be silently dropped.
+
+    .. deprecated:: 2.6
+
+       The `attrs` keyword argument is replaced by `ident` and `children`
+       and will be removed in networkx 3.0
+
+ident : string
+    Attribute name for storing NetworkX-internal graph data. `ident` must
+    have a different value than `children`. The default is 'id'.
+
+children : string
+    Attribute name for storing NetworkX-internal graph data. `children`
+    must have a different value than `ident`. The default is 'children'.
+
+Returns
+-------
+data : dict
+   A dictionary with node-link formatted data.
+
+Raises
+------
+NetworkXError
+    If `children` and `ident` attributes are identical.
+
+Examples
+--------
+>>> from networkx.readwrite import json_graph
+>>> G = nx.DiGraph([(1, 2)])
+>>> data = json_graph.tree_data(G, root=1)
+
+To serialize with json
+
+>>> import json
+>>> s = json.dumps(data)
+
+Notes
+-----
+Node attributes are stored in this format but keys
+for attributes must be strings if you want to serialize with JSON.
+
+Graph and edge attributes are not stored.
+
+See Also
+--------
+tree_graph, node_link_data, adjacency_data
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1json__graph_1_1tree_aef119a559fb1947b2d159beabb83001e}\label{namespacenetworkx_1_1readwrite_1_1json__graph_1_1tree_aef119a559fb1947b2d159beabb83001e}} 
+\index{networkx\+::readwrite\+::json\+\_\+graph\+::tree@{networkx\+::readwrite\+::json\+\_\+graph\+::tree}!tree\+\_\+graph@{tree\+\_\+graph}}
+\index{tree\+\_\+graph@{tree\+\_\+graph}!networkx\+::readwrite\+::json\+\_\+graph\+::tree@{networkx\+::readwrite\+::json\+\_\+graph\+::tree}}
+\subsubsection{\texorpdfstring{tree\+\_\+graph()}{tree\_graph()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+json\+\_\+graph.\+tree.\+tree\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{attrs = {\ttfamily None},  }\item[{}]{ident = {\ttfamily \char`\"{}id\char`\"{}},  }\item[{}]{children = {\ttfamily \char`\"{}children\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns graph from tree data format.
+
+Parameters
+----------
+data : dict
+    Tree formatted graph data
+attrs : dict
+    A dictionary that contains two keys 'id' and 'children'. The
+    corresponding values provide the attribute names for storing
+    NetworkX-internal graph data. The values should be unique. Default
+    value: :samp:`dict(id='id', children='children')`.
+
+    .. deprecated:: 2.6
+
+       The `attrs` keyword argument is replaced by `ident` and `children`
+       and will be removed in networkx 3.0
+
+ident : string
+    Attribute name for storing NetworkX-internal graph data. `ident` must
+    have a different value than `children`. The default is 'id'.
+
+children : string
+    Attribute name for storing NetworkX-internal graph data. `children`
+    must have a different value than `ident`. The default is 'children'.
+
+Returns
+-------
+G : NetworkX DiGraph
+
+Examples
+--------
+>>> from networkx.readwrite import json_graph
+>>> G = nx.DiGraph([(1, 2)])
+>>> data = json_graph.tree_data(G, root=1)
+>>> H = json_graph.tree_graph(data)
+
+See Also
+--------
+tree_data, node_link_data, adjacency_data
+\end{DoxyVerb}
+ 

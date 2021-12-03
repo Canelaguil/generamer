@@ -1,0 +1,176 @@
+\hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request}{}\section{pip.\+\_\+vendor.\+requests.\+models.\+Request Class Reference}
+\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request}\index{pip.\+\_\+vendor.\+requests.\+models.\+Request@{pip.\+\_\+vendor.\+requests.\+models.\+Request}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+requests.\+models.\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classpip_1_1__vendor_1_1requests_1_1models_1_1Request__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+requests.\+models.\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classpip_1_1__vendor_1_1requests_1_1models_1_1Request__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a08cc53ad5e35305ac699e7457473d756}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a1abe778109e5e62b9899212a82f35c21}{method}=None, \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a2f09fa6b6d5dc1b66f18f35c87a6a9ac}{url}=None, \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_ad4046fa53a2dc5072f91e798328cdc8d}{headers}=None, \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a30545c8379b7cc31c6d2fc63d909f7fb}{files}=None, \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a6f8c20c420d2876df5ceed3b47ae7f10}{data}=None, \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_af0c527889cc5ac1f6984c1e5a304a291}{params}=None, \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a1ee0c0977e654596a8a8b3ed4bf6b867}{auth}=None, \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a2469f801afbf4ffe3bc894b56e769f0a}{cookies}=None, \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a84e606481a29a063b2631d867ece6385}{hooks}=None, \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_af58d7221f333c2a768935c96af37c82c}{json}=None)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a932d3ee07b7e2f0e45f6b59fbffc90d6}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a1aef1fe537b8565201546df0e993c6c1}{prepare} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a84e606481a29a063b2631d867ece6385}{hooks}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a1abe778109e5e62b9899212a82f35c21}{method}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a2f09fa6b6d5dc1b66f18f35c87a6a9ac}{url}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_ad4046fa53a2dc5072f91e798328cdc8d}{headers}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a30545c8379b7cc31c6d2fc63d909f7fb}{files}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a6f8c20c420d2876df5ceed3b47ae7f10}{data}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_af58d7221f333c2a768935c96af37c82c}{json}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_af0c527889cc5ac1f6984c1e5a304a291}{params}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a1ee0c0977e654596a8a8b3ed4bf6b867}{auth}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a2469f801afbf4ffe3bc894b56e769f0a}{cookies}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A user-created :class:`Request <Request>` object.
+
+Used to prepare a :class:`PreparedRequest <PreparedRequest>`, which is sent to the server.
+
+:param method: HTTP method to use.
+:param url: URL to send.
+:param headers: dictionary of headers to send.
+:param files: dictionary of {filename: fileobject} files to multipart upload.
+:param data: the body to attach to the request. If a dictionary or
+    list of tuples ``[(key, value)]`` is provided, form-encoding will
+    take place.
+:param json: json for the body to attach to the request (if files or data is not specified).
+:param params: URL parameters to append to the URL. If a dictionary or
+    list of tuples ``[(key, value)]`` is provided, form-encoding will
+    take place.
+:param auth: Auth handler or (user, pass) tuple.
+:param cookies: dictionary or CookieJar of cookies to attach to this request.
+:param hooks: dictionary of callback hooks, for internal usage.
+
+Usage::
+
+  >>> import requests
+  >>> req = requests.Request('GET', 'https://httpbin.org/get')
+  >>> req.prepare()
+  <PreparedRequest [GET]>
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a08cc53ad5e35305ac699e7457473d756}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a08cc53ad5e35305ac699e7457473d756}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+models.\+Request.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{method = {\ttfamily None},  }\item[{}]{url = {\ttfamily None},  }\item[{}]{headers = {\ttfamily None},  }\item[{}]{files = {\ttfamily None},  }\item[{}]{data = {\ttfamily None},  }\item[{}]{params = {\ttfamily None},  }\item[{}]{auth = {\ttfamily None},  }\item[{}]{cookies = {\ttfamily None},  }\item[{}]{hooks = {\ttfamily None},  }\item[{}]{json = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a932d3ee07b7e2f0e45f6b59fbffc90d6}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a932d3ee07b7e2f0e45f6b59fbffc90d6}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+models.\+Request.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a1aef1fe537b8565201546df0e993c6c1}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a1aef1fe537b8565201546df0e993c6c1}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!prepare@{prepare}}
+\index{prepare@{prepare}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+requests.\+models.\+Request.\+prepare (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Constructs a :class:`PreparedRequest <PreparedRequest>` for transmission and returns it.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a1ee0c0977e654596a8a8b3ed4bf6b867}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a1ee0c0977e654596a8a8b3ed4bf6b867}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!auth@{auth}}
+\index{auth@{auth}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{auth}{auth}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+requests.\+models.\+Request.\+auth}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a2469f801afbf4ffe3bc894b56e769f0a}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a2469f801afbf4ffe3bc894b56e769f0a}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!cookies@{cookies}}
+\index{cookies@{cookies}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{cookies}{cookies}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+requests.\+models.\+Request.\+cookies}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a6f8c20c420d2876df5ceed3b47ae7f10}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a6f8c20c420d2876df5ceed3b47ae7f10}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!data@{data}}
+\index{data@{data}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+requests.\+models.\+Request.\+data}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a30545c8379b7cc31c6d2fc63d909f7fb}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a30545c8379b7cc31c6d2fc63d909f7fb}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!files@{files}}
+\index{files@{files}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{files}{files}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+requests.\+models.\+Request.\+files}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_ad4046fa53a2dc5072f91e798328cdc8d}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_ad4046fa53a2dc5072f91e798328cdc8d}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!headers@{headers}}
+\index{headers@{headers}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{headers}{headers}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+requests.\+models.\+Request.\+headers}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a84e606481a29a063b2631d867ece6385}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a84e606481a29a063b2631d867ece6385}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!hooks@{hooks}}
+\index{hooks@{hooks}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{hooks}{hooks}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+requests.\+models.\+Request.\+hooks}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_af58d7221f333c2a768935c96af37c82c}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_af58d7221f333c2a768935c96af37c82c}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!json@{json}}
+\index{json@{json}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{json}{json}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+requests.\+models.\+Request.\+json}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a1abe778109e5e62b9899212a82f35c21}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a1abe778109e5e62b9899212a82f35c21}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!method@{method}}
+\index{method@{method}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{method}{method}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+requests.\+models.\+Request.\+method}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_af0c527889cc5ac1f6984c1e5a304a291}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_af0c527889cc5ac1f6984c1e5a304a291}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!params@{params}}
+\index{params@{params}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{params}{params}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+requests.\+models.\+Request.\+params}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a2f09fa6b6d5dc1b66f18f35c87a6a9ac}\label{classpip_1_1__vendor_1_1requests_1_1models_1_1Request_a2f09fa6b6d5dc1b66f18f35c87a6a9ac}} 
+\index{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}!url@{url}}
+\index{url@{url}!pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request@{pip\+::\+\_\+vendor\+::requests\+::models\+::\+Request}}
+\subsubsection{\texorpdfstring{url}{url}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+requests.\+models.\+Request.\+url}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/requests/\hyperlink{__vendor_2requests_2models_8py}{models.\+py}\end{DoxyCompactItemize}

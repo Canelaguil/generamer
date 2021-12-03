@@ -1,0 +1,110 @@
+\hypertarget{classmatplotlib_1_1docstring_1_1Substitution}{}\section{matplotlib.\+docstring.\+Substitution Class Reference}
+\label{classmatplotlib_1_1docstring_1_1Substitution}\index{matplotlib.\+docstring.\+Substitution@{matplotlib.\+docstring.\+Substitution}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1docstring_1_1Substitution_ab8010fcdd00dcc7c88a90748d4c37d4f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1docstring_1_1Substitution_a2a8935759c15e4ab7e37013f629af793}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, func)
+\item 
+def \hyperlink{classmatplotlib_1_1docstring_1_1Substitution_a8aee3f1be589a772f2751ab2a7eb6e8b}{update} (self, args, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1docstring_1_1Substitution_ae0175a2e7b63a4e787b37dce1587d5fd}{from\+\_\+params} (cls, \hyperlink{classmatplotlib_1_1docstring_1_1Substitution_af427316b5e8f50e6458018c5c0ea2d18}{params})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1docstring_1_1Substitution_af427316b5e8f50e6458018c5c0ea2d18}{params}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1docstring_1_1Substitution_a276f9c722ef3324ff1c94800e0dc3759}{alternative}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A decorator that performs %-substitution on an object's docstring.
+
+This decorator should be robust even if ``obj.__doc__`` is None (for
+example, if -OO was passed to the interpreter).
+
+Usage: construct a docstring.Substitution with a sequence or dictionary
+suitable for performing substitution; then decorate a suitable function
+with the constructed object, e.g.::
+
+    sub_author_name = Substitution(author='Jason')
+
+    @sub_author_name
+    def some_function(x):
+        "%(author)s wrote this function"
+
+    # note that some_function.__doc__ is now "Jason wrote this function"
+
+One can also use positional arguments::
+
+    sub_first_last_names = Substitution('Edgar Allen', 'Poe')
+
+    @sub_first_last_names
+    def some_function(x):
+        "%s %s wrote the Raven"
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1docstring_1_1Substitution_ab8010fcdd00dcc7c88a90748d4c37d4f}\label{classmatplotlib_1_1docstring_1_1Substitution_ab8010fcdd00dcc7c88a90748d4c37d4f}} 
+\index{matplotlib\+::docstring\+::\+Substitution@{matplotlib\+::docstring\+::\+Substitution}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::docstring\+::\+Substitution@{matplotlib\+::docstring\+::\+Substitution}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+docstring.\+Substitution.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1docstring_1_1Substitution_a2a8935759c15e4ab7e37013f629af793}\label{classmatplotlib_1_1docstring_1_1Substitution_a2a8935759c15e4ab7e37013f629af793}} 
+\index{matplotlib\+::docstring\+::\+Substitution@{matplotlib\+::docstring\+::\+Substitution}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::docstring\+::\+Substitution@{matplotlib\+::docstring\+::\+Substitution}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+docstring.\+Substitution.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1docstring_1_1Substitution_ae0175a2e7b63a4e787b37dce1587d5fd}\label{classmatplotlib_1_1docstring_1_1Substitution_ae0175a2e7b63a4e787b37dce1587d5fd}} 
+\index{matplotlib\+::docstring\+::\+Substitution@{matplotlib\+::docstring\+::\+Substitution}!from\+\_\+params@{from\+\_\+params}}
+\index{from\+\_\+params@{from\+\_\+params}!matplotlib\+::docstring\+::\+Substitution@{matplotlib\+::docstring\+::\+Substitution}}
+\subsubsection{\texorpdfstring{from\+\_\+params()}{from\_params()}}
+{\footnotesize\ttfamily def matplotlib.\+docstring.\+Substitution.\+from\+\_\+params (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{params }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}In the case where the params is a mutable sequence (list or
+dictionary) and it may change before this class is called, one may
+explicitly use a reference to the params rather than using *args or
+**kwargs which will copy the values and not reference them.
+
+:meta private:
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1docstring_1_1Substitution_a8aee3f1be589a772f2751ab2a7eb6e8b}\label{classmatplotlib_1_1docstring_1_1Substitution_a8aee3f1be589a772f2751ab2a7eb6e8b}} 
+\index{matplotlib\+::docstring\+::\+Substitution@{matplotlib\+::docstring\+::\+Substitution}!update@{update}}
+\index{update@{update}!matplotlib\+::docstring\+::\+Substitution@{matplotlib\+::docstring\+::\+Substitution}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily def matplotlib.\+docstring.\+Substitution.\+update (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update ``self.params`` (which must be a dict) with the supplied args.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1docstring_1_1Substitution_a276f9c722ef3324ff1c94800e0dc3759}\label{classmatplotlib_1_1docstring_1_1Substitution_a276f9c722ef3324ff1c94800e0dc3759}} 
+\index{matplotlib\+::docstring\+::\+Substitution@{matplotlib\+::docstring\+::\+Substitution}!alternative@{alternative}}
+\index{alternative@{alternative}!matplotlib\+::docstring\+::\+Substitution@{matplotlib\+::docstring\+::\+Substitution}}
+\subsubsection{\texorpdfstring{alternative}{alternative}}
+{\footnotesize\ttfamily matplotlib.\+docstring.\+Substitution.\+alternative\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1docstring_1_1Substitution_af427316b5e8f50e6458018c5c0ea2d18}\label{classmatplotlib_1_1docstring_1_1Substitution_af427316b5e8f50e6458018c5c0ea2d18}} 
+\index{matplotlib\+::docstring\+::\+Substitution@{matplotlib\+::docstring\+::\+Substitution}!params@{params}}
+\index{params@{params}!matplotlib\+::docstring\+::\+Substitution@{matplotlib\+::docstring\+::\+Substitution}}
+\subsubsection{\texorpdfstring{params}{params}}
+{\footnotesize\ttfamily matplotlib.\+docstring.\+Substitution.\+params}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{docstring_8py}{docstring.\+py}\end{DoxyCompactItemize}

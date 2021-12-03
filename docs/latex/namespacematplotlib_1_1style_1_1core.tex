@@ -1,0 +1,209 @@
+\hypertarget{namespacematplotlib_1_1style_1_1core}{}\section{matplotlib.\+style.\+core Namespace Reference}
+\label{namespacematplotlib_1_1style_1_1core}\index{matplotlib.\+style.\+core@{matplotlib.\+style.\+core}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1style_1_1core_a7a3b0dabe53194cb84ce4f20e0ac5629}{use} (style)
+\item 
+def \hyperlink{namespacematplotlib_1_1style_1_1core_a4b6573cbad37ba7c73edd44c7b64e387}{context} (style, after\+\_\+reset=False)
+\item 
+def \hyperlink{namespacematplotlib_1_1style_1_1core_a81e2e48e80974f82ed14e7c381974d60}{load\+\_\+base\+\_\+library} ()
+\item 
+def \hyperlink{namespacematplotlib_1_1style_1_1core_afff002c2298cc82b0e7d48197cc56dc8}{iter\+\_\+user\+\_\+libraries} ()
+\item 
+def \hyperlink{namespacematplotlib_1_1style_1_1core_af10e002f693151e340af7409c99f05b5}{update\+\_\+user\+\_\+library} (\hyperlink{namespacematplotlib_1_1style_1_1core_a9a119f100ad7d6dd795ba9f2e3f58c14}{library})
+\item 
+def \hyperlink{namespacematplotlib_1_1style_1_1core_a60f4086faca68bc46a2c35c75b748b0e}{read\+\_\+style\+\_\+directory} (style\+\_\+dir)
+\item 
+def \hyperlink{namespacematplotlib_1_1style_1_1core_a47cf38d3c8ec7e1391e20e2d1efa8712}{update\+\_\+nested\+\_\+dict} (main\+\_\+dict, new\+\_\+dict)
+\item 
+def \hyperlink{namespacematplotlib_1_1style_1_1core_a454226441405668d78957d31cf5280aa}{reload\+\_\+library} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1style_1_1core_a117c22eb75611021d43b69d1d971d26a}{B\+A\+S\+E\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+TH}
+\item 
+\hyperlink{namespacematplotlib_1_1style_1_1core_a0a5ad3fae449d1efaf13a8fe3133528c}{U\+S\+E\+R\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+T\+HS}
+\item 
+\hyperlink{namespacematplotlib_1_1style_1_1core_a52737a05b96304a26693e4e4c1abf4d2}{S\+T\+Y\+L\+E\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}
+\item 
+\hyperlink{namespacematplotlib_1_1style_1_1core_aad34d19e4db6919ddea275595dec7416}{S\+T\+Y\+L\+E\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+T\+T\+E\+RN}
+\item 
+\hyperlink{namespacematplotlib_1_1style_1_1core_a5fe219acd4005f94072737ddcd90a495}{S\+T\+Y\+L\+E\+\_\+\+B\+L\+A\+C\+K\+L\+I\+ST}
+\item 
+\hyperlink{namespacematplotlib_1_1style_1_1core_a9a119f100ad7d6dd795ba9f2e3f58c14}{library}
+\item 
+\hyperlink{namespacematplotlib_1_1style_1_1core_a9b41d9049d8c37c31f8007711fa863a0}{available}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Core functions and attributes for the matplotlib style library:
+
+``use``
+Select style sheet to override the current matplotlib settings.
+``context``
+Context manager to use a style sheet temporarily.
+``available``
+List available style sheets.
+``library``
+A dictionary of style names and matplotlib settings.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_a4b6573cbad37ba7c73edd44c7b64e387}\label{namespacematplotlib_1_1style_1_1core_a4b6573cbad37ba7c73edd44c7b64e387}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!context@{context}}
+\index{context@{context}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{context()}{context()}}
+{\footnotesize\ttfamily def matplotlib.\+style.\+core.\+context (\begin{DoxyParamCaption}\item[{}]{style,  }\item[{}]{after\+\_\+reset = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Context manager for using style settings temporarily.
+
+Parameters
+----------
+style : str, dict, Path or list
+    A style specification. Valid options are:
+
+    +------+-------------------------------------------------------------+
+    | str  | The name of a style or a path/URL to a style file. For a    |
+    |      | list of available style names, see `style.available`.       |
+    +------+-------------------------------------------------------------+
+    | dict | Dictionary with valid key/value pairs for                   |
+    |      | `matplotlib.rcParams`.                                      |
+    +------+-------------------------------------------------------------+
+    | Path | A path-like object which is a path to a style file.         |
+    +------+-------------------------------------------------------------+
+    | list | A list of style specifiers (str, Path or dict) applied from |
+    |      | first to last in the list.                                  |
+    +------+-------------------------------------------------------------+
+
+after_reset : bool
+    If True, apply style after resetting settings to their defaults;
+    otherwise, apply style on top of the current settings.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_afff002c2298cc82b0e7d48197cc56dc8}\label{namespacematplotlib_1_1style_1_1core_afff002c2298cc82b0e7d48197cc56dc8}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!iter\+\_\+user\+\_\+libraries@{iter\+\_\+user\+\_\+libraries}}
+\index{iter\+\_\+user\+\_\+libraries@{iter\+\_\+user\+\_\+libraries}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{iter\+\_\+user\+\_\+libraries()}{iter\_user\_libraries()}}
+{\footnotesize\ttfamily def matplotlib.\+style.\+core.\+iter\+\_\+user\+\_\+libraries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_a81e2e48e80974f82ed14e7c381974d60}\label{namespacematplotlib_1_1style_1_1core_a81e2e48e80974f82ed14e7c381974d60}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!load\+\_\+base\+\_\+library@{load\+\_\+base\+\_\+library}}
+\index{load\+\_\+base\+\_\+library@{load\+\_\+base\+\_\+library}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{load\+\_\+base\+\_\+library()}{load\_base\_library()}}
+{\footnotesize\ttfamily def matplotlib.\+style.\+core.\+load\+\_\+base\+\_\+library (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load style library defined in this package.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_a60f4086faca68bc46a2c35c75b748b0e}\label{namespacematplotlib_1_1style_1_1core_a60f4086faca68bc46a2c35c75b748b0e}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!read\+\_\+style\+\_\+directory@{read\+\_\+style\+\_\+directory}}
+\index{read\+\_\+style\+\_\+directory@{read\+\_\+style\+\_\+directory}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{read\+\_\+style\+\_\+directory()}{read\_style\_directory()}}
+{\footnotesize\ttfamily def matplotlib.\+style.\+core.\+read\+\_\+style\+\_\+directory (\begin{DoxyParamCaption}\item[{}]{style\+\_\+dir }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return dictionary of styles defined in *style_dir*.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_a454226441405668d78957d31cf5280aa}\label{namespacematplotlib_1_1style_1_1core_a454226441405668d78957d31cf5280aa}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!reload\+\_\+library@{reload\+\_\+library}}
+\index{reload\+\_\+library@{reload\+\_\+library}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{reload\+\_\+library()}{reload\_library()}}
+{\footnotesize\ttfamily def matplotlib.\+style.\+core.\+reload\+\_\+library (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reload the style library.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_a47cf38d3c8ec7e1391e20e2d1efa8712}\label{namespacematplotlib_1_1style_1_1core_a47cf38d3c8ec7e1391e20e2d1efa8712}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!update\+\_\+nested\+\_\+dict@{update\+\_\+nested\+\_\+dict}}
+\index{update\+\_\+nested\+\_\+dict@{update\+\_\+nested\+\_\+dict}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{update\+\_\+nested\+\_\+dict()}{update\_nested\_dict()}}
+{\footnotesize\ttfamily def matplotlib.\+style.\+core.\+update\+\_\+nested\+\_\+dict (\begin{DoxyParamCaption}\item[{}]{main\+\_\+dict,  }\item[{}]{new\+\_\+dict }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update nested dict (only level of nesting) with new values.
+
+Unlike `dict.update`, this assumes that the values of the parent dict are
+dicts (or dict-like), so you shouldn't replace the nested dict if it
+already exists. Instead you should update the sub-dict.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_af10e002f693151e340af7409c99f05b5}\label{namespacematplotlib_1_1style_1_1core_af10e002f693151e340af7409c99f05b5}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!update\+\_\+user\+\_\+library@{update\+\_\+user\+\_\+library}}
+\index{update\+\_\+user\+\_\+library@{update\+\_\+user\+\_\+library}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{update\+\_\+user\+\_\+library()}{update\_user\_library()}}
+{\footnotesize\ttfamily def matplotlib.\+style.\+core.\+update\+\_\+user\+\_\+library (\begin{DoxyParamCaption}\item[{}]{library }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update style library with user-defined rc files.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_a7a3b0dabe53194cb84ce4f20e0ac5629}\label{namespacematplotlib_1_1style_1_1core_a7a3b0dabe53194cb84ce4f20e0ac5629}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!use@{use}}
+\index{use@{use}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily def matplotlib.\+style.\+core.\+use (\begin{DoxyParamCaption}\item[{}]{style }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Use Matplotlib style settings from a style specification.
+
+The style name of 'default' is reserved for reverting back to
+the default style settings.
+
+.. note::
+
+   This updates the `.rcParams` with the settings from the style.
+   `.rcParams` not defined in the style are kept.
+
+Parameters
+----------
+style : str, dict, Path or list
+    A style specification. Valid options are:
+
+    +------+-------------------------------------------------------------+
+    | str  | The name of a style or a path/URL to a style file. For a    |
+    |      | list of available style names, see `style.available`.       |
+    +------+-------------------------------------------------------------+
+    | dict | Dictionary with valid key/value pairs for                   |
+    |      | `matplotlib.rcParams`.                                      |
+    +------+-------------------------------------------------------------+
+    | Path | A path-like object which is a path to a style file.         |
+    +------+-------------------------------------------------------------+
+    | list | A list of style specifiers (str, Path or dict) applied from |
+    |      | first to last in the list.                                  |
+    +------+-------------------------------------------------------------+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_a9b41d9049d8c37c31f8007711fa863a0}\label{namespacematplotlib_1_1style_1_1core_a9b41d9049d8c37c31f8007711fa863a0}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!available@{available}}
+\index{available@{available}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{available}{available}}
+{\footnotesize\ttfamily matplotlib.\+style.\+core.\+available}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_a117c22eb75611021d43b69d1d971d26a}\label{namespacematplotlib_1_1style_1_1core_a117c22eb75611021d43b69d1d971d26a}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!B\+A\+S\+E\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+TH@{B\+A\+S\+E\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+TH}}
+\index{B\+A\+S\+E\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+TH@{B\+A\+S\+E\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+TH}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{B\+A\+S\+E\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+TH}{BASE\_LIBRARY\_PATH}}
+{\footnotesize\ttfamily matplotlib.\+style.\+core.\+B\+A\+S\+E\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+TH}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_a9a119f100ad7d6dd795ba9f2e3f58c14}\label{namespacematplotlib_1_1style_1_1core_a9a119f100ad7d6dd795ba9f2e3f58c14}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!library@{library}}
+\index{library@{library}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{library}{library}}
+{\footnotesize\ttfamily matplotlib.\+style.\+core.\+library}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_a5fe219acd4005f94072737ddcd90a495}\label{namespacematplotlib_1_1style_1_1core_a5fe219acd4005f94072737ddcd90a495}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!S\+T\+Y\+L\+E\+\_\+\+B\+L\+A\+C\+K\+L\+I\+ST@{S\+T\+Y\+L\+E\+\_\+\+B\+L\+A\+C\+K\+L\+I\+ST}}
+\index{S\+T\+Y\+L\+E\+\_\+\+B\+L\+A\+C\+K\+L\+I\+ST@{S\+T\+Y\+L\+E\+\_\+\+B\+L\+A\+C\+K\+L\+I\+ST}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{S\+T\+Y\+L\+E\+\_\+\+B\+L\+A\+C\+K\+L\+I\+ST}{STYLE\_BLACKLIST}}
+{\footnotesize\ttfamily matplotlib.\+style.\+core.\+S\+T\+Y\+L\+E\+\_\+\+B\+L\+A\+C\+K\+L\+I\+ST}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_a52737a05b96304a26693e4e4c1abf4d2}\label{namespacematplotlib_1_1style_1_1core_a52737a05b96304a26693e4e4c1abf4d2}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!S\+T\+Y\+L\+E\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON@{S\+T\+Y\+L\+E\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}
+\index{S\+T\+Y\+L\+E\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON@{S\+T\+Y\+L\+E\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{S\+T\+Y\+L\+E\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}{STYLE\_EXTENSION}}
+{\footnotesize\ttfamily matplotlib.\+style.\+core.\+S\+T\+Y\+L\+E\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_aad34d19e4db6919ddea275595dec7416}\label{namespacematplotlib_1_1style_1_1core_aad34d19e4db6919ddea275595dec7416}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!S\+T\+Y\+L\+E\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+T\+T\+E\+RN@{S\+T\+Y\+L\+E\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+T\+T\+E\+RN}}
+\index{S\+T\+Y\+L\+E\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+T\+T\+E\+RN@{S\+T\+Y\+L\+E\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+T\+T\+E\+RN}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{S\+T\+Y\+L\+E\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+T\+T\+E\+RN}{STYLE\_FILE\_PATTERN}}
+{\footnotesize\ttfamily matplotlib.\+style.\+core.\+S\+T\+Y\+L\+E\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+T\+T\+E\+RN}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1style_1_1core_a0a5ad3fae449d1efaf13a8fe3133528c}\label{namespacematplotlib_1_1style_1_1core_a0a5ad3fae449d1efaf13a8fe3133528c}} 
+\index{matplotlib\+::style\+::core@{matplotlib\+::style\+::core}!U\+S\+E\+R\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+T\+HS@{U\+S\+E\+R\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+T\+HS}}
+\index{U\+S\+E\+R\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+T\+HS@{U\+S\+E\+R\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+T\+HS}!matplotlib\+::style\+::core@{matplotlib\+::style\+::core}}
+\subsubsection{\texorpdfstring{U\+S\+E\+R\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+T\+HS}{USER\_LIBRARY\_PATHS}}
+{\footnotesize\ttfamily matplotlib.\+style.\+core.\+U\+S\+E\+R\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+T\+HS}
+

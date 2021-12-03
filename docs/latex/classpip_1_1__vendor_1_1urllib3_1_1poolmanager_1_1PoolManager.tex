@@ -1,0 +1,231 @@
+\hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager}{}\section{pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager Class Reference}
+\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager}\index{pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager@{pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_ae2f3332cce2d95c424164d3c03851a73}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, num\+\_\+pools=10, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1request_1_1RequestMethods_a507ade459b427bd81a5a8849563702e3}{headers}=None, \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a509374901e1f086853c6df9928b7312a}{connection\+\_\+pool\+\_\+kw})
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a2b2f223bf1d4ce8dabfdcc7347333eb6}{\+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_ab3a3ef8fb5ba2ab1a62c4d4cbe336440}{\+\_\+\+\_\+exit\+\_\+\+\_\+} (self, exc\+\_\+type, exc\+\_\+val, exc\+\_\+tb)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a293a4e1145fa83883ca5a0a83c9e2a0d}{clear} (self)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a7e530a63470af62cc2ce9c7d5ceb4402}{connection\+\_\+from\+\_\+host} (self, host, port=None, scheme=\char`\"{}http\char`\"{}, pool\+\_\+kwargs=None)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a1b1cc75e0e4df72c7190c1dc85cfb8b3}{connection\+\_\+from\+\_\+context} (self, request\+\_\+context)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_aec90b429d0fd092fe7baaeef721088e4}{connection\+\_\+from\+\_\+pool\+\_\+key} (self, pool\+\_\+key, request\+\_\+context=None)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_ad3a3b301f8ce97a6a6904ac76dc31bd8}{connection\+\_\+from\+\_\+url} (self, url, pool\+\_\+kwargs=None)
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a544250cb00f6ef92d7a724790391a985}{urlopen} (self, method, url, redirect=True, kw)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a509374901e1f086853c6df9928b7312a}{connection\+\_\+pool\+\_\+kw}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a0677ea3fbf3ddfc088b284c56377e35e}{pools}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a40d9cd018f9467aee2841c06d83ccfe2}{pool\+\_\+classes\+\_\+by\+\_\+scheme}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_aa67bdb3813fdcaa695cfb60b9741c3bd}{key\+\_\+fn\+\_\+by\+\_\+scheme}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a237e5af864203b1b19f4abec4dc9a908}{proxy}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a172d98ef9b90b01ad76e686efbf0a5b2}{proxy\+\_\+config}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Allows for arbitrary requests while transparently keeping track of
+necessary connection pools for you.
+
+:param num_pools:
+    Number of connection pools to cache before discarding the least
+    recently used pool.
+
+:param headers:
+    Headers to include with all requests, unless other headers are given
+    explicitly.
+
+:param \\**connection_pool_kw:
+    Additional parameters are used to create fresh
+    :class:`urllib3.connectionpool.ConnectionPool` instances.
+
+Example::
+
+    >>> manager = PoolManager(num_pools=2)
+    >>> r = manager.request('GET', 'http://google.com/')
+    >>> r = manager.request('GET', 'http://google.com/mail')
+    >>> r = manager.request('GET', 'http://yahoo.com/')
+    >>> len(manager.pools)
+    2\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_ae2f3332cce2d95c424164d3c03851a73}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_ae2f3332cce2d95c424164d3c03851a73}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{num\+\_\+pools = {\ttfamily 10},  }\item[{}]{headers = {\ttfamily None},  }\item[{}]{connection\+\_\+pool\+\_\+kw }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a2b2f223bf1d4ce8dabfdcc7347333eb6}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a2b2f223bf1d4ce8dabfdcc7347333eb6}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+enter\+\_\+\+\_\+@{\+\_\+\+\_\+enter\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+enter\+\_\+\+\_\+()}{\_\_enter\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+\_\+\+\_\+enter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_ab3a3ef8fb5ba2ab1a62c4d4cbe336440}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_ab3a3ef8fb5ba2ab1a62c4d4cbe336440}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+exit\+\_\+\+\_\+@{\+\_\+\+\_\+exit\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+exit\+\_\+\+\_\+()}{\_\_exit\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+\_\+\+\_\+exit\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{exc\+\_\+type,  }\item[{}]{exc\+\_\+val,  }\item[{}]{exc\+\_\+tb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a293a4e1145fa83883ca5a0a83c9e2a0d}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a293a4e1145fa83883ca5a0a83c9e2a0d}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!clear@{clear}}
+\index{clear@{clear}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+clear (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Empty our store of pools and direct them all to close.
+
+This will not affect in-flight connections, but they will not be
+re-used after completion.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a1b1cc75e0e4df72c7190c1dc85cfb8b3}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a1b1cc75e0e4df72c7190c1dc85cfb8b3}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!connection\+\_\+from\+\_\+context@{connection\+\_\+from\+\_\+context}}
+\index{connection\+\_\+from\+\_\+context@{connection\+\_\+from\+\_\+context}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{connection\+\_\+from\+\_\+context()}{connection\_from\_context()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+connection\+\_\+from\+\_\+context (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{request\+\_\+context }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a :class:`urllib3.connectionpool.ConnectionPool` based on the request context.
+
+``request_context`` must at least contain the ``scheme`` key and its
+value must be a key in ``key_fn_by_scheme`` instance variable.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a7e530a63470af62cc2ce9c7d5ceb4402}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a7e530a63470af62cc2ce9c7d5ceb4402}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!connection\+\_\+from\+\_\+host@{connection\+\_\+from\+\_\+host}}
+\index{connection\+\_\+from\+\_\+host@{connection\+\_\+from\+\_\+host}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{connection\+\_\+from\+\_\+host()}{connection\_from\_host()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+connection\+\_\+from\+\_\+host (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{host,  }\item[{}]{port = {\ttfamily None},  }\item[{}]{scheme = {\ttfamily \char`\"{}http\char`\"{}},  }\item[{}]{pool\+\_\+kwargs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a :class:`urllib3.connectionpool.ConnectionPool` based on the host, port, and scheme.
+
+If ``port`` isn't given, it will be derived from the ``scheme`` using
+``urllib3.connectionpool.port_by_scheme``. If ``pool_kwargs`` is
+provided, it is merged with the instance's ``connection_pool_kw``
+variable and used to create the new connection pool, if one is
+needed.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_aec90b429d0fd092fe7baaeef721088e4}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_aec90b429d0fd092fe7baaeef721088e4}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!connection\+\_\+from\+\_\+pool\+\_\+key@{connection\+\_\+from\+\_\+pool\+\_\+key}}
+\index{connection\+\_\+from\+\_\+pool\+\_\+key@{connection\+\_\+from\+\_\+pool\+\_\+key}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{connection\+\_\+from\+\_\+pool\+\_\+key()}{connection\_from\_pool\_key()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+connection\+\_\+from\+\_\+pool\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pool\+\_\+key,  }\item[{}]{request\+\_\+context = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a :class:`urllib3.connectionpool.ConnectionPool` based on the provided pool key.
+
+``pool_key`` should be a namedtuple that only contains immutable
+objects. At a minimum it must have the ``scheme``, ``host``, and
+``port`` fields.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_ad3a3b301f8ce97a6a6904ac76dc31bd8}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_ad3a3b301f8ce97a6a6904ac76dc31bd8}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!connection\+\_\+from\+\_\+url@{connection\+\_\+from\+\_\+url}}
+\index{connection\+\_\+from\+\_\+url@{connection\+\_\+from\+\_\+url}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{connection\+\_\+from\+\_\+url()}{connection\_from\_url()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+connection\+\_\+from\+\_\+url (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{url,  }\item[{}]{pool\+\_\+kwargs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Similar to :func:`urllib3.connectionpool.connection_from_url`.
+
+If ``pool_kwargs`` is not provided and a new pool needs to be
+constructed, ``self.connection_pool_kw`` is used to initialize
+the :class:`urllib3.connectionpool.ConnectionPool`. If ``pool_kwargs``
+is provided, it is used instead. Note that if a new pool does not
+need to be created for the request, the provided ``pool_kwargs`` are
+not used.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a544250cb00f6ef92d7a724790391a985}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a544250cb00f6ef92d7a724790391a985}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!urlopen@{urlopen}}
+\index{urlopen@{urlopen}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{urlopen()}{urlopen()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+urlopen (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{method,  }\item[{}]{url,  }\item[{}]{redirect = {\ttfamily True},  }\item[{}]{kw }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Same as :meth:`urllib3.HTTPConnectionPool.urlopen`
+with custom cross-host redirect logic and only sends the request-uri
+portion of the ``url``.
+
+The given ``url`` parameter must be absolute, such that an appropriate
+:class:`urllib3.connectionpool.ConnectionPool` can be chosen for it.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a509374901e1f086853c6df9928b7312a}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a509374901e1f086853c6df9928b7312a}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!connection\+\_\+pool\+\_\+kw@{connection\+\_\+pool\+\_\+kw}}
+\index{connection\+\_\+pool\+\_\+kw@{connection\+\_\+pool\+\_\+kw}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{connection\+\_\+pool\+\_\+kw}{connection\_pool\_kw}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+connection\+\_\+pool\+\_\+kw}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_aa67bdb3813fdcaa695cfb60b9741c3bd}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_aa67bdb3813fdcaa695cfb60b9741c3bd}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!key\+\_\+fn\+\_\+by\+\_\+scheme@{key\+\_\+fn\+\_\+by\+\_\+scheme}}
+\index{key\+\_\+fn\+\_\+by\+\_\+scheme@{key\+\_\+fn\+\_\+by\+\_\+scheme}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{key\+\_\+fn\+\_\+by\+\_\+scheme}{key\_fn\_by\_scheme}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+key\+\_\+fn\+\_\+by\+\_\+scheme}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a40d9cd018f9467aee2841c06d83ccfe2}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a40d9cd018f9467aee2841c06d83ccfe2}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!pool\+\_\+classes\+\_\+by\+\_\+scheme@{pool\+\_\+classes\+\_\+by\+\_\+scheme}}
+\index{pool\+\_\+classes\+\_\+by\+\_\+scheme@{pool\+\_\+classes\+\_\+by\+\_\+scheme}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{pool\+\_\+classes\+\_\+by\+\_\+scheme}{pool\_classes\_by\_scheme}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+pool\+\_\+classes\+\_\+by\+\_\+scheme}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a0677ea3fbf3ddfc088b284c56377e35e}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a0677ea3fbf3ddfc088b284c56377e35e}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!pools@{pools}}
+\index{pools@{pools}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{pools}{pools}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+pools}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a237e5af864203b1b19f4abec4dc9a908}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a237e5af864203b1b19f4abec4dc9a908}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!proxy@{proxy}}
+\index{proxy@{proxy}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{proxy}{proxy}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+proxy\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a172d98ef9b90b01ad76e686efbf0a5b2}\label{classpip_1_1__vendor_1_1urllib3_1_1poolmanager_1_1PoolManager_a172d98ef9b90b01ad76e686efbf0a5b2}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}!proxy\+\_\+config@{proxy\+\_\+config}}
+\index{proxy\+\_\+config@{proxy\+\_\+config}!pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager@{pip\+::\+\_\+vendor\+::urllib3\+::poolmanager\+::\+Pool\+Manager}}
+\subsubsection{\texorpdfstring{proxy\+\_\+config}{proxy\_config}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+poolmanager.\+Pool\+Manager.\+proxy\+\_\+config\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/urllib3/\hyperlink{poolmanager_8py}{poolmanager.\+py}\end{DoxyCompactItemize}

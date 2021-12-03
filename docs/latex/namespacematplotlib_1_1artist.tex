@@ -1,0 +1,163 @@
+\hypertarget{namespacematplotlib_1_1artist}{}\section{matplotlib.\+artist Namespace Reference}
+\label{namespacematplotlib_1_1artist}\index{matplotlib.\+artist@{matplotlib.\+artist}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1artist_1_1Artist}{Artist}
+\item 
+class \hyperlink{classmatplotlib_1_1artist_1_1ArtistInspector}{Artist\+Inspector}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1artist_a245255cfcc105c1845ef73ae27e6dabf}{allow\+\_\+rasterization} (draw)
+\item 
+def \hyperlink{namespacematplotlib_1_1artist_a785d2dbc5e400ed2895a0402aa5a033b}{getp} (obj, property=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1artist_a9ff399f3e188b91146776186bc5e58d0}{setp} (obj, args, file=None, kwargs)
+\item 
+def \hyperlink{namespacematplotlib_1_1artist_a77bfe0d444aada684df5406441f82753}{kwdoc} (artist)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1artist_ae96fe45bfe7ec8859299a9de210c0dca}{get} = \hyperlink{namespacematplotlib_1_1artist_a785d2dbc5e400ed2895a0402aa5a033b}{getp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1artist_a245255cfcc105c1845ef73ae27e6dabf}\label{namespacematplotlib_1_1artist_a245255cfcc105c1845ef73ae27e6dabf}} 
+\index{matplotlib\+::artist@{matplotlib\+::artist}!allow\+\_\+rasterization@{allow\+\_\+rasterization}}
+\index{allow\+\_\+rasterization@{allow\+\_\+rasterization}!matplotlib\+::artist@{matplotlib\+::artist}}
+\subsubsection{\texorpdfstring{allow\+\_\+rasterization()}{allow\_rasterization()}}
+{\footnotesize\ttfamily def matplotlib.\+artist.\+allow\+\_\+rasterization (\begin{DoxyParamCaption}\item[{}]{draw }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decorator for Artist.draw method. Provides routines
+that run before and after the draw call. The before and after functions
+are useful for changing artist-dependent renderer attributes or making
+other setup function calls, such as starting and flushing a mixed-mode
+renderer.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1artist_a785d2dbc5e400ed2895a0402aa5a033b}\label{namespacematplotlib_1_1artist_a785d2dbc5e400ed2895a0402aa5a033b}} 
+\index{matplotlib\+::artist@{matplotlib\+::artist}!getp@{getp}}
+\index{getp@{getp}!matplotlib\+::artist@{matplotlib\+::artist}}
+\subsubsection{\texorpdfstring{getp()}{getp()}}
+{\footnotesize\ttfamily def matplotlib.\+artist.\+getp (\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{property = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the value of an `.Artist`'s *property*, or print all of them.
+
+Parameters
+----------
+obj : `.Artist`
+    The queried artist; e.g., a `.Line2D`, a `.Text`, or an `~.axes.Axes`.
+
+property : str or None, default: None
+    If *property* is 'somename', this function returns
+    ``obj.get_somename()``.
+
+    If is is None (or unset), it *prints* all gettable properties from
+    *obj*.  Many properties have aliases for shorter typing, e.g. 'lw' is
+    an alias for 'linewidth'.  In the output, aliases and full property
+    names will be listed as:
+
+      property or alias = value
+
+    e.g.:
+
+      linewidth or lw = 2
+
+See Also
+--------
+setp
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1artist_a77bfe0d444aada684df5406441f82753}\label{namespacematplotlib_1_1artist_a77bfe0d444aada684df5406441f82753}} 
+\index{matplotlib\+::artist@{matplotlib\+::artist}!kwdoc@{kwdoc}}
+\index{kwdoc@{kwdoc}!matplotlib\+::artist@{matplotlib\+::artist}}
+\subsubsection{\texorpdfstring{kwdoc()}{kwdoc()}}
+{\footnotesize\ttfamily def matplotlib.\+artist.\+kwdoc (\begin{DoxyParamCaption}\item[{}]{artist }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Inspect an `~matplotlib.artist.Artist` class (using `.ArtistInspector`) and
+return information about its settable properties and their current values.
+
+Parameters
+----------
+artist : `~matplotlib.artist.Artist` or an iterable of `Artist`\s
+
+Returns
+-------
+str
+    The settable properties of *artist*, as plain text if
+    :rc:`docstring.hardcopy` is False and as a rst table (intended for
+    use in Sphinx) if it is True.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1artist_a9ff399f3e188b91146776186bc5e58d0}\label{namespacematplotlib_1_1artist_a9ff399f3e188b91146776186bc5e58d0}} 
+\index{matplotlib\+::artist@{matplotlib\+::artist}!setp@{setp}}
+\index{setp@{setp}!matplotlib\+::artist@{matplotlib\+::artist}}
+\subsubsection{\texorpdfstring{setp()}{setp()}}
+{\footnotesize\ttfamily def matplotlib.\+artist.\+setp (\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{args,  }\item[{}]{file = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set one or more properties on an `.Artist`, or list allowed values.
+
+Parameters
+----------
+obj : `.Artist` or list of `.Artist`
+    The artist(s) whose properties are being set or queried.  When setting
+    properties, all artists are affected; when querying the allowed values,
+    only the first instance in the sequence is queried.
+
+    For example, two lines can be made thicker and red with a single call:
+
+    >>> x = arange(0, 1, 0.01)
+    >>> lines = plot(x, sin(2*pi*x), x, sin(4*pi*x))
+    >>> setp(lines, linewidth=2, color='r')
+
+file : file-like, default: `sys.stdout`
+    Where `setp` writes its output when asked to list allowed values.
+
+    >>> with open('output.log') as file:
+    ...     setp(line, file=file)
+
+    The default, ``None``, means `sys.stdout`.
+
+*args, **kwargs
+    The properties to set.  The following combinations are supported:
+
+    - Set the linestyle of a line to be dashed:
+
+      >>> line, = plot([1, 2, 3])
+      >>> setp(line, linestyle='--')
+
+    - Set multiple properties at once:
+
+      >>> setp(line, linewidth=2, color='r')
+
+    - List allowed values for a line's linestyle:
+
+      >>> setp(line, 'linestyle')
+      linestyle: {'-', '--', '-.', ':', '', (offset, on-off-seq), ...}
+
+    - List all properties that can be set, and their allowed values:
+
+      >>> setp(line)
+      agg_filter: a filter function, ...
+      [long output listing omitted]
+
+    `setp` also supports MATLAB style string/value pairs.  For example, the
+    following are equivalent:
+
+    >>> setp(lines, 'linewidth', 2, 'color', 'r')  # MATLAB style
+    >>> setp(lines, linewidth=2, color='r')        # Python style
+
+See Also
+--------
+getp
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1artist_ae96fe45bfe7ec8859299a9de210c0dca}\label{namespacematplotlib_1_1artist_ae96fe45bfe7ec8859299a9de210c0dca}} 
+\index{matplotlib\+::artist@{matplotlib\+::artist}!get@{get}}
+\index{get@{get}!matplotlib\+::artist@{matplotlib\+::artist}}
+\subsubsection{\texorpdfstring{get}{get}}
+{\footnotesize\ttfamily def matplotlib.\+artist.\+get = \hyperlink{namespacematplotlib_1_1artist_a785d2dbc5e400ed2895a0402aa5a033b}{getp}}
+

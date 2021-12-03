@@ -1,0 +1,163 @@
+\hypertarget{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar}{}\section{axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Size\+Bar Class Reference}
+\label{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar}\index{axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Size\+Bar@{axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Size\+Bar}}
+
+
+Inheritance diagram for axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Size\+Bar\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Size\+Bar\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar_a82d68d202c57827b3c49e7c8761b0922}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, transform, size, label, loc, pad=0.\+1, borderpad=0.\+1, sep=2, frameon=True, size\+\_\+vertical=0, color=\textquotesingle{}black\textquotesingle{}, label\+\_\+top=False, fontproperties=None, fill\+\_\+bar=None, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar_a39070142bc27121b01115ced472df035}{size\+\_\+bar}
+\item 
+\hyperlink{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar_a7debb95f72c21abf57883b2e6e913510}{txt\+\_\+label}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar_a82d68d202c57827b3c49e7c8761b0922}\label{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar_a82d68d202c57827b3c49e7c8761b0922}} 
+\index{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Size\+Bar@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Size\+Bar}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Size\+Bar@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Size\+Bar}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Size\+Bar.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{transform,  }\item[{}]{size,  }\item[{}]{label,  }\item[{}]{loc,  }\item[{}]{pad = {\ttfamily 0.1},  }\item[{}]{borderpad = {\ttfamily 0.1},  }\item[{}]{sep = {\ttfamily 2},  }\item[{}]{frameon = {\ttfamily True},  }\item[{}]{size\+\_\+vertical = {\ttfamily 0},  }\item[{}]{color = {\ttfamily \textquotesingle{}black\textquotesingle{}},  }\item[{}]{label\+\_\+top = {\ttfamily False},  }\item[{}]{fontproperties = {\ttfamily None},  }\item[{}]{fill\+\_\+bar = {\ttfamily None},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw a horizontal scale bar with a center-aligned label underneath.
+
+Parameters
+----------
+transform : `matplotlib.transforms.Transform`
+    The transformation object for the coordinate system in use, i.e.,
+    :attr:`matplotlib.axes.Axes.transData`.
+
+size : float
+    Horizontal length of the size bar, given in coordinates of
+    *transform*.
+
+label : str
+    Label to display.
+
+loc : int
+    Location of this size bar. Valid location codes are::
+
+'upper right'  : 1,
+'upper left'   : 2,
+'lower left'   : 3,
+'lower right'  : 4,
+'right'        : 5,
+'center left'  : 6,
+'center right' : 7,
+'lower center' : 8,
+'upper center' : 9,
+'center'       : 10
+
+pad : float, default: 0.1
+    Padding around the label and size bar, in fraction of the font
+    size.
+
+borderpad : float, default: 0.1
+    Border padding, in fraction of the font size.
+
+sep : float, default: 2
+    Separation between the label and the size bar, in points.
+
+frameon : bool, default: True
+    If True, draw a box around the horizontal bar and label.
+
+size_vertical : float, default: 0
+    Vertical length of the size bar, given in coordinates of
+    *transform*.
+
+color : str, default: 'black'
+    Color for the size bar and label.
+
+label_top : bool, default: False
+    If True, the label will be over the size bar.
+
+fontproperties : `matplotlib.font_manager.FontProperties`, optional
+    Font properties for the label text.
+
+fill_bar : bool, optional
+    If True and if size_vertical is nonzero, the size bar will
+    be filled in with the color specified by the size bar.
+    Defaults to True if *size_vertical* is greater than
+    zero and False otherwise.
+
+**kwargs
+    Keyworded arguments to pass to
+    :class:`matplotlib.offsetbox.AnchoredOffsetbox`.
+
+Attributes
+----------
+size_bar : `matplotlib.offsetbox.AuxTransformBox`
+    Container for the size bar.
+
+txt_label : `matplotlib.offsetbox.TextArea`
+    Container for the label of the size bar.
+
+Notes
+-----
+If *prop* is passed as a keyworded argument, but *fontproperties* is
+not, then *prop* is be assumed to be the intended *fontproperties*.
+Using both *prop* and *fontproperties* is not supported.
+
+Examples
+--------
+>>> import matplotlib.pyplot as plt
+>>> import numpy as np
+>>> from mpl_toolkits.axes_grid1.anchored_artists import (
+...     AnchoredSizeBar)
+>>> fig, ax = plt.subplots()
+>>> ax.imshow(np.random.random((10, 10)))
+>>> bar = AnchoredSizeBar(ax.transData, 3, '3 data units', 4)
+>>> ax.add_artist(bar)
+>>> fig.show()
+
+Using all the optional parameters
+
+>>> import matplotlib.font_manager as fm
+>>> fontprops = fm.FontProperties(size=14, family='monospace')
+>>> bar = AnchoredSizeBar(ax.transData, 3, '3 units', 4, pad=0.5,
+...                       sep=5, borderpad=0.5, frameon=False,
+...                       size_vertical=0.5, color='white',
+...                       fontproperties=fontprops)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar_a39070142bc27121b01115ced472df035}\label{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar_a39070142bc27121b01115ced472df035}} 
+\index{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Size\+Bar@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Size\+Bar}!size\+\_\+bar@{size\+\_\+bar}}
+\index{size\+\_\+bar@{size\+\_\+bar}!axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Size\+Bar@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Size\+Bar}}
+\subsubsection{\texorpdfstring{size\+\_\+bar}{size\_bar}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Size\+Bar.\+size\+\_\+bar}
+
+\mbox{\Hypertarget{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar_a7debb95f72c21abf57883b2e6e913510}\label{classaxes__grid1_1_1anchored__artists_1_1AnchoredSizeBar_a7debb95f72c21abf57883b2e6e913510}} 
+\index{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Size\+Bar@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Size\+Bar}!txt\+\_\+label@{txt\+\_\+label}}
+\index{txt\+\_\+label@{txt\+\_\+label}!axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Size\+Bar@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Size\+Bar}}
+\subsubsection{\texorpdfstring{txt\+\_\+label}{txt\_label}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Size\+Bar.\+txt\+\_\+label}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/mpl\+\_\+toolkits/axes\+\_\+grid1/\hyperlink{_2anchored__artists_8py}{anchored\+\_\+artists.\+py}\end{DoxyCompactItemize}

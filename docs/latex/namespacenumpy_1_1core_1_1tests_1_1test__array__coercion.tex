@@ -1,0 +1,75 @@
+\hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion}{}\section{numpy.\+core.\+tests.\+test\+\_\+array\+\_\+coercion Namespace Reference}
+\label{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion}\index{numpy.\+core.\+tests.\+test\+\_\+array\+\_\+coercion@{numpy.\+core.\+tests.\+test\+\_\+array\+\_\+coercion}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestArrayLikes}{Test\+Array\+Likes}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestBadSequences}{Test\+Bad\+Sequences}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestNested}{Test\+Nested}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestScalarDiscovery}{Test\+Scalar\+Discovery}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestStringDiscovery}{Test\+String\+Discovery}
+\item 
+class \hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestTimeScalars}{Test\+Time\+Scalars}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a9e29bbf3f7a61359fd7f0e6d209c2e40}{arraylikes} ()
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a05348eea13c6dd9f83e3781464ecb484}{scalar\+\_\+instances} (times=True, extended\+\_\+precision=True, user\+\_\+dtype=True)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a5558fd4669aff55a30433bbfb240fdea}{is\+\_\+parametric\+\_\+dtype} (dtype)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_af7280b4e939b2b2de78d9579223fab50}{a}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Tests for array coercion, mainly through testing `np.array` results directly.
+Note that other such tests exist e.g. in `test_api.py` and many corner-cases
+are tested (sometimes indirectly) elsewhere.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a9e29bbf3f7a61359fd7f0e6d209c2e40}\label{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a9e29bbf3f7a61359fd7f0e6d209c2e40}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion@{numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion}!arraylikes@{arraylikes}}
+\index{arraylikes@{arraylikes}!numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion@{numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion}}
+\subsubsection{\texorpdfstring{arraylikes()}{arraylikes()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+array\+\_\+coercion.\+arraylikes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generator for functions converting an array into various array-likes.
+If full is True (default) includes array-likes not capable of handling
+all dtypes
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a5558fd4669aff55a30433bbfb240fdea}\label{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a5558fd4669aff55a30433bbfb240fdea}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion@{numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion}!is\+\_\+parametric\+\_\+dtype@{is\+\_\+parametric\+\_\+dtype}}
+\index{is\+\_\+parametric\+\_\+dtype@{is\+\_\+parametric\+\_\+dtype}!numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion@{numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion}}
+\subsubsection{\texorpdfstring{is\+\_\+parametric\+\_\+dtype()}{is\_parametric\_dtype()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+array\+\_\+coercion.\+is\+\_\+parametric\+\_\+dtype (\begin{DoxyParamCaption}\item[{}]{dtype }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if the the dtype is a parametric legacy dtype (itemsize
+is 0, or a datetime without units)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a05348eea13c6dd9f83e3781464ecb484}\label{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a05348eea13c6dd9f83e3781464ecb484}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion@{numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion}!scalar\+\_\+instances@{scalar\+\_\+instances}}
+\index{scalar\+\_\+instances@{scalar\+\_\+instances}!numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion@{numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion}}
+\subsubsection{\texorpdfstring{scalar\+\_\+instances()}{scalar\_instances()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+array\+\_\+coercion.\+scalar\+\_\+instances (\begin{DoxyParamCaption}\item[{}]{times = {\ttfamily True},  }\item[{}]{extended\+\_\+precision = {\ttfamily True},  }\item[{}]{user\+\_\+dtype = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_af7280b4e939b2b2de78d9579223fab50}\label{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_af7280b4e939b2b2de78d9579223fab50}} 
+\index{numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion@{numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion}!a@{a}}
+\index{a@{a}!numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion@{numpy\+::core\+::tests\+::test\+\_\+array\+\_\+coercion}}
+\subsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily numpy.\+core.\+tests.\+test\+\_\+array\+\_\+coercion.\+a}
+

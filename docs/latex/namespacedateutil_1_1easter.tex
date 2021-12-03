@@ -1,0 +1,77 @@
+\hypertarget{namespacedateutil_1_1easter}{}\section{dateutil.\+easter Namespace Reference}
+\label{namespacedateutil_1_1easter}\index{dateutil.\+easter@{dateutil.\+easter}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacedateutil_1_1easter_a4b7d108a3e023afeea1b274f3ef33eae}{easter} (year, method=\hyperlink{namespacedateutil_1_1easter_a4ac5ff01646101652b7f14cb8ea9efe1}{E\+A\+S\+T\+E\+R\+\_\+\+W\+E\+S\+T\+E\+RN})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespacedateutil_1_1easter_a0f48635544f76e1371844ecbc5761a96}{E\+A\+S\+T\+E\+R\+\_\+\+J\+U\+L\+I\+AN} = 1
+\item 
+int \hyperlink{namespacedateutil_1_1easter_af476c86174fc92d91cdbc970e073d5b6}{E\+A\+S\+T\+E\+R\+\_\+\+O\+R\+T\+H\+O\+D\+OX} = 2
+\item 
+int \hyperlink{namespacedateutil_1_1easter_a4ac5ff01646101652b7f14cb8ea9efe1}{E\+A\+S\+T\+E\+R\+\_\+\+W\+E\+S\+T\+E\+RN} = 3
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacedateutil_1_1easter_a4b7d108a3e023afeea1b274f3ef33eae}\label{namespacedateutil_1_1easter_a4b7d108a3e023afeea1b274f3ef33eae}} 
+\index{dateutil\+::easter@{dateutil\+::easter}!easter@{easter}}
+\index{easter@{easter}!dateutil\+::easter@{dateutil\+::easter}}
+\subsubsection{\texorpdfstring{easter()}{easter()}}
+{\footnotesize\ttfamily def dateutil.\+easter.\+easter (\begin{DoxyParamCaption}\item[{}]{year,  }\item[{}]{method = {\ttfamily \hyperlink{namespacedateutil_1_1easter_a4ac5ff01646101652b7f14cb8ea9efe1}{E\+A\+S\+T\+E\+R\+\_\+\+W\+E\+S\+T\+E\+RN}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This method was ported from the work done by GM Arts,
+on top of the algorithm by Claus Tondering, which was
+based in part on the algorithm of Ouding (1940), as
+quoted in "Explanatory Supplement to the Astronomical
+Almanac", P.  Kenneth Seidelmann, editor.
+
+This algorithm implements three different Easter
+calculation methods:
+
+1. Original calculation in Julian calendar, valid in
+   dates after 326 AD
+2. Original method, with date converted to Gregorian
+   calendar, valid in years 1583 to 4099
+3. Revised method, in Gregorian calendar, valid in
+   years 1583 to 4099 as well
+
+These methods are represented by the constants:
+
+* ``EASTER_JULIAN   = 1``
+* ``EASTER_ORTHODOX = 2``
+* ``EASTER_WESTERN  = 3``
+
+The default method is method 3.
+
+More about the algorithm may be found at:
+
+`GM Arts: Easter Algorithms <http://www.gmarts.org/index.php?go=415>`_
+
+and
+
+`The Calendar FAQ: Easter <https://www.tondering.dk/claus/cal/easter.php>`_\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacedateutil_1_1easter_a0f48635544f76e1371844ecbc5761a96}\label{namespacedateutil_1_1easter_a0f48635544f76e1371844ecbc5761a96}} 
+\index{dateutil\+::easter@{dateutil\+::easter}!E\+A\+S\+T\+E\+R\+\_\+\+J\+U\+L\+I\+AN@{E\+A\+S\+T\+E\+R\+\_\+\+J\+U\+L\+I\+AN}}
+\index{E\+A\+S\+T\+E\+R\+\_\+\+J\+U\+L\+I\+AN@{E\+A\+S\+T\+E\+R\+\_\+\+J\+U\+L\+I\+AN}!dateutil\+::easter@{dateutil\+::easter}}
+\subsubsection{\texorpdfstring{E\+A\+S\+T\+E\+R\+\_\+\+J\+U\+L\+I\+AN}{EASTER\_JULIAN}}
+{\footnotesize\ttfamily int dateutil.\+easter.\+E\+A\+S\+T\+E\+R\+\_\+\+J\+U\+L\+I\+AN = 1}
+
+\mbox{\Hypertarget{namespacedateutil_1_1easter_af476c86174fc92d91cdbc970e073d5b6}\label{namespacedateutil_1_1easter_af476c86174fc92d91cdbc970e073d5b6}} 
+\index{dateutil\+::easter@{dateutil\+::easter}!E\+A\+S\+T\+E\+R\+\_\+\+O\+R\+T\+H\+O\+D\+OX@{E\+A\+S\+T\+E\+R\+\_\+\+O\+R\+T\+H\+O\+D\+OX}}
+\index{E\+A\+S\+T\+E\+R\+\_\+\+O\+R\+T\+H\+O\+D\+OX@{E\+A\+S\+T\+E\+R\+\_\+\+O\+R\+T\+H\+O\+D\+OX}!dateutil\+::easter@{dateutil\+::easter}}
+\subsubsection{\texorpdfstring{E\+A\+S\+T\+E\+R\+\_\+\+O\+R\+T\+H\+O\+D\+OX}{EASTER\_ORTHODOX}}
+{\footnotesize\ttfamily int dateutil.\+easter.\+E\+A\+S\+T\+E\+R\+\_\+\+O\+R\+T\+H\+O\+D\+OX = 2}
+
+\mbox{\Hypertarget{namespacedateutil_1_1easter_a4ac5ff01646101652b7f14cb8ea9efe1}\label{namespacedateutil_1_1easter_a4ac5ff01646101652b7f14cb8ea9efe1}} 
+\index{dateutil\+::easter@{dateutil\+::easter}!E\+A\+S\+T\+E\+R\+\_\+\+W\+E\+S\+T\+E\+RN@{E\+A\+S\+T\+E\+R\+\_\+\+W\+E\+S\+T\+E\+RN}}
+\index{E\+A\+S\+T\+E\+R\+\_\+\+W\+E\+S\+T\+E\+RN@{E\+A\+S\+T\+E\+R\+\_\+\+W\+E\+S\+T\+E\+RN}!dateutil\+::easter@{dateutil\+::easter}}
+\subsubsection{\texorpdfstring{E\+A\+S\+T\+E\+R\+\_\+\+W\+E\+S\+T\+E\+RN}{EASTER\_WESTERN}}
+{\footnotesize\ttfamily int dateutil.\+easter.\+E\+A\+S\+T\+E\+R\+\_\+\+W\+E\+S\+T\+E\+RN = 3}
+

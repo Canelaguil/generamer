@@ -57,7 +57,7 @@ class History:
             chance = random.random()
 
             # matrimony
-            if chance < 0.6:
+            if chance < 0.7:
                 # ages
                 wife_age = random.randrange(14, 28)
                 husband_age = random.randrange(18, 38)
@@ -164,7 +164,7 @@ class History:
                     if sibling.key != person.key and sibling.alive and sibling.independent:
                         if sibling.house != None:
                             sibling.house.add_person(person, 'adopted')
-                            person.knowledge.add_bit(1, f"Went to live with sibling {sibling.name} at age {person.age}.")
+                            person.knowledge.add_bit(1, f"Went to live with sibling {sibling.name} at age {person.age}.", 'sibling_adopted')
                             # print(f"{person.key} adopted")
                             return
 
@@ -176,7 +176,7 @@ class History:
                             return
                     for unclaunt in person.parents.man.parents.children:
                         if unclaunt.alive and unclaunt.emancipated and unclaunt.house != None:
-                            person.knowledge.add_bit(1, f"Went to live with father's sibling {unclaunt.name} at age {person.age}.")
+                            person.knowledge.add_bit(1, f"Went to live with father's sibling {unclaunt.name} at age {person.age}.", 'funcleaunt_adopted')
                             unclaunt.house.add_person(person, 'adopted')
                             # print(f"{person.key} adopted")
                             return
@@ -189,7 +189,7 @@ class History:
                         return
                     for unclaunt in person.parents.woman.parents.children:
                         if unclaunt.alive and unclaunt.emancipated and unclaunt.house != None and unclaunt.independent:
-                            person.knowledge.add_bit(1, f"Went to live with mother's sibling {unclaunt.name} at age {person.age}.")
+                            person.knowledge.add_bit(1, f"Went to live with mother's sibling {unclaunt.name} at age {person.age}.", 'muncleaunt_adopted')
                             unclaunt.house.add_person(person, 'adopted')
                             # print(f"{person.key} adopted")
                             return

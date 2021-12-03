@@ -1,0 +1,123 @@
+\hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher}{}\section{networkx.\+algorithms.\+isomorphism.\+vf2userfunc.\+Graph\+Matcher Class Reference}
+\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher}\index{networkx.\+algorithms.\+isomorphism.\+vf2userfunc.\+Graph\+Matcher@{networkx.\+algorithms.\+isomorphism.\+vf2userfunc.\+Graph\+Matcher}}
+
+
+Inheritance diagram for networkx.\+algorithms.\+isomorphism.\+vf2userfunc.\+Graph\+Matcher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for networkx.\+algorithms.\+isomorphism.\+vf2userfunc.\+Graph\+Matcher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a961d057ce8c3c616c787b384c7c1ae77}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, G1, G2, \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a6cac0eb9c46db6c80e0e2ce1ee33052e}{node\+\_\+match}=None, \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a99cc8c319d252884c51f89fc5624edf1}{edge\+\_\+match}=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a6cac0eb9c46db6c80e0e2ce1ee33052e}{node\+\_\+match}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a99cc8c319d252884c51f89fc5624edf1}{edge\+\_\+match}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a607ebf960da736ed1ecbf7431390e716}{G1\+\_\+adj}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a17dd27841d8362898c71210baf8b2f64}{G2\+\_\+adj}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a03c050b9deb96effc54c6b0a4f7ebf0f}{semantic\+\_\+feasibility}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}VF2 isomorphism checker for undirected graphs.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a961d057ce8c3c616c787b384c7c1ae77}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a961d057ce8c3c616c787b384c7c1ae77}} 
+\index{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher@{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher@{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+vf2userfunc.\+Graph\+Matcher.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G1,  }\item[{}]{G2,  }\item[{}]{node\+\_\+match = {\ttfamily None},  }\item[{}]{edge\+\_\+match = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize graph matcher.
+
+Parameters
+----------
+G1, G2: graph
+    The graphs to be tested.
+
+node_match: callable
+    A function that returns True iff node n1 in G1 and n2 in G2
+    should be considered equal during the isomorphism test. The
+    function will be called like::
+
+       node_match(G1.nodes[n1], G2.nodes[n2])
+
+    That is, the function will receive the node attribute dictionaries
+    of the nodes under consideration. If None, then no attributes are
+    considered when testing for an isomorphism.
+
+edge_match: callable
+    A function that returns True iff the edge attribute dictionary for
+    the pair of nodes (u1, v1) in G1 and (u2, v2) in G2 should be
+    considered equal during the isomorphism test. The function will be
+    called like::
+
+       edge_match(G1[u1][v1], G2[u2][v2])
+
+    That is, the function will receive the edge attribute dictionaries
+    of the edges under consideration. If None, then no attributes are
+    considered when testing for an isomorphism.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a99cc8c319d252884c51f89fc5624edf1}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a99cc8c319d252884c51f89fc5624edf1}} 
+\index{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher@{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher}!edge\+\_\+match@{edge\+\_\+match}}
+\index{edge\+\_\+match@{edge\+\_\+match}!networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher@{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher}}
+\subsubsection{\texorpdfstring{edge\+\_\+match}{edge\_match}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+vf2userfunc.\+Graph\+Matcher.\+edge\+\_\+match}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a607ebf960da736ed1ecbf7431390e716}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a607ebf960da736ed1ecbf7431390e716}} 
+\index{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher@{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher}!G1\+\_\+adj@{G1\+\_\+adj}}
+\index{G1\+\_\+adj@{G1\+\_\+adj}!networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher@{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher}}
+\subsubsection{\texorpdfstring{G1\+\_\+adj}{G1\_adj}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+vf2userfunc.\+Graph\+Matcher.\+G1\+\_\+adj}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a17dd27841d8362898c71210baf8b2f64}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a17dd27841d8362898c71210baf8b2f64}} 
+\index{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher@{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher}!G2\+\_\+adj@{G2\+\_\+adj}}
+\index{G2\+\_\+adj@{G2\+\_\+adj}!networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher@{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher}}
+\subsubsection{\texorpdfstring{G2\+\_\+adj}{G2\_adj}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+vf2userfunc.\+Graph\+Matcher.\+G2\+\_\+adj}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a6cac0eb9c46db6c80e0e2ce1ee33052e}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a6cac0eb9c46db6c80e0e2ce1ee33052e}} 
+\index{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher@{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher}!node\+\_\+match@{node\+\_\+match}}
+\index{node\+\_\+match@{node\+\_\+match}!networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher@{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher}}
+\subsubsection{\texorpdfstring{node\+\_\+match}{node\_match}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+vf2userfunc.\+Graph\+Matcher.\+node\+\_\+match}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a03c050b9deb96effc54c6b0a4f7ebf0f}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1vf2userfunc_1_1GraphMatcher_a03c050b9deb96effc54c6b0a4f7ebf0f}} 
+\index{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher@{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher}!semantic\+\_\+feasibility@{semantic\+\_\+feasibility}}
+\index{semantic\+\_\+feasibility@{semantic\+\_\+feasibility}!networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher@{networkx\+::algorithms\+::isomorphism\+::vf2userfunc\+::\+Graph\+Matcher}}
+\subsubsection{\texorpdfstring{semantic\+\_\+feasibility}{semantic\_feasibility}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+vf2userfunc.\+Graph\+Matcher.\+semantic\+\_\+feasibility\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/algorithms/isomorphism/\hyperlink{vf2userfunc_8py}{vf2userfunc.\+py}\end{DoxyCompactItemize}

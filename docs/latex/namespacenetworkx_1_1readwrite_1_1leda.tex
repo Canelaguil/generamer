@@ -1,0 +1,87 @@
+\hypertarget{namespacenetworkx_1_1readwrite_1_1leda}{}\section{networkx.\+readwrite.\+leda Namespace Reference}
+\label{namespacenetworkx_1_1readwrite_1_1leda}\index{networkx.\+readwrite.\+leda@{networkx.\+readwrite.\+leda}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1leda_ad5d909359692d23cb40dc859cdf76f2b}{read\+\_\+leda} (path, encoding=\char`\"{}U\+TF-\/8\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1readwrite_1_1leda_ad6e90bae951d9d2a6c08eae3a222f027}{parse\+\_\+leda} (lines)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenetworkx_1_1readwrite_1_1leda_aef752773fe0772bf06fb2037ad6ff8bf}{mode}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Read graphs in LEDA format.
+
+LEDA is a C++ class library for efficient data types and algorithms.
+
+Format
+------
+See http://www.algorithmic-solutions.info/leda_guide/graphs/leda_native_graph_fileformat.html\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1leda_ad6e90bae951d9d2a6c08eae3a222f027}\label{namespacenetworkx_1_1readwrite_1_1leda_ad6e90bae951d9d2a6c08eae3a222f027}} 
+\index{networkx\+::readwrite\+::leda@{networkx\+::readwrite\+::leda}!parse\+\_\+leda@{parse\+\_\+leda}}
+\index{parse\+\_\+leda@{parse\+\_\+leda}!networkx\+::readwrite\+::leda@{networkx\+::readwrite\+::leda}}
+\subsubsection{\texorpdfstring{parse\+\_\+leda()}{parse\_leda()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+leda.\+parse\+\_\+leda (\begin{DoxyParamCaption}\item[{}]{lines }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read graph in LEDA format from string or iterable.
+
+Parameters
+----------
+lines : string or iterable
+   Data in LEDA format.
+
+Returns
+-------
+G : NetworkX graph
+
+Examples
+--------
+G=nx.parse_leda(string)
+
+References
+----------
+.. [1] http://www.algorithmic-solutions.info/leda_guide/graphs/leda_native_graph_fileformat.html
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1leda_ad5d909359692d23cb40dc859cdf76f2b}\label{namespacenetworkx_1_1readwrite_1_1leda_ad5d909359692d23cb40dc859cdf76f2b}} 
+\index{networkx\+::readwrite\+::leda@{networkx\+::readwrite\+::leda}!read\+\_\+leda@{read\+\_\+leda}}
+\index{read\+\_\+leda@{read\+\_\+leda}!networkx\+::readwrite\+::leda@{networkx\+::readwrite\+::leda}}
+\subsubsection{\texorpdfstring{read\+\_\+leda()}{read\_leda()}}
+{\footnotesize\ttfamily def networkx.\+readwrite.\+leda.\+read\+\_\+leda (\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{encoding = {\ttfamily \char`\"{}UTF-\/8\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read graph in LEDA format from path.
+
+Parameters
+----------
+path : file or string
+   File or filename to read.  Filenames ending in .gz or .bz2  will be
+   uncompressed.
+
+Returns
+-------
+G : NetworkX graph
+
+Examples
+--------
+G=nx.read_leda('file.leda')
+
+References
+----------
+.. [1] http://www.algorithmic-solutions.info/leda_guide/graphs/leda_native_graph_fileformat.html
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1readwrite_1_1leda_aef752773fe0772bf06fb2037ad6ff8bf}\label{namespacenetworkx_1_1readwrite_1_1leda_aef752773fe0772bf06fb2037ad6ff8bf}} 
+\index{networkx\+::readwrite\+::leda@{networkx\+::readwrite\+::leda}!mode@{mode}}
+\index{mode@{mode}!networkx\+::readwrite\+::leda@{networkx\+::readwrite\+::leda}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily networkx.\+readwrite.\+leda.\+mode}
+

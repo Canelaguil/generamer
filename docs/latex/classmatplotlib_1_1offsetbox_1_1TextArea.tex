@@ -1,0 +1,214 @@
+\hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea}{}\section{matplotlib.\+offsetbox.\+Text\+Area Class Reference}
+\label{classmatplotlib_1_1offsetbox_1_1TextArea}\index{matplotlib.\+offsetbox.\+Text\+Area@{matplotlib.\+offsetbox.\+Text\+Area}}
+
+
+Inheritance diagram for matplotlib.\+offsetbox.\+Text\+Area\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classmatplotlib_1_1offsetbox_1_1TextArea__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+offsetbox.\+Text\+Area\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classmatplotlib_1_1offsetbox_1_1TextArea__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_ac71264e145ecf21220e76b356702ffdb}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, s, textprops=None, multilinebaseline=False, minimumdescent=True)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_a7acb6eb3b2f2dce00c07291f4718194f}{set\+\_\+text} (self, s)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_a3410a2d154f2e08753252b20956ccb39}{get\+\_\+text} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_a84eec6c537cb96e1ef48e4ec5c2a2011}{set\+\_\+multilinebaseline} (self, t)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_a0ed4b54d2388fd77f00395350043882e}{get\+\_\+multilinebaseline} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_a9da29c75e024bbf623cd53a736dea6f5}{set\+\_\+minimumdescent} (self, t)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_a8184ba192729c7c697f20d0735d000cd}{get\+\_\+minimumdescent} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_a7b92c6ccb364d2720800b92481fa6693}{set\+\_\+transform} (self, t)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_a73902ef7200697a0d3b71030bf153f9f}{set\+\_\+offset} (self, xy)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_abd1148d17e19b2ec5a46c44f7f48dc5b}{get\+\_\+offset} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_a9dadf5d6083e6171a9e4f607f8cbf030}{get\+\_\+window\+\_\+extent} (self, renderer)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_a7314aa1497249edc40ced6501d14609f}{get\+\_\+extent} (self, renderer)
+\item 
+def \hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_a8cf9ee8e94d8c91c029c3175aba52d3f}{draw} (self, renderer)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_aafcc9664ffe6a4460f92093043647e0d}{offset\+\_\+transform}
+\item 
+\hyperlink{classmatplotlib_1_1offsetbox_1_1TextArea_acd7558a0c039e4f4a3be15777b64e4d9}{stale}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The TextArea is a container artist for a single Text instance.
+
+The text is placed at (0, 0) with baseline+left alignment, by default. The
+width and height of the TextArea instance is the width and height of its
+child text.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_ac71264e145ecf21220e76b356702ffdb}\label{classmatplotlib_1_1offsetbox_1_1TextArea_ac71264e145ecf21220e76b356702ffdb}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{s,  }\item[{}]{textprops = {\ttfamily None},  }\item[{}]{multilinebaseline = {\ttfamily False},  }\item[{}]{minimumdescent = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+s : str
+    The text to be displayed.
+textprops : dict, default: {}
+    Dictionary of keyword parameters to be passed to the `.Text`
+    instance in the TextArea.
+multilinebaseline : bool, default: False
+    Whether the baseline for multiline text is adjusted so that it
+    is (approximately) center-aligned with single-line text.
+minimumdescent : bool, default: True
+    If `True`, the box has a minimum descent of "p".  This is now
+    effectively always True.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_a8cf9ee8e94d8c91c029c3175aba52d3f}\label{classmatplotlib_1_1offsetbox_1_1TextArea_a8cf9ee8e94d8c91c029c3175aba52d3f}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!draw@{draw}}
+\index{draw@{draw}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+draw (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_a7314aa1497249edc40ced6501d14609f}\label{classmatplotlib_1_1offsetbox_1_1TextArea_a7314aa1497249edc40ced6501d14609f}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!get\+\_\+extent@{get\+\_\+extent}}
+\index{get\+\_\+extent@{get\+\_\+extent}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{get\+\_\+extent()}{get\_extent()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+get\+\_\+extent (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_a8184ba192729c7c697f20d0735d000cd}\label{classmatplotlib_1_1offsetbox_1_1TextArea_a8184ba192729c7c697f20d0735d000cd}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!get\+\_\+minimumdescent@{get\+\_\+minimumdescent}}
+\index{get\+\_\+minimumdescent@{get\+\_\+minimumdescent}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{get\+\_\+minimumdescent()}{get\_minimumdescent()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+get\+\_\+minimumdescent (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get minimumdescent.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_a0ed4b54d2388fd77f00395350043882e}\label{classmatplotlib_1_1offsetbox_1_1TextArea_a0ed4b54d2388fd77f00395350043882e}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!get\+\_\+multilinebaseline@{get\+\_\+multilinebaseline}}
+\index{get\+\_\+multilinebaseline@{get\+\_\+multilinebaseline}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{get\+\_\+multilinebaseline()}{get\_multilinebaseline()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+get\+\_\+multilinebaseline (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get multilinebaseline.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_abd1148d17e19b2ec5a46c44f7f48dc5b}\label{classmatplotlib_1_1offsetbox_1_1TextArea_abd1148d17e19b2ec5a46c44f7f48dc5b}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!get\+\_\+offset@{get\+\_\+offset}}
+\index{get\+\_\+offset@{get\+\_\+offset}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{get\+\_\+offset()}{get\_offset()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+get\+\_\+offset (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return offset of the container.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_a3410a2d154f2e08753252b20956ccb39}\label{classmatplotlib_1_1offsetbox_1_1TextArea_a3410a2d154f2e08753252b20956ccb39}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!get\+\_\+text@{get\+\_\+text}}
+\index{get\+\_\+text@{get\+\_\+text}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{get\+\_\+text()}{get\_text()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+get\+\_\+text (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the string representation of this area's text.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_a9dadf5d6083e6171a9e4f607f8cbf030}\label{classmatplotlib_1_1offsetbox_1_1TextArea_a9dadf5d6083e6171a9e4f607f8cbf030}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!get\+\_\+window\+\_\+extent@{get\+\_\+window\+\_\+extent}}
+\index{get\+\_\+window\+\_\+extent@{get\+\_\+window\+\_\+extent}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{get\+\_\+window\+\_\+extent()}{get\_window\_extent()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+get\+\_\+window\+\_\+extent (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the bounding box in display space.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_a9da29c75e024bbf623cd53a736dea6f5}\label{classmatplotlib_1_1offsetbox_1_1TextArea_a9da29c75e024bbf623cd53a736dea6f5}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!set\+\_\+minimumdescent@{set\+\_\+minimumdescent}}
+\index{set\+\_\+minimumdescent@{set\+\_\+minimumdescent}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{set\+\_\+minimumdescent()}{set\_minimumdescent()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+set\+\_\+minimumdescent (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{t }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set minimumdescent.
+
+If True, extent of the single line text is adjusted so that
+its descent is at least the one of the glyph "p".
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_a84eec6c537cb96e1ef48e4ec5c2a2011}\label{classmatplotlib_1_1offsetbox_1_1TextArea_a84eec6c537cb96e1ef48e4ec5c2a2011}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!set\+\_\+multilinebaseline@{set\+\_\+multilinebaseline}}
+\index{set\+\_\+multilinebaseline@{set\+\_\+multilinebaseline}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{set\+\_\+multilinebaseline()}{set\_multilinebaseline()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+set\+\_\+multilinebaseline (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{t }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set multilinebaseline.
+
+If True, the baseline for multiline text is adjusted so that it is
+(approximately) center-aligned with single-line text.  This is used
+e.g. by the legend implementation so that single-line labels are
+baseline-aligned, but multiline labels are "center"-aligned with them.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_a73902ef7200697a0d3b71030bf153f9f}\label{classmatplotlib_1_1offsetbox_1_1TextArea_a73902ef7200697a0d3b71030bf153f9f}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!set\+\_\+offset@{set\+\_\+offset}}
+\index{set\+\_\+offset@{set\+\_\+offset}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{set\+\_\+offset()}{set\_offset()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+set\+\_\+offset (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xy }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the offset of the container.
+
+Parameters
+----------
+xy : (float, float)
+    The (x, y) coordinates of the offset in display units.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_a7acb6eb3b2f2dce00c07291f4718194f}\label{classmatplotlib_1_1offsetbox_1_1TextArea_a7acb6eb3b2f2dce00c07291f4718194f}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!set\+\_\+text@{set\+\_\+text}}
+\index{set\+\_\+text@{set\+\_\+text}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{set\+\_\+text()}{set\_text()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+set\+\_\+text (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the text of this area as a string.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_a7b92c6ccb364d2720800b92481fa6693}\label{classmatplotlib_1_1offsetbox_1_1TextArea_a7b92c6ccb364d2720800b92481fa6693}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!set\+\_\+transform@{set\+\_\+transform}}
+\index{set\+\_\+transform@{set\+\_\+transform}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{set\+\_\+transform()}{set\_transform()}}
+{\footnotesize\ttfamily def matplotlib.\+offsetbox.\+Text\+Area.\+set\+\_\+transform (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{t }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}set_transform is ignored.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_aafcc9664ffe6a4460f92093043647e0d}\label{classmatplotlib_1_1offsetbox_1_1TextArea_aafcc9664ffe6a4460f92093043647e0d}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!offset\+\_\+transform@{offset\+\_\+transform}}
+\index{offset\+\_\+transform@{offset\+\_\+transform}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{offset\+\_\+transform}{offset\_transform}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Text\+Area.\+offset\+\_\+transform}
+
+\mbox{\Hypertarget{classmatplotlib_1_1offsetbox_1_1TextArea_acd7558a0c039e4f4a3be15777b64e4d9}\label{classmatplotlib_1_1offsetbox_1_1TextArea_acd7558a0c039e4f4a3be15777b64e4d9}} 
+\index{matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::offsetbox\+::\+Text\+Area@{matplotlib\+::offsetbox\+::\+Text\+Area}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+offsetbox.\+Text\+Area.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{offsetbox_8py}{offsetbox.\+py}\end{DoxyCompactItemize}

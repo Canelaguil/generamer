@@ -1,0 +1,57 @@
+\hypertarget{classsetuptools_1_1command_1_1build__clib_1_1build__clib}{}\section{setuptools.\+command.\+build\+\_\+clib.\+build\+\_\+clib Class Reference}
+\label{classsetuptools_1_1command_1_1build__clib_1_1build__clib}\index{setuptools.\+command.\+build\+\_\+clib.\+build\+\_\+clib@{setuptools.\+command.\+build\+\_\+clib.\+build\+\_\+clib}}
+
+
+Inheritance diagram for setuptools.\+command.\+build\+\_\+clib.\+build\+\_\+clib\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classsetuptools_1_1command_1_1build__clib_1_1build__clib__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for setuptools.\+command.\+build\+\_\+clib.\+build\+\_\+clib\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classsetuptools_1_1command_1_1build__clib_1_1build__clib__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1command_1_1build__clib_1_1build__clib_a0f23e07ecec40a09f77d20205db47ae8}{build\+\_\+libraries} (self, libraries)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Override the default build_clib behaviour to do the following:
+
+1. Implement a rudimentary timestamp-based dependency system
+   so 'compile()' doesn't run every time.
+2. Add more keys to the 'build_info' dictionary:
+    * obj_deps - specify dependencies for each object compiled.
+                 this should be a dictionary mapping a key
+                 with the source filename to a list of
+                 dependencies. Use an empty string for global
+                 dependencies.
+    * cflags   - specify a list of additional flags to pass to
+                 the compiler.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1command_1_1build__clib_1_1build__clib_a0f23e07ecec40a09f77d20205db47ae8}\label{classsetuptools_1_1command_1_1build__clib_1_1build__clib_a0f23e07ecec40a09f77d20205db47ae8}} 
+\index{setuptools\+::command\+::build\+\_\+clib\+::build\+\_\+clib@{setuptools\+::command\+::build\+\_\+clib\+::build\+\_\+clib}!build\+\_\+libraries@{build\+\_\+libraries}}
+\index{build\+\_\+libraries@{build\+\_\+libraries}!setuptools\+::command\+::build\+\_\+clib\+::build\+\_\+clib@{setuptools\+::command\+::build\+\_\+clib\+::build\+\_\+clib}}
+\subsubsection{\texorpdfstring{build\+\_\+libraries()}{build\_libraries()}}
+{\footnotesize\ttfamily def setuptools.\+command.\+build\+\_\+clib.\+build\+\_\+clib.\+build\+\_\+libraries (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{libraries }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/command/\hyperlink{setuptools_2command_2build__clib_8py}{build\+\_\+clib.\+py}\end{DoxyCompactItemize}

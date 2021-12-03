@@ -1,0 +1,256 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg}{}\section{networkx.\+algorithms.\+link\+\_\+analysis.\+hits\+\_\+alg Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg}\index{networkx.\+algorithms.\+link\+\_\+analysis.\+hits\+\_\+alg@{networkx.\+algorithms.\+link\+\_\+analysis.\+hits\+\_\+alg}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a4a207747e9f9b5fb389523c25415ddc1}{hits} (G, max\+\_\+iter=100, tol=1.\+0e-\/8, nstart=\+None, normalized=\+True)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a4479709019067c40b62926c528515d5c}{authority\+\_\+matrix} (G, nodelist=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a9a88378eb91aabf0c7b7fe26a0881ffd}{hub\+\_\+matrix} (G, nodelist=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a940e4ad55a082f2588ee5e9b23f2275b}{hits\+\_\+numpy} (G, normalized=True)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a8433ac63ed595400073ba886ae358a63}{hits\+\_\+scipy} (G, max\+\_\+iter=100, tol=1.\+0e-\/6, nstart=\+None, normalized=\+True)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Hubs and authorities analysis of graph structure.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a4479709019067c40b62926c528515d5c}\label{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a4479709019067c40b62926c528515d5c}} 
+\index{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg@{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg}!authority\+\_\+matrix@{authority\+\_\+matrix}}
+\index{authority\+\_\+matrix@{authority\+\_\+matrix}!networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg@{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg}}
+\subsubsection{\texorpdfstring{authority\+\_\+matrix()}{authority\_matrix()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+link\+\_\+analysis.\+hits\+\_\+alg.\+authority\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodelist = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the HITS authority matrix.
+
+.. deprecated:: 2.6
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a4a207747e9f9b5fb389523c25415ddc1}\label{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a4a207747e9f9b5fb389523c25415ddc1}} 
+\index{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg@{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg}!hits@{hits}}
+\index{hits@{hits}!networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg@{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg}}
+\subsubsection{\texorpdfstring{hits()}{hits()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+link\+\_\+analysis.\+hits\+\_\+alg.\+hits (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{max\+\_\+iter = {\ttfamily 100},  }\item[{}]{tol = {\ttfamily 1.0e-\/8},  }\item[{}]{nstart = {\ttfamily None},  }\item[{}]{normalized = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns HITS hubs and authorities values for nodes.
+
+The HITS algorithm computes two numbers for a node.
+Authorities estimates the node value based on the incoming links.
+Hubs estimates the node value based on outgoing links.
+
+Parameters
+----------
+G : graph
+  A NetworkX graph
+
+max_iter : integer, optional
+  Maximum number of iterations in power method.
+
+tol : float, optional
+  Error tolerance used to check convergence in power method iteration.
+
+nstart : dictionary, optional
+  Starting value of each node for power method iteration.
+
+normalized : bool (default=True)
+   Normalize results by the sum of all of the values.
+
+Returns
+-------
+(hubs,authorities) : two-tuple of dictionaries
+   Two dictionaries keyed by node containing the hub and authority
+   values.
+
+Raises
+------
+PowerIterationFailedConvergence
+    If the algorithm fails to converge to the specified tolerance
+    within the specified number of iterations of the power iteration
+    method.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> h, a = nx.hits(G)
+
+Notes
+-----
+The eigenvector calculation is done by the power iteration method
+and has no guarantee of convergence.  The iteration will stop
+after max_iter iterations or an error tolerance of
+number_of_nodes(G)*tol has been reached.
+
+The HITS algorithm was designed for directed graphs but this
+algorithm does not check if the input graph is directed and will
+execute on undirected graphs.
+
+References
+----------
+.. [1] A. Langville and C. Meyer,
+   "A survey of eigenvector methods of web information retrieval."
+   http://citeseer.ist.psu.edu/713792.html
+.. [2] Jon Kleinberg,
+   Authoritative sources in a hyperlinked environment
+   Journal of the ACM 46 (5): 604-32, 1999.
+   doi:10.1145/324133.324140.
+   http://www.cs.cornell.edu/home/kleinber/auth.pdf.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a940e4ad55a082f2588ee5e9b23f2275b}\label{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a940e4ad55a082f2588ee5e9b23f2275b}} 
+\index{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg@{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg}!hits\+\_\+numpy@{hits\+\_\+numpy}}
+\index{hits\+\_\+numpy@{hits\+\_\+numpy}!networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg@{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg}}
+\subsubsection{\texorpdfstring{hits\+\_\+numpy()}{hits\_numpy()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+link\+\_\+analysis.\+hits\+\_\+alg.\+hits\+\_\+numpy (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{normalized = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns HITS hubs and authorities values for nodes.
+
+.. deprecated:: 2.6
+
+   hits_numpy is deprecated and will be removed in networkx 3.0.
+
+The HITS algorithm computes two numbers for a node.
+Authorities estimates the node value based on the incoming links.
+Hubs estimates the node value based on outgoing links.
+
+Parameters
+----------
+G : graph
+  A NetworkX graph
+
+normalized : bool (default=True)
+   Normalize results by the sum of all of the values.
+
+Returns
+-------
+(hubs,authorities) : two-tuple of dictionaries
+   Two dictionaries keyed by node containing the hub and authority
+   values.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+
+The `hubs` and `authorities` are given by the eigenvectors corresponding to the
+maximum eigenvalues of the hubs_matrix and the authority_matrix, respectively.
+
+The ``hubs`` and ``authority`` matrices are computed from the adjancency
+matrix:
+
+>>> adj_ary = nx.to_numpy_array(G)
+>>> hubs_matrix = adj_ary @ adj_ary.T
+>>> authority_matrix = adj_ary.T @ adj_ary
+
+`hits_numpy` maps the eigenvector corresponding to the maximum eigenvalue
+of the respective matrices to the nodes in `G`:
+
+>>> hubs, authority = nx.hits_numpy(G)
+
+Notes
+-----
+The eigenvector calculation uses NumPy's interface to LAPACK.
+
+The HITS algorithm was designed for directed graphs but this
+algorithm does not check if the input graph is directed and will
+execute on undirected graphs.
+
+References
+----------
+.. [1] A. Langville and C. Meyer,
+   "A survey of eigenvector methods of web information retrieval."
+   http://citeseer.ist.psu.edu/713792.html
+.. [2] Jon Kleinberg,
+   Authoritative sources in a hyperlinked environment
+   Journal of the ACM 46 (5): 604-32, 1999.
+   doi:10.1145/324133.324140.
+   http://www.cs.cornell.edu/home/kleinber/auth.pdf.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a8433ac63ed595400073ba886ae358a63}\label{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a8433ac63ed595400073ba886ae358a63}} 
+\index{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg@{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg}!hits\+\_\+scipy@{hits\+\_\+scipy}}
+\index{hits\+\_\+scipy@{hits\+\_\+scipy}!networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg@{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg}}
+\subsubsection{\texorpdfstring{hits\+\_\+scipy()}{hits\_scipy()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+link\+\_\+analysis.\+hits\+\_\+alg.\+hits\+\_\+scipy (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{max\+\_\+iter = {\ttfamily 100},  }\item[{}]{tol = {\ttfamily 1.0e-\/6},  }\item[{}]{nstart = {\ttfamily None},  }\item[{}]{normalized = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns HITS hubs and authorities values for nodes.
+
+.. deprecated:: 2.6
+
+   hits_scipy is deprecated and will be removed in networkx 3.0
+
+The HITS algorithm computes two numbers for a node.
+Authorities estimates the node value based on the incoming links.
+Hubs estimates the node value based on outgoing links.
+
+Parameters
+----------
+G : graph
+  A NetworkX graph
+
+max_iter : integer, optional
+  Maximum number of iterations in power method.
+
+tol : float, optional
+  Error tolerance used to check convergence in power method iteration.
+
+nstart : dictionary, optional
+  Starting value of each node for power method iteration.
+
+normalized : bool (default=True)
+   Normalize results by the sum of all of the values.
+
+Returns
+-------
+(hubs,authorities) : two-tuple of dictionaries
+   Two dictionaries keyed by node containing the hub and authority
+   values.
+
+Examples
+--------
+>>> G = nx.path_graph(4)
+>>> h, a = nx.hits(G)
+
+Notes
+-----
+This implementation uses SciPy sparse matrices.
+
+The eigenvector calculation is done by the power iteration method
+and has no guarantee of convergence.  The iteration will stop
+after max_iter iterations or an error tolerance of
+number_of_nodes(G)*tol has been reached.
+
+The HITS algorithm was designed for directed graphs but this
+algorithm does not check if the input graph is directed and will
+execute on undirected graphs.
+
+Raises
+------
+PowerIterationFailedConvergence
+    If the algorithm fails to converge to the specified tolerance
+    within the specified number of iterations of the power iteration
+    method.
+
+References
+----------
+.. [1] A. Langville and C. Meyer,
+   "A survey of eigenvector methods of web information retrieval."
+   http://citeseer.ist.psu.edu/713792.html
+.. [2] Jon Kleinberg,
+   Authoritative sources in a hyperlinked environment
+   Journal of the ACM 46 (5): 604-632, 1999.
+   doi:10.1145/324133.324140.
+   http://www.cs.cornell.edu/home/kleinber/auth.pdf.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a9a88378eb91aabf0c7b7fe26a0881ffd}\label{namespacenetworkx_1_1algorithms_1_1link__analysis_1_1hits__alg_a9a88378eb91aabf0c7b7fe26a0881ffd}} 
+\index{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg@{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg}!hub\+\_\+matrix@{hub\+\_\+matrix}}
+\index{hub\+\_\+matrix@{hub\+\_\+matrix}!networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg@{networkx\+::algorithms\+::link\+\_\+analysis\+::hits\+\_\+alg}}
+\subsubsection{\texorpdfstring{hub\+\_\+matrix()}{hub\_matrix()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+link\+\_\+analysis.\+hits\+\_\+alg.\+hub\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{nodelist = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the HITS hub matrix.
+
+.. deprecated:: 2.6
+\end{DoxyVerb}
+ 

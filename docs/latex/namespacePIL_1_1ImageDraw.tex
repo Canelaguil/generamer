@@ -1,0 +1,82 @@
+\hypertarget{namespacePIL_1_1ImageDraw}{}\section{P\+I\+L.\+Image\+Draw Namespace Reference}
+\label{namespacePIL_1_1ImageDraw}\index{P\+I\+L.\+Image\+Draw@{P\+I\+L.\+Image\+Draw}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPIL_1_1ImageDraw_1_1ImageDraw}{Image\+Draw}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacePIL_1_1ImageDraw_a6c01f971ba16419c06c05596924dc231}{Draw} (im, mode=None)
+\item 
+def \hyperlink{namespacePIL_1_1ImageDraw_a795718ecd4f1ff28d17008a4e9f97531}{getdraw} (im=None, hints=None)
+\item 
+def \hyperlink{namespacePIL_1_1ImageDraw_a04f749c473f734ca12218058346457a3}{floodfill} (image, xy, value, border=None, thresh=0)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacePIL_1_1ImageDraw_aee58acc4f36851df639ca75bdcc41ab7}{Outline}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1ImageDraw_a6c01f971ba16419c06c05596924dc231}\label{namespacePIL_1_1ImageDraw_a6c01f971ba16419c06c05596924dc231}} 
+\index{P\+I\+L\+::\+Image\+Draw@{P\+I\+L\+::\+Image\+Draw}!Draw@{Draw}}
+\index{Draw@{Draw}!P\+I\+L\+::\+Image\+Draw@{P\+I\+L\+::\+Image\+Draw}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Draw.\+Draw (\begin{DoxyParamCaption}\item[{}]{im,  }\item[{}]{mode = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A simple 2D drawing interface for PIL images.
+
+:param im: The image to draw in.
+:param mode: Optional mode to use for color values.  For RGB
+   images, this argument can be RGB or RGBA (to blend the
+   drawing into the image).  For all other modes, this argument
+   must be the same as the image mode.  If omitted, the mode
+   defaults to the mode of the image.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageDraw_a04f749c473f734ca12218058346457a3}\label{namespacePIL_1_1ImageDraw_a04f749c473f734ca12218058346457a3}} 
+\index{P\+I\+L\+::\+Image\+Draw@{P\+I\+L\+::\+Image\+Draw}!floodfill@{floodfill}}
+\index{floodfill@{floodfill}!P\+I\+L\+::\+Image\+Draw@{P\+I\+L\+::\+Image\+Draw}}
+\subsubsection{\texorpdfstring{floodfill()}{floodfill()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Draw.\+floodfill (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{xy,  }\item[{}]{value,  }\item[{}]{border = {\ttfamily None},  }\item[{}]{thresh = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}(experimental) Fills a bounded region with a given color.
+
+:param image: Target image.
+:param xy: Seed position (a 2-item coordinate tuple). See
+    :ref:`coordinate-system`.
+:param value: Fill color.
+:param border: Optional border value.  If given, the region consists of
+    pixels with a color different from the border color.  If not given,
+    the region consists of pixels having the same color as the seed
+    pixel.
+:param thresh: Optional threshold value which specifies a maximum
+    tolerable difference of a pixel value from the 'background' in
+    order for it to be replaced. Useful for filling regions of
+    non-homogeneous, but similar, colors.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacePIL_1_1ImageDraw_a795718ecd4f1ff28d17008a4e9f97531}\label{namespacePIL_1_1ImageDraw_a795718ecd4f1ff28d17008a4e9f97531}} 
+\index{P\+I\+L\+::\+Image\+Draw@{P\+I\+L\+::\+Image\+Draw}!getdraw@{getdraw}}
+\index{getdraw@{getdraw}!P\+I\+L\+::\+Image\+Draw@{P\+I\+L\+::\+Image\+Draw}}
+\subsubsection{\texorpdfstring{getdraw()}{getdraw()}}
+{\footnotesize\ttfamily def P\+I\+L.\+Image\+Draw.\+getdraw (\begin{DoxyParamCaption}\item[{}]{im = {\ttfamily None},  }\item[{}]{hints = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}(Experimental) A more advanced 2D drawing interface for PIL images,
+based on the WCK interface.
+
+:param im: The image to draw in.
+:param hints: An optional list of hints.
+:returns: A (drawing context, drawing resource factory) tuple.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacePIL_1_1ImageDraw_aee58acc4f36851df639ca75bdcc41ab7}\label{namespacePIL_1_1ImageDraw_aee58acc4f36851df639ca75bdcc41ab7}} 
+\index{P\+I\+L\+::\+Image\+Draw@{P\+I\+L\+::\+Image\+Draw}!Outline@{Outline}}
+\index{Outline@{Outline}!P\+I\+L\+::\+Image\+Draw@{P\+I\+L\+::\+Image\+Draw}}
+\subsubsection{\texorpdfstring{Outline}{Outline}}
+{\footnotesize\ttfamily P\+I\+L.\+Image\+Draw.\+Outline}
+

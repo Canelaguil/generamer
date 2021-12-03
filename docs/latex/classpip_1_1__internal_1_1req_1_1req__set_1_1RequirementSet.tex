@@ -1,0 +1,169 @@
+\hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet}{}\section{pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set Class Reference}
+\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet}\index{pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set@{pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a652631b789142752e0008f5c63aaf6a0}{\+\_\+\+\_\+init\+\_\+\+\_\+}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a92e9cf36067086afed7d03ce82cbc746}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a971cc746e84b28193a232f5243cff8c9}{\+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_aaf810c3b7d4f6a05b10d0f4813c62f27}{add\+\_\+unnamed\+\_\+requirement}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_ad7d4e29cdee4ba14e052aeb09325253c}{add\+\_\+named\+\_\+requirement}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a365be3d7392e7e62cb711fa9ad3b4c26}{add\+\_\+requirement}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a0b8b44613267cf6d5296823f80a155d6}{has\+\_\+requirement}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a4cbdfe2e73632d8758dcdab117fb0963}{get\+\_\+requirement}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a652daa5ae46d64b021bce1fc517dbbb1}{all\+\_\+requirements} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_ae0cd02dd40841c8bb39d4c1b6ddd506c}{check\+\_\+supported\+\_\+wheels}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_ab20062b07874e2b728827c89cff17f68}{wheel}
+\item 
+\hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_afaf791259ee5678a1486cd772f0ea2be}{tags}
+\item 
+\hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_ab56334f1f2a897a01ab3aef0de9d9431}{existing\+\_\+req}
+\item 
+\hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_af81d79a85a2c3e0f38226b09074d91a1}{has\+\_\+conflicting\+\_\+requirement}
+\item 
+\hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a8ad1a575ae5319e6df9741bc4a109827}{does\+\_\+not\+\_\+satisfy\+\_\+constraint}
+\item 
+\hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a8bd6d55a76fcd2da1de51058ed488962}{constraint}
+\item 
+\hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_aa13bc9d40c97121a5a5cd3cbb07fd657}{user\+\_\+supplied}
+\item 
+\hyperlink{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a998e23eca1e8daadd814c2a66637e7a6}{extras}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a652631b789142752e0008f5c63aaf6a0}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a652631b789142752e0008f5c63aaf6a0}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{check\+\_\+supported\+\_\+wheels }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a971cc746e84b28193a232f5243cff8c9}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a971cc746e84b28193a232f5243cff8c9}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+repr\+\_\+\+\_\+@{\+\_\+\+\_\+repr\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+repr\+\_\+\+\_\+()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a92e9cf36067086afed7d03ce82cbc746}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a92e9cf36067086afed7d03ce82cbc746}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_ad7d4e29cdee4ba14e052aeb09325253c}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_ad7d4e29cdee4ba14e052aeb09325253c}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!add\+\_\+named\+\_\+requirement@{add\+\_\+named\+\_\+requirement}}
+\index{add\+\_\+named\+\_\+requirement@{add\+\_\+named\+\_\+requirement}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{add\+\_\+named\+\_\+requirement()}{add\_named\_requirement()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+add\+\_\+named\+\_\+requirement (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{install\+\_\+req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a365be3d7392e7e62cb711fa9ad3b4c26}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a365be3d7392e7e62cb711fa9ad3b4c26}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!add\+\_\+requirement@{add\+\_\+requirement}}
+\index{add\+\_\+requirement@{add\+\_\+requirement}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{add\+\_\+requirement()}{add\_requirement()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+add\+\_\+requirement (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{install\+\_\+req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_aaf810c3b7d4f6a05b10d0f4813c62f27}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_aaf810c3b7d4f6a05b10d0f4813c62f27}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!add\+\_\+unnamed\+\_\+requirement@{add\+\_\+unnamed\+\_\+requirement}}
+\index{add\+\_\+unnamed\+\_\+requirement@{add\+\_\+unnamed\+\_\+requirement}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{add\+\_\+unnamed\+\_\+requirement()}{add\_unnamed\_requirement()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+add\+\_\+unnamed\+\_\+requirement (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{install\+\_\+req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a652daa5ae46d64b021bce1fc517dbbb1}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a652daa5ae46d64b021bce1fc517dbbb1}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!all\+\_\+requirements@{all\+\_\+requirements}}
+\index{all\+\_\+requirements@{all\+\_\+requirements}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{all\+\_\+requirements()}{all\_requirements()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+all\+\_\+requirements (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{List,  }\item[{}]{Install\+Requirement }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a4cbdfe2e73632d8758dcdab117fb0963}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a4cbdfe2e73632d8758dcdab117fb0963}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!get\+\_\+requirement@{get\+\_\+requirement}}
+\index{get\+\_\+requirement@{get\+\_\+requirement}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{get\+\_\+requirement()}{get\_requirement()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+get\+\_\+requirement (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a0b8b44613267cf6d5296823f80a155d6}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a0b8b44613267cf6d5296823f80a155d6}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!has\+\_\+requirement@{has\+\_\+requirement}}
+\index{has\+\_\+requirement@{has\+\_\+requirement}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{has\+\_\+requirement()}{has\_requirement()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+has\+\_\+requirement (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_ae0cd02dd40841c8bb39d4c1b6ddd506c}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_ae0cd02dd40841c8bb39d4c1b6ddd506c}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!check\+\_\+supported\+\_\+wheels@{check\+\_\+supported\+\_\+wheels}}
+\index{check\+\_\+supported\+\_\+wheels@{check\+\_\+supported\+\_\+wheels}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{check\+\_\+supported\+\_\+wheels}{check\_supported\_wheels}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+check\+\_\+supported\+\_\+wheels}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a8bd6d55a76fcd2da1de51058ed488962}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a8bd6d55a76fcd2da1de51058ed488962}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!constraint@{constraint}}
+\index{constraint@{constraint}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{constraint}{constraint}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+constraint\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a8ad1a575ae5319e6df9741bc4a109827}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a8ad1a575ae5319e6df9741bc4a109827}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!does\+\_\+not\+\_\+satisfy\+\_\+constraint@{does\+\_\+not\+\_\+satisfy\+\_\+constraint}}
+\index{does\+\_\+not\+\_\+satisfy\+\_\+constraint@{does\+\_\+not\+\_\+satisfy\+\_\+constraint}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{does\+\_\+not\+\_\+satisfy\+\_\+constraint}{does\_not\_satisfy\_constraint}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+does\+\_\+not\+\_\+satisfy\+\_\+constraint\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_ab56334f1f2a897a01ab3aef0de9d9431}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_ab56334f1f2a897a01ab3aef0de9d9431}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!existing\+\_\+req@{existing\+\_\+req}}
+\index{existing\+\_\+req@{existing\+\_\+req}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{existing\+\_\+req}{existing\_req}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+existing\+\_\+req\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a998e23eca1e8daadd814c2a66637e7a6}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_a998e23eca1e8daadd814c2a66637e7a6}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!extras@{extras}}
+\index{extras@{extras}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{extras}{extras}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+extras\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_af81d79a85a2c3e0f38226b09074d91a1}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_af81d79a85a2c3e0f38226b09074d91a1}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!has\+\_\+conflicting\+\_\+requirement@{has\+\_\+conflicting\+\_\+requirement}}
+\index{has\+\_\+conflicting\+\_\+requirement@{has\+\_\+conflicting\+\_\+requirement}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{has\+\_\+conflicting\+\_\+requirement}{has\_conflicting\_requirement}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+has\+\_\+conflicting\+\_\+requirement\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_afaf791259ee5678a1486cd772f0ea2be}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_afaf791259ee5678a1486cd772f0ea2be}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!tags@{tags}}
+\index{tags@{tags}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{tags}{tags}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+tags\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_aa13bc9d40c97121a5a5cd3cbb07fd657}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_aa13bc9d40c97121a5a5cd3cbb07fd657}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!user\+\_\+supplied@{user\+\_\+supplied}}
+\index{user\+\_\+supplied@{user\+\_\+supplied}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{user\+\_\+supplied}{user\_supplied}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+user\+\_\+supplied\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_ab20062b07874e2b728827c89cff17f68}\label{classpip_1_1__internal_1_1req_1_1req__set_1_1RequirementSet_ab20062b07874e2b728827c89cff17f68}} 
+\index{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}!wheel@{wheel}}
+\index{wheel@{wheel}!pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set@{pip\+::\+\_\+internal\+::req\+::req\+\_\+set\+::\+Requirement\+Set}}
+\subsubsection{\texorpdfstring{wheel}{wheel}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+req.\+req\+\_\+set.\+Requirement\+Set.\+wheel\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+internal/req/\hyperlink{req__set_8py}{req\+\_\+set.\+py}\end{DoxyCompactItemize}

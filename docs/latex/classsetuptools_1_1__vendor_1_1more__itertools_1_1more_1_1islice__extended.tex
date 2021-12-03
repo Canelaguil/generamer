@@ -1,0 +1,73 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended}{}\section{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+islice\+\_\+extended Class Reference}
+\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended}\index{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+islice\+\_\+extended@{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+islice\+\_\+extended}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended_a226ac7be84a14b75d0ffcb7b39a4dae4}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, iterable, args)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended_aea1e2c0e26f14f7dfc6b806d99002ee4}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended_a3e2aab9dd44013cbe5903ef97b455c26}{\+\_\+\+\_\+next\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended_af4aae326b398dd50b10439c5dd40d8fc}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, key)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An extension of :func:`itertools.islice` that supports negative values
+for *stop*, *start*, and *step*.
+
+    >>> iterable = iter('abcdefgh')
+    >>> list(islice_extended(iterable, -4, -1))
+    ['e', 'f', 'g']
+
+Slices with negative values require some caching of *iterable*, but this
+function takes care to minimize the amount of memory required.
+
+For example, you can use a negative step with an infinite iterator:
+
+    >>> from itertools import count
+    >>> list(islice_extended(count(), 110, 99, -2))
+    [110, 108, 106, 104, 102, 100]
+
+You can also use slice notation directly:
+
+    >>> iterable = map(str, count())
+    >>> it = islice_extended(iterable)[10:20:2]
+    >>> list(it)
+    ['10', '12', '14', '16', '18']\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended_a226ac7be84a14b75d0ffcb7b39a4dae4}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended_a226ac7be84a14b75d0ffcb7b39a4dae4}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+islice\+\_\+extended.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iterable,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended_af4aae326b398dd50b10439c5dd40d8fc}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended_af4aae326b398dd50b10439c5dd40d8fc}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+islice\+\_\+extended.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended_aea1e2c0e26f14f7dfc6b806d99002ee4}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended_aea1e2c0e26f14f7dfc6b806d99002ee4}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+islice\+\_\+extended.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended_a3e2aab9dd44013cbe5903ef97b455c26}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1islice__extended_a3e2aab9dd44013cbe5903ef97b455c26}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended}!\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::islice\+\_\+extended}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+next\+\_\+\+\_\+()}{\_\_next\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+islice\+\_\+extended.\+\_\+\+\_\+next\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/more\+\_\+itertools/\hyperlink{more_8py}{more.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,640 @@
+\hypertarget{distributions_8h}{}\section{venv/lib/python3.9/site-\/packages/numpy/core/include/numpy/random/distributions.h File Reference}
+\label{distributions_8h}\index{venv/lib/python3.\+9/site-\/packages/numpy/core/include/numpy/random/distributions.\+h@{venv/lib/python3.\+9/site-\/packages/numpy/core/include/numpy/random/distributions.\+h}}
+{\ttfamily \#include \char`\"{}Python.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}numpy/npy\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}numpy/npy\+\_\+math.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}numpy/random/bitgen.\+h\char`\"{}}\newline
+Include dependency graph for distributions.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{distributions_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structs__binomial__t}{s\+\_\+binomial\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE}~int64\+\_\+t
+\item 
+\#define \hyperlink{distributions_8h_a9d668c8e2ab02df4d81fe2b85b0c2acb}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+M\+AX}~I\+N\+T64\+\_\+\+M\+AX
+\item 
+\#define \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR}~extern
+\item 
+\#define \hyperlink{distributions_8h_a74e75242132eaabbc1c512488a135926}{M\+IN}(x,  y)~(((x) $<$ (y)) ? x \+: y)
+\item 
+\#define \hyperlink{distributions_8h_aacc3ee1a7f283f8ef65cea31f4436a95}{M\+AX}(x,  y)~(((x) $>$ (y)) ? x \+: y)
+\item 
+\#define \hyperlink{distributions_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}~3.\+14159265358979323846264338328
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structs__binomial__t}{s\+\_\+binomial\+\_\+t} \hyperlink{distributions_8h_a9b896487758e555d2e2105672a449ab6}{binomial\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} float \hyperlink{distributions_8h_a069f3dcd781c72409758d351a413b19a}{random\+\_\+standard\+\_\+uniform\+\_\+f} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_ad6d522c564ad7dab25088e9e69849135}{random\+\_\+standard\+\_\+uniform} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_a364dbd98ec4a891c263a7c9880bbcfd7}{random\+\_\+standard\+\_\+uniform\+\_\+fill} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}, double $\ast$)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_ade2e249581d21b00f980c5bb89f916ae}{random\+\_\+standard\+\_\+uniform\+\_\+fill\+\_\+f} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}, float $\ast$)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int64\+\_\+t \hyperlink{distributions_8h_a5d2641c1b12fb02dc0482b177fe3e79a}{random\+\_\+positive\+\_\+int64} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int32\+\_\+t \hyperlink{distributions_8h_ac301e707d6408ea3852627b90283cf88}{random\+\_\+positive\+\_\+int32} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int64\+\_\+t \hyperlink{distributions_8h_af74c54c692759fdf85f8c476c8cf621f}{random\+\_\+positive\+\_\+int} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} uint64\+\_\+t \hyperlink{distributions_8h_af34dc866b9e91a91f945b70027682c00}{random\+\_\+uint} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_ac4d14065e9681ac433d31c22ecdebaaf}{random\+\_\+standard\+\_\+exponential} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} float \hyperlink{distributions_8h_a1da2b33809dd9a4e448eef257f2018d7}{random\+\_\+standard\+\_\+exponential\+\_\+f} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_a3ce88bfa0ff011b81a726fda571fb8bb}{random\+\_\+standard\+\_\+exponential\+\_\+fill} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}, double $\ast$)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_a67af2ca82d105bee485aa946ee61e2f2}{random\+\_\+standard\+\_\+exponential\+\_\+fill\+\_\+f} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}, float $\ast$)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_a83de904b1951b21c227985ff2293f47c}{random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}, double $\ast$)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_a561d418a2b7bf8dd99f90b97da1f75ff}{random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill\+\_\+f} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}, float $\ast$)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a969519ed3d12d4a4522a2252752652f9}{random\+\_\+standard\+\_\+normal} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} float \hyperlink{distributions_8h_a58c7ed79f5384dd9a1f331d2c0e012cf}{random\+\_\+standard\+\_\+normal\+\_\+f} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_a4086be8bc643d0eb46150e62588a814e}{random\+\_\+standard\+\_\+normal\+\_\+fill} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}, double $\ast$)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_a4d3a9d3fce58e8175c06fd8940ec79cb}{random\+\_\+standard\+\_\+normal\+\_\+fill\+\_\+f} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}, float $\ast$)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_ae04dc46f04b1d5262c1f64f73e5ccc83}{random\+\_\+standard\+\_\+gamma} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double shape)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} float \hyperlink{distributions_8h_aba194a3012632fb35e8a9b19e15cde2a}{random\+\_\+standard\+\_\+gamma\+\_\+f} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, float shape)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_aa7cdfffc2d5128355aec1785a491384c}{random\+\_\+normal} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double loc, double scale)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a0a82e21ce645965c7a25886e6d3f4c50}{random\+\_\+gamma} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double shape, double scale)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} float \hyperlink{distributions_8h_a08ba6bf5f5aebc02361643aab0fd904d}{random\+\_\+gamma\+\_\+f} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, float shape, float scale)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a08fcc617155fba1b9d7db7c0da511270}{random\+\_\+exponential} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double scale)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a602d2b0552799a7f535b314facae94ad}{random\+\_\+uniform} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double lower, double range)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a83bbc6d4f2aea0eaada33b1299f5af6a}{random\+\_\+beta} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double a, double b)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_ac8f16b6fc6a1969c2bd1b2646997c379}{random\+\_\+chisquare} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double df)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a924c05c19a887376c961bacc8b36fa71}{random\+\_\+f} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double dfnum, double dfden)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a373e0324af1a8e2d284c92c694ad4da9}{random\+\_\+standard\+\_\+cauchy} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_ab49cdd9176ea1b460a6edb2ec36eec0b}{random\+\_\+pareto} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double a)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a86df8f881824ae83110b4adabbda5372}{random\+\_\+weibull} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double a)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a7602d10cfde3d5182c3cdcd98b1f42aa}{random\+\_\+power} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double a)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a6d89f546f6c96fdf5315c1a8ea4f7c8d}{random\+\_\+laplace} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double loc, double scale)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a79f32568f5678fb4d22cb0af869d4086}{random\+\_\+gumbel} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double loc, double scale)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a5a6514bf7925cf87dbbf35f4ac3e22a5}{random\+\_\+logistic} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double loc, double scale)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a1072302c25ced1eb0a27e23c801a4246}{random\+\_\+lognormal} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double mean, double sigma)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a862e4ad4dc0f98a18d0a31c3d47f723f}{random\+\_\+rayleigh} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double mode)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a63a517342b960230b4d0fcbd276cbc57}{random\+\_\+standard\+\_\+t} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double df)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a8cde4b3f08ffa38d87420c42ed1f27bd}{random\+\_\+noncentral\+\_\+chisquare} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double df, double nonc)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a484686542177cfda9776183b474fbc5f}{random\+\_\+noncentral\+\_\+f} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double dfnum, double dfden, double nonc)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_affdba9f710402030acab2e080148f89c}{random\+\_\+wald} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double mean, double scale)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a591927fca1902ec47fcc4feb901b82c3}{random\+\_\+vonmises} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double mu, double kappa)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double \hyperlink{distributions_8h_a19f5ac43d0e09f9d798786eb5d1069dd}{random\+\_\+triangular} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double left, double mode, double right)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} \hyperlink{distributions_8h_a2abb9ae2c09869773b739cf993ada645}{random\+\_\+poisson} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double lam)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} \hyperlink{distributions_8h_a847de0497db3a69b8052ef5f5d4e1b89}{random\+\_\+negative\+\_\+binomial} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double n, double p)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int64\+\_\+t \hyperlink{distributions_8h_ae3c94b70e8703a1e4360745ad33e96af}{random\+\_\+binomial} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double p, int64\+\_\+t n, \hyperlink{distributions_8h_a9b896487758e555d2e2105672a449ab6}{binomial\+\_\+t} $\ast$binomial)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int64\+\_\+t \hyperlink{distributions_8h_ab0f0b77605490caa665ec8cf5b424d78}{random\+\_\+logseries} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double p)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int64\+\_\+t \hyperlink{distributions_8h_a1434e320018e5716462f75994cdbd828}{random\+\_\+geometric} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double p)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} \hyperlink{distributions_8h_ab2da02bcae61a4e2e5d47f0d065b7431}{random\+\_\+geometric\+\_\+search} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double p)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} \hyperlink{distributions_8h_a8277e8e70966e5decc1c891bed7d5912}{random\+\_\+zipf} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, double a)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int64\+\_\+t \hyperlink{distributions_8h_a48d994a9a789aa24cc344eb1b71aa0cc}{random\+\_\+hypergeometric} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, int64\+\_\+t good, int64\+\_\+t bad, int64\+\_\+t sample)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} uint64\+\_\+t \hyperlink{distributions_8h_a4a3bb4695df5a293bb00614bbf6a4c83}{random\+\_\+interval} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, uint64\+\_\+t max)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} uint64\+\_\+t \hyperlink{distributions_8h_a9c5727c6a66f3d9f75559ff29a259a1a}{random\+\_\+bounded\+\_\+uint64} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, uint64\+\_\+t off, uint64\+\_\+t rng, uint64\+\_\+t mask, bool use\+\_\+masked)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} uint32\+\_\+t \hyperlink{distributions_8h_a9c60864843f63bbf9791b7a754e83701}{random\+\_\+buffered\+\_\+bounded\+\_\+uint32} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, uint32\+\_\+t off, uint32\+\_\+t rng, uint32\+\_\+t mask, bool use\+\_\+masked, int $\ast$bcnt, uint32\+\_\+t $\ast$buf)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} uint16\+\_\+t \hyperlink{distributions_8h_af5b3f4d27ec58435302ae124a4707cc1}{random\+\_\+buffered\+\_\+bounded\+\_\+uint16} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, uint16\+\_\+t off, uint16\+\_\+t rng, uint16\+\_\+t mask, bool use\+\_\+masked, int $\ast$bcnt, uint32\+\_\+t $\ast$buf)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} uint8\+\_\+t \hyperlink{distributions_8h_aa722714572c2ddf340901a493766d558}{random\+\_\+buffered\+\_\+bounded\+\_\+uint8} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, uint8\+\_\+t off, uint8\+\_\+t rng, uint8\+\_\+t mask, bool use\+\_\+masked, int $\ast$bcnt, uint32\+\_\+t $\ast$buf)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} \hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool} \hyperlink{distributions_8h_a6d68ca8f43b632acce64954969352c60}{random\+\_\+buffered\+\_\+bounded\+\_\+bool} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, \hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool} off, \hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool} rng, \hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool} mask, bool use\+\_\+masked, int $\ast$bcnt, uint32\+\_\+t $\ast$buf)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_ab45f9165201dbe620c4feeb2996d0670}{random\+\_\+bounded\+\_\+uint64\+\_\+fill} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, uint64\+\_\+t off, uint64\+\_\+t rng, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp} cnt, bool use\+\_\+masked, uint64\+\_\+t $\ast$out)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_ab544de3791ec1fb290d750f5c2b00960}{random\+\_\+bounded\+\_\+uint32\+\_\+fill} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, uint32\+\_\+t off, uint32\+\_\+t rng, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp} cnt, bool use\+\_\+masked, uint32\+\_\+t $\ast$out)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_a9a3daa164f9752f5f57d45af967de18c}{random\+\_\+bounded\+\_\+uint16\+\_\+fill} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, uint16\+\_\+t off, uint16\+\_\+t rng, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp} cnt, bool use\+\_\+masked, uint16\+\_\+t $\ast$out)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_ae9105d6d55b2ba2a24e1437863f4ada1}{random\+\_\+bounded\+\_\+uint8\+\_\+fill} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, uint8\+\_\+t off, uint8\+\_\+t rng, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp} cnt, bool use\+\_\+masked, uint8\+\_\+t $\ast$out)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_af9fd5c222fd19a17cb4a6de42b4f2e07}{random\+\_\+bounded\+\_\+bool\+\_\+fill} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, \hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool} off, \hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool} rng, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp} cnt, bool use\+\_\+masked, \hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool} $\ast$out)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_ab8c3be690d270e395dc50a68e0c01316}{random\+\_\+multinomial} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} n, \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} $\ast$mnix, double $\ast$pix, \hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp} d, \hyperlink{distributions_8h_a9b896487758e555d2e2105672a449ab6}{binomial\+\_\+t} $\ast$binomial)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int \hyperlink{distributions_8h_a643c3f6eefd582d35200304ca6d19ab3}{random\+\_\+multivariate\+\_\+hypergeometric\+\_\+count} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, int64\+\_\+t total, size\+\_\+t num\+\_\+colors, int64\+\_\+t $\ast$colors, int64\+\_\+t nsample, size\+\_\+t num\+\_\+variates, int64\+\_\+t $\ast$variates)
+\item 
+\hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void \hyperlink{distributions_8h_af829d638562c4cdb48842c86c8d787c3}{random\+\_\+multivariate\+\_\+hypergeometric\+\_\+marginals} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, int64\+\_\+t total, size\+\_\+t num\+\_\+colors, int64\+\_\+t $\ast$colors, int64\+\_\+t nsample, size\+\_\+t num\+\_\+variates, int64\+\_\+t $\ast$variates)
+\item 
+\hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} \hyperlink{distributions_8h_a06af66f6940352641d6305adc60aa96b}{random\+\_\+binomial\+\_\+btpe} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} n, double p, \hyperlink{distributions_8h_a9b896487758e555d2e2105672a449ab6}{binomial\+\_\+t} $\ast$binomial)
+\item 
+\hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} \hyperlink{distributions_8h_ad1fa26048367cd36dba81b0d20d1cafe}{random\+\_\+binomial\+\_\+inversion} (\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$bitgen\+\_\+state, \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} n, double p, \hyperlink{distributions_8h_a9b896487758e555d2e2105672a449ab6}{binomial\+\_\+t} $\ast$binomial)
+\item 
+double \hyperlink{distributions_8h_a0c15ae3b92c8982b3086f1170859b632}{random\+\_\+loggam} (double x)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}\label{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}} 
+\index{distributions.\+h@{distributions.\+h}!D\+E\+C\+L\+D\+IR@{D\+E\+C\+L\+D\+IR}}
+\index{D\+E\+C\+L\+D\+IR@{D\+E\+C\+L\+D\+IR}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{D\+E\+C\+L\+D\+IR}{DECLDIR}}
+{\footnotesize\ttfamily \#define D\+E\+C\+L\+D\+IR~extern}
+
+\mbox{\Hypertarget{distributions_8h_ae71449b1cc6e6250b91f539153a7a0d3}\label{distributions_8h_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{distributions.\+h@{distributions.\+h}!M\+\_\+\+PI@{M\+\_\+\+PI}}
+\index{M\+\_\+\+PI@{M\+\_\+\+PI}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{M\+\_\+\+PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~3.\+14159265358979323846264338328}
+
+\mbox{\Hypertarget{distributions_8h_aacc3ee1a7f283f8ef65cea31f4436a95}\label{distributions_8h_aacc3ee1a7f283f8ef65cea31f4436a95}} 
+\index{distributions.\+h@{distributions.\+h}!M\+AX@{M\+AX}}
+\index{M\+AX@{M\+AX}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{M\+AX}{MAX}}
+{\footnotesize\ttfamily \#define M\+AX(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})~(((x) $>$ (y)) ? x \+: y)}
+
+\mbox{\Hypertarget{distributions_8h_a74e75242132eaabbc1c512488a135926}\label{distributions_8h_a74e75242132eaabbc1c512488a135926}} 
+\index{distributions.\+h@{distributions.\+h}!M\+IN@{M\+IN}}
+\index{M\+IN@{M\+IN}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{M\+IN}{MIN}}
+{\footnotesize\ttfamily \#define M\+IN(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})~(((x) $<$ (y)) ? x \+: y)}
+
+\mbox{\Hypertarget{distributions_8h_a9d668c8e2ab02df4d81fe2b85b0c2acb}\label{distributions_8h_a9d668c8e2ab02df4d81fe2b85b0c2acb}} 
+\index{distributions.\+h@{distributions.\+h}!R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+M\+AX@{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+M\+AX}}
+\index{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+M\+AX@{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+M\+AX}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+M\+AX}{RAND\_INT\_MAX}}
+{\footnotesize\ttfamily \#define R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+M\+AX~I\+N\+T64\+\_\+\+M\+AX}
+
+\mbox{\Hypertarget{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}\label{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}} 
+\index{distributions.\+h@{distributions.\+h}!R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE@{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE}}
+\index{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE@{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE}{RAND\_INT\_TYPE}}
+{\footnotesize\ttfamily \#define R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE~int64\+\_\+t}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{distributions_8h_a9b896487758e555d2e2105672a449ab6}\label{distributions_8h_a9b896487758e555d2e2105672a449ab6}} 
+\index{distributions.\+h@{distributions.\+h}!binomial\+\_\+t@{binomial\+\_\+t}}
+\index{binomial\+\_\+t@{binomial\+\_\+t}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{binomial\+\_\+t}{binomial\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structs__binomial__t}{s\+\_\+binomial\+\_\+t}  \hyperlink{distributions_8h_a9b896487758e555d2e2105672a449ab6}{binomial\+\_\+t}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{distributions_8h_a83bbc6d4f2aea0eaada33b1299f5af6a}\label{distributions_8h_a83bbc6d4f2aea0eaada33b1299f5af6a}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+beta@{random\+\_\+beta}}
+\index{random\+\_\+beta@{random\+\_\+beta}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+beta()}{random\_beta()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+beta (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ae3c94b70e8703a1e4360745ad33e96af}\label{distributions_8h_ae3c94b70e8703a1e4360745ad33e96af}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+binomial@{random\+\_\+binomial}}
+\index{random\+\_\+binomial@{random\+\_\+binomial}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+binomial()}{random\_binomial()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int64\+\_\+t random\+\_\+binomial (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{p,  }\item[{int64\+\_\+t}]{n,  }\item[{\hyperlink{distributions_8h_a9b896487758e555d2e2105672a449ab6}{binomial\+\_\+t} $\ast$}]{binomial }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a06af66f6940352641d6305adc60aa96b}\label{distributions_8h_a06af66f6940352641d6305adc60aa96b}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+binomial\+\_\+btpe@{random\+\_\+binomial\+\_\+btpe}}
+\index{random\+\_\+binomial\+\_\+btpe@{random\+\_\+binomial\+\_\+btpe}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+binomial\+\_\+btpe()}{random\_binomial\_btpe()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} random\+\_\+binomial\+\_\+btpe (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{\hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE}}]{n,  }\item[{double}]{p,  }\item[{\hyperlink{distributions_8h_a9b896487758e555d2e2105672a449ab6}{binomial\+\_\+t} $\ast$}]{binomial }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ad1fa26048367cd36dba81b0d20d1cafe}\label{distributions_8h_ad1fa26048367cd36dba81b0d20d1cafe}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+binomial\+\_\+inversion@{random\+\_\+binomial\+\_\+inversion}}
+\index{random\+\_\+binomial\+\_\+inversion@{random\+\_\+binomial\+\_\+inversion}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+binomial\+\_\+inversion()}{random\_binomial\_inversion()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} random\+\_\+binomial\+\_\+inversion (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{\hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE}}]{n,  }\item[{double}]{p,  }\item[{\hyperlink{distributions_8h_a9b896487758e555d2e2105672a449ab6}{binomial\+\_\+t} $\ast$}]{binomial }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_af9fd5c222fd19a17cb4a6de42b4f2e07}\label{distributions_8h_af9fd5c222fd19a17cb4a6de42b4f2e07}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+bounded\+\_\+bool\+\_\+fill@{random\+\_\+bounded\+\_\+bool\+\_\+fill}}
+\index{random\+\_\+bounded\+\_\+bool\+\_\+fill@{random\+\_\+bounded\+\_\+bool\+\_\+fill}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+bounded\+\_\+bool\+\_\+fill()}{random\_bounded\_bool\_fill()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+bounded\+\_\+bool\+\_\+fill (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{\hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool}}]{off,  }\item[{\hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool}}]{rng,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{cnt,  }\item[{bool}]{use\+\_\+masked,  }\item[{\hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool} $\ast$}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a9a3daa164f9752f5f57d45af967de18c}\label{distributions_8h_a9a3daa164f9752f5f57d45af967de18c}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+bounded\+\_\+uint16\+\_\+fill@{random\+\_\+bounded\+\_\+uint16\+\_\+fill}}
+\index{random\+\_\+bounded\+\_\+uint16\+\_\+fill@{random\+\_\+bounded\+\_\+uint16\+\_\+fill}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+bounded\+\_\+uint16\+\_\+fill()}{random\_bounded\_uint16\_fill()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+bounded\+\_\+uint16\+\_\+fill (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{uint16\+\_\+t}]{off,  }\item[{uint16\+\_\+t}]{rng,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{cnt,  }\item[{bool}]{use\+\_\+masked,  }\item[{uint16\+\_\+t $\ast$}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ab544de3791ec1fb290d750f5c2b00960}\label{distributions_8h_ab544de3791ec1fb290d750f5c2b00960}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+bounded\+\_\+uint32\+\_\+fill@{random\+\_\+bounded\+\_\+uint32\+\_\+fill}}
+\index{random\+\_\+bounded\+\_\+uint32\+\_\+fill@{random\+\_\+bounded\+\_\+uint32\+\_\+fill}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+bounded\+\_\+uint32\+\_\+fill()}{random\_bounded\_uint32\_fill()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+bounded\+\_\+uint32\+\_\+fill (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{uint32\+\_\+t}]{off,  }\item[{uint32\+\_\+t}]{rng,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{cnt,  }\item[{bool}]{use\+\_\+masked,  }\item[{uint32\+\_\+t $\ast$}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a9c5727c6a66f3d9f75559ff29a259a1a}\label{distributions_8h_a9c5727c6a66f3d9f75559ff29a259a1a}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+bounded\+\_\+uint64@{random\+\_\+bounded\+\_\+uint64}}
+\index{random\+\_\+bounded\+\_\+uint64@{random\+\_\+bounded\+\_\+uint64}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+bounded\+\_\+uint64()}{random\_bounded\_uint64()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} uint64\+\_\+t random\+\_\+bounded\+\_\+uint64 (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{uint64\+\_\+t}]{off,  }\item[{uint64\+\_\+t}]{rng,  }\item[{uint64\+\_\+t}]{mask,  }\item[{bool}]{use\+\_\+masked }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ab45f9165201dbe620c4feeb2996d0670}\label{distributions_8h_ab45f9165201dbe620c4feeb2996d0670}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+bounded\+\_\+uint64\+\_\+fill@{random\+\_\+bounded\+\_\+uint64\+\_\+fill}}
+\index{random\+\_\+bounded\+\_\+uint64\+\_\+fill@{random\+\_\+bounded\+\_\+uint64\+\_\+fill}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+bounded\+\_\+uint64\+\_\+fill()}{random\_bounded\_uint64\_fill()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+bounded\+\_\+uint64\+\_\+fill (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{uint64\+\_\+t}]{off,  }\item[{uint64\+\_\+t}]{rng,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{cnt,  }\item[{bool}]{use\+\_\+masked,  }\item[{uint64\+\_\+t $\ast$}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ae9105d6d55b2ba2a24e1437863f4ada1}\label{distributions_8h_ae9105d6d55b2ba2a24e1437863f4ada1}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+bounded\+\_\+uint8\+\_\+fill@{random\+\_\+bounded\+\_\+uint8\+\_\+fill}}
+\index{random\+\_\+bounded\+\_\+uint8\+\_\+fill@{random\+\_\+bounded\+\_\+uint8\+\_\+fill}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+bounded\+\_\+uint8\+\_\+fill()}{random\_bounded\_uint8\_fill()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+bounded\+\_\+uint8\+\_\+fill (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{uint8\+\_\+t}]{off,  }\item[{uint8\+\_\+t}]{rng,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{cnt,  }\item[{bool}]{use\+\_\+masked,  }\item[{uint8\+\_\+t $\ast$}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a6d68ca8f43b632acce64954969352c60}\label{distributions_8h_a6d68ca8f43b632acce64954969352c60}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+buffered\+\_\+bounded\+\_\+bool@{random\+\_\+buffered\+\_\+bounded\+\_\+bool}}
+\index{random\+\_\+buffered\+\_\+bounded\+\_\+bool@{random\+\_\+buffered\+\_\+bounded\+\_\+bool}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+buffered\+\_\+bounded\+\_\+bool()}{random\_buffered\_bounded\_bool()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} \hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool} random\+\_\+buffered\+\_\+bounded\+\_\+bool (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{\hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool}}]{off,  }\item[{\hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool}}]{rng,  }\item[{\hyperlink{npy__common_8h_a95307a629b2747f357f81b3853c5d1b6}{npy\+\_\+bool}}]{mask,  }\item[{bool}]{use\+\_\+masked,  }\item[{int $\ast$}]{bcnt,  }\item[{uint32\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_af5b3f4d27ec58435302ae124a4707cc1}\label{distributions_8h_af5b3f4d27ec58435302ae124a4707cc1}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+buffered\+\_\+bounded\+\_\+uint16@{random\+\_\+buffered\+\_\+bounded\+\_\+uint16}}
+\index{random\+\_\+buffered\+\_\+bounded\+\_\+uint16@{random\+\_\+buffered\+\_\+bounded\+\_\+uint16}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+buffered\+\_\+bounded\+\_\+uint16()}{random\_buffered\_bounded\_uint16()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} uint16\+\_\+t random\+\_\+buffered\+\_\+bounded\+\_\+uint16 (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{uint16\+\_\+t}]{off,  }\item[{uint16\+\_\+t}]{rng,  }\item[{uint16\+\_\+t}]{mask,  }\item[{bool}]{use\+\_\+masked,  }\item[{int $\ast$}]{bcnt,  }\item[{uint32\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a9c60864843f63bbf9791b7a754e83701}\label{distributions_8h_a9c60864843f63bbf9791b7a754e83701}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+buffered\+\_\+bounded\+\_\+uint32@{random\+\_\+buffered\+\_\+bounded\+\_\+uint32}}
+\index{random\+\_\+buffered\+\_\+bounded\+\_\+uint32@{random\+\_\+buffered\+\_\+bounded\+\_\+uint32}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+buffered\+\_\+bounded\+\_\+uint32()}{random\_buffered\_bounded\_uint32()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} uint32\+\_\+t random\+\_\+buffered\+\_\+bounded\+\_\+uint32 (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{uint32\+\_\+t}]{off,  }\item[{uint32\+\_\+t}]{rng,  }\item[{uint32\+\_\+t}]{mask,  }\item[{bool}]{use\+\_\+masked,  }\item[{int $\ast$}]{bcnt,  }\item[{uint32\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_aa722714572c2ddf340901a493766d558}\label{distributions_8h_aa722714572c2ddf340901a493766d558}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+buffered\+\_\+bounded\+\_\+uint8@{random\+\_\+buffered\+\_\+bounded\+\_\+uint8}}
+\index{random\+\_\+buffered\+\_\+bounded\+\_\+uint8@{random\+\_\+buffered\+\_\+bounded\+\_\+uint8}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+buffered\+\_\+bounded\+\_\+uint8()}{random\_buffered\_bounded\_uint8()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} uint8\+\_\+t random\+\_\+buffered\+\_\+bounded\+\_\+uint8 (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{uint8\+\_\+t}]{off,  }\item[{uint8\+\_\+t}]{rng,  }\item[{uint8\+\_\+t}]{mask,  }\item[{bool}]{use\+\_\+masked,  }\item[{int $\ast$}]{bcnt,  }\item[{uint32\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ac8f16b6fc6a1969c2bd1b2646997c379}\label{distributions_8h_ac8f16b6fc6a1969c2bd1b2646997c379}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+chisquare@{random\+\_\+chisquare}}
+\index{random\+\_\+chisquare@{random\+\_\+chisquare}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+chisquare()}{random\_chisquare()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+chisquare (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{df }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a08fcc617155fba1b9d7db7c0da511270}\label{distributions_8h_a08fcc617155fba1b9d7db7c0da511270}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+exponential@{random\+\_\+exponential}}
+\index{random\+\_\+exponential@{random\+\_\+exponential}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+exponential()}{random\_exponential()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+exponential (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a924c05c19a887376c961bacc8b36fa71}\label{distributions_8h_a924c05c19a887376c961bacc8b36fa71}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+f@{random\+\_\+f}}
+\index{random\+\_\+f@{random\+\_\+f}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+f()}{random\_f()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{dfnum,  }\item[{double}]{dfden }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a0a82e21ce645965c7a25886e6d3f4c50}\label{distributions_8h_a0a82e21ce645965c7a25886e6d3f4c50}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+gamma@{random\+\_\+gamma}}
+\index{random\+\_\+gamma@{random\+\_\+gamma}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+gamma()}{random\_gamma()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+gamma (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{shape,  }\item[{double}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a08ba6bf5f5aebc02361643aab0fd904d}\label{distributions_8h_a08ba6bf5f5aebc02361643aab0fd904d}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+gamma\+\_\+f@{random\+\_\+gamma\+\_\+f}}
+\index{random\+\_\+gamma\+\_\+f@{random\+\_\+gamma\+\_\+f}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+gamma\+\_\+f()}{random\_gamma\_f()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} float random\+\_\+gamma\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{float}]{shape,  }\item[{float}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a1434e320018e5716462f75994cdbd828}\label{distributions_8h_a1434e320018e5716462f75994cdbd828}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+geometric@{random\+\_\+geometric}}
+\index{random\+\_\+geometric@{random\+\_\+geometric}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+geometric()}{random\_geometric()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int64\+\_\+t random\+\_\+geometric (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ab2da02bcae61a4e2e5d47f0d065b7431}\label{distributions_8h_ab2da02bcae61a4e2e5d47f0d065b7431}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+geometric\+\_\+search@{random\+\_\+geometric\+\_\+search}}
+\index{random\+\_\+geometric\+\_\+search@{random\+\_\+geometric\+\_\+search}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+geometric\+\_\+search()}{random\_geometric\_search()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} random\+\_\+geometric\+\_\+search (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a79f32568f5678fb4d22cb0af869d4086}\label{distributions_8h_a79f32568f5678fb4d22cb0af869d4086}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+gumbel@{random\+\_\+gumbel}}
+\index{random\+\_\+gumbel@{random\+\_\+gumbel}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+gumbel()}{random\_gumbel()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+gumbel (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{loc,  }\item[{double}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a48d994a9a789aa24cc344eb1b71aa0cc}\label{distributions_8h_a48d994a9a789aa24cc344eb1b71aa0cc}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+hypergeometric@{random\+\_\+hypergeometric}}
+\index{random\+\_\+hypergeometric@{random\+\_\+hypergeometric}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+hypergeometric()}{random\_hypergeometric()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int64\+\_\+t random\+\_\+hypergeometric (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{int64\+\_\+t}]{good,  }\item[{int64\+\_\+t}]{bad,  }\item[{int64\+\_\+t}]{sample }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a4a3bb4695df5a293bb00614bbf6a4c83}\label{distributions_8h_a4a3bb4695df5a293bb00614bbf6a4c83}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+interval@{random\+\_\+interval}}
+\index{random\+\_\+interval@{random\+\_\+interval}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+interval()}{random\_interval()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} uint64\+\_\+t random\+\_\+interval (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{uint64\+\_\+t}]{max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a6d89f546f6c96fdf5315c1a8ea4f7c8d}\label{distributions_8h_a6d89f546f6c96fdf5315c1a8ea4f7c8d}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+laplace@{random\+\_\+laplace}}
+\index{random\+\_\+laplace@{random\+\_\+laplace}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+laplace()}{random\_laplace()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+laplace (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{loc,  }\item[{double}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a0c15ae3b92c8982b3086f1170859b632}\label{distributions_8h_a0c15ae3b92c8982b3086f1170859b632}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+loggam@{random\+\_\+loggam}}
+\index{random\+\_\+loggam@{random\+\_\+loggam}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+loggam()}{random\_loggam()}}
+{\footnotesize\ttfamily double random\+\_\+loggam (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a5a6514bf7925cf87dbbf35f4ac3e22a5}\label{distributions_8h_a5a6514bf7925cf87dbbf35f4ac3e22a5}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+logistic@{random\+\_\+logistic}}
+\index{random\+\_\+logistic@{random\+\_\+logistic}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+logistic()}{random\_logistic()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+logistic (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{loc,  }\item[{double}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a1072302c25ced1eb0a27e23c801a4246}\label{distributions_8h_a1072302c25ced1eb0a27e23c801a4246}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+lognormal@{random\+\_\+lognormal}}
+\index{random\+\_\+lognormal@{random\+\_\+lognormal}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+lognormal()}{random\_lognormal()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+lognormal (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{mean,  }\item[{double}]{sigma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ab0f0b77605490caa665ec8cf5b424d78}\label{distributions_8h_ab0f0b77605490caa665ec8cf5b424d78}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+logseries@{random\+\_\+logseries}}
+\index{random\+\_\+logseries@{random\+\_\+logseries}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+logseries()}{random\_logseries()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int64\+\_\+t random\+\_\+logseries (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ab8c3be690d270e395dc50a68e0c01316}\label{distributions_8h_ab8c3be690d270e395dc50a68e0c01316}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+multinomial@{random\+\_\+multinomial}}
+\index{random\+\_\+multinomial@{random\+\_\+multinomial}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+multinomial()}{random\_multinomial()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+multinomial (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{\hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE}}]{n,  }\item[{\hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} $\ast$}]{mnix,  }\item[{double $\ast$}]{pix,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{d,  }\item[{\hyperlink{distributions_8h_a9b896487758e555d2e2105672a449ab6}{binomial\+\_\+t} $\ast$}]{binomial }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a643c3f6eefd582d35200304ca6d19ab3}\label{distributions_8h_a643c3f6eefd582d35200304ca6d19ab3}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+multivariate\+\_\+hypergeometric\+\_\+count@{random\+\_\+multivariate\+\_\+hypergeometric\+\_\+count}}
+\index{random\+\_\+multivariate\+\_\+hypergeometric\+\_\+count@{random\+\_\+multivariate\+\_\+hypergeometric\+\_\+count}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+multivariate\+\_\+hypergeometric\+\_\+count()}{random\_multivariate\_hypergeometric\_count()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int random\+\_\+multivariate\+\_\+hypergeometric\+\_\+count (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{int64\+\_\+t}]{total,  }\item[{size\+\_\+t}]{num\+\_\+colors,  }\item[{int64\+\_\+t $\ast$}]{colors,  }\item[{int64\+\_\+t}]{nsample,  }\item[{size\+\_\+t}]{num\+\_\+variates,  }\item[{int64\+\_\+t $\ast$}]{variates }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_af829d638562c4cdb48842c86c8d787c3}\label{distributions_8h_af829d638562c4cdb48842c86c8d787c3}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+multivariate\+\_\+hypergeometric\+\_\+marginals@{random\+\_\+multivariate\+\_\+hypergeometric\+\_\+marginals}}
+\index{random\+\_\+multivariate\+\_\+hypergeometric\+\_\+marginals@{random\+\_\+multivariate\+\_\+hypergeometric\+\_\+marginals}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+multivariate\+\_\+hypergeometric\+\_\+marginals()}{random\_multivariate\_hypergeometric\_marginals()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+multivariate\+\_\+hypergeometric\+\_\+marginals (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{int64\+\_\+t}]{total,  }\item[{size\+\_\+t}]{num\+\_\+colors,  }\item[{int64\+\_\+t $\ast$}]{colors,  }\item[{int64\+\_\+t}]{nsample,  }\item[{size\+\_\+t}]{num\+\_\+variates,  }\item[{int64\+\_\+t $\ast$}]{variates }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a847de0497db3a69b8052ef5f5d4e1b89}\label{distributions_8h_a847de0497db3a69b8052ef5f5d4e1b89}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+negative\+\_\+binomial@{random\+\_\+negative\+\_\+binomial}}
+\index{random\+\_\+negative\+\_\+binomial@{random\+\_\+negative\+\_\+binomial}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+negative\+\_\+binomial()}{random\_negative\_binomial()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} random\+\_\+negative\+\_\+binomial (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{n,  }\item[{double}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a8cde4b3f08ffa38d87420c42ed1f27bd}\label{distributions_8h_a8cde4b3f08ffa38d87420c42ed1f27bd}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+noncentral\+\_\+chisquare@{random\+\_\+noncentral\+\_\+chisquare}}
+\index{random\+\_\+noncentral\+\_\+chisquare@{random\+\_\+noncentral\+\_\+chisquare}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+noncentral\+\_\+chisquare()}{random\_noncentral\_chisquare()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+noncentral\+\_\+chisquare (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{df,  }\item[{double}]{nonc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a484686542177cfda9776183b474fbc5f}\label{distributions_8h_a484686542177cfda9776183b474fbc5f}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+noncentral\+\_\+f@{random\+\_\+noncentral\+\_\+f}}
+\index{random\+\_\+noncentral\+\_\+f@{random\+\_\+noncentral\+\_\+f}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+noncentral\+\_\+f()}{random\_noncentral\_f()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+noncentral\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{dfnum,  }\item[{double}]{dfden,  }\item[{double}]{nonc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_aa7cdfffc2d5128355aec1785a491384c}\label{distributions_8h_aa7cdfffc2d5128355aec1785a491384c}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+normal@{random\+\_\+normal}}
+\index{random\+\_\+normal@{random\+\_\+normal}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+normal()}{random\_normal()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+normal (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{loc,  }\item[{double}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ab49cdd9176ea1b460a6edb2ec36eec0b}\label{distributions_8h_ab49cdd9176ea1b460a6edb2ec36eec0b}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+pareto@{random\+\_\+pareto}}
+\index{random\+\_\+pareto@{random\+\_\+pareto}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+pareto()}{random\_pareto()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+pareto (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a2abb9ae2c09869773b739cf993ada645}\label{distributions_8h_a2abb9ae2c09869773b739cf993ada645}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+poisson@{random\+\_\+poisson}}
+\index{random\+\_\+poisson@{random\+\_\+poisson}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+poisson()}{random\_poisson()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} random\+\_\+poisson (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{lam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_af74c54c692759fdf85f8c476c8cf621f}\label{distributions_8h_af74c54c692759fdf85f8c476c8cf621f}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+positive\+\_\+int@{random\+\_\+positive\+\_\+int}}
+\index{random\+\_\+positive\+\_\+int@{random\+\_\+positive\+\_\+int}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+positive\+\_\+int()}{random\_positive\_int()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int64\+\_\+t random\+\_\+positive\+\_\+int (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ac301e707d6408ea3852627b90283cf88}\label{distributions_8h_ac301e707d6408ea3852627b90283cf88}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+positive\+\_\+int32@{random\+\_\+positive\+\_\+int32}}
+\index{random\+\_\+positive\+\_\+int32@{random\+\_\+positive\+\_\+int32}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+positive\+\_\+int32()}{random\_positive\_int32()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int32\+\_\+t random\+\_\+positive\+\_\+int32 (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a5d2641c1b12fb02dc0482b177fe3e79a}\label{distributions_8h_a5d2641c1b12fb02dc0482b177fe3e79a}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+positive\+\_\+int64@{random\+\_\+positive\+\_\+int64}}
+\index{random\+\_\+positive\+\_\+int64@{random\+\_\+positive\+\_\+int64}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+positive\+\_\+int64()}{random\_positive\_int64()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} int64\+\_\+t random\+\_\+positive\+\_\+int64 (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a7602d10cfde3d5182c3cdcd98b1f42aa}\label{distributions_8h_a7602d10cfde3d5182c3cdcd98b1f42aa}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+power@{random\+\_\+power}}
+\index{random\+\_\+power@{random\+\_\+power}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+power()}{random\_power()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+power (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a862e4ad4dc0f98a18d0a31c3d47f723f}\label{distributions_8h_a862e4ad4dc0f98a18d0a31c3d47f723f}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+rayleigh@{random\+\_\+rayleigh}}
+\index{random\+\_\+rayleigh@{random\+\_\+rayleigh}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+rayleigh()}{random\_rayleigh()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+rayleigh (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a373e0324af1a8e2d284c92c694ad4da9}\label{distributions_8h_a373e0324af1a8e2d284c92c694ad4da9}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+cauchy@{random\+\_\+standard\+\_\+cauchy}}
+\index{random\+\_\+standard\+\_\+cauchy@{random\+\_\+standard\+\_\+cauchy}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+cauchy()}{random\_standard\_cauchy()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+standard\+\_\+cauchy (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ac4d14065e9681ac433d31c22ecdebaaf}\label{distributions_8h_ac4d14065e9681ac433d31c22ecdebaaf}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+exponential@{random\+\_\+standard\+\_\+exponential}}
+\index{random\+\_\+standard\+\_\+exponential@{random\+\_\+standard\+\_\+exponential}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+exponential()}{random\_standard\_exponential()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+standard\+\_\+exponential (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a1da2b33809dd9a4e448eef257f2018d7}\label{distributions_8h_a1da2b33809dd9a4e448eef257f2018d7}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+exponential\+\_\+f@{random\+\_\+standard\+\_\+exponential\+\_\+f}}
+\index{random\+\_\+standard\+\_\+exponential\+\_\+f@{random\+\_\+standard\+\_\+exponential\+\_\+f}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+exponential\+\_\+f()}{random\_standard\_exponential\_f()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} float random\+\_\+standard\+\_\+exponential\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a3ce88bfa0ff011b81a726fda571fb8bb}\label{distributions_8h_a3ce88bfa0ff011b81a726fda571fb8bb}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+exponential\+\_\+fill@{random\+\_\+standard\+\_\+exponential\+\_\+fill}}
+\index{random\+\_\+standard\+\_\+exponential\+\_\+fill@{random\+\_\+standard\+\_\+exponential\+\_\+fill}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+exponential\+\_\+fill()}{random\_standard\_exponential\_fill()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+standard\+\_\+exponential\+\_\+fill (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{,  }\item[{double $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a67af2ca82d105bee485aa946ee61e2f2}\label{distributions_8h_a67af2ca82d105bee485aa946ee61e2f2}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+exponential\+\_\+fill\+\_\+f@{random\+\_\+standard\+\_\+exponential\+\_\+fill\+\_\+f}}
+\index{random\+\_\+standard\+\_\+exponential\+\_\+fill\+\_\+f@{random\+\_\+standard\+\_\+exponential\+\_\+fill\+\_\+f}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+exponential\+\_\+fill\+\_\+f()}{random\_standard\_exponential\_fill\_f()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+standard\+\_\+exponential\+\_\+fill\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{,  }\item[{float $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a83de904b1951b21c227985ff2293f47c}\label{distributions_8h_a83de904b1951b21c227985ff2293f47c}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill@{random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill}}
+\index{random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill@{random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill()}{random\_standard\_exponential\_inv\_fill()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{,  }\item[{double $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a561d418a2b7bf8dd99f90b97da1f75ff}\label{distributions_8h_a561d418a2b7bf8dd99f90b97da1f75ff}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill\+\_\+f@{random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill\+\_\+f}}
+\index{random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill\+\_\+f@{random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill\+\_\+f}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill\+\_\+f()}{random\_standard\_exponential\_inv\_fill\_f()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+standard\+\_\+exponential\+\_\+inv\+\_\+fill\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{,  }\item[{float $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ae04dc46f04b1d5262c1f64f73e5ccc83}\label{distributions_8h_ae04dc46f04b1d5262c1f64f73e5ccc83}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+gamma@{random\+\_\+standard\+\_\+gamma}}
+\index{random\+\_\+standard\+\_\+gamma@{random\+\_\+standard\+\_\+gamma}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+gamma()}{random\_standard\_gamma()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+standard\+\_\+gamma (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{shape }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_aba194a3012632fb35e8a9b19e15cde2a}\label{distributions_8h_aba194a3012632fb35e8a9b19e15cde2a}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+gamma\+\_\+f@{random\+\_\+standard\+\_\+gamma\+\_\+f}}
+\index{random\+\_\+standard\+\_\+gamma\+\_\+f@{random\+\_\+standard\+\_\+gamma\+\_\+f}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+gamma\+\_\+f()}{random\_standard\_gamma\_f()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} float random\+\_\+standard\+\_\+gamma\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{float}]{shape }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a969519ed3d12d4a4522a2252752652f9}\label{distributions_8h_a969519ed3d12d4a4522a2252752652f9}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+normal@{random\+\_\+standard\+\_\+normal}}
+\index{random\+\_\+standard\+\_\+normal@{random\+\_\+standard\+\_\+normal}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+normal()}{random\_standard\_normal()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+standard\+\_\+normal (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a58c7ed79f5384dd9a1f331d2c0e012cf}\label{distributions_8h_a58c7ed79f5384dd9a1f331d2c0e012cf}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+normal\+\_\+f@{random\+\_\+standard\+\_\+normal\+\_\+f}}
+\index{random\+\_\+standard\+\_\+normal\+\_\+f@{random\+\_\+standard\+\_\+normal\+\_\+f}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+normal\+\_\+f()}{random\_standard\_normal\_f()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} float random\+\_\+standard\+\_\+normal\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a4086be8bc643d0eb46150e62588a814e}\label{distributions_8h_a4086be8bc643d0eb46150e62588a814e}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+normal\+\_\+fill@{random\+\_\+standard\+\_\+normal\+\_\+fill}}
+\index{random\+\_\+standard\+\_\+normal\+\_\+fill@{random\+\_\+standard\+\_\+normal\+\_\+fill}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+normal\+\_\+fill()}{random\_standard\_normal\_fill()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+standard\+\_\+normal\+\_\+fill (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{,  }\item[{double $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a4d3a9d3fce58e8175c06fd8940ec79cb}\label{distributions_8h_a4d3a9d3fce58e8175c06fd8940ec79cb}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+normal\+\_\+fill\+\_\+f@{random\+\_\+standard\+\_\+normal\+\_\+fill\+\_\+f}}
+\index{random\+\_\+standard\+\_\+normal\+\_\+fill\+\_\+f@{random\+\_\+standard\+\_\+normal\+\_\+fill\+\_\+f}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+normal\+\_\+fill\+\_\+f()}{random\_standard\_normal\_fill\_f()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+standard\+\_\+normal\+\_\+fill\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{,  }\item[{float $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a63a517342b960230b4d0fcbd276cbc57}\label{distributions_8h_a63a517342b960230b4d0fcbd276cbc57}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+t@{random\+\_\+standard\+\_\+t}}
+\index{random\+\_\+standard\+\_\+t@{random\+\_\+standard\+\_\+t}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+t()}{random\_standard\_t()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+standard\+\_\+t (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{df }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ad6d522c564ad7dab25088e9e69849135}\label{distributions_8h_ad6d522c564ad7dab25088e9e69849135}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+uniform@{random\+\_\+standard\+\_\+uniform}}
+\index{random\+\_\+standard\+\_\+uniform@{random\+\_\+standard\+\_\+uniform}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+uniform()}{random\_standard\_uniform()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+standard\+\_\+uniform (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a069f3dcd781c72409758d351a413b19a}\label{distributions_8h_a069f3dcd781c72409758d351a413b19a}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+uniform\+\_\+f@{random\+\_\+standard\+\_\+uniform\+\_\+f}}
+\index{random\+\_\+standard\+\_\+uniform\+\_\+f@{random\+\_\+standard\+\_\+uniform\+\_\+f}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+uniform\+\_\+f()}{random\_standard\_uniform\_f()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} float random\+\_\+standard\+\_\+uniform\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a364dbd98ec4a891c263a7c9880bbcfd7}\label{distributions_8h_a364dbd98ec4a891c263a7c9880bbcfd7}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+uniform\+\_\+fill@{random\+\_\+standard\+\_\+uniform\+\_\+fill}}
+\index{random\+\_\+standard\+\_\+uniform\+\_\+fill@{random\+\_\+standard\+\_\+uniform\+\_\+fill}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+uniform\+\_\+fill()}{random\_standard\_uniform\_fill()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+standard\+\_\+uniform\+\_\+fill (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{,  }\item[{double $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_ade2e249581d21b00f980c5bb89f916ae}\label{distributions_8h_ade2e249581d21b00f980c5bb89f916ae}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+standard\+\_\+uniform\+\_\+fill\+\_\+f@{random\+\_\+standard\+\_\+uniform\+\_\+fill\+\_\+f}}
+\index{random\+\_\+standard\+\_\+uniform\+\_\+fill\+\_\+f@{random\+\_\+standard\+\_\+uniform\+\_\+fill\+\_\+f}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+standard\+\_\+uniform\+\_\+fill\+\_\+f()}{random\_standard\_uniform\_fill\_f()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} void random\+\_\+standard\+\_\+uniform\+\_\+fill\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{,  }\item[{\hyperlink{npy__common_8h_a2d6effc4d5ecb85675ebfcfaa102b483}{npy\+\_\+intp}}]{,  }\item[{float $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a19f5ac43d0e09f9d798786eb5d1069dd}\label{distributions_8h_a19f5ac43d0e09f9d798786eb5d1069dd}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+triangular@{random\+\_\+triangular}}
+\index{random\+\_\+triangular@{random\+\_\+triangular}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+triangular()}{random\_triangular()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+triangular (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{left,  }\item[{double}]{mode,  }\item[{double}]{right }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_af34dc866b9e91a91f945b70027682c00}\label{distributions_8h_af34dc866b9e91a91f945b70027682c00}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+uint@{random\+\_\+uint}}
+\index{random\+\_\+uint@{random\+\_\+uint}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+uint()}{random\_uint()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} uint64\+\_\+t random\+\_\+uint (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a602d2b0552799a7f535b314facae94ad}\label{distributions_8h_a602d2b0552799a7f535b314facae94ad}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+uniform@{random\+\_\+uniform}}
+\index{random\+\_\+uniform@{random\+\_\+uniform}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+uniform()}{random\_uniform()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+uniform (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{lower,  }\item[{double}]{range }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a591927fca1902ec47fcc4feb901b82c3}\label{distributions_8h_a591927fca1902ec47fcc4feb901b82c3}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+vonmises@{random\+\_\+vonmises}}
+\index{random\+\_\+vonmises@{random\+\_\+vonmises}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+vonmises()}{random\_vonmises()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+vonmises (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{mu,  }\item[{double}]{kappa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_affdba9f710402030acab2e080148f89c}\label{distributions_8h_affdba9f710402030acab2e080148f89c}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+wald@{random\+\_\+wald}}
+\index{random\+\_\+wald@{random\+\_\+wald}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+wald()}{random\_wald()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+wald (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{mean,  }\item[{double}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a86df8f881824ae83110b4adabbda5372}\label{distributions_8h_a86df8f881824ae83110b4adabbda5372}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+weibull@{random\+\_\+weibull}}
+\index{random\+\_\+weibull@{random\+\_\+weibull}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+weibull()}{random\_weibull()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} double random\+\_\+weibull (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{distributions_8h_a8277e8e70966e5decc1c891bed7d5912}\label{distributions_8h_a8277e8e70966e5decc1c891bed7d5912}} 
+\index{distributions.\+h@{distributions.\+h}!random\+\_\+zipf@{random\+\_\+zipf}}
+\index{random\+\_\+zipf@{random\+\_\+zipf}!distributions.\+h@{distributions.\+h}}
+\subsubsection{\texorpdfstring{random\+\_\+zipf()}{random\_zipf()}}
+{\footnotesize\ttfamily \hyperlink{distributions_8h_a6b6635274dbcf57e29a0140cd8cf0305}{D\+E\+C\+L\+D\+IR} \hyperlink{distributions_8h_abfa1397c653784f9b040ba5bcb0448a2}{R\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE} random\+\_\+zipf (\begin{DoxyParamCaption}\item[{\hyperlink{bitgen_8h_a66c9e4eed6a5be7be0ced2729d7bede3}{bitgen\+\_\+t} $\ast$}]{bitgen\+\_\+state,  }\item[{double}]{a }\end{DoxyParamCaption})}
+

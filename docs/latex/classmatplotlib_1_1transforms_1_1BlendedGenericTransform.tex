@@ -1,0 +1,173 @@
+\hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform}{}\section{matplotlib.\+transforms.\+Blended\+Generic\+Transform Class Reference}
+\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform}\index{matplotlib.\+transforms.\+Blended\+Generic\+Transform@{matplotlib.\+transforms.\+Blended\+Generic\+Transform}}
+
+
+Inheritance diagram for matplotlib.\+transforms.\+Blended\+Generic\+Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1transforms_1_1BlendedGenericTransform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+transforms.\+Blended\+Generic\+Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1transforms_1_1BlendedGenericTransform__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a740fed126c92a23be0cf06f4cbc62e3d}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, x\+\_\+transform, y\+\_\+transform, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_aa90d3aa8274240b48e0a74d5cb27ae56}{depth} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_aac2192c8b2ec4949638f89d58936c3f4}{contains\+\_\+branch} (self, other)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a3827f004a8602ab96d633ffe40454bc3}{frozen} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_ad66214b99be29e88d87a100ff6b2396c}{transform\+\_\+non\+\_\+affine} (self, points)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_ad211a0f27ab6107c4bd1e810e8fbb1dd}{inverted} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a4f7fdd902f0bee7b7babed463a665e4b}{get\+\_\+affine} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_add96d9abbbda5fa15aa58ce2701eff0f}{input\+\_\+dims}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a20d006926fff791b57dfb0c329a9f201}{output\+\_\+dims}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_af8974614784ed9092ae117eacdee2e7b}{is\+\_\+separable}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a021fa72f9432d6ff1bc7b40e92ad618b}{pass\+\_\+through}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a96ce5f24de76a1b9abf60d173df41fe6}{is\+\_\+affine} = property(lambda self\+: self.\+\_\+x.\+is\+\_\+affine and self.\+\_\+y.\+is\+\_\+affine)
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a5f3980d472ea7915057f2fc82492d463}{has\+\_\+inverse}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A "blended" transform uses one transform for the *x*-direction, and
+another transform for the *y*-direction.
+
+This "generic" version can handle any given child transform in the
+*x*- and *y*-directions.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a740fed126c92a23be0cf06f4cbc62e3d}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a740fed126c92a23be0cf06f4cbc62e3d}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x\+\_\+transform,  }\item[{}]{y\+\_\+transform,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new "blended" transform using *x_transform* to transform the
+*x*-axis and *y_transform* to transform the *y*-axis.
+
+You will generally not call this constructor directly but use the
+`blended_transform_factory` function instead, which can determine
+automatically which kind of blended transform to create.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_aac2192c8b2ec4949638f89d58936c3f4}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_aac2192c8b2ec4949638f89d58936c3f4}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!contains\+\_\+branch@{contains\+\_\+branch}}
+\index{contains\+\_\+branch@{contains\+\_\+branch}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{contains\+\_\+branch()}{contains\_branch()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+contains\+\_\+branch (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_aa90d3aa8274240b48e0a74d5cb27ae56}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_aa90d3aa8274240b48e0a74d5cb27ae56}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!depth@{depth}}
+\index{depth@{depth}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{depth()}{depth()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+depth (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a3827f004a8602ab96d633ffe40454bc3}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a3827f004a8602ab96d633ffe40454bc3}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!frozen@{frozen}}
+\index{frozen@{frozen}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{frozen()}{frozen()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+frozen (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a4f7fdd902f0bee7b7babed463a665e4b}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a4f7fdd902f0bee7b7babed463a665e4b}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!get\+\_\+affine@{get\+\_\+affine}}
+\index{get\+\_\+affine@{get\+\_\+affine}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{get\+\_\+affine()}{get\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+get\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_ad211a0f27ab6107c4bd1e810e8fbb1dd}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_ad211a0f27ab6107c4bd1e810e8fbb1dd}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!inverted@{inverted}}
+\index{inverted@{inverted}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{inverted()}{inverted()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+inverted (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_ad66214b99be29e88d87a100ff6b2396c}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_ad66214b99be29e88d87a100ff6b2396c}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!transform\+\_\+non\+\_\+affine@{transform\+\_\+non\+\_\+affine}}
+\index{transform\+\_\+non\+\_\+affine@{transform\+\_\+non\+\_\+affine}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{transform\+\_\+non\+\_\+affine()}{transform\_non\_affine()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+transform\+\_\+non\+\_\+affine (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{points }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_add96d9abbbda5fa15aa58ce2701eff0f}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_add96d9abbbda5fa15aa58ce2701eff0f}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!input\+\_\+dims@{input\+\_\+dims}}
+\index{input\+\_\+dims@{input\+\_\+dims}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{input\+\_\+dims}{input\_dims}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+input\+\_\+dims\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_af8974614784ed9092ae117eacdee2e7b}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_af8974614784ed9092ae117eacdee2e7b}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!is\+\_\+separable@{is\+\_\+separable}}
+\index{is\+\_\+separable@{is\+\_\+separable}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{is\+\_\+separable}{is\_separable}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+is\+\_\+separable\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a20d006926fff791b57dfb0c329a9f201}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a20d006926fff791b57dfb0c329a9f201}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!output\+\_\+dims@{output\+\_\+dims}}
+\index{output\+\_\+dims@{output\+\_\+dims}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{output\+\_\+dims}{output\_dims}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+output\+\_\+dims\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a021fa72f9432d6ff1bc7b40e92ad618b}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a021fa72f9432d6ff1bc7b40e92ad618b}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!pass\+\_\+through@{pass\+\_\+through}}
+\index{pass\+\_\+through@{pass\+\_\+through}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{pass\+\_\+through}{pass\_through}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+pass\+\_\+through\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a5f3980d472ea7915057f2fc82492d463}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a5f3980d472ea7915057f2fc82492d463}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!has\+\_\+inverse@{has\+\_\+inverse}}
+\index{has\+\_\+inverse@{has\+\_\+inverse}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{has\+\_\+inverse}{has\_inverse}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+has\+\_\+inverse\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  property(
+        \textcolor{keyword}{lambda} self: self.\_x.has\_inverse \textcolor{keywordflow}{and} self.\_y.has\_inverse)
+\end{DoxyCode}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a96ce5f24de76a1b9abf60d173df41fe6}\label{classmatplotlib_1_1transforms_1_1BlendedGenericTransform_a96ce5f24de76a1b9abf60d173df41fe6}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}!is\+\_\+affine@{is\+\_\+affine}}
+\index{is\+\_\+affine@{is\+\_\+affine}!matplotlib\+::transforms\+::\+Blended\+Generic\+Transform@{matplotlib\+::transforms\+::\+Blended\+Generic\+Transform}}
+\subsubsection{\texorpdfstring{is\+\_\+affine}{is\_affine}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Blended\+Generic\+Transform.\+is\+\_\+affine = property(lambda self\+: self.\+\_\+x.\+is\+\_\+affine and self.\+\_\+y.\+is\+\_\+affine)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{transforms_8py}{transforms.\+py}\end{DoxyCompactItemize}

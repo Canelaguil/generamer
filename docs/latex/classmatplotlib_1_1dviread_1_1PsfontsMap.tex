@@ -1,0 +1,74 @@
+\hypertarget{classmatplotlib_1_1dviread_1_1PsfontsMap}{}\section{matplotlib.\+dviread.\+Psfonts\+Map Class Reference}
+\label{classmatplotlib_1_1dviread_1_1PsfontsMap}\index{matplotlib.\+dviread.\+Psfonts\+Map@{matplotlib.\+dviread.\+Psfonts\+Map}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1dviread_1_1PsfontsMap_a9087664b44314da1115fafaa9f3fd36b}{\+\_\+\+\_\+new\+\_\+\+\_\+} (cls, filename)
+\item 
+def \hyperlink{classmatplotlib_1_1dviread_1_1PsfontsMap_abd474b1ee124efee7a61d7c9adcd8f83}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, texname)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A psfonts.map formatted file, mapping TeX fonts to PS fonts.
+
+Parameters
+----------
+filename : str or path-like
+
+Notes
+-----
+For historical reasons, TeX knows many Type-1 fonts by different
+names than the outside world. (For one thing, the names have to
+fit in eight characters.) Also, TeX's native fonts are not Type-1
+but Metafont, which is nontrivial to convert to PostScript except
+as a bitmap. While high-quality conversions to Type-1 format exist
+and are shipped with modern TeX distributions, we need to know
+which Type-1 fonts are the counterparts of which native fonts. For
+these reasons a mapping is needed from internal font names to font
+file names.
+
+A texmf tree typically includes mapping files called e.g.
+:file:`psfonts.map`, :file:`pdftex.map`, or :file:`dvipdfm.map`.
+The file :file:`psfonts.map` is used by :program:`dvips`,
+:file:`pdftex.map` by :program:`pdfTeX`, and :file:`dvipdfm.map`
+by :program:`dvipdfm`. :file:`psfonts.map` might avoid embedding
+the 35 PostScript fonts (i.e., have no filename for them, as in
+the Times-Bold example above), while the pdf-related files perhaps
+only avoid the "Base 14" pdf fonts. But the user may have
+configured these files differently.
+
+Examples
+--------
+>>> map = PsfontsMap(find_tex_file('pdftex.map'))
+>>> entry = map[b'ptmbo8r']
+>>> entry.texname
+b'ptmbo8r'
+>>> entry.psname
+b'Times-Bold'
+>>> entry.encoding
+'/usr/local/texlive/2008/texmf-dist/fonts/enc/dvips/base/8r.enc'
+>>> entry.effects
+{'slant': 0.16700000000000001}
+>>> entry.filename
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1PsfontsMap_abd474b1ee124efee7a61d7c9adcd8f83}\label{classmatplotlib_1_1dviread_1_1PsfontsMap_abd474b1ee124efee7a61d7c9adcd8f83}} 
+\index{matplotlib\+::dviread\+::\+Psfonts\+Map@{matplotlib\+::dviread\+::\+Psfonts\+Map}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!matplotlib\+::dviread\+::\+Psfonts\+Map@{matplotlib\+::dviread\+::\+Psfonts\+Map}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dviread.\+Psfonts\+Map.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{texname }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dviread_1_1PsfontsMap_a9087664b44314da1115fafaa9f3fd36b}\label{classmatplotlib_1_1dviread_1_1PsfontsMap_a9087664b44314da1115fafaa9f3fd36b}} 
+\index{matplotlib\+::dviread\+::\+Psfonts\+Map@{matplotlib\+::dviread\+::\+Psfonts\+Map}!\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}!matplotlib\+::dviread\+::\+Psfonts\+Map@{matplotlib\+::dviread\+::\+Psfonts\+Map}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+new\+\_\+\+\_\+()}{\_\_new\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dviread.\+Psfonts\+Map.\+\_\+\+\_\+new\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{dviread_8py}{dviread.\+py}\end{DoxyCompactItemize}

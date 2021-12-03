@@ -1,0 +1,122 @@
+\hypertarget{classmatplotlib_1_1dates_1_1MicrosecondLocator}{}\section{matplotlib.\+dates.\+Microsecond\+Locator Class Reference}
+\label{classmatplotlib_1_1dates_1_1MicrosecondLocator}\index{matplotlib.\+dates.\+Microsecond\+Locator@{matplotlib.\+dates.\+Microsecond\+Locator}}
+
+
+Inheritance diagram for matplotlib.\+dates.\+Microsecond\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classmatplotlib_1_1dates_1_1MicrosecondLocator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+dates.\+Microsecond\+Locator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classmatplotlib_1_1dates_1_1MicrosecondLocator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1MicrosecondLocator_a8bd8bb6a6688e3e24062ddfc161f1f31}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, interval=1, \hyperlink{classmatplotlib_1_1dates_1_1MicrosecondLocator_a525890ca6ae73c35dbe874579842c77e}{tz}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1MicrosecondLocator_a2315077c779a3cf14c677e36e0f9f431}{set\+\_\+axis} (self, \hyperlink{classmatplotlib_1_1ticker_1_1TickHelper_a22c5bc260545f95f9674da1311e8a0d9}{axis})
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1MicrosecondLocator_a91b62e05c7962594bc0f621eb84be351}{set\+\_\+view\+\_\+interval} (self, vmin, vmax)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1MicrosecondLocator_a64a65ed8290a692230a8cf7927197b49}{set\+\_\+data\+\_\+interval} (self, vmin, vmax)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1MicrosecondLocator_affe8157dda20e0073f46df13b19f6e0b}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1dates_1_1MicrosecondLocator_ac21967f4c5e9cbf38d9cd7e6f8856a82}{tick\+\_\+values} (self, vmin, vmax)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1dates_1_1MicrosecondLocator_a525890ca6ae73c35dbe874579842c77e}{tz}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Make ticks on regular intervals of one or more microsecond(s).
+
+.. note::
+
+    By default, Matplotlib uses a floating point representation of time in
+    days since the epoch, so plotting data with
+    microsecond time resolution does not work well for
+    dates that are far (about 70 years) from the epoch (check with
+    `~.dates.get_epoch`).
+
+    If you want sub-microsecond resolution time plots, it is strongly
+    recommended to use floating point seconds, not datetime-like
+    time representation.
+
+    If you really must use datetime.datetime() or similar and still
+    need microsecond precision, change the time origin via
+    `.dates.set_epoch` to something closer to the dates being plotted.
+    See :doc:`/gallery/ticks_and_spines/date_precision_and_epochs`.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1MicrosecondLocator_a8bd8bb6a6688e3e24062ddfc161f1f31}\label{classmatplotlib_1_1dates_1_1MicrosecondLocator_a8bd8bb6a6688e3e24062ddfc161f1f31}} 
+\index{matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Microsecond\+Locator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{interval = {\ttfamily 1},  }\item[{}]{tz = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}*interval* is the interval between each iteration.  For
+example, if ``interval=2``, mark every second microsecond.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1MicrosecondLocator_affe8157dda20e0073f46df13b19f6e0b}\label{classmatplotlib_1_1dates_1_1MicrosecondLocator_affe8157dda20e0073f46df13b19f6e0b}} 
+\index{matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Microsecond\+Locator.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1MicrosecondLocator_a2315077c779a3cf14c677e36e0f9f431}\label{classmatplotlib_1_1dates_1_1MicrosecondLocator_a2315077c779a3cf14c677e36e0f9f431}} 
+\index{matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}!set\+\_\+axis@{set\+\_\+axis}}
+\index{set\+\_\+axis@{set\+\_\+axis}!matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}}
+\subsubsection{\texorpdfstring{set\+\_\+axis()}{set\_axis()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Microsecond\+Locator.\+set\+\_\+axis (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{axis }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1MicrosecondLocator_a64a65ed8290a692230a8cf7927197b49}\label{classmatplotlib_1_1dates_1_1MicrosecondLocator_a64a65ed8290a692230a8cf7927197b49}} 
+\index{matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}!set\+\_\+data\+\_\+interval@{set\+\_\+data\+\_\+interval}}
+\index{set\+\_\+data\+\_\+interval@{set\+\_\+data\+\_\+interval}!matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}}
+\subsubsection{\texorpdfstring{set\+\_\+data\+\_\+interval()}{set\_data\_interval()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Microsecond\+Locator.\+set\+\_\+data\+\_\+interval (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1MicrosecondLocator_a91b62e05c7962594bc0f621eb84be351}\label{classmatplotlib_1_1dates_1_1MicrosecondLocator_a91b62e05c7962594bc0f621eb84be351}} 
+\index{matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}!set\+\_\+view\+\_\+interval@{set\+\_\+view\+\_\+interval}}
+\index{set\+\_\+view\+\_\+interval@{set\+\_\+view\+\_\+interval}!matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}}
+\subsubsection{\texorpdfstring{set\+\_\+view\+\_\+interval()}{set\_view\_interval()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Microsecond\+Locator.\+set\+\_\+view\+\_\+interval (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1MicrosecondLocator_ac21967f4c5e9cbf38d9cd7e6f8856a82}\label{classmatplotlib_1_1dates_1_1MicrosecondLocator_ac21967f4c5e9cbf38d9cd7e6f8856a82}} 
+\index{matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}!tick\+\_\+values@{tick\+\_\+values}}
+\index{tick\+\_\+values@{tick\+\_\+values}!matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}}
+\subsubsection{\texorpdfstring{tick\+\_\+values()}{tick\_values()}}
+{\footnotesize\ttfamily def matplotlib.\+dates.\+Microsecond\+Locator.\+tick\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vmin,  }\item[{}]{vmax }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1dates_1_1MicrosecondLocator_a525890ca6ae73c35dbe874579842c77e}\label{classmatplotlib_1_1dates_1_1MicrosecondLocator_a525890ca6ae73c35dbe874579842c77e}} 
+\index{matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}!tz@{tz}}
+\index{tz@{tz}!matplotlib\+::dates\+::\+Microsecond\+Locator@{matplotlib\+::dates\+::\+Microsecond\+Locator}}
+\subsubsection{\texorpdfstring{tz}{tz}}
+{\footnotesize\ttfamily matplotlib.\+dates.\+Microsecond\+Locator.\+tz}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{dates_8py}{dates.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,128 @@
+\hypertarget{namespacesetuptools_1_1__distutils_1_1archive__util}{}\section{setuptools.\+\_\+distutils.\+archive\+\_\+util Namespace Reference}
+\label{namespacesetuptools_1_1__distutils_1_1archive__util}\index{setuptools.\+\_\+distutils.\+archive\+\_\+util@{setuptools.\+\_\+distutils.\+archive\+\_\+util}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1archive__util_a3274d5b3e116dba9c44cdf5d0a0713dc}{make\+\_\+tarball} (base\+\_\+name, base\+\_\+dir, compress=\char`\"{}gzip\char`\"{}, verbose=0, dry\+\_\+run=0, owner=None, group=None)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1archive__util_a38983f08433f7de571d0eef0831aa651}{make\+\_\+zipfile} (base\+\_\+name, base\+\_\+dir, verbose=0, dry\+\_\+run=0)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1archive__util_a75ae10289c3cf2eca8b6f87af8f61d0e}{check\+\_\+archive\+\_\+formats} (formats)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1archive__util_a10c09cf11a23f7a364c38cd8e3d201f5}{make\+\_\+archive} (base\+\_\+name, format, root\+\_\+dir=None, base\+\_\+dir=None, verbose=0, dry\+\_\+run=0, owner=None, group=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1archive__util_a6039907852b6dd17db8509bbb5f2f31d}{zipfile}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1archive__util_a665584188bac387b92e98b81f64cc0f1}{getpwnam}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1archive__util_a7a62b813e4cfca7274c91f6873d585ca}{getgrnam}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1archive__util_adfd17290be21b0e3d3c1f6a7f7e0b342}{A\+R\+C\+H\+I\+V\+E\+\_\+\+F\+O\+R\+M\+A\+TS}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}distutils.archive_util
+
+Utility functions for creating archive files (tarballs, zip files,
+that sort of thing).\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1archive__util_a75ae10289c3cf2eca8b6f87af8f61d0e}\label{namespacesetuptools_1_1__distutils_1_1archive__util_a75ae10289c3cf2eca8b6f87af8f61d0e}} 
+\index{setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}!check\+\_\+archive\+\_\+formats@{check\+\_\+archive\+\_\+formats}}
+\index{check\+\_\+archive\+\_\+formats@{check\+\_\+archive\+\_\+formats}!setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{check\+\_\+archive\+\_\+formats()}{check\_archive\_formats()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+archive\+\_\+util.\+check\+\_\+archive\+\_\+formats (\begin{DoxyParamCaption}\item[{}]{formats }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the first format from the 'format' list that is unknown.
+
+If all formats are known, returns None
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1archive__util_a10c09cf11a23f7a364c38cd8e3d201f5}\label{namespacesetuptools_1_1__distutils_1_1archive__util_a10c09cf11a23f7a364c38cd8e3d201f5}} 
+\index{setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}!make\+\_\+archive@{make\+\_\+archive}}
+\index{make\+\_\+archive@{make\+\_\+archive}!setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{make\+\_\+archive()}{make\_archive()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+archive\+\_\+util.\+make\+\_\+archive (\begin{DoxyParamCaption}\item[{}]{base\+\_\+name,  }\item[{}]{format,  }\item[{}]{root\+\_\+dir = {\ttfamily None},  }\item[{}]{base\+\_\+dir = {\ttfamily None},  }\item[{}]{verbose = {\ttfamily 0},  }\item[{}]{dry\+\_\+run = {\ttfamily 0},  }\item[{}]{owner = {\ttfamily None},  }\item[{}]{group = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create an archive file (eg. zip or tar).
+
+'base_name' is the name of the file to create, minus any format-specific
+extension; 'format' is the archive format: one of "zip", "tar", "gztar",
+"bztar", "xztar", or "ztar".
+
+'root_dir' is a directory that will be the root directory of the
+archive; ie. we typically chdir into 'root_dir' before creating the
+archive.  'base_dir' is the directory where we start archiving from;
+ie. 'base_dir' will be the common prefix of all files and
+directories in the archive.  'root_dir' and 'base_dir' both default
+to the current directory.  Returns the name of the archive file.
+
+'owner' and 'group' are used when creating a tar archive. By default,
+uses the current owner and group.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1archive__util_a3274d5b3e116dba9c44cdf5d0a0713dc}\label{namespacesetuptools_1_1__distutils_1_1archive__util_a3274d5b3e116dba9c44cdf5d0a0713dc}} 
+\index{setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}!make\+\_\+tarball@{make\+\_\+tarball}}
+\index{make\+\_\+tarball@{make\+\_\+tarball}!setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{make\+\_\+tarball()}{make\_tarball()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+archive\+\_\+util.\+make\+\_\+tarball (\begin{DoxyParamCaption}\item[{}]{base\+\_\+name,  }\item[{}]{base\+\_\+dir,  }\item[{}]{compress = {\ttfamily \char`\"{}gzip\char`\"{}},  }\item[{}]{verbose = {\ttfamily 0},  }\item[{}]{dry\+\_\+run = {\ttfamily 0},  }\item[{}]{owner = {\ttfamily None},  }\item[{}]{group = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a (possibly compressed) tar file from all the files under
+'base_dir'.
+
+'compress' must be "gzip" (the default), "bzip2", "xz", "compress", or
+None.  ("compress" will be deprecated in Python 3.2)
+
+'owner' and 'group' can be used to define an owner and a group for the
+archive that is being built. If not provided, the current owner and group
+will be used.
+
+The output tar file will be named 'base_dir' +  ".tar", possibly plus
+the appropriate compression extension (".gz", ".bz2", ".xz" or ".Z").
+
+Returns the output filename.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1archive__util_a38983f08433f7de571d0eef0831aa651}\label{namespacesetuptools_1_1__distutils_1_1archive__util_a38983f08433f7de571d0eef0831aa651}} 
+\index{setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}!make\+\_\+zipfile@{make\+\_\+zipfile}}
+\index{make\+\_\+zipfile@{make\+\_\+zipfile}!setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{make\+\_\+zipfile()}{make\_zipfile()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+archive\+\_\+util.\+make\+\_\+zipfile (\begin{DoxyParamCaption}\item[{}]{base\+\_\+name,  }\item[{}]{base\+\_\+dir,  }\item[{}]{verbose = {\ttfamily 0},  }\item[{}]{dry\+\_\+run = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a zip file from all the files under 'base_dir'.
+
+The output zip file will be named 'base_name' + ".zip".  Uses either the
+"zipfile" Python module (if available) or the InfoZIP "zip" utility
+(if installed and found on the default search path).  If neither tool is
+available, raises DistutilsExecError.  Returns the name of the output zip
+file.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1archive__util_adfd17290be21b0e3d3c1f6a7f7e0b342}\label{namespacesetuptools_1_1__distutils_1_1archive__util_adfd17290be21b0e3d3c1f6a7f7e0b342}} 
+\index{setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}!A\+R\+C\+H\+I\+V\+E\+\_\+\+F\+O\+R\+M\+A\+TS@{A\+R\+C\+H\+I\+V\+E\+\_\+\+F\+O\+R\+M\+A\+TS}}
+\index{A\+R\+C\+H\+I\+V\+E\+\_\+\+F\+O\+R\+M\+A\+TS@{A\+R\+C\+H\+I\+V\+E\+\_\+\+F\+O\+R\+M\+A\+TS}!setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{A\+R\+C\+H\+I\+V\+E\+\_\+\+F\+O\+R\+M\+A\+TS}{ARCHIVE\_FORMATS}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+archive\+\_\+util.\+A\+R\+C\+H\+I\+V\+E\+\_\+\+F\+O\+R\+M\+A\+TS}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1archive__util_a7a62b813e4cfca7274c91f6873d585ca}\label{namespacesetuptools_1_1__distutils_1_1archive__util_a7a62b813e4cfca7274c91f6873d585ca}} 
+\index{setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}!getgrnam@{getgrnam}}
+\index{getgrnam@{getgrnam}!setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{getgrnam}{getgrnam}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+archive\+\_\+util.\+getgrnam}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1archive__util_a665584188bac387b92e98b81f64cc0f1}\label{namespacesetuptools_1_1__distutils_1_1archive__util_a665584188bac387b92e98b81f64cc0f1}} 
+\index{setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}!getpwnam@{getpwnam}}
+\index{getpwnam@{getpwnam}!setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{getpwnam}{getpwnam}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+archive\+\_\+util.\+getpwnam}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1archive__util_a6039907852b6dd17db8509bbb5f2f31d}\label{namespacesetuptools_1_1__distutils_1_1archive__util_a6039907852b6dd17db8509bbb5f2f31d}} 
+\index{setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}!zipfile@{zipfile}}
+\index{zipfile@{zipfile}!setuptools\+::\+\_\+distutils\+::archive\+\_\+util@{setuptools\+::\+\_\+distutils\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{zipfile}{zipfile}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+archive\+\_\+util.\+zipfile}
+

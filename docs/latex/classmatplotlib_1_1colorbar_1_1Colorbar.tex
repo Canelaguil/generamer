@@ -1,0 +1,228 @@
+\hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar}{}\section{matplotlib.\+colorbar.\+Colorbar Class Reference}
+\label{classmatplotlib_1_1colorbar_1_1Colorbar}\index{matplotlib.\+colorbar.\+Colorbar@{matplotlib.\+colorbar.\+Colorbar}}
+
+
+Inheritance diagram for matplotlib.\+colorbar.\+Colorbar\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classmatplotlib_1_1colorbar_1_1Colorbar__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+colorbar.\+Colorbar\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classmatplotlib_1_1colorbar_1_1Colorbar__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_aca7aed155746cb1d91ddcc2cd92a1980}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1colorbar_1_1ColorbarBase_a7c7242b00d002cd407d5068a8755afe2}{ax}, \hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_ad7c20d86772ebdbeef4c890e15582852}{mappable}, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_afa4380dbd203cb46dd4ddd7d7efaa33b}{on\+\_\+mappable\+\_\+changed} (self, \hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_ad7c20d86772ebdbeef4c890e15582852}{mappable})
+\item 
+def \hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_afebe8a9cb067bcf3ef446d88961578da}{add\+\_\+lines} (self, CS, erase=True)
+\item 
+def \hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_a9659e2def6ae41ffce0034b96355529a}{update\+\_\+normal} (self, \hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_ad7c20d86772ebdbeef4c890e15582852}{mappable})
+\item 
+def \hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_a6526f6449ae2d0d5164c91b64067c60c}{update\+\_\+bruteforce} (self, \hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_ad7c20d86772ebdbeef4c890e15582852}{mappable})
+\item 
+def \hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_a342afe263299dd1a2a682fbf7ed1df2c}{remove} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_ad7c20d86772ebdbeef4c890e15582852}{mappable}
+\item 
+\hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_a5bdcb0c2825bef8f0481fa134196607c}{cmap}
+\item 
+\hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_a6e0b3d2ddbbe3e9380e61dd812b597cb}{norm}
+\item 
+\hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_a6989f9fac95a5baae3b558c3b3f1e06f}{stale}
+\item 
+\hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_a4287b2fc9880df488f14d393609f1305}{locator}
+\item 
+\hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_aaf2904de762ad18d32196a89e9c1a769}{formatter}
+\item 
+\hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_a534f4ac7da3c25a9f6b96ba3773a2e1d}{outline}
+\item 
+\hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_a92b69c1c3fa0e1e80ac5b1c1c7c9a2aa}{patch}
+\item 
+\hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_adf048e6e4b1d6be1e392d07e7281e9b0}{solids}
+\item 
+\hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_af338fd689537c7d0c2afaef3e43de1de}{lines}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1colorbar_1_1Colorbar_a5acd00b6c4b82a162744a2a4e028d929}{alternative}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This class connects a `ColorbarBase` to a `~.cm.ScalarMappable`
+such as an `~.image.AxesImage` generated via `~.axes.Axes.imshow`.
+
+.. note::
+    This class is not intended to be instantiated directly; instead, use
+    `.Figure.colorbar` or `.pyplot.colorbar` to create a colorbar.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_aca7aed155746cb1d91ddcc2cd92a1980}\label{classmatplotlib_1_1colorbar_1_1Colorbar_aca7aed155746cb1d91ddcc2cd92a1980}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+colorbar.\+Colorbar.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{mappable,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_afebe8a9cb067bcf3ef446d88961578da}\label{classmatplotlib_1_1colorbar_1_1Colorbar_afebe8a9cb067bcf3ef446d88961578da}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!add\+\_\+lines@{add\+\_\+lines}}
+\index{add\+\_\+lines@{add\+\_\+lines}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{add\+\_\+lines()}{add\_lines()}}
+{\footnotesize\ttfamily def matplotlib.\+colorbar.\+Colorbar.\+add\+\_\+lines (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{CS,  }\item[{}]{erase = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add the lines from a non-filled `~.contour.ContourSet` to the colorbar.
+
+Parameters
+----------
+CS : `~.contour.ContourSet`
+    The line positions are taken from the ContourSet levels. The
+    ContourSet must not be filled.
+erase : bool, default: True
+    Whether to remove any previously added lines.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_afa4380dbd203cb46dd4ddd7d7efaa33b}\label{classmatplotlib_1_1colorbar_1_1Colorbar_afa4380dbd203cb46dd4ddd7d7efaa33b}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!on\+\_\+mappable\+\_\+changed@{on\+\_\+mappable\+\_\+changed}}
+\index{on\+\_\+mappable\+\_\+changed@{on\+\_\+mappable\+\_\+changed}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{on\+\_\+mappable\+\_\+changed()}{on\_mappable\_changed()}}
+{\footnotesize\ttfamily def matplotlib.\+colorbar.\+Colorbar.\+on\+\_\+mappable\+\_\+changed (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{mappable }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update this colorbar to match the mappable's properties.
+
+Typically this is automatically registered as an event handler
+by :func:`colorbar_factory` and should not be called manually.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_a342afe263299dd1a2a682fbf7ed1df2c}\label{classmatplotlib_1_1colorbar_1_1Colorbar_a342afe263299dd1a2a682fbf7ed1df2c}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!remove@{remove}}
+\index{remove@{remove}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily def matplotlib.\+colorbar.\+Colorbar.\+remove (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove this colorbar from the figure.
+
+If the colorbar was created with ``use_gridspec=True`` the previous
+gridspec is restored.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_a6526f6449ae2d0d5164c91b64067c60c}\label{classmatplotlib_1_1colorbar_1_1Colorbar_a6526f6449ae2d0d5164c91b64067c60c}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!update\+\_\+bruteforce@{update\+\_\+bruteforce}}
+\index{update\+\_\+bruteforce@{update\+\_\+bruteforce}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{update\+\_\+bruteforce()}{update\_bruteforce()}}
+{\footnotesize\ttfamily def matplotlib.\+colorbar.\+Colorbar.\+update\+\_\+bruteforce (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{mappable }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Destroy and rebuild the colorbar.  This is
+intended to become obsolete, and will probably be
+deprecated and then removed.  It is not called when
+the pyplot.colorbar function or the Figure.colorbar
+method are used to create the colorbar.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_a9659e2def6ae41ffce0034b96355529a}\label{classmatplotlib_1_1colorbar_1_1Colorbar_a9659e2def6ae41ffce0034b96355529a}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!update\+\_\+normal@{update\+\_\+normal}}
+\index{update\+\_\+normal@{update\+\_\+normal}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{update\+\_\+normal()}{update\_normal()}}
+{\footnotesize\ttfamily def matplotlib.\+colorbar.\+Colorbar.\+update\+\_\+normal (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{mappable }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update solid patches, lines, etc.
+
+This is meant to be called when the norm of the image or contour plot
+to which this colorbar belongs changes.
+
+If the norm on the mappable is different than before, this resets the
+locator and formatter for the axis, so if these have been customized,
+they will need to be customized again.  However, if the norm only
+changes values of *vmin*, *vmax* or *cmap* then the old formatter
+and locator will be preserved.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_a5acd00b6c4b82a162744a2a4e028d929}\label{classmatplotlib_1_1colorbar_1_1Colorbar_a5acd00b6c4b82a162744a2a4e028d929}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!alternative@{alternative}}
+\index{alternative@{alternative}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{alternative}{alternative}}
+{\footnotesize\ttfamily matplotlib.\+colorbar.\+Colorbar.\+alternative\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_a5bdcb0c2825bef8f0481fa134196607c}\label{classmatplotlib_1_1colorbar_1_1Colorbar_a5bdcb0c2825bef8f0481fa134196607c}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!cmap@{cmap}}
+\index{cmap@{cmap}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{cmap}{cmap}}
+{\footnotesize\ttfamily matplotlib.\+colorbar.\+Colorbar.\+cmap}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_aaf2904de762ad18d32196a89e9c1a769}\label{classmatplotlib_1_1colorbar_1_1Colorbar_aaf2904de762ad18d32196a89e9c1a769}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!formatter@{formatter}}
+\index{formatter@{formatter}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{formatter}{formatter}}
+{\footnotesize\ttfamily matplotlib.\+colorbar.\+Colorbar.\+formatter}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_af338fd689537c7d0c2afaef3e43de1de}\label{classmatplotlib_1_1colorbar_1_1Colorbar_af338fd689537c7d0c2afaef3e43de1de}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!lines@{lines}}
+\index{lines@{lines}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{lines}{lines}}
+{\footnotesize\ttfamily matplotlib.\+colorbar.\+Colorbar.\+lines}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_a4287b2fc9880df488f14d393609f1305}\label{classmatplotlib_1_1colorbar_1_1Colorbar_a4287b2fc9880df488f14d393609f1305}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!locator@{locator}}
+\index{locator@{locator}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{locator}{locator}}
+{\footnotesize\ttfamily matplotlib.\+colorbar.\+Colorbar.\+locator}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_ad7c20d86772ebdbeef4c890e15582852}\label{classmatplotlib_1_1colorbar_1_1Colorbar_ad7c20d86772ebdbeef4c890e15582852}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!mappable@{mappable}}
+\index{mappable@{mappable}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{mappable}{mappable}}
+{\footnotesize\ttfamily matplotlib.\+colorbar.\+Colorbar.\+mappable}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_a6e0b3d2ddbbe3e9380e61dd812b597cb}\label{classmatplotlib_1_1colorbar_1_1Colorbar_a6e0b3d2ddbbe3e9380e61dd812b597cb}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!norm@{norm}}
+\index{norm@{norm}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{norm}{norm}}
+{\footnotesize\ttfamily matplotlib.\+colorbar.\+Colorbar.\+norm}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_a534f4ac7da3c25a9f6b96ba3773a2e1d}\label{classmatplotlib_1_1colorbar_1_1Colorbar_a534f4ac7da3c25a9f6b96ba3773a2e1d}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!outline@{outline}}
+\index{outline@{outline}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{outline}{outline}}
+{\footnotesize\ttfamily matplotlib.\+colorbar.\+Colorbar.\+outline}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_a92b69c1c3fa0e1e80ac5b1c1c7c9a2aa}\label{classmatplotlib_1_1colorbar_1_1Colorbar_a92b69c1c3fa0e1e80ac5b1c1c7c9a2aa}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!patch@{patch}}
+\index{patch@{patch}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{patch}{patch}}
+{\footnotesize\ttfamily matplotlib.\+colorbar.\+Colorbar.\+patch}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_adf048e6e4b1d6be1e392d07e7281e9b0}\label{classmatplotlib_1_1colorbar_1_1Colorbar_adf048e6e4b1d6be1e392d07e7281e9b0}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!solids@{solids}}
+\index{solids@{solids}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{solids}{solids}}
+{\footnotesize\ttfamily matplotlib.\+colorbar.\+Colorbar.\+solids}
+
+\mbox{\Hypertarget{classmatplotlib_1_1colorbar_1_1Colorbar_a6989f9fac95a5baae3b558c3b3f1e06f}\label{classmatplotlib_1_1colorbar_1_1Colorbar_a6989f9fac95a5baae3b558c3b3f1e06f}} 
+\index{matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}!stale@{stale}}
+\index{stale@{stale}!matplotlib\+::colorbar\+::\+Colorbar@{matplotlib\+::colorbar\+::\+Colorbar}}
+\subsubsection{\texorpdfstring{stale}{stale}}
+{\footnotesize\ttfamily matplotlib.\+colorbar.\+Colorbar.\+stale}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{colorbar_8py}{colorbar.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,101 @@
+\hypertarget{classpip_1_1__internal_1_1exceptions_1_1HashError}{}\section{pip.\+\_\+internal.\+exceptions.\+Hash\+Error Class Reference}
+\label{classpip_1_1__internal_1_1exceptions_1_1HashError}\index{pip.\+\_\+internal.\+exceptions.\+Hash\+Error@{pip.\+\_\+internal.\+exceptions.\+Hash\+Error}}
+
+
+Inheritance diagram for pip.\+\_\+internal.\+exceptions.\+Hash\+Error\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__internal_1_1exceptions_1_1HashError__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+internal.\+exceptions.\+Hash\+Error\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classpip_1_1__internal_1_1exceptions_1_1HashError__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__internal_1_1exceptions_1_1HashError_a9b89535522b4de9758f62636848d4f62}{body} (self)
+\item 
+def \hyperlink{classpip_1_1__internal_1_1exceptions_1_1HashError_ad5c0add04540a93dee3301a7d5f792a9}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__internal_1_1exceptions_1_1HashError_af3c50ea4f7da6636a64b938cda7052c9}{req}
+\item 
+\hyperlink{classpip_1_1__internal_1_1exceptions_1_1HashError_a8dc528f839ced7bff0f8909445b48b1b}{head}
+\item 
+\hyperlink{classpip_1_1__internal_1_1exceptions_1_1HashError_a9ffcc2f77a2f4a1cf096084d187b7045}{order}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A failure to verify a package against known-good hashes
+
+:cvar order: An int sorting hash exception classes by difficulty of
+    recovery (lower being harder), so the user doesn't bother fretting
+    about unpinned packages when he has deeper issues, like VCS
+    dependencies, to deal with. Also keeps error reports in a
+    deterministic order.
+:cvar head: A section heading for display above potentially many
+    exceptions of this kind
+:ivar req: The InstallRequirement that triggered this error. This is
+    pasted on after the exception is instantiated, because it's not
+    typically available earlier.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1exceptions_1_1HashError_ad5c0add04540a93dee3301a7d5f792a9}\label{classpip_1_1__internal_1_1exceptions_1_1HashError_ad5c0add04540a93dee3301a7d5f792a9}} 
+\index{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error@{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error@{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+exceptions.\+Hash\+Error.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1exceptions_1_1HashError_a9b89535522b4de9758f62636848d4f62}\label{classpip_1_1__internal_1_1exceptions_1_1HashError_a9b89535522b4de9758f62636848d4f62}} 
+\index{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error@{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error}!body@{body}}
+\index{body@{body}!pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error@{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error}}
+\subsubsection{\texorpdfstring{body()}{body()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+exceptions.\+Hash\+Error.\+body (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a summary of me for display under the heading.
+
+This default implementation simply prints a description of the
+triggering requirement.
+
+:param req: The InstallRequirement that provoked this error, with
+    its link already populated by the resolver's _populate_link().\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1exceptions_1_1HashError_a8dc528f839ced7bff0f8909445b48b1b}\label{classpip_1_1__internal_1_1exceptions_1_1HashError_a8dc528f839ced7bff0f8909445b48b1b}} 
+\index{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error@{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error}!head@{head}}
+\index{head@{head}!pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error@{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error}}
+\subsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+exceptions.\+Hash\+Error.\+head\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1exceptions_1_1HashError_a9ffcc2f77a2f4a1cf096084d187b7045}\label{classpip_1_1__internal_1_1exceptions_1_1HashError_a9ffcc2f77a2f4a1cf096084d187b7045}} 
+\index{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error@{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error}!order@{order}}
+\index{order@{order}!pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error@{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error}}
+\subsubsection{\texorpdfstring{order}{order}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+exceptions.\+Hash\+Error.\+order\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpip_1_1__internal_1_1exceptions_1_1HashError_af3c50ea4f7da6636a64b938cda7052c9}\label{classpip_1_1__internal_1_1exceptions_1_1HashError_af3c50ea4f7da6636a64b938cda7052c9}} 
+\index{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error@{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error}!req@{req}}
+\index{req@{req}!pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error@{pip\+::\+\_\+internal\+::exceptions\+::\+Hash\+Error}}
+\subsubsection{\texorpdfstring{req}{req}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+exceptions.\+Hash\+Error.\+req\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+internal/\hyperlink{pip_2__internal_2exceptions_8py}{exceptions.\+py}\end{DoxyCompactItemize}

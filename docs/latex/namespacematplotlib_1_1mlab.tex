@@ -1,0 +1,488 @@
+\hypertarget{namespacematplotlib_1_1mlab}{}\section{matplotlib.\+mlab Namespace Reference}
+\label{namespacematplotlib_1_1mlab}\index{matplotlib.\+mlab@{matplotlib.\+mlab}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1mlab_1_1GaussianKDE}{Gaussian\+K\+DE}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1mlab_a0be4c7ab27102a4d8ceb0a08a32ac0fc}{window\+\_\+hanning} (x)
+\item 
+def \hyperlink{namespacematplotlib_1_1mlab_acef28ebe480ae1d60bd6b695441873a0}{window\+\_\+none} (x)
+\item 
+def \hyperlink{namespacematplotlib_1_1mlab_a6139bfa85c059f2a11858aaab4471a5d}{detrend} (x, key=None, axis=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1mlab_a33582c8e986a5abbf517793a90af9ec9}{detrend\+\_\+mean} (x, axis=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1mlab_a359979aa8e0e635738648ca88ebd5e1d}{detrend\+\_\+none} (x, axis=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1mlab_ad8259a7aec39bab4216763acc518aba2}{detrend\+\_\+linear} (y)
+\item 
+def \hyperlink{namespacematplotlib_1_1mlab_a80bb47f94fc42f477178fb4e77272c80}{stride\+\_\+windows} (x, n, noverlap=None, axis=0)
+\item 
+def \hyperlink{namespacematplotlib_1_1mlab_ac7e214a07b5569a236ed4a255e7d703d}{psd} (x, N\+F\+FT=None, Fs=None, \hyperlink{namespacematplotlib_1_1mlab_a6139bfa85c059f2a11858aaab4471a5d}{detrend}=None, window=None, noverlap=None, pad\+\_\+to=None, sides=None, scale\+\_\+by\+\_\+freq=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1mlab_af5c09befd987c2d0090be90434de805a}{csd} (x, y, N\+F\+FT=None, Fs=None, \hyperlink{namespacematplotlib_1_1mlab_a6139bfa85c059f2a11858aaab4471a5d}{detrend}=None, window=None, noverlap=None, pad\+\_\+to=None, sides=None, scale\+\_\+by\+\_\+freq=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1mlab_a1512ebd8694c242d0aa5d75518d74723}{specgram} (x, N\+F\+FT=None, Fs=None, \hyperlink{namespacematplotlib_1_1mlab_a6139bfa85c059f2a11858aaab4471a5d}{detrend}=None, window=None, noverlap=None, pad\+\_\+to=None, sides=None, scale\+\_\+by\+\_\+freq=None, mode=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1mlab_a95254cce5b7e87a908f947cf3ee3a3c3}{cohere} (x, y, N\+F\+FT=256, Fs=2, \hyperlink{namespacematplotlib_1_1mlab_a6139bfa85c059f2a11858aaab4471a5d}{detrend}=\hyperlink{namespacematplotlib_1_1mlab_a359979aa8e0e635738648ca88ebd5e1d}{detrend\+\_\+none}, window=\hyperlink{namespacematplotlib_1_1mlab_a0be4c7ab27102a4d8ceb0a08a32ac0fc}{window\+\_\+hanning}, noverlap=0, pad\+\_\+to=None, sides=\textquotesingle{}default\textquotesingle{}, scale\+\_\+by\+\_\+freq=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1mlab_af9fe23cd7c677efdfda27673cf1acd7b}{complex\+\_\+spectrum} = functools.\+partial(\+\_\+single\+\_\+spectrum\+\_\+helper, \char`\"{}complex\char`\"{})
+\item 
+\hyperlink{namespacematplotlib_1_1mlab_a6b561b24d549354119a44640169596ff}{quantity}
+\item 
+\hyperlink{namespacematplotlib_1_1mlab_a0900364120ca4896abeb582fafa87750}{magnitude\+\_\+spectrum} = functools.\+partial(\+\_\+single\+\_\+spectrum\+\_\+helper, \char`\"{}magnitude\char`\"{})
+\item 
+\hyperlink{namespacematplotlib_1_1mlab_a4c68c82f633551591f79ca822c4cba6f}{angle\+\_\+spectrum} = functools.\+partial(\+\_\+single\+\_\+spectrum\+\_\+helper, \char`\"{}angle\char`\"{})
+\item 
+\hyperlink{namespacematplotlib_1_1mlab_a3ff39313e62c876e7310b03cbf275a45}{phase\+\_\+spectrum} = functools.\+partial(\+\_\+single\+\_\+spectrum\+\_\+helper, \char`\"{}phase\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Numerical python functions written for compatibility with MATLAB
+commands with the same names. Most numerical python functions can be found in
+the `numpy` and `scipy` libraries. What remains here is code for performing
+spectral computations.
+
+Spectral functions
+------------------
+
+`cohere`
+    Coherence (normalized cross spectral density)
+
+`csd`
+    Cross spectral density using Welch's average periodogram
+
+`detrend`
+    Remove the mean or best fit line from an array
+
+`psd`
+    Power spectral density using Welch's average periodogram
+
+`specgram`
+    Spectrogram (spectrum over segments of time)
+
+`complex_spectrum`
+    Return the complex-valued frequency spectrum of a signal
+
+`magnitude_spectrum`
+    Return the magnitude of the frequency spectrum of a signal
+
+`angle_spectrum`
+    Return the angle (wrapped phase) of the frequency spectrum of a signal
+
+`phase_spectrum`
+    Return the phase (unwrapped angle) of the frequency spectrum of a signal
+
+`detrend_mean`
+    Remove the mean from a line.
+
+`detrend_linear`
+    Remove the best fit line from a line.
+
+`detrend_none`
+    Return the original line.
+
+`stride_windows`
+    Get all windows in an array in a memory-efficient manner
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1mlab_a95254cce5b7e87a908f947cf3ee3a3c3}\label{namespacematplotlib_1_1mlab_a95254cce5b7e87a908f947cf3ee3a3c3}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!cohere@{cohere}}
+\index{cohere@{cohere}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{cohere()}{cohere()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+cohere (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{N\+F\+FT = {\ttfamily 256},  }\item[{}]{Fs = {\ttfamily 2},  }\item[{}]{detrend = {\ttfamily \hyperlink{namespacematplotlib_1_1mlab_a359979aa8e0e635738648ca88ebd5e1d}{detrend\+\_\+none}},  }\item[{}]{window = {\ttfamily \hyperlink{namespacematplotlib_1_1mlab_a0be4c7ab27102a4d8ceb0a08a32ac0fc}{window\+\_\+hanning}},  }\item[{}]{noverlap = {\ttfamily 0},  }\item[{}]{pad\+\_\+to = {\ttfamily None},  }\item[{}]{sides = {\ttfamily \textquotesingle{}default\textquotesingle{}},  }\item[{}]{scale\+\_\+by\+\_\+freq = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The coherence between *x* and *y*.  Coherence is the normalized
+cross spectral density:
+
+.. math::
+
+    C_{xy} = \frac{|P_{xy}|^2}{P_{xx}P_{yy}}
+
+Parameters
+----------
+x, y
+    Array or sequence containing the data
+
+%(Spectral)s
+
+%(PSD)s
+
+noverlap : int, default: 0 (no overlap)
+    The number of points of overlap between segments.
+
+Returns
+-------
+Cxy : 1-D array
+    The coherence vector.
+freqs : 1-D array
+        The frequencies for the elements in *Cxy*.
+
+See Also
+--------
+:func:`psd`, :func:`csd` :
+    For information about the methods used to compute :math:`P_{xy}`,
+    :math:`P_{xx}` and :math:`P_{yy}`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1mlab_af5c09befd987c2d0090be90434de805a}\label{namespacematplotlib_1_1mlab_af5c09befd987c2d0090be90434de805a}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!csd@{csd}}
+\index{csd@{csd}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{csd()}{csd()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+csd (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{N\+F\+FT = {\ttfamily None},  }\item[{}]{Fs = {\ttfamily None},  }\item[{}]{detrend = {\ttfamily None},  }\item[{}]{window = {\ttfamily None},  }\item[{}]{noverlap = {\ttfamily None},  }\item[{}]{pad\+\_\+to = {\ttfamily None},  }\item[{}]{sides = {\ttfamily None},  }\item[{}]{scale\+\_\+by\+\_\+freq = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the cross-spectral density.
+
+The cross spectral density :math:`P_{xy}` by Welch's average
+periodogram method.  The vectors *x* and *y* are divided into
+*NFFT* length segments.  Each segment is detrended by function
+*detrend* and windowed by function *window*.  *noverlap* gives
+the length of the overlap between segments.  The product of
+the direct FFTs of *x* and *y* are averaged over each segment
+to compute :math:`P_{xy}`, with a scaling to correct for power
+loss due to windowing.
+
+If len(*x*) < *NFFT* or len(*y*) < *NFFT*, they will be zero
+padded to *NFFT*.
+
+Parameters
+----------
+x, y : 1-D arrays or sequences
+    Arrays or sequences containing the data
+
+%(Spectral)s
+
+%(PSD)s
+
+noverlap : int, default: 0 (no overlap)
+    The number of points of overlap between segments.
+
+Returns
+-------
+Pxy : 1-D array
+    The values for the cross spectrum :math:`P_{xy}` before scaling (real
+    valued)
+
+freqs : 1-D array
+    The frequencies corresponding to the elements in *Pxy*
+
+References
+----------
+Bendat & Piersol -- Random Data: Analysis and Measurement Procedures, John
+Wiley & Sons (1986)
+
+See Also
+--------
+psd : equivalent to setting ``y = x``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1mlab_a6139bfa85c059f2a11858aaab4471a5d}\label{namespacematplotlib_1_1mlab_a6139bfa85c059f2a11858aaab4471a5d}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!detrend@{detrend}}
+\index{detrend@{detrend}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{detrend()}{detrend()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+detrend (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{key = {\ttfamily None},  }\item[{}]{axis = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return x with its trend removed.
+
+Parameters
+----------
+x : array or sequence
+    Array or sequence containing the data.
+
+key : {'default', 'constant', 'mean', 'linear', 'none'} or function
+    The detrending algorithm to use. 'default', 'mean', and 'constant' are
+    the same as `detrend_mean`. 'linear' is the same as `detrend_linear`.
+    'none' is the same as `detrend_none`. The default is 'mean'. See the
+    corresponding functions for more details regarding the algorithms. Can
+    also be a function that carries out the detrend operation.
+
+axis : int
+    The axis along which to do the detrending.
+
+See Also
+--------
+detrend_mean : Implementation of the 'mean' algorithm.
+detrend_linear : Implementation of the 'linear' algorithm.
+detrend_none : Implementation of the 'none' algorithm.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1mlab_ad8259a7aec39bab4216763acc518aba2}\label{namespacematplotlib_1_1mlab_ad8259a7aec39bab4216763acc518aba2}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!detrend\+\_\+linear@{detrend\+\_\+linear}}
+\index{detrend\+\_\+linear@{detrend\+\_\+linear}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{detrend\+\_\+linear()}{detrend\_linear()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+detrend\+\_\+linear (\begin{DoxyParamCaption}\item[{}]{y }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return x minus best fit line; 'linear' detrending.
+
+Parameters
+----------
+y : 0-D or 1-D array or sequence
+    Array or sequence containing the data
+
+axis : int
+    The axis along which to take the mean.  See numpy.mean for a
+    description of this argument.
+
+See Also
+--------
+detrend_mean : Another detrend algorithm.
+detrend_none : Another detrend algorithm.
+detrend : A wrapper around all the detrend algorithms.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1mlab_a33582c8e986a5abbf517793a90af9ec9}\label{namespacematplotlib_1_1mlab_a33582c8e986a5abbf517793a90af9ec9}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!detrend\+\_\+mean@{detrend\+\_\+mean}}
+\index{detrend\+\_\+mean@{detrend\+\_\+mean}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{detrend\+\_\+mean()}{detrend\_mean()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+detrend\+\_\+mean (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{axis = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return x minus the mean(x).
+
+Parameters
+----------
+x : array or sequence
+    Array or sequence containing the data
+    Can have any dimensionality
+
+axis : int
+    The axis along which to take the mean.  See numpy.mean for a
+    description of this argument.
+
+See Also
+--------
+detrend_linear : Another detrend algorithm.
+detrend_none : Another detrend algorithm.
+detrend : A wrapper around all the detrend algorithms.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1mlab_a359979aa8e0e635738648ca88ebd5e1d}\label{namespacematplotlib_1_1mlab_a359979aa8e0e635738648ca88ebd5e1d}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!detrend\+\_\+none@{detrend\+\_\+none}}
+\index{detrend\+\_\+none@{detrend\+\_\+none}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{detrend\+\_\+none()}{detrend\_none()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+detrend\+\_\+none (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{axis = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return x: no detrending.
+
+Parameters
+----------
+x : any object
+    An object containing the data
+
+axis : int
+    This parameter is ignored.
+    It is included for compatibility with detrend_mean
+
+See Also
+--------
+detrend_mean : Another detrend algorithm.
+detrend_linear : Another detrend algorithm.
+detrend : A wrapper around all the detrend algorithms.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1mlab_ac7e214a07b5569a236ed4a255e7d703d}\label{namespacematplotlib_1_1mlab_ac7e214a07b5569a236ed4a255e7d703d}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!psd@{psd}}
+\index{psd@{psd}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{psd()}{psd()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+psd (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{N\+F\+FT = {\ttfamily None},  }\item[{}]{Fs = {\ttfamily None},  }\item[{}]{detrend = {\ttfamily None},  }\item[{}]{window = {\ttfamily None},  }\item[{}]{noverlap = {\ttfamily None},  }\item[{}]{pad\+\_\+to = {\ttfamily None},  }\item[{}]{sides = {\ttfamily None},  }\item[{}]{scale\+\_\+by\+\_\+freq = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the power spectral density.
+
+The power spectral density :math:`P_{xx}` by Welch's average
+periodogram method.  The vector *x* is divided into *NFFT* length
+segments.  Each segment is detrended by function *detrend* and
+windowed by function *window*.  *noverlap* gives the length of
+the overlap between segments.  The :math:`|\mathrm{fft}(i)|^2`
+of each segment :math:`i` are averaged to compute :math:`P_{xx}`.
+
+If len(*x*) < *NFFT*, it will be zero padded to *NFFT*.
+
+Parameters
+----------
+x : 1-D array or sequence
+    Array or sequence containing the data
+
+%(Spectral)s
+
+%(PSD)s
+
+noverlap : int, default: 0 (no overlap)
+    The number of points of overlap between segments.
+
+Returns
+-------
+Pxx : 1-D array
+    The values for the power spectrum :math:`P_{xx}` (real valued)
+
+freqs : 1-D array
+    The frequencies corresponding to the elements in *Pxx*
+
+References
+----------
+Bendat & Piersol -- Random Data: Analysis and Measurement Procedures, John
+Wiley & Sons (1986)
+
+See Also
+--------
+specgram
+    `specgram` differs in the default overlap; in not returning the mean of
+    the segment periodograms; and in returning the times of the segments.
+
+magnitude_spectrum : returns the magnitude spectrum.
+
+csd : returns the spectral density between two signals.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1mlab_a1512ebd8694c242d0aa5d75518d74723}\label{namespacematplotlib_1_1mlab_a1512ebd8694c242d0aa5d75518d74723}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!specgram@{specgram}}
+\index{specgram@{specgram}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{specgram()}{specgram()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+specgram (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{N\+F\+FT = {\ttfamily None},  }\item[{}]{Fs = {\ttfamily None},  }\item[{}]{detrend = {\ttfamily None},  }\item[{}]{window = {\ttfamily None},  }\item[{}]{noverlap = {\ttfamily None},  }\item[{}]{pad\+\_\+to = {\ttfamily None},  }\item[{}]{sides = {\ttfamily None},  }\item[{}]{scale\+\_\+by\+\_\+freq = {\ttfamily None},  }\item[{}]{mode = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute a spectrogram.
+
+Compute and plot a spectrogram of data in x.  Data are split into
+NFFT length segments and the spectrum of each section is
+computed.  The windowing function window is applied to each
+segment, and the amount of overlap of each segment is
+specified with noverlap.
+
+Parameters
+----------
+x : array-like
+    1-D array or sequence.
+
+%(Spectral)s
+
+%(PSD)s
+
+noverlap : int, default: 128
+    The number of points of overlap between blocks.
+mode : str, default: 'psd'
+    What sort of spectrum to use:
+        'psd'
+            Returns the power spectral density.
+        'complex'
+            Returns the complex-valued frequency spectrum.
+        'magnitude'
+            Returns the magnitude spectrum.
+        'angle'
+            Returns the phase spectrum without unwrapping.
+        'phase'
+            Returns the phase spectrum with unwrapping.
+
+Returns
+-------
+spectrum : array-like
+    2D array, columns are the periodograms of successive segments.
+
+freqs : array-like
+    1-D array, frequencies corresponding to the rows in *spectrum*.
+
+t : array-like
+    1-D array, the times corresponding to midpoints of segments
+    (i.e the columns in *spectrum*).
+
+See Also
+--------
+psd : differs in the overlap and in the return values.
+complex_spectrum : similar, but with complex valued frequencies.
+magnitude_spectrum : similar single segment when mode is 'magnitude'.
+angle_spectrum : similar to single segment when mode is 'angle'.
+phase_spectrum : similar to single segment when mode is 'phase'.
+
+Notes
+-----
+detrend and scale_by_freq only apply when *mode* is set to 'psd'.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1mlab_a80bb47f94fc42f477178fb4e77272c80}\label{namespacematplotlib_1_1mlab_a80bb47f94fc42f477178fb4e77272c80}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!stride\+\_\+windows@{stride\+\_\+windows}}
+\index{stride\+\_\+windows@{stride\+\_\+windows}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{stride\+\_\+windows()}{stride\_windows()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+stride\+\_\+windows (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{n,  }\item[{}]{noverlap = {\ttfamily None},  }\item[{}]{axis = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get all windows of x with length n as a single array,
+using strides to avoid data duplication.
+
+.. warning::
+
+    It is not safe to write to the output array.  Multiple
+    elements may point to the same piece of memory,
+    so modifying one value may change others.
+
+Parameters
+----------
+x : 1D array or sequence
+    Array or sequence containing the data.
+n : int
+    The number of data points in each window.
+noverlap : int, default: 0 (no overlap)
+    The overlap between adjacent windows.
+axis : int
+    The axis along which the windows will run.
+
+References
+----------
+`stackoverflow: Rolling window for 1D arrays in Numpy?
+<http://stackoverflow.com/a/6811241>`_
+`stackoverflow: Using strides for an efficient moving average filter
+<http://stackoverflow.com/a/4947453>`_
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1mlab_a0be4c7ab27102a4d8ceb0a08a32ac0fc}\label{namespacematplotlib_1_1mlab_a0be4c7ab27102a4d8ceb0a08a32ac0fc}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!window\+\_\+hanning@{window\+\_\+hanning}}
+\index{window\+\_\+hanning@{window\+\_\+hanning}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{window\+\_\+hanning()}{window\_hanning()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+window\+\_\+hanning (\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return x times the hanning window of len(x).
+
+See Also
+--------
+window_none : Another window algorithm.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1mlab_acef28ebe480ae1d60bd6b695441873a0}\label{namespacematplotlib_1_1mlab_acef28ebe480ae1d60bd6b695441873a0}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!window\+\_\+none@{window\+\_\+none}}
+\index{window\+\_\+none@{window\+\_\+none}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{window\+\_\+none()}{window\_none()}}
+{\footnotesize\ttfamily def matplotlib.\+mlab.\+window\+\_\+none (\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}No window function; simply return x.
+
+See Also
+--------
+window_hanning : Another window algorithm.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1mlab_a4c68c82f633551591f79ca822c4cba6f}\label{namespacematplotlib_1_1mlab_a4c68c82f633551591f79ca822c4cba6f}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!angle\+\_\+spectrum@{angle\+\_\+spectrum}}
+\index{angle\+\_\+spectrum@{angle\+\_\+spectrum}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{angle\+\_\+spectrum}{angle\_spectrum}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+angle\+\_\+spectrum = functools.\+partial(\+\_\+single\+\_\+spectrum\+\_\+helper, \char`\"{}angle\char`\"{})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1mlab_af9fe23cd7c677efdfda27673cf1acd7b}\label{namespacematplotlib_1_1mlab_af9fe23cd7c677efdfda27673cf1acd7b}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!complex\+\_\+spectrum@{complex\+\_\+spectrum}}
+\index{complex\+\_\+spectrum@{complex\+\_\+spectrum}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{complex\+\_\+spectrum}{complex\_spectrum}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+complex\+\_\+spectrum = functools.\+partial(\+\_\+single\+\_\+spectrum\+\_\+helper, \char`\"{}complex\char`\"{})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1mlab_a0900364120ca4896abeb582fafa87750}\label{namespacematplotlib_1_1mlab_a0900364120ca4896abeb582fafa87750}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!magnitude\+\_\+spectrum@{magnitude\+\_\+spectrum}}
+\index{magnitude\+\_\+spectrum@{magnitude\+\_\+spectrum}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{magnitude\+\_\+spectrum}{magnitude\_spectrum}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+magnitude\+\_\+spectrum = functools.\+partial(\+\_\+single\+\_\+spectrum\+\_\+helper, \char`\"{}magnitude\char`\"{})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1mlab_a3ff39313e62c876e7310b03cbf275a45}\label{namespacematplotlib_1_1mlab_a3ff39313e62c876e7310b03cbf275a45}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!phase\+\_\+spectrum@{phase\+\_\+spectrum}}
+\index{phase\+\_\+spectrum@{phase\+\_\+spectrum}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{phase\+\_\+spectrum}{phase\_spectrum}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+phase\+\_\+spectrum = functools.\+partial(\+\_\+single\+\_\+spectrum\+\_\+helper, \char`\"{}phase\char`\"{})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1mlab_a6b561b24d549354119a44640169596ff}\label{namespacematplotlib_1_1mlab_a6b561b24d549354119a44640169596ff}} 
+\index{matplotlib\+::mlab@{matplotlib\+::mlab}!quantity@{quantity}}
+\index{quantity@{quantity}!matplotlib\+::mlab@{matplotlib\+::mlab}}
+\subsubsection{\texorpdfstring{quantity}{quantity}}
+{\footnotesize\ttfamily matplotlib.\+mlab.\+quantity}
+

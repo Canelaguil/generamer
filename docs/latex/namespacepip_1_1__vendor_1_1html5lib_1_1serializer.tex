@@ -1,0 +1,65 @@
+\hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1serializer}{}\section{pip.\+\_\+vendor.\+html5lib.\+serializer Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1html5lib_1_1serializer}\index{pip.\+\_\+vendor.\+html5lib.\+serializer@{pip.\+\_\+vendor.\+html5lib.\+serializer}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1html5lib_1_1serializer_1_1HTMLSerializer}{H\+T\+M\+L\+Serializer}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1html5lib_1_1serializer_1_1SerializeError}{Serialize\+Error}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1serializer_a38bfc70be42df9f446e8944d87b15c88}{htmlentityreplace\+\_\+errors} (exc)
+\item 
+def \hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1serializer_a8db95115d1fd7c943fe4b138e810ed5b}{serialize} (input, tree=\char`\"{}etree\char`\"{}, encoding=None, serializer\+\_\+opts)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1html5lib_1_1serializer_a891d046d68d2a906ab8b95738a4aeccf}{v}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1serializer_a38bfc70be42df9f446e8944d87b15c88}\label{namespacepip_1_1__vendor_1_1html5lib_1_1serializer_a38bfc70be42df9f446e8944d87b15c88}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::serializer@{pip\+::\+\_\+vendor\+::html5lib\+::serializer}!htmlentityreplace\+\_\+errors@{htmlentityreplace\+\_\+errors}}
+\index{htmlentityreplace\+\_\+errors@{htmlentityreplace\+\_\+errors}!pip\+::\+\_\+vendor\+::html5lib\+::serializer@{pip\+::\+\_\+vendor\+::html5lib\+::serializer}}
+\subsubsection{\texorpdfstring{htmlentityreplace\+\_\+errors()}{htmlentityreplace\_errors()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+html5lib.\+serializer.\+htmlentityreplace\+\_\+errors (\begin{DoxyParamCaption}\item[{}]{exc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1serializer_a8db95115d1fd7c943fe4b138e810ed5b}\label{namespacepip_1_1__vendor_1_1html5lib_1_1serializer_a8db95115d1fd7c943fe4b138e810ed5b}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::serializer@{pip\+::\+\_\+vendor\+::html5lib\+::serializer}!serialize@{serialize}}
+\index{serialize@{serialize}!pip\+::\+\_\+vendor\+::html5lib\+::serializer@{pip\+::\+\_\+vendor\+::html5lib\+::serializer}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+html5lib.\+serializer.\+serialize (\begin{DoxyParamCaption}\item[{}]{input,  }\item[{}]{tree = {\ttfamily \char`\"{}etree\char`\"{}},  }\item[{}]{encoding = {\ttfamily None},  }\item[{}]{serializer\+\_\+opts }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Serializes the input token stream using the specified treewalker
+
+:arg input: the token stream to serialize
+
+:arg tree: the treewalker to use
+
+:arg encoding: the encoding to use
+
+:arg serializer_opts: any options to pass to the
+    :py:class:`html5lib.serializer.HTMLSerializer` that gets created
+
+:returns: the tree serialized as a string
+
+Example:
+
+>>> from html5lib.html5parser import parse
+>>> from html5lib.serializer import serialize
+>>> token_stream = parse('<html><body><p>Hi!</p></body></html>')
+>>> serialize(token_stream, omit_optional_tags=False)
+'<html><head></head><body><p>Hi!</p></body></html>'\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1html5lib_1_1serializer_a891d046d68d2a906ab8b95738a4aeccf}\label{namespacepip_1_1__vendor_1_1html5lib_1_1serializer_a891d046d68d2a906ab8b95738a4aeccf}} 
+\index{pip\+::\+\_\+vendor\+::html5lib\+::serializer@{pip\+::\+\_\+vendor\+::html5lib\+::serializer}!v@{v}}
+\index{v@{v}!pip\+::\+\_\+vendor\+::html5lib\+::serializer@{pip\+::\+\_\+vendor\+::html5lib\+::serializer}}
+\subsubsection{\texorpdfstring{v}{v}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+html5lib.\+serializer.\+v}
+

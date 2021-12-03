@@ -1,0 +1,113 @@
+\hypertarget{namespacesetuptools_1_1__distutils_1_1fancy__getopt}{}\section{setuptools.\+\_\+distutils.\+fancy\+\_\+getopt Namespace Reference}
+\label{namespacesetuptools_1_1__distutils_1_1fancy__getopt}\index{setuptools.\+\_\+distutils.\+fancy\+\_\+getopt@{setuptools.\+\_\+distutils.\+fancy\+\_\+getopt}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1__distutils_1_1fancy__getopt_1_1FancyGetopt}{Fancy\+Getopt}
+\item 
+class \hyperlink{classsetuptools_1_1__distutils_1_1fancy__getopt_1_1OptionDummy}{Option\+Dummy}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a47ff59acdd9c80c1d227b4c57fc76f24}{fancy\+\_\+getopt} (options, negative\+\_\+opt, object, args)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1fancy__getopt_aa01c8d3e0a2fd41fefc32875efe1215a}{wrap\+\_\+text} (\hyperlink{namespacesetuptools_1_1__distutils_1_1fancy__getopt_af3c1f9e9725fa4c91614ca2eccdd0336}{text}, width)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a84337e4a816ccdb085cd6beb89ce7b98}{translate\+\_\+longopt} (opt)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a9a9f87aab18fe599747558a58737c190}{longopt\+\_\+pat}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a60c7a52f45f6d8f931dea97318acf6f2}{longopt\+\_\+re}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a000db048c630080d1070094183581a4a}{neg\+\_\+alias\+\_\+re}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a6d04bb4bdf093a0d2ff173f530388fdd}{longopt\+\_\+xlate}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a163c41f299a4a83109f068a7309887e0}{W\+S\+\_\+\+T\+R\+A\+NS}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1fancy__getopt_af3c1f9e9725fa4c91614ca2eccdd0336}{text}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}distutils.fancy_getopt
+
+Wrapper around the standard getopt module that provides the following
+additional features:
+  * short and long options are tied together
+  * options have help strings, so fancy_getopt could potentially
+    create a complete usage summary
+  * options set attributes of a passed-in object
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a47ff59acdd9c80c1d227b4c57fc76f24}\label{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a47ff59acdd9c80c1d227b4c57fc76f24}} 
+\index{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}!fancy\+\_\+getopt@{fancy\+\_\+getopt}}
+\index{fancy\+\_\+getopt@{fancy\+\_\+getopt}!setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}}
+\subsubsection{\texorpdfstring{fancy\+\_\+getopt()}{fancy\_getopt()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+fancy\+\_\+getopt.\+fancy\+\_\+getopt (\begin{DoxyParamCaption}\item[{}]{options,  }\item[{}]{negative\+\_\+opt,  }\item[{}]{object,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a84337e4a816ccdb085cd6beb89ce7b98}\label{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a84337e4a816ccdb085cd6beb89ce7b98}} 
+\index{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}!translate\+\_\+longopt@{translate\+\_\+longopt}}
+\index{translate\+\_\+longopt@{translate\+\_\+longopt}!setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}}
+\subsubsection{\texorpdfstring{translate\+\_\+longopt()}{translate\_longopt()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+fancy\+\_\+getopt.\+translate\+\_\+longopt (\begin{DoxyParamCaption}\item[{}]{opt }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a long option name to a valid Python identifier by
+changing "-" to "_".
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1fancy__getopt_aa01c8d3e0a2fd41fefc32875efe1215a}\label{namespacesetuptools_1_1__distutils_1_1fancy__getopt_aa01c8d3e0a2fd41fefc32875efe1215a}} 
+\index{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}!wrap\+\_\+text@{wrap\+\_\+text}}
+\index{wrap\+\_\+text@{wrap\+\_\+text}!setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}}
+\subsubsection{\texorpdfstring{wrap\+\_\+text()}{wrap\_text()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+fancy\+\_\+getopt.\+wrap\+\_\+text (\begin{DoxyParamCaption}\item[{}]{text,  }\item[{}]{width }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}wrap_text(text : string, width : int) -> [string]
+
+Split 'text' into multiple lines of no more than 'width' characters
+each, and return the list of strings that results.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a9a9f87aab18fe599747558a58737c190}\label{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a9a9f87aab18fe599747558a58737c190}} 
+\index{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}!longopt\+\_\+pat@{longopt\+\_\+pat}}
+\index{longopt\+\_\+pat@{longopt\+\_\+pat}!setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}}
+\subsubsection{\texorpdfstring{longopt\+\_\+pat}{longopt\_pat}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+fancy\+\_\+getopt.\+longopt\+\_\+pat}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a60c7a52f45f6d8f931dea97318acf6f2}\label{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a60c7a52f45f6d8f931dea97318acf6f2}} 
+\index{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}!longopt\+\_\+re@{longopt\+\_\+re}}
+\index{longopt\+\_\+re@{longopt\+\_\+re}!setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}}
+\subsubsection{\texorpdfstring{longopt\+\_\+re}{longopt\_re}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+fancy\+\_\+getopt.\+longopt\+\_\+re}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a6d04bb4bdf093a0d2ff173f530388fdd}\label{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a6d04bb4bdf093a0d2ff173f530388fdd}} 
+\index{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}!longopt\+\_\+xlate@{longopt\+\_\+xlate}}
+\index{longopt\+\_\+xlate@{longopt\+\_\+xlate}!setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}}
+\subsubsection{\texorpdfstring{longopt\+\_\+xlate}{longopt\_xlate}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+fancy\+\_\+getopt.\+longopt\+\_\+xlate}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a000db048c630080d1070094183581a4a}\label{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a000db048c630080d1070094183581a4a}} 
+\index{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}!neg\+\_\+alias\+\_\+re@{neg\+\_\+alias\+\_\+re}}
+\index{neg\+\_\+alias\+\_\+re@{neg\+\_\+alias\+\_\+re}!setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}}
+\subsubsection{\texorpdfstring{neg\+\_\+alias\+\_\+re}{neg\_alias\_re}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+fancy\+\_\+getopt.\+neg\+\_\+alias\+\_\+re}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1fancy__getopt_af3c1f9e9725fa4c91614ca2eccdd0336}\label{namespacesetuptools_1_1__distutils_1_1fancy__getopt_af3c1f9e9725fa4c91614ca2eccdd0336}} 
+\index{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}!text@{text}}
+\index{text@{text}!setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}}
+\subsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+fancy\+\_\+getopt.\+text}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a163c41f299a4a83109f068a7309887e0}\label{namespacesetuptools_1_1__distutils_1_1fancy__getopt_a163c41f299a4a83109f068a7309887e0}} 
+\index{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}!W\+S\+\_\+\+T\+R\+A\+NS@{W\+S\+\_\+\+T\+R\+A\+NS}}
+\index{W\+S\+\_\+\+T\+R\+A\+NS@{W\+S\+\_\+\+T\+R\+A\+NS}!setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt@{setuptools\+::\+\_\+distutils\+::fancy\+\_\+getopt}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+T\+R\+A\+NS}{WS\_TRANS}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+fancy\+\_\+getopt.\+W\+S\+\_\+\+T\+R\+A\+NS}
+

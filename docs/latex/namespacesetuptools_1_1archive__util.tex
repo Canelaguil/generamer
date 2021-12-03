@@ -1,0 +1,108 @@
+\hypertarget{namespacesetuptools_1_1archive__util}{}\section{setuptools.\+archive\+\_\+util Namespace Reference}
+\label{namespacesetuptools_1_1archive__util}\index{setuptools.\+archive\+\_\+util@{setuptools.\+archive\+\_\+util}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1archive__util_1_1UnrecognizedFormat}{Unrecognized\+Format}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1archive__util_adede8e93e57be04915ea0d27831b654b}{default\+\_\+filter} (src, dst)
+\item 
+def \hyperlink{namespacesetuptools_1_1archive__util_a50b89b80cdc264528d20a0b7a7964aa4}{unpack\+\_\+archive} (filename, extract\+\_\+dir, progress\+\_\+filter=\hyperlink{namespacesetuptools_1_1archive__util_adede8e93e57be04915ea0d27831b654b}{default\+\_\+filter}, drivers=None)
+\item 
+def \hyperlink{namespacesetuptools_1_1archive__util_a6ad75ce90d1cbed27a1d5a1dc6e4dda3}{unpack\+\_\+directory} (filename, extract\+\_\+dir, progress\+\_\+filter=\hyperlink{namespacesetuptools_1_1archive__util_adede8e93e57be04915ea0d27831b654b}{default\+\_\+filter})
+\item 
+def \hyperlink{namespacesetuptools_1_1archive__util_a01c6de8920234e1bcb47befda68d40c4}{unpack\+\_\+zipfile} (filename, extract\+\_\+dir, progress\+\_\+filter=\hyperlink{namespacesetuptools_1_1archive__util_adede8e93e57be04915ea0d27831b654b}{default\+\_\+filter})
+\item 
+def \hyperlink{namespacesetuptools_1_1archive__util_aee037d06b845eaf69e229fafccae35b9}{unpack\+\_\+tarfile} (filename, extract\+\_\+dir, progress\+\_\+filter=\hyperlink{namespacesetuptools_1_1archive__util_adede8e93e57be04915ea0d27831b654b}{default\+\_\+filter})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1archive__util_a2648d1e9cc1b921fec949efb97c64295}{extraction\+\_\+drivers}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Utilities for extracting common archive formats\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1archive__util_adede8e93e57be04915ea0d27831b654b}\label{namespacesetuptools_1_1archive__util_adede8e93e57be04915ea0d27831b654b}} 
+\index{setuptools\+::archive\+\_\+util@{setuptools\+::archive\+\_\+util}!default\+\_\+filter@{default\+\_\+filter}}
+\index{default\+\_\+filter@{default\+\_\+filter}!setuptools\+::archive\+\_\+util@{setuptools\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{default\+\_\+filter()}{default\_filter()}}
+{\footnotesize\ttfamily def setuptools.\+archive\+\_\+util.\+default\+\_\+filter (\begin{DoxyParamCaption}\item[{}]{src,  }\item[{}]{dst }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The default progress/filter callback; returns True for all files\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1archive__util_a50b89b80cdc264528d20a0b7a7964aa4}\label{namespacesetuptools_1_1archive__util_a50b89b80cdc264528d20a0b7a7964aa4}} 
+\index{setuptools\+::archive\+\_\+util@{setuptools\+::archive\+\_\+util}!unpack\+\_\+archive@{unpack\+\_\+archive}}
+\index{unpack\+\_\+archive@{unpack\+\_\+archive}!setuptools\+::archive\+\_\+util@{setuptools\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{unpack\+\_\+archive()}{unpack\_archive()}}
+{\footnotesize\ttfamily def setuptools.\+archive\+\_\+util.\+unpack\+\_\+archive (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{extract\+\_\+dir,  }\item[{}]{progress\+\_\+filter = {\ttfamily \hyperlink{namespacesetuptools_1_1archive__util_adede8e93e57be04915ea0d27831b654b}{default\+\_\+filter}},  }\item[{}]{drivers = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Unpack `filename` to `extract_dir`, or raise ``UnrecognizedFormat``
+
+`progress_filter` is a function taking two arguments: a source path
+internal to the archive ('/'-separated), and a filesystem path where it
+will be extracted.  The callback must return the desired extract path
+(which may be the same as the one passed in), or else ``None`` to skip
+that file or directory.  The callback can thus be used to report on the
+progress of the extraction, as well as to filter the items extracted or
+alter their extraction paths.
+
+`drivers`, if supplied, must be a non-empty sequence of functions with the
+same signature as this function (minus the `drivers` argument), that raise
+``UnrecognizedFormat`` if they do not support extracting the designated
+archive type.  The `drivers` are tried in sequence until one is found that
+does not raise an error, or until all are exhausted (in which case
+``UnrecognizedFormat`` is raised).  If you do not supply a sequence of
+drivers, the module's ``extraction_drivers`` constant will be used, which
+means that ``unpack_zipfile`` and ``unpack_tarfile`` will be tried, in that
+order.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1archive__util_a6ad75ce90d1cbed27a1d5a1dc6e4dda3}\label{namespacesetuptools_1_1archive__util_a6ad75ce90d1cbed27a1d5a1dc6e4dda3}} 
+\index{setuptools\+::archive\+\_\+util@{setuptools\+::archive\+\_\+util}!unpack\+\_\+directory@{unpack\+\_\+directory}}
+\index{unpack\+\_\+directory@{unpack\+\_\+directory}!setuptools\+::archive\+\_\+util@{setuptools\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{unpack\+\_\+directory()}{unpack\_directory()}}
+{\footnotesize\ttfamily def setuptools.\+archive\+\_\+util.\+unpack\+\_\+directory (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{extract\+\_\+dir,  }\item[{}]{progress\+\_\+filter = {\ttfamily \hyperlink{namespacesetuptools_1_1archive__util_adede8e93e57be04915ea0d27831b654b}{default\+\_\+filter}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}"Unpack" a directory, using the same interface as for archives
+
+Raises ``UnrecognizedFormat`` if `filename` is not a directory
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1archive__util_aee037d06b845eaf69e229fafccae35b9}\label{namespacesetuptools_1_1archive__util_aee037d06b845eaf69e229fafccae35b9}} 
+\index{setuptools\+::archive\+\_\+util@{setuptools\+::archive\+\_\+util}!unpack\+\_\+tarfile@{unpack\+\_\+tarfile}}
+\index{unpack\+\_\+tarfile@{unpack\+\_\+tarfile}!setuptools\+::archive\+\_\+util@{setuptools\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{unpack\+\_\+tarfile()}{unpack\_tarfile()}}
+{\footnotesize\ttfamily def setuptools.\+archive\+\_\+util.\+unpack\+\_\+tarfile (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{extract\+\_\+dir,  }\item[{}]{progress\+\_\+filter = {\ttfamily \hyperlink{namespacesetuptools_1_1archive__util_adede8e93e57be04915ea0d27831b654b}{default\+\_\+filter}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Unpack tar/tar.gz/tar.bz2 `filename` to `extract_dir`
+
+Raises ``UnrecognizedFormat`` if `filename` is not a tarfile (as determined
+by ``tarfile.open()``).  See ``unpack_archive()`` for an explanation
+of the `progress_filter` argument.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1archive__util_a01c6de8920234e1bcb47befda68d40c4}\label{namespacesetuptools_1_1archive__util_a01c6de8920234e1bcb47befda68d40c4}} 
+\index{setuptools\+::archive\+\_\+util@{setuptools\+::archive\+\_\+util}!unpack\+\_\+zipfile@{unpack\+\_\+zipfile}}
+\index{unpack\+\_\+zipfile@{unpack\+\_\+zipfile}!setuptools\+::archive\+\_\+util@{setuptools\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{unpack\+\_\+zipfile()}{unpack\_zipfile()}}
+{\footnotesize\ttfamily def setuptools.\+archive\+\_\+util.\+unpack\+\_\+zipfile (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{extract\+\_\+dir,  }\item[{}]{progress\+\_\+filter = {\ttfamily \hyperlink{namespacesetuptools_1_1archive__util_adede8e93e57be04915ea0d27831b654b}{default\+\_\+filter}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Unpack zip `filename` to `extract_dir`
+
+Raises ``UnrecognizedFormat`` if `filename` is not a zipfile (as determined
+by ``zipfile.is_zipfile()``).  See ``unpack_archive()`` for an explanation
+of the `progress_filter` argument.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1archive__util_a2648d1e9cc1b921fec949efb97c64295}\label{namespacesetuptools_1_1archive__util_a2648d1e9cc1b921fec949efb97c64295}} 
+\index{setuptools\+::archive\+\_\+util@{setuptools\+::archive\+\_\+util}!extraction\+\_\+drivers@{extraction\+\_\+drivers}}
+\index{extraction\+\_\+drivers@{extraction\+\_\+drivers}!setuptools\+::archive\+\_\+util@{setuptools\+::archive\+\_\+util}}
+\subsubsection{\texorpdfstring{extraction\+\_\+drivers}{extraction\_drivers}}
+{\footnotesize\ttfamily setuptools.\+archive\+\_\+util.\+extraction\+\_\+drivers}
+

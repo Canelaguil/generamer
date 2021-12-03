@@ -1,0 +1,80 @@
+\hypertarget{namespacenumpy_1_1testing_1_1__private_1_1nosetester}{}\section{numpy.\+testing.\+\_\+private.\+nosetester Namespace Reference}
+\label{namespacenumpy_1_1testing_1_1__private_1_1nosetester}\index{numpy.\+testing.\+\_\+private.\+nosetester@{numpy.\+testing.\+\_\+private.\+nosetester}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnumpy_1_1testing_1_1__private_1_1nosetester_1_1NoseTester}{Nose\+Tester}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1__private_1_1nosetester_a565a910a8d59114ed60ff895749e2854}{get\+\_\+package\+\_\+name} (filepath)
+\item 
+def \hyperlink{namespacenumpy_1_1testing_1_1__private_1_1nosetester_ab2fa64ee08ede16c8dabb87785e8cc54}{run\+\_\+module\+\_\+suite} (file\+\_\+to\+\_\+run=None, argv=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Nose test running.
+
+This module implements ``test()`` and ``bench()`` functions for NumPy modules.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1testing_1_1__private_1_1nosetester_a565a910a8d59114ed60ff895749e2854}\label{namespacenumpy_1_1testing_1_1__private_1_1nosetester_a565a910a8d59114ed60ff895749e2854}} 
+\index{numpy\+::testing\+::\+\_\+private\+::nosetester@{numpy\+::testing\+::\+\_\+private\+::nosetester}!get\+\_\+package\+\_\+name@{get\+\_\+package\+\_\+name}}
+\index{get\+\_\+package\+\_\+name@{get\+\_\+package\+\_\+name}!numpy\+::testing\+::\+\_\+private\+::nosetester@{numpy\+::testing\+::\+\_\+private\+::nosetester}}
+\subsubsection{\texorpdfstring{get\+\_\+package\+\_\+name()}{get\_package\_name()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+nosetester.\+get\+\_\+package\+\_\+name (\begin{DoxyParamCaption}\item[{}]{filepath }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given a path where a package is installed, determine its name.
+
+Parameters
+----------
+filepath : str
+    Path to a file. If the determination fails, "numpy" is returned.
+
+Examples
+--------
+>>> np.testing.nosetester.get_package_name('nonsense')
+'numpy'\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1testing_1_1__private_1_1nosetester_ab2fa64ee08ede16c8dabb87785e8cc54}\label{namespacenumpy_1_1testing_1_1__private_1_1nosetester_ab2fa64ee08ede16c8dabb87785e8cc54}} 
+\index{numpy\+::testing\+::\+\_\+private\+::nosetester@{numpy\+::testing\+::\+\_\+private\+::nosetester}!run\+\_\+module\+\_\+suite@{run\+\_\+module\+\_\+suite}}
+\index{run\+\_\+module\+\_\+suite@{run\+\_\+module\+\_\+suite}!numpy\+::testing\+::\+\_\+private\+::nosetester@{numpy\+::testing\+::\+\_\+private\+::nosetester}}
+\subsubsection{\texorpdfstring{run\+\_\+module\+\_\+suite()}{run\_module\_suite()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+nosetester.\+run\+\_\+module\+\_\+suite (\begin{DoxyParamCaption}\item[{}]{file\+\_\+to\+\_\+run = {\ttfamily None},  }\item[{}]{argv = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Run a test module.
+
+Equivalent to calling ``$ nosetests <argv> <file_to_run>`` from
+the command line
+
+Parameters
+----------
+file_to_run : str, optional
+    Path to test module, or None.
+    By default, run the module from which this function is called.
+argv : list of strings
+    Arguments to be passed to the nose test runner. ``argv[0]`` is
+    ignored. All command line arguments accepted by ``nosetests``
+    will work. If it is the default value None, sys.argv is used.
+
+    .. versionadded:: 1.9.0
+
+Examples
+--------
+Adding the following::
+
+    if __name__ == "__main__" :
+        run_module_suite(argv=sys.argv)
+
+at the end of a test module will run the tests when that module is
+called in the python interpreter.
+
+Alternatively, calling::
+
+>>> run_module_suite(file_to_run="numpy/tests/test_matlib.py")  # doctest: +SKIP
+
+from an interpreter will run all the test routine in 'test_matlib.py'.
+\end{DoxyVerb}
+ 

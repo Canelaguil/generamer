@@ -1,0 +1,257 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents}{}\section{networkx.\+algorithms.\+connectivity.\+edge\+\_\+kcomponents Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents}\index{networkx.\+algorithms.\+connectivity.\+edge\+\_\+kcomponents@{networkx.\+algorithms.\+connectivity.\+edge\+\_\+kcomponents}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_1_1EdgeComponentAuxGraph}{Edge\+Component\+Aux\+Graph}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_af6249ee7fb8d09fe3f506cdf57b5e8e3}{k\+\_\+edge\+\_\+components} (G, k)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_ac157f85d3e68bf00257d29488f8c795e}{k\+\_\+edge\+\_\+subgraphs} (G, k)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_a37f92268daf27cb5c79593656e3c5958}{bridge\+\_\+components} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_a37593586a0ba623692e0b34dae6a6cb8}{general\+\_\+k\+\_\+edge\+\_\+subgraphs} (G, k)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Algorithms for finding k-edge-connected components and subgraphs.
+
+A k-edge-connected component (k-edge-cc) is a maximal set of nodes in G, such
+that all pairs of node have an edge-connectivity of at least k.
+
+A k-edge-connected subgraph (k-edge-subgraph) is a maximal set of nodes in G,
+such that the subgraph of G defined by the nodes has an edge-connectivity at
+least k.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_a37f92268daf27cb5c79593656e3c5958}\label{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_a37f92268daf27cb5c79593656e3c5958}} 
+\index{networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents@{networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents}!bridge\+\_\+components@{bridge\+\_\+components}}
+\index{bridge\+\_\+components@{bridge\+\_\+components}!networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents@{networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents}}
+\subsubsection{\texorpdfstring{bridge\+\_\+components()}{bridge\_components()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+connectivity.\+edge\+\_\+kcomponents.\+bridge\+\_\+components (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Finds all bridge-connected components G.
+
+Parameters
+----------
+G : NetworkX undirected graph
+
+Returns
+-------
+bridge_components : a generator of 2-edge-connected components
+
+
+See Also
+--------
+:func:`k_edge_subgraphs` : this function is a special case for an
+    undirected graph where k=2.
+:func:`biconnected_components` : similar to this function, but is defined
+    using 2-node-connectivity instead of 2-edge-connectivity.
+
+Raises
+------
+NetworkXNotImplemented
+    If the input graph is directed or a multigraph.
+
+Notes
+-----
+Bridge-connected components are also known as 2-edge-connected components.
+
+Examples
+--------
+>>> # The barbell graph with parameter zero has a single bridge
+>>> G = nx.barbell_graph(5, 0)
+>>> from networkx.algorithms.connectivity.edge_kcomponents import bridge_components
+>>> sorted(map(sorted, bridge_components(G)))
+[[0, 1, 2, 3, 4], [5, 6, 7, 8, 9]]
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_a37593586a0ba623692e0b34dae6a6cb8}\label{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_a37593586a0ba623692e0b34dae6a6cb8}} 
+\index{networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents@{networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents}!general\+\_\+k\+\_\+edge\+\_\+subgraphs@{general\+\_\+k\+\_\+edge\+\_\+subgraphs}}
+\index{general\+\_\+k\+\_\+edge\+\_\+subgraphs@{general\+\_\+k\+\_\+edge\+\_\+subgraphs}!networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents@{networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents}}
+\subsubsection{\texorpdfstring{general\+\_\+k\+\_\+edge\+\_\+subgraphs()}{general\_k\_edge\_subgraphs()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+connectivity.\+edge\+\_\+kcomponents.\+general\+\_\+k\+\_\+edge\+\_\+subgraphs (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{k }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}General algorithm to find all maximal k-edge-connected subgraphs in G.
+
+Returns
+-------
+k_edge_subgraphs : a generator of nx.Graphs that are k-edge-subgraphs
+    Each k-edge-subgraph is a maximal set of nodes that defines a subgraph
+    of G that is k-edge-connected.
+
+Notes
+-----
+Implementation of the basic algorithm from _[1].  The basic idea is to find
+a global minimum cut of the graph. If the cut value is at least k, then the
+graph is a k-edge-connected subgraph and can be added to the results.
+Otherwise, the cut is used to split the graph in two and the procedure is
+applied recursively. If the graph is just a single node, then it is also
+added to the results. At the end, each result is either guaranteed to be
+a single node or a subgraph of G that is k-edge-connected.
+
+This implementation contains optimizations for reducing the number of calls
+to max-flow, but there are other optimizations in _[1] that could be
+implemented.
+
+References
+----------
+.. [1] Zhou, Liu, et al. (2012) Finding maximal k-edge-connected subgraphs
+    from a large graph.  ACM International Conference on Extending Database
+    Technology 2012 480-–491.
+    https://openproceedings.org/2012/conf/edbt/ZhouLYLCL12.pdf
+
+Examples
+--------
+>>> from networkx.utils import pairwise
+>>> paths = [
+...     (11, 12, 13, 14, 11, 13, 14, 12),  # a 4-clique
+...     (21, 22, 23, 24, 21, 23, 24, 22),  # another 4-clique
+...     # connect the cliques with high degree but low connectivity
+...     (50, 13),
+...     (12, 50, 22),
+...     (13, 102, 23),
+...     (14, 101, 24),
+... ]
+>>> G = nx.Graph(it.chain(*[pairwise(path) for path in paths]))
+>>> sorted(map(len, k_edge_subgraphs(G, k=3)))
+[1, 1, 1, 4, 4]
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_af6249ee7fb8d09fe3f506cdf57b5e8e3}\label{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_af6249ee7fb8d09fe3f506cdf57b5e8e3}} 
+\index{networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents@{networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents}!k\+\_\+edge\+\_\+components@{k\+\_\+edge\+\_\+components}}
+\index{k\+\_\+edge\+\_\+components@{k\+\_\+edge\+\_\+components}!networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents@{networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents}}
+\subsubsection{\texorpdfstring{k\+\_\+edge\+\_\+components()}{k\_edge\_components()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+connectivity.\+edge\+\_\+kcomponents.\+k\+\_\+edge\+\_\+components (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{k }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generates nodes in each maximal k-edge-connected component in G.
+
+Parameters
+----------
+G : NetworkX graph
+
+k : Integer
+    Desired edge connectivity
+
+Returns
+-------
+k_edge_components : a generator of k-edge-ccs. Each set of returned nodes
+   will have k-edge-connectivity in the graph G.
+
+See Also
+--------
+:func:`local_edge_connectivity`
+:func:`k_edge_subgraphs` : similar to this function, but the subgraph
+    defined by the nodes must also have k-edge-connectivity.
+:func:`k_components` : similar to this function, but uses node-connectivity
+    instead of edge-connectivity
+
+Raises
+------
+NetworkXNotImplemented
+    If the input graph is a multigraph.
+
+ValueError:
+    If k is less than 1
+
+Notes
+-----
+Attempts to use the most efficient implementation available based on k.
+If k=1, this is simply connected components for directed graphs and
+connected components for undirected graphs.
+If k=2 on an efficient bridge connected component algorithm from _[1] is
+run based on the chain decomposition.
+Otherwise, the algorithm from _[2] is used.
+
+Examples
+--------
+>>> import itertools as it
+>>> from networkx.utils import pairwise
+>>> paths = [
+...     (1, 2, 4, 3, 1, 4),
+...     (5, 6, 7, 8, 5, 7, 8, 6),
+... ]
+>>> G = nx.Graph()
+>>> G.add_nodes_from(it.chain(*paths))
+>>> G.add_edges_from(it.chain(*[pairwise(path) for path in paths]))
+>>> # note this returns {1, 4} unlike k_edge_subgraphs
+>>> sorted(map(sorted, nx.k_edge_components(G, k=3)))
+[[1, 4], [2], [3], [5, 6, 7, 8]]
+
+References
+----------
+.. [1] https://en.wikipedia.org/wiki/Bridge_%28graph_theory%29
+.. [2] Wang, Tianhao, et al. (2015) A simple algorithm for finding all
+    k-edge-connected components.
+    http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0136264
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_ac157f85d3e68bf00257d29488f8c795e}\label{namespacenetworkx_1_1algorithms_1_1connectivity_1_1edge__kcomponents_ac157f85d3e68bf00257d29488f8c795e}} 
+\index{networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents@{networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents}!k\+\_\+edge\+\_\+subgraphs@{k\+\_\+edge\+\_\+subgraphs}}
+\index{k\+\_\+edge\+\_\+subgraphs@{k\+\_\+edge\+\_\+subgraphs}!networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents@{networkx\+::algorithms\+::connectivity\+::edge\+\_\+kcomponents}}
+\subsubsection{\texorpdfstring{k\+\_\+edge\+\_\+subgraphs()}{k\_edge\_subgraphs()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+connectivity.\+edge\+\_\+kcomponents.\+k\+\_\+edge\+\_\+subgraphs (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{k }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generates nodes in each maximal k-edge-connected subgraph in G.
+
+Parameters
+----------
+G : NetworkX graph
+
+k : Integer
+    Desired edge connectivity
+
+Returns
+-------
+k_edge_subgraphs : a generator of k-edge-subgraphs
+    Each k-edge-subgraph is a maximal set of nodes that defines a subgraph
+    of G that is k-edge-connected.
+
+See Also
+--------
+:func:`edge_connectivity`
+:func:`k_edge_components` : similar to this function, but nodes only
+    need to have k-edge-connctivity within the graph G and the subgraphs
+    might not be k-edge-connected.
+
+Raises
+------
+NetworkXNotImplemented
+    If the input graph is a multigraph.
+
+ValueError:
+    If k is less than 1
+
+Notes
+-----
+Attempts to use the most efficient implementation available based on k.
+If k=1, or k=2 and the graph is undirected, then this simply calls
+`k_edge_components`.  Otherwise the algorithm from _[1] is used.
+
+Examples
+--------
+>>> import itertools as it
+>>> from networkx.utils import pairwise
+>>> paths = [
+...     (1, 2, 4, 3, 1, 4),
+...     (5, 6, 7, 8, 5, 7, 8, 6),
+... ]
+>>> G = nx.Graph()
+>>> G.add_nodes_from(it.chain(*paths))
+>>> G.add_edges_from(it.chain(*[pairwise(path) for path in paths]))
+>>> # note this does not return {1, 4} unlike k_edge_components
+>>> sorted(map(sorted, nx.k_edge_subgraphs(G, k=3)))
+[[1], [2], [3], [4], [5, 6, 7, 8]]
+
+References
+----------
+.. [1] Zhou, Liu, et al. (2012) Finding maximal k-edge-connected subgraphs
+    from a large graph.  ACM International Conference on Extending Database
+    Technology 2012 480-–491.
+    https://openproceedings.org/2012/conf/edbt/ZhouLYLCL12.pdf
+\end{DoxyVerb}
+ 

@@ -1,0 +1,52 @@
+\hypertarget{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1__Base}{}\section{matplotlib.\+patches.\+Connection\+Style.\+\_\+\+Base Class Reference}
+\label{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1__Base}\index{matplotlib.\+patches.\+Connection\+Style.\+\_\+\+Base@{matplotlib.\+patches.\+Connection\+Style.\+\_\+\+Base}}
+
+
+Inheritance diagram for matplotlib.\+patches.\+Connection\+Style.\+\_\+\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1__Base__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1__Base_1_1SimpleEvent}{Simple\+Event}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1__Base_ad7d3bfb980597e9c0a651c28549f7a82}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, posA, posB, shrinkA=2., shrinkB=2., patchA=None, patchB=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A base class for connectionstyle classes. The subclass needs
+to implement a *connect* method whose call signature is::
+
+  connect(posA, posB)
+
+where posA and posB are tuples of x, y coordinates to be
+connected.  The method needs to return a path connecting two
+points. This base class defines a __call__ method, and a few
+helper methods.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1__Base_ad7d3bfb980597e9c0a651c28549f7a82}\label{classmatplotlib_1_1patches_1_1ConnectionStyle_1_1__Base_ad7d3bfb980597e9c0a651c28549f7a82}} 
+\index{matplotlib\+::patches\+::\+Connection\+Style\+::\+\_\+\+Base@{matplotlib\+::patches\+::\+Connection\+Style\+::\+\_\+\+Base}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::patches\+::\+Connection\+Style\+::\+\_\+\+Base@{matplotlib\+::patches\+::\+Connection\+Style\+::\+\_\+\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Connection\+Style.\+\_\+\+Base.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{posA,  }\item[{}]{posB,  }\item[{}]{shrinkA = {\ttfamily 2.},  }\item[{}]{shrinkB = {\ttfamily 2.},  }\item[{}]{patchA = {\ttfamily None},  }\item[{}]{patchB = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Call the *connect* method to create a path between *posA* and
+*posB*; then clip and shrink the path.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{patches_8py}{patches.\+py}\end{DoxyCompactItemize}

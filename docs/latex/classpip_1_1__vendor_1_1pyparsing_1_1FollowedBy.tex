@@ -1,0 +1,91 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy}{}\section{pip.\+\_\+vendor.\+pyparsing.\+Followed\+By Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy}\index{pip.\+\_\+vendor.\+pyparsing.\+Followed\+By@{pip.\+\_\+vendor.\+pyparsing.\+Followed\+By}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+Followed\+By\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+Followed\+By\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy_a688b488206de4531072833e452cf5ca1}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1ParseElementEnhance_af574b49a0a7d914693fdaa833df7098f}{expr})
+\item 
+def \hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy_ad084867c0f85f4251113d4151e83503c}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy_a202b4cdaafda86bb1046f1d317aa7e0a}{may\+Return\+Empty}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Lookahead matching of the given parse expression.
+``FollowedBy`` does *not* advance the parsing position within
+the input string, it only verifies that the specified parse
+expression matches at the current position.  ``FollowedBy``
+always returns a null token list. If any results names are defined
+in the lookahead expression, those *will* be returned for access by
+name.
+
+Example::
+
+    # use FollowedBy to match a label only if it is followed by a ':'
+    data_word = Word(alphas)
+    label = data_word + FollowedBy(':')
+    attr_expr = Group(label + Suppress(':') + OneOrMore(data_word, stopOn=label).setParseAction(' '.join))
+
+    OneOrMore(attr_expr).parseString("shape: SQUARE color: BLACK posn: upper left").pprint()
+
+prints::
+
+    [['shape', 'SQUARE'], ['color', 'BLACK'], ['posn', 'upper left']]
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy_a688b488206de4531072833e452cf5ca1}\label{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy_a688b488206de4531072833e452cf5ca1}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Followed\+By@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Followed\+By}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Followed\+By@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Followed\+By}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+Followed\+By.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{expr }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy_ad084867c0f85f4251113d4151e83503c}\label{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy_ad084867c0f85f4251113d4151e83503c}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Followed\+By@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Followed\+By}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Followed\+By@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Followed\+By}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+Followed\+By.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy_a202b4cdaafda86bb1046f1d317aa7e0a}\label{classpip_1_1__vendor_1_1pyparsing_1_1FollowedBy_a202b4cdaafda86bb1046f1d317aa7e0a}} 
+\index{pip\+::\+\_\+vendor\+::pyparsing\+::\+Followed\+By@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Followed\+By}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!pip\+::\+\_\+vendor\+::pyparsing\+::\+Followed\+By@{pip\+::\+\_\+vendor\+::pyparsing\+::\+Followed\+By}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+pyparsing.\+Followed\+By.\+may\+Return\+Empty}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pip/\+\_\+vendor/\hyperlink{pip_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

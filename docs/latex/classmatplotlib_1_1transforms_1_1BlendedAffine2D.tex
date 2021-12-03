@@ -1,0 +1,84 @@
+\hypertarget{classmatplotlib_1_1transforms_1_1BlendedAffine2D}{}\section{matplotlib.\+transforms.\+Blended\+Affine2D Class Reference}
+\label{classmatplotlib_1_1transforms_1_1BlendedAffine2D}\index{matplotlib.\+transforms.\+Blended\+Affine2D@{matplotlib.\+transforms.\+Blended\+Affine2D}}
+
+
+Inheritance diagram for matplotlib.\+transforms.\+Blended\+Affine2D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1transforms_1_1BlendedAffine2D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+transforms.\+Blended\+Affine2D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1transforms_1_1BlendedAffine2D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1BlendedAffine2D_aed2da8d23d9c632cd576d17618b8c296}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, x\+\_\+transform, y\+\_\+transform, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1BlendedAffine2D_a0bf024301aeb795be31d3c709e8ae8b2}{get\+\_\+matrix} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1BlendedAffine2D_a6ffcad8f5288c0d1d9351114b576dea0}{is\+\_\+separable}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A "blended" transform uses one transform for the *x*-direction, and
+another transform for the *y*-direction.
+
+This version is an optimization for the case where both child
+transforms are of type `Affine2DBase`.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedAffine2D_aed2da8d23d9c632cd576d17618b8c296}\label{classmatplotlib_1_1transforms_1_1BlendedAffine2D_aed2da8d23d9c632cd576d17618b8c296}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Affine2D@{matplotlib\+::transforms\+::\+Blended\+Affine2D}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Blended\+Affine2D@{matplotlib\+::transforms\+::\+Blended\+Affine2D}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Blended\+Affine2\+D.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x\+\_\+transform,  }\item[{}]{y\+\_\+transform,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new "blended" transform using *x_transform* to transform the
+*x*-axis and *y_transform* to transform the *y*-axis.
+
+Both *x_transform* and *y_transform* must be 2D affine transforms.
+
+You will generally not call this constructor directly but use the
+`blended_transform_factory` function instead, which can determine
+automatically which kind of blended transform to create.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedAffine2D_a0bf024301aeb795be31d3c709e8ae8b2}\label{classmatplotlib_1_1transforms_1_1BlendedAffine2D_a0bf024301aeb795be31d3c709e8ae8b2}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Affine2D@{matplotlib\+::transforms\+::\+Blended\+Affine2D}!get\+\_\+matrix@{get\+\_\+matrix}}
+\index{get\+\_\+matrix@{get\+\_\+matrix}!matplotlib\+::transforms\+::\+Blended\+Affine2D@{matplotlib\+::transforms\+::\+Blended\+Affine2D}}
+\subsubsection{\texorpdfstring{get\+\_\+matrix()}{get\_matrix()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Blended\+Affine2\+D.\+get\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1BlendedAffine2D_a6ffcad8f5288c0d1d9351114b576dea0}\label{classmatplotlib_1_1transforms_1_1BlendedAffine2D_a6ffcad8f5288c0d1d9351114b576dea0}} 
+\index{matplotlib\+::transforms\+::\+Blended\+Affine2D@{matplotlib\+::transforms\+::\+Blended\+Affine2D}!is\+\_\+separable@{is\+\_\+separable}}
+\index{is\+\_\+separable@{is\+\_\+separable}!matplotlib\+::transforms\+::\+Blended\+Affine2D@{matplotlib\+::transforms\+::\+Blended\+Affine2D}}
+\subsubsection{\texorpdfstring{is\+\_\+separable}{is\_separable}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Blended\+Affine2\+D.\+is\+\_\+separable\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{transforms_8py}{transforms.\+py}\end{DoxyCompactItemize}

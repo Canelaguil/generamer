@@ -1,0 +1,72 @@
+\hypertarget{namespacepip_1_1__internal_1_1wheel__builder}{}\section{pip.\+\_\+internal.\+wheel\+\_\+builder Namespace Reference}
+\label{namespacepip_1_1__internal_1_1wheel__builder}\index{pip.\+\_\+internal.\+wheel\+\_\+builder@{pip.\+\_\+internal.\+wheel\+\_\+builder}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1wheel__builder_a749449fdb347d3f2ede8c2e5a44ba6de}{should\+\_\+build\+\_\+for\+\_\+wheel\+\_\+command} (req)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1wheel__builder_ab94686847ec6405ad386cc08d1c330f5}{should\+\_\+build\+\_\+for\+\_\+install\+\_\+command} (req, check\+\_\+binary\+\_\+allowed)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1wheel__builder_a413cbabbf4b550b880022d07be8a3df7}{build} (requirements, wheel\+\_\+cache, verify, build\+\_\+options, global\+\_\+options)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1wheel__builder_a84898e3516b9c46fa75845a249fc5200}{logger}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1wheel__builder_adee63dbab347e19a170a3a7a4a1f7834}{Binary\+Allowed\+Predicate}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1wheel__builder_ad8206fa8e5856a00e6283c148f53bfa6}{Build\+Result}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Orchestrator for building wheels from InstallRequirements.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1wheel__builder_a413cbabbf4b550b880022d07be8a3df7}\label{namespacepip_1_1__internal_1_1wheel__builder_a413cbabbf4b550b880022d07be8a3df7}} 
+\index{pip\+::\+\_\+internal\+::wheel\+\_\+builder@{pip\+::\+\_\+internal\+::wheel\+\_\+builder}!build@{build}}
+\index{build@{build}!pip\+::\+\_\+internal\+::wheel\+\_\+builder@{pip\+::\+\_\+internal\+::wheel\+\_\+builder}}
+\subsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+wheel\+\_\+builder.\+build (\begin{DoxyParamCaption}\item[{}]{requirements,  }\item[{}]{wheel\+\_\+cache,  }\item[{}]{verify,  }\item[{}]{build\+\_\+options,  }\item[{}]{global\+\_\+options }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Build wheels.
+
+:return: The list of InstallRequirement that succeeded to build and
+    the list of InstallRequirement that failed to build.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1wheel__builder_ab94686847ec6405ad386cc08d1c330f5}\label{namespacepip_1_1__internal_1_1wheel__builder_ab94686847ec6405ad386cc08d1c330f5}} 
+\index{pip\+::\+\_\+internal\+::wheel\+\_\+builder@{pip\+::\+\_\+internal\+::wheel\+\_\+builder}!should\+\_\+build\+\_\+for\+\_\+install\+\_\+command@{should\+\_\+build\+\_\+for\+\_\+install\+\_\+command}}
+\index{should\+\_\+build\+\_\+for\+\_\+install\+\_\+command@{should\+\_\+build\+\_\+for\+\_\+install\+\_\+command}!pip\+::\+\_\+internal\+::wheel\+\_\+builder@{pip\+::\+\_\+internal\+::wheel\+\_\+builder}}
+\subsubsection{\texorpdfstring{should\+\_\+build\+\_\+for\+\_\+install\+\_\+command()}{should\_build\_for\_install\_command()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+wheel\+\_\+builder.\+should\+\_\+build\+\_\+for\+\_\+install\+\_\+command (\begin{DoxyParamCaption}\item[{}]{req,  }\item[{}]{check\+\_\+binary\+\_\+allowed }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1wheel__builder_a749449fdb347d3f2ede8c2e5a44ba6de}\label{namespacepip_1_1__internal_1_1wheel__builder_a749449fdb347d3f2ede8c2e5a44ba6de}} 
+\index{pip\+::\+\_\+internal\+::wheel\+\_\+builder@{pip\+::\+\_\+internal\+::wheel\+\_\+builder}!should\+\_\+build\+\_\+for\+\_\+wheel\+\_\+command@{should\+\_\+build\+\_\+for\+\_\+wheel\+\_\+command}}
+\index{should\+\_\+build\+\_\+for\+\_\+wheel\+\_\+command@{should\+\_\+build\+\_\+for\+\_\+wheel\+\_\+command}!pip\+::\+\_\+internal\+::wheel\+\_\+builder@{pip\+::\+\_\+internal\+::wheel\+\_\+builder}}
+\subsubsection{\texorpdfstring{should\+\_\+build\+\_\+for\+\_\+wheel\+\_\+command()}{should\_build\_for\_wheel\_command()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+wheel\+\_\+builder.\+should\+\_\+build\+\_\+for\+\_\+wheel\+\_\+command (\begin{DoxyParamCaption}\item[{}]{req }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1wheel__builder_adee63dbab347e19a170a3a7a4a1f7834}\label{namespacepip_1_1__internal_1_1wheel__builder_adee63dbab347e19a170a3a7a4a1f7834}} 
+\index{pip\+::\+\_\+internal\+::wheel\+\_\+builder@{pip\+::\+\_\+internal\+::wheel\+\_\+builder}!Binary\+Allowed\+Predicate@{Binary\+Allowed\+Predicate}}
+\index{Binary\+Allowed\+Predicate@{Binary\+Allowed\+Predicate}!pip\+::\+\_\+internal\+::wheel\+\_\+builder@{pip\+::\+\_\+internal\+::wheel\+\_\+builder}}
+\subsubsection{\texorpdfstring{Binary\+Allowed\+Predicate}{BinaryAllowedPredicate}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+wheel\+\_\+builder.\+Binary\+Allowed\+Predicate}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1wheel__builder_ad8206fa8e5856a00e6283c148f53bfa6}\label{namespacepip_1_1__internal_1_1wheel__builder_ad8206fa8e5856a00e6283c148f53bfa6}} 
+\index{pip\+::\+\_\+internal\+::wheel\+\_\+builder@{pip\+::\+\_\+internal\+::wheel\+\_\+builder}!Build\+Result@{Build\+Result}}
+\index{Build\+Result@{Build\+Result}!pip\+::\+\_\+internal\+::wheel\+\_\+builder@{pip\+::\+\_\+internal\+::wheel\+\_\+builder}}
+\subsubsection{\texorpdfstring{Build\+Result}{BuildResult}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+wheel\+\_\+builder.\+Build\+Result}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1wheel__builder_a84898e3516b9c46fa75845a249fc5200}\label{namespacepip_1_1__internal_1_1wheel__builder_a84898e3516b9c46fa75845a249fc5200}} 
+\index{pip\+::\+\_\+internal\+::wheel\+\_\+builder@{pip\+::\+\_\+internal\+::wheel\+\_\+builder}!logger@{logger}}
+\index{logger@{logger}!pip\+::\+\_\+internal\+::wheel\+\_\+builder@{pip\+::\+\_\+internal\+::wheel\+\_\+builder}}
+\subsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+wheel\+\_\+builder.\+logger}
+

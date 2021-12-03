@@ -1,0 +1,104 @@
+\hypertarget{classmatplotlib_1_1category_1_1StrCategoryConverter}{}\section{matplotlib.\+category.\+Str\+Category\+Converter Class Reference}
+\label{classmatplotlib_1_1category_1_1StrCategoryConverter}\index{matplotlib.\+category.\+Str\+Category\+Converter@{matplotlib.\+category.\+Str\+Category\+Converter}}
+
+
+Inheritance diagram for matplotlib.\+category.\+Str\+Category\+Converter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmatplotlib_1_1category_1_1StrCategoryConverter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+category.\+Str\+Category\+Converter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classmatplotlib_1_1category_1_1StrCategoryConverter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1category_1_1StrCategoryConverter_a63788082b85f23c179de550839c6e949}{convert} (value, unit, axis)
+\item 
+def \hyperlink{classmatplotlib_1_1category_1_1StrCategoryConverter_a76ae677dd1971c5f631374ab34367a0d}{axisinfo} (unit, axis)
+\item 
+def \hyperlink{classmatplotlib_1_1category_1_1StrCategoryConverter_a25039041c51db034d0fa4b607b8e00d9}{default\+\_\+units} (data, axis)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1category_1_1StrCategoryConverter_a76ae677dd1971c5f631374ab34367a0d}\label{classmatplotlib_1_1category_1_1StrCategoryConverter_a76ae677dd1971c5f631374ab34367a0d}} 
+\index{matplotlib\+::category\+::\+Str\+Category\+Converter@{matplotlib\+::category\+::\+Str\+Category\+Converter}!axisinfo@{axisinfo}}
+\index{axisinfo@{axisinfo}!matplotlib\+::category\+::\+Str\+Category\+Converter@{matplotlib\+::category\+::\+Str\+Category\+Converter}}
+\subsubsection{\texorpdfstring{axisinfo()}{axisinfo()}}
+{\footnotesize\ttfamily def matplotlib.\+category.\+Str\+Category\+Converter.\+axisinfo (\begin{DoxyParamCaption}\item[{}]{unit,  }\item[{}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Set the default axis ticks and labels.
+
+Parameters
+----------
+unit : `.UnitData`
+    object string unit information for value
+axis : `~matplotlib.axis.Axis`
+    axis for which information is being set
+
+Returns
+-------
+`~matplotlib.units.AxisInfo`
+    Information to support default tick labeling
+
+.. note: axis is not used
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1category_1_1StrCategoryConverter_a63788082b85f23c179de550839c6e949}\label{classmatplotlib_1_1category_1_1StrCategoryConverter_a63788082b85f23c179de550839c6e949}} 
+\index{matplotlib\+::category\+::\+Str\+Category\+Converter@{matplotlib\+::category\+::\+Str\+Category\+Converter}!convert@{convert}}
+\index{convert@{convert}!matplotlib\+::category\+::\+Str\+Category\+Converter@{matplotlib\+::category\+::\+Str\+Category\+Converter}}
+\subsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily def matplotlib.\+category.\+Str\+Category\+Converter.\+convert (\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{unit,  }\item[{}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Convert strings in *value* to floats using mapping information stored
+in the *unit* object.
+
+Parameters
+----------
+value : str or iterable
+    Value or list of values to be converted.
+unit : `.UnitData`
+    An object mapping strings to integers.
+axis : `~matplotlib.axis.Axis`
+    The axis on which the converted value is plotted.
+
+    .. note:: *axis* is unused.
+
+Returns
+-------
+float or ndarray[float]
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1category_1_1StrCategoryConverter_a25039041c51db034d0fa4b607b8e00d9}\label{classmatplotlib_1_1category_1_1StrCategoryConverter_a25039041c51db034d0fa4b607b8e00d9}} 
+\index{matplotlib\+::category\+::\+Str\+Category\+Converter@{matplotlib\+::category\+::\+Str\+Category\+Converter}!default\+\_\+units@{default\+\_\+units}}
+\index{default\+\_\+units@{default\+\_\+units}!matplotlib\+::category\+::\+Str\+Category\+Converter@{matplotlib\+::category\+::\+Str\+Category\+Converter}}
+\subsubsection{\texorpdfstring{default\+\_\+units()}{default\_units()}}
+{\footnotesize\ttfamily def matplotlib.\+category.\+Str\+Category\+Converter.\+default\+\_\+units (\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Set and update the `~matplotlib.axis.Axis` units.
+
+Parameters
+----------
+data : str or iterable of str
+axis : `~matplotlib.axis.Axis`
+    axis on which the data is plotted
+
+Returns
+-------
+`.UnitData`
+    object storing string to integer mapping
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{category_8py}{category.\+py}\end{DoxyCompactItemize}

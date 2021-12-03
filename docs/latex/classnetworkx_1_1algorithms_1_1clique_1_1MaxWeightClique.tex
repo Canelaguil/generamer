@@ -1,0 +1,161 @@
+\hypertarget{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique}{}\section{networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique Class Reference}
+\label{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique}\index{networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique@{networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique}}
+
+
+Inheritance diagram for networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_adab3a8caa38decccd41f1fcd23c24834}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a07894ff14e22ad9796a602d0eb32b02f}{G}, weight)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_aad07c0a3b0b66ba2fa5af06eada87942}{update\+\_\+incumbent\+\_\+if\+\_\+improved} (self, C, C\+\_\+weight)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_ab3cedc84d68078f16b90f26d056e7eb4}{greedily\+\_\+find\+\_\+independent\+\_\+set} (self, P)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_aa44f51a676815449e6aab9e0f0ccd513}{find\+\_\+branching\+\_\+nodes} (self, P, target)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a363f31dbdd62931e93781c6dfc7057bd}{expand} (self, C, C\+\_\+weight, P)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a8da95287135418157fd5300c715faac3}{find\+\_\+max\+\_\+weight\+\_\+clique} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a07894ff14e22ad9796a602d0eb32b02f}{G}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_abfde92b0761db815dbf5c23885686d92}{incumbent\+\_\+nodes}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_af3733710733e93a7bb84446df17efd3f}{incumbent\+\_\+weight}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a45893ce88d8cd16a600c2f8c91bbf731}{node\+\_\+weights}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A class for the maximum weight clique algorithm.
+
+This class is a helper for the `max_weight_clique` function.  The class
+should not normally be used directly.
+
+Parameters
+----------
+G : NetworkX graph
+    The undirected graph for which a maximum weight clique is sought
+weight : string or None, optional (default='weight')
+    The node attribute that holds the integer value used as a weight.
+    If None, then each node has weight 1.
+
+Attributes
+----------
+G : NetworkX graph
+    The undirected graph for which a maximum weight clique is sought
+node_weights: dict
+    The weight of each node
+incumbent_nodes : list
+    The nodes of the incumbent clique (the best clique found so far)
+incumbent_weight: int
+    The weight of the incumbent clique
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_adab3a8caa38decccd41f1fcd23c24834}\label{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_adab3a8caa38decccd41f1fcd23c24834}} 
+\index{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G,  }\item[{}]{weight }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a363f31dbdd62931e93781c6dfc7057bd}\label{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a363f31dbdd62931e93781c6dfc7057bd}} 
+\index{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}!expand@{expand}}
+\index{expand@{expand}!networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}}
+\subsubsection{\texorpdfstring{expand()}{expand()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique.\+expand (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{C,  }\item[{}]{C\+\_\+weight,  }\item[{}]{P }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Look for the best clique that contains all the nodes in C and zero or
+more of the nodes in P, backtracking if it can be shown that no such
+clique has greater weight than the incumbent.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_aa44f51a676815449e6aab9e0f0ccd513}\label{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_aa44f51a676815449e6aab9e0f0ccd513}} 
+\index{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}!find\+\_\+branching\+\_\+nodes@{find\+\_\+branching\+\_\+nodes}}
+\index{find\+\_\+branching\+\_\+nodes@{find\+\_\+branching\+\_\+nodes}!networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}}
+\subsubsection{\texorpdfstring{find\+\_\+branching\+\_\+nodes()}{find\_branching\_nodes()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique.\+find\+\_\+branching\+\_\+nodes (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{P,  }\item[{}]{target }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find a set of nodes to branch on.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a8da95287135418157fd5300c715faac3}\label{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a8da95287135418157fd5300c715faac3}} 
+\index{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}!find\+\_\+max\+\_\+weight\+\_\+clique@{find\+\_\+max\+\_\+weight\+\_\+clique}}
+\index{find\+\_\+max\+\_\+weight\+\_\+clique@{find\+\_\+max\+\_\+weight\+\_\+clique}!networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}}
+\subsubsection{\texorpdfstring{find\+\_\+max\+\_\+weight\+\_\+clique()}{find\_max\_weight\_clique()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique.\+find\+\_\+max\+\_\+weight\+\_\+clique (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find a maximum weight clique.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_ab3cedc84d68078f16b90f26d056e7eb4}\label{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_ab3cedc84d68078f16b90f26d056e7eb4}} 
+\index{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}!greedily\+\_\+find\+\_\+independent\+\_\+set@{greedily\+\_\+find\+\_\+independent\+\_\+set}}
+\index{greedily\+\_\+find\+\_\+independent\+\_\+set@{greedily\+\_\+find\+\_\+independent\+\_\+set}!networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}}
+\subsubsection{\texorpdfstring{greedily\+\_\+find\+\_\+independent\+\_\+set()}{greedily\_find\_independent\_set()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique.\+greedily\+\_\+find\+\_\+independent\+\_\+set (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{P }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Greedily find an independent set of nodes from a set of
+nodes P.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_aad07c0a3b0b66ba2fa5af06eada87942}\label{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_aad07c0a3b0b66ba2fa5af06eada87942}} 
+\index{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}!update\+\_\+incumbent\+\_\+if\+\_\+improved@{update\+\_\+incumbent\+\_\+if\+\_\+improved}}
+\index{update\+\_\+incumbent\+\_\+if\+\_\+improved@{update\+\_\+incumbent\+\_\+if\+\_\+improved}!networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}}
+\subsubsection{\texorpdfstring{update\+\_\+incumbent\+\_\+if\+\_\+improved()}{update\_incumbent\_if\_improved()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique.\+update\+\_\+incumbent\+\_\+if\+\_\+improved (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{C,  }\item[{}]{C\+\_\+weight }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update the incumbent if the node set C has greater weight.
+
+C is assumed to be a clique.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a07894ff14e22ad9796a602d0eb32b02f}\label{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a07894ff14e22ad9796a602d0eb32b02f}} 
+\index{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}!G@{G}}
+\index{G@{G}!networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}}
+\subsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique.\+G}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_abfde92b0761db815dbf5c23885686d92}\label{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_abfde92b0761db815dbf5c23885686d92}} 
+\index{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}!incumbent\+\_\+nodes@{incumbent\+\_\+nodes}}
+\index{incumbent\+\_\+nodes@{incumbent\+\_\+nodes}!networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}}
+\subsubsection{\texorpdfstring{incumbent\+\_\+nodes}{incumbent\_nodes}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique.\+incumbent\+\_\+nodes}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_af3733710733e93a7bb84446df17efd3f}\label{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_af3733710733e93a7bb84446df17efd3f}} 
+\index{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}!incumbent\+\_\+weight@{incumbent\+\_\+weight}}
+\index{incumbent\+\_\+weight@{incumbent\+\_\+weight}!networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}}
+\subsubsection{\texorpdfstring{incumbent\+\_\+weight}{incumbent\_weight}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique.\+incumbent\+\_\+weight}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a45893ce88d8cd16a600c2f8c91bbf731}\label{classnetworkx_1_1algorithms_1_1clique_1_1MaxWeightClique_a45893ce88d8cd16a600c2f8c91bbf731}} 
+\index{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}!node\+\_\+weights@{node\+\_\+weights}}
+\index{node\+\_\+weights@{node\+\_\+weights}!networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique@{networkx\+::algorithms\+::clique\+::\+Max\+Weight\+Clique}}
+\subsubsection{\texorpdfstring{node\+\_\+weights}{node\_weights}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+clique.\+Max\+Weight\+Clique.\+node\+\_\+weights}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/algorithms/\hyperlink{clique_8py}{clique.\+py}\end{DoxyCompactItemize}

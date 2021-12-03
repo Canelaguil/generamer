@@ -1,0 +1,86 @@
+\hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState}{}\section{networkx.\+algorithms.\+isomorphism.\+isomorphvf2.\+Di\+G\+M\+State Class Reference}
+\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState}\index{networkx.\+algorithms.\+isomorphism.\+isomorphvf2.\+Di\+G\+M\+State@{networkx.\+algorithms.\+isomorphism.\+isomorphvf2.\+Di\+G\+M\+State}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_a781e3282fdf17863c27aecc06f56b270}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_af2da4f3bcee6582853f2e5e5a71f2bc3}{GM}, \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_a7f327e26ebf4a28321367771d4e9b789}{G1\+\_\+node}=None, \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_af184fd16fa025e95c3db1e9ed81bcb4b}{G2\+\_\+node}=None)
+\item 
+def \hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_ae08d3913cb7891b6bb079ad7dde67b25}{restore} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_af2da4f3bcee6582853f2e5e5a71f2bc3}{GM}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_a7f327e26ebf4a28321367771d4e9b789}{G1\+\_\+node}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_af184fd16fa025e95c3db1e9ed81bcb4b}{G2\+\_\+node}
+\item 
+\hyperlink{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_a8b16ee2343f8f64b5f25cdf64a575141}{depth}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Internal representation of state for the DiGraphMatcher class.
+
+This class is used internally by the DiGraphMatcher class.  It is used
+only to store state specific data. There will be at most G2.order() of
+these objects in memory at a time, due to the depth-first search
+strategy employed by the VF2 algorithm.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_a781e3282fdf17863c27aecc06f56b270}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_a781e3282fdf17863c27aecc06f56b270}} 
+\index{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State@{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State@{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+isomorphvf2.\+Di\+G\+M\+State.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{GM,  }\item[{}]{G1\+\_\+node = {\ttfamily None},  }\item[{}]{G2\+\_\+node = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes DiGMState object.
+
+Pass in the DiGraphMatcher to which this DiGMState belongs and the
+new node pair that will be added to the GraphMatcher's current
+isomorphism mapping.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_ae08d3913cb7891b6bb079ad7dde67b25}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_ae08d3913cb7891b6bb079ad7dde67b25}} 
+\index{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State@{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State}!restore@{restore}}
+\index{restore@{restore}!networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State@{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State}}
+\subsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+isomorphvf2.\+Di\+G\+M\+State.\+restore (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Deletes the DiGMState object and restores the class variables.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_a8b16ee2343f8f64b5f25cdf64a575141}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_a8b16ee2343f8f64b5f25cdf64a575141}} 
+\index{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State@{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State}!depth@{depth}}
+\index{depth@{depth}!networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State@{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State}}
+\subsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+isomorphvf2.\+Di\+G\+M\+State.\+depth}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_a7f327e26ebf4a28321367771d4e9b789}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_a7f327e26ebf4a28321367771d4e9b789}} 
+\index{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State@{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State}!G1\+\_\+node@{G1\+\_\+node}}
+\index{G1\+\_\+node@{G1\+\_\+node}!networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State@{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State}}
+\subsubsection{\texorpdfstring{G1\+\_\+node}{G1\_node}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+isomorphvf2.\+Di\+G\+M\+State.\+G1\+\_\+node}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_af184fd16fa025e95c3db1e9ed81bcb4b}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_af184fd16fa025e95c3db1e9ed81bcb4b}} 
+\index{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State@{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State}!G2\+\_\+node@{G2\+\_\+node}}
+\index{G2\+\_\+node@{G2\+\_\+node}!networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State@{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State}}
+\subsubsection{\texorpdfstring{G2\+\_\+node}{G2\_node}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+isomorphvf2.\+Di\+G\+M\+State.\+G2\+\_\+node}
+
+\mbox{\Hypertarget{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_af2da4f3bcee6582853f2e5e5a71f2bc3}\label{classnetworkx_1_1algorithms_1_1isomorphism_1_1isomorphvf2_1_1DiGMState_af2da4f3bcee6582853f2e5e5a71f2bc3}} 
+\index{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State@{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State}!GM@{GM}}
+\index{GM@{GM}!networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State@{networkx\+::algorithms\+::isomorphism\+::isomorphvf2\+::\+Di\+G\+M\+State}}
+\subsubsection{\texorpdfstring{GM}{GM}}
+{\footnotesize\ttfamily networkx.\+algorithms.\+isomorphism.\+isomorphvf2.\+Di\+G\+M\+State.\+GM}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/algorithms/isomorphism/\hyperlink{isomorphvf2_8py}{isomorphvf2.\+py}\end{DoxyCompactItemize}

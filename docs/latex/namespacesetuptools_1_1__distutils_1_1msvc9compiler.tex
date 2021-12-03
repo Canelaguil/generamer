@@ -1,0 +1,180 @@
+\hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler}{}\section{setuptools.\+\_\+distutils.\+msvc9compiler Namespace Reference}
+\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler}\index{setuptools.\+\_\+distutils.\+msvc9compiler@{setuptools.\+\_\+distutils.\+msvc9compiler}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsetuptools_1_1__distutils_1_1msvc9compiler_1_1MacroExpander}{Macro\+Expander}
+\item 
+class \hyperlink{classsetuptools_1_1__distutils_1_1msvc9compiler_1_1MSVCCompiler}{M\+S\+V\+C\+Compiler}
+\item 
+class \hyperlink{classsetuptools_1_1__distutils_1_1msvc9compiler_1_1Reg}{Reg}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_ac4367f7450a56ac581a75e82067a815d}{get\+\_\+build\+\_\+version} ()
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_ad5c2a4a0af506b05e108b8ec9689d1b9}{normalize\+\_\+and\+\_\+reduce\+\_\+paths} (paths)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a12fc5d2e326f661cd1c49c5003efe076}{remove\+Duplicates} (variable)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a7c6b6df5e6749e9b60b1e5d592b1acf9}{find\+\_\+vcvarsall} (version)
+\item 
+def \hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a97c300b2c4cda029520e92d5801036f9}{query\+\_\+vcvarsall} (version, arch=\char`\"{}x86\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a6796e5ffe5016f456cb23827ac24d7c0}{Reg\+Open\+Key\+Ex}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_af11fb01f580ba66f2a9546f1ff9363b2}{Reg\+Enum\+Key}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a5b8a9d9b12a5d41dbd67eb6154e9e034}{Reg\+Enum\+Value}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_ada7c65a5cc7110800ad286016728544b}{Reg\+Error}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_aa2883ca6e52126b833ce214719ce1b95}{H\+K\+E\+YS}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a92c32bd84bba334762ba0d4e44339554}{N\+A\+T\+I\+V\+E\+\_\+\+W\+I\+N64}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_af8f33a65909edd3b558d823a99e7f3ea}{V\+S\+\_\+\+B\+A\+SE}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a0b52c11dcbea7854f05b2512b85fa90e}{W\+I\+N\+S\+D\+K\+\_\+\+B\+A\+SE}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_ad9762ebffd6b1c8d589b688057a4ceed}{N\+E\+T\+\_\+\+B\+A\+SE}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_aff38cc20efeaa75ef8bc3597b0bab63f}{P\+L\+A\+T\+\_\+\+T\+O\+\_\+\+V\+C\+V\+A\+RS}
+\item 
+\hyperlink{namespacesetuptools_1_1__distutils_1_1msvc9compiler_aac2c20fd89c38313646e8bab31002fbe}{V\+E\+R\+S\+I\+ON}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}distutils.msvc9compiler
+
+Contains MSVCCompiler, an implementation of the abstract CCompiler class
+for the Microsoft Visual Studio 2008.
+
+The module is compatible with VS 2005 and VS 2008. You can find legacy support
+for older versions of VS in distutils.msvccompiler.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a7c6b6df5e6749e9b60b1e5d592b1acf9}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a7c6b6df5e6749e9b60b1e5d592b1acf9}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!find\+\_\+vcvarsall@{find\+\_\+vcvarsall}}
+\index{find\+\_\+vcvarsall@{find\+\_\+vcvarsall}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{find\+\_\+vcvarsall()}{find\_vcvarsall()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+msvc9compiler.\+find\+\_\+vcvarsall (\begin{DoxyParamCaption}\item[{}]{version }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the vcvarsall.bat file
+
+At first it tries to find the productdir of VS 2008 in the registry. If
+that fails it falls back to the VS90COMNTOOLS env var.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_ac4367f7450a56ac581a75e82067a815d}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_ac4367f7450a56ac581a75e82067a815d}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!get\+\_\+build\+\_\+version@{get\+\_\+build\+\_\+version}}
+\index{get\+\_\+build\+\_\+version@{get\+\_\+build\+\_\+version}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{get\+\_\+build\+\_\+version()}{get\_build\_version()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+msvc9compiler.\+get\+\_\+build\+\_\+version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the version of MSVC that was used to build Python.
+
+For Python 2.3 and up, the version number is included in
+sys.version.  For earlier versions, assume the compiler is MSVC 6.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_ad5c2a4a0af506b05e108b8ec9689d1b9}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_ad5c2a4a0af506b05e108b8ec9689d1b9}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!normalize\+\_\+and\+\_\+reduce\+\_\+paths@{normalize\+\_\+and\+\_\+reduce\+\_\+paths}}
+\index{normalize\+\_\+and\+\_\+reduce\+\_\+paths@{normalize\+\_\+and\+\_\+reduce\+\_\+paths}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{normalize\+\_\+and\+\_\+reduce\+\_\+paths()}{normalize\_and\_reduce\_paths()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+msvc9compiler.\+normalize\+\_\+and\+\_\+reduce\+\_\+paths (\begin{DoxyParamCaption}\item[{}]{paths }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of normalized paths with duplicates removed.
+
+The current order of paths is maintained.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a97c300b2c4cda029520e92d5801036f9}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a97c300b2c4cda029520e92d5801036f9}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!query\+\_\+vcvarsall@{query\+\_\+vcvarsall}}
+\index{query\+\_\+vcvarsall@{query\+\_\+vcvarsall}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{query\+\_\+vcvarsall()}{query\_vcvarsall()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+msvc9compiler.\+query\+\_\+vcvarsall (\begin{DoxyParamCaption}\item[{}]{version,  }\item[{}]{arch = {\ttfamily \char`\"{}x86\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Launch vcvarsall.bat and read the settings from its environment
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a12fc5d2e326f661cd1c49c5003efe076}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a12fc5d2e326f661cd1c49c5003efe076}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!remove\+Duplicates@{remove\+Duplicates}}
+\index{remove\+Duplicates@{remove\+Duplicates}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{remove\+Duplicates()}{removeDuplicates()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+msvc9compiler.\+remove\+Duplicates (\begin{DoxyParamCaption}\item[{}]{variable }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove duplicate values of an environment variable.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_aa2883ca6e52126b833ce214719ce1b95}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_aa2883ca6e52126b833ce214719ce1b95}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!H\+K\+E\+YS@{H\+K\+E\+YS}}
+\index{H\+K\+E\+YS@{H\+K\+E\+YS}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{H\+K\+E\+YS}{HKEYS}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+msvc9compiler.\+H\+K\+E\+YS}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a92c32bd84bba334762ba0d4e44339554}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a92c32bd84bba334762ba0d4e44339554}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!N\+A\+T\+I\+V\+E\+\_\+\+W\+I\+N64@{N\+A\+T\+I\+V\+E\+\_\+\+W\+I\+N64}}
+\index{N\+A\+T\+I\+V\+E\+\_\+\+W\+I\+N64@{N\+A\+T\+I\+V\+E\+\_\+\+W\+I\+N64}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{N\+A\+T\+I\+V\+E\+\_\+\+W\+I\+N64}{NATIVE\_WIN64}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+msvc9compiler.\+N\+A\+T\+I\+V\+E\+\_\+\+W\+I\+N64}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_ad9762ebffd6b1c8d589b688057a4ceed}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_ad9762ebffd6b1c8d589b688057a4ceed}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!N\+E\+T\+\_\+\+B\+A\+SE@{N\+E\+T\+\_\+\+B\+A\+SE}}
+\index{N\+E\+T\+\_\+\+B\+A\+SE@{N\+E\+T\+\_\+\+B\+A\+SE}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{N\+E\+T\+\_\+\+B\+A\+SE}{NET\_BASE}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+msvc9compiler.\+N\+E\+T\+\_\+\+B\+A\+SE}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_aff38cc20efeaa75ef8bc3597b0bab63f}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_aff38cc20efeaa75ef8bc3597b0bab63f}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!P\+L\+A\+T\+\_\+\+T\+O\+\_\+\+V\+C\+V\+A\+RS@{P\+L\+A\+T\+\_\+\+T\+O\+\_\+\+V\+C\+V\+A\+RS}}
+\index{P\+L\+A\+T\+\_\+\+T\+O\+\_\+\+V\+C\+V\+A\+RS@{P\+L\+A\+T\+\_\+\+T\+O\+\_\+\+V\+C\+V\+A\+RS}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{P\+L\+A\+T\+\_\+\+T\+O\+\_\+\+V\+C\+V\+A\+RS}{PLAT\_TO\_VCVARS}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+msvc9compiler.\+P\+L\+A\+T\+\_\+\+T\+O\+\_\+\+V\+C\+V\+A\+RS}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_af11fb01f580ba66f2a9546f1ff9363b2}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_af11fb01f580ba66f2a9546f1ff9363b2}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!Reg\+Enum\+Key@{Reg\+Enum\+Key}}
+\index{Reg\+Enum\+Key@{Reg\+Enum\+Key}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{Reg\+Enum\+Key}{RegEnumKey}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+msvc9compiler.\+Reg\+Enum\+Key}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a5b8a9d9b12a5d41dbd67eb6154e9e034}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a5b8a9d9b12a5d41dbd67eb6154e9e034}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!Reg\+Enum\+Value@{Reg\+Enum\+Value}}
+\index{Reg\+Enum\+Value@{Reg\+Enum\+Value}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{Reg\+Enum\+Value}{RegEnumValue}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+msvc9compiler.\+Reg\+Enum\+Value}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_ada7c65a5cc7110800ad286016728544b}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_ada7c65a5cc7110800ad286016728544b}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!Reg\+Error@{Reg\+Error}}
+\index{Reg\+Error@{Reg\+Error}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{Reg\+Error}{RegError}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+msvc9compiler.\+Reg\+Error}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a6796e5ffe5016f456cb23827ac24d7c0}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a6796e5ffe5016f456cb23827ac24d7c0}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!Reg\+Open\+Key\+Ex@{Reg\+Open\+Key\+Ex}}
+\index{Reg\+Open\+Key\+Ex@{Reg\+Open\+Key\+Ex}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{Reg\+Open\+Key\+Ex}{RegOpenKeyEx}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+msvc9compiler.\+Reg\+Open\+Key\+Ex}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_aac2c20fd89c38313646e8bab31002fbe}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_aac2c20fd89c38313646e8bab31002fbe}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!V\+E\+R\+S\+I\+ON@{V\+E\+R\+S\+I\+ON}}
+\index{V\+E\+R\+S\+I\+ON@{V\+E\+R\+S\+I\+ON}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{V\+E\+R\+S\+I\+ON}{VERSION}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+msvc9compiler.\+V\+E\+R\+S\+I\+ON}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_af8f33a65909edd3b558d823a99e7f3ea}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_af8f33a65909edd3b558d823a99e7f3ea}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!V\+S\+\_\+\+B\+A\+SE@{V\+S\+\_\+\+B\+A\+SE}}
+\index{V\+S\+\_\+\+B\+A\+SE@{V\+S\+\_\+\+B\+A\+SE}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{V\+S\+\_\+\+B\+A\+SE}{VS\_BASE}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+msvc9compiler.\+V\+S\+\_\+\+B\+A\+SE}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a0b52c11dcbea7854f05b2512b85fa90e}\label{namespacesetuptools_1_1__distutils_1_1msvc9compiler_a0b52c11dcbea7854f05b2512b85fa90e}} 
+\index{setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}!W\+I\+N\+S\+D\+K\+\_\+\+B\+A\+SE@{W\+I\+N\+S\+D\+K\+\_\+\+B\+A\+SE}}
+\index{W\+I\+N\+S\+D\+K\+\_\+\+B\+A\+SE@{W\+I\+N\+S\+D\+K\+\_\+\+B\+A\+SE}!setuptools\+::\+\_\+distutils\+::msvc9compiler@{setuptools\+::\+\_\+distutils\+::msvc9compiler}}
+\subsubsection{\texorpdfstring{W\+I\+N\+S\+D\+K\+\_\+\+B\+A\+SE}{WINSDK\_BASE}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+msvc9compiler.\+W\+I\+N\+S\+D\+K\+\_\+\+B\+A\+SE}
+

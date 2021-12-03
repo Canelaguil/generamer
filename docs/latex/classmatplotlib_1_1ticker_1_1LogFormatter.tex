@@ -1,0 +1,189 @@
+\hypertarget{classmatplotlib_1_1ticker_1_1LogFormatter}{}\section{matplotlib.\+ticker.\+Log\+Formatter Class Reference}
+\label{classmatplotlib_1_1ticker_1_1LogFormatter}\index{matplotlib.\+ticker.\+Log\+Formatter@{matplotlib.\+ticker.\+Log\+Formatter}}
+
+
+Inheritance diagram for matplotlib.\+ticker.\+Log\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1ticker_1_1LogFormatter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+ticker.\+Log\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classmatplotlib_1_1ticker_1_1LogFormatter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_a4d25714f8e214f2ed67cd2f4ec83f292}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_a507d19cbe228689e4658c98d73328136}{base}=10.\+0, \hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_a7bc43fd53bbbd340f532123f83bcab3c}{label\+Only\+Base}=False, \hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_a8deb464d46fb5534e9a7ec6df8296c3a}{minor\+\_\+thresholds}=None, linthresh=None)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_a507d19cbe228689e4658c98d73328136}{base} (self, base)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_a8161302a1fe9578b01a1214dff788f6f}{label\+\_\+minor} (self, \hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_a7bc43fd53bbbd340f532123f83bcab3c}{label\+Only\+Base})
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_a22b3717775e4efe8ce4c0ee0621ad29a}{set\+\_\+locs} (self, \hyperlink{classmatplotlib_1_1ticker_1_1Formatter_a2b5924640e2c85567e80f40931f7bbf8}{locs}=None)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_ae74f4e71079473c2d1d086951a44b834}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, x, pos=None)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_a7b27ed8889f9464ba7e5ef33f8952ccf}{format\+\_\+data} (self, value)
+\item 
+def \hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_aa272aa795ced91566cb57872a9d3b439}{format\+\_\+data\+\_\+short} (self, value)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_a7bc43fd53bbbd340f532123f83bcab3c}{label\+Only\+Base}
+\item 
+\hyperlink{classmatplotlib_1_1ticker_1_1LogFormatter_a8deb464d46fb5534e9a7ec6df8296c3a}{minor\+\_\+thresholds}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Base class for formatting ticks on a log or symlog scale.
+
+It may be instantiated directly, or subclassed.
+
+Parameters
+----------
+base : float, default: 10.
+    Base of the logarithm used in all calculations.
+
+labelOnlyBase : bool, default: False
+    If True, label ticks only at integer powers of base.
+    This is normally True for major ticks and False for
+    minor ticks.
+
+minor_thresholds : (subset, all), default: (1, 0.4)
+    If labelOnlyBase is False, these two numbers control
+    the labeling of ticks that are not at integer powers of
+    base; normally these are the minor ticks. The controlling
+    parameter is the log of the axis data range.  In the typical
+    case where base is 10 it is the number of decades spanned
+    by the axis, so we can call it 'numdec'. If ``numdec <= all``,
+    all minor ticks will be labeled.  If ``all < numdec <= subset``,
+    then only a subset of minor ticks will be labeled, so as to
+    avoid crowding. If ``numdec > subset`` then no minor ticks will
+    be labeled.
+
+linthresh : None or float, default: None
+    If a symmetric log scale is in use, its ``linthresh``
+    parameter must be supplied here.
+
+Notes
+-----
+The `set_locs` method must be called to enable the subsetting
+logic controlled by the ``minor_thresholds`` parameter.
+
+In some cases such as the colorbar, there is no distinction between
+major and minor ticks; the tick locations might be set manually,
+or by a locator that puts ticks at integer powers of base and
+at intermediate locations.  For this situation, disable the
+minor_thresholds logic by using ``minor_thresholds=(np.inf, np.inf)``,
+so that all ticks will be labeled.
+
+To disable labeling of minor ticks when 'labelOnlyBase' is False,
+use ``minor_thresholds=(0, 0)``.  This is the default for the
+"classic" style.
+
+Examples
+--------
+To label a subset of minor ticks when the view limits span up
+to 2 decades, and all of the ticks when zoomed in to 0.5 decades
+or less, use ``minor_thresholds=(2, 0.5)``.
+
+To label all minor ticks when the view limits span up to 1.5
+decades, use ``minor_thresholds=(1.5, 1.5)``.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogFormatter_a4d25714f8e214f2ed67cd2f4ec83f292}\label{classmatplotlib_1_1ticker_1_1LogFormatter_a4d25714f8e214f2ed67cd2f4ec83f292}} 
+\index{matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Formatter.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{base = {\ttfamily 10.0},  }\item[{}]{label\+Only\+Base = {\ttfamily False},  }\item[{}]{minor\+\_\+thresholds = {\ttfamily None},  }\item[{}]{linthresh = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogFormatter_ae74f4e71079473c2d1d086951a44b834}\label{classmatplotlib_1_1ticker_1_1LogFormatter_ae74f4e71079473c2d1d086951a44b834}} 
+\index{matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+call\+\_\+\+\_\+()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Formatter.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{pos = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogFormatter_a507d19cbe228689e4658c98d73328136}\label{classmatplotlib_1_1ticker_1_1LogFormatter_a507d19cbe228689e4658c98d73328136}} 
+\index{matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}!base@{base}}
+\index{base@{base}!matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}}
+\subsubsection{\texorpdfstring{base()}{base()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Formatter.\+base (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{base }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Change the *base* for labeling.
+
+.. warning::
+   Should always match the base used for :class:`LogLocator`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogFormatter_a7b27ed8889f9464ba7e5ef33f8952ccf}\label{classmatplotlib_1_1ticker_1_1LogFormatter_a7b27ed8889f9464ba7e5ef33f8952ccf}} 
+\index{matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}!format\+\_\+data@{format\+\_\+data}}
+\index{format\+\_\+data@{format\+\_\+data}!matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}}
+\subsubsection{\texorpdfstring{format\+\_\+data()}{format\_data()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Formatter.\+format\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogFormatter_aa272aa795ced91566cb57872a9d3b439}\label{classmatplotlib_1_1ticker_1_1LogFormatter_aa272aa795ced91566cb57872a9d3b439}} 
+\index{matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}!format\+\_\+data\+\_\+short@{format\+\_\+data\+\_\+short}}
+\index{format\+\_\+data\+\_\+short@{format\+\_\+data\+\_\+short}!matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}}
+\subsubsection{\texorpdfstring{format\+\_\+data\+\_\+short()}{format\_data\_short()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Formatter.\+format\+\_\+data\+\_\+short (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogFormatter_a8161302a1fe9578b01a1214dff788f6f}\label{classmatplotlib_1_1ticker_1_1LogFormatter_a8161302a1fe9578b01a1214dff788f6f}} 
+\index{matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}!label\+\_\+minor@{label\+\_\+minor}}
+\index{label\+\_\+minor@{label\+\_\+minor}!matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}}
+\subsubsection{\texorpdfstring{label\+\_\+minor()}{label\_minor()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Formatter.\+label\+\_\+minor (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{label\+Only\+Base }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Switch minor tick labeling on or off.
+
+Parameters
+----------
+labelOnlyBase : bool
+    If True, label ticks only at integer powers of base.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogFormatter_a22b3717775e4efe8ce4c0ee0621ad29a}\label{classmatplotlib_1_1ticker_1_1LogFormatter_a22b3717775e4efe8ce4c0ee0621ad29a}} 
+\index{matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}!set\+\_\+locs@{set\+\_\+locs}}
+\index{set\+\_\+locs@{set\+\_\+locs}!matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}}
+\subsubsection{\texorpdfstring{set\+\_\+locs()}{set\_locs()}}
+{\footnotesize\ttfamily def matplotlib.\+ticker.\+Log\+Formatter.\+set\+\_\+locs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{locs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Use axis view limits to control which ticks are labeled.
+
+The *locs* parameter is ignored in the present algorithm.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogFormatter_a7bc43fd53bbbd340f532123f83bcab3c}\label{classmatplotlib_1_1ticker_1_1LogFormatter_a7bc43fd53bbbd340f532123f83bcab3c}} 
+\index{matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}!label\+Only\+Base@{label\+Only\+Base}}
+\index{label\+Only\+Base@{label\+Only\+Base}!matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}}
+\subsubsection{\texorpdfstring{label\+Only\+Base}{labelOnlyBase}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Log\+Formatter.\+label\+Only\+Base}
+
+\mbox{\Hypertarget{classmatplotlib_1_1ticker_1_1LogFormatter_a8deb464d46fb5534e9a7ec6df8296c3a}\label{classmatplotlib_1_1ticker_1_1LogFormatter_a8deb464d46fb5534e9a7ec6df8296c3a}} 
+\index{matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}!minor\+\_\+thresholds@{minor\+\_\+thresholds}}
+\index{minor\+\_\+thresholds@{minor\+\_\+thresholds}!matplotlib\+::ticker\+::\+Log\+Formatter@{matplotlib\+::ticker\+::\+Log\+Formatter}}
+\subsubsection{\texorpdfstring{minor\+\_\+thresholds}{minor\_thresholds}}
+{\footnotesize\ttfamily matplotlib.\+ticker.\+Log\+Formatter.\+minor\+\_\+thresholds}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{ticker_8py}{ticker.\+py}\end{DoxyCompactItemize}

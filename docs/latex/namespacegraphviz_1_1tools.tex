@@ -1,0 +1,45 @@
+\hypertarget{namespacegraphviz_1_1tools}{}\section{graphviz.\+tools Namespace Reference}
+\label{namespacegraphviz_1_1tools}\index{graphviz.\+tools@{graphviz.\+tools}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacegraphviz_1_1tools_aaef6b2c64d0f4a8fb899dfe5648d3d10}{attach}
+\item 
+def \hyperlink{namespacegraphviz_1_1tools_af1a59f0a7eb40eb2ec66666aedcf9183}{mkdirs}
+\item 
+def \hyperlink{namespacegraphviz_1_1tools_aa562d6dcc043feb04b1b072b30350f57}{mapping\+\_\+items} (mapping)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Generic re-useable self-contained helper functions.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacegraphviz_1_1tools_aaef6b2c64d0f4a8fb899dfe5648d3d10}\label{namespacegraphviz_1_1tools_aaef6b2c64d0f4a8fb899dfe5648d3d10}} 
+\index{graphviz\+::tools@{graphviz\+::tools}!attach@{attach}}
+\index{attach@{attach}!graphviz\+::tools@{graphviz\+::tools}}
+\subsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily def graphviz.\+tools.\+attach (\begin{DoxyParamCaption}\item[{}]{object }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacegraphviz_1_1tools_aa562d6dcc043feb04b1b072b30350f57}\label{namespacegraphviz_1_1tools_aa562d6dcc043feb04b1b072b30350f57}} 
+\index{graphviz\+::tools@{graphviz\+::tools}!mapping\+\_\+items@{mapping\+\_\+items}}
+\index{mapping\+\_\+items@{mapping\+\_\+items}!graphviz\+::tools@{graphviz\+::tools}}
+\subsubsection{\texorpdfstring{mapping\+\_\+items()}{mapping\_items()}}
+{\footnotesize\ttfamily def graphviz.\+tools.\+mapping\+\_\+items (\begin{DoxyParamCaption}\item[{}]{mapping }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return an iterator over the ``mapping`` items, sort if it's a plain dict.
+
+>>> list(mapping_items({'spam': 0, 'ham': 1, 'eggs': 2}))
+[('eggs', 2), ('ham', 1), ('spam', 0)]
+
+>>> from collections import OrderedDict
+>>> list(mapping_items(OrderedDict(enumerate(['spam', 'ham', 'eggs']))))
+[(0, 'spam'), (1, 'ham'), (2, 'eggs')]
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacegraphviz_1_1tools_af1a59f0a7eb40eb2ec66666aedcf9183}\label{namespacegraphviz_1_1tools_af1a59f0a7eb40eb2ec66666aedcf9183}} 
+\index{graphviz\+::tools@{graphviz\+::tools}!mkdirs@{mkdirs}}
+\index{mkdirs@{mkdirs}!graphviz\+::tools@{graphviz\+::tools}}
+\subsubsection{\texorpdfstring{mkdirs()}{mkdirs()}}
+{\footnotesize\ttfamily def graphviz.\+tools.\+mkdirs (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{mode }\end{DoxyParamCaption})}
+

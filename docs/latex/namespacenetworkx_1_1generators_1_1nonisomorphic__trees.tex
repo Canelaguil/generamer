@@ -1,0 +1,66 @@
+\hypertarget{namespacenetworkx_1_1generators_1_1nonisomorphic__trees}{}\section{networkx.\+generators.\+nonisomorphic\+\_\+trees Namespace Reference}
+\label{namespacenetworkx_1_1generators_1_1nonisomorphic__trees}\index{networkx.\+generators.\+nonisomorphic\+\_\+trees@{networkx.\+generators.\+nonisomorphic\+\_\+trees}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1generators_1_1nonisomorphic__trees_a7f79333ee805973a1d31506d9e0fd1dd}{nonisomorphic\+\_\+trees} (order, create=\char`\"{}graph\char`\"{})
+\item 
+def \hyperlink{namespacenetworkx_1_1generators_1_1nonisomorphic__trees_a66d9b154b22e025c5c680efc6273fee7}{number\+\_\+of\+\_\+nonisomorphic\+\_\+trees} (order)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Implementation of the Wright, Richmond, Odlyzko and McKay (WROM)
+algorithm for the enumeration of all non-isomorphic free trees of a
+given order.  Rooted trees are represented by level sequences, i.e.,
+lists in which the i-th element specifies the distance of vertex i to
+the root.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1nonisomorphic__trees_a7f79333ee805973a1d31506d9e0fd1dd}\label{namespacenetworkx_1_1generators_1_1nonisomorphic__trees_a7f79333ee805973a1d31506d9e0fd1dd}} 
+\index{networkx\+::generators\+::nonisomorphic\+\_\+trees@{networkx\+::generators\+::nonisomorphic\+\_\+trees}!nonisomorphic\+\_\+trees@{nonisomorphic\+\_\+trees}}
+\index{nonisomorphic\+\_\+trees@{nonisomorphic\+\_\+trees}!networkx\+::generators\+::nonisomorphic\+\_\+trees@{networkx\+::generators\+::nonisomorphic\+\_\+trees}}
+\subsubsection{\texorpdfstring{nonisomorphic\+\_\+trees()}{nonisomorphic\_trees()}}
+{\footnotesize\ttfamily def networkx.\+generators.\+nonisomorphic\+\_\+trees.\+nonisomorphic\+\_\+trees (\begin{DoxyParamCaption}\item[{}]{order,  }\item[{}]{create = {\ttfamily \char`\"{}graph\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a list of nonisomporphic trees
+
+Parameters
+----------
+order : int
+  order of the desired tree(s)
+
+create : graph or matrix (default="Graph)
+  If graph is selected a list of trees will be returned,
+  if matrix is selected a list of adjancency matrix will
+  be returned
+
+Returns
+-------
+G : List of NetworkX Graphs
+
+M : List of Adjacency matrices
+
+References
+----------\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1generators_1_1nonisomorphic__trees_a66d9b154b22e025c5c680efc6273fee7}\label{namespacenetworkx_1_1generators_1_1nonisomorphic__trees_a66d9b154b22e025c5c680efc6273fee7}} 
+\index{networkx\+::generators\+::nonisomorphic\+\_\+trees@{networkx\+::generators\+::nonisomorphic\+\_\+trees}!number\+\_\+of\+\_\+nonisomorphic\+\_\+trees@{number\+\_\+of\+\_\+nonisomorphic\+\_\+trees}}
+\index{number\+\_\+of\+\_\+nonisomorphic\+\_\+trees@{number\+\_\+of\+\_\+nonisomorphic\+\_\+trees}!networkx\+::generators\+::nonisomorphic\+\_\+trees@{networkx\+::generators\+::nonisomorphic\+\_\+trees}}
+\subsubsection{\texorpdfstring{number\+\_\+of\+\_\+nonisomorphic\+\_\+trees()}{number\_of\_nonisomorphic\_trees()}}
+{\footnotesize\ttfamily def networkx.\+generators.\+nonisomorphic\+\_\+trees.\+number\+\_\+of\+\_\+nonisomorphic\+\_\+trees (\begin{DoxyParamCaption}\item[{}]{order }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the number of nonisomorphic trees
+
+Parameters
+----------
+order : int
+  order of the desired tree(s)
+
+Returns
+-------
+length : Number of nonisomorphic graphs for the given order
+
+References
+----------\end{DoxyVerb}
+ 

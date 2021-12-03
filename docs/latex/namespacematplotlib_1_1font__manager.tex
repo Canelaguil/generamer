@@ -1,0 +1,100 @@
+\hypertarget{namespacematplotlib_1_1font__manager}{}\section{matplotlib.\+font\+\_\+manager Namespace Reference}
+\label{namespacematplotlib_1_1font__manager}\index{matplotlib.\+font\+\_\+manager@{matplotlib.\+font\+\_\+manager}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dictionary \hyperlink{namespacematplotlib_1_1font__manager_a3bc5c8e851abd8ee824b77aa137318ce}{font\+\_\+scalings}
+\item 
+dictionary \hyperlink{namespacematplotlib_1_1font__manager_a095ada35e9a066bd1b88db8e550f4bbd}{stretch\+\_\+dict}
+\item 
+dictionary \hyperlink{namespacematplotlib_1_1font__manager_a8d9baa8500646980b236908b262aa8a1}{weight\+\_\+dict}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A module for finding, managing, and using fonts across platforms.
+
+This module provides a single `FontManager` instance that can
+be shared across backends and platforms.  The `findfont`
+function returns the best TrueType (TTF) font file in the local or
+system font path that matches the specified `FontProperties`
+instance.  The `FontManager` also handles Adobe Font Metrics
+(AFM) font files for use by the PostScript backend.
+
+The design is based on the `W3C Cascading Style Sheet, Level 1 (CSS1)
+font specification <http://www.w3.org/TR/1998/REC-CSS2-19980512/>`_.
+Future versions may implement the Level 2 or 2.1 specifications.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1font__manager_a3bc5c8e851abd8ee824b77aa137318ce}\label{namespacematplotlib_1_1font__manager_a3bc5c8e851abd8ee824b77aa137318ce}} 
+\index{matplotlib\+::font\+\_\+manager@{matplotlib\+::font\+\_\+manager}!font\+\_\+scalings@{font\+\_\+scalings}}
+\index{font\+\_\+scalings@{font\+\_\+scalings}!matplotlib\+::font\+\_\+manager@{matplotlib\+::font\+\_\+manager}}
+\subsubsection{\texorpdfstring{font\+\_\+scalings}{font\_scalings}}
+{\footnotesize\ttfamily dictionary matplotlib.\+font\+\_\+manager.\+font\+\_\+scalings}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{
+2     \textcolor{stringliteral}{'xx-small'}: 0.579,
+3     \textcolor{stringliteral}{'x-small'}:  0.694,
+4     \textcolor{stringliteral}{'small'}:    0.833,
+5     \textcolor{stringliteral}{'medium'}:   1.0,
+6     \textcolor{stringliteral}{'large'}:    1.200,
+7     \textcolor{stringliteral}{'x-large'}:  1.440,
+8     \textcolor{stringliteral}{'xx-large'}: 1.728,
+9     \textcolor{stringliteral}{'larger'}:   1.2,
+10     \textcolor{stringliteral}{'smaller'}:  0.833,
+11     \textcolor{keywordtype}{None}:       1.0,
+12 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacematplotlib_1_1font__manager_a095ada35e9a066bd1b88db8e550f4bbd}\label{namespacematplotlib_1_1font__manager_a095ada35e9a066bd1b88db8e550f4bbd}} 
+\index{matplotlib\+::font\+\_\+manager@{matplotlib\+::font\+\_\+manager}!stretch\+\_\+dict@{stretch\+\_\+dict}}
+\index{stretch\+\_\+dict@{stretch\+\_\+dict}!matplotlib\+::font\+\_\+manager@{matplotlib\+::font\+\_\+manager}}
+\subsubsection{\texorpdfstring{stretch\+\_\+dict}{stretch\_dict}}
+{\footnotesize\ttfamily dictionary matplotlib.\+font\+\_\+manager.\+stretch\+\_\+dict}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{
+2     \textcolor{stringliteral}{'ultra-condensed'}: 100,
+3     \textcolor{stringliteral}{'extra-condensed'}: 200,
+4     \textcolor{stringliteral}{'condensed'}:       300,
+5     \textcolor{stringliteral}{'semi-condensed'}:  400,
+6     \textcolor{stringliteral}{'normal'}:          500,
+7     \textcolor{stringliteral}{'semi-expanded'}:   600,
+8     \textcolor{stringliteral}{'semi-extended'}:   600,
+9     \textcolor{stringliteral}{'expanded'}:        700,
+10     \textcolor{stringliteral}{'extended'}:        700,
+11     \textcolor{stringliteral}{'extra-expanded'}:  800,
+12     \textcolor{stringliteral}{'extra-extended'}:  800,
+13     \textcolor{stringliteral}{'ultra-expanded'}:  900,
+14     \textcolor{stringliteral}{'ultra-extended'}:  900,
+15 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacematplotlib_1_1font__manager_a8d9baa8500646980b236908b262aa8a1}\label{namespacematplotlib_1_1font__manager_a8d9baa8500646980b236908b262aa8a1}} 
+\index{matplotlib\+::font\+\_\+manager@{matplotlib\+::font\+\_\+manager}!weight\+\_\+dict@{weight\+\_\+dict}}
+\index{weight\+\_\+dict@{weight\+\_\+dict}!matplotlib\+::font\+\_\+manager@{matplotlib\+::font\+\_\+manager}}
+\subsubsection{\texorpdfstring{weight\+\_\+dict}{weight\_dict}}
+{\footnotesize\ttfamily dictionary matplotlib.\+font\+\_\+manager.\+weight\+\_\+dict}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \{
+2     \textcolor{stringliteral}{'ultralight'}: 100,
+3     \textcolor{stringliteral}{'light'}:      200,
+4     \textcolor{stringliteral}{'normal'}:     400,
+5     \textcolor{stringliteral}{'regular'}:    400,
+6     \textcolor{stringliteral}{'book'}:       400,
+7     \textcolor{stringliteral}{'medium'}:     500,
+8     \textcolor{stringliteral}{'roman'}:      500,
+9     \textcolor{stringliteral}{'semibold'}:   600,
+10     \textcolor{stringliteral}{'demibold'}:   600,
+11     \textcolor{stringliteral}{'demi'}:       600,
+12     \textcolor{stringliteral}{'bold'}:       700,
+13     \textcolor{stringliteral}{'heavy'}:      800,
+14     \textcolor{stringliteral}{'extra bold'}: 800,
+15     \textcolor{stringliteral}{'black'}:      900,
+16 \}
+\end{DoxyCode}

@@ -1,0 +1,165 @@
+\hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex}{}\section{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex Class Reference}
+\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex}\index{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex@{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex}}
+
+
+Inheritance diagram for pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a344d143fdcdc1ff4aef98404422781f1}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a668261616fecfa783128d422936c5822}{pattern}, \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a438ead3932bb9a1d00342361d6ec727b}{flags}=0)
+\item 
+def \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_af18815c256629aaf99e23f3cbf1bb90c}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\item 
+def \hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_aaccca833661bfd93cd288838783438f6}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a668261616fecfa783128d422936c5822}{pattern}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a438ead3932bb9a1d00342361d6ec727b}{flags}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_aae387dae124bc460ef7bba1f12628136}{re}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a16b354129ae1d3bf6bd74cf36da30194}{re\+String}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a139cd5bc18957e505678b78632fa60c5}{name}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a94cb2e44d62f673392540af4809d8626}{errmsg}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a1eaa09ac3af53d744f5c7ca94e5c852d}{may\+Index\+Error}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_ad6d563920c30c08162bacb9e3fc6f812}{may\+Return\+Empty}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a010942a4fcef59631b098f59d26aaeba}{str\+Repr}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_acf52ddb23c1ec08f8c580c6e28c49bc5}{compiled\+R\+Etype}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Token for matching strings that match a given regular expression.
+Defined with string specifying the regular expression in a form recognized by the inbuilt Python re module.
+If the given regex contains named groups (defined using C{(?P<name>...)}), these will be preserved as 
+named parse results.
+
+Example::
+    realnum = Regex(r"[+-]?\d+\.\d*")
+    date = Regex(r'(?P<year>\d{4})-(?P<month>\d\d?)-(?P<day>\d\d?)')
+    # ref: http://stackoverflow.com/questions/267399/how-do-you-match-only-valid-roman-numerals-with-a-regular-expression
+    roman = Regex(r"M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})")
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a344d143fdcdc1ff4aef98404422781f1}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a344d143fdcdc1ff4aef98404422781f1}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pattern,  }\item[{}]{flags = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The parameters C{pattern} and C{flags} are passed to the C{re.compile()} function as-is. See the Python C{re} module for an explanation of the acceptable patterns and flags.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_aaccca833661bfd93cd288838783438f6}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_aaccca833661bfd93cd288838783438f6}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_af18815c256629aaf99e23f3cbf1bb90c}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_af18815c256629aaf99e23f3cbf1bb90c}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_acf52ddb23c1ec08f8c580c6e28c49bc5}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_acf52ddb23c1ec08f8c580c6e28c49bc5}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!compiled\+R\+Etype@{compiled\+R\+Etype}}
+\index{compiled\+R\+Etype@{compiled\+R\+Etype}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{compiled\+R\+Etype}{compiledREtype}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+compiled\+R\+Etype\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a94cb2e44d62f673392540af4809d8626}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a94cb2e44d62f673392540af4809d8626}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!errmsg@{errmsg}}
+\index{errmsg@{errmsg}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{errmsg}{errmsg}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+errmsg}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a438ead3932bb9a1d00342361d6ec727b}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a438ead3932bb9a1d00342361d6ec727b}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!flags@{flags}}
+\index{flags@{flags}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+flags}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a1eaa09ac3af53d744f5c7ca94e5c852d}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a1eaa09ac3af53d744f5c7ca94e5c852d}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!may\+Index\+Error@{may\+Index\+Error}}
+\index{may\+Index\+Error@{may\+Index\+Error}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{may\+Index\+Error}{mayIndexError}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+may\+Index\+Error}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_ad6d563920c30c08162bacb9e3fc6f812}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_ad6d563920c30c08162bacb9e3fc6f812}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+may\+Return\+Empty}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a139cd5bc18957e505678b78632fa60c5}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a139cd5bc18957e505678b78632fa60c5}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!name@{name}}
+\index{name@{name}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+name}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a668261616fecfa783128d422936c5822}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a668261616fecfa783128d422936c5822}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!pattern@{pattern}}
+\index{pattern@{pattern}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{pattern}{pattern}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+pattern}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_aae387dae124bc460ef7bba1f12628136}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_aae387dae124bc460ef7bba1f12628136}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!re@{re}}
+\index{re@{re}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{re}{re}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+re}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a16b354129ae1d3bf6bd74cf36da30194}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a16b354129ae1d3bf6bd74cf36da30194}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!re\+String@{re\+String}}
+\index{re\+String@{re\+String}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{re\+String}{reString}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+re\+String}
+
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a010942a4fcef59631b098f59d26aaeba}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Regex_a010942a4fcef59631b098f59d26aaeba}} 
+\index{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}!str\+Repr@{str\+Repr}}
+\index{str\+Repr@{str\+Repr}!pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex@{pkg\+\_\+resources\+::\+\_\+vendor\+::pyparsing\+::\+Regex}}
+\subsubsection{\texorpdfstring{str\+Repr}{strRepr}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Regex.\+str\+Repr}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pkg\+\_\+resources/\+\_\+vendor/\hyperlink{pkg__resources_2__vendor_2pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,98 @@
+\hypertarget{classmatplotlib_1_1transforms_1_1CompositeAffine2D}{}\section{matplotlib.\+transforms.\+Composite\+Affine2D Class Reference}
+\label{classmatplotlib_1_1transforms_1_1CompositeAffine2D}\index{matplotlib.\+transforms.\+Composite\+Affine2D@{matplotlib.\+transforms.\+Composite\+Affine2D}}
+
+
+Inheritance diagram for matplotlib.\+transforms.\+Composite\+Affine2D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmatplotlib_1_1transforms_1_1CompositeAffine2D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+transforms.\+Composite\+Affine2D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmatplotlib_1_1transforms_1_1CompositeAffine2D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1CompositeAffine2D_a0ab5137c9be148dbe6c6399b85ab49ce}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, a, b, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1CompositeAffine2D_af5fe01b5684e9047f325b78c6cf197f4}{depth} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1transforms_1_1CompositeAffine2D_a72c8eae938e6ff15c7d3874bb03a31d1}{get\+\_\+matrix} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1CompositeAffine2D_adce3dc3282566faaed639c9fc84c32d3}{input\+\_\+dims}
+\item 
+\hyperlink{classmatplotlib_1_1transforms_1_1CompositeAffine2D_a79a176338d6502885484c930173c67a8}{output\+\_\+dims}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A composite transform formed by applying transform *a* then transform *b*.
+
+This version is an optimization that handles the case where both *a*
+and *b* are 2D affines.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeAffine2D_a0ab5137c9be148dbe6c6399b85ab49ce}\label{classmatplotlib_1_1transforms_1_1CompositeAffine2D_a0ab5137c9be148dbe6c6399b85ab49ce}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Affine2D@{matplotlib\+::transforms\+::\+Composite\+Affine2D}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::transforms\+::\+Composite\+Affine2D@{matplotlib\+::transforms\+::\+Composite\+Affine2D}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Composite\+Affine2\+D.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{a,  }\item[{}]{b,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new composite transform that is the result of
+applying `Affine2DBase` *a* then `Affine2DBase` *b*.
+
+You will generally not call this constructor directly but write ``a +
+b`` instead, which will automatically choose the best kind of composite
+transform instance to create.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeAffine2D_af5fe01b5684e9047f325b78c6cf197f4}\label{classmatplotlib_1_1transforms_1_1CompositeAffine2D_af5fe01b5684e9047f325b78c6cf197f4}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Affine2D@{matplotlib\+::transforms\+::\+Composite\+Affine2D}!depth@{depth}}
+\index{depth@{depth}!matplotlib\+::transforms\+::\+Composite\+Affine2D@{matplotlib\+::transforms\+::\+Composite\+Affine2D}}
+\subsubsection{\texorpdfstring{depth()}{depth()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Composite\+Affine2\+D.\+depth (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeAffine2D_a72c8eae938e6ff15c7d3874bb03a31d1}\label{classmatplotlib_1_1transforms_1_1CompositeAffine2D_a72c8eae938e6ff15c7d3874bb03a31d1}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Affine2D@{matplotlib\+::transforms\+::\+Composite\+Affine2D}!get\+\_\+matrix@{get\+\_\+matrix}}
+\index{get\+\_\+matrix@{get\+\_\+matrix}!matplotlib\+::transforms\+::\+Composite\+Affine2D@{matplotlib\+::transforms\+::\+Composite\+Affine2D}}
+\subsubsection{\texorpdfstring{get\+\_\+matrix()}{get\_matrix()}}
+{\footnotesize\ttfamily def matplotlib.\+transforms.\+Composite\+Affine2\+D.\+get\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeAffine2D_adce3dc3282566faaed639c9fc84c32d3}\label{classmatplotlib_1_1transforms_1_1CompositeAffine2D_adce3dc3282566faaed639c9fc84c32d3}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Affine2D@{matplotlib\+::transforms\+::\+Composite\+Affine2D}!input\+\_\+dims@{input\+\_\+dims}}
+\index{input\+\_\+dims@{input\+\_\+dims}!matplotlib\+::transforms\+::\+Composite\+Affine2D@{matplotlib\+::transforms\+::\+Composite\+Affine2D}}
+\subsubsection{\texorpdfstring{input\+\_\+dims}{input\_dims}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Composite\+Affine2\+D.\+input\+\_\+dims}
+
+\mbox{\Hypertarget{classmatplotlib_1_1transforms_1_1CompositeAffine2D_a79a176338d6502885484c930173c67a8}\label{classmatplotlib_1_1transforms_1_1CompositeAffine2D_a79a176338d6502885484c930173c67a8}} 
+\index{matplotlib\+::transforms\+::\+Composite\+Affine2D@{matplotlib\+::transforms\+::\+Composite\+Affine2D}!output\+\_\+dims@{output\+\_\+dims}}
+\index{output\+\_\+dims@{output\+\_\+dims}!matplotlib\+::transforms\+::\+Composite\+Affine2D@{matplotlib\+::transforms\+::\+Composite\+Affine2D}}
+\subsubsection{\texorpdfstring{output\+\_\+dims}{output\_dims}}
+{\footnotesize\ttfamily matplotlib.\+transforms.\+Composite\+Affine2\+D.\+output\+\_\+dims}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{transforms_8py}{transforms.\+py}\end{DoxyCompactItemize}

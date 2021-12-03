@@ -1,0 +1,143 @@
+\hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView}{}\section{networkx.\+classes.\+reportviews.\+Edge\+View Class Reference}
+\label{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView}\index{networkx.\+classes.\+reportviews.\+Edge\+View@{networkx.\+classes.\+reportviews.\+Edge\+View}}
+
+
+Inheritance diagram for networkx.\+classes.\+reportviews.\+Edge\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for networkx.\+classes.\+reportviews.\+Edge\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView_a9fe6fd609cd91b9209c747688f2a1162}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView_a937637471130a6dba111883296096b87}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView_a73d4b8ea94558517661fc98cface81b2}{\+\_\+\+\_\+contains\+\_\+\+\_\+} (self, e)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView_af3b32461c8bcc6bf7f735a6534f5f681}{dataview}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A EdgeView class for edges of a Graph
+
+This densely packed View allows iteration over edges, data lookup
+like a dict and set operations on edges represented by node-tuples.
+In addition, edge data can be controlled by calling this object
+possibly creating an EdgeDataView. Typically edges are iterated over
+and reported as `(u, v)` node tuples or `(u, v, key)` node/key tuples
+for multigraphs. Those edge representations can also be using to
+lookup the data dict for any edge. Set operations also are available
+where those tuples are the elements of the set.
+Calling this object with optional arguments `data`, `default` and `keys`
+controls the form of the tuple (see EdgeDataView). Optional argument
+`nbunch` allows restriction to edges only involving certain nodes.
+
+If `data is False` (the default) then iterate over 2-tuples `(u, v)`.
+If `data is True` iterate over 3-tuples `(u, v, datadict)`.
+Otherwise iterate over `(u, v, datadict.get(data, default))`.
+For Multigraphs, if `keys is True`, replace `u, v` with `u, v, key` above.
+
+Parameters
+==========
+graph : NetworkX graph-like class
+nbunch : (default= all nodes in graph) only report edges with these nodes
+keys : (only for MultiGraph. default=False) report edge key in tuple
+data : bool or string (default=False) see above
+default : object (default=None)
+
+Examples
+========
+>>> G = nx.path_graph(4)
+>>> EV = G.edges()
+>>> (2, 3) in EV
+True
+>>> for u, v in EV:
+...     print((u, v))
+(0, 1)
+(1, 2)
+(2, 3)
+>>> assert EV & {(1, 2), (3, 4)} == {(1, 2)}
+
+>>> EVdata = G.edges(data="color", default="aqua")
+>>> G.add_edge(2, 3, color="blue")
+>>> assert (2, 3, "blue") in EVdata
+>>> for u, v, c in EVdata:
+...     print(f"({u}, {v}) has color: {c}")
+(0, 1) has color: aqua
+(1, 2) has color: aqua
+(2, 3) has color: blue
+
+>>> EVnbunch = G.edges(nbunch=2)
+>>> assert (2, 3) in EVnbunch
+>>> assert (0, 1) not in EVnbunch
+>>> for u, v in EVnbunch:
+...     assert u == 2 or v == 2
+
+>>> MG = nx.path_graph(4, create_using=nx.MultiGraph)
+>>> EVmulti = MG.edges(keys=True)
+>>> (2, 3, 0) in EVmulti
+True
+>>> (2, 3) in EVmulti  # 2-tuples work even when keys is True
+True
+>>> key = MG.add_edge(2, 3)
+>>> for u, v, k in EVmulti:
+...     print((u, v, k))
+(0, 1, 0)
+(1, 2, 0)
+(2, 3, 0)
+(2, 3, 1)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView_a73d4b8ea94558517661fc98cface81b2}\label{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView_a73d4b8ea94558517661fc98cface81b2}} 
+\index{networkx\+::classes\+::reportviews\+::\+Edge\+View@{networkx\+::classes\+::reportviews\+::\+Edge\+View}!\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+contains\+\_\+\+\_\+@{\+\_\+\+\_\+contains\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Edge\+View@{networkx\+::classes\+::reportviews\+::\+Edge\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+contains\+\_\+\+\_\+()}{\_\_contains\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Edge\+View.\+\_\+\+\_\+contains\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{e }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView_a937637471130a6dba111883296096b87}\label{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView_a937637471130a6dba111883296096b87}} 
+\index{networkx\+::classes\+::reportviews\+::\+Edge\+View@{networkx\+::classes\+::reportviews\+::\+Edge\+View}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Edge\+View@{networkx\+::classes\+::reportviews\+::\+Edge\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Edge\+View.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView_a9fe6fd609cd91b9209c747688f2a1162}\label{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView_a9fe6fd609cd91b9209c747688f2a1162}} 
+\index{networkx\+::classes\+::reportviews\+::\+Edge\+View@{networkx\+::classes\+::reportviews\+::\+Edge\+View}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!networkx\+::classes\+::reportviews\+::\+Edge\+View@{networkx\+::classes\+::reportviews\+::\+Edge\+View}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def networkx.\+classes.\+reportviews.\+Edge\+View.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView_af3b32461c8bcc6bf7f735a6534f5f681}\label{classnetworkx_1_1classes_1_1reportviews_1_1EdgeView_af3b32461c8bcc6bf7f735a6534f5f681}} 
+\index{networkx\+::classes\+::reportviews\+::\+Edge\+View@{networkx\+::classes\+::reportviews\+::\+Edge\+View}!dataview@{dataview}}
+\index{dataview@{dataview}!networkx\+::classes\+::reportviews\+::\+Edge\+View@{networkx\+::classes\+::reportviews\+::\+Edge\+View}}
+\subsubsection{\texorpdfstring{dataview}{dataview}}
+{\footnotesize\ttfamily networkx.\+classes.\+reportviews.\+Edge\+View.\+dataview\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/networkx/classes/\hyperlink{reportviews_8py}{reportviews.\+py}\end{DoxyCompactItemize}

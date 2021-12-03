@@ -1,0 +1,150 @@
+\hypertarget{classmatplotlib_1_1__mathtext_1_1Hlist}{}\section{matplotlib.\+\_\+mathtext.\+Hlist Class Reference}
+\label{classmatplotlib_1_1__mathtext_1_1Hlist}\index{matplotlib.\+\_\+mathtext.\+Hlist@{matplotlib.\+\_\+mathtext.\+Hlist}}
+
+
+Inheritance diagram for matplotlib.\+\_\+mathtext.\+Hlist\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1__mathtext_1_1Hlist__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+\_\+mathtext.\+Hlist\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classmatplotlib_1_1__mathtext_1_1Hlist__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Hlist_ad694997f98a3982e10e2cc9d2ad157ad}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, elements, w=0., m=\textquotesingle{}additional\textquotesingle{}, do\+\_\+kern=True)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Hlist_aa838918fbf306f588ba975a06bbb44b3}{kern} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Hlist_a45f4dc8384318cb753ed86078e85ff9f}{hpack} (self, w=0., m=\textquotesingle{}additional\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Hlist_ae2d53be50f7aeb8a5e5764316b0caa2f}{children}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Hlist_ad4da62a3f586721d3ff2fd30c5f43705}{height}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Hlist_a349cf825e904929d3b410c4e46fe20a9}{depth}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Hlist_ab163b65ac3c9be176cce2bcb6c591ef9}{width}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Hlist_a93d92aa88913c8dd9f514d8d5daa36f8}{glue\+\_\+sign}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Hlist_a9bc48a6e8c325df8fbf4b1dec2e8f3f3}{glue\+\_\+order}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Hlist_ad61fce1d51d2925fd31e53656789b4e3}{glue\+\_\+ratio}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A horizontal list of boxes.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Hlist_ad694997f98a3982e10e2cc9d2ad157ad}\label{classmatplotlib_1_1__mathtext_1_1Hlist_ad694997f98a3982e10e2cc9d2ad157ad}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Hlist.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{elements,  }\item[{}]{w = {\ttfamily 0.},  }\item[{}]{m = {\ttfamily \textquotesingle{}additional\textquotesingle{}},  }\item[{}]{do\+\_\+kern = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Hlist_a45f4dc8384318cb753ed86078e85ff9f}\label{classmatplotlib_1_1__mathtext_1_1Hlist_a45f4dc8384318cb753ed86078e85ff9f}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}!hpack@{hpack}}
+\index{hpack@{hpack}!matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}}
+\subsubsection{\texorpdfstring{hpack()}{hpack()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Hlist.\+hpack (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{w = {\ttfamily 0.},  }\item[{}]{m = {\ttfamily \textquotesingle{}additional\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the dimensions of the resulting boxes, and adjust the glue if
+one of those dimensions is pre-specified.  The computed sizes normally
+enclose all of the material inside the new box; but some items may
+stick out if negative glue is used, if the box is overfull, or if a
+``\vbox`` includes other boxes that have been shifted left.
+
+Parameters
+----------
+w : float, default: 0
+    A width.
+m : {'exactly', 'additional'}, default: 'additional'
+    Whether to produce a box whose width is 'exactly' *w*; or a box
+    with the natural width of the contents, plus *w* ('additional').
+
+Notes
+-----
+The defaults produce a box with the natural width of the contents.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Hlist_aa838918fbf306f588ba975a06bbb44b3}\label{classmatplotlib_1_1__mathtext_1_1Hlist_aa838918fbf306f588ba975a06bbb44b3}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}!kern@{kern}}
+\index{kern@{kern}!matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}}
+\subsubsection{\texorpdfstring{kern()}{kern()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Hlist.\+kern (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Insert `Kern` nodes between `Char` nodes to set kerning.
+
+The `Char` nodes themselves determine the amount of kerning they need
+(in `~Char.get_kerning`), and this function just creates the correct
+linked list.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Hlist_ae2d53be50f7aeb8a5e5764316b0caa2f}\label{classmatplotlib_1_1__mathtext_1_1Hlist_ae2d53be50f7aeb8a5e5764316b0caa2f}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}!children@{children}}
+\index{children@{children}!matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}}
+\subsubsection{\texorpdfstring{children}{children}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Hlist.\+children}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Hlist_a349cf825e904929d3b410c4e46fe20a9}\label{classmatplotlib_1_1__mathtext_1_1Hlist_a349cf825e904929d3b410c4e46fe20a9}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}!depth@{depth}}
+\index{depth@{depth}!matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}}
+\subsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Hlist.\+depth}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Hlist_a9bc48a6e8c325df8fbf4b1dec2e8f3f3}\label{classmatplotlib_1_1__mathtext_1_1Hlist_a9bc48a6e8c325df8fbf4b1dec2e8f3f3}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}!glue\+\_\+order@{glue\+\_\+order}}
+\index{glue\+\_\+order@{glue\+\_\+order}!matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}}
+\subsubsection{\texorpdfstring{glue\+\_\+order}{glue\_order}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Hlist.\+glue\+\_\+order}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Hlist_ad61fce1d51d2925fd31e53656789b4e3}\label{classmatplotlib_1_1__mathtext_1_1Hlist_ad61fce1d51d2925fd31e53656789b4e3}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}!glue\+\_\+ratio@{glue\+\_\+ratio}}
+\index{glue\+\_\+ratio@{glue\+\_\+ratio}!matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}}
+\subsubsection{\texorpdfstring{glue\+\_\+ratio}{glue\_ratio}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Hlist.\+glue\+\_\+ratio}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Hlist_a93d92aa88913c8dd9f514d8d5daa36f8}\label{classmatplotlib_1_1__mathtext_1_1Hlist_a93d92aa88913c8dd9f514d8d5daa36f8}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}!glue\+\_\+sign@{glue\+\_\+sign}}
+\index{glue\+\_\+sign@{glue\+\_\+sign}!matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}}
+\subsubsection{\texorpdfstring{glue\+\_\+sign}{glue\_sign}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Hlist.\+glue\+\_\+sign}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Hlist_ad4da62a3f586721d3ff2fd30c5f43705}\label{classmatplotlib_1_1__mathtext_1_1Hlist_ad4da62a3f586721d3ff2fd30c5f43705}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}!height@{height}}
+\index{height@{height}!matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Hlist.\+height}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Hlist_ab163b65ac3c9be176cce2bcb6c591ef9}\label{classmatplotlib_1_1__mathtext_1_1Hlist_ab163b65ac3c9be176cce2bcb6c591ef9}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}!width@{width}}
+\index{width@{width}!matplotlib\+::\+\_\+mathtext\+::\+Hlist@{matplotlib\+::\+\_\+mathtext\+::\+Hlist}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Hlist.\+width}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{__mathtext_8py}{\+\_\+mathtext.\+py}\end{DoxyCompactItemize}

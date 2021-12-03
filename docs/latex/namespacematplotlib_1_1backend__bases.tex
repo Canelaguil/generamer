@@ -1,0 +1,162 @@
+\hypertarget{namespacematplotlib_1_1backend__bases}{}\section{matplotlib.\+backend\+\_\+bases Namespace Reference}
+\label{namespacematplotlib_1_1backend__bases}\index{matplotlib.\+backend\+\_\+bases@{matplotlib.\+backend\+\_\+bases}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1__Backend}{\+\_\+\+Backend}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1__Mode}{\+\_\+\+Mode}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1CloseEvent}{Close\+Event}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1DrawEvent}{Draw\+Event}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1Event}{Event}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureCanvasBase}{Figure\+Canvas\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase}{Figure\+Manager\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1GraphicsContextBase}{Graphics\+Context\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1KeyEvent}{Key\+Event}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1LocationEvent}{Location\+Event}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1MouseButton}{Mouse\+Button}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1MouseEvent}{Mouse\+Event}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1NavigationToolbar2}{Navigation\+Toolbar2}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1NonGuiException}{Non\+Gui\+Exception}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1PickEvent}{Pick\+Event}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1RendererBase}{Renderer\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1ResizeEvent}{Resize\+Event}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1ShowBase}{Show\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1StatusbarBase}{Statusbar\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1TimerBase}{Timer\+Base}
+\item 
+class \hyperlink{classmatplotlib_1_1backend__bases_1_1ToolContainerBase}{Tool\+Container\+Base}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1backend__bases_a4a8cc05719bffc6db22eef463fb832e5}{register\+\_\+backend} (format, backend, description=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1backend__bases_a57f84e94a9fac8a951a7a7e1c3bc4a6e}{get\+\_\+registered\+\_\+canvas\+\_\+class} (format)
+\item 
+def \hyperlink{namespacematplotlib_1_1backend__bases_a1ec45458122389c565d08445bf03b167}{key\+\_\+press\+\_\+handler} (event, canvas=None, toolbar=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1backend__bases_a1eb12e49461e6fd3c786ee9817a0838e}{button\+\_\+press\+\_\+handler} (event, canvas=None, toolbar=None)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1backend__bases_adc161ae2cced74cf28308e01920a24c3}{cursors} = tools.\+cursors
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Abstract base classes define the primitives that renderers and
+graphics contexts must implement to serve as a Matplotlib backend.
+
+`RendererBase`
+    An abstract base class to handle drawing/rendering operations.
+
+`FigureCanvasBase`
+    The abstraction layer that separates the `.Figure` from the backend
+    specific details like a user interface drawing area.
+
+`GraphicsContextBase`
+    An abstract base class that provides color, line styles, etc.
+
+`Event`
+    The base class for all of the Matplotlib event handling.  Derived classes
+    such as `KeyEvent` and `MouseEvent` store the meta data like keys and
+    buttons pressed, x and y locations in pixel and `~.axes.Axes` coordinates.
+
+`ShowBase`
+    The base class for the ``Show`` class of each interactive backend; the
+    'show' callable is then set to ``Show.__call__``.
+
+`ToolContainerBase`
+    The base class for the Toolbar class of each interactive backend.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1backend__bases_a1eb12e49461e6fd3c786ee9817a0838e}\label{namespacematplotlib_1_1backend__bases_a1eb12e49461e6fd3c786ee9817a0838e}} 
+\index{matplotlib\+::backend\+\_\+bases@{matplotlib\+::backend\+\_\+bases}!button\+\_\+press\+\_\+handler@{button\+\_\+press\+\_\+handler}}
+\index{button\+\_\+press\+\_\+handler@{button\+\_\+press\+\_\+handler}!matplotlib\+::backend\+\_\+bases@{matplotlib\+::backend\+\_\+bases}}
+\subsubsection{\texorpdfstring{button\+\_\+press\+\_\+handler()}{button\_press\_handler()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+button\+\_\+press\+\_\+handler (\begin{DoxyParamCaption}\item[{}]{event,  }\item[{}]{canvas = {\ttfamily None},  }\item[{}]{toolbar = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The default Matplotlib button actions for extra mouse buttons.
+
+Parameters are as for `key_press_handler`, except that *event* is a
+`MouseEvent`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1backend__bases_a57f84e94a9fac8a951a7a7e1c3bc4a6e}\label{namespacematplotlib_1_1backend__bases_a57f84e94a9fac8a951a7a7e1c3bc4a6e}} 
+\index{matplotlib\+::backend\+\_\+bases@{matplotlib\+::backend\+\_\+bases}!get\+\_\+registered\+\_\+canvas\+\_\+class@{get\+\_\+registered\+\_\+canvas\+\_\+class}}
+\index{get\+\_\+registered\+\_\+canvas\+\_\+class@{get\+\_\+registered\+\_\+canvas\+\_\+class}!matplotlib\+::backend\+\_\+bases@{matplotlib\+::backend\+\_\+bases}}
+\subsubsection{\texorpdfstring{get\+\_\+registered\+\_\+canvas\+\_\+class()}{get\_registered\_canvas\_class()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+get\+\_\+registered\+\_\+canvas\+\_\+class (\begin{DoxyParamCaption}\item[{}]{format }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the registered default canvas for given file format.
+Handles deferred import of required backend.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1backend__bases_a1ec45458122389c565d08445bf03b167}\label{namespacematplotlib_1_1backend__bases_a1ec45458122389c565d08445bf03b167}} 
+\index{matplotlib\+::backend\+\_\+bases@{matplotlib\+::backend\+\_\+bases}!key\+\_\+press\+\_\+handler@{key\+\_\+press\+\_\+handler}}
+\index{key\+\_\+press\+\_\+handler@{key\+\_\+press\+\_\+handler}!matplotlib\+::backend\+\_\+bases@{matplotlib\+::backend\+\_\+bases}}
+\subsubsection{\texorpdfstring{key\+\_\+press\+\_\+handler()}{key\_press\_handler()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+key\+\_\+press\+\_\+handler (\begin{DoxyParamCaption}\item[{}]{event,  }\item[{}]{canvas = {\ttfamily None},  }\item[{}]{toolbar = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Implement the default Matplotlib key bindings for the canvas and toolbar
+described at :ref:`key-event-handling`.
+
+Parameters
+----------
+event : `KeyEvent`
+    A key press/release event.
+canvas : `FigureCanvasBase`, default: ``event.canvas``
+    The backend-specific canvas instance.  This parameter is kept for
+    back-compatibility, but, if set, should always be equal to
+    ``event.canvas``.
+toolbar : `NavigationToolbar2`, default: ``event.canvas.toolbar``
+    The navigation cursor toolbar.  This parameter is kept for
+    back-compatibility, but, if set, should always be equal to
+    ``event.canvas.toolbar``.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1backend__bases_a4a8cc05719bffc6db22eef463fb832e5}\label{namespacematplotlib_1_1backend__bases_a4a8cc05719bffc6db22eef463fb832e5}} 
+\index{matplotlib\+::backend\+\_\+bases@{matplotlib\+::backend\+\_\+bases}!register\+\_\+backend@{register\+\_\+backend}}
+\index{register\+\_\+backend@{register\+\_\+backend}!matplotlib\+::backend\+\_\+bases@{matplotlib\+::backend\+\_\+bases}}
+\subsubsection{\texorpdfstring{register\+\_\+backend()}{register\_backend()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+register\+\_\+backend (\begin{DoxyParamCaption}\item[{}]{format,  }\item[{}]{backend,  }\item[{}]{description = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a backend for saving to a given file format.
+
+Parameters
+----------
+format : str
+    File extension
+backend : module string or canvas class
+    Backend for handling file output
+description : str, default: ""
+    Description of the file type.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1backend__bases_adc161ae2cced74cf28308e01920a24c3}\label{namespacematplotlib_1_1backend__bases_adc161ae2cced74cf28308e01920a24c3}} 
+\index{matplotlib\+::backend\+\_\+bases@{matplotlib\+::backend\+\_\+bases}!cursors@{cursors}}
+\index{cursors@{cursors}!matplotlib\+::backend\+\_\+bases@{matplotlib\+::backend\+\_\+bases}}
+\subsubsection{\texorpdfstring{cursors}{cursors}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+cursors = tools.\+cursors}
+

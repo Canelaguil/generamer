@@ -1,0 +1,85 @@
+\hypertarget{classpkg__resources_1_1PathMetadata}{}\section{pkg\+\_\+resources.\+Path\+Metadata Class Reference}
+\label{classpkg__resources_1_1PathMetadata}\index{pkg\+\_\+resources.\+Path\+Metadata@{pkg\+\_\+resources.\+Path\+Metadata}}
+
+
+Inheritance diagram for pkg\+\_\+resources.\+Path\+Metadata\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpkg__resources_1_1PathMetadata__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pkg\+\_\+resources.\+Path\+Metadata\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpkg__resources_1_1PathMetadata__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpkg__resources_1_1PathMetadata_a42afa04f667e8f792f431ec4eba76a5b}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, path, \hyperlink{classpkg__resources_1_1PathMetadata_a61a445362a417dfb470ebee020a73762}{egg\+\_\+info})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpkg__resources_1_1PathMetadata_a32d4f91934149b639e6b3e88e802bd9f}{module\+\_\+path}
+\item 
+\hyperlink{classpkg__resources_1_1PathMetadata_a61a445362a417dfb470ebee020a73762}{egg\+\_\+info}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Metadata provider for egg directories
+
+Usage::
+
+    # Development eggs:
+
+    egg_info = "/path/to/PackageName.egg-info"
+    base_dir = os.path.dirname(egg_info)
+    metadata = PathMetadata(base_dir, egg_info)
+    dist_name = os.path.splitext(os.path.basename(egg_info))[0]
+    dist = Distribution(basedir, project_name=dist_name, metadata=metadata)
+
+    # Unpacked egg directories:
+
+    egg_path = "/path/to/PackageName-ver-pyver-etc.egg"
+    metadata = PathMetadata(egg_path, os.path.join(egg_path,'EGG-INFO'))
+    dist = Distribution.from_filename(egg_path, metadata=metadata)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1PathMetadata_a42afa04f667e8f792f431ec4eba76a5b}\label{classpkg__resources_1_1PathMetadata_a42afa04f667e8f792f431ec4eba76a5b}} 
+\index{pkg\+\_\+resources\+::\+Path\+Metadata@{pkg\+\_\+resources\+::\+Path\+Metadata}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pkg\+\_\+resources\+::\+Path\+Metadata@{pkg\+\_\+resources\+::\+Path\+Metadata}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+Path\+Metadata.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path,  }\item[{}]{egg\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1PathMetadata_a61a445362a417dfb470ebee020a73762}\label{classpkg__resources_1_1PathMetadata_a61a445362a417dfb470ebee020a73762}} 
+\index{pkg\+\_\+resources\+::\+Path\+Metadata@{pkg\+\_\+resources\+::\+Path\+Metadata}!egg\+\_\+info@{egg\+\_\+info}}
+\index{egg\+\_\+info@{egg\+\_\+info}!pkg\+\_\+resources\+::\+Path\+Metadata@{pkg\+\_\+resources\+::\+Path\+Metadata}}
+\subsubsection{\texorpdfstring{egg\+\_\+info}{egg\_info}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+Path\+Metadata.\+egg\+\_\+info}
+
+\mbox{\Hypertarget{classpkg__resources_1_1PathMetadata_a32d4f91934149b639e6b3e88e802bd9f}\label{classpkg__resources_1_1PathMetadata_a32d4f91934149b639e6b3e88e802bd9f}} 
+\index{pkg\+\_\+resources\+::\+Path\+Metadata@{pkg\+\_\+resources\+::\+Path\+Metadata}!module\+\_\+path@{module\+\_\+path}}
+\index{module\+\_\+path@{module\+\_\+path}!pkg\+\_\+resources\+::\+Path\+Metadata@{pkg\+\_\+resources\+::\+Path\+Metadata}}
+\subsubsection{\texorpdfstring{module\+\_\+path}{module\_path}}
+{\footnotesize\ttfamily pkg\+\_\+resources.\+Path\+Metadata.\+module\+\_\+path}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/pkg\+\_\+resources/\hyperlink{venv_2lib_2python3_89_2site-packages_2pkg__resources_2____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}\end{DoxyCompactItemize}

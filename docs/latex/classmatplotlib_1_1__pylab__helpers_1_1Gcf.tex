@@ -1,0 +1,150 @@
+\hypertarget{classmatplotlib_1_1__pylab__helpers_1_1Gcf}{}\section{matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf Class Reference}
+\label{classmatplotlib_1_1__pylab__helpers_1_1Gcf}\index{matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf@{matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1__pylab__helpers_1_1Gcf_ab7305abada9a0b1b90b3372fcf8ac252}{get\+\_\+fig\+\_\+manager} (cls, num)
+\item 
+def \hyperlink{classmatplotlib_1_1__pylab__helpers_1_1Gcf_a86f75e007ad25fdd27d8b9d653fbbc68}{destroy} (cls, num)
+\item 
+def \hyperlink{classmatplotlib_1_1__pylab__helpers_1_1Gcf_abad6184840428b5f61e4189e31b7afca}{destroy\+\_\+fig} (cls, fig)
+\item 
+def \hyperlink{classmatplotlib_1_1__pylab__helpers_1_1Gcf_a905219f103cc91dfde091ed3646a6232}{destroy\+\_\+all} (cls)
+\item 
+def \hyperlink{classmatplotlib_1_1__pylab__helpers_1_1Gcf_a83e22aaf970c30ceace612df6d71627d}{has\+\_\+fignum} (cls, num)
+\item 
+def \hyperlink{classmatplotlib_1_1__pylab__helpers_1_1Gcf_ad92db96f2a96a72fb6c1c50e9463175e}{get\+\_\+all\+\_\+fig\+\_\+managers} (cls)
+\item 
+def \hyperlink{classmatplotlib_1_1__pylab__helpers_1_1Gcf_adbf95150f1ec9e1e7e627c15d6e70d8f}{get\+\_\+num\+\_\+fig\+\_\+managers} (cls)
+\item 
+def \hyperlink{classmatplotlib_1_1__pylab__helpers_1_1Gcf_a0e47e4eb6aeaafb74964663be2006896}{get\+\_\+active} (cls)
+\item 
+def \hyperlink{classmatplotlib_1_1__pylab__helpers_1_1Gcf_aef2f252452714001e349f445885b0716}{set\+\_\+active} (cls, manager)
+\item 
+def \hyperlink{classmatplotlib_1_1__pylab__helpers_1_1Gcf_acbced6083e36a464b12764c3785959b7}{draw\+\_\+all} (cls, force=False)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1__pylab__helpers_1_1Gcf_ac1d16159d761b872a4840cb20b1a591d}{figs} = Ordered\+Dict()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Singleton to maintain the relation between figures and their managers, and
+keep track of and "active" figure and manager.
+
+The canvas of a figure created through pyplot is associated with a figure
+manager, which handles the interaction between the figure and the backend.
+pyplot keeps track of figure managers using an identifier, the "figure
+number" or "manager number" (which can actually be any hashable value);
+this number is available as the :attr:`number` attribute of the manager.
+
+This class is never instantiated; it consists of an `OrderedDict` mapping
+figure/manager numbers to managers, and a set of class methods that
+manipulate this `OrderedDict`.
+
+Attributes
+----------
+figs : OrderedDict
+    `OrderedDict` mapping numbers to managers; the active manager is at the
+    end.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__pylab__helpers_1_1Gcf_a86f75e007ad25fdd27d8b9d653fbbc68}\label{classmatplotlib_1_1__pylab__helpers_1_1Gcf_a86f75e007ad25fdd27d8b9d653fbbc68}} 
+\index{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}!destroy@{destroy}}
+\index{destroy@{destroy}!matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf.\+destroy (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{num }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Destroy manager *num* -- either a manager instance or a manager number.
+
+In the interactive backends, this is bound to the window "destroy" and
+"delete" events.
+
+It is recommended to pass a manager instance, to avoid confusion when
+two managers share the same number.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__pylab__helpers_1_1Gcf_a905219f103cc91dfde091ed3646a6232}\label{classmatplotlib_1_1__pylab__helpers_1_1Gcf_a905219f103cc91dfde091ed3646a6232}} 
+\index{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}!destroy\+\_\+all@{destroy\+\_\+all}}
+\index{destroy\+\_\+all@{destroy\+\_\+all}!matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}}
+\subsubsection{\texorpdfstring{destroy\+\_\+all()}{destroy\_all()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf.\+destroy\+\_\+all (\begin{DoxyParamCaption}\item[{}]{cls }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Destroy all figures.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__pylab__helpers_1_1Gcf_abad6184840428b5f61e4189e31b7afca}\label{classmatplotlib_1_1__pylab__helpers_1_1Gcf_abad6184840428b5f61e4189e31b7afca}} 
+\index{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}!destroy\+\_\+fig@{destroy\+\_\+fig}}
+\index{destroy\+\_\+fig@{destroy\+\_\+fig}!matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}}
+\subsubsection{\texorpdfstring{destroy\+\_\+fig()}{destroy\_fig()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf.\+destroy\+\_\+fig (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{fig }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Destroy figure *fig*.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__pylab__helpers_1_1Gcf_acbced6083e36a464b12764c3785959b7}\label{classmatplotlib_1_1__pylab__helpers_1_1Gcf_acbced6083e36a464b12764c3785959b7}} 
+\index{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}!draw\+\_\+all@{draw\+\_\+all}}
+\index{draw\+\_\+all@{draw\+\_\+all}!matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}}
+\subsubsection{\texorpdfstring{draw\+\_\+all()}{draw\_all()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf.\+draw\+\_\+all (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{force = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Redraw all stale managed figures, or, if *force* is True, all managed
+figures.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__pylab__helpers_1_1Gcf_a0e47e4eb6aeaafb74964663be2006896}\label{classmatplotlib_1_1__pylab__helpers_1_1Gcf_a0e47e4eb6aeaafb74964663be2006896}} 
+\index{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}!get\+\_\+active@{get\+\_\+active}}
+\index{get\+\_\+active@{get\+\_\+active}!matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}}
+\subsubsection{\texorpdfstring{get\+\_\+active()}{get\_active()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf.\+get\+\_\+active (\begin{DoxyParamCaption}\item[{}]{cls }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the active manager, or *None* if there is no manager.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__pylab__helpers_1_1Gcf_ad92db96f2a96a72fb6c1c50e9463175e}\label{classmatplotlib_1_1__pylab__helpers_1_1Gcf_ad92db96f2a96a72fb6c1c50e9463175e}} 
+\index{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}!get\+\_\+all\+\_\+fig\+\_\+managers@{get\+\_\+all\+\_\+fig\+\_\+managers}}
+\index{get\+\_\+all\+\_\+fig\+\_\+managers@{get\+\_\+all\+\_\+fig\+\_\+managers}!matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}}
+\subsubsection{\texorpdfstring{get\+\_\+all\+\_\+fig\+\_\+managers()}{get\_all\_fig\_managers()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf.\+get\+\_\+all\+\_\+fig\+\_\+managers (\begin{DoxyParamCaption}\item[{}]{cls }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of figure managers.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__pylab__helpers_1_1Gcf_ab7305abada9a0b1b90b3372fcf8ac252}\label{classmatplotlib_1_1__pylab__helpers_1_1Gcf_ab7305abada9a0b1b90b3372fcf8ac252}} 
+\index{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}!get\+\_\+fig\+\_\+manager@{get\+\_\+fig\+\_\+manager}}
+\index{get\+\_\+fig\+\_\+manager@{get\+\_\+fig\+\_\+manager}!matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}}
+\subsubsection{\texorpdfstring{get\+\_\+fig\+\_\+manager()}{get\_fig\_manager()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf.\+get\+\_\+fig\+\_\+manager (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{num }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}If manager number *num* exists, make it the active one and return it;
+otherwise return *None*.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__pylab__helpers_1_1Gcf_adbf95150f1ec9e1e7e627c15d6e70d8f}\label{classmatplotlib_1_1__pylab__helpers_1_1Gcf_adbf95150f1ec9e1e7e627c15d6e70d8f}} 
+\index{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}!get\+\_\+num\+\_\+fig\+\_\+managers@{get\+\_\+num\+\_\+fig\+\_\+managers}}
+\index{get\+\_\+num\+\_\+fig\+\_\+managers@{get\+\_\+num\+\_\+fig\+\_\+managers}!matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}}
+\subsubsection{\texorpdfstring{get\+\_\+num\+\_\+fig\+\_\+managers()}{get\_num\_fig\_managers()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf.\+get\+\_\+num\+\_\+fig\+\_\+managers (\begin{DoxyParamCaption}\item[{}]{cls }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the number of figures being managed.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__pylab__helpers_1_1Gcf_a83e22aaf970c30ceace612df6d71627d}\label{classmatplotlib_1_1__pylab__helpers_1_1Gcf_a83e22aaf970c30ceace612df6d71627d}} 
+\index{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}!has\+\_\+fignum@{has\+\_\+fignum}}
+\index{has\+\_\+fignum@{has\+\_\+fignum}!matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}}
+\subsubsection{\texorpdfstring{has\+\_\+fignum()}{has\_fignum()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf.\+has\+\_\+fignum (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{num }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether figure number *num* exists.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__pylab__helpers_1_1Gcf_aef2f252452714001e349f445885b0716}\label{classmatplotlib_1_1__pylab__helpers_1_1Gcf_aef2f252452714001e349f445885b0716}} 
+\index{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}!set\+\_\+active@{set\+\_\+active}}
+\index{set\+\_\+active@{set\+\_\+active}!matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}}
+\subsubsection{\texorpdfstring{set\+\_\+active()}{set\_active()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf.\+set\+\_\+active (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{manager }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make *manager* the active manager.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__pylab__helpers_1_1Gcf_ac1d16159d761b872a4840cb20b1a591d}\label{classmatplotlib_1_1__pylab__helpers_1_1Gcf_ac1d16159d761b872a4840cb20b1a591d}} 
+\index{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}!figs@{figs}}
+\index{figs@{figs}!matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf@{matplotlib\+::\+\_\+pylab\+\_\+helpers\+::\+Gcf}}
+\subsubsection{\texorpdfstring{figs}{figs}}
+{\footnotesize\ttfamily matplotlib.\+\_\+pylab\+\_\+helpers.\+Gcf.\+figs = Ordered\+Dict()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{__pylab__helpers_8py}{\+\_\+pylab\+\_\+helpers.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,111 @@
+\hypertarget{namespacematplotlib_1_1table}{}\section{matplotlib.\+table Namespace Reference}
+\label{namespacematplotlib_1_1table}\index{matplotlib.\+table@{matplotlib.\+table}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmatplotlib_1_1table_1_1Cell}{Cell}
+\item 
+class \hyperlink{classmatplotlib_1_1table_1_1Table}{Table}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1table_ad26b1da40447e1db89274755fd108887}{table} (ax, cell\+Text=None, cell\+Colours=None, cell\+Loc=\textquotesingle{}right\textquotesingle{}, col\+Widths=None, row\+Labels=None, row\+Colours=None, row\+Loc=\textquotesingle{}left\textquotesingle{}, col\+Labels=None, col\+Colours=None, col\+Loc=\textquotesingle{}center\textquotesingle{}, loc=\textquotesingle{}bottom\textquotesingle{}, bbox=None, edges=\textquotesingle{}closed\textquotesingle{}, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacematplotlib_1_1table_a9e60ecfcd412a387f7aebb19a6d395df}{Custom\+Cell}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1table_ad26b1da40447e1db89274755fd108887}\label{namespacematplotlib_1_1table_ad26b1da40447e1db89274755fd108887}} 
+\index{matplotlib\+::table@{matplotlib\+::table}!table@{table}}
+\index{table@{table}!matplotlib\+::table@{matplotlib\+::table}}
+\subsubsection{\texorpdfstring{table()}{table()}}
+{\footnotesize\ttfamily def matplotlib.\+table.\+table (\begin{DoxyParamCaption}\item[{}]{ax,  }\item[{}]{cell\+Text = {\ttfamily None},  }\item[{}]{cell\+Colours = {\ttfamily None},  }\item[{}]{cell\+Loc = {\ttfamily \textquotesingle{}right\textquotesingle{}},  }\item[{}]{col\+Widths = {\ttfamily None},  }\item[{}]{row\+Labels = {\ttfamily None},  }\item[{}]{row\+Colours = {\ttfamily None},  }\item[{}]{row\+Loc = {\ttfamily \textquotesingle{}left\textquotesingle{}},  }\item[{}]{col\+Labels = {\ttfamily None},  }\item[{}]{col\+Colours = {\ttfamily None},  }\item[{}]{col\+Loc = {\ttfamily \textquotesingle{}center\textquotesingle{}},  }\item[{}]{loc = {\ttfamily \textquotesingle{}bottom\textquotesingle{}},  }\item[{}]{bbox = {\ttfamily None},  }\item[{}]{edges = {\ttfamily \textquotesingle{}closed\textquotesingle{}},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a table to an `~.axes.Axes`.
+
+At least one of *cellText* or *cellColours* must be specified. These
+parameters must be 2D lists, in which the outer lists define the rows and
+the inner list define the column values per row. Each row must have the
+same number of elements.
+
+The table can optionally have row and column headers, which are configured
+using *rowLabels*, *rowColours*, *rowLoc* and *colLabels*, *colColours*,
+*colLoc* respectively.
+
+For finer grained control over tables, use the `.Table` class and add it to
+the axes with `.Axes.add_table`.
+
+Parameters
+----------
+cellText : 2D list of str, optional
+    The texts to place into the table cells.
+
+    *Note*: Line breaks in the strings are currently not accounted for and
+    will result in the text exceeding the cell boundaries.
+
+cellColours : 2D list of colors, optional
+    The background colors of the cells.
+
+cellLoc : {'left', 'center', 'right'}, default: 'right'
+    The alignment of the text within the cells.
+
+colWidths : list of float, optional
+    The column widths in units of the axes. If not given, all columns will
+    have a width of *1 / ncols*.
+
+rowLabels : list of str, optional
+    The text of the row header cells.
+
+rowColours : list of colors, optional
+    The colors of the row header cells.
+
+rowLoc : {'left', 'center', 'right'}, default: 'left'
+    The text alignment of the row header cells.
+
+colLabels : list of str, optional
+    The text of the column header cells.
+
+colColours : list of colors, optional
+    The colors of the column header cells.
+
+colLoc : {'left', 'center', 'right'}, default: 'left'
+    The text alignment of the column header cells.
+
+loc : str, optional
+    The position of the cell with respect to *ax*. This must be one of
+    the `~.Table.codes`.
+
+bbox : `.Bbox`, optional
+    A bounding box to draw the table into. If this is not *None*, this
+    overrides *loc*.
+
+edges : substring of 'BRTL' or {'open', 'closed', 'horizontal', 'vertical'}
+    The cell edges to be drawn with a line. See also
+    `~.Cell.visible_edges`.
+
+Returns
+-------
+`~matplotlib.table.Table`
+    The created table.
+
+Other Parameters
+----------------
+**kwargs
+    `.Table` properties.
+
+%(Table_kwdoc)s
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1table_a9e60ecfcd412a387f7aebb19a6d395df}\label{namespacematplotlib_1_1table_a9e60ecfcd412a387f7aebb19a6d395df}} 
+\index{matplotlib\+::table@{matplotlib\+::table}!Custom\+Cell@{Custom\+Cell}}
+\index{Custom\+Cell@{Custom\+Cell}!matplotlib\+::table@{matplotlib\+::table}}
+\subsubsection{\texorpdfstring{Custom\+Cell}{CustomCell}}
+{\footnotesize\ttfamily matplotlib.\+table.\+Custom\+Cell}
+

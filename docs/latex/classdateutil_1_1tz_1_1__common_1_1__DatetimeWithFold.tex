@@ -1,0 +1,67 @@
+\hypertarget{classdateutil_1_1tz_1_1__common_1_1__DatetimeWithFold}{}\section{dateutil.\+tz.\+\_\+common.\+\_\+\+Datetime\+With\+Fold Class Reference}
+\label{classdateutil_1_1tz_1_1__common_1_1__DatetimeWithFold}\index{dateutil.\+tz.\+\_\+common.\+\_\+\+Datetime\+With\+Fold@{dateutil.\+tz.\+\_\+common.\+\_\+\+Datetime\+With\+Fold}}
+
+
+Inheritance diagram for dateutil.\+tz.\+\_\+common.\+\_\+\+Datetime\+With\+Fold\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classdateutil_1_1tz_1_1__common_1_1__DatetimeWithFold__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dateutil.\+tz.\+\_\+common.\+\_\+\+Datetime\+With\+Fold\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classdateutil_1_1tz_1_1__common_1_1__DatetimeWithFold__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1__common_1_1__DatetimeWithFold_acf169cf4f46f72cf2a112ccb3e9c4bc1}{replace} (self, args, kwargs)
+\item 
+def \hyperlink{classdateutil_1_1tz_1_1__common_1_1__DatetimeWithFold_a2b99810ebbdb187d83b95be6c69bcbf5}{fold} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This is a class designed to provide a PEP 495-compliant interface for
+Python versions before 3.6. It is used only for dates in a fold, so
+the ``fold`` attribute is fixed at ``1``.
+
+.. versionadded:: 2.6.0
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1__common_1_1__DatetimeWithFold_a2b99810ebbdb187d83b95be6c69bcbf5}\label{classdateutil_1_1tz_1_1__common_1_1__DatetimeWithFold_a2b99810ebbdb187d83b95be6c69bcbf5}} 
+\index{dateutil\+::tz\+::\+\_\+common\+::\+\_\+\+Datetime\+With\+Fold@{dateutil\+::tz\+::\+\_\+common\+::\+\_\+\+Datetime\+With\+Fold}!fold@{fold}}
+\index{fold@{fold}!dateutil\+::tz\+::\+\_\+common\+::\+\_\+\+Datetime\+With\+Fold@{dateutil\+::tz\+::\+\_\+common\+::\+\_\+\+Datetime\+With\+Fold}}
+\subsubsection{\texorpdfstring{fold()}{fold()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+\_\+common.\+\_\+\+Datetime\+With\+Fold.\+fold (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdateutil_1_1tz_1_1__common_1_1__DatetimeWithFold_acf169cf4f46f72cf2a112ccb3e9c4bc1}\label{classdateutil_1_1tz_1_1__common_1_1__DatetimeWithFold_acf169cf4f46f72cf2a112ccb3e9c4bc1}} 
+\index{dateutil\+::tz\+::\+\_\+common\+::\+\_\+\+Datetime\+With\+Fold@{dateutil\+::tz\+::\+\_\+common\+::\+\_\+\+Datetime\+With\+Fold}!replace@{replace}}
+\index{replace@{replace}!dateutil\+::tz\+::\+\_\+common\+::\+\_\+\+Datetime\+With\+Fold@{dateutil\+::tz\+::\+\_\+common\+::\+\_\+\+Datetime\+With\+Fold}}
+\subsubsection{\texorpdfstring{replace()}{replace()}}
+{\footnotesize\ttfamily def dateutil.\+tz.\+\_\+common.\+\_\+\+Datetime\+With\+Fold.\+replace (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a datetime with the same attributes, except for those
+attributes given new values by whichever keyword arguments are
+specified. Note that tzinfo=None can be specified to create a naive
+datetime from an aware datetime with no conversion of date and time
+data.
+
+This is reimplemented in ``_DatetimeWithFold`` because pypy3 will
+return a ``datetime.datetime`` even if ``fold`` is unchanged.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/dateutil/tz/\hyperlink{tz_2__common_8py}{\+\_\+common.\+py}\end{DoxyCompactItemize}

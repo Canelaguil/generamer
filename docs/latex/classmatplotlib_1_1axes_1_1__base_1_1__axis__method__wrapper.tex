@@ -1,0 +1,71 @@
+\hypertarget{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper}{}\section{matplotlib.\+axes.\+\_\+base.\+\_\+axis\+\_\+method\+\_\+wrapper Class Reference}
+\label{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper}\index{matplotlib.\+axes.\+\_\+base.\+\_\+axis\+\_\+method\+\_\+wrapper@{matplotlib.\+axes.\+\_\+base.\+\_\+axis\+\_\+method\+\_\+wrapper}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_aaf935d52d0ec0007cbaaa8d77b0ccaf3}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_a6af479c9e9beb298055b1fd389ed2168}{attr\+\_\+name}, \hyperlink{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_aaa8da607ce4e7fbe20405f94215adc7a}{method\+\_\+name}, doc\+\_\+sub=None)
+\item 
+def \hyperlink{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_aa35c42b030bc2a941d198b24ad80ec7e}{\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+} (self, owner, name)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_a6af479c9e9beb298055b1fd389ed2168}{attr\+\_\+name}
+\item 
+\hyperlink{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_aaa8da607ce4e7fbe20405f94215adc7a}{method\+\_\+name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Helper to generate Axes methods wrapping Axis methods.
+
+After ::
+
+    get_foo = _axis_method_wrapper("xaxis", "get_bar")
+
+(in the body of a class) ``get_foo`` is a method that forwards it arguments
+to the ``get_bar`` method of the ``xaxis`` attribute, and gets its
+signature and docstring from ``Axis.get_bar``.
+
+The docstring of ``get_foo`` is built by replacing "this Axis" by "the
+{attr_name}" (i.e., "the xaxis", "the yaxis") in the wrapped method's
+dedented docstring; additional replacements can by given in *doc_sub*.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_aaf935d52d0ec0007cbaaa8d77b0ccaf3}\label{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_aaf935d52d0ec0007cbaaa8d77b0ccaf3}} 
+\index{matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper@{matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper@{matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+base.\+\_\+axis\+\_\+method\+\_\+wrapper.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{attr\+\_\+name,  }\item[{}]{method\+\_\+name,  }\item[{}]{doc\+\_\+sub = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_aa35c42b030bc2a941d198b24ad80ec7e}\label{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_aa35c42b030bc2a941d198b24ad80ec7e}} 
+\index{matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper@{matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper}!\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+@{\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+@{\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+}!matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper@{matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+()}{\_\_set\_name\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+axes.\+\_\+base.\+\_\+axis\+\_\+method\+\_\+wrapper.\+\_\+\+\_\+set\+\_\+name\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{owner,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_a6af479c9e9beb298055b1fd389ed2168}\label{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_a6af479c9e9beb298055b1fd389ed2168}} 
+\index{matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper@{matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper}!attr\+\_\+name@{attr\+\_\+name}}
+\index{attr\+\_\+name@{attr\+\_\+name}!matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper@{matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{attr\+\_\+name}{attr\_name}}
+{\footnotesize\ttfamily matplotlib.\+axes.\+\_\+base.\+\_\+axis\+\_\+method\+\_\+wrapper.\+attr\+\_\+name}
+
+\mbox{\Hypertarget{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_aaa8da607ce4e7fbe20405f94215adc7a}\label{classmatplotlib_1_1axes_1_1__base_1_1__axis__method__wrapper_aaa8da607ce4e7fbe20405f94215adc7a}} 
+\index{matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper@{matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper}!method\+\_\+name@{method\+\_\+name}}
+\index{method\+\_\+name@{method\+\_\+name}!matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper@{matplotlib\+::axes\+::\+\_\+base\+::\+\_\+axis\+\_\+method\+\_\+wrapper}}
+\subsubsection{\texorpdfstring{method\+\_\+name}{method\_name}}
+{\footnotesize\ttfamily matplotlib.\+axes.\+\_\+base.\+\_\+axis\+\_\+method\+\_\+wrapper.\+method\+\_\+name}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/axes/\hyperlink{matplotlib_2axes_2__base_8py}{\+\_\+base.\+py}\end{DoxyCompactItemize}

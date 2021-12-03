@@ -1,0 +1,85 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited}{}\section{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+time\+\_\+limited Class Reference}
+\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited}\index{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+time\+\_\+limited@{setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+time\+\_\+limited}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_a5216044d2d66082b691e81ff550f5852}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_afd9a751859ddb2a44350cc60410ee67c}{limit\+\_\+seconds}, iterable)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_ad067f53e0b929535792e20c4d1d9e354}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_a1100c3ff67bbeb84a1468548a144b1e7}{\+\_\+\+\_\+next\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_afd9a751859ddb2a44350cc60410ee67c}{limit\+\_\+seconds}
+\item 
+\hyperlink{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_a2ba9fc293c2fd559a84c1ad9a1f653d1}{timed\+\_\+out}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Yield items from *iterable* until *limit_seconds* have passed.
+If the time limit expires before all items have been yielded, the
+``timed_out`` parameter will be set to ``True``.
+
+>>> from time import sleep
+>>> def generator():
+...     yield 1
+...     yield 2
+...     sleep(0.2)
+...     yield 3
+>>> iterable = time_limited(0.1, generator())
+>>> list(iterable)
+[1, 2]
+>>> iterable.timed_out
+True
+
+Note that the time is checked before each item is yielded, and iteration
+stops if  the time elapsed is greater than *limit_seconds*. If your time
+limit is 1 second, but it takes 2 seconds to generate the first item from
+the iterable, the function will run for 2 seconds and not yield anything.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_a5216044d2d66082b691e81ff550f5852}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_a5216044d2d66082b691e81ff550f5852}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+time\+\_\+limited.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{limit\+\_\+seconds,  }\item[{}]{iterable }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_ad067f53e0b929535792e20c4d1d9e354}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_ad067f53e0b929535792e20c4d1d9e354}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+time\+\_\+limited.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_a1100c3ff67bbeb84a1468548a144b1e7}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_a1100c3ff67bbeb84a1468548a144b1e7}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited}!\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+next\+\_\+\+\_\+@{\+\_\+\+\_\+next\+\_\+\+\_\+}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+next\+\_\+\+\_\+()}{\_\_next\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+time\+\_\+limited.\+\_\+\+\_\+next\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_afd9a751859ddb2a44350cc60410ee67c}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_afd9a751859ddb2a44350cc60410ee67c}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited}!limit\+\_\+seconds@{limit\+\_\+seconds}}
+\index{limit\+\_\+seconds@{limit\+\_\+seconds}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited}}
+\subsubsection{\texorpdfstring{limit\+\_\+seconds}{limit\_seconds}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+time\+\_\+limited.\+limit\+\_\+seconds}
+
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_a2ba9fc293c2fd559a84c1ad9a1f653d1}\label{classsetuptools_1_1__vendor_1_1more__itertools_1_1more_1_1time__limited_a2ba9fc293c2fd559a84c1ad9a1f653d1}} 
+\index{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited}!timed\+\_\+out@{timed\+\_\+out}}
+\index{timed\+\_\+out@{timed\+\_\+out}!setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited@{setuptools\+::\+\_\+vendor\+::more\+\_\+itertools\+::more\+::time\+\_\+limited}}
+\subsubsection{\texorpdfstring{timed\+\_\+out}{timed\_out}}
+{\footnotesize\ttfamily setuptools.\+\_\+vendor.\+more\+\_\+itertools.\+more.\+time\+\_\+limited.\+timed\+\_\+out}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+vendor/more\+\_\+itertools/\hyperlink{more_8py}{more.\+py}\end{DoxyCompactItemize}

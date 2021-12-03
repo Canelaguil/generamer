@@ -1,0 +1,140 @@
+\hypertarget{classmatplotlib_1_1spines_1_1Spines}{}\section{matplotlib.\+spines.\+Spines Class Reference}
+\label{classmatplotlib_1_1spines_1_1Spines}\index{matplotlib.\+spines.\+Spines@{matplotlib.\+spines.\+Spines}}
+
+
+Inheritance diagram for matplotlib.\+spines.\+Spines\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classmatplotlib_1_1spines_1_1Spines__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+spines.\+Spines\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classmatplotlib_1_1spines_1_1Spines__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1spines_1_1Spines_ad5cbe055785eaf834a6e2c405ee791cc}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1spines_1_1Spines_a1e8c091dfda1d51deb167542833e46b0}{from\+\_\+dict} (cls, d)
+\item 
+def \hyperlink{classmatplotlib_1_1spines_1_1Spines_a0aa42fde258738858db8a4897ed4cae8}{\+\_\+\+\_\+getstate\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1spines_1_1Spines_a55614fa7681ed17908ff5cf3efe605c0}{\+\_\+\+\_\+setstate\+\_\+\+\_\+} (self, state)
+\item 
+def \hyperlink{classmatplotlib_1_1spines_1_1Spines_aad641177988cb46d9bdb56afd58fdd1e}{\+\_\+\+\_\+getattr\+\_\+\+\_\+} (self, name)
+\item 
+def \hyperlink{classmatplotlib_1_1spines_1_1Spines_acd4c96a29c9f3765cadc7f3b98885790}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, key)
+\item 
+def \hyperlink{classmatplotlib_1_1spines_1_1Spines_a0916c7bfdd5b11da4977746e18a1a6dd}{\+\_\+\+\_\+setitem\+\_\+\+\_\+} (self, key, value)
+\item 
+def \hyperlink{classmatplotlib_1_1spines_1_1Spines_a834cfdf6e7c420a654c03a2d107f7aa5}{\+\_\+\+\_\+delitem\+\_\+\+\_\+} (self, key)
+\item 
+def \hyperlink{classmatplotlib_1_1spines_1_1Spines_ae460ef4f3882e1de4d5e46717283fc32}{\+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1spines_1_1Spines_ab97587b94247789a48713680e5fc425d}{\+\_\+\+\_\+len\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The container of all `.Spine`\s in an Axes.
+
+The interface is dict-like mapping names (e.g. 'left') to `.Spine` objects.
+Additionally it implements some pandas.Series-like features like accessing
+elements by attribute::
+
+    spines['top'].set_visible(False)
+    spines.top.set_visible(False)
+
+Multiple spines can be addressed simultaneously by passing a list::
+
+    spines[['top', 'right']].set_visible(False)
+
+Use an open slice to address all spines::
+
+    spines[:].set_visible(False)
+
+The latter two indexing methods will return a `SpinesProxy` that broadcasts
+all ``set_*`` calls to its members, but cannot be used for any other
+operation.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1spines_1_1Spines_ad5cbe055785eaf834a6e2c405ee791cc}\label{classmatplotlib_1_1spines_1_1Spines_ad5cbe055785eaf834a6e2c405ee791cc}} 
+\index{matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+spines.\+Spines.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1spines_1_1Spines_a834cfdf6e7c420a654c03a2d107f7aa5}\label{classmatplotlib_1_1spines_1_1Spines_a834cfdf6e7c420a654c03a2d107f7aa5}} 
+\index{matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}!\+\_\+\+\_\+delitem\+\_\+\+\_\+@{\+\_\+\+\_\+delitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+delitem\+\_\+\+\_\+@{\+\_\+\+\_\+delitem\+\_\+\+\_\+}!matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+delitem\+\_\+\+\_\+()}{\_\_delitem\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+spines.\+Spines.\+\_\+\+\_\+delitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1spines_1_1Spines_aad641177988cb46d9bdb56afd58fdd1e}\label{classmatplotlib_1_1spines_1_1Spines_aad641177988cb46d9bdb56afd58fdd1e}} 
+\index{matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}!\+\_\+\+\_\+getattr\+\_\+\+\_\+@{\+\_\+\+\_\+getattr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getattr\+\_\+\+\_\+@{\+\_\+\+\_\+getattr\+\_\+\+\_\+}!matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getattr\+\_\+\+\_\+()}{\_\_getattr\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+spines.\+Spines.\+\_\+\+\_\+getattr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1spines_1_1Spines_acd4c96a29c9f3765cadc7f3b98885790}\label{classmatplotlib_1_1spines_1_1Spines_acd4c96a29c9f3765cadc7f3b98885790}} 
+\index{matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getitem\+\_\+\+\_\+()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+spines.\+Spines.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1spines_1_1Spines_a0aa42fde258738858db8a4897ed4cae8}\label{classmatplotlib_1_1spines_1_1Spines_a0aa42fde258738858db8a4897ed4cae8}} 
+\index{matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}!\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getstate\+\_\+\+\_\+@{\+\_\+\+\_\+getstate\+\_\+\+\_\+}!matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+getstate\+\_\+\+\_\+()}{\_\_getstate\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+spines.\+Spines.\+\_\+\+\_\+getstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1spines_1_1Spines_ae460ef4f3882e1de4d5e46717283fc32}\label{classmatplotlib_1_1spines_1_1Spines_ae460ef4f3882e1de4d5e46717283fc32}} 
+\index{matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}!\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+iter\+\_\+\+\_\+@{\+\_\+\+\_\+iter\+\_\+\+\_\+}!matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+iter\+\_\+\+\_\+()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+spines.\+Spines.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1spines_1_1Spines_ab97587b94247789a48713680e5fc425d}\label{classmatplotlib_1_1spines_1_1Spines_ab97587b94247789a48713680e5fc425d}} 
+\index{matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}!\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+len\+\_\+\+\_\+@{\+\_\+\+\_\+len\+\_\+\+\_\+}!matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+len\+\_\+\+\_\+()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+spines.\+Spines.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1spines_1_1Spines_a0916c7bfdd5b11da4977746e18a1a6dd}\label{classmatplotlib_1_1spines_1_1Spines_a0916c7bfdd5b11da4977746e18a1a6dd}} 
+\index{matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}!\+\_\+\+\_\+setitem\+\_\+\+\_\+@{\+\_\+\+\_\+setitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setitem\+\_\+\+\_\+@{\+\_\+\+\_\+setitem\+\_\+\+\_\+}!matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setitem\+\_\+\+\_\+()}{\_\_setitem\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+spines.\+Spines.\+\_\+\+\_\+setitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1spines_1_1Spines_a55614fa7681ed17908ff5cf3efe605c0}\label{classmatplotlib_1_1spines_1_1Spines_a55614fa7681ed17908ff5cf3efe605c0}} 
+\index{matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}!\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+setstate\+\_\+\+\_\+@{\+\_\+\+\_\+setstate\+\_\+\+\_\+}!matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+setstate\+\_\+\+\_\+()}{\_\_setstate\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+spines.\+Spines.\+\_\+\+\_\+setstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1spines_1_1Spines_a1e8c091dfda1d51deb167542833e46b0}\label{classmatplotlib_1_1spines_1_1Spines_a1e8c091dfda1d51deb167542833e46b0}} 
+\index{matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}!from\+\_\+dict@{from\+\_\+dict}}
+\index{from\+\_\+dict@{from\+\_\+dict}!matplotlib\+::spines\+::\+Spines@{matplotlib\+::spines\+::\+Spines}}
+\subsubsection{\texorpdfstring{from\+\_\+dict()}{from\_dict()}}
+{\footnotesize\ttfamily def matplotlib.\+spines.\+Spines.\+from\+\_\+dict (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{d }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{spines_8py}{spines.\+py}\end{DoxyCompactItemize}

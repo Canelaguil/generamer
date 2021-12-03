@@ -1,0 +1,173 @@
+\hypertarget{classmatplotlib_1_1patches_1_1Arc}{}\section{matplotlib.\+patches.\+Arc Class Reference}
+\label{classmatplotlib_1_1patches_1_1Arc}\index{matplotlib.\+patches.\+Arc@{matplotlib.\+patches.\+Arc}}
+
+
+Inheritance diagram for matplotlib.\+patches.\+Arc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classmatplotlib_1_1patches_1_1Arc__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+patches.\+Arc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{classmatplotlib_1_1patches_1_1Arc__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Arc_ad2c4d99ff99e693762005044d0bfadec}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Arc_a7330a32b95ef688e532904dd4a70f7cc}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, xy, \hyperlink{classmatplotlib_1_1patches_1_1Ellipse_a60c9f834917ca71a1ca9f92d6e5b7986}{width}, \hyperlink{classmatplotlib_1_1patches_1_1Ellipse_a0f3d6d29727e93758c785abd6b14abea}{height}, \hyperlink{classmatplotlib_1_1patches_1_1Ellipse_a36ada1e22adc07aa2c4a753a272f8f62}{angle}=0.\+0, \hyperlink{classmatplotlib_1_1patches_1_1Arc_afedb04eda7b2c8b3d9faca286376e941}{theta1}=0.\+0, \hyperlink{classmatplotlib_1_1patches_1_1Arc_aa51cfe8105d94d19d218334c562fc00d}{theta2}=360.\+0, kwargs)
+\item 
+def \hyperlink{classmatplotlib_1_1patches_1_1Arc_abd7a44ef09b65a789bda801515180220}{draw} (self, renderer)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1patches_1_1Arc_afedb04eda7b2c8b3d9faca286376e941}{theta1}
+\item 
+\hyperlink{classmatplotlib_1_1patches_1_1Arc_aa51cfe8105d94d19d218334c562fc00d}{theta2}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An elliptical arc, i.e. a segment of an ellipse.
+
+Due to internal optimizations, there are certain restrictions on using Arc:
+
+- The arc cannot be filled.
+
+- The arc must be used in an `~.axes.Axes` instance. It can not be added
+  directly to a `.Figure` because it is optimized to only render the
+  segments that are inside the axes bounding box with high resolution.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Arc_a7330a32b95ef688e532904dd4a70f7cc}\label{classmatplotlib_1_1patches_1_1Arc_a7330a32b95ef688e532904dd4a70f7cc}} 
+\index{matplotlib\+::patches\+::\+Arc@{matplotlib\+::patches\+::\+Arc}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::patches\+::\+Arc@{matplotlib\+::patches\+::\+Arc}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Arc.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xy,  }\item[{}]{width,  }\item[{}]{height,  }\item[{}]{angle = {\ttfamily 0.0},  }\item[{}]{theta1 = {\ttfamily 0.0},  }\item[{}]{theta2 = {\ttfamily 360.0},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+xy : (float, float)
+    The center of the ellipse.
+
+width : float
+    The length of the horizontal axis.
+
+height : float
+    The length of the vertical axis.
+
+angle : float
+    Rotation of the ellipse in degrees (counterclockwise).
+
+theta1, theta2 : float, default: 0, 360
+    Starting and ending angles of the arc in degrees. These values
+    are relative to *angle*, e.g. if *angle* = 45 and *theta1* = 90
+    the absolute starting angle is 135.
+    Default *theta1* = 0, *theta2* = 360, i.e. a complete ellipse.
+    The arc is drawn in the counterclockwise direction.
+    Angles greater than or equal to 360, or smaller than 0, are
+    represented by an equivalent angle in the range [0, 360), by
+    taking the input value mod 360.
+
+Other Parameters
+----------------
+**kwargs : `.Patch` properties
+    Most `.Patch` properties are supported as keyword arguments,
+    with the exception of *fill* and *facecolor* because filling is
+    not supported.
+
+%(Patch_kwdoc)s
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Arc_ad2c4d99ff99e693762005044d0bfadec}\label{classmatplotlib_1_1patches_1_1Arc_ad2c4d99ff99e693762005044d0bfadec}} 
+\index{matplotlib\+::patches\+::\+Arc@{matplotlib\+::patches\+::\+Arc}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!matplotlib\+::patches\+::\+Arc@{matplotlib\+::patches\+::\+Arc}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Arc.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Arc_abd7a44ef09b65a789bda801515180220}\label{classmatplotlib_1_1patches_1_1Arc_abd7a44ef09b65a789bda801515180220}} 
+\index{matplotlib\+::patches\+::\+Arc@{matplotlib\+::patches\+::\+Arc}!draw@{draw}}
+\index{draw@{draw}!matplotlib\+::patches\+::\+Arc@{matplotlib\+::patches\+::\+Arc}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily def matplotlib.\+patches.\+Arc.\+draw (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{renderer }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw the arc to the given *renderer*.
+
+Notes
+-----
+Ellipses are normally drawn using an approximation that uses
+eight cubic Bezier splines.  The error of this approximation
+is 1.89818e-6, according to this unverified source:
+
+  Lancaster, Don.  *Approximating a Circle or an Ellipse Using
+  Four Bezier Cubic Splines.*
+
+  https://www.tinaja.com/glib/ellipse4.pdf
+
+There is a use case where very large ellipses must be drawn
+with very high accuracy, and it is too expensive to render the
+entire ellipse with enough segments (either splines or line
+segments).  Therefore, in the case where either radius of the
+ellipse is large enough that the error of the spline
+approximation will be visible (greater than one pixel offset
+from the ideal), a different technique is used.
+
+In that case, only the visible parts of the ellipse are drawn,
+with each visible arc using a fixed number of spline segments
+(8).  The algorithm proceeds as follows:
+
+1. The points where the ellipse intersects the axes bounding
+   box are located.  (This is done be performing an inverse
+   transformation on the axes bbox such that it is relative
+   to the unit circle -- this makes the intersection
+   calculation much easier than doing rotated ellipse
+   intersection directly).
+
+   This uses the "line intersecting a circle" algorithm from:
+
+       Vince, John.  *Geometry for Computer Graphics: Formulae,
+       Examples & Proofs.*  London: Springer-Verlag, 2005.
+
+2. The angles of each of the intersection points are calculated.
+
+3. Proceeding counterclockwise starting in the positive
+   x-direction, each of the visible arc-segments between the
+   pairs of vertices are drawn using the Bezier arc
+   approximation technique implemented in `.Path.arc`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Arc_afedb04eda7b2c8b3d9faca286376e941}\label{classmatplotlib_1_1patches_1_1Arc_afedb04eda7b2c8b3d9faca286376e941}} 
+\index{matplotlib\+::patches\+::\+Arc@{matplotlib\+::patches\+::\+Arc}!theta1@{theta1}}
+\index{theta1@{theta1}!matplotlib\+::patches\+::\+Arc@{matplotlib\+::patches\+::\+Arc}}
+\subsubsection{\texorpdfstring{theta1}{theta1}}
+{\footnotesize\ttfamily matplotlib.\+patches.\+Arc.\+theta1}
+
+\mbox{\Hypertarget{classmatplotlib_1_1patches_1_1Arc_aa51cfe8105d94d19d218334c562fc00d}\label{classmatplotlib_1_1patches_1_1Arc_aa51cfe8105d94d19d218334c562fc00d}} 
+\index{matplotlib\+::patches\+::\+Arc@{matplotlib\+::patches\+::\+Arc}!theta2@{theta2}}
+\index{theta2@{theta2}!matplotlib\+::patches\+::\+Arc@{matplotlib\+::patches\+::\+Arc}}
+\subsubsection{\texorpdfstring{theta2}{theta2}}
+{\footnotesize\ttfamily matplotlib.\+patches.\+Arc.\+theta2}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{patches_8py}{patches.\+py}\end{DoxyCompactItemize}

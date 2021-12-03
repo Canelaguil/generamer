@@ -1,0 +1,119 @@
+\hypertarget{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion}{}\section{setuptools.\+\_\+distutils.\+version.\+Strict\+Version Class Reference}
+\label{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion}\index{setuptools.\+\_\+distutils.\+version.\+Strict\+Version@{setuptools.\+\_\+distutils.\+version.\+Strict\+Version}}
+
+
+Inheritance diagram for setuptools.\+\_\+distutils.\+version.\+Strict\+Version\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for setuptools.\+\_\+distutils.\+version.\+Strict\+Version\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_ab5aaefcdcab1ab487508edeb29821e27}{parse} (self, vstring)
+\item 
+def \hyperlink{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_a9d0e48fb3db8e0bdb6635bffd8a63a9b}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_a3dedcc2c334c6567e2d92964b3f07c99}{version}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_a6f58633fa840cf359d88af0a22580c4d}{prerelease}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_a94d0d0d109081b71e41ad7d513e5419f}{version\+\_\+re}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Version numbering for anal retentives and software idealists.
+Implements the standard interface for version number classes as
+described above.  A version number consists of two or three
+dot-separated numeric components, with an optional "pre-release" tag
+on the end.  The pre-release tag consists of the letter 'a' or 'b'
+followed by a number.  If the numeric components of two version
+numbers are equal, then one with a pre-release tag will always
+be deemed earlier (lesser) than one without.
+
+The following are valid version numbers (shown in the order that
+would be obtained by sorting according to the supplied cmp function):
+
+    0.4       0.4.0  (these two are equivalent)
+    0.4.1
+    0.5a1
+    0.5b3
+    0.5
+    0.9.6
+    1.0
+    1.0.4a3
+    1.0.4b1
+    1.0.4
+
+The following are examples of invalid version numbers:
+
+    1
+    2.7.2.2
+    1.3.a4
+    1.3pl1
+    1.3c4
+
+The rationale for this version numbering system will be explained
+in the distutils documentation.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_a9d0e48fb3db8e0bdb6635bffd8a63a9b}\label{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_a9d0e48fb3db8e0bdb6635bffd8a63a9b}} 
+\index{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version@{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version@{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+version.\+Strict\+Version.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_ab5aaefcdcab1ab487508edeb29821e27}\label{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_ab5aaefcdcab1ab487508edeb29821e27}} 
+\index{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version@{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version}!parse@{parse}}
+\index{parse@{parse}!setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version@{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version}}
+\subsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily def setuptools.\+\_\+distutils.\+version.\+Strict\+Version.\+parse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vstring }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_a6f58633fa840cf359d88af0a22580c4d}\label{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_a6f58633fa840cf359d88af0a22580c4d}} 
+\index{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version@{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version}!prerelease@{prerelease}}
+\index{prerelease@{prerelease}!setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version@{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version}}
+\subsubsection{\texorpdfstring{prerelease}{prerelease}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+version.\+Strict\+Version.\+prerelease}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_a3dedcc2c334c6567e2d92964b3f07c99}\label{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_a3dedcc2c334c6567e2d92964b3f07c99}} 
+\index{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version@{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version}!version@{version}}
+\index{version@{version}!setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version@{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version}}
+\subsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+version.\+Strict\+Version.\+version}
+
+\mbox{\Hypertarget{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_a94d0d0d109081b71e41ad7d513e5419f}\label{classsetuptools_1_1__distutils_1_1version_1_1StrictVersion_a94d0d0d109081b71e41ad7d513e5419f}} 
+\index{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version@{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version}!version\+\_\+re@{version\+\_\+re}}
+\index{version\+\_\+re@{version\+\_\+re}!setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version@{setuptools\+::\+\_\+distutils\+::version\+::\+Strict\+Version}}
+\subsubsection{\texorpdfstring{version\+\_\+re}{version\_re}}
+{\footnotesize\ttfamily setuptools.\+\_\+distutils.\+version.\+Strict\+Version.\+version\+\_\+re\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/setuptools/\+\_\+distutils/\hyperlink{setuptools_2__distutils_2version_8py}{version.\+py}\end{DoxyCompactItemize}

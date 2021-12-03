@@ -1,0 +1,86 @@
+\hypertarget{namespacematplotlib_1_1testing_1_1widgets}{}\section{matplotlib.\+testing.\+widgets Namespace Reference}
+\label{namespacematplotlib_1_1testing_1_1widgets}\index{matplotlib.\+testing.\+widgets@{matplotlib.\+testing.\+widgets}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1widgets_aedcccd23785f9a7f802bc4aa32cd62eb}{get\+\_\+ax} ()
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1widgets_ac13ed6feeaf8edc9195366861e34b60d}{mock\+\_\+event} (ax, button=1, xdata=0, ydata=0, key=None, step=1)
+\item 
+def \hyperlink{namespacematplotlib_1_1testing_1_1widgets_ab52523b67821cc7ed7921237de6d32f0}{do\+\_\+event} (tool, etype, button=1, xdata=0, ydata=0, key=None, step=1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}========================
+Widget testing utilities
+========================
+Functions that are useful for testing widgets.
+See also matplotlib.tests.test_widgets
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1widgets_ab52523b67821cc7ed7921237de6d32f0}\label{namespacematplotlib_1_1testing_1_1widgets_ab52523b67821cc7ed7921237de6d32f0}} 
+\index{matplotlib\+::testing\+::widgets@{matplotlib\+::testing\+::widgets}!do\+\_\+event@{do\+\_\+event}}
+\index{do\+\_\+event@{do\+\_\+event}!matplotlib\+::testing\+::widgets@{matplotlib\+::testing\+::widgets}}
+\subsubsection{\texorpdfstring{do\+\_\+event()}{do\_event()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+widgets.\+do\+\_\+event (\begin{DoxyParamCaption}\item[{}]{tool,  }\item[{}]{etype,  }\item[{}]{button = {\ttfamily 1},  }\item[{}]{xdata = {\ttfamily 0},  }\item[{}]{ydata = {\ttfamily 0},  }\item[{}]{key = {\ttfamily None},  }\item[{}]{step = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Trigger an event on the given tool.
+
+Parameters
+----------
+tool : matplotlib.widgets.RectangleSelector
+etype : str
+    The event to trigger.
+xdata : int
+    x coord of mouse in data coords.
+ydata : int
+    y coord of mouse in data coords.
+button : None or `MouseButton` or {'up', 'down'}
+    The mouse button pressed in this event (see also `.MouseEvent`).
+key : None or str
+    The key pressed when the mouse event triggered (see also `.KeyEvent`).
+step : int
+    Number of scroll steps (positive for 'up', negative for 'down').
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1widgets_aedcccd23785f9a7f802bc4aa32cd62eb}\label{namespacematplotlib_1_1testing_1_1widgets_aedcccd23785f9a7f802bc4aa32cd62eb}} 
+\index{matplotlib\+::testing\+::widgets@{matplotlib\+::testing\+::widgets}!get\+\_\+ax@{get\+\_\+ax}}
+\index{get\+\_\+ax@{get\+\_\+ax}!matplotlib\+::testing\+::widgets@{matplotlib\+::testing\+::widgets}}
+\subsubsection{\texorpdfstring{get\+\_\+ax()}{get\_ax()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+widgets.\+get\+\_\+ax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Creates plot and returns its axes\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1testing_1_1widgets_ac13ed6feeaf8edc9195366861e34b60d}\label{namespacematplotlib_1_1testing_1_1widgets_ac13ed6feeaf8edc9195366861e34b60d}} 
+\index{matplotlib\+::testing\+::widgets@{matplotlib\+::testing\+::widgets}!mock\+\_\+event@{mock\+\_\+event}}
+\index{mock\+\_\+event@{mock\+\_\+event}!matplotlib\+::testing\+::widgets@{matplotlib\+::testing\+::widgets}}
+\subsubsection{\texorpdfstring{mock\+\_\+event()}{mock\_event()}}
+{\footnotesize\ttfamily def matplotlib.\+testing.\+widgets.\+mock\+\_\+event (\begin{DoxyParamCaption}\item[{}]{ax,  }\item[{}]{button = {\ttfamily 1},  }\item[{}]{xdata = {\ttfamily 0},  }\item[{}]{ydata = {\ttfamily 0},  }\item[{}]{key = {\ttfamily None},  }\item[{}]{step = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a mock event that can stand in for `.Event` and its subclasses.
+
+This event is intended to be used in tests where it can be passed into
+event handling functions.
+
+Parameters
+----------
+ax : `matplotlib.axes.Axes`
+    The axes the event will be in.
+xdata : int
+    x coord of mouse in data coords.
+ydata : int
+    y coord of mouse in data coords.
+button : None or `MouseButton` or {'up', 'down'}
+    The mouse button pressed in this event (see also `.MouseEvent`).
+key : None or str
+    The key pressed when the mouse event triggered (see also `.KeyEvent`).
+step : int
+    Number of scroll steps (positive for 'up', negative for 'down').
+
+Returns
+-------
+event
+    A `.Event`\-like Mock instance.
+\end{DoxyVerb}
+ 

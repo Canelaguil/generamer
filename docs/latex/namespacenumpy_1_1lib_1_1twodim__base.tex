@@ -1,0 +1,912 @@
+\hypertarget{namespacenumpy_1_1lib_1_1twodim__base}{}\section{numpy.\+lib.\+twodim\+\_\+base Namespace Reference}
+\label{namespacenumpy_1_1lib_1_1twodim__base}\index{numpy.\+lib.\+twodim\+\_\+base@{numpy.\+lib.\+twodim\+\_\+base}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a2f41aaea32e91fb7452fae3c58927b1f}{fliplr} (m)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a33ed22c6334be41a34f97257be3ff2ed}{flipud} (m)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a7a0b29351e4930dbb6ad06d35256e59b}{eye} (N, M=None, k=0, dtype=float, order=\textquotesingle{}C\textquotesingle{}, like=None)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_ab5c9fa6bbfe9e559e90c311d320b49f3}{diag} (v, k=0)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a2e76d5ad9a99bf0dfbc11ec1eec8a733}{diagflat} (v, k=0)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a5e4ae28b8ab99d6def80add7515108ff}{tri} (N, M=None, k=0, dtype=float, like=None)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a25994ec2771961d49aa773b59f6d8674}{tril} (m, k=0)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_ad4c5f72467e0719ef3b6e8e9a1aad2cd}{triu} (m, k=0)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a2aaf8cbe0cc568d958fd0ec603b94677}{vander} (x, N=None, increasing=False)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a890a4b6f905191422798139ce511849a}{histogram2d} (x, y, bins=10, range=None, normed=None, weights=None, density=None)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a1475cbe0d8625d39a2e2a3b91dc0a44f}{mask\+\_\+indices} (\hyperlink{namespacenumpy_a352663c52853d2754274407d5cae2832}{n}, mask\+\_\+func, k=0)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a2b716112412d6d2a7d5c6d62479ab0f8}{tril\+\_\+indices} (\hyperlink{namespacenumpy_a352663c52853d2754274407d5cae2832}{n}, k=0, m=None)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_acf3be40e3614389bdaded615b72aa5e0}{tril\+\_\+indices\+\_\+from} (arr, k=0)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_ab3a38f5d340ce47aebc8046a4d7d57d7}{triu\+\_\+indices} (\hyperlink{namespacenumpy_a352663c52853d2754274407d5cae2832}{n}, k=0, m=None)
+\item 
+def \hyperlink{namespacenumpy_1_1lib_1_1twodim__base_aaa286c33b12fe305ea9ead63f3f25f38}{triu\+\_\+indices\+\_\+from} (arr, k=0)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a12fefeaaa42281321c1a4d46f5466e78}{array\+\_\+function\+\_\+dispatch}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1twodim__base_ad8e45c14f052afdf95f8cf7a4f957bcb}{module}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a06cfcadf2383c62ad7ab2416c9d6be56}{i1}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a1faf902c5cb76b708ad9b9b7817e6fee}{i2}
+\item 
+\hyperlink{namespacenumpy_1_1lib_1_1twodim__base_a5f21f9684d5a55768287866e474514f7}{i4}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Basic functions for manipulating 2d arrays\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_ab5c9fa6bbfe9e559e90c311d320b49f3}\label{namespacenumpy_1_1lib_1_1twodim__base_ab5c9fa6bbfe9e559e90c311d320b49f3}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!diag@{diag}}
+\index{diag@{diag}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{diag()}{diag()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+diag (\begin{DoxyParamCaption}\item[{}]{v,  }\item[{}]{k = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extract a diagonal or construct a diagonal array.
+
+See the more detailed documentation for ``numpy.diagonal`` if you use this
+function to extract a diagonal and wish to write to the resulting array;
+whether it returns a copy or a view depends on what version of numpy you
+are using.
+
+Parameters
+----------
+v : array_like
+    If `v` is a 2-D array, return a copy of its `k`-th diagonal.
+    If `v` is a 1-D array, return a 2-D array with `v` on the `k`-th
+    diagonal.
+k : int, optional
+    Diagonal in question. The default is 0. Use `k>0` for diagonals
+    above the main diagonal, and `k<0` for diagonals below the main
+    diagonal.
+
+Returns
+-------
+out : ndarray
+    The extracted diagonal or constructed diagonal array.
+
+See Also
+--------
+diagonal : Return specified diagonals.
+diagflat : Create a 2-D array with the flattened input as a diagonal.
+trace : Sum along diagonals.
+triu : Upper triangle of an array.
+tril : Lower triangle of an array.
+
+Examples
+--------
+>>> x = np.arange(9).reshape((3,3))
+>>> x
+array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])
+
+>>> np.diag(x)
+array([0, 4, 8])
+>>> np.diag(x, k=1)
+array([1, 5])
+>>> np.diag(x, k=-1)
+array([3, 7])
+
+>>> np.diag(np.diag(x))
+array([[0, 0, 0],
+       [0, 4, 0],
+       [0, 0, 8]])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a2e76d5ad9a99bf0dfbc11ec1eec8a733}\label{namespacenumpy_1_1lib_1_1twodim__base_a2e76d5ad9a99bf0dfbc11ec1eec8a733}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!diagflat@{diagflat}}
+\index{diagflat@{diagflat}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{diagflat()}{diagflat()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+diagflat (\begin{DoxyParamCaption}\item[{}]{v,  }\item[{}]{k = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a two-dimensional array with the flattened input as a diagonal.
+
+Parameters
+----------
+v : array_like
+    Input data, which is flattened and set as the `k`-th
+    diagonal of the output.
+k : int, optional
+    Diagonal to set; 0, the default, corresponds to the "main" diagonal,
+    a positive (negative) `k` giving the number of the diagonal above
+    (below) the main.
+
+Returns
+-------
+out : ndarray
+    The 2-D output array.
+
+See Also
+--------
+diag : MATLAB work-alike for 1-D and 2-D arrays.
+diagonal : Return specified diagonals.
+trace : Sum along diagonals.
+
+Examples
+--------
+>>> np.diagflat([[1,2], [3,4]])
+array([[1, 0, 0, 0],
+       [0, 2, 0, 0],
+       [0, 0, 3, 0],
+       [0, 0, 0, 4]])
+
+>>> np.diagflat([1,2], 1)
+array([[0, 1, 0],
+       [0, 0, 2],
+       [0, 0, 0]])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a7a0b29351e4930dbb6ad06d35256e59b}\label{namespacenumpy_1_1lib_1_1twodim__base_a7a0b29351e4930dbb6ad06d35256e59b}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!eye@{eye}}
+\index{eye@{eye}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{eye()}{eye()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+eye (\begin{DoxyParamCaption}\item[{}]{N,  }\item[{}]{M = {\ttfamily None},  }\item[{}]{k = {\ttfamily 0},  }\item[{}]{dtype = {\ttfamily float},  }\item[{}]{order = {\ttfamily \textquotesingle{}C\textquotesingle{}},  }\item[{}]{like = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a 2-D array with ones on the diagonal and zeros elsewhere.
+
+Parameters
+----------
+N : int
+  Number of rows in the output.
+M : int, optional
+  Number of columns in the output. If None, defaults to `N`.
+k : int, optional
+  Index of the diagonal: 0 (the default) refers to the main diagonal,
+  a positive value refers to an upper diagonal, and a negative value
+  to a lower diagonal.
+dtype : data-type, optional
+  Data-type of the returned array.
+order : {'C', 'F'}, optional
+    Whether the output should be stored in row-major (C-style) or
+    column-major (Fortran-style) order in memory.
+
+    .. versionadded:: 1.14.0
+${ARRAY_FUNCTION_LIKE}
+
+    .. versionadded:: 1.20.0
+
+Returns
+-------
+I : ndarray of shape (N,M)
+  An array where all elements are equal to zero, except for the `k`-th
+  diagonal, whose values are equal to one.
+
+See Also
+--------
+identity : (almost) equivalent function
+diag : diagonal 2-D array from a 1-D array specified by the user.
+
+Examples
+--------
+>>> np.eye(2, dtype=int)
+array([[1, 0],
+       [0, 1]])
+>>> np.eye(3, k=1)
+array([[0.,  1.,  0.],
+       [0.,  0.,  1.],
+       [0.,  0.,  0.]])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a2f41aaea32e91fb7452fae3c58927b1f}\label{namespacenumpy_1_1lib_1_1twodim__base_a2f41aaea32e91fb7452fae3c58927b1f}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!fliplr@{fliplr}}
+\index{fliplr@{fliplr}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{fliplr()}{fliplr()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+fliplr (\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reverse the order of elements along axis 1 (left/right).
+
+For a 2-D array, this flips the entries in each row in the left/right
+direction. Columns are preserved, but appear in a different order than
+before.
+
+Parameters
+----------
+m : array_like
+    Input array, must be at least 2-D.
+
+Returns
+-------
+f : ndarray
+    A view of `m` with the columns reversed.  Since a view
+    is returned, this operation is :math:`\\mathcal O(1)`.
+
+See Also
+--------
+flipud : Flip array in the up/down direction.
+flip : Flip array in one or more dimesions.
+rot90 : Rotate array counterclockwise.
+
+Notes
+-----
+Equivalent to ``m[:,::-1]`` or ``np.flip(m, axis=1)``.
+Requires the array to be at least 2-D.
+
+Examples
+--------
+>>> A = np.diag([1.,2.,3.])
+>>> A
+array([[1.,  0.,  0.],
+       [0.,  2.,  0.],
+       [0.,  0.,  3.]])
+>>> np.fliplr(A)
+array([[0.,  0.,  1.],
+       [0.,  2.,  0.],
+       [3.,  0.,  0.]])
+
+>>> A = np.random.randn(2,3,5)
+>>> np.all(np.fliplr(A) == A[:,::-1,...])
+True\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a33ed22c6334be41a34f97257be3ff2ed}\label{namespacenumpy_1_1lib_1_1twodim__base_a33ed22c6334be41a34f97257be3ff2ed}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!flipud@{flipud}}
+\index{flipud@{flipud}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{flipud()}{flipud()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+flipud (\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reverse the order of elements along axis 0 (up/down).
+
+For a 2-D array, this flips the entries in each column in the up/down
+direction. Rows are preserved, but appear in a different order than before.
+
+Parameters
+----------
+m : array_like
+    Input array.
+
+Returns
+-------
+out : array_like
+    A view of `m` with the rows reversed.  Since a view is
+    returned, this operation is :math:`\\mathcal O(1)`.
+
+See Also
+--------
+fliplr : Flip array in the left/right direction.
+flip : Flip array in one or more dimesions.
+rot90 : Rotate array counterclockwise.
+
+Notes
+-----
+Equivalent to ``m[::-1, ...]`` or ``np.flip(m, axis=0)``.
+Requires the array to be at least 1-D.
+
+Examples
+--------
+>>> A = np.diag([1.0, 2, 3])
+>>> A
+array([[1.,  0.,  0.],
+       [0.,  2.,  0.],
+       [0.,  0.,  3.]])
+>>> np.flipud(A)
+array([[0.,  0.,  3.],
+       [0.,  2.,  0.],
+       [1.,  0.,  0.]])
+
+>>> A = np.random.randn(2,3,5)
+>>> np.all(np.flipud(A) == A[::-1,...])
+True
+
+>>> np.flipud([1,2])
+array([2, 1])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a890a4b6f905191422798139ce511849a}\label{namespacenumpy_1_1lib_1_1twodim__base_a890a4b6f905191422798139ce511849a}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!histogram2d@{histogram2d}}
+\index{histogram2d@{histogram2d}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{histogram2d()}{histogram2d()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+histogram2d (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{bins = {\ttfamily 10},  }\item[{}]{range = {\ttfamily None},  }\item[{}]{normed = {\ttfamily None},  }\item[{}]{weights = {\ttfamily None},  }\item[{}]{density = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the bi-dimensional histogram of two data samples.
+
+Parameters
+----------
+x : array_like, shape (N,)
+    An array containing the x coordinates of the points to be
+    histogrammed.
+y : array_like, shape (N,)
+    An array containing the y coordinates of the points to be
+    histogrammed.
+bins : int or array_like or [int, int] or [array, array], optional
+    The bin specification:
+
+      * If int, the number of bins for the two dimensions (nx=ny=bins).
+      * If array_like, the bin edges for the two dimensions
+        (x_edges=y_edges=bins).
+      * If [int, int], the number of bins in each dimension
+        (nx, ny = bins).
+      * If [array, array], the bin edges in each dimension
+        (x_edges, y_edges = bins).
+      * A combination [int, array] or [array, int], where int
+        is the number of bins and array is the bin edges.
+
+range : array_like, shape(2,2), optional
+    The leftmost and rightmost edges of the bins along each dimension
+    (if not specified explicitly in the `bins` parameters):
+    ``[[xmin, xmax], [ymin, ymax]]``. All values outside of this range
+    will be considered outliers and not tallied in the histogram.
+density : bool, optional
+    If False, the default, returns the number of samples in each bin.
+    If True, returns the probability *density* function at the bin,
+    ``bin_count / sample_count / bin_area``.
+normed : bool, optional
+    An alias for the density argument that behaves identically. To avoid
+    confusion with the broken normed argument to `histogram`, `density`
+    should be preferred.
+weights : array_like, shape(N,), optional
+    An array of values ``w_i`` weighing each sample ``(x_i, y_i)``.
+    Weights are normalized to 1 if `normed` is True. If `normed` is
+    False, the values of the returned histogram are equal to the sum of
+    the weights belonging to the samples falling into each bin.
+
+Returns
+-------
+H : ndarray, shape(nx, ny)
+    The bi-dimensional histogram of samples `x` and `y`. Values in `x`
+    are histogrammed along the first dimension and values in `y` are
+    histogrammed along the second dimension.
+xedges : ndarray, shape(nx+1,)
+    The bin edges along the first dimension.
+yedges : ndarray, shape(ny+1,)
+    The bin edges along the second dimension.
+
+See Also
+--------
+histogram : 1D histogram
+histogramdd : Multidimensional histogram
+
+Notes
+-----
+When `normed` is True, then the returned histogram is the sample
+density, defined such that the sum over bins of the product
+``bin_value * bin_area`` is 1.
+
+Please note that the histogram does not follow the Cartesian convention
+where `x` values are on the abscissa and `y` values on the ordinate
+axis.  Rather, `x` is histogrammed along the first dimension of the
+array (vertical), and `y` along the second dimension of the array
+(horizontal).  This ensures compatibility with `histogramdd`.
+
+Examples
+--------
+>>> from matplotlib.image import NonUniformImage
+>>> import matplotlib.pyplot as plt
+
+Construct a 2-D histogram with variable bin width. First define the bin
+edges:
+
+>>> xedges = [0, 1, 3, 5]
+>>> yedges = [0, 2, 3, 4, 6]
+
+Next we create a histogram H with random bin content:
+
+>>> x = np.random.normal(2, 1, 100)
+>>> y = np.random.normal(1, 1, 100)
+>>> H, xedges, yedges = np.histogram2d(x, y, bins=(xedges, yedges))
+>>> # Histogram does not follow Cartesian convention (see Notes),
+>>> # therefore transpose H for visualization purposes.
+>>> H = H.T
+
+:func:`imshow <matplotlib.pyplot.imshow>` can only display square bins:
+
+>>> fig = plt.figure(figsize=(7, 3))
+>>> ax = fig.add_subplot(131, title='imshow: square bins')
+>>> plt.imshow(H, interpolation='nearest', origin='lower',
+...         extent=[xedges[0], xedges[-1], yedges[0], yedges[-1]])
+<matplotlib.image.AxesImage object at 0x...>
+
+:func:`pcolormesh <matplotlib.pyplot.pcolormesh>` can display actual edges:
+
+>>> ax = fig.add_subplot(132, title='pcolormesh: actual edges',
+...         aspect='equal')
+>>> X, Y = np.meshgrid(xedges, yedges)
+>>> ax.pcolormesh(X, Y, H)
+<matplotlib.collections.QuadMesh object at 0x...>
+
+:class:`NonUniformImage <matplotlib.image.NonUniformImage>` can be used to
+display actual bin edges with interpolation:
+
+>>> ax = fig.add_subplot(133, title='NonUniformImage: interpolated',
+...         aspect='equal', xlim=xedges[[0, -1]], ylim=yedges[[0, -1]])
+>>> im = NonUniformImage(ax, interpolation='bilinear')
+>>> xcenters = (xedges[:-1] + xedges[1:]) / 2
+>>> ycenters = (yedges[:-1] + yedges[1:]) / 2
+>>> im.set_data(xcenters, ycenters, H)
+>>> ax.images.append(im)
+>>> plt.show()\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a1475cbe0d8625d39a2e2a3b91dc0a44f}\label{namespacenumpy_1_1lib_1_1twodim__base_a1475cbe0d8625d39a2e2a3b91dc0a44f}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!mask\+\_\+indices@{mask\+\_\+indices}}
+\index{mask\+\_\+indices@{mask\+\_\+indices}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{mask\+\_\+indices()}{mask\_indices()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+mask\+\_\+indices (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{mask\+\_\+func,  }\item[{}]{k = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the indices to access (n, n) arrays, given a masking function.
+
+Assume `mask_func` is a function that, for a square array a of size
+``(n, n)`` with a possible offset argument `k`, when called as
+``mask_func(a, k)`` returns a new array with zeros in certain locations
+(functions like `triu` or `tril` do precisely this). Then this function
+returns the indices where the non-zero values would be located.
+
+Parameters
+----------
+n : int
+    The returned indices will be valid to access arrays of shape (n, n).
+mask_func : callable
+    A function whose call signature is similar to that of `triu`, `tril`.
+    That is, ``mask_func(x, k)`` returns a boolean array, shaped like `x`.
+    `k` is an optional argument to the function.
+k : scalar
+    An optional argument which is passed through to `mask_func`. Functions
+    like `triu`, `tril` take a second argument that is interpreted as an
+    offset.
+
+Returns
+-------
+indices : tuple of arrays.
+    The `n` arrays of indices corresponding to the locations where
+    ``mask_func(np.ones((n, n)), k)`` is True.
+
+See Also
+--------
+triu, tril, triu_indices, tril_indices
+
+Notes
+-----
+.. versionadded:: 1.4.0
+
+Examples
+--------
+These are the indices that would allow you to access the upper triangular
+part of any 3x3 array:
+
+>>> iu = np.mask_indices(3, np.triu)
+
+For example, if `a` is a 3x3 array:
+
+>>> a = np.arange(9).reshape(3, 3)
+>>> a
+array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])
+>>> a[iu]
+array([0, 1, 2, 4, 5, 8])
+
+An offset can be passed also to the masking function.  This gets us the
+indices starting on the first diagonal right of the main one:
+
+>>> iu1 = np.mask_indices(3, np.triu, 1)
+
+with which we now extract only three elements:
+
+>>> a[iu1]
+array([1, 2, 5])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a5e4ae28b8ab99d6def80add7515108ff}\label{namespacenumpy_1_1lib_1_1twodim__base_a5e4ae28b8ab99d6def80add7515108ff}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!tri@{tri}}
+\index{tri@{tri}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{tri()}{tri()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+tri (\begin{DoxyParamCaption}\item[{}]{N,  }\item[{}]{M = {\ttfamily None},  }\item[{}]{k = {\ttfamily 0},  }\item[{}]{dtype = {\ttfamily float},  }\item[{}]{like = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}An array with ones at and below the given diagonal and zeros elsewhere.
+
+Parameters
+----------
+N : int
+    Number of rows in the array.
+M : int, optional
+    Number of columns in the array.
+    By default, `M` is taken equal to `N`.
+k : int, optional
+    The sub-diagonal at and below which the array is filled.
+    `k` = 0 is the main diagonal, while `k` < 0 is below it,
+    and `k` > 0 is above.  The default is 0.
+dtype : dtype, optional
+    Data type of the returned array.  The default is float.
+${ARRAY_FUNCTION_LIKE}
+
+    .. versionadded:: 1.20.0
+
+Returns
+-------
+tri : ndarray of shape (N, M)
+    Array with its lower triangle filled with ones and zero elsewhere;
+    in other words ``T[i,j] == 1`` for ``j <= i + k``, 0 otherwise.
+
+Examples
+--------
+>>> np.tri(3, 5, 2, dtype=int)
+array([[1, 1, 1, 0, 0],
+       [1, 1, 1, 1, 0],
+       [1, 1, 1, 1, 1]])
+
+>>> np.tri(3, 5, -1)
+array([[0.,  0.,  0.,  0.,  0.],
+       [1.,  0.,  0.,  0.,  0.],
+       [1.,  1.,  0.,  0.,  0.]])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a25994ec2771961d49aa773b59f6d8674}\label{namespacenumpy_1_1lib_1_1twodim__base_a25994ec2771961d49aa773b59f6d8674}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!tril@{tril}}
+\index{tril@{tril}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{tril()}{tril()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+tril (\begin{DoxyParamCaption}\item[{}]{m,  }\item[{}]{k = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Lower triangle of an array.
+
+Return a copy of an array with elements above the `k`-th diagonal zeroed.
+
+Parameters
+----------
+m : array_like, shape (M, N)
+    Input array.
+k : int, optional
+    Diagonal above which to zero elements.  `k = 0` (the default) is the
+    main diagonal, `k < 0` is below it and `k > 0` is above.
+
+Returns
+-------
+tril : ndarray, shape (M, N)
+    Lower triangle of `m`, of same shape and data-type as `m`.
+
+See Also
+--------
+triu : same thing, only for the upper triangle
+
+Examples
+--------
+>>> np.tril([[1,2,3],[4,5,6],[7,8,9],[10,11,12]], -1)
+array([[ 0,  0,  0],
+       [ 4,  0,  0],
+       [ 7,  8,  0],
+       [10, 11, 12]])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a2b716112412d6d2a7d5c6d62479ab0f8}\label{namespacenumpy_1_1lib_1_1twodim__base_a2b716112412d6d2a7d5c6d62479ab0f8}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!tril\+\_\+indices@{tril\+\_\+indices}}
+\index{tril\+\_\+indices@{tril\+\_\+indices}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{tril\+\_\+indices()}{tril\_indices()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+tril\+\_\+indices (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{k = {\ttfamily 0},  }\item[{}]{m = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the indices for the lower-triangle of an (n, m) array.
+
+Parameters
+----------
+n : int
+    The row dimension of the arrays for which the returned
+    indices will be valid.
+k : int, optional
+    Diagonal offset (see `tril` for details).
+m : int, optional
+    .. versionadded:: 1.9.0
+
+    The column dimension of the arrays for which the returned
+    arrays will be valid.
+    By default `m` is taken equal to `n`.
+
+
+Returns
+-------
+inds : tuple of arrays
+    The indices for the triangle. The returned tuple contains two arrays,
+    each with the indices along one dimension of the array.
+
+See also
+--------
+triu_indices : similar function, for upper-triangular.
+mask_indices : generic function accepting an arbitrary mask function.
+tril, triu
+
+Notes
+-----
+.. versionadded:: 1.4.0
+
+Examples
+--------
+Compute two different sets of indices to access 4x4 arrays, one for the
+lower triangular part starting at the main diagonal, and one starting two
+diagonals further right:
+
+>>> il1 = np.tril_indices(4)
+>>> il2 = np.tril_indices(4, 2)
+
+Here is how they can be used with a sample array:
+
+>>> a = np.arange(16).reshape(4, 4)
+>>> a
+array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11],
+       [12, 13, 14, 15]])
+
+Both for indexing:
+
+>>> a[il1]
+array([ 0,  4,  5, ..., 13, 14, 15])
+
+And for assigning values:
+
+>>> a[il1] = -1
+>>> a
+array([[-1,  1,  2,  3],
+       [-1, -1,  6,  7],
+       [-1, -1, -1, 11],
+       [-1, -1, -1, -1]])
+
+These cover almost the whole array (two diagonals right of the main one):
+
+>>> a[il2] = -10
+>>> a
+array([[-10, -10, -10,   3],
+       [-10, -10, -10, -10],
+       [-10, -10, -10, -10],
+       [-10, -10, -10, -10]])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_acf3be40e3614389bdaded615b72aa5e0}\label{namespacenumpy_1_1lib_1_1twodim__base_acf3be40e3614389bdaded615b72aa5e0}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!tril\+\_\+indices\+\_\+from@{tril\+\_\+indices\+\_\+from}}
+\index{tril\+\_\+indices\+\_\+from@{tril\+\_\+indices\+\_\+from}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{tril\+\_\+indices\+\_\+from()}{tril\_indices\_from()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+tril\+\_\+indices\+\_\+from (\begin{DoxyParamCaption}\item[{}]{arr,  }\item[{}]{k = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the indices for the lower-triangle of arr.
+
+See `tril_indices` for full details.
+
+Parameters
+----------
+arr : array_like
+    The indices will be valid for square arrays whose dimensions are
+    the same as arr.
+k : int, optional
+    Diagonal offset (see `tril` for details).
+
+See Also
+--------
+tril_indices, tril
+
+Notes
+-----
+.. versionadded:: 1.4.0\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_ad4c5f72467e0719ef3b6e8e9a1aad2cd}\label{namespacenumpy_1_1lib_1_1twodim__base_ad4c5f72467e0719ef3b6e8e9a1aad2cd}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!triu@{triu}}
+\index{triu@{triu}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{triu()}{triu()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+triu (\begin{DoxyParamCaption}\item[{}]{m,  }\item[{}]{k = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Upper triangle of an array.
+
+Return a copy of an array with the elements below the `k`-th diagonal
+zeroed.
+
+Please refer to the documentation for `tril` for further details.
+
+See Also
+--------
+tril : lower triangle of an array
+
+Examples
+--------
+>>> np.triu([[1,2,3],[4,5,6],[7,8,9],[10,11,12]], -1)
+array([[ 1,  2,  3],
+       [ 4,  5,  6],
+       [ 0,  8,  9],
+       [ 0,  0, 12]])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_ab3a38f5d340ce47aebc8046a4d7d57d7}\label{namespacenumpy_1_1lib_1_1twodim__base_ab3a38f5d340ce47aebc8046a4d7d57d7}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!triu\+\_\+indices@{triu\+\_\+indices}}
+\index{triu\+\_\+indices@{triu\+\_\+indices}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{triu\+\_\+indices()}{triu\_indices()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+triu\+\_\+indices (\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{k = {\ttfamily 0},  }\item[{}]{m = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the indices for the upper-triangle of an (n, m) array.
+
+Parameters
+----------
+n : int
+    The size of the arrays for which the returned indices will
+    be valid.
+k : int, optional
+    Diagonal offset (see `triu` for details).
+m : int, optional
+    .. versionadded:: 1.9.0
+
+    The column dimension of the arrays for which the returned
+    arrays will be valid.
+    By default `m` is taken equal to `n`.
+
+
+Returns
+-------
+inds : tuple, shape(2) of ndarrays, shape(`n`)
+    The indices for the triangle. The returned tuple contains two arrays,
+    each with the indices along one dimension of the array.  Can be used
+    to slice a ndarray of shape(`n`, `n`).
+
+See also
+--------
+tril_indices : similar function, for lower-triangular.
+mask_indices : generic function accepting an arbitrary mask function.
+triu, tril
+
+Notes
+-----
+.. versionadded:: 1.4.0
+
+Examples
+--------
+Compute two different sets of indices to access 4x4 arrays, one for the
+upper triangular part starting at the main diagonal, and one starting two
+diagonals further right:
+
+>>> iu1 = np.triu_indices(4)
+>>> iu2 = np.triu_indices(4, 2)
+
+Here is how they can be used with a sample array:
+
+>>> a = np.arange(16).reshape(4, 4)
+>>> a
+array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11],
+       [12, 13, 14, 15]])
+
+Both for indexing:
+
+>>> a[iu1]
+array([ 0,  1,  2, ..., 10, 11, 15])
+
+And for assigning values:
+
+>>> a[iu1] = -1
+>>> a
+array([[-1, -1, -1, -1],
+       [ 4, -1, -1, -1],
+       [ 8,  9, -1, -1],
+       [12, 13, 14, -1]])
+
+These cover only a small part of the whole array (two diagonals right
+of the main one):
+
+>>> a[iu2] = -10
+>>> a
+array([[ -1,  -1, -10, -10],
+       [  4,  -1,  -1, -10],
+       [  8,   9,  -1,  -1],
+       [ 12,  13,  14,  -1]])\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_aaa286c33b12fe305ea9ead63f3f25f38}\label{namespacenumpy_1_1lib_1_1twodim__base_aaa286c33b12fe305ea9ead63f3f25f38}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!triu\+\_\+indices\+\_\+from@{triu\+\_\+indices\+\_\+from}}
+\index{triu\+\_\+indices\+\_\+from@{triu\+\_\+indices\+\_\+from}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{triu\+\_\+indices\+\_\+from()}{triu\_indices\_from()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+triu\+\_\+indices\+\_\+from (\begin{DoxyParamCaption}\item[{}]{arr,  }\item[{}]{k = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the indices for the upper-triangle of arr.
+
+See `triu_indices` for full details.
+
+Parameters
+----------
+arr : ndarray, shape(N, N)
+    The indices will be valid for square arrays.
+k : int, optional
+    Diagonal offset (see `triu` for details).
+
+Returns
+-------
+triu_indices_from : tuple, shape(2) of ndarray, shape(N)
+    Indices for the upper-triangle of `arr`.
+
+See Also
+--------
+triu_indices, triu
+
+Notes
+-----
+.. versionadded:: 1.4.0\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a2aaf8cbe0cc568d958fd0ec603b94677}\label{namespacenumpy_1_1lib_1_1twodim__base_a2aaf8cbe0cc568d958fd0ec603b94677}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!vander@{vander}}
+\index{vander@{vander}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{vander()}{vander()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+twodim\+\_\+base.\+vander (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{N = {\ttfamily None},  }\item[{}]{increasing = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a Vandermonde matrix.
+
+The columns of the output matrix are powers of the input vector. The
+order of the powers is determined by the `increasing` boolean argument.
+Specifically, when `increasing` is False, the `i`-th output column is
+the input vector raised element-wise to the power of ``N - i - 1``. Such
+a matrix with a geometric progression in each row is named for Alexandre-
+Theophile Vandermonde.
+
+Parameters
+----------
+x : array_like
+    1-D input array.
+N : int, optional
+    Number of columns in the output.  If `N` is not specified, a square
+    array is returned (``N = len(x)``).
+increasing : bool, optional
+    Order of the powers of the columns.  If True, the powers increase
+    from left to right, if False (the default) they are reversed.
+
+    .. versionadded:: 1.9.0
+
+Returns
+-------
+out : ndarray
+    Vandermonde matrix.  If `increasing` is False, the first column is
+    ``x^(N-1)``, the second ``x^(N-2)`` and so forth. If `increasing` is
+    True, the columns are ``x^0, x^1, ..., x^(N-1)``.
+
+See Also
+--------
+polynomial.polynomial.polyvander
+
+Examples
+--------
+>>> x = np.array([1, 2, 3, 5])
+>>> N = 3
+>>> np.vander(x, N)
+array([[ 1,  1,  1],
+       [ 4,  2,  1],
+       [ 9,  3,  1],
+       [25,  5,  1]])
+
+>>> np.column_stack([x**(N-1-i) for i in range(N)])
+array([[ 1,  1,  1],
+       [ 4,  2,  1],
+       [ 9,  3,  1],
+       [25,  5,  1]])
+
+>>> x = np.array([1, 2, 3, 5])
+>>> np.vander(x)
+array([[  1,   1,   1,   1],
+       [  8,   4,   2,   1],
+       [ 27,   9,   3,   1],
+       [125,  25,   5,   1]])
+>>> np.vander(x, increasing=True)
+array([[  1,   1,   1,   1],
+       [  1,   2,   4,   8],
+       [  1,   3,   9,  27],
+       [  1,   5,  25, 125]])
+
+The determinant of a square Vandermonde matrix is the product
+of the differences between the values of the input vector:
+
+>>> np.linalg.det(np.vander(x))
+48.000000000000043 # may vary
+>>> (5-3)*(5-2)*(5-1)*(3-2)*(3-1)*(2-1)
+48\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a12fefeaaa42281321c1a4d46f5466e78}\label{namespacenumpy_1_1lib_1_1twodim__base_a12fefeaaa42281321c1a4d46f5466e78}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!array\+\_\+function\+\_\+dispatch@{array\+\_\+function\+\_\+dispatch}}
+\index{array\+\_\+function\+\_\+dispatch@{array\+\_\+function\+\_\+dispatch}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{array\+\_\+function\+\_\+dispatch}{array\_function\_dispatch}}
+{\footnotesize\ttfamily numpy.\+lib.\+twodim\+\_\+base.\+array\+\_\+function\+\_\+dispatch}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a06cfcadf2383c62ad7ab2416c9d6be56}\label{namespacenumpy_1_1lib_1_1twodim__base_a06cfcadf2383c62ad7ab2416c9d6be56}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!i1@{i1}}
+\index{i1@{i1}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{i1}{i1}}
+{\footnotesize\ttfamily numpy.\+lib.\+twodim\+\_\+base.\+i1}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a1faf902c5cb76b708ad9b9b7817e6fee}\label{namespacenumpy_1_1lib_1_1twodim__base_a1faf902c5cb76b708ad9b9b7817e6fee}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!i2@{i2}}
+\index{i2@{i2}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{i2}{i2}}
+{\footnotesize\ttfamily numpy.\+lib.\+twodim\+\_\+base.\+i2}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_a5f21f9684d5a55768287866e474514f7}\label{namespacenumpy_1_1lib_1_1twodim__base_a5f21f9684d5a55768287866e474514f7}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!i4@{i4}}
+\index{i4@{i4}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{i4}{i4}}
+{\footnotesize\ttfamily numpy.\+lib.\+twodim\+\_\+base.\+i4}
+
+\mbox{\Hypertarget{namespacenumpy_1_1lib_1_1twodim__base_ad8e45c14f052afdf95f8cf7a4f957bcb}\label{namespacenumpy_1_1lib_1_1twodim__base_ad8e45c14f052afdf95f8cf7a4f957bcb}} 
+\index{numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}!module@{module}}
+\index{module@{module}!numpy\+::lib\+::twodim\+\_\+base@{numpy\+::lib\+::twodim\+\_\+base}}
+\subsubsection{\texorpdfstring{module}{module}}
+{\footnotesize\ttfamily numpy.\+lib.\+twodim\+\_\+base.\+module}
+

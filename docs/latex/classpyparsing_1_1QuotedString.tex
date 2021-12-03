@@ -1,0 +1,267 @@
+\hypertarget{classpyparsing_1_1QuotedString}{}\section{pyparsing.\+Quoted\+String Class Reference}
+\label{classpyparsing_1_1QuotedString}\index{pyparsing.\+Quoted\+String@{pyparsing.\+Quoted\+String}}
+
+
+Inheritance diagram for pyparsing.\+Quoted\+String\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classpyparsing_1_1QuotedString__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pyparsing.\+Quoted\+String\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classpyparsing_1_1QuotedString__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpyparsing_1_1QuotedString_abb103669400ef33107fb60ed95679a9d}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpyparsing_1_1QuotedString_a69a9115cd85b4601b2402da6dc80224f}{quote\+Char}, \hyperlink{classpyparsing_1_1QuotedString_aa3070e527bcd7be8d54083ba9173ffa7}{esc\+Char}=None, \hyperlink{classpyparsing_1_1QuotedString_a02923940fe9ae44f43a43a1628e7d15e}{esc\+Quote}=None, multiline=False, \hyperlink{classpyparsing_1_1QuotedString_a599c2949fc7459408cdb1583312502e3}{unquote\+Results}=True, \hyperlink{classpyparsing_1_1QuotedString_a020c579ce6fc0c72ddeb7f562ae065b4}{end\+Quote\+Char}=None, \hyperlink{classpyparsing_1_1QuotedString_af2d9d7db0dcb6af41ef8edeb72eb62fa}{convert\+Whitespace\+Escapes}=True)
+\item 
+def \hyperlink{classpyparsing_1_1QuotedString_a1c84c4b36842807dadafa1471de7658a}{parse\+Impl} (self, instring, loc, do\+Actions=True)
+\item 
+def \hyperlink{classpyparsing_1_1QuotedString_a79accb54c4e676c5398d063450b141de}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a69a9115cd85b4601b2402da6dc80224f}{quote\+Char}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_ac5891cf65344a6ee26aab2de9888061e}{quote\+Char\+Len}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a3ec1e4e16863721ba8130b53cfe97a91}{first\+Quote\+Char}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a020c579ce6fc0c72ddeb7f562ae065b4}{end\+Quote\+Char}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_aabdad5a4af0531ed1fe6b53ba4bef3f2}{end\+Quote\+Char\+Len}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_aa3070e527bcd7be8d54083ba9173ffa7}{esc\+Char}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a02923940fe9ae44f43a43a1628e7d15e}{esc\+Quote}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a599c2949fc7459408cdb1583312502e3}{unquote\+Results}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_af2d9d7db0dcb6af41ef8edeb72eb62fa}{convert\+Whitespace\+Escapes}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a08f53e0159bfd41ea6e881564f38a112}{flags}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a65074a9ec0525f3cbe102d3dfe3c0559}{pattern}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a49cca844b865d1fe0686ac2febfab556}{esc\+Char\+Replace\+Pattern}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a5d1bf7335413fc312b3d925706a67262}{re}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_aa8a46982796d41ed8beeb6bfbf735497}{re\+String}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_ace5213501575390e0c80d482764cb135}{re\+\_\+match}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_acbffa2066e87a9d4b99bbc86c86a9b45}{name}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a17bb0f58496a5f8683627da33f016dce}{errmsg}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a8c0ca2a6a97712f500731eb5c179ab95}{may\+Index\+Error}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a71613b3f26e22bd91cec700776f9a348}{may\+Return\+Empty}
+\item 
+\hyperlink{classpyparsing_1_1QuotedString_a77eba8f668233482f476607da05bbba8}{str\+Repr}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Token for matching strings that are delimited by quoting characters.
+
+Defined with the following parameters:
+
+    - quoteChar - string of one or more characters defining the
+      quote delimiting string
+    - escChar - character to escape quotes, typically backslash
+      (default= ``None``)
+    - escQuote - special quote sequence to escape an embedded quote
+      string (such as SQL's ``""`` to escape an embedded ``"``)
+      (default= ``None``)
+    - multiline - boolean indicating whether quotes can span
+      multiple lines (default= ``False``)
+    - unquoteResults - boolean indicating whether the matched text
+      should be unquoted (default= ``True``)
+    - endQuoteChar - string of one or more characters defining the
+      end of the quote delimited string (default= ``None``  => same as
+      quoteChar)
+    - convertWhitespaceEscapes - convert escaped whitespace
+      (``'\t'``, ``'\n'``, etc.) to actual whitespace
+      (default= ``True``)
+
+Example::
+
+    qs = QuotedString('"')
+    print(qs.searchString('lsjdf "This is the quote" sldjf'))
+    complex_qs = QuotedString('{{', endQuoteChar='}}')
+    print(complex_qs.searchString('lsjdf {{This is the "quote"}} sldjf'))
+    sql_qs = QuotedString('"', escQuote='""')
+    print(sql_qs.searchString('lsjdf "This is the quote with ""embedded"" quotes" sldjf'))
+
+prints::
+
+    [['This is the quote']]
+    [['This is the "quote"']]
+    [['This is the quote with "embedded" quotes']]
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_abb103669400ef33107fb60ed95679a9d}\label{classpyparsing_1_1QuotedString_abb103669400ef33107fb60ed95679a9d}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Quoted\+String.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{quote\+Char,  }\item[{}]{esc\+Char = {\ttfamily None},  }\item[{}]{esc\+Quote = {\ttfamily None},  }\item[{}]{multiline = {\ttfamily False},  }\item[{}]{unquote\+Results = {\ttfamily True},  }\item[{}]{end\+Quote\+Char = {\ttfamily None},  }\item[{}]{convert\+Whitespace\+Escapes = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a79accb54c4e676c5398d063450b141de}\label{classpyparsing_1_1QuotedString_a79accb54c4e676c5398d063450b141de}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+str\+\_\+\+\_\+()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def pyparsing.\+Quoted\+String.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a1c84c4b36842807dadafa1471de7658a}\label{classpyparsing_1_1QuotedString_a1c84c4b36842807dadafa1471de7658a}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!parse\+Impl@{parse\+Impl}}
+\index{parse\+Impl@{parse\+Impl}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{parse\+Impl()}{parseImpl()}}
+{\footnotesize\ttfamily def pyparsing.\+Quoted\+String.\+parse\+Impl (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{instring,  }\item[{}]{loc,  }\item[{}]{do\+Actions = {\ttfamily True} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_af2d9d7db0dcb6af41ef8edeb72eb62fa}\label{classpyparsing_1_1QuotedString_af2d9d7db0dcb6af41ef8edeb72eb62fa}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!convert\+Whitespace\+Escapes@{convert\+Whitespace\+Escapes}}
+\index{convert\+Whitespace\+Escapes@{convert\+Whitespace\+Escapes}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{convert\+Whitespace\+Escapes}{convertWhitespaceEscapes}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+convert\+Whitespace\+Escapes}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a020c579ce6fc0c72ddeb7f562ae065b4}\label{classpyparsing_1_1QuotedString_a020c579ce6fc0c72ddeb7f562ae065b4}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!end\+Quote\+Char@{end\+Quote\+Char}}
+\index{end\+Quote\+Char@{end\+Quote\+Char}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{end\+Quote\+Char}{endQuoteChar}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+end\+Quote\+Char}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_aabdad5a4af0531ed1fe6b53ba4bef3f2}\label{classpyparsing_1_1QuotedString_aabdad5a4af0531ed1fe6b53ba4bef3f2}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!end\+Quote\+Char\+Len@{end\+Quote\+Char\+Len}}
+\index{end\+Quote\+Char\+Len@{end\+Quote\+Char\+Len}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{end\+Quote\+Char\+Len}{endQuoteCharLen}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+end\+Quote\+Char\+Len}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a17bb0f58496a5f8683627da33f016dce}\label{classpyparsing_1_1QuotedString_a17bb0f58496a5f8683627da33f016dce}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!errmsg@{errmsg}}
+\index{errmsg@{errmsg}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{errmsg}{errmsg}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+errmsg}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_aa3070e527bcd7be8d54083ba9173ffa7}\label{classpyparsing_1_1QuotedString_aa3070e527bcd7be8d54083ba9173ffa7}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!esc\+Char@{esc\+Char}}
+\index{esc\+Char@{esc\+Char}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{esc\+Char}{escChar}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+esc\+Char}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a49cca844b865d1fe0686ac2febfab556}\label{classpyparsing_1_1QuotedString_a49cca844b865d1fe0686ac2febfab556}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!esc\+Char\+Replace\+Pattern@{esc\+Char\+Replace\+Pattern}}
+\index{esc\+Char\+Replace\+Pattern@{esc\+Char\+Replace\+Pattern}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{esc\+Char\+Replace\+Pattern}{escCharReplacePattern}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+esc\+Char\+Replace\+Pattern}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a02923940fe9ae44f43a43a1628e7d15e}\label{classpyparsing_1_1QuotedString_a02923940fe9ae44f43a43a1628e7d15e}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!esc\+Quote@{esc\+Quote}}
+\index{esc\+Quote@{esc\+Quote}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{esc\+Quote}{escQuote}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+esc\+Quote}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a3ec1e4e16863721ba8130b53cfe97a91}\label{classpyparsing_1_1QuotedString_a3ec1e4e16863721ba8130b53cfe97a91}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!first\+Quote\+Char@{first\+Quote\+Char}}
+\index{first\+Quote\+Char@{first\+Quote\+Char}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{first\+Quote\+Char}{firstQuoteChar}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+first\+Quote\+Char}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a08f53e0159bfd41ea6e881564f38a112}\label{classpyparsing_1_1QuotedString_a08f53e0159bfd41ea6e881564f38a112}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!flags@{flags}}
+\index{flags@{flags}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+flags}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a8c0ca2a6a97712f500731eb5c179ab95}\label{classpyparsing_1_1QuotedString_a8c0ca2a6a97712f500731eb5c179ab95}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!may\+Index\+Error@{may\+Index\+Error}}
+\index{may\+Index\+Error@{may\+Index\+Error}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{may\+Index\+Error}{mayIndexError}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+may\+Index\+Error}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a71613b3f26e22bd91cec700776f9a348}\label{classpyparsing_1_1QuotedString_a71613b3f26e22bd91cec700776f9a348}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!may\+Return\+Empty@{may\+Return\+Empty}}
+\index{may\+Return\+Empty@{may\+Return\+Empty}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{may\+Return\+Empty}{mayReturnEmpty}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+may\+Return\+Empty}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_acbffa2066e87a9d4b99bbc86c86a9b45}\label{classpyparsing_1_1QuotedString_acbffa2066e87a9d4b99bbc86c86a9b45}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!name@{name}}
+\index{name@{name}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+name}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a65074a9ec0525f3cbe102d3dfe3c0559}\label{classpyparsing_1_1QuotedString_a65074a9ec0525f3cbe102d3dfe3c0559}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!pattern@{pattern}}
+\index{pattern@{pattern}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{pattern}{pattern}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+pattern}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a69a9115cd85b4601b2402da6dc80224f}\label{classpyparsing_1_1QuotedString_a69a9115cd85b4601b2402da6dc80224f}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!quote\+Char@{quote\+Char}}
+\index{quote\+Char@{quote\+Char}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{quote\+Char}{quoteChar}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+quote\+Char}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_ac5891cf65344a6ee26aab2de9888061e}\label{classpyparsing_1_1QuotedString_ac5891cf65344a6ee26aab2de9888061e}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!quote\+Char\+Len@{quote\+Char\+Len}}
+\index{quote\+Char\+Len@{quote\+Char\+Len}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{quote\+Char\+Len}{quoteCharLen}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+quote\+Char\+Len}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a5d1bf7335413fc312b3d925706a67262}\label{classpyparsing_1_1QuotedString_a5d1bf7335413fc312b3d925706a67262}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!re@{re}}
+\index{re@{re}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{re}{re}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+re}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_ace5213501575390e0c80d482764cb135}\label{classpyparsing_1_1QuotedString_ace5213501575390e0c80d482764cb135}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!re\+\_\+match@{re\+\_\+match}}
+\index{re\+\_\+match@{re\+\_\+match}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{re\+\_\+match}{re\_match}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+re\+\_\+match}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_aa8a46982796d41ed8beeb6bfbf735497}\label{classpyparsing_1_1QuotedString_aa8a46982796d41ed8beeb6bfbf735497}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!re\+String@{re\+String}}
+\index{re\+String@{re\+String}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{re\+String}{reString}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+re\+String}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a77eba8f668233482f476607da05bbba8}\label{classpyparsing_1_1QuotedString_a77eba8f668233482f476607da05bbba8}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!str\+Repr@{str\+Repr}}
+\index{str\+Repr@{str\+Repr}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{str\+Repr}{strRepr}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+str\+Repr}
+
+\mbox{\Hypertarget{classpyparsing_1_1QuotedString_a599c2949fc7459408cdb1583312502e3}\label{classpyparsing_1_1QuotedString_a599c2949fc7459408cdb1583312502e3}} 
+\index{pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}!unquote\+Results@{unquote\+Results}}
+\index{unquote\+Results@{unquote\+Results}!pyparsing\+::\+Quoted\+String@{pyparsing\+::\+Quoted\+String}}
+\subsubsection{\texorpdfstring{unquote\+Results}{unquoteResults}}
+{\footnotesize\ttfamily pyparsing.\+Quoted\+String.\+unquote\+Results}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/\hyperlink{pyparsing_8py}{pyparsing.\+py}\end{DoxyCompactItemize}

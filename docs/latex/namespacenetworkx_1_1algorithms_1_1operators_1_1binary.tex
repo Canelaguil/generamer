@@ -1,0 +1,267 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1binary}{}\section{networkx.\+algorithms.\+operators.\+binary Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1operators_1_1binary}\index{networkx.\+algorithms.\+operators.\+binary@{networkx.\+algorithms.\+operators.\+binary}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a50ec19daf9362376b5b30a6cecd15332}{union} (G, H, rename=(None, None), name=None)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a24a3e1feb5877673d0f4398390ee0827}{disjoint\+\_\+union} (G, H)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_adbc0da1f63a3b76f5180a315493b2045}{intersection} (G, H)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a7f1344a1a58fd6b4c9b548ec21696106}{difference} (G, H)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a5e3003e6b8541bbe1ee2b7ef1339a490}{symmetric\+\_\+difference} (G, H)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_aac06181fb38342d26d2425f250de7320}{compose} (G, H)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a4ccd668d718078b0f4578e55274e590f}{full\+\_\+join} (G, H, rename=(None, None))
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Operations on graphs including union, intersection, difference.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_aac06181fb38342d26d2425f250de7320}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_aac06181fb38342d26d2425f250de7320}} 
+\index{networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}!compose@{compose}}
+\index{compose@{compose}!networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}}
+\subsubsection{\texorpdfstring{compose()}{compose()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+binary.\+compose (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{H }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a new graph of G composed with H.
+
+Composition is the simple union of the node sets and edge sets.
+The node sets of G and H do not need to be disjoint.
+
+Parameters
+----------
+G, H : graph
+   A NetworkX graph
+
+Returns
+-------
+C: A new graph  with the same type as G
+
+Notes
+-----
+It is recommended that G and H be either both directed or both undirected.
+Attributes from H take precedent over attributes from G.
+
+For MultiGraphs, the edges are identified by incident nodes AND edge-key.
+This can cause surprises (i.e., edge `(1, 2)` may or may not be the same
+in two graphs) if you use MultiGraph without keeping track of edge keys.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a7f1344a1a58fd6b4c9b548ec21696106}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a7f1344a1a58fd6b4c9b548ec21696106}} 
+\index{networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}!difference@{difference}}
+\index{difference@{difference}!networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}}
+\subsubsection{\texorpdfstring{difference()}{difference()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+binary.\+difference (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{H }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a new graph that contains the edges that exist in G but not in H.
+
+The node sets of H and G must be the same.
+
+Parameters
+----------
+G,H : graph
+   A NetworkX graph.  G and H must have the same node sets.
+
+Returns
+-------
+D : A new graph with the same type as G.
+
+Notes
+-----
+Attributes from the graph, nodes, and edges are not copied to the new
+graph.  If you want a new graph of the difference of G and H with
+the attributes (including edge data) from G use remove_nodes_from()
+as follows:
+
+>>> G = nx.path_graph(3)
+>>> H = nx.path_graph(5)
+>>> R = G.copy()
+>>> R.remove_nodes_from(n for n in G if n in H)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a24a3e1feb5877673d0f4398390ee0827}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a24a3e1feb5877673d0f4398390ee0827}} 
+\index{networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}!disjoint\+\_\+union@{disjoint\+\_\+union}}
+\index{disjoint\+\_\+union@{disjoint\+\_\+union}!networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}}
+\subsubsection{\texorpdfstring{disjoint\+\_\+union()}{disjoint\_union()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+binary.\+disjoint\+\_\+union (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{H }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the disjoint union of graphs G and H.
+
+This algorithm forces distinct integer node labels.
+
+Parameters
+----------
+G,H : graph
+   A NetworkX graph
+
+Returns
+-------
+U : A union graph with the same type as G.
+
+Notes
+-----
+A new graph is created, of the same class as G.  It is recommended
+that G and H be either both directed or both undirected.
+
+The nodes of G are relabeled 0 to len(G)-1, and the nodes of H are
+relabeled len(G) to len(G)+len(H)-1.
+
+Graph, edge, and node attributes are propagated from G and H
+to the union graph.  If a graph attribute is present in both
+G and H the value from H is used.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a4ccd668d718078b0f4578e55274e590f}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a4ccd668d718078b0f4578e55274e590f}} 
+\index{networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}!full\+\_\+join@{full\+\_\+join}}
+\index{full\+\_\+join@{full\+\_\+join}!networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}}
+\subsubsection{\texorpdfstring{full\+\_\+join()}{full\_join()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+binary.\+full\+\_\+join (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{H,  }\item[{}]{rename = {\ttfamily (None,~None)} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the full join of graphs G and H.
+
+Full join is the union of G and H in which all edges between
+G and H are added.
+The node sets of G and H must be disjoint,
+otherwise an exception is raised.
+
+Parameters
+----------
+G, H : graph
+   A NetworkX graph
+
+rename : bool , default=(None, None)
+   Node names of G and H can be changed by specifying the tuple
+   rename=('G-','H-') (for example).  Node "u" in G is then renamed
+   "G-u" and "v" in H is renamed "H-v".
+
+Returns
+-------
+U : The full join graph with the same type as G.
+
+Notes
+-----
+It is recommended that G and H be either both directed or both undirected.
+
+If G is directed, then edges from G to H are added as well as from H to G.
+
+Note that full_join() does not produce parallel edges for MultiGraphs.
+
+The full join operation of graphs G and H is the same as getting
+their complement, performing a disjoint union, and finally getting
+the complement of the resulting graph.
+
+Graph, edge, and node attributes are propagated from G and H
+to the union graph.  If a graph attribute is present in both
+G and H the value from H is used.
+
+See Also
+--------
+union
+disjoint_union
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_adbc0da1f63a3b76f5180a315493b2045}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_adbc0da1f63a3b76f5180a315493b2045}} 
+\index{networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}!intersection@{intersection}}
+\index{intersection@{intersection}!networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}}
+\subsubsection{\texorpdfstring{intersection()}{intersection()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+binary.\+intersection (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{H }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a new graph that contains only the nodes and the edges that exist in
+both G and H.
+
+Parameters
+----------
+G,H : graph
+   A NetworkX graph. G and H can have different node sets but must be both graphs or both multigraphs.
+
+Raises
+------
+NetworkXError
+    If one is a MultiGraph and the other one is a graph.
+
+Returns
+-------
+GH : A new graph with the same type as G.
+
+Notes
+-----
+Attributes from the graph, nodes, and edges are not copied to the new
+graph.  If you want a new graph of the intersection of G and H
+with the attributes (including edge data) from G use remove_nodes_from()
+as follows
+
+>>> G = nx.path_graph(3)
+>>> H = nx.path_graph(5)
+>>> R = G.copy()
+>>> R.remove_nodes_from(n for n in G if n not in H)
+>>> R.remove_edges_from(e for e in G.edges if e not in H.edges)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a5e3003e6b8541bbe1ee2b7ef1339a490}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a5e3003e6b8541bbe1ee2b7ef1339a490}} 
+\index{networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}!symmetric\+\_\+difference@{symmetric\+\_\+difference}}
+\index{symmetric\+\_\+difference@{symmetric\+\_\+difference}!networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}}
+\subsubsection{\texorpdfstring{symmetric\+\_\+difference()}{symmetric\_difference()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+binary.\+symmetric\+\_\+difference (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{H }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns new graph with edges that exist in either G or H but not both.
+
+The node sets of H and G must be the same.
+
+Parameters
+----------
+G,H : graph
+   A NetworkX graph.  G and H must have the same node sets.
+
+Returns
+-------
+D : A new graph with the same type as G.
+
+Notes
+-----
+Attributes from the graph, nodes, and edges are not copied to the new
+graph.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a50ec19daf9362376b5b30a6cecd15332}\label{namespacenetworkx_1_1algorithms_1_1operators_1_1binary_a50ec19daf9362376b5b30a6cecd15332}} 
+\index{networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}!union@{union}}
+\index{union@{union}!networkx\+::algorithms\+::operators\+::binary@{networkx\+::algorithms\+::operators\+::binary}}
+\subsubsection{\texorpdfstring{union()}{union()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+operators.\+binary.\+union (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{H,  }\item[{}]{rename = {\ttfamily (None,~None)},  }\item[{}]{name = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the union of graphs G and H.
+
+Graphs G and H must be disjoint, otherwise an exception is raised.
+
+Parameters
+----------
+G,H : graph
+   A NetworkX graph
+
+rename : bool , default=(None, None)
+   Node names of G and H can be changed by specifying the tuple
+   rename=('G-','H-') (for example).  Node "u" in G is then renamed
+   "G-u" and "v" in H is renamed "H-v".
+
+name : string
+   Specify the name for the union graph
+
+Returns
+-------
+U : A union graph with the same type as G.
+
+Notes
+-----
+To force a disjoint union with node relabeling, use
+disjoint_union(G,H) or convert_node_labels_to integers().
+
+Graph, edge, and node attributes are propagated from G and H
+to the union graph.  If a graph attribute is present in both
+G and H the value from H is used.
+
+See Also
+--------
+disjoint_union
+\end{DoxyVerb}
+ 

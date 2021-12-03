@@ -1,0 +1,247 @@
+\hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase}{}\section{matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base Class Reference}
+\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase}\index{matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base@{matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base}}
+
+
+Inheritance diagram for matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{classmatplotlib_1_1backend__bases_1_1FigureManagerBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a0ca0a73e11a64d448716a462ee7ed62f}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_ae355aa0633d6b4da5e2e698b007b4c3f}{canvas}, \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_aba55ac119779c90c08e4034713892c63}{num})
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a488847b7268d48725b82935842c24bf2}{show} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a36863081686416dd6216b1b9e046ecbf}{destroy} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a6ca3de97fb51710b3115836e66e3a1b7}{full\+\_\+screen\+\_\+toggle} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a59d902f59e03e9d1811a1117e3fb6775}{resize} (self, w, h)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_ad966e08c9052186d1da97167fe212d0b}{key\+\_\+press} (self, event)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a01e35daecd5ee4d413ec5c137f636f78}{button\+\_\+press} (self, event)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_ad957b3f4f041eee76b64cfd0709743c7}{get\+\_\+window\+\_\+title} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a39ebb6f9157b9eb8e101c5a4f20876d0}{set\+\_\+window\+\_\+title} (self, title)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_ae355aa0633d6b4da5e2e698b007b4c3f}{canvas}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_aba55ac119779c90c08e4034713892c63}{num}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_adba106d5b61f941d29b215cb6b132fc0}{key\+\_\+press\+\_\+handler\+\_\+id}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_af8f7fa62dd5340db8476b68907372740}{button\+\_\+press\+\_\+handler\+\_\+id}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a9ad94135cc8bb6c295fca4ceb9b46170}{toolmanager}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a77320bcdf3b2ba18ea1224b6aa020d2a}{toolbar}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_af963eb97f66b42737ff04e9be63d4e1e}{statusbar} = \+\_\+api.\+deprecated(\char`\"{}3.\+3\char`\"{})(property(lambda self\+: None))
+\item 
+\hyperlink{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a572a48f598168a7972177f10602b2d60}{alternative}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A backend-independent abstraction of a figure container and controller.
+
+The figure manager is used by pyplot to interact with the window in a
+backend-independent way. It's an adapter for the real (GUI) framework that
+represents the visual figure on screen.
+
+GUI backends define from this class to translate common operations such
+as *show* or *resize* to the GUI-specific code. Non-GUI backends do not
+support these operations an can just use the base class.
+
+This following basic operations are accessible:
+
+**Window operations**
+
+- `~.FigureManagerBase.show`
+- `~.FigureManagerBase.destroy`
+- `~.FigureManagerBase.full_screen_toggle`
+- `~.FigureManagerBase.resize`
+- `~.FigureManagerBase.get_window_title`
+- `~.FigureManagerBase.set_window_title`
+
+**Key and mouse button press handling**
+
+The figure manager sets up default key and mouse button press handling by
+hooking up the `.key_press_handler` to the matplotlib event system. This
+ensures the same shortcuts and mouse actions across backends.
+
+**Other operations**
+
+Subclasses will have additional attributes and functions to access
+additional functionality. This is of course backend-specific. For example,
+most GUI backends have ``window`` and ``toolbar`` attributes that give
+access to the native GUI widgets of the respective framework.
+
+Attributes
+----------
+canvas : `FigureCanvasBase`
+    The backend-specific canvas instance.
+
+num : int or str
+    The figure number.
+
+key_press_handler_id : int
+    The default key handler cid, when using the toolmanager.
+    To disable the default key press handling use::
+
+        figure.canvas.mpl_disconnect(
+            figure.canvas.manager.key_press_handler_id)
+
+button_press_handler_id : int
+    The default mouse button handler cid, when using the toolmanager.
+    To disable the default button press handling use::
+
+        figure.canvas.mpl_disconnect(
+            figure.canvas.manager.button_press_handler_id)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a0ca0a73e11a64d448716a462ee7ed62f}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a0ca0a73e11a64d448716a462ee7ed62f}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{canvas,  }\item[{}]{num }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a01e35daecd5ee4d413ec5c137f636f78}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a01e35daecd5ee4d413ec5c137f636f78}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!button\+\_\+press@{button\+\_\+press}}
+\index{button\+\_\+press@{button\+\_\+press}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{button\+\_\+press()}{button\_press()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+button\+\_\+press (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The default Matplotlib button actions for extra mouse buttons.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a36863081686416dd6216b1b9e046ecbf}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a36863081686416dd6216b1b9e046ecbf}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!destroy@{destroy}}
+\index{destroy@{destroy}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+destroy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a6ca3de97fb51710b3115836e66e3a1b7}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a6ca3de97fb51710b3115836e66e3a1b7}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!full\+\_\+screen\+\_\+toggle@{full\+\_\+screen\+\_\+toggle}}
+\index{full\+\_\+screen\+\_\+toggle@{full\+\_\+screen\+\_\+toggle}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{full\+\_\+screen\+\_\+toggle()}{full\_screen\_toggle()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+full\+\_\+screen\+\_\+toggle (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_ad957b3f4f041eee76b64cfd0709743c7}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_ad957b3f4f041eee76b64cfd0709743c7}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!get\+\_\+window\+\_\+title@{get\+\_\+window\+\_\+title}}
+\index{get\+\_\+window\+\_\+title@{get\+\_\+window\+\_\+title}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{get\+\_\+window\+\_\+title()}{get\_window\_title()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+get\+\_\+window\+\_\+title (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the title text of the window containing the figure, or None
+if there is no window (e.g., a PS backend).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_ad966e08c9052186d1da97167fe212d0b}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_ad966e08c9052186d1da97167fe212d0b}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!key\+\_\+press@{key\+\_\+press}}
+\index{key\+\_\+press@{key\+\_\+press}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{key\+\_\+press()}{key\_press()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+key\+\_\+press (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Implement the default Matplotlib key bindings defined at
+:ref:`key-event-handling`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a59d902f59e03e9d1811a1117e3fb6775}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a59d902f59e03e9d1811a1117e3fb6775}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!resize@{resize}}
+\index{resize@{resize}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+resize (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{w,  }\item[{}]{h }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}For GUI backends, resize the window (in pixels).\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a39ebb6f9157b9eb8e101c5a4f20876d0}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a39ebb6f9157b9eb8e101c5a4f20876d0}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!set\+\_\+window\+\_\+title@{set\+\_\+window\+\_\+title}}
+\index{set\+\_\+window\+\_\+title@{set\+\_\+window\+\_\+title}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{set\+\_\+window\+\_\+title()}{set\_window\_title()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+set\+\_\+window\+\_\+title (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{title }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the title text of the window containing the figure.
+
+This has no effect for non-GUI (e.g., PS) backends.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a488847b7268d48725b82935842c24bf2}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a488847b7268d48725b82935842c24bf2}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!show@{show}}
+\index{show@{show}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily def matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+show (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}For GUI backends, show the figure window and redraw.
+For non-GUI backends, raise an exception, unless running headless (i.e.
+on Linux with an unset DISPLAY); this exception is converted to a
+warning in `.Figure.show`.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a572a48f598168a7972177f10602b2d60}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a572a48f598168a7972177f10602b2d60}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!alternative@{alternative}}
+\index{alternative@{alternative}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{alternative}{alternative}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+alternative\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_af8f7fa62dd5340db8476b68907372740}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_af8f7fa62dd5340db8476b68907372740}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!button\+\_\+press\+\_\+handler\+\_\+id@{button\+\_\+press\+\_\+handler\+\_\+id}}
+\index{button\+\_\+press\+\_\+handler\+\_\+id@{button\+\_\+press\+\_\+handler\+\_\+id}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{button\+\_\+press\+\_\+handler\+\_\+id}{button\_press\_handler\_id}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+button\+\_\+press\+\_\+handler\+\_\+id}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_ae355aa0633d6b4da5e2e698b007b4c3f}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_ae355aa0633d6b4da5e2e698b007b4c3f}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!canvas@{canvas}}
+\index{canvas@{canvas}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{canvas}{canvas}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+canvas}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_adba106d5b61f941d29b215cb6b132fc0}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_adba106d5b61f941d29b215cb6b132fc0}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!key\+\_\+press\+\_\+handler\+\_\+id@{key\+\_\+press\+\_\+handler\+\_\+id}}
+\index{key\+\_\+press\+\_\+handler\+\_\+id@{key\+\_\+press\+\_\+handler\+\_\+id}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{key\+\_\+press\+\_\+handler\+\_\+id}{key\_press\_handler\_id}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+key\+\_\+press\+\_\+handler\+\_\+id}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_aba55ac119779c90c08e4034713892c63}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_aba55ac119779c90c08e4034713892c63}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!num@{num}}
+\index{num@{num}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{num}{num}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+num}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_af963eb97f66b42737ff04e9be63d4e1e}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_af963eb97f66b42737ff04e9be63d4e1e}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!statusbar@{statusbar}}
+\index{statusbar@{statusbar}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{statusbar}{statusbar}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+statusbar = \+\_\+api.\+deprecated(\char`\"{}3.\+3\char`\"{})(property(lambda self\+: None))\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a77320bcdf3b2ba18ea1224b6aa020d2a}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a77320bcdf3b2ba18ea1224b6aa020d2a}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!toolbar@{toolbar}}
+\index{toolbar@{toolbar}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{toolbar}{toolbar}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+toolbar}
+
+\mbox{\Hypertarget{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a9ad94135cc8bb6c295fca4ceb9b46170}\label{classmatplotlib_1_1backend__bases_1_1FigureManagerBase_a9ad94135cc8bb6c295fca4ceb9b46170}} 
+\index{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}!toolmanager@{toolmanager}}
+\index{toolmanager@{toolmanager}!matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base@{matplotlib\+::backend\+\_\+bases\+::\+Figure\+Manager\+Base}}
+\subsubsection{\texorpdfstring{toolmanager}{toolmanager}}
+{\footnotesize\ttfamily matplotlib.\+backend\+\_\+bases.\+Figure\+Manager\+Base.\+toolmanager}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{backend__bases_8py}{backend\+\_\+bases.\+py}\end{DoxyCompactItemize}

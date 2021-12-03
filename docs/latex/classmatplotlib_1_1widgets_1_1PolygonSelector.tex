@@ -1,0 +1,130 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1PolygonSelector}{}\section{matplotlib.\+widgets.\+Polygon\+Selector Class Reference}
+\label{classmatplotlib_1_1widgets_1_1PolygonSelector}\index{matplotlib.\+widgets.\+Polygon\+Selector@{matplotlib.\+widgets.\+Polygon\+Selector}}
+
+
+Inheritance diagram for matplotlib.\+widgets.\+Polygon\+Selector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1PolygonSelector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+widgets.\+Polygon\+Selector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1PolygonSelector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1PolygonSelector_a7249877a7cdf72467696eb9e3f82fc96}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_ac0722858b7001d10a42055dc90420b4f}{ax}, \hyperlink{classmatplotlib_1_1widgets_1_1__SelectorWidget_ad893af1ad010d595c7cce1106b48d854}{onselect}, \hyperlink{classmatplotlib_1_1widgets_1_1__SelectorWidget_a6d178ef2dd7ec61c11b18302de3f43bf}{useblit}=False, lineprops=None, markerprops=None, \hyperlink{classmatplotlib_1_1widgets_1_1PolygonSelector_afd99cff1d93a27df668a2d86178f4519}{vertex\+\_\+select\+\_\+radius}=15)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1PolygonSelector_a8fa486d641d53e2f8d4cd42058d63da4}{onmove} (self, event)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1PolygonSelector_a16b522342c41e88284774df6eddc7820}{verts} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1PolygonSelector_afd85181a50784842331747cc6af4d080}{line}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1PolygonSelector_afd99cff1d93a27df668a2d86178f4519}{vertex\+\_\+select\+\_\+radius}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1PolygonSelector_ab6e8bb70d3122fd8bcf15dffbef001cb}{artists}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Select a polygon region of an axes.
+
+Place vertices with each mouse click, and make the selection by completing
+the polygon (clicking on the first vertex). Hold the *ctrl* key and click
+and drag a vertex to reposition it (the *ctrl* key is not necessary if the
+polygon has already been completed). Hold the *shift* key and click and
+drag anywhere in the axes to move all vertices. Press the *esc* key to
+start a new polygon.
+
+For the selector to remain responsive you must keep a reference to it.
+
+Parameters
+----------
+ax : `~matplotlib.axes.Axes`
+    The parent axes for the widget.
+onselect : function
+    When a polygon is completed or modified after completion,
+    the *onselect* function is called and passed a list of the vertices as
+    ``(xdata, ydata)`` tuples.
+useblit : bool, default: False
+lineprops : dict, default: \
+``dict(color='k', linestyle='-', linewidth=2, alpha=0.5)``.
+    Artist properties for the line representing the edges of the polygon.
+markerprops : dict, default: \
+``dict(marker='o', markersize=7, mec='k', mfc='k', alpha=0.5)``.
+    Artist properties for the markers drawn at the vertices of the polygon.
+vertex_select_radius : float, default: 15px
+    A vertex is selected (to complete the polygon or to move a vertex) if
+    the mouse click is within *vertex_select_radius* pixels of the vertex.
+
+Examples
+--------
+:doc:`/gallery/widgets/polygon_selector_demo`
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1PolygonSelector_a7249877a7cdf72467696eb9e3f82fc96}\label{classmatplotlib_1_1widgets_1_1PolygonSelector_a7249877a7cdf72467696eb9e3f82fc96}} 
+\index{matplotlib\+::widgets\+::\+Polygon\+Selector@{matplotlib\+::widgets\+::\+Polygon\+Selector}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Polygon\+Selector@{matplotlib\+::widgets\+::\+Polygon\+Selector}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Polygon\+Selector.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{onselect,  }\item[{}]{useblit = {\ttfamily False},  }\item[{}]{lineprops = {\ttfamily None},  }\item[{}]{markerprops = {\ttfamily None},  }\item[{}]{vertex\+\_\+select\+\_\+radius = {\ttfamily 15} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1PolygonSelector_a8fa486d641d53e2f8d4cd42058d63da4}\label{classmatplotlib_1_1widgets_1_1PolygonSelector_a8fa486d641d53e2f8d4cd42058d63da4}} 
+\index{matplotlib\+::widgets\+::\+Polygon\+Selector@{matplotlib\+::widgets\+::\+Polygon\+Selector}!onmove@{onmove}}
+\index{onmove@{onmove}!matplotlib\+::widgets\+::\+Polygon\+Selector@{matplotlib\+::widgets\+::\+Polygon\+Selector}}
+\subsubsection{\texorpdfstring{onmove()}{onmove()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Polygon\+Selector.\+onmove (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Cursor move event handler and validator.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1PolygonSelector_a16b522342c41e88284774df6eddc7820}\label{classmatplotlib_1_1widgets_1_1PolygonSelector_a16b522342c41e88284774df6eddc7820}} 
+\index{matplotlib\+::widgets\+::\+Polygon\+Selector@{matplotlib\+::widgets\+::\+Polygon\+Selector}!verts@{verts}}
+\index{verts@{verts}!matplotlib\+::widgets\+::\+Polygon\+Selector@{matplotlib\+::widgets\+::\+Polygon\+Selector}}
+\subsubsection{\texorpdfstring{verts()}{verts()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Polygon\+Selector.\+verts (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The polygon vertices, as a list of ``(x, y)`` pairs.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1PolygonSelector_ab6e8bb70d3122fd8bcf15dffbef001cb}\label{classmatplotlib_1_1widgets_1_1PolygonSelector_ab6e8bb70d3122fd8bcf15dffbef001cb}} 
+\index{matplotlib\+::widgets\+::\+Polygon\+Selector@{matplotlib\+::widgets\+::\+Polygon\+Selector}!artists@{artists}}
+\index{artists@{artists}!matplotlib\+::widgets\+::\+Polygon\+Selector@{matplotlib\+::widgets\+::\+Polygon\+Selector}}
+\subsubsection{\texorpdfstring{artists}{artists}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Polygon\+Selector.\+artists}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1PolygonSelector_afd85181a50784842331747cc6af4d080}\label{classmatplotlib_1_1widgets_1_1PolygonSelector_afd85181a50784842331747cc6af4d080}} 
+\index{matplotlib\+::widgets\+::\+Polygon\+Selector@{matplotlib\+::widgets\+::\+Polygon\+Selector}!line@{line}}
+\index{line@{line}!matplotlib\+::widgets\+::\+Polygon\+Selector@{matplotlib\+::widgets\+::\+Polygon\+Selector}}
+\subsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Polygon\+Selector.\+line}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1PolygonSelector_afd99cff1d93a27df668a2d86178f4519}\label{classmatplotlib_1_1widgets_1_1PolygonSelector_afd99cff1d93a27df668a2d86178f4519}} 
+\index{matplotlib\+::widgets\+::\+Polygon\+Selector@{matplotlib\+::widgets\+::\+Polygon\+Selector}!vertex\+\_\+select\+\_\+radius@{vertex\+\_\+select\+\_\+radius}}
+\index{vertex\+\_\+select\+\_\+radius@{vertex\+\_\+select\+\_\+radius}!matplotlib\+::widgets\+::\+Polygon\+Selector@{matplotlib\+::widgets\+::\+Polygon\+Selector}}
+\subsubsection{\texorpdfstring{vertex\+\_\+select\+\_\+radius}{vertex\_select\_radius}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Polygon\+Selector.\+vertex\+\_\+select\+\_\+radius}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

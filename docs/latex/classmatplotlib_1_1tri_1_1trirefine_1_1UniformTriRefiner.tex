@@ -1,0 +1,120 @@
+\hypertarget{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner}{}\section{matplotlib.\+tri.\+trirefine.\+Uniform\+Tri\+Refiner Class Reference}
+\label{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner}\index{matplotlib.\+tri.\+trirefine.\+Uniform\+Tri\+Refiner@{matplotlib.\+tri.\+trirefine.\+Uniform\+Tri\+Refiner}}
+
+
+Inheritance diagram for matplotlib.\+tri.\+trirefine.\+Uniform\+Tri\+Refiner\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+tri.\+trirefine.\+Uniform\+Tri\+Refiner\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner_a30ff5e2c0cb0daef69eb86f919bfba82}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, triangulation)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner_afae7d843d5e02cefdc3f35bee6ef090e}{refine\+\_\+triangulation} (self, return\+\_\+tri\+\_\+index=False, subdiv=3)
+\item 
+def \hyperlink{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner_a6c9a6d3f49d0d5cec563208e19a5de08}{refine\+\_\+field} (self, z, triinterpolator=None, subdiv=3)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Uniform mesh refinement by recursive subdivisions.
+
+Parameters
+----------
+triangulation : `~matplotlib.tri.Triangulation`
+    The encapsulated triangulation (to be refined)
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner_a30ff5e2c0cb0daef69eb86f919bfba82}\label{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner_a30ff5e2c0cb0daef69eb86f919bfba82}} 
+\index{matplotlib\+::tri\+::trirefine\+::\+Uniform\+Tri\+Refiner@{matplotlib\+::tri\+::trirefine\+::\+Uniform\+Tri\+Refiner}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::tri\+::trirefine\+::\+Uniform\+Tri\+Refiner@{matplotlib\+::tri\+::trirefine\+::\+Uniform\+Tri\+Refiner}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+trirefine.\+Uniform\+Tri\+Refiner.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{triangulation }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner_a6c9a6d3f49d0d5cec563208e19a5de08}\label{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner_a6c9a6d3f49d0d5cec563208e19a5de08}} 
+\index{matplotlib\+::tri\+::trirefine\+::\+Uniform\+Tri\+Refiner@{matplotlib\+::tri\+::trirefine\+::\+Uniform\+Tri\+Refiner}!refine\+\_\+field@{refine\+\_\+field}}
+\index{refine\+\_\+field@{refine\+\_\+field}!matplotlib\+::tri\+::trirefine\+::\+Uniform\+Tri\+Refiner@{matplotlib\+::tri\+::trirefine\+::\+Uniform\+Tri\+Refiner}}
+\subsubsection{\texorpdfstring{refine\+\_\+field()}{refine\_field()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+trirefine.\+Uniform\+Tri\+Refiner.\+refine\+\_\+field (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{z,  }\item[{}]{triinterpolator = {\ttfamily None},  }\item[{}]{subdiv = {\ttfamily 3} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Refine a field defined on the encapsulated triangulation.
+
+Parameters
+----------
+z : (npoints,) array-like
+    Values of the field to refine, defined at the nodes of the
+    encapsulated triangulation. (``n_points`` is the number of points
+    in the initial triangulation)
+triinterpolator : `~matplotlib.tri.TriInterpolator`, optional
+    Interpolator used for field interpolation. If not specified,
+    a `~matplotlib.tri.CubicTriInterpolator` will be used.
+subdiv : int, default: 3
+    Recursion level for the subdivision.
+    Each triangle is divided into ``4**subdiv`` child triangles.
+
+Returns
+-------
+refi_tri : `~matplotlib.tri.Triangulation`
+     The returned refined triangulation.
+refi_z : 1D array of length: *refi_tri* node count.
+     The returned interpolated field (at *refi_tri* nodes).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner_afae7d843d5e02cefdc3f35bee6ef090e}\label{classmatplotlib_1_1tri_1_1trirefine_1_1UniformTriRefiner_afae7d843d5e02cefdc3f35bee6ef090e}} 
+\index{matplotlib\+::tri\+::trirefine\+::\+Uniform\+Tri\+Refiner@{matplotlib\+::tri\+::trirefine\+::\+Uniform\+Tri\+Refiner}!refine\+\_\+triangulation@{refine\+\_\+triangulation}}
+\index{refine\+\_\+triangulation@{refine\+\_\+triangulation}!matplotlib\+::tri\+::trirefine\+::\+Uniform\+Tri\+Refiner@{matplotlib\+::tri\+::trirefine\+::\+Uniform\+Tri\+Refiner}}
+\subsubsection{\texorpdfstring{refine\+\_\+triangulation()}{refine\_triangulation()}}
+{\footnotesize\ttfamily def matplotlib.\+tri.\+trirefine.\+Uniform\+Tri\+Refiner.\+refine\+\_\+triangulation (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{return\+\_\+tri\+\_\+index = {\ttfamily False},  }\item[{}]{subdiv = {\ttfamily 3} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute an uniformly refined triangulation *refi_triangulation* of
+the encapsulated :attr:`triangulation`.
+
+This function refines the encapsulated triangulation by splitting each
+father triangle into 4 child sub-triangles built on the edges midside
+nodes, recursing *subdiv* times.  In the end, each triangle is hence
+divided into ``4**subdiv`` child triangles.
+
+Parameters
+----------
+return_tri_index : bool, default: False
+    Whether an index table indicating the father triangle index of each
+    point is returned.
+subdiv : int, default: 3
+    Recursion level for the subdivision.
+    Each triangle is divided into ``4**subdiv`` child triangles;
+    hence, the default results in 64 refined subtriangles for each
+    triangle of the initial triangulation.
+
+Returns
+-------
+refi_triangulation : `~matplotlib.tri.Triangulation`
+    The refined triangulation.
+found_index : int array
+    Index of the initial triangulation containing triangle, for each
+    point of *refi_triangulation*.
+    Returned only if *return_tri_index* is set to True.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/tri/\hyperlink{trirefine_8py}{trirefine.\+py}\end{DoxyCompactItemize}

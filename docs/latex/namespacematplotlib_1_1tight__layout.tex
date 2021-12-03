@@ -1,0 +1,112 @@
+\hypertarget{namespacematplotlib_1_1tight__layout}{}\section{matplotlib.\+tight\+\_\+layout Namespace Reference}
+\label{namespacematplotlib_1_1tight__layout}\index{matplotlib.\+tight\+\_\+layout@{matplotlib.\+tight\+\_\+layout}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacematplotlib_1_1tight__layout_aac0a3ed65fdbe116ec3c52a261a0d0da}{auto\+\_\+adjust\+\_\+subplotpars} (fig, renderer, nrows\+\_\+ncols, num1num2\+\_\+list, subplot\+\_\+list, ax\+\_\+bbox\+\_\+list=None, pad=1.\+08, h\+\_\+pad=None, w\+\_\+pad=None, rect=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1tight__layout_a76e234291b6f43abf23322624f19cd6f}{get\+\_\+renderer} (fig)
+\item 
+def \hyperlink{namespacematplotlib_1_1tight__layout_ad7e4bbde66af2565e3d7f870913c87f8}{get\+\_\+subplotspec\+\_\+list} (axes\+\_\+list, grid\+\_\+spec=None)
+\item 
+def \hyperlink{namespacematplotlib_1_1tight__layout_acfa6d3d8d24026f694a08798f67f6561}{get\+\_\+tight\+\_\+layout\+\_\+figure} (fig, axes\+\_\+list, subplotspec\+\_\+list, renderer, pad=1.\+08, h\+\_\+pad=None, w\+\_\+pad=None, rect=None)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Routines to adjust subplot params so that subplots are
+nicely fit in the figure. In doing so, only axis labels, tick labels, axes
+titles and offsetboxes that are anchored to axes are currently considered.
+
+Internally, this module assumes that the margins (left_margin, etc.) which are
+differences between ax.get_tightbbox and ax.bbox are independent of axes
+position. This may fail if Axes.adjustable is datalim. Also, This will fail
+for some cases (for example, left or right margin is affected by xlabel).
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlib_1_1tight__layout_aac0a3ed65fdbe116ec3c52a261a0d0da}\label{namespacematplotlib_1_1tight__layout_aac0a3ed65fdbe116ec3c52a261a0d0da}} 
+\index{matplotlib\+::tight\+\_\+layout@{matplotlib\+::tight\+\_\+layout}!auto\+\_\+adjust\+\_\+subplotpars@{auto\+\_\+adjust\+\_\+subplotpars}}
+\index{auto\+\_\+adjust\+\_\+subplotpars@{auto\+\_\+adjust\+\_\+subplotpars}!matplotlib\+::tight\+\_\+layout@{matplotlib\+::tight\+\_\+layout}}
+\subsubsection{\texorpdfstring{auto\+\_\+adjust\+\_\+subplotpars()}{auto\_adjust\_subplotpars()}}
+{\footnotesize\ttfamily def matplotlib.\+tight\+\_\+layout.\+auto\+\_\+adjust\+\_\+subplotpars (\begin{DoxyParamCaption}\item[{}]{fig,  }\item[{}]{renderer,  }\item[{}]{nrows\+\_\+ncols,  }\item[{}]{num1num2\+\_\+list,  }\item[{}]{subplot\+\_\+list,  }\item[{}]{ax\+\_\+bbox\+\_\+list = {\ttfamily None},  }\item[{}]{pad = {\ttfamily 1.08},  }\item[{}]{h\+\_\+pad = {\ttfamily None},  }\item[{}]{w\+\_\+pad = {\ttfamily None},  }\item[{}]{rect = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a dict of subplot parameters to adjust spacing between subplots
+or ``None`` if resulting axes would have zero height or width.
+
+Note that this function ignores geometry information of subplot
+itself, but uses what is given by the *nrows_ncols* and *num1num2_list*
+parameters.  Also, the results could be incorrect if some subplots have
+``adjustable=datalim``.
+
+Parameters
+----------
+nrows_ncols : tuple[int, int]
+    Number of rows and number of columns of the grid.
+num1num2_list : list[int]
+    List of numbers specifying the area occupied by the subplot
+subplot_list : list of subplots
+    List of subplots that will be used to calculate optimal subplot_params.
+pad : float
+    Padding between the figure edge and the edges of subplots, as a
+    fraction of the font size.
+h_pad, w_pad : float
+    Padding (height/width) between edges of adjacent subplots, as a
+    fraction of the font size.  Defaults to *pad*.
+rect : tuple[float, float, float, float]
+    [left, bottom, right, top] in normalized (0, 1) figure coordinates.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1tight__layout_a76e234291b6f43abf23322624f19cd6f}\label{namespacematplotlib_1_1tight__layout_a76e234291b6f43abf23322624f19cd6f}} 
+\index{matplotlib\+::tight\+\_\+layout@{matplotlib\+::tight\+\_\+layout}!get\+\_\+renderer@{get\+\_\+renderer}}
+\index{get\+\_\+renderer@{get\+\_\+renderer}!matplotlib\+::tight\+\_\+layout@{matplotlib\+::tight\+\_\+layout}}
+\subsubsection{\texorpdfstring{get\+\_\+renderer()}{get\_renderer()}}
+{\footnotesize\ttfamily def matplotlib.\+tight\+\_\+layout.\+get\+\_\+renderer (\begin{DoxyParamCaption}\item[{}]{fig }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacematplotlib_1_1tight__layout_ad7e4bbde66af2565e3d7f870913c87f8}\label{namespacematplotlib_1_1tight__layout_ad7e4bbde66af2565e3d7f870913c87f8}} 
+\index{matplotlib\+::tight\+\_\+layout@{matplotlib\+::tight\+\_\+layout}!get\+\_\+subplotspec\+\_\+list@{get\+\_\+subplotspec\+\_\+list}}
+\index{get\+\_\+subplotspec\+\_\+list@{get\+\_\+subplotspec\+\_\+list}!matplotlib\+::tight\+\_\+layout@{matplotlib\+::tight\+\_\+layout}}
+\subsubsection{\texorpdfstring{get\+\_\+subplotspec\+\_\+list()}{get\_subplotspec\_list()}}
+{\footnotesize\ttfamily def matplotlib.\+tight\+\_\+layout.\+get\+\_\+subplotspec\+\_\+list (\begin{DoxyParamCaption}\item[{}]{axes\+\_\+list,  }\item[{}]{grid\+\_\+spec = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of subplotspec from the given list of axes.
+
+For an instance of axes that does not support subplotspec, None is inserted
+in the list.
+
+If grid_spec is given, None is inserted for those not from the given
+grid_spec.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacematplotlib_1_1tight__layout_acfa6d3d8d24026f694a08798f67f6561}\label{namespacematplotlib_1_1tight__layout_acfa6d3d8d24026f694a08798f67f6561}} 
+\index{matplotlib\+::tight\+\_\+layout@{matplotlib\+::tight\+\_\+layout}!get\+\_\+tight\+\_\+layout\+\_\+figure@{get\+\_\+tight\+\_\+layout\+\_\+figure}}
+\index{get\+\_\+tight\+\_\+layout\+\_\+figure@{get\+\_\+tight\+\_\+layout\+\_\+figure}!matplotlib\+::tight\+\_\+layout@{matplotlib\+::tight\+\_\+layout}}
+\subsubsection{\texorpdfstring{get\+\_\+tight\+\_\+layout\+\_\+figure()}{get\_tight\_layout\_figure()}}
+{\footnotesize\ttfamily def matplotlib.\+tight\+\_\+layout.\+get\+\_\+tight\+\_\+layout\+\_\+figure (\begin{DoxyParamCaption}\item[{}]{fig,  }\item[{}]{axes\+\_\+list,  }\item[{}]{subplotspec\+\_\+list,  }\item[{}]{renderer,  }\item[{}]{pad = {\ttfamily 1.08},  }\item[{}]{h\+\_\+pad = {\ttfamily None},  }\item[{}]{w\+\_\+pad = {\ttfamily None},  }\item[{}]{rect = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return subplot parameters for tight-layouted-figure with specified padding.
+
+Parameters
+----------
+fig : Figure
+axes_list : list of Axes
+subplotspec_list : list of `.SubplotSpec`
+    The subplotspecs of each axes.
+renderer : renderer
+pad : float
+    Padding between the figure edge and the edges of subplots, as a
+    fraction of the font size.
+h_pad, w_pad : float
+    Padding (height/width) between edges of adjacent subplots.  Defaults to
+    *pad*.
+rect : tuple[float, float, float, float], optional
+    (left, bottom, right, top) rectangle in normalized figure coordinates
+    that the whole subplots area (including labels) will fit into.
+    Defaults to using the entire figure.
+
+Returns
+-------
+subplotspec or None
+    subplotspec kwargs to be passed to `.Figure.subplots_adjust` or
+    None if tight_layout could not be accomplished.
+\end{DoxyVerb}
+ 

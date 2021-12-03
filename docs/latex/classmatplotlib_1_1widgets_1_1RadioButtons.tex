@@ -1,0 +1,171 @@
+\hypertarget{classmatplotlib_1_1widgets_1_1RadioButtons}{}\section{matplotlib.\+widgets.\+Radio\+Buttons Class Reference}
+\label{classmatplotlib_1_1widgets_1_1RadioButtons}\index{matplotlib.\+widgets.\+Radio\+Buttons@{matplotlib.\+widgets.\+Radio\+Buttons}}
+
+
+Inheritance diagram for matplotlib.\+widgets.\+Radio\+Buttons\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1RadioButtons__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for matplotlib.\+widgets.\+Radio\+Buttons\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmatplotlib_1_1widgets_1_1RadioButtons__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1RadioButtons_aa818136aaa788c963d2793e0dbad9012}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1widgets_1_1AxesWidget_ac0722858b7001d10a42055dc90420b4f}{ax}, \hyperlink{classmatplotlib_1_1widgets_1_1RadioButtons_a0bc3c6546009bd9fe06be5e66999c2f5}{labels}, \hyperlink{classmatplotlib_1_1widgets_1_1Widget_a6fc79b9a86770ee3a3b46ea419b7ad74}{active}=0, \hyperlink{classmatplotlib_1_1widgets_1_1RadioButtons_a6ce66d134773281a7a1e8498dfc4ff4b}{activecolor}=\textquotesingle{}blue\textquotesingle{})
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1RadioButtons_a8261d322f9d60862093f5d96b5a4903a}{set\+\_\+active} (self, index)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1RadioButtons_ad0aaa373d0a5f717bc4bddac898afae6}{on\+\_\+clicked} (self, func)
+\item 
+def \hyperlink{classmatplotlib_1_1widgets_1_1RadioButtons_a7f96c03e9756e7c4098c2fcb1ef5175d}{disconnect} (self, cid)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RadioButtons_a6ce66d134773281a7a1e8498dfc4ff4b}{activecolor}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RadioButtons_adac6c1a025207ffe807ba00155316672}{value\+\_\+selected}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RadioButtons_a0bc3c6546009bd9fe06be5e66999c2f5}{labels}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RadioButtons_a7882ce34abcceaa3d5766c751eea563d}{circles}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RadioButtons_af02db107ef5c838f38be3a766a7d1b3c}{cnt}
+\item 
+\hyperlink{classmatplotlib_1_1widgets_1_1RadioButtons_ad1db0297f95b9e6218b5c0783098178f}{observers}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A GUI neutral radio button.
+
+For the buttons to remain responsive you must keep a reference to this
+object.
+
+Connect to the RadioButtons with the `.on_clicked` method.
+
+Attributes
+----------
+ax : `~matplotlib.axes.Axes`
+    The parent axes for the widget.
+activecolor : color
+    The color of the selected button.
+labels : list of `.Text`
+    The button labels.
+circles : list of `~.patches.Circle`
+    The buttons.
+value_selected : str
+    The label text of the currently selected button.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RadioButtons_aa818136aaa788c963d2793e0dbad9012}\label{classmatplotlib_1_1widgets_1_1RadioButtons_aa818136aaa788c963d2793e0dbad9012}} 
+\index{matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Radio\+Buttons.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ax,  }\item[{}]{labels,  }\item[{}]{active = {\ttfamily 0},  }\item[{}]{activecolor = {\ttfamily \textquotesingle{}blue\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add radio buttons to an `~.axes.Axes`.
+
+Parameters
+----------
+ax : `~matplotlib.axes.Axes`
+    The axes to add the buttons to.
+labels : list of str
+    The button labels.
+active : int
+    The index of the initially selected button.
+activecolor : color
+    The color of the selected button.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RadioButtons_a7f96c03e9756e7c4098c2fcb1ef5175d}\label{classmatplotlib_1_1widgets_1_1RadioButtons_a7f96c03e9756e7c4098c2fcb1ef5175d}} 
+\index{matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}}
+\subsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Radio\+Buttons.\+disconnect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cid }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove the observer with connection id *cid*.\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RadioButtons_ad0aaa373d0a5f717bc4bddac898afae6}\label{classmatplotlib_1_1widgets_1_1RadioButtons_ad0aaa373d0a5f717bc4bddac898afae6}} 
+\index{matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}!on\+\_\+clicked@{on\+\_\+clicked}}
+\index{on\+\_\+clicked@{on\+\_\+clicked}!matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}}
+\subsubsection{\texorpdfstring{on\+\_\+clicked()}{on\_clicked()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Radio\+Buttons.\+on\+\_\+clicked (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Connect the callback function *func* to button click events.
+
+Returns a connection id, which can be used to disconnect the callback.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RadioButtons_a8261d322f9d60862093f5d96b5a4903a}\label{classmatplotlib_1_1widgets_1_1RadioButtons_a8261d322f9d60862093f5d96b5a4903a}} 
+\index{matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}!set\+\_\+active@{set\+\_\+active}}
+\index{set\+\_\+active@{set\+\_\+active}!matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}}
+\subsubsection{\texorpdfstring{set\+\_\+active()}{set\_active()}}
+{\footnotesize\ttfamily def matplotlib.\+widgets.\+Radio\+Buttons.\+set\+\_\+active (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Select button with number *index*.
+
+Callbacks will be triggered if :attr:`eventson` is True.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RadioButtons_a6ce66d134773281a7a1e8498dfc4ff4b}\label{classmatplotlib_1_1widgets_1_1RadioButtons_a6ce66d134773281a7a1e8498dfc4ff4b}} 
+\index{matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}!activecolor@{activecolor}}
+\index{activecolor@{activecolor}!matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}}
+\subsubsection{\texorpdfstring{activecolor}{activecolor}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Radio\+Buttons.\+activecolor}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RadioButtons_a7882ce34abcceaa3d5766c751eea563d}\label{classmatplotlib_1_1widgets_1_1RadioButtons_a7882ce34abcceaa3d5766c751eea563d}} 
+\index{matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}!circles@{circles}}
+\index{circles@{circles}!matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}}
+\subsubsection{\texorpdfstring{circles}{circles}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Radio\+Buttons.\+circles}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RadioButtons_af02db107ef5c838f38be3a766a7d1b3c}\label{classmatplotlib_1_1widgets_1_1RadioButtons_af02db107ef5c838f38be3a766a7d1b3c}} 
+\index{matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}!cnt@{cnt}}
+\index{cnt@{cnt}!matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}}
+\subsubsection{\texorpdfstring{cnt}{cnt}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Radio\+Buttons.\+cnt\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RadioButtons_a0bc3c6546009bd9fe06be5e66999c2f5}\label{classmatplotlib_1_1widgets_1_1RadioButtons_a0bc3c6546009bd9fe06be5e66999c2f5}} 
+\index{matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}!labels@{labels}}
+\index{labels@{labels}!matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}}
+\subsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Radio\+Buttons.\+labels}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RadioButtons_ad1db0297f95b9e6218b5c0783098178f}\label{classmatplotlib_1_1widgets_1_1RadioButtons_ad1db0297f95b9e6218b5c0783098178f}} 
+\index{matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}!observers@{observers}}
+\index{observers@{observers}!matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}}
+\subsubsection{\texorpdfstring{observers}{observers}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Radio\+Buttons.\+observers\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmatplotlib_1_1widgets_1_1RadioButtons_adac6c1a025207ffe807ba00155316672}\label{classmatplotlib_1_1widgets_1_1RadioButtons_adac6c1a025207ffe807ba00155316672}} 
+\index{matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}!value\+\_\+selected@{value\+\_\+selected}}
+\index{value\+\_\+selected@{value\+\_\+selected}!matplotlib\+::widgets\+::\+Radio\+Buttons@{matplotlib\+::widgets\+::\+Radio\+Buttons}}
+\subsubsection{\texorpdfstring{value\+\_\+selected}{value\_selected}}
+{\footnotesize\ttfamily matplotlib.\+widgets.\+Radio\+Buttons.\+value\+\_\+selected}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{widgets_8py}{widgets.\+py}\end{DoxyCompactItemize}

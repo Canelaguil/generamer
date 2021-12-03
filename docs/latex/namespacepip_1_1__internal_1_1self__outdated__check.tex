@@ -1,0 +1,62 @@
+\hypertarget{namespacepip_1_1__internal_1_1self__outdated__check}{}\section{pip.\+\_\+internal.\+self\+\_\+outdated\+\_\+check Namespace Reference}
+\label{namespacepip_1_1__internal_1_1self__outdated__check}\index{pip.\+\_\+internal.\+self\+\_\+outdated\+\_\+check@{pip.\+\_\+internal.\+self\+\_\+outdated\+\_\+check}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__internal_1_1self__outdated__check_1_1SelfCheckState}{Self\+Check\+State}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1self__outdated__check_ad0acb8c33b098e33468091effd105c54}{was\+\_\+installed\+\_\+by\+\_\+pip} (pkg)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1self__outdated__check_afc5bffdf02b45d7ab26ab16c3345b7ac}{pip\+\_\+self\+\_\+version\+\_\+check} (session, options)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1self__outdated__check_a63a4eaaf96e7d5a46278098607cf4488}{S\+E\+L\+F\+C\+H\+E\+C\+K\+\_\+\+D\+A\+T\+E\+\_\+\+F\+MT}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1self__outdated__check_a588d105ffdaf709ec245d8bff02d38eb}{logger}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1self__outdated__check_afc5bffdf02b45d7ab26ab16c3345b7ac}\label{namespacepip_1_1__internal_1_1self__outdated__check_afc5bffdf02b45d7ab26ab16c3345b7ac}} 
+\index{pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check@{pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check}!pip\+\_\+self\+\_\+version\+\_\+check@{pip\+\_\+self\+\_\+version\+\_\+check}}
+\index{pip\+\_\+self\+\_\+version\+\_\+check@{pip\+\_\+self\+\_\+version\+\_\+check}!pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check@{pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check}}
+\subsubsection{\texorpdfstring{pip\+\_\+self\+\_\+version\+\_\+check()}{pip\_self\_version\_check()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+self\+\_\+outdated\+\_\+check.\+pip\+\_\+self\+\_\+version\+\_\+check (\begin{DoxyParamCaption}\item[{}]{session,  }\item[{}]{options }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check for an update for pip.
+
+Limit the frequency of checks to once per week. State is stored either in
+the active virtualenv or in the user's USER_CACHE_DIR keyed off the prefix
+of the pip script path.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1self__outdated__check_ad0acb8c33b098e33468091effd105c54}\label{namespacepip_1_1__internal_1_1self__outdated__check_ad0acb8c33b098e33468091effd105c54}} 
+\index{pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check@{pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check}!was\+\_\+installed\+\_\+by\+\_\+pip@{was\+\_\+installed\+\_\+by\+\_\+pip}}
+\index{was\+\_\+installed\+\_\+by\+\_\+pip@{was\+\_\+installed\+\_\+by\+\_\+pip}!pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check@{pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check}}
+\subsubsection{\texorpdfstring{was\+\_\+installed\+\_\+by\+\_\+pip()}{was\_installed\_by\_pip()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+self\+\_\+outdated\+\_\+check.\+was\+\_\+installed\+\_\+by\+\_\+pip (\begin{DoxyParamCaption}\item[{}]{pkg }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks whether pkg was installed by pip
+
+This is used not to display the upgrade message when pip is in fact
+installed by system package manager, such as dnf on Fedora.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1self__outdated__check_a588d105ffdaf709ec245d8bff02d38eb}\label{namespacepip_1_1__internal_1_1self__outdated__check_a588d105ffdaf709ec245d8bff02d38eb}} 
+\index{pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check@{pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check}!logger@{logger}}
+\index{logger@{logger}!pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check@{pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check}}
+\subsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+self\+\_\+outdated\+\_\+check.\+logger}
+
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1self__outdated__check_a63a4eaaf96e7d5a46278098607cf4488}\label{namespacepip_1_1__internal_1_1self__outdated__check_a63a4eaaf96e7d5a46278098607cf4488}} 
+\index{pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check@{pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check}!S\+E\+L\+F\+C\+H\+E\+C\+K\+\_\+\+D\+A\+T\+E\+\_\+\+F\+MT@{S\+E\+L\+F\+C\+H\+E\+C\+K\+\_\+\+D\+A\+T\+E\+\_\+\+F\+MT}}
+\index{S\+E\+L\+F\+C\+H\+E\+C\+K\+\_\+\+D\+A\+T\+E\+\_\+\+F\+MT@{S\+E\+L\+F\+C\+H\+E\+C\+K\+\_\+\+D\+A\+T\+E\+\_\+\+F\+MT}!pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check@{pip\+::\+\_\+internal\+::self\+\_\+outdated\+\_\+check}}
+\subsubsection{\texorpdfstring{S\+E\+L\+F\+C\+H\+E\+C\+K\+\_\+\+D\+A\+T\+E\+\_\+\+F\+MT}{SELFCHECK\_DATE\_FMT}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+self\+\_\+outdated\+\_\+check.\+S\+E\+L\+F\+C\+H\+E\+C\+K\+\_\+\+D\+A\+T\+E\+\_\+\+F\+MT}
+

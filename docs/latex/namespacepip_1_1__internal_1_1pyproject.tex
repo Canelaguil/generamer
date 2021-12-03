@@ -1,0 +1,59 @@
+\hypertarget{namespacepip_1_1__internal_1_1pyproject}{}\section{pip.\+\_\+internal.\+pyproject Namespace Reference}
+\label{namespacepip_1_1__internal_1_1pyproject}\index{pip.\+\_\+internal.\+pyproject@{pip.\+\_\+internal.\+pyproject}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1pyproject_aa0250284deda8acb0915feb29cbf0fc9}{make\+\_\+pyproject\+\_\+path} (unpacked\+\_\+source\+\_\+directory)
+\item 
+def \hyperlink{namespacepip_1_1__internal_1_1pyproject_a0bee1804548f06cf5055d85e5b2509d3}{load\+\_\+pyproject\+\_\+toml} (use\+\_\+pep517, pyproject\+\_\+toml, setup\+\_\+py, req\+\_\+name)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__internal_1_1pyproject_a274d06001ee00ebc1024f50fe1cc1d05}{Build\+System\+Details}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1pyproject_a0bee1804548f06cf5055d85e5b2509d3}\label{namespacepip_1_1__internal_1_1pyproject_a0bee1804548f06cf5055d85e5b2509d3}} 
+\index{pip\+::\+\_\+internal\+::pyproject@{pip\+::\+\_\+internal\+::pyproject}!load\+\_\+pyproject\+\_\+toml@{load\+\_\+pyproject\+\_\+toml}}
+\index{load\+\_\+pyproject\+\_\+toml@{load\+\_\+pyproject\+\_\+toml}!pip\+::\+\_\+internal\+::pyproject@{pip\+::\+\_\+internal\+::pyproject}}
+\subsubsection{\texorpdfstring{load\+\_\+pyproject\+\_\+toml()}{load\_pyproject\_toml()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+pyproject.\+load\+\_\+pyproject\+\_\+toml (\begin{DoxyParamCaption}\item[{}]{use\+\_\+pep517,  }\item[{}]{pyproject\+\_\+toml,  }\item[{}]{setup\+\_\+py,  }\item[{}]{req\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load the pyproject.toml file.
+
+Parameters:
+    use_pep517 - Has the user requested PEP 517 processing? None
+                 means the user hasn't explicitly specified.
+    pyproject_toml - Location of the project's pyproject.toml file
+    setup_py - Location of the project's setup.py file
+    req_name - The name of the requirement we're processing (for
+               error reporting)
+
+Returns:
+    None if we should use the legacy code path, otherwise a tuple
+    (
+        requirements from pyproject.toml,
+        name of PEP 517 backend,
+        requirements we should check are installed after setting
+            up the build environment
+        directory paths to import the backend from (backend-path),
+            relative to the project root.
+    )
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1pyproject_aa0250284deda8acb0915feb29cbf0fc9}\label{namespacepip_1_1__internal_1_1pyproject_aa0250284deda8acb0915feb29cbf0fc9}} 
+\index{pip\+::\+\_\+internal\+::pyproject@{pip\+::\+\_\+internal\+::pyproject}!make\+\_\+pyproject\+\_\+path@{make\+\_\+pyproject\+\_\+path}}
+\index{make\+\_\+pyproject\+\_\+path@{make\+\_\+pyproject\+\_\+path}!pip\+::\+\_\+internal\+::pyproject@{pip\+::\+\_\+internal\+::pyproject}}
+\subsubsection{\texorpdfstring{make\+\_\+pyproject\+\_\+path()}{make\_pyproject\_path()}}
+{\footnotesize\ttfamily def pip.\+\_\+internal.\+pyproject.\+make\+\_\+pyproject\+\_\+path (\begin{DoxyParamCaption}\item[{}]{unpacked\+\_\+source\+\_\+directory }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1pyproject_a274d06001ee00ebc1024f50fe1cc1d05}\label{namespacepip_1_1__internal_1_1pyproject_a274d06001ee00ebc1024f50fe1cc1d05}} 
+\index{pip\+::\+\_\+internal\+::pyproject@{pip\+::\+\_\+internal\+::pyproject}!Build\+System\+Details@{Build\+System\+Details}}
+\index{Build\+System\+Details@{Build\+System\+Details}!pip\+::\+\_\+internal\+::pyproject@{pip\+::\+\_\+internal\+::pyproject}}
+\subsubsection{\texorpdfstring{Build\+System\+Details}{BuildSystemDetails}}
+{\footnotesize\ttfamily pip.\+\_\+internal.\+pyproject.\+Build\+System\+Details}
+

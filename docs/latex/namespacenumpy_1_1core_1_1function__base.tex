@@ -1,0 +1,381 @@
+\hypertarget{namespacenumpy_1_1core_1_1function__base}{}\section{numpy.\+core.\+function\+\_\+base Namespace Reference}
+\label{namespacenumpy_1_1core_1_1function__base}\index{numpy.\+core.\+function\+\_\+base@{numpy.\+core.\+function\+\_\+base}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1function__base_a862c72ee6263594acd4800a760179c42}{linspace} (start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1function__base_a5ceb5a989bdff2dff89633612912686f}{logspace} (start, stop, num=50, endpoint=True, base=10.\+0, dtype=None, axis=0)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1function__base_a9807dcedd10fa5ef1b6ac11fd2b9247c}{geomspace} (start, stop, num=50, endpoint=True, dtype=None, axis=0)
+\item 
+def \hyperlink{namespacenumpy_1_1core_1_1function__base_a44125f12bbf93f7acaae09946f3487e2}{add\+\_\+newdoc} (place, obj, doc, warn\+\_\+on\+\_\+python=True)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1function__base_ab747ac78f568825def99f439f463736b}{array\+\_\+function\+\_\+dispatch}
+\item 
+\hyperlink{namespacenumpy_1_1core_1_1function__base_aed21068da2537f63888b104d1d128db2}{module}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1function__base_a44125f12bbf93f7acaae09946f3487e2}\label{namespacenumpy_1_1core_1_1function__base_a44125f12bbf93f7acaae09946f3487e2}} 
+\index{numpy\+::core\+::function\+\_\+base@{numpy\+::core\+::function\+\_\+base}!add\+\_\+newdoc@{add\+\_\+newdoc}}
+\index{add\+\_\+newdoc@{add\+\_\+newdoc}!numpy\+::core\+::function\+\_\+base@{numpy\+::core\+::function\+\_\+base}}
+\subsubsection{\texorpdfstring{add\+\_\+newdoc()}{add\_newdoc()}}
+{\footnotesize\ttfamily def numpy.\+core.\+function\+\_\+base.\+add\+\_\+newdoc (\begin{DoxyParamCaption}\item[{}]{place,  }\item[{}]{obj,  }\item[{}]{doc,  }\item[{}]{warn\+\_\+on\+\_\+python = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add documentation to an existing object, typically one defined in C
+
+The purpose is to allow easier editing of the docstrings without requiring
+a re-compile. This exists primarily for internal use within numpy itself.
+
+Parameters
+----------
+place : str
+    The absolute name of the module to import from
+obj : str
+    The name of the object to add documentation to, typically a class or
+    function name
+doc : {str, Tuple[str, str], List[Tuple[str, str]]}
+    If a string, the documentation to apply to `obj`
+
+    If a tuple, then the first element is interpreted as an attribute of
+    `obj` and the second as the docstring to apply - ``(method, docstring)``
+
+    If a list, then each element of the list should be a tuple of length
+    two - ``[(method1, docstring1), (method2, docstring2), ...]``
+warn_on_python : bool
+    If True, the default, emit `UserWarning` if this is used to attach
+    documentation to a pure-python object.
+
+Notes
+-----
+This routine never raises an error if the docstring can't be written, but
+will raise an error if the object being documented does not exist.
+
+This routine cannot modify read-only docstrings, as appear
+in new-style classes or built-in functions. Because this
+routine never raises an error the caller must check manually
+that the docstrings were changed.
+
+Since this function grabs the ``char *`` from a c-level str object and puts
+it into the ``tp_doc`` slot of the type of `obj`, it violates a number of
+C-API best-practices, by:
+
+- modifying a `PyTypeObject` after calling `PyType_Ready`
+- calling `Py_INCREF` on the str and losing the reference, so the str
+  will never be released
+
+If possible it should be avoided.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1function__base_a9807dcedd10fa5ef1b6ac11fd2b9247c}\label{namespacenumpy_1_1core_1_1function__base_a9807dcedd10fa5ef1b6ac11fd2b9247c}} 
+\index{numpy\+::core\+::function\+\_\+base@{numpy\+::core\+::function\+\_\+base}!geomspace@{geomspace}}
+\index{geomspace@{geomspace}!numpy\+::core\+::function\+\_\+base@{numpy\+::core\+::function\+\_\+base}}
+\subsubsection{\texorpdfstring{geomspace()}{geomspace()}}
+{\footnotesize\ttfamily def numpy.\+core.\+function\+\_\+base.\+geomspace (\begin{DoxyParamCaption}\item[{}]{start,  }\item[{}]{stop,  }\item[{}]{num = {\ttfamily 50},  }\item[{}]{endpoint = {\ttfamily True},  }\item[{}]{dtype = {\ttfamily None},  }\item[{}]{axis = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return numbers spaced evenly on a log scale (a geometric progression).
+
+This is similar to `logspace`, but with endpoints specified directly.
+Each output sample is a constant multiple of the previous.
+
+.. versionchanged:: 1.16.0
+    Non-scalar `start` and `stop` are now supported.
+
+Parameters
+----------
+start : array_like
+    The starting value of the sequence.
+stop : array_like
+    The final value of the sequence, unless `endpoint` is False.
+    In that case, ``num + 1`` values are spaced over the
+    interval in log-space, of which all but the last (a sequence of
+    length `num`) are returned.
+num : integer, optional
+    Number of samples to generate.  Default is 50.
+endpoint : boolean, optional
+    If true, `stop` is the last sample. Otherwise, it is not included.
+    Default is True.
+dtype : dtype
+    The type of the output array.  If `dtype` is not given, the data type
+    is inferred from `start` and `stop`. The inferred dtype will never be
+    an integer; `float` is chosen even if the arguments would produce an
+    array of integers.
+axis : int, optional
+    The axis in the result to store the samples.  Relevant only if start
+    or stop are array-like.  By default (0), the samples will be along a
+    new axis inserted at the beginning. Use -1 to get an axis at the end.
+
+    .. versionadded:: 1.16.0
+
+Returns
+-------
+samples : ndarray
+    `num` samples, equally spaced on a log scale.
+
+See Also
+--------
+logspace : Similar to geomspace, but with endpoints specified using log
+           and base.
+linspace : Similar to geomspace, but with arithmetic instead of geometric
+           progression.
+arange : Similar to linspace, with the step size specified instead of the
+         number of samples.
+
+Notes
+-----
+If the inputs or dtype are complex, the output will follow a logarithmic
+spiral in the complex plane.  (There are an infinite number of spirals
+passing through two points; the output will follow the shortest such path.)
+
+Examples
+--------
+>>> np.geomspace(1, 1000, num=4)
+array([    1.,    10.,   100.,  1000.])
+>>> np.geomspace(1, 1000, num=3, endpoint=False)
+array([   1.,   10.,  100.])
+>>> np.geomspace(1, 1000, num=4, endpoint=False)
+array([   1.        ,    5.62341325,   31.6227766 ,  177.827941  ])
+>>> np.geomspace(1, 256, num=9)
+array([   1.,    2.,    4.,    8.,   16.,   32.,   64.,  128.,  256.])
+
+Note that the above may not produce exact integers:
+
+>>> np.geomspace(1, 256, num=9, dtype=int)
+array([  1,   2,   4,   7,  16,  32,  63, 127, 256])
+>>> np.around(np.geomspace(1, 256, num=9)).astype(int)
+array([  1,   2,   4,   8,  16,  32,  64, 128, 256])
+
+Negative, decreasing, and complex inputs are allowed:
+
+>>> np.geomspace(1000, 1, num=4)
+array([1000.,  100.,   10.,    1.])
+>>> np.geomspace(-1000, -1, num=4)
+array([-1000.,  -100.,   -10.,    -1.])
+>>> np.geomspace(1j, 1000j, num=4)  # Straight line
+array([0.   +1.j, 0.  +10.j, 0. +100.j, 0.+1000.j])
+>>> np.geomspace(-1+0j, 1+0j, num=5)  # Circle
+array([-1.00000000e+00+1.22464680e-16j, -7.07106781e-01+7.07106781e-01j,
+        6.12323400e-17+1.00000000e+00j,  7.07106781e-01+7.07106781e-01j,
+        1.00000000e+00+0.00000000e+00j])
+
+Graphical illustration of `endpoint` parameter:
+
+>>> import matplotlib.pyplot as plt
+>>> N = 10
+>>> y = np.zeros(N)
+>>> plt.semilogx(np.geomspace(1, 1000, N, endpoint=True), y + 1, 'o')
+[<matplotlib.lines.Line2D object at 0x...>]
+>>> plt.semilogx(np.geomspace(1, 1000, N, endpoint=False), y + 2, 'o')
+[<matplotlib.lines.Line2D object at 0x...>]
+>>> plt.axis([0.5, 2000, 0, 3])
+[0.5, 2000, 0, 3]
+>>> plt.grid(True, color='0.7', linestyle='-', which='both', axis='both')
+>>> plt.show()\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1function__base_a862c72ee6263594acd4800a760179c42}\label{namespacenumpy_1_1core_1_1function__base_a862c72ee6263594acd4800a760179c42}} 
+\index{numpy\+::core\+::function\+\_\+base@{numpy\+::core\+::function\+\_\+base}!linspace@{linspace}}
+\index{linspace@{linspace}!numpy\+::core\+::function\+\_\+base@{numpy\+::core\+::function\+\_\+base}}
+\subsubsection{\texorpdfstring{linspace()}{linspace()}}
+{\footnotesize\ttfamily def numpy.\+core.\+function\+\_\+base.\+linspace (\begin{DoxyParamCaption}\item[{}]{start,  }\item[{}]{stop,  }\item[{}]{num = {\ttfamily 50},  }\item[{}]{endpoint = {\ttfamily True},  }\item[{}]{retstep = {\ttfamily False},  }\item[{}]{dtype = {\ttfamily None},  }\item[{}]{axis = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return evenly spaced numbers over a specified interval.
+
+Returns `num` evenly spaced samples, calculated over the
+interval [`start`, `stop`].
+
+The endpoint of the interval can optionally be excluded.
+
+.. versionchanged:: 1.16.0
+    Non-scalar `start` and `stop` are now supported.
+
+.. versionchanged:: 1.20.0
+    Values are rounded towards ``-inf`` instead of ``0`` when an
+    integer ``dtype`` is specified. The old behavior can
+    still be obtained with ``np.linspace(start, stop, num).astype(int)``
+
+Parameters
+----------
+start : array_like
+    The starting value of the sequence.
+stop : array_like
+    The end value of the sequence, unless `endpoint` is set to False.
+    In that case, the sequence consists of all but the last of ``num + 1``
+    evenly spaced samples, so that `stop` is excluded.  Note that the step
+    size changes when `endpoint` is False.
+num : int, optional
+    Number of samples to generate. Default is 50. Must be non-negative.
+endpoint : bool, optional
+    If True, `stop` is the last sample. Otherwise, it is not included.
+    Default is True.
+retstep : bool, optional
+    If True, return (`samples`, `step`), where `step` is the spacing
+    between samples.
+dtype : dtype, optional
+    The type of the output array.  If `dtype` is not given, the data type
+    is inferred from `start` and `stop`. The inferred dtype will never be
+    an integer; `float` is chosen even if the arguments would produce an
+    array of integers.
+
+    .. versionadded:: 1.9.0
+
+axis : int, optional
+    The axis in the result to store the samples.  Relevant only if start
+    or stop are array-like.  By default (0), the samples will be along a
+    new axis inserted at the beginning. Use -1 to get an axis at the end.
+
+    .. versionadded:: 1.16.0
+
+Returns
+-------
+samples : ndarray
+    There are `num` equally spaced samples in the closed interval
+    ``[start, stop]`` or the half-open interval ``[start, stop)``
+    (depending on whether `endpoint` is True or False).
+step : float, optional
+    Only returned if `retstep` is True
+
+    Size of spacing between samples.
+
+
+See Also
+--------
+arange : Similar to `linspace`, but uses a step size (instead of the
+         number of samples).
+geomspace : Similar to `linspace`, but with numbers spaced evenly on a log
+            scale (a geometric progression).
+logspace : Similar to `geomspace`, but with the end points specified as
+           logarithms.
+
+Examples
+--------
+>>> np.linspace(2.0, 3.0, num=5)
+array([2.  , 2.25, 2.5 , 2.75, 3.  ])
+>>> np.linspace(2.0, 3.0, num=5, endpoint=False)
+array([2. ,  2.2,  2.4,  2.6,  2.8])
+>>> np.linspace(2.0, 3.0, num=5, retstep=True)
+(array([2.  ,  2.25,  2.5 ,  2.75,  3.  ]), 0.25)
+
+Graphical illustration:
+
+>>> import matplotlib.pyplot as plt
+>>> N = 8
+>>> y = np.zeros(N)
+>>> x1 = np.linspace(0, 10, N, endpoint=True)
+>>> x2 = np.linspace(0, 10, N, endpoint=False)
+>>> plt.plot(x1, y, 'o')
+[<matplotlib.lines.Line2D object at 0x...>]
+>>> plt.plot(x2, y + 0.5, 'o')
+[<matplotlib.lines.Line2D object at 0x...>]
+>>> plt.ylim([-0.5, 1])
+(-0.5, 1)
+>>> plt.show()\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1function__base_a5ceb5a989bdff2dff89633612912686f}\label{namespacenumpy_1_1core_1_1function__base_a5ceb5a989bdff2dff89633612912686f}} 
+\index{numpy\+::core\+::function\+\_\+base@{numpy\+::core\+::function\+\_\+base}!logspace@{logspace}}
+\index{logspace@{logspace}!numpy\+::core\+::function\+\_\+base@{numpy\+::core\+::function\+\_\+base}}
+\subsubsection{\texorpdfstring{logspace()}{logspace()}}
+{\footnotesize\ttfamily def numpy.\+core.\+function\+\_\+base.\+logspace (\begin{DoxyParamCaption}\item[{}]{start,  }\item[{}]{stop,  }\item[{}]{num = {\ttfamily 50},  }\item[{}]{endpoint = {\ttfamily True},  }\item[{}]{base = {\ttfamily 10.0},  }\item[{}]{dtype = {\ttfamily None},  }\item[{}]{axis = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return numbers spaced evenly on a log scale.
+
+In linear space, the sequence starts at ``base ** start``
+(`base` to the power of `start`) and ends with ``base ** stop``
+(see `endpoint` below).
+
+.. versionchanged:: 1.16.0
+    Non-scalar `start` and `stop` are now supported.
+
+Parameters
+----------
+start : array_like
+    ``base ** start`` is the starting value of the sequence.
+stop : array_like
+    ``base ** stop`` is the final value of the sequence, unless `endpoint`
+    is False.  In that case, ``num + 1`` values are spaced over the
+    interval in log-space, of which all but the last (a sequence of
+    length `num`) are returned.
+num : integer, optional
+    Number of samples to generate.  Default is 50.
+endpoint : boolean, optional
+    If true, `stop` is the last sample. Otherwise, it is not included.
+    Default is True.
+base : array_like, optional
+    The base of the log space. The step size between the elements in
+    ``ln(samples) / ln(base)`` (or ``log_base(samples)``) is uniform.
+    Default is 10.0.
+dtype : dtype
+    The type of the output array.  If `dtype` is not given, the data type
+    is inferred from `start` and `stop`. The inferred type will never be
+    an integer; `float` is chosen even if the arguments would produce an
+    array of integers.
+axis : int, optional
+    The axis in the result to store the samples.  Relevant only if start
+    or stop are array-like.  By default (0), the samples will be along a
+    new axis inserted at the beginning. Use -1 to get an axis at the end.
+
+    .. versionadded:: 1.16.0
+
+
+Returns
+-------
+samples : ndarray
+    `num` samples, equally spaced on a log scale.
+
+See Also
+--------
+arange : Similar to linspace, with the step size specified instead of the
+         number of samples. Note that, when used with a float endpoint, the
+         endpoint may or may not be included.
+linspace : Similar to logspace, but with the samples uniformly distributed
+           in linear space, instead of log space.
+geomspace : Similar to logspace, but with endpoints specified directly.
+
+Notes
+-----
+Logspace is equivalent to the code
+
+>>> y = np.linspace(start, stop, num=num, endpoint=endpoint)
+... # doctest: +SKIP
+>>> power(base, y).astype(dtype)
+... # doctest: +SKIP
+
+Examples
+--------
+>>> np.logspace(2.0, 3.0, num=4)
+array([ 100.        ,  215.443469  ,  464.15888336, 1000.        ])
+>>> np.logspace(2.0, 3.0, num=4, endpoint=False)
+array([100.        ,  177.827941  ,  316.22776602,  562.34132519])
+>>> np.logspace(2.0, 3.0, num=4, base=2.0)
+array([4.        ,  5.0396842 ,  6.34960421,  8.        ])
+
+Graphical illustration:
+
+>>> import matplotlib.pyplot as plt
+>>> N = 10
+>>> x1 = np.logspace(0.1, 1, N, endpoint=True)
+>>> x2 = np.logspace(0.1, 1, N, endpoint=False)
+>>> y = np.zeros(N)
+>>> plt.plot(x1, y, 'o')
+[<matplotlib.lines.Line2D object at 0x...>]
+>>> plt.plot(x2, y + 0.5, 'o')
+[<matplotlib.lines.Line2D object at 0x...>]
+>>> plt.ylim([-0.5, 1])
+(-0.5, 1)
+>>> plt.show()\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1function__base_ab747ac78f568825def99f439f463736b}\label{namespacenumpy_1_1core_1_1function__base_ab747ac78f568825def99f439f463736b}} 
+\index{numpy\+::core\+::function\+\_\+base@{numpy\+::core\+::function\+\_\+base}!array\+\_\+function\+\_\+dispatch@{array\+\_\+function\+\_\+dispatch}}
+\index{array\+\_\+function\+\_\+dispatch@{array\+\_\+function\+\_\+dispatch}!numpy\+::core\+::function\+\_\+base@{numpy\+::core\+::function\+\_\+base}}
+\subsubsection{\texorpdfstring{array\+\_\+function\+\_\+dispatch}{array\_function\_dispatch}}
+{\footnotesize\ttfamily numpy.\+core.\+function\+\_\+base.\+array\+\_\+function\+\_\+dispatch}
+
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1function__base_aed21068da2537f63888b104d1d128db2}\label{namespacenumpy_1_1core_1_1function__base_aed21068da2537f63888b104d1d128db2}} 
+\index{numpy\+::core\+::function\+\_\+base@{numpy\+::core\+::function\+\_\+base}!module@{module}}
+\index{module@{module}!numpy\+::core\+::function\+\_\+base@{numpy\+::core\+::function\+\_\+base}}
+\subsubsection{\texorpdfstring{module}{module}}
+{\footnotesize\ttfamily numpy.\+core.\+function\+\_\+base.\+module}
+

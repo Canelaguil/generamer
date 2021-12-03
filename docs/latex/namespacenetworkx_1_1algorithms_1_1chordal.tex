@@ -1,0 +1,288 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1chordal}{}\section{networkx.\+algorithms.\+chordal Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1chordal}\index{networkx.\+algorithms.\+chordal@{networkx.\+algorithms.\+chordal}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetworkx_1_1algorithms_1_1chordal_1_1NetworkXTreewidthBoundExceeded}{Network\+X\+Treewidth\+Bound\+Exceeded}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1chordal_a931ba6a80a30421b68ec4c3287ec4c2c}{is\+\_\+chordal} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1chordal_adf8d1e4874cff57394eba12dcab9a5f1}{find\+\_\+induced\+\_\+nodes} (G, s, t, treewidth\+\_\+bound=sys.\+maxsize)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1chordal_a1a3217ee59ce97387bc3973eb9e480cd}{chordal\+\_\+graph\+\_\+cliques} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1chordal_aef7499130a6e6ada8058bebb4c2b6df8}{chordal\+\_\+graph\+\_\+treewidth} (G)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1chordal_a2c5ab1c68e004234ae71af003b7f3220}{complete\+\_\+to\+\_\+chordal\+\_\+graph} (G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Algorithms for chordal graphs.
+
+A graph is chordal if every cycle of length at least 4 has a chord
+(an edge joining two nodes not adjacent in the cycle).
+https://en.wikipedia.org/wiki/Chordal_graph
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1chordal_a1a3217ee59ce97387bc3973eb9e480cd}\label{namespacenetworkx_1_1algorithms_1_1chordal_a1a3217ee59ce97387bc3973eb9e480cd}} 
+\index{networkx\+::algorithms\+::chordal@{networkx\+::algorithms\+::chordal}!chordal\+\_\+graph\+\_\+cliques@{chordal\+\_\+graph\+\_\+cliques}}
+\index{chordal\+\_\+graph\+\_\+cliques@{chordal\+\_\+graph\+\_\+cliques}!networkx\+::algorithms\+::chordal@{networkx\+::algorithms\+::chordal}}
+\subsubsection{\texorpdfstring{chordal\+\_\+graph\+\_\+cliques()}{chordal\_graph\_cliques()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+chordal.\+chordal\+\_\+graph\+\_\+cliques (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the set of maximal cliques of a chordal graph.
+
+The algorithm breaks the graph in connected components and performs a
+maximum cardinality search in each component to get the cliques.
+
+Parameters
+----------
+G : graph
+  A NetworkX graph
+
+Returns
+-------
+cliques : A set containing the maximal cliques in G.
+
+Raises
+------
+NetworkXError
+    The algorithm does not support DiGraph, MultiGraph and MultiDiGraph.
+    The algorithm can only be applied to chordal graphs. If the input
+    graph is found to be non-chordal, a :exc:`NetworkXError` is raised.
+
+Examples
+--------
+>>> e = [
+...     (1, 2),
+...     (1, 3),
+...     (2, 3),
+...     (2, 4),
+...     (3, 4),
+...     (3, 5),
+...     (3, 6),
+...     (4, 5),
+...     (4, 6),
+...     (5, 6),
+...     (7, 8),
+... ]
+>>> G = nx.Graph(e)
+>>> G.add_node(9)
+>>> setlist = nx.chordal_graph_cliques(G)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1chordal_aef7499130a6e6ada8058bebb4c2b6df8}\label{namespacenetworkx_1_1algorithms_1_1chordal_aef7499130a6e6ada8058bebb4c2b6df8}} 
+\index{networkx\+::algorithms\+::chordal@{networkx\+::algorithms\+::chordal}!chordal\+\_\+graph\+\_\+treewidth@{chordal\+\_\+graph\+\_\+treewidth}}
+\index{chordal\+\_\+graph\+\_\+treewidth@{chordal\+\_\+graph\+\_\+treewidth}!networkx\+::algorithms\+::chordal@{networkx\+::algorithms\+::chordal}}
+\subsubsection{\texorpdfstring{chordal\+\_\+graph\+\_\+treewidth()}{chordal\_graph\_treewidth()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+chordal.\+chordal\+\_\+graph\+\_\+treewidth (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the treewidth of the chordal graph G.
+
+Parameters
+----------
+G : graph
+  A NetworkX graph
+
+Returns
+-------
+treewidth : int
+    The size of the largest clique in the graph minus one.
+
+Raises
+------
+NetworkXError
+    The algorithm does not support DiGraph, MultiGraph and MultiDiGraph.
+    The algorithm can only be applied to chordal graphs. If the input
+    graph is found to be non-chordal, a :exc:`NetworkXError` is raised.
+
+Examples
+--------
+>>> e = [
+...     (1, 2),
+...     (1, 3),
+...     (2, 3),
+...     (2, 4),
+...     (3, 4),
+...     (3, 5),
+...     (3, 6),
+...     (4, 5),
+...     (4, 6),
+...     (5, 6),
+...     (7, 8),
+... ]
+>>> G = nx.Graph(e)
+>>> G.add_node(9)
+>>> nx.chordal_graph_treewidth(G)
+3
+
+References
+----------
+.. [1] https://en.wikipedia.org/wiki/Tree_decomposition#Treewidth
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1chordal_a2c5ab1c68e004234ae71af003b7f3220}\label{namespacenetworkx_1_1algorithms_1_1chordal_a2c5ab1c68e004234ae71af003b7f3220}} 
+\index{networkx\+::algorithms\+::chordal@{networkx\+::algorithms\+::chordal}!complete\+\_\+to\+\_\+chordal\+\_\+graph@{complete\+\_\+to\+\_\+chordal\+\_\+graph}}
+\index{complete\+\_\+to\+\_\+chordal\+\_\+graph@{complete\+\_\+to\+\_\+chordal\+\_\+graph}!networkx\+::algorithms\+::chordal@{networkx\+::algorithms\+::chordal}}
+\subsubsection{\texorpdfstring{complete\+\_\+to\+\_\+chordal\+\_\+graph()}{complete\_to\_chordal\_graph()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+chordal.\+complete\+\_\+to\+\_\+chordal\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a copy of G completed to a chordal graph
+
+Adds edges to a copy of G to create a chordal graph. A graph G=(V,E) is
+called chordal if for each cycle with length bigger than 3, there exist
+two non-adjacent nodes connected by an edge (called a chord).
+
+Parameters
+----------
+G : NetworkX graph
+    Undirected graph
+
+Returns
+-------
+H : NetworkX graph
+    The chordal enhancement of G
+alpha : Dictionary
+        The elimination ordering of nodes of G
+
+Notes
+-----
+There are different approaches to calculate the chordal
+enhancement of a graph. The algorithm used here is called
+MCS-M and gives at least minimal (local) triangulation of graph. Note
+that this triangulation is not necessarily a global minimum.
+
+https://en.wikipedia.org/wiki/Chordal_graph
+
+References
+----------
+.. [1] Berry, Anne & Blair, Jean & Heggernes, Pinar & Peyton, Barry. (2004)
+       Maximum Cardinality Search for Computing Minimal Triangulations of
+       Graphs.  Algorithmica. 39. 287-298. 10.1007/s00453-004-1084-3.
+
+Examples
+--------
+>>> from networkx.algorithms.chordal import complete_to_chordal_graph
+>>> G = nx.wheel_graph(10)
+>>> H, alpha = complete_to_chordal_graph(G)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1chordal_adf8d1e4874cff57394eba12dcab9a5f1}\label{namespacenetworkx_1_1algorithms_1_1chordal_adf8d1e4874cff57394eba12dcab9a5f1}} 
+\index{networkx\+::algorithms\+::chordal@{networkx\+::algorithms\+::chordal}!find\+\_\+induced\+\_\+nodes@{find\+\_\+induced\+\_\+nodes}}
+\index{find\+\_\+induced\+\_\+nodes@{find\+\_\+induced\+\_\+nodes}!networkx\+::algorithms\+::chordal@{networkx\+::algorithms\+::chordal}}
+\subsubsection{\texorpdfstring{find\+\_\+induced\+\_\+nodes()}{find\_induced\_nodes()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+chordal.\+find\+\_\+induced\+\_\+nodes (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{s,  }\item[{}]{t,  }\item[{}]{treewidth\+\_\+bound = {\ttfamily sys.maxsize} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the set of induced nodes in the path from s to t.
+
+Parameters
+----------
+G : graph
+  A chordal NetworkX graph
+s : node
+    Source node to look for induced nodes
+t : node
+    Destination node to look for induced nodes
+treewidth_bound: float
+    Maximum treewidth acceptable for the graph H. The search
+    for induced nodes will end as soon as the treewidth_bound is exceeded.
+
+Returns
+-------
+Induced_nodes : Set of nodes
+    The set of induced nodes in the path from s to t in G
+
+Raises
+------
+NetworkXError
+    The algorithm does not support DiGraph, MultiGraph and MultiDiGraph.
+    If the input graph is an instance of one of these classes, a
+    :exc:`NetworkXError` is raised.
+    The algorithm can only be applied to chordal graphs. If the input
+    graph is found to be non-chordal, a :exc:`NetworkXError` is raised.
+
+Examples
+--------
+>>> G = nx.Graph()
+>>> G = nx.generators.classic.path_graph(10)
+>>> induced_nodes = nx.find_induced_nodes(G, 1, 9, 2)
+>>> sorted(induced_nodes)
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+Notes
+-----
+G must be a chordal graph and (s,t) an edge that is not in G.
+
+If a treewidth_bound is provided, the search for induced nodes will end
+as soon as the treewidth_bound is exceeded.
+
+The algorithm is inspired by Algorithm 4 in [1]_.
+A formal definition of induced node can also be found on that reference.
+
+References
+----------
+.. [1] Learning Bounded Treewidth Bayesian Networks.
+   Gal Elidan, Stephen Gould; JMLR, 9(Dec):2699--2731, 2008.
+   http://jmlr.csail.mit.edu/papers/volume9/elidan08a/elidan08a.pdf
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1chordal_a931ba6a80a30421b68ec4c3287ec4c2c}\label{namespacenetworkx_1_1algorithms_1_1chordal_a931ba6a80a30421b68ec4c3287ec4c2c}} 
+\index{networkx\+::algorithms\+::chordal@{networkx\+::algorithms\+::chordal}!is\+\_\+chordal@{is\+\_\+chordal}}
+\index{is\+\_\+chordal@{is\+\_\+chordal}!networkx\+::algorithms\+::chordal@{networkx\+::algorithms\+::chordal}}
+\subsubsection{\texorpdfstring{is\+\_\+chordal()}{is\_chordal()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+chordal.\+is\+\_\+chordal (\begin{DoxyParamCaption}\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks whether G is a chordal graph.
+
+A graph is chordal if every cycle of length at least 4 has a chord
+(an edge joining two nodes not adjacent in the cycle).
+
+Parameters
+----------
+G : graph
+  A NetworkX graph.
+
+Returns
+-------
+chordal : bool
+  True if G is a chordal graph and False otherwise.
+
+Raises
+------
+NetworkXNotImplemented
+    The algorithm does not support DiGraph, MultiGraph and MultiDiGraph.
+
+Examples
+--------
+>>> e = [
+...     (1, 2),
+...     (1, 3),
+...     (2, 3),
+...     (2, 4),
+...     (3, 4),
+...     (3, 5),
+...     (3, 6),
+...     (4, 5),
+...     (4, 6),
+...     (5, 6),
+... ]
+>>> G = nx.Graph(e)
+>>> nx.is_chordal(G)
+True
+
+Notes
+-----
+The routine tries to go through every node following maximum cardinality
+search. It returns False when it finds that the separator for any node
+is not a clique.  Based on the algorithms in [1]_.
+
+References
+----------
+.. [1] R. E. Tarjan and M. Yannakakis, Simple linear-time algorithms
+   to test chordality of graphs, test acyclicity of hypergraphs, and
+   selectively reduce acyclic hypergraphs, SIAM J. Comput., 13 (1984),
+   pp. 566–579.
+\end{DoxyVerb}
+ 

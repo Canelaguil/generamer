@@ -1,0 +1,114 @@
+\hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine}{}\section{pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine}\index{pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine@{pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager}{App\+Engine\+Manager}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEnginePlatformError}{App\+Engine\+Platform\+Error}
+\item 
+class \hyperlink{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEnginePlatformWarning}{App\+Engine\+Platform\+Warning}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a43bcc7d1059815293b9969954bfe2854}{urlfetch}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a11755208f8de682c059b7329b78c96e0}{log}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_adeaee65e7765924563778db31118b78c}{is\+\_\+appengine}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a5dee34caa3af4d9bd1687c3cc72847a6}{is\+\_\+appengine\+\_\+sandbox}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a6166783c78cd832aea184120e9d9eac4}{is\+\_\+local\+\_\+appengine}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_afedea0831b9c11a55d44748b7366459a}{is\+\_\+prod\+\_\+appengine}
+\item 
+\hyperlink{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a6ab46ac46fee4fba79b08854e0e484df}{is\+\_\+prod\+\_\+appengine\+\_\+mvms}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This module provides a pool manager that uses Google App Engine's
+`URLFetch Service <https://cloud.google.com/appengine/docs/python/urlfetch>`_.
+
+Example usage::
+
+from pip._vendor.urllib3 import PoolManager
+from pip._vendor.urllib3.contrib.appengine import AppEngineManager, is_appengine_sandbox
+
+if is_appengine_sandbox():
+    # AppEngineManager uses AppEngine's URLFetch API behind the scenes
+    http = AppEngineManager()
+else:
+    # PoolManager uses a socket-level API behind the scenes
+    http = PoolManager()
+
+r = http.request('GET', 'https://google.com/')
+
+There are `limitations <https://cloud.google.com/appengine/docs/python/\
+urlfetch/#Python_Quotas_and_limits>`_ to the URLFetch service and it may not be
+the best choice for your application. There are three options for using
+urllib3 on Google App Engine:
+
+1. You can use :class:`AppEngineManager` with URLFetch. URLFetch is
+   cost-effective in many circumstances as long as your usage is within the
+   limitations.
+2. You can use a normal :class:`~urllib3.PoolManager` by enabling sockets.
+   Sockets also have `limitations and restrictions
+   <https://cloud.google.com/appengine/docs/python/sockets/\
+   #limitations-and-restrictions>`_ and have a lower free quota than URLFetch.
+   To use sockets, be sure to specify the following in your ``app.yaml``::
+
+    env_variables:
+        GAE_USE_SOCKETS_HTTPLIB : 'true'
+
+3. If you are using `App Engine Flexible
+<https://cloud.google.com/appengine/docs/flexible/>`_, you can use the standard
+:class:`PoolManager` without any configuration or special environment variables.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_adeaee65e7765924563778db31118b78c}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_adeaee65e7765924563778db31118b78c}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}!is\+\_\+appengine@{is\+\_\+appengine}}
+\index{is\+\_\+appengine@{is\+\_\+appengine}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}}
+\subsubsection{\texorpdfstring{is\+\_\+appengine}{is\_appengine}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+is\+\_\+appengine}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a5dee34caa3af4d9bd1687c3cc72847a6}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a5dee34caa3af4d9bd1687c3cc72847a6}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}!is\+\_\+appengine\+\_\+sandbox@{is\+\_\+appengine\+\_\+sandbox}}
+\index{is\+\_\+appengine\+\_\+sandbox@{is\+\_\+appengine\+\_\+sandbox}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}}
+\subsubsection{\texorpdfstring{is\+\_\+appengine\+\_\+sandbox}{is\_appengine\_sandbox}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+is\+\_\+appengine\+\_\+sandbox}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a6166783c78cd832aea184120e9d9eac4}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a6166783c78cd832aea184120e9d9eac4}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}!is\+\_\+local\+\_\+appengine@{is\+\_\+local\+\_\+appengine}}
+\index{is\+\_\+local\+\_\+appengine@{is\+\_\+local\+\_\+appengine}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}}
+\subsubsection{\texorpdfstring{is\+\_\+local\+\_\+appengine}{is\_local\_appengine}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+is\+\_\+local\+\_\+appengine}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_afedea0831b9c11a55d44748b7366459a}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_afedea0831b9c11a55d44748b7366459a}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}!is\+\_\+prod\+\_\+appengine@{is\+\_\+prod\+\_\+appengine}}
+\index{is\+\_\+prod\+\_\+appengine@{is\+\_\+prod\+\_\+appengine}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}}
+\subsubsection{\texorpdfstring{is\+\_\+prod\+\_\+appengine}{is\_prod\_appengine}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+is\+\_\+prod\+\_\+appengine}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a6ab46ac46fee4fba79b08854e0e484df}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a6ab46ac46fee4fba79b08854e0e484df}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}!is\+\_\+prod\+\_\+appengine\+\_\+mvms@{is\+\_\+prod\+\_\+appengine\+\_\+mvms}}
+\index{is\+\_\+prod\+\_\+appengine\+\_\+mvms@{is\+\_\+prod\+\_\+appengine\+\_\+mvms}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}}
+\subsubsection{\texorpdfstring{is\+\_\+prod\+\_\+appengine\+\_\+mvms}{is\_prod\_appengine\_mvms}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+is\+\_\+prod\+\_\+appengine\+\_\+mvms}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a11755208f8de682c059b7329b78c96e0}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a11755208f8de682c059b7329b78c96e0}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}!log@{log}}
+\index{log@{log}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}}
+\subsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+log}
+
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a43bcc7d1059815293b9969954bfe2854}\label{namespacepip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_a43bcc7d1059815293b9969954bfe2854}} 
+\index{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}!urlfetch@{urlfetch}}
+\index{urlfetch@{urlfetch}!pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine@{pip\+::\+\_\+vendor\+::urllib3\+::contrib\+::appengine}}
+\subsubsection{\texorpdfstring{urlfetch}{urlfetch}}
+{\footnotesize\ttfamily pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+urlfetch}
+

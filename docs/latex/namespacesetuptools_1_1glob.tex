@@ -1,0 +1,117 @@
+\hypertarget{namespacesetuptools_1_1glob}{}\section{setuptools.\+glob Namespace Reference}
+\label{namespacesetuptools_1_1glob}\index{setuptools.\+glob@{setuptools.\+glob}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1glob_aaa3481017d8575f370da9768113e795f}{glob} (pathname, recursive=False)
+\item 
+def \hyperlink{namespacesetuptools_1_1glob_a785709f6dd54bc19304bb581cc6e7707}{iglob} (pathname, recursive=False)
+\item 
+def \hyperlink{namespacesetuptools_1_1glob_a44ead1132e5a984ad1edd86a4b643141}{glob1} (dirname, pattern)
+\item 
+def \hyperlink{namespacesetuptools_1_1glob_a75dda51129cf0b110589765487cb12dd}{glob0} (dirname, basename)
+\item 
+def \hyperlink{namespacesetuptools_1_1glob_a314c02b7732b13b3a0c129a7282b55ef}{glob2} (dirname, pattern)
+\item 
+def \hyperlink{namespacesetuptools_1_1glob_aab80b9560e1118922c32b88a7b758288}{has\+\_\+magic} (s)
+\item 
+def \hyperlink{namespacesetuptools_1_1glob_a73ffea4dfe02e8a0294dad20dbb55a0a}{escape} (pathname)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacesetuptools_1_1glob_a8b4aa8dfe849c42d139011a8050da833}{magic\+\_\+check}
+\item 
+\hyperlink{namespacesetuptools_1_1glob_a6004b75354404430fa928ea3dd63792c}{magic\+\_\+check\+\_\+bytes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Filename globbing utility. Mostly a copy of `glob` from Python 3.5.
+
+Changes include:
+ * `yield from` and PEP3102 `*` removed.
+ * Hidden files are not ignored.
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1glob_a73ffea4dfe02e8a0294dad20dbb55a0a}\label{namespacesetuptools_1_1glob_a73ffea4dfe02e8a0294dad20dbb55a0a}} 
+\index{setuptools\+::glob@{setuptools\+::glob}!escape@{escape}}
+\index{escape@{escape}!setuptools\+::glob@{setuptools\+::glob}}
+\subsubsection{\texorpdfstring{escape()}{escape()}}
+{\footnotesize\ttfamily def setuptools.\+glob.\+escape (\begin{DoxyParamCaption}\item[{}]{pathname }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Escape all special characters.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1glob_aaa3481017d8575f370da9768113e795f}\label{namespacesetuptools_1_1glob_aaa3481017d8575f370da9768113e795f}} 
+\index{setuptools\+::glob@{setuptools\+::glob}!glob@{glob}}
+\index{glob@{glob}!setuptools\+::glob@{setuptools\+::glob}}
+\subsubsection{\texorpdfstring{glob()}{glob()}}
+{\footnotesize\ttfamily def setuptools.\+glob.\+glob (\begin{DoxyParamCaption}\item[{}]{pathname,  }\item[{}]{recursive = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of paths matching a pathname pattern.
+
+The pattern may contain simple shell-style wildcards a la
+fnmatch. However, unlike fnmatch, filenames starting with a
+dot are special cases that are not matched by '*' and '?'
+patterns.
+
+If recursive is true, the pattern '**' will match any files and
+zero or more directories and subdirectories.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1glob_a75dda51129cf0b110589765487cb12dd}\label{namespacesetuptools_1_1glob_a75dda51129cf0b110589765487cb12dd}} 
+\index{setuptools\+::glob@{setuptools\+::glob}!glob0@{glob0}}
+\index{glob0@{glob0}!setuptools\+::glob@{setuptools\+::glob}}
+\subsubsection{\texorpdfstring{glob0()}{glob0()}}
+{\footnotesize\ttfamily def setuptools.\+glob.\+glob0 (\begin{DoxyParamCaption}\item[{}]{dirname,  }\item[{}]{basename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1glob_a44ead1132e5a984ad1edd86a4b643141}\label{namespacesetuptools_1_1glob_a44ead1132e5a984ad1edd86a4b643141}} 
+\index{setuptools\+::glob@{setuptools\+::glob}!glob1@{glob1}}
+\index{glob1@{glob1}!setuptools\+::glob@{setuptools\+::glob}}
+\subsubsection{\texorpdfstring{glob1()}{glob1()}}
+{\footnotesize\ttfamily def setuptools.\+glob.\+glob1 (\begin{DoxyParamCaption}\item[{}]{dirname,  }\item[{}]{pattern }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1glob_a314c02b7732b13b3a0c129a7282b55ef}\label{namespacesetuptools_1_1glob_a314c02b7732b13b3a0c129a7282b55ef}} 
+\index{setuptools\+::glob@{setuptools\+::glob}!glob2@{glob2}}
+\index{glob2@{glob2}!setuptools\+::glob@{setuptools\+::glob}}
+\subsubsection{\texorpdfstring{glob2()}{glob2()}}
+{\footnotesize\ttfamily def setuptools.\+glob.\+glob2 (\begin{DoxyParamCaption}\item[{}]{dirname,  }\item[{}]{pattern }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1glob_aab80b9560e1118922c32b88a7b758288}\label{namespacesetuptools_1_1glob_aab80b9560e1118922c32b88a7b758288}} 
+\index{setuptools\+::glob@{setuptools\+::glob}!has\+\_\+magic@{has\+\_\+magic}}
+\index{has\+\_\+magic@{has\+\_\+magic}!setuptools\+::glob@{setuptools\+::glob}}
+\subsubsection{\texorpdfstring{has\+\_\+magic()}{has\_magic()}}
+{\footnotesize\ttfamily def setuptools.\+glob.\+has\+\_\+magic (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1glob_a785709f6dd54bc19304bb581cc6e7707}\label{namespacesetuptools_1_1glob_a785709f6dd54bc19304bb581cc6e7707}} 
+\index{setuptools\+::glob@{setuptools\+::glob}!iglob@{iglob}}
+\index{iglob@{iglob}!setuptools\+::glob@{setuptools\+::glob}}
+\subsubsection{\texorpdfstring{iglob()}{iglob()}}
+{\footnotesize\ttfamily def setuptools.\+glob.\+iglob (\begin{DoxyParamCaption}\item[{}]{pathname,  }\item[{}]{recursive = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return an iterator which yields the paths matching a pathname pattern.
+
+The pattern may contain simple shell-style wildcards a la
+fnmatch. However, unlike fnmatch, filenames starting with a
+dot are special cases that are not matched by '*' and '?'
+patterns.
+
+If recursive is true, the pattern '**' will match any files and
+zero or more directories and subdirectories.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1glob_a8b4aa8dfe849c42d139011a8050da833}\label{namespacesetuptools_1_1glob_a8b4aa8dfe849c42d139011a8050da833}} 
+\index{setuptools\+::glob@{setuptools\+::glob}!magic\+\_\+check@{magic\+\_\+check}}
+\index{magic\+\_\+check@{magic\+\_\+check}!setuptools\+::glob@{setuptools\+::glob}}
+\subsubsection{\texorpdfstring{magic\+\_\+check}{magic\_check}}
+{\footnotesize\ttfamily setuptools.\+glob.\+magic\+\_\+check}
+
+\mbox{\Hypertarget{namespacesetuptools_1_1glob_a6004b75354404430fa928ea3dd63792c}\label{namespacesetuptools_1_1glob_a6004b75354404430fa928ea3dd63792c}} 
+\index{setuptools\+::glob@{setuptools\+::glob}!magic\+\_\+check\+\_\+bytes@{magic\+\_\+check\+\_\+bytes}}
+\index{magic\+\_\+check\+\_\+bytes@{magic\+\_\+check\+\_\+bytes}!setuptools\+::glob@{setuptools\+::glob}}
+\subsubsection{\texorpdfstring{magic\+\_\+check\+\_\+bytes}{magic\_check\_bytes}}
+{\footnotesize\ttfamily setuptools.\+glob.\+magic\+\_\+check\+\_\+bytes}
+

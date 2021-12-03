@@ -1,0 +1,157 @@
+\hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism}{}\section{networkx.\+algorithms.\+isomorphism.\+tree\+\_\+isomorphism Namespace Reference}
+\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism}\index{networkx.\+algorithms.\+isomorphism.\+tree\+\_\+isomorphism@{networkx.\+algorithms.\+isomorphism.\+tree\+\_\+isomorphism}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a77029094aa772129dd7d77bd232fb577}{root\+\_\+trees} (t1, root1, t2, root2)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_ab50c69d1ddd49d853681c8db00cf05da}{assign\+\_\+levels} (G, root)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a0c11ea1f0a596a6b819f810cf04b107f}{group\+\_\+by\+\_\+levels} (levels)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a28fa4e0e6f13d215fb862243e2138fc4}{generate\+\_\+isomorphism} (v, w, M, ordered\+\_\+children)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a77311446523f91a7c1fa30d21ce78e05}{rooted\+\_\+tree\+\_\+isomorphism} (t1, root1, t2, root2)
+\item 
+def \hyperlink{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a5a92453309ab6be345c022472c2200d2}{tree\+\_\+isomorphism} (t1, t2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An algorithm for finding if two undirected trees are isomorphic,
+and if so returns an isomorphism between the two sets of nodes.
+
+This algorithm uses a routine to tell if two rooted trees (trees with a
+specified root node) are isomorphic, which may be independently useful.
+
+This implements an algorithm from:
+The Design and Analysis of Computer Algorithms
+by Aho, Hopcroft, and Ullman
+Addison-Wesley Publishing 1974
+Example 3.2 pp. 84-86.
+
+A more understandable version of this algorithm is described in:
+Homework Assignment 5
+McGill University SOCS 308-250B, Winter 2002
+by Matthew Suderman
+http://crypto.cs.mcgill.ca/~crepeau/CS250/2004/HW5+.pdf
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_ab50c69d1ddd49d853681c8db00cf05da}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_ab50c69d1ddd49d853681c8db00cf05da}} 
+\index{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism@{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism}!assign\+\_\+levels@{assign\+\_\+levels}}
+\index{assign\+\_\+levels@{assign\+\_\+levels}!networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism@{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism}}
+\subsubsection{\texorpdfstring{assign\+\_\+levels()}{assign\_levels()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+tree\+\_\+isomorphism.\+assign\+\_\+levels (\begin{DoxyParamCaption}\item[{}]{G,  }\item[{}]{root }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a28fa4e0e6f13d215fb862243e2138fc4}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a28fa4e0e6f13d215fb862243e2138fc4}} 
+\index{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism@{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism}!generate\+\_\+isomorphism@{generate\+\_\+isomorphism}}
+\index{generate\+\_\+isomorphism@{generate\+\_\+isomorphism}!networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism@{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism}}
+\subsubsection{\texorpdfstring{generate\+\_\+isomorphism()}{generate\_isomorphism()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+tree\+\_\+isomorphism.\+generate\+\_\+isomorphism (\begin{DoxyParamCaption}\item[{}]{v,  }\item[{}]{w,  }\item[{}]{M,  }\item[{}]{ordered\+\_\+children }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a0c11ea1f0a596a6b819f810cf04b107f}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a0c11ea1f0a596a6b819f810cf04b107f}} 
+\index{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism@{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism}!group\+\_\+by\+\_\+levels@{group\+\_\+by\+\_\+levels}}
+\index{group\+\_\+by\+\_\+levels@{group\+\_\+by\+\_\+levels}!networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism@{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism}}
+\subsubsection{\texorpdfstring{group\+\_\+by\+\_\+levels()}{group\_by\_levels()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+tree\+\_\+isomorphism.\+group\+\_\+by\+\_\+levels (\begin{DoxyParamCaption}\item[{}]{levels }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a77029094aa772129dd7d77bd232fb577}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a77029094aa772129dd7d77bd232fb577}} 
+\index{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism@{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism}!root\+\_\+trees@{root\+\_\+trees}}
+\index{root\+\_\+trees@{root\+\_\+trees}!networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism@{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism}}
+\subsubsection{\texorpdfstring{root\+\_\+trees()}{root\_trees()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+tree\+\_\+isomorphism.\+root\+\_\+trees (\begin{DoxyParamCaption}\item[{}]{t1,  }\item[{}]{root1,  }\item[{}]{t2,  }\item[{}]{root2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a single digraph dT of free trees t1 and t2
+#   with roots root1 and root2 respectively
+# rename the nodes with consecutive integers
+# so that all nodes get a unique name between both trees
+
+# our new "fake" root node is 0
+# t1 is numbers from 1 ... n
+# t2 is numbered from n+1 to 2n
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a77311446523f91a7c1fa30d21ce78e05}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a77311446523f91a7c1fa30d21ce78e05}} 
+\index{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism@{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism}!rooted\+\_\+tree\+\_\+isomorphism@{rooted\+\_\+tree\+\_\+isomorphism}}
+\index{rooted\+\_\+tree\+\_\+isomorphism@{rooted\+\_\+tree\+\_\+isomorphism}!networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism@{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism}}
+\subsubsection{\texorpdfstring{rooted\+\_\+tree\+\_\+isomorphism()}{rooted\_tree\_isomorphism()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+tree\+\_\+isomorphism.\+rooted\+\_\+tree\+\_\+isomorphism (\begin{DoxyParamCaption}\item[{}]{t1,  }\item[{}]{root1,  }\item[{}]{t2,  }\item[{}]{root2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given two rooted trees `t1` and `t2`,
+with roots `root1` and `root2` respectivly
+this routine will determine if they are isomorphic.
+
+These trees may be either directed or undirected,
+but if they are directed, all edges should flow from the root.
+
+It returns the isomorphism, a mapping of the nodes of `t1` onto the nodes
+of `t2`, such that two trees are then identical.
+
+Note that two trees may have more than one isomorphism, and this
+routine just returns one valid mapping.
+
+Parameters
+----------
+`t1` :  NetworkX graph
+    One of the trees being compared
+
+`root1` : a node of `t1` which is the root of the tree
+
+`t2` : undirected NetworkX graph
+    The other tree being compared
+
+`root2` : a node of `t2` which is the root of the tree
+
+This is a subroutine used to implement `tree_isomorphism`, but will
+be somewhat faster if you already have rooted trees.
+
+Returns
+-------
+isomorphism : list
+    A list of pairs in which the left element is a node in `t1`
+    and the right element is a node in `t2`.  The pairs are in
+    arbitrary order.  If the nodes in one tree is mapped to the names in
+    the other, then trees will be identical. Note that an isomorphism
+    will not necessarily be unique.
+
+    If `t1` and `t2` are not isomorphic, then it returns the empty list.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a5a92453309ab6be345c022472c2200d2}\label{namespacenetworkx_1_1algorithms_1_1isomorphism_1_1tree__isomorphism_a5a92453309ab6be345c022472c2200d2}} 
+\index{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism@{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism}!tree\+\_\+isomorphism@{tree\+\_\+isomorphism}}
+\index{tree\+\_\+isomorphism@{tree\+\_\+isomorphism}!networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism@{networkx\+::algorithms\+::isomorphism\+::tree\+\_\+isomorphism}}
+\subsubsection{\texorpdfstring{tree\+\_\+isomorphism()}{tree\_isomorphism()}}
+{\footnotesize\ttfamily def networkx.\+algorithms.\+isomorphism.\+tree\+\_\+isomorphism.\+tree\+\_\+isomorphism (\begin{DoxyParamCaption}\item[{}]{t1,  }\item[{}]{t2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given two undirected (or free) trees `t1` and `t2`,
+this routine will determine if they are isomorphic.
+It returns the isomorphism, a mapping of the nodes of `t1` onto the nodes
+of `t2`, such that two trees are then identical.
+
+Note that two trees may have more than one isomorphism, and this
+routine just returns one valid mapping.
+
+Parameters
+----------
+t1 : undirected NetworkX graph
+    One of the trees being compared
+
+t2 : undirected NetworkX graph
+    The other tree being compared
+
+Returns
+-------
+isomorphism : list
+    A list of pairs in which the left element is a node in `t1`
+    and the right element is a node in `t2`.  The pairs are in
+    arbitrary order.  If the nodes in one tree is mapped to the names in
+    the other, then trees will be identical. Note that an isomorphism
+    will not necessarily be unique.
+
+    If `t1` and `t2` are not isomorphic, then it returns the empty list.
+
+Notes
+-----
+This runs in O(n*log(n)) time for trees with n nodes.
+\end{DoxyVerb}
+ 

@@ -1,0 +1,32 @@
+\hypertarget{namespacesetuptools_1_1installer}{}\section{setuptools.\+installer Namespace Reference}
+\label{namespacesetuptools_1_1installer}\index{setuptools.\+installer@{setuptools.\+installer}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacesetuptools_1_1installer_a27d66fe10187c391586040e6b039649e}{fetch\+\_\+build\+\_\+egg} (dist, req)
+\item 
+def \hyperlink{namespacesetuptools_1_1installer_afdf503a562fe3ad6ed3d4a7b05c2fb4f}{strip\+\_\+marker} (req)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1installer_a27d66fe10187c391586040e6b039649e}\label{namespacesetuptools_1_1installer_a27d66fe10187c391586040e6b039649e}} 
+\index{setuptools\+::installer@{setuptools\+::installer}!fetch\+\_\+build\+\_\+egg@{fetch\+\_\+build\+\_\+egg}}
+\index{fetch\+\_\+build\+\_\+egg@{fetch\+\_\+build\+\_\+egg}!setuptools\+::installer@{setuptools\+::installer}}
+\subsubsection{\texorpdfstring{fetch\+\_\+build\+\_\+egg()}{fetch\_build\_egg()}}
+{\footnotesize\ttfamily def setuptools.\+installer.\+fetch\+\_\+build\+\_\+egg (\begin{DoxyParamCaption}\item[{}]{dist,  }\item[{}]{req }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Fetch an egg needed for building.
+
+Use pip/wheel to fetch/build a wheel.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesetuptools_1_1installer_afdf503a562fe3ad6ed3d4a7b05c2fb4f}\label{namespacesetuptools_1_1installer_afdf503a562fe3ad6ed3d4a7b05c2fb4f}} 
+\index{setuptools\+::installer@{setuptools\+::installer}!strip\+\_\+marker@{strip\+\_\+marker}}
+\index{strip\+\_\+marker@{strip\+\_\+marker}!setuptools\+::installer@{setuptools\+::installer}}
+\subsubsection{\texorpdfstring{strip\+\_\+marker()}{strip\_marker()}}
+{\footnotesize\ttfamily def setuptools.\+installer.\+strip\+\_\+marker (\begin{DoxyParamCaption}\item[{}]{req }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a new requirement without the environment marker to avoid
+calling pip with something like `babel; extra == "i18n"`, which
+would always be ignored.
+\end{DoxyVerb}
+ 

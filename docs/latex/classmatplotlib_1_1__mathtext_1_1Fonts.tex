@@ -1,0 +1,245 @@
+\hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts}{}\section{matplotlib.\+\_\+mathtext.\+Fonts Class Reference}
+\label{classmatplotlib_1_1__mathtext_1_1Fonts}\index{matplotlib.\+\_\+mathtext.\+Fonts@{matplotlib.\+\_\+mathtext.\+Fonts}}
+
+
+Inheritance diagram for matplotlib.\+\_\+mathtext.\+Fonts\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlib_1_1__mathtext_1_1Fonts__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_ad54dc7f42b0ee47accb66a4648d2f317}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a716114e691f32387590085aa0f7128ce}{default\+\_\+font\+\_\+prop}, \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a9742f1a6a11c8cf2ba8b0daddab0acec}{mathtext\+\_\+backend})
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a7caf4da76a13d681f02ace7ed097445d}{destroy} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a757f73592219d24858ad8f10f88cdd73}{get\+\_\+kern} (self, font1, fontclass1, sym1, fontsize1, font2, fontclass2, sym2, fontsize2, dpi)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_ab792d9a1b3dcd8bf87b2a2ed68c4887e}{get\+\_\+metrics} (self, font, font\+\_\+class, sym, fontsize, dpi, math=True)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a48ab0f528547f4c009357a4948cfc9c2}{set\+\_\+canvas\+\_\+size} (self, w, h, d)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_aed988318d92997e165675879a068e51b}{render\+\_\+glyph} (self, ox, oy, font, font\+\_\+class, sym, fontsize, dpi)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a4bf8a7061e25d14ffb02b860df99a558}{render\+\_\+rect\+\_\+filled} (self, x1, y1, x2, y2)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a24d7cef0a8450b137999c232d78a2c6e}{get\+\_\+xheight} (self, font, fontsize, dpi)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a221da18a4d54c041734a77d00484b875}{get\+\_\+underline\+\_\+thickness} (self, font, fontsize, dpi)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a541083e50d7b30cba251107b381a4f36}{get\+\_\+used\+\_\+characters} (self)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_afc8444ade4a0cdd7a891f3761b53d290}{get\+\_\+results} (self, box)
+\item 
+def \hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_ac13329029c44c7ea107a297e78db3a8a}{get\+\_\+sized\+\_\+alternatives\+\_\+for\+\_\+symbol} (self, fontname, sym)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a716114e691f32387590085aa0f7128ce}{default\+\_\+font\+\_\+prop}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a9742f1a6a11c8cf2ba8b0daddab0acec}{mathtext\+\_\+backend}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a08b1e97cfcf61c612bd827aeaf6cbfbe}{used\+\_\+characters}
+\item 
+\hyperlink{classmatplotlib_1_1__mathtext_1_1Fonts_a297c8b5ab1db0a3c9707a866561b344d}{depth}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}An abstract base class for a system of fonts to use for mathtext.
+
+The class must be able to take symbol keys and font file names and
+return the character metrics.  It also delegates to a backend class
+to do the actual drawing.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_ad54dc7f42b0ee47accb66a4648d2f317}\label{classmatplotlib_1_1__mathtext_1_1Fonts_ad54dc7f42b0ee47accb66a4648d2f317}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Fonts.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{default\+\_\+font\+\_\+prop,  }\item[{}]{mathtext\+\_\+backend }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+default_font_prop : `~.font_manager.FontProperties`
+    The default non-math font, or the base font for Unicode (generic)
+    font rendering.
+mathtext_backend : `MathtextBackend` subclass
+    Backend to which rendering is actually delegated.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_a7caf4da76a13d681f02ace7ed097445d}\label{classmatplotlib_1_1__mathtext_1_1Fonts_a7caf4da76a13d681f02ace7ed097445d}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!destroy@{destroy}}
+\index{destroy@{destroy}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Fonts.\+destroy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Fix any cyclical references before the object is about
+to be destroyed.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_a757f73592219d24858ad8f10f88cdd73}\label{classmatplotlib_1_1__mathtext_1_1Fonts_a757f73592219d24858ad8f10f88cdd73}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!get\+\_\+kern@{get\+\_\+kern}}
+\index{get\+\_\+kern@{get\+\_\+kern}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{get\+\_\+kern()}{get\_kern()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Fonts.\+get\+\_\+kern (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{font1,  }\item[{}]{fontclass1,  }\item[{}]{sym1,  }\item[{}]{fontsize1,  }\item[{}]{font2,  }\item[{}]{fontclass2,  }\item[{}]{sym2,  }\item[{}]{fontsize2,  }\item[{}]{dpi }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the kerning distance for font between *sym1* and *sym2*.
+
+See `~.Fonts.get_metrics` for a detailed description of the parameters.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_ab792d9a1b3dcd8bf87b2a2ed68c4887e}\label{classmatplotlib_1_1__mathtext_1_1Fonts_ab792d9a1b3dcd8bf87b2a2ed68c4887e}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!get\+\_\+metrics@{get\+\_\+metrics}}
+\index{get\+\_\+metrics@{get\+\_\+metrics}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{get\+\_\+metrics()}{get\_metrics()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Fonts.\+get\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{font,  }\item[{}]{font\+\_\+class,  }\item[{}]{sym,  }\item[{}]{fontsize,  }\item[{}]{dpi,  }\item[{}]{math = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+font : str
+    One of the TeX font names: "tt", "it", "rm", "cal", "sf", "bf",
+    "default", "regular", "bb", "frak", "scr".  "default" and "regular"
+    are synonyms and use the non-math font.
+font_class : str
+    One of the TeX font names (as for *font*), but **not** "bb",
+    "frak", or "scr".  This is used to combine two font classes.  The
+    only supported combination currently is ``get_metrics("frak", "bf",
+    ...)``.
+sym : str
+    A symbol in raw TeX form, e.g., "1", "x", or "\sigma".
+fontsize : float
+    Font size in points.
+dpi : float
+    Rendering dots-per-inch.
+math : bool
+    Whether we are currently in math mode or not.
+
+Returns
+-------
+object
+
+    The returned object has the following attributes (all floats,
+    except *slanted*):
+
+    - *advance*: The advance distance (in points) of the glyph.
+    - *height*: The height of the glyph in points.
+    - *width*: The width of the glyph in points.
+    - *xmin*, *xmax*, *ymin*, *ymax*: The ink rectangle of the glyph
+    - *iceberg*: The distance from the baseline to the top of the
+      glyph.  (This corresponds to TeX's definition of "height".)
+    - *slanted*: Whether the glyph should be considered as "slanted"
+      (currently used for kerning sub/superscripts).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_afc8444ade4a0cdd7a891f3761b53d290}\label{classmatplotlib_1_1__mathtext_1_1Fonts_afc8444ade4a0cdd7a891f3761b53d290}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!get\+\_\+results@{get\+\_\+results}}
+\index{get\+\_\+results@{get\+\_\+results}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{get\+\_\+results()}{get\_results()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Fonts.\+get\+\_\+results (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{box }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the data needed by the backend to render the math
+expression.  The return value is backend-specific.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_ac13329029c44c7ea107a297e78db3a8a}\label{classmatplotlib_1_1__mathtext_1_1Fonts_ac13329029c44c7ea107a297e78db3a8a}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!get\+\_\+sized\+\_\+alternatives\+\_\+for\+\_\+symbol@{get\+\_\+sized\+\_\+alternatives\+\_\+for\+\_\+symbol}}
+\index{get\+\_\+sized\+\_\+alternatives\+\_\+for\+\_\+symbol@{get\+\_\+sized\+\_\+alternatives\+\_\+for\+\_\+symbol}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{get\+\_\+sized\+\_\+alternatives\+\_\+for\+\_\+symbol()}{get\_sized\_alternatives\_for\_symbol()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Fonts.\+get\+\_\+sized\+\_\+alternatives\+\_\+for\+\_\+symbol (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fontname,  }\item[{}]{sym }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Override if your font provides multiple sizes of the same
+symbol.  Should return a list of symbols matching *sym* in
+various sizes.  The expression renderer will select the most
+appropriate size for a given situation from this list.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_a221da18a4d54c041734a77d00484b875}\label{classmatplotlib_1_1__mathtext_1_1Fonts_a221da18a4d54c041734a77d00484b875}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!get\+\_\+underline\+\_\+thickness@{get\+\_\+underline\+\_\+thickness}}
+\index{get\+\_\+underline\+\_\+thickness@{get\+\_\+underline\+\_\+thickness}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{get\+\_\+underline\+\_\+thickness()}{get\_underline\_thickness()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Fonts.\+get\+\_\+underline\+\_\+thickness (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{font,  }\item[{}]{fontsize,  }\item[{}]{dpi }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the line thickness that matches the given font.  Used as a
+base unit for drawing lines such as in a fraction or radical.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_a541083e50d7b30cba251107b381a4f36}\label{classmatplotlib_1_1__mathtext_1_1Fonts_a541083e50d7b30cba251107b381a4f36}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!get\+\_\+used\+\_\+characters@{get\+\_\+used\+\_\+characters}}
+\index{get\+\_\+used\+\_\+characters@{get\+\_\+used\+\_\+characters}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{get\+\_\+used\+\_\+characters()}{get\_used\_characters()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Fonts.\+get\+\_\+used\+\_\+characters (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the set of characters that were used in the math
+expression.  Used by backends that need to subset fonts so
+they know which glyphs to include.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_a24d7cef0a8450b137999c232d78a2c6e}\label{classmatplotlib_1_1__mathtext_1_1Fonts_a24d7cef0a8450b137999c232d78a2c6e}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!get\+\_\+xheight@{get\+\_\+xheight}}
+\index{get\+\_\+xheight@{get\+\_\+xheight}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{get\+\_\+xheight()}{get\_xheight()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Fonts.\+get\+\_\+xheight (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{font,  }\item[{}]{fontsize,  }\item[{}]{dpi }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the xheight for the given *font* and *fontsize*.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_aed988318d92997e165675879a068e51b}\label{classmatplotlib_1_1__mathtext_1_1Fonts_aed988318d92997e165675879a068e51b}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!render\+\_\+glyph@{render\+\_\+glyph}}
+\index{render\+\_\+glyph@{render\+\_\+glyph}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{render\+\_\+glyph()}{render\_glyph()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Fonts.\+render\+\_\+glyph (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ox,  }\item[{}]{oy,  }\item[{}]{font,  }\item[{}]{font\+\_\+class,  }\item[{}]{sym,  }\item[{}]{fontsize,  }\item[{}]{dpi }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}At position (*ox*, *oy*), draw the glyph specified by the remaining
+parameters (see `get_metrics` for their detailed description).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_a4bf8a7061e25d14ffb02b860df99a558}\label{classmatplotlib_1_1__mathtext_1_1Fonts_a4bf8a7061e25d14ffb02b860df99a558}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!render\+\_\+rect\+\_\+filled@{render\+\_\+rect\+\_\+filled}}
+\index{render\+\_\+rect\+\_\+filled@{render\+\_\+rect\+\_\+filled}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{render\+\_\+rect\+\_\+filled()}{render\_rect\_filled()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Fonts.\+render\+\_\+rect\+\_\+filled (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x1,  }\item[{}]{y1,  }\item[{}]{x2,  }\item[{}]{y2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Draw a filled rectangle from (*x1*, *y1*) to (*x2*, *y2*).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_a48ab0f528547f4c009357a4948cfc9c2}\label{classmatplotlib_1_1__mathtext_1_1Fonts_a48ab0f528547f4c009357a4948cfc9c2}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!set\+\_\+canvas\+\_\+size@{set\+\_\+canvas\+\_\+size}}
+\index{set\+\_\+canvas\+\_\+size@{set\+\_\+canvas\+\_\+size}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{set\+\_\+canvas\+\_\+size()}{set\_canvas\_size()}}
+{\footnotesize\ttfamily def matplotlib.\+\_\+mathtext.\+Fonts.\+set\+\_\+canvas\+\_\+size (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{w,  }\item[{}]{h,  }\item[{}]{d }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the size of the buffer used to render the math expression.
+Only really necessary for the bitmap backends.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_a716114e691f32387590085aa0f7128ce}\label{classmatplotlib_1_1__mathtext_1_1Fonts_a716114e691f32387590085aa0f7128ce}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!default\+\_\+font\+\_\+prop@{default\+\_\+font\+\_\+prop}}
+\index{default\+\_\+font\+\_\+prop@{default\+\_\+font\+\_\+prop}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{default\+\_\+font\+\_\+prop}{default\_font\_prop}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Fonts.\+default\+\_\+font\+\_\+prop}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_a297c8b5ab1db0a3c9707a866561b344d}\label{classmatplotlib_1_1__mathtext_1_1Fonts_a297c8b5ab1db0a3c9707a866561b344d}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!depth@{depth}}
+\index{depth@{depth}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Fonts.\+depth}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_a9742f1a6a11c8cf2ba8b0daddab0acec}\label{classmatplotlib_1_1__mathtext_1_1Fonts_a9742f1a6a11c8cf2ba8b0daddab0acec}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!mathtext\+\_\+backend@{mathtext\+\_\+backend}}
+\index{mathtext\+\_\+backend@{mathtext\+\_\+backend}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{mathtext\+\_\+backend}{mathtext\_backend}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Fonts.\+mathtext\+\_\+backend}
+
+\mbox{\Hypertarget{classmatplotlib_1_1__mathtext_1_1Fonts_a08b1e97cfcf61c612bd827aeaf6cbfbe}\label{classmatplotlib_1_1__mathtext_1_1Fonts_a08b1e97cfcf61c612bd827aeaf6cbfbe}} 
+\index{matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}!used\+\_\+characters@{used\+\_\+characters}}
+\index{used\+\_\+characters@{used\+\_\+characters}!matplotlib\+::\+\_\+mathtext\+::\+Fonts@{matplotlib\+::\+\_\+mathtext\+::\+Fonts}}
+\subsubsection{\texorpdfstring{used\+\_\+characters}{used\_characters}}
+{\footnotesize\ttfamily matplotlib.\+\_\+mathtext.\+Fonts.\+used\+\_\+characters}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/matplotlib/\hyperlink{__mathtext_8py}{\+\_\+mathtext.\+py}\end{DoxyCompactItemize}

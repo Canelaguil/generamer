@@ -1,0 +1,123 @@
+\hypertarget{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea}{}\section{axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Drawing\+Area Class Reference}
+\label{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea}\index{axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Drawing\+Area@{axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Drawing\+Area}}
+
+
+Inheritance diagram for axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Drawing\+Area\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Drawing\+Area\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea_a6c46a4ba3f7a38fb6fdd269f239a623c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, width, height, xdescent, ydescent, loc, pad=0.\+4, borderpad=0.\+5, prop=None, frameon=True, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea_a4785fd434765666d9ee531b9c648907e}{da}
+\item 
+\hyperlink{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea_a269387e8b219d2f5a0788e9276ac275a}{drawing\+\_\+area}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea_a6c46a4ba3f7a38fb6fdd269f239a623c}\label{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea_a6c46a4ba3f7a38fb6fdd269f239a623c}} 
+\index{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Drawing\+Area@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Drawing\+Area}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Drawing\+Area@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Drawing\+Area}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Drawing\+Area.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{width,  }\item[{}]{height,  }\item[{}]{xdescent,  }\item[{}]{ydescent,  }\item[{}]{loc,  }\item[{}]{pad = {\ttfamily 0.4},  }\item[{}]{borderpad = {\ttfamily 0.5},  }\item[{}]{prop = {\ttfamily None},  }\item[{}]{frameon = {\ttfamily True},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}An anchored container with a fixed size and fillable DrawingArea.
+
+Artists added to the *drawing_area* will have their coordinates
+interpreted as pixels. Any transformations set on the artists will be
+overridden.
+
+Parameters
+----------
+width, height : float
+    width and height of the container, in pixels.
+
+xdescent, ydescent : float
+    descent of the container in the x- and y- direction, in pixels.
+
+loc : int
+    Location of this artist. Valid location codes are::
+
+'upper right'  : 1,
+'upper left'   : 2,
+'lower left'   : 3,
+'lower right'  : 4,
+'right'        : 5,
+'center left'  : 6,
+'center right' : 7,
+'lower center' : 8,
+'upper center' : 9,
+'center'       : 10
+
+pad : float, default: 0.4
+    Padding around the child objects, in fraction of the font size.
+
+borderpad : float, default: 0.5
+    Border padding, in fraction of the font size.
+
+prop : `matplotlib.font_manager.FontProperties`, optional
+    Font property used as a reference for paddings.
+
+frameon : bool, default: True
+    If True, draw a box around this artists.
+
+**kwargs
+    Keyworded arguments to pass to
+    :class:`matplotlib.offsetbox.AnchoredOffsetbox`.
+
+Attributes
+----------
+drawing_area : `matplotlib.offsetbox.DrawingArea`
+    A container for artists to display.
+
+Examples
+--------
+To display blue and red circles of different sizes in the upper right
+of an axes *ax*:
+
+>>> ada = AnchoredDrawingArea(20, 20, 0, 0,
+...                           loc='upper right', frameon=False)
+>>> ada.drawing_area.add_artist(Circle((10, 10), 10, fc="b"))
+>>> ada.drawing_area.add_artist(Circle((30, 10), 5, fc="r"))
+>>> ax.add_artist(ada)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea_a4785fd434765666d9ee531b9c648907e}\label{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea_a4785fd434765666d9ee531b9c648907e}} 
+\index{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Drawing\+Area@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Drawing\+Area}!da@{da}}
+\index{da@{da}!axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Drawing\+Area@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Drawing\+Area}}
+\subsubsection{\texorpdfstring{da}{da}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Drawing\+Area.\+da}
+
+\mbox{\Hypertarget{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea_a269387e8b219d2f5a0788e9276ac275a}\label{classaxes__grid1_1_1anchored__artists_1_1AnchoredDrawingArea_a269387e8b219d2f5a0788e9276ac275a}} 
+\index{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Drawing\+Area@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Drawing\+Area}!drawing\+\_\+area@{drawing\+\_\+area}}
+\index{drawing\+\_\+area@{drawing\+\_\+area}!axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Drawing\+Area@{axes\+\_\+grid1\+::anchored\+\_\+artists\+::\+Anchored\+Drawing\+Area}}
+\subsubsection{\texorpdfstring{drawing\+\_\+area}{drawing\_area}}
+{\footnotesize\ttfamily axes\+\_\+grid1.\+anchored\+\_\+artists.\+Anchored\+Drawing\+Area.\+drawing\+\_\+area}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+venv/lib/python3.\+9/site-\/packages/mpl\+\_\+toolkits/axes\+\_\+grid1/\hyperlink{_2anchored__artists_8py}{anchored\+\_\+artists.\+py}\end{DoxyCompactItemize}
