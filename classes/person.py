@@ -212,7 +212,7 @@ class Person:
             try:
                 hi = self.house.income_class
             except:
-                print(f"{self.jsonify()}")
+                logging.warniung(f'{self.key} does not belong to a house with an income class.')
             in_weights = [0.2, 0.7, 0.1]
             in_values = [hi if hi == 1 else hi-1, hi, hi if hi == 5 else hi+1]
             self.income_class = np.random.choice(in_values, p=in_weights)
@@ -568,7 +568,7 @@ class Person:
             
             index_mod = round(np.linalg.norm(A-B))
 
-            print(index_mod, file=open('extra/modifiers.txt', 'a'))
+            print(index_mod, file=open('analysis/modifiers.txt', 'a'))
 
             return index_mod
 

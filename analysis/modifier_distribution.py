@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-data = np.loadtxt('extra/modifiers.txt',dtype=int)
+data = np.loadtxt('analysis/modifiers.txt',dtype=int)
 plt.hist(data, bins=np.arange(data.min(), data.max()+1)-0.5)
 plt.show()
 sorted = np.sort(data)

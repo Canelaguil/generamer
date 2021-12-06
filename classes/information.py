@@ -78,5 +78,5 @@ class Knowledge:
         for el in self.all_bits:
             if el.year not in bits:
                 bits[el.year] = []
-            bits[el.year].append(el.description)
+            bits[el.year].append((el.key, el.description))
         return bits
